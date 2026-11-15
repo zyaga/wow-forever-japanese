@@ -40,7 +40,7 @@ Point at a Japanese word in quest text, NPC dialogue, a book page or a window la
 
 ### <span style="color:#E8C77E;">Word list</span>
 
-While the popup shows a word, **Ctrl+click** it to save it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. Type `/wfj words` to copy the whole list as text for Anki, a spreadsheet or a text file: the word and its sentence come with furigana for your cards, and a screenshot taken when you saved the word can come along. Choose the click on the **Words** settings page.
+While the popup shows a word, **Ctrl+click** it to save it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. Type `/wfj words` to copy the whole list as text for Anki, a spreadsheet or a text file: the word and its sentence come with furigana for your cards, and a screenshot taken when you saved the word can come along. With the voice installed, the study card speaks each saved sentence in its NPC's voice, and the export can bring those recordings to Anki too. Choose the click on the **Words** settings page.
 
 ### <span style="color:#E8C77E;">Study whichever you want</span>
 
@@ -139,7 +139,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ### <span style="color:#E8C77E;">単語帳</span>
 
-ポップアップが出ている単語を **Ctrl+クリック** すると、読み方・意味・その文と一緒に保存されます。単語帳は次回以降も残り、すべてのキャラクターで共通です。`/wfj words` で単語帳全体を Anki・表計算ソフト・テキストファイル用のテキストとしてコピーできます。単語と文にはカード用のふりがなが付き、保存したときのスクリーンショットも添えられます。保存の操作は設定の **単語帳** ページで選べます。
+ポップアップが出ている単語を **Ctrl+クリック** すると、読み方・意味・その文と一緒に保存されます。単語帳は次回以降も残り、すべてのキャラクターで共通です。`/wfj words` で単語帳全体を Anki・表計算ソフト・テキストファイル用のテキストとしてコピーできます。単語と文にはカード用のふりがなが付き、保存したときのスクリーンショットも添えられます。音声を入れていれば、学習カードが保存した文をNPCの声で読み上げ、その録音も書き出してAnkiで使えます。保存の操作は設定の **単語帳** ページで選べます。
 
 ### <span style="color:#E8C77E;">学びたい言語を選べます</span>
 

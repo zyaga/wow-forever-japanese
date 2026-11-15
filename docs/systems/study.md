@@ -1,6 +1,6 @@
 # Study
 
-> Studying the saved word list in game: a small tab at the screen edge says how many words wait, and the card it opens asks one word at a time, graded Again or Good, on an FSRS-6 schedule. Code: `Core/Fsrs.lua` (the memory model), `Core/Study.lua` (the queue and the saved table), `UI/StudyWindow.lua` (the tab and the card), the `study` surface in `UI/Readings.lua`, `Words.has`, `Words.lineSpans`, `Words.source` and the `words` change event in `Core/Words.lua`, the three `study.*` settings in `Core/Settings.lua`, the Study section of the Words page in `UI/Options.lua`, the strings in `UI/OptionsText.lua`, `UI/MinimapButton.lua`, `UI/Slash.lua`, `Bindings.xml` and `Core/Const.lua` (the key binding), the `study` and `studywindow` load steps in `Main.lua`. Decision: [ADR-071](../adr/071-study-the-word-list-in-game.md).
+> Studying the saved word list in game: a small tab at the screen edge says how many words wait, and the card it opens asks one word at a time, graded Again or Good, on an FSRS-6 schedule. Code: `Core/Fsrs.lua` (the memory model), `Core/Study.lua` (the queue and the saved table), `UI/StudyWindow.lua` (the tab and the card), `UI/StudyVoice.lua` (the saved sentence in its NPC's voice), the `study` surface in `UI/Readings.lua`, `Words.has`, `Words.lineSpans`, `Words.source` and the `words` change event in `Core/Words.lua`, the `study.*` settings and `voice.study` in `Core/Settings.lua`, `Voice.record` and `Voice.soundPath` in `Core/Voice.lua`, the Study section of the Words page in `UI/Options.lua`, the strings in `UI/OptionsText.lua`, `UI/MinimapButton.lua`, `UI/Slash.lua`, `Bindings.xml` and `Core/Const.lua` (the key binding), the `study` and `studywindow` load steps in `Main.lua`. Decisions: [ADR-071](../adr/071-study-the-word-list-in-game.md), [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) (the sentence's voice).
 
 ## Purpose
 A learner who saved words with the save click ([Word list](word-list.md)) can review them without leaving the game, in the quiet moments the game has anyway. The card shows the word in the sentence it was saved from, asks for its reading and meaning, and the two grades decide when it comes back; when nothing is due the learner is done. The scheduler is FSRS-6 as the published libraries ship it, so the intervals are the ones Anki gives. The addon keeps the schedule in its own SavedVariables table and never talks to Anki: a player who also imports the list there keeps two schedules.
@@ -81,7 +81,30 @@ The sentence is a word-card surface, `study`: the card attaches a reading record
 
 **The back** (Show answer): a faint gold rule under the sentence, then the reading, when it differs from the word; `Dictionary form: X（reading）`, when the dictionary form differs from the word or its reading differs from the word's; and, on its own line a half line lower, the meaning, when the word has one. The cover stays, so the sentence's readings stay hoverable. Then the **Again** (red) and **Good** (green) buttons. A grade asks `Study.answer`, then the next card shows, or the done state. Each step has one of the client's own short interface sounds: Show answer the options checkbox click (sound kit 856), Good the loot window's coin jingle (120), Again the quest log's abandon sound (846); all three are off with `study.sound` off, which the card's own speaker button toggles. A grade also blinks the whole card for a fifth of a second while the next one comes, green for Good and red for Again, the grade buttons' own colours. The card's height follows its text: it measures the title, the sentence and the answer once laid out (and once more a frame later) and grows past its 244 px minimum when a two-line title, a four-line sentence and a long answer need it, so the grades stay under the last line. A refused grade (a read-only table, a word no longer listed) prints the word list's chat line and leaves the card.
 
-**An English word** ([Word list → English entries](word-list.md#english-entries); an entry with `lang = "en"`, saved in English first). The front shows the English word and the English sentence it was saved from, with the word marked. The sentence's other English words take their English word cards (`Words.lineSpans` asks `Readings.englishLookup` for an English entry), never the tested word. The back shows how the word is said, between slashes, when the entry has a pronunciation; then, a half line lower, the Japanese word with its reading and, on the next line, the Japanese sentence that holds it (`jaSentence`). There is no dictionary form line. The scheduler, the queue, the grades and the sounds are the same: an English entry is a card like any other, and Japanese and English words share one queue and one daily cap.
+**The sentence's voice** ([ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md)). With a voice pack loaded, the back can speak the saved sentence in its NPC's recorded Japanese voice. A play button (the voice windows' own play and pause icons) sits under the rule, at the right of the answer's first line; the answer and the meaning are 28 px narrower to keep clear of it. A click plays the sentence, a click while it plays stops it, and the icon shows pause while it plays. With `voice.study` on (the default, on the Voice settings page) the sentence also plays by itself when Show answer is pressed. Never on the front: the voice would say the word's reading before the answer.
+
+`UI/StudyVoice` finds the sentence's audio each time the card asks, from the entry's `kind`, `id` and sentence (an English word's `jaSentence`, the Japanese its back shows). Nothing about audio is stored with a word, so a word saved before this feature finds its audio the same way. The steps:
+
+1. The kind must be a voiced one: quest offer, progress and turn-in (`quest.description`, `quest.progress`, `quest.completion`), gossip (NPC greetings and gossip, a quest window's greeting among them) or a book or letter page. `Voice.packKey(kind, id)` gives the line's pack key.
+2. `Voice.record(key)` gives the line's main recording: its files in order with their lengths, its timing marks, the hash of the Japanese it was made from and its pack folder. The hash must equal the shipped line's (`Lookup.get`), as for every voice line.
+3. The line is filled in for this character, as the window shows it, and the saved sentence is found in it as plain text.
+4. `VoicePanelText.timedParts` over that line and the marks gives each spoken part's time. The files played are the one holding the sentence's first spoken part through the one holding its last. When the next sentence starts inside that last file, playback stops there. A sentence that starts partway through a file plays that file from its start: the client cannot start a sound partway.
+5. A pack with no timing (one file per line) can still play a sentence that is the whole line.
+
+When the sentence cannot be played, the button shows greyed, and its tooltip, in both languages, says why:
+
+| reason | when |
+|---|---|
+| `missing` | the voice pack has no recording of the line |
+| `stale` | the pack's recording was made from older Japanese than the shipped line |
+| `notfound` | the sentence is no longer in its line (retranslated, or it names another of the player's characters) |
+| `untimed` | a pack with no timing, and the sentence is only part of the line |
+
+The button is hidden on the front, in the done state, with no voice pack, with the voice or translation off, and for a word from text that is never voiced (window labels, titles, objectives).
+
+The sound plays alone on the Master channel through `PlaySoundFile`, each file started when the one before ends by the pack's lengths (`C_Timer.After`), the same way the voice player chains a line's sentences. It does not go through the voice queue: no voice panel, no dialog mute, no lowered volumes. It plays the line's main voice only, never a speaker's variant. Starting it stops a voice line that is playing (`VoicePlayer.stop`), and a voice line starting stops it. It also stops on the next card or a grade, Collapse, Close, the combat hide, translation off and the voice turned off. It fires the State event `studyVoice` when it starts and ends, and the button follows it.
+
+**An English word** ([Word list → English entries](word-list.md#english-entries); an entry with `lang = "en"`, saved in English first). The front shows the English word and the English sentence it was saved from, with the word marked. The sentence's other English words take their English word cards (`Words.lineSpans` asks `Readings.englishLookup` for an English entry), never the tested word. The back shows how the word is said, between slashes, when the entry has a pronunciation; then, a half line lower, the Japanese word with its reading and, on the next line, the Japanese sentence that holds it (`jaSentence`). There is no dictionary form line. Its play button speaks that Japanese sentence. The scheduler, the queue, the grades and the sounds are the same: an English entry is a card like any other, and Japanese and English words share one queue and one daily cap.
 
 **The done state**: the title **Study** in place of the word, and two lines: `Nothing due.` and one of, in this order:
 
@@ -122,14 +145,17 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 - `addon/WoWForeverJapanese/Core/Fsrs.lua`: the FSRS-6 model: `W()` (a fresh copy of the 21 defaults), `retrievability`, `review` (pure)
 - `addon/WoWForeverJapanese/Core/Study.lua`: `load`, `prune`, `next`, `counts`, `answer`, `card`, `readonly`; the relearn step and the day length (pure)
 - `addon/WoWForeverJapanese/UI/StudyWindow.lua`: the tab and the card, the done state, the position, combat, the tick, `open` / `collapse` / `close` / `toggle`, `resetPosition` (`/wfj study reset`), `setCombat` (from Main's combat events), `WFJ_StudyToggle` (the binding)
+- `addon/WoWForeverJapanese/UI/StudyVoice.lua`: `find` (the sentence's files and stop time, or the reason it has none), `play`, `toggle`, `stop`, `playing`, `available`; `cell` and `copyLines` for the word list's export
+- `addon/WoWForeverJapanese/Core/Voice.lua`: `Voice.record(key)` (a line's main recording, read only) and `Voice.soundPath(folder, file)`
+- `addon/WoWForeverJapanese/UI/VoicePlayer.lua`: `play` stops the card's sentence when a voice line starts
 - `addon/WoWForeverJapanese/UI/Readings.lua`: `study` in `SURFACES`; `View.spanAreas`, the guarded span call the card measures its mark with
 - `addon/WoWForeverJapanese/Core/Words.lua`: `has(key)`, `lineSpans(entry)`, `source(surface, kind)`, and the `words` State event fired on every change
 - `addon/WoWForeverJapanese/UI/WordsWindow.lua`: the export window, refreshed by the `words` event
-- `addon/WoWForeverJapanese/Core/Settings.lua`: `study.tab`, `study.newPerDay`, `study.combatHide`, `study.sound` (State `study`)
+- `addon/WoWForeverJapanese/Core/Settings.lua`: `study.tab`, `study.newPerDay`, `study.combatHide`, `study.sound` (State `study`); `voice.study` (State `voice`)
 - `addon/WoWForeverJapanese/UI/Options.lua`, `UI/OptionsText.lua`: the Study section, the card's and the tab's strings, in English and Japanese
 - `addon/WoWForeverJapanese/UI/MinimapButton.lua`, `UI/Slash.lua`, `Bindings.xml`, `Core/Const.lua`: the other ways in
 - `addon/WoWForeverJapanese/Main.lua`: the `study` and `studywindow` load steps; `WoWForeverJapanese.toc`: `WFJ_Study` in `## SavedVariables`
-- `tests/lua/spec/fsrs_spec.lua`, `tests/lua/spec/study_spec.lua`, `tests/lua/spec/study_window_spec.lua`, `tests/lua/spec/readings_spec.lua`, `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`
+- `tests/lua/spec/fsrs_spec.lua`, `tests/lua/spec/study_spec.lua`, `tests/lua/spec/study_window_spec.lua`, `tests/lua/spec/study_voice_spec.lua`, `tests/lua/spec/readings_spec.lua`, `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`
 
 ## Invariants
 - For a Japanese word no English game text is stored or shown: the card shows the saved Japanese, the reading and the model-written meaning. An English entry shows the English word and sentence the player saved, from their own word list. `WFJ_Study` holds keys and numbers only. [Principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away).
@@ -138,7 +164,9 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 - The window never computes a schedule and the queue never reads a global: `now`, `today` and the cap are passed in.
 - Nothing in the window is a protected call; combat only shows and hides the addon's own frames, and no cover is made in combat.
 - The card is always recoverable: no setting and no close can keep `/wfj study`, the minimap menu, the binding or the Words page from opening it, and `/wfj study reset` always brings it back on screen.
-- The export is unchanged: studying adds no column and changes no line.
+- The export is unchanged by studying: it adds no column and changes no line. The Audio column comes only from the word list window's Include audio box.
+- Nothing about a word's audio is stored: `WFJ_Words` and `WFJ_Study` keep the same fields, and the sentence's files are found each time from the shipped line and the loaded packs.
+- The card plays only audio whose Japanese hash equals the shipped line's, and never while translation or the voice is off.
 
 ## Edge cases
 - **A word removed while on the card.** The list's change event moves on at once to the next word; its state is gone, so saving it again starts as new.
@@ -148,10 +176,13 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 - **A reading equal to the word** (a kana word): the back skips the reading line.
 - **A line no longer shipped**: the sentence keeps its mark, but no other word is hoverable, because the line has no reading list.
 - **Opened in combat with the combat setting off**: the sentence shows with its mark but no hover readings, because no cover can be made in combat; the readings come when the card next shows out of combat (the card attaches again whenever it comes back on screen with a word waiting).
+- **A sentence that names another character.** A line that names the player is filled in for the character playing now, so a sentence saved on another character is not found in it: the button is greyed with `notfound`.
+- **Two sentences in one file.** A saved sentence that starts partway through a file plays that file from its start, so the end of the sentence before it is heard first. A sentence followed by another in its last file stops where the next one starts.
+- **A voice line during the card's sentence.** An NPC window that starts a voice line stops the card's sentence; the button goes back to play.
 - **The list from a newer version**: the queue is empty and a grade is refused; the card shows the done state.
 - **Midnight.** The daily cap resets at the client's local midnight; a word graded at 23:59 counts for that day.
 - **A short gap.** Two grades of one word within the same day use the short-term formula, so Again then Good ten minutes later gives a small stability and a one-day interval.
 - **`/wfj study <setting> <value>`** falls through to the settings grammar (only `reset` is the window's own word), so `/wfj study tab off` and `/wfj study newPerDay 10` set the settings.
 
 ## Related
-- [Word list](word-list.md) · [Readings](readings.md) · [Settings](settings.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-081](../adr/081-english-first-and-english-word-cards.md) · [Testing → Study checklist](../testing/strategy.md#study-checklist) · [App capabilities → Study](../app-capabilities.md#study) · [Glossary](../glossary.md)
+- [Word list](word-list.md) · [Readings](readings.md) · [Settings](settings.md) · [Voice over](voice.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-081](../adr/081-english-first-and-english-word-cards.md) · [Testing → Study checklist](../testing/strategy.md#study-checklist) · [App capabilities → Study](../app-capabilities.md#study) · [Glossary](../glossary.md)

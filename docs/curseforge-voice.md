@@ -30,7 +30,7 @@ The voices were made with Qwen3-TTS (Apache-2.0), each modelled on one of the ga
 
 This is only its Japanese voice and needs the addon to work. The CurseForge app installs the addon with it if you do not have it yet, and the voice never loads in the game without the addon.
 
-Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness. Names stay English on screen, and the voice says them in Japanese sounds that match the English you read. Every line comes as one file per sentence, timed to its words, so the addon's voice panel follows the voice word by word: the page turns as each sentence starts, and the words light up as they are spoken. The files are MP3 at 64 kbps, which keeps the voices clear.
+Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness. Names stay English on screen, and the voice says them in Japanese sounds that match the English you read. Every line comes as one file per sentence, timed to its words, so the addon's voice panel follows the voice word by word: the page turns as each sentence starts, and the words light up as they are spoken. The files are MP3 at 64 kbps, which keeps the voices clear. The addon's study card also plays a saved word's sentence from them, and its word list can export those sentences for Anki.
 
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how the addon works).
 
@@ -69,7 +69,7 @@ Every voice was made with **Qwen3-TTS** (https://github.com/QwenLM/Qwen3-TTS, Ap
 
 これは本体用の日本語音声だけで、本体がないと動きません。本体がまだなければ、CurseForge アプリが一緒にインストールします。ゲーム内でも、本体なしで音声が読み込まれることはありません。
 
-**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。名前は画面では英語のままで、音声では読んでいる英語に合わせたカタカナの音で読み上げます。どの行も 1 文ずつのファイルに分かれ、単語ごとのタイミングが付いているので、アドオンの音声パネルは声に合わせて単語ごとに進みます。文が始まるとページが切り替わり、話している単語に色が付きます。ファイルは 64 kbps の MP3 で、声がはっきり聞こえます。
+**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。名前は画面では英語のままで、音声では読んでいる英語に合わせたカタカナの音で読み上げます。どの行も 1 文ずつのファイルに分かれ、単語ごとのタイミングが付いているので、アドオンの音声パネルは声に合わせて単語ごとに進みます。文が始まるとページが切り替わり、話している単語に色が付きます。ファイルは 64 kbps の MP3 で、声がはっきり聞こえます。アドオンの学習カードは、保存した単語の文をこのファイルから再生し、単語帳からその文の音声を Anki 用に書き出すこともできます。
 
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと、アドオンのしくみの簡単な説明）
 
