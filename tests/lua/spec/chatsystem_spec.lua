@@ -183,6 +183,40 @@ describe("SYSTEM chat lines", function()
     assert.are.equal("|cff71d5ff|Hdeath:43|h[You have died.]|h", f:Last())
   end)
 
+  it("the death recap link is Japanese whatever chat type it comes under, or none", function()
+    local f = _G.ChatFrame1
+    f:AddMessage("|cff71d5ff|Hdeath:44|h[You died.]|h", 1, 1, 1) -- untyped
+    assert.are.equal("|cff71d5ff|Hdeath:44|h[死亡しました。]|h", f:Last())
+    f:AddMessage("|cff71d5ff|Hdeath:45|h[You died.]|h", 1, 1, 1, SAY) -- a typed, non-plain chat type
+    assert.are.equal("|cff71d5ff|Hdeath:45|h[死亡しました。]|h", f:Last())
+    f:AddMessage("|cff71d5ff|Hdeath:46|h[You died.]|h", 0.4, 0.4, 1, XP)
+    assert.are.equal("|cff71d5ff|Hdeath:46|h[死亡しました。]|h", f:Last())
+    f:Refresh()
+    alt(WFJ, true)
+    assert.are.equal("|cff71d5ff|Hdeath:46|h[You died.]|h", f.visibleLines[2]:GetText())
+    alt(WFJ, false)
+  end)
+
+  it("a death recap link that stays English logs why once, with its chat type and no text", function()
+    local db = WFJ.Diag.load(nil)
+    local f = _G.ChatFrame1
+    _G.DEATH_RECAP_TEXT = "You have died."
+    f:AddMessage("|cff71d5ff|Hdeath:47|h[You have died.]|h", 1, 1, 1, SAY)
+    assert.are.equal("|cff71d5ff|Hdeath:47|h[You have died.]|h", f:Last())
+    local e = db.entries[#db.entries]
+    assert.are.equal("chatsystem", e.kind)
+    assert.are.equal("death link stays English: not the checked English", e.msg)
+    assert.are.equal(SAY, e.chatType)
+    for _, v in pairs(e) do
+      assert.is_falsy(type(v) == "string" and v:find("died", 1, true))
+    end
+    _G.DEATH_RECAP_TEXT = "You died."
+    WFJ.State.setArea("ui", false)
+    f:AddMessage("|cff71d5ff|Hdeath:48|h[You died.]|h", 1, 1, 0, SYSTEM)
+    assert.are.equal("|cff71d5ff|Hdeath:48|h[You died.]|h", f:Last())
+    assert.are.equal("death link stays English: off", db.entries[#db.entries].msg)
+  end)
+
   it("a SYSTEM line is rewritten in the history when it arrives; others stay", function()
     local f = _G.ChatFrame1
     system(f, "Your party is full.")

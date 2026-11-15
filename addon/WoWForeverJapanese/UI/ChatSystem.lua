@@ -413,6 +413,41 @@ local function onEmoteLine(frame, message, typeId, eventArgs)
   return 1
 end
 
+-- The battleground announcement chat types: their lines are the server's broadcast text, shipped with the NPC lines,
+-- and may name any player in the match.
+local bgIds
+local function battlegroundTypeIds()
+  if bgIds then return bgIds end
+  local info = Compat.get(SURFACE, "typeInfo")
+  if type(info) ~= "table" then return nil end
+  bgIds = {}
+  for _, name in ipairs({ "BG_SYSTEM_NEUTRAL", "BG_SYSTEM_ALLIANCE", "BG_SYSTEM_HORDE" }) do
+    local t = info[name]
+    if type(t) == "table" and t.id ~= nil then bgIds[t.id] = true end
+  end
+  return bgIds
+end
+
+-- A line holding the death recap link, under whatever chat type the client posts it (or none): only its label
+-- changes (ChatSystem.deathLink). One that stays English says why in the problem log, with its chat type and never
+-- its text. → 1 | 0
+local function onDeathLine(frame, message, typeId)
+  local function stays(reason)
+    if WFJ.Diag then WFJ.Diag.log(SURFACE, "death link stays English: " .. reason, { chatType = typeId }) end
+    return 0
+  end
+  if not on() then return stays("off") end
+  local ja = ChatSystem.deathLink(message)
+  if not ja then return stays("not the checked English") end
+  if not remember(ja, message) then return stays("remember refused") end
+  frame:TransformMessages(function(text, _, _, _, lineType)
+    return lineType == typeId and not secret(text) and text == message
+  end, function(_, ...)
+    return ja, ...
+  end)
+  return 1
+end
+
 -- hooksecurefunc target (a chat frame's AddMessage). → 1 | 0
 function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, eventArgs)
   local ids = plainTypeIds()
@@ -420,6 +455,7 @@ function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, event
       or type(frame.TransformMessages) ~= "function" then
     return 0
   end
+  if message:find("|Hdeath:", 1, true) then return onDeathLine(frame, message, typeId) end
   -- a line with no chat type (DEFAULT_CHAT_FRAME:AddMessage(text, r, g, b): Blizzard's slash-command usage lines,
   -- print(), another addon's too) takes an exact dictionary English only, as the errors frame's Lua lines do
   local untyped = typeId == nil
@@ -427,6 +463,12 @@ function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, event
   if not untyped and not ids[typeId] then return onPlayerLine(frame, message, typeId, eventArgs) end
   if not on() then return 0 end
   local ja = ChatSystem.translate(message, untyped, not untyped and typeId == factionTypeId())
+  -- no interface string: the line may be an NPC line's text the server sent as system chat (a battleground
+  -- announcement); the player it names is looked for on battleground lines only
+  if not ja and not untyped and WFJ.Speech and type(WFJ.Speech.translateLine) == "function" then
+    local bg = battlegroundTypeIds()
+    ja = WFJ.Speech.translateLine(message, bg ~= nil and bg[typeId] == true)
+  end
   if not ja or not remember(ja, message) then return 0 end
   -- no line id on a plain line: an identical English still in the history (it arrived while off) is rewritten too
   frame:TransformMessages(function(text, _, _, _, lineType)
