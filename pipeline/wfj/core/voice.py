@@ -46,6 +46,8 @@ _TOKEN = re.compile(r"\{(name|class|race)\}")
 # angle brackets around Japanese are a stage direction ("<Iverronが解毒剤を飲む>"), read by nobody
 _STAGE = re.compile(r"<[^<>]*[^\x00-\x7f][^<>]*>")
 _MARKUP = re.compile(r"[{}<>$|]")
+# a run of binary bytes (a joke page of zeros and ones): read out digit by digit it is a minute of noise
+_BINARY = re.compile(r"(?:[01]{8}[ \t]*){3,}")
 _KEY = re.compile(r"\d+-(description|progress|completion)|[gb]-[0-9a-f]{16}")
 _VOICE = re.compile(r"[a-z0-9]+")
 
@@ -107,8 +109,9 @@ def text_hash(ja: str, values: Sequence[str] = ()) -> str:
 def speech_text(ja: str, key: str, values: Sequence[str] = ()) -> str:
     """The text the engine reads: player tokens become 冒険者, `$N<k>` the k-th number of the line's English
     (`values`); a number only the game knows (none in the English, or a server count such as `$2113w`) is
-    read as 何個か / 数, stage directions are dropped (a line that is nothing but one is read without its
-    brackets), and any other markup is refused with the line's key (it would be read aloud as symbols)."""
+    read as 何個か / 数, stage directions and runs of binary bytes are dropped (a line that is nothing but
+    a direction is read without its brackets), and any other markup is refused with the line's key (it
+    would be read aloud as symbols)."""
 
     def number(m: re.Match[str]) -> str:
         k, counter = int(m.group(1)), m.group(2) or ""
@@ -117,7 +120,7 @@ def speech_text(ja: str, key: str, values: Sequence[str] = ()) -> str:
         return f"何{counter}か" if counter else "いくつか"
 
     filled = _WORLD_STATE.sub("数", _VALUE.sub(number, _BREAK.sub("\n", ja)))
-    spoken = _STAGE.sub("", filled)
+    spoken = _BINARY.sub("", _STAGE.sub("", filled))
     if not _MARKUP.sub("", _TOKEN.sub("", spoken)).strip():
         spoken = re.sub(r"[<>]", "", filled)
     text = _TOKEN.sub(PLAYER_WORD, spoken)

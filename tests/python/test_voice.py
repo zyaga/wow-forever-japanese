@@ -178,6 +178,9 @@ def test_player_tokens_become_the_neutral_word():
 
 def test_a_stage_direction_is_not_read():
     assert voice.speech_text("飲んで。\n\n<Iverronが解毒剤を飲む>\n\nありがとう。", "k") == "飲んで。\n\n\n\nありがとう。"
+    page = "超機密データ！\n\n01001000 01100101 01101100 01110000 00100001"
+    assert voice.speech_text(page, "k") == "超機密データ！"  # the binary is shown, never read
+    assert voice.speech_text("01001000 は数字", "k") == "01001000 は数字"  # one byte alone stays
 
 
 def test_numbers_are_filled_from_the_english_as_the_addon_fills_them():
