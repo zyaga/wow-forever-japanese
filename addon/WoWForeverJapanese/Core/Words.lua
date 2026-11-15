@@ -2,7 +2,8 @@
 -- UI/Readings saves the highlighted word here, UI/WordsWindow shows the export text.
 --   Words.load(saved) → the table to keep in WFJ_Words
 --   Words.add(input, now) → "added" | "exists" | "refused", entry
---   Words.export(opts, fmt) → tab-separated text with Anki's file headers; fmt(pattern, t) is the client's date()
+--   Words.export(opts, fmt) → tab-separated text with Anki's file headers (opts.images, opts.audio); fmt(pattern, t)
+--     is the client's date()
 --   Words.matches / hidden / nextFree: the save-click choices
 -- An English word (English first) is an entry too: `lang = "en"`, the English word and the English sentence the
 -- client showed, its pronunciation under `reading`, the Japanese word of the line under `meaning`, and that word's
@@ -326,11 +327,13 @@ function Words.bold(e)
   return s:sub(1, wf - 1) .. "<b>" .. s:sub(wf, wl) .. "</b>" .. s:sub(wl + 1)
 end
 
--- opts.images: add the image column. fmt(pattern, t): the client's date().
+-- opts.images: add the image column. opts.audio(entry) → the entry's Anki sound cell: add the audio column (UI/
+-- StudyVoice names the files; this module stays pure). fmt(pattern, t): the client's date().
 function Words.export(opts, fmt)
   opts = opts or {}
   local cols = { unpack(COLUMNS) }
   if opts.images then cols[#cols + 1] = "Image" end
+  if opts.audio then cols[#cols + 1] = "Audio" end
   local out = { "#separator:Tab", "#html:true", "#columns:" .. table.concat(cols, "\t") }
   for _, e in ipairs(Words.entries()) do
     -- every field through clean(): a list a newer version wrote may lack any of them
@@ -343,6 +346,7 @@ function Words.export(opts, fmt)
       type(e.saved) == "number" and fmt("%Y-%m-%d %H:%M", e.saved) or "",
       en and clean(e.word) or clean(Words.furigana(e.word, e.reading)), clean(Words.sentenceFurigana(e)) }
     if opts.images then row[#row + 1] = type(e.shot) == "string" and clean('<img src="' .. e.shot .. '">') or "" end
+    if opts.audio then row[#row + 1] = clean(opts.audio(e)) end
     out[#out + 1] = table.concat(row, "\t")
   end
   return table.concat(out, "\n")

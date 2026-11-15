@@ -311,6 +311,7 @@ local function play(path, seconds, key, window, again, sentences, from)
     VoicePlayer.restoreDialog()
     return false
   end
+  if WFJ.StudyVoice then WFJ.StudyVoice.stop() end -- one voice at a time: the study card's sentence gives way
   tokens = tokens + 1
   local token = tokens
   local getTime = Compat.resolve("GetTime")

@@ -3,7 +3,8 @@
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
-local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua", "Core/Hash.lua",
+local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
+  "Core/Hash.lua",
   "Core/Voice.lua", "Core/Placeholders.lua", "Core/Words.lua", "UI/VoicePanelText.lua", "UI/StudyVoice.lua" }
 
 local FOLDER = "WoWForeverJapanese_VoiceLevels1to10"
@@ -182,8 +183,8 @@ describe("UI/StudyVoice", function()
       local keys = {}
       for k in pairs(e) do keys[#keys + 1] = k end
       table.sort(keys)
-      assert.are.same({ "id", "key", "kind", "lemma", "lemmaReading", "meaning", "questId", "reading", "saved", "sentence", "source",
-        "wf", "wl", "word" }, keys)
+      assert.are.same({ "id", "key", "kind", "lemma", "lemmaReading", "meaning", "questId", "reading", "saved",
+        "sentence", "source", "wf", "wl", "word" }, keys)
       assert.are.equal(BASE .. "5-progress-2.mp3", SV.find(e).clips[1].path)
     end)
   end)

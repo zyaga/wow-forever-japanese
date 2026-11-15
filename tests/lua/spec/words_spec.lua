@@ -273,6 +273,22 @@ describe("Words", function()
       assert.is_nil(W.export({}, fmt):find("<img", 1, true))
     end)
 
+    it("adds the audio column only when given its cell, after the image column; without it nothing changes", function()
+      W.add(input({}), T)
+      W.add(input({ word = "数", lemma = "数" }), T)
+      local before = W.export({ images = true }, fmt)
+      local cells = {}
+      local out = W.export({ images = true, audio = function(e)
+        cells[#cells + 1] = e.word
+        return e.word == "数" and "[sound:wfj-a.mp3]" or ""
+      end }, fmt)
+      assert.is_truthy(out:find("\tImage\tAudio\n", 1, true))
+      assert.are.equal("\t[sound:wfj-a.mp3]", out:sub(-#"\t[sound:wfj-a.mp3]"))
+      assert.are.same({ "生き物", "数" }, cells)
+      assert.are.equal(before, W.export({ images = true }, fmt))
+      assert.is_nil(before:find("Audio", 1, true))
+    end)
+
     it("names a screenshot the way the client does, with the format's extension", function()
       assert.are.equal("WoWScrnShot_" .. fmt("%m%d%y_%H%M%S", T) .. ".jpg", W.shotName(T, "jpeg", fmt))
       assert.are.equal("WoWScrnShot_" .. fmt("%m%d%y_%H%M%S", T) .. ".png", W.shotName(T, "png", fmt))

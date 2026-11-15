@@ -2,6 +2,8 @@
 -- write its SavedVariables, so the export is text on screen: tab-separated with Anki's file headers (Core/Words), for a
 -- text file, a spreadsheet or Anki. A tool window the player opens; it shows the saved Japanese, never game English.
 -- Entry points call WordsWindow.open(): /wfj words, the Words settings page and the minimap button's menu.
+-- With a voice pack, Include audio adds each sentence's recording to the export (UI/StudyVoice, ADR-092) and shows the
+-- lines that copy those files into Anki's media folder: an addon cannot copy files itself.
 local _, WFJ = ...
 local WordsWindow = {}
 WFJ.WordsWindow = WordsWindow
@@ -9,6 +11,9 @@ WFJ.WordsWindow = WordsWindow
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
 local WIDTH, HEIGHT, LEFT = 620, 520, 16
 local HEIGHT_IMAGES = 570 -- with Include images ticked: room for the two folder paths below the checkbox
+local ROW = 28 -- a checkbox row
+local AUDIO_LINES = 96 -- the copy lines' box
+local BOTTOM = 40 -- the frame below the page's last row: the page starts 32 down, and a margin
 local INNER = WIDTH - 2 * LEFT
 local ARM_SECONDS = 5 -- Clear all needs a second click within this long, as the collector's Clear does
 
@@ -27,15 +32,47 @@ local function say(key, ...)
   if key then W.setPair(f.message, Text.get(key, ...)) else W.setPair(f.message, "", "") end
 end
 
+local function at(frame, y)
+  frame:ClearAllPoints()
+  frame:SetPoint("TOPLEFT", LEFT, y)
+end
+
+-- Include audio sits under the images rows when they show; ticked, its hint and copy lines under it.
+-- → the frame's height
+local function layAudio(images, audio)
+  local f = WordsWindow.frame
+  local SV = WFJ.StudyVoice
+  local offered = SV ~= nil and WFJ.Voice ~= nil and WFJ.Voice.hasPack()
+  local base = images and HEIGHT_IMAGES or HEIGHT
+  show(f.audio, offered)
+  show(f.audio.label.en, offered)
+  show(f.audio.label.ja, offered)
+  audio = offered and audio
+  for _, w in ipairs(f.audioRows) do show(w, audio) end
+  if not offered then return base end
+  local y = images and -490 or -374
+  f.audio:ClearAllPoints()
+  f.audio:SetPoint("TOPLEFT", LEFT, y + 5)
+  at(f.audio.label.en, y)
+  f.audio.label.en:SetPoint("TOPLEFT", LEFT + 30, y)
+  if not audio then return base end
+  at(f.audioHint.en, y - ROW - 4)
+  at(f.audioLines.frame, y - ROW - 64)
+  local lines = SV.copyLines(WFJ.Words.entries(), WFJ.Compat.call("IsMacClient") == true)
+  f.audioLines:setText(#lines > 0 and table.concat(lines, "\n") or W.pick(Text.get("words.audioNone")))
+  return math.max(base, -(y - ROW - 64 - AUDIO_LINES) + BOTTOM)
+end
+
 local function fill()
   local f = WordsWindow.frame
   local n = WFJ.Words.count()
   if n == 0 then W.setPair(f.summary, Text.withSaveClick("words.empty"))
   else W.setPair(f.summary, Text.get("words.summary", n)) end
   local images = f.images:GetChecked() and true or false
-  f.text:setText(WFJ.Words.export({ images = images }, date()))
+  local audio = f.audio:GetChecked() and WFJ.StudyVoice ~= nil and WFJ.Voice.hasPack() or false
+  f.text:setText(WFJ.Words.export({ images = images, audio = audio and WFJ.StudyVoice.cell or nil }, date()))
   for _, w in ipairs(f.imageRows) do show(w, images) end
-  f:SetHeight(images and HEIGHT_IMAGES or HEIGHT)
+  f:SetHeight(layAudio(images, audio))
   -- new text drops the selection; the box keeps its focus, so select it again for Cmd+C
   local box = f.text.box
   if box.HasFocus and box:HasFocus() then box:HighlightText() end
@@ -100,6 +137,13 @@ local function build()
   f.ankiWin = W.copyBox(p, LEFT, -460, INNER - 12, WordsWindow.ANKI_WIN)
   -- shown only with Include images ticked
   f.imageRows = { f.shotsLabel.en, f.shotsLabel.ja, f.shotsPath, f.ankiLabel.en, f.ankiLabel.ja, f.ankiMac, f.ankiWin }
+  en, ja = Text.get("words.audio")
+  f.audio = W.checkbox(p, en, ja, LEFT, -374, INNER, function() fill() end)
+  f.audioHint = W.label(p, "", "", LEFT, -406, INNER)
+  W.setPair(f.audioHint, Text.get("words.audioHint"))
+  f.audioLines = W.scrollText(p, LEFT, -442, INNER, AUDIO_LINES)
+  -- shown only with Include audio ticked
+  f.audioRows = { f.audioHint.en, f.audioHint.ja, f.audioLines }
   f.message = W.label(p, "", "", LEFT + 460, -316, INNER - 460)
   f.message.en:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   WordsWindow.frame = f

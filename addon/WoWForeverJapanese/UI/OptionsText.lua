@@ -48,6 +48,14 @@ Text.T = {
   ["words.shotsPath"] = { en = "Your screenshots are in this folder:", ja = "スクリーンショットはこのフォルダにあります：" },
   ["words.ankiPath"] = { en = "Copy them into Anki's media folder (Mac, then Windows; User 1 is Anki's first profile):",
     ja = "Ankiのメディアフォルダにコピーしてください（上がMac、下がWindows。User 1はAnkiの最初のプロフィール）：" },
+  ["words.audio"] = { en = "Include audio (each sentence in its NPC's voice)", ja = "音声を含める（各文をNPCの声で）" },
+  ["words.audioHint"] = {
+    en = "Open a terminal in your World of Warcraft _forever_ folder and paste these lines: they copy the sound files "
+      .. "into Anki's media folder (User 1 is Anki's first profile).",
+    ja = "World of Warcraftの_forever_フォルダでターミナルを開き、この行を貼り付けてください。音声ファイルがAnkiのメディアフォルダに"
+      .. "コピーされます（User 1はAnkiの最初のプロフィール）。",
+  },
+  ["words.audioNone"] = { en = "None of these words has a recording to copy.", ja = "コピーできる録音のある単語はありません。" },
 
   ["main.welcome"] = { en = "Studying Japanese, studying English or just playing? Choose again any time.",
     ja = "日本語の勉強、英語の勉強、ただ遊ぶ。使い方はいつでも選び直せます。" },
@@ -89,6 +97,15 @@ Text.T = {
   ["study.sound"] = { en = "Sound on Good: on / off", ja = "正解の音：オン／オフ" },
   ["study.footer"] = { en = "%s due, %s new", ja = "復習%s・新規%s" },
   ["study.show"] = { en = "Show answer", ja = "答えを見る" },
+  ["study.voice"] = { en = "Play the sentence: play / stop", ja = "文を読み上げる：再生／停止" },
+  ["study.voice.missing"] = { en = "The voice pack has no recording of this line.",
+    ja = "ボイスパックにこの文の録音がありません。" },
+  ["study.voice.stale"] = { en = "The recording is older than this line's Japanese. Update the voice packs.",
+    ja = "録音がこの文の日本語より古いです。ボイスパックを更新してください。" },
+  ["study.voice.notfound"] = { en = "This sentence is no longer in its line, so its recording is not found.",
+    ja = "この文はもう元の文章にないため、録音が見つかりません。" },
+  ["study.voice.untimed"] = { en = "This voice pack cannot play one sentence of this line. Update the voice packs.",
+    ja = "このボイスパックではこの文だけを再生できません。ボイスパックを更新してください。" },
   ["study.again"] = { en = "Again", ja = "もう一度" },
   ["study.good"] = { en = "Good", ja = "正解" },
   ["study.lemma"] = { en = "Dictionary form: %s", ja = "辞書形：%s" },

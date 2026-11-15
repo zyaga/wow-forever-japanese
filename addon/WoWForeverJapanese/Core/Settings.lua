@@ -264,6 +264,10 @@ Settings.define{ id = "voice.books", kind = "boolean", default = true, hidden = 
 Settings.define{ id = "voice.errors", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Your character's error lines (\"out of range\")", ja = "自分のキャラクターのエラー音声（「遠すぎる」など）",
   apply = voiceChanged }
+-- the study card's sentence in its NPC's voice, played as the answer shows (UI/StudyVoice); its button plays it
+-- whatever this says
+Settings.define{ id = "voice.study", kind = "boolean", default = true, hidden = voiceHidden, apply = voiceChanged,
+  label = "Study card (as the answer shows)", ja = "学習カード（答えの表示時）" }
 -- First time only (Core/Voice): a line already heard is not read aloud again when its window shows; its play button
 -- still reads it. Greetings repeat at every vendor and trainer visit, so they are heard once by default; quest lines
 -- play every time unless the player asks otherwise.

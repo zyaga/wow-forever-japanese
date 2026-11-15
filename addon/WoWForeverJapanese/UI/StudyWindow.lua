@@ -8,7 +8,8 @@
 -- the card collapses to the tab, either close button hides both for the session, and /wfj study, the minimap
 -- menu, the key binding and the Words page open the card again whatever the tab setting says. In combat both hide
 -- (a setting) with Show / Hide only: nothing here is a protected call. The word list's change event (State "words")
--- and a ticker that runs only while something is on screen keep the counts current.
+-- and a ticker that runs only while something is on screen keep the counts current. On the back, a play button
+-- speaks the saved sentence in its NPC's recorded voice (UI/StudyVoice, ADR-092), at once when voice.study is on.
 local _, WFJ = ...
 local StudyWindow = {}
 WFJ.StudyWindow = StudyWindow
@@ -40,6 +41,10 @@ local ICON = {
 }
 local BUTTON = 24 -- the close button's own size
 local REVEAL_SOUND, GOOD_SOUND, AGAIN_SOUND = 856, 120, 846
+-- the voice windows' play / pause pair (UI/VoicePlayer), so the card's button reads as the same control
+local VOICE_PLAY = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
+local VOICE_PAUSE = "Interface\\TimeManager\\PauseButton"
+local VOICE_COLUMN = BUTTON + 4 -- the answer and the meaning keep clear of the button at the right of their lines
 local FLASH = 0.2 -- seconds the whole card glows after a grade, like a saved word's tint
 
 local S = function() return WFJ.Settings end
@@ -248,6 +253,30 @@ function fit()
   f:SetHeight(math.max(HEIGHT, h + GAPS.buttons + PAD))
 end
 
+-- The play button: on the back while a voice pack is loaded and the voice and translation are on, for a word from a
+-- voiced line; greyed, with why in its tooltip, when the sentence cannot be played.
+local function voiceButton()
+  local b, SV = card and card.voice, WFJ.StudyVoice
+  if not b then return end
+  local r, why
+  if current and answered and SV and SV.available() then r, why = SV.find(current) end
+  if not r and (why == nil or why == "kind" or why == "nopack") then
+    b:Hide()
+    return
+  end
+  b.why = not r and why or nil
+  b.isPlaying = r ~= nil and SV.playing() == current.key
+  b:SetEnabled(r ~= nil)
+  b.icon:SetTexture(b.isPlaying and VOICE_PAUSE or VOICE_PLAY)
+  b.icon:SetDesaturated(r == nil)
+  b:SetAlpha(r and 1 or 0.5)
+  b:Show()
+end
+
+local function stopVoice()
+  if WFJ.StudyVoice then WFJ.StudyVoice.stop() end
+end
+
 local function showState()
   local f, asking = card, current ~= nil
   W.setShown(f.sentence, asking)
@@ -258,6 +287,7 @@ local function showState()
   W.setShown(f.meaning, asking and answered)
   W.setShown(f.rule, asking and answered)
   W.setShown(f.message.en, not asking)
+  voiceButton()
   fit()
 end
 
@@ -279,6 +309,7 @@ local function setTitle(word)
 end
 
 local function front(e)
+  stopVoice()
   current, answered = e, false
   detach()
   setTitle(e.word or "")
@@ -301,6 +332,7 @@ local function nextLine(r)
 end
 
 local function done(r)
+  stopVoice()
   current, answered, pendingAttach = nil, false, false
   detach()
   setTitle(W.pick(Text.get("study.title")))
@@ -312,6 +344,11 @@ end
 
 local function nextCard(r)
   if r.entry then front(r.entry) else done(r) end
+end
+
+-- the sentence spoken as the answer shows (never on the front: it would say the word's reading before the answer)
+local function autoplay(e)
+  if S().get("voice.study") == true and WFJ.StudyVoice then WFJ.StudyVoice.play(e) end
 end
 
 function StudyWindow.showAnswer()
@@ -328,7 +365,8 @@ function StudyWindow.showAnswer()
     local meaning = e.meaning or ""
     if type(e.jaSentence) == "string" and e.jaSentence ~= "" then meaning = meaning .. "\n" .. e.jaSentence end
     W.put(card.meaning, meaning, 14)
-    return showState()
+    showState()
+    return autoplay(e)
   end
   if e.reading ~= nil and e.reading ~= "" and e.reading ~= e.word then both(e.reading, e.reading) end
   local lemma = e.lemma
@@ -342,6 +380,7 @@ function StudyWindow.showAnswer()
   W.setPair(card.answer, table.concat(en, "\n"), table.concat(ja, "\n"))
   W.put(card.meaning, e.meaning or "", 14) -- the English, a half line under the Japanese
   showState()
+  autoplay(e)
 end
 
 -- ── Showing and hiding ───────────────────────────────────────────────────
@@ -380,6 +419,7 @@ local function apply(r)
     putIfChanged(tab.text, "tab", W.pick(Text.get("study.tab", waiting)), 16)
   end
   if tab then tab:SetShown(showTab) end
+  if not showCard then stopVoice() end -- collapsed, closed or hidden in combat
   if card then
     if showCard then
       putIfChanged(card.footer, "footer", W.pick(Text.get("study.footer", r.due, r.newLeft)), 11)
@@ -493,14 +533,22 @@ local function buildCard()
   f.rule:SetPoint("TOPLEFT", f.sentence, "BOTTOMLEFT", 0, -9) -- under the sentence, however many lines
   f.rule:SetSize(inner, 1)
 
-  f.answer = W.label(f, "", "", PAD, -116, inner, 14) -- the sentence's size: it is read as closely
+  f.answer = W.label(f, "", "", PAD, -116, inner - VOICE_COLUMN, 14) -- the sentence's size: it is read as closely
   f.answer.en:ClearAllPoints()
   f.answer.en:SetPoint("TOPLEFT", f.rule, "BOTTOMLEFT", 0, -9)
   f.meaning = f:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
   f.meaning:SetPoint("TOPLEFT", f.answer.en, "BOTTOMLEFT", 0, -8)
-  f.meaning:SetWidth(inner)
+  f.meaning:SetWidth(inner - VOICE_COLUMN)
   f.meaning:SetJustifyH("LEFT")
   f.meaning:SetWordWrap(true)
+  -- the sentence's play button, at the right of the answer's first line, under the rule
+  f.voice = iconButton(f, nil, 20, "study.voice", function() WFJ.StudyVoice.toggle(current) end)
+  f.voice:SetPoint("TOPRIGHT", f.rule, "BOTTOMRIGHT", 0, -6)
+  f.voice:SetScript("OnEnter", function(self)
+    tip(self, W.pick(Text.get(self.why and ("study.voice." .. self.why) or "study.voice")))
+  end)
+  if f.voice.SetMotionScriptsWhileDisabled then f.voice:SetMotionScriptsWhileDisabled(true) end -- greyed, it says why
+  f.voice:Hide()
   f.message = W.label(f, "", "", PAD, -50, inner)
 
   local en, ja = Text.get("study.show")
@@ -580,7 +628,9 @@ function StudyWindow.init(saved)
   local refresh = function() pcall(StudyWindow.refresh) end
   WFJ.State.on("study", refresh)
   WFJ.State.on("words", refresh)
-  WFJ.State.on("enabled", function() pcall(relabel) end)
+  WFJ.State.on("enabled", function() pcall(relabel); pcall(voiceButton) end)
+  WFJ.State.on("voice", function() pcall(voiceButton) end)
+  WFJ.State.on("studyVoice", function() pcall(voiceButton) end)
   WFJ.State.on("language", function() pcall(relabel) end)
   apply(scan())
   return true

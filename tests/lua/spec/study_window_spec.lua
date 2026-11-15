@@ -5,7 +5,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/Readings.lua", "Core/Glosses.lua",
   "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua", "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua",
-  "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/WordSave.lua", "UI/StudyWindow.lua" }
+  "Core/Hash.lua", "Core/Voice.lua", "Core/Placeholders.lua", "UI/Font.lua", "UI/OptionsText.lua",
+  "UI/OptionsWidgets.lua", "UI/WordSave.lua", "UI/VoicePanelText.lua", "UI/StudyVoice.lua", "UI/StudyWindow.lua" }
 
 local JA = "少しの生き物たちを狩り、数を減らしてほしい。"
 local PACKED = "少し=すこし 生き物=いきもの=7 狩り=かり=8 数=かず"
@@ -472,5 +473,116 @@ describe("the study window", function()
     WFJ.Words.removeLast() -- 生き物: the list's change event moves the card on
     assert.is_true(f.message.en:IsShown())
     assert.is_nil(WFJ.Study.card("quest.description:456:生き物"))
+  end)
+
+  describe("the sentence's voice", function()
+    local played, stopped
+    local FOLDER = "WoWForeverJapanese_VoiceLevels1to10"
+    local function pack(madeFrom)
+      WFJ.Voice.register({ format = 3, folder = FOLDER, lines = {
+        ["456-description"] = { false, WFJ.Hash.key(madeFrom or JA), s = { { "456-description-1.mp3", 2.0 } } } } })
+    end
+    local function show(f) f.show.scripts.OnClick(f.show, "LeftButton") end
+    local function click(f) f.voice.scripts.OnClick(f.voice, "LeftButton") end
+
+    before_each(function()
+      played, stopped = {}, {}
+      _G.PlaySoundFile = function(path) played[#played + 1] = path; return true, #played end
+      _G.StopSound = function(h) stopped[#stopped + 1] = h end
+      WFJ.Lookup = { get = function(kind, id)
+        if kind == "quest.description" and id == 456 then return { ja = JA } end
+      end }
+      WFJ.VoicePlayer = { playing = function() return nil end, stop = function() end }
+    end)
+    after_each(function() _G.PlaySoundFile, _G.StopSound = nil, nil end)
+
+    it("the play button is on the back only, with a pack and the voice on, greyed with why when it cannot play",
+      function()
+        save("生き物")
+        S.set("voice.study", false)
+        SW.open()
+        local f = card()
+        show(f)
+        assert.is_false(f.voice:IsShown()) -- no pack
+        pack()
+        SW.close()
+        SW.open()
+        assert.are.equal("生き物", f.word.text)
+        assert.is_false(f.voice:IsShown()) -- the front
+        show(f)
+        assert.is_true(f.voice:IsShown())
+        assert.is_true(f.voice:IsEnabled())
+        S.set("voice.enabled", false)
+        assert.is_false(f.voice:IsShown())
+        S.set("voice.enabled", true)
+        assert.is_true(f.voice:IsShown())
+        WFJ.State.setEnabled(false)
+        assert.is_false(f.voice:IsShown())
+        WFJ.State.setEnabled(true)
+        pack("古い訳。") -- the pack's audio was made from other Japanese
+        WFJ.State.fire("voice")
+        assert.is_true(f.voice:IsShown())
+        assert.is_false(f.voice:IsEnabled())
+        assert.are.equal("stale", f.voice.why)
+        click(f)
+        assert.are.equal(0, #played)
+        save("閉じる", "閉じる", "ui", 7, "options")
+        SW.grade(WFJ.Study.GOOD) -- the window label's word comes next
+        assert.are.equal("閉じる", f.word.text)
+        show(f)
+        assert.is_false(f.voice:IsShown()) -- never voiced
+      end)
+
+    it("Show answer plays the sentence; the button plays it again and stops it; the setting keeps it to the button",
+      function()
+        pack()
+        save("生き物")
+        save("数")
+        SW.open()
+        local f = card()
+        show(f)
+        assert.are.same({ "Interface\\AddOns\\" .. FOLDER .. "\\Sound\\456-description-1.mp3" }, played)
+        assert.is_true(f.voice.isPlaying)
+        click(f)
+        assert.are.same({ 1 }, stopped)
+        assert.is_false(f.voice.isPlaying)
+        click(f)
+        assert.are.equal(2, #played)
+        S.set("voice.study", false)
+        SW.grade(WFJ.Study.GOOD)
+        show(f)
+        assert.are.equal(2, #played)
+        click(f)
+        assert.are.equal(3, #played)
+      end)
+
+    it("the sentence stops on a grade, Collapse, Close and the combat hide", function()
+      pack()
+      save("生き物")
+      save("数")
+      SW.open()
+      local f = card()
+      show(f)
+      SW.grade(WFJ.Study.AGAIN)
+      assert.are.same({ 1 }, stopped)
+      show(f)
+      SW.collapse()
+      assert.are.same({ 1, 2 }, stopped)
+      SW.open()
+      show(f)
+      SW.close()
+      assert.are.same({ 1, 2, 3 }, stopped)
+      SW.open()
+      show(f)
+      SW.setCombat(true)
+      assert.are.same({ 1, 2, 3, 4 }, stopped)
+    end)
+
+    it("the autoplay setting is hidden without a voice pack", function()
+      assert.is_true(S.definition("voice.study").hidden())
+      pack()
+      assert.is_false(S.definition("voice.study").hidden())
+      assert.is_true(S.get("voice.study"))
+    end)
   end)
 end)
