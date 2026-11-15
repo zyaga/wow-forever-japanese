@@ -13,7 +13,7 @@
 --                                         type_ = "gossip" | "book"
 --   Lookup.gossip(key)    → Lookup.keyed("gossip", key)
 -- Consumers of Lookup.get: Main (Translator + Collector `lookup` deps), UI/Slash (debug verbs),
--- UI/Tooltip (nil and status checks only).
+-- UI/Tooltip (nil and status checks only), UI/StudyVoice (a saved word's line, `ja` only).
 -- `status` is the one-char code Translator reads ("." trusted · "s" stale · "u" unaligned); an unshipped slot
 -- ("m") is nil: a missing translation leaves the live English untouched.
 local _, WFJ = ...
