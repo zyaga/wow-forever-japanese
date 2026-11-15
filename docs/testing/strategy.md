@@ -513,6 +513,8 @@ Interface lines with links, colour-wrapped names and plural groups ([ADR-067](..
 5. **A crafted item.** Hover a crafted item (buy one from a crafter, or craft a Linen Bandage with First Aid): the "Made by" line is Japanese with the crafter's name kept, in green as before.
 6. **The duel to the death popup does not taint.** Have a second character challenge this one to a duel to the death (or skip this step solo): the popup's line is Japanese around the challenger's name, accepting works, and afterwards `/wfj log` shows no blocked action from this addon.
 
+**In a battleground (not level-1):** when a base is taken or assaulted in Arathi Basin, a flag is picked up, dropped or captured in Warsong Gulch, or a mine or tower changes hands in Alterac Valley, the chat line is Japanese with any player's name in English inside it. Alt → English. Die once: the chat's "[You died.]" link reads 「[死亡しました。]」; if it stays English, `/wfj log` shows a `chatsystem` entry naming why and the chat type (no entry: the line was secret or never reached the chat hook).
+
 **Needs a friend online (not level-1 solo):** when a friend comes online, the chat line is Japanese around the friend's name link. **Needs a group:** a loot roll's lines (need, greed, won) are Japanese around the item link; the "[Loot]" header line stays English.
 
 **Needs a quest with a reputation reward:** open such a quest's reward page: the reputation row reads "<faction>の評価" with the faction's name in English, and its hover is Japanese.
