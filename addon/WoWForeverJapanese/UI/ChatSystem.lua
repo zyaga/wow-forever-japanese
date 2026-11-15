@@ -14,8 +14,9 @@
 --   already read the English: no key has to be held back.
 -- The line is then rewritten in that frame's history with TransformMessages, a secure-elevation wrapper whose addon
 -- callbacks run tainted (blizzard_sharedxml/scrollingmessageframe.lua:95–107, 795–824; Blizzard does the same,
--- itemrefhandlersshared.lua:217). Only a line of a PLAIN_TYPES chat type id (or one holding the death recap link) is considered, never a secret one (chat
--- messaging lockdown makes CHAT_MSG_SYSTEM text secret, chatinfodocumentation.lua:2455); it takes an exact dictionary
+-- itemrefhandlersshared.lua:217). Only a line of a PLAIN_TYPES chat type id (or one holding the death recap link)
+-- is considered, never a secret one (chat messaging lockdown makes CHAT_MSG_SYSTEM text secret,
+-- chatinfodocumentation.lua:2455); it takes an exact dictionary
 -- English (one English is one Japanese; also the non-error lines Blizzard's Lua prints, e.g. the guild-rename
 -- refusal) or a chat key's template, matched by key only: a listed error key with text of its own (UI/Errors' wrapper
 -- set), a key of UIStrings.CHAT_FAMILIES, or EXTRA_TEMPLATES; never any other template. A stale row or a failed fill
