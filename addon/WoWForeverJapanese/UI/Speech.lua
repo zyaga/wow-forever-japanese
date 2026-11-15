@@ -309,14 +309,15 @@ end
 -- each run of one to three capitalised words in it taken as the player the line names ("Velkian Freecss has
 -- assaulted the mine!": the server writes the whole name and sends no target with the line). The first run a
 -- shipped row resolves fills its Japanese. → ja | nil
-local NAME_WORD = "()[%u\192-\255][%w\128-\255'%-]*()"
+local NAME_WORD = "()[%u\192-\255][%w\128-\255%-]*()"
 local MAX_NAME_WORDS = 3
 
 function Speech.translateLine(en, findName)
   if not readable(en) or not deps.key then return nil end
   local key = deps.key(en)
   local ja = Speech.translate(en, key)
-  if ja or not findName or (key ~= nil and shipped(key)) then return ja end
+  -- a row under the line's own English owns it, shipped or not: no other row may answer it with a guessed name
+  if ja or not findName or (key ~= nil and WFJ.Lookup.keyed("gossip", key) ~= nil) then return ja end
   local starts, ends, runs = {}, {}, {}
   for s, e in en:gmatch(NAME_WORD) do starts[#starts + 1], ends[#ends + 1] = s, e - 1 end
   for i = 1, #starts do

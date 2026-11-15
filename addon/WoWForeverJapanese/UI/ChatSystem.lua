@@ -208,18 +208,19 @@ end
 -- The death recap link the client posts in chat: DEATH_RECAP_LINK, "|cff71d5ff|Hdeath:%i|h[You died.]|h"; its label,
 -- written there literally, is DEATH_RECAP_TEXT's English [verified: Forever GlobalStrings 1.60.1.70170]. Only the
 -- label inside a `death:` link changes; the link, its id and its colour stay exactly as the client wrote them, and
--- only while the client's own DEATH_RECAP_TEXT is the English the shipped row was checked against. → line | nil
+-- only while the client's own DEATH_RECAP_TEXT is the English the shipped row was checked against.
+-- → line | nil, why ("no row", "client English" or "link shape")
 function ChatSystem.deathLink(line)
   local index = WFJ.UIIndex
   local row = index and index.rows and index.rows.DEATH_RECAP_TEXT
-  if type(line) ~= "string" or type(row) ~= "table" or row[3] ~= "." or type(index.hash) ~= "function" then
-    return nil
-  end
+  if type(line) ~= "string" then return nil, "link shape" end
+  if type(row) ~= "table" or row[3] ~= "." or type(index.hash) ~= "function" then return nil, "no row" end
   local en = Compat.resolve("DEATH_RECAP_TEXT")
-  if type(en) ~= "string" or en == "" or index.hash(en) ~= row[2] then return nil end
+  if type(en) ~= "string" or en == "" or index.hash(en) ~= row[2] then return nil, "client English" end
   local label = ("|h[" .. en .. "]|h"):gsub("%p", "%%%0")
   local out, n = line:gsub("(|Hdeath:%d+)" .. label, function(link) return link .. "|h[" .. row[1] .. "]|h" end)
-  return n > 0 and out or nil
+  if n == 0 then return nil, "link shape" end
+  return out
 end
 
 -- `faction` (optional): the line is a reputation line, which may also be a FriendshipGain row.
@@ -430,29 +431,40 @@ local function rewrite(frame, message, typeId, ja)
   return 1
 end
 
+-- The problem log names a chat type in the message, so each type gets its own entry (repeats only count).
+local function logLine(what, typeId)
+  if WFJ.Diag then WFJ.Diag.log(SURFACE, what .. " (type " .. tostring(typeId) .. ")", { chatType = typeId }) end
+end
+
+-- Whether the line holds the client's death recap link: a link a player typed arrives with its bars doubled.
+local function holdsDeathLink(message)
+  local at = message:find("|Hdeath:", 1, true)
+  return at ~= nil and (at == 1 or message:byte(at - 1) ~= 124)
+end
+
 -- A line holding the death recap link, under whatever chat type the client posts it (or none): only its label
 -- changes (ChatSystem.deathLink). One that stays English says why in the problem log, with its chat type and never
--- its text. → 1 | 0
+-- its text, and goes on to its chat type's own handling. → 1 | nil
 local function onDeathLine(frame, message, typeId)
-  local function stays(reason)
-    if WFJ.Diag then WFJ.Diag.log(SURFACE, "death link stays English: " .. reason, { chatType = typeId }) end
-    return 0
-  end
-  if not on() then return stays("off") end
-  local ja = ChatSystem.deathLink(message)
-  if not ja then return stays("not the checked English") end
-  if rewrite(frame, message, typeId, ja) == 0 then return stays("remember refused") end
-  return 1
+  local ja, why = ChatSystem.deathLink(message)
+  if ja and rewrite(frame, message, typeId, ja) == 1 then return 1 end
+  logLine("death link stays English: " .. (why or "remember refused"), typeId)
+  return nil
 end
 
 -- hooksecurefunc target (a chat frame's AddMessage). → 1 | 0
 function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, eventArgs)
   local ids = plainTypeIds()
-  if not ids or type(frame) ~= "table" or type(message) ~= "string" or secret(message)
-      or type(frame.TransformMessages) ~= "function" then
+  if not ids or type(frame) ~= "table" or type(message) ~= "string" or type(frame.TransformMessages) ~= "function" then
     return 0
   end
-  if message:find("|Hdeath:", 1, true) then return onDeathLine(frame, message, typeId) end
+  -- chat messaging lockdown: the line cannot be read, so whether it held a death link is not known; one entry per
+  -- chat type tells a report that lockdown was in play
+  if secret(message) then
+    logLine("secret line", typeId)
+    return 0
+  end
+  if on() and holdsDeathLink(message) and onDeathLine(frame, message, typeId) == 1 then return 1 end
   -- a line with no chat type (DEFAULT_CHAT_FRAME:AddMessage(text, r, g, b): Blizzard's slash-command usage lines,
   -- print(), another addon's too) takes an exact dictionary English only, as the errors frame's Lua lines do
   local untyped = typeId == nil
