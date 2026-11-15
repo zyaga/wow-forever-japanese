@@ -191,6 +191,13 @@ def models_load() -> bool:
     return True
 
 
+def flac_name(job: dict) -> str:
+    """A recording's FLAC name: its run folder and WAV name, so a line voiced again is a new file, never the
+    old take already on the volume."""
+    wav = Path(job["wav"])
+    return f"{wav.parent.parent.name}-{wav.stem}.flac"
+
+
 def flac(wav: Path, out: Path) -> None:
     """The WAV packed losslessly (the same samples, about half the bytes)."""
     if out.is_file():
@@ -236,12 +243,13 @@ def recording_seconds(wav: Path) -> float:
         return w.getnframes() / w.getframerate()
 
 
-def done_in(out: Path) -> set[str]:
+def done_in(out: Path) -> set[tuple[str, str | None]]:
+    """(stem, WAV) pairs both models answered: an answer belongs to one recording."""
     both = []
     for name in ("reazon.jsonl", "qwen.jsonl"):
         path = out / name
         rows = path.read_text(encoding="utf-8").splitlines() if path.is_file() else []
-        both.append({json.loads(x)["stem"] for x in rows if x.strip()})
+        both.append({(r["stem"], r.get("wav")) for r in map(json.loads, rows) if r})
     return both[0] & both[1]
 
 
@@ -254,25 +262,25 @@ def upload(jobs: list[dict], packed: Path) -> None:
         there = {Path(e.path).name for e in volume.listdir("/flac")}
     except Exception:  # noqa: BLE001 - a new volume has no /flac yet
         there = set()
-    todo = [j for j in jobs if f"{j['stem']}.flac" not in there]
+    todo = [j for j in jobs if flac_name(j) not in there]
     packed.mkdir(parents=True, exist_ok=True)
     with ThreadPoolExecutor(max_workers=4) as pool:
-        list(pool.map(lambda j: flac(Path(j["wav"]), packed / f"{j['stem']}.flac"), todo))
+        list(pool.map(lambda j: flac(Path(j["wav"]), packed / flac_name(j)), todo))
         bad = [j["stem"] for j, ok in zip(todo, pool.map(
-            lambda j: same_audio(Path(j["wav"]), packed / f"{j['stem']}.flac"), todo), strict=True) if not ok]
+            lambda j: same_audio(Path(j["wav"]), packed / flac_name(j)), todo), strict=True) if not ok]
     if bad:
         raise SystemExit(f"align_modal: {len(bad)} FLAC files differ from their WAVs, e.g. {bad[:3]}; "
                          "nothing uploaded")
     print(f"align_modal: {len(todo)} new FLAC files decode to exactly their WAVs' samples "
           f"({len(jobs) - len(todo)} on the volume already)", flush=True)
-    size = sum((packed / f"{j['stem']}.flac").stat().st_size for j in todo)
+    size = sum((packed / flac_name(j)).stat().st_size for j in todo)
     print(f"align_modal: uploading {len(todo)} files, {size / 1e9:.1f} GB", flush=True)
     for n in range(0, len(todo), UPLOAD_BATCH):
         for attempt in range(1, UPLOAD_TRIES + 1):
             try:
                 with volume.batch_upload(force=True) as b:
                     for j in todo[n:n + UPLOAD_BATCH]:
-                        b.put_file(str(packed / f"{j['stem']}.flac"), f"/flac/{j['stem']}.flac")
+                        b.put_file(str(packed / flac_name(j)), f"/flac/{flac_name(j)}")
                 break
             except Exception as e:  # noqa: BLE001 - a dropped connection: send the batch again
                 if attempt == UPLOAD_TRIES:
@@ -297,7 +305,7 @@ def main() -> int:
 
     done = done_in(a.out)
     listed = [j for j in map(json.loads, a.jobs.read_text(encoding="utf-8").splitlines())
-              if j["stem"] not in done]
+              if (j["stem"], j["wav"]) not in done]
     mac_rz, mac_qw = mac_answers(a.out, listed, a.trial)
     # the lines the Mac already answered go first, so a card that answers differently stops the run at once
     jobs = sorted(listed, key=lambda j: j["stem"] not in mac_rz and j["stem"] not in mac_qw)[: a.limit]
@@ -307,9 +315,10 @@ def main() -> int:
     if not jobs:
         return 0
     a.out.mkdir(parents=True, exist_ok=True)
-    seconds = {j["stem"]: recording_seconds(Path(j["wav"])) for j in jobs}
+    seconds, wav_of = ({j["stem"]: recording_seconds(Path(j["wav"])) for j in jobs},
+                       {j["stem"]: j["wav"] for j in jobs})
     upload(jobs, a.out / "flac")
-    batches = [([(j["stem"], f"/audio/flac/{j['stem']}.flac", j["text"]) for j in jobs[n:n + BATCH]],)
+    batches = [([(j["stem"], f"/audio/flac/{flac_name(j)}", j["text"]) for j in jobs[n:n + BATCH]],)
                for n in range(0, len(jobs), BATCH)]
     started, timed, failed, card_seconds, seen = time.time(), 0, 0, 0.0, 0
     stop = ""
@@ -336,8 +345,8 @@ def main() -> int:
                         failed += 1
                         print(f"align_modal: {stem}: {error}", file=sys.stderr, flush=True)
                         continue
-                    rz_out.write(json.dumps({"stem": stem, "chars": chars}) + "\n")
-                    qw_out.write(json.dumps({"stem": stem, "words": words}) + "\n")
+                    rz_out.write(json.dumps({"stem": stem, "wav": wav_of[stem], "chars": chars}) + "\n")
+                    qw_out.write(json.dumps({"stem": stem, "wav": wav_of[stem], "words": words}) + "\n")
                     timed += 1
                 rz_out.flush()
                 qw_out.flush()

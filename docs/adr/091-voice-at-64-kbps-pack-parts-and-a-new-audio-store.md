@@ -51,7 +51,7 @@ A better encode doubles the download, and that runs into three limits:
 
 - The voice sounds clearer. Every player downloads every pack again once, and the voice is about 2.8 GB in all instead of about 1.4 GB.
 - Sizes at 64 kbps, under the 420 MB cap (the build warns at 315 MB): Levels 1-10 243 MB, Levels 1-10 (part 2) 260 MB, Levels 11-20 325 MB, Levels 21-30 264 MB, Levels 31-40 298 MB, Levels 41-50 300 MB, Levels 51-60 357 MB, Levels 51-60 (part 2) 236 MB, Levels 51-60 (part 3) 234 MB, Other 306 MB. Levels 11-20 and Levels 51-60 are past the warning mark.
-- The three new packs need CurseForge projects before their first release; until then their rows carry `project_id = 0`.
+- The three new packs have their CurseForge projects: Levels 1-10 (part 2) is 1806010, Levels 51-60 (part 2) is 1806014 and Levels 51-60 (part 3) is 1806018, in their rows of `pipeline/voice-packs.toml`.
 - A player who updates the entry but not the new packs is told which packs did not load.
 - Rolling back the store is reverting the change: the workflow then checks out the old repository with its old key at its old pin.
 - A second machine sets up the store with `git clone` of the new repository into `build/voice`.

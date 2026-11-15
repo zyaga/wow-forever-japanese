@@ -1,4 +1,4 @@
-- **The voice panel follows the voice.** The page turns as each sentence starts, and a soft tint marks the words as they are spoken. Pausing and playing again picks up at the sentence you paused in.
+- **The voice panel follows the voice.** The page turns as each sentence starts, and a soft tint marks the words as they are spoken. Pausing and playing again picks up at the sentence you paused in, and two small arrows beside pause play the sentence before or the next one.
 - **A clearer voice: update all your voice packs once.** The files now keep the voices' high end, and each line comes as one file per sentence. The download is about twice as big (about 2.8 GB), with three new packs. Use Update All in the CurseForge app. At login the addon names any voice pack that is out of date or did not load.
 - **Right-click menus in Japanese** on the target, party and raid frames and on a player's name. Names stay in English.
 - **The quest log shows the quest giver's head** again after a reload, a restart or a game patch.

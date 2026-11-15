@@ -18,7 +18,7 @@ SAMPLES_PER_FRAME = 576  # MPEG-2 layer III
 # seconds a decoded voice MP3 runs behind the WAV it was made from, by sample rate: LAME's encoder and
 # decoder delay (1,105 samples) plus the levelling limiter's 5 ms look-ahead, measured on files made by
 # voice_make.to_levelled_mp3. A cut on the recording's clock is snipped this much later in the MP3.
-LEAD = {22050: 0.055, 24000: 0.051}
+LEAD = {r: round(1105 / r + 0.005, 3) for r in (16000, 22050, 24000)}  # 22050: 0.055, 24000: 0.051
 
 
 class Mp3Error(ValueError):

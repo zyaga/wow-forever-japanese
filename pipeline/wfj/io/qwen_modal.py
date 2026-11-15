@@ -126,6 +126,17 @@ def main() -> int:
     if not work:
         return 0
     (a.run / "wav").mkdir(exist_ok=True)
+    try:
+        return _read_and_time(a, work, lines)
+    finally:
+        try:
+            align_modal.volume.remove_file(f"/runs/{a.run.name}", recursive=True)
+        except Exception as e:  # noqa: BLE001 - only space left on the volume; the run's answers are kept
+            print(f"qwen_modal: could not clear runs/{a.run.name} from the volume: {e}", file=sys.stderr)
+
+
+def _read_and_time(a: argparse.Namespace, work: list, lines: int) -> int:
+    """Reads every batch on the cards, keeps its WAVs, and has the aligners time each line it read."""
     started, done, failed = time.time(), 0, 0
     texts = {ln["key"]: ln["text"] for _, part in work for ln in part}
     timing = []  # the aligners' calls, one per batch read: they start as cards come free
@@ -154,10 +165,6 @@ def main() -> int:
             print(f"qwen_modal: {done}/{lines} read, {failed} failed, {took:.0f} s", flush=True)
         timed = keep_answers(a.run, timing)
         print(f"qwen_modal: {timed}/{done} lines timed beside their WAVs", flush=True)
-    try:
-        align_modal.volume.remove_file(f"/runs/{a.run.name}", recursive=True)
-    except Exception as e:  # noqa: BLE001 - only space left on the volume; the run's answers are kept
-        print(f"qwen_modal: could not clear runs/{a.run.name} from the volume: {e}", file=sys.stderr)
     return 1 if failed else 0
 
 

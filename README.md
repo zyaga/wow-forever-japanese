@@ -141,8 +141,8 @@ name and title, and the Japanese a sentence at a time, with the popup dictionary
 voice word by word: the page turns as each sentence starts, and a soft tint marks the words as they are spoken. Close the window and
 the line keeps playing, so you can walk on while the NPC finishes. A line that starts meanwhile waits its turn in a
 list above the panel; click it to hear it now. Hold Alt and the panel shows the line's English while the voice goes
-on. Point at the panel for pause, play again, the whole text and close. The quest log has a play button too, for a
-quest you already took. The panel can be moved, shrunk to a small strip, switched to a dark style or turned off.
+on. Point at the panel for pause, play again, the whole text and close; two small arrows beside pause play the line
+from the sentence before or the next one. The quest log has a play button too, for a quest you already took. The panel can be moved, shrunk to a small strip, switched to a dark style or turned off.
 
 **Markers.** A line with no translation yet shows **[未翻訳 / Not Translated]** and stays in the game's English. A
 line whose English has changed since it was translated shows **[要更新 / English Changed]**. Either marker can be
@@ -366,7 +366,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 **日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。それ以外はナレーターが読み、どの行も同じ音量で再生されます。
 
-**音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。パネルは声に合わせて単語ごとに進み、文が始まるとページが切り替わり、話している単語に淡い色が付きます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
+**音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。パネルは声に合わせて単語ごとに進み、文が始まるとページが切り替わり、話している単語に淡い色が付きます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。一時停止の両側にある小さな矢印で、前の文や次の文から再生できます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
 
 **マーカー。** まだ翻訳のない行は **[未翻訳 / Not Translated]** と表示され、英語のままになります。翻訳後に英語が変わった行には **[要更新 / English Changed]** が付きます。どちらも非表示にできます。
 

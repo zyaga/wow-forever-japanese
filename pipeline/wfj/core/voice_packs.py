@@ -13,7 +13,7 @@ import hashlib
 import json
 import re
 import tomllib
-from collections.abc import Iterable, Mapping
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -87,6 +87,19 @@ def _project(row: Mapping[str, Any], where: str) -> Project:
     return Project(row["folder"], row["title"], row["slug"], pid, row["holds"], levels, quests)
 
 
+def _check_parts(banded: Sequence[Project]) -> None:
+    """A band in parts: its first part starts at quest 1 and its last ends at QUEST_LAST, so no quest of
+    that level falls out of every part."""
+    parted: dict[tuple[int, int], list[tuple[int, int]]] = {}
+    for p in banded:
+        if p.quests and p.levels:
+            parted.setdefault(p.levels, []).append(p.quests)
+    for levels, parts in parted.items():
+        if parts[0][0] != 1 or parts[-1][1] != QUEST_LAST:
+            raise ValueError(f"the parts of levels {levels[0]}-{levels[1]} must take every quest, 1 to "
+                             f"{QUEST_LAST}")
+
+
 def parse(raw: Mapping[str, Any]) -> Table:
     """The table, checked: one entry, bands that follow each other with no gap or overlap, then exactly one
     pack with no band, last; folders and slugs distinct."""
@@ -112,6 +125,7 @@ def parse(raw: Mapping[str, Any]) -> Table:
         if a.quests and a.quests[1] != QUEST_LAST or b.quests and b.quests[0] != 1:
             raise ValueError(f"{a.folder}, {b.folder}: the parts of a band take every quest, 1 to "
                              f"{QUEST_LAST}")
+    _check_parts(packs[:-1])
     for what in ("folder", "slug"):
         seen = [getattr(p, what) for p in (entry, *packs)]
         dup = sorted({v for v in seen if seen.count(v) > 1})

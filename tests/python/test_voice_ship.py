@@ -78,6 +78,7 @@ def test_the_committed_table_is_the_entry_and_ten_packs():
         (lambda r: r["pack"][0].update(quests=[1, 5]), "every quest"),
         (lambda r: r["pack"][-1].update(quests=[1, 5]), "this pack has none"),
         (lambda r: r["pack"][0].update(quests=[5, 1]), "first, last"),
+        (lambda r: r["pack"][0].update(levels=[1, 10], quests=[2, 99999]), "every quest"),
     ],
 )
 def test_a_broken_table_is_refused(change, message):

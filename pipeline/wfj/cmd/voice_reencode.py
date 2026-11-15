@@ -113,8 +113,11 @@ def run(argv: Sequence[str]) -> int:
     try:
         cfg = voice_make.load_config(Path(a.config))
         index = voice_time.archive_index(Path(a.archive) if a.archive else None)
+        audio = voice_make.audio_record(root)
+
         def wav_of(j: dict[str, Any]) -> Path | None:
-            return index.get(voice_time.wav_name(j["fingerprint"], j["text"]) or "")
+            takes = index.get(voice_time.wav_name(j["fingerprint"], j["text"]) or "", [])
+            return voice_time.take_of(takes, audio[j["stem"]].get("seconds"))
 
         r = reencode(root, cfg, store, wav_of, workers=a.workers, limit=a.limit)
         print(f"voice reencode: {r['made']} made, {r['kept']} already in the current encode")

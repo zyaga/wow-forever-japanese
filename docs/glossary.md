@@ -838,7 +838,7 @@ _Avoid_: format (that is the `Register.lua` format), bit rate alone, quality
 → [Voice over runbook](operations/voice.md#re-encoding) · [ADR-091](adr/091-voice-at-64-kbps-pack-parts-and-a-new-audio-store.md)
 
 **Audio store**:
-The whole-line voice MP3s, in the private repository `zyaga/wow-forever-japanese-voice-2`, checked out at `build/voice/` in the main checkout. It holds the current files only: the WAV masters and the release zips are the record, so when its history grows too large a fresh repository starts the same way. The first repository, `zyaga/wow-forever-japanese-voice`, is kept read-only as an archive.
+The whole-line voice MP3s, in the private repository `zyaga/wow-forever-japanese-voice-2`, checked out at `build/voice/` in the main checkout. It holds the current files only: the WAV masters and the release zips are the record, so when its history grows too large a fresh repository starts the same way. The first repository, `zyaga/wow-forever-japanese-voice`, is left as it is, unused: nothing writes to it any more.
 _Avoid_: audio repo history, WAV archive (the uncompressed masters, elsewhere), voice pack (built from it)
 → [Voice over runbook](operations/voice.md#the-audio-store-and-the-pin) · [ADR-091](adr/091-voice-at-64-kbps-pack-parts-and-a-new-audio-store.md)
 

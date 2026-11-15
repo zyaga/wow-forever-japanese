@@ -54,11 +54,12 @@ def main(jobs_path: str, out_path: str) -> int:
     device = os.environ.get("ALIGN_DEVICE") or ("mps" if torch.backends.mps.is_available() else "cpu")
     done = set()
     if Path(out_path).is_file():
-        done = {json.loads(line)["stem"] for line in Path(out_path).read_text(encoding="utf-8").splitlines()
-                if line.strip()}
+        # an answer belongs to one recording: a line voiced again (another WAV) is answered afresh
+        done = {(r["stem"], r.get("wav")) for r in map(json.loads, Path(out_path).read_text(encoding="utf-8")
+                                                        .splitlines()) if r}
     listed = Path(jobs_path).read_text(encoding="utf-8").splitlines()
     jobs = [json.loads(line) for line in listed if line.strip()]
-    jobs = [j for j in jobs if j["stem"] not in done]
+    jobs = [j for j in jobs if (j["stem"], j["wav"]) not in done]
     if not jobs:
         return 0
     aligner = load(device)
@@ -72,7 +73,7 @@ def main(jobs_path: str, out_path: str) -> int:
             except Exception as e:  # noqa: BLE001 - one line the model cannot take is reported, the run goes on
                 print(f"align qwen: {job['stem']}: {e}", flush=True)
                 words = []
-            out.write(json.dumps({"stem": job["stem"], "words": words}) + "\n")
+            out.write(json.dumps({"stem": job["stem"], "wav": job["wav"], "words": words}) + "\n")
             out.flush()
             if n % 100 == 0 or n == len(jobs):
                 rate = heard / max(1e-6, time.time() - started)

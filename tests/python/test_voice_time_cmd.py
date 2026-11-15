@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import math
 import wave
 from pathlib import Path
@@ -173,3 +174,35 @@ def test_answers_made_from_another_recording_of_a_line_are_dropped(tmp_path):
     assert voice_time.drop_other_recordings(work, jobs) == ["a"]
     assert [r["stem"] for r in voice_time.read_jsonl(work / "reazon.jsonl")] == ["b"]
     assert [r["stem"] for r in voice_time.read_jsonl(work / "qwen.jsonl")] == ["b"]
+
+
+def test_a_retake_is_found_by_its_length_and_answers_belong_to_their_recording(tmp_path):
+    import os
+
+    old = tmp_path / "archive" / "2026-11-11-173742" / "wav"
+    new = tmp_path / "archive" / "local-2026-11-14-120000" / "wav"
+    old.mkdir(parents=True)
+    new.mkdir(parents=True)
+    a = recording(old / "k.wav")  # 2.2 s, the first take
+    b = new / "k.wav"
+    recording(b)
+    with wave.open(str(b), "wb") as w:  # the retake: 1.0 s of silence, same name
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(8000)
+        w.writeframes(bytes(16000))
+    os.utime(a, (1, 1))
+    index = voice_time.archive_index(tmp_path / "archive")
+    assert index["k.wav"] == [b, a]  # newest first
+    assert voice_time.take_of(index["k.wav"], 2.2) == a  # the take as long as the record
+    assert voice_time.take_of(index["k.wav"], 1.0) == b
+    assert voice_time.take_of(index["k.wav"], None) == b
+    work = tmp_path / "work"
+    work.mkdir()
+    (work / "reazon.jsonl").write_text(json.dumps({"stem": "s", "wav": str(a), "chars": {"0": 0.1}}) + "\n"
+                                       + json.dumps({"stem": "t", "chars": {"0": 0.2}}) + "\n")
+    (work / "qwen.jsonl").write_text(json.dumps({"stem": "s", "wav": str(a), "words": []}) + "\n")
+    rz, _ = voice_time.read_answers(work, [{"stem": "s", "wav": b}, {"stem": "t", "wav": a}])
+    assert rz == {}  # s was answered from the old take, t from no named recording
+    rz, _ = voice_time.read_answers(work, [{"stem": "s", "wav": a}])
+    assert rz == {"s": {0: 0.1}}

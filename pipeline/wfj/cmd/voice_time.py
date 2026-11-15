@@ -105,13 +105,33 @@ def wav_name(fingerprint: str, text: str) -> str | None:
                     float(temperature) if temperature else None) + ".wav"
 
 
-def archive_index(archive: Path | None) -> dict[str, Path]:
-    """Every WAV in the archive by its file name (the name its remote run gave it)."""
-    index: dict[str, Path] = {}
+def archive_index(archive: Path | None) -> dict[str, list[Path]]:
+    """Every WAV in the archive by its file name (the name its run gave it), newest first: a line read again
+    from the same text, voice and seed (a retake) has the same name in another run folder."""
+    index: dict[str, list[Path]] = {}
     if archive is not None and archive.is_dir():
         for p in archive.glob("*/wav/*.wav"):
-            index.setdefault(p.name, p)
+            index.setdefault(p.name, []).append(p)
+    for takes in index.values():
+        takes.sort(key=lambda p: p.stat().st_mtime, reverse=True)
     return index
+
+
+def wav_seconds(path: Path) -> float:
+    with wave.open(str(path)) as w:
+        return w.getnframes() / w.getframerate()
+
+
+def take_of(takes: Sequence[Path], seconds: float | None) -> Path | None:
+    """The take the recorded file was made from: the one as long as the record says (to 0.05 s), else the
+    newest."""
+    if not takes:
+        return None
+    if seconds is not None:
+        for p in takes:
+            if abs(wav_seconds(p) - float(seconds)) <= 0.05:
+                return p
+    return takes[0]
 
 
 def archive_source(archive: Path | None, store: Path, work: Path) -> Source:
@@ -120,12 +140,14 @@ def archive_source(archive: Path | None, store: Path, work: Path) -> Source:
 
     def source(rec: dict[str, Any], text: str) -> tuple[Path, float] | None:
         name = wav_name(rec["fingerprint"], text)
-        if name and name in index:
-            return index[name], 0.0
+        take = take_of(index.get(name or "", []), rec.get("seconds"))
+        if take is not None:
+            return take, 0.0
         mp3 = voice_make.audio_file(store, rec["file"])
         if not mp3.is_file():
             return None
-        out = work / "decoded" / f"{rec['file']}.wav"
+        # named by the file's hash: a line voiced again is decoded afresh, never answered from the old audio
+        out = work / "decoded" / f"{rec['file']}-{str(rec.get('sha256', ''))[:12]}.wav"
         if not out.is_file():
             out.parent.mkdir(parents=True, exist_ok=True)
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(mp3), "-ac", "1", "-c:a", "pcm_s16le",
@@ -171,14 +193,15 @@ def model_align(work: Path, log: Callable[[str], None] = print, *, modal: bool =
             script = Path(__file__).resolve().parents[1] / "io" / "align_modal.py"
             cmd = [str(main / MODAL_PYTHON), str(script), str(listed), str(work)]
             log(f"voice time: align_modal.py over {len(jobs)} line(s)")
-            subprocess.run([*cmd, *(["--max-dollars", str(max_dollars)] if max_dollars else [])], check=True)
-            return read_answers(work)
+            # a run that stopped or left lines untimed still hands back what it answered
+            subprocess.run([*cmd, *(["--max-dollars", str(max_dollars)] if max_dollars else [])], check=False)
+            return read_answers(work, jobs)
         for python, script, out in ((reazon, "align_reazon.py", "reazon.jsonl"),
                                     (qwen, "align_qwen.py", "qwen.jsonl")):
             log(f"voice time: {script} over {len(jobs)} line(s)")
             cmd = [str(python), "-I", str(scripts / script), str(listed), str(work / out)]
             subprocess.run(cmd, check=True)
-        return read_answers(work)
+        return read_answers(work, jobs)
 
     return align
 
@@ -248,13 +271,23 @@ def drop_other_recordings(work: Path, jobs: Sequence[Job]) -> list[str]:
     return sorted(changed)
 
 
-def read_answers(work: Path) -> tuple[dict[str, dict[int, float]], dict[str, list[voice_timing.Word]]]:
+def read_answers(work: Path, jobs: Sequence[Job] | None = None) -> tuple[dict[str, dict[int, float]],
+                                                                       dict[str, list[voice_timing.Word]]]:
+    """The models' answers in the work folder by stem; with `jobs`, only those made from each job's own WAV
+    (an answer from an older recording of a line, or with no recording named, is left out)."""
+    want = {j["stem"]: str(j["wav"]) for j in jobs} if jobs is not None else None
+
+    def mine(line: dict[str, Any]) -> bool:
+        return want is None or (line["stem"] in want and want[line["stem"]] == line.get("wav"))
+
     rz: dict[str, dict[int, float]] = {}
     qw: dict[str, list[voice_timing.Word]] = {}
     for line in read_jsonl(work / "reazon.jsonl") if (work / "reazon.jsonl").is_file() else []:
-        rz[line["stem"]] = {int(k): float(v) for k, v in line["chars"].items()}
+        if mine(line):
+            rz[line["stem"]] = {int(k): float(v) for k, v in line["chars"].items()}
     for line in read_jsonl(work / "qwen.jsonl") if (work / "qwen.jsonl").is_file() else []:
-        qw[line["stem"]] = [(int(a), int(b), float(s), float(e)) for a, b, s, e in line["words"]]
+        if mine(line):
+            qw[line["stem"]] = [(int(a), int(b), float(s), float(e)) for a, b, s, e in line["words"]]
     return rz, qw
 
 
@@ -393,4 +426,6 @@ def run(argv: Sequence[str]) -> int:
     (work / "report.md").write_text(report_text(r), encoding="utf-8")
     print(report_text(r), end="")
     print(f"voice time: report in {work / 'report.md'}")
-    return 0 if not r["failed"] else 1
+    if r["failed"]:  # the lines timed are written; the audio still syncs, and the gate test names the rest
+        print(f"voice time: {len(r['failed'])} line(s) not timed, listed in the report", file=sys.stderr)
+    return 0

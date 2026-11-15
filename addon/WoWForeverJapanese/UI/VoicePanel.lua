@@ -511,6 +511,8 @@ function Panel.update()
   local steps = shown and shown.sentences and #shown.sentences > 1 and true or false
   f.back:SetShown(steps)
   f.on:SetShown(steps)
+  f.pause:ClearAllPoints() -- next to the right arrow, or straight beside play again when the arrows are away
+  f.pause:SetPoint("RIGHT", steps and f.on or f.replay, "LEFT", -2, 0)
   if not fadeFrom then f:SetAlpha(baseAlpha()) end -- mid-fade, the tick owns the alpha
   applyControls()
   local was = f:IsShown()

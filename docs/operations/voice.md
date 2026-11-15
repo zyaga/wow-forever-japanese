@@ -226,6 +226,10 @@ Each model call holds at most 24 paragraphs and at most 3,000 padded characters 
 
 **Estimating time and money.** Characters C come from `wfj voice export` ("N lines to read (C characters)"); the picked voices speak 5.88 characters a second. A card (L40S, $1.95 an hour) reads R characters per card-second: 48.5 on clean batches (measured on 60 lines), 11.4 on the first full run (Levels 1-10, 404,046 characters, $19.25 including tests, about 72 minutes, held back by out-of-memory batches, an idle tail and one call that hit the time limit). Card time = C / R + cards x start-up (2 to 4 minutes each); cost = card time x $1.95 an hour; wall time is about card time / cards. Update R in this paragraph after each run. A collector send or fix report of 20 to 100 lines costs a few cents, mostly the card's start-up.
 
+**The aligner cards.** The same run also times every line it reads (`pipeline/wfj/io/align_modal.py`, which `qwen_modal.py` includes; see "Timing on Modal" above): up to 5 Qwen aligner cards and 5 ReazonSpeech cards, L40S at $1.95 a card-hour, each with its own start-up like any card. Timing the whole game alone took about 17 minutes on 10 cards; that day's Modal bill was $5.93, a failed start and two stopped tries included. Plan on about $5 to $9 to time all 17,500 lines, and a few cents for a small run.
+
+**Before a Modal run**, state for the maintainer's go: the lines, the characters, the reader cards' cost (above), the aligner cards' cost, and what the files cost to keep and move: storage $0.09 a GiB-month after the first 1 TiB, which is free, and $0.04 a GiB sent out.
+
 ### If the publisher asks for a takedown
 
 The cloned voices are modelled on the publisher's recordings, shipped non-commercially and credited, with no actor named ([ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md)). On a takedown request, the affected voice packs are withdrawn (removed from CurseForge and GitHub, or not released) until the maintainer decides what follows. No AivisSpeech audio is made or shipped as a stand-in.
@@ -278,7 +282,7 @@ If the game's English NPC voices stay silent after a test (the dialog channel le
 
 `make voice-run` and `make voice-generate` end with `store-sync --if-changed`: when the run made files, or an earlier sync committed but could not push, it commits them to the audio repository, pushes them, and writes that commit to the pin; when there is nothing new, nothing moves. Commit the pin with the audio record in the same pull request. A release builds the packs from exactly the pinned commit, so a line never plays audio made from other words. `make voice-sync` alone does the same after a run that was stopped.
 
-**A fresh store.** The store holds the current files; its history is not the record. When its history grows too large (a re-encode pushes every file again), start a new private repository the same way: push the current files in batches under GitHub's 2 GB push limit, clone it as `build/voice`, pin its commit, give the Release workflow a read-only deploy key on it under a new secret, and keep the old repository read-only. GitHub refuses one deploy key on two repositories, so each store has its own key and secret.
+**A fresh store.** The store holds the current files; its history is not the record. When its history grows too large (a re-encode pushes every file again), start a new private repository the same way: push the current files in batches under GitHub's 2 GB push limit, clone it as `build/voice`, pin its commit, give the Release workflow a read-only deploy key on it under a new secret, and leave the old repository as it is, unused (nothing writes to it, and it is not deleted). GitHub refuses one deploy key on two repositories, so each store has its own key and secret.
 
 ## Kana lines
 
