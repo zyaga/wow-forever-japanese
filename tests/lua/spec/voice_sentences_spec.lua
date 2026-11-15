@@ -317,6 +317,17 @@ describe("UI/VoicePanelText: following the timing", function()
     assert.are.equal(2, #parts)
   end)
 
+  it("a name of several English words said as one is one part, so the mark covers the whole name", function()
+    local ja = "SentinelsはWarsong Outridersと戦う。"
+    local parts = T.timedParts(ja, ja, "9:10 1:60 7:70 1:- 9:0 1:120 3:20", fill)
+    assert.are.equal("Warsong Outriders", ja:sub(parts[3].first, parts[3].last))
+    assert.is_true(math.abs(parts[3].t - 1.4) < 1e-9)
+    assert.are.equal("と", ja:sub(parts[4].first, parts[4].last))
+    -- a word said later, after a space, stays its own part
+    local two = T.timedParts("Warsong Outriders", "Warsong Outriders", "7:10 1:- 9:30", fill)
+    assert.are.equal(2, #two)
+  end)
+
   it("the part said last, and the word card's word as what to mark", function()
     local parts = T.timedParts(JA, JA, TIMING, fill)
     assert.is_nil(T.spokenAt(parts, 0.05))

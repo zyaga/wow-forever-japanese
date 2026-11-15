@@ -221,7 +221,14 @@ function Text.timedParts(shown, raw, timing, fill)
     if piece ~= "" and not piece:find("[{$]") then
       local s, f = shown:find(piece, cursor, true)
       if s and s - cursor <= NEAR then
-        if dt ~= "-" then out[#out + 1] = { first = s, last = trimmed(shown, s, f), t = clock } end
+        local prev = out[#out]
+        if dt == "0" and prev and prev.t == clock and shown:sub(prev.last + 1, s - 1):match("^%s+$") then
+          -- said at the same moment, across a space: one word spoken as one (a name of several English words,
+          -- which the voice reads as one katakana word), so it is marked whole
+          prev.last = trimmed(shown, s, f)
+        elseif dt ~= "-" then
+          out[#out + 1] = { first = s, last = trimmed(shown, s, f), t = clock }
+        end
         cursor = f + 1
       end
     end
