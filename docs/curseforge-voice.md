@@ -1,19 +1,22 @@
 # CurseForge description: the voice
 
 The text of the voice's CurseForge pages: the Voice entry ("WoW Forever Japanese Voice (日本語音声)") and each of
-the seven voice packs. One text for all eight; paste everything under "Description" into each project's description
+the ten voice packs. One text for all eleven; paste everything under "Description" into each project's description
 with the editor set to Markdown. When the README's voice section changes, change this too.
 
 - **Project names:** WoW Forever Japanese Voice (日本語音声); WoW Forever Japanese Voice: Levels 1-10, … : Levels
-  51-60, … : Other
+  1-10 (part 2), … : Levels 11-20, … : Levels 21-30, … : Levels 31-40, … : Levels 41-50, … : Levels 51-60, … : Levels
+  51-60 (part 2), … : Levels 51-60 (part 3), … : Other
 - **Summary (the entry):** Japanese voice over for WoW Forever Japanese. Install this one; it brings every voice pack.
 - **Summary (a pack):** One part of the Japanese voice for WoW Forever Japanese. Install "WoW Forever Japanese
   Voice" instead; it brings this pack and the others.
 
 ## Pack description
 
-The seven packs are unlisted, so players never see their pages; the text only has to pass CurseForge's review. Paste
-everything below this paragraph, down to "Description", into each pack's description; change the level range.
+The ten packs are unlisted, so players never see their pages; the text only has to pass CurseForge's review. Paste
+everything below this paragraph, down to "Description", into each pack's description; change the level range to what
+the pack holds (its `holds` line in `pipeline/voice-packs.toml`): "levels 1 to 5", "levels 6 to 10", "levels 51 to
+59", "level 60 up to quest 8509", "level 60 from quest 8510 on".
 
 Part of the Japanese voice for the **WoW Forever Japanese** addon: the spoken Japanese for quests of levels 1 to 10 and the talk of their NPCs, as audio files the addon plays. It adds nothing on its own and needs the addon to work.
 
@@ -27,7 +30,7 @@ The voices were made with Qwen3-TTS (Apache-2.0), each modelled on one of the ga
 
 This is only its Japanese voice and needs the addon to work. The CurseForge app installs the addon with it if you do not have it yet, and the voice never loads in the game without the addon.
 
-Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness. Names stay English on screen, and the voice says them in Japanese sounds that match the English you read.
+Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness. Names stay English on screen, and the voice says them in Japanese sounds that match the English you read. Every line comes as one file per sentence, timed to its words, so the addon's voice panel follows the voice word by word: the page turns as each sentence starts, and the words light up as they are spoken. The files are MP3 at 64 kbps, which keeps the voices clear.
 
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how the addon works).
 
@@ -37,7 +40,22 @@ Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its 
 
 **Step 2:** install **WoW Forever Japanese Voice** the same way.
 
-The Voice entry holds no audio itself; the app installs every voice pack with it (about 1.2 GB in all) and keeps them up to date. In the game, the packs show as extra rows under the addon in the AddOns list; leave them ticked. By hand: download the zip whose name ends in `-all-` and a date from the latest **Voice** release on the [GitHub releases page](https://github.com/zyaga/wow-forever-japanese/releases), and unzip it into your Forever client's `Interface/AddOns` folder.
+The Voice entry holds no audio itself; the app installs every voice pack with it (about 2.8 GB in all) and keeps them up to date. In the game, the packs show as extra rows under the addon in the AddOns list; leave them ticked. The voice packs update separately from the addon: use **Update All** in the app so the addon and every pack stay current together. At login the addon names a pack that is out of date, or one that did not load (not installed, or turned off in the AddOns list), and a pack too new for the addon says so. By hand: download every zip whose name has `-all-` and a date in it (one, or several numbered parts) from the latest **Voice** release on the [GitHub releases page](https://github.com/zyaga/wow-forever-japanese/releases), and unzip each into your Forever client's `Interface/AddOns` folder.
+
+| Voice pack | Holds | Size |
+|---|---|---|
+| Levels 1-10 | quests of levels 1 to 5 | 243 MB |
+| Levels 1-10 (part 2) | quests of levels 6 to 10 | 260 MB |
+| Levels 11-20 | quests of levels 11 to 20 | 325 MB |
+| Levels 21-30 | quests of levels 21 to 30 | 264 MB |
+| Levels 31-40 | quests of levels 31 to 40 | 298 MB |
+| Levels 41-50 | quests of levels 41 to 50 | 300 MB |
+| Levels 51-60 | quests of levels 51 to 59 | 357 MB |
+| Levels 51-60 (part 2) | level 60 quests, first half | 236 MB |
+| Levels 51-60 (part 3) | level 60 quests, second half | 234 MB |
+| Other | books, letters, your character's lines | 306 MB |
+
+Each pack also holds the talk of the NPCs who give its quests.
 
 One setting on the addon's **Voice** page turns the voice off. Others read NPC greetings (on by default) or quest lines only the first time you hear them; the window's play button reads them again. Removing the voice addons removes it, and the addon keeps working. A line plays only when its audio was made from the Japanese the addon shows; a line whose Japanese changed stays silent until its audio is remade.
 
@@ -51,7 +69,7 @@ Every voice was made with **Qwen3-TTS** (https://github.com/QwenLM/Qwen3-TTS, Ap
 
 これは本体用の日本語音声だけで、本体がないと動きません。本体がまだなければ、CurseForge アプリが一緒にインストールします。ゲーム内でも、本体なしで音声が読み込まれることはありません。
 
-**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。名前は画面では英語のままで、音声では読んでいる英語に合わせたカタカナの音で読み上げます。
+**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。名前は画面では英語のままで、音声では読んでいる英語に合わせたカタカナの音で読み上げます。どの行も 1 文ずつのファイルに分かれ、単語ごとのタイミングが付いているので、アドオンの音声パネルは声に合わせて単語ごとに進みます。文が始まるとページが切り替わり、話している単語に色が付きます。ファイルは 64 kbps の MP3 で、声がはっきり聞こえます。
 
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと、アドオンのしくみの簡単な説明）
 
@@ -61,7 +79,22 @@ Every voice was made with **Qwen3-TTS** (https://github.com/QwenLM/Qwen3-TTS, Ap
 
 **手順 2:** 続けて **WoW Forever Japanese Voice** を同じようにインストールします。
 
-Voice 自体は音声を持たず、すべての音声パック（合計約 1.2 GB）をアプリが一緒にインストールし、更新します。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。手動の場合は、[GitHub のリリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で最新の **Voice** リリースから、名前が `-all-` と日付で終わる zip をダウンロードし、Forever クライアントの `Interface/AddOns` フォルダに展開します。
+Voice 自体は音声を持たず、すべての音声パック（合計約 2.8 GB）をアプリが一緒にインストールし、更新します。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。音声パックはアドオンとは別に更新されます。アプリの **Update All** で、アドオンとすべてのパックをまとめて最新にしてください。古いパックや、読み込まれなかったパック（未インストール、または AddOns 一覧でオフ）があるとログイン時にアドオンがそのパック名を表示し、アドオンが古すぎる場合はパック自身がそう表示します。手動の場合は、[GitHub のリリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で最新の **Voice** リリースから、名前に `-all-` と日付が入った zip をすべて（1 つ、または番号付きの複数のパート）ダウンロードし、それぞれを Forever クライアントの `Interface/AddOns` フォルダに展開します。
+
+| 音声パック | 内容 | サイズ |
+|---|---|---|
+| Levels 1-10 | レベル 1〜5 のクエスト | 243 MB |
+| Levels 1-10 (part 2) | レベル 6〜10 のクエスト | 260 MB |
+| Levels 11-20 | レベル 11〜20 のクエスト | 325 MB |
+| Levels 21-30 | レベル 21〜30 のクエスト | 264 MB |
+| Levels 31-40 | レベル 31〜40 のクエスト | 298 MB |
+| Levels 41-50 | レベル 41〜50 のクエスト | 300 MB |
+| Levels 51-60 | レベル 51〜59 のクエスト | 357 MB |
+| Levels 51-60 (part 2) | レベル 60 のクエスト（前半） | 236 MB |
+| Levels 51-60 (part 3) | レベル 60 のクエスト（後半） | 234 MB |
+| Other | 本、手紙、自分のキャラクターのセリフ | 306 MB |
+
+どのパックにも、そのクエストを出す NPC の会話が入っています。
 
 アドオンの **音声** ページの設定ひとつで音声をオフにできます。NPC のあいさつ（初期設定でオン）やクエストの音声を、初めて聞くときだけ読み上げる設定もあります。ウィンドウの再生ボタンでもう一度聞けます。音声アドオンを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は、アドオンが表示する日本語から作られたものだけが再生されます。日本語が変わった行は、音声が作り直されるまで再生されません。
 

@@ -84,13 +84,14 @@ local function logLine()
   if type(qid) ~= "number" then qid = type(m.id) == "number" and m.id or nil end
   local saw = QuestLog.rememberedSpeaker(qid, "description")
   local who = saw and { creature = saw.c, sex = saw.s } or nil
-  local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, who, true)
+  local path, detail, sentences = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, who, true)
   if not path then return nil end
   local questTitle = WFJ.SurfaceState.get(LOG_SURFACE, "title")
   -- nobody remembered: the quest's title as the pane shows it (its Japanese, or the client's English it was left as)
   local shownTitle = questTitle and (questTitle.applied or questTitle.en)
   local name = saw and saw.n or (type(shownTitle) == "string" and shownTitle or nil)
   return path, detail, { key = WFJ.Voice.packKey(m.kind, m.id), path = path, seconds = detail, window = LOG,
+    sentences = sentences,
     surface = "questframe.detail", kind = m.kind, id = m.id,
     shown = { "questframe.detail", "description", m.kind, m.id },
     ja = (rec.applied:gsub("^|c%x%x%x%x%x%x%x%x.-|r[\n ]", "")), en = rec.en, name = name,

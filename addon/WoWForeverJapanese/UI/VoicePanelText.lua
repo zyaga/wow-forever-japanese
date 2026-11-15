@@ -5,6 +5,8 @@
 --   Text.pageSpans(item, segs, page) → the page's words, located in the whole line
 --   Text.showPage(fs, item, page, spans) · Text.showEnglish(fs, item) · Text.detach()
 --   Text.openWhole(anchor, item, look, english) → true when shown · Text.refreshWhole(item, look, english)
+--   Text.timedParts(shown, raw, timing, fill) · Text.spokenAt(parts, t) · Text.unitOf(part, cards): the line's
+--     timing (pure; see "Timing" below)
 --   Text.hideWhole() · Text.wholeShown()
 -- Word cards come from UI/Readings like every other surface (surface "voicepanel"); a page passes its words in
 -- `rec.spans`, because a line's word list is in the order of the whole line and a sentence alone can match an
@@ -22,6 +24,9 @@ local rec = { surface = "voicepanel", key = "text" } -- the panel text's record 
 local wholeRec = { surface = "voicepanel", key = "full" } -- the whole-text window's record
 local lineSpans, lineSpansFor -- the displayed line's words in the whole line, and the item they are for
 local whole -- the whole-text window, built on first use
+
+-- the bytes of the UTF-8 character whose first byte is c
+local function charLen(c) return c >= 0xF0 and 4 or c >= 0xE0 and 3 or c >= 0xC0 and 2 or 1 end
 
 local function chars(s)
   return (s:gsub("[\128-\191]", "")):len()
@@ -42,8 +47,22 @@ local function markAt(ja, i, set)
 end
 
 -- The line's sentences as { text, from }: `from` is the byte the trimmed text starts at in `ja`. A sentence ends after
--- a run of 。！？ and the closing brackets after it, or at a line break; spaces and breaks around it are trimmed.
+-- a run of 。！？ and the closing brackets after it, or at a line break; spaces and breaks around it are trimmed. A
+-- stage direction on a line of its own is left out when the voice skips it (isStage).
+-- A stage direction: angle brackets around Japanese ("<Iverronが解毒剤を飲む>"); an ASCII pair (<lad/lass>) is not.
+-- The voice skips them, except in a line that is nothing but directions, which it reads without the brackets
+-- (pipeline wfj/core/voice.py speech_text): the panel follows the same rule, so it hides only what is not said.
+local function isStage(t)
+  return t:match("^<[^<>]*>$") ~= nil and t:find("[\128-\255]") ~= nil
+end
+
+local function onlyStages(ja)
+  local rest = ja:gsub("<[^<>]*>", function(t) return isStage(t) and "" or nil end)
+  return rest:match("^%s*$") ~= nil
+end
+
 local function sentences(ja)
+  local dropStages = not onlyStages(ja)
   local out, start, i = {}, 1, 1
   local function cut(stop)
     local raw = ja:sub(start, stop)
@@ -51,7 +70,9 @@ local function sentences(ja)
     local text = raw:gsub("^%s+", ""):gsub("%s+$", "")
     local bare = text
     for _, m in ipairs(WIDE_MARKS) do bare = bare:gsub(m, "") end
-    if text ~= "" and bare:match(MARKS_ONLY) and #out > 0 then
+    if dropStages and isStage(text) then -- luacheck: ignore 542
+      -- a stage direction (<Kaltunkは笑った>) is not read aloud: the quest window shows it, the panel does not
+    elseif text ~= "" and bare:match(MARKS_ONLY) and #out > 0 then
       -- a stray closing mark after a sentence's end (the 。 of an emote in <…>): the sentence keeps it
       local prev = out[#out]
       prev.text = (ja:sub(prev.from, stop):gsub("%s+$", ""))
@@ -93,7 +114,7 @@ local function fit(piece, budget)
   local lastComma -- the byte after the last 、 seen in the current piece
   while at <= #text do
     local c = text:byte(at)
-    local len = c >= 0xF0 and 4 or c >= 0xE0 and 3 or c >= 0xC0 and 2 or 1
+    local len = charLen(c)
     if text:sub(at, at + len - 1) == "、" then lastComma = at + len end
     if chars(text:sub(from, at + len - 1)) > budget then
       local stop = (lastComma and lastComma > from) and lastComma - 1 or at - 1
@@ -156,6 +177,81 @@ function Text.pageSpans(item, segs, page)
     end
   end
   return out
+end
+
+-- ── Timing ───────────────────────────────────────────────────────────────
+-- A line's timing (Core/Voice format 3, ADR-090) is its shipped Japanese as parts of n characters, each with the
+-- hundredths of a second since the part before it started ("3:48 1:104 2:- ..."; "-": never said). Text.timedParts
+-- finds the said parts in the text as the window shows it, in order: a part holding a player token is looked for
+-- filled in (`fill`), one the client fills ($N, a number) is skipped, and a part not found near where the last one
+-- ended is left out. → { { first, last, t } } (bytes of `shown`, closing punctuation off the end), or nil
+local CLOSING = { ["。"] = true, ["、"] = true, ["！"] = true, ["？"] = true, ["…"] = true, ["・"] = true,
+  ["」"] = true, ["』"] = true, ["）"] = true, ["　"] = true }
+local NEAR = 96 -- bytes: how far past the last part the next one may be found
+
+local function trimmed(text, first, last)
+  local i, ends = first, {}
+  while i <= last do
+    local n = charLen(text:byte(i))
+    ends[#ends + 1] = { i, i + n - 1 }
+    i = i + n
+  end
+  for k = #ends, 2, -1 do
+    local ch = text:sub(ends[k][1], ends[k][2])
+    if not (CLOSING[ch] or ch:match("^%s$") or ch:match("^%p$")) then return ends[k][2] end
+  end
+  return ends[1] and ends[1][2] or last
+end
+
+function Text.timedParts(shown, raw, timing, fill)
+  if type(shown) ~= "string" or type(raw) ~= "string" or type(timing) ~= "string" then return nil end
+  local out, pos, cursor, clock = {}, 1, 1, 0
+  for len, dt in timing:gmatch("(%d+):([%-%d]+)") do
+    local e = pos
+    for _ = 1, tonumber(len) do
+      local c = raw:byte(e)
+      if not c then break end
+      e = e + charLen(c)
+    end
+    local piece = raw:sub(pos, e - 1):match("^%s*(.-)%s*$")
+    pos = e
+    if dt ~= "-" then clock = clock + tonumber(dt) / 100 end
+    if piece:find("[{<]") and fill then piece = fill(piece) end
+    -- an unsaid part (a stage direction) is looked for too, so the search moves past it
+    if piece ~= "" and not piece:find("[{$]") then
+      local s, f = shown:find(piece, cursor, true)
+      if s and s - cursor <= NEAR then
+        local prev = out[#out]
+        if dt == "0" and prev and prev.t == clock and shown:sub(prev.last + 1, s - 1):match("^%s+$") then
+          -- said at the same moment, across a space: one word spoken as one (a name of several English words,
+          -- which the voice reads as one katakana word), so it is marked whole
+          prev.last = trimmed(shown, s, f)
+        elseif dt ~= "-" then
+          out[#out + 1] = { first = s, last = trimmed(shown, s, f), t = clock }
+        end
+        cursor = f + 1
+      end
+    end
+  end
+  return #out > 0 and out or nil
+end
+
+-- The part said last by time t (seconds into the recording), or nil before the first.
+function Text.spokenAt(parts, t)
+  local found
+  for _, p in ipairs(parts or {}) do
+    if p.t <= t then found = p else break end
+  end
+  return found
+end
+
+-- What to mark for a part: the word card's whole word when the part starts inside one, so what lights up is what
+-- pointing at it shows; else the part. → first, last (bytes)
+function Text.unitOf(part, cards)
+  for _, sp in ipairs(cards or {}) do
+    if sp.first <= part.first and part.first <= sp.last then return sp.first, math.max(sp.last, part.last) end
+  end
+  return part.first, part.last
 end
 
 local function attach(r)

@@ -46,6 +46,12 @@ function WoWForeverJapanese_RegisterVoice(tbl)
   return n, invalid
 end
 
+-- Global entry point for the voice entry addon: its Packs.lua names the packs it installs, so a pack that did not
+-- load can be named to the player.
+function WoWForeverJapanese_ExpectVoicePacks(list)
+  WFJ.Voice.expect(list)
+end
+
 -- The one reader of the player's own name / class / race / sex, shared by Core/Placeholders (the corpus tokens)
 -- and Core/Collector (English normalization). Read at call time rather than cached at load. Each API
 -- is guarded: a client without one leaves that token literal and makes the collector refuse (no_player) instead of
@@ -68,6 +74,7 @@ local function player()
     sex = call(UnitSex, "player"),
   }
 end
+WFJ.player = player -- the voice panel fills a line's tokens part by part, as the window filled the whole line
 
 -- The player as the Collector normalizes English with: the name and the localized class / race, and the shorter
 -- word the client prints for the race where it has one.
@@ -327,6 +334,13 @@ function WFJ.OnLoad()
       if type(WFJ_DB.voiceHeard) ~= "table" then WFJ_DB.voiceHeard = {} end
       return WFJ_DB.voiceHeard
     end,
+    -- a pack's Version, for the notices and the bug report (C_AddOns on newer clients, the global on older ones)
+    meta = function(folder, field)
+      local get = (type(C_AddOns) == "table" and C_AddOns.GetAddOnMetadata) or _G.GetAddOnMetadata
+      if type(get) ~= "function" then return nil end
+      local ok, v = pcall(get, folder, field)
+      return ok and v or nil
+    end,
   }) end)
   step("voicequeue", function() WFJ.VoiceQueue.init(WFJ_DB) end)
   step("voiceplayer", function() WFJ.VoicePlayer.init(WFJ_DB) end)
@@ -549,6 +563,7 @@ local function onEvent(self, event, name, ...)
         WFJ.CollectorRemind.run(WFJ_DB, time(), WFJ.CollectorReminder.open, disclosed)
       end)
       step("intro", function() WFJ.Intro.run(WFJ_DB, WFJ.IntroWindow.request) end) -- once, on a first install
+      step("voicepacks", function() WFJ.VoicePlayer.announcePacks() end) -- every pack has registered by now
     end
     -- every addon has loaded by now: another one (BugGrabber) may have replaced our error handler; and the player's
     -- name is known, so an error caught earlier loses it

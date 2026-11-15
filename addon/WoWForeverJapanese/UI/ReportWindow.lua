@@ -139,7 +139,7 @@ end
 -- A fresh bug report from the unsent errors.
 local function packBug()
   return WFJ.BugReport.pack({ build = clientBuild(), version = WFJ.VERSION, errors = WFJ.ErrorLog.unsent(),
-    ours = WFJ.ErrorLog.ours() })
+    ours = WFJ.ErrorLog.ours(), voice = WFJ.Voice and WFJ.Voice.packList() or nil })
 end
 
 function ReportWindow.retitle()

@@ -46,6 +46,8 @@ _TOKEN = re.compile(r"\{(name|class|race)\}")
 # angle brackets around Japanese are a stage direction ("<Iverronが解毒剤を飲む>"), read by nobody
 _STAGE = re.compile(r"<[^<>]*[^\x00-\x7f][^<>]*>")
 _MARKUP = re.compile(r"[{}<>$|]")
+# a run of binary bytes (a joke page of zeros and ones): read out digit by digit it is a minute of noise
+_BINARY = re.compile(r"(?:[01]{8}[ \t]*){3,}")
 _KEY = re.compile(r"\d+-(description|progress|completion)|[gb]-[0-9a-f]{16}")
 _VOICE = re.compile(r"[a-z0-9]+")
 
@@ -69,6 +71,10 @@ def ja_hash(ja: str) -> str:
 _VALUE = re.compile(r"\$N(\d+)(個|体|頭|匹|羽|本|枚|つ|人|名|回|分|秒|時間|日|年|冊|粒|束|杯|箱|袋|着)?")
 _WORLD_STATE = re.compile(r"\$\d+w")  # a number the server fills in ("$2113w日以内"): read as 数
 _BREAK = re.compile(r"\$[bB]")
+# every player token or number a line's Japanese holds that the addon or the client fills in: a timing part
+# never splits one (core/voice_timing); `<lad/lass>` is a word pair the addon picks one side of
+TOKENS = re.compile("|".join(p.pattern for p in (_TOKEN, _VALUE, _WORLD_STATE, _BREAK))
+                    + r"|<[A-Za-z]+/[A-Za-z]+>")
 _LIVE_NUMBER = re.compile(r"[\d.,]+")
 
 
@@ -103,8 +109,9 @@ def text_hash(ja: str, values: Sequence[str] = ()) -> str:
 def speech_text(ja: str, key: str, values: Sequence[str] = ()) -> str:
     """The text the engine reads: player tokens become 冒険者, `$N<k>` the k-th number of the line's English
     (`values`); a number only the game knows (none in the English, or a server count such as `$2113w`) is
-    read as 何個か / 数, stage directions are dropped (a line that is nothing but one is read without its
-    brackets), and any other markup is refused with the line's key (it would be read aloud as symbols)."""
+    read as 何個か / 数, stage directions and runs of binary bytes are dropped (a line that is nothing but
+    a direction is read without its brackets), and any other markup is refused with the line's key (it
+    would be read aloud as symbols)."""
 
     def number(m: re.Match[str]) -> str:
         k, counter = int(m.group(1)), m.group(2) or ""
@@ -113,6 +120,7 @@ def speech_text(ja: str, key: str, values: Sequence[str] = ()) -> str:
         return f"何{counter}か" if counter else "いくつか"
 
     filled = _WORLD_STATE.sub("数", _VALUE.sub(number, _BREAK.sub("\n", ja)))
+    filled = _BINARY.sub("", filled)
     spoken = _STAGE.sub("", filled)
     if not _MARKUP.sub("", _TOKEN.sub("", spoken)).strip():
         spoken = re.sub(r"[<>]", "", filled)

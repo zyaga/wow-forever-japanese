@@ -753,14 +753,19 @@ _Avoid_: error log, debug log, diagnostics file, BugSack
 ## Voice over
 
 **Voice pack**:
-One of the separate addons that hold the Japanese voice over audio, named for what it holds: `WoWForeverJapanese_VoiceLevels1to10` to `…Levels51to60` (the quests of a level band and their NPCs' talk) and `…VoiceOther` (book and letter pages, the character's error lines, quests with no known level). Each holds one MP3 per voiced line (and per [[Voice variant]]), and a `Register.lua` that hands the main addon a table of [[Pack key]] → file, [[Japanese hash]] and length. Every pack depends on the main addon; the main addon plays nothing and shows no voice setting without one. Built by `wfj voice pack`, never committed to this repository.
-_Avoid_: voice addon, sound pack, part, audio data (the main addon ships no audio)
+One of the separate addons that hold the Japanese voice over audio, named for what it holds: `WoWForeverJapanese_VoiceLevels1to10` to `…Levels51to60` (the quests of a level band and their NPCs' talk, a band too big for one pack in [[Pack part]]s) and `…VoiceOther` (book and letter pages, the character's error lines, quests with no known level). Each holds a voiced line (and each [[Voice variant]]) as [[Sentence file]]s, and a `Register.lua` (format 3) that hands the main addon a table of [[Pack key]] → its sentence files with their lengths, the [[Japanese hash]] and the line's [[Voice timing]]. Older packs (format 2) hold one MP3 per line, and the addon still plays them. Every pack depends on the main addon; the main addon plays nothing and shows no voice setting without one. Built by `wfj voice pack`, never committed to this repository.
+_Avoid_: voice addon, sound pack, part (a [[Pack part]] is one of the packs of a split band), audio data (the main addon ships no audio)
 → [Voice over](systems/voice.md) · [ADR-061](adr/061-voice-over-from-a-separate-pack.md) · [ADR-062](adr/062-voice-cast-per-speaker-in-step-with-the-text.md)
 
 **Voice entry**:
-The addon players install for the voice, "WoW Forever Japanese Voice" (`WoWForeverJapanese_Voice`): no audio of its own; on CurseForge its file requires the main addon and every [[Voice pack]], so the app installs them all from one click. Its list of required projects is the one place that says what the voice consists of.
+The addon players install for the voice, "WoW Forever Japanese Voice" (`WoWForeverJapanese_Voice`): no audio of its own; on CurseForge its file requires the main addon and every [[Voice pack]], so the app installs them all from one click. Its list of required projects is the one place that says what the voice consists of. Its `Packs.lua` names the same packs to the addon, which says at login which of them did not load.
 _Avoid_: voice pack (it holds none), installer, bundle
 → [Voice over](systems/voice.md) · [Voice over runbook](operations/voice.md)
+
+**Pack part**:
+One of the [[Voice pack]]s a level band is split into when it is too big for one pack: same levels, a range of quest ids (`quests = [first, last]` in `pipeline/voice-packs.toml`), named after the band's first pack with "(part N)" ("Levels 51-60 (part 2)"). The parts of a band together take every quest id. The band's first pack keeps its folder and project and holds the lower levels or the first quest ids.
+_Avoid_: sub-pack, split pack, volume, sentence part (a part of the [[Voice timing]]), zip part (a piece of the all-in-one download)
+→ [Voice over runbook](operations/voice.md#which-pack-holds-a-line) · [ADR-091](adr/091-voice-at-64-kbps-pack-parts-and-a-new-audio-store.md)
 
 **Pack key**:
 The name a voiced line goes by in a [[Voice pack]] and in `data/voice/`: `<quest id>-<field>` for a quest's offer (`description`), `progress` or turn-in (`completion`), `g-<gossip key>` for a greeting (and quest text keyed by its English), `b-<page key>` for a book or letter page. It is the audio file's name without `.mp3` (plus `_<voice id>` for a [[Voice variant]]), and keys the audio the same way the Japanese is keyed, never by position.
@@ -803,17 +808,42 @@ _Avoid_: game voice (that is the English original), AI voice, copied voice
 → [Voice over](systems/voice.md#cloned-game-voice-sets) · [Voice over runbook](operations/voice.md#cloned-game-voice-sets)
 
 **Voice variant**:
-A second file for a line that differently cast creatures say: `<pack key>_<voice id>.mp3`, same key and [[Japanese hash]]. The addon plays the file of the creature on screen, else the line's main voice.
+A second recording for a line that differently cast creatures say: `<pack key>_<voice id>.mp3` (shipped as its own [[Sentence file]]s), same key and [[Japanese hash]]. The addon plays the file of the creature on screen, else the line's main voice.
 _Avoid_: alternate take, duplicate
 → [Voice over](systems/voice.md)
 
 **Audio record**:
-`data/voice/audio.jsonl`: one row per made audio file, with the [[Japanese hash]] and voice it was made from. Committed; the CI test compares it with the shipped Japanese and the [[Casting]], so a voiced line with missing or stale audio fails the pull request.
+`data/voice/audio.jsonl`: one row per made audio file, with the [[Japanese hash]] and voice it was made from, its [[Encode]], and its [[Cut]]s and [[Voice timing]] with the fingerprint they were made from (`cuts`, `timing`, `timing_of`). Committed; the CI test compares it with the shipped Japanese and the [[Casting]], so a voiced line with missing or stale audio fails the pull request.
 _Avoid_: manifest, audio index
 → [Data model](architecture/data-model.md#voice-over-tables)
 
+**Sentence file**:
+One file of a voiced line as a [[Voice pack]] ships it: the line's recording snipped between two MP3 frames at its [[Cut]]s, `<stem>-<n>.mp3`, played one after another by the addon. The pieces played back to back are the stored recording byte for byte. A line with no cut ships as one file, its whole recording. The audio store keeps only whole recordings; the pieces are made when the packs are built (`wfj voice pack`).
+_Avoid_: clip, segment, chunk, part (a part is a piece of the [[Voice timing]]), sentence audio
+→ [Voice over](systems/voice.md#the-packs) · [ADR-090](adr/090-voice-in-sentences-with-real-timing.md)
+
+**Cut**:
+A point in a voiced line's recording, in seconds, where it is split into [[Sentence file]]s: the middle of the pause before a sentence, made only when the pause is at least 150 ms and both speech models agree the sentence before has ended and the next has not begun. Sentences with no confirmed pause between them share a file. Written by `wfj voice time` to the [[Audio record]].
+_Avoid_: split point, boundary (a sentence break with no cut is still a boundary), break
+→ [Voice over runbook](operations/voice.md#timing) · [ADR-090](adr/090-voice-in-sentences-with-real-timing.md)
+
+**Voice timing**:
+When each part of a voiced line's Japanese is spoken, as a string (`timing` in the [[Audio record]], `m` in a pack's `Register.lua`): the shipped Japanese in order as parts `n:dt`, n characters and the hundredths of a second since the previous part started, or `n:-` for what the voice never says (a stage direction it skips, a blank line). A part starts at each word a speech model found, each word-card word and each [[Player placeholder]]. Made by `wfj voice time` from two speech models; numbers only. The [[Voice panel]] turns its pages and marks what is being said from it.
+_Avoid_: timestamps, subtitles, word marks, alignment (the models' raw output)
+→ [Voice over](systems/voice.md#the-pipeline-wfj-voice) · [ADR-090](adr/090-voice-in-sentences-with-real-timing.md)
+
+**Encode**:
+The format a voice file was made in, recorded as `encode` in the [[Audio record]]: `"mp3 24000 64"`, MP3 MPEG-2 layer III, 24 kHz, 64 kbps CBR, mono (`voice_make.LAME`). A file in another encode is made again from its WAV master by `wfj voice reencode`; the CI test fails a record in another encode.
+_Avoid_: format (that is the `Register.lua` format), bit rate alone, quality
+→ [Voice over runbook](operations/voice.md#re-encoding) · [ADR-091](adr/091-voice-at-64-kbps-pack-parts-and-a-new-audio-store.md)
+
+**Audio store**:
+The whole-line voice MP3s, in the private repository `zyaga/wow-forever-japanese-voice-2`, checked out at `build/voice/` in the main checkout. It holds the current files only: the WAV masters and the release zips are the record, so when its history grows too large a fresh repository starts the same way. The first repository, `zyaga/wow-forever-japanese-voice`, is left as it is, unused: nothing writes to it any more.
+_Avoid_: audio repo history, WAV archive (the uncompressed masters, elsewhere), voice pack (built from it)
+→ [Voice over runbook](operations/voice.md#the-audio-store-and-the-pin) · [ADR-091](adr/091-voice-at-64-kbps-pack-parts-and-a-new-audio-store.md)
+
 **Audio pin**:
-`pipeline/voice-audio-commit.txt`: the commit of the voice audio repository (`zyaga/wow-forever-japanese-voice`) that goes with this repository's text. A voice run writes it; a release builds the [[Voice pack]]s from exactly that commit.
+`pipeline/voice-audio-commit.txt`: the commit of the [[Audio store]] (`zyaga/wow-forever-japanese-voice-2`) that goes with this repository's text. A voice run writes it; a release builds the [[Voice pack]]s from exactly that commit.
 _Avoid_: audio version, lock file
 → [Voice over runbook](operations/voice.md)
 
@@ -823,7 +853,7 @@ _Avoid_: system voice, default voice
 → [Voice over](systems/voice.md)
 
 **Voice panel**:
-The panel that shows a voiced line while it plays: the speaking NPC's head, their name and title as the client showed them, and the line's Japanese a sentence at a time in step with the audio, with word cards, plus pause, play again, whole text and close. With it on, a line outlives its window and the reveal key shows the line's English without stopping the voice. Panel size Off turns it off.
+The panel that shows a voiced line while it plays: the speaking NPC's head, their name and title as the client showed them, and the line's Japanese a sentence at a time, turned and marked in step with the voice from the line's [[Voice timing]] (a soft tint on the word being said), with word cards, plus pause, play again, whole text and close. Resume picks up at the sentence the line was paused in. With it on, a line outlives its window and the reveal key shows the line's English without stopping the voice. Panel size Off turns it off.
 _Avoid_: talking head (that is the client's own frame), subtitle box, player window
 → [Voice over](systems/voice.md#the-voice-panel-uivoicepanellua) · [ADR-063](adr/063-the-voice-panel.md)
 

@@ -1,7 +1,7 @@
 -- UI/VoicePanel.lua: the voice panel (ADR-063). While a voiced line plays it shows the speaker's head
 -- (UI/VoicePanelHead), the NPC's name and title as the client showed them, and the line's Japanese a sentence at a
 -- time in step with the audio, with word cards (UI/VoicePanelText); the lines waiting their turn, each one clickable;
--- and pause / resume, play again, whole text and close.
+-- and previous / next sentence, pause / resume, play again, whole text and close.
 --   * It draws only: UI/VoicePlayer decides what plays and fires State "voiceQueue" on every change; the panel reads
 --     VoicePlayer.state().
 --   * Its look is one of four (UI/VoicePanelLooks) from the Panel size and Panel style settings; Off hides it.
@@ -34,6 +34,7 @@ local WORDS = {
   upNext = { "Up next (click to play)", "次に読む（クリックで再生）" },
   more = { "Up next (click to play), %d more", "次に読む（クリックで再生）ほか%d件" },
   pause = { "Pause", "一時停止" }, resume = { "Resume", "再開" },
+  back = { "Play the sentence before", "前の文を再生" }, on = { "Play the next sentence", "次の文を再生" },
   replay = { "Play again from the start", "最初から再生" }, whole = { "Show the whole text", "全文を表示" },
   ["questframe.detail"] = { "Quest", "クエスト" }, ["questframe.progress"] = { "Progress", "途中経過" },
   ["questframe.reward"] = { "Turn-in", "完了" }, ["questframe.greeting"] = { "Greeting", "あいさつ" },
@@ -46,6 +47,8 @@ local ICON = {
   pause = "Interface\\TimeManager\\PauseButton",
   play = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up",
   replay = "Interface\\TimeManager\\ResetButton",
+  back = "Interface\\MoneyFrame\\Arrow-Left-Up", -- the client's small gold arrows (MoneyFrame); the page arrow is play
+  on = "Interface\\MoneyFrame\\Arrow-Right-Up",
   book = "Interface\\Spellbook\\Spellbook-Icon", -- the book icon of the client's book window (itemtextframe.xml)
   hilight = "Interface\\Buttons\\UI-Common-MouseHilight",
 }
@@ -85,9 +88,91 @@ end
 
 -- ── Text ─────────────────────────────────────────────────────────────────
 
+-- ── Word marks ─────────────────────────────────────────────────────────────
+-- A line whose pack carries its timing (Core/Voice format 3: every part of the shipped Japanese with the moment it is
+-- spoken) turns its pages when their first word is spoken and marks what is being said with a soft tint (not the
+-- gold of the word under the mouse). The mark takes a word card's whole word when what is said is part of one, so
+-- what lights up is what pointing at it shows; particles, endings and names light as the parts the recording has.
+-- The parts are found in the text as the window showed it, in order, so a filled-in name never shifts them.
+local MARK = { 1, 0.95, 0.8, 0.16 } -- a look without its own markColor (UI/VoicePanelLooks)
+local timed, cards, timedFor -- the displayed line's spoken parts { first, last, t } and its word-card words
+local markTex = {}
+local markOn -- the part marked now ("page:first:last"), so a frame with nothing new draws nothing
+
+local function timedWords(item, marks)
+  if timedFor == item then return timed end
+  timedFor, timed, cards = item, nil, nil
+  local shipped = type(marks) == "string" and type(item.ja) == "string" and WFJ.Lookup.get(item.kind, item.id)
+  if not (shipped and type(shipped.ja) == "string") then return nil end
+  local player = WFJ.player and WFJ.player() or {}
+  timed = Text.timedParts(item.ja, shipped.ja, marks, function(piece)
+    return (WFJ.Placeholders.expand(piece, player))
+  end)
+  if timed then cards = WFJ.Readings.lookup(item.kind, item.id, item.ja) or {} end
+  return timed
+end
+
+local function pageOf(pos)
+  for i, seg in ipairs(segs) do
+    for _, sg in ipairs(seg) do
+      if pos >= sg.from and pos <= sg.from + sg.len - 1 then return i, pos + sg.at - sg.from end
+    end
+  end
+  return nil
+end
+
+-- → the line's timed parts and how far into it the voice is, when the displayed line is the one playing and has
+-- timing
+local function lineClock()
+  if not (displayed and WFJ.VoicePlayer.playing() == displayed.key and Q.current() == displayed) then return nil end
+  local t, marks = WFJ.VoicePlayer.timing()
+  local words = t and timedWords(displayed, marks)
+  if not words then return nil end
+  return words, t
+end
+
+local markPart -- the part the mark was last drawn for: a frame where it has not changed draws nothing
+
+local function hideMark()
+  if markOn == nil and markPart == nil then return end
+  for _, t in ipairs(markTex) do t:Hide() end
+  markOn, markPart = nil, nil
+end
+
+local function drawMark()
+  local words, t = lineClock()
+  local w = words and not english and Text.spokenAt(words, t)
+  if not w then return hideMark() end
+  if w == markPart and markOn and markOn:match("^(%d+):") == tostring(pageShown) then return end
+  markPart = w
+  local uFirst, uLast = Text.unitOf(w, cards)
+  local page, first = pageOf(uFirst)
+  local lastPage, last = pageOf(uLast)
+  if page ~= pageShown or lastPage ~= page or not first or not last then return hideMark() end
+  local key = page .. ":" .. first .. ":" .. last
+  if key == markOn then return end
+  hideMark()
+  markOn = key -- set before measuring: a span the guard refuses is not asked again every frame
+  local areas = WFJ.ReadingView.spanAreas(f.text, pages[page], first, last, "voicepanel mark")
+  for i, a in ipairs(areas or {}) do
+    local tex = markTex[i]
+    if not tex then
+      tex = f:CreateTexture(nil, "BORDER")
+      markTex[i] = tex
+    end
+    local c = look().markColor or MARK
+    tex:SetColorTexture(c[1], c[2], c[3], c[4])
+    tex:ClearAllPoints()
+    tex:SetPoint("BOTTOMLEFT", f.text, "BOTTOMLEFT", a.left, a.bottom)
+    tex:SetSize(math.max(a.width, 1), math.max(a.height, 1))
+    tex:Show()
+  end
+end
+
 local function showPage(i)
   if not displayed then return end
   pageShown = i
+  hideMark()
   if revealed() then
     english = true
     return Text.showEnglish(f.text, displayed)
@@ -97,8 +182,14 @@ local function showPage(i)
   Text.showPage(f.text, displayed, page, Text.pageSpans(displayed, segs[i], page))
 end
 
--- the page the audio is on now
+-- the page the audio is on now: the page of the word spoken last when the line has times, else the estimate
 local function audioPage(st)
+  local words, t = lineClock()
+  if words then
+    local w = Text.spokenAt(words, t)
+    if not w then return 1 end
+    return pageOf(w.first) or pageShown or 1 -- a part on no page keeps the page shown
+  end
   if not (st.playing and st.startedAt and st.seconds and st.seconds > 0) then return nil end
   local share = (now() - st.startedAt) / st.seconds
   local want = 1
@@ -314,6 +405,7 @@ local function hidePanel()
 end
 
 local function onTick(self, elapsed)
+  if displayed then pcall(drawMark) end
   self.since = (self.since or 0) + elapsed
   if self.since < TICK then return end
   self.since = 0
@@ -415,6 +507,12 @@ function Panel.update()
   Head.setTalking(f.head, st.playing)
   updateQueue(st)
   f.pause:SetNormalTexture((st.paused or (st.item ~= nil and not st.playing)) and ICON.play or ICON.pause)
+  local shown = st.item or st.last -- the sentence arrows only for a line in sentences
+  local steps = shown and shown.sentences and #shown.sentences > 1 and true or false
+  f.back:SetShown(steps)
+  f.on:SetShown(steps)
+  f.pause:ClearAllPoints() -- next to the right arrow, or straight beside play again when the arrows are away
+  f.pause:SetPoint("RIGHT", steps and f.on or f.replay, "LEFT", -2, 0)
   if not fadeFrom then f:SetAlpha(baseAlpha()) end -- mid-fade, the tick owns the alpha
   applyControls()
   local was = f:IsShown()
@@ -505,12 +603,16 @@ local function build()
   f.textButton:SetPoint("RIGHT", f.close, "LEFT", -2, 0)
   f.replay = control(ICON.replay, function() return word("replay") end, function() P.replay() end)
   f.replay:SetPoint("RIGHT", f.textButton, "LEFT", -2, 0)
+  f.on = control(ICON.on, function() return word("on") end, function() P.step(1) end)
+  f.on:SetPoint("RIGHT", f.replay, "LEFT", -2, 0)
   f.pause = control(ICON.pause, function()
     local st = P.state()
     return word((st.paused or not st.playing) and "resume" or "pause")
   end, function() P.togglePause() end)
-  f.pause:SetPoint("RIGHT", f.replay, "LEFT", -2, 0)
-  f.controls = { f.pause, f.replay, f.textButton, f.close }
+  f.pause:SetPoint("RIGHT", f.on, "LEFT", -2, 0)
+  f.back = control(ICON.back, function() return word("back") end, function() P.step(-1) end)
+  f.back:SetPoint("RIGHT", f.pause, "LEFT", -2, 0)
+  f.controls = { f.back, f.pause, f.on, f.replay, f.textButton, f.close }
 
   local lockdown = Compat.resolve("InCombatLockdown") -- built mid-combat: dimmed from the start
   inCombat = type(lockdown) == "function" and lockdown() and true or false

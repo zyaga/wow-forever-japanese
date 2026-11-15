@@ -79,8 +79,38 @@ def has_changes(store: Path) -> bool:
     return ahead.returncode == 0 and ahead.stdout.strip() not in ("", "0")
 
 
+PUSH_BYTES = 1_000_000_000  # new bytes in one push, well under the 2 GB GitHub accepts in one
+
+
+def push_groups(store: Path) -> list[list[str]]:
+    """The store's changed paths in groups of at most PUSH_BYTES of new files each, in path order: a whole
+    remake is committed and pushed a group at a time, since GitHub refuses a push of 2 GB or more."""
+    out = _git(store, "status", "--porcelain", "-z", "--untracked-files=all")
+    entries = [e for e in out.split("\0") if e]
+    paths: list[str] = []
+    skip = False
+    for e in entries:
+        if skip:  # the old name of a rename
+            skip = False
+            continue
+        paths.append(e[3:])
+        skip = e[0] == "R"
+    groups: list[list[str]] = []
+    size = PUSH_BYTES
+    for path in sorted(paths):
+        f = store / path
+        n = f.stat().st_size if f.is_file() else 0
+        if size + n > PUSH_BYTES:
+            groups.append([])
+            size = 0
+        groups[-1].append(path)
+        size += n
+    return groups
+
+
 def sync(store: Path, pin: Path, message: str) -> str:
-    """Commits what changed in the store, pushes, writes the pin. → the commit."""
+    """Commits what changed in the store, pushes, writes the pin. → the commit. A large change goes up in
+    several commits, each pushed before the next (push_groups)."""
     if not (store / ".git").exists():
         raise ValueError(f"{store} is not a checkout of the voice audio repository (see the voice runbook)")
     on_branch = subprocess.run(["git", "-C", str(store), "symbolic-ref", "-q", "HEAD"], capture_output=True,
@@ -88,10 +118,14 @@ def sync(store: Path, pin: Path, message: str) -> str:
     if on_branch.returncode:
         raise ValueError(f"the audio store is not on a branch (it sits at one commit): run `git -C {store} "
                          "switch main`, then sync again")
-    if _git(store, "status", "--porcelain"):
-        _git(store, "add", "-A")
-        _git(store, "commit", "-q", "-m", message)
-    _git(store, "push", "-q", "origin", "HEAD")
+    groups = push_groups(store)
+    for k, paths in enumerate(groups, 1):
+        _git(store, "add", "-A", "--", *paths)
+        part = f" (part {k} of {len(groups)})" if len(groups) > 1 else ""
+        _git(store, "commit", "-q", "-m", message + part)
+        _git(store, "push", "-q", "origin", "HEAD")
+    if not groups:
+        _git(store, "push", "-q", "origin", "HEAD")
     sha = _git(store, "rev-parse", "HEAD").strip()
     pin.write_text(PIN_HEAD + sha + "\n", encoding="utf-8")
     return sha

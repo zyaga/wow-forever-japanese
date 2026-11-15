@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import os
 import subprocess
+from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
@@ -216,7 +217,23 @@ def test_pack_tables_name_a_mixed_creatures_two_voices_and_play_a_female_wording
     assert creatures == {2079: "m", 1992: ("f", "old")}
     assert sorted(lines["456-description"]["variants"]) == ["f", "old"]
     fkey = voice.gossip_key(hash_key(normalize_v1("Welcome, madam.")))
-    assert lines[fkey] is lines["g-0123456789abcdef"] and left_out == []
+    # the female wording plays the male wording's file; its Japanese differs, so its timing is the whole line
+    assert lines[fkey]["file"] == lines["g-0123456789abcdef"]["file"] and left_out == []
+    assert lines[fkey]["timing"] is None  # the male wording here is untimed: nothing to start from
+    assert voice_make.whole_line(6, "2:- 3:40 1:10") == "6:40"
+    assert voice_make.whole_line(6, None) is None
+
+
+def test_a_key_that_plays_another_lines_file_and_shows_its_japanese_keeps_the_timing(world, monkeypatch):
+    voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
+    audio = voice_make.audio_record(world.data)
+    rec = audio["456-description"]
+    rec.update(cuts=[], timing="3:10", timing_of=rec["fingerprint"])
+    voice_make._write(world.data / "voice" / voice_make.AUDIO, [audio[k] for k in sorted(audio)])
+    monkeypatch.setattr(voice_make, "aliases", lambda root: {"g-00000000000000aa": "456-description"})
+    lines, _, _ = voice_make.pack_tables(world.data, CFG, "all")
+    assert lines["g-00000000000000aa"]["file"] == lines["456-description"]["file"]
+    assert lines["g-00000000000000aa"]["timing"] == "3:10"  # no Japanese of its own: the source's is shown
 
 
 # ---- the commands ----------------------------------------------------------------------------------------
@@ -421,3 +438,28 @@ def test_the_coverage_page_counts_voiced_files_and_silent_lines_by_reason(world)
     page = "\n".join(coverage._render_voice({**got, "silent": {}}))
     assert "| Quest offer | 1 | 1 | 0 | 1 | 0 | 0 |" in page
     assert page.endswith("### Silent lines\n\nShipped Japanese the voice does not read, by reason.\n\nNone.")
+
+
+def test_a_local_engine_keeps_every_wav_in_the_archive_named_as_a_remote_run_names_it(tmp_path):
+    from wfj.io.qwen import line_key
+
+    class Engine:
+        entered = False
+
+        def __enter__(self):
+            self.entered = True
+            return self
+
+        def __exit__(self, *exc):
+            pass
+
+        def synthesize(self, text, ref_wav, ref_text, mode, seed=None, temperature=None):
+            return b"RIFF" + text.encode()
+
+    inner = Engine()
+    kept = voice_make.KeepWavs(inner, tmp_path / "local-2026-11-14-120000")
+    with kept as q:
+        wav = q.synthesize("よく来たな。", Path("set-copy-a.wav"), "ref", "copy", 7, 0.5)
+    name = line_key("よく来たな。", Path("set-copy-a.wav"), "copy", 7, 0.5) + ".wav"
+    assert (tmp_path / "local-2026-11-14-120000" / "wav" / name).read_bytes() == wav
+    assert inner.entered

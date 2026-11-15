@@ -372,8 +372,8 @@ def home_packs(root: Path, table: vp.Table, levels: dict[int, int]) -> dict[int,
     speakers = _rows(root / "voice" / "speakers.jsonl")
     out: dict[int, str] = {}
     for c, quests in vp.creature_quests(speakers).items():
-        found = sorted(lv for q in quests if (lv := levels.get(q)) is not None and lv >= 1)
-        bands = [vp.band(table, lv) for lv in found]
+        found = sorted((lv, q) for q in quests if (lv := levels.get(q)) is not None and lv >= 1)
+        bands = [vp.band(table, lv, q) for lv, q in found]
         out[c] = next((p.folder for p in bands if p is not table.other), table.packs[0].folder)
     for r in speakers:
         for c in (r["speaker"], *r.get("others", ())):

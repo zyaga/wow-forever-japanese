@@ -271,7 +271,24 @@ local function finished(window)
   notify()
 end
 
-local function play(path, seconds, key, window, again)
+-- ── Sentences ─────────────────────────────────────────────────────────────
+-- A line a pack ships in sentences (Core/Voice format 3, ADR-090) plays as a chain: each file starts when the one
+-- before it ends, every timer measured from the line's start so the chain never drifts. The files are the line's
+-- recording snipped between two MP3 frames in the middle of a pause, so they join back exactly, and a timer that
+-- fires a little late or early only stretches that pause. The timing is on the files' own clock (the pack build
+-- adds the MP3s' lead), so a part is heard at its time into the line.
+
+-- the line's time at which each sentence starts, and the line's length
+local function timeline(sentences)
+  local at, t = {}, 0
+  for i, c in ipairs(sentences) do
+    at[i] = t
+    t = t + c.seconds
+  end
+  return at, t
+end
+
+local function play(path, seconds, key, window, again, sentences, from)
   if playing and playing.key == key and not again then return false end
   if queueOn() then silence() else VoicePlayer.stop() end
   local playSoundFile = Compat.resolve("PlaySoundFile")
@@ -279,9 +296,16 @@ local function play(path, seconds, key, window, again)
     VoicePlayer.counts.refused = VoicePlayer.counts.refused + 1
     return false
   end
+  local at, total
+  if sentences and #sentences == 0 then sentences = nil end
+  if sentences then
+    at, total = timeline(sentences)
+    from = (from and sentences[from]) and from or 1
+    seconds = total
+  end
   muteDialog()
   ahead = nil -- the line holds the mute now
-  local willPlay, handle = playSoundFile(path, CHANNEL)
+  local willPlay, handle = playSoundFile(sentences and sentences[from].path or path, CHANNEL)
   if not willPlay then
     VoicePlayer.counts.refused = VoicePlayer.counts.refused + 1
     VoicePlayer.restoreDialog()
@@ -290,27 +314,48 @@ local function play(path, seconds, key, window, again)
   tokens = tokens + 1
   local token = tokens
   local getTime = Compat.resolve("GetTime")
-  playing = { handle = handle, key = key, token = token, window = window,
-    startedAt = type(getTime) == "function" and getTime() or 0, seconds = seconds or UNKNOWN_LENGTH }
-  last[window] = { path = path, seconds = seconds, key = key }
-  trace("start", playing, { path = path })
+  local t0 = type(getTime) == "function" and getTime() or 0
+  local offset = sentences and at[from] or 0
+  playing = { handle = handle, key = key, token = token, window = window, startedAt = t0 - offset,
+    seconds = seconds or UNKNOWN_LENGTH, sentences = sentences, at = at, sentence = from,
+    marks = sentences and sentences.marks, sentenceAt = t0 }
+  last[window] = { path = path, seconds = seconds, key = key, sentences = sentences }
+  trace("start", playing, { path = path, from = from })
   showButton(window, true)
   VoicePlayer.counts.played = VoicePlayer.counts.played + 1
   local timer = Compat.resolve("C_Timer")
   if type(timer) == "table" and type(timer.After) == "function" then
-    timer.After((seconds or UNKNOWN_LENGTH) + END_MARGIN, function()
+    timer.After((seconds or UNKNOWN_LENGTH) - offset + END_MARGIN, function()
       if playing and playing.token == token then finished(window) end
     end)
+    if sentences then
+      local startedAt = playing.startedAt
+      local function nextSentence(i)
+        if not sentences[i] then return end
+        local now = type(getTime) == "function" and getTime() or startedAt
+        timer.After(math.max(0, at[i] - (now - startedAt)), function()
+          if not (playing and playing.token == token) then return end
+          local ok, h = playSoundFile(sentences[i].path, CHANNEL)
+          if ok then playing.handle = h end
+          playing.sentence = i
+          playing.sentenceAt = type(getTime) == "function" and getTime() or playing.sentenceAt
+          nextSentence(i + 1)
+        end)
+      end
+      nextSentence(from + 1)
+    end
   end
   return true
 end
 
--- Plays the queue's head. → true when it started
+-- Plays the queue's head, from the sentence a pause stopped it at. → true when it started
 startHead = function()
   local item = Q.current()
   if not item then return false end
   Q.paused = false
-  local started = play(item.path, item.seconds, item.key, item.window, true)
+  local from = item.from
+  item.from = nil
+  local started = play(item.path, item.seconds, item.key, item.window, true, item.sentences, from)
   if started and last[item.window] then last[item.window].shown = item.shown end
   if started and item.shown then WFJ.Voice.markHeard(unpack(item.shown)) end
   if not started then -- the client refused the file: drop it and go on
@@ -334,7 +379,9 @@ end
 -- State "lineShown" listener. → true when a line started
 function VoicePlayer.onShown(surface, recKey, kind, id)
   local window = windowOf(surface)
-  local path, detail = WFJ.Voice.decide(surface, recKey, kind, id, speaker(window)) -- detail: length, or why not
+  -- detail: length, or why not
+  local path, detail, sentences = WFJ.Voice.decide(surface, recKey, kind, id, speaker(window))
+  if not path and detail == "stale" then VoicePlayer.staleNotice(sentences) end
   if not path and detail == "heard" then
     -- heard before (first time only): it stays quiet, and the window's button reads this line on a click. The same
     -- line laid out again while it plays (the gossip window lays its first window out twice) goes on.
@@ -365,7 +412,8 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
     local who = speaker(window)
     local ja, name, title, en = describe(window, surface, recKey, who)
     local item = { key = key, path = path, seconds = detail, window = window, surface = surface, kind = kind, id = id,
-      shown = { surface, recKey, kind, id }, ja = ja, en = en, name = name, title = title, speaker = who }
+      shown = { surface, recKey, kind, id }, ja = ja, en = en, name = name, title = title, speaker = who,
+      sentences = sentences }
     -- a paused line gives way to the new one: the player has moved on; lines waiting stay waiting
     if Q.paused then return takeOver(item) end
     Q.push(item)
@@ -377,7 +425,7 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
     notify()
     return false
   end
-  local started = play(path, detail, key, window)
+  local started = play(path, detail, key, window, false, sentences)
   if started then
     last[window].shown = { surface, recKey, kind, id } -- re-asked before a replay
     WFJ.Voice.markHeard(surface, recKey, kind, id)
@@ -386,15 +434,15 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
 end
 
 -- The window's last line again, as Voice.decide answers now (a setting may have switched its kind off since).
--- → path, seconds, or nil
+-- → path, seconds, sentences, or nil
 local function replayable(window)
   local line = last[window]
   if not line then return nil end
-  if not line.shown then return line.path, line.seconds end
+  if not line.shown then return line.path, line.seconds, line.sentences end
   local s = line.shown
-  local path, detail = WFJ.Voice.decide(s[1], s[2], s[3], s[4], speaker(window), true)
+  local path, detail, sentences = WFJ.Voice.decide(s[1], s[2], s[3], s[4], speaker(window), true)
   if not path then return nil end
-  return path, detail
+  return path, detail, sentences
 end
 
 -- The button's click: stop the line playing, or play the window's line again. Never while English is showing.
@@ -410,7 +458,7 @@ function VoicePlayer.toggle(window)
   if not line or not WFJ.State.enabled or WFJ.State.showsEnglish() or not WFJ.Settings.get("voice.enabled") then
     return false
   end
-  local path, seconds = replayable(window)
+  local path, seconds, sentences = replayable(window)
   if not path then return false end
   local shown = line.shown
   if queueOn() then
@@ -424,19 +472,22 @@ function VoicePlayer.toggle(window)
         ja = ja, en = en, name = name, title = title, speaker = who }
     end
     item = item or { key = line.key, window = window, shown = shown }
-    item.path, item.seconds = path, seconds
+    item.path, item.seconds, item.sentences, item.from = path, seconds, sentences, nil
     return takeOver(item)
   end
-  local started = play(path, seconds, line.key, window, true)
+  local started = play(path, seconds, line.key, window, true, sentences)
   if started then last[window].shown = shown end
   return started
 end
 
 -- ── The panel's controls (UI/VoicePanel, the key bindings) ────────────────
 
--- Stops the line and keeps it at the head; resume plays it again from the start (the client cannot resume a file).
+-- Stops the line and keeps it at the head. Resume plays it again from the start (the client cannot resume a file),
+-- or, for a line in sentences, from the sentence it was paused in.
 function VoicePlayer.pause()
-  if not Q.current() then return false end
+  local item = Q.current()
+  if not item then return false end
+  if playing and playing.key == item.key and playing.sentences then item.from = playing.sentence end
   silence()
   Q.paused = true
   VoicePlayer.restoreDialog()
@@ -478,6 +529,30 @@ function VoicePlayer.replay()
   if not item or not item.path or not stillVoiced(item) then return false end
   silence()
   Q.front(item)
+  item.from = nil -- from the start, not from the sentence a pause kept
+  return startHead()
+end
+
+-- One sentence back or on (`delta` -1 or 1) in the panel's line when it plays in sentences: plays the line from that
+-- sentence, whether it was playing, paused or had ended (back from the end is its last sentence). At either end it
+-- plays that end's sentence again. → true when it started
+function VoicePlayer.step(delta)
+  if not queueOn() or not voiceAllowed() then return false end
+  local item = Q.current() or lastItem
+  if not item or not item.sentences or #item.sentences == 0 or not stillVoiced(item) then return false end
+  local n = #item.sentences
+  local now
+  if playing and playing.key == item.key then
+    now = playing.sentence
+  elseif item == Q.current() then
+    now = item.from or 1
+  else
+    now = n + 1 -- the line ended: back is its last sentence
+  end
+  local to = math.max(1, math.min(n, now + delta))
+  silence()
+  if item ~= Q.current() then Q.front(item) end
+  item.from = to
   return startHead()
 end
 
@@ -531,7 +606,73 @@ function VoicePlayer.speaker(window) return speaker(window) end
 function VoicePlayer.titleOf(unit) return titleOf(unit) end
 function VoicePlayer.playNow(item, window)
   if queueOn() then return takeOver(item) end
-  return play(item.path, item.seconds, item.key, window, true)
+  return play(item.path, item.seconds, item.key, window, true, item.sentences)
+end
+
+-- Where the voice is in the line, in seconds, and the line's timing, for the panel. Measured from the moment the
+-- sentence playing started, plus where that sentence starts in the line (the files are cut end to end), so a timer
+-- that started a file late never carries into the next. → seconds, timing, or nil
+function VoicePlayer.timing()
+  if not (playing and playing.sentences and playing.marks) then return nil end
+  local getTime = Compat.resolve("GetTime")
+  if type(getTime) ~= "function" then return nil end
+  return playing.at[playing.sentence] + (getTime() - playing.sentenceAt), playing.marks
+end
+
+-- A voiced quest or gossip line by its pack key ("4641-description", "g-<hash>"), played through the queue with no
+-- window open, so the panel shows it (/wfj debug voice). → whether it started, and what was played or why not
+local QUEST_SURFACE = { description = "questframe.detail", progress = "questframe.progress",
+  completion = "questframe.reward" }
+function VoicePlayer.playKey(key)
+  local qid, field = tostring(key):match("^(%d+)%-(%a+)$")
+  local kind, id = "gossip", tostring(key):match("^g%-(%x+)$")
+  if qid then kind, id = "quest." .. field, tonumber(qid) end
+  local surface = qid and QUEST_SURFACE[field] or "gossip"
+  if not id or not surface then return false, "not a quest or gossip key" end
+  local recKey = qid and field or "greeting"
+  local path, seconds, sentences = WFJ.Voice.decide(surface, recKey, kind, id, nil, true)
+  if not path then return false, tostring(seconds) end
+  local shipped = WFJ.Lookup.get(kind, id)
+  local ja = WFJ.Placeholders.expand(shipped and shipped.ja or "", WFJ.player and WFJ.player() or {})
+  local title = qid and WFJ.Lookup.get("quest.title", id)
+  local item = { key = key, path = path, seconds = seconds, sentences = sentences, window = "QuestFrame",
+    surface = surface, kind = kind, id = id, ja = ja, name = title and title.ja or key,
+    shown = { surface, recKey, kind, id } }
+  return VoicePlayer.playNow(item, "QuestFrame"), sentences and (#sentences .. " sentence files") or "whole file"
+end
+
+-- ── Notices ──────────────────────────────────────────────────────────────
+-- Once per session each: the packs built in an older format than this addon reads best, named with their versions,
+-- and the packs the voice entry installs that did not load (at login), and a pack whose audio is older than a line's
+-- Japanese (the first time one of its lines stays quiet).
+-- Every pack and version also goes to the addon's log, which a bug report carries.
+local noticed = {}
+local function notice(text)
+  if noticed[text] then return end
+  noticed[text] = true
+  local say = Compat.resolve("print")
+  if type(say) == "function" then say(text) end
+end
+
+function VoicePlayer.announcePacks()
+  local list = WFJ.Voice.packList()
+  if #list > 0 and WFJ.Diag then pcall(WFJ.Diag.log, "voicepacks", table.concat(list, " · ")) end
+  local old = WFJ.Voice.outdated()
+  if #old > 0 then
+    notice(("WFJ: these voice packs are out of date: %s. Update all in the CurseForge app."):format(
+      table.concat(old, ", ")))
+  end
+  local missing = WFJ.Voice.missing()
+  if #missing > 0 and WFJ.Voice.hasPack() and WFJ.Settings.get("voice.enabled") then
+    notice(("WFJ: these voice packs did not load: %s. Install them with Update all in the CurseForge app,"
+      .. " or turn them on in the AddOn List."):format(table.concat(missing, ", ")))
+  end
+end
+
+function VoicePlayer.staleNotice(folder)
+  if type(folder) ~= "string" then return end
+  notice(("WFJ: the voice pack %s is older than this line's Japanese, so the line stays quiet."
+    .. " Update all in the CurseForge app."):format(WFJ.Voice.packName(folder)))
 end
 
 -- → the window's button, or nil (for /wfj debug and the specs)

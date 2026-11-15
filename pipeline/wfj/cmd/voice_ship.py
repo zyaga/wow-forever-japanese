@@ -35,6 +35,7 @@ from pathlib import Path
 from typing import Any
 
 from wfj.cmd import voice_make, voice_store
+from wfj.core import mp3_frames, voice_timing
 from wfj.core import voice_packs as vp
 from wfj.core.voice_packs import Project, Table
 from wfj.emit import voice_pack
@@ -54,6 +55,9 @@ class Pack:
     creatures: dict[int, Any] = field(default_factory=dict)
     errors: dict[str, Any] = field(default_factory=dict)
     files: list[str] = field(default_factory=list)
+    # each recorded file → its pieces as shipped [(name, seconds)], and the cuts they were snipped at
+    pieces: dict[str, list[tuple[str, float]]] = field(default_factory=dict)
+    cuts: dict[str, list[float]] = field(default_factory=dict)
     size: int = 0
     register: str = ""
     digest: str = ""
@@ -77,6 +81,36 @@ def quest_levels(cache: Path | None, db: Path | None) -> dict[int, int]:
     return levels
 
 
+def pieces_of(store: Path | None, file: str, cuts: Sequence[float],
+              seconds: float) -> list[tuple[str, float]]:
+    """A recorded file as shipped: snipped at its cuts into `<stem>-<n>.mp3` (ADR-090), or whole when it has
+    no cut."""
+    if not cuts:
+        return [(file, seconds)]
+    stem = file.removesuffix(".mp3")
+    if store is None:
+        raise ValueError(f"{file}: cut into sentences, but no audio store to snip it from")
+    got = mp3_frames.split(voice_make.audio_file(store, stem).read_bytes(), cuts)
+    if len(got) == 1:
+        return [(file, round(got[0][1], 3))]
+    return [(f"{stem}-{n}.mp3", round(s, 3)) for n, (_, s) in enumerate(got, 1)]
+
+
+def lead_of(store: Path | None, file: str) -> float:
+    """The seconds a recorded file runs behind its recording, read from its first frame; without a store,
+    the lead of the current encode."""
+    if store is None:
+        return mp3_frames.LEAD[voice_make.RATE]
+    with voice_make.audio_file(store, file.removesuffix(".mp3")).open("rb") as f:
+        return mp3_frames.lead(f.read(4))
+
+
+def ship_of(pack: Pack) -> list[str]:
+    """The Sound files a pack ships: its lines' pieces and the character's error lines."""
+    return sorted({f for ps in pack.pieces.values() for f, _ in ps}
+                  | {f for v in pack.errors.get("voices", {}).values() for f, _ in v.values()})
+
+
 def split(
     root: Path,
     cfg: Mapping[str, Any],
@@ -84,9 +118,11 @@ def split(
     levels: Mapping[int, int],
     interface: str,
     players: Sequence[tuple[str, str]] = (),
+    store: Path | None = None,
 ) -> tuple[list[Pack], list[str]]:
     """(every pack in table order, the files left out as not in step). A key that shows another line's audio
-    (a female wording, a repeated quest's text) goes where that line goes: its file is in that pack."""
+    (a female wording, a repeated quest's text) goes where that line goes: its file is in that pack. A file
+    cut into sentences is snipped from `store` to learn its pieces' lengths."""
     lines, creatures, left_out = voice_make.pack_tables(root, dict(cfg), "all")
     errors = voice_make.error_table(root, dict(cfg), players)
     speakers = {r["key"]: r for r in voice_make.scoped_rows(root, "all")}
@@ -108,13 +144,25 @@ def split(
                     pack.creatures[c] = creatures[c]
         pack.files = sorted(
             {e["file"] for e in pack.lines.values()}
-            | {f for e in pack.lines.values() for f, _ in e["variants"].values()}
+            | {v[0] for e in pack.lines.values() for v in e["variants"].values()}
             | {f for v in pack.errors.get("voices", {}).values() for f, _ in v.values()}
         )
         unrecorded = [f for f in pack.files if f.removesuffix(".mp3") not in audio]
         if unrecorded:
             raise ValueError(f"{pack.project.folder}: {len(unrecorded)} file(s) not in the audio record, "
                              f"e.g. {unrecorded[:3]}: run `wfj voice plan`, then make voice-generate")
+        for entry in pack.lines.values():
+            files = [(entry["file"], entry["seconds"], entry["cuts"]),
+                     *[(f, sec, cuts) for f, sec, cuts, _ in entry["variants"].values()]]
+            for f, seconds, cuts in files:
+                if f not in pack.pieces:
+                    pack.pieces[f], pack.cuts[f] = pieces_of(store, f, cuts, seconds), list(cuts)
+            # the timing is measured on the recording; the shipped files run the MP3s' lead behind it
+            entry["s"] = pack.pieces[entry["file"]]
+            t0 = entry["timing"]
+            entry["m"] = t0 and voice_timing.delay(t0, lead_of(store, entry["file"]))
+            entry["vs"] = {v: (pack.pieces[f], t and voice_timing.delay(t, lead_of(store, f)))
+                           for v, (f, _, _, t) in entry["variants"].items()}
         pack.size = sum(int(audio[f.removesuffix(".mp3")]["bytes"]) for f in pack.files)
         pack.register = voice_pack.register_text(
             pack.lines, pack.creatures, pack.errors, pack.project.folder
@@ -220,7 +268,14 @@ def write(
             voice_pack.readme_text(credits, len(p.lines), pr.title, pr.holds), encoding="utf-8"
         )
         for f in p.files:
-            _place(voice_make.audio_file(store, f.removesuffix(".mp3")), dest / "Sound" / f)
+            src = voice_make.audio_file(store, f.removesuffix(".mp3"))
+            pieces = p.pieces.get(f, [(f, 0.0)])
+            if [n for n, _ in pieces] == [f]:
+                _place(src, dest / "Sound" / f)
+                continue
+            snipped = mp3_frames.split(src.read_bytes(), p.cuts[f])
+            for (name, _), (data, _) in zip(pieces, snipped, strict=True):
+                (dest / "Sound" / name).write_bytes(data)
     e, dest = table.entry, out / table.entry.folder
     dest.mkdir()
     (dest / f"{e.folder}.toc").write_text(
@@ -229,14 +284,19 @@ def write(
     (dest / "README.txt").write_text(
         voice_pack.entry_readme_text(e.title, [(p.title, p.holds) for p in table.packs]), encoding="utf-8"
     )
+    (dest / "Packs.lua").write_text(voice_pack.entry_packs_text([p.folder for p in table.packs]),
+                                    encoding="utf-8")
 
 
 def check_zip(path: Path, folder: str, files: Sequence[str] | None) -> list[str]:
     """What is wrong with one zip: anything but the folder's TOC, README and (for a pack) Register.lua and its
-    recorded Sound files; a recorded file missing. `files` None: the entry, which holds no audio."""
+    recorded Sound files; a recorded file missing. `files` None: the entry, which holds no audio and lists its
+    packs in Packs.lua."""
     want = {f"{folder}/{folder}.toc", f"{folder}/README.txt"}
     if files is not None:
         want |= {f"{folder}/Register.lua"} | {f"{folder}/Sound/{f}" for f in files}
+    else:
+        want.add(f"{folder}/Packs.lua")
     with zipfile.ZipFile(path) as z:
         have = {n for n in z.namelist() if not n.endswith("/")}
     problems = [f"{path.name}: holds {n}, which is not in the record" for n in sorted(have - want)]
@@ -393,7 +453,8 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
     today."""
     root, cfg, table, levels, interface = _inputs(a)
     players = voice_make.players_of(a.players)
-    packs, left_out = split(root, cfg, table, levels, interface, players)
+    store = voice_make.store_dir(a.store)
+    packs, left_out = split(root, cfg, table, levels, interface, players, store if store.is_dir() else None)
     rows, over = size_table(table, packs)
     print("\n".join(f"voice pack: {r}" for r in rows))
     if left_out:
@@ -406,7 +467,6 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
             file=sys.stderr,
         )
         return None
-    store = voice_make.store_dir(a.store)
     if not store.is_dir():
         print(f"voice pack: no audio store at {store} (docs/operations/voice.md); nothing written",
               file=sys.stderr)
@@ -455,8 +515,9 @@ def zip_release(
     packs: Sequence[Pack],
     versions: Mapping[str, str],
     day: datetime.date,
-) -> tuple[dict[str, Path], Path] | None:
-    """Every folder's zip, checked, and the zip of everything. None (problems printed) when a zip fails."""
+) -> tuple[dict[str, Path], list[Path]] | None:
+    """Every folder's zip, checked, and the zips of everything (bundle_parts). None (problems printed) when a
+    zip fails."""
     if dist.exists():
         shutil.rmtree(dist)
     dist.mkdir(parents=True)
@@ -465,7 +526,7 @@ def zip_release(
     for p in packs:
         z = dist / vp.asset_name(p.project.folder, versions[p.project.folder])
         zip_folders(out, [p.project.folder], z)
-        problems += check_zip(z, p.project.folder, p.files)
+        problems += check_zip(z, p.project.folder, ship_of(p))
         zips[p.project.folder] = z
     e = table.entry
     zips[e.folder] = dist / vp.asset_name(e.folder, versions[e.folder])
@@ -474,9 +535,28 @@ def zip_release(
     if problems:
         print("\n".join(f"voice release: {x}" for x in problems), file=sys.stderr)
         return None
-    bundle = dist / f"{e.folder}-all-{day:%Y.%m.%d}.zip"
-    zip_folders(out, [e.folder, *(p.project.folder for p in packs)], bundle)
-    return zips, bundle
+    return zips, bundle_parts(out, dist, [e.folder, *(p.project.folder for p in packs)], zips, e.folder, day)
+
+
+def bundle_parts(out: Path, dist: Path, folders: Sequence[str], zips: Mapping[str, Path], entry: str,
+                 day: datetime.date) -> list[Path]:
+    """Every folder in zips of whole folders, each under BUNDLE_LIMIT (GitHub refuses an asset of 2 GiB):
+    `<entry>-all-<date>.zip` when one holds them all, else numbered `-part1.zip`, `-part2.zip` ..."""
+    groups: list[list[str]] = [[]]
+    size = 0
+    for f in folders:
+        n = zips[f].stat().st_size
+        if groups[-1] and size + n > BUNDLE_LIMIT:
+            groups.append([])
+            size = 0
+        groups[-1].append(f)
+        size += n
+    stem = f"{entry}-all-{day:%Y.%m.%d}"
+    parts = [dist / (f"{stem}.zip" if len(groups) == 1 else f"{stem}-part{k}.zip")
+             for k in range(1, len(groups) + 1)]
+    for group, dest in zip(groups, parts, strict=True):
+        zip_folders(out, group, dest)
+    return parts
 
 
 def _only(plan: Plan, table: Table, only: str | None) -> None:
@@ -570,6 +650,7 @@ def check_pin(store: Path, pin: Path) -> None:
 
 
 GH_ASSET_LIMIT = 2 * 1024**3  # bytes: GitHub refuses a release asset of 2 GiB or more
+BUNDLE_LIMIT = 1_900_000_000  # bytes in one part of the all-in-one download, well under GH_ASSET_LIMIT
 
 
 @dataclass
@@ -582,7 +663,7 @@ class Release:
     plan: Plan
     versions: dict[str, str]
     zips: dict[str, Path]
-    bundle: Path
+    bundles: list[Path]
     out: Path
     dist: Path
     day: datetime.date
@@ -621,7 +702,7 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     zipped = zip_release(out, dist, table, packs, versions, day)
     if zipped is None:
         return 1
-    zips, bundle = zipped
+    zips, bundles = zipped
     _only(plan, table, a.only)
     entry_partial = _entry_on_draft(plan, table, state, versions, zips, dist)
     if state.draft and not plan.upload and not plan.no_project and _draft_holds_nothing_new(state):
@@ -635,17 +716,18 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     print(f"voice release: last voice release {state.published or 'none'}; this one {tag} ({rtype})"
           + (" (resuming its draft)" if state.draft else ""))
     _print_plan(plan, zips, versions)
-    r = Release(a, run, table, plan, versions, zips, bundle, out, dist, day, rtype, state, tag,
+    r = Release(a, run, table, plan, versions, zips, bundles, out, dist, day, rtype, state, tag,
                 inputs_fingerprint(data_root().parent))
     if not plan.upload and not plan.no_project and not state.draft:
         return _nothing_changed(r)
     if a.curseforge_only:
         print("voice release: CurseForge only; no GitHub release")
     else:
-        big = [z.name for z in (*zips.values(), bundle) if z.stat().st_size >= GH_ASSET_LIMIT]
+        big = [z.name for z in (*zips.values(), *bundles) if z.stat().st_size >= GH_ASSET_LIMIT]
         if big:
             raise ValueError(f"{', '.join(big)} reach GitHub's 2 GiB asset limit; nothing uploaded")
-        print(f"voice release: GitHub release {tag}: {len(zips)} zips and {bundle.name}")
+        names = ", ".join(b.name for b in bundles)
+        print(f"voice release: GitHub release {tag}: {len(zips)} zips and {names}")
     if a.dry_run:
         print("voice release: dry run; nothing uploaded")
         return 0
@@ -737,10 +819,10 @@ def _upload_changed(r: Release, notes: Path) -> bool | None:
 
 
 def _publish(r: Release, notes: Path, partial: bool) -> None:
-    """Every zip and the bundle onto the draft, stale draft assets removed, the draft published. The inputs
-    are recorded only when the entry went up whole, so a partial one is tried again by the next release (a
-    pack with no project yet needs no such help: giving it one edits voice-packs.toml, a voice input)."""
-    final = [*r.zips.values(), r.bundle]
+    """Every zip and the all-in-one parts onto the draft, stale draft assets removed, the draft published. The
+    inputs are recorded only when the entry went up whole, so a partial one is tried again by the next release
+    (a pack with no project yet needs no such help: giving it one edits voice-packs.toml, a voice input)."""
+    final = [*r.zips.values(), *r.bundles]
     if partial:
         print("voice release: the entry went up without some packs; the next release tries them again")
     else:
@@ -825,7 +907,8 @@ def _notes(table: Table, versions: Mapping[str, str], plan: Plan) -> str:
     return "\n".join([
         "Japanese voice for WoW Forever Japanese. Install the addon first.",
         "",
-        "By hand: download the zip whose name ends in -all-, and unzip it into Interface/AddOns.",
+        "By hand: download every zip whose name has -all- in it (one, or several parts), and unzip each into "
+        "Interface/AddOns.",
         "",
         *rows,
         "",

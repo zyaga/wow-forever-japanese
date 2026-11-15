@@ -17,6 +17,7 @@
 --   /wfj debug ui scan        English still showing on visible frames: "hook?" = the dictionary knows it, "key?" = not
 --   /wfj debug fonts          the refused-font retry: timer state, one pending widget, then a retry now
 --   /wfj debug intro [novoice] open the first-install window (novoice: drawn as with no voice pack loaded)
+--   /wfj debug voice <key>    play a voiced quest or gossip line by its pack key (4641-description) in the panel
 --   (plain /wfj debug also prints the voice packs' counts: lines, matched, missing, stale, played, refused,
 --   and the lines of each pack)
 --   /wfj version              the addon, normalization and Lua versions
@@ -284,6 +285,10 @@ end
 function Slash.debug(sub, arg)
   if sub == "fonts" then return debugFonts() end
   if sub == "intro" then return WFJ.IntroWindow.open(arg ~= nil and arg:lower() == "novoice") end
+  if sub == "voice" and arg then
+    local ok, what = WFJ.VoicePlayer.playKey(arg)
+    return say("voice %s: %s", arg, ok and ("playing, " .. what) or ("not played (" .. tostring(what) .. ")"))
+  end
   if sub == "tooltip" then return debugTooltip(arg) end
   if sub == "hash" then return debugHash() end
   if sub == "quest" or sub == "item" or sub == "spell" then return debugRow(sub, arg) end
@@ -311,10 +316,7 @@ function Slash.debug(sub, arg)
     local c = V.counts
     say("voice: %d lines (%d invalid) · matched %d · missing %d · stale %d · played %d · refused %d",
       c.registered, c.invalid, c.matched, c.missing, c.stale, P and P.counts.played or 0, P and P.counts.refused or 0)
-    local list = {}
-    for folder, n in pairs(V.packs()) do list[#list + 1] = ("%s=%d"):format(folder, n) end
-    table.sort(list)
-    say("voice packs: %s", table.concat(list, " · "))
+    say("voice packs: %s", table.concat(V.packList(), " · "))
     if WFJ.VoicePanel and WFJ.VoiceQueue then
       local st = WFJ.VoicePlayer.state()
       say("voice panel: look %d · %d waiting · playing %s · paused %s", WFJ.VoiceQueue.opt.look, #st.waiting,
