@@ -10,7 +10,6 @@ WFJ.Data.add("english", {
   ["gossip:4d16eb50708d21a6"] = { text = "again=4 any=10 come=12 could=13 direction=11 guards=1 he=8 must=7 posts=2 protected=9 they=3" },
   ["gossip:4d193aae0ab6c2c3"] = { text = "alchemical=4 know=6 rare=3 recipe=5 teach=7 well=1" },
   ["gossip:4d1b277577e5b348"] = { text = "enchant=3 torch=2" },
-  ["gossip:4d1e99b4b35a5e3a"] = { text = "free=1" },
   ["gossip:4d2c77e6cf39ee31"] = { text = "body=1 importance=3 strength=2 understand=4" },
   ["gossip:4d2f86d3857825b6"] = { text = "about=11 after=15 ahoy=1 and=20 bottom=6 canals=16 cargo=9 crew=7 debris=18 ends=22 festival=14 like=13 passengers=10 picture=3 pretty=2 sea=5 shambles=8 strewn=12 trouble=21" },
   ["gossip:4d3b5e4cab776fc7"] = { text = "berries=1 pick=2" },

@@ -12,7 +12,6 @@ WFJ.Data.add("english", {
   ["gossip:402213ef32732bb4"] = { text = "explodes=1 releases=3 several=2" },
   ["gossip:4022153c3b442371"] = { text = "fossil=4 help=7 mysterious=3 tells=1 this=2 wants=5" },
   ["gossip:4023e50656d26e1d"] = { text = "blade=4 cleansed=18 control=9 hold=5 impure=13 my=2 purged=15 soldiers=7 taint=17 take=11 their=16 you=1 yours=8" },
-  ["gossip:4031b475cbf1fe9e"] = { text = "help=2" },
   ["gossip:40331f17ae98f7ae"] = { text = "but=4 buy=13 cologne=14 looking=6 lots=8 love=5 my=10 no=1 others=7 pass=18 perfume=15 put=16 should=19 tokens=12" },
   ["gossip:4039189e338975dc"] = { text = "fight=2 regret=3 this=1" },
   ["gossip:4043beab63369b8a"] = { text = "former=1 glory=2 see=3 timidness=5" },

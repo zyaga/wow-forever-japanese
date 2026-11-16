@@ -12,7 +12,6 @@ WFJ.Data.add("english", {
   ["gossip:b827703d22c0a3e9"] = { text = "adventures=28 always=14 bright=11 doubt=25 dusty=19 duty=8 elder=5 eyed=10 free=35 good=15 hello=1 here=4 homeland=6 however=17 i=3 later=34 mage=21 many=29 more=32 old=20 ready=9 see=13 service=7 speak=33 stop=36 this=18 you=26 young=2" },
   ["gossip:b83109cf91ed24d5"] = { text = "careful=2 delicate=5 one=1 very=4" },
   ["gossip:b841c06693faf531"] = { text = "answer=10 carefully=9 depend=13 i=5 life=12 lot=4 made=6 may=14 store=1 things=3 think=8 what=7" },
-  ["gossip:b843e1d6bdc7047e"] = { text = "yourself=1" },
   ["gossip:b85337a2dea3e796"] = { text = "again=3 hey=1 make=2 teach=4" },
   ["gossip:b85da36d6a4716e9"] = { text = "follow=2 hey=1" },
   ["gossip:b86073e4fa484a6b"] = { text = "barely=4 consciousness=5 holding=6 severely=1 wounded=3" },
