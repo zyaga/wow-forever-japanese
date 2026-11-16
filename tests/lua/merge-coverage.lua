@@ -1,11 +1,12 @@
 -- Adds up luacov stats files, one per test process, into one, the way luacov adds a run to a file it finds.
---   lua tests/lua/merge-coverage.lua <out> <stats file>...
+--   lua tests/lua/merge-coverage.lua <out> < <stats files, one path per line>
+-- The paths come on standard input so the list is never split across two runs that would each write <out>.
 local stats = require("luacov.stats")
 
-local out = assert(arg[1], "usage: merge-coverage.lua <out> <stats file>...")
+local out = assert(arg[1], "usage: merge-coverage.lua <out> < <stats files, one per line>")
 local total = {}
-for i = 2, #arg do
-  for name, file in pairs(stats.load(arg[i]) or {}) do
+for path in io.lines() do
+  for name, file in pairs(stats.load(path) or {}) do
     local into = total[name]
     if not into then
       total[name] = file

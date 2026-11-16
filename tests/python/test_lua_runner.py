@@ -106,7 +106,8 @@ def test_the_stats_of_each_file_are_added_up_into_one(root: Path, tmp_path: Path
     (tmp_path / "b.stats").write_text("4:x.lua\n1 1 0 7 \n", encoding="utf-8")
     (tmp_path / "empty.stats").write_text("", encoding="utf-8")
     out = tmp_path / "all.stats"
-    r = subprocess.run([lua, MERGE, str(out), *(str(tmp_path / n) for n in ("a.stats", "b.stats", "empty.stats"))],
-                       cwd=root, env=_env(), capture_output=True, text=True, check=False)
+    paths = "".join(f"{tmp_path / n}\n" for n in ("a.stats", "b.stats", "empty.stats"))
+    r = subprocess.run([lua, MERGE, str(out)], input=paths, cwd=root, env=_env(), capture_output=True, text=True,
+                       check=False)
     assert r.returncode == 0, r.stdout + r.stderr
     assert out.read_text(encoding="utf-8") == "4:x.lua\n2 1 2 7 \n2:y.lua\n0 5 \n"

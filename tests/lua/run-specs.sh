@@ -45,7 +45,12 @@ if [ ! -s "$list" ]; then
 fi
 
 start=$(date +%s)
-xargs -P "$JOBS" -n 1 sh "$0" --one < "$list"
+# Each file's process exits 0 and leaves its result in its .rc, so a non-zero xargs means the run itself broke
+# off: files it never started would be read from an earlier run's output.
+if ! xargs -P "$JOBS" -n 1 sh "$0" --one < "$list"; then
+  echo "run-specs: the run broke off before every file had run"
+  exit 1
+fi
 
 esc=$(printf '\033')
 files=0 ok=0 failed=0 errors=0 pending=0 bad=0
@@ -77,5 +82,5 @@ echo "lua tests: $files files, $ok successes, $failed failures, $errors errors, 
 [ "$bad" -eq 0 ] || exit 1
 
 if [ "$COVERAGE" = 1 ]; then
-  sed "s#/#_#g; s#^#$OUT/#; s#\$#.stats#" "$list" | xargs "$LUA" "$(dirname "$0")/merge-coverage.lua" luacov.stats.out
+  sed "s#/#_#g; s#^#$OUT/#; s#\$#.stats#" "$list" | "$LUA" "$(dirname "$0")/merge-coverage.lua" luacov.stats.out
 fi

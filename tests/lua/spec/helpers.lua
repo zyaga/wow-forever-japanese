@@ -6,7 +6,8 @@ H.ADDON_DIR = ROOT .. "/addon/WoWForeverJapanese"
 
 -- Under `make coverage-lua` the generated data is loaded with the coverage hook off: it is not code under
 -- test, and luacov's hook runs on every line of its tables even while luacov is paused (pausing only stops
--- saving), which makes a whole-addon load many times slower. The hook is put back as luacov sets it.
+-- saving), which makes a whole-addon load many times slower. The hook is put back as luacov sets it. The
+-- `Data.add` calls the shards make go uncounted with it; specs that call `Data.add` themselves count it.
 local function run(relpath, chunk, addonName, ns)
   local runner = package.loaded["luacov.runner"]
   if not (runner and runner.debug_hook and relpath:find("^Data/")) then
