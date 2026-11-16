@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("gossip", {
   ["ff00b65dab470201"] = { "買い物がしたい。", "." },
+  ["ff0544773cea5058"] = { "Krol'dok Stronghold", "." },
   ["ff05591d594254a9"] = { "ごきげんよう、{class}。東のThe Bulwarkへ向かう際は用心しろ。最近の偵察報告では、その一帯でScourgeの活動が活発になっているとのことだ。慎重に行動しろ。", "." },
   ["ff09f93da2768327"] = { "キスして。", "." },
   ["ff0ee181a9ec2557"] = { "Elder Windtotemはどこにいる?", "." },
