@@ -23,6 +23,9 @@ an old setting stops working). A release moves those lines under its version num
 - A bug report now lists your voice packs with their versions.
 - The voice panel no longer goes faint in combat (the "Dim the panel in combat" setting is gone), and a paused line stays on screen, whole, on the sentence you paused in, until you play it or close it.
 
+### Fixed
+- Battleground announcements in chat are in Japanese: bases taken and assaulted in Arathi Basin, flag captures in Warsong Gulch, and Alterac Valley's mines and towers. A player named in the line keeps their name as the game wrote it. The "[You died.]" link in chat is Japanese in battlegrounds too.
+
 ## 0.13.1 - 2026-11-14
 
 ### Changed

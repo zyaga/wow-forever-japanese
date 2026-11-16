@@ -38,7 +38,8 @@ TaintWatch.SCAN_ROOTS = { "StanceBar", "PetActionBar", "MainActionBar", "MultiBa
   "MultiBarLeft", "MultiBarRight", "MultiBar5", "MultiBar6", "MultiBar7", "EditModeManagerFrame",
   "MainStatusTrackingBarContainer", "SecondaryStatusTrackingBarContainer", "MicroButtonAndBagsBar",
   "ObjectiveTrackerFrame", "GameTooltip", "PlayerSpellsFrame", "QuestMapFrame", "WorldMapFrame", "QuestCache",
-  "QuestScrollFrame", "ContainerFrameCombinedBags", "MerchantFrame", "BankFrame", "StackSplitFrame" }
+  "QuestScrollFrame", "ContainerFrameCombinedBags", "MerchantFrame", "BankFrame", "StackSplitFrame",
+  "GossipFrame", "PlayerInteractionFrameManager", "UIPanelWindows", "DUIQuestFrame" }
 -- the bags: a bag item's click reads its button's fields (ContainerFrame<n>.Items[i].bagID,
 -- mainline/containerframe.lua:1845-1847) before it uses the item, so a tainted button field makes the use a forbidden
 -- call
@@ -388,9 +389,24 @@ local function hook(t, method, fn)
   return true
 end
 
+-- The merchant window's OnShow sets its tab (PanelTemplates_SetTab(MerchantFrame, 1), mainline/merchantframe.lua:154)
+-- and then opens every bag; a bag item's click reads that tab before it uses the item (containerframe.lua:1544-1546).
+-- A tab written tainted means the whole OnShow ran tainted: its stack and one scan (the talk window it often opens
+-- from, the panel manager) name what carried the taint in.
+local scannedMerchant = false
+local function onSetTab(frame)
+  local merchant = C.resolve("MerchantFrame")
+  if frame == nil or frame ~= merchant then return end
+  if not TaintWatch.wrote("MerchantFrame.selectedTab", frame, "selectedTab") then return end
+  if scannedMerchant or inCombat() then return end
+  scannedMerchant = true
+  TaintWatch.scan("merchant tab written tainted")
+end
+
 -- The writers of FIELDS. → the number of hooks placed
 local function hookWriters()
   local n = 0
+  if hook(nil, "PanelTemplates_SetTab", onSetTab) then n = n + 1 end
   for _, name in ipairs(TaintWatch.BARS) do
     local bar = C.resolve(name)
     if hook(bar, "SetShowGrid", function(self) TaintWatch.wrote(name .. ".showAllButtons", self, "showAllButtons") end)

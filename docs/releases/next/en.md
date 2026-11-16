@@ -3,4 +3,5 @@
 - **A clearer voice: update all your voice packs once.** The files now keep the voices' high end, and each line comes as one file per sentence. The download is about twice as big (about 2.8 GB), with three new packs. Use Update All in the CurseForge app.
 - **Saved words speak.** When you show the answer, the study card says the word's whole sentence in the NPC's voice, and the word list can add those recordings to your Anki export.
 - **The addon tells you about your voice packs.** At login it names any voice pack that is out of date or did not load, and a bug report lists your packs with their versions.
+- **Battleground announcements in Japanese**: bases taken and assaulted in Arathi Basin, flag captures in Warsong Gulch, and Alterac Valley's mines and towers, with player names as the game writes them. The "[You died.]" link is Japanese there too.
 - **Stage directions the voice skips stay off the voice panel**, so what you read matches what you hear.

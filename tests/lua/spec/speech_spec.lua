@@ -9,6 +9,7 @@ local UI = {
   CHAT_MONSTER_SAY_GET = { "%s says: ", "%sの発言: " },
   CHAT_MONSTER_YELL_GET = { "%s yells: ", "%sの叫び: " },
   CHAT_SAY_GET = { "%s says: ", "%sの発言: " },
+  ERR_GROUP_FULL = { "Your party is full.", "パーティーがいっぱいです。" },
 }
 local GOSSIP = {
   ["Stay close, {name}!"] = { "離れるな、{name}！", "." },
@@ -18,6 +19,12 @@ local GOSSIP = {
   ["I can make it from here.  Thanks, {name}!"] = { "ここからは一人で行ける。ありがとう、{name}！", "." },
   ["Hail, {name}!"] = { "{class}の{name}よ！", "." }, -- a token another player's name cannot fill
   ["Good work, {name}."] = { "<sir/madam>、{name}。", "." }, -- a pair that follows the named player's sex
+  -- battleground announcements (VMaNGOS broadcast text, CHAT_MSG_BG_SYSTEM_*)
+  ["The Horde has taken the blacksmith!"] = { "Hordeが鍛冶屋を占領した！", "." },
+  ["{name} has assaulted the mine!"] = { "{name}が鉱山を襲撃した！", "." },
+  ["The flag was dropped by {name}!"] = { "{name}が旗を落とした！", "." },
+  ["{name} has defended the farm!"] = { "{name}が農場を守った！", "s" }, -- stale
+  ["Your party is full."] = { "ゴシップの訳。", "." }, -- also a UI string: the UI string wins
 }
 -- The gossip key stands in for Main's hash: an opaque string, never the English itself.
 local KEY, keys = {}, 0
@@ -41,6 +48,7 @@ local function format(...) return string.format(...) end
 local NAMES = { "CHAT_FRAMES", "ChatTypeInfo", "ChatFrame1", "FCF_OpenTemporaryWindow", "issecretvalue",
   "RaidWarningFrame", "C_ChatBubbles" }
 local SAY, YELL, EMOTE, BOSS, PLAYER_SAY = 11, 12, 13, 14, 1
+local BG_NEUTRAL, BG_ALLIANCE, BG_HORDE, SYSTEM = 21, 22, 23, 99
 
 local clock = 0
 local function chatFrame()
@@ -87,8 +95,10 @@ local secrets = {}
 local bubbles = {}
 local function install()
   _G.format = _G.format or string.format -- WoW's global
-  _G.ChatTypeInfo = { SYSTEM = { id = 99 }, SAY = { id = PLAYER_SAY }, MONSTER_SAY = { id = SAY },
-    MONSTER_YELL = { id = YELL }, MONSTER_EMOTE = { id = EMOTE }, RAID_BOSS_EMOTE = { id = BOSS } }
+  _G.ChatTypeInfo = { SYSTEM = { id = SYSTEM }, SAY = { id = PLAYER_SAY }, MONSTER_SAY = { id = SAY },
+    MONSTER_YELL = { id = YELL }, MONSTER_EMOTE = { id = EMOTE }, RAID_BOSS_EMOTE = { id = BOSS },
+    BG_SYSTEM_NEUTRAL = { id = BG_NEUTRAL }, BG_SYSTEM_ALLIANCE = { id = BG_ALLIANCE },
+    BG_SYSTEM_HORDE = { id = BG_HORDE } }
   _G.ChatFrame1 = chatFrame()
   _G.CHAT_FRAMES = { "ChatFrame1" }
   _G.issecretvalue = function(v) return secrets[v] == true end
@@ -664,6 +674,82 @@ describe("NPC speech", function()
       npc(f, SAY, "%s says: ", "I can make it from here.  Thanks, Testplayer!", SPEAKER, GUID, "Testplayer")
       assert.are.equal("\"Stinky\" Ignatzの発言: ここからは一人で行ける。ありがとう、Testplayer！", f:Last())
       assert.is_nil(traced().other)
+    end)
+  end)
+  -- A battleground announcement is a plain chat line, AddMessage(arg1, r, g, b, info.id)
+  -- (chatframeoverrides.lua:423), its English a broadcast text line shipped with the NPC lines.
+  describe("a battleground announcement", function()
+    local function bg(frame, typeId, text) frame:AddMessage(text, 1, 0.5, 0, typeId) end
+
+    it("is the shipped Japanese on each battleground type; the reveal key shows the English", function()
+      local f = _G.ChatFrame1
+      for _, t in ipairs({ BG_NEUTRAL, BG_ALLIANCE, BG_HORDE }) do
+        bg(f, t, "The Horde has taken the blacksmith!")
+        assert.are.equal("Hordeが鍛冶屋を占領した！", f:Last())
+      end
+      f:Refresh()
+      assert.are.equal("Hordeが鍛冶屋を占領した！", f.visibleLines[1]:GetText())
+      alt(WFJ, true)
+      assert.are.equal("The Horde has taken the blacksmith!", f.visibleLines[1]:GetText())
+      alt(WFJ, false)
+      assert.are.equal("Hordeが鍛冶屋を占領した！", f.visibleLines[1]:GetText())
+    end)
+
+    it("names a player, one word or two, anywhere in the line, the name kept as written", function()
+      local f = _G.ChatFrame1
+      bg(f, BG_HORDE, "Velkian Freecss has assaulted the mine!")
+      assert.are.equal("Velkian Freecssが鉱山を襲撃した！", f:Last())
+      bg(f, BG_ALLIANCE, "Sky has assaulted the mine!")
+      assert.are.equal("Skyが鉱山を襲撃した！", f:Last())
+      bg(f, BG_NEUTRAL, "The flag was dropped by Jo Ann Lee!")
+      assert.are.equal("Jo Ann Leeが旗を落とした！", f:Last())
+      bg(f, BG_NEUTRAL, "The flag was dropped by Testplayer!") -- this character
+      assert.are.equal("Testplayerが旗を落とした！", f:Last())
+    end)
+
+    it("stays the English: no row, a stale row, a pair for the named player's sex, a secret line", function()
+      local f = _G.ChatFrame1
+      for _, text in ipairs({ "Something no one translated!", "Velkian has defended the farm!",
+          "Good work, Velkian." }) do
+        bg(f, BG_HORDE, text)
+        assert.are.equal(text, f:Last())
+      end
+      local hidden = "The Horde has taken the blacksmith!"
+      secrets[hidden] = true
+      bg(f, BG_HORDE, hidden)
+      assert.are.equal(hidden, f:Last())
+    end)
+
+    it("stays the English while the addon or its interface text is off", function()
+      local f = _G.ChatFrame1
+      WFJ.State.setArea("ui", false)
+      bg(f, BG_HORDE, "The Horde has taken the blacksmith!")
+      assert.are.equal("The Horde has taken the blacksmith!", f:Last())
+      WFJ.State.setArea("ui", true)
+      WFJ.State.setEnabled(false)
+      bg(f, BG_HORDE, "Sky has assaulted the mine!")
+      assert.are.equal("Sky has assaulted the mine!", f:Last())
+    end)
+
+    it("a UI string wins; a system line takes a whole shipped NPC line, never with a name searched for", function()
+      local f = _G.ChatFrame1
+      bg(f, SYSTEM, "Your party is full.")
+      assert.are.equal("パーティーがいっぱいです。", f:Last())
+      bg(f, BG_HORDE, "Your party is full.")
+      assert.are.equal("パーティーがいっぱいです。", f:Last())
+      bg(f, SYSTEM, "The Horde has taken the blacksmith!")
+      assert.are.equal("Hordeが鍛冶屋を占領した！", f:Last())
+      bg(f, SYSTEM, "Sky has assaulted the mine!")
+      assert.are.equal("Sky has assaulted the mine!", f:Last())
+    end)
+
+    it("Speech.translateLine: the whole line first, then each run of one to three capitalised words", function()
+      assert.are.equal("Hordeが鍛冶屋を占領した！", WFJ.Speech.translateLine("The Horde has taken the blacksmith!"))
+      assert.is_nil(WFJ.Speech.translateLine("Sky has assaulted the mine!"))
+      assert.are.equal("Skyが鉱山を襲撃した！", WFJ.Speech.translateLine("Sky has assaulted the mine!", true))
+      assert.is_nil(WFJ.Speech.translateLine("a b c d has assaulted the mine!", true)) -- lower case: no name
+      assert.is_nil(WFJ.Speech.translateLine("", true))
+      assert.is_nil(WFJ.Speech.translateLine(nil, true))
     end)
   end)
 end)
