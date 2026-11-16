@@ -2,6 +2,7 @@
 return {
   include = { "addon/WoWForeverJapanese/Core/", "addon/WoWForeverJapanese/UI/", "addon/WoWForeverJapanese/Main" },
   exclude = { "addon/WoWForeverJapanese/Data/", "tests/" },
-  statsfile = "luacov.stats.out",
+  -- the parallel runner gives each test process a file of its own, then adds them up into the default
+  statsfile = os.getenv("LUACOV_STATS") or "luacov.stats.out",
   reportfile = "luacov.report.out",
 }

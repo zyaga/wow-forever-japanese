@@ -17,10 +17,10 @@ def test_nothing_to_translate_classes():
     assert coverage.nothing_to_translate("book", "A page of prose.", None) is None
 
 
-def test_the_committed_report_is_current(root: Path):
+def test_the_committed_report_is_current(root: Path, store_coverage: dict):
     # every data change re-runs `make coverage`: the committed doc matches the store (the date line aside)
     committed = (root / "docs" / "operations" / "coverage.md").read_text(encoding="utf-8")
-    fresh = coverage.render(coverage.measure(root / "data"), "X")
+    fresh = coverage.render(store_coverage, "X")
     strip = lambda text: [ln for ln in text.splitlines() if not ln.startswith("> **Generated**")]  # noqa: E731
     assert strip(committed) == strip(fresh), "run `make coverage` and commit docs/operations/coverage.md"
 
@@ -61,8 +61,8 @@ def test_a_stated_reason_is_not_a_gap(tmp_path: Path):
     assert coverage.gaps(coverage.measure(data)) == {}
 
 
-def test_no_served_text_is_left_without_japanese_or_a_reason(root: Path):
-    gaps = coverage.gaps(coverage.measure(root / "data"))
+def test_no_served_text_is_left_without_japanese_or_a_reason(store_coverage: dict):
+    gaps = coverage.gaps(store_coverage)
     assert not gaps, f"served lines with no Japanese and no stated reason: {gaps} (docs/operations/coverage.md)"
 
 

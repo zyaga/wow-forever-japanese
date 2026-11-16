@@ -23,4 +23,5 @@ predecessors/
 luacov.stats.out
 luacov.report.out
 .coverage
+.coverage.*
 htmlcov/

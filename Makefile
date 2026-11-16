@@ -22,11 +22,21 @@ help:
 
 test: test-py test-lua luac ## run every test suite (pytest, busted, luac -p)
 
-test-py: ## pytest over pipeline/ and tests/python
-	cd pipeline && $(PY) -m pytest -q ../tests/python
+# The Python tests run on every core (pytest-xdist); worksteal moves waiting tests off a worker held up by a slow
+# one. A single test file run by hand stays a plain run.
+PYTEST_PARALLEL = -n auto --dist worksteal
 
-test-lua: ## busted specs under tests/lua (LuaJIT = Lua 5.1 semantics); luarocks path makes the rocks visible to $(LUA)
-	eval "$$($(LUAROCKS) --lua-version=5.1 path)"; $(BUSTED) --lua=$(LUA) tests/lua
+test-py: ## pytest over pipeline/ and tests/python, in parallel
+	cd pipeline && $(PY) -m pytest -q $(PYTEST_PARALLEL) ../tests/python
+
+# The Lua specs run one busted process per file, as many at once as the machine has cores (JOBS=n to change it,
+# JOBS=1 for one at a time); each file's output is in build/lua-tests/ and a failing file's is printed.
+# luarocks path makes the rocks visible to $(LUA).
+LUA_ROCKS_PATH = eval "$$($(LUAROCKS) --lua-version=5.1 path)"
+LUA_SPECS = LUA="$(LUA)" BUSTED="$(BUSTED)" $(if $(JOBS),JOBS=$(JOBS)) sh tests/lua/run-specs.sh
+
+test-lua: ## busted specs under tests/lua, one process per file, in parallel (LuaJIT = Lua 5.1 semantics)
+	$(LUA_ROCKS_PATH); $(LUA_SPECS)
 
 # Test coverage floors: one point under the measured level, because CI's interpreter and skipped tests can count
 # lines differently. Raise them as coverage grows.
@@ -34,11 +44,12 @@ COV_PY_MIN  ?= 89
 COV_LUA_MIN ?= 98
 
 coverage-py: ## pytest under coverage.py; fails below COV_PY_MIN percent of the pipeline's lines
-	cd pipeline && $(PY) -m coverage run -m pytest -q ../tests/python && $(PY) -m coverage report --fail-under=$(COV_PY_MIN)
+	cd pipeline && $(PY) -m coverage erase && $(PY) -m coverage run -m pytest -q $(PYTEST_PARALLEL) ../tests/python && \
+		$(PY) -m coverage combine -q && $(PY) -m coverage report --fail-under=$(COV_PY_MIN)
 
 coverage-lua: ## busted under luacov; fails below COV_LUA_MIN percent of the addon's logic lines (generated Data excluded)
 	rm -f luacov.stats.out luacov.report.out
-	eval "$$($(LUAROCKS) --lua-version=5.1 path)"; $(BUSTED) --lua=$(LUA) --coverage tests/lua && $(LUACOV)
+	$(LUA_ROCKS_PATH); COVERAGE=1 $(LUA_SPECS) && $(LUACOV)
 	@test -s luacov.report.out || { echo "coverage-lua: no report written"; exit 1; }
 	@total=$$(awk '/^Total/ {print $$NF}' luacov.report.out | tr -d '%'); \
 	echo "coverage-lua: $$total% (floor $(COV_LUA_MIN)%)"; \

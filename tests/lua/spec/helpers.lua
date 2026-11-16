@@ -4,21 +4,35 @@ local ROOT = (debug.getinfo(1, "S").source:match("^@(.*)/tests/lua/spec/helpers%
 H.ROOT = ROOT
 H.ADDON_DIR = ROOT .. "/addon/WoWForeverJapanese"
 
--- Under `make coverage-lua` the generated data is loaded with the coverage hook paused: it is not code
--- under test, and counting every line of its tables makes the run many times slower.
+-- Under `make coverage-lua` the generated data is loaded with the coverage hook off: it is not code under
+-- test, and luacov's hook runs on every line of its tables even while luacov is paused (pausing only stops
+-- saving), which makes a whole-addon load many times slower. The hook is put back as luacov sets it. The
+-- `Data.add` calls the shards make go uncounted with it; specs that call `Data.add` themselves count it.
 local function run(relpath, chunk, addonName, ns)
   local runner = package.loaded["luacov.runner"]
-  if not (runner and relpath:find("^Data/")) then return chunk(addonName or "WoWForeverJapanese", ns) end
-  runner.pause()
+  if not (runner and runner.debug_hook and relpath:find("^Data/")) then
+    return chunk(addonName or "WoWForeverJapanese", ns)
+  end
+  debug.sethook()
   local ok, result = pcall(chunk, addonName or "WoWForeverJapanese", ns)
-  runner.resume()
+  debug.sethook(runner.debug_hook, "l")
   if not ok then error(result, 0) end
   return result
 end
 
+-- One parse per file per process. A parsed chunk runs again for each fresh namespace, and parsing the generated
+-- data again for every test is most of what a whole-addon load costs.
+local chunks = {}
+
 function H.loadChunk(relpath, addonName, ns)
-  local chunk, err = loadfile(H.ADDON_DIR .. "/" .. relpath)
-  assert(chunk, err)
+  local path = H.ADDON_DIR .. "/" .. relpath
+  local chunk = chunks[path]
+  if not chunk then
+    local err
+    chunk, err = loadfile(path)
+    assert(chunk, err)
+    chunks[path] = chunk
+  end
   return run(relpath, chunk, addonName, ns)
 end
 

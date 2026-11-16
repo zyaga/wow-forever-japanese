@@ -10,7 +10,7 @@ A clean checkout where `make lint`, `make test` and `make validate` all pass, an
 
 | Tool | Version | Notes |
 |---|---|---|
-| Python | 3.11 or later (CI runs 3.14) | The pipeline has **no runtime dependencies**. The dev tools are pinned exactly in `pipeline/pyproject.toml` (`pytest`, `ruff`, `coverage`); bump one by editing that line. |
+| Python | 3.11 or later (CI runs 3.14) | The pipeline has **no runtime dependencies**. The dev tools are pinned exactly in `pipeline/pyproject.toml` (`pytest`, `pytest-xdist`, `ruff`, `coverage`); bump one by editing that line. |
 | Lua | 5.1 semantics: LuaJIT 2.1 (`luajit`) or PUC Lua 5.1 (`lua5.1`) | Matches WoW. Lua 5.2 and later are **not** compatible. The Makefile uses `luajit` by default; pass `LUA=<interpreter>` to use another. |
 | luarocks | any recent | Used only to install the pinned rocks in `.github/lua-rocks.txt` for Lua 5.1. |
 | busted, luacheck, luacov, cluacov | pinned in `.github/lua-rocks.txt` | Installed to `~/.luarocks/bin` (the user tree, `--local`), which need not be on `PATH`: the Makefile looks there too. The pin file also pins their transitive rocks. |
@@ -62,8 +62,8 @@ The Lua and luarocks versions CI uses are the inputs of `.github/actions/lua-too
 | Target | Runs |
 |---|---|
 | `make test` | `test-py` + `test-lua` + `luac` |
-| `make test-py` | pytest over `tests/python` |
-| `make test-lua` | busted over `tests/lua`, under `$(LUA)` |
+| `make test-py` | pytest over `tests/python`, on every core |
+| `make test-lua` | busted over `tests/lua`, under `$(LUA)`, one process per spec file on every core (`JOBS=1` for one at a time; each file's output in `build/lua-tests/`) |
 | `make luac` | every addon Lua file (the generated `Data/` shards included) must load |
 | `make coverage-py` | pytest under coverage.py; fails below `COV_PY_MIN` percent of the pipeline's lines |
 | `make coverage-lua` | busted under luacov; fails below `COV_LUA_MIN` percent of the addon's logic lines (generated `Data/` excluded) |
@@ -280,6 +280,7 @@ tests/                      python/ · lua/spec/ · fixtures/ (small excerpts of
 |---|---|
 | `busted: command not found` | `export PATH="$HOME/.luarocks/bin:$PATH"`, or pass `BUSTED=/path/to/busted`. |
 | busted complains about the interpreter or Lua version | It must run under Lua 5.1 semantics: `LUA=luajit` (the default) or `LUA=lua5.1`. Newer Lua versions are not compatible. |
+| `pytest: error: unrecognized arguments: -n` | The venv predates pytest-xdist: `.venv/bin/pip install -e "pipeline[dev]"` again. |
 | `No module named pytest` / `ruff` / `coverage` | The venv is missing: `python3 -m venv .venv && .venv/bin/pip install -e "pipeline[dev]"` from the repository root. |
 | luarocks install fails on missing headers | Re-run with `LUA_INCDIR=$(brew --prefix luajit)/include/luajit-2.1` (macOS), or the include folder of your Lua 5.1. |
 | A vector drift test fails after editing a `gen_*vectors.py`, `core/align.py` or `allowlist.txt` | `make vectors` and commit the vector files; `make generate` for the shipped `Data/Vectors.lua`. If the allowlist changed, mirror it in `Align.ALLOWLIST`. |
