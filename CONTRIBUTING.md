@@ -50,7 +50,7 @@ The Makefile uses `.venv` automatically. The Lua rocks (busted, luacheck, luacov
 
 | Command | What it does |
 |---|---|
-| `make test` | pytest over the pipeline, busted over the addon logic, and a parse of every addon Lua file |
+| `make test` | pytest over the pipeline, busted over the addon logic, and a parse of every addon Lua file, on every core |
 | `make lint` | ruff, luacheck, the layering and no-English-in-the-addon gates, and `wfj public-check` |
 | `make validate` | the data gate: schema, provenance, key collisions, regenerate-and-diff |
 | `make coverage` | how much of the game ships in Japanese, written to `docs/operations/coverage.md` |

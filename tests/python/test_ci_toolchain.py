@@ -430,6 +430,6 @@ def test_python_dev_deps_are_pinned_exactly(root):
     text = (root / "pipeline" / "pyproject.toml").read_text(encoding="utf-8")
     dev = re.search(r'(?m)^dev = \[(.*?)\]', text).group(1)
     pins = re.findall(r'"([^"]+)"', dev)
-    assert [pin.split("==")[0] for pin in pins] == ["pytest", "ruff", "coverage"]
+    assert [pin.split("==")[0] for pin in pins] == ["pytest", "pytest-xdist", "ruff", "coverage"]
     for pin in pins:
-        assert re.fullmatch(r"[a-z]+==\d+\.\d+\.\d+", pin), pin
+        assert re.fullmatch(r"[a-z-]+==\d+\.\d+\.\d+", pin), pin

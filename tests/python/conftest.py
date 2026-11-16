@@ -1,12 +1,42 @@
+import fcntl
 import json
+import os
+import pickle
 import subprocess
 import sys
+from collections.abc import Callable
 from pathlib import Path
+from typing import TypeVar
 
 import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "pipeline"))
+
+T = TypeVar("T")
+
+
+def shared(folder: Path, name: str, produce: Callable[[], T]) -> T:
+    """`produce()`, computed once per test run. The tests run in parallel worker processes (pytest-xdist) and a
+    session fixture is per process, so a whole-store result would be computed again in every worker. The first
+    worker computes it under a lock in `folder`, the run's temp folder every worker shares, and the others read
+    it from there. Outside a parallel run it is simply computed."""
+    if os.environ.get("PYTEST_XDIST_WORKER") is None:
+        return produce()
+    path = folder / f"{name}.pickle"
+    with (folder / f"{name}.lock").open("w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)  # held until the file closes: the others wait for the first result
+        if path.exists():
+            return pickle.loads(path.read_bytes())
+        value = produce()
+        path.write_bytes(pickle.dumps(value, protocol=pickle.HIGHEST_PROTOCOL))
+        return value
+
+
+@pytest.fixture(scope="session")
+def run_folder(tmp_path_factory) -> Path:
+    """The temp folder all the workers of one run share."""
+    return tmp_path_factory.getbasetemp().parent
 
 
 @pytest.fixture(scope="session")
@@ -21,16 +51,27 @@ def vectors(root: Path) -> list[dict]:
 
 
 @pytest.fixture(scope="session")
-def plan_report(root: Path) -> tuple[dict[str, str], dict]:
-    """The committed store's plan and its report, computed once: planning the whole store takes seconds, and
-    every test that needs it asserts on the same committed data. Tests read the plan; the ones that write
-    apply it to a copy of the addon folder."""
+def plan_report(root: Path, run_folder: Path) -> tuple[dict[str, str], dict]:
+    """The committed store's plan and its report, computed once per run: planning the whole store takes
+    seconds, and every test that needs it asserts on the same committed data. Tests read the plan; the ones
+    that write apply it to a copy of the addon folder."""
     from wfj.cmd import generate
     from wfj.io.jsonl_store import Store
 
-    report: dict = {}
-    planned = generate.plan(Store(root / "data"), generate.vectors_rows(root / "data"), report)
-    return planned, report
+    def produce() -> tuple[dict[str, str], dict]:
+        report: dict = {}
+        planned = generate.plan(Store(root / "data"), generate.vectors_rows(root / "data"), report)
+        return planned, report
+
+    return shared(run_folder, "plan_report", produce)
+
+
+@pytest.fixture(scope="session")
+def store_coverage(root: Path, run_folder: Path) -> dict:
+    """`wfj.dev.coverage.measure` of the committed store, computed once per run."""
+    from wfj.dev import coverage
+
+    return shared(run_folder, "store_coverage", lambda: coverage.measure(root / "data"))
 
 
 @pytest.fixture(scope="session")

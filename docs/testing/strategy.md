@@ -12,10 +12,10 @@ Pipeline (Python), the addon's Core (Lua, all pure or stub-driven), the shared n
 | Command | What it runs |
 |---|---|
 | `make test` | `test-py`, `test-lua` and `luac` |
-| `make test-py` | pytest over `pipeline/` and `tests/python/` |
-| `make test-lua` | busted over `tests/lua/spec/` (Lua 5.1 semantics) |
-| `make coverage-py` | pytest under coverage.py; fails below `COV_PY_MIN` percent of the pipeline's lines |
-| `make coverage-lua` | busted under luacov; fails below `COV_LUA_MIN` percent of the addon's logic lines |
+| `make test-py` | pytest over `pipeline/` and `tests/python/`, on every core (pytest-xdist) |
+| `make test-lua` | busted over `tests/lua/spec/` (Lua 5.1 semantics), one process per spec file, on every core |
+| `make coverage-py` | the same under coverage.py, the workers' data added up; fails below `COV_PY_MIN` percent of the pipeline's lines |
+| `make coverage-lua` | the same under luacov, each process's counts added up; fails below `COV_LUA_MIN` percent of the addon's logic lines |
 | `make luac` | every addon Lua file parses, generated shards included |
 | `make lint` | ruff, luacheck, the `Core/` frame-access gate, no English data in the addon, `wfj public-check` |
 | `make validate` | the data gate: schema, provenance, collisions, referential integrity, regenerate-and-diff, placeholders, UI strings, objective fingerprints, readings |
@@ -25,6 +25,16 @@ Python tools run from the repository's virtual environment (`python3 -m venv .ve
 ### Coverage
 
 Test coverage is measured, not estimated. `make coverage-py` runs the pytest suite under **coverage.py** (source `wfj`, configured in `pipeline/pyproject.toml`); `make coverage-lua` runs the busted suite under **luacov** (`.luacov` counts `Core/`, `UI/` and `Main.lua`, and leaves out the generated `Data/` and the tests). Each target fails when the total drops below its floor, `COV_PY_MIN` and `COV_LUA_MIN` in the `Makefile`. CI runs both on every pull request, in place of plain `test-py` / `test-lua`, in two jobs that run beside each other (`validate` for Python, `lua` for the addon), so a pull request waits for the longer suite, not both in a row.
+
+### Running in parallel
+
+Both suites run on every core the machine has ([ADR-097](../adr/097-the-tests-run-in-parallel.md)).
+
+- **Lua.** `tests/lua/run-specs.sh` runs each spec file in a busted process of its own, as many at once as there are cores (`JOBS=n` changes it, `JOBS=1` runs one at a time). Each file's output is kept in `build/lua-tests/`; a failing file's output is printed, and a file that exits without busted's result line counts as failed. The run ends with the slowest five files and the summed results. Under coverage each process writes its own luacov file (`.luacov` reads `LUACOV_STATS`) and `tests/lua/merge-coverage.lua` adds them up into `luacov.stats.out` before the report.
+- **Python.** pytest-xdist with `-n auto --dist worksteal` in the make targets only, so a single test file run by hand stays a plain run. Coverage runs in each worker (`patch = ["subprocess"]` in `pipeline/pyproject.toml`) and `coverage combine` adds the files up.
+- **Shared whole-store results.** Each worker is a process of its own, so a session fixture would compute a whole-store result once per worker. `conftest.shared` computes it once per run, under a lock in the temp folder the workers share, and the others read it: `plan_report` (the whole store's plan) and `store_coverage` (`coverage.measure` of the committed store) use it.
+- **Parse once.** `H.loadChunk` keeps each addon file's parsed chunk for the life of its process and runs it again for each new namespace, so a spec that loads the whole addon before every test parses the generated data once. Under coverage the generated data runs with luacov's hook off.
+- **A test that cannot run beside others** uses its own `tmp_path` (never a fixed path in the repo or `/tmp`).
 
 How much of the *game* ships in Japanese is a different number: `make coverage` writes it to [Coverage](../operations/coverage.md), and `test_coverage.py` fails when that file is out of date.
 
