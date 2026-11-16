@@ -38,7 +38,7 @@ LOCALE_ENUS = b"SUne"
 HEADER_SIZE = 24
 RECORD_HEADER = struct.Struct("<II")
 DISPLAY = struct.Struct("<Iff")
-MAX_DISPLAYS = 16  # the most measured is eleven (creature 256352); a wilder count means the layout was misread
+MAX_DISPLAYS = 16  # the most measured is eleven; a wilder count means the layout was misread
 
 
 class CreatureCacheError(ValueError):
