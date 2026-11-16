@@ -15,7 +15,6 @@ local Words = {}
 WFJ.Words = Words
 
 Words.SCHEMA = 1
-Words.SENTENCE_MAX = 200 -- bytes: a quest paragraph with no full stop stays a readable card
 
 local list -- the saved table
 local index = {} -- key → entry
@@ -102,7 +101,8 @@ local ENDS = { ["。"] = true, ["！"] = true, ["？"] = true, ["!"] = true, ["?
 -- English also ends a sentence at a full stop; Japanese text holds them inside names ("Dr. Reyn") and never ends on one
 local ENDS_ENGLISH = { ["."] = true }
 
--- The sentence holding bytes first..last of text, and the word's place inside it. `english`: the text is English.
+-- The sentence holding bytes first..last of text, whole however long, and the word's place inside it (a line with
+-- no sentence end is cut at its line breaks). `english`: the text is English.
 -- → sentence, wordFirst, wordLast
 function Words.sentence(text, first, last, english)
   local s, e = 1, #text
@@ -117,16 +117,6 @@ function Words.sentence(text, first, last, english)
       break
     end
     i = j + 1
-  end
-  -- too long: keep whole characters around the word, at most SENTENCE_MAX bytes
-  while e - s + 1 > Words.SENTENCE_MAX do
-    if first - s > e - last then
-      s = charEnd(text, s) + 1
-    else
-      local k = e
-      while k > s and not lead(text, k) do k = k - 1 end
-      e = k - 1
-    end
   end
   -- an English sentence starts after the space that follows the one before it
   while english and s < first and text:sub(s, s) == " " do s = s + 1 end

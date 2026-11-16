@@ -16,6 +16,7 @@ an old setting stops working). A release moves those lines under its version num
 - The study card can say a saved word's sentence in the NPC's recorded voice: it plays when you show the answer (a setting on the Voice page turns that off), and a play button beside the answer plays it again. In the word list, Include audio adds those recordings to the Anki export, with lines to paste in a terminal that copy the sound files into Anki.
 
 ### Changed
+- A saved word now keeps its whole sentence, however long. A long sentence used to be cut at about 66 characters, so the study card and the export could miss its start. Words saved before keep the text they were saved with.
 - The voice packs now hold each line as one file per sentence, timed to the words. Update all the voice packs once in the CurseForge app (Update All updates them together). Older voice packs still play, without the word marks.
 - The voice is clearer: the packs now keep the voices' high end, which makes the download about twice as big (about 2.8 GB). Three new packs split the largest level bands (Levels 1-10 (part 2), Levels 51-60 (part 2) and (part 3)); the CurseForge app installs them with the next Update All, and a chat line at login names any voice pack that did not load.
 - The voice panel no longer shows a stage direction, such as an emote in angle brackets, that the voice does not read. A line made only of such directions is still shown.
