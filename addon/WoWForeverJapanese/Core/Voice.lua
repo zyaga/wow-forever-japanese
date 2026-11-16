@@ -290,6 +290,26 @@ end
 local function pathOf(folder, file)
   return "Interface\\AddOns\\" .. folder .. "\\Sound\\" .. file
 end
+Voice.soundPath = pathOf
+
+-- The Translator kinds a pack may voice (Voice.KINDS by surface): quest offer, progress and turn-in, NPC greetings
+-- and gossip (a quest window's greeting is gossip too), book and letter pages.
+local VOICED = { ["quest.description"] = true, ["quest.progress"] = true, ["quest.completion"] = true,
+  gossip = true, book = true }
+
+-- A shipped line's main recording, whatever the settings say, for the study card and the word list's export
+-- (UI/StudyVoice). → the registry's record (files in order as { file, seconds }, marks, folder; not to be changed)
+-- and the shipped Japanese, or nil and why: "kind" (never voiced) · "nopack" · "missing" · "stale"
+function Voice.line(kind, id)
+  local key = VOICED[kind] and Voice.packKey(kind, id)
+  if not key then return nil, "kind" end
+  if not lines then return nil, "nopack" end
+  local entry = lines[key]
+  local shipped = entry and type(deps.lookup) == "function" and deps.lookup(kind, id) or nil
+  if type(shipped) ~= "table" or type(shipped.ja) ~= "string" then return nil, "missing" end
+  if type(deps.hash) ~= "function" or deps.hash(shipped.ja) ~= entry.jaHash then return nil, "stale" end
+  return entry, shipped.ja
+end
 
 -- A record's files for the player → path of the first, the line's length (nil when a file has none), and the
 -- sentences { { path, seconds }, ..., marks } when there are several files or a timing, else nil (one whole file)

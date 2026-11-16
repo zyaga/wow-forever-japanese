@@ -2381,6 +2381,7 @@ UI\VoicePlayer.lua
 UI\VoicePanelLooks.lua
 UI\VoicePanelHead.lua
 UI\VoicePanelText.lua
+UI\StudyVoice.lua
 UI\VoicePanel.lua
 UI\VoiceQuestLog.lua
 UI\VoiceErrors.lua

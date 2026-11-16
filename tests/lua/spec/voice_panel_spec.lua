@@ -14,7 +14,9 @@ local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/Stat
 local DATA = {
   ["quest.title"] = { [2] = { ja = "Sharptalonの鉤爪", status = "." }, [3] = { ja = "別のクエスト", status = "." } },
   ["quest.description"] = { [2] = { ja = "御機嫌よう、{name}。Silverwind Refugeへ行け。", status = "." },
-    [3] = { ja = "二つ目の依頼", status = "." } },
+    [3] = { ja = "二つ目の依頼", status = "." },
+    [4] = { ja = "これは最初のとても長い文で、話はまだまだ続いていきます。二つ目の文もかなり長く書いてあるので次のページになります。"
+      .. "三つ目の文はさらに長くて、ここまで来ると最後のページに入るはずです。", status = "." } },
   ["quest.objectives"] = { [2] = { ja = "Sharptalonを倒せ", status = "." } },
   ["quest.completion"] = { [2] = { ja = "よくやった", status = "." } },
   ["quest.progress"] = { [2] = { ja = "まだか？", status = "." } },
@@ -74,7 +76,8 @@ end
 
 local function packLines()
   local lines = {}
-  for _, k in ipairs({ { 2, "description" }, { 2, "progress" }, { 2, "completion" }, { 3, "description" } }) do
+  for _, k in ipairs({ { 2, "description" }, { 2, "progress" }, { 2, "completion" }, { 3, "description" },
+    { 4, "description" } }) do
     local ja = DATA["quest." .. k[2]][k[1]].ja
     lines[k[1] .. "-" .. k[2]] = { k[1] .. "-" .. k[2] .. ".mp3", WFJ.Hash.key(ja), 3.0 }
   end
@@ -327,6 +330,56 @@ describe("the voice player with the voice panel on", function()
     assert.is_false(f:IsShown())
   end)
 
+  it("a pause keeps the page the voice was on, so its words can be read; it never jumps back to the first", function()
+    setQuest(4)
+    Stub.showDetail()
+    local f = panel()
+    local first = f.text:GetText()
+    tick(f, (clock or 0) + 2.9) -- near the end of the line: a later page
+    local later = f.text:GetText()
+    assert.are_not.equal(first, later)
+    f.pause.scripts.OnClick(f.pause)
+    assert.is_true(P.state().paused)
+    tick(f, clock + 1)
+    assert.are.equal(later, f.text:GetText())
+    WFJ.State.fire("voiceQueue")
+    tick(f, clock + 1)
+    assert.are.equal(later, f.text:GetText())
+  end)
+
+  it("a line played from a chosen sentence shows that sentence's page at once, never the one before", function()
+    setQuest(4)
+    local ja = DATA["quest.description"][4].ja
+    WFJ.Lookup = { get = function(kind, id) return DATA[kind] and DATA[kind][id] end } -- the timing reads the line
+    WFJ.Voice.register({ format = 3, folder = "WoWForeverJapanese_VoiceLevels1to10", lines = {
+      ["4-description"] = { false, WFJ.Hash.key(ja), m = "28:50 29:300 34:300",
+        s = { { "4-description-1.mp3", 3.0 }, { "4-description-2.mp3", 3.0 }, { "4-description-3.mp3", 3.0 } } } } })
+    Stub.showDetail()
+    local f = panel()
+    local second = "二つ目の文もかなり長く書いてあるので次のページになります。"
+    local third = "三つ目の文はさらに長くて、ここまで来ると最後のページに入るはずです。"
+    tick(f, (clock or 0) + 0.1)
+    assert.is_false(f.back:IsShown()) -- the first sentence: nothing before it
+    assert.is_true(f.on:IsShown())
+    f.on.scripts.OnClick(f.on)
+    tick(f, clock + 0.1)
+    assert.is_true(f.back:IsShown())
+    assert.is_true(f.on:IsShown())
+    f.on.scripts.OnClick(f.on) -- on to the third sentence
+    tick(f, clock + 0.1)
+    assert.are.equal(third, f.text:GetText())
+    assert.is_true(f.back:IsShown())
+    assert.is_false(f.on:IsShown()) -- the last sentence: nothing after it
+    assert.are.equal(f.on, f.pause.point[2]) -- its room is kept: pause stays where it was
+    f.back.scripts.OnClick(f.back) -- back one: the second sentence's file starts in the pause before its first word
+    tick(f, clock + 0.1)
+    assert.are.equal(second, f.text:GetText())
+    f.pause.scripts.OnClick(f.pause)
+    f.pause.scripts.OnClick(f.pause) -- resume: that sentence again, from the start of its file
+    tick(f, clock + 0.1)
+    assert.are.equal(second, f.text:GetText())
+  end)
+
   it("translation off or Panel size Off stops the line and hides the panel", function()
     Stub.showDetail()
     S.set("voice.panel.size", "off")
@@ -351,7 +404,7 @@ describe("the voice player with the voice panel on", function()
     assert.is_true(b:IsShown())
   end)
 
-  it("fades after the last line unless the mouse is on it; a fade on a paused line stays away", function()
+  it("fades after the last line unless the mouse is on it; a paused line never fades", function()
     Stub.showDetail()
     runTimers()
     local f = panel()
@@ -363,18 +416,19 @@ describe("the voice player with the voice panel on", function()
     tick(f, 12.1)
     tick(f, 12.8)
     assert.is_false(f:IsShown())
-    -- a paused line: it fades, and a refresh does not bring it back
+    -- a paused line: it stays, whole, however long it waits
     Stub.showDetail()
     f.pause.scripts.OnClick(f.pause)
     tick(f, 16)
-    tick(f, 17)
-    assert.is_false(f:IsShown())
+    tick(f, 30)
+    assert.is_true(f:IsShown())
+    assert.are.equal(1, f.alpha)
     WFJ.Modifier.refresh()
     WFJ.State.fire("voice")
-    assert.is_false(f:IsShown())
+    assert.is_true(f:IsShown())
   end)
 
-  it("controls show only with the mouse on the panel, unless that setting is off; combat dims the panel", function()
+  it("controls show only with the mouse on the panel, unless that setting is off; combat never dims it", function()
     Stub.showDetail()
     local f = panel()
     tick(f, 0.2)
@@ -386,9 +440,8 @@ describe("the voice player with the voice panel on", function()
     S.set("voice.panel.hoverButtons", false)
     tick(f, 0.6)
     assert.are.equal(1, f.pause.alpha)
-    frameWith("PLAYER_REGEN_DISABLED", f):fire("PLAYER_REGEN_DISABLED")
-    assert.are.equal(0.4, f.alpha)
-    frameWith("PLAYER_REGEN_DISABLED", f):fire("PLAYER_REGEN_ENABLED")
+    assert.is_nil(frameWith("PLAYER_REGEN_DISABLED", f)) -- nothing on the panel listens for combat
+    tick(f, 0.8)
     assert.are.equal(1, f.alpha)
   end)
 
@@ -567,10 +620,10 @@ describe("the voice player with the voice panel on", function()
     WFJ.Modifier.refresh()
   end)
 
-  it("built in combat it starts dimmed; locked, it lets clicks through", function()
+  it("built in combat it shows whole; locked, it lets clicks through", function()
     _G.InCombatLockdown = function() return true end
     Stub.showDetail()
-    assert.are.equal(0.4, panel().alpha)
+    assert.are.equal(1, panel().alpha)
     assert.is_true(panel().clicks)
     S.set("voice.panel.lock", true)
     assert.is_false(panel().clicks)

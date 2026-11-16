@@ -13,12 +13,15 @@ an old setting stops working). A release moves those lines under its version num
 - The voice panel follows the voice word by word: the page turns as the speaker starts each sentence, and a soft tint marks the words as they are spoken (warm white on the dark looks, brown on parchment). A name of several English words lights up whole.
 - Pausing a voiced line and playing it again picks up at the sentence you paused in, not from the start of the line. Two small gold arrows beside pause on the voice panel play the line from the sentence before or the next one, also while it is paused or after it ended. Play again starts from the first sentence, even after a pause.
 - When a voice pack is out of date, a chat line at login names it and its version. A line that stays quiet because its voice pack is older than its Japanese names that pack too, and a voice pack too new for your addon says so at login.
+- The study card can say a saved word's sentence in the NPC's recorded voice: it plays when you show the answer (a setting on the Voice page turns that off), and a play button beside the answer plays it again. In the word list, Include audio adds those recordings to the Anki export and lists the sound files to copy into Anki's media folder.
 
 ### Changed
+- A saved word now keeps its whole sentence, however long. A long sentence used to be cut at about 66 characters, so the study card and the export could miss its start. Words saved before keep the text they were saved with.
 - The voice packs now hold each line as one file per sentence, timed to the words. Update all the voice packs once in the CurseForge app (Update All updates them together). Older voice packs still play, without the word marks.
 - The voice is clearer: the packs now keep the voices' high end, which makes the download about twice as big (about 2.8 GB). Three new packs split the largest level bands (Levels 1-10 (part 2), Levels 51-60 (part 2) and (part 3)); the CurseForge app installs them with the next Update All, and a chat line at login names any voice pack that did not load.
 - The voice panel no longer shows a stage direction, such as an emote in angle brackets, that the voice does not read. A line made only of such directions is still shown.
 - A bug report now lists your voice packs with their versions.
+- The voice panel no longer goes faint in combat (the "Dim the panel in combat" setting is gone), and a paused line stays on screen, whole, on the sentence you paused in, until you play it or close it.
 
 ### Fixed
 - Battleground announcements in chat are in Japanese: bases taken and assaulted in Arathi Basin, flag captures in Warsong Gulch, and Alterac Valley's mines and towers. A player named in the line keeps their name as the game wrote it. The "[You died.]" link in chat is Japanese in battlegrounds too.

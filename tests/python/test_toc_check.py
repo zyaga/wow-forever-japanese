@@ -36,7 +36,9 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/Render.lua",
         "UI/VoicePlayer.lua",  # voice playback, after Render that starts a line
         # the voice panel: its looks, head and text before the panel that uses them
-        "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua", "UI/VoicePanel.lua",
+        "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua",
+        "UI/StudyVoice.lua",  # a saved word's sentence from the packs, after the timing it reads
+        "UI/VoicePanel.lua",
         "UI/VoiceQuestLog.lua",  # the quest log's button and the remembered speaker
         "UI/VoiceErrors.lua",
         "UI/ButtonText.lua", "UI/Labels.lua",

@@ -782,7 +782,7 @@ describe("voice settings: shown only with a pack", function()
       end
       return n
     end
-    assert.are.equal(19, hiddenVoice()) -- the eleven voice settings and the voice panel's eight
+    assert.are.equal(19, hiddenVoice()) -- the twelve voice settings and the voice panel's seven
     WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
     assert.are.equal(0, hiddenVoice())
     assert.is_true(WFJ.Settings.get("voice.enabled")) -- on by default

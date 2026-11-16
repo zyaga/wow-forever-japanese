@@ -297,6 +297,16 @@ describe("UI/VoicePlayer: a line in sentences", function()
     assert.are.equal(base .. "2-description-1.mp3", sounds[1].path)
     assert.is_false((WFJ.VoicePlayer.playKey("nonsense")))
   end)
+
+  it("a voice line starting stops the study card's sentence", function()
+    setup("full")
+    local stops = 0
+    WFJ.StudyVoice = { stop = function() stops = stops + 1 end }
+    WFJ.Lookup = { get = function(kind, id) return DATA[kind] and DATA[kind][id] end }
+    WFJ.Placeholders = { expand = function(text) return text, 0 end }
+    assert.is_true((WFJ.VoicePlayer.playKey("2-description")))
+    assert.are.equal(1, stops)
+  end)
 end)
 
 describe("UI/VoicePanelText: following the timing", function()

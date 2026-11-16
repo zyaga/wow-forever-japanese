@@ -2,7 +2,8 @@
 -- UI/Readings saves the highlighted word here, UI/WordsWindow shows the export text.
 --   Words.load(saved) → the table to keep in WFJ_Words
 --   Words.add(input, now) → "added" | "exists" | "refused", entry
---   Words.export(opts, fmt) → tab-separated text with Anki's file headers; fmt(pattern, t) is the client's date()
+--   Words.export(opts, fmt) → tab-separated text with Anki's file headers (opts.images, opts.audio); fmt(pattern, t)
+--     is the client's date()
 --   Words.matches / hidden / nextFree: the save-click choices
 -- An English word (English first) is an entry too: `lang = "en"`, the English word and the English sentence the
 -- client showed, its pronunciation under `reading`, the Japanese word of the line under `meaning`, and that word's
@@ -14,7 +15,6 @@ local Words = {}
 WFJ.Words = Words
 
 Words.SCHEMA = 1
-Words.SENTENCE_MAX = 200 -- bytes: a quest paragraph with no full stop stays a readable card
 
 local list -- the saved table
 local index = {} -- key → entry
@@ -101,7 +101,8 @@ local ENDS = { ["。"] = true, ["！"] = true, ["？"] = true, ["!"] = true, ["?
 -- English also ends a sentence at a full stop; Japanese text holds them inside names ("Dr. Reyn") and never ends on one
 local ENDS_ENGLISH = { ["."] = true }
 
--- The sentence holding bytes first..last of text, and the word's place inside it. `english`: the text is English.
+-- The sentence holding bytes first..last of text, whole however long, and the word's place inside it (a line with
+-- no sentence end is cut at its line breaks). `english`: the text is English.
 -- → sentence, wordFirst, wordLast
 function Words.sentence(text, first, last, english)
   local s, e = 1, #text
@@ -116,16 +117,6 @@ function Words.sentence(text, first, last, english)
       break
     end
     i = j + 1
-  end
-  -- too long: keep whole characters around the word, at most SENTENCE_MAX bytes
-  while e - s + 1 > Words.SENTENCE_MAX do
-    if first - s > e - last then
-      s = charEnd(text, s) + 1
-    else
-      local k = e
-      while k > s and not lead(text, k) do k = k - 1 end
-      e = k - 1
-    end
   end
   -- an English sentence starts after the space that follows the one before it
   while english and s < first and text:sub(s, s) == " " do s = s + 1 end
@@ -326,11 +317,13 @@ function Words.bold(e)
   return s:sub(1, wf - 1) .. "<b>" .. s:sub(wf, wl) .. "</b>" .. s:sub(wl + 1)
 end
 
--- opts.images: add the image column. fmt(pattern, t): the client's date().
+-- opts.images: add the image column. opts.audio(entry) → the entry's Anki sound cell: add the audio column (UI/
+-- StudyVoice names the files; this module stays pure). fmt(pattern, t): the client's date().
 function Words.export(opts, fmt)
   opts = opts or {}
   local cols = { unpack(COLUMNS) }
   if opts.images then cols[#cols + 1] = "Image" end
+  if opts.audio then cols[#cols + 1] = "Audio" end
   local out = { "#separator:Tab", "#html:true", "#columns:" .. table.concat(cols, "\t") }
   for _, e in ipairs(Words.entries()) do
     -- every field through clean(): a list a newer version wrote may lack any of them
@@ -343,6 +336,7 @@ function Words.export(opts, fmt)
       type(e.saved) == "number" and fmt("%Y-%m-%d %H:%M", e.saved) or "",
       en and clean(e.word) or clean(Words.furigana(e.word, e.reading)), clean(Words.sentenceFurigana(e)) }
     if opts.images then row[#row + 1] = type(e.shot) == "string" and clean('<img src="' .. e.shot .. '">') or "" end
+    if opts.audio then row[#row + 1] = clean(opts.audio(e)) end
     out[#out + 1] = table.concat(row, "\t")
   end
   return table.concat(out, "\n")

@@ -23,7 +23,6 @@ Q.MAPPED = {
   on = function() return S().get("voice.panel.size") ~= "off" end, -- Panel size Off switches the panel off
   keepPlaying = flag("voice.panel.keep"),
   head = flag("voice.panel.head"),
-  combat = flag("voice.panel.combatDim"),
   locked = flag("voice.panel.lock"),
   buttons = word("voice.panel.hoverButtons", "hover", "always"),
   idle = word("voice.panel.fade", "fade", "stay"),

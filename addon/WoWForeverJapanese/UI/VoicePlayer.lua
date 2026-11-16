@@ -311,6 +311,7 @@ local function play(path, seconds, key, window, again, sentences, from)
     VoicePlayer.restoreDialog()
     return false
   end
+  if WFJ.StudyVoice then pcall(WFJ.StudyVoice.stop) end -- one voice at a time: the study card's sentence gives way
   tokens = tokens + 1
   local token = tokens
   local getTime = Compat.resolve("GetTime")
@@ -318,7 +319,10 @@ local function play(path, seconds, key, window, again, sentences, from)
   local offset = sentences and at[from] or 0
   playing = { handle = handle, key = key, token = token, window = window, startedAt = t0 - offset,
     seconds = seconds or UNKNOWN_LENGTH, sentences = sentences, at = at, sentence = from,
-    marks = sentences and sentences.marks, sentenceAt = t0 }
+    marks = sentences and sentences.marks, sentenceAt = t0,
+    -- played from a chosen sentence: its file starts in the pause before its first word, so until that word the
+    -- panel keeps to it (the word spoken last is still the sentence before)
+    floor = sentences and from > 1 and at[from] or nil }
   last[window] = { path = path, seconds = seconds, key = key, sentences = sentences }
   trace("start", playing, { path = path, from = from })
   showButton(window, true)
@@ -338,6 +342,7 @@ local function play(path, seconds, key, window, again, sentences, from)
           local ok, h = playSoundFile(sentences[i].path, CHANNEL)
           if ok then playing.handle = h end
           playing.sentence = i
+          playing.floor = nil
           playing.sentenceAt = type(getTime) == "function" and getTime() or playing.sentenceAt
           nextSentence(i + 1)
         end)
@@ -533,6 +538,14 @@ function VoicePlayer.replay()
   return startHead()
 end
 
+-- The sentence of `item` the voice is on: the one playing, the one a pause kept, or, once the line ended, one past
+-- its last (so back is its last sentence)
+local function sentenceOf(item)
+  if playing and playing.key == item.key then return playing.sentence end
+  if item == Q.current() then return item.from or 1 end
+  return #item.sentences + 1
+end
+
 -- One sentence back or on (`delta` -1 or 1) in the panel's line when it plays in sentences: plays the line from that
 -- sentence, whether it was playing, paused or had ended (back from the end is its last sentence). At either end it
 -- plays that end's sentence again. → true when it started
@@ -540,16 +553,7 @@ function VoicePlayer.step(delta)
   if not queueOn() or not voiceAllowed() then return false end
   local item = Q.current() or lastItem
   if not item or not item.sentences or #item.sentences == 0 or not stillVoiced(item) then return false end
-  local n = #item.sentences
-  local now
-  if playing and playing.key == item.key then
-    now = playing.sentence
-  elseif item == Q.current() then
-    now = item.from or 1
-  else
-    now = n + 1 -- the line ended: back is its last sentence
-  end
-  local to = math.max(1, math.min(n, now + delta))
+  local to = math.max(1, math.min(#item.sentences, sentenceOf(item) + delta))
   silence()
   if item ~= Q.current() then Q.front(item) end
   item.from = to
@@ -567,9 +571,11 @@ end
 function VoicePlayer.state()
   local waiting = {}
   for i = 2, #Q.items do waiting[#waiting + 1] = Q.items[i] end
+  local shown = Q.current() or lastItem
   return { item = Q.current(), playing = playing ~= nil, paused = Q.paused,
     startedAt = playing and playing.startedAt or nil, seconds = playing and playing.seconds or nil,
-    waiting = waiting, last = lastItem }
+    waiting = waiting, last = lastItem,
+    sentence = shown and shown.sentences and #shown.sentences > 0 and sentenceOf(shown) or nil }
 end
 
 local function createButton(window)
@@ -611,12 +617,13 @@ end
 
 -- Where the voice is in the line, in seconds, and the line's timing, for the panel. Measured from the moment the
 -- sentence playing started, plus where that sentence starts in the line (the files are cut end to end), so a timer
--- that started a file late never carries into the next. → seconds, timing, or nil
+-- that started a file late never carries into the next. → seconds, timing, and the time the line was played from when
+-- it was played from a chosen sentence and that sentence's file still plays (else nil), or nil
 function VoicePlayer.timing()
   if not (playing and playing.sentences and playing.marks) then return nil end
   local getTime = Compat.resolve("GetTime")
   if type(getTime) ~= "function" then return nil end
-  return playing.at[playing.sentence] + (getTime() - playing.sentenceAt), playing.marks
+  return playing.at[playing.sentence] + (getTime() - playing.sentenceAt), playing.marks, playing.floor
 end
 
 -- A voiced quest or gossip line by its pack key ("4641-description", "g-<hash>"), played through the queue with no

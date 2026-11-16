@@ -48,6 +48,17 @@ Text.T = {
   ["words.shotsPath"] = { en = "Your screenshots are in this folder:", ja = "スクリーンショットはこのフォルダにあります：" },
   ["words.ankiPath"] = { en = "Copy them into Anki's media folder (Mac, then Windows; User 1 is Anki's first profile):",
     ja = "Ankiのメディアフォルダにコピーしてください（上がMac、下がWindows。User 1はAnkiの最初のプロフィール）：" },
+  ["words.audio"] = { en = "Include audio (each sentence in its NPC's voice)", ja = "音声を含める（各文をNPCの声で）" },
+  ["words.audioHint"] = {
+    en = "To hear the sentences in Anki, copy these %s sound files into Anki's media folder (the box below). Each line "
+      .. "below is one file inside this folder of your game:\n"
+      .. "|cffffd100World of Warcraft/_forever_/Interface/AddOns|r\n"
+      .. "Find each file, copy it, and paste it into Anki's media folder. Then import the word list into Anki.",
+    ja = "Ankiで文の音声を聞くには、この%s個の音声ファイルをAnkiのメディアフォルダ（下の欄）にコピーしてください。下の一行が、"
+      .. "ゲームの次のフォルダの中のひとつのファイルです：\n|cffffd100World of Warcraft/_forever_/Interface/AddOns|r\n"
+      .. "それぞれのファイルを探してコピーし、Ankiのメディアフォルダに貼り付けてください。最後に単語の一覧をAnkiに取り込んでください。",
+  },
+  ["words.audioNone"] = { en = "None of these words has a recording to copy.", ja = "コピーできる録音のある単語はありません。" },
 
   ["main.welcome"] = { en = "Studying Japanese, studying English or just playing? Choose again any time.",
     ja = "日本語の勉強、英語の勉強、ただ遊ぶ。使い方はいつでも選び直せます。" },
@@ -89,6 +100,15 @@ Text.T = {
   ["study.sound"] = { en = "Sound on Good: on / off", ja = "正解の音：オン／オフ" },
   ["study.footer"] = { en = "%s due, %s new", ja = "復習%s・新規%s" },
   ["study.show"] = { en = "Show answer", ja = "答えを見る" },
+  ["study.voice"] = { en = "Play the sentence: play / stop", ja = "文を読み上げる：再生／停止" },
+  ["study.voice.missing"] = { en = "The voice pack has no recording of this line.",
+    ja = "ボイスパックにこの文の録音がありません。" },
+  ["study.voice.stale"] = { en = "The recording is older than this line's Japanese. Update the voice packs.",
+    ja = "録音がこの文の日本語より古いです。ボイスパックを更新してください。" },
+  ["study.voice.notfound"] = { en = "This sentence is not found in its line's recording.",
+    ja = "この文は元の文章の録音に見つかりません。" },
+  ["study.voice.untimed"] = { en = "This voice pack cannot play this sentence on its own.",
+    ja = "このボイスパックではこの文だけを再生できません。" },
   ["study.again"] = { en = "Again", ja = "もう一度" },
   ["study.good"] = { en = "Good", ja = "正解" },
   ["study.lemma"] = { en = "Dictionary form: %s", ja = "辞書形：%s" },

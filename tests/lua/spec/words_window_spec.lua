@@ -4,7 +4,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local F = require("tests.lua.spec.stub_fixwindow")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
-  "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua",
+  "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua", "Core/Hash.lua", "Core/Voice.lua", "Core/Placeholders.lua",
+  "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/VoicePanelText.lua", "UI/StudyVoice.lua",
   "UI/WordsWindow.lua" }
 
 local function add(W, word, shot)
@@ -84,6 +85,56 @@ describe("the word list window", function()
     assert.is_truthy(f.shotsPath:GetText():find("Screenshots", 1, true))
     assert.is_truthy(f.ankiMac:GetText():find("collection.media", 1, true))
     assert.is_truthy(f.ankiWin:GetText():find("collection.media", 1, true))
+  end)
+
+  it("Include audio shows only with a voice pack; ticked, the export names each sentence's files and the window "
+    .. "gives the lines that copy them into Anki, for this system", function()
+    local FOLDER = "WoWForeverJapanese_VoiceLevels1to10"
+    local text = "生き物がある。"
+    WFJ.Voice.init({ hash = WFJ.Hash.key, lookup = function(kind, id)
+      if kind == "quest.description" and id == 456 then return { ja = text } end
+    end })
+    add(WFJ.Words, "生き物")
+    add(WFJ.Words, "数") -- its sentence is not in the line: no audio
+    local f = WW.open()
+    assert.is_false(shown(f.audio))
+    WFJ.Voice.register({ format = 3, folder = FOLDER, lines = {
+      ["456-description"] = { false, WFJ.Hash.key(text), s = { { "456-description-1.mp3", 2.0 } } } } })
+    f = WW.open()
+    assert.is_true(shown(f.audio))
+    assert.is_false(shown(f.audioLines))
+    local height = f.size[2]
+    _G.IsMacClient = function() return true end
+    f.audio:SetChecked(true)
+    f.audio.scripts.OnClick(f.audio)
+    local found = WFJ.StudyVoice.findAll(WFJ.Words.entries())
+    assert.are.equal(WFJ.Words.export({ audio = function(e) return WFJ.StudyVoice.cell(found[e]) end }, _G.date),
+      f.text.value)
+    assert.is_truthy(f.text.value:find("\t[sound:456-description-1.mp3]\n", 1, true))
+    assert.is_true(shown(f.audioLines))
+    assert.are.equal(table.concat(WFJ.StudyVoice.fileList(WFJ.Words.entries(), found), "\n"), f.audioLines.value)
+    assert.are.equal(FOLDER .. "/Sound/456-description-1.mp3", f.audioLines.value)
+    assert.are.equal(ja("words.audioHint", 1), f.audioHint.en:GetText())
+    assert.are.equal(WW.ANKI_MAC, f.ankiFolder.value) -- the Anki folder for the player's own system
+    assert.is_true(f.size[2] > height) -- taller, so the file list fits inside the frame
+    _G.IsMacClient = function() return false end
+    f.audio.scripts.OnClick(f.audio)
+    assert.are.equal(WW.ANKI_WIN, f.ankiFolder.value)
+    f.audio:SetChecked(false)
+    f.audio.scripts.OnClick(f.audio)
+    assert.are.equal(WFJ.Words.export({}, _G.date), f.text.value)
+    assert.is_false(shown(f.audioLines))
+    _G.IsMacClient = nil
+  end)
+
+  it("Include audio says so when no saved word has a recording", function()
+    WFJ.Voice.init({ hash = WFJ.Hash.key, lookup = function() return nil end })
+    WFJ.Voice.register({ format = 3, folder = "WoWForeverJapanese_VoiceOther", lines = {} })
+    add(WFJ.Words, "生き物")
+    local f = WW.open()
+    f.audio:SetChecked(true)
+    f.audio.scripts.OnClick(f.audio)
+    assert.are.equal(ja("words.audioNone"), f.audioLines.value)
   end)
 
   it("Remove last removes the newest word; Clear all needs a second click", function()
