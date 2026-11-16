@@ -358,6 +358,7 @@ function Stub.install(tocPath)
       tex.SetHeight = function(t, h) t.height = h end
       tex.SetTexture = function(t, path) t.texture = path end
       tex.SetAtlas = function(t, atlas) t.atlas = atlas end
+      tex.SetBlendMode = function(t, mode) t.blend = mode end
       tex.SetAllPoints = function(t, rel) t.allPoints = rel or true end
       tex.ClearAllPoints = function(t) t.point = nil end
       tex.Show = function(t) t.shown = true end

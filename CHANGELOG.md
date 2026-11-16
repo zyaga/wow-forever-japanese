@@ -21,6 +21,7 @@ an old setting stops working). A release moves those lines under its version num
 - The voice is clearer: the packs now keep the voices' high end, which makes the download about twice as big (about 2.8 GB). Three new packs split the largest level bands (Levels 1-10 (part 2), Levels 51-60 (part 2) and (part 3)); the CurseForge app installs them with the next Update All, and a chat line at login names any voice pack that did not load.
 - The voice panel no longer shows a stage direction, such as an emote in angle brackets, that the voice does not read. A line made only of such directions is still shown.
 - A bug report now lists your voice packs with their versions.
+- The voice panel no longer goes faint in combat (the "Dim the panel in combat" setting is gone), and a paused line stays on screen, whole, on the sentence you paused in, until you play it or close it.
 
 ## 0.13.1 - 2026-11-14
 
