@@ -191,7 +191,6 @@ WFJ.Data.add("gloss", {
   [67188] = "尊敬する\tそんけいする\tbe revered",
   [67189] = "尊敬する\tそんけいする\thave respect",
   [67190] = "尊敬する\tそんけいする\thonorable",
-  [67191] = "尊敬する\tそんけいする\thonored (respected)",
   [67192] = "尊敬する\tそんけいする\tis respected",
   [67193] = "尊敬する\tそんけいする\trespect",
   [67194] = "尊敬する\tそんけいする\trespected",

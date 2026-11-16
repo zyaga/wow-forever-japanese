@@ -4,6 +4,7 @@ WFJ.Data.add("english", {
   ["gossip:3e044d25778cb87d"] = { text = "best=25 boot=4 but=13 day=11 fast=3 good=6 hard=21 sense=19 sign=12 smith=7 still=14 talk=20 taskmaster=22 work=10 ye=1" },
   ["gossip:3e05589572d79ac3"] = { text = "business=4 greetings=1 one=2 you=3" },
   ["gossip:3e19e0b1c27f9ce0"] = { text = "axe=18 best=12 but=17 demons=9 doing=7 find=31 get=21 go=26 i=14 keep=11 leash=10 leave=25 like=16 lost=27 love=20 me=23 mind=8 now=22 putting=19 sort=5 that=28 thing=6 warlock=1 well=2" },
+  ["gossip:3e1b27e7a2496c28"] = { text = "book=8 books=8 crest=6 family=19 found=9 highly=30 indeed=13 interesting=4 known=14 lineage=15 matched=11 my=7 one=10 quite=3 retrieved=24 seems=22 shield=2 them=28 this=1 trace=17 whoever=27 wrote=26 you=23" },
   ["gossip:3e1b8dfde2985ee6"] = { text = "leave=3 meditation=1 time=2" },
   ["gossip:3e1c941d66057d41"] = { text = "behind=3 gnome=1" },
   ["gossip:3e1cc66c78145e50"] = { text = "ogre=3" },

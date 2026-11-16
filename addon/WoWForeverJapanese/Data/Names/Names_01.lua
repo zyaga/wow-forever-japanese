@@ -223,6 +223,7 @@ WFJ.Data.add("name", {
   ["01ea2609cca4cb0b"] = { "プライマル・ブレッシング・ビジュアル", "ぷらいまる・ぶれっしんぐ・びじゅある", "Primal Blessing Visual" },
   ["01ebfaf585391e3d"] = { "イライザズ・ガード", "いらいざず・がーど", "Eliza's Guards" },
   ["01ed321f547b79fb"] = { "ジャイアント", "じゃいあんと", "Giants" },
+  ["01ee24b28ca2dc56"] = { "マルゲンズ・ロング・ボウ", "まるげんず・ろんぐ・ぼう", "Malgen's Long Bow" },
   ["01ee506efbe38bc2"] = { "クロスロード", "くろすろーど", "The Crossroads" },
   ["01ef11d3173f75b5"] = { "ディープラン・ダイバー", "でぃーぷらん・だいばー", "Deeprun Diver" },
   ["01f15be9483b9ea8"] = { "コボルド・マイナー", "こぼるど・まいなー", "Kobold Miner" },

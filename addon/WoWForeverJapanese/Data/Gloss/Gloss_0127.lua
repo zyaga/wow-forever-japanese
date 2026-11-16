@@ -216,7 +216,6 @@ WFJ.Data.add("gloss", {
   [127215] = "転がる\tころがる\tis (never) lying around",
   [127216] = "転がる\tころがる\tlay (roll about)",
   [127217] = "転がる\tころがる\tlayin' around",
-  [127218] = "転がる\tころがる\tlaying",
   [127219] = "転がる\tころがる\tlaying (lying sprawled)",
   [127220] = "転がる\tころがる\tlies",
   [127221] = "転がる\tころがる\tlittering (lying around)",

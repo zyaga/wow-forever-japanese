@@ -124,7 +124,6 @@ WFJ.Data.add("gloss", {
   [5121] = "おける\tおける\tthroughout (in)",
   [5122] = "おける\tおける\twithin (における)",
   [5123] = "おこし方\tおこしかた\thow to make (kindle)",
-  [5124] = "おこす\tおこす\tburn (kindle)",
   [5125] = "おごり\tおごり\ttreat (it's on him)",
   [5126] = "おごり\tおごり\ttreat (on me)",
   [5127] = "おごる\tおごる\tbuy (treat)",

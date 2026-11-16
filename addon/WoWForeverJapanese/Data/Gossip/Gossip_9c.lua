@@ -20,6 +20,7 @@ WFJ.Data.add("gossip", {
   ["9c600498a72eb54c"] = { "お願い……お願いです……Miss Proudmore。そんなつもりじゃ……", "." },
   ["9c61ed23104e9e0d"] = { "おやすみ、おやすみ。", "." },
   ["9c69bad5eeaae79d"] = { "今年のWinter Veilにどんな秘密の贈り物が欲しいか、忘れずにGreatfather Winterに伝えるんだよ!", "." },
+  ["9c6ea3ab269a1c11"] = { "奴が来た時には、我々は備えができている。", "." },
   ["9c70f7cd5837b25c"] = { "ここにこの邪悪な道具を破壊する！Hordeのために！", "." },
   ["9c7a35637d68678f"] = { "この仕事は、どう考えても年に一万六千五百の値打ちもないね。", "." },
   ["9c80476bad5905cc"] = { "見事だ! League of Arathorのために、Arathi BasinからThe Defilersとその Hordeの手先どもを一掃するという大きな働きをしてもらうことになる。Stormwind Keepの謁見の間にいるLady Hoteshemを訪ねよ。彼女はあなたを待っている、{name}。", "." },

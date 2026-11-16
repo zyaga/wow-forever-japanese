@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:a5a8bf8ed8117045"] = { text = "but=5 hmm=1 nice=4 rock=3 small=6 that=2" },
   ["gossip:a5a9aded2f30d37b"] = { text = "healed=1 priest=2" },
   ["gossip:a5b4e45761cacafe"] = { text = "anything=2 else=1 need=3 please=4" },
+  ["gossip:a5b88f2372a308da"] = { text = "alerting=26 assistance=32 busy=18 but=29 canyons=19 certain=3 dealing=17 further=31 going=13 gratitude=28 hmmph=1 might=34 need=33 note=7 one=2 patrol=20 preparations=11 right=15 send=21 still=30 this=6 threat=25 unseen=12 we=16 whoever=9" },
   ["gossip:a5b8c28b928ca565"] = { text = "all=6 citizens=30 control=17 dedicated=8 destinies=14 during=29 every=32 fallen=5 first=27 freedoms=11 hardships=21 here=23 made=31 monument=2 our=9 own=13 people=10 protection=3 remember=34 retain=12 riddled=26 sacrifice=33 this=1 those=7 unbelievable=19 war=28 weathered=22" },
   ["gossip:a5bbbc8e6a610213"] = { text = "love=3 roasted=2 yummy=1" },
   ["gossip:a5bd3b3ca7e9874e"] = { text = "need=2 plan=3" },

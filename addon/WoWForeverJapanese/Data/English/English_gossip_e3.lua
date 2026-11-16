@@ -14,7 +14,6 @@ WFJ.Data.add("english", {
   ["gossip:e35d5b4a5270fed5"] = { text = "ever=5 fold=3 lost=1 lovely=6 returned=4 sheep=2 think=8" },
   ["gossip:e3600d39873bbe59"] = { text = "gnomes=1 go=7 hear=6 look=8 run=2 shop=4 specializes=3" },
   ["gossip:e361f26e724ee82d"] = { text = "central=2 house=1 ring=3" },
-  ["gossip:e3639023aafa084a"] = { text = "commitment=2 i=3 see=8 taught=4 understood=6 what=5 your=1" },
   ["gossip:e36d0c502d80c677"] = { text = "kindly=2 thank=1" },
   ["gossip:e36d21b29336d08d"] = { text = "and=5 eh=4 love=3 morning=1 needing=7 smell=2 what=6" },
   ["gossip:e37228ddfe3918ac"] = { text = "look=3 ok=1 thing=2" },

@@ -276,7 +276,6 @@ WFJ.Data.add("gloss", {
   [107273] = "空\tそら\tair (sky)",
   [107274] = "空\tそら\tskies",
   [107275] = "空\tそら\tsky",
-  [107276] = "空\tそら\tsky (skyborne)",
   [107277] = "空\tそら\tskyward (sky)",
   [107278] = "空\tそら\tthe heavens (sky)",
   [107279] = "空かせる\tすかせる\tare hungry (お腹を空かせる)",

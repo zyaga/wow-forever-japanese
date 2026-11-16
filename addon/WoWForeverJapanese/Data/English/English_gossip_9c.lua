@@ -18,6 +18,7 @@ WFJ.Data.add("english", {
   ["gossip:9c487c9af5ed4344"] = { text = "braggart=2 east=22 enough=4 found=24 he=21 loudmouth=1 meet=7 most=9 one=12 should=19 skilled=10 sure=25 talking=18 tell=14 that=3 trained=17 warrior=11 warriors=11 ways=16 who=20" },
   ["gossip:9c600498a72eb54c"] = { text = "mean=3 please=1" },
   ["gossip:9c69bad5eeaae79d"] = { text = "like=5 secret=3 sure=6 surprise=4 tell=7 this=1 what=2" },
+  ["gossip:9c6ea3ab269a1c11"] = { text = "arrives=2 he=1 ready=5 we=4 when=3" },
   ["gossip:9c70f7cd5837b25c"] = { text = "destroy=5 evil=3 hereby=1 instruments=4 these=2" },
   ["gossip:9c7a35637d68678f"] = { text = "definitely=3 five=5 job=2 not=7 this=1 worth=6 year=4" },
   ["gossip:9c80476bad5905cc"] = { text = "chamber=10 doing=8 excellent=1 expecting=15 great=6 ridding=5 seek=12 service=7 she=13 their=3 thugs=4 you=14" },

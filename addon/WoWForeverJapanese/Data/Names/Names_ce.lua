@@ -206,6 +206,7 @@ WFJ.Data.add("name", {
   ["cecb4ce43111ee43"] = { "マーミドンズ・ケープ", "まーみどんず・けーぷ", "Myrmidon's Cape" },
   ["cecc853f5b7f0e69"] = { "バロン・リーヴェンデアズ・デスチャージャー", "ばろん・りーゔぇんであず・ですちゃーじゃー", "Baron Rivendare's Deathcharger" },
   ["cecdb9325b970daf"] = { "インテンス・ヒート", "いんてんす・ひーと", "Intense Heat" },
+  ["cece61777ab89d59"] = { "ファーザー・セナリウス", "ふぁーざー・せなりうす", "Father Cenarius" },
   ["cecf1263ec4afacc"] = { "クルードリー・リトゥン・ログ", "くるーどりー・りとぅん・ろぐ", "Crudely-written Log" },
   ["cecf2abc1b4ade2e"] = { "ウィザーバーク・トロール", "うぃざーばーく・とろーる", "Witherbark Trolls" },
   ["cecf43e0b02f5e3c"] = { "ラサーラザル", "らさーらざる", "Lathar'Lazal" },

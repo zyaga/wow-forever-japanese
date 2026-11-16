@@ -234,6 +234,7 @@ WFJ.Data.add("name", {
   ["61d5ae90edabaed2"] = { "ダスクレイス・ウエストガード", "だすくれいす・うえすとがーど", "Duskwraith Waistguard" },
   ["61d80006a245ec71"] = { "レシピ：ロッホ・フレンジー・ディライト", "れしぴ・ろっほ・ふれんじー・でぃらいと", "Recipe: Loch Frenzy Delight" },
   ["61d8bbc4cf36560b"] = { "クリスタル・ケルプ", "くりすたる・けるぷ", "crystal kelp" },
+  ["61d8f32412c61d52"] = { "ジャック", "じゃっく", "Jacques" },
   ["61d8f5f1c2ad11cc"] = { "グローイング・リザードスケイル・クローク", "ぐろーいんぐ・りざーどすけいる・くろーく", "Glowing Lizardscale Cloak" },
   ["61d9ce7809c78a81"] = { "マウント・ハイジャル", "まうんと・はいじゃる", "Mt. Hyjal" },
   ["61db1eed22142535"] = { "ランバー・ミル・バナー", "らんばー・みる・ばなー", "Lumber Mill Banner" },

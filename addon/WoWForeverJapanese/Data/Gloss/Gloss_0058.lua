@@ -309,7 +309,6 @@ WFJ.Data.add("gloss", {
   [58306] = "呼び出す\tよびだす\tnever bring forth (not summon)",
   [58307] = "呼び出す\tよびだす\tonce (I) summon (her)",
   [58308] = "呼び出す\tよびだす\tonce (she) is summoned",
-  [58309] = "呼び出す\tよびだす\tprovoke (call out)",
   [58310] = "呼び出す\tよびだす\tstart summoning forth",
   [58311] = "呼び出す\tよびだす\tsummon",
   [58312] = "呼び出す\tよびだす\tsummon (call forth)",

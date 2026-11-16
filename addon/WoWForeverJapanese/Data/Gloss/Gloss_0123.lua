@@ -906,7 +906,6 @@ WFJ.Data.add("gloss", {
   [123906] = "読み取る\tよみとる\tcan be read",
   [123907] = "読み取る\tよみとる\tcan make out",
   [123908] = "読み取る\tよみとる\tcan make out (could read)",
-  [123909] = "読み取る\tよみとる\tcan make out (read)",
   [123910] = "読み取る\tよみとる\tcan read",
   [123911] = "読み取る\tよみとる\tcan't make (sense of)",
   [123912] = "読み取る\tよみとる\tglean (read)",

@@ -205,7 +205,6 @@ WFJ.Data.add("gloss", {
   [6202] = "かけて\tかけて\tby (I swear by)",
   [6203] = "かけて\tかけて\tspending",
   [6204] = "かけて\tかけて\twhen it comes to",
-  [6205] = "かけら\tかけら\ta piece",
   [6206] = "かけら\tかけら\tbits",
   [6207] = "かけら\tかけら\tchips",
   [6208] = "かけら\tかけら\tcrumbs; fragments",

@@ -35,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:dfcf4499c00875fe"] = { text = "shamans=1 show=4 totems=2" },
   ["gossip:dfd91062bb6846bf"] = { text = "kill=2 outsiders=1" },
   ["gossip:dfe16e9a5eb128e2"] = { text = "happening=3 this=4 what=1" },
+  ["gossip:dfe1960eb0a086c7"] = { text = "come=1 grant=4 passage=3 temporary=2" },
   ["gossip:dfe4c3d9e02cdd43"] = { text = "assist=4 what=3 yes=1" },
   ["gossip:dfe597b007d72880"] = { text = "adoring=10 but=20 even=21 fans=11 find=9 greet=15 heart=18 heroes=4 hi=1 kiss=26 know=25 leaders=14 many=13 most=7 popular=8 see=16 so=12 sure=17 warm=19 warms=19 what=23 who=6" },
   ["gossip:dfefb31a7c434722"] = { text = "cries=1" },

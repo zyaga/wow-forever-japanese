@@ -21,6 +21,7 @@ WFJ.Data.add("english", {
   ["gossip:976dcf15d3a8a0e7"] = { text = "base=4 find=14 go=5 he=3 him=13 portal=9 seek=2 watches=6 western=7 you=1" },
   ["gossip:977271405ba4726f"] = { text = "building=9 city=4 know=3 outer=5 ring=6 skull=8 us=1" },
   ["gossip:977af7d000482995"] = { text = "no=1" },
+  ["gossip:977bc6ecb24e6aab"] = { text = "then=1" },
   ["gossip:9780a82aa0087a4e"] = { text = "demon=6 face=5 gnome=1 how=3 pathetic=4" },
   ["gossip:9781bdf54cc60cfc"] = { text = "blow=6 filled=3 kegs=1 one=2" },
   ["gossip:9785a87073eaac42"] = { text = "crate=2 this=1" },

@@ -7,6 +7,7 @@ WFJ.Data.add("english", {
   ["gossip:a20c349fe0df7302"] = { text = "always=10 back=3 fellow=5 new=7 paladins=6 skills=8 smithy=2 stories=4 teaching=9 usually=1" },
   ["gossip:a212fc0ec15af5a2"] = { text = "adventures=28 amongst=17 capitals=7 ceremony=24 citizenry=16 city=14 during=29 every=13 grown=4 hamlets=9 hidden=18 hovels=10 interacted=30 it=32 known=33 large=3 members=15 nearly=12 one=5 only=26 possible=36 quite=35 ritual=23 scope=2 small=8 so=19 surprised=20 uniform=21 wears=22 you=27" },
   ["gossip:a21cf8cb52e6ab06"] = { text = "and=7 dinner=8 here=4 how=2 idea=6 long=3 nothing=13 show=14 time=11 waiting=5" },
+  ["gossip:a229431ae8b7190c"] = { text = "bodies=2 cart=4 hall=3 he=5 those=1 waiting=6 want=7" },
   ["gossip:a22e42a9ad71206e"] = { text = "get=7 much=10 now=5 prepare=2 see=4 trying=3 visit=1 way=6 work=9" },
   ["gossip:a238c9ae316b8c67"] = { text = "amateur=2 bad=1 i=5 if=11 know=8 learn=10 more=9 still=3 talk=12 you=4" },
   ["gossip:a24517f6174d770e"] = { text = "affiliation=13 all=17 alliance=12 believe=30 carriers=24 center=4 converted=11 destroyed=28 during=5 enlightenment=3 fanatical=9 human=15 intolerant=19 learning=2 non=16 once=1 outsiders=20 peaceful=8 plague=23 potential=26 races=18 regardless=14 rise=7 stronghold=10 they=29 undead=6" },
@@ -45,5 +46,6 @@ WFJ.Data.add("english", {
   ["gossip:a2eb2d0f987f53b9"] = { text = "efforts=3 good=1 my=2 tell=6 wasted=4" },
   ["gossip:a2eb364eb38403b5"] = { text = "able=7 elf=9 heard=11 lives=13 might=8 more=1 name=12 nothing=5 teach=3 though=6 you=2" },
   ["gossip:a2f585cb399ac6a3"] = { text = "answer=3 any=2 good=4 hmm=1" },
+  ["gossip:a2fbcd0eea462394"] = { text = "dare=2 learn=6 me=7 more=4 speak=9" },
   ["gossip:a2fbd4aa2eafa908"] = { text = "saved=1 state=2" },
 })

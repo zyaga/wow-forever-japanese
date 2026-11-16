@@ -28,6 +28,7 @@ WFJ.Data.add("english", {
   ["gossip:d1732731ef893ccb"] = { text = "can=6 friend=3 gales=1 greetings=2 help=5 something=4" },
   ["gossip:d1799ec788612e01"] = { text = "stupid=2 you=1" },
   ["gossip:d17caf7fd12d8c38"] = { text = "cards=1 dare=6 if=8 more=3 speak=5" },
+  ["gossip:d18397b09681986a"] = { text = "else=1 like=3 talk=2" },
   ["gossip:d186c8877f9a31ab"] = { text = "big=3 heads=2 pay=4 you=1" },
   ["gossip:d1927b12932299ea"] = { text = "alert=8 beware=2 lurks=7 threat=6 wild=5" },
   ["gossip:d197bfa0c3c19deb"] = { text = "life=1 runs=2" },

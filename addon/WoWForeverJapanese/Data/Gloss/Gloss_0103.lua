@@ -889,7 +889,6 @@ WFJ.Data.add("gloss", {
   [103889] = "相手\tあいて\tagainst (as opponent)",
   [103890] = "相手\tあいて\tagainst (opponent)",
   [103891] = "相手\tあいて\tagainst (with as opponent)",
-  [103892] = "相手\tあいて\tallies (the other party)",
   [103893] = "相手\tあいて\tare no match",
   [103894] = "相手\tあいて\taround (as an opponent)",
   [103895] = "相手\tあいて\tbusiness (foe)",

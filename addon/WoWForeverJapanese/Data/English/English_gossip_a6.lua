@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:a6a7e05bd62136d9"] = { text = "dirty=6 just=5 no=3 why=2 you=1" },
   ["gossip:a6a7ef1da95339ce"] = { text = "default=2" },
   ["gossip:a6afae77ff7e31e8"] = { text = "across=8 began=11 both=35 chained=36 cursed=23 desert=24 destruction=9 during=13 greetings=1 here=39 i=30 initial=19 invasion=20 know=41 lives=15 lost=16 march=10 most=18 must=43 nearly=4 one=32 past=5 present=34 remain=27 stationed=40 this=6 traveler=2 war=12 why=37" },
+  ["gossip:a6bc5ebd60b63fed"] = { text = "adventurer=3 drink=1 fancy=2 finest=6 selection=7 world=4" },
   ["gossip:a6c88e9e8bb44a2a"] = { text = "almighty=8 fear=7 i=3 infused=5 master=13 my=12 one=14 pathetic=1 power=4 serve=11 wrath=9" },
   ["gossip:a6d637c7dfef399e"] = { text = "degrees=2 temperature=1" },
   ["gossip:a6d7cff8711ddda3"] = { text = "land=1" },
@@ -50,4 +51,5 @@ WFJ.Data.add("english", {
   ["gossip:a6f60c772c0c0b49"] = { text = "agree=32 all=5 and=14 begins=20 better=28 carefully=13 collections=12 completed=6 cost=23 discourage=8 don't=9 effort=3 essence=11 help=16 life=22 making=25 me=29 mistake=24 seems=30 someone=21 tasks=4 that=7 this=17 thoroughly=15 time=10 true=1 truly=1 war=2" },
   ["gossip:a6f6f512eb4bfc7f"] = { text = "bet=5 bothering=4 come=16 create=9 go=12 me=3 my=13 quality=6 robe=7 talents=14 what=1 why=2 worthy=15" },
   ["gossip:a6f77af0c9b13a07"] = { text = "tell=2 use=1" },
+  ["gossip:a6fb9c648e830c90"] = { text = "cold=2 cream=3 ice=1 interest=4" },
 })

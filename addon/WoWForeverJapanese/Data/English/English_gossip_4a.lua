@@ -13,7 +13,6 @@ WFJ.Data.add("english", {
   ["gossip:4a26ca3cb1624b5d"] = { text = "cleansed=5 keep=3 this=4 will=6 work=2" },
   ["gossip:4a2bb1b0f6991722"] = { text = "but=1 wait=2" },
   ["gossip:4a32c12be4f0acb5"] = { text = "able=7 bodied=9 every=11 grows=2 infestation=1 invasion=4 needed=12 remaining=13 stem=6 their=3 tide=5 warrior=10" },
-  ["gossip:4a3b65bbf636ccd9"] = { text = "sight=6 wreckage=1" },
   ["gossip:4a455cef76cb6204"] = { text = "leave=3 place=2 this=1" },
   ["gossip:4a458c0c4fdd5566"] = { text = "already=2 approach=4 orcs=3" },
   ["gossip:4a497f443eea70ec"] = { text = "chat=30 company=21 course=27 deal=44 enough=31 finally=10 former=20 going=39 him=37 how=13 i=41 know=9 living=22 me=1 member=23 must=25 my=19 one=4 refreshing=15 return=38 right=28 see=2 sent=24 spirit=36 talk=11 things=34 work=43 you=18" },

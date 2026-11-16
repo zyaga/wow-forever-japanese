@@ -215,6 +215,7 @@ WFJ.Data.add("name", {
   ["0eb8538eedf5bb9f"] = { "モールド", "もーるど", "mold" },
   ["0eb8539eedf5bbaf"] = { "モルト", "もると", "molt" },
   ["0eb85521edf61b4c"] = { "ムーン", "むーん", "moon" },
+  ["0eb857a7edf6baa8"] = { "モート", "もーと", "mote" },
   ["0eb858adedf6fa6a"] = { "ムーブ", "むーぶ", "move" },
   ["0eb8c1c0ba8cf327"] = { "バサルト・ネックレス", "ばさると・ねっくれす", "Basalt Necklace" },
   ["0eb96d1eed95c841"] = { "スモール・ダート・マウンド", "すもーる・だーと・まうんど", "Small Dirt Mound" },

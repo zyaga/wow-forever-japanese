@@ -8,6 +8,7 @@ WFJ.Data.add("english", {
   ["gossip:6a0c65f68d69477e"] = { text = "hopefully=4 reinforcements=1 show=3 soon=2" },
   ["gossip:6a0d7dadafdb3bae"] = { text = "where=1" },
   ["gossip:6a0db92916a30be6"] = { text = "annoy=5 boring=1 can=3 old=7 wretch=4" },
+  ["gossip:6a1341ab79db5367"] = { text = "met=1" },
   ["gossip:6a16ac0ae2a19de6"] = { text = "finally=1 get=4 glad=5 place=3 this=2" },
   ["gossip:6a256d9cfa307bd6"] = { text = "breathtaking=1 children=3 each=6 give=13 legendary=8 one=11 oral=12 people=9 return=5 school=4 these=7" },
   ["gossip:6a2a05c01bb0ef31"] = { text = "return=3 then=2 well=1" },

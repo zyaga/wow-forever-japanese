@@ -4,6 +4,7 @@ WFJ.Data.add("english", {
   ["gossip:18076c900eb61931"] = { text = "always=7 brings=8 demonic=9 elves=1 forests=12 gifts=3 granted=4 many=2 our=14 responsibility=15 return=6 safeguard=13 taint=10 these=11" },
   ["gossip:1809700f2b1d207d"] = { text = "defeated=3 face=6 me=5 minions=2 mortals=7 my=1 then=4" },
   ["gossip:180990cb69ea7a3b"] = { text = "animal=1 bubbling=3 cauldron=5 drops=6 parts=2" },
+  ["gossip:180cf4060833fa7c"] = { text = "containing=12 end=15 it=7 know=6 madness=14 matter=8 matters=8 now=9 part=19 rest=22 saw=5 this=11 us=23 well=20 what=4 you=3 your=18" },
   ["gossip:180da3a470cf32f9"] = { text = "grown=5 knowledge=1 lacking=2 return=7 skills=4 smelting=3" },
   ["gossip:181203c38a41047b"] = { text = "arts=44 basics=49 before=31 camp=9 campfire=24 camps=9 care=11 center=8 check=48 complete=27 cooks=36 craft=6 culinary=43 fire=38 folk=12 head=18 if=16 learn=50 make=39 most=35 need=19 now=2 one=33 own=4 remember=23 set=10 someone=46 start=30 teach=40 test=15 town=7 train=45 want=51 wilderness=17 without=25 you=3" },
   ["gossip:18149e1fc7e00e8f"] = { text = "day=6 greater=3 listen=11 magic=2 me=8 sky=1 something=4 work=5" },

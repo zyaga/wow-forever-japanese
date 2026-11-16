@@ -3,7 +3,6 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:f50380244bff8657"] = { text = "all=6 clear=7 even=10 lady=3 look=13 master=8 now=9 returned=14 right=2 skies=12 stirs=11 time=1" },
   ["gossip:f5070ae8754e63c1"] = { text = "effort=8 good=2 heard=5 last=4 needed=9 question=3 smelt=19 very=1 war=7" },
-  ["gossip:f50c040e11b7a57d"] = { text = "all=5 beast=19 call=23 choose=13 dismiss=24 earned=34 fit=22 give=26 here=7 i=2 learned=6 new=27 now=17 own=11 pet=12 power=21 pride=29 skills=28 take=10 tame=20 teach=3 them=33 time=14 use=31 what=9 with=30 you=1" },
   ["gossip:f50e0dde4a062014"] = { text = "found=10 help=2 just=8 learn=1 middle=5 outside=9 rise=6 she=4" },
   ["gossip:f51aa128e297e1bd"] = { text = "any=5 brethren=19 command=16 congratulate=30 continue=12 elements=14 ever=3 first=29 guidance=21 look=23 newest=27 our=18 path=11 proud=9 seen=4 should=10 this=24 torch=6 totem=28 wisdom=20 you=1 your=15" },
   ["gossip:f51c64aafae72e4c"] = { text = "ask=2 far=8 gathered=19 just=3 received=6 skins=15 that=4 update=5" },
@@ -15,6 +14,7 @@ WFJ.Data.add("english", {
   ["gossip:f53a0a0f496a10f2"] = { text = "city=6 fellow=4 free=14 friend=3 greetings=2 leisure=13 offer=9 passage=8 portal=12 quick=7 utilize=15 wind's=1" },
   ["gossip:f53dea4e0237027e"] = { text = "becomes=13 concentrated=6 essence=7 form=4 i=11 incantation=9 it=5 power=2 powers=2 reflect=19 supernatural=1 transform=12 unfocused=3 use=15 using=10 you=14 yourself=18" },
   ["gossip:f55c5d42b7a92173"] = { text = "daddy=1" },
+  ["gossip:f561c1fd220de8b4"] = { text = "appearances=19 catastrophe=16 city=10 council=15 decreed=23 delusions=26 disruption=6 enter=1 guards=3 if=2 important=22 keeping=20 let=11 met=4 orders=13 outsiders=9 preventing=17 rampant=7 such=25 suffer=27 this=5 while=8" },
   ["gossip:f5628678fffdcb4f"] = { text = "about=4 assistance=9 collecting=30 commander=40 create=25 deal=8 effort=3 gathering=32 goods=29 hail=1 help=35 helping=35 impending=16 masters=15 materiel=24 need=10 our=39 prepare=18 tasks=33 their=14 these=31 trust=6 united=20 vast=27 war=2 we=7 your=34" },
   ["gossip:f56c162b07aaede1"] = { text = "all=9 and=1 brave=18 days=13 done=15 gates=21 gong=24 goods=7 left=5 near=22 open=27 some=17 soul=19 start=29 that=12 then=16 these=6 those=20 war=3 weapons=8 within=14" },
   ["gossip:f56d58cbf3c1f03d"] = { text = "all=22 delighted=6 glory=23 heed=18 leads=24 loose=15 our=19 rumors=12 sister=2 strife=9 such=14 talk=16 train=3 us=21 welcome=1 within=8" },

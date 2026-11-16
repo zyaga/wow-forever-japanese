@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:d403eee077aecfb1"] = { text = "and=1 before=2 brings=5 business=4 what=3" },
+  ["gossip:d40c60a747d9e972"] = { text = "ah=1 nicely=4 ought=5 that=2" },
   ["gossip:d40fcf6a0879b912"] = { text = "able=10 done=1 help=3 never=9 that=5 thwart=7 wave=6 without=4 your=2" },
   ["gossip:d41020c584b37c15"] = { text = "business=6 commodities=3 goods=2 my=5 mystical=1 stranger=7" },
   ["gossip:d413930889d5fe1d"] = { text = "city=5 course=1 speak=8 this=4" },

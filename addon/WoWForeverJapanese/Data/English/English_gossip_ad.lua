@@ -23,6 +23,7 @@ WFJ.Data.add("english", {
   ["gossip:ad435cc2aac8a15c"] = { text = "abandons=4 bait=5 block=3 doorway=1 holding=2 looks=7 towards=6" },
   ["gossip:ad47805b3ee1306e"] = { text = "enters=3 trance=1" },
   ["gossip:ad4c630b4f4b3ba9"] = { text = "and=16 backstrokes=9 beast=19 doing=10 lava=5 molten=4 nay=8 nowhere=17 so=1 suit=13 swimming=7 this=11 whole=21 yes=15 you=3" },
+  ["gossip:ad4edaa19c984fc5"] = { text = "learned=4 little=7 mortal=8 return=2 tell=6 what=5" },
   ["gossip:ad581cb551408dc9"] = { text = "disappears=3 into=2 woods=1" },
   ["gossip:ad60d6f06b8c8b31"] = { text = "battle=1 fear=3 smell=4 your=2" },
   ["gossip:ad6697463be099b7"] = { text = "ambush=4 appease=11 death=9 hope=13 learn=5 lord=2 my=1 outraged=6 this=3 will=7 your=8" },

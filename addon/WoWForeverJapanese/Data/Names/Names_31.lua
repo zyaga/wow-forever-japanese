@@ -248,5 +248,6 @@ WFJ.Data.add("name", {
   ["31fd7fd60b7df785"] = { "ブラック・アンビル", "ぶらっく・あんびる", "The Black Anvil" },
   ["31fdb9b19f9440a3"] = { "テイラリング・サプライ", "ていらりんぐ・さぷらい", "Tailoring Supplies" },
   ["31feb9870dac8017"] = { "ソテー・サンフィッシュ", "そてー・さんふぃっしゅ", "Sauteed Sunfish" },
+  ["31ff20afb4ed802a"] = { "ジジックス・アセット・リカバリー・サービス", "じじっくす・あせっと・りかばりー・さーびす", "Xizzix Asset Recovery Service" },
   ["31ff52a07c6c47a4"] = { "テンダー・クラブ・ミート", "てんだー・くらぶ・みーと", "Tender Crab Meat" },
 })

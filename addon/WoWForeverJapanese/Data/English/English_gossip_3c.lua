@@ -14,6 +14,7 @@ WFJ.Data.add("english", {
   ["gossip:3c4eaab6fb106123"] = { text = "and=1 final=3 now=2 step=4" },
   ["gossip:3c4ebd91eb0b5630"] = { text = "against=11 assist=7 assistance=12 audience=2 can=8 chamber=3 find=4 getting=6 need=13 she=5 where=10 will=9" },
   ["gossip:3c5237b5dc862531"] = { text = "disturbed=1 doom=7 face=8 mortals=10 now=4 or=6 turn=5 weak=9 wish=3" },
+  ["gossip:3c54b56072cf94f5"] = { text = "aptitude=3 arts=2 train=5" },
   ["gossip:3c599235eebc42a8"] = { text = "me=1 summon=2 who=3" },
   ["gossip:3c5aaadd1d92e521"] = { text = "avatar=2 give=5 spell=4 summon=3 yes=1" },
   ["gossip:3c5ebb3b3331d6ca"] = { text = "come=5 enchants=1 right=6 use=3" },

@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:71023fd1785b47b3"] = { text = "all=6 between=9 complete=4 culmination=8 education=2 efforts=7 final=11 nearly=3 one=13 stands=10 task=12 your=1" },
   ["gossip:7103a8535cf7635a"] = { text = "bells=1 buy=10 festivities=8 jingle=2 pocket=5 treats=9" },
+  ["gossip:710d2fd658538354"] = { text = "guild=1 how=5 registrar=2 today=4 welcome=3" },
   ["gossip:7111b6893a34384a"] = { text = "copy=2 itself=1 make=3" },
   ["gossip:711ccad01859ea2d"] = { text = "and=18 burning=11 city=12 hometown=6 if=2 jaunting=3 meaty=16 minions=8 now=7 overrun=9 perils=13 prize=19 strike=17 take=20 wanting=1" },
   ["gossip:7124d755379331d7"] = { text = "admit=3 advise=49 aesthetic=51 bear=41 best=60 choice=68 comparison=20 conjure=55 council=54 creatures=57 encourage=28 examine=63 faithfully=39 finest=33 fire=46 greetings=1 here=15 horses=30 infernal=37 land=32 lighting=47 liking=5 looking=14 may=22 me=69 mount=13 one=8 our=25 ours=29 pale=21 peruse=27 place=16 regardless=23 return=71 saved=59 see=11 should=42 skeletal=44 stables=10 steeds=26 summoned=19 summoning=19 surprised=12 talents=6 though=17 undead=61 unholy=56 warlock=2 you=4 your=53" },

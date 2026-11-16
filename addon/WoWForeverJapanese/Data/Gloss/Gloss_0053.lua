@@ -263,7 +263,6 @@ WFJ.Data.add("gloss", {
   [53261] = "北北東\tほくほくとう\tnorth by northeast",
   [53262] = "北北東部\tほくほくとうぶ\tnorth by northeastern region",
   [53263] = "北半分\tきたはんぶん\tnorthern part",
-  [53264] = "北半島\tきたはんとう\tnorthern peninsula",
   [53265] = "北岸\tほくがん\tnorthern shore",
   [53266] = "北方\tほっぽう\tnorth",
   [53267] = "北方\tほっぽう\tnorthern",

@@ -605,7 +605,6 @@ WFJ.Data.add("gloss", {
   [69604] = "幼虫\tようちゅう\tlarvae (grubs)",
   [69605] = "幼虫\tようちゅう\tlarval",
   [69606] = "幼虫\tようちゅう\tlarval spawns",
-  [69607] = "幽か\tかすか\tghostly (faint)",
   [69608] = "幽玄\tゆうげん\tghostly (mysterious)",
   [69609] = "幽閉\tゆうへい\tcaptivity; confinement",
   [69610] = "幽閉\tゆうへい\tcontainment (confinement)",

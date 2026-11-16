@@ -39,6 +39,7 @@ WFJ.Data.add("english", {
   ["gossip:15cc7176ac63714a"] = { text = "all=27 appreciate=23 conflicts=11 curiosity=22 easier=7 here=3 knew=2 life=4 many=12 matter=19 much=5 mystery=15 our=9 revolve=16 say=26 struggles=10 suspect=8 that=1 this=18 today=25 your=21" },
   ["gossip:15d12bbc1a6230b2"] = { text = "construction=2 foundation=3 resilient=1 what=4" },
   ["gossip:15d1c5135e747c26"] = { text = "lost=1" },
+  ["gossip:15d3de04730a7d96"] = { text = "and=10 anomaly=14 arcane=13 assistance=23 construction=2 demon=15 encounter=19 entity=18 exit=26 fashion=29 fleeing=27 free=22 laughs=32 malign=17 member=21 mind=8 nearest=20 nervously=31 oh=9 other=16 please=7 rogue=12 seek=24 some=5 still=3 um=28 underway=4 visiting=33 welcome=1" },
   ["gossip:15d70c64025e8f74"] = { text = "approach=4 beneath=8 buzzing=10 carefully=12 construct=3 cyclone=2 enormous=1 faint=9 formed=15 hear=11 its=5 massive=6 plates=7 think=17 words=14" },
   ["gossip:15ddcadd80453181"] = { text = "afterlife=4 belongs=3 land=2 prepare=7 see=5 this=1" },
   ["gossip:15e55a5b8b0208f3"] = { text = "amazing=1 armor=4 worked=2 your=3" },

@@ -16,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:cc44319c1fefb4dc"] = { text = "believe=9 find=11 habit=6 looking=8 people=4 referring=5 rogue=1 those=2 types=3 you=7" },
   ["gossip:cc510942ed0148c3"] = { text = "cowardly=1 fool=4 forth=3 master=2 me=5" },
   ["gossip:cc5126f85da048b3"] = { text = "attack=1 destroy=3 unchecked=2" },
+  ["gossip:cc5da71a897f73ff"] = { text = "carry=3 enter=4 prepare=5 taint=2 you=1" },
   ["gossip:cc5e57da6633e521"] = { text = "dead=5 elf=6 fall=8 queen=7 rabble=3 their=4 these=1 undead=2" },
   ["gossip:cc6546153926753d"] = { text = "believe=18 blame=17 dark=8 hearts=6 into=7 leaving=15 many=3 mirror=9 spirits=12 symptom=2 they=5 this=1 us=10 ways=4 we=16" },
   ["gossip:cc6714e6229cdfd6"] = { text = "die=7 hope=1 land=5 soul=2 this=4 wither=6" },

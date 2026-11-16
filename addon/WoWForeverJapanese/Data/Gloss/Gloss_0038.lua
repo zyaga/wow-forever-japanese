@@ -841,7 +841,6 @@ WFJ.Data.add("gloss", {
   [38842] = "主力\tしゅりょく\tbulk (main force)",
   [38843] = "主力\tしゅりょく\tmain forces",
   [38844] = "主君\tしゅくん\tLord (master)",
-  [38845] = "主君\tしゅくん\tlady (lord)",
   [38846] = "主君\tしゅくん\tliege",
   [38847] = "主君\tしゅくん\tliege (lord)",
   [38848] = "主君\tしゅくん\tliege's",

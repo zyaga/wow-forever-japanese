@@ -83,6 +83,7 @@ WFJ.Data.add("name", {
   ["986d22fddd998f4f"] = { "トロール・ヒーロー・エア・ポータル", "とろーる・ひーろー・えあ・ぽーたる", "Troll Hero Air Portal" },
   ["986d439a6954340e"] = { "デザイナー・アイランド", "でざいなー・あいらんど", "Designer Island" },
   ["986e381b9bc1eba1"] = { "パターン：スカーレット・アモ・ポーチ", "ぱたーん・すかーれっと・あも・ぽーち", "Pattern: Scarlet Ammo Pouch" },
+  ["986fd8d237a81802"] = { "コンカラーズ・ペンダント", "こんからーず・ぺんだんと", "Conqueror's Pendant" },
   ["986ff890a4396fd7"] = { "ヘッド・ハーベスト・クロスボウ", "へっど・はーべすと・くろすぼう", "Head-Harvest Crossbow" },
   ["9870a0be4234f5a5"] = { "セレモニアル・フリント・アンド・ティンダー", "せれもにある・ふりんと・あんど・てぃんだー", "ceremonial flint and tinder" },
   ["9874a08a62ea8bd8"] = { "コンスタンス・ブリスボワーズ", "こんすたんす・ぶりすぼわーず", "Constance Brisboise" },

@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:3002177b15742961"] = { text = "apply=7 bear=2 cantrip=6 curing=5 custody=3 done=1 release=4" },
   ["gossip:300527556dcecfdf"] = { text = "should=4 there=1" },
+  ["gossip:300bc3825dbb02a3"] = { text = "hello=1" },
   ["gossip:300cb9ec97d156d4"] = { text = "way=2 why=1" },
   ["gossip:300e6de1fa9c8669"] = { text = "insolence=7 mortal=10 mount=3 my=1 pay=9 precious=2 steal=4 who=5 your=6" },
   ["gossip:300efbc6080a2a54"] = { text = "hail=7 king=6 new=5 now=2 one=4 strong=3 you=1" },

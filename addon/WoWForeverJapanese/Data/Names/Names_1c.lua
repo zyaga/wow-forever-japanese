@@ -61,6 +61,7 @@ WFJ.Data.add("name", {
   ["1c42bd8d1fcda5db"] = { "グレーター・アストラル", "ぐれーたー・あすとらる", "Greater Astral" },
   ["1c45349cdffe79ad"] = { "ルドルフ・ゲルハルト", "るどるふ・げるはると", "Rudolph Gelhardt" },
   ["1c45baaa57846f55"] = { "スコーピッド", "すこーぴっど", "scorpid" },
+  ["1c45bdc357852ea2"] = { "スコーポック", "すこーぽっく", "scorpok" },
   ["1c4732d2f44eed3f"] = { "ゴラッカ・スプリングス・クレーター", "ごらっか・すぷりんぐす・くれーたー", "Golakka Springs Crater" },
   ["1c474a6d44526185"] = { "ヨナダ", "よなだ", "Yonada" },
   ["1c47b54540db96dc"] = { "スティンガー・チャージ・プライマー", "すてぃんがー・ちゃーじ・ぷらいまー", "Stinger Charge Primer" },

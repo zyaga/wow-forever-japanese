@@ -7,7 +7,6 @@ WFJ.Data.add("gloss", {
   [74004] = "思い知らせる\tおもいしらせる\tcould teach (them) a lesson",
   [74005] = "思い知らせる\tおもいしらせる\tdelivered this reminder (made him feel)",
   [74006] = "思い知らせる\tおもいしらせる\tlet them feel (make them realize)",
-  [74007] = "思い知らせる\tおもいしらせる\tlet them know",
   [74008] = "思い知らせる\tおもいしらせる\tlet them know (make them realize)",
   [74009] = "思い知らせる\tおもいしらせる\tmake (them) know",
   [74010] = "思い知らせる\tおもいしらせる\tmust be shown (made to realize)",

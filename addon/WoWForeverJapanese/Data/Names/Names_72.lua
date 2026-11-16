@@ -204,6 +204,7 @@ WFJ.Data.add("name", {
   ["72f69df381d7837a"] = { "ロード・トマス", "ろーど・とます", "Lord Tomas" },
   ["72f7f44de60bf157"] = { "サリラセズ・エレメンタル・パッシブ", "さりらせず・えれめんたる・ぱっしぶ", "Sarilus's Elementals Passive" },
   ["72f830de78fdfa3b"] = { "ポータル・オブ・イモルサール", "ぽーたる・おぶ・いもるさーる", "Portal of Immol'thar" },
+  ["72fb6276fcd9cab1"] = { "スターブレイズ", "すたーぶれいず", "Starblaze" },
   ["72fba4e31179e604"] = { "リチュアル・キャンドル・オーラ", "りちゅある・きゃんどる・おーら", "Ritual Candle Aura" },
   ["72fc0a696d30df68"] = { "ヘヴィー・ラメラー・ガードル", "へゔぃー・らめらー・がーどる", "Heavy Lamellar Girdle" },
   ["72fd2da99a2b8978"] = { "オーウィン・ギズミック", "おーうぃん・ぎずみっく", "Orwin Gizzmick" },

@@ -130,6 +130,7 @@ WFJ.Data.add("name", {
   ["db6fcbc4e019e859"] = { "ダークマスター・ガンドリング・クリスマス・ディスガイズ", "だーくますたー・がんどりんぐ・くりすます・でぃすがいず", "Darkmaster Gandling Christmas Disguise" },
   ["db721cead351e2e0"] = { "アイ・オブ・ボスカ", "あい・おぶ・ぼすか", "The Eye of Bhossca" },
   ["db7272ccca0918c3"] = { "ゴシック・プレート・アーマー", "ごしっく・ぷれーと・あーまー", "Gothic Plate Armor" },
+  ["db72959f28cbeda7"] = { "ヴァイル・コンコクション", "ゔぁいる・こんこくしょん", "Vile Concoction" },
   ["db742563cc427f1d"] = { "ハイジャル・スピード", "はいじゃる・すぴーど", "Hyjal Speed" },
   ["db749aea4aaf0dfe"] = { "ワイルド・デッキ", "わいるど・でっき", "Wilds Deck" },
   ["db74ada7a986cbc9"] = { "ハードゥンド・レザー・ヘルム", "はーどぅんど・れざー・へるむ", "Hardened Leather Helm" },

@@ -5,7 +5,6 @@ WFJ.Data.add("gloss", {
   [89002] = "望ましい\tのぞましい\tdesired (desirable)",
   [89003] = "望ましい\tのぞましい\tundesirable",
   [89004] = "望ましい\tのぞましい\tunwanted",
-  [89005] = "望ましい\tのぞましい\tyou do not want (undesirable)",
   [89006] = "望み\tのぞみ\tambition",
   [89007] = "望み\tのぞみ\tbid (wish)",
   [89008] = "望み\tのぞみ\tcare (wish)",

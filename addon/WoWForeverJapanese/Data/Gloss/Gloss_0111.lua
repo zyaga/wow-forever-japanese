@@ -352,7 +352,6 @@ WFJ.Data.add("gloss", {
   [111352] = "考えさせる\tかんがえさせる\tgive ... to think about",
   [111353] = "考えすぎ\tかんがえすぎ\toverthinking",
   [111354] = "考えなし\tかんがえなし\tmisguided (thoughtless)",
-  [111355] = "考えなし\tかんがえなし\tthoughtlessly",
   [111356] = "考えられない\tかんがえられない\tunthinkable",
   [111357] = "考える\tかんがえる\t(even) thinking",
   [111358] = "考える\tかんがえる\t(than) I thought",

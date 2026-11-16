@@ -18,6 +18,7 @@ WFJ.Data.add("english", {
   ["gossip:4b4ed946741310ed"] = { text = "all=7 and=1 contact=19 day=48 drink=56 food=55 forced=47 go=3 happened=28 hide=45 household=22 i=42 it=4 knew=6 know=13 known=9 lost=20 only=30 other=25 our=43 quarters=44 quiet=51 relatively=50 school=49 screams=31 scrounge=57 separated=24 servants=26 sneak=54 tortured=36 ultimately=21 we=5 what=27 when=52 where=2 would=14" },
   ["gossip:4b54885a03b11325"] = { text = "end=2 his=5 magic=6 other=9 soulgems=10 spirit=4 tell=3 then=1 undo=7 where=11" },
   ["gossip:4b5da104d512a700"] = { text = "look=2 where=1" },
+  ["gossip:4b722f77da190b3e"] = { text = "best=1 brew=2 brews=2" },
   ["gossip:4b74a26c0f27895e"] = { text = "forehead=1 lays=5 sweat=2 tools=4 wipes=3" },
   ["gossip:4b78dccdf234dbee"] = { text = "bide=11 collections=5 completed=2 extra=7 finishes=6 gathering=1 preparations=8 time=10 war=3 while=9" },
   ["gossip:4b7a96df479a7175"] = { text = "cast=1" },

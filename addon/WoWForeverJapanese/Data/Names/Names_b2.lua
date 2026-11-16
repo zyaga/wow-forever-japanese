@@ -136,6 +136,7 @@ WFJ.Data.add("name", {
   ["b2a600c3b7ebc5a2"] = { "アプレンティス・マイニング", "あぷれんてぃす・まいにんぐ", "Apprentice Mining" },
   ["b2a71d698bb3e442"] = { "スレイヤーズ・スカルキャップ", "すれいやーず・すかるきゃっぷ", "Slayer's Skullcap" },
   ["b2a762d2789f7dce"] = { "スロー・トーチ", "すろー・とーち", "Throw Torch" },
+  ["b2a88041c7a36b6b"] = { "ニトロ・グリーン・ハイパーライター", "にとろ・ぐりーん・はいぱーらいたー", "Nitro-Green-Hyperlighter" },
   ["b2a9491147833328"] = { "スクワール", "すくわーる", "Squirrel" },
   ["b2ab09ad2805f2c5"] = { "ヴァイルブランチ・ヘッドハンター", "ゔぁいるぶらんち・へっどはんたー", "Vilebranch Headhunter" },
   ["b2ac01b8189c823b"] = { "レッサー・ガーゴイル", "れっさー・がーごいる", "Lesser Gargoyle" },
@@ -200,6 +201,7 @@ WFJ.Data.add("name", {
   ["b2f5b8e87e66c0dc"] = { "スカイフューリー・ガントレット", "すかいふゅーりー・がんとれっと", "Skyfury Gauntlets" },
   ["b2f74f443ee5ffd2"] = { "キャラバン・マーチャント", "きゃらばん・まーちゃんと", "Caravan Merchant" },
   ["b2f7b0945d58ae8d"] = { "サニー・ティー", "さにー・てぃー", "Sunny Tea" },
+  ["b2fc98aa724755e6"] = { "カルダー・グレー", "かるだー・ぐれー", "Calder Gray" },
   ["b2ff6aefc955abc9"] = { "バロン・レヴィルガズ", "ばろん・れゔぃるがず", "Baron Revilgaz" },
   ["b2ff94dbe21ece47"] = { "グルバシ・ヘッドハンター", "ぐるばし・へっどはんたー", "Gurubashi Headhunter" },
 })

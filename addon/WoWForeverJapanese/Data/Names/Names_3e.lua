@@ -12,6 +12,7 @@ WFJ.Data.add("name", {
   ["3e09d1570a3fcbbe"] = { "ストロンガー・ホールド・ガントレット", "すとろんがー・ほーるど・がんとれっと", "Stronger-hold Gauntlets" },
   ["3e0b44ecd85de923"] = { "マスター・エンジニアズ・ゴーグル", "ますたー・えんじにあず・ごーぐる", "Master Engineer's Goggles" },
   ["3e0b802ba96fd99e"] = { "アライアンス・スピリット・ガイド", "あらいあんす・すぴりっと・がいど", "Alliance Spirit Guide" },
+  ["3e0d0524e53779d8"] = { "スリーブレス・ティー・シャツ", "すりーぶれす・てぃー・しゃつ", "Sleeveless T-Shirt" },
   ["3e0d3b7ffc2dfa40"] = { "ダークスピア・アイランド・アイアン・レーション", "だーくすぴあ・あいらんど・あいあん・れーしょん", "Darkspear Islands Iron Ration" },
   ["3e0d7b3f43df4998"] = { "ラッキー・ロケット・クラスター", "らっきー・ろけっと・くらすたー", "Lucky Rocket Cluster" },
   ["3e103e73de237032"] = { "ボルダー・ロード・マイン", "ぼるだー・ろーど・まいん", "Boulder Lode Mine" },

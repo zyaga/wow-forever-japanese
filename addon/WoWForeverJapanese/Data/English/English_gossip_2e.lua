@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:2eafe641cf4c350a"] = { text = "block=5 desert=1 rise=3 sands=2 sun=4" },
   ["gossip:2ec46bdb752b60d2"] = { text = "atrocities=3 destroyed=4 these=1 undead=2" },
   ["gossip:2ec6a705438ec035"] = { text = "party=2 right=1 time=3" },
+  ["gossip:2ecf2d2065f5253f"] = { text = "can=5 teach=3 yes=1 you=2" },
   ["gossip:2ed1a5c352ce6d57"] = { text = "affair=25 all=4 always=36 birds=10 care=33 cause=35 collects=29 corruption=16 creatures=5 danger=11 druids=1 eggs=28 found=13 gnome=23 head=40 help=38 here=30 i=32 leads=26 look=41 maybe=42 more=37 named=21 our=34 plight=6 rescuing=18 sensitive=8 sent=31 set=20 she=27 system=19 them=17 these=9 very=7 we=15 when=14 world=3" },
   ["gossip:2edbf7e0dabd0e70"] = { text = "cleansing=3 gave=1 items=2 totem=4 transforms=5" },
   ["gossip:2edf96a3f1a0aa31"] = { text = "and=14 day=9 eternal=5 finally=15 it=16 knees=1 long=11 my=3 prison=6 realized=17 recovered=7 released=19 this=8 waited=12" },

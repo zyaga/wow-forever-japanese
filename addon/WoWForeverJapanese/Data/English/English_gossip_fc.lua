@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:fc89cc857b22f5ba"] = { text = "ammo=9 close=6 gun=8 house=1 matter=4 me=5 what=3" },
   ["gossip:fc8dea293bfd1f12"] = { text = "live=6 tragedy=4 we=1 world=5" },
   ["gossip:fc91263ebe777dc1"] = { text = "artisan=7 best=11 blacksmith=8 highly=1 metal=4 miner=9 sought=3 speak=10" },
+  ["gossip:fc9f20266960fa9e"] = { text = "normal=1" },
   ["gossip:fca429426926a992"] = { text = "abilities=16 attack=13 defense=10 demonic=2 drain=19 endurance=7 enemy=12 entity=3 ideal=11 its=5 known=4 life=18 shield=21 significant=8 spells=15 strength=6 this=1 use=23 while=20 you=14" },
   ["gossip:fcafb51f5f862977"] = { text = "bet=13 go=8 grunts=10 know=6 north=7 one=3 speak=12" },
   ["gossip:fcb07d5784ceb506"] = { text = "command=5 feel=1 get=10 need=3 want=4" },

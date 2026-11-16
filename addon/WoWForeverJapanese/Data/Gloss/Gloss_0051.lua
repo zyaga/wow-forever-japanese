@@ -447,7 +447,6 @@ WFJ.Data.add("gloss", {
   [51444] = "力\tちから\tforces (the elements)",
   [51445] = "力\tちから\tforces (力を合わせる: join forces)",
   [51446] = "力\tちから\tgift (power)",
-  [51447] = "力\tちから\tgifts (powers)",
   [51448] = "力\tちから\thelp",
   [51449] = "力\tちから\thelp (strength)",
   [51450] = "力\tちから\thelp (力になる: assist)",

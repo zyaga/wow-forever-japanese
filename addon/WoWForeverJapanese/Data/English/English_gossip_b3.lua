@@ -42,4 +42,5 @@ WFJ.Data.add("english", {
   ["gossip:b3e192af0a2a32f8"] = { text = "current=3 greetings=1 help=5 i=2" },
   ["gossip:b3e3d9e84bd033bc"] = { text = "evil=1 mistress=2 safe=3 yes=4" },
   ["gossip:b3e786d0a7b69aaf"] = { text = "barring=18 definite=8 first=1 improvement=9 me=12 noisy=6 persistent=14 pretty=5 relocated=10 set=3 shop=2 still=11 students=15 there=4 this=7 track=13" },
+  ["gossip:b3f20144398264a3"] = { text = "about=3 else=1 speak=4" },
 })

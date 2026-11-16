@@ -34,7 +34,6 @@ WFJ.Data.add("english", {
   ["gossip:599379901fa08888"] = { text = "all=9 and=8 blessing=2 creatures=11 defend=12 good=10 justice=6 thank=4 this=1 used=14" },
   ["gossip:59962272ec22cd17"] = { text = "able=40 anew=38 begins=21 blade=4 build=39 but=12 chapter=16 deep=9 devout=27 ended=17 hatred=7 he=32 his=23 hold=2 hope=13 lose=14 meet=31 new=19 old=34 one=20 pious=28 requiring=37 rumored=41 saving=6 son=24 tainted=35 that=3 too=8 where=18 you=1" },
   ["gossip:599bcfdc037e4c94"] = { text = "ambush=7 canals=2 hey=1 riding=3 suits=4 tell=10 time=8" },
-  ["gossip:599c5b8f86fc3cc7"] = { text = "already=1 back=2 impressive=3 speed=4" },
   ["gossip:599e15672f0676fa"] = { text = "parchment=1" },
   ["gossip:599f5f16a2679a9e"] = { text = "allowed=8 his=3 known=5 presence=4 world=2" },
   ["gossip:59adeac29bde1994"] = { text = "destroy=5 heroes=1 i=2 salvation=9 shard=4 this=3 wonder=10 world=8 you=6" },

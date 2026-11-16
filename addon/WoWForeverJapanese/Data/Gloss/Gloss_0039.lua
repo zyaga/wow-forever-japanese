@@ -430,7 +430,6 @@ WFJ.Data.add("gloss", {
   [39429] = "事態\tじたい\t(situation)",
   [39430] = "事態\tじたい\tcontingencies (situation)",
   [39431] = "事態\tじたい\tcontingency (situation)",
-  [39432] = "事態\tじたい\tevents (situation)",
   [39433] = "事態\tじたい\tit (the situation)",
   [39434] = "事態\tじたい\tmatter",
   [39435] = "事態\tじたい\tmatter (situation)",

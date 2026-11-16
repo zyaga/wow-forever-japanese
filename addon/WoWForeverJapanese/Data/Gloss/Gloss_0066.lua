@@ -882,7 +882,6 @@ WFJ.Data.add("gloss", {
   [66886] = "対処する\tたいしょする\tshould deal with",
   [66887] = "対処する\tたいしょする\tto deal with",
   [66888] = "対処する\tたいしょする\tto respond to (deal with)",
-  [66889] = "対処する\tたいしょする\twe'll see about (deal with)",
   [66890] = "対処する\tたいしょする\twill need to be dealt with",
   [66891] = "対処法\tたいしょほう\tway to deal with",
   [66892] = "対峙する\tたいじする\t(be able to) confront",

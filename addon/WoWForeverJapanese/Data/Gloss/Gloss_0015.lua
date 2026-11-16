@@ -165,7 +165,6 @@ WFJ.Data.add("gloss", {
   [15163] = "そんな\tそんな\tthis (such)",
   [15164] = "そんな\tそんな\tthose",
   [15165] = "そんな\tそんな\tthose (such)",
-  [15166] = "そんなこと\tそんなこと\tas much (such a thing)",
   [15167] = "そんなこと\tそんなこと\tthat (such a thing)",
   [15168] = "そんなこと\tそんなこと\tthat; such a thing",
   [15169] = "そんなことはない\tそんなことはない\tit's not true",

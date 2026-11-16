@@ -23,6 +23,7 @@ WFJ.Data.add("english", {
   ["gossip:8a5ae9b96e4fbd6b"] = { text = "want=2 what=1" },
   ["gossip:8a5b790db44bbb01"] = { text = "doomed=3 soul=2 your=1" },
   ["gossip:8a5d672d99570cf4"] = { text = "care=1 gettin'=5 here=4" },
+  ["gossip:8a608fe534db30ba"] = { text = "aware=10 business=32 cases=20 cause=8 deep=19 divisions=17 find=26 goals=36 greetings=1 grove=34 harmony=14 indeed=18 interfere=37 leave=35 likely=42 members=2 mind=33 more=27 most=5 nothing=28 once=44 outright=22 outside=15 own=31 receive=40 relative=12 rivalry=21 save=30 say=29 themselves=3 these=16 this=43 violence=23 warning=41 way=24 you=9" },
   ["gossip:8a7679ad00b693cb"] = { text = "begin=4 burning=3 celebrate=11 come=9 festival=8 just=5 liberation=10 located=7 minutes=1 west=6" },
   ["gossip:8a79bace113b58c9"] = { text = "blue=9 happened=3 know=15 soon=13 team=10 what=2 you=4" },
   ["gossip:8a7aa422a6c34d8a"] = { text = "cleansed=3 lands=2 these=1" },

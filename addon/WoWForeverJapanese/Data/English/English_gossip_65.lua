@@ -36,7 +36,6 @@ WFJ.Data.add("english", {
   ["gossip:65c226e15a309d55"] = { text = "ages=7 battle=5 day=16 dwells=15 far=12 here=11 his=3 lust=6 may=18 now=10 one=1 pierce=8 return=17 strength=4 wanderer=2" },
   ["gossip:65c7f43374bbce7d"] = { text = "and=1 coming=4 turn=3" },
   ["gossip:65d0fc419e382601"] = { text = "units=1 upgrade=2" },
-  ["gossip:65d417aeb47358d6"] = { text = "swift=2 well=3" },
   ["gossip:65d6d5c1f91a11e7"] = { text = "hello=1 today=2 what=3" },
   ["gossip:65d7094e82e3a089"] = { text = "controls=1 who=2" },
   ["gossip:65d8b0a519fdc9a4"] = { text = "cure=2 go=8 hides=3 leather=1 north=7 one=9 tell=12 way=11 will=13 work=4" },
