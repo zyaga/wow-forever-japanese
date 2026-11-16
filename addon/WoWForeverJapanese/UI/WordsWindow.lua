@@ -52,12 +52,13 @@ local function layAudio(images, offered, found)
   at(f.audio.label.en, y, LEFT + 30)
   if not found then return base end
   at(f.audioHint.en, y - ROW - 4)
-  at(f.ankiFolder, y - ROW - 70, LEFT + 6) -- InputBoxTemplate's left cap sits outside the frame
-  at(f.audioLines.frame, y - ROW - 98)
+  at(f.ankiFolder, y - ROW - 96, LEFT + 6) -- InputBoxTemplate's left cap sits outside the frame
+  at(f.audioLines.frame, y - ROW - 124)
   W.setBox(f.ankiFolder, WFJ.Compat.call("IsMacClient") == true and WordsWindow.ANKI_MAC or WordsWindow.ANKI_WIN)
   local lines = SV.fileList(WFJ.Words.entries(), found)
+  W.setPair(f.audioHint, Text.get("words.audioHint", #lines))
   f.audioLines:setText(#lines > 0 and table.concat(lines, "\n") or W.pick(Text.get("words.audioNone")))
-  return math.max(base, -(y - ROW - 98 - AUDIO_LINES) + BOTTOM)
+  return math.max(base, -(y - ROW - 124 - AUDIO_LINES) + BOTTOM)
 end
 
 local function fill()

@@ -112,9 +112,9 @@ describe("the word list window", function()
       f.text.value)
     assert.is_truthy(f.text.value:find("\t[sound:456-description-1.mp3]\n", 1, true))
     assert.is_true(shown(f.audioLines))
-    assert.are.equal(ja("words.audioHint"), f.audioHint.en:GetText())
     assert.are.equal(table.concat(WFJ.StudyVoice.fileList(WFJ.Words.entries(), found), "\n"), f.audioLines.value)
-    assert.is_truthy(f.audioLines.value:find("Sound:\n  456-description-1.mp3", 1, true))
+    assert.are.equal(FOLDER .. "/Sound/456-description-1.mp3", f.audioLines.value)
+    assert.are.equal(ja("words.audioHint", 1), f.audioHint.en:GetText())
     assert.are.equal(WW.ANKI_MAC, f.ankiFolder.value) -- the Anki folder for the player's own system
     assert.is_true(f.size[2] > height) -- taller, so the file list fits inside the frame
     _G.IsMacClient = function() return false end

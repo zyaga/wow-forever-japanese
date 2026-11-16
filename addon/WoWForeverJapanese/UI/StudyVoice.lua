@@ -210,30 +210,21 @@ function StudyVoice.cell(r)
   return table.concat(out)
 end
 
--- The files the player copies into Anki's media folder, each once, under the pack folder it is in (both in list
--- order): "<folder>/Sound:" then "  <file>" lines. An addon cannot copy files, and cannot know where the game is
--- installed, so the window names the folders from the World of Warcraft folder the player knows.
+-- The files the player copies into Anki's media folder, each once, one a line as "<pack folder>/Sound/<file>" (the
+-- window names the AddOns folder they sit in, from the World of Warcraft folder the player knows: an addon cannot
+-- copy files or learn where the game is installed), sorted so the files of one folder sit together.
 function StudyVoice.fileList(entries, found)
-  local order, files, seen = {}, {}, {}
+  local out, seen = {}, {}
   for _, e in ipairs(entries or {}) do
     local r = found[e]
     for _, c in ipairs(r and r.clips or {}) do
-      if not files[c.folder] then
-        files[c.folder] = {}
-        order[#order + 1] = c.folder
-      end
-      local id = c.folder .. "/" .. c.file
-      if not seen[id] then
-        seen[id] = true
-        local list = files[c.folder]
-        list[#list + 1] = "  " .. c.file
+      local path = c.folder .. "/Sound/" .. c.file
+      if not seen[path] then
+        seen[path] = true
+        out[#out + 1] = path
       end
     end
   end
-  local out = {}
-  for _, folder in ipairs(order) do
-    out[#out + 1] = folder .. "/Sound:"
-    for _, line in ipairs(files[folder]) do out[#out + 1] = line end
-  end
+  table.sort(out)
   return out
 end

@@ -222,13 +222,14 @@ describe("UI/StudyVoice", function()
       assert.are.equal("", SV.cell(found[label]))
     end)
 
-    it("lists the files to copy once each, under the pack folder each is in, in list order", function()
+    it("lists each file to copy once, one full path a line from the World of Warcraft folder, sorted", function()
       register()
-      local list = { entry("book", "bbbb", SPLIT_JA), entry("gossip", "aaaa", "話を聞いてくれ。"),
-        entry("gossip", "aaaa", "頼む。"), entry("ui", 3, "閉じる"), entry("gossip", "cccc", WHOLE_JA) }
+      local list = { entry("gossip", "cccc", WHOLE_JA), entry("book", "bbbb", SPLIT_JA),
+        entry("gossip", "aaaa", "話を聞いてくれ。"), entry("gossip", "aaaa", "頼む。"), entry("ui", 3, "閉じる") }
+      local at = ""
       assert.are.same({
-        FOLDER .. "/Sound:", "  b-bbbb-1.mp3", "  b-bbbb-2.mp3", "  g-aaaa-2.mp3",
-        "WoWForeverJapanese_VoiceOther/Sound:", "  g-cccc.mp3",
+        at .. FOLDER .. "/Sound/b-bbbb-1.mp3", at .. FOLDER .. "/Sound/b-bbbb-2.mp3",
+        at .. FOLDER .. "/Sound/g-aaaa-2.mp3", at .. "WoWForeverJapanese_VoiceOther/Sound/g-cccc.mp3",
       }, SV.fileList(list, SV.findAll(list)))
       assert.are.same({}, SV.fileList({ entry("ui", 3, "閉じる") }, {}))
     end)

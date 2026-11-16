@@ -50,13 +50,13 @@ Text.T = {
     ja = "Ankiのメディアフォルダにコピーしてください（上がMac、下がWindows。User 1はAnkiの最初のプロフィール）：" },
   ["words.audio"] = { en = "Include audio (each sentence in its NPC's voice)", ja = "音声を含める（各文をNPCの声で）" },
   ["words.audioHint"] = {
-    en = "Copy the sound files listed below into Anki's media folder, then import the text above into Anki. "
-      .. "They are in your World of Warcraft folder, under _forever_/Interface/AddOns, in the folders named in the "
-      .. "list. Anki's media folder on this computer (User 1 is Anki's first profile; use your own profile's name if "
-      .. "you changed it):",
-    ja = "下に並んだ音声ファイルをAnkiのメディアフォルダにコピーしてから、上のテキストをAnkiに取り込んでください。ファイルは"
-      .. "World of Warcraftフォルダの _forever_/Interface/AddOns の中の、一覧にあるフォルダにあります。このパソコンのAnkiの"
-      .. "メディアフォルダ（User 1はAnkiの最初のプロフィールです。名前を変えた場合はご自分のプロフィール名にしてください）：",
+    en = "To hear the sentences in Anki, copy these %s sound files into Anki's media folder (the box below). Each line "
+      .. "below is one file inside this folder of your game:\n"
+      .. "|cffffd100World of Warcraft/_forever_/Interface/AddOns|r\n"
+      .. "Find each file, copy it, and paste it into Anki's media folder. Then import the word list into Anki.",
+    ja = "Ankiで文の音声を聞くには、この%s個の音声ファイルをAnkiのメディアフォルダ（下の欄）にコピーしてください。下の一行が、"
+      .. "ゲームの次のフォルダの中のひとつのファイルです：\n|cffffd100World of Warcraft/_forever_/Interface/AddOns|r\n"
+      .. "それぞれのファイルを探してコピーし、Ankiのメディアフォルダに貼り付けてください。最後に単語の一覧をAnkiに取り込んでください。",
   },
   ["words.audioNone"] = { en = "None of these words has a recording to copy.", ja = "コピーできる録音のある単語はありません。" },
 
