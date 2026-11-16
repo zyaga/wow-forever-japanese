@@ -33,6 +33,7 @@ WFJ.Data.add("english", {
   ["gossip:aeb9962bed7dbaba"] = { text = "all=7 amazing=4 catch=8 comes=2 sights=5 town=1 wonders=6" },
   ["gossip:aebeff36f8230e21"] = { text = "accomplished=5 afraid=37 ambitious=35 arrive=17 battalion=38 border=13 build=15 call=3 called=3 command=40 decision=47 encampment=14 forth=42 here=12 honored=6 i=9 judgment=32 later=44 men=27 most=4 my=31 nothing=36 ordered=11 orders=11 passed=26 regiment=10 regret=45 restless=29 soldiers=7 they=1 under=41 us=2 waited=18 warchief=21 weeks=25 while=19 without=23 word=22 would=43 young=34" },
   ["gossip:aec8f595a0acd13c"] = { text = "exchange=8 give=7 hello=1 it=6 pleasure=3 see=5 something=9 special=4" },
+  ["gossip:aecd37ebd766e1a7"] = { text = "again=14 air=5 aspect=27 aura=11 bear=32 but=31 cat=19 continues=3 druidic=24 embrace=37 falls=13 gesture=8 him=12 i=22 invisible=7 it=2 learn=20 learning=20 life=25 like=34 nature=16 next=17 path=29 perspective=18 power=10 propagate=38 put=30 quick=6 slight=9 this=26 time=21 understanding=28 you=23" },
   ["gossip:aece2f49d5584b76"] = { text = "hm=1 recipe=5 teach=7 useful=4 yes=2 you=3" },
   ["gossip:aed0a54bb5658151"] = { text = "cause=12 death=8 energies=6 focused=7 healing=4 i=2 life=1 others=3 pain=11 see=13" },
   ["gossip:aed393389edc4f50"] = { text = "burns=3 complete=7 consumes=26 done=1 icon=13 it=20 just=16 now=4 once=2 our=28 plane=18 power=12 present=8 remember=17 respect=21 serves=23 this=11 those=22 travels=9 trial=6 use=15 way=29 well=14 your=5" },

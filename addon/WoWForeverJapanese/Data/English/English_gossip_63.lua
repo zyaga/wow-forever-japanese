@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:63b12f55accfc261"] = { text = "bargain=5 he=12 kept=6 money=13 road=9 seems=7 sigh=3 stupid=2 those=1 well=4" },
   ["gossip:63b18d28a667e7fa"] = { text = "so=1 today=2 want=4 what=3" },
   ["gossip:63b305db24cfaf3e"] = { text = "centers=2 energies=4 focus=1 form=7 might=11 more=5 necessary=8 putting=3 solidly=6 stability=9" },
+  ["gossip:63bba36c49a522ab"] = { text = "brightness=5 bulb=4 dynamic=8 reads=3 sensors=9 tag=1 twice=6" },
   ["gossip:63bc2f70838f2b70"] = { text = "brothers=2 go=4 hurry=1 know=9 longer=6 now=3 open=8 rift=5" },
   ["gossip:63c4b5a0ce6eb26b"] = { text = "appreciate=3 but=4 company=1 experience=12 face=6 i=11 if=16 instead=17 more=13 potions=7 talk=18 training=14 want=15 with=8 you=9" },
   ["gossip:63c71666355672bc"] = { text = "all=7 arrive=8 assemble=21 bugs=11 burrowing=15 days=5 finally=26 gates=24 gong=22 heard=9 hope=30 mine=13 my=12 opened=25 preparations=1 rung=23 see=17 shipped=3 someone=18 taking=20 those=10 time=19 war=27" },

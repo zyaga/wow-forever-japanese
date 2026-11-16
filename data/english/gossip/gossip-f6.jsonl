@@ -16,6 +16,7 @@
 {"id": "f64128a29785627b", "field": "text", "en": "Must be careful not to damage the specimen...", "hash": "f64128a29785627b", "src": "vmangos@13b49dc"}
 {"id": "f64af4a53ee70a4c", "field": "text", "en": "It is my dream to one day serve under your command, $G Master:Mistress; $n. That is, should you ever deem me worthy of such things...", "hash": "f64af4a53ee70a4c", "src": "vmangos@13b49dc"}
 {"id": "f64cfee276a1a590", "field": "text", "en": "Your challenge has failed!", "hash": "f64cfee276a1a590", "src": "vmangos@13b49dc"}
+{"id": "f652f6b91595bf6e", "field": "text", "en": "Only the righteous will be saved from what is to come! Death to non-believers!", "hash": "f652f6b91595bf6e", "src": "collector@1.60.1.70862"}
 {"id": "f653239efcfa4c0e", "field": "text", "en": "Where's the water, Emma? Get the water, Emma? If'n it weren't fer me, that lot wouldn't know what water looks like.", "hash": "f653239efcfa4c0e", "src": "vmangos@13b49dc"}
 {"id": "f655cb5b7f756ef3", "field": "text", "en": "Razorfen Kraul", "hash": "f655cb5b7f756ef3", "src": "vmangos@13b49dc"}
 {"id": "f662e0d07115b46c", "field": "text", "en": "RUN THEM THROUGH, SOLDIERS!", "hash": "f662e0d07115b46c", "src": "vmangos@13b49dc"}
@@ -23,6 +24,7 @@
 {"id": "f677deaa0a786e8c", "field": "text", "en": "So why are you here? What are we to do if there is no hope?", "hash": "f677deaa0a786e8c", "src": "vmangos@13b49dc"}
 {"id": "f679881a04edb4f4", "field": "text", "en": "That's what I like to hear.", "hash": "f679881a04edb4f4", "src": "vmangos@13b49dc"}
 {"id": "f681118120d19ae8", "field": "text", "en": "Well Done!", "hash": "f681118120d19ae8", "src": "vmangos@13b49dc"}
+{"id": "f68438145a50f09b", "field": "text", "en": "The night elf is motionless, with multiple wounds and discoloration emblematic of suffering from poison.", "hash": "f68438145a50f09b", "src": "collector@1.60.1.70888", "npcs": [268925]}
 {"id": "f689a251bac256b3", "field": "text", "en": "We defend. We stand. We show that as one. United. We destroy. Their god will fall.\n", "hash": "f689a251bac256b3", "src": "vmangos@13b49dc"}
 {"id": "f698d53141ed488c", "field": "text", "en": "Herbalism requires a gentle touch that few such as Malorne can teach.  Seek him out east of the Inn in Dolanaar.", "hash": "f698d53141ed488c", "src": "vmangos@13b49dc"}
 {"id": "f6a9cc2c85cdf94f", "field": "text", "en": "What could you possibly need a bank for?  Very well, you'll need to go through the Ruins of Lordaeron to the south of Brill.  In the back are a set of elevators leading down into the Undercity.  When you get there stop any of those lumbering Abominations they like to call an Undercity Guardian and ask it for better directions.", "hash": "f6a9cc2c85cdf94f", "src": "vmangos@13b49dc"}

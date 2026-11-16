@@ -256,7 +256,6 @@ WFJ.Data.add("gloss", {
   [31254] = "わけ\tわけ\t(so that's) it",
   [31255] = "わけ\tわけ\t(so) (reason)",
   [31256] = "わけ\tわけ\t(so) I assume",
-  [31257] = "わけ\tわけ\t(so) it is that",
   [31258] = "わけ\tわけ\t(so) it means",
   [31259] = "わけ\tわけ\t(so) that's how it is",
   [31260] = "わけ\tわけ\t(that's how it goes)",

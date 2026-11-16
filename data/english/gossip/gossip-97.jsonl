@@ -18,6 +18,7 @@
 {"id": "977086e334e98de7", "field": "text", "en": "Very well, $n.", "hash": "977086e334e98de7", "src": "vmangos@13b49dc"}
 {"id": "977271405ba4726f", "field": "text", "en": "Us know where they are!  Skull building in Magic Quarter on outer ring of city.", "hash": "977271405ba4726f", "src": "vmangos@13b49dc"}
 {"id": "977af7d000482995", "field": "text", "en": "No, Vaelan, I do not.", "hash": "977af7d000482995", "src": "vmangos@13b49dc"}
+{"id": "977bc6ecb24e6aab", "field": "text", "en": "What do we do, then?", "hash": "977bc6ecb24e6aab", "src": "collector@1.60.1.70938", "npcs": [4722]}
 {"id": "9780a82aa0087a4e", "field": "text", "en": "A gnome? How pathetic. Face me, demon!", "hash": "9780a82aa0087a4e", "src": "vmangos@13b49dc"}
 {"id": "9781bdf54cc60cfc", "field": "text", "en": "I think Plugger filled one of his kegs too much.  It looks like it's about to blow!", "hash": "9781bdf54cc60cfc", "src": "vmangos@13b49dc"}
 {"id": "9785a87073eaac42", "field": "text", "en": "Take a Candle of Beckoning from this crate, $n.", "hash": "9785a87073eaac42", "src": "vmangos@13b49dc"}

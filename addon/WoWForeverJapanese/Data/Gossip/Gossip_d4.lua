@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("gossip", {
   ["d403eee077aecfb1"] = { "Court of Lakeshire、そしてHonorable Magistrate Solomonの前に、どのような用件で参ったのだ？", "." },
+  ["d40c60a747d9e972"] = { "おお！これならうまくいくはずだ！", "." },
   ["d40fcf6a0879b912"] = { "よくやった！あなたの助けがなければ、あのtroggの波を食い止めることは決してできなかった。", "." },
   ["d41020c584b37c15"] = { "神秘的な品や商品を扱うのが私の商売だ、よそ者よ。", "." },
   ["d413930889d5fe1d"] = { "もちろん、もちろんだとも。この街のValley of HonorにあるHall of the BraveにいるDeze Snowbaneと話してくれ、{class}。", "." },

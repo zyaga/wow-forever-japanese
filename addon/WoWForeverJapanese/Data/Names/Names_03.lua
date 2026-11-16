@@ -182,6 +182,7 @@ WFJ.Data.add("name", {
   ["03b2eb985ca564b0"] = { "フロスト・アフィニティ", "ふろすと・あふぃにてぃ", "Frost Affinity" },
   ["03b3eb604c286fae"] = { "シャドウ・ボルト・ビジュアル", "しゃどう・ぼると・びじゅある", "[DNT] Shadow Bolt Visual" },
   ["03b3fb3cddc7c5c1"] = { "リコンポーズド", "りこんぽーずど", "Recomposed" },
+  ["03b4551f90b275b2"] = { "コンカラーズ・メダリオン", "こんからーず・めだりおん", "Conqueror's Medallion" },
   ["03b7fafcef518e80"] = { "セキュア・ディスエンボディード・スピリット", "せきゅあ・でぃすえんぼでぃーど・すぴりっと", "Secure Disembodied Spirit" },
   ["03b813c308143d2a"] = { "サモン・シーアージスト", "さもん・しーあーじすと", "Summon Theurgist" },
   ["03b8f9b1c875e09d"] = { "コドー・グレイヴヤード", "こどー・ぐれいゔやーど", "Kodo Graveyard" },

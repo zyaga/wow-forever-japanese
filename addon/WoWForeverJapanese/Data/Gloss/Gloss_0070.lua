@@ -125,7 +125,6 @@ WFJ.Data.add("gloss", {
   [70122] = "引きずり込む\tひきずりこむ\tdragged in",
   [70123] = "引きずり込む\tひきずりこむ\tdragged inside",
   [70124] = "引きずり込む\tひきずりこむ\tdrags into",
-  [70125] = "引きずり込む\tひきずりこむ\tdraw into",
   [70126] = "引きずり込む\tひきずりこむ\tget pulled under",
   [70127] = "引きずり込む\tひきずりこむ\thad dragged",
   [70128] = "引きずり込む\tひきずりこむ\tpulled (him) into",

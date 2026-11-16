@@ -10,8 +10,10 @@
 {"id": "745ba17d8ce98dd8", "field": "text", "en": "It's 40 degrees Kraklenheit. Can you feel the heat? No? I really couldn't either.", "hash": "745ba17d8ce98dd8", "src": "vmangos@13b49dc"}
 {"id": "745fde109a77f4ab", "field": "text", "en": "We have won $2219W battles against the Scourge.  Stand firm, $n!  We must persevere!", "hash": "745fde109a77f4ab", "src": "vmangos@13b49dc"}
 {"id": "7461ff8dbc2911f7", "field": "text", "en": "The power of Elune compels you!  The power of Elune compels you!  \n\nGo now!  Seek out Jandria in the central hall of the Temple of the Moon in the southern section of Darnassus!", "hash": "7461ff8dbc2911f7", "src": "vmangos@13b49dc"}
+{"id": "747a296c7753baa1", "field": "text", "en": "<The great cat lets out a small huff as you near it.>", "hash": "747a296c7753baa1", "src": "collector@1.60.1.70938", "npcs": [276732]}
 {"id": "747eb181cae43bc8", "field": "text", "en": "You cannot hide from us, little paladin!", "hash": "747eb181cae43bc8", "src": "vmangos@13b49dc"}
 {"id": "7480c175b0866793", "field": "text", "en": "How else could this have happened? Someone must have tipped the Dark Irons off.$B$B<Kharan shakes his fist at you.>$B$BSo help me, if I ever get out of here, I will spend the rest of my days finding the traitor.", "hash": "7480c175b0866793", "src": "vmangos@13b49dc"}
+{"id": "748483510494e976", "field": "text", "en": "Thank you, Greenwarden. I will do all I can to help.", "hash": "748483510494e976", "src": "collector@1.60.1.70938", "npcs": [1244]}
 {"id": "748b52f4d3b60bdf", "field": "text", "en": "%s begins to summon a lava spawn!", "hash": "748b52f4d3b60bdf", "src": "vmangos@13b49dc"}
 {"id": "748ed6feeb7274b5", "field": "text", "en": "Here among the craftsmen of Darnassus, there is a millenium of knowledge for the benefit of your chosen craft.  Now tell me, which craft do you find the most intriguing?", "hash": "748ed6feeb7274b5", "src": "vmangos@13b49dc"}
 {"id": "748f5075393fe67e", "field": "text", "en": "Stranger, find the fallen Prince Menethil and end his reign of terror.", "hash": "748f5075393fe67e", "src": "vmangos@13b49dc"}

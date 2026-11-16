@@ -790,7 +790,6 @@ WFJ.Data.add("gloss", {
   [60789] = "報奨金\tほうしょうきん\tbounty",
   [60790] = "報奨金\tほうしょうきん\tbounty money",
   [60791] = "報奨金\tほうしょうきん\treward (bounty)",
-  [60792] = "報復\tほうふく\tcrusade (retaliation)",
   [60793] = "報復\tほうふく\treckoning (retaliation)",
   [60794] = "報復\tほうふく\treprisal",
   [60795] = "報復\tほうふく\tretaliation",

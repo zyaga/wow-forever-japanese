@@ -21,7 +21,7 @@ Make the Japanese voice from the Japanese the addon ships, copy it into the Fore
    ```
    This runs the three steps below in order. Each can be run alone.
    - `make voice-speakers`: writes `data/voice/speakers.jsonl` (who says each voiced line): for a quest line, the creature Spoken's newest corpus names for it (`make voice-spoken-fetch` runs first); otherwise VMaNGOS, the quest cache's conditional descriptions, forever-vo's player captures and the collector's NPC ids; a signed book page is read by its writer. It runs `make voice-levels` first (the committed quest level table). Read its report: narrator lines, conflicts (two creatures for one line), lines with no Japanese. A gossip line that ships as the English it is (a made-up language, a name alone) gets no speaker and is never voiced: the engine reads Japanese. The report lists such a line under missing. Who each creature is (`data/voice/profiles.jsonl`) and the voice it is cast in (`data/voice/voices.jsonl`, written by `wfj voice cast` from `pipeline/voice.toml`) are separate steps (`wfj voice profiles`, `wfj voice cast`). The files are data: commit them with the ticket, after `make validate` passes.
-   - `make voice-generate`: first runs `make voice-match` (Spoken's newest corpus, then speakers, voice sets and the cast), so run `make voice-match` yourself before counting a run: the count then already follows the newest Spoken. Then it makes the missing and changed files in the audio store (`build/voice/audio/<key>.mp3`, `<key>_<voice>.mp3` for a variant; the store keeps its README and license at the top) and records each in `data/voice/audio.jsonl`. A file is made again only when its fingerprint changed: the hash of its Japanese, its roster voice, its set, mode (voice-only or full copy) and reference hash, the `[clone]` temperature and seed, and the hash of its [engine text](#what-the-engine-reads) when that differs from the spoken line. With nothing to make it needs no engine. A line the engine cannot read is logged and left for the next run; the run goes on. Because it runs over the whole game (`--scope all --players all`), it also drops the record rows of files no line uses any more, so `data/voice/audio.jsonl` lists exactly the shipped files (`test_audio_in_step` fails on an unused row). Then it times the files not timed yet (`wfj voice time`, [Timing](#timing)), so a remade line is timed in the same round. When it made files it then commits and pushes the store and writes the audio pin (`store-sync --if-changed`); when it made nothing, the store, the remote and the pin are left alone. `wfj voice plan` shows what it would make, without making anything.
+   - `make voice-generate`: first runs `make voice-match` (Spoken's newest corpus, then speakers, voice sets and the cast), so run `make voice-match` yourself before counting a run: the count then already follows the newest Spoken. Then it makes the missing and changed files in the audio store (`build/voice/audio/<key>.mp3`, `<key>_<voice>.mp3` for a variant; the store keeps its README and license at the top) and records each in `data/voice/audio.jsonl`. A file is made again only when its fingerprint changed: the hash of its Japanese, its roster voice, its set, mode (voice-only or full copy) and reference hash, the `[clone]` temperature and seed, and the hash of its [engine text](#what-the-engine-reads) when that differs from the spoken line. With nothing to make it needs no engine. A line the engine cannot read is logged and left for the next run; the run goes on. It makes the character's error lines too: `--players all` is every player race and sex, then every NPC voice of the cast (`--players npc` alone, stem `e-<line>-<voice id>`), so the player can choose any of them for their character ([ADR-093](../adr/093-a-voice-the-player-chooses-for-the-error-lines.md)); the NPC voices add about 2,700 short files (50 lines in each of 54 voices), made, timed and checked like any other file. Because it runs over the whole game (`--scope all --players all`), it also drops the record rows of files no line uses any more, so `data/voice/audio.jsonl` lists exactly the shipped files (`test_audio_in_step` fails on an unused row). Then it times the files not timed yet (`wfj voice time`, [Timing](#timing)), so a remade line is timed in the same round. When it made files it then commits and pushes the store and writes the audio pin (`store-sync --if-changed`); when it made nothing, the store, the remote and the pin are left alone. `wfj voice plan` shows what it would make, without making anything.
    - `make voice-pack`: writes the entry and every pack under `build/voice-pack/`, split by `pipeline/voice-packs.toml` (below), and prints each pack's lines, files, size and room left under the 420 MB cap. It also writes the entry's `Packs.lua`, the list of its pack folders. Each timed recording is snipped at its cuts into `<stem>-<n>.mp3`, between two MP3 frames, copying the bytes as they are (the pieces played back to back are the stored file); a recording with no cut ships whole. `Register.lua` is format 3. A stored file that is not a plain run of MPEG-2 layer III frames stops the build. Lines whose Japanese changed since their file was made are left out and counted. A pack past 315 MB is marked; a pack past 420 MB stops the build and nothing is written, as does a missing audio store or a store file that is not the recorded take (its SHA-256 differs from the audio record's). `wfj voice record-hashes` fills the SHA-256 of rows made before the field existed, reading the store only.
 2. **Validate** the voice tables with the rest: `make validate`.
 
@@ -359,22 +359,22 @@ When a pack nears the cap (the build marks it past 315 MB), split its band: a ne
 
 ## Numbers
 
-The cloned voices at 64 kbps, as `make voice-pack` printed them: about 2.8 GB in all (about 1.4 GB at 32 kbps). Shipped as sentence files the packs hold about four times as many files, but the pieces add up to the stored files byte for byte, so the sizes below do not change.
+The cloned voices at 64 kbps, as `make voice-pack` printed them: about 2.9 GB in all (about 1.4 GB at 32 kbps). Shipped as sentence files the packs hold about four times as many files, but the pieces add up to the stored files byte for byte, so the sizes below do not change.
 
 | Pack | Size | Room under 420 MB |
 |---|---|---|
-| Levels 1-10 | 243 MB | 177 MB |
-| Levels 1-10 (part 2) | 260 MB | 160 MB |
-| Levels 11-20 | 325 MB | 95 MB |
-| Levels 21-30 | 264 MB | 156 MB |
-| Levels 31-40 | 298 MB | 122 MB |
-| Levels 41-50 | 300 MB | 120 MB |
-| Levels 51-60 | 357 MB | 63 MB |
+| Levels 1-10 | 247 MB | 173 MB |
+| Levels 1-10 (part 2) | 261 MB | 159 MB |
+| Levels 11-20 | 328 MB | 92 MB |
+| Levels 21-30 | 272 MB | 148 MB |
+| Levels 31-40 | 304 MB | 116 MB |
+| Levels 41-50 | 301 MB | 119 MB |
+| Levels 51-60 | 358 MB | 62 MB |
 | Levels 51-60 (part 2) | 236 MB | 184 MB |
-| Levels 51-60 (part 3) | 234 MB | 186 MB |
-| Other | 306 MB | 114 MB |
+| Levels 51-60 (part 3) | 235 MB | 185 MB |
+| Other | 356 MB | 64 MB |
 
-Levels 11-20 and Levels 51-60 are past the 315 MB mark: when one grows near the cap, split its band (see "Adding a pack"). Every take is levelled to -20 LUFS (one gain measured with ffmpeg's `ebur128`, peaks limited to -2 dBFS); a silent take or one shorter than 400 ms is left as it is. Time and money for a run: "Estimating time and money" above.
+Other holds the error lines in every NPC voice (about 2,700 short files, [ADR-093](../adr/093-a-voice-the-player-chooses-for-the-error-lines.md)). Levels 11-20, Levels 51-60 and Other are past the 315 MB mark: when one grows near the cap, split its band (see "Adding a pack"). Every take is levelled to -20 LUFS (one gain measured with ffmpeg's `ebur128`, peaks limited to -2 dBFS); a silent take or one shorter than 400 ms is left as it is. Time and money for a run: "Estimating time and money" above.
 
 ## Open work
 

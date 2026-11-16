@@ -25,6 +25,8 @@ WFJ.Data.add("gossip", {
   ["dda93b5001b331db"] = { "Valley of Strengthの西側、高いところを探すといい。中に入れてもらえるのは士官だけだぞ! そうでないなら、外にいるSergeant Ba'shaと話せ。", "." },
   ["ddaaea28a07399c6"] = { "Borgusのところで修行したいのか? ああ、どこにいるか教えてやれる。俺の炉から北西のSquareを抜けて、西の道を行け。右手の二軒目の建物にいるぞ。", "." },
   ["ddb9d4eda71d319a"] = { "Snowfall Graveyardを支配しているのはどちらだ？", "." },
+  ["ddc0204856c2a2bb"] = { "よく来てくれた、{name}。話し合わねばならないことは多いが、それより大事なのは、光の道における君の修練だ。\n\n光に仕える者すべてが学ばねばならない教えがある。準備ができているなら、今からそのいくつかについて話し始めよう。", "." },
+  ["ddc8bfb0c0c3beb1"] = { "Dalaran City行きのskycutterがただいま到着しました。Dalaran City行き、ご搭乗ください！", "." },
   ["ddc9d9bd6a1984fb"] = { "MAGNIのために！", "." },
   ["ddceaa4afea9b1ea"] = { "%sはBloodpetalの芽にもやを加えた。", "." },
   ["ddd4983e2faf7796"] = { "やあ、{class}。私はGnomereganの亡命者たちを率いるHigh Tinker Mekkatorqueだ。", "." },

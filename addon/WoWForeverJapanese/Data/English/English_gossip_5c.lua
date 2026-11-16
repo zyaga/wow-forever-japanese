@@ -13,7 +13,6 @@ WFJ.Data.add("english", {
   ["gossip:5c57e10038b6db46"] = { text = "all=6 days=16 fool=22 gates=23 getting'=18 gong=26 knowin'=9 last=14 misguided=21 open=29 outside=24 ring=27 some=20 startin'=31 stuff=5 that=4 told=11 war=30 way=7 whoa=1 you=3" },
   ["gossip:5c617b3c8bd7df3c"] = { text = "concocts=2 potion=1" },
   ["gossip:5c61977714f290ad"] = { text = "around=3 backs=5 dwarves=1 like=10 open=6 opportunity=8 spin=4 strike=11 take=9 this=7 times=2" },
-  ["gossip:5c64ed8c14d25699"] = { text = "animal=8 basics=5 bond=11 companion=9 excellent=1 go=17 how=12 know=6 knowledge=15 lasting=10 learner=4 needs=19 quite=3 teach=13 this=14 thrive=18 with=16 you=2" },
   ["gossip:5c65948d4a91339e"] = { text = "better=2 come=4 get=3 now=1" },
   ["gossip:5c67715b106da800"] = { text = "fire=3 party=2 yonder=1" },
   ["gossip:5c6ad9a0bc7e8891"] = { text = "beating=3 car=1 next=4 race=5 ready=7" },

@@ -46,6 +46,7 @@ WFJ.Data.add("english", {
   ["gossip:57dadc6ab3ba5733"] = { text = "ago=7 arcane=10 beautiful=26 casting=11 catalyst=39 day=32 devastating=37 elf=1 elves=8 events=38 greatest=19 held=14 her=30 history=35 knowledge=4 limited=5 lore=2 most=18 my=3 named=25 queen=24 sacred=12 sadly=28 said=22 still=9 they=23 this=33 woman=27" },
   ["gossip:57e27109658342e2"] = { text = "fortune=7 good=5 land=2 our=3 people=4 thankful=8" },
   ["gossip:57e3d2c02d95db15"] = { text = "but=10 elves=4 esteemed=13 heard=9 history=2 hosts=12 matter=16 once=1 related=6 somehow=3 speak=18 that=7 whisper=8" },
+  ["gossip:57e56f84369b40d6"] = { text = "all=7 carry=5 destroy=8 escape=2 taint=4 who=6 you=1" },
   ["gossip:57e5a57291a8003b"] = { text = "business=11 have=3 how=4 next=12 talk=2 then=10 welcome=1" },
   ["gossip:57fda7a3bdf933a3"] = { text = "controlled=7 east=2 flanks=3 protects=4 south=1" },
 })

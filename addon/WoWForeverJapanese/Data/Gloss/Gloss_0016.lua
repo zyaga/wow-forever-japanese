@@ -323,7 +323,6 @@ WFJ.Data.add("gloss", {
   [16320] = "だって\tだって\teh (you say)",
   [16321] = "だって\tだって\teh? (you say)",
   [16322] = "だって\tだって\teven",
-  [16323] = "だって\tだって\thuh? (you say)",
   [16324] = "だって\tだって\tor (even)",
   [16325] = "だって\tだって\ttoo",
   [16326] = "だって\tだって\ttoo (even)",

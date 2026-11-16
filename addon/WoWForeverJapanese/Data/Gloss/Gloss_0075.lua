@@ -772,7 +772,6 @@ WFJ.Data.add("gloss", {
   [75770] = "意向\tいこう\twishes",
   [75771] = "意味\tいみ\tdo I mean (meaning)",
   [75772] = "意味\tいみ\tdo you mean (meaning)",
-  [75773] = "意味\tいみ\tit means (meaning)",
   [75774] = "意味\tいみ\tmatters (meaning)",
   [75775] = "意味\tいみ\tmean (meaning)",
   [75776] = "意味\tいみ\tmean(ing)",

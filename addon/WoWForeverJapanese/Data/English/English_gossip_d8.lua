@@ -46,6 +46,7 @@ WFJ.Data.add("english", {
   ["gossip:d8d4c0266d70f8bf"] = { text = "and=4 brother=3 death=7 promise=8 second=6 swift=5 troops=1 withdraw=2" },
   ["gossip:d8d653c9980bd9f4"] = { text = "all=30 collected=9 effort=2 friend=14 good=6 help=4 knife=16 leather=21 lot=12 making=25 our=22 see=8 so=15 uses=31 war=1" },
   ["gossip:d8db604a02163846"] = { text = "all=11 art=19 best=12 here=1 miners=13 mining=17 one=14 show=20 there=16 think=8 trainers=2 true=18 where=6" },
+  ["gossip:d8dc9251a54c3674"] = { text = "i=1 my=3 rest=4 return=2" },
   ["gossip:d8e2228c670cafc1"] = { text = "and=24 blade=16 caster=11 conflicts=6 days=1 end=7 grow=3 know=10 lands=5 long=2 no=14 our=20 seen=8 take=17 takes=17 that=9 these=4 time=19 war=18 you=28" },
   ["gossip:d8e3ec5258026c60"] = { text = "aye=1 betrayed=13 ended=20 faith=6 forces=15 founder=3 here=19 i=18 knight=9 original=2 own=11 purity=7 slain=16 son=12 unwavering=5" },
   ["gossip:d8f21ae016c79149"] = { text = "farm=1 taken=2" },

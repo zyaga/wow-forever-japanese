@@ -13,6 +13,8 @@ an old setting stops working). A release moves those lines under its version num
 - The voice panel follows the voice word by word: the page turns as the speaker starts each sentence, and a soft tint marks the words as they are spoken (warm white on the dark looks, brown on parchment). A name of several English words lights up whole.
 - Pausing a voiced line and playing it again picks up at the sentence you paused in, not from the start of the line. Two small gold arrows beside pause on the voice panel play the line from the sentence before or the next one, also while it is paused or after it ended. Play again starts from the first sentence, even after a pause.
 - When a voice pack is out of date, a chat line at login names it and its version. A line that stays quiet because its voice pack is older than its Japanese names that pack too, and a voice pack too new for your addon says so at login.
+- You can choose the voice of your character's own error lines ("out of range") on the Voice settings page: Automatic (your character's race and sex), or any player or NPC voice of the game, grouped by race, for example "Dwarf, female (guard)". The game's English error lines of your own race and sex stay silent whatever you choose.
+- Japanese for what Forever 1.60.1.70938 added and for what twenty-three players sent with the English Collector: 124 NPC lines, 128 quest progress and turn-in texts, and new quest titles, objectives and descriptions (with word cards), and 33 item tooltips.
 - The study card can say a saved word's sentence in the NPC's recorded voice: it plays when you show the answer (a setting on the Voice page turns that off), and a play button beside the answer plays it again. In the word list, Include audio adds those recordings to the Anki export and lists the sound files to copy into Anki's media folder.
 
 ### Changed
@@ -21,6 +23,7 @@ an old setting stops working). A release moves those lines under its version num
 - The voice is clearer: the packs now keep the voices' high end, which makes the download about twice as big (about 2.8 GB). Three new packs split the largest level bands (Levels 1-10 (part 2), Levels 51-60 (part 2) and (part 3)); the CurseForge app installs them with the next Update All, and a chat line at login names any voice pack that did not load.
 - The voice panel no longer shows a stage direction, such as an emote in angle brackets, that the voice does not read. A line made only of such directions is still shown.
 - A bug report now lists your voice packs with their versions.
+- Quest texts and item and spell tooltips the game reworded on 1.60.1.70938 follow the new wording.
 - The voice panel no longer goes faint in combat (the "Dim the panel in combat" setting is gone), and a paused line stays on screen, whole, on the sentence you paused in, until you play it or close it.
 
 ### Fixed

@@ -31,6 +31,7 @@ WFJ.Data.add("english", {
   ["gossip:36bed95a710c5740"] = { text = "always=6 patience=2 peace=1 strong=7 with=4 you=3" },
   ["gossip:36c5bdc348d1ae33"] = { text = "adventurers=4 cost=9 insignia=8 items=7 offering=6 reputation=2 revered=1" },
   ["gossip:36cbad5eb4364863"] = { text = "before=2 goggles=3 stone=1" },
+  ["gossip:36d6dcd2c17d5228"] = { text = "fading=3 this=1 what=2" },
   ["gossip:36d8875b35381c87"] = { text = "alright=1 figure=6 operate=5 thing=4 think=7 this=3" },
   ["gossip:36dcbc2fd140552b"] = { text = "die=4 tell=2 you=1" },
   ["gossip:36dcbf965b885c07"] = { text = "below=2 but=9 care=13 caverns=4 depths=11 far=17 hides=7 own=14 remember=21 skin=15 source=8 strange=5 their=10 us=1 venture=12 wondrous=6" },

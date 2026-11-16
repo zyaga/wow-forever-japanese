@@ -448,7 +448,6 @@ WFJ.Data.add("gloss", {
   [1445] = "ある\tある\thappens (there is)",
   [1446] = "ある\tある\thas",
   [1447] = "ある\tある\thas (and)",
-  [1448] = "ある\tある\thas (been)",
   [1449] = "ある\tある\thas (ever)",
   [1450] = "ある\tある\thas (owes)",
   [1451] = "ある\tある\thas (there are)",

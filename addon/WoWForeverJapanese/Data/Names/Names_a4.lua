@@ -181,6 +181,7 @@ WFJ.Data.add("name", {
   ["a4dae487f4f2f2ee"] = { "フレアン", "ふれあん", "Fre'an" },
   ["a4dcabaf559031a3"] = { "21・パウンド・ロブスター", "にじゅういち・ぱうんど・ろぶすたー", "21 Pound Lobster" },
   ["a4df28c1df80d17f"] = { "ソウル・オブ・ザ・ヴォイド", "そうる・おぶ・ざ・ゔぉいど", "Soul of the Void" },
+  ["a4e0596ceff93e2c"] = { "ウーズ・ラマジャー", "うーず・らまじゃー", "Ooze Rummagers" },
   ["a4e07222725e559f"] = { "レプロス・テクニシャン", "れぷろす・てくにしゃん", "Leprous Technician" },
   ["a4e081cdd1ade195"] = { "ストーン・モー・バジリスク", "すとーん・もー・ばじりすく", "Stone Maw Basilisk" },
   ["a4e14bf694d88113"] = { "フェイク・デス", "ふぇいく・です", "Fake Death" },

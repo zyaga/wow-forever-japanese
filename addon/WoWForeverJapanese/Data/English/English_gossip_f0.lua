@@ -13,6 +13,7 @@ WFJ.Data.add("english", {
   ["gossip:f031205a4d22b392"] = { text = "actions=16 behalf=12 beyond=22 call=20 cheers=28 diplomacy=9 duty=19 earned=6 engaged=10 gone=24 great=8 hero=26 known=2 our=11 performed=17 respect=5 them=13 true=25 undying=4 valiant=15 whole=3" },
   ["gossip:f03be98becb236dd"] = { text = "drop=3 head=2" },
   ["gossip:f03e217d6eb0b826"] = { text = "clear=8 cloudy=4 come=3 crystal=6 me=1 speak=2 what=5" },
+  ["gossip:f040d7ae661f3a83"] = { text = "challenge=2" },
   ["gossip:f04855d6e880bdf6"] = { text = "animal=12 anywhere=13 brave=1 bred=3 endurance=9 finest=2 inspect=19 instincts=10 mounts=4 please=16 with=11 wolf=5" },
   ["gossip:f04e3c67e915df1b"] = { text = "blue=11 brother=23 come=1 crystal=10 day=22 enjoy=29 gorgeous=3 heat=20 here=27 i=17 jungle=5 jungles=5 look=24 looking=24 right=8 spending=15 stand=28 sunbathing=14 this=18 trip=6 tropical=4 unbearable=19 waters=12 while=16 wonderful=2 you=9" },
   ["gossip:f06164c35ddf7399"] = { text = "found=1" },

@@ -21,6 +21,7 @@ WFJ.Data.add("english", {
   ["gossip:b244a94ebe0698ab"] = { text = "any=6 children=5 discounts=11 get=12 good=4 special=10 uh=2 um=9 vendor=7 wondrous=1 yum=13" },
   ["gossip:b2513485456e30dd"] = { text = "coming=3 more=1 way=2" },
   ["gossip:b25becdacf7f221d"] = { text = "battle=3 champion=1 entering=4 units=2" },
+  ["gossip:b25d5d5bfb58bd03"] = { text = "all=27 beneath=8 combat=25 dark=11 deep=9 fear=28 fibers=15 further=55 gratitude=48 help=57 it=4 its=23 just=45 land=31 life=14 look=39 madness=54 malevolence=18 night=42 presence=12 provide=36 relief=35 rely=33 roils=41 seeped=17 seethes=19 sounds=43 source=38 symptoms=24 takes=2 this=51 those=34 thought=3 token=49 under=46 us=7 veil=44 we=21 wetlands=13 whispers=47 worse=5 you=1" },
   ["gossip:b2616af3e0df71f3"] = { text = "invulnerable=3 orcs=1" },
   ["gossip:b262f2c1fa397ad8"] = { text = "what=1" },
   ["gossip:b264f7c0d259f69b"] = { text = "defile=1 die=2 prepare=3" },

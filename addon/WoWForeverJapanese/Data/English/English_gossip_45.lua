@@ -29,6 +29,7 @@ WFJ.Data.add("english", {
   ["gossip:45745e4fd411422a"] = { text = "doomed=1 we=2" },
   ["gossip:457e66ce58fa3c51"] = { text = "battle=6 find=3 seek=5 sure=8 top=2 way=7 will=10 you=4" },
   ["gossip:4590b956e921e27c"] = { text = "free=11 inevitable=2 merely=5 misguided=9 prolong=4 she=7 soul=10 succumb=6 you=1 your=8" },
+  ["gossip:4592898f0c67bbdd"] = { text = "overlook=1 point=3" },
   ["gossip:45980b4f981becdd"] = { text = "lowers=2 voice=1 whisper=3" },
   ["gossip:459d0cbea3ece8f0"] = { text = "armor=4 arms=3 gear=12 honest=10 job=7 much=8 my=6 need=13 proper=2 sale=15 set=5 should=14 two=16 work=9" },
   ["gossip:45a1160aeb73debe"] = { text = "friendly=1" },

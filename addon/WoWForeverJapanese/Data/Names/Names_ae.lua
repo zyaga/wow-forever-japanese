@@ -24,6 +24,7 @@ WFJ.Data.add("name", {
   ["ae1c3e5d38636379"] = { "ティンバーモウ・ウォリアー", "てぃんばーもう・うぉりあー", "Timbermaw Warrior" },
   ["ae1cd67702bfbc3a"] = { "スカラマンス", "すからまんす", "Scholomance" },
   ["ae1d37138b99517f"] = { "フリントファイア・シップメント", "ふりんとふぁいあ・しっぷめんと", "Flintfire Shipment" },
+  ["ae2133388204b466"] = { "エラヤー・イーズウィンド", "えらやー・いーずうぃんど", "Elayaa Easewind" },
   ["ae21ca51988a671d"] = { "ロード・マルダザー", "ろーど・まるだざー", "Lord Maldazzar" },
   ["ae21e6b04c88f4d6"] = { "ディビエート・ラッシャー", "でぃびえーと・らっしゃー", "Deviate Lasher" },
   ["ae22ac929018f3a1"] = { "シールド・ブラッド・コンテナー", "しーるど・ぶらっど・こんてなー", "Sealed Blood Container" },

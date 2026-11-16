@@ -10,7 +10,7 @@ WFJ.Data.add("objective", {
   [381143] = { "SatyrnaarでHighborneの魂を解放する", 0x5813f300, "." },
   [381177] = { "Drullを救出する", 0x6d39f825, "." },
   [381178] = { "Tog'tharを救出する", 0x64af34f4, "." },
-  [381321] = { "Ysidaを解放する", 0x19481639, "." },
+  [381321] = { "Ysidaを解放する", 0x4afee063, "." },
   [381589] = { "Metzen the Reindeerを見つけて救出する", 0xa60c43d1, "." },
   [381845] = { "Silithystを持ち帰る", 0x99f2356d, "." },
   [381874] = { "Rabid Thistle Bearを捕獲する", 0xb4020a0e, "." },

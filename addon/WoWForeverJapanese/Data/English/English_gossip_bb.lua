@@ -24,6 +24,7 @@ WFJ.Data.add("english", {
   ["gossip:bbb388a11c4b9e9c"] = { text = "ah=1 he=3 looking=2 outside=6 runs=8 shop=7 way=5" },
   ["gossip:bbb66c90368769b4"] = { text = "against=3 ally=5 presence=10 welcome=1 your=9" },
   ["gossip:bbb94fd2c760ed17"] = { text = "boxes=5 dwarves=2 locked=3 number=6" },
+  ["gossip:bbb9b3398ed8c3a9"] = { text = "absorbed=8 he=4 indeed=9 invincible=10 magic=2 power=7 seen=3 such=1 that=5" },
   ["gossip:bbbf58e50b6d2057"] = { text = "all=6 arrive=15 both=4 completed=7 day=13 duty=1 found=19 hope=23 materiel=5 pieces=18 reporting=2 shipped=10 should=16 someone=17 together=21" },
   ["gossip:bbc6bc0f21103b74"] = { text = "drawn=2 magnet=1" },
   ["gossip:bbc9a7a7f1219fe0"] = { text = "controls=2 who=1" },

@@ -4,6 +4,7 @@ WFJ.Data.add("english", {
   ["gossip:7004f61a9980d187"] = { text = "anger=2 give=8 guttersnipe=10 hostility=3 i=1 lot=4 pent=5 reason=6" },
   ["gossip:7008516b8b67a67a"] = { text = "accept=14 acting=4 adventurers=7 assist=8 behalf=3 beneficial=17 deeds=26 different=12 duty=10 enter=29 greetings=1 hand=21 i=2 most=16 my=9 once=20 our=27 quantities=13 received=6 records=28 result=30 service=34 set=19 signets=11 will=38 you=15 your=25" },
   ["gossip:700d37b786a4d43c"] = { text = "against=3 woman=1" },
+  ["gossip:7013c23a5f427f44"] = { text = "ah=1 brought=4 hope=5 relics=3 returned=2" },
   ["gossip:702067fce7f05e4d"] = { text = "find=6 finer=3 kabob=5 rat=4 side=1" },
   ["gossip:7023d96b8aeeee06"] = { text = "condition=7 examine=4 free=2 goods=3 other=6 perfect=8 smell=5 welcome=1" },
   ["gossip:702c1efa18126341"] = { text = "his=1 indicate=8 lieutenant=2 location=7 possesses=3 remaining=5 soulgems=6 tome=4" },

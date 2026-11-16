@@ -41,6 +41,7 @@ WFJ.Data.add("gossip", {
   ["e0a52944ab86dc0a"] = { "Hall of Thanes", "." },
   ["e0a7303cc7bab5d9"] = { "ああ、懐かしのBrandur Ironhammerか。あいつなら間違いなく、お前さんの求める導きを与えてくれるだろうよ、若いの。IronforgeのHall of Mysteries、門の北にいるぞ。", "." },
   ["e0b1bd53532c6082"] = { "Elder Shadowsongから、次の段取りについてあなたに報告するよう言われました。", "." },
+  ["e0bb174f4fb05ea5"] = { "あなたにお持ちした球体をいただけますか？この辺りのhighborneに関わることで、私の助けになると思うのです。", "." },
   ["e0c00f9b8ed128c4"] = { "Captain GalvangarはDrek'Tharの信頼する補佐役だ。彼はField of Strifeの南側にあるIceblood GarrisonからHordeの軍を率いている。\n\nCaptain Galvangarは現在Iceblood Garrisonにいる。", "." },
   ["e0c6d07c8cec4315"] = { "品物を見せてください。", "." },
   ["e0c8c93db2793f92"] = { "呪われるがいい、定命の者よ。", "." },

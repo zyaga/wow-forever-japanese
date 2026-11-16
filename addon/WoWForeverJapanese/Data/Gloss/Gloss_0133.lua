@@ -694,7 +694,6 @@ WFJ.Data.add("gloss", {
   [133694] = "間違える\tまちがえる\t(have come to) the wrong (mistaken)",
   [133695] = "間違える\tまちがえる\t(if you get it) wrong",
   [133696] = "間違える\tまちがえる\tget (it) wrong",
-  [133697] = "間違える\tまちがえる\tgot wrong",
   [133698] = "間違える\tまちがえる\thave (me) mistaken",
   [133699] = "間違える\tまちがえる\thaven't got wrong (the right place)",
   [133700] = "間違える\tまちがえる\tmade a wrong (turn)",

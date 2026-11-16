@@ -237,6 +237,38 @@ describe("Core/Voice: the pack registry and the decision", function()
     assert.is_false(V.hasErrors("Tauren", 3))
   end)
 
+  it("the character's error lines speak in the voice the player chose; a voice no pack carries plays their own",
+  function()
+    local F = "WoWForeverJapanese_Voice"
+    settings["voice.errors"] = true
+    V.register({ format = 2, folder = F, lines = {}, errors = { kinds = { [10] = "outofrange", [15] = "nomana" },
+      voices = {
+        ["tauren-f"] = { outofrange = { "e-o-tauren-f.mp3", 1 }, ERR_X = { "e-x-tauren-f.mp3", 1.1 },
+          nomana = { "e-n-tauren-f.mp3", 1.2 } },
+        ["dwarf-m"] = { outofrange = { "e-o-dwarf-m.mp3", 2 } },
+        qdwarffemaleguard = { outofrange = { "e-o-qdwarffemaleguard.mp3", 3 },
+          ERR_X = { "e-x-qdwarffemaleguard.mp3", 3.1 } } } } })
+    local function file(id, message) return { V.errorFile(id, "Tauren", 3, message) } end
+    settings["voice.errorVoice"] = "auto" -- the voice of the character's race and sex
+    assert.are.same({ PATH:format(F, "e-o-tauren-f.mp3"), 1 }, file(10))
+    settings["voice.errorVoice"] = "dwarf-m" -- a player voice
+    assert.are.same({ PATH:format(F, "e-o-dwarf-m.mp3"), 2 }, file(10))
+    settings["voice.errorVoice"] = "qdwarffemaleguard" -- an NPC voice: the message on screen, else the kind's line
+    assert.are.same({ PATH:format(F, "e-x-qdwarffemaleguard.mp3"), 3.1 }, file(10, "ERR_X"))
+    assert.are.same({ PATH:format(F, "e-o-qdwarffemaleguard.mp3"), 3 }, file(10))
+    assert.are.same({ PATH:format(F, "e-n-tauren-f.mp3"), 1.2 }, file(15)) -- a line the chosen voice lacks
+    settings["voice.errorVoice"] = "qorcmaleguard" -- carried by no pack
+    assert.are.same({ PATH:format(F, "e-o-tauren-f.mp3"), 1 }, file(10))
+    settings["voice.errorVoice"] = nil -- saved by a version without the setting
+    assert.are.same({ PATH:format(F, "e-o-tauren-f.mp3"), 1 }, file(10))
+    assert.are.same({ nil, "kind" }, file(99))
+    -- the chosen voice never stands in for the character's own: without them nothing plays (the English is not muted)
+    settings["voice.errorVoice"] = "qdwarffemaleguard"
+    assert.are.same({ nil, "nopack" }, { V.errorFile(10, "Dwarf", 3) })
+    assert.is_true(V.hasErrorVoice("qdwarffemaleguard"))
+    assert.is_false(V.hasErrorVoice("qorcmaleguard"))
+  end)
+
   it("a creature two packs carry keeps its voice when one of them registers again without it", function()
     local line = { "2-description.mp3", WFJ.Hash.key(desc), 3, v = { deep = { "2-description_deep.mp3", 2 } } }
     V.register({ format = 2, folder = "WoWForeverJapanese_VoiceA", creatures = { [10] = "deep" },
@@ -773,7 +805,7 @@ describe("voice settings: shown only with a pack", function()
   it("the voice settings are hidden from lists until a pack registers", function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     local WFJ = H.loadChunks({ "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua",
-      "Core/Voice.lua", "Core/Modifier.lua" })
+      "Core/Voice.lua", "Core/ErrorVoices.lua", "Core/Modifier.lua" })
     WFJ.Settings.load(nil, 1, {})
     local function hiddenVoice()
       local n = 0
@@ -782,7 +814,7 @@ describe("voice settings: shown only with a pack", function()
       end
       return n
     end
-    assert.are.equal(19, hiddenVoice()) -- the twelve voice settings and the voice panel's seven
+    assert.are.equal(20, hiddenVoice()) -- the thirteen voice settings and the voice panel's seven
     WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
     assert.are.equal(0, hiddenVoice())
     assert.is_true(WFJ.Settings.get("voice.enabled")) -- on by default
@@ -827,7 +859,7 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     _G.UnitSex = function() return 3 end
     _G.GetTime = function() return 100 end
     WFJ = H.loadChunks({ "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Voice.lua",
-      "Core/Modifier.lua", "Core/Hash.lua", "UI/VoiceErrors.lua" })
+      "Core/ErrorVoices.lua", "Core/Modifier.lua", "Core/Hash.lua", "UI/VoiceErrors.lua" })
     WFJ.Compat.init(function(name) return _G[name] end)
     -- the English recordings the game plays for a tauren (race id 6), as the generated data file gives them
     WFJ.Data = WFJ.Data or {}
@@ -931,6 +963,18 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     WFJ.VoiceErrors.restore() -- the logout path
     assert.are.same({ 901, 902, 901, 902, 901, 902, 901, 902 }, unmuted)
     assert.are.equal(0, writes)
+  end)
+
+  it("with another voice chosen, plays it and still mutes the character's own race and sex", function()
+    WFJ.Voice.register({ format = 2, folder = "WoWForeverJapanese_VoiceOther", lines = {}, errors = { kinds = {},
+      voices = { ["dwarf-m"] = { ERR_USE_TOO_FAR = { "e-ERR_USE_TOO_FAR-dwarf-m.mp3", 0.8 } } } } })
+    WFJ.Settings.set("voice.errorVoice", "dwarf-m")
+    WFJ.VoiceErrors.init(db)
+    assert.are.same({ 901, 902 }, muted) -- the tauren woman's English recordings, as before
+    _G.UIErrorsFrame:TryDisplayMessage(51, "You are too far away.")
+    frames()
+    assert.are.equal("Interface\\AddOns\\WoWForeverJapanese_VoiceOther\\Sound\\e-ERR_USE_TOO_FAR-dwarf-m.mp3",
+      sounds[1].path)
   end)
 
   it("mutes nothing for a character the pack has no lines for", function()

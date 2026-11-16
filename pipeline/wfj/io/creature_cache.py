@@ -21,6 +21,8 @@ The payload layout is pinned per build, with its evidence, like the quest cache'
 1.60.1.70938: all 469 records of the client's full cache read this way, every display list adds up, and for
 the 421 creatures VMaNGOS also has, 410 first displays are one of VMaNGOS's four (the other 11 are models
 Forever replaced).
+A later full cache of the same build: all 1,764 records read this way and every display list adds up; most
+creatures have one to six displays, one has eleven.
 """
 
 from __future__ import annotations
@@ -36,7 +38,7 @@ LOCALE_ENUS = b"SUne"
 HEADER_SIZE = 24
 RECORD_HEADER = struct.Struct("<II")
 DISPLAY = struct.Struct("<Iff")
-MAX_DISPLAYS = 8  # no creature measured has more than four; a wilder count means the layout was misread
+MAX_DISPLAYS = 16  # the most measured is eleven; a wilder count means the layout was misread
 
 
 class CreatureCacheError(ValueError):

@@ -6,6 +6,8 @@ WFJ.Data.add("english", {
   ["gossip:930ad5a65c6ea72f"] = { text = "accumulated=7 heard=2 last=1" },
   ["gossip:930b20ab009eaf50"] = { text = "come=6 fellow=1 fellowship=4 home=9 paladins=3 seeking=5" },
   ["gossip:9317dea149f76a12"] = { text = "falls=2 knee=1" },
+  ["gossip:931c01e8cfe1edd5"] = { text = "amongst=14 authorized=10 dealer=11 erm=1 exalted=15 gnomes=13 happy=23 if=20 know=8 mean=9 mounts=18 offer=24 only=17 people=16 really=3 recognized=22 sell=19 show=25 sorry=2 well=7 you=4" },
+  ["gossip:931ded5dbc315417"] = { text = "help=2 something=1" },
   ["gossip:932eae0d5bd22c4b"] = { text = "best=18 blessed=7 garments=2 her=4 herself=6 listen=17 needle=5 northeastern=21 so=11 tailors=1 teachings=16 think=8 visit=15 with=3 your=9" },
   ["gossip:933471fd27088b53"] = { text = "agent=4 cloth=7 donation=8 grateful=11 here=2 i=1 if=9 most=10 organization=6 our=5" },
   ["gossip:933c45a1ea760e7e"] = { text = "unworthy=1" },

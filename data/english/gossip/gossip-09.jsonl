@@ -19,6 +19,7 @@
 {"id": "0945ea27c4f4cb21", "field": "text", "en": "Argh, I need help here!", "hash": "0945ea27c4f4cb21", "src": "vmangos@13b49dc"}
 {"id": "094bb50bd00238c1", "field": "text", "en": "I am Samuel Hawke, the main supplier for the League of Arathor posted here at Arathi Basin.  As you improve your standing with us, I will make available to you a fine selection of goods that you might find useful.  Should you find yourself in need of item repair, I also provide those services.", "hash": "094bb50bd00238c1", "src": "vmangos@13b49dc"}
 {"id": "095125d3d86e7a6d", "field": "text", "en": "Hakkar shall live again!", "hash": "095125d3d86e7a6d", "src": "vmangos@13b49dc"}
+{"id": "0954211c8e38c34c", "field": "text", "en": "Oh my, this is quite historical. A monumental find. But these wretched beasts! Merrin seems to be handling the situation quite well. Now if I could just piece together this complicated puzzle. . . .", "hash": "0954211c8e38c34c", "src": "collector@1.60.1.70888", "npcs": [1077]}
 {"id": "095ce64236f1cfdd", "field": "text", "en": "Innkeeper Norman on upper ring of Trade Quarter is one to talk to.", "hash": "095ce64236f1cfdd", "src": "vmangos@13b49dc"}
 {"id": "095ecafa44dc21b5", "field": "text", "en": "Ahh, \"Mystical Conjurings of the Archmages of Dalaran.\" Perfect.", "hash": "095ecafa44dc21b5", "src": "vmangos@13b49dc"}
 {"id": "0963bd1ce1c233e7", "field": "text", "en": "It worked!  Amazing!  I guess I haven't lost my touch...", "hash": "0963bd1ce1c233e7", "src": "vmangos@13b49dc"}

@@ -617,7 +617,6 @@ WFJ.Data.add("gloss", {
   [56616] = "合わさる\tあわさる\tcombined",
   [56617] = "合わさる\tあわさる\ttogether (combined)",
   [56618] = "合わせる\tあわせる\t(suited) for",
-  [56619] = "合わせる\tあわせる\talong with",
   [56620] = "合わせる\tあわせる\talong with (combine)",
   [56621] = "合わせる\tあわせる\tas (in step with)",
   [56622] = "合わせる\tあわせる\tbased on (matching)",

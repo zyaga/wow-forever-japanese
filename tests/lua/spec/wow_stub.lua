@@ -367,14 +367,24 @@ function Stub.install(tocPath)
       self.children[#self.children + 1] = tex
       return tex
     end
-    -- test-only: the recorded dropdown's radio items → { { text, isSelected, setSelected, data } }
+    -- test-only: the recorded dropdown's radio items → { { text, isSelected, setSelected, data, group } }; a radio in
+    -- a submenu (CreateButton) carries the submenu's text as its group, and `groups` lists the submenus in order
     function frame:menuItems()
-      local items, root = {}, {}
-      function root.CreateRadio(_, text, isSelected, setSelected, data)
-        items[#items + 1] = { text = text, isSelected = isSelected, setSelected = setSelected, data = data }
+      local items, groups = {}, {}
+      local function menu(group)
+        local m = {}
+        function m.CreateRadio(_, text, isSelected, setSelected, data)
+          items[#items + 1] = { text = text, isSelected = isSelected, setSelected = setSelected, data = data,
+            group = group }
+        end
+        function m.CreateButton(_, text)
+          groups[#groups + 1] = text
+          return menu(text)
+        end
+        return m
       end
-      self.menuGenerator(self, root)
-      return items
+      self.menuGenerator(self, menu(nil))
+      return items, groups
     end
     -- test-only: a key / mouse button pressed while this frame has keyboard input
     function frame:keyDown(key) if self.scripts.OnKeyDown then self.scripts.OnKeyDown(self, key) end end

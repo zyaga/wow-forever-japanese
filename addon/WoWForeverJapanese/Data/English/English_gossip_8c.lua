@@ -11,6 +11,7 @@ WFJ.Data.add("english", {
   ["gossip:8c397c59192d70db"] = { text = "hello=1" },
   ["gossip:8c3ec5c24f9f8ab3"] = { text = "appears=4 apprentice=8 aye=1 but=6 know=13 learned=3 quite=2 seek=9 task=16 tell=14" },
   ["gossip:8c433ba9d25c2b03"] = { text = "day=11 decided=10 lands=8 near=1 poach=9 them=7 use=4 when=3" },
+  ["gossip:8c49b2e1377966f2"] = { text = "back=9 come=10 enough=1 finish=13 later=8 me=2 next=4 once=12 plan=3 step=5 time=7" },
   ["gossip:8c4d1af8978117ed"] = { text = "altars=5 decorate=6 our=3 ritual=4 skull=2" },
   ["gossip:8c5ac8cc8755e531"] = { text = "absolutely=4 learn=1 that=2" },
   ["gossip:8c5cd5132919ae58"] = { text = "class=1 legacy=2 talents=3 unlearn=4" },

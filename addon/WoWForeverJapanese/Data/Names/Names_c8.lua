@@ -151,6 +151,7 @@ WFJ.Data.add("name", {
   ["c88a240ee64b3d92"] = { "モンスター・アイテム、ランタン・スクエア", "もんすたー・あいてむらんたん・すくえあ", "Monster - Item, Lantern - Square" },
   ["c88a93190ce0573a"] = { "ヴァンダルズ・ドキュメント", "ゔぁんだるず・どきゅめんと", "Vanndar's Documents" },
   ["c88ba1de33247cb9"] = { "クラッシュリッジ・ウォーモンガー", "くらっしゅりっじ・うぉーもんがー", "Crushridge Warmonger" },
+  ["c88d1485d983db0c"] = { "シュラウド・オブ・ドミネーション", "しゅらうど・おぶ・どみねーしょん", "Shroud of Domination" },
   ["c88f2e6781afae38"] = { "チーフ・ウコーズ・サンドスカルプ", "ちーふ・うこーず・さんどすかるぷ", "Chief Ukorz Sandscalp" },
   ["c891f6a1bdae5d4f"] = { "フォーチュン・テラーズ・テント", "ふぉーちゅん・てらーず・てんと", "Fortune Teller's Tent" },
   ["c894f7acfcd72053"] = { "アンユーズド・ブラック・レザー・ディー02・パンツ", "あんゆーずど・ぶらっく・れざー・でぃーに・ぱんつ", "Unused Black Leather D02 Pants" },

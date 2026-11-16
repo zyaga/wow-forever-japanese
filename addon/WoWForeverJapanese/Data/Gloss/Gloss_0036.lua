@@ -187,7 +187,6 @@ WFJ.Data.add("gloss", {
   [36185] = "一掃する\tいっそうする\tclear (swept away)",
   [36186] = "一掃する\tいっそうする\tclear (them) out",
   [36187] = "一掃する\tいっそうする\tclear out",
-  [36188] = "一掃する\tいっそうする\tcleared out",
   [36189] = "一掃する\tいっそうする\tmust be scoured (swept away)",
   [36190] = "一掃する\tいっそうする\tmust eliminate (sweep away)",
   [36191] = "一掃する\tいっそうする\tmust wipe out",

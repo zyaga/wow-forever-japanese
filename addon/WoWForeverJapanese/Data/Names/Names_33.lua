@@ -183,6 +183,7 @@ WFJ.Data.add("name", {
   ["33b6f82cccb01f81"] = { "ブラックモス・ザ・フェティッド", "ぶらっくもす・ざ・ふぇてぃっど", "Blackmoss the Fetid" },
   ["33b79cb6ab28b455"] = { "エリクサー・オブ・フォーティチュード", "えりくさー・おぶ・ふぉーてぃちゅーど", "Elixir of Fortitude" },
   ["33b8b5e22fbd8bed"] = { "バレー", "ばれー", "Valley" },
+  ["33b9859e3ba7f597"] = { "ヴァラー", "ゔぁらー", "Valors" },
   ["33baf62fabac5848"] = { "インプルーブド・エンレイジ", "いんぷるーぶど・えんれいじ", "Improved Enrage" },
   ["33bc597e6b1e6fd4"] = { "サモン・タイプ・シー・トリガー", "さもん・たいぷ・しー・とりがー", "Summon Type C Trigger" },
   ["33bd0952a71fedb3"] = { "テンプル・オブ・ザ・ムーン", "てんぷる・おぶ・ざ・むーん", "Temple of the Moon" },

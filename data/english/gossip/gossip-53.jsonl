@@ -11,6 +11,7 @@
 {"id": "5333ee0f56e35191", "field": "text", "en": "I know a few things, but I'm no expert. Lucky for you, Magar is. He's standing near the back of the shop. See if he can help you, but be careful not to rile him. He can be irritable.", "hash": "5333ee0f56e35191", "src": "vmangos@13b49dc"}
 {"id": "53371757c5c8b517", "field": "text", "en": "I don't agree with your turning to alchemy to fix some of the problems, but I do agree with the results. Very well done.", "hash": "53371757c5c8b517", "src": "vmangos@13b49dc"}
 {"id": "53421fa25cad893e", "field": "text", "en": "To reach the Rut'theran Ferry, you will need to travel to Darnassus and take the portal to Rut'theran Village at the base of Teldrassil.", "hash": "53421fa25cad893e", "src": "vmangos@13b49dc"}
+{"id": "53432902f775a059", "field": "text", "en": "The skycutters and ferries haven't run in years at this point. For all we know, there are no other islands left for us to get imports from. Still though, I'm here... just in case.", "hash": "53432902f775a059", "src": "collector@1.60.1.70862", "npcs": [252478]}
 {"id": "5348e4d1faf5bb06", "field": "text", "en": "I live only to serve, Warchief! My life is empty and meaningless without your guidance.", "hash": "5348e4d1faf5bb06", "src": "vmangos@13b49dc"}
 {"id": "534962e8a189e9cd", "field": "text", "en": "I see. I can respect a man who values his honor and does not compromise his convictions.", "hash": "534962e8a189e9cd", "src": "collector@1.60.1.70862"}
 {"id": "534d4d999983d8a6", "field": "text", "en": "%s writhes in agony. The Disciple seems to be breaking through.", "hash": "534d4d999983d8a6", "src": "vmangos@13b49dc"}
@@ -36,6 +37,7 @@
 {"id": "53c84853ffcedfe8", "field": "text", "en": "That was refreshing. Now there's information that needs to be told...", "hash": "53c84853ffcedfe8", "src": "vmangos@13b49dc"}
 {"id": "53c8a1cecfab7b9c", "field": "text", "en": "You've heard about the Tram have you?  What a ride that thing is!  You'll find it in the Dwarven District towards the back.  Oh, and be sure to keep your arms and legs inside the tram while the tram is in motion.", "hash": "53c8a1cecfab7b9c", "src": "vmangos@13b49dc"}
 {"id": "53ca038aaa7b7c98", "field": "text", "en": "Privates Horus, Tilling, Rockwell...", "hash": "53ca038aaa7b7c98", "src": "vmangos@13b49dc"}
+{"id": "53cbdef162632d15", "field": "text", "en": "The ch-ch-chains... must... not...", "hash": "53cbdef162632d15", "src": "collector@1.60.1.70938"}
 {"id": "53dc059d2e716321", "field": "text", "en": "Salutations!  I am a guardian of entry.  Please use the proper discs for access to Uldum.", "hash": "53dc059d2e716321", "src": "vmangos@13b49dc"}
 {"id": "53e00d4bf9f833ab", "field": "text", "en": "Best ale in Stormwind, Langston. Thanks.", "hash": "53e00d4bf9f833ab", "src": "vmangos@13b49dc"}
 {"id": "53e4bc05d8f7ca51", "field": "text", "en": "I do not understand.", "hash": "53e4bc05d8f7ca51", "src": "vmangos@13b49dc"}

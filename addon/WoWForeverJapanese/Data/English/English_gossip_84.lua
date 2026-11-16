@@ -7,6 +7,7 @@ WFJ.Data.add("english", {
   ["gossip:840f8b43730dc376"] = { text = "beasts=18 citadel=4 clans=6 decades=14 destroy=19 exceptionally=11 hold=9 item=8 lesser=5 mortal=2 rare=12 recommend=21 search=13 such=7 take=15 these=17 this=3 warned=1" },
   ["gossip:8410c6a7115262c7"] = { text = "fire=1" },
   ["gossip:841609e08f476ed9"] = { text = "warn=1" },
+  ["gossip:8417bc6b7fff2d59"] = { text = "no=2 stop=3 wait=1" },
   ["gossip:841ed6ea87bb2571"] = { text = "all=2 craven=4 easier=8 if=5 mortals=1 so=3 thought=6" },
   ["gossip:84293ee46c69773f"] = { text = "locked=1 no=2" },
   ["gossip:8437cdc2cc0f6f48"] = { text = "locked=3 many=5 orcs=1 sunk=2 supplies=4" },

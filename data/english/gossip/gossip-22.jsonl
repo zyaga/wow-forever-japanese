@@ -27,6 +27,7 @@
 {"id": "22b5d6c11828c714", "field": "text", "en": "What has brought you to the Earthen Ring?", "hash": "22b5d6c11828c714", "src": "forever-vo@025070f", "npcs": [262558]}
 {"id": "22b67b17851ec7c7", "field": "text", "en": "We hunger for vengeance.", "hash": "22b67b17851ec7c7", "src": "vmangos@13b49dc"}
 {"id": "22c0cffb3350b748", "field": "text", "en": "%s shakes his head in disappointment.", "hash": "22c0cffb3350b748", "src": "vmangos@13b49dc"}
+{"id": "22c6dd33a60368c5", "field": "text", "en": "Yes? I am quite busy.", "hash": "22c6dd33a60368c5", "src": "collector@1.60.1.70938", "npcs": [252085]}
 {"id": "22c7db75d4734b0a", "field": "text", "en": "I am not fooled by your disguise, temptress. Your time to die has come.", "hash": "22c7db75d4734b0a", "src": "vmangos@13b49dc"}
 {"id": "22caaa705eca4eaa", "field": "text", "en": "Silence, servant! Vengeance will be mine! Death to Stormwind! Death by chicken!", "hash": "22caaa705eca4eaa", "src": "vmangos@13b49dc"}
 {"id": "22e176cf0c106888", "field": "text", "en": "Get a rope!", "hash": "22e176cf0c106888", "src": "vmangos@13b49dc"}

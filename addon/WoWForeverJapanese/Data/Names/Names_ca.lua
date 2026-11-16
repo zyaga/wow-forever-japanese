@@ -192,6 +192,7 @@ WFJ.Data.add("name", {
   ["cac028bc4eaae648"] = { "コーポラル・ケイレブ", "こーぽらる・けいれぶ", "Corporal Kaleb" },
   ["cac04641d51ba092"] = { "ブリトン・キルラス", "ぶりとん・きるらす", "[UNUSED] Briton Kilras" },
   ["cac11b1be23b65ba"] = { "オシ・ミストポー", "おし・みすとぽー", "Osi Mistpaw" },
+  ["cac180a21c366b22"] = { "グレーター・ブレッシング・オブ・サルベーション", "ぐれーたー・ぶれっしんぐ・おぶ・さるべーしょん", "Greater Blessing of Salvation" },
   ["cac33d303911862d"] = { "ルーン・オブ・ザ・ウィンドストーム", "るーん・おぶ・ざ・うぃんどすとーむ", "Rune of the Windstorm" },
   ["cac3dbd0ea0fc0e7"] = { "スカーレット・キュレート", "すかーれっと・きゅれーと", "Scarlet Curate" },
   ["cac447c7b1b630d1"] = { "サンダー・ブラフ・アーマラー", "さんだー・ぶらふ・あーまらー", "Thunder Bluff Armorers" },

@@ -31,6 +31,7 @@ WFJ.Data.add("english", {
   ["gossip:c49b6a1b06928f02"] = { text = "fool=2 meaning=6 now=4 pain=5 pathetic=1 teach=7" },
   ["gossip:c4b4329f9662464b"] = { text = "abandoning=8 actions=16 alone=42 associate=32 brother=34 brought=26 clearly=28 come=15 free=43 from=17 garnered=18 he=37 here=5 i=4 itself=38 know=1 me=23 mortal=2 my=31 nightmare=40 number=6 pretenses=7 purpose=21 recommend=12 rest=36 same=10 this=29 trapped=41 what=19 within=39 you=9" },
   ["gossip:c4b7ead0a4fe73e1"] = { text = "return=3 shortly=2 understood=1" },
+  ["gossip:c4c134bf40860194"] = { text = "transport=2" },
   ["gossip:c4c6418934154f17"] = { text = "brings=4 so=1 what=2" },
   ["gossip:c4cbc677b7b3dcd2"] = { text = "but=10 elsewhere=3 fail=11 gameboard=7 i=1 needed=5 one=9 piece=8 this=6" },
   ["gossip:c4cc496b15c469f3"] = { text = "hic=10 many=8 marsh=5 returned=6 seeker=7 step=2 watch=3" },

@@ -124,7 +124,6 @@ WFJ.Data.add("gloss", {
   [110121] = "絹製\tきぬせい\tsilk (made of silk)",
   [110122] = "継ぎ足す\tつぎたす\thas grafted (added on)",
   [110123] = "継ぐ\tつぐ\trenewed (catch)",
-  [110124] = "継ぐ\tつぐ\twill carry on",
   [110125] = "継続効果\tけいぞくこうか\tperiodic (lasting effect)",
   [110126] = "継続的\tけいぞくてき\tcontinuing",
   [110127] = "継続的\tけいぞくてき\tperiodic (continuous)",

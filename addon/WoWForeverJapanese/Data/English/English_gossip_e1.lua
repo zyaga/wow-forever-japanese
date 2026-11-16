@@ -26,6 +26,7 @@ WFJ.Data.add("english", {
   ["gossip:e165e44c6ddfd73c"] = { text = "beast=3 cleansed=19 comes=13 corruption=18 madness=16 one=2 predictable=1 redemption=11 summon=8 surely=4 think=9 this=15 top=7 we=5 will=20 you=6 your=10" },
   ["gossip:e167d47690d18e3e"] = { text = "again=7 ok=9 question=3 real=1 summon=8 unless=6" },
   ["gossip:e16802170d51b483"] = { text = "across=2 agreed=27 ambush=5 ambushed=5 assist=26 before=42 brave=29 clear=34 cranny=18 crevice=16 dwarves=9 every=15 few=28 guards=23 heroes=30 highly=36 knew=46 mission=25 move=41 nook=17 orchestrated=37 overwhelming=31 rocks=12 shifting=19 sight=14 swarmed=22 they=10 this=24 us=21 walls=11 way=3 we=1" },
+  ["gossip:e1719e35a612ab2d"] = { text = "far=3 find=10 hope=11 looking=8 proven=7 quite=4 resourceful=5 what=9 you=2 young=12" },
   ["gossip:e17f26a539a95572"] = { text = "and=1 you=2" },
   ["gossip:e17f3edad66ff22d"] = { text = "continued=2 engulfed=11 great=3 hosts=10 leader=4 sapped=6 soon=8 their=9 war=1 whole=7 will=5" },
   ["gossip:e18bcaccfb5876c6"] = { text = "help=1 please=2" },

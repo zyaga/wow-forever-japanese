@@ -119,7 +119,7 @@ def test_an_unpinned_build_is_refused(tmp_path, real):
     """ADR-020: a build with no verified layout stops the import rather than guessing one."""
     path = tmp_path / "questcache.wdb"
     path.write_bytes(real[:4] + struct.pack("<I", 99999) + real[8:])
-    pinned = ", ".join(map(str, (69722, 69913, *FOREVER_PINS, 70888)))
+    pinned = ", ".join(map(str, (69722, 69913, *FOREVER_PINS, 70888, 70938)))
     with pytest.raises(wdb.WdbError, match=rf"build 99999 has no pinned payload layout \(pinned: {pinned}\)"):
         wdb.read_quests(path)
     assert "wdb_layout" in str(pytest.raises(wdb.WdbError, wdb.read_quests, path).value)
@@ -220,7 +220,7 @@ def test_70888_reads_the_69913_offsets_and_one_more_bit_after_the_string_lengths
     from dataclasses import replace
 
     lay = wdb.layout_for(70888)
-    assert lay.pad_bits == (32, 96) and wdb.FOREVER_LATEST is lay
+    assert lay.pad_bits == (32, 96) and wdb.FOREVER_LATEST.pad_bits == (32, 96)  # a later pin keeps both values
     assert replace(lay, build=69913, evidence="", pad_bits=(32,)) == replace(wdb.layout_for(69913), evidence="")
     real = (FOREVER / "questcache.wdb").read_bytes()
     recs = _records(real)

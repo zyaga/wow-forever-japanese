@@ -616,7 +616,6 @@ WFJ.Data.add("gloss", {
   [24618] = "はず\tはず\tmust (should)",
   [24619] = "はず\tはず\tmust (surely)",
   [24620] = "はず\tはず\tmust be",
-  [24621] = "はず\tはず\tmust be (should be)",
   [24622] = "はず\tはず\tmust be (should)",
   [24623] = "はず\tはず\tmust be (surely)",
   [24624] = "はず\tはず\tmust have (been)",

@@ -932,7 +932,6 @@ WFJ.Data.add("gloss", {
   [54931] = "取り戻す\tとりもどす\tmake up (recover)",
   [54932] = "取り戻す\tとりもどす\tmake up for",
   [54933] = "取り戻す\tとりもどす\tmake up; recover",
-  [54934] = "取り戻す\tとりもどす\tmay be restored (can regain)",
   [54935] = "取り戻す\tとりもどす\tmust be reclaimed",
   [54936] = "取り戻す\tとりもどす\tmust be recovered",
   [54937] = "取り戻す\tとりもどす\tmust be recovered (must recover)",

@@ -3,7 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:0e09682a9d7e0588"] = { text = "different=14 glory=7 honor=9 hunt=4 hunted=4 lived=6 long=1 now=12 past=2 so=13 we=3" },
   ["gossip:0e1126b186478fd1"] = { text = "attack=1 capture=4 unchecked=3" },
-  ["gossip:0e12a96b266f6a1e"] = { text = "ah=1 already=2 form=3 good=5 mastered=4 way=8 well=7 young=9" },
+  ["gossip:0e1a99e8b34db273"] = { text = "channel=10 i=3 magic=9 mortal=2 saw=4 see=7 step=1 what=5 you=6" },
   ["gossip:0e212e971f698feb"] = { text = "broken=1 come=9 like=2 look=3 sad=6 so=5" },
   ["gossip:0e21745b22f6d6b9"] = { text = "anew=9 battle=8 begin=10 eager=4 enter=7 forces=2 our=1 outpost=6 ready=3 soon=5" },
   ["gossip:0e23ae1d11138d9b"] = { text = "come=3 girl=5 like=1 shadows=2 some=6 time=4" },

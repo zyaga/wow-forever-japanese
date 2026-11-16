@@ -35,6 +35,7 @@
 {"id": "e0a52944ab86dc0a", "field": "text", "en": "Hall of Thanes", "hash": "e0a52944ab86dc0a", "src": "collector@1.60.1.70862", "npcs": [6734, 6740]}
 {"id": "e0a7303cc7bab5d9", "field": "text", "en": "Ah, good ol' Brandur Ironhammer.  There's no doubt he'll provide ye with the guidance ye seek, $glad : lass;.  Ye'll find him in the Hall of Mysteries north of the gates of Ironforge.", "hash": "e0a7303cc7bab5d9", "src": "vmangos@13b49dc"}
 {"id": "e0b1bd53532c6082", "field": "text", "en": "Elder Shadowsong asked me to report to you for next steps.", "hash": "e0b1bd53532c6082", "src": "collector@1.60.1.70790", "npcs": [252383]}
+{"id": "e0bb174f4fb05ea5", "field": "text", "en": "May I have the globe I brought you? I believe it can help me with something relating to the highborne in the area.", "hash": "e0bb174f4fb05ea5", "src": "collector@1.60.1.70938", "npcs": [12736]}
 {"id": "e0c00f9b8ed128c4", "field": "text", "en": "Captain Galvangar is the trusted aid to Drek'Thar.  He leads the Horde forces from the Iceblood Garrison, in the southern section of the the Field of Strife.$B$BCaptain Galvangar is currently in the Iceblood Garrison.", "hash": "e0c00f9b8ed128c4", "src": "vmangos@13b49dc"}
 {"id": "e0c6d07c8cec4315", "field": "text", "en": "I'd like to see your wares.", "hash": "e0c6d07c8cec4315", "src": "collector@1.60.1.70790", "npcs": [271465, 276067]}
 {"id": "e0c8c93db2793f92", "field": "text", "en": "Curse you, mortal.", "hash": "e0c8c93db2793f92", "src": "vmangos@13b49dc"}

@@ -3,9 +3,11 @@ local Stub = require("tests.lua.spec.wow_stub")
 local Loader = require("tests.lua.spec.loader")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Data/Meta.lua", "Core/State.lua",
-  "Core/Settings.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua",
+  "Core/Settings.lua", "Core/ErrorVoices.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua",
+  "Core/Fsrs.lua", "Core/Study.lua",
   "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua",
   "UI/Options.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua" }
+local VOICE = { "Core/Voice.lua" } -- the voice pack registry, loaded by the tests that register a pack
 
 -- Every widget the stub created, per page frame (FontStrings and textures live in `children`; frames in Stub.frames).
 local function pageFrames(page)
@@ -65,7 +67,7 @@ describe("Settings pages from the registry and PAGES", function()
   end)
 
   it("the voice page exists only with a voice pack: built with the others, or added when the pack registers", function()
-    H.loadChunk("Core/Voice.lua", nil, WFJ)
+    for _, f in ipairs(VOICE) do H.loadChunk(f, nil, WFJ) end
     assert.is_nil(O.pages.voice) -- no pack when the pages were built
     WFJ.Compat.registerOptions(list)
     assert.is_false(O.addPage("voice")) -- still no pack
@@ -137,8 +139,41 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_truthy(table.concat(WFJ.OptionsText.SLASH, "\n"):find("/wfj study", 1, true))
   end)
 
+  it("the voice page's error-line voice: Automatic, then a submenu per race of the voices the packs carry", function()
+    for _, f in ipairs(VOICE) do H.loadChunk(f, nil, WFJ) end
+    WFJ.Voice.register({ format = 2, folder = "WoWForeverJapanese_Voice", lines = {}, errors = { kinds = {},
+      voices = { ["dwarf-f"] = { outofrange = { "e-o-dwarf-f.mp3", 1 } },
+        qdwarffemaleguard = { outofrange = { "e-o-qdwarffemaleguard.mp3", 1 } },
+        ["orc-m"] = { outofrange = { "e-o-orc-m.mp3", 1 } } } } })
+    O.build()
+    local rows
+    for _, page in ipairs(O.PAGES) do if page.id == "voice" then rows = page.sections[1].rows end end
+    assert.are.same({ "voice.enabled", "voice.muteDialog", "voice.button", "voice.errorVoice" }, rows)
+    local ctl = control("voice.errorVoice")
+    local items, groups = ctl.dropdown:menuItems()
+    assert.are.same({ "Orc", "Dwarf" }, groups) -- a race whose voices no pack carries has no submenu
+    local got = {}
+    for i, it in ipairs(items) do got[i] = { it.group or "", it.text } end
+    assert.are.same({ { "", "Automatic (your character's race and sex)" }, { "Orc", "Orc, male (player)" },
+      { "Dwarf", "Dwarf, female (player)" }, { "Dwarf", "Dwarf, female (guard)" } }, got)
+    assert.is_true(items[1].isSelected())
+    items[4].setSelected()
+    assert.are.equal("qdwarffemaleguard", S.get("voice.errorVoice"))
+    -- the chosen voice's name in the page's language under the dropdown
+    assert.are.same({ "Dwarf, female (guard)", "ドワーフ・女性（衛兵）" }, ctl.caption.pair)
+    S.set("voice.errorVoice", "auto")
+    O.refresh()
+    assert.are.same({ "Automatic (your character's race and sex)", "自動（キャラクターの種族と性別）" }, ctl.caption.pair)
+    -- a saved voice no installed pack carries plays the character's own: the caption says Automatic, and the
+    -- saved choice is kept for when its pack is back
+    S.set("voice.errorVoice", "qorcmaleguard")
+    O.refresh()
+    assert.are.same({ "Automatic (your character's race and sex)", "自動（キャラクターの種族と性別）" }, ctl.caption.pair)
+    assert.are.equal("qorcmaleguard", S.get("voice.errorVoice"))
+  end)
+
   it("the voice panel page: Panel size and Panel style as dropdowns, then its switches", function()
-    H.loadChunk("Core/Voice.lua", nil, WFJ)
+    for _, f in ipairs(VOICE) do H.loadChunk(f, nil, WFJ) end
     WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
     O.build()
     local size, style = control("voice.panel.size"), control("voice.panel.style")
@@ -567,7 +602,7 @@ describe("Settings pages from the registry and PAGES", function()
     box:SetText("edited")
     box.scripts.OnTextChanged(box, true)
     assert.are.equal(O.VOICE_URL, box:GetText()) -- snaps back
-    H.loadChunk("Core/Voice.lua", nil, WFJ)
+    for _, f in ipairs(VOICE) do H.loadChunk(f, nil, WFJ) end
     O.refresh()
     assert.is_true(box:IsShown()) -- Voice loaded, still no pack
     for _, folder in ipairs({ "WoWForeverJapanese_VoiceOther", "WoWForeverJapanese_VoiceLevels11to20",

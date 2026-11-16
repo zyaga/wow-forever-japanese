@@ -39,6 +39,7 @@ WFJ.Data.add("english", {
   ["gossip:c0abad2ffbaa7ba2"] = { text = "adventure=6 all=3 and=15 await=8 come=18 during=17 excitement=7 greatest=4 mysteries=10 old=12 one=2 prizes=11 professor=20 show=5 shy=9 speak=21 sure=19 travels=16 welcome=1" },
   ["gossip:c0ada2bb21fedd5c"] = { text = "all=30 bear=26 body=41 bolsters=6 come=16 druid=3 heart=38 i=1 importance=43 know=36 learn=12 listen=22 me=14 means=35 my=32 one=17 order=37 provided=25 spirit=27 strength=7 teach=21 that=29 this=10 understand=23 upon=34 well=40 will=24 you=5 young=2" },
   ["gossip:c0b4f7163497cf17"] = { text = "arcane=7 creation=6 design=3 druidic=11 it=5 knowledge=8 more=10 nature=12 simple=4 use=9" },
+  ["gossip:c0ba59562f38979a"] = { text = "classy=7 establishment=8 here=6 hey=1 shoes=2 watch=5 where=3" },
   ["gossip:c0bef7ee420e4092"] = { text = "ah=1 cave=3 elves=7 feel=5 little=6 magic=2 muhahaha=8 seep=4" },
   ["gossip:c0c2837aaa278d88"] = { text = "pipe=1" },
   ["gossip:c0cc02a0ea309137"] = { text = "and=10 ask=7 assure=9 curious=1 death=17 here=19 i=8 now=18 one=14 survive=6 thing=13 this=2 vision=3 you=5 your=16" },

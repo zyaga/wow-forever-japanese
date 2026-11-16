@@ -492,7 +492,6 @@ WFJ.Data.add("gloss", {
   [19492] = "というのか\tというのか\tare (you) willing",
   [19493] = "というのか\tというのか\tare you (saying)",
   [19494] = "というのか\tというのか\tare you saying?",
-  [19495] = "というのか\tというのか\tcould it be",
   [19496] = "というのか\tというのか\tdo you mean (that)?",
   [19497] = "というのか\tというのか\tdo you mean to? (seek to)",
   [19498] = "というのか\tというのか\tso you say?",

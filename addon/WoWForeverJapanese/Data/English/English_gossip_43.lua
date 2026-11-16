@@ -29,6 +29,7 @@ WFJ.Data.add("english", {
   ["gossip:4373d0b6ae4ae051"] = { text = "assisted=14 assume=15 carry=10 countless=2 culling=13 fatalities=4 give=17 its=18 me=16 mojo=7 power=19 sense=5 stink=8 talisman=11 that=12 their=6 you=1" },
   ["gossip:43740eb78425d500"] = { text = "atop=1 home=4 village=3" },
   ["gossip:437500bc404c8a7d"] = { text = "catches=9 emerges=2 grain=4 hovel=1 stores=5 tampering=7 you=3" },
+  ["gossip:437a3090fcce0fd0"] = { text = "greetings=1 i=3 meet=7 sent=9 you=6" },
   ["gossip:438105ede1ec715b"] = { text = "done=4 long=7 now=1 realize=6 wait=2 we=3 what=5" },
   ["gossip:43869d0fcbf631cb"] = { text = "all=2 await=7 begin=22 complete=3 done=15 forward=17 gong=19 last=5 materiel=6 organization=14 preparations=1 ring=20 sent=4 should=12 someone=16 that=23 there=13 time=24 us=25 watch=27" },
   ["gossip:4389a2a4e2d5d317"] = { text = "care=8 craftsmanship=7 fetch=14 filled=19 knowledge=25 making=24 my=17 nice=3 now=26 order=18 put=6 reward=22 several=12 silver=11 these=5 very=2 vests=23 would=15 your=27 yours=28" },

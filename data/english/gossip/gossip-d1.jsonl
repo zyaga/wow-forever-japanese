@@ -24,6 +24,7 @@
 {"id": "d1732731ef893ccb", "field": "text", "en": "Gales greetings, friend. Is there something I can help you with?", "hash": "d1732731ef893ccb", "src": "forever-vo@025070f", "npcs": [252479, 253004, 257004, 257008, 257019, 257021]}
 {"id": "d1799ec788612e01", "field": "text", "en": "Niby, you are stupid.", "hash": "d1799ec788612e01", "src": "vmangos@13b49dc"}
 {"id": "d17caf7fd12d8c38", "field": "text", "en": "Have you any Darkmoon Faire cards?  Come speak with me to learn more about them if you dare!", "hash": "d17caf7fd12d8c38", "src": "vmangos@13b49dc"}
+{"id": "d18397b09681986a", "field": "text", "en": "I'd like to talk about something else.", "hash": "d18397b09681986a", "src": "collector@1.60.1.70862", "npcs": [3616, 12736]}
 {"id": "d186c8877f9a31ab", "field": "text", "en": "VanCleef pay big for you heads!", "hash": "d186c8877f9a31ab", "src": "vmangos@13b49dc"}
 {"id": "d1927b12932299ea", "field": "text", "en": "Beware!  Beware!  A threat lurks in the wild!  Night Watchers, be on the alert!", "hash": "d1927b12932299ea", "src": "vmangos@13b49dc"}
 {"id": "d197bfa0c3c19deb", "field": "text", "en": "%s runs for their life!", "hash": "d197bfa0c3c19deb", "src": "vmangos@13b49dc"}

@@ -117,7 +117,7 @@ def split(
     table: Table,
     levels: Mapping[int, int],
     interface: str,
-    players: Sequence[tuple[str, str]] = (),
+    players: Sequence[voice_make.Player] = (),
     store: Path | None = None,
 ) -> tuple[list[Pack], list[str]]:
     """(every pack in table order, the files left out as not in step). A key that shows another line's audio
@@ -930,7 +930,8 @@ def run(argv: Sequence[str]) -> int:
         sp.add_argument("--pin", default=voice_store.PIN, help="the audio commit the text pins (release)")
         sp.add_argument("--wdb", help="the pinned Forever quest cache: each quest's level")
         sp.add_argument("--vmangos", help="the VMaNGOS database: levels of quests the cache has not answered")
-        sp.add_argument("--players", default="all", help="the character's error lines: race-sex list or all")
+        sp.add_argument("--players", default="all",
+                        help="the character's error lines: race-sex list, npc, or all")
         if name == "release":
             sp.add_argument("--dry-run", action="store_true")
             sp.add_argument("--curseforge-only", action="store_true", help="no GitHub release (a rehearsal)")

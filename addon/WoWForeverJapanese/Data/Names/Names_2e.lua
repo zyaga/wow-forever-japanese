@@ -227,6 +227,7 @@ WFJ.Data.add("name", {
   ["2ee95f099dc16894"] = { "サベージ・グラディエーター・グリーヴ", "さべーじ・ぐらでぃえーたー・ぐりーゔ", "Savage Gladiator Greaves" },
   ["2eea567f4e7b6ef9"] = { "マスター・オブ・サトルティ", "ますたー・おぶ・さとるてぃ", "Master of Subtlety" },
   ["2eea722070224f5a"] = { "フリーウィンド・ポスト・ガード・ポスト", "ふりーうぃんど・ぽすと・がーど・ぽすと", "Freewind Post Guard Post" },
+  ["2eeba02267840031"] = { "アール・ゼット・モード", "あーる・ぜっと・もーど", "Earl Z. Moade" },
   ["2eecdb11a2a85b8f"] = { "コマンダー・ゴーモール", "こまんだー・ごーもーる", "[UNUSED] Commander Gormaul" },
   ["2eee153858d07152"] = { "アントゥスルズ・スウォーム", "あんとぅするず・すうぉーむ", "Antu'sul's Swarm" },
   ["2eee3365df7f4e35"] = { "シャドウハイド・レギンス", "しゃどうはいど・れぎんす", "Shadowhide Leggings" },

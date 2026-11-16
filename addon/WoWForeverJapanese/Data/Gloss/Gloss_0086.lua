@@ -596,7 +596,6 @@ WFJ.Data.add("gloss", {
   [86597] = "断固として\tだんことして\tdecisively",
   [86598] = "断崖\tだんがい\tbluff (cliff)",
   [86599] = "断崖\tだんがい\tbluffs",
-  [86600] = "断崖\tだんがい\tbluffs (cliffs)",
   [86601] = "断崖\tだんがい\tcliffs",
   [86602] = "断崖\tだんがい\tprecipice",
   [86603] = "断念する\tだんねんする\tabandon",

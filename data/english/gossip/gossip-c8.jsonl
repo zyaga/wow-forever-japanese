@@ -1,9 +1,11 @@
 {"id": "c80945da3b27d4ce", "field": "text", "en": "That has to be the biggest $n I have ever seen... and it's coming right for us!", "hash": "c80945da3b27d4ce", "src": "vmangos@13b49dc"}
 {"id": "c812ed45a868b3d2", "field": "text", "en": "Remove your disguise, lest you feel the bite of my blade when the fury has taken control.", "hash": "c812ed45a868b3d2", "src": "vmangos@13b49dc"}
 {"id": "c8190c8f52da4b66", "field": "text", "en": "Hail, $c. You look familiar... have we met before?$B$BWell if we have met, then... surely you were given a secret code. Tell me your code and I will give you a gift!", "hash": "c8190c8f52da4b66", "src": "vmangos@13b49dc"}
+{"id": "c81bb68a07518bb7", "field": "text", "en": "The bank and auction house can be found on the western side of Valanaar, near the Windshapers' skycutter dock.", "hash": "c81bb68a07518bb7", "src": "collector@1.60.1.70862", "npcs": [253474]}
 {"id": "c81e765f6b63a379", "field": "text", "en": "If a bank is what you desire, then your travels take you to the heart of Darnassus.  There you will find storage for your treasures.", "hash": "c81e765f6b63a379", "src": "vmangos@13b49dc"}
 {"id": "c824892fa09c0607", "field": "text", "en": "Here they come! Defend yourselves!", "hash": "c824892fa09c0607", "src": "vmangos@13b49dc"}
 {"id": "c82650503c79b173", "field": "text", "en": "You must save us!", "hash": "c82650503c79b173", "src": "vmangos@13b49dc"}
+{"id": "c831ef185946328b", "field": "text", "en": "Halt! The city is on lockdown until order has been restored.", "hash": "c831ef185946328b", "src": "collector@1.60.1.70938"}
 {"id": "c8341f87bd1a7647", "field": "text", "en": "Who dares summon the power of the void?", "hash": "c8341f87bd1a7647", "src": "vmangos@13b49dc"}
 {"id": "c83421eee372e977", "field": "text", "en": "I have just the spell to get this door open. Too bad the cell doors weren't locked so haphazardly.", "hash": "c83421eee372e977", "src": "vmangos@13b49dc"}
 {"id": "c838607d71a1ad57", "field": "text", "en": "I can't even visit my father's grave in peace anymore.", "hash": "c838607d71a1ad57", "src": "vmangos@13b49dc"}

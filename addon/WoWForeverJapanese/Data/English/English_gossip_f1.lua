@@ -17,7 +17,6 @@ WFJ.Data.add("english", {
   ["gossip:f1414d06e968fe2f"] = { text = "please=1 remember=5 shown=3 we=2 what=4" },
   ["gossip:f141f2dfb42775d9"] = { text = "attend=3 business=4 cover=1" },
   ["gossip:f143867b27e22d57"] = { text = "dance=6 grave=4 stupid=1 your=3" },
-  ["gossip:f149b5be3434fea1"] = { text = "another=1 charred=2 corpse=3 gaze=11 message=10 plank=8 remnants=4 secured=9 upon=5 wooden=7 you=6" },
   ["gossip:f14b8ad0163285b1"] = { text = "between=2 controlled=8 holds=4 pass=3 side=7 territory=1" },
   ["gossip:f14c03d52b7b02c7"] = { text = "hoot=3 menacing=1" },
   ["gossip:f14d892bd9dfe0f5"] = { text = "after=12 constantly=24 creating=25 deposits=23 dig=17 floating=1 force=20 however=10 if=37 interesting=14 invisible=19 island=2 like=5 live=3 lot=16 magic=30 me=4 might=9 miner=6 miners=6 need=7 new=22 often=21 right=32 still=13 that=29 that's=31 things=15 think=8 though=27 training=35 years=11" },

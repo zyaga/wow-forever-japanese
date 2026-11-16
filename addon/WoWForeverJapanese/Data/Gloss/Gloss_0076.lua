@@ -392,7 +392,6 @@ WFJ.Data.add("gloss", {
   [76390] = "慎重\tしんちょう\tdiscreetly (carefully)",
   [76391] = "慎重\tしんちょう\tdiscretion (carefully)",
   [76392] = "慎重\tしんちょう\tjudicious (careful)",
-  [76393] = "慎重\tしんちょう\tjudiciously",
   [76394] = "慎重\tしんちょう\tlightly (carefully)",
   [76395] = "慎重\tしんちょう\ttoo subtle (too cautious)",
   [76396] = "慎重\tしんちょう\twisely (carefully)",

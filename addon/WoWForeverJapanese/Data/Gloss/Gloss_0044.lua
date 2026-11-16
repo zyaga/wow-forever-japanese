@@ -283,7 +283,6 @@ WFJ.Data.add("gloss", {
   [44280] = "使う\tつかう\tmust be used",
   [44281] = "使う\tつかう\tmust put (use)",
   [44282] = "使う\tつかう\tmust use",
-  [44283] = "使う\tつかう\tnot be able to use",
   [44284] = "使う\tつかう\toperational (usable)",
   [44285] = "使う\tつかう\tplease cast (use)",
   [44286] = "使う\tつかう\tplease use",

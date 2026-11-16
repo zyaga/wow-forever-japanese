@@ -7,6 +7,7 @@ WFJ.Data.add("name", {
   ["3d041576835a873d"] = { "キャプテン・ナイアルズ・コレスポンデンス", "きゃぷてん・ないあるず・これすぽんでんす", "Captain Nials' Correspondence" },
   ["3d05b08bf16dca22"] = { "オーバーマスター・パイロン", "おーばーますたー・ぱいろん", "Overmaster Pyron" },
   ["3d064983eaecf920"] = { "ロキシック", "ろきしっく", "Roxxik" },
+  ["3d06c1bf4b49159f"] = { "ボーンブレース・ホーバーク", "ぼーんぶれーす・ほーばーく", "Bonebrace Hauberk" },
   ["3d07e5328a16e75d"] = { "ラグナロス・サブマージ・フェード", "らぐなろす・さぶまーじ・ふぇーど", "Ragnaros Submerge Fade" },
   ["3d08ddb0e01c016e"] = { "シマリング・フラット", "しまりんぐ・ふらっと", "The Shimmering Flats" },
   ["3d0ad684ec1fcacf"] = { "ワールド・ウォリアー・トレーナー", "わーるど・うぉりあー・とれーなー", "World Warrior Trainer" },

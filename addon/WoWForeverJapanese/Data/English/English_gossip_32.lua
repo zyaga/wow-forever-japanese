@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:32836098a76f0321"] = { text = "act=6 blade=1 city=32 contagion=27 corrupted=8 crime=17 days=23 death=10 entity=3 escape=33 expose=20 gathering=37 heinous=16 i=21 knight=11 own=9 perpetrators=19 possible=35 razed=31 rot=26 singular=2 strength=36 swore=22 this=5 under=28 understand=4" },
   ["gossip:328486f36e32d5f9"] = { text = "lost=2 new=3 one=4 require=5 talisman=1" },
   ["gossip:32855a42b3ada022"] = { text = "chicken=6 come=12 find=8 he=1 hiding=10 himself=7 know=5 still=2" },
+  ["gossip:3287e174f5d8e1b3"] = { text = "artillery=14 ears=17 hear=8 say=1 saying=1 sonny=2 speak=12 what=6 word=7 years=13" },
   ["gossip:32895ea648c170c1"] = { text = "against=7 best=5 chosen=21 contest=17 folk=6 lands=4 listen=13 master=2 met=1 skills=8 test=9 this=3 very=14 well=12 will=10 willing=10" },
   ["gossip:3293339342f77d82"] = { text = "against=13 better=22 both=9 chance=20 encouraging=7 finally=3 greater=10 his=1 know=6 mages=2 much=21 planned=17 they=16 threat=12 thwart=19 us=4 whatever=18 working=15" },
   ["gossip:3295e6aff0be25e5"] = { text = "accept=7 attempts=13 but=17 city=9 contamination=15 cure=27 evacuated=21 fallout=24 from=25 headed=5 help=6 hope=19 invasion=32 light=1 mass=14 meanwhile=30 our=22 overrun=10 point=4 resulted=16 retaken=37 scientists=23 sickness=26 still=18 stop=33 thank=2 them=11 wipe=12 working=28 you=31" },

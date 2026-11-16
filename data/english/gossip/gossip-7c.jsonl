@@ -24,6 +24,7 @@
 {"id": "7c961f7154360fb2", "field": "text", "en": "The Horde has taken the stables!", "hash": "7c961f7154360fb2", "src": "vmangos@13b49dc"}
 {"id": "7ca1d6a8ed27330a", "field": "text", "en": "Surely you do not think that you will get away with this incursion. They will come for me and you shall pay for your insolence.", "hash": "7ca1d6a8ed27330a", "src": "vmangos@13b49dc"}
 {"id": "7cac39bbffb8128e", "field": "text", "en": "It is... as it should be. ", "hash": "7cac39bbffb8128e", "src": "vmangos@13b49dc"}
+{"id": "7cae4799db8e41ff", "field": "text", "en": "Desperation? Hunger? I'm not exactly here doing this because I like robbing and murdering. I lost my home, had nowhere to go, and I don't much care to shave my head and worship some imaginary wind god, so I became a bandit. The rest is obvious.", "hash": "7cae4799db8e41ff", "src": "collector@1.60.1.70790", "npcs": [256930]}
 {"id": "7caf7f53ce2f076b", "field": "text", "en": "Adventurer! The wind bridge leading to the other spire is unstable. You may need to wait here with me until it returns.", "hash": "7caf7f53ce2f076b", "src": "forever-vo@025070f", "npcs": [256635]}
 {"id": "7cb1aa2cfba5c3dc", "field": "text", "en": "Would you like a flight to Rut'theran Village, courtesy of the Cenarion Circle?", "hash": "7cb1aa2cfba5c3dc", "src": "vmangos@13b49dc"}
 {"id": "7cb2135bd7cc042a", "field": "text", "en": "No matter how much one learns, there is always more to know.", "hash": "7cb2135bd7cc042a", "src": "vmangos@13b49dc"}
@@ -32,6 +33,7 @@
 {"id": "7cb88a256edffe8e", "field": "text", "en": "Och, there's nothing I can teach ye, $n. Have a word with Tally Berryfizz over there. She can hardly reach the tables, but when she starts brewing a potion, watch out!", "hash": "7cb88a256edffe8e", "src": "vmangos@13b49dc"}
 {"id": "7cb8e32a5d3da75e", "field": "text", "en": "I am now corrupted.", "hash": "7cb8e32a5d3da75e", "src": "vmangos@13b49dc"}
 {"id": "7cbd378b0dec4480", "field": "text", "en": "Work scum!", "hash": "7cbd378b0dec4480", "src": "vmangos@13b49dc"}
+{"id": "7cc10b08b40b9780", "field": "text", "en": "What'ya need from ol' Mazu'kon, $C?", "hash": "7cc10b08b40b9780", "src": "collector@1.60.1.70938", "npcs": [264074]}
 {"id": "7ccfe7d0596f8e49", "field": "text", "en": "We may have been suffering a drought but there's no shortage of meat! Care to browse my goods?", "hash": "7ccfe7d0596f8e49", "src": "vmangos@13b49dc"}
 {"id": "7cd26e414511cc60", "field": "text", "en": "Oh, the ever-present obsession with material wealth.  Well, fortune smiles on you, as you can find the auction house in the Tradesman's Terrace.", "hash": "7cd26e414511cc60", "src": "vmangos@13b49dc"}
 {"id": "7cd61ae8dcdfab2f", "field": "text", "en": "If you'll excuse me, I must take my leave. Good day, ladies.", "hash": "7cd61ae8dcdfab2f", "src": "vmangos@13b49dc"}

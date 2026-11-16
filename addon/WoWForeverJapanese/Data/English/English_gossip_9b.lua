@@ -24,6 +24,7 @@ WFJ.Data.add("english", {
   ["gossip:9b868dd05d5fa6a6"] = { text = "mon=5" },
   ["gossip:9b8721dbe9ea2238"] = { text = "cooking=1 don't=13 go=8 good=3 knowledge=4 recipes=9 see=12 seems=5 show=11 some=10 trade=2 usually=14" },
   ["gossip:9b8a5153e177fe8f"] = { text = "careful=13 done=4 helped=8 here=1 know=10 little=7 my=2 others=5 past=15 sure=9 this=11 work=3 you=6" },
+  ["gossip:9b8b6ab8751a3ff5"] = { text = "any=24 attacks=4 become=29 citizens=6 corrupted=33 dangerous=27 death=19 family=14 forest=1 ignore=11 life=15 monster=25 normally=8 other=23 phantoms=3 reporting=5 rest=35 souls=32 stories=10 such=9 them=34 these=21 throughout=2 whatever=16 woods=22 would=12" },
   ["gossip:9b9667adfaa888fc"] = { text = "careful=1 cultists=3 nearby=2" },
   ["gossip:9b96ba0692515cfe"] = { text = "all=3 destroying=4 terminated=6 us=2 you=1" },
   ["gossip:9b97d7b32e2b67fb"] = { text = "know=2" },

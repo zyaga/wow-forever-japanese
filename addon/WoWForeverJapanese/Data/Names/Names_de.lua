@@ -94,6 +94,7 @@ WFJ.Data.add("name", {
   ["de71acafcb96540d"] = { "カラン", "からん", "Kharan" },
   ["de748bf361584574"] = { "ヴァイル・フィン・シュレッダー", "ゔぁいる・ふぃん・しゅれっだー", "Vile Fin Shredder" },
   ["de74ba78606eea6b"] = { "ウェンディゴ", "うぇんでぃご", "Wendigos" },
+  ["de755c0f37ccdafa"] = { "エミッサリー・ジャック", "えみっさりー・じゃっく", "Emissary Jacques" },
   ["de75ebcb794f5886"] = { "ニューロ・コンダクティヴ・チャネラーズ・フード", "にゅーろ・こんだくてぃゔ・ちゃねらーず・ふーど", "Gneuro-Conductive Channeler's Hood" },
   ["de767f49c34b05ce"] = { "チョルアルク", "ちょるあるく", "CHOL'ARUK" },
   ["de77bef9f681eeaf"] = { "ウォーダーズ・ウエストガード", "うぉーだーず・うえすとがーど", "Warder's Waistguard" },

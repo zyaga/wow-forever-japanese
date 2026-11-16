@@ -9,6 +9,7 @@
 {"id": "b827703d22c0a3e9", "field": "text", "en": "Hello there, young $C. I am Rathiril Sunlance and I am an elder Magister of the High Order here on Zephras Isle. It's always good to see bright-eyed young shen'dorei, ready to do their duty in service to their homeland.$B$BDon't let this dusty old mage hold you up, however. No doubt you've got many adventures to see to. Feel free to stop by later if you'd like to speak more.", "hash": "b827703d22c0a3e9", "src": "collector@1.60.1.70790", "npcs": [251903]}
 {"id": "b83109cf91ed24d5", "field": "text", "en": "Must be very careful with this one... Very delicate.", "hash": "b83109cf91ed24d5", "src": "vmangos@13b49dc"}
 {"id": "b841c06693faf531", "field": "text", "en": "I made a lot of the things you see in the store. What do you think? Answer carefully, your life may depend on it.", "hash": "b841c06693faf531", "src": "vmangos@13b49dc"}
+{"id": "b843e1d6bdc7047e", "field": "text", "en": "Prepare yourself!", "hash": "b843e1d6bdc7047e", "src": "collector@1.60.1.70938"}
 {"id": "b843e1e3bdc7048b", "field": "text", "en": "Prepare yourself.", "hash": "b843e1e3bdc7048b", "src": "collector@1.60.1.70790"}
 {"id": "b85337a2dea3e796", "field": "text", "en": "Hey Jangdor - can you teach me how to make Wild Leather Shoulders again?", "hash": "b85337a2dea3e796", "src": "vmangos@13b49dc"}
 {"id": "b85da36d6a4716e9", "field": "text", "en": "Hey, follow me!", "hash": "b85da36d6a4716e9", "src": "vmangos@13b49dc"}
@@ -37,4 +38,5 @@
 {"id": "b8e287f3409dd7e8", "field": "text", "en": "What are you?", "hash": "b8e287f3409dd7e8", "src": "collector@1.60.1.70790", "npcs": [251684]}
 {"id": "b8e50c0081dca17e", "field": "text", "en": "Here's a singing telegram for $n: Roses are red, violets are blue, I will kill any $R I see, including you!", "hash": "b8e50c0081dca17e", "src": "vmangos@13b49dc"}
 {"id": "b8e880d8bb009fbd", "field": "text", "en": "Sarok, why don't we talk business?", "hash": "b8e880d8bb009fbd", "src": "vmangos@13b49dc"}
+{"id": "b8f045adc651aae5", "field": "text", "en": "What is your curiosity looking for?", "hash": "b8f045adc651aae5", "src": "collector@1.60.1.70790", "npcs": [246848]}
 {"id": "b8f2326ead66d18f", "field": "text", "en": "The Sunken Temple can be found in the center of a great lake in eastern Swamp of Sorrows.", "hash": "b8f2326ead66d18f", "src": "vmangos@13b49dc"}

@@ -832,7 +832,6 @@ WFJ.Data.add("gloss", {
   [132832] = "鎌\tかま\tsickle",
   [132833] = "鎖\tくさり\tchain",
   [132834] = "鎖\tくさり\tchained (chain)",
-  [132835] = "鎖\tくさり\tchained (chains)",
   [132836] = "鎖\tくさり\tchains",
   [132837] = "鎖\tくさり\tleash (chain)",
   [132838] = "鎖\tくさり\tshackles (chains)",

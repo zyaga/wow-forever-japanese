@@ -318,7 +318,6 @@ WFJ.Data.add("gloss", {
   [113316] = "腕前\tうでまえ\tabilities",
   [113317] = "腕前\tうでまえ\tabilities (skill)",
   [113318] = "腕前\tうでまえ\taptitude (skill)",
-  [113319] = "腕前\tうでまえ\tcapable (skill)",
   [113320] = "腕前\tうでまえ\tcompetence (skill)",
   [113321] = "腕前\tうでまえ\thow competent (skill)",
   [113322] = "腕前\tうでまえ\tmastery (skill)",

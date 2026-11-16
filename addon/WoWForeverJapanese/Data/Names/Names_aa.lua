@@ -35,6 +35,7 @@ WFJ.Data.add("name", {
   ["aa28f5ef76b89438"] = { "ホワイト・モロガイ・ジェム", "ほわいと・もろがい・じぇむ", "White Moro'gai Gem" },
   ["aa29e43e36efe208"] = { "セラドリック・クリスタル・カーヴィング", "せらどりっく・くりすたる・かーゔぃんぐ", "theradric crystal carvings" },
   ["aa2a470353de9d52"] = { "アドベンチャラーズ・バンダナ", "あどべんちゃらーず・ばんだな", "Adventurer's Bandana" },
+  ["aa2a6c1cdec16eb5"] = { "ドレッドガードズ・プロテクター", "どれっどがーどず・ぷろてくたー", "Dreadguard's Protector" },
   ["aa2dd8889e28a1b1"] = { "プライベート・ハラン", "ぷらいべーと・はらん", "Private Hallan" },
   ["aa2f52ceca984352"] = { "セイター・ブラッド", "せいたー・ぶらっど", "Satyr Blood" },
   ["aa2f87f912670969"] = { "スメルター", "すめるたー", "The Smelter" },

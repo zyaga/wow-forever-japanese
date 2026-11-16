@@ -784,7 +784,6 @@ WFJ.Data.add("gloss", {
   [98785] = "無謀\tむぼう\tbrashly (recklessly)",
   [98786] = "無謀\tむぼう\trash",
   [98787] = "無謀\tむぼう\treckless",
-  [98788] = "無謀\tむぼう\treckless (recklessly)",
   [98789] = "無謀\tむぼう\trecklessly",
   [98790] = "無謀\tむぼう\twith reckless abandon (recklessly)",
   [98791] = "無謀さ\tむぼうさ\trecklessness",

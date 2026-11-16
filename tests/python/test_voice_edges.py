@@ -327,6 +327,15 @@ def test_register_text_writes_the_error_table():
             "      },\n    },\n  },\n") in text
 
 
+def test_register_text_writes_an_npc_voice_beside_the_race_sexes():
+    text = voice_pack.register_text({}, {}, {"kinds": {1: "outofrange"}, "voices": {
+        "tauren-f": {"outofrange": ("e-o-tauren-f.mp3", 1.0)},
+        "qdwarffemaleguard": {"outofrange": ("e-o-qdwarffemaleguard.mp3", 1.5)}}})
+    assert ("    voices = {\n      [\"qdwarffemaleguard\"] = {\n"
+            "        [\"outofrange\"] = { \"e-o-qdwarffemaleguard.mp3\", 1.5 },\n      },\n"
+            "      [\"tauren-f\"] = {\n") in text
+
+
 # ---- the commands' entry points ----------------------------------------------------------------------------
 
 

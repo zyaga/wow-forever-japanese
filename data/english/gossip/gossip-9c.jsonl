@@ -13,10 +13,12 @@
 {"id": "9c3e25df0c884bba", "field": "text", "en": "And I am determined to find out more... So if you need my help again, you know where I'll be.", "hash": "9c3e25df0c884bba", "src": "vmangos@13b49dc"}
 {"id": "9c40841606dc6fc1", "field": "text", "en": "I'd like to purchase a Galestrider.", "hash": "9c40841606dc6fc1", "src": "collector@1.60.1.70790", "npcs": [265756]}
 {"id": "9c4638900c1123f3", "field": "text", "en": "Where is the Cooking trainer?", "hash": "9c4638900c1123f3", "src": "collector@1.60.1.70205", "npcs": [247229]}
+{"id": "9c472115229a9634", "field": "text", "en": "Excavation Site: Wetlands", "hash": "9c472115229a9634", "src": "collector@1.60.1.70938", "npcs": [2352, 5111]}
 {"id": "9c487c9af5ed4344", "field": "text", "en": "Kelstrum is a loudmouth and a braggart... and if that weren't enough he's also one of the most skilled warriors ye'll ever meet!  \n\nI tell ye, if ye're looking to be trained in the ways of a warrior, that's who ye should be talking to.  I'm sure he can be found over in the Hall of Arms east of the Gates of Ironforge.", "hash": "9c487c9af5ed4344", "src": "vmangos@13b49dc"}
 {"id": "9c600498a72eb54c", "field": "text", "en": "Please... please... Miss Proudmore. I didn't mean to...", "hash": "9c600498a72eb54c", "src": "vmangos@13b49dc"}
 {"id": "9c61ed23104e9e0d", "field": "text", "en": "Night, night.", "hash": "9c61ed23104e9e0d", "src": "vmangos@13b49dc"}
 {"id": "9c69bad5eeaae79d", "field": "text", "en": "Be sure to tell Greatfather Winter what secret surprise you'd like to get this Winter Veil!", "hash": "9c69bad5eeaae79d", "src": "vmangos@13b49dc"}
+{"id": "9c6ea3ab269a1c11", "field": "text", "en": "When he arrives we will be ready.", "hash": "9c6ea3ab269a1c11", "src": "collector@1.60.1.70938"}
 {"id": "9c70f7cd5837b25c", "field": "text", "en": "I hereby destroy these instruments of evil! For the Horde!", "hash": "9c70f7cd5837b25c", "src": "vmangos@13b49dc"}
 {"id": "9c7a35637d68678f", "field": "text", "en": "This job is definitely not worth sixteen-five a year.", "hash": "9c7a35637d68678f", "src": "vmangos@13b49dc"}
 {"id": "9c80476bad5905cc", "field": "text", "en": "Excellent!  You shall be doing the League of Arathor a great service in ridding Arathi Basin of The Defilers and their Horde thugs.  Seek out the Lady Hoteshem in the royal audience chamber of Stormwind Keep.  She has been expecting you, $n.", "hash": "9c80476bad5905cc", "src": "vmangos@13b49dc"}

@@ -42,6 +42,7 @@ WFJ.Data.add("name", {
   ["cc319359981c0dc3"] = { "イミューン・ポリ・フィアー", "いみゅーん・ぽり・ふぃあー", "Immune Poly/Fear/" },
   ["cc31c2a3394f85f4"] = { "キャプン・ゲルカク・ジャイロマスト", "きゃぷん・げるかく・じゃいろますと", "Cap'n Gelkak Gyromast" },
   ["cc31e7fc89b5c451"] = { "エンシェント", "えんしぇんと", "Ancient" },
+  ["cc32eab15bebc80b"] = { "ハンマー・オブ・リバイタライゼーション", "はんまー・おぶ・りばいたらいぜーしょん", "Hammer of Revitalization" },
   ["cc34e27a06303dd7"] = { "エルダー・ストーンスパイア", "えるだー・すとーんすぱいあ", "Elder Stonespire" },
   ["cc37c98a12a66cce"] = { "カーガス、バッドランズ", "かーがすばっどらんず", "Kargath, Badlands" },
   ["cc39dfb4adbc0f99"] = { "ハーベスター・オーバーライド・シグナルキャスター", "はーべすたー・おーばーらいど・しぐなるきゃすたー", "Harvester Override Signalcaster" },

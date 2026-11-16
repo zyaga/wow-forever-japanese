@@ -174,6 +174,7 @@ WFJ.Data.add("name", {
   ["bdb98cb1727f47ba"] = { "マトリアーク", "まとりあーく", "Matriarch" },
   ["bdbc964a591ec339"] = { "アルジャーノン", "あるじゃーのん", "Algernon" },
   ["bdbd8281003636c3"] = { "ブラッジョン", "ぶらっじょん", "the Bludgeon" },
+  ["bdbe38497d3c56d6"] = { "トレンツ・ベイン", "とれんつ・べいん", "Treant's Bane" },
   ["bdbe49141b81b5f5"] = { "リアーニ・ナイトウィンド", "りあーに・ないとうぃんど", "Riaani Nightwind" },
   ["bdbf7423f9e8fd1a"] = { "ハンドブック・オブ・デッドリー・ポイズン5", "はんどぶっく・おぶ・でっどりー・ぽいずんご", "Handbook of Deadly Poison V" },
   ["bdbfc06765864935"] = { "ハーベスト・ネクター", "はーべすと・ねくたー", "Harvest Nectar" },

@@ -103,3 +103,4 @@
 479980  # Pinto Horse
 479981  # Brown Horse
 479982  # Chestnut Mare
+477640  # Hexx's Key

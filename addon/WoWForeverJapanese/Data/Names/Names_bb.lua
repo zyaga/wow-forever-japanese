@@ -227,6 +227,7 @@ WFJ.Data.add("name", {
   ["bbdf8eba30beec33"] = { "ブラッドウーブン・ラップ", "ぶらっどうーぶん・らっぷ", "Bloodwoven Wraps" },
   ["bbe112b57fe463af"] = { "チージー・テスト・テイラー", "ちーじー・てすと・ていらー", "Cheesy Test Tailor" },
   ["bbe160c9646022f5"] = { "プラン：テンパード・ダーク・アイアン・プレート", "ぷらん・てんぱーど・だーく・あいあん・ぷれーと", "Plans: Tempered Dark Iron Plate" },
+  ["bbe2a42740d72597"] = { "レシピ：ドラフト・オブ・ウォーター・ウォーキング", "れしぴ・どらふと・おぶ・うぉーたー・うぉーきんぐ", "Recipe: Draught of Water Walking" },
   ["bbe33016ffbfff93"] = { "マッシュルーム・ファーマー", "まっしゅるーむ・ふぁーまー", "Mushroom Farmer" },
   ["bbe43c3035be6899"] = { "エンチャント・ブレイサー・ディフレクション", "えんちゃんと・ぶれいさー・でぃふれくしょん", "Enchant Bracer - Deflection" },
   ["bbedeff6700cb1fd"] = { "スピーク・ドラコニック", "すぴーく・どらこにっく", "Speak Draconic" },

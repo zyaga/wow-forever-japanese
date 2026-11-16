@@ -930,7 +930,6 @@ WFJ.Data.add("gloss", {
   [45929] = "値する\tあたいする\tis worthy of",
   [45930] = "値する\tあたいする\tof (worthy of)",
   [45931] = "値する\tあたいする\tpunishable by (deserves)",
-  [45932] = "値する\tあたいする\tunworthy",
   [45933] = "値する\tあたいする\tunworthy (does not deserve)",
   [45934] = "値する\tあたいする\twarranted (deserves)",
   [45935] = "値する\tあたいする\twell worth",

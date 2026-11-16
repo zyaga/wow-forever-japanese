@@ -75,6 +75,7 @@ WFJ.Data.add("name", {
   ["d65f3ad94e5ab89d"] = { "アウトランナーズ・カフス", "あうとらんなーず・かふす", "Outrunner's Cuffs" },
   ["d65f6534fe1a3df7"] = { "ボトル・オブ・ディジーズ", "ぼとる・おぶ・でぃじーず", "Bottle of Disease" },
   ["d66121864dadf4bb"] = { "ラージ・ブリリアント・シャード", "らーじ・ぶりりあんと・しゃーど", "Large Brilliant Shard" },
+  ["d6620a3924c94eb1"] = { "サッシュ・オブ・ザ・ウィンドリーヴァー", "さっしゅ・おぶ・ざ・うぃんどりーゔぁー", "Sash of the Windreaver" },
   ["d66290b4e7e2de32"] = { "バニヤナイズ", "ばにやないず", "Bunyanize" },
   ["d662cd17544fa47a"] = { "オーカラー", "おーからー", "Or'Kalar" },
   ["d66533b0f89adfc7"] = { "ウルサナー", "うるさなー", "Urs'anah" },

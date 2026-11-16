@@ -159,6 +159,7 @@ WFJ.Data.add("name", {
   ["94abc6b6c02a3f29"] = { "ハルダール", "はるだーる", "Haldaar" },
   ["94abce656f83b28a"] = { "ティリオンズ・スパイボット", "てぃりおんず・すぱいぼっと", "Tyrion's Spybot" },
   ["94abcf69c02c5d1a"] = { "ハルダー", "はるだー", "Haldarr" },
+  ["94acb732bb30e7ab"] = { "ハンマー・オブ・ディバイン・マイト", "はんまー・おぶ・でぃばいん・まいと", "Hammer of Divine Might" },
   ["94ad6775cb20e940"] = { "アイアンフォージ・テレポート", "あいあんふぉーじ・てれぽーと", "Ironforge Teleport" },
   ["94ad9f8fc6cc5201"] = { "ダララン・メイジ", "だららん・めいじ", "Dalaran Mage" },
   ["94af2ee49030d95d"] = { "エリッサ", "えりっさ", "Aelyssa" },

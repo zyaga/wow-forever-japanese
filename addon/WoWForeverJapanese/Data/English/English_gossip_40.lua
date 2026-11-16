@@ -38,7 +38,6 @@ WFJ.Data.add("english", {
   ["gossip:409865ade3d460bd"] = { text = "believe=1 born=2 sissy=4" },
   ["gossip:409958b28a5bf603"] = { text = "again=12 begun=8 blade=16 fear=10 he=3 just=9 nearly=14 once=2 our=5 problem=6 reads=4 see=1 something=18 time=11 uncovered=19 use=17 willing=15" },
   ["gossip:40a187496eac25c8"] = { text = "citadel=24 combined=9 continue=29 destroyed=5 father=26 his=20 however=18 indeed=1 item=3 know=19 left=27 nearly=11 now=14 power=10 progeny=21 remaining=6 renewed=8 rules=25 slain=12 this=23 ultimately=4 unknown=17 where=15" },
-  ["gossip:40ad2d6e81580ba9"] = { text = "brave=3 brawn=2 forest=1 work=4" },
   ["gossip:40bd5ad932d96f1b"] = { text = "attack=2 beating=4 last=1 more=8 need=10 order=7 real=3 rebuild=5 repairs=6 supplies=9" },
   ["gossip:40bdbb8fe7dc2866"] = { text = "catch=3 plague=2 try=4" },
   ["gossip:40befd091302d915"] = { text = "there=1" },

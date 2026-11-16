@@ -25,6 +25,7 @@ WFJ.Data.add("english", {
   ["gossip:6b6f4a0821040b2e"] = { text = "after=1 bear=12 began=8 creature=5 feathers=10 might=14 owl=9 soon=2 visions=6 we=3 will=13 with=11" },
   ["gossip:6b7733fd8a3a6cac"] = { text = "congratulations=2" },
   ["gossip:6b925997d4748c7f"] = { text = "armor=10 assassination=18 believe=7 better=23 business=19 deal=16 fashioning=11 fella=5 get=20 guy=2 i=1 interested=14 sane=4 sooner=21 this=9 what=6" },
+  ["gossip:6b935d16ef9ae33b"] = { text = "learned=3 shield=1 what=2" },
   ["gossip:6b95fb08c39a7711"] = { text = "throats=8 war=1" },
   ["gossip:6b96648aa2547a4c"] = { text = "and=2 soldier=4" },
   ["gossip:6b999f5b6cac86a6"] = { text = "against=35 all=37 and=9 courage=17 depending=13 earn=49 forces=34 greetings=1 honor=43 hunter=4 i=27 life=5 mark=18 me=21 mean=25 mind=31 more=50 my=47 nature=33 nothing=26 others=10 passage=19 profession=8 race=22 respect=28 skills=38 some=2 speak=52 spirit=30 test=32 testing=32 that=41 tribe=12 true=42 yourself=45" },

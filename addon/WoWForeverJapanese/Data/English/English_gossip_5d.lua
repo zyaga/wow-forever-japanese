@@ -26,6 +26,7 @@ WFJ.Data.add("english", {
   ["gossip:5d742ffe6b79a3cb"] = { text = "bash=4 brain=2 many=3 may=5 you=1" },
   ["gossip:5d774c2182a28c39"] = { text = "blinding=6 creature=13 engulfed=8 entirely=10 flame=11 light=7 mortal=4 only=15 remember=9 ruins=2 taint=3 these=1" },
   ["gossip:5d796deef2659412"] = { text = "deeply=2 halt=1 snorts=3" },
+  ["gossip:5d7c45ad83d5c9b6"] = { text = "entrails=2 pave=4 streets=3 your=1" },
   ["gossip:5d7df209f61631ff"] = { text = "again=8 barely=5 bear=13 brother=16 corrupted=27 cursed=3 escape=6 evil=24 feverish=30 flows=26 fortunate=19 garden=25 go=11 growing=23 haze=28 help=32 i=4 inside=20 place=2 sisters=17 there=22 this=1 though=14 trapped=21 tunnels=10" },
   ["gossip:5d83dd8cd9da89e8"] = { text = "i=1 undone=2" },
   ["gossip:5d8443caa5fe8971"] = { text = "wins=1" },

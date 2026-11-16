@@ -175,6 +175,7 @@ WFJ.Data.add("name", {
   ["daca922ae6a37ee2"] = { "アースシャッター・ハンドガード", "あーすしゃったー・はんどがーど", "Earthshatter Handguards" },
   ["dacae08cb42a389f"] = { "ブラッドストーン・アミュレット", "ぶらっどすとーん・あみゅれっと", "Bloodstone Amulets" },
   ["daccbeef5080afc7"] = { "プロテクター・リーク", "ぷろてくたー・りーく", "Protector Leick" },
+  ["dacd66614f24b81c"] = { "メイガス・オルヴェク", "めいがす・おるゔぇく", "Magus Olvek" },
   ["dace88803d248ffc"] = { "オースストーン", "おーすすとーん", "Oathstone" },
   ["dad0d93a2b5d79c2"] = { "ブラッド・ステインド・パーチメント", "ぶらっど・すていんど・ぱーちめんと", "Blood-Stained Parchment" },
   ["dad1862f2a2ccc4c"] = { "シルバーウィング・ウォリアー", "しるばーうぃんぐ・うぉりあー", "Silverwing Warrior" },

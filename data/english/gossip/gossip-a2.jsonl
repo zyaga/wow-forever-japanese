@@ -4,6 +4,7 @@
 {"id": "a20c349fe0df7302", "field": "text", "en": "You can usually find Brother Wilhelm in back of the smithy trading stories with Lyria.  He's always up for teaching fellow paladins new skills.", "hash": "a20c349fe0df7302", "src": "vmangos@13b49dc"}
 {"id": "a212fc0ec15af5a2", "field": "text", "en": "The Cult of the Damned has grown large in scope. Nearly every city, from the capitals to the small hamlets and hovels of both the Horde and Alliance, have Cult members hidden amongst their citizenry.$B$BDo not look so surprised. The Cult only wears a uniform for ritual and ceremony. It is quite possible that you have interacted with one during your adventures and not even known.", "hash": "a212fc0ec15af5a2", "src": "vmangos@13b49dc"}
 {"id": "a21cf8cb52e6ab06", "field": "text", "en": "You have any idea how long I've been waiting here? And where's dinner? All that time gone and nothing to show for it?", "hash": "a21cf8cb52e6ab06", "src": "vmangos@13b49dc"}
+{"id": "a229431ae8b7190c", "field": "text", "en": "Cart those bodies from the hall. He does not want to be kept waiting.", "hash": "a229431ae8b7190c", "src": "collector@1.60.1.70938"}
 {"id": "a22e42a9ad71206e", "field": "text", "en": "Can't you see we're trying to prepare for Uther's visit? Now get out of my way, I have much work to do!", "hash": "a22e42a9ad71206e", "src": "vmangos@13b49dc"}
 {"id": "a23830cbb017c2f7", "field": "text", "en": "|cff33ccffAll four towers are now in control of the Alliance!|r", "hash": "a23830cbb017c2f7", "src": "vmangos@13b49dc"}
 {"id": "a238c9ae316b8c67", "field": "text", "en": "Not bad... for an amateur! Still, you know about as much as I do. If you wanna' learn more you're gonna' have to talk to Josef Gregorian in Undercity.", "hash": "a238c9ae316b8c67", "src": "vmangos@13b49dc"}
@@ -45,4 +46,5 @@
 {"id": "a2eb2d0f987f53b9", "field": "text", "en": "Good! I can tell that my efforts will not be wasted!", "hash": "a2eb2d0f987f53b9", "src": "vmangos@13b49dc"}
 {"id": "a2eb364eb38403b5", "field": "text", "en": "There's nothing more I can teach you. I've heard of a night elf who might be able to, though. Her name is Ainethil, and she lives in the Craftsmen's Terrace of Darnassus.", "hash": "a2eb364eb38403b5", "src": "vmangos@13b49dc"}
 {"id": "a2f585cb399ac6a3", "field": "text", "en": "Neltharion, hmm? As good an answer as any, yes?", "hash": "a2f585cb399ac6a3", "src": "vmangos@13b49dc"}
+{"id": "a2fbcd0eea462394", "field": "text", "en": "Have you any Darkmoon Faire Cards? Come speak with me to learn more about them if you dare!", "hash": "a2fbcd0eea462394", "src": "collector@1.60.1.70938"}
 {"id": "a2fbd4aa2eafa908", "field": "text", "en": "saved world state is: $2285W", "hash": "a2fbd4aa2eafa908", "src": "vmangos@13b49dc"}

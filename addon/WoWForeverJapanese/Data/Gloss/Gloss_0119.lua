@@ -145,7 +145,6 @@ WFJ.Data.add("gloss", {
   [119143] = "見事\tみごと\tamazing",
   [119144] = "見事\tみごと\tamazing (splendid)",
   [119145] = "見事\tみごと\tamazing; splendid",
-  [119146] = "見事\tみごと\tbang-up (splendidly)",
   [119147] = "見事\tみごと\tbeautiful (splendid)",
   [119148] = "見事\tみごと\tbravely (splendid)",
   [119149] = "見事\tみごと\tbravely (splendidly)",

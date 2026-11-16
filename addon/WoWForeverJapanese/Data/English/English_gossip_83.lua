@@ -19,7 +19,6 @@ WFJ.Data.add("english", {
   ["gossip:8345272677ad076b"] = { text = "hear=7 listen=1 speaks=4 spirits=5" },
   ["gossip:834643b0063eb8f6"] = { text = "ahh=1 found=8 great=5 hunters=6 like=4 several=7 then=2 way=3" },
   ["gossip:8348bf7b8f2b45cc"] = { text = "bestow=4 deserving=8 fine=1 i=3 knowledge=5 truly=7 work=2 you=6" },
-  ["gossip:834b33ff398b1768"] = { text = "all=5 beast=17 blessings=10 call=21 choosing=8 dismiss=22 fit=20 give=24 guide=12 honor=30 i=2 learned=6 new=25 now=15 pet=7 power=19 pride=27 skills=26 tame=18 teach=3 use=29 with=28 you=1" },
   ["gossip:834dc587955cdac7"] = { text = "always=9 cracker=12 fool=6 i=5 knew=19 me=1 orcs=4 pappy=8 part=13 that=16 versus=2" },
   ["gossip:834e6c60b98c4d0d"] = { text = "both=7 hello=1 just=2 listen=6 looking=3 make=9 person=4 plan=10 rich=8 seat=5" },
   ["gossip:8351f0c5f2951df9"] = { text = "information=1" },

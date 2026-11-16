@@ -12,6 +12,7 @@ WFJ.Data.add("objective", {
   [477268] = { "Enchantingのスキルを20まで上げる", 0x67d7fcad, "." },
   [477270] = { "Engineeringのスキルを20まで上げる", 0xe75484ed, "." },
   [477368] = { "Mountaineer Corneliusを見つける", 0x4c37d9bb, "." },
+  [477491] = { "墓石でVidere Elixirを使用", 0x050f885d, "." },
   [477504] = { "Tarantula Eggを破壊する", 0xecffe759, "." },
   [477518] = { "Webbed Forsakenを解放する", 0x280e18e3, "." },
   [477594] = { "Kurothelの持ち物を発見した", 0x27b25393, "." },

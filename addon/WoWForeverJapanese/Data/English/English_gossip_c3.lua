@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:c37c49ce85d92fb4"] = { text = "form=3 guild=1 how=2" },
   ["gossip:c380508e1674aabd"] = { text = "before=3 friendly=5 orcs=4 riding=1 teach=2" },
   ["gossip:c388fe06ab769513"] = { text = "hear=7 laughing=6 night=4 oh=8 pay=9 they=1 will=12" },
+  ["gossip:c38b573c4d9f6d49"] = { text = "across=53 all=33 always=20 another=62 answers=25 but=58 chaotic=44 city=5 cloth=17 correspondence=15 disturbed=46 dropped=51 ever=27 experienced=39 feel=18 flow=42 greater=22 i=10 interruption=38 leader=9 life=37 magic=41 member=1 months=11 most=6 mysteries=24 now=66 our=4 quite=13 ripples=54 rock=50 said=28 search=26 seeking=30 somehow=45 still=48 such=59 surface=52 surge=55 survival=34 talk=61 time=64 troubles=60 vital=35 wait=65 water=49 welcome=7 well=43 world=21 you=3 your=8" },
   ["gossip:c392ca5a312a1f8d"] = { text = "again=1 ago=5 awakening=54 awoken=37 beasts=29 cavern=15 corrupted=47 dreams=31 entering=6 evil=43 focus=20 forest=8 forever=40 goal=12 great=42 he=39 his=19 honorable=11 i=53 journeyed=16 land=32 lost=41 lush=7 nightmare=36 or=38 perform=56 regrowing=9 reptilian=28 ritual=55 seep=33 serpentine=24 servants=48 slain=51 sleeps=2 tainted=26 this=14 thoughts=23 unleashed=44 visions=25 waned=21 will=45 with=13" },
   ["gossip:c39768847a3ce90e"] = { text = "great=9 hungry=4 see=7 today=3" },
   ["gossip:c39e136bba5b9ac9"] = { text = "charge=3 come=5 commander=1 filth=2 run=6 time=4" },

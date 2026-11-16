@@ -25,6 +25,7 @@ WFJ.Data.add("gossip", {
   ["bbb388a11c4b9e9c"] = { "ああ、Lucan Cordellを探しているんだな。彼はStockadeへ向かう途中、Magic Quarterの外側で店をやっている。", "." },
   ["bbb66c90368769b4"] = { "よく戻った、{name}。そなたはRagnarosに対する頼もしき味方であることを示した。そなたの訪れはいつでも歓迎する。", "." },
   ["bbb94fd2c760ed17"] = { "Searing GorgeのSlag PitにいるDark Ironのドワーフたちは、鍵のかかった箱を大量に持っている。", "." },
+  ["bbb9b3398ed8c3a9"] = { "このような魔法は見たことがない。奴はあの半神の力を吸い取ったのだ。まさに無敵だな……", "." },
   ["bbbf58e50b6d2057"] = { "任務の報告に来たのか、{class}？HordeとAllianceの双方の軍需物資はすべて完成し、今まさにSilithusへ輸送されているところだ。すべて一日とかからずに到着するはずだ。誰かがScepter of the Shifting Sandsの各部分を見つけ出し、すべて繋ぎ合わせてくれていることを願う。", "." },
   ["bbc6bc0f21103b74"] = { "%sは幽霊磁石に引き寄せられた……", "." },
   ["bbc9a7a7f1219fe0"] = { "Dun Baldar South Bunkerは誰が支配している？", "." },

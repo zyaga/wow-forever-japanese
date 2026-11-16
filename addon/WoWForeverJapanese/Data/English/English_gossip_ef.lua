@@ -13,6 +13,7 @@ WFJ.Data.add("english", {
   ["gossip:ef4adb3e63eb6b03"] = { text = "any=11 free=6 him=5 his=7 i=1 innocence=8 life=3 own=2 risk=4 way=12" },
   ["gossip:ef572566ef3592f0"] = { text = "fast=2 filth=8 friends=3 give=10 he=17 how=14 knew=18 little=15 loyalty=13 made=4 orc=7 refused=11 seems=5 this=6 you=9" },
   ["gossip:ef57d928618351df"] = { text = "aims=5 carefully=4 fires=8 gun=1 raises=3 shoulder=2 target=7" },
+  ["gossip:ef5c4ba3979c2fcd"] = { text = "gift=2 praised=5 this=1" },
   ["gossip:ef6457b760044a05"] = { text = "bed=2 heh=4 right=1 sorry=5" },
   ["gossip:ef66a2c5f2f2c781"] = { text = "and=26 await=30 before=3 burden=13 cognizance=6 completeness=5 feel=16 forever=19 great=12 i=18 know=25 lifted=14 my=10 now=23 patiently=29 peace=20 present=4 rest=22 soon=17 soul=11 spirit=2 stranger=32 that=27 this=24 though=15 time=28 upon=9 you=8" },
   ["gossip:ef736420f8abfda2"] = { text = "about=7 ah=1 find=17 gates=10 hands=4 her=16 magic=3 matters=6 north=11 one=2 see=8 travel=12" },

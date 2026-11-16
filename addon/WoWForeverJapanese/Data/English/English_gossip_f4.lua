@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:f469305efaad3546"] = { text = "eggs=3 fools=1 know=5 precious=7 these=2 you=4" },
   ["gossip:f470fc0654e9af2d"] = { text = "leave=3 mark=2 this=1" },
   ["gossip:f4737aefecc45612"] = { text = "answer=6 call=5 cowardly=7 every=4 fight=8 join=9 member=3 time=10 war=1" },
+  ["gossip:f47800e845326c67"] = { text = "become=6 continue=3 dedication=9 great=5 lesson=13 maintain=10 next=11 ready=15 service=2 vigilance=8 will=7 you=4" },
   ["gossip:f47a067c99f103e2"] = { text = "done=1 eye=3 i=12 know=8 pup=10 same=13 see=19 something=17 spark=5 teach=18 that=4 well=7 when=11 your=2" },
   ["gossip:f47a1635ea331ae3"] = { text = "cannot=4 fear=7 hide=2 me=1 rogue=5 smell=8 your=6" },
   ["gossip:f47ff9121524700d"] = { text = "clearing=4 doom=12 foolish=2 hands=11 meet=13 most=8 powerful=9 prepare=15 senators=3 servant=10 thank=5 those=1" },

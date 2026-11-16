@@ -146,6 +146,7 @@ WFJ.Data.add("name", {
   ["9f9b008d3aedce87"] = { "クエルクス・ニアバイ・オーラ", "くえるくす・にあばい・おーら", "[DNT] Quercus Nearby Aura" },
   ["9f9b38c3513b9bd2"] = { "タンドラ・リング", "たんどら・りんぐ", "Tundra Ring" },
   ["9f9bec8e438984e5"] = { "エス03・アイテム・ティー2・シャーマン・エンハンスメント2ピー・ボーナス", "えすさん・あいてむ・てぃーに・しゃーまん・えんはんすめんとにぴー・ぼーなす", "S03 - Item - T2 - Shaman - Enhancement 2P Bonus" },
+  ["9f9c2a6bb74fd301"] = { "ロード・ヴァルサラクス・スタッフ・オブ・コマンド", "ろーど・ゔぁるさらくす・すたっふ・おぶ・こまんど", "Lord Valthalak's Staff of Command" },
   ["9f9d0da6cc296a7a"] = { "ウィキッド・レザー・パンツ", "うぃきっど・れざー・ぱんつ", "Wicked Leather Pants" },
   ["9f9efcf08ff6718b"] = { "ボーンスパイク", "ぼーんすぱいく", "Bonespike" },
   ["9fa1f933a7bfef42"] = { "スタッデッド・リング・シールド", "すたっでっど・りんぐ・しーるど", "Studded Ring Shield" },

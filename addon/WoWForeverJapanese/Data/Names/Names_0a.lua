@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("name", {
   ["0a005342e0fd9bfd"] = { "スリーピング・ローブ", "すりーぴんぐ・ろーぶ", "Sleeping Robes" },
+  ["0a00fb5fbc990dd1"] = { "シャッタード・アタライ・スピア", "しゃったーど・あたらい・すぴあ", "Shattered Atal'ai Spear" },
   ["0a0408c8612aaaea"] = { "ジェイド", "じぇいど", "Jade" },
   ["0a040add612b2a77"] = { "ジャーン", "じゃーん", "Jahn" },
   ["0a040de8612be9b6"] = { "ジャン", "じゃん", "Jang" },
@@ -24,6 +25,7 @@ WFJ.Data.add("name", {
   ["0a09489eb090b554"] = { "ジュジュ", "じゅじゅ", "Juju" },
   ["0a09c51fb5f0ccd4"] = { "ジョセフ・レッドパスズ・モニュメント", "じょせふ・れっどぱすず・もにゅめんと", "Joseph Redpath's Monument" },
   ["0a0a845c2755888a"] = { "ヒタヤ・ザ・キーパー", "ひたや・ざ・きーぱー", "Hitah'ya the Keeper" },
+  ["0a0b2c09ff1c2ef7"] = { "アマルガムズ・バンド", "あまるがむず・ばんど", "Amalgam's Band" },
   ["0a0b9e4b4bdcb695"] = { "オーナメント", "おーなめんと", "ornament" },
   ["0a0cb92557c6597f"] = { "パシファイアー", "ぱしふぁいあー", "The Pacifier" },
   ["0a0ce4d8b98db86f"] = { "スタティック・フィールド", "すたてぃっく・ふぃーるど", "Static Field" },
@@ -327,6 +329,7 @@ WFJ.Data.add("name", {
   ["0ac8da073e7efaae"] = { "スタンディング、スモール・インテリア", "すたんでぃんぐすもーる・いんてりあ", "Standing, small Interior" },
   ["0ac934629bcc0772"] = { "モンスター・スタッフ、フェザード・インバート", "もんすたー・すたっふふぇざーど・いんばーと", "Monster - Staff, Feathered Invert" },
   ["0ac9e3bc8c345248"] = { "ウォーターログド・アックス", "うぉーたーろぐど・あっくす", "Waterlogged Axe" },
+  ["0acb4d9a5084a2af"] = { "キーストーン", "きーすとーん", "keystone" },
   ["0ace8eabd3a638b5"] = { "ウォーターログド・ソー", "うぉーたーろぐど・そー", "Waterlogged Saw" },
   ["0ad1c8eff86e9240"] = { "ディフェンシブ・ストライク", "でぃふぇんしぶ・すとらいく", "Defensive Strike" },
   ["0ad1cd89406760d8"] = { "デスガード・ギャヴィン", "ですがーど・ぎゃゔぃん", "Deathguard Gavin" },
