@@ -146,7 +146,7 @@ local function expand(ja)
   if not WFJ.Placeholders.mayHaveTokens(ja) then return ja end -- token-free text never touches the client
   return (WFJ.Placeholders.expand(ja, player()))
 end
-WFJ.expandTokens = expand -- UI/WordSave: a saved English word's Japanese sentence, as the game shows it
+WFJ.expandTokens = expand -- UI/WordSave and UI/StudyVoice: a line's Japanese as the game shows it to this character
 
 -- Japanese filled for another player (UI/Speech): their name and sex only; a {class} or {race} stays literal.
 local function expandAs(ja, other)

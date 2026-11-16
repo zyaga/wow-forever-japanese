@@ -22,6 +22,7 @@
 -- ships nothing under this character's name, the target's name, or with no target each party member's name that
 -- stands in the line, is put back instead, and the Japanese is filled with that name. Such a line is never given to
 -- the Collector.
+-- Speech.translateLine serves UI/ChatSystem's system lines that are an NPC line's text (battleground announcements).
 -- Secret text (chat messaging lockdown: dungeons, raids, encounters; chatinfodocumentation.lua) is never touched: the
 -- line stays English. A stale row, a missing one, or a `%s` count that differs leaves the English.
 local _, WFJ = ...
@@ -301,6 +302,31 @@ local function readable(en) return type(en) == "string" and not secret(en) and e
 local function shipped(key)
   local entry = WFJ.Lookup.keyed("gossip", key)
   return type(entry) == "table" and entry.status == "." and type(entry.ja) == "string" and entry.ja ~= ""
+end
+
+-- The Japanese for a whole chat line the server wrote from an NPC line's text with no speaker of its own (a
+-- battleground announcement, CHAT_MSG_BG_SYSTEM_*, UI/ChatSystem): the line as it stands, else, with `findName`,
+-- each run of one to three capitalised words in it taken as the player the line names ("Velkian Freecss has
+-- assaulted the mine!": the server writes the whole name and sends no target with the line). The first run a
+-- shipped row resolves fills its Japanese. → ja | nil
+local NAME_WORD = "()[%u\192-\255][%w\128-\255%-]*()"
+local MAX_NAME_WORDS = 3
+
+function Speech.translateLine(en, findName)
+  if not readable(en) or not deps.key then return nil end
+  local key = deps.key(en)
+  local ja = Speech.translate(en, key)
+  -- a row under the line's own English owns it, shipped or not: no other row may answer it with a guessed name
+  if ja or not findName or (key ~= nil and WFJ.Lookup.keyed("gossip", key) ~= nil) then return ja end
+  local starts, ends, runs = {}, {}, {}
+  for s, e in en:gmatch(NAME_WORD) do starts[#starts + 1], ends[#ends + 1] = s, e - 1 end
+  for i = 1, #starts do
+    for j = i, math.min(i + MAX_NAME_WORDS - 1, #starts) do
+      if j > i and (starts[j] - ends[j - 1] ~= 2 or en:byte(ends[j - 1] + 1) ~= 32) then break end
+      runs[#runs + 1] = { name = en:sub(starts[i], ends[j]) }
+    end
+  end
+  return (translateOthers(en, runs))
 end
 
 -- the current line, for Speech.trace: its first exit reason, whether its own Japanese went in, its gossip key

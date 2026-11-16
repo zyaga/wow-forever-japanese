@@ -2,6 +2,8 @@
 -- write its SavedVariables, so the export is text on screen: tab-separated with Anki's file headers (Core/Words), for a
 -- text file, a spreadsheet or Anki. A tool window the player opens; it shows the saved Japanese, never game English.
 -- Entry points call WordsWindow.open(): /wfj words, the Words settings page and the minimap button's menu.
+-- With a voice pack, Include audio adds each sentence's recording to the export (UI/StudyVoice, ADR-092) and lists
+-- those files and where they go, for the player to copy into Anki's media folder: an addon cannot copy files itself.
 local _, WFJ = ...
 local WordsWindow = {}
 WFJ.WordsWindow = WordsWindow
@@ -9,6 +11,9 @@ WFJ.WordsWindow = WordsWindow
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
 local WIDTH, HEIGHT, LEFT = 620, 520, 16
 local HEIGHT_IMAGES = 570 -- with Include images ticked: room for the two folder paths below the checkbox
+local ROW = 28 -- a checkbox row
+local AUDIO_LINES = 96 -- the file list's box
+local BOTTOM = 40 -- the frame below the page's last row: the page starts 32 down, and a margin
 local INNER = WIDTH - 2 * LEFT
 local ARM_SECONDS = 5 -- Clear all needs a second click within this long, as the collector's Clear does
 
@@ -27,15 +32,47 @@ local function say(key, ...)
   if key then W.setPair(f.message, Text.get(key, ...)) else W.setPair(f.message, "", "") end
 end
 
+local SV = WFJ.StudyVoice
+
+local function at(frame, y, x)
+  frame:ClearAllPoints()
+  frame:SetPoint("TOPLEFT", x or LEFT, y)
+end
+
+-- Include audio sits under the images rows when they show; ticked, its hint, Anki's folder and the file list
+-- under it. `found`: the entries' files (StudyVoice.findAll), when Include audio is ticked. → the frame's height
+local function layAudio(images, offered, found)
+  local f = WordsWindow.frame
+  local base = images and HEIGHT_IMAGES or HEIGHT
+  for _, w in ipairs({ f.audio, f.audio.label.en, f.audio.label.ja }) do show(w, offered) end
+  for _, w in ipairs(f.audioRows) do show(w, found ~= nil) end
+  if not offered then return base end
+  local y = images and -490 or -374
+  at(f.audio, y + 5)
+  at(f.audio.label.en, y, LEFT + 30)
+  if not found then return base end
+  at(f.audioHint.en, y - ROW - 4)
+  at(f.ankiFolder, y - ROW - 96, LEFT + 6) -- InputBoxTemplate's left cap sits outside the frame
+  at(f.audioLines.frame, y - ROW - 124)
+  W.setBox(f.ankiFolder, WFJ.Compat.call("IsMacClient") == true and WordsWindow.ANKI_MAC or WordsWindow.ANKI_WIN)
+  local lines = SV.fileList(WFJ.Words.entries(), found)
+  W.setPair(f.audioHint, Text.get("words.audioHint", #lines))
+  f.audioLines:setText(#lines > 0 and table.concat(lines, "\n") or W.pick(Text.get("words.audioNone")))
+  return math.max(base, -(y - ROW - 124 - AUDIO_LINES) + BOTTOM)
+end
+
 local function fill()
   local f = WordsWindow.frame
   local n = WFJ.Words.count()
   if n == 0 then W.setPair(f.summary, Text.withSaveClick("words.empty"))
   else W.setPair(f.summary, Text.get("words.summary", n)) end
   local images = f.images:GetChecked() and true or false
-  f.text:setText(WFJ.Words.export({ images = images }, date()))
+  local offered = WFJ.Voice.hasPack()
+  local found = offered and f.audio:GetChecked() and SV.findAll(WFJ.Words.entries()) or nil
+  local audio = found and function(e) return SV.cell(found[e]) end or nil
+  f.text:setText(WFJ.Words.export({ images = images, audio = audio }, date()))
   for _, w in ipairs(f.imageRows) do show(w, images) end
-  f:SetHeight(images and HEIGHT_IMAGES or HEIGHT)
+  f:SetHeight(layAudio(images, offered, found))
   -- new text drops the selection; the box keeps its focus, so select it again for Cmd+C
   local box = f.text.box
   if box.HasFocus and box:HasFocus() then box:HighlightText() end
@@ -100,6 +137,15 @@ local function build()
   f.ankiWin = W.copyBox(p, LEFT, -460, INNER - 12, WordsWindow.ANKI_WIN)
   -- shown only with Include images ticked
   f.imageRows = { f.shotsLabel.en, f.shotsLabel.ja, f.shotsPath, f.ankiLabel.en, f.ankiLabel.ja, f.ankiMac, f.ankiWin }
+  en, ja = Text.get("words.audio")
+  -- the audio rows are placed by layAudio, under whatever shows above them
+  f.audio = W.checkbox(p, en, ja, LEFT, 0, INNER, function() fill() end)
+  f.audioHint = W.label(p, "", "", LEFT, 0, INNER)
+  W.setPair(f.audioHint, Text.get("words.audioHint"))
+  f.ankiFolder = W.copyBox(p, LEFT, 0, INNER - 12, WordsWindow.ANKI_MAC)
+  f.audioLines = W.scrollText(p, LEFT, 0, INNER, AUDIO_LINES)
+  -- shown only with Include audio ticked
+  f.audioRows = { f.audioHint.en, f.audioHint.ja, f.ankiFolder, f.audioLines }
   f.message = W.label(p, "", "", LEFT + 460, -316, INNER - 460)
   f.message.en:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   WordsWindow.frame = f

@@ -379,7 +379,6 @@ Other's size predates the error lines in the NPC voices (about 2,700 short files
 ## Open work
 
 - Not voiced: quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者), the trainer window's text.
-- Not built: playing a saved word's sentence on the study card, and a sound column in the Anki export. Both can use the sentence files.
 
 ## Related
 

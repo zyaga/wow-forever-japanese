@@ -264,6 +264,10 @@ Settings.define{ id = "voice.books", kind = "boolean", default = true, hidden = 
 Settings.define{ id = "voice.errors", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Your character's error lines (\"out of range\")", ja = "自分のキャラクターのエラー音声（「遠すぎる」など）",
   apply = voiceChanged }
+-- the study card's sentence in its NPC's voice, played as the answer shows (UI/StudyVoice); its button plays it
+-- whatever this says
+Settings.define{ id = "voice.study", kind = "boolean", default = true, hidden = voiceHidden, apply = voiceChanged,
+  label = "Study card (as the answer shows)", ja = "学習カード（答えの表示時）" }
 -- First time only (Core/Voice): a line already heard is not read aloud again when its window shows; its play button
 -- still reads it. Greetings repeat at every vendor and trainer visit, so they are heard once by default; quest lines
 -- play every time unless the player asks otherwise.
@@ -300,7 +304,6 @@ panelSetting("voice.panel.head", true, "Show the speaker's head", "話し手の�
 panelSetting("voice.panel.hoverButtons", true, "Show the controls only while the mouse is on the panel",
   "マウスを乗せたときだけ操作ボタンを表示")
 panelSetting("voice.panel.fade", true, "Fade out after the last line", "最後の文のあと消える")
-panelSetting("voice.panel.combatDim", true, "Dim the panel in combat", "戦闘中はパネルを薄くする")
 panelSetting("voice.panel.lock", false, "Lock the panel where it is", "パネルの位置を固定")
 
 -- The word list (Core/Words, ADR-069). The save click is read when the mouse button is released over a highlighted

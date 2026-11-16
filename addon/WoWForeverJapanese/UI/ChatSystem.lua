@@ -14,12 +14,15 @@
 --   already read the English: no key has to be held back.
 -- The line is then rewritten in that frame's history with TransformMessages, a secure-elevation wrapper whose addon
 -- callbacks run tainted (blizzard_sharedxml/scrollingmessageframe.lua:95–107, 795–824; Blizzard does the same,
--- itemrefhandlersshared.lua:217). Only a line of a PLAIN_TYPES chat type id is considered, never a secret one (chat
--- messaging lockdown makes CHAT_MSG_SYSTEM text secret, chatinfodocumentation.lua:2455); it takes an exact dictionary
+-- itemrefhandlersshared.lua:217). Only a line of a PLAIN_TYPES chat type id (or one holding the death recap link)
+-- is considered, never a secret one (chat messaging lockdown makes CHAT_MSG_SYSTEM text secret,
+-- chatinfodocumentation.lua:2455); it takes an exact dictionary
 -- English (one English is one Japanese; also the non-error lines Blizzard's Lua prints, e.g. the guild-rename
 -- refusal) or a chat key's template, matched by key only: a listed error key with text of its own (UI/Errors' wrapper
 -- set), a key of UIStrings.CHAT_FAMILIES, or EXTRA_TEMPLATES; never any other template. A stale row or a failed fill
--- leaves the English.
+-- leaves the English. A typed line no interface string answers may be an NPC line's text the server sent as system
+-- chat: UI/Speech's translateLine looks it up, and on a battleground announcement (BG_SYSTEM_*) also takes the player
+-- the line names. A line holding the death recap link has its label translated under any chat type, or none.
 -- Alt / the switch: the history is rewritten once, when the line arrives, and never again; a
 -- rewrite repackages the entry with a new timestamp (PackageEntry, scrollingmessageframe.lua:737–745), which would
 -- bring every faded line back. Holding the modifier, or switching the addon / its UI area off, instead puts the
@@ -67,6 +70,11 @@ ChatSystem.PLAIN_TYPES = { "SYSTEM", "SKILL", "CURRENCY", "MONEY", "OPENING", "T
   "TARGETICONS", "BN_WHISPER_PLAYER_OFFLINE", "COLLECTED_APPEARANCE", "LOOT", "COMBAT_XP_GAIN", "COMBAT_HONOR_GAIN",
   "COMBAT_FACTION_CHANGE", "COMBAT_MISC_INFO", "BG_SYSTEM_NEUTRAL", "BG_SYSTEM_ALLIANCE", "BG_SYSTEM_HORDE",
   "ACHIEVEMENT", "GUILD_ACHIEVEMENT" }
+-- The plain types whose lines may be an NPC line's text the server sent as system chat, and those of them (the
+-- battleground announcements) that may name any player in the match.
+ChatSystem.NPC_TEXT_TYPES = { SYSTEM = true, BG_SYSTEM_NEUTRAL = true, BG_SYSTEM_ALLIANCE = true,
+  BG_SYSTEM_HORDE = true }
+ChatSystem.NAMING_TYPES = { BG_SYSTEM_NEUTRAL = true, BG_SYSTEM_ALLIANCE = true, BG_SYSTEM_HORDE = true }
 -- System chat lines outside the UIStrings.CHAT_FAMILIES a SYSTEM line may be (Lua-built: chatframeutil.lua:251–263,
 -- the GMOTD, the community channel notices); key-only through UIStrings.ONLY.
 -- The voice channel's announce line (channelframe.lua:816–828, DisplaySystemMessageInPrimary): the
@@ -77,7 +85,7 @@ ChatSystem.EXTRA_TEMPLATES = { "GUILD_MOTD_TEMPLATE", "TIME_PLAYED_TOTAL", "TIME
   "COMMUNITIES_CHANNEL_ADDED_TO_CHAT_WINDOW", "COMMUNITIES_CHANNEL_REMOVED_FROM_CHAT_WINDOW",
   "VOICE_CHAT_CHANNEL_ANNOUNCE", "VOICE_CHAT_SERVICE_SWITCHING" }
 
--- → the set of plain chat type ids | nil (ChatTypeInfo[type].id is set at load, chattypeinfocolors.lua:12, 21)
+-- → { [plain chat type id] = type name } | nil (ChatTypeInfo[type].id is set at load, chattypeinfocolors.lua:12, 21)
 local plainIds
 local function plainTypeIds()
   if plainIds then return plainIds end
@@ -86,7 +94,7 @@ local function plainTypeIds()
   plainIds = {}
   for _, name in ipairs(ChatSystem.PLAIN_TYPES) do
     local t = info[name]
-    if type(t) == "table" and t.id ~= nil then plainIds[t.id] = true end
+    if type(t) == "table" and t.id ~= nil then plainIds[t.id] = name end
   end
   return plainIds
 end
@@ -201,26 +209,25 @@ end
 -- The death recap link the client posts in chat: DEATH_RECAP_LINK, "|cff71d5ff|Hdeath:%i|h[You died.]|h"; its label,
 -- written there literally, is DEATH_RECAP_TEXT's English [verified: Forever GlobalStrings 1.60.1.70170]. Only the
 -- label inside a `death:` link changes; the link, its id and its colour stay exactly as the client wrote them, and
--- only while the client's own DEATH_RECAP_TEXT is the English the shipped row was checked against. → line | nil
+-- only while the client's own DEATH_RECAP_TEXT is the English the shipped row was checked against.
+-- → line | nil, why ("no row", "client English" or "link shape")
 function ChatSystem.deathLink(line)
   local index = WFJ.UIIndex
   local row = index and index.rows and index.rows.DEATH_RECAP_TEXT
-  if type(line) ~= "string" or type(row) ~= "table" or row[3] ~= "." or type(index.hash) ~= "function" then
-    return nil
-  end
+  if type(line) ~= "string" then return nil, "link shape" end
+  if type(row) ~= "table" or row[3] ~= "." or type(index.hash) ~= "function" then return nil, "no row" end
   local en = Compat.resolve("DEATH_RECAP_TEXT")
-  if type(en) ~= "string" or en == "" or index.hash(en) ~= row[2] then return nil end
+  if type(en) ~= "string" or en == "" or index.hash(en) ~= row[2] then return nil, "client English" end
   local label = ("|h[" .. en .. "]|h"):gsub("%p", "%%%0")
   local out, n = line:gsub("(|Hdeath:%d+)" .. label, function(link) return link .. "|h[" .. row[1] .. "]|h" end)
-  return n > 0 and out or nil
+  if n == 0 then return nil, "link shape" end
+  return out
 end
 
 -- `faction` (optional): the line is a reputation line, which may also be a FriendshipGain row.
 function ChatSystem.translate(en, exactOnly, faction)
   local index = WFJ.UIIndex
   if not index or type(en) ~= "string" or en == "" then return nil end
-  local death = ChatSystem.deathLink(en)
-  if death then return death end
   local key, args = index:exactKey(en), nil
   if not key and not exactOnly then
     key, args = index:matchOnly(en, faction and factionKeys(index) or chatKeys(index))
@@ -413,13 +420,52 @@ local function onEmoteLine(frame, message, typeId, eventArgs)
   return 1
 end
 
+-- A plain line's English replaced by `ja` in the frame's history, once the pair is remembered. No line id on a plain
+-- line: an identical English still in the history (it arrived while off) is rewritten too. → 1 | 0
+local function rewrite(frame, message, typeId, ja)
+  if not remember(ja, message) then return 0 end
+  frame:TransformMessages(function(text, _, _, _, lineType)
+    return lineType == typeId and not secret(text) and text == message
+  end, function(_, ...)
+    return ja, ...
+  end)
+  return 1
+end
+
+-- The problem log names a chat type in the message, so each type gets its own entry (repeats only count).
+local function logLine(what, typeId)
+  if WFJ.Diag then WFJ.Diag.log(SURFACE, what .. " (type " .. tostring(typeId) .. ")", { chatType = typeId }) end
+end
+
+-- Whether the line holds the client's death recap link: a link a player typed arrives with its bars doubled.
+local function holdsDeathLink(message)
+  local at = message:find("|Hdeath:", 1, true)
+  return at ~= nil and (at == 1 or message:byte(at - 1) ~= 124)
+end
+
+-- A line holding the death recap link, under whatever chat type the client posts it (or none): only its label
+-- changes (ChatSystem.deathLink). One that stays English says why in the problem log, with its chat type and never
+-- its text, and goes on to its chat type's own handling. → 1 | nil
+local function onDeathLine(frame, message, typeId)
+  local ja, why = ChatSystem.deathLink(message)
+  if ja and rewrite(frame, message, typeId, ja) == 1 then return 1 end
+  logLine("death link stays English: " .. (why or "remember refused"), typeId)
+  return nil
+end
+
 -- hooksecurefunc target (a chat frame's AddMessage). → 1 | 0
 function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, eventArgs)
   local ids = plainTypeIds()
-  if not ids or type(frame) ~= "table" or type(message) ~= "string" or secret(message)
-      or type(frame.TransformMessages) ~= "function" then
+  if not ids or type(frame) ~= "table" or type(message) ~= "string" or type(frame.TransformMessages) ~= "function" then
     return 0
   end
+  -- chat messaging lockdown: the line cannot be read, so whether it held a death link is not known; one entry per
+  -- chat type tells a report that lockdown was in play
+  if secret(message) then
+    logLine("secret line", typeId)
+    return 0
+  end
+  if on() and holdsDeathLink(message) and onDeathLine(frame, message, typeId) == 1 then return 1 end
   -- a line with no chat type (DEFAULT_CHAT_FRAME:AddMessage(text, r, g, b): Blizzard's slash-command usage lines,
   -- print(), another addon's too) takes an exact dictionary English only, as the errors frame's Lua lines do
   local untyped = typeId == nil
@@ -427,14 +473,14 @@ function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, event
   if not untyped and not ids[typeId] then return onPlayerLine(frame, message, typeId, eventArgs) end
   if not on() then return 0 end
   local ja = ChatSystem.translate(message, untyped, not untyped and typeId == factionTypeId())
-  if not ja or not remember(ja, message) then return 0 end
-  -- no line id on a plain line: an identical English still in the history (it arrived while off) is rewritten too
-  frame:TransformMessages(function(text, _, _, _, lineType)
-    return lineType == typeId and not secret(text) and text == message
-  end, function(_, ...)
-    return ja, ...
-  end)
-  return 1
+  -- no interface string: the line may be an NPC line's text the server sent as system chat (a battleground
+  -- announcement). Only the types that carry such text pay for the lookup (loot, money and XP lines never do).
+  local typeName = not untyped and ids[typeId] or nil
+  if not ja and ChatSystem.NPC_TEXT_TYPES[typeName] and WFJ.Speech then -- Speech loads after this file
+    ja = WFJ.Speech.translateLine(message, ChatSystem.NAMING_TYPES[typeName])
+  end
+  if not ja then return 0 end
+  return rewrite(frame, message, typeId, ja)
 end
 
 -- The bundled face on one chat line, at the line's size: smaller when the Japanese would not fit the height the

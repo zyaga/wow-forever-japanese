@@ -80,16 +80,19 @@ describe("Words", function()
       assert.are.equal("二行目の生き物?", (W.sentence(text2, f2, f2 + #"生き物" - 1)))
     end)
 
-    it("caps a long sentence at 200 bytes around the word without splitting a character", function()
-      local text = ("あ"):rep(150) .. "生き物" .. ("い"):rep(150)
-      local f = text:find("生き物", 1, true)
-      local s, wf, wl = W.sentence(text, f, f + #"生き物" - 1)
-      assert.is_true(#s <= 200)
-      assert.are.equal("生き物", s:sub(wf, wl))
-      -- every byte run is whole characters: re-reading it as UTF-8 leaves no stray continuation byte at either end
-      local c1, cn = s:byte(1), s:byte(#s - 2)
-      assert.is_true(c1 >= 0xC0)
-      assert.is_true(cn >= 0xC0)
+    it("keeps the whole sentence however long it is", function()
+      local quest = "今、それをRazor Hillに持って帰らなくちゃいけなくなったんだけど、道中の獣どもが怖いのよ…"
+      local text = "でも、あの人たちは少しの食料も必要じゃなかったんだ!\n\n" .. quest .. "\n\nおいらの代わりに。"
+      local f = text:find("持って帰らなくちゃいけなくなったんだけど", 1, true)
+      local s, wf, wl = W.sentence(text, f, f + #"持って帰らなくちゃいけなくなったんだけど" - 1)
+      assert.are.equal(quest, s)
+      assert.are.equal("持って帰らなくちゃいけなくなったんだけど", s:sub(wf, wl))
+      -- a paragraph with no sentence end is kept whole too, up to its line breaks
+      local long = ("あ"):rep(150) .. "生き物" .. ("い"):rep(150)
+      local f2 = long:find("生き物", 1, true)
+      local s2, wf2, wl2 = W.sentence("前。\n" .. long .. "\n後。", f2 + #"前。\n", f2 + #"前。\n" + #"生き物" - 1)
+      assert.are.equal(long, s2)
+      assert.are.equal("生き物", s2:sub(wf2, wl2))
     end)
   end)
 
@@ -271,6 +274,22 @@ describe("Words", function()
       assert.is_truthy(out:find('\t<img src="WoWScrnShot_092126_165320.jpg">\n', 1, true))
       assert.is_truthy(out:find("\t$"))
       assert.is_nil(W.export({}, fmt):find("<img", 1, true))
+    end)
+
+    it("adds the audio column only when given its cell, after the image column; without it nothing changes", function()
+      W.add(input({}), T)
+      W.add(input({ word = "数", lemma = "数" }), T)
+      local before = W.export({ images = true }, fmt)
+      local cells = {}
+      local out = W.export({ images = true, audio = function(e)
+        cells[#cells + 1] = e.word
+        return e.word == "数" and "[sound:wfj-a.mp3]" or ""
+      end }, fmt)
+      assert.is_truthy(out:find("\tImage\tAudio\n", 1, true))
+      assert.are.equal("\t[sound:wfj-a.mp3]", out:sub(-#"\t[sound:wfj-a.mp3]"))
+      assert.are.same({ "生き物", "数" }, cells)
+      assert.are.equal(before, W.export({ images = true }, fmt))
+      assert.is_nil(before:find("Audio", 1, true))
     end)
 
     it("names a screenshot the way the client does, with the format's extension", function()

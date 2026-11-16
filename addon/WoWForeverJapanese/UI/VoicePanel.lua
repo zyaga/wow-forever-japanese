@@ -19,11 +19,11 @@ local LOOKS = WFJ.VoicePanelLooks
 local Head = WFJ.VoicePanelHead
 local Text = WFJ.VoicePanelText
 
-local FADE_DELAY = 3 -- seconds after the last line (or a pause) before the panel fades
+local FADE_DELAY = 3 -- seconds after the last line before the panel fades
 local FADE_TIME = 0.6
-local COMBAT_ALPHA = 0.4
 local TICK = 0.1
 local BUTTON = 28 -- the icons have wide transparent margins: smaller reads as a dot (the window button's size)
+local ARROW = 20 -- the sentence arrows' gold arrow, drawn at this size in the middle of a button of the row's size
 local CLOSE = 26 -- the client's close button at this size matches the row
 local QUEUE_ROW = 15 -- a waiting-list row's height
 local QUEUE_MAX = 6 -- rows the waiting list shows; the rest are counted in its header
@@ -60,9 +60,7 @@ local pageShown -- the page on screen
 local english = false -- the panel shows the line's English (the reveal key is down)
 local fadeAt, fadeFrom -- the idle fade: when it starts, and when it started
 local fadeCount = 0 -- the timing trace numbers each fade it logs
-local fadedPaused -- a paused line the panel faded on: it stays away until something plays or the queue changes
 local redraw = false -- a look changed: lay the displayed line out again
-local inCombat = false
 
 local function now()
   local t = Compat.resolve("GetTime")
@@ -125,10 +123,22 @@ end
 -- timing
 local function lineClock()
   if not (displayed and WFJ.VoicePlayer.playing() == displayed.key and Q.current() == displayed) then return nil end
-  local t, marks = WFJ.VoicePlayer.timing()
+  local t, marks, floor = WFJ.VoicePlayer.timing()
   local words = t and timedWords(displayed, marks)
   if not words then return nil end
-  return words, t
+  return words, t, floor
+end
+
+-- The part spoken now, or, when the line was played from a chosen sentence and its first word is still ahead, that
+-- first word: the sentence chosen shows at once, never the one before it.
+local function spokenNow(words, t, floor)
+  local w = Text.spokenAt(words, t)
+  if floor and (not w or w.t < floor) then
+    for _, p in ipairs(words) do
+      if p.t >= floor then return p end
+    end
+  end
+  return w
 end
 
 local markPart -- the part the mark was last drawn for: a frame where it has not changed draws nothing
@@ -140,8 +150,9 @@ local function hideMark()
 end
 
 local function drawMark()
-  local words, t = lineClock()
+  local words, t, floor = lineClock()
   local w = words and not english and Text.spokenAt(words, t)
+  if w and floor and w.t < floor then w = nil end -- before the chosen sentence's first word: nothing is marked yet
   if not w then return hideMark() end
   if w == markPart and markOn and markOn:match("^(%d+):") == tostring(pageShown) then return end
   markPart = w
@@ -184,12 +195,14 @@ end
 
 -- the page the audio is on now: the page of the word spoken last when the line has times, else the estimate
 local function audioPage(st)
-  local words, t = lineClock()
+  local words, t, floor = lineClock()
   if words then
-    local w = Text.spokenAt(words, t)
+    local w = spokenNow(words, t, floor)
     if not w then return 1 end
     return pageOf(w.first) or pageShown or 1 -- a part on no page keeps the page shown
   end
+  -- a line with its timing never guesses: until the timing reads, the page stays where it is
+  if st.item and st.item.sentences and st.item.sentences.marks then return nil end
   if not (st.playing and st.startedAt and st.seconds and st.seconds > 0) then return nil end
   local share = (now() - st.startedAt) / st.seconds
   local want = 1
@@ -319,11 +332,24 @@ local function hideTip()
   if tipFrame then tipFrame:Hide() end
 end
 
-local function control(texture, tooltip, onClick)
+local function control(texture, tooltip, onClick, size)
   local b = CreateFrame("Button", nil, f)
   b:SetSize(BUTTON, BUTTON)
-  b:SetNormalTexture(texture)
-  b:SetHighlightTexture(ICON.hilight, "ADD")
+  if size then -- a small icon stays its own size in the middle of the button, not stretched to it
+    b.icon = b:CreateTexture(nil, "ARTWORK")
+    b.icon:SetTexture(texture)
+    b.icon:SetSize(size, size)
+    b.icon:SetPoint("CENTER")
+    -- the mouse brightens the arrow itself: the square highlight around a small icon reads as a box
+    local glow = b:CreateTexture(nil, "HIGHLIGHT")
+    glow:SetTexture(texture)
+    glow:SetBlendMode("ADD")
+    glow:SetSize(size, size)
+    glow:SetPoint("CENTER")
+  else
+    b:SetNormalTexture(texture)
+    b:SetHighlightTexture(ICON.hilight, "ADD")
+  end
   b:SetScript("OnClick", onClick)
   b:SetScript("OnEnter", function(self) tip(self, type(tooltip) == "function" and tooltip() or tooltip) end)
   b:SetScript("OnLeave", hideTip)
@@ -382,10 +408,6 @@ end
 
 -- ── Show, hide, fade ─────────────────────────────────────────────────────
 
-local function baseAlpha()
-  return (Q.opt.combat and inCombat) and COMBAT_ALPHA or 1
-end
-
 -- the window buttons follow the panel's visibility (UI/VoicePlayer shows them only while it is away)
 local function buttonsFollow()
   local P = WFJ.VoicePlayer
@@ -404,6 +426,24 @@ local function hidePanel()
   if was then buttonsFollow() end
 end
 
+-- The sentence arrows, for a line in sentences: back only after its first sentence, on only before its last (the
+-- voice moves on between queue changes, so each tick asks again)
+local function showArrows(st)
+  local shown = st.item or st.last
+  local n = shown and shown.sentences and #shown.sentences or 0
+  local at = st.sentence
+  local back, on = n > 1 and at ~= nil and at > 1, n > 1 and at ~= nil and at < n
+  local steps = n > 1
+  if back == f.back:IsShown() and on == f.on:IsShown() and steps == f.stepsRoom then return end
+  f.back:SetShown(back)
+  f.on:SetShown(on)
+  -- a line in sentences keeps the next arrow's room even while it is hidden, so pause and the arrows never move;
+  -- a line with no sentences has pause straight beside play again
+  f.stepsRoom = steps
+  f.pause:ClearAllPoints()
+  f.pause:SetPoint("RIGHT", steps and f.on or f.replay, "LEFT", -2, 0)
+end
+
 local function onTick(self, elapsed)
   if displayed then pcall(drawMark) end
   self.since = (self.since or 0) + elapsed
@@ -411,13 +451,13 @@ local function onTick(self, elapsed)
   self.since = 0
   applyControls()
   local st = WFJ.VoicePlayer.state()
+  showArrows(st)
   if revealed() ~= english then -- the reveal key went down or up: the panel and the whole text follow
     showPage(audioPage(st) or pageShown or 1)
     Text.refreshWhole(displayed, look(), english)
   end
   local want = not english and #pages > 1 and audioPage(st)
   if want and want ~= pageShown then showPage(want) end
-  local alpha = baseAlpha()
   -- the mouse on the panel or its whole-text window open holds it: the fade waits until the player has left both
   -- for the delay, and coming back mid-fade brings it back whole
   if fadeAt and (self:IsMouseOver() or Text.wholeShown()) then
@@ -426,13 +466,9 @@ local function onTick(self, elapsed)
   if fadeAt and now() >= fadeAt then
     fadeFrom = fadeFrom or now()
     local left = 1 - (now() - fadeFrom) / FADE_TIME
-    if left <= 0 then
-      fadedPaused = (st.item and not st.playing) and st.item or nil
-      return hidePanel()
-    end
-    alpha = alpha * left
+    if left <= 0 then return hidePanel() end
+    self:SetAlpha(left)
   end
-  self:SetAlpha(alpha)
 end
 
 -- Another addon's window that fades the whole interface (UIParent) out while it is open (Dialogue UI) has the panel
@@ -479,7 +515,6 @@ function Panel.update()
   local st = WFJ.VoicePlayer.state()
   local item = st.item or (displayed and st.last == displayed and displayed) or nil
   if hidden() or not item then return hidePanel() end
-  if not displayed and st.item and st.item == fadedPaused and not st.playing then return end -- faded while paused
   if item ~= displayed or redraw then
     redraw = false
     displayed = item
@@ -490,30 +525,23 @@ function Panel.update()
     showPage(1)
     Text.refreshWhole(item, look(), revealed())
   end
-  if st.playing then
-    fadeAt, fadeFrom, fadedPaused = nil, nil, nil
+  if st.item then
+    -- playing or paused: never faded (a paused line is there to be read)
+    fadeAt, fadeFrom = nil, nil
   elseif not fadeAt and Q.opt.idle == "fade" then
-    -- nothing playing (the line ended, or is paused) fades like the end of a line
+    -- the line ended and nothing waits: the panel fades
     fadeAt = now() + FADE_DELAY
     if WFJ.Diag then
       fadeCount = fadeCount + 1
-      pcall(WFJ.Diag.log, "voicetime", ("fade armed %s #%d"):format(tostring(item.key), fadeCount),
-        { paused = st.paused == true, queued = st.item ~= nil, at = now() })
+      pcall(WFJ.Diag.log, "voicetime", ("fade armed %s #%d"):format(tostring(item.key), fadeCount), { at = now() })
     end
-    showPage(st.item and 1 or #pages) -- paused: a resume starts the line again; ended: its last sentence
-  elseif st.item then
-    showPage(1)
+    showPage(#pages) -- ended: its last sentence (paused, the page stays where the voice was)
   end
   Head.setTalking(f.head, st.playing)
   updateQueue(st)
   f.pause:SetNormalTexture((st.paused or (st.item ~= nil and not st.playing)) and ICON.play or ICON.pause)
-  local shown = st.item or st.last -- the sentence arrows only for a line in sentences
-  local steps = shown and shown.sentences and #shown.sentences > 1 and true or false
-  f.back:SetShown(steps)
-  f.on:SetShown(steps)
-  f.pause:ClearAllPoints() -- next to the right arrow, or straight beside play again when the arrows are away
-  f.pause:SetPoint("RIGHT", steps and f.on or f.replay, "LEFT", -2, 0)
-  if not fadeFrom then f:SetAlpha(baseAlpha()) end -- mid-fade, the tick owns the alpha
+  showArrows(st)
+  if not fadeFrom then f:SetAlpha(1) end -- mid-fade, the tick owns the alpha
   applyControls()
   local was = f:IsShown()
   f:Show()
@@ -603,26 +631,16 @@ local function build()
   f.textButton:SetPoint("RIGHT", f.close, "LEFT", -2, 0)
   f.replay = control(ICON.replay, function() return word("replay") end, function() P.replay() end)
   f.replay:SetPoint("RIGHT", f.textButton, "LEFT", -2, 0)
-  f.on = control(ICON.on, function() return word("on") end, function() P.step(1) end)
+  f.on = control(ICON.on, function() return word("on") end, function() P.step(1) end, ARROW)
   f.on:SetPoint("RIGHT", f.replay, "LEFT", -2, 0)
   f.pause = control(ICON.pause, function()
     local st = P.state()
     return word((st.paused or not st.playing) and "resume" or "pause")
   end, function() P.togglePause() end)
   f.pause:SetPoint("RIGHT", f.on, "LEFT", -2, 0)
-  f.back = control(ICON.back, function() return word("back") end, function() P.step(-1) end)
+  f.back = control(ICON.back, function() return word("back") end, function() P.step(-1) end, ARROW)
   f.back:SetPoint("RIGHT", f.pause, "LEFT", -2, 0)
   f.controls = { f.back, f.pause, f.on, f.replay, f.textButton, f.close }
-
-  local lockdown = Compat.resolve("InCombatLockdown") -- built mid-combat: dimmed from the start
-  inCombat = type(lockdown) == "function" and lockdown() and true or false
-  local ev = CreateFrame("Frame", nil, f)
-  ev:RegisterEvent("PLAYER_REGEN_DISABLED")
-  ev:RegisterEvent("PLAYER_REGEN_ENABLED")
-  ev:SetScript("OnEvent", WFJ.Perf.wrap("idle.voicepanel.event", function(_, event)
-    inCombat = event == "PLAYER_REGEN_DISABLED"
-    if f:IsShown() and not fadeFrom then f:SetAlpha(baseAlpha()) end
-  end))
 
   applyLook()
   applyLock()

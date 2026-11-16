@@ -51,12 +51,11 @@ Options.PAGES = {
       rows = { "voice.enabled", "voice.muteDialog", "voice.button", "voice.errorVoice" } },
     { title = "section.voiceKinds", columns = 2,
       rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors",
-        "voice.questOnce", "voice.greetingOnce" } },
+        "voice.study", "voice.questOnce", "voice.greetingOnce" } },
     { title = "section.voicePanel",
       rows = { "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head" } },
     { title = "section.voicePanelMore", -- one column: the labels are long, and two columns wrapped into each other
-      rows = { "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim",
-        "voice.panel.lock" } },
+      rows = { "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.lock" } },
   } },
   { id = "collector", title = "page.collector", sections = {
     { title = "section.collector",

@@ -119,6 +119,8 @@ for Anki cards. Going back to an older version of the addon loses the list, so c
 **Study them in game.** A small tab at the right edge of the screen says how many saved words are due. Click it for one
 card at a time: the word in the sentence it came from, then its reading and meaning, and **Again** or **Good** to say
 how it went; the same FSRS schedule Anki uses decides when the word comes back, and when nothing is due you are done.
+With the voice installed, the answer also speaks the saved sentence in its NPC's voice, and the word list can export
+those recordings for Anki.
 The card collapses to the tab, moves anywhere, hides in combat, and comes back with `/wfj study`, from the minimap
 button's menu or from the **Words** settings page, where you also choose how many new words to start per day.
 
@@ -360,7 +362,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 |---|---|
 | ![コピー用のテキストで保存した単語が表示された単語帳ウィンドウ](docs/images/word-list.jpg) | ![保存した単語から作った Anki のカード。ふりがな付きの単語と文、意味、ゲーム内のスクリーンショット](docs/images/anki-card.jpg) |
 
-**ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
+**ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。音声を入れていれば、答えを見たときに保存した文がNPCの声で読み上げられ、単語帳からその録音を Anki 用に書き出すこともできます。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
 
 **英語を学ぶ場合。** 設定ページの **ゲームの文字**（Game text）を **English first** にするか、ようこそ画面で **英語を学ぶ** を選びます。ゲームは本来の英語のまま表示され、Alt を押している間だけ日本語が表示されます。同じキーで、向きが逆になります。クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで英語の単語にマウスを合わせると、発音、その行の翻訳で使われている日本語の単語と読み方、その辞書形が表示されます。名前や *the*、*is*、*of* のような短い語には表示されません。Ctrl+クリックで英語の単語を英語の文と日本語の文と一緒に保存でき、学習カードは英語から出題します。日本語音声は、キーを押している間だけ再生されます。
 
