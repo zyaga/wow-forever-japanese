@@ -187,7 +187,7 @@ local function choiceRow(page, d, x, y)
   end)
   Options.controls[#Options.controls + 1] = ctl
   if not d.choiceTextJa then return 40 end
-  ctl.caption = W.label(page, "", "", x + 310, y - 28, 300)
+  ctl.caption = W.label(page, "", "", x + 310, y - 28, LEFT + WIDTH - (x + 310)) -- to the page's right edge
   return 62
 end
 
@@ -760,6 +760,8 @@ function Options.refresh()
       if c.dropdown.GenerateMenu then c.dropdown:GenerateMenu() end
       if c.caption then
         local d, v = c.definition, S.get(c.id)
+        -- a saved choice the menu no longer offers is not what plays: the caption names the default instead
+        if d.choiceHidden and d.choiceHidden(v) then v = d.default end
         W.setPair(c.caption, d.choiceText[v] or v, d.choiceTextJa[v] or v)
       end
     else

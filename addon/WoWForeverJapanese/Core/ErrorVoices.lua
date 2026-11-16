@@ -135,7 +135,6 @@ for id, t in pairs(EV.TEXT) do choiceText[id], choiceTextJa[id] = t.en, t.ja end
 -- Listed only with a voice pack, like the other voice settings; a voice no installed pack carries is not offered.
 WFJ.Settings.define{ id = "voice.errorVoice", kind = "choice", choices = EV.CHOICES, default = EV.AUTO,
   hidden = function() return not (WFJ.Voice and WFJ.Voice.hasPack()) end,
-  apply = function() WFJ.State.fire("voice") end,
   label = "Voice of your character's error lines", ja = "自分のキャラクターのエラー音声の声",
   choiceText = choiceText, choiceTextJa = choiceTextJa, choiceGroups = EV.GROUPS,
   choiceHidden = function(c)

@@ -164,6 +164,12 @@ describe("Settings pages from the registry and PAGES", function()
     S.set("voice.errorVoice", "auto")
     O.refresh()
     assert.are.same({ "Automatic (your character's race and sex)", "自動（キャラクターの種族と性別）" }, ctl.caption.pair)
+    -- a saved voice no installed pack carries plays the character's own: the caption says Automatic, and the
+    -- saved choice is kept for when its pack is back
+    S.set("voice.errorVoice", "qorcmaleguard")
+    O.refresh()
+    assert.are.same({ "Automatic (your character's race and sex)", "自動（キャラクターの種族と性別）" }, ctl.caption.pair)
+    assert.are.equal("qorcmaleguard", S.get("voice.errorVoice"))
   end)
 
   it("the voice panel page: Panel size and Panel style as dropdowns, then its switches", function()
