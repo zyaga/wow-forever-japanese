@@ -359,22 +359,22 @@ When a pack nears the cap (the build marks it past 315 MB), split its band: a ne
 
 ## Numbers
 
-The cloned voices at 64 kbps, as `make voice-pack` printed them: about 2.8 GB in all (about 1.4 GB at 32 kbps). Shipped as sentence files the packs hold about four times as many files, but the pieces add up to the stored files byte for byte, so the sizes below do not change.
+The cloned voices at 64 kbps, as `make voice-pack` printed them: about 2.9 GB in all (about 1.4 GB at 32 kbps). Shipped as sentence files the packs hold about four times as many files, but the pieces add up to the stored files byte for byte, so the sizes below do not change.
 
 | Pack | Size | Room under 420 MB |
 |---|---|---|
-| Levels 1-10 | 243 MB | 177 MB |
-| Levels 1-10 (part 2) | 260 MB | 160 MB |
-| Levels 11-20 | 325 MB | 95 MB |
-| Levels 21-30 | 264 MB | 156 MB |
-| Levels 31-40 | 298 MB | 122 MB |
-| Levels 41-50 | 300 MB | 120 MB |
-| Levels 51-60 | 357 MB | 63 MB |
+| Levels 1-10 | 247 MB | 173 MB |
+| Levels 1-10 (part 2) | 261 MB | 159 MB |
+| Levels 11-20 | 328 MB | 92 MB |
+| Levels 21-30 | 272 MB | 148 MB |
+| Levels 31-40 | 304 MB | 116 MB |
+| Levels 41-50 | 301 MB | 119 MB |
+| Levels 51-60 | 358 MB | 62 MB |
 | Levels 51-60 (part 2) | 236 MB | 184 MB |
-| Levels 51-60 (part 3) | 234 MB | 186 MB |
-| Other | 306 MB | 114 MB |
+| Levels 51-60 (part 3) | 235 MB | 185 MB |
+| Other | 356 MB | 64 MB |
 
-Other's size predates the error lines in the NPC voices (about 2,700 short files, [ADR-093](../adr/093-a-voice-the-player-chooses-for-the-error-lines.md)); `make voice-pack` prints its current size. Levels 11-20 and Levels 51-60 are past the 315 MB mark: when one grows near the cap, split its band (see "Adding a pack"). Every take is levelled to -20 LUFS (one gain measured with ffmpeg's `ebur128`, peaks limited to -2 dBFS); a silent take or one shorter than 400 ms is left as it is. Time and money for a run: "Estimating time and money" above.
+Other holds the error lines in every NPC voice (about 2,700 short files, [ADR-093](../adr/093-a-voice-the-player-chooses-for-the-error-lines.md)). Levels 11-20, Levels 51-60 and Other are past the 315 MB mark: when one grows near the cap, split its band (see "Adding a pack"). Every take is levelled to -20 LUFS (one gain measured with ffmpeg's `ebur128`, peaks limited to -2 dBFS); a silent take or one shorter than 400 ms is left as it is. Time and money for a run: "Estimating time and money" above.
 
 ## Open work
 
