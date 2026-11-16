@@ -6,9 +6,11 @@
 {"id": 12004, "field": "name", "en": "Obsidian Band", "hash": "ef37d3be2ee33498", "src": "db2@1.60.1.70938"}
 {"id": 12005, "field": "name", "en": "Granite Ring", "hash": "a8461a46379ef0d7", "src": "db2@1.60.1.70938"}
 {"id": 12006, "field": "name", "en": "Meadow Ring", "hash": "3d4034d76091b69b", "src": "db2@1.60.1.70938"}
+{"id": 12006, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70862"}
 {"id": 12007, "field": "name", "en": "Prairie Ring", "hash": "9d50773273fc448b", "src": "db2@1.60.1.70938"}
 {"id": 12008, "field": "name", "en": "Savannah Ring", "hash": "aded6c69558fbd07", "src": "db2@1.60.1.70938"}
 {"id": 12009, "field": "name", "en": "Tundra Ring", "hash": "9f9b38c3513b9bd2", "src": "db2@1.60.1.70938"}
+{"id": 12009, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 12010, "field": "name", "en": "Fen Ring", "hash": "43322a9fb1c52404", "src": "db2@1.60.1.70938"}
 {"id": 12011, "field": "name", "en": "Forest Hoop", "hash": "ec0b221b0736b663", "src": "db2@1.60.1.70938"}
 {"id": 12012, "field": "name", "en": "Marsh Ring", "hash": "66faf9d0f612d97a", "src": "db2@1.60.1.70938"}
@@ -19,7 +21,9 @@
 {"id": 12017, "field": "name", "en": "Prismatic Band", "hash": "55d5bfc44727f3ae", "src": "db2@1.60.1.70938"}
 {"id": 12018, "field": "name", "en": "Conservator Helm", "hash": "380e2ea945f3b50b", "src": "db2@1.60.1.70938"}
 {"id": 12019, "field": "name", "en": "Cerulean Talisman", "hash": "09aced4a2f2ffa56", "src": "db2@1.60.1.70938"}
+{"id": 12019, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 12020, "field": "name", "en": "Thallium Choker", "hash": "a5f4036df75ac614", "src": "db2@1.60.1.70938"}
+{"id": 12020, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 12021, "field": "name", "en": "Shieldplate Sabatons", "hash": "34e832530ae9ead1", "src": "db2@1.60.1.70938"}
 {"id": 12022, "field": "name", "en": "Iridium Chain", "hash": "d7bebd65f2e97696", "src": "db2@1.60.1.70938"}
 {"id": 12023, "field": "name", "en": "Tellurium Necklace", "hash": "a026c1f3999e04b7", "src": "db2@1.60.1.70938"}
@@ -28,7 +32,9 @@
 {"id": 12026, "field": "name", "en": "Quicksilver Pendant", "hash": "2bd16a9091faf710", "src": "db2@1.60.1.70938"}
 {"id": 12027, "field": "name", "en": "Vermilion Necklace", "hash": "cd5e97ded368392c", "src": "db2@1.60.1.70938"}
 {"id": 12028, "field": "name", "en": "Basalt Necklace", "hash": "0eb8c1c0ba8cf327", "src": "db2@1.60.1.70938"}
+{"id": 12028, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 12029, "field": "name", "en": "Greenstone Talisman", "hash": "963126cbd1e292a2", "src": "db2@1.60.1.70938"}
+{"id": 12029, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 12030, "field": "name", "en": "Jet Chain", "hash": "13c0425ef2840262", "src": "db2@1.60.1.70938"}
 {"id": 12031, "field": "name", "en": "Lodestone Necklace", "hash": "53f2a0a97e4ef5c2", "src": "db2@1.60.1.70938"}
 {"id": 12032, "field": "name", "en": "Onyx Choker", "hash": "6745523830383850", "src": "db2@1.60.1.70938"}
@@ -47,6 +53,7 @@
 {"id": 12045, "field": "name", "en": "Swamp Pendant", "hash": "1b354d8b476d6319", "src": "db2@1.60.1.70938"}
 {"id": 12046, "field": "name", "en": "Jungle Necklace", "hash": "623a921f082e5b21", "src": "db2@1.60.1.70938"}
 {"id": 12047, "field": "name", "en": "Spectral Necklace", "hash": "6b0483f852fa34d7", "src": "db2@1.60.1.70938"}
+{"id": 12047, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 12048, "field": "name", "en": "Prismatic Pendant", "hash": "8b4b26fbbfca5c24", "src": "db2@1.60.1.70938"}
 {"id": 12049, "field": "name", "en": "Splintsteel Armor", "hash": "7517f9097570d4f1", "src": "db2@1.60.1.70938"}
 {"id": 12050, "field": "name", "en": "Hazecover Boots", "hash": "1c06129dcf326c31", "src": "db2@1.60.1.70938"}

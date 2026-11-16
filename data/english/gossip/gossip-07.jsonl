@@ -8,6 +8,7 @@
 {"id": "072df3d5ba189d59", "field": "text", "en": "We must not give up!", "hash": "072df3d5ba189d59", "src": "vmangos@13b49dc"}
 {"id": "073525993b8ff144", "field": "text", "en": "Fight!", "hash": "073525993b8ff144", "src": "vmangos@13b49dc"}
 {"id": "073b5ab1ca115af9", "field": "text", "en": "The Stonehearth Graveyard is under attack!  If left unchecked, the Alliance will capture it!", "hash": "073b5ab1ca115af9", "src": "vmangos@13b49dc"}
+{"id": "073bbc09fc12df29", "field": "text", "en": "The sharpest shears and most delicate hands are found at Curls and Furls here in the trade district. Take a gander if you have some spare time and are interested in taking a little off the top.", "hash": "073bbc09fc12df29", "src": "collector@1.60.1.70888", "npcs": [68]}
 {"id": "0740cbda3c68b4d8", "field": "text", "en": "If you're willing to endure tales that will shiver your timbers and sog your skivvies, then get yourself a drink and sit for a spell...", "hash": "0740cbda3c68b4d8", "src": "vmangos@13b49dc"}
 {"id": "0749090f64f1496a", "field": "text", "en": "You can find the gryphon master on the northeast rampart overlooking the Valley of Heroes.", "hash": "0749090f64f1496a", "src": "vmangos@13b49dc"}
 {"id": "07497adafba49341", "field": "text", "en": "Looks dead to me. Not much use to us like this. You'd better go back and tell Krog what happened.", "hash": "07497adafba49341", "src": "vmangos@13b49dc"}

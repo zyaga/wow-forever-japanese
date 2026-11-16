@@ -293,6 +293,7 @@
 {"id": 6319, "field": "name", "en": "Girdle of the Blindwatcher", "hash": "5d8d1a657a57a306", "src": "db2@1.60.1.70938"}
 {"id": 6319, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5}.", "hash": "56868fcba461b542", "src": "db2@1.60.1.70938"}
 {"id": 6320, "field": "name", "en": "Commander's Crest", "hash": "42af1a3d2c857df2", "src": "db2@1.60.1.70938"}
+{"id": 6320, "field": "description", "en": "Equip: Restores 4 Health per 5 sec.", "hash": "6f79689a59272f4b", "src": "collector@1.60.1.70888"}
 {"id": 6321, "field": "name", "en": "Silverlaine's Family Seal", "hash": "48316cbdcfe078c0", "src": "db2@1.60.1.70938"}
 {"id": 6321, "field": "description", "en": "Increases movement speed by $s1% in Tirisfal Glades, Silverpine Forest, and Shadowfang Keep.", "hash": "dd6d5464544a6492", "src": "db2@1.60.1.70938"}
 {"id": 6322, "field": "name", "en": "Monster - Staff, Arugal", "hash": "afbffd10962c572f", "src": "db2@1.60.1.70938"}

@@ -110,6 +110,7 @@
 {"id": 280347, "field": "name", "en": "Shadowgale Squirrel", "hash": "1969d0478c4b19e8", "src": "db2@1.60.1.70938"}
 {"id": 280347, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70938"}
 {"id": 280363, "field": "name", "en": "Nightclaw Mantle", "hash": "1ad5ff9d716c25df", "src": "db2@1.60.1.70938"}
+{"id": 280363, "field": "description", "en": "Use: Add this appearance to your Account collection.", "hash": "e0037bc6426a5db2", "src": "collector@1.60.1.70862"}
 {"id": 280369, "field": "name", "en": "Dragonmaw Armaments", "hash": "920dbe7a12cb6e69", "src": "db2@1.60.1.70938"}
 {"id": 280375, "field": "name", "en": "Worgen Bits", "hash": "22b50d20ea49e8d6", "src": "db2@1.60.1.70938"}
 {"id": 280390, "field": "name", "en": "Carved Stone Trinket", "hash": "248fc16828012787", "src": "db2@1.60.1.70938"}

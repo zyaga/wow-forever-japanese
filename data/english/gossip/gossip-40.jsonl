@@ -8,6 +8,7 @@
 {"id": "401894ac4206848d", "field": "text", "en": "You must be looking for Smith Argus.  He's usually overseeing the forge in Goldshire if you need some training.", "hash": "401894ac4206848d", "src": "vmangos@13b49dc"}
 {"id": "402213ef32732bb4", "field": "text", "en": "%s explodes and releases several Bile Slimes!", "hash": "402213ef32732bb4", "src": "vmangos@13b49dc"}
 {"id": "4022153c3b442371", "field": "text", "en": "Something tells me this $n wants the mysterious fossil too. Help!", "hash": "4022153c3b442371", "src": "vmangos@13b49dc"}
+{"id": "4031b475cbf1fe9e", "field": "text", "en": "How may I help you?", "hash": "4031b475cbf1fe9e", "src": "collector@1.60.1.70888", "npcs": [4048]}
 {"id": "40331f17ae98f7ae", "field": "text", "en": "No, I'm not, but lots of others are looking for love.  You should buy my love tokens, put on some cologne or perfume, and then pass them around!", "hash": "40331f17ae98f7ae", "src": "vmangos@13b49dc"}
 {"id": "4039189e338975dc", "field": "text", "en": "I regret that I must fight this $n.", "hash": "4039189e338975dc", "src": "vmangos@13b49dc"}
 {"id": "4043beab63369b8a", "field": "text", "en": "The Shattered Hand will see the Horde to their former glory, unhindered by the timidness of the Warchief.", "hash": "4043beab63369b8a", "src": "vmangos@13b49dc"}

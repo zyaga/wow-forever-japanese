@@ -14,12 +14,14 @@
 {"id": "ba38ad3a55201654", "field": "text", "en": "This windblossom plant stands out as a beacon of light in the darkness that is Felwood. Plump and juicy berries hang from the plant, ripe for the picking.", "hash": "ba38ad3a55201654", "src": "vmangos@13b49dc"}
 {"id": "ba3e944edf340888", "field": "text", "en": "Polar Gloves.", "hash": "ba3e944edf340888", "src": "vmangos@13b49dc"}
 {"id": "ba49f61b1a16cff1", "field": "text", "en": "We have a lot of supplies, but we still need a lot more in order to send a ground assault into the Field of Strife.", "hash": "ba49f61b1a16cff1", "src": "vmangos@13b49dc"}
+{"id": "ba4e178465a52ad7", "field": "text", "en": "May I have the globe I brought you? I believe it can help me with something relating to the Highborne to the south.", "hash": "ba4e178465a52ad7", "src": "collector@1.60.1.70862", "npcs": [3616]}
 {"id": "ba53f6aec8aeb168", "field": "text", "en": "I already know a lot about style. Now it's just a matter of mastering the techniques for working with leather. Good thing Simon's a real sport about helping me learn them.", "hash": "ba53f6aec8aeb168", "src": "vmangos@13b49dc"}
 {"id": "ba63556b41816bc1", "field": "text", "en": "I have survived the poisons of the Forsaken, $n, and I know now what must be done.", "hash": "ba63556b41816bc1", "src": "vmangos@13b49dc"}
 {"id": "ba69630a3240e9ea", "field": "text", "en": "%s shifts uncomfortably.", "hash": "ba69630a3240e9ea", "src": "vmangos@13b49dc"}
 {"id": "ba71fe0a2a891920", "field": "text", "en": "Where's My Bacon?", "hash": "ba71fe0a2a891920", "src": "vmangos@13b49dc"}
 {"id": "ba7790d67a72d63b", "field": "text", "en": "Be alert!  The orcs and their allies are close!", "hash": "ba7790d67a72d63b", "src": "vmangos@13b49dc"}
 {"id": "ba817b7fa05125b7", "field": "text", "en": "Intruders have assaulted our lair.  Be on your guard!", "hash": "ba817b7fa05125b7", "src": "vmangos@13b49dc"}
+{"id": "ba8bbae2185cd1fe", "field": "text", "en": "Look at that view, would ya? Don't get much better than this.", "hash": "ba8bbae2185cd1fe", "src": "collector@1.60.1.70938", "npcs": [260559]}
 {"id": "ba92ba82440a51db", "field": "text", "en": "Shaman", "hash": "ba92ba82440a51db", "src": "vmangos@13b49dc"}
 {"id": "ba93dd58a412cb14", "field": "text", "en": "There were hundreds imprisoned by his spell. Now only a few remain in their prisons. He would speak to us sometimes.", "hash": "ba93dd58a412cb14", "src": "vmangos@13b49dc"}
 {"id": "ba97186b3b749cca", "field": "text", "en": "All the bottles on this table are potions I brewed today. And they say a watched pot never boils. Ha!", "hash": "ba97186b3b749cca", "src": "vmangos@13b49dc"}

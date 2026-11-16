@@ -43,7 +43,13 @@
 {"id": 2425, "field": "name", "en": "Varimathras", "hash": "325d1afc53f2809b", "src": "collector@1.60.1.70790"}
 {"id": 2430, "field": "name", "en": "Chef Jessen", "hash": "e20359aedc342028", "src": "collector@1.60.1.70888"}
 {"id": 2438, "field": "name", "en": "Bartolo Ginsetti", "hash": "e4aa111aad16ee7c", "src": "collector@1.60.1.70888"}
+{"id": 2439, "field": "name", "en": "Major Samuelson", "hash": "7cebc582cbc3e178", "src": "collector@1.60.1.70888"}
+{"id": 2495, "field": "name", "en": "Drizzlik", "hash": "c8fbbf260a7f768e", "src": "collector@1.60.1.70888"}
+{"id": 2496, "field": "name", "en": "Baron Revilgaz", "hash": "b2ff6aefc955abc9", "src": "collector@1.60.1.70888"}
+{"id": 2498, "field": "name", "en": "Crank Fizzlebub", "hash": "a3c1c2e0a42e77fa", "src": "collector@1.60.1.70888"}
+{"id": 2501, "field": "name", "en": "\"Sea Wolf\" MacKinley", "hash": "fd7a263c37f5a360", "src": "collector@1.60.1.70938"}
 {"id": 2504, "field": "name", "en": "Donyal Tovald", "hash": "d11ce567acaa6fe1", "src": "collector@1.60.1.70862"}
+{"id": 2695, "field": "name", "en": "Sara Balloo", "hash": "dfdc4cc3533be616", "src": "collector@1.60.1.70938"}
 {"id": 2700, "field": "name", "en": "Captain Nials", "hash": "d03ce75042e0ed4f", "src": "collector@1.60.1.70938"}
 {"id": 2705, "field": "name", "en": "Brewmeister Bilger", "hash": "5d3a7f4680e38033", "src": "collector@1.60.1.70888"}
 {"id": 2708, "field": "name", "en": "Archmage Malin", "hash": "2596d14e4b07743d", "src": "collector@1.60.1.70938"}
@@ -53,7 +59,11 @@
 {"id": 2756, "field": "name", "en": "Grund Drokda", "hash": "63e1bab1feebc01f", "src": "collector@1.60.1.70205"}
 {"id": 2784, "field": "name", "en": "King Magni Bronzebeard", "hash": "b5b1f991588315d4", "src": "collector@1.60.1.70862"}
 {"id": 2786, "field": "name", "en": "Gerrig Bonegrip", "hash": "e3163cda2402d476", "src": "collector@1.60.1.70862"}
+{"id": 2787, "field": "name", "en": "Zaruk", "hash": "38ef969fb77105ea", "src": "collector@1.60.1.70938"}
 {"id": 2788, "field": "name", "en": "Apprentice Kryten", "hash": "5b1504d92a383390", "src": "collector@1.60.1.70938"}
+{"id": 2789, "field": "name", "en": "Skuerto", "hash": "c9a69ddc4428996c", "src": "collector@1.60.1.70888"}
+{"id": 2790, "field": "name", "en": "Grand Mason Marblesten", "hash": "9d99ca39cce42539", "src": "collector@1.60.1.70888"}
+{"id": 2832, "field": "name", "en": "Nixxrax Fillamug", "hash": "6c210d2c8e7e3f5d", "src": "collector@1.60.1.70938"}
 {"id": 2911, "field": "name", "en": "Archaeologist Flagongut", "hash": "58d31b11d439fd5d", "src": "collector@1.60.1.70862"}
 {"id": 2912, "field": "name", "en": "Chief Archaeologist Greywhisker", "hash": "538d1bb62c0edb94", "src": "collector@1.60.1.70888"}
 {"id": 2913, "field": "name", "en": "Archaeologist Hollee", "hash": "f904166192e1b5ea", "src": "collector@1.60.1.70862"}
@@ -66,6 +76,7 @@
 {"id": 2981, "field": "name", "en": "Chief Hawkwind", "hash": "d58b325c3806996d", "src": "collector@1.60.1.70235"}
 {"id": 2982, "field": "name", "en": "Seer Graytongue", "hash": "80064c5bfcc021b9", "src": "collector@1.60.1.70235"}
 {"id": 2985, "field": "name", "en": "Ruul Eagletalon", "hash": "ed29633d383178c6", "src": "collector@1.60.1.70790"}
+{"id": 2986, "field": "name", "en": "Dorn Plainstalker", "hash": "554514ed457f4ded", "src": "collector@1.60.1.70938"}
 {"id": 2987, "field": "name", "en": "Eyahn Eagletalon", "hash": "90b1f487a232ae06", "src": "collector@1.60.1.70790"}
 {"id": 2991, "field": "name", "en": "Greatmother Hawkwind", "hash": "219e566a0274a733", "src": "collector@1.60.1.70235"}
 {"id": 2993, "field": "name", "en": "Baine Bloodhoof", "hash": "9149be4584530d3f", "src": "collector@1.60.1.70790"}

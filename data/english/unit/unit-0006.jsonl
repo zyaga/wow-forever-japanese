@@ -1,3 +1,4 @@
+{"id": 6019, "field": "name", "en": "Hornizz Brimbuzzle", "hash": "33b1468887ba9188", "src": "collector@1.60.1.70938"}
 {"id": 6031, "field": "name", "en": "Tormus Deepforge", "hash": "9d447a97ef89128b", "src": "collector@1.60.1.70862"}
 {"id": 6089, "field": "name", "en": "Harry Burlguard", "hash": "1ca578b40493d274", "src": "collector@1.60.1.70450"}
 {"id": 6090, "field": "name", "en": "Bartleby", "hash": "46ad25003d8b6ee2", "src": "collector@1.60.1.70450"}
@@ -5,6 +6,7 @@
 {"id": 6114, "field": "name", "en": "Muren Stormpike", "hash": "d9ddd0b2c5a8385d", "src": "collector@1.60.1.70862"}
 {"id": 6121, "field": "name", "en": "Remen Marcot", "hash": "75261419edd3c707", "src": "collector@1.60.1.70790"}
 {"id": 6142, "field": "name", "en": "Mathiel", "hash": "a9224821b8d19265", "src": "collector@1.60.1.70862"}
+{"id": 6166, "field": "name", "en": "Yorus Barleybrew", "hash": "cd09cdbf0b2c778e", "src": "collector@1.60.1.70888"}
 {"id": 6169, "field": "name", "en": "Klockmort Spannerspan", "hash": "e7370e5cbbc9f939", "src": "collector@1.60.1.70862"}
 {"id": 6175, "field": "name", "en": "John Turner", "hash": "0a50bb445cba268b", "src": "collector@1.60.1.70862"}
 {"id": 6177, "field": "name", "en": "Narm Faulk", "hash": "f2da758431b238a2", "src": "collector@1.60.1.70862"}
@@ -32,4 +34,5 @@
 {"id": 6782, "field": "name", "en": "Hands Springsprocket", "hash": "2b1be246f64b749b", "src": "collector@1.60.1.70790"}
 {"id": 6784, "field": "name", "en": "Calvin Montague", "hash": "ed790f5547df2344", "src": "collector@1.60.1.70790"}
 {"id": 6786, "field": "name", "en": "Ukor", "hash": "0b8002799c562b87", "src": "collector@1.60.1.70790"}
+{"id": 6826, "field": "name", "en": "Talvash del Kissel", "hash": "e1058bc7296f4a7f", "src": "collector@1.60.1.70888"}
 {"id": 6928, "field": "name", "en": "Innkeeper Grosk", "hash": "ebfdfeb7de4f8c2f", "src": "collector@1.60.1.70790"}

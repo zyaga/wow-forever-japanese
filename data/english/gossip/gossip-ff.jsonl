@@ -1,4 +1,5 @@
 {"id": "ff00b65dab470201", "field": "text", "en": "I wish to make a purchase.", "hash": "ff00b65dab470201", "src": "vmangos@13b49dc"}
+{"id": "ff0544773cea5058", "field": "text", "en": "Krol'dok Stronghold", "hash": "ff0544773cea5058", "src": "collector@1.60.1.70938", "npcs": [257595]}
 {"id": "ff05591d594254a9", "field": "text", "en": "Greetings, $C.  Be wary as you travel east toward The Bulwark.  Recent surveillance reports indicate increased Scourge activity in that area, so exercise caution.", "hash": "ff05591d594254a9", "src": "vmangos@13b49dc"}
 {"id": "ff09f93da2768327", "field": "text", "en": "Kiss me.", "hash": "ff09f93da2768327", "src": "vmangos@13b49dc"}
 {"id": "ff0ee181a9ec2557", "field": "text", "en": "Where is Elder Windtotem?", "hash": "ff0ee181a9ec2557", "src": "vmangos@13b49dc"}

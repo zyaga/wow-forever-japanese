@@ -12,6 +12,7 @@
 {"id": "3c4eaab6fb106123", "field": "text", "en": "And now... the final step!", "hash": "3c4eaab6fb106123", "src": "vmangos@13b49dc"}
 {"id": "3c4ebd91eb0b5630", "field": "text", "en": "In the King's audience chamber you will find the Lady Hoteshem.  She can assist you in getting to Arathi Basin where The League of Arathor is in need of assistance against The Defilers.", "hash": "3c4ebd91eb0b5630", "src": "vmangos@13b49dc"}
 {"id": "3c5237b5dc862531", "field": "text", "en": "Emperor Thaurissan does not wish to be disturbed! Turn back now or face your doom, weak mortals!", "hash": "3c5237b5dc862531", "src": "vmangos@13b49dc"}
+{"id": "3c54b56072cf94f5", "field": "text", "en": "If you have the aptitude for the druidic arts, I can train you.", "hash": "3c54b56072cf94f5", "src": "collector@1.60.1.70790", "npcs": [251373, 254081]}
 {"id": "3c599235eebc42a8", "field": "text", "en": "Who dares summon me?", "hash": "3c599235eebc42a8", "src": "vmangos@13b49dc"}
 {"id": "3c5aaadd1d92e521", "field": "text", "en": "Yes.  Give me the spell to summon the avatar.", "hash": "3c5aaadd1d92e521", "src": "vmangos@13b49dc"}
 {"id": "3c5ebb3b3331d6ca", "field": "text", "en": "You look like you could use a few enchants. You have come to the right place!", "hash": "3c5ebb3b3331d6ca", "src": "forever-vo@025070f", "npcs": [256732]}

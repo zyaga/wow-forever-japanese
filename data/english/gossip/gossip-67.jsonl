@@ -1,6 +1,7 @@
 {"id": "6703f20be7ca5c1c", "field": "text", "en": "Bye, bye, tiny little $r. Raze go now.", "hash": "6703f20be7ca5c1c", "src": "vmangos@13b49dc"}
 {"id": "67073178acd43cf7", "field": "text", "en": "You can learn to sew up in Orgrimmar.  That's to the north.  Maybe one of the Orgrimmar Grunts can help you.", "hash": "67073178acd43cf7", "src": "vmangos@13b49dc"}
 {"id": "6715a9b2defc035b", "field": "text", "en": "For reasons I cannot understand, Elder Thunderhorn has gone to the Slithering Scar in Un'Goro Crater.", "hash": "6715a9b2defc035b", "src": "vmangos@13b49dc"}
+{"id": "672a8fc90588155d", "field": "text", "en": "Very interesting. Thank you for sharing.", "hash": "672a8fc90588155d", "src": "collector@1.60.1.70790", "npcs": [256930]}
 {"id": "672b5ffabf3673c9", "field": "text", "en": "$C, the Horde has gathered all that it needs for the Ahn'Qiraj War! Now we wait for the puny Alliance to catch up. When they do, we'll begin transporting everything to Silithus. It should not be long after the buildup there is completed that the war will begin!", "hash": "672b5ffabf3673c9", "src": "vmangos@13b49dc"}
 {"id": "672e08d2ac0f85b3", "field": "text", "en": "Well done. A blow to Arugal no doubt!", "hash": "672e08d2ac0f85b3", "src": "vmangos@13b49dc"}
 {"id": "67318b4829532a33", "field": "text", "en": "If it weren't for the goblins' inconceivable, dumb luck, they'd crash their car during every race!", "hash": "67318b4829532a33", "src": "vmangos@13b49dc"}

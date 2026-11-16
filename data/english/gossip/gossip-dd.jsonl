@@ -22,6 +22,7 @@
 {"id": "dda93b5001b331db", "field": "text", "en": "Look for it high up on the west side of the Valley of Strength. They'll only let you in if you're an officer! Talk to Sergeant Ba'sha outside otherwise.", "hash": "dda93b5001b331db", "src": "vmangos@13b49dc"}
 {"id": "ddaaea28a07399c6", "field": "text", "en": "Want to train with Borgus? Aye, I can tell ye where to find him. Head through the Square northwest of me forge, then take the western road. Ye'll find him in the second building on yer right.", "hash": "ddaaea28a07399c6", "src": "vmangos@13b49dc"}
 {"id": "ddb9d4eda71d319a", "field": "text", "en": "Who controls the Snowfall Graveyard?", "hash": "ddb9d4eda71d319a", "src": "vmangos@13b49dc"}
+{"id": "ddc8bfb0c0c3beb1", "field": "text", "en": "The skycutter bound for Dalaran City has just arrived. All aboard for Dalaran City!", "hash": "ddc8bfb0c0c3beb1", "src": "collector@1.60.1.70862"}
 {"id": "ddc9d9bd6a1984fb", "field": "text", "en": "FER MAGNI!", "hash": "ddc9d9bd6a1984fb", "src": "vmangos@13b49dc"}
 {"id": "ddceaa4afea9b1ea", "field": "text", "en": "%s adds the haze to the Bloodpetal sprouts.", "hash": "ddceaa4afea9b1ea", "src": "vmangos@13b49dc"}
 {"id": "ddd4983e2faf7796", "field": "text", "en": "Hello there, $c. I am High Tinker Mekkatorque of the exiles of Gnomeregan.", "hash": "ddd4983e2faf7796", "src": "forever-vo@025070f", "npcs": [7937]}

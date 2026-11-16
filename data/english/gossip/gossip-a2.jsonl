@@ -46,4 +46,5 @@
 {"id": "a2eb2d0f987f53b9", "field": "text", "en": "Good! I can tell that my efforts will not be wasted!", "hash": "a2eb2d0f987f53b9", "src": "vmangos@13b49dc"}
 {"id": "a2eb364eb38403b5", "field": "text", "en": "There's nothing more I can teach you. I've heard of a night elf who might be able to, though. Her name is Ainethil, and she lives in the Craftsmen's Terrace of Darnassus.", "hash": "a2eb364eb38403b5", "src": "vmangos@13b49dc"}
 {"id": "a2f585cb399ac6a3", "field": "text", "en": "Neltharion, hmm? As good an answer as any, yes?", "hash": "a2f585cb399ac6a3", "src": "vmangos@13b49dc"}
+{"id": "a2fbcd0eea462394", "field": "text", "en": "Have you any Darkmoon Faire Cards? Come speak with me to learn more about them if you dare!", "hash": "a2fbcd0eea462394", "src": "collector@1.60.1.70938"}
 {"id": "a2fbd4aa2eafa908", "field": "text", "en": "saved world state is: $2285W", "hash": "a2fbd4aa2eafa908", "src": "vmangos@13b49dc"}

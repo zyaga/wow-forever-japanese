@@ -37,4 +37,5 @@
 {"id": "b8e287f3409dd7e8", "field": "text", "en": "What are you?", "hash": "b8e287f3409dd7e8", "src": "collector@1.60.1.70790", "npcs": [251684]}
 {"id": "b8e50c0081dca17e", "field": "text", "en": "Here's a singing telegram for $n: Roses are red, violets are blue, I will kill any $R I see, including you!", "hash": "b8e50c0081dca17e", "src": "vmangos@13b49dc"}
 {"id": "b8e880d8bb009fbd", "field": "text", "en": "Sarok, why don't we talk business?", "hash": "b8e880d8bb009fbd", "src": "vmangos@13b49dc"}
+{"id": "b8f045adc651aae5", "field": "text", "en": "What is your curiosity looking for?", "hash": "b8f045adc651aae5", "src": "collector@1.60.1.70790", "npcs": [246848]}
 {"id": "b8f2326ead66d18f", "field": "text", "en": "The Sunken Temple can be found in the center of a great lake in eastern Swamp of Sorrows.", "hash": "b8f2326ead66d18f", "src": "vmangos@13b49dc"}

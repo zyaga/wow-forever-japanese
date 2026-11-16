@@ -1,5 +1,6 @@
 {"id": "8b0008a3a55b8c96", "field": "text", "en": "I see right through your disguise, $r. Number Two! Number Two kill!", "hash": "8b0008a3a55b8c96", "src": "vmangos@13b49dc"}
 {"id": "8b08facbd5b421b4", "field": "text", "en": "The time has come for me to once again make my wares available to all who travel near Sentinel Hill! Come one, come all!", "hash": "8b08facbd5b421b4", "src": "vmangos@13b49dc"}
+{"id": "8b0b1bb677ab0e2f", "field": "text", "en": "The Windshapers' transport to Mulgore", "hash": "8b0b1bb677ab0e2f", "src": "collector@1.60.1.70938", "npcs": [252477]}
 {"id": "8b0f0d5ba83cd210", "field": "text", "en": "I have lost my Ring of the Gathering Storm. Are you able to replace it for me?", "hash": "8b0f0d5ba83cd210", "src": "vmangos@13b49dc"}
 {"id": "8b13bc4aaedfd395", "field": "text", "en": "...do not delay. Muster our forces to march immediately. The pylons are key and...the wards...come down. This is...", "hash": "8b13bc4aaedfd395", "src": "collector@1.60.1.70790"}
 {"id": "8b208d2202b53d5e", "field": "text", "en": "Even in death... I will persist.", "hash": "8b208d2202b53d5e", "src": "collector@1.60.1.70862"}

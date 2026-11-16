@@ -175,6 +175,7 @@
 {"id": 279473, "field": "name", "en": "Makeshift Belt", "hash": "efd672cb5b2f500f", "src": "db2@1.60.1.70938"}
 {"id": 279474, "field": "name", "en": "Dustwallow Dirk", "hash": "d70e955e59d15c2a", "src": "db2@1.60.1.70938"}
 {"id": 279480, "field": "name", "en": "Bigger Rock on Bigger Stick", "hash": "5e0425e62be198aa", "src": "db2@1.60.1.70938"}
+{"id": 279480, "field": "description", "en": "Chance on hit: Bash the target in the face, causing 14 Physical damage every 2 sec for 20 sec.$B$B\"That's more like it!\"", "hash": "f4f864cef74d9f20", "src": "collector@1.60.1.70888"}
 {"id": 279481, "field": "name", "en": "Package of Pristine Pelts", "hash": "b8e416f6a6c6f6bb", "src": "db2@1.60.1.70938"}
 {"id": 279505, "field": "name", "en": "Jagged Orcish Sword", "hash": "6f30e0306e0825d3", "src": "db2@1.60.1.70938"}
 {"id": 279507, "field": "name", "en": "Curved Orcish Dagger", "hash": "7bc9c0361d1347a0", "src": "db2@1.60.1.70938"}

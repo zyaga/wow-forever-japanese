@@ -714,7 +714,9 @@
 {"id": 11979, "field": "name", "en": "Peridot Circle", "hash": "9ebd241a7a834f9b", "src": "db2@1.60.1.70938"}
 {"id": 11980, "field": "name", "en": "Opal Ring", "hash": "a9c11d65e49e2b9e", "src": "db2@1.60.1.70938"}
 {"id": 11981, "field": "name", "en": "Lead Band", "hash": "4c5575529b7857cc", "src": "db2@1.60.1.70938"}
+{"id": 11981, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70862"}
 {"id": 11982, "field": "name", "en": "Viridian Band", "hash": "6786d2ca1bc8d9ce", "src": "db2@1.60.1.70938"}
+{"id": 11982, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70862"}
 {"id": 11983, "field": "name", "en": "Chrome Ring", "hash": "ca30cbb5b2bef9b6", "src": "db2@1.60.1.70938"}
 {"id": 11984, "field": "name", "en": "Cobalt Ring", "hash": "b22630766e67d34c", "src": "db2@1.60.1.70938"}
 {"id": 11985, "field": "name", "en": "Cerulean Ring", "hash": "86d97181410840d6", "src": "db2@1.60.1.70938"}
@@ -727,6 +729,7 @@
 {"id": 11992, "field": "name", "en": "Vermilion Band", "hash": "b3b516537ceb2268", "src": "db2@1.60.1.70938"}
 {"id": 11993, "field": "name", "en": "Clay Ring", "hash": "1cabfe5246a8299a", "src": "db2@1.60.1.70938"}
 {"id": 11994, "field": "name", "en": "Coral Band", "hash": "3f696b71e466f17e", "src": "db2@1.60.1.70938"}
+{"id": 11994, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 11995, "field": "name", "en": "Ivory Band", "hash": "e98925856059213c", "src": "db2@1.60.1.70938"}
 {"id": 11996, "field": "name", "en": "Basalt Ring", "hash": "3be847da97dffa61", "src": "db2@1.60.1.70938"}
 {"id": 11997, "field": "name", "en": "Greenstone Circle", "hash": "6aca9c73f247baa3", "src": "db2@1.60.1.70938"}

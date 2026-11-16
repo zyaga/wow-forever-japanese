@@ -16,6 +16,7 @@
 {"id": "b9557bd20758387a", "field": "text", "en": "What I wouldn't give to be out on the open plains on a day like this... but, my duty binds me.", "hash": "b9557bd20758387a", "src": "vmangos@13b49dc"}
 {"id": "b95a2ed589607960", "field": "text", "en": "I shall return in time..", "hash": "b95a2ed589607960", "src": "vmangos@13b49dc"}
 {"id": "b961267a80835fa8", "field": "text", "en": "I have lost my Confessor's Mantle and require a replacement, Al'tabim.", "hash": "b961267a80835fa8", "src": "vmangos@13b49dc"}
+{"id": "b967ec24140e0e57", "field": "text", "en": "Yes? What is it?", "hash": "b967ec24140e0e57", "src": "collector@1.60.1.70938", "npcs": [4722]}
 {"id": "b96e6ad9f0d9166f", "field": "text", "en": "The spirits of nature are powers to respect.  They offer great aid to the worthy, and mete out swift death to the foolish.", "hash": "b96e6ad9f0d9166f", "src": "vmangos@13b49dc"}
 {"id": "b9858cd82ee93ab4", "field": "text", "en": "It was not his fault, $N. Tell him that...", "hash": "b9858cd82ee93ab4", "src": "vmangos@13b49dc"}
 {"id": "b9866b161153e3a7", "field": "text", "en": "Open for business!", "hash": "b9866b161153e3a7", "src": "vmangos@13b49dc"}
