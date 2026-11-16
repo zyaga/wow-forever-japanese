@@ -207,6 +207,14 @@ the screen. NPC speech is server text (VMaNGOS `broadcast_text`), keyed like gos
    message (English lines turned small in the bundled face).
    **The remembered pairs** (§7) are shared with §9 and §10 and record each pair's settings area, so Alt and the
    switch follow the area the line belongs to (`ui`, or `gossip` for NPC speech).
+   *Amended:* a SYSTEM or battleground (`BG_SYSTEM_*`) line that no interface string answers is then looked up as
+   an NPC line (§10's gossip key, `Speech.translateLine`): the server sends battleground announcements and some
+   world notices as system chat from the same broadcast text the NPC lines come from. Interface strings stay first.
+   On a battleground line, which may name any player in the match and carries no target, each run of one to three
+   capitalised words joined by single spaces is tried as the player's name against the shipped `$n` row, and the
+   Japanese is filled with the name as written. Other plain types (loot, money, experience) never take this lookup.
+   The death recap link is handled before the type dispatch, under any chat type or none; a line where it stays
+   English logs its reason and chat type and then takes its type's own path.
 9. **Player chat prefixes: the words only, never the player's text.** The chat frame builds a player's line as
    `format(_G["CHAT_" .. type .. "_GET"] .. message, pflag .. name, name)` (`chatframeutil.lua:352–355`,
    `chatframeoverrides.lua:629–633`). For `ChatSystem.PREFIXED_TYPES` (`SAY`, `YELL`, `WHISPER`, `WHISPER_INFORM`,

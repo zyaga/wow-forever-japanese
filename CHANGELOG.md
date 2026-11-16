@@ -20,6 +20,9 @@ an old setting stops working). A release moves those lines under its version num
 - The voice panel no longer shows a stage direction, such as an emote in angle brackets, that the voice does not read. A line made only of such directions is still shown.
 - A bug report now lists your voice packs with their versions.
 
+### Fixed
+- Battleground announcements in chat are in Japanese: bases taken and assaulted in Arathi Basin, flag captures in Warsong Gulch, and Alterac Valley's mines and towers. A player named in the line keeps their name as the game wrote it. The "[You died.]" link in chat is Japanese in battlegrounds too.
+
 ## 0.13.1 - 2026-11-14
 
 ### Changed

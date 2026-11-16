@@ -67,6 +67,36 @@ describe("UI/TaintWatch", function()
     assert.is_table(TW.wrote("ON_BAR_HIGHLIGHT_MARKS", nil, "ON_BAR_HIGHLIGHT_MARKS"))
   end)
 
+  it("the merchant window's tab written tainted logs its writer once, then scans once out of combat", function()
+    local hooks = {}
+    _G.hooksecurefunc = function(a, b, c)
+      if type(a) == "string" then hooks[a] = b else hooks[b] = c end
+    end
+    _G.PanelTemplates_SetTab = function() end
+    _G.MerchantFrame = { selectedTab = 1 }
+    _G.GossipFrame = { shown = true }
+    finally(function()
+      _G.hooksecurefunc, _G.PanelTemplates_SetTab, _G.MerchantFrame, _G.GossipFrame = nil, nil, nil, nil
+    end)
+    TW.init()
+    assert.is_function(hooks.PanelTemplates_SetTab)
+    hooks.PanelTemplates_SetTab(_G.MerchantFrame, 1) -- written clean: nothing
+    assert.are.equal(0, #entriesOf("write"))
+    taint.selectedTab = { t = _G.MerchantFrame, by = "WoWForeverJapanese" }
+    hooks.PanelTemplates_SetTab({ selectedTab = 1 }, 1) -- another frame's tab: not this hook's business
+    assert.are.equal(0, #entriesOf("write"))
+    hooks.PanelTemplates_SetTab(_G.MerchantFrame, 1)
+    hooks.PanelTemplates_SetTab(_G.MerchantFrame, 1)
+    local writes = entriesOf("write")
+    assert.are.equal(1, #writes)
+    assert.is_truthy(writes[1].msg:find("MerchantFrame.selectedTab", 1, true))
+    assert.are.equal(2, writes[1].n)
+    local scans = entriesOf("taint")
+    assert.are.equal(1, #scans)
+    assert.are.equal("merchant tab written tainted", scans[1].reason)
+    assert.are.equal(1, #entriesOf("taint")) -- the second tainted write does not scan again
+  end)
+
   it("the ring keeps the last RING events, oldest first; noisy and secret events are left out", function()
     for i = 1, TW.RING + 5 do TW.onEvent("EVENT_" .. i) end
     TW.onEvent("COMBAT_LOG_EVENT_UNFILTERED")
