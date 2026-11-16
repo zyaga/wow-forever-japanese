@@ -7,7 +7,8 @@
 --     Japanese) · "notfound" (the sentence is not in the line now) · "untimed" (one file, no timing, part of a line)
 --   play(entry, found) · toggle(entry, found) · stop() · playing() · available(): the study card's sound (`found`:
 --     what find returned, when the caller has it). It plays alone on the Master channel (no queue, no panel, no
---     dialog mute), stops the voice line playing, and fires State "studyVoice" when it starts and ends.
+--     dialog mute), needs only a voice pack, stops the voice line playing, and fires State "studyVoice" when it
+--     starts and ends.
 --   findAll(entries) · cell(found) · fileList(entries, found): the word list's Anki export, file names only.
 local _, WFJ = ...
 local StudyVoice = {}
@@ -117,9 +118,10 @@ local current -- the sentence playing: { key, handle }; a timer of an older one 
 
 local function changed() WFJ.State.fire("studyVoice") end
 
--- A pack loaded, the voice and translation on: the card shows its button.
+-- A pack loaded: the card shows its button. Nothing else: it is a study tool, so it plays whatever translation, the
+-- voice switch (NPCs reading aloud in the world), the reveal key or the direction say.
 function StudyVoice.available()
-  return WFJ.Voice.hasPack() and WFJ.Settings.get("voice.enabled") == true and WFJ.State.enabled == true
+  return WFJ.Voice.hasPack()
 end
 
 -- → the key of the entry playing, or nil
@@ -141,7 +143,7 @@ end
 -- → true, or false and why
 function StudyVoice.play(e, found)
   StudyVoice.stop()
-  if not StudyVoice.available() then return false, WFJ.Voice.hasPack() and "off" or "nopack" end
+  if not StudyVoice.available() then return false, "nopack" end
   local r, why = found, nil
   if not r then r, why = StudyVoice.find(e) end
   if not r then return false, why end
@@ -189,13 +191,6 @@ function StudyVoice.toggle(e, found)
   end
   return (StudyVoice.play(e, found))
 end
-
--- Translation or the voice switched off stops it, as it stops the voice player.
--- Guarded: these events are shared with UI/Render, which must run whatever happens here.
-WFJ.State.on("enabled", function(on) if not on then pcall(StudyVoice.stop) end end)
-WFJ.State.on("voice", function()
-  if WFJ.Settings.get("voice.enabled") ~= true then pcall(StudyVoice.stop) end
-end)
 
 -- ── The Anki export ──────────────────────────────────────────────────────
 

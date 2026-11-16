@@ -266,8 +266,8 @@ local function voiceIcon()
   b.icon:SetTexture(b.isPlaying and VOICE_PAUSE or VOICE_PLAY)
 end
 
--- The play button: on the back while a voice pack is loaded and the voice and translation are on, for a word from a
--- voiced line; greyed, with why in its tooltip, when the sentence cannot be played.
+-- The play button: on the back while a voice pack is loaded (whatever translation or the voice switch say: it is a
+-- study tool), for a word from a voiced line; greyed, with why in its tooltip, when the sentence cannot be played.
 local function voiceButton()
   local b = card and card.voice
   if not b then return end
