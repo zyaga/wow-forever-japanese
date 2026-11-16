@@ -39,8 +39,8 @@ local function at(frame, y, x)
   frame:SetPoint("TOPLEFT", x or LEFT, y)
 end
 
--- Include audio sits under the images rows when they show; ticked, its hint, Anki's folder and the file list under it. `found`: the
--- entries' files (StudyVoice.findAll), when Include audio is ticked. → the frame's height
+-- Include audio sits under the images rows when they show; ticked, its hint, Anki's folder and the file list
+-- under it. `found`: the entries' files (StudyVoice.findAll), when Include audio is ticked. → the frame's height
 local function layAudio(images, offered, found)
   local f = WordsWindow.frame
   local base = images and HEIGHT_IMAGES or HEIGHT
