@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.14.0 - 2026-11-16
+
 ### Added
 - The voice panel follows the voice word by word: the page turns as the speaker starts each sentence, and a soft tint marks the words as they are spoken (warm white on the dark looks, brown on parchment). A name of several English words lights up whole.
 - Pausing a voiced line and playing it again picks up at the sentence you paused in, not from the start of the line. Two small gold arrows beside pause on the voice panel play the line from the sentence before or the next one, also while it is paused or after it ended. Play again starts from the first sentence, even after a pause.
