@@ -2350,6 +2350,7 @@ Core\Align.lua
 Core\State.lua
 Core\Settings.lua
 Core\Voice.lua
+Core\ErrorVoices.lua
 Core\VoiceQueue.lua
 Core\Modifier.lua
 Core\Placeholders.lua

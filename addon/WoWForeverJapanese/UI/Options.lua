@@ -47,7 +47,8 @@ Options.PAGES = {
   -- added by Options.addPage when it registers. The voice panel's choices are on the same page: a page scrolls.
   { id = "voice", title = "page.voice", requires = function() return WFJ.Voice ~= nil and WFJ.Voice.hasPack() end,
     sections = {
-    { title = "section.voice", rows = { "voice.enabled", "voice.muteDialog", "voice.button" } },
+    { title = "section.voice",
+      rows = { "voice.enabled", "voice.muteDialog", "voice.button", "voice.errorVoice" } },
     { title = "section.voiceKinds", columns = 2,
       rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors",
         "voice.questOnce", "voice.greetingOnce" } },
@@ -153,23 +154,42 @@ local function keyRow(page, d, x, y, width)
 end
 
 -- A choice setting: its label, and a dropdown of its choices (English: the dropdown's font has no Japanese glyphs).
+-- A definition's `choiceGroups` ({ en, choices }) puts those choices in one submenu each, after the ungrouped ones;
+-- a submenu with nothing offered is left out. With `choiceTextJa`, the chosen value's name is also shown under the
+-- dropdown in the page's language.
 local function choiceRow(page, d, x, y)
   W.label(page, d.label, d.ja, x, y, 300)
-  local ctl = { id = d.id, kind = "choice" }
+  local ctl = { id = d.id, kind = "choice", definition = d }
+  -- a choice the player is not offered right now is asked each time the menu opens, so it follows the reveal key
+  local function offered(c) return not (d.choiceHidden and d.choiceHidden(c)) end
+  local function radio(menu, c)
+    menu:CreateRadio(d.choiceText and d.choiceText[c] or c, function() return S.get(d.id) == c end, function()
+      S.set(d.id, c)
+      Options.refresh()
+    end, c)
+  end
   ctl.dropdown = W.dropdown(page, x + 310, y, 170, function(_, root)
+    local grouped = {}
+    for _, g in ipairs(d.choiceGroups or {}) do
+      for _, c in ipairs(g.choices) do grouped[c] = true end
+    end
     for _, c in ipairs(d.choices) do
-      -- a choice the player is not offered right now (asked each time the menu opens, so it follows the reveal key)
-      if not (d.choiceHidden and d.choiceHidden(c)) then
-        local text = d.choiceText and d.choiceText[c] or c
-        root:CreateRadio(text, function() return S.get(d.id) == c end, function()
-          S.set(d.id, c)
-          Options.refresh()
-        end, c)
+      if not grouped[c] and offered(c) then radio(root, c) end
+    end
+    for _, g in ipairs(d.choiceGroups or {}) do
+      local sub
+      for _, c in ipairs(g.choices) do
+        if offered(c) then
+          sub = sub or root:CreateButton(g.en)
+          radio(sub, c)
+        end
       end
     end
   end)
   Options.controls[#Options.controls + 1] = ctl
-  return 40
+  if not d.choiceTextJa then return 40 end
+  ctl.caption = W.label(page, "", "", x + 310, y - 28, 300)
+  return 62
 end
 
 local function settingRow(page, id, x, y, width)
@@ -739,6 +759,10 @@ function Options.refresh()
       c.widget:SetChecked(S.get(c.id) == true)
     elseif c.kind == "choice" then
       if c.dropdown.GenerateMenu then c.dropdown:GenerateMenu() end
+      if c.caption then
+        local d, v = c.definition, S.get(c.id)
+        W.setPair(c.caption, d.choiceText[v] or v, d.choiceTextJa[v] or v)
+      end
     else
       refreshKeyRow(c, combat)
     end

@@ -361,15 +361,26 @@ function Voice.markHeard(surface, recKey, kind, id)
   return true
 end
 
--- → whether a pack carries the character's error lines for this race and sex ("tauren", 3 = female)
-function Voice.hasErrors(race, sex)
-  local who = type(race) == "string" and (race:lower() .. "-" .. (sex == 3 and "f" or "m")) or nil
-  return who ~= nil and errorFiles[who] ~= nil and next(errorFiles[who]) ~= nil
+-- The pack key of a character's own error voice: "tauren-f" for ("Tauren", 3 = female)
+local function errorKey(race, sex)
+  return type(race) == "string" and (race:lower() .. "-" .. (sex == 3 and "f" or "m")) or nil
 end
 
--- The character's spoken error line for the game's voice id, in the voice of their race and sex: the recording of
--- the message on screen (`message`, its global string name, "ERR_OUT_OF_RANGE") when the pack has it, so the voice
--- says what the frame shows, else the line for the voice id's kind.
+-- → whether a pack carries error lines in this voice (a race-sex key or an NPC voice id, Core/ErrorVoices)
+function Voice.hasErrorVoice(who)
+  return type(who) == "string" and errorFiles[who] ~= nil and next(errorFiles[who]) ~= nil
+end
+
+-- → whether a pack carries the character's error lines for this race and sex ("tauren", 3 = female)
+function Voice.hasErrors(race, sex)
+  return Voice.hasErrorVoice(errorKey(race, sex))
+end
+
+-- The character's spoken error line for the game's voice id: the recording of the message on screen (`message`, its
+-- global string name, "ERR_OUT_OF_RANGE") when the pack has it, so the voice says what the frame shows, else the
+-- line for the voice id's kind. It speaks in the voice the player chose (`voice.errorVoice`), else, and for a line
+-- the chosen voice lacks, in the voice of the character's race and sex. The character's own lines must be there:
+-- only they mute the English recordings the game plays (UI/VoiceErrors).
 -- → path and seconds, or nil and why ("off" · "english" · "nopack" · "kind" · "missing")
 function Voice.errorFile(voiceID, race, sex, message)
   if not setting("voice.enabled") or not setting("voice.errors") then return nil, "off" end
@@ -378,13 +389,13 @@ function Voice.errorFile(voiceID, race, sex, message)
     return nil, "english"
   end
   if not Voice.hasErrors(race, sex) then return nil, "nopack" end
-  local files = errorFiles[race:lower() .. "-" .. (sex == 3 and "f" or "m")]
-  local f = type(message) == "string" and files[message] or nil
-  if not f then
-    local kind = errorKinds[voiceID]
-    if not kind then return nil, "kind" end
-    f = files[kind]
+  local kind = errorKinds[voiceID]
+  local function find(files)
+    if not files then return nil end
+    return (type(message) == "string" and files[message]) or (kind and files[kind]) or nil
   end
-  if not f then return nil, "missing" end
+  local chosen = setting("voice.errorVoice")
+  local f = (chosen ~= "auto" and find(errorFiles[chosen])) or find(errorFiles[errorKey(race, sex)])
+  if not f then return nil, kind and "missing" or "kind" end
   return "Interface\\AddOns\\" .. f.folder .. "\\Sound\\" .. f.file, f.seconds
 end

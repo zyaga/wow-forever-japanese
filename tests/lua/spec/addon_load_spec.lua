@@ -7,7 +7,7 @@ local HEAD = { "Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/N
   "Core/Data.lua" }
 local TAIL = {
   "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
-  "Core/Voice.lua", "Core/VoiceQueue.lua", "Core/Modifier.lua",
+  "Core/Voice.lua", "Core/ErrorVoices.lua", "Core/VoiceQueue.lua", "Core/Modifier.lua",
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
   "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua", "Core/Intro.lua",

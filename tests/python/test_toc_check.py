@@ -22,6 +22,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua",
         "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
         "Core/Voice.lua",  # the voice packs' registry, before the settings that read it
+        "Core/ErrorVoices.lua",  # the voices the character's error lines may speak in, and that setting
         "Core/VoiceQueue.lua",  # the voice panel's order and choices
         "Core/Modifier.lua",
         "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua",
