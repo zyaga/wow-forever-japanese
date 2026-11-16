@@ -572,6 +572,7 @@ describe("the study window", function()
       show(f)
       SW.close()
       assert.are.same({ 1, 2, 3 }, stopped)
+      assert.is_false(f.voice.isPlaying) -- the icon followed, with no card on screen
       SW.open()
       show(f)
       SW.setCombat(true)

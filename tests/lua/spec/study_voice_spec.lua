@@ -152,6 +152,28 @@ describe("UI/StudyVoice", function()
       assert.are.same({ nil, "untimed" }, { SV.find(entry("gossip", "cccc", WHOLE_JA)) })
     end)
 
+    it("a short sentence is found where it starts a sentence, not inside an earlier one", function()
+      register()
+      -- 「頼む。」 is the third sentence; the first place it starts a sentence is that one
+      shipped.gossip.aaaa = { ja = TWO_JA }
+      assert.are.equal(BASE .. "g-aaaa-2.mp3", SV.find(entry("gossip", "aaaa", "頼む。")).clips[1].path)
+      local text = "早く行け！行け！"
+      shipped.gossip.eeee = { ja = text }
+      WFJ.Voice.register({ format = 3, folder = "WoWForeverJapanese_VoiceOther", lines = {
+        ["g-eeee"] = { false, WFJ.Hash.key(text), s = { { "g-eeee-1.mp3", 1.0 }, { "g-eeee-2.mp3", 1.0 } },
+          m = "5:10 3:100" } } })
+      assert.are.equal("Interface\\AddOns\\WoWForeverJapanese_VoiceOther\\Sound\\g-eeee-2.mp3",
+        SV.find(entry("gossip", "eeee", "行け！")).clips[1].path)
+    end)
+
+    it("a file the pack gives no length is timed as the voice player guesses, so its end is not missed", function()
+      register()
+      shipped.gossip.ffff = { ja = WHOLE_JA }
+      WFJ.Voice.register({ format = 2, folder = "WoWForeverJapanese_VoiceOld", lines = {
+        ["g-ffff"] = { "g-ffff.mp3", WFJ.Hash.key(WHOLE_JA) } } })
+      assert.are.equal(30, SV.find(entry("gossip", "ffff", WHOLE_JA)).clips[1].seconds)
+    end)
+
     it("an English word plays its Japanese sentence, never its English one", function()
       register()
       local e = entry("gossip", "aaaa", "Listen to me.", { lang = "en", jaSentence = "話を聞いてくれ。" })
@@ -212,7 +234,7 @@ describe("UI/StudyVoice", function()
         'cp "Interface/AddOns/' .. FOLDER .. '/Sound/g-aaaa-2.mp3" ~/"Library/Application Support/Anki2/User 1/'
           .. 'collection.media/wfj-g-aaaa-2.mp3"',
       }, SV.copyLines(list, SV.findAll(list), true))
-      assert.are.same('copy /Y "Interface\\AddOns\\' .. FOLDER .. '\\Sound\\b-bbbb-1.mp3" '
+      assert.are.same('cmd /c copy /Y "Interface\\AddOns\\' .. FOLDER .. '\\Sound\\b-bbbb-1.mp3" '
         .. '"%APPDATA%\\Anki2\\User 1\\collection.media\\wfj-b-bbbb-1.mp3"',
         SV.copyLines(list, SV.findAll(list), false)[1])
     end)
@@ -260,6 +282,14 @@ describe("UI/StudyVoice", function()
       assert.are.equal(1, #played) -- the old chain's timer started nothing
       assert.is_true(SV.toggle(e))
       assert.are.equal(2, #played)
+    end)
+
+    it("a file the client refuses leaves the voice line playing", function()
+      register()
+      _G.PlaySoundFile = function() return false end
+      assert.are.same({ false, "refused" }, { SV.play(entry("book", "bbbb", SPLIT_JA)) })
+      assert.are.equal(0, voiceStops)
+      assert.is_nil(SV.playing())
     end)
 
     it("refuses with no pack, voice off, translation off or no audio, and plays nothing", function()

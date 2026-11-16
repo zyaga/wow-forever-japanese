@@ -15,6 +15,7 @@ WFJ.StudyVoice = StudyVoice
 
 local Compat = WFJ.Compat
 local CHANNEL = "Master"
+local UNKNOWN_LENGTH = 30 -- a file a pack gives no length: the voice player's guess, so its end is not missed
 local PREFIX = "wfj-" -- the files' names in Anki's media folder, clear of other decks' media
 
 -- ── Finding ──────────────────────────────────────────────────────────────
@@ -31,6 +32,28 @@ local function sentenceOf(e)
 end
 
 local function trim(s) return (s:match("^%s*(.-)%s*$")) end
+
+-- a sentence starts the line, or follows a sentence end, a line break or a space
+local STARTS = { ["。"] = true, ["！"] = true, ["？"] = true, ["!"] = true, ["?"] = true, ["」"] = true }
+local function startsSentence(text, i)
+  if i == 1 or text:sub(i - 1, i - 1):match("%s") then return true end
+  for mark in pairs(STARTS) do
+    if i > #mark and text:sub(i - #mark, i - 1) == mark then return true end
+  end
+  return false
+end
+
+-- Where the saved sentence is in the line: the first place it starts a sentence (a short one, 「行け！」, also sits
+-- inside an earlier 「早く行け！」), else the first place at all.
+local function locate(text, sentence)
+  local first = text:find(sentence, 1, true)
+  local i = first
+  while i do
+    if startsSentence(text, i) then return i end
+    i = text:find(sentence, i + 1, true)
+  end
+  return first
+end
 
 -- the file holding the line's moment t: the last one that starts at or before it
 local function clipAt(at, t)
@@ -71,7 +94,7 @@ function StudyVoice.find(e)
   local rec, ja = WFJ.Voice.line(e.kind, e.id)
   if not rec then return nil, ja end
   local sentence, text = sentenceOf(e), shown(ja)
-  local s0 = sentence and text:find(sentence, 1, true)
+  local s0 = sentence and locate(text, sentence)
   if not s0 then return nil, "notfound" end
   local first, last, stop
   if rec.marks then
@@ -84,7 +107,7 @@ function StudyVoice.find(e)
   for i = first, last do
     local c = rec.clips[i]
     clips[#clips + 1] = { path = WFJ.Voice.soundPath(rec.folder, c[1]), folder = rec.folder, file = c[1],
-      seconds = c[2] or 0 }
+      seconds = (c[2] or 0) > 0 and c[2] or UNKNOWN_LENGTH }
   end
   return { clips = clips, stop = stop }
 end
@@ -125,10 +148,11 @@ function StudyVoice.play(e, found)
   if not r then return false, why end
   local playSoundFile = Compat.resolve("PlaySoundFile")
   if type(playSoundFile) ~= "function" then return false, "refused" end
-  local VP = WFJ.VoicePlayer
-  if VP and VP.playing() then VP.stop() end
   local ok, handle = playSoundFile(r.clips[1].path, CHANNEL)
   if not ok then return false, "refused" end
+  -- one voice at a time: the voice player's line, and the lines waiting their turn, give way once this one started
+  local VP = WFJ.VoicePlayer
+  if VP and VP.playing() then VP.stop() end
   local me = { key = e.key, handle = handle }
   current = me
   changed()
@@ -168,9 +192,10 @@ function StudyVoice.toggle(e, found)
 end
 
 -- Translation or the voice switched off stops it, as it stops the voice player.
-WFJ.State.on("enabled", function(on) if not on then StudyVoice.stop() end end)
+-- Guarded: these events are shared with UI/Render, which must run whatever happens here.
+WFJ.State.on("enabled", function(on) if not on then pcall(StudyVoice.stop) end end)
 WFJ.State.on("voice", function()
-  if WFJ.Settings.get("voice.enabled") ~= true then StudyVoice.stop() end
+  if WFJ.Settings.get("voice.enabled") ~= true then pcall(StudyVoice.stop) end
 end)
 
 -- ── The Anki export ──────────────────────────────────────────────────────
@@ -191,7 +216,9 @@ function StudyVoice.cell(r)
 end
 
 local MAC = 'cp "Interface/AddOns/%s/Sound/%s" ~/"Library/Application Support/Anki2/User 1/collection.media/%s"'
-local WINDOWS = 'copy /Y "Interface\\AddOns\\%s\\Sound\\%s" "%%APPDATA%%\\Anki2\\User 1\\collection.media\\%s"'
+-- through cmd, so the line works pasted in PowerShell (Windows' default terminal) as well as in Command Prompt
+local WINDOWS = 'cmd /c copy /Y "Interface\\AddOns\\%s\\Sound\\%s" '
+  .. '"%%APPDATA%%\\Anki2\\User 1\\collection.media\\%s"'
 
 -- The lines that copy the entries' files (`found`, from findAll) into Anki's media folder, each file once, in list
 -- order: pasted in a terminal opened in the client's _forever_ folder (an addon cannot copy files). `mac`: the Mac's

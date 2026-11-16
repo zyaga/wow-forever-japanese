@@ -119,7 +119,7 @@ describe("the word list window", function()
     assert.is_true(f.size[2] > height) -- taller, so the copy lines fit inside the frame
     _G.IsMacClient = function() return false end
     f.audio.scripts.OnClick(f.audio)
-    assert.is_truthy(f.audioLines.value:find("^copy /Y "))
+    assert.is_truthy(f.audioLines.value:find("^cmd /c copy /Y "))
     f.audio:SetChecked(false)
     f.audio.scripts.OnClick(f.audio)
     assert.are.equal(WFJ.Words.export({}, _G.date), f.text.value)

@@ -262,7 +262,7 @@ local found
 local function voiceIcon()
   local b = card and card.voice
   if not b or not b:IsShown() then return end
-  b.isPlaying = found ~= nil and found.r ~= nil and SV.playing() == current.key
+  b.isPlaying = current ~= nil and found ~= nil and found.r ~= nil and SV.playing() == current.key
   b.icon:SetTexture(b.isPlaying and VOICE_PAUSE or VOICE_PLAY)
 end
 
