@@ -110,16 +110,16 @@ describe("the word list window", function()
     local found = WFJ.StudyVoice.findAll(WFJ.Words.entries())
     assert.are.equal(WFJ.Words.export({ audio = function(e) return WFJ.StudyVoice.cell(found[e]) end }, _G.date),
       f.text.value)
-    assert.is_truthy(f.text.value:find("456-description-1.mp3]\n", 1, true))
+    assert.is_truthy(f.text.value:find("\t[sound:456-description-1.mp3]\n", 1, true))
     assert.is_true(shown(f.audioLines))
     assert.are.equal(ja("words.audioHint"), f.audioHint.en:GetText())
-    assert.are.equal(table.concat(WFJ.StudyVoice.copyLines(WFJ.Words.entries(), found, true), "\n"),
-      f.audioLines.value)
-    assert.is_truthy(f.audioLines.value:find("^cp "))
-    assert.is_true(f.size[2] > height) -- taller, so the copy lines fit inside the frame
+    assert.are.equal(table.concat(WFJ.StudyVoice.fileList(WFJ.Words.entries(), found), "\n"), f.audioLines.value)
+    assert.is_truthy(f.audioLines.value:find("Sound:\n  456-description-1.mp3", 1, true))
+    assert.are.equal(WW.ANKI_MAC, f.ankiFolder.value) -- the Anki folder for the player's own system
+    assert.is_true(f.size[2] > height) -- taller, so the file list fits inside the frame
     _G.IsMacClient = function() return false end
     f.audio.scripts.OnClick(f.audio)
-    assert.is_truthy(f.audioLines.value:find("^cmd /c copy /Y "))
+    assert.are.equal(WW.ANKI_WIN, f.ankiFolder.value)
     f.audio:SetChecked(false)
     f.audio.scripts.OnClick(f.audio)
     assert.are.equal(WFJ.Words.export({}, _G.date), f.text.value)

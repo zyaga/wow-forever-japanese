@@ -379,7 +379,6 @@ Levels 11-20 and Levels 51-60 are past the 315 MB mark: when one grows near the 
 ## Open work
 
 - Not voiced: quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者), the trainer window's text.
-- Not built: playing a saved word's sentence on the study card, and a sound column in the Anki export. Both can use the sentence files.
 
 ## Related
 

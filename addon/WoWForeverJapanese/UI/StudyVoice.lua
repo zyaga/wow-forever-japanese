@@ -8,7 +8,7 @@
 --   play(entry, found) · toggle(entry, found) · stop() · playing() · available(): the study card's sound (`found`:
 --     what find returned, when the caller has it). It plays alone on the Master channel (no queue, no panel, no
 --     dialog mute), stops the voice line playing, and fires State "studyVoice" when it starts and ends.
---   findAll(entries) · cell(found) · copyLines(entries, found, mac): the word list's Anki export, file names only.
+--   findAll(entries) · cell(found) · fileList(entries, found): the word list's Anki export, file names only.
 local _, WFJ = ...
 local StudyVoice = {}
 WFJ.StudyVoice = StudyVoice
@@ -16,7 +16,6 @@ WFJ.StudyVoice = StudyVoice
 local Compat = WFJ.Compat
 local CHANNEL = "Master"
 local UNKNOWN_LENGTH = 30 -- a file a pack gives no length: the voice player's guess, so its end is not missed
-local PREFIX = "wfj-" -- the files' names in Anki's media folder, clear of other decks' media
 
 -- ── Finding ──────────────────────────────────────────────────────────────
 
@@ -201,39 +200,45 @@ end)
 -- ── The Anki export ──────────────────────────────────────────────────────
 
 -- → each entry's files as find returns them, by entry (none for an entry without audio): one search per word for
--- both the export's cells and the copy lines
+-- both the export's cells and the file list
 function StudyVoice.findAll(entries)
   local found = {}
   for _, e in ipairs(entries or {}) do found[e] = StudyVoice.find(e) end
   return found
 end
 
--- → "[sound:wfj-<file>]" for each file of what find returned, or "" for nothing
+-- → "[sound:<file>]" for each file of what find returned, or "" for nothing: the files keep the packs' names, which
+-- is how a player copying them by hand finds them in Anki's media folder
 function StudyVoice.cell(r)
   local out = {}
-  for _, c in ipairs(r and r.clips or {}) do out[#out + 1] = "[sound:" .. PREFIX .. c.file .. "]" end
+  for _, c in ipairs(r and r.clips or {}) do out[#out + 1] = "[sound:" .. c.file .. "]" end
   return table.concat(out)
 end
 
-local MAC = 'cp "Interface/AddOns/%s/Sound/%s" ~/"Library/Application Support/Anki2/User 1/collection.media/%s"'
--- through cmd, so the line works pasted in PowerShell (Windows' default terminal) as well as in Command Prompt
-local WINDOWS = 'cmd /c copy /Y "Interface\\AddOns\\%s\\Sound\\%s" '
-  .. '"%%APPDATA%%\\Anki2\\User 1\\collection.media\\%s"'
-
--- The lines that copy the entries' files (`found`, from findAll) into Anki's media folder, each file once, in list
--- order: pasted in a terminal opened in the client's _forever_ folder (an addon cannot copy files). `mac`: the Mac's
--- cp, else Windows' copy.
-function StudyVoice.copyLines(entries, found, mac)
-  local out, seen = {}, {}
+-- The files the player copies into Anki's media folder, each once, under the pack folder it is in (both in list
+-- order): "<folder>/Sound:" then "  <file>" lines. An addon cannot copy files, and cannot know where the game is
+-- installed, so the window names the folders from the World of Warcraft folder the player knows.
+function StudyVoice.fileList(entries, found)
+  local order, files, seen = {}, {}, {}
   for _, e in ipairs(entries or {}) do
     local r = found[e]
     for _, c in ipairs(r and r.clips or {}) do
+      if not files[c.folder] then
+        files[c.folder] = {}
+        order[#order + 1] = c.folder
+      end
       local id = c.folder .. "/" .. c.file
       if not seen[id] then
         seen[id] = true
-        out[#out + 1] = (mac and MAC or WINDOWS):format(c.folder, c.file, PREFIX .. c.file)
+        local list = files[c.folder]
+        list[#list + 1] = "  " .. c.file
       end
     end
+  end
+  local out = {}
+  for _, folder in ipairs(order) do
+    out[#out + 1] = folder .. "/Sound:"
+    for _, line in ipairs(files[folder]) do out[#out + 1] = line end
   end
   return out
 end

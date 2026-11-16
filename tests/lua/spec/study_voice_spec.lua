@@ -213,30 +213,24 @@ describe("UI/StudyVoice", function()
   end)
 
   describe("the export", function()
-    it("an entry's Anki sound cell names its files with the wfj- prefix, empty without audio", function()
+    it("an entry's Anki sound cell names its files as the pack names them, empty without audio", function()
       register()
       local book, label = entry("book", "bbbb", SPLIT_JA), entry("ui", 3, "閉じる")
       local found = SV.findAll({ book, label })
-      assert.are.equal("[sound:wfj-b-bbbb-1.mp3][sound:wfj-b-bbbb-2.mp3]", SV.cell(found[book]))
+      assert.are.equal("[sound:b-bbbb-1.mp3][sound:b-bbbb-2.mp3]", SV.cell(found[book]))
       assert.is_nil(found[label])
       assert.are.equal("", SV.cell(found[label]))
     end)
 
-    it("the copy lines copy each file once, for the player's system", function()
+    it("lists the files to copy once each, under the pack folder each is in, in list order", function()
       register()
       local list = { entry("book", "bbbb", SPLIT_JA), entry("gossip", "aaaa", "話を聞いてくれ。"),
-        entry("gossip", "aaaa", "頼む。"), entry("ui", 3, "閉じる") }
+        entry("gossip", "aaaa", "頼む。"), entry("ui", 3, "閉じる"), entry("gossip", "cccc", WHOLE_JA) }
       assert.are.same({
-        'cp "Interface/AddOns/' .. FOLDER .. '/Sound/b-bbbb-1.mp3" ~/"Library/Application Support/Anki2/User 1/'
-          .. 'collection.media/wfj-b-bbbb-1.mp3"',
-        'cp "Interface/AddOns/' .. FOLDER .. '/Sound/b-bbbb-2.mp3" ~/"Library/Application Support/Anki2/User 1/'
-          .. 'collection.media/wfj-b-bbbb-2.mp3"',
-        'cp "Interface/AddOns/' .. FOLDER .. '/Sound/g-aaaa-2.mp3" ~/"Library/Application Support/Anki2/User 1/'
-          .. 'collection.media/wfj-g-aaaa-2.mp3"',
-      }, SV.copyLines(list, SV.findAll(list), true))
-      assert.are.same('cmd /c copy /Y "Interface\\AddOns\\' .. FOLDER .. '\\Sound\\b-bbbb-1.mp3" '
-        .. '"%APPDATA%\\Anki2\\User 1\\collection.media\\wfj-b-bbbb-1.mp3"',
-        SV.copyLines(list, SV.findAll(list), false)[1])
+        FOLDER .. "/Sound:", "  b-bbbb-1.mp3", "  b-bbbb-2.mp3", "  g-aaaa-2.mp3",
+        "WoWForeverJapanese_VoiceOther/Sound:", "  g-cccc.mp3",
+      }, SV.fileList(list, SV.findAll(list)))
+      assert.are.same({}, SV.fileList({ entry("ui", 3, "閉じる") }, {}))
     end)
   end)
 

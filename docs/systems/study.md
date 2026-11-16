@@ -145,7 +145,7 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 - `addon/WoWForeverJapanese/Core/Fsrs.lua`: the FSRS-6 model: `W()` (a fresh copy of the 21 defaults), `retrievability`, `review` (pure)
 - `addon/WoWForeverJapanese/Core/Study.lua`: `load`, `prune`, `next`, `counts`, `answer`, `card`, `readonly`; the relearn step and the day length (pure)
 - `addon/WoWForeverJapanese/UI/StudyWindow.lua`: the tab and the card, the done state, the position, combat, the tick, `open` / `collapse` / `close` / `toggle`, `resetPosition` (`/wfj study reset`), `setCombat` (from Main's combat events), `WFJ_StudyToggle` (the binding)
-- `addon/WoWForeverJapanese/UI/StudyVoice.lua`: `find` (the sentence's files and stop time, or the reason it has none), `play`, `toggle`, `stop`, `playing`, `available`; `cell` and `copyLines` for the word list's export
+- `addon/WoWForeverJapanese/UI/StudyVoice.lua`: `find` (the sentence's files and stop time, or the reason it has none), `play`, `toggle`, `stop`, `playing`, `available`; `cell` and `fileList` for the word list's export
 - `addon/WoWForeverJapanese/Core/Voice.lua`: `Voice.line(kind, id)` (a shipped line's main recording, or why not) and `Voice.soundPath(folder, file)`
 - `addon/WoWForeverJapanese/UI/VoicePlayer.lua`: `play` stops the card's sentence when a voice line starts
 - `addon/WoWForeverJapanese/UI/Readings.lua`: `study` in `SURFACES`; `View.spanAreas`, the guarded span call the card measures its mark with
