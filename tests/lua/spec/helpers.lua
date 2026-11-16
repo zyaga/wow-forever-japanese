@@ -16,9 +16,19 @@ local function run(relpath, chunk, addonName, ns)
   return result
 end
 
+-- One parse per file per process. A parsed chunk runs again for each fresh namespace, and parsing the generated
+-- data again for every test is most of what a whole-addon load costs.
+local chunks = {}
+
 function H.loadChunk(relpath, addonName, ns)
-  local chunk, err = loadfile(H.ADDON_DIR .. "/" .. relpath)
-  assert(chunk, err)
+  local path = H.ADDON_DIR .. "/" .. relpath
+  local chunk = chunks[path]
+  if not chunk then
+    local err
+    chunk, err = loadfile(path)
+    assert(chunk, err)
+    chunks[path] = chunk
+  end
   return run(relpath, chunk, addonName, ns)
 end
 
