@@ -1,5 +1,6 @@
 {"id": "3002177b15742961", "field": "text", "en": "Well done. Release the bear into my custody so that I may apply the curing cantrip.", "hash": "3002177b15742961", "src": "vmangos@13b49dc"}
 {"id": "300527556dcecfdf", "field": "text", "en": "There, that should do it...", "hash": "300527556dcecfdf", "src": "vmangos@13b49dc"}
+{"id": "300bc3825dbb02a3", "field": "text", "en": "Hello, $N! What can I do for you?", "hash": "300bc3825dbb02a3", "src": "collector@1.60.1.70888", "npcs": [2277]}
 {"id": "300cb9ec97d156d4", "field": "text", "en": "Why are we goin' this way?", "hash": "300cb9ec97d156d4", "src": "vmangos@13b49dc"}
 {"id": "300e6de1fa9c8669", "field": "text", "en": "Who dares steal my precious mount?  You will pay for your insolence, mortal!", "hash": "300e6de1fa9c8669", "src": "vmangos@13b49dc"}
 {"id": "300efbc6080a2a54", "field": "text", "en": "You da strong one now!  All hail to da new king of da Gordok!", "hash": "300efbc6080a2a54", "src": "vmangos@13b49dc"}

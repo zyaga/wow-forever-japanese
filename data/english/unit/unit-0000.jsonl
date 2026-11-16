@@ -31,6 +31,7 @@
 {"id": 289, "field": "name", "en": "Abercrombie", "hash": "a8c0829571b251cc", "src": "collector@1.60.1.70862"}
 {"id": 294, "field": "name", "en": "Marshal Haggard", "hash": "0f30a2479826e2aa", "src": "collector@1.60.1.70862"}
 {"id": 295, "field": "name", "en": "Innkeeper Farley", "hash": "9d7103f07336ded3", "src": "collector@1.60.1.70205"}
+{"id": 297, "field": "name", "en": "Caretaker Folsom", "hash": "05ffa8fba490ec87", "src": "collector@1.60.1.70888"}
 {"id": 302, "field": "name", "en": "Blind Mary", "hash": "195df5564c1c89f9", "src": "collector@1.60.1.70862"}
 {"id": 311, "field": "name", "en": "Sven Yorgen", "hash": "f86479b508060189", "src": "collector@1.60.1.70862"}
 {"id": 332, "field": "name", "en": "Master Mathias Shaw", "hash": "49359f231edfa704", "src": "collector@1.60.1.70862"}
@@ -69,6 +70,7 @@
 {"id": 823, "field": "name", "en": "Deputy Willem", "hash": "44d951be59ef57a2", "src": "collector@1.60.1.70205"}
 {"id": 836, "field": "name", "en": "Durnan Furcutter", "hash": "7515cfa91ffc4b6c", "src": "collector@1.60.1.70790"}
 {"id": 837, "field": "name", "en": "Branstock Khalder", "hash": "91f6059fcd83ab84", "src": "collector@1.60.1.70245"}
+{"id": 840, "field": "name", "en": "Watcher Backus", "hash": "22f500a33e9da434", "src": "collector@1.60.1.70888"}
 {"id": 859, "field": "name", "en": "Guard Berton", "hash": "5c5ece0f8d2f830f", "src": "collector@1.60.1.70862"}
 {"id": 878, "field": "name", "en": "Scout Galiaan", "hash": "0e5f226223fe78c4", "src": "collector@1.60.1.70862"}
 {"id": 888, "field": "name", "en": "Watcher Dodds", "hash": "dcf20fac7c5c9abc", "src": "collector@1.60.1.70862"}

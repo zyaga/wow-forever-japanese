@@ -30,14 +30,30 @@
 {"id": 2215, "field": "name", "en": "High Executor Darthalia", "hash": "eeae2415ed9722be", "src": "collector@1.60.1.70862"}
 {"id": 2216, "field": "name", "en": "Apothecary Lydon", "hash": "f708188cb4b3fcbf", "src": "collector@1.60.1.70862"}
 {"id": 2226, "field": "name", "en": "Karos Razok", "hash": "efcef084a48c2b4e", "src": "collector@1.60.1.70790"}
+{"id": 2228, "field": "name", "en": "Lieutenant Farren Orinelle", "hash": "bde5ef544899fc16", "src": "collector@1.60.1.70888"}
+{"id": 2263, "field": "name", "en": "Marshal Redpath", "hash": "d8c865999217b42e", "src": "collector@1.60.1.70888"}
+{"id": 2276, "field": "name", "en": "Magistrate Henry Maleb", "hash": "e1352c5a1b809230", "src": "collector@1.60.1.70888"}
+{"id": 2277, "field": "name", "en": "Loremaster Dibbs", "hash": "79def4a33cd11c0d", "src": "collector@1.60.1.70888"}
+{"id": 2285, "field": "name", "en": "Count Remington Ridgewell", "hash": "1a4d53fa68cb7a08", "src": "collector@1.60.1.70938"}
 {"id": 2326, "field": "name", "en": "Thamner Pol", "hash": "27ac87c4019b780a", "src": "collector@1.60.1.70862"}
 {"id": 2329, "field": "name", "en": "Michelle Belle", "hash": "5a361ebc72d9fea1", "src": "collector@1.60.1.70862"}
+{"id": 2366, "field": "name", "en": "Barkeep Kelly", "hash": "934db948dd0b38b9", "src": "collector@1.60.1.70888"}
+{"id": 2382, "field": "name", "en": "Darren Malvew", "hash": "7bdcedd0889922bb", "src": "collector@1.60.1.70888"}
 {"id": 2391, "field": "name", "en": "Serge Hinott", "hash": "04b9e26bbac3dcea", "src": "collector@1.60.1.70862"}
 {"id": 2425, "field": "name", "en": "Varimathras", "hash": "325d1afc53f2809b", "src": "collector@1.60.1.70790"}
+{"id": 2430, "field": "name", "en": "Chef Jessen", "hash": "e20359aedc342028", "src": "collector@1.60.1.70888"}
+{"id": 2438, "field": "name", "en": "Bartolo Ginsetti", "hash": "e4aa111aad16ee7c", "src": "collector@1.60.1.70888"}
 {"id": 2504, "field": "name", "en": "Donyal Tovald", "hash": "d11ce567acaa6fe1", "src": "collector@1.60.1.70862"}
+{"id": 2700, "field": "name", "en": "Captain Nials", "hash": "d03ce75042e0ed4f", "src": "collector@1.60.1.70938"}
+{"id": 2705, "field": "name", "en": "Brewmeister Bilger", "hash": "5d3a7f4680e38033", "src": "collector@1.60.1.70888"}
+{"id": 2708, "field": "name", "en": "Archmage Malin", "hash": "2596d14e4b07743d", "src": "collector@1.60.1.70938"}
+{"id": 2711, "field": "name", "en": "Phin Odelic", "hash": "b0940d69f7b0a444", "src": "collector@1.60.1.70888"}
+{"id": 2712, "field": "name", "en": "Quae", "hash": "0af963308e674298", "src": "collector@1.60.1.70938"}
+{"id": 2713, "field": "name", "en": "Kinelory", "hash": "29e41db7dcc1d0e9", "src": "collector@1.60.1.70938"}
 {"id": 2756, "field": "name", "en": "Grund Drokda", "hash": "63e1bab1feebc01f", "src": "collector@1.60.1.70205"}
 {"id": 2784, "field": "name", "en": "King Magni Bronzebeard", "hash": "b5b1f991588315d4", "src": "collector@1.60.1.70862"}
 {"id": 2786, "field": "name", "en": "Gerrig Bonegrip", "hash": "e3163cda2402d476", "src": "collector@1.60.1.70862"}
+{"id": 2788, "field": "name", "en": "Apprentice Kryten", "hash": "5b1504d92a383390", "src": "collector@1.60.1.70938"}
 {"id": 2911, "field": "name", "en": "Archaeologist Flagongut", "hash": "58d31b11d439fd5d", "src": "collector@1.60.1.70862"}
 {"id": 2912, "field": "name", "en": "Chief Archaeologist Greywhisker", "hash": "538d1bb62c0edb94", "src": "collector@1.60.1.70888"}
 {"id": 2913, "field": "name", "en": "Archaeologist Hollee", "hash": "f904166192e1b5ea", "src": "collector@1.60.1.70862"}
