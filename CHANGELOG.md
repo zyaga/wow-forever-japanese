@@ -13,6 +13,7 @@ an old setting stops working). A release moves those lines under its version num
 - The voice panel follows the voice word by word: the page turns as the speaker starts each sentence, and a soft tint marks the words as they are spoken (warm white on the dark looks, brown on parchment). A name of several English words lights up whole.
 - Pausing a voiced line and playing it again picks up at the sentence you paused in, not from the start of the line. Two small gold arrows beside pause on the voice panel play the line from the sentence before or the next one, also while it is paused or after it ended. Play again starts from the first sentence, even after a pause.
 - When a voice pack is out of date, a chat line at login names it and its version. A line that stays quiet because its voice pack is older than its Japanese names that pack too, and a voice pack too new for your addon says so at login.
+- The study card can say a saved word's sentence in the NPC's recorded voice: it plays when you show the answer (a setting on the Voice page turns that off), and a play button beside the answer plays it again. In the word list, Include audio adds those recordings to the Anki export, with lines to paste in a terminal that copy the sound files into Anki.
 
 ### Changed
 - The voice packs now hold each line as one file per sentence, timed to the words. Update all the voice packs once in the CurseForge app (Update All updates them together). Older voice packs still play, without the word marks.
