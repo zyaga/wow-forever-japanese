@@ -15959,6 +15959,7 @@
 {"key": "g-f006cdd7c876eb2d", "speaker": 268679, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "g-f02789a1637632d0", "speaker": 5641, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-f02ae5a75746e775", "speaker": 15737, "others": [15761], "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
+{"key": "g-f040d7ae661f3a83", "speaker": 10721, "provenance": {"source": "collector@1.60.1.70938", "imported": "2026-11-16"}}
 {"key": "g-f04855d6e880bdf6", "speaker": 3362, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-f0b92989bbac2be7", "speaker": 15909, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-f0fc524ee7f17edd", "speaker": 9529, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}

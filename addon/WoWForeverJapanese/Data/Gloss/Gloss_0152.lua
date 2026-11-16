@@ -919,4 +919,9 @@ WFJ.Data.add("gloss", {
   [152916] = "表\tおもて\tsurface",
   [152917] = "調合薬\tちょうごうやく\tassay (a mixed preparation)",
   [152918] = "足りる\tたりる\tit's never enough",
+  [152919] = "くださる\tくださる\tkindly (gave)",
+  [152920] = "くださる\tくださる\tmay (they) kindly",
+  [152921] = "勝負\tしょうぶ\ta fight (contest)",
+  [152922] = "恵み\tめぐみ\tgift (blessing)",
+  [152923] = "覚悟する\tかくごする\tprepare yourself (brace for it)",
 })
