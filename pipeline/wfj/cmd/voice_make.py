@@ -207,26 +207,47 @@ def player_voice(cfg: dict[str, Any], race: str, sex: str) -> str:
     return hit[0] if hit else cfg["narrator"]
 
 
-def players_of(arg: str | None) -> list[tuple[str, str]]:
-    """`--players tauren-f,human-m` or `all` → [(race, sex)]."""
+# `--players npc` (and `all`): the character's error lines in every NPC voice of the cast too, so a player can
+# choose any of them for their character (ADR-093)
+NPC = "npc"
+Player = tuple[str, str] | str  # (race, sex), or NPC for the cast's NPC voices
+
+
+def players_of(arg: str | None) -> list[Player]:
+    """`--players tauren-f,human-m,npc` or `all` (every race and sex, then the NPC voices)
+    → [(race, sex) | NPC]."""
     if not arg:
         return []
     if arg == "all":
-        return [(r, x) for r in PLAYER_RACES for x in PLAYER_SEXES]
-    out = []
+        return [*((r, x) for r in PLAYER_RACES for x in PLAYER_SEXES), NPC]
+    out: list[Player] = []
     for item in arg.split(","):
+        if item == NPC:
+            out.append(NPC)
+            continue
         race, _, sex = item.partition("-")
         if race not in PLAYER_RACES or sex not in PLAYER_SEXES:
-            raise ValueError(f"--players {item!r}: a race of {PLAYER_RACES} and m or f")
+            raise ValueError(f"--players {item!r}: a race of {PLAYER_RACES} and m or f, or {NPC}")
         out.append((race, sex))
     return out
 
 
-def error_jobs(root: Path, cfg: dict[str, Any], players: list[tuple[str, str]]) -> list[voice.Job]:
+def npc_voices(root: Path, cfg: dict[str, Any]) -> list[str]:
+    """The roster voices the cast gives creatures (a creature's voice and its female voice), less those a
+    player race already speaks in: the same voice is never made twice under two names."""
+    players = {player_voice(cfg, r, x) for r in PLAYER_RACES for x in PLAYER_SEXES}
+    cast = {v for r in read_cast(root).values() for v in (r["voice"], r.get("female")) if v}
+    return sorted(cast - players)
+
+
+def error_jobs(root: Path, cfg: dict[str, Any], players: Sequence[Player]) -> list[voice.Job]:
+    """The character's error lines: `e-<line>-<race>-<sex>` in each listed player voice, then, with NPC
+    listed, `e-<line>-<voice>` in each NPC voice."""
     keys = sorted(error_lines(root))
-    return [
-        voice.Job(f"{k}-{race}-{sex}", k, player_voice(cfg, race, sex)) for race, sex in players for k in keys
-    ]
+    who = [(f"{p[0]}-{p[1]}", player_voice(cfg, *p)) for p in players if p != NPC]
+    if NPC in players:
+        who += [(v, v) for v in npc_voices(root, cfg)]
+    return [voice.Job(f"{k}-{name}", k, v) for name, v in who for k in keys]
 
 
 def read_cast(root: Path) -> dict[int, dict[str, str]]:
@@ -248,9 +269,9 @@ def file_jobs(
     cfg: dict[str, Any],
     scope: str,
     lines: dict[str, str],
-    players: Sequence[tuple[str, str]] = (),
+    players: Sequence[Player] = (),
 ) -> list[voice.Job]:
-    """Every file a scope needs, and the character's error lines for `players` [(race, sex)]."""
+    """Every file a scope needs, and the character's error lines for `players` [(race, sex) | NPC]."""
     rows = scoped_rows(root, scope)
     jobs = voice.jobs(rows, read_cast(root), cfg["narrator"], cfg["book_narrator"], lines)
     return jobs + error_jobs(root, cfg, list(players))
@@ -450,7 +471,7 @@ def step_state(root: Path, cfg: dict[str, Any], jobs: Sequence[voice.Job], lines
 
 
 def plan(
-    root: Path, cfg: dict[str, Any], scope: str, players: Sequence[tuple[str, str]] = ()
+    root: Path, cfg: dict[str, Any], scope: str, players: Sequence[Player] = ()
 ) -> dict[str, Any]:
     """The files generate would make now, and why."""
     lines = shipped_lines(root)
@@ -480,7 +501,7 @@ def plan(
     }
 
 
-def run_plan(cfg: dict[str, Any], root: Path, scope: str, players: Sequence[tuple[str, str]] = ()) -> int:
+def run_plan(cfg: dict[str, Any], root: Path, scope: str, players: Sequence[Player] = ()) -> int:
     p = plan(root, cfg, scope, players)
     hours = p["chars"] / 19.8 / 3600  # the measured rate of the first pack, characters a second of work
     print(
@@ -649,7 +670,7 @@ def _cloned_lines(todo: collections.deque, qwen: Callable[[], Any], make: Callab
 
 
 def _drop_unused(audio: dict[str, Any], jobs: Sequence[voice.Job], scope: str,
-                 players: Sequence[tuple[str, str]]) -> None:
+                 players: Sequence[Player]) -> None:
     """After a run over the whole game, rows for files no line uses any more (a recast, a removed line) leave
     the record, so it lists exactly the files the packs carry."""
     if scope == "all" and set(players) >= set(players_of("all")):
@@ -666,7 +687,7 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
     engine: Engine,
     encode: Callable[[bytes, Path], None] | None = None,
     log=print,
-    players: Sequence[tuple[str, str]] = (),
+    players: Sequence[Player] = (),
     checkout: bool = False,
     engine_run: Path | None = None,
     qwen: Callable[[], Any] | None = None,
@@ -844,7 +865,7 @@ def run_generate(
     root: Path,
     scope: str,
     store: Path,
-    players: Sequence[tuple[str, str]] = (),
+    players: Sequence[Player] = (),
     engine_run: Path | None = None,
     prepared: Path | None = None,
     archive: Path | None = None,
@@ -880,7 +901,7 @@ def run_generate(
 
 
 def export_remote(root: Path, cfg: dict[str, Any], scope: str, store: Path, out: Path,
-                  players: Sequence[tuple[str, str]] = ()) -> int:
+                  players: Sequence[Player] = ()) -> int:
     """The cloned-voice files a run would make, written for a remote run (`qwen_modal.py`): jobs.jsonl (key,
     text, reference, mode), refs/ (the joined set references) and refs.json (their transcripts)."""
     lines = shipped_lines(root)
@@ -924,7 +945,7 @@ BATCH_LINES = 15
 
 
 def remote_round(root: Path, cfg: dict[str, Any], scope: str, store: Path,
-                 archive: Path | None, players: Sequence[tuple[str, str]] = ()) -> Path | None:
+                 archive: Path | None, players: Sequence[Player] = ()) -> Path | None:
     """The cloned lines a run needs, read on Modal: exported to build/voice-remote/<time>, read with
     `qwen_modal.py` on as many cards as the lines fill (up to 10), and the WAVs copied to `archive` and
     checked. → the folder for `--prepared`, or None when no cloned line needs making."""
@@ -1065,8 +1086,9 @@ def status_lines(store: Path) -> list[str]:
 # ---- pack ------------------------------------------------------------------------------------------------
 
 
-def error_table(root: Path, cfg: dict[str, Any], players: Sequence[tuple[str, str]]) -> dict[str, Any]:
-    """Register.lua's `errors`: the game's voice id → kind, and per race-sex the files in step."""
+def error_table(root: Path, cfg: dict[str, Any], players: Sequence[Player]) -> dict[str, Any]:
+    """Register.lua's `errors`: the game's voice id → kind, and per race-sex (`tauren-f`) and per NPC voice
+    (its roster id) the files in step."""
     lines = shipped_lines(root)
     audio = audio_record(root)
     jobs = error_jobs(root, cfg, list(players))
@@ -1193,7 +1215,9 @@ def run(argv: Sequence[str]) -> int:
         sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
         sp.add_argument("--store")
         sp.add_argument(
-            "--players", help="the character's error lines too: race-sex (tauren-f,human-m) or all"
+            "--players",
+            help="the character's error lines too: race-sex (tauren-f,human-m), npc (every NPC voice of the "
+                 "cast) or all",
         )
         if name == "generate":
             sp.add_argument("--engine-run", help="the engine to start when none answers")

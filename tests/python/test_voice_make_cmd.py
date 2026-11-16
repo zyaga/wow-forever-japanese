@@ -102,10 +102,12 @@ def test_a_broken_config_lists_its_problems(tmp_path):
         voice_make.load_config(bad)
 
 
-def test_players_of_reads_race_sex_pairs():
+def test_players_of_reads_race_sex_pairs_and_the_npc_voices():
     assert voice_make.players_of(None) == [] and voice_make.players_of("") == []
-    assert len(voice_make.players_of("all")) == len(voice_make.PLAYER_RACES) * 2
+    every = voice_make.players_of("all")
+    assert len(every) == len(voice_make.PLAYER_RACES) * 2 + 1 and every[-1] == voice_make.NPC
     assert voice_make.players_of("tauren-f,human-m") == [("tauren", "f"), ("human", "m")]
+    assert voice_make.players_of("npc,tauren-f") == [voice_make.NPC, ("tauren", "f")]
     with pytest.raises(ValueError, match="--players 'elf-m'"):
         voice_make.players_of("elf-m")
     with pytest.raises(ValueError, match="--players 'orc-x'"):
@@ -144,6 +146,46 @@ def test_the_error_table_holds_files_in_step_per_race_and_sex(world):
             "outofrange": ("e-ERR_OUT_OF_RANGE-tauren-f.mp3", 0.5),  # the kind speaks its message's file
         }},
     }
+
+
+def _deep_npc(data):
+    """A creature of the cast whose voice no player race speaks in."""
+    rows = voice_make._rows(data / "voice" / "voices.jsonl")
+    voice_make._write(data / "voice" / "voices.jsonl", [
+        *rows, {"creature": 4000, "voice": "deep", "row": "deep", "female": "f", "female_row": "female",
+                "provenance": SRC}])
+    return {**CFG, "cast": PLAYER_CAST, "roster": {**CFG["roster"], "deep": {**CFG["roster"]["m"], "style": 33}}}
+
+
+def test_the_npc_voices_of_the_cast_speak_the_error_lines_too(world):
+    _errors(world.data)
+    cfg = _deep_npc(world.data)
+    assert voice_make.npc_voices(world.data, cfg) == ["deep"]  # f, m and old are player voices already
+    jobs = voice_make.error_jobs(world.data, cfg, [("tauren", "f"), voice_make.NPC])
+    assert [(j.stem, j.voice) for j in jobs] == [
+        ("e-ERR_OUT_OF_RANGE-tauren-f", "f"), ("e-nomana-tauren-f", "f"),
+        ("e-ERR_OUT_OF_RANGE-deep", "deep"), ("e-nomana-deep", "deep")]
+    # the race-sex files are the same with or without the NPC voices
+    assert [j.stem for j in voice_make.error_jobs(world.data, cfg, [("tauren", "f")])] == [
+        "e-ERR_OUT_OF_RANGE-tauren-f", "e-nomana-tauren-f"]
+
+
+def test_the_error_table_keys_an_npc_voice_by_its_id_beside_the_race_sexes(world):
+    _errors(world.data)
+    cfg = _deep_npc(world.data)
+    players = [("tauren", "f"), voice_make.NPC]
+    voice_make.generate(world.data, "all", cfg, world.store, FakeEngine(), _fake_encode, log=lambda *_: None,
+                        players=players)
+    voices = voice_make.error_table(world.data, cfg, players)["voices"]
+    assert sorted(voices) == ["deep", "tauren-f"]
+    assert voices["deep"] == {
+        "ERR_OUT_OF_RANGE": ("e-ERR_OUT_OF_RANGE-deep.mp3", 0.5),
+        "nomana": ("e-nomana-deep.mp3", 0.5),
+        "outofrange": ("e-ERR_OUT_OF_RANGE-deep.mp3", 0.5),
+    }
+    # a file not in step with the shipped Japanese is left out, as for the race-sex files
+    Store(world.data).save("ui", [{"id": "ERR_OUT_OF_RANGE", "field": "text", "ja": "遠い。", "status": "trusted"}])
+    assert "ERR_OUT_OF_RANGE" not in voice_make.error_table(world.data, cfg, players)["voices"]["deep"]
 
 
 # ---- generate and the pack tables ------------------------------------------------------------------------
