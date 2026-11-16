@@ -396,7 +396,7 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
-### 1.60.1.70888 → 1.60.1.70938, with twenty-two players' sends (2026-11-16)
+### 1.60.1.70888 → 1.60.1.70938, with twenty-three players' sends (2026-11-16)
 
 Read from the caches the client saved at its exit on 2026-11-16, after the WFJScan sweep and its slow recheck.
 Quest cache: 5,215 records (5,125 quests and 90 placeholders), read with 70888's layout, pinned again for 70938 (one record
@@ -414,10 +414,16 @@ lists eleven displays, so the reader's cap went from 8 to 16.
 The import followed the 70888 order (`make import-shared-english`, `make import-client CLIENT=forever`, `make
 import-served`): the full `make import-english` would have put Classic Era's English back on 812 lines (798 items,
 14 spells). The English Collector: the maintainer's file (16 gossip lines, 25 quest texts, 27 units, 26 items and 3
-spells that differ) and twenty-two players' sends, issues #122, #127, #128, #132, #136, #138, #140, #141, #142,
-#145 to #150, #153 to #157, #159 and #160: 399 lines added, 9 replaced, nothing rejected. Six quest texts that a
+spells that differ) and twenty-three players' sends, issues #122, #127, #128, #132, #136, #138, #140, #141, #142,
+#145 to #150, #153 to #157 and #159 to #161: 399 lines added, 9 replaced, nothing rejected, with #161 (taken last)
+adding four NPC lines. Six quest texts that a
 send recorded with the player's race or name written out ("skyborne" for `$r`, a name for `$n`) keep the token
 wording, and one gossip line with its `$R` form in the store already was dropped.
+
+The last sends' 13 item lines were drafted, and three gossip labels that are only a place name ship as the English. Four
+quest fields whose English this build rewrote (the objectives of 3505, 3842 and 8961, and 8961's description, where
+Executor Asharell replaces the Duke of Cynders) had stopped shipping; the hand-written ones were ruled for redraft and
+all four redrafted with their word cards.
 
 | Type | Reworded (shipped line now stale) | English the build no longer serves (stays stale, listed) | Drafted |
 |---|---|---|---|

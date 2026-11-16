@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-16 at commit `2aafe33a2`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-16 at commit `e7e07a84f`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,7 +9,7 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 23,450 | 23,360 | 81 | 100.0% | 9 |
+| Quest text | 23,450 | 23,364 | 81 | 100.0% | 5 |
 | NPC dialogue (gossip, speech) | 11,605 | 11,605 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 687 | 585 | 102 | 100.0% | 0 |
@@ -17,7 +17,7 @@
 | Item descriptions | 10,619 | 10,618 | 0 | 100.0% | 1 |
 | Spell tooltips + auras | 25,933 | 25,885 | 1 | 99.8% | 47 |
 | Interface strings | 16,116 | 16,116 | 0 | 100.0% | 0 |
-| **All** | **89,912** | | | **99.9%** | **57** |
+| **All** | **89,912** | | | **99.9%** | **53** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 336, gossip 94, item 907, spell 301, ui 313.
@@ -41,10 +41,6 @@ professions, internal strings): quest 336, gossip 94, item 907, spell 301, ui 31
 |---|---|---|
 | Quest text | rejected: alignment_failed:Orgrimmar | 2 |
 | Quest text | rejected: alignment_failed:Felicia | 1 |
-| Quest text | rejected: alignment_failed:Magus | 1 |
-| Quest text | rejected: alignment_failed:Fortitudes | 1 |
-| Quest text | rejected: alignment_failed:Cinder | 1 |
-| Quest text | rejected: duplicate_conflict | 1 |
 | Quest text | rejected: alignment_failed:Tyr's Watch | 1 |
 | Quest text | rejected: alignment_failed:skyborne | 1 |
 | Item descriptions | no Japanese yet: the template has too many optional parts for one translation | 1 |
@@ -367,7 +363,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 21,892 | 21,892 | 100.0% | 200 | 347,364 | 100.0% |
+| quest | 21,896 | 21,896 | 100.0% | 196 | 347,408 | 100.0% |
 | gossip | 11,465 | 11,465 | 100.0% | 0 | 112,222 | 100.0% |
 | ui | 15,298 | 15,298 | 100.0% | 0 | 47,665 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,629 | 100.0% |
@@ -382,11 +378,11 @@ translation uses for it. The pairs are read off the meanings the readings alread
 
 | Type | Lines with English and a word list | Words that can take a card | With one | Done |
 |---|---|---|---|---|
-| quest | 21,884 | 447,903 | 407,893 | 91.1% |
+| quest | 21,888 | 447,970 | 407,954 | 91.1% |
 | gossip | 11,459 | 147,975 | 135,805 | 91.8% |
 | ui | 14,310 | 48,598 | 43,716 | 90.0% |
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
-| **All** | | **689,211** | **628,334** | **91.2%** |
+| **All** | | **689,278** | **628,395** | **91.2%** |
 
 A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
 the client fills in are not counted, and neither are the words that take no card by design: the
@@ -408,7 +404,7 @@ outnumber lines.
 | Quest turn-in | 4,370 | 4,396 | 4,396 | 0 | 0 | 282 |
 | NPC talk (greetings, gossip, quest text keyed by its English) | 2,378 | 2,968 | 2,968 | 0 | 0 | 34 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
-| The character's error lines (one file per race and sex) | 50 | 3,600 | 3,600 | 0 | 0 | 0 |
+| The character's error lines (one file per race and sex, and per NPC voice) | 50 | 3,600 | 3,600 | 0 | 0 | 0 |
 
 Lines that play another line's file (a female wording of a gossip line, or a quest's text Forever repeats under another id): 1.
 
@@ -423,3 +419,4 @@ Shipped Japanese the voice does not read, by reason.
 | HTML book page (keeps the client's layout) | 38 |
 | A quest log line (the completion text the tracker shows) | 20 |
 | NPC text with no known speaker | 2 |
+| No speaker found for the quest | 1 |

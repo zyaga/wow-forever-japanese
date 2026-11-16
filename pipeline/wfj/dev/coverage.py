@@ -307,7 +307,7 @@ VOICE_KINDS = {
     "completion": "Quest turn-in",
     "g": "NPC talk (greetings, gossip, quest text keyed by its English)",
     "b": "Book and letter pages",
-    "e": "The character's error lines (one file per race and sex)",
+    "e": "The character's error lines (one file per race and sex, and per NPC voice)",
     "other": "Other",
 }
 # why a shipped NPC line has no voice, by where its English came from (data/english/gossip `src`)

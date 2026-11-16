@@ -252,6 +252,7 @@ WFJ.Data.add("gloss", {
   [105251] = "石核\tせきかく\tstone core",
   [105252] = "石灰化する\tせっかいかする\tcalcified",
   [105253] = "石炭\tせきたん\tcoal",
+  [105254] = "石炭\tせきたん\tcoals",
   [105255] = "石版\tせきばん\ttablet",
   [105256] = "石用\tいしよう\tstone (for stone)",
   [105257] = "石用ブラシ\tいしようブラシ\tstone brush",

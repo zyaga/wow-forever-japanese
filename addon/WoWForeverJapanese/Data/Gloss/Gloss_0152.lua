@@ -924,4 +924,10 @@ WFJ.Data.add("gloss", {
   [152921] = "勝負\tしょうぶ\ta fight (contest)",
   [152922] = "恵み\tめぐみ\tgift (blessing)",
   [152923] = "覚悟する\tかくごする\tprepare yourself (brace for it)",
+  [152924] = "そのため\tそのため\tfor that",
+  [152925] = "一緒に\tいっしょに\ttogether with",
+  [152926] = "一部\tいちぶ\ta piece",
+  [152927] = "三分の二\tさんぶんのに\ttwo-thirds",
+  [152928] = "持ち帰る\tもちかえる\tplease return (with them)",
+  [152929] = "集める\tあつめる\thave to gather",
 })

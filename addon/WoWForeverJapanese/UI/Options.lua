@@ -762,7 +762,7 @@ function Options.refresh()
         local d, v = c.definition, S.get(c.id)
         -- a saved choice the menu no longer offers is not what plays: the caption names the default instead
         if d.choiceHidden and d.choiceHidden(v) then v = d.default end
-        W.setPair(c.caption, d.choiceText[v] or v, d.choiceTextJa[v] or v)
+        W.setPair(c.caption, (d.choiceText and d.choiceText[v]) or v, d.choiceTextJa[v] or v)
       end
     else
       refreshKeyRow(c, combat)
