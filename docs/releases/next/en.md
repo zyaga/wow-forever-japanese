@@ -1,5 +1,6 @@
-- **The voice panel follows the voice.** The page turns as each sentence starts, and a soft tint marks the words as they are spoken. A name of several English words lights up whole.
+- **The voice panel follows the voice.** The page turns as each sentence starts, and a soft tint marks the words as they are spoken. Stage directions the voice skips stay off the panel, so what you read matches what you hear.
 - **Go back and forth by sentence.** Pausing and playing again picks up at the sentence you paused in, and two small arrows beside pause play the sentence before or the next one.
 - **A clearer voice: update all your voice packs once.** The files now keep the voices' high end, and each line comes as one file per sentence. The download is about twice as big (about 2.8 GB), with three new packs. Use Update All in the CurseForge app.
+- **Forever 1.60.1.70938 in Japanese**, with what twenty-two players sent: 120 NPC lines, 128 quest progress and turn-in texts, new quest text and 20 item tooltips.
+- **Choose your character's error voice.** On the Voice settings page, pick any player or NPC voice for "out of range" and the other error lines.
 - **The addon tells you about your voice packs.** At login it names any voice pack that is out of date or did not load, and a bug report lists your packs with their versions.
-- **Stage directions the voice skips stay off the voice panel**, so what you read matches what you hear.

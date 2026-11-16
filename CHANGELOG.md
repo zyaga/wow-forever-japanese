@@ -13,12 +13,15 @@ an old setting stops working). A release moves those lines under its version num
 - The voice panel follows the voice word by word: the page turns as the speaker starts each sentence, and a soft tint marks the words as they are spoken (warm white on the dark looks, brown on parchment). A name of several English words lights up whole.
 - Pausing a voiced line and playing it again picks up at the sentence you paused in, not from the start of the line. Two small gold arrows beside pause on the voice panel play the line from the sentence before or the next one, also while it is paused or after it ended. Play again starts from the first sentence, even after a pause.
 - When a voice pack is out of date, a chat line at login names it and its version. A line that stays quiet because its voice pack is older than its Japanese names that pack too, and a voice pack too new for your addon says so at login.
+- You can choose the voice of your character's own error lines ("out of range") on the Voice settings page: Automatic (your character's race and sex), or any player or NPC voice of the game, grouped by race, for example "Dwarf, female (guard)". The game's English error lines of your own race and sex stay silent whatever you choose.
+- Japanese for what Forever 1.60.1.70938 added and for what twenty-two players sent with the English Collector: 120 NPC lines, 128 quest progress and turn-in texts, and new quest titles, objectives and descriptions (with word cards), and 20 item tooltips.
 
 ### Changed
 - The voice packs now hold each line as one file per sentence, timed to the words. Update all the voice packs once in the CurseForge app (Update All updates them together). Older voice packs still play, without the word marks.
 - The voice is clearer: the packs now keep the voices' high end, which makes the download about twice as big (about 2.8 GB). Three new packs split the largest level bands (Levels 1-10 (part 2), Levels 51-60 (part 2) and (part 3)); the CurseForge app installs them with the next Update All, and a chat line at login names any voice pack that did not load.
 - The voice panel no longer shows a stage direction, such as an emote in angle brackets, that the voice does not read. A line made only of such directions is still shown.
 - A bug report now lists your voice packs with their versions.
+- Quest texts and item and spell tooltips the game reworded on 1.60.1.70938 follow the new wording.
 
 ## 0.13.1 - 2026-11-14
 

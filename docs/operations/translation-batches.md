@@ -396,6 +396,41 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70888 → 1.60.1.70938, with twenty-two players' sends (2026-11-16)
+
+Read from the caches the client saved at its exit on 2026-11-16, after the WFJScan sweep and its slow recheck.
+Quest cache: 5,215 records (5,125 quests and 90 placeholders), read with 70888's layout, pinned again for 70938 (one record
+again carries 96 after its string lengths); 65 quest ids it holds that 70888's cache did not, and 78 that 70888's
+held and this one did not answer. Client tables: 63, with the hotfix cache of that exit (5,657 rows replaced,
+5,487 added, 3 removed). The wago.tools cross-check: no value differs; the rows wago has and ours lacks are the
+same encrypted sections as on 70888 (ItemSparse 26, Spell and SpellName 357, ItemEffect 24, QuestV2 12,
+GlobalStrings 1, SpellItemEnchantment 1); QuestV2's highest id 99,670. The UI extract: 4,496 files, 13 differ from
+70888 (the professions window's reagent check and recipe counts, transmog's linked slots, collection filters, the
+inspect PvP frame, the character copy popup, API docs); none renames a method the addon hooks, moves a frame it
+writes or adds text. The served-text inventory: no column added or gone. `make family-rows`: 43 new BroadcastText
+rows, all NPC lines, given `gossip`. The creature cache: 1,764 records, every display list adds up; one creature
+lists eleven displays, so the reader's cap went from 8 to 16.
+
+The import followed the 70888 order (`make import-shared-english`, `make import-client CLIENT=forever`, `make
+import-served`): the full `make import-english` would have put Classic Era's English back on 812 lines (798 items,
+14 spells). The English Collector: the maintainer's file (16 gossip lines, 25 quest texts, 27 units, 26 items and 3
+spells that differ) and twenty-two players' sends, issues #122, #127, #128, #132, #136, #138, #140, #141, #142,
+#145 to #150, #153 to #157, #159 and #160: 399 lines added, 9 replaced, nothing rejected. Six quest texts that a
+send recorded with the player's race or name written out ("skyborne" for `$r`, a name for `$n`) keep the token
+wording, and one gossip line with its `$R` form in the store already was dropped.
+
+| Type | Reworded (shipped line now stale) | English the build no longer serves (stays stale, listed) | Drafted |
+|---|---|---|---|
+| quest | 7 machine turn-ins (231, 276, 295, 299, 1324, 91900, 92474) and 1 description (3842) redrafted; 2 hand-written lines reviewed: quest 5624's turn-in kept, quest 3505's description, which Forever replaced with another text, ruled for a redraft | none | 7 titles, 6 objectives, 6 descriptions, 53 progress, 75 turn-ins; word lists for all, and for 9 lines of quests that started shipping (2586, 5892, 8383) |
+| gossip | 0 | none | 120, with word lists; 2 lines in a made-up language kept as the English (ruled `accept`, as on 2026-11-05) |
+| item | 2 machine lines redrafted (250725, 867); item 14557's hand-written line, which wrote one rank's numbers into what is now a template, ruled for a redraft | 9 hand-written items whose description text the build does not have (862, 18382, 18535, 18673, 22326, 22329, 22330, 22331, 22334) | 20 descriptions (1 left out: too many variants) |
+| spell | 17 descriptions and 3 auras (one text) redrafted | none | none |
+| objective | 1 re-verified unchanged (381321, a case change) | none | 1 (and one that is only a name listed in `pipeline/objective_names.txt`) |
+| ui, book | none | none | the 11 new book pages are images or a name with dates, nothing to translate |
+
+Names: 45 new words spelled. Voice: 25 new speakers profiled and cast; the run that makes the new lines' audio also
+makes the character's error lines in each NPC voice of the cast ([ADR-093](../adr/093-a-voice-the-player-chooses-for-the-error-lines.md)).
+
 ### 1.60.1.70862 → 1.60.1.70888, with twenty players' sends (2026-11-12)
 
 Read from the caches the client saved at its exit on 2026-11-12, after the WFJScan sweep and its slow recheck and a
