@@ -219,7 +219,7 @@ blizzard_moneyreceipt login 1
 blizzard_movepad lod 3
 blizzard_nameplates login 21
 blizzard_narration login 6
-blizzard_newplayerexperience lod 10
+blizzard_newplayerexperience lod 11
 blizzard_newplayerexperienceguide lod 4
 blizzard_notification login 2
 blizzard_objectapi login 12
@@ -278,7 +278,7 @@ blizzard_securetransferui login 3
 blizzard_selectorui lod 0
 blizzard_settings lod 1
 blizzard_settings_shared login 28
-blizzard_settingsdefinitions_frame login 34
+blizzard_settingsdefinitions_frame login 35
 blizzard_settingsdefinitions_shared login 21
 blizzard_shakeutil login 1
 blizzard_sharedmapdataproviders lod 79
