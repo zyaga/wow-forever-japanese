@@ -124,3 +124,30 @@ def test_main_output_and_usage(tmp_path):
         assert client_addons.main(["--files", str(addons), "Blizzard_Two"]) == 0
     assert out.getvalue().split() == ["blizzard_two/mainline.lua"]
     assert client_addons.main([]) == 2 and client_addons.main(["--files", str(addons)]) == 2
+
+
+def test_a_script_an_xml_file_names_from_the_addon_folder_is_followed(tmp_path):
+    """The client finds a path an XML file names beside that file, and from the addon's folder when no file is
+    there. A file in both places is the one beside the XML file."""
+    addons = tmp_path / "interface" / "addons"
+    tree = {
+        "blizzard_item/blizzard_item.toc": "Mainline\\Template.xml\nMainline\\Both.xml\n",
+        # named from the addon's folder: nothing is at mainline/mainline/template.lua
+        "blizzard_item/mainline/template.xml": '<Ui><Script file="Mainline\\Template.lua"/></Ui>',
+        "blizzard_item/mainline/template.lua": "",
+        # in both places
+        "blizzard_item/mainline/both.xml": '<Ui><Script file="Both.lua"/><Include file="Gone.xml"/></Ui>',
+        "blizzard_item/mainline/both.lua": "",
+        "blizzard_item/both.lua": "",
+    }
+    for rel, body in tree.items():
+        f = addons / rel
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(body, encoding="utf-8")
+    files = {addon: found for addon, _state, found in client_addons.sweep(addons)}["blizzard_item"]
+    assert files == [
+        "blizzard_item/mainline/template.xml",
+        "blizzard_item/mainline/template.lua",  # from the addon's folder
+        "blizzard_item/mainline/both.xml",
+        "blizzard_item/mainline/both.lua",  # beside the XML file, never the addon folder's copy
+    ]  # a file that is in neither place is not in the load set
