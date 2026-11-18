@@ -363,9 +363,9 @@ describe("the Communities guild view on Forever", function()
           assert.are.equal(ja, row.Zone:GetText())
         end
         local stream = _G.CommunitiesFrame.StreamDropdown
-        stream.Text.text = "Guild"
+        stream.Text.text = "|cff40ff40Guild|r" -- as the client writes it: the name in the channel's chat colour
         stream:UpdateText()
-        assert.are.equal("ギルド", stream.Text:GetText())
+        assert.are.equal("|cff40ff40ギルド|r", stream.Text:GetText())
         stream.Text.text = "Raid planning"
         stream:UpdateText()
         assert.are.equal("Raid planning", stream.Text:GetText())

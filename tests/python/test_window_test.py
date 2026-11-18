@@ -344,6 +344,19 @@ WFJScanDB = {
     assert client_surface.read_window_test(saved)[1] == {("character", "Reputation")}
     not_opened = saved.replace('["build"] = "70959"', '["build"] = "70959", ["unopened"] = { ["character"] = "not opened" }')
     assert ("character", client_surface.NOT_OPENED) in client_surface.read_window_test(not_opened)[1]
+    # what was read is kept from the first read, and a reload with the window still open ends the run
+    step = lua[lua.index("local function WFJScanCharacterRead(done)"):lua.index("SLASH_WFJTEST1")]
+    assert step.index('db.live["character"] = record') < step.index("readScreen()")
+    assert 'characterReader:RegisterEvent("PLAYER_LOGOUT")' in step
+    # a run that stopped at this step is still read: the window nobody read is a line of it
+    stopped = saved.replace('["finished"] = "b"', '["part"] = "character"').replace('["character"] = {', '["x"] = {')
+    assert ("character", client_surface.NOT_OPENED) in client_surface.read_window_test(stopped)[1]
+
+
+def test_a_window_this_client_does_not_have_is_named_and_not_failed():
+    lua = client_surface.TEXT_LUA
+    assert '{ "group finder", function() PVEFrame_ToggleFrame() end, "PVEFrame_ToggleFrame" }' in lua
+    assert "if LIVE[at][3] and _G[LIVE[at][3]] == nil then" in lua and "db.test.absent" in lua
 
 
 def test_closed_windows_are_read_without_being_shown_and_listed_to_read():

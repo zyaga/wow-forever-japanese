@@ -291,6 +291,8 @@ do
       "CLICK_BINDING_MACRO_TITLE",
       -- the friends window's notice in place of the BattleTag (socialuitemplates.lua:302–304)
       "SOCIAL_UI_BATTLE_NET_UNAVAILABLE_NOTICE",
+      -- the guild window's channel dropdown: a channel's name in its chat colour (communitiesstreams.lua:10–12)
+      "GUILD", "OFFICER",
       -- the auction house quality filter's entries, each in its quality colour
       "ITEM_QUALITY0_DESC", "ITEM_QUALITY1_DESC", "ITEM_QUALITY2_DESC", "ITEM_QUALITY3_DESC", "ITEM_QUALITY4_DESC",
       "ITEM_QUALITY5_DESC" },

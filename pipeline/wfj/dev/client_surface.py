@@ -634,8 +634,10 @@ local LIVE = {
   { "map", function() ToggleWorldMap() end },
   { "quest log", function() ToggleQuestLog() end },
   { "collections", function() ToggleCollectionsJournal(1) end },
-  { "group finder", function() PVEFrame_ToggleFrame() end },
-  { "dungeon journal", function() ToggleEncounterJournal() end },
+  -- Forever loads neither window (blizzard_groupfinder.toc: ExcludeLoadGameType camelot; the dungeon journal's
+  -- bootstrap is for other game types), so there the opener is missing and the window is named as absent
+  { "group finder", function() PVEFrame_ToggleFrame() end, "PVEFrame_ToggleFrame" },
+  { "dungeon journal", function() ToggleEncounterJournal() end, "ToggleEncounterJournal" },
   { "friends", function() ToggleFriendsFrame(1) end },
   { "guild", function() ToggleGuildFrame() end },
   { "professions", function() ToggleProfessionsBook() end },
@@ -1154,6 +1156,10 @@ local function WFJScanLiveSweep(done)
       return
     end
     window = LIVE[at][1]
+    if LIVE[at][3] and _G[LIVE[at][3]] == nil then -- a window this client does not have: said, not failed
+      db.test.absent = (db.test.absent and db.test.absent .. ", " or "") .. window
+      return
+    end
     local ok, err = pcall(LIVE[at][2])
     if ok then
       state = "open"
@@ -1313,7 +1319,9 @@ local function WFJScanClosedRead(done)
 end
 
 -- The character window, opened by the player (see above): read every half second while it is open, so each page
--- the player shows is read; it ends when the player closes it. Not opened in time, the run says so.
+-- the player shows is read; it ends when the player closes it. Not opened in time, the run says so. What was read
+-- is kept from the first read on, and a reload while the window is open ends the run as closing it does: the
+-- player has done the step either way, and the read must not be lost with it.
 local characterReader = CreateFrame("Frame")
 local function WFJScanCharacterRead(done)
   local db = probeDb()
@@ -1333,7 +1341,11 @@ local function WFJScanCharacterRead(done)
       end
     end
     if characterShown() then
-      opened = true
+      if not opened then
+        opened = true
+        db.live["character"] = record
+        print("WFJ test: reading the character window. Click its tabs, then close it")
+      end
       sinceRead = sinceRead + elapsed
       if sinceRead < CHARACTER_READ then return end
       sinceRead = 0
@@ -1346,12 +1358,17 @@ local function WFJScanCharacterRead(done)
     waited = waited + elapsed
     if not opened and waited < CHARACTER_WAIT then return end
     characterReader:SetScript("OnUpdate", nil)
-    if opened then
-      db.live["character"] = record
-    else
+    characterReader:UnregisterEvent("PLAYER_LOGOUT")
+    if not opened then
       db.test.unopened = db.test.unopened or {}
       db.test.unopened["character"] = "not opened: press C when the test asks (an addon cannot open it without an error)"
     end
+    done()
+  end)
+  characterReader:RegisterEvent("PLAYER_LOGOUT")
+  characterReader:SetScript("OnEvent", function()
+    if not opened then return end
+    characterReader:SetScript("OnUpdate", nil)
     done()
   end)
 end
@@ -1817,6 +1834,10 @@ def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
     unopened = probe.get("test").get("unopened") if probe.get("test") is not None else None
     if unopened is not None:
         found |= {(str(window), NOT_OPENED) for window in unopened.named()}
+    # a run that stopped while waiting for the character window read every other window: its result is read, and
+    # the window nobody read is a line of it
+    if not info.get("finished") and info.get("part") == "character" and "character" not in live:
+        found.add(("character", NOT_OPENED))
     closed = probe.get("closed").named() if probe.get("closed") is not None else {}
     for window, lines in closed.items():
         found |= {(f"closed {_POOLED.sub('*', str(window))}", str(en)) for en in lines.named().values()}
@@ -1912,9 +1933,13 @@ def _loaded(extract: Path, game: str) -> list[Path]:
 def _texts(args: argparse.Namespace) -> int:
     """The `texts` command: the window test's saved result against the baseline. → the exit code."""
     info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
-    if not info.get("finished"):
+    if not info.get("finished") and info.get("part") == "character":
+        print("window test: the run stopped while waiting for the character window; the rest is read below")
+    elif not info.get("finished"):
         print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
         return 2
+    if info.get("absent"):
+        print(f"windows this client does not have: {info['absent']}")
     baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
     new, gone = window_test_report(found, baseline)
     # a window the open sweep showed did not run the client's opening code, so a surface that works from that
