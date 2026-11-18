@@ -3,6 +3,6 @@ local _, WFJ = ...
 WFJ.Data.meta = {
   schema = 1,
   english = { collector = "1.60.1.70170+1.60.1.70205+1.60.1.70235+1.60.1.70245+1.60.1.70374+1.60.1.70450+1.60.1.70790+1.60.1.70840+1.60.1.70862+1.60.1.70888+1.60.1.70938", db2 = "1.60.1.69913+1.60.1.70009+1.60.1.70124+1.60.1.70170+1.60.1.70245+1.60.1.70338+1.60.1.70425+1.60.1.70450+1.60.1.70532+1.60.1.70685+1.60.1.70707+1.60.1.70790+1.60.1.70888+1.60.1.70938+1.60.1.70959", ["forever-vo"] = "025070f", pfquest = "7786596", vmangos = "13b49dc", wago = "1.15.9.69722", wdb = "1.15.9.69722+1.60.1.69913+1.60.1.70245+1.60.1.70532+1.60.1.70888+1.60.1.70938+1.60.1.70959" },
-  counts = { quest = 5803, item = 11240, spell = 20357, objective = 590, area = 247, gossip = 11688, book = 1132, ui = 16124, english = 45029, reading = 50843, gloss = 153167 },
+  counts = { quest = 5803, item = 11240, spell = 20357, objective = 590, area = 247, gossip = 11688, book = 1132, ui = 16124, english = 45037, reading = 50851, gloss = 153167 },
   fields = { quest = { "title", "objectives", "description", "progress", "completion" }, item = { "description" }, spell = { "description", "aura" }, objective = { "text" }, area = { "text" } },
 }
