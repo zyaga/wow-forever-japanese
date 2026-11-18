@@ -164,3 +164,19 @@ def test_the_tabs_run_clicks_page_switchers_only():
     lua = client_surface.TEXT_LUA
     assert 'pagesOnly = how == "tabs"' in lua and "if not pagesOnly then" in lua
     assert 'clicks = pagesOnly and "tabs" or "all"' in lua  # the saved run says which kind it was
+
+
+def test_a_pooled_frames_address_is_recognised_whatever_it_starts_with():
+    pooled = client_surface._POOLED
+    for name in ("ScrollTarget.b0462b3b0.Text", "ScrollTarget.c765a8010.Button", "ScrollTarget.9914c3950"):
+        assert "*" in pooled.sub("*", name), name
+    assert pooled.sub("*", "CalendarDayButton10 Deadbeefed Facade") == "CalendarDayButton10 Deadbeefed Facade"
+
+
+def test_the_sweep_never_clicks_an_icon_a_party_button_or_another_addons_bag():
+    lua = client_surface.TEXT_LUA
+    assert 'return nil, "an icon with no words"' in lua
+    for word in ("party", "raid", "friendslist", "baganator"):
+        assert f'"{word}"' in lua, word
+    for window in ("EditMode", "BarberShop", "PetBattle"):
+        assert f'"{window}"' in lua, window  # the open sweep leaves these closed

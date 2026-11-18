@@ -702,6 +702,7 @@ local ACTS = { "item", "slot", "bag", "container", "action", "spell", "macro", "
   "vote", "roll", "need", "greed", "pass", "decline", "reject", "resign", "surrender", "forfeit", "concede",
   "battle", "find", "search", "request", "submit", "publish", "upload", "connect", "login", "sync", "track",
   "toggle", "summon", "cast", "glyph", "pet", "toy", "heirloom", "transmog", "outfit", "dye", "place", "sort",
+  "party", "raid", "chat", "message", "call", "travel", "customise", "customize",
   "clean", "refresh", "new", "add", "set", "pin", "waypoint", "social", "tweet", "screenshot", "photo", "drag" }
 local AREAS = { "talent", "spellbook", "pagedspells", "loadout", "containerframe", "merchant", "auction", "trade",
   "mailframe", "bankframe", "guildbank", "catalogshop", "storeframe", "macro", "keybind", "binding", "editmode",
@@ -711,10 +712,19 @@ local AREAS = { "talent", "spellbook", "pagedspells", "loadout", "containerframe
   "clubfinder", "recruitafriend", "channel", "voice", "report", "tooltip", "dropdown", "menu", "chatframe",
   "chatconfig", "actionbar", "microbutton", "minimap", "objectivetracker", "staticpopup",
   "achievementframeachievements", "achievementframesummary", "achievementframecomparison", "shield",
+  "friendslist", "baganator",
   "titlemanager" }
 
 local ACT = {}
 for _, word in ipairs(ACTS) do ACT[word] = true end
+
+-- A frame with no name of its own is named by its address (`ScrollTarget.9914c3950`), which changes every
+-- session and from row to row: a run of eight or more hex characters holding a digit. → the name with `*` there.
+local function unaddressed(name)
+  return (name:gsub("%%f[%%w]%%x+%%f[%%W]", function(part)
+    if #part >= 8 and part:find("%%d") then return "*" end
+  end))
+end
 
 -- The action word a name holds, as one of its own words (CloseButton → close; ScrollTarget holds none), or nil.
 local function act(name)
@@ -730,6 +740,19 @@ local function holds(text, words)
     if text:find(word, 1, true) then return word end
   end
   return nil
+end
+
+-- What a button shows: its own text, or its first text region's (a list row's label).
+local function caption(button)
+  local text = button:GetText()
+  if type(text) == "string" and text ~= "" then return text end
+  for _, region in ipairs({ button:GetRegions() }) do
+    if region:GetObjectType() == "FontString" then
+      local label = region:GetText()
+      if type(label) == "string" and label ~= "" then return label end
+    end
+  end
+  return ""
 end
 
 -- What the test does with a button, and why: "page" for a page switcher, "button" for another button that is safe
@@ -756,6 +779,12 @@ local function verdict(button)
   if area then return nil, "area: " .. area end
   local does = act(name:match("([^.]*%%.?[^.]*)$") or name) -- the last two parts of the name
   if does then return nil, "act: " .. does end
+  -- a button with no name of its own and no words on it is an icon: an item, a spell, a pet. What a click on
+  -- one does cannot be told from outside, so it is never clicked.
+  if name:find("%%.%%x+$") and unaddressed(name) ~= name then
+    local ok, text = pcall(caption, button)
+    if not ok or text == "" then return nil, "an icon with no words" end
+  end
   return "button"
 end
 
@@ -786,26 +815,12 @@ local function under(frame, roots)
   return false
 end
 
--- What a button shows: its own text, or its first text region's (a list row's label).
-local function caption(button)
-  local text = button:GetText()
-  if type(text) == "string" and text ~= "" then return text end
-  for _, region in ipairs({ button:GetRegions() }) do
-    if region:GetObjectType() == "FontString" then
-      local label = region:GetText()
-      if type(label) == "string" and label ~= "" then return label end
-    end
-  end
-  return ""
-end
-
 -- A button as its place in the window and what it shows now. A list's rows are a few frames the client reuses
 -- for one entry after another, and gives back in any order: the entry is the same wherever it is drawn, so the
 -- row's own address is left out of its name. Rows that show no text count as one.
 local function taken(button)
   local ok, text = pcall(caption, button)
-  local name = tostring(button:GetDebugName()):gsub("b%%x%%x%%x%%x%%x%%x%%x%%x+", "*")
-  return name .. "|" .. (ok and text or "")
+  return unaddressed(tostring(button:GetDebugName())) .. "|" .. (ok and text or "")
 end
 
 -- A category list longer than its window (the achievement window's): moved down a step so its further rows are
@@ -884,7 +899,7 @@ local function listButtons(roots)
       else
         what, why = verdict(frame)
       end
-      local name = tostring(frame:GetDebugName()):gsub("b%%x%%x%%x%%x%%x%%x%%x%%x+", "*")
+      local name = unaddressed(tostring(frame:GetDebugName()))
       local ok, text = pcall(caption, frame)
       local line = name .. " | " .. (ok and text or "") .. " | " .. (what or why or "?")
       local once = name .. "|" .. (what or why or "?")
@@ -968,7 +983,7 @@ local function WFJScanLiveSweep(done)
     local tab = not seen[key] and clicks < MAX_PAGES and map[key] or nil
     if not tab then error("skip") end
     -- a run of like buttons: a list's rows (one name but for the row's address) or numbered ones (a calendar's days)
-    local kind = tostring(tab:GetDebugName()):gsub("b%%x%%x%%x%%x%%x%%x%%x%%x+", "*"):gsub("%%d+", "#")
+    local kind = unaddressed(tostring(tab:GetDebugName())):gsub("%%d+", "#")
     if verdict(tab) == "button" and (kind:find("*", 1, true) or kind:find("#", 1, true))
       and not kind:find("Categor", 1, true) then
       local sampled = seen["#" .. kind] or 0
@@ -1061,7 +1076,8 @@ SlashCmdList.WFJLIVE = WFJScanLiveSweep
 -- left closed. Saved under `probe.opened`.
 local ALARMING = { "Tooltip", "DropDown", "Cinematic", "Movie", "Trial", "Ghost", "Death", "Logout", "Splash",
   "StaticPopup", "GMChat", "Survey", "RatingMenu", "Kiosk", "Subscription", "Destiny", "BossBanner", "LevelUp",
-  "Toast", "ReadyCheck", "ReadyPopup", "ReadyDialog", "RoleCheck", "RolePoll", "Invite", "Report", "Behavioral" }
+  "Toast", "ReadyCheck", "ReadyPopup", "ReadyDialog", "RoleCheck", "RolePoll", "Invite", "Report", "Behavioral",
+  "EditMode", "BarberShop", "PetBattle", "Commentator" }
 
 local function windowOf(region)
   local frame, top = region:GetParent(), nil
@@ -1520,7 +1536,7 @@ def by_surface(rows: list[dict[str, Any]], include_suspect: bool = False) -> dic
 
 
 # A pooled frame's debug name carries its address (`b0462b3b0`), which changes every session.
-_POOLED = re.compile(r"\bb[0-9a-f]{8,}\b")
+_POOLED = re.compile(r"\b(?=[0-9a-f]*\d)[0-9a-f]{8,}\b")
 ALWAYS = "always on screen"
 
 

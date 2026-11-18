@@ -60,7 +60,7 @@ function box:HasScrollableExtent() return #flat() > ROWS end
 -- the pool hands rows out in an order of its own, as the client's does
 local order = { 4, 1, 6, 2, 5, 3 }
 for slot = 1, ROWS do
-  local row = frame("FakeFrameCategories.ScrollBox.ScrollTarget.b0000000" .. slot, box)
+  local row = frame("FakeFrameCategories.ScrollBox.ScrollTarget.9910000" .. slot .. "0", box)
   local button = frame(row.name .. ".Button", row, "Button")
   local function entry() return flat()[offset + order[slot]] end
   button.label = function() local e = entry(); return e and e[1] or "" end
