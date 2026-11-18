@@ -149,8 +149,8 @@ WFJ.Data.add("quest", {
   [98913] = { "Theramore Basic Care Package", nil, nil, nil, nil, 0xc3a4cb1b, nil, nil, nil, nil, ".mmmm" },
   [98914] = { "Theramore Standard Care Package", nil, nil, nil, nil, 0x2d442b6d, nil, nil, nil, nil, ".mmmm" },
   [98915] = { "Theramore Advanced Care Package", nil, nil, nil, nil, 0x9089cd51, nil, nil, nil, nil, ".mmmm" },
-  [98918] = { "諸島の制圧", "Darkspear Islandsで同時に少なくとも3つの拠点を保持したまま勝利し、その後Northwatch HoldにいるBrelinda McFarryのところへ戻って下さい。", nil, nil, nil, 0xded7b891, 0x7abf4eb8, nil, nil, nil, "..mmm" },
-  [98919] = { "島の制圧", "Darkspear Islandsで同時に少なくとも3つの拠点を保持したまま勝利し、その後The Merchant CoastにいるNizook Boofのところへ戻って下さい。", nil, nil, nil, 0x0862661e, 0x7d374bf1, nil, nil, nil, "..mmm" },
+  [98918] = { "諸島の制圧", "Darkspear Islandsで同時に少なくとも3つの拠点を保持したまま勝利し、その後Northwatch HoldにいるBrelinda McFarryのところへ戻って下さい。", "Hordeにただ勝つだけでは足りないのだ、{class}。我々の勝利は決定的でなければならない。Darkspear Islandsへ戻り、少なくとも3つの前哨地を支配したまま勝利を収めてこい。\n\nAllianceのために！", nil, nil, 0xded7b891, 0x7abf4eb8, 0xac3b76c5, nil, nil, "...mm" },
+  [98919] = { "島の制圧", "Darkspear Islandsで同時に少なくとも3つの拠点を保持したまま勝利し、その後The Merchant CoastにいるNizook Boofのところへ戻って下さい。", "Allianceをただ倒すだけじゃ足りねえ。奴らの士気をくじいて、Darkspear Islandsから永遠に追い出してやらなきゃならねえ。Darkspear Islandsへ戻って、奴らに情けはかけるな。少なくとも3つの前哨地を支配したまま戦いに勝つんだ。\n\nAllianceを叩き潰して、Darkspear Raidersの大勝利をつかみ取れ！", nil, nil, 0x0862661e, 0x7d374bf1, 0x7781e4e5, nil, nil, "...mm" },
   [98977] = { "Mossheart the Elder", nil, nil, nil, nil, 0x59a6f410, nil, nil, nil, nil, ".mmmm" },
   [98983] = { "Frostleaf the Elder", nil, nil, nil, nil, 0x6a68dc5d, nil, nil, nil, nil, ".mmmm" },
 })

@@ -136,6 +136,7 @@ WFJ.Data.add("name", {
   ["ca7c3a133b7d1f7f"] = { "グリッタリング・ダスト", "ぐりったりんぐ・だすと", "glittering dust" },
   ["ca7cee6298c99700"] = { "バーバリック・アイアン・ブレストプレート", "ばーばりっく・あいあん・ぶれすとぷれーと", "Barbaric Iron Breastplate" },
   ["ca7fae77f4b7851f"] = { "スライムスレイヤーズ・アダプティブ・ローブ", "すらいむすれいやーず・あだぷてぃぶ・ろーぶ", "Slimeslayer's Adaptive Robes" },
+  ["ca813798118187f9"] = { "ストライダー", "すとらいだー", "striders" },
   ["ca81bde278ccc105"] = { "ディフェンダー・オブ・ダララン", "でぃふぇんだー・おぶ・だららん", "Defender of Dalaran" },
   ["ca81dc16cc8c05f7"] = { "マウンテニア・スウォース", "まうんてにあ・すうぉーす", "Mountaineer Swarth" },
   ["ca83e9d3792a6b66"] = { "オークショニア・トロン", "おーくしょにあ・とろん", "Auctioneer Tolon" },

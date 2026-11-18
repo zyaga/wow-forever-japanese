@@ -47,7 +47,7 @@ WFJ.Data.add("quest", {
   [79950] = { "Demons and You", nil, nil, nil, nil, 0x6fe9a1ef, nil, nil, nil, nil, ".mmmm" },
   [79951] = { "Mummies: A Guide to the Unsavory Undead", nil, nil, nil, nil, 0x99295356, nil, nil, nil, nil, ".mmmm" },
   [79952] = { "RwlRwlRwlRwl!", nil, nil, nil, nil, 0x6bc7959f, nil, nil, nil, nil, ".mmmm" },
-  [79963] = { "光の恩寵により", "Aeonasを癒やして下さい。", nil, nil, nil, 0x065f680d, 0x621932f4, nil, nil, nil, "..mmm" },
+  [79963] = { "光の恩寵により", "Aeonasを癒やして下さい。", "<Aeonasはすぐに治療しなければ死んでしまう。光に呼びかけ、彼を救うのだ。>", nil, nil, 0x065f680d, 0x621932f4, 0x73df2bf3, nil, nil, "...mm" },
   [79970] = { "Aeonas the Vindicated", "StormwindのCathedral of LightでAeonasと会ってください。", "助けてくれてありがとう、{class}。私ももう若くはないようだ。これから起こることのためには、仲間が必要になるだろう。どうか、できるだけ早くStormwindのCathedral of Lightで私と会ってほしい。\n\n私のことは心配しなくていい。ここからは自分で出られる。ただ、力を取り戻すのに少し時間が必要なだけだ。", nil, nil, 0x749a0adb, 0xd1bc03f8, 0x1795f604, nil, nil, "...mm" },
   [79974] = { "濡れ仕事", "土から覗いている伝令の鞄の埃を払うと、中の物資の間に羊皮紙が挟まっているのが見つかる。", "「いざという時に急いで逃げなきゃならない場合に備えて、近くに予備の蓄えを置いておくのが好きなんだ。\n\nこの山腹の斜面は実に美しくて、時の滝から彫り出されたとでも言いたくなるほどだ。\nあれが鷲の巣だ。お前が探しているのはあれだよ」", nil, "Dwarven Engineering、いつ見ても驚異だ。", 0x9c808653, 0x9e139b4e, 0x631c42d4, nil, 0xb4a31145, "...m." },
   [79975] = { "Eagle's Fist", "水しぶきが辺りを湿らせ、眺めは素晴らしい。", "<道具箱の中に、丁寧に折りたたまれた手紙が見つかった。>\n\n「ここからなら、ちゃんとした道具さえあれば、思いのままに事を運べる。パラシュートグライダーで飛び立つには絶好の場所だ。\n\nEagle and Fistへの忠誠を最もよく果たすには、距離を置く必要がある。このバリケードもかつてはもっと良い時代があった。かつて守っていたOld Kingdomsと同じようにな。だが、俺は決してこれを見捨てはしない」", nil, "焚き火には新しく薪がくべられているが、急いで立ち去った形跡がはっきりと残っている。", 0xa1fb6a7a, 0xb9a33603, 0x322bb447, nil, 0x98322f53, "...m." },

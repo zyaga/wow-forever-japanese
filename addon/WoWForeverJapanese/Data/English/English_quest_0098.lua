@@ -137,6 +137,6 @@ WFJ.Data.add("english", {
   ["quest:98906"] = { objectives = "battleground=1 return=4 win=2", description = "battle=1 blessing=16 claim=13 fools=4 force=7 givin'=17 high=10 locked=3 service=9 show=8 stalemate=2 superior=6 surely=14 victory=12 who=5 you=15" },
   ["quest:98907"] = { objectives = "battleground=1 return=4 win=2", description = "battle=1 blessing=16 claim=13 fools=4 force=7 givin'=17 high=10 locked=3 service=9 show=8 stalemate=2 superior=6 surely=14 victory=12 who=5 you=15" },
   ["quest:98908"] = { objectives = "battleground=1 return=4 win=2", description = "battle=1 blessing=16 claim=13 fools=4 force=7 givin'=17 high=10 locked=3 service=9 show=8 stalemate=2 superior=6 surely=14 victory=12 who=5 you=15" },
-  ["quest:98918"] = { title = "conquering=2", objectives = "bases=4 holding=5 least=2 then=8 time=1 while=6 win=7" },
-  ["quest:98919"] = { title = "conquering=2", objectives = "bases=4 holding=5 least=2 then=8 time=1 while=6 win=7" },
+  ["quest:98918"] = { title = "conquering=2", objectives = "bases=4 holding=5 least=2 then=8 time=1 while=6 win=7", description = "achieve=15 controlling=12 decisive=7 enough=4 least=10 merely=1 must=8 our=5 outposts=11 return=9 victory=6 while=13 win=2" },
+  ["quest:98919"] = { title = "conquering=2", objectives = "bases=4 holding=5 least=2 then=8 time=1 while=6 win=7", description = "battle=18 claim=22 controlling=16 defeat=2 demoralizing=7 drive=9 enough=4 good=8 just=1 least=14 mercy=12 outposts=15 return=10 show=13 them=5 victory=21 while=17 win=19" },
 })

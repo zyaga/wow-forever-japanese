@@ -276,6 +276,7 @@ WFJ.Data.add("name", {
   ["befb47103962f5cf"] = { "ショーン", "しょーん", "Shawn" },
   ["befb480939633584"] = { "シャヤ", "しゃや", "Shaya" },
   ["befba0f1c57dac90"] = { "メカニカル・リペア・キット", "めかにかる・りぺあ・きっと", "mechanical repair kits" },
+  ["befbeb9c37b62eea"] = { "ダークスピアズ・アドバンスド・ケア・パッケージ", "だーくすぴあず・あどばんすど・けあ・ぱっけーじ", "Darkspear's Advanced Care Package" },
   ["befc4a004941c703"] = { "シープ", "しーぷ", "Sheep" },
   ["befcd2832f8f455e"] = { "フリントロック・ショルダー", "ふりんとろっく・しょるだー", "Flintrock Shoulders" },
   ["befceb3588b3ecff"] = { "デファイアス・ドケット", "でふぁいあす・どけっと", "Defias Docket" },

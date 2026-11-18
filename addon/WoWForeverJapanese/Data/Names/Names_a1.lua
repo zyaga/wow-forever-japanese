@@ -39,6 +39,7 @@ WFJ.Data.add("name", {
   ["a125ef6823b7fe44"] = { "レイク・スカルカー・モス", "れいく・すかるかー・もす", "Lake Skulker Moss" },
   ["a12676b14a9f2c67"] = { "サモン・オニキシア・ウェルプ", "さもん・おにきしあ・うぇるぷ", "Summon Onyxian Whelp" },
   ["a126f60f817b1b7e"] = { "バーニング・キーストーン", "ばーにんぐ・きーすとーん", "Burning Keystone" },
+  ["a1270fcf66719c7e"] = { "メジャー・マナ・ポーション", "めじゃー・まな・ぽーしょん", "Major Mana Potions" },
   ["a1280db1c5a054f8"] = { "ラン・ブラッドトゥース", "らん・ぶらっどとぅーす", "Ran Bloodtooth" },
   ["a12d69502d0fb2e1"] = { "フラゴン・オブ・ドワーベン・ハニーミード", "ふらごん・おぶ・どわーべん・はにーみーど", "Flagon of Dwarven Honeymead" },
   ["a12e8a78e2eb2eb8"] = { "カッパー・アックス", "かっぱー・あっくす", "Copper Axe" },
