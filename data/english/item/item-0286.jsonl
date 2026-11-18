@@ -191,7 +191,7 @@
 {"id": 286613, "field": "description", "en": "The king of Un'Goro consumed all who challenged his rule.", "hash": "23c05b8271034eb1", "src": "db2@1.60.1.70959"}
 {"id": 286614, "field": "name", "en": "Gruff's Tough Tongue", "hash": "bf0c84b7ec189a85", "src": "db2@1.60.1.70959"}
 {"id": 286616, "field": "name", "en": "Matriarch's Prowlers", "hash": "f69838483d7a64c5", "src": "db2@1.60.1.70959"}
-{"id": 286616, "field": "description", "en": "Increases Feral Combat +$s1.", "hash": "5338bc2527198102", "src": "db2@1.60.1.70959"}
+{"id": 286616, "field": "description", "en": "Increased Feral Combat +$s1.", "hash": "3029c093ccc747e6", "src": "db2@1.60.1.70959"}
 {"id": 286618, "field": "name", "en": "Clutchmother's Guards", "hash": "7d6c428ee0762fc1", "src": "db2@1.60.1.70959"}
 {"id": 286619, "field": "name", "en": "Big Basher's Belt", "hash": "fbb3a97be10952a6", "src": "db2@1.60.1.70959"}
 {"id": 286639, "field": "name", "en": "Ambassador's Bloodrobes", "hash": "87a9785ef26941a4", "src": "db2@1.60.1.70959"}

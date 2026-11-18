@@ -45,7 +45,7 @@
 {"id": 1320658, "field": "name", "en": "Unleash Swarm", "hash": "222ed862650c4ddb", "src": "db2@1.60.1.70959"}
 {"id": 1320658, "field": "description", "en": "Open a silithid hive, unleashing the swarm.", "hash": "22f9e3787914b5cb", "src": "db2@1.60.1.70959"}
 {"id": 1320726, "field": "name", "en": "Increased Feral Combat", "hash": "c03920d2ce5d1f04", "src": "db2@1.60.1.70959"}
-{"id": 1320726, "field": "description", "en": "Increases Feral Combat +$s1.", "hash": "5338bc2527198102", "src": "db2@1.60.1.70959"}
+{"id": 1320726, "field": "description", "en": "Increased Feral Combat +$s1.", "hash": "3029c093ccc747e6", "src": "db2@1.60.1.70959"}
 {"id": 1320726, "field": "aura", "en": "Increased Feral Combat +$w1.", "hash": "302accb7dca856ea", "src": "db2@1.60.1.70959"}
 {"id": 1320758, "field": "name", "en": "Summon Spawn of Grubthor", "hash": "c954d1b2e8d01144", "src": "db2@1.60.1.70959"}
 {"id": 1320758, "field": "description", "en": "Right Click to summon and dismiss Spawn of Grubthor.", "hash": "2f66ba80519cf56b", "src": "db2@1.60.1.70959"}

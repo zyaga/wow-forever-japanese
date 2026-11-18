@@ -616,7 +616,7 @@
 {"id": 9413, "field": "name", "en": "The Rockpounder", "hash": "d6275377681a3f9c", "src": "db2@1.60.1.70959"}
 {"id": 9413, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
 {"id": 9414, "field": "name", "en": "Oilskin Leggings", "hash": "09ff7e1134176681", "src": "db2@1.60.1.70959"}
-{"id": 9414, "field": "description", "en": "Increases Feral Combat +$s1.", "hash": "5338bc2527198102", "src": "db2@1.60.1.70959"}
+{"id": 9414, "field": "description", "en": "Increased Feral Combat +$s1.", "hash": "3029c093ccc747e6", "src": "db2@1.60.1.70959"}
 {"id": 9415, "field": "name", "en": "Grimlok's Tribal Vestments", "hash": "9a43eaee463470dc", "src": "db2@1.60.1.70959"}
 {"id": 9416, "field": "name", "en": "Grimlok's Charge", "hash": "28a9d566432ccfca", "src": "db2@1.60.1.70959"}
 {"id": 9417, "field": "name", "en": "Archaedic Shard", "hash": "8ef6cce6c8077470", "src": "db2@1.60.1.70959"}

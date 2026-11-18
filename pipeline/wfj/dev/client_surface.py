@@ -571,6 +571,11 @@ TEXT_LUA = """
 local ENGLISH = {
 %s
 }
+-- The dictionary's interface strings by name. The addon reads each one's English from the client to match a line
+-- on screen, so a string the client does not hand to addon code can be matched by nothing; the test lists them.
+local KEYS = {
+%s
+}
 local PER_TICK = 400
 local sweeper = CreateFrame("Frame")
 
@@ -1444,6 +1449,12 @@ SlashCmdList.WFJTEST = function(how)
     local key = "[" .. tostring(db.test.part) .. "] " .. event .. " " .. tostring(addon) .. " " .. tostring(action)
     db.test.blocked[key] = (db.test.blocked[key] or 0) + 1
   end)
+  -- asked before anything is loaded or shown: the strings exist from login or not at all
+  local missing = {}
+  for _, key in ipairs(KEYS) do
+    if type(_G[key]) ~= "string" then missing[#missing + 1] = key end
+  end
+  db.test.strings = { asked = #KEYS, missing = missing }
   db.test.part = "load"
   WFJScanWalk(function()
     db.test.part = "live"
@@ -1497,8 +1508,23 @@ def translated_english(data: Path) -> list[str]:
     return out
 
 
+_STRING_NAME = re.compile(r"[A-Z][A-Z0-9_]*")
+
+
+def translated_keys(data: Path) -> list[str]:
+    """The names of the interface strings that ship Japanese under `data`: the client's own string names only
+    (a client-table row, keyed `<Family>:<id>`, has no such name)."""
+    out = []
+    for path in sorted((data / "ui").glob("*.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            row = json.loads(line) if line.strip() else {}
+            if row.get("ja") and _STRING_NAME.fullmatch(str(row.get("id", ""))):
+                out.append(row["id"])
+    return out
+
+
 def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[str] = (),
-              at_login: bool = True) -> str:
+              at_login: bool = True, keys: Iterable[str] = ()) -> str:
     """The probe as one Lua file for the scan dev addon: every manifest name with its surface, checked at
     login, saved under `WFJScanDB.probe` for `report`. With `walk` it also loads every load-on-demand addon a
     surface waits for and records what the client restricts (`read_walk` reads both back); with `at_login`
@@ -1516,7 +1542,8 @@ def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[st
         # the English lines that have Japanese: a text region still holding one was reached by no surface
         lines = sorted({t for t in english if "%" not in t and re.search(r"[A-Za-z]{2}", t)})
         if lines:
-            lua += TEXT_LUA % "\n".join(f"  [{_lua_string(t)}] = true," for t in lines)
+            lua += TEXT_LUA % ("\n".join(f"  [{_lua_string(t)}] = true," for t in lines),
+                               "\n".join(f'  "{k}",' for k in sorted(set(keys))))
     return lua
 
 
@@ -1849,6 +1876,23 @@ def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
     return info, found
 
 
+def read_missing_strings(text: str) -> tuple[int, list[str]]:
+    """The dictionary's interface strings the client did not hand to addon code when the window test asked:
+    (how many it asked for, the names it did not get). A line the game writes from such a string can be matched
+    by nothing the addon reads, so it stays English however good its Japanese is."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    test = probe.get("test") if probe is not None else None
+    strings = test.get("strings") if test is not None else None
+    if strings is None:
+        return 0, []
+    missing = strings.get("missing")
+    names = sorted(str(v) for _, v in missing.items) if missing is not None else []
+    return int(strings.get("asked") or 0), names
+
+
 def read_test_problems(text: str, log: str = "") -> list[str]:
     """What went wrong while the window test ran, one line each: the Lua errors and the actions the client refused
     an addon, as the scan addon counted them, and, from the shipped addon's own saved file (`log`), its recorded
@@ -1940,6 +1984,16 @@ def _texts(args: argparse.Namespace) -> int:
         return 2
     if info.get("absent"):
         print(f"windows this client does not have: {info['absent']}")
+    asked, missing = read_missing_strings(args.saved.read_text(encoding="utf-8", errors="replace"))
+    if asked:
+        # grouped by the first two words of the name: a whole family missing reads as one line
+        groups: dict[str, int] = {}
+        for name in missing:
+            head = "_".join(name.split("_")[:2])
+            groups[head] = groups.get(head, 0) + 1
+        print(f"dictionary strings the client does not hand to addons: {len(missing)} of {asked}")
+        for head, n in sorted(groups.items(), key=lambda kv: (-kv[1], kv[0]))[:40]:
+            print(f"read  not handed to addons\t{head}\t{n}")
     baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
     new, gone = window_test_report(found, baseline)
     # a window the open sweep showed did not run the client's opening code, so a surface that works from that
@@ -2016,8 +2070,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "probe":
         args.out.parent.mkdir(parents=True, exist_ok=True)
         english = translated_english(args.window_test) if args.window_test else ()
+        keys = translated_keys(args.window_test) if args.window_test else ()
         text = probe_lua(manifest, walk=args.walk or bool(args.window_test), english=english,
-                         at_login=args.walk)
+                         at_login=args.walk, keys=keys)
         args.out.write_text(text, encoding="utf-8")
         print(f"probe: {len(probe_names(manifest))} names → {args.out}")
         return 0

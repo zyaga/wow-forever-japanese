@@ -144,7 +144,7 @@ def test_the_sweep_clicks_every_entry_of_a_reused_list_once_and_nothing_that_act
     if lua is None:
         pytest.skip("no Lua interpreter")
     head, tail = (root / "tests/fixtures/window_test_sim.lua").read_text(encoding="utf-8").split("--[[SWEEP]]\n")
-    sweep = client_surface.TEXT_LUA % '  ["Back"] = true,'
+    sweep = client_surface.TEXT_LUA % ('  ["Back"] = true,', '  "BACK",')
     script = tmp_path / "sim.lua"
     script.write_text(head + sweep[sweep.index("-- The text sweep."):] + tail, encoding="utf-8")
     out = subprocess.run([lua, str(script)], check=False, capture_output=True, text=True, timeout=120)
@@ -396,3 +396,30 @@ def test_a_friends_window_that_lost_its_friends_fails_the_run_though_nothing_err
     # a count the client keeps from addon code is never read as zero
     unread = _friends('["battlenet"] = "secret", ["game"] = "secret", ["listed"] = 0, ["drawn"] = 0')
     assert client_surface.read_test_problems(unread)[0].startswith("friends list not checked:")
+
+
+def test_the_test_lists_the_dictionary_strings_the_client_does_not_hand_to_addons(tmp_path):
+    # the addon matches a line on screen by the English it reads from the client's own string: a string the client
+    # keeps from addon code can be matched by nothing, and no window sweep sees why the line stayed English
+    (tmp_path / "ui").mkdir()
+    (tmp_path / "ui" / "ui-T.jsonl").write_text(
+        '{"id": "TOOLTIP_ITEM_STAT_MANA_REGEN_INCREASE", "field": "text", "ja": "x"}\n'
+        '{"id": "AchievementTitle:1", "field": "text", "ja": "y"}\n{"id": "BACK", "field": "text", "ja": ""}\n',
+        encoding="utf-8")
+    assert client_surface.translated_keys(tmp_path) == ["TOOLTIP_ITEM_STAT_MANA_REGEN_INCREASE"]
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Back"], keys=["B_KEY", "A_KEY"])
+    assert 'local KEYS = {\n  "A_KEY",\n  "B_KEY",\n}' in lua
+    run = lua[lua.index("SlashCmdList.WFJTEST = function(how)"):]
+    assert 'if type(_G[key]) ~= "string" then missing[#missing + 1] = key end' in run
+    assert run.index("db.test.strings = { asked = #KEYS, missing = missing }") < run.index("WFJScanWalk(function()")
+    saved = """
+WFJScanDB = {
+["probe"] = {
+["test"] = { ["started"] = "a", ["finished"] = "b", ["build"] = "70959",
+  ["strings"] = { ["asked"] = 3, ["missing"] = { "TOOLTIP_ITEM_STAT_B", "TOOLTIP_ITEM_STAT_A", } } },
+},
+}
+"""
+    assert client_surface.read_missing_strings(saved) == (3, ["TOOLTIP_ITEM_STAT_A", "TOOLTIP_ITEM_STAT_B"])
+    assert client_surface.read_missing_strings("WFJScanDB = {\n}\n") == (0, [])
+

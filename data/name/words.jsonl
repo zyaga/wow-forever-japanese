@@ -249,6 +249,7 @@
 {"en": "Aku'Mai", "ja": "アクマイ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Aku'mai", "ja": "アクマイ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Akubar", "ja": "アクバー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
+{"en": "al", "ja": "エーエル", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118b@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Al'Aketh", "ja": "アルアケス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Al'Akir", "ja": "アラキア", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
 {"en": "Al'Ameth", "ja": "アルアメス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
@@ -2551,6 +2552,7 @@
 {"en": "Bruuz", "ja": "ブルーズ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Bryan", "ja": "ブライアン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Bryllia", "ja": "ブリリア", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
+{"en": "bs", "ja": "ビーエス", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118b@2026-11-18", "imported": "2026-11-18"}}
 {"en": "btft", "ja": "ビーティーエフティー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-respell-010@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Bubba", "ja": "ババ", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
 {"en": "Bubble", "ja": "バブル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}

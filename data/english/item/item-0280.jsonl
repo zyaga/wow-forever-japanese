@@ -6,7 +6,7 @@
 {"id": 280014, "field": "name", "en": "Raptorscale Bulwark", "hash": "41463fb6e8c26d67", "src": "db2@1.60.1.70959"}
 {"id": 280015, "field": "name", "en": "Venomvessel Ring", "hash": "fe49d18c2b520aae", "src": "db2@1.60.1.70959"}
 {"id": 280016, "field": "name", "en": "Spiderchitin Wrap", "hash": "e7df76c1ef2d2214", "src": "db2@1.60.1.70959"}
-{"id": 280016, "field": "description", "en": "Increases Feral Combat +$s1.", "hash": "5338bc2527198102", "src": "db2@1.60.1.70959"}
+{"id": 280016, "field": "description", "en": "Increased Feral Combat +$s1.", "hash": "3029c093ccc747e6", "src": "db2@1.60.1.70959"}
 {"id": 280017, "field": "name", "en": "Octoclaw Chain Boots", "hash": "6d1dbba450fdbca1", "src": "db2@1.60.1.70959"}
 {"id": 280018, "field": "name", "en": "Hammer of Thundering Hooves", "hash": "10b0be9e2ac7fe2c", "src": "db2@1.60.1.70959"}
 {"id": 280019, "field": "name", "en": "Dinofrill Casque", "hash": "b2e802676b2996a1", "src": "db2@1.60.1.70959"}

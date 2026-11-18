@@ -21,7 +21,11 @@
 {"id": 1330855, "field": "description", "en": "Has a $h% chance when landing a harmful spell or attack to Smite the target for $s1 Holy damage. Damage is tripled against Undead.", "hash": "0a2fed35350882af", "src": "db2@1.60.1.70959"}
 {"id": 1330858, "field": "name", "en": "Lash of the Dark Rider", "hash": "4dec8e627780673a", "src": "db2@1.60.1.70959"}
 {"id": 1330858, "field": "description", "en": "Chance on melee attack to lash the target, inflicting $s1 Shadow damage.", "hash": "e715b1ba5f71c31a", "src": "db2@1.60.1.70959"}
+{"id": 1330887, "field": "name", "en": "Thorns Aura", "hash": "5664420de6b87ced", "src": "db2@1.60.1.70959"}
+{"id": 1330887, "field": "description", "en": "Magical thorns deal $S1 Nature damage to anyone who attacks in melee.", "hash": "82c58d13e0050243", "src": "db2@1.60.1.70959"}
+{"id": 1330887, "field": "aura", "en": "Surrounded by magical thorns, dealing $S1 Nature damage when attacked in melee.", "hash": "27611b2fcc9f37c7", "src": "db2@1.60.1.70959"}
 {"id": 1330904, "field": "name", "en": "[DNT] Scarlet Tracking", "hash": "e43f62c3d5c5f146", "src": "db2@1.60.1.70959"}
 {"id": 1330916, "field": "name", "en": "Howler's Cry", "hash": "b59360a41003a462", "src": "db2@1.60.1.70959"}
 {"id": 1330916, "field": "description", "en": "Reduces the target enemy's attack power by $s1 for $1315767d.", "hash": "77ef34fea4eaabbe", "src": "db2@1.60.1.70959"}
 {"id": 1330916, "field": "aura", "en": "Attack power lowered by $s1.", "hash": "3ac7251302b5bc93", "src": "db2@1.60.1.70959"}
+{"id": 1330970, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70959"}
