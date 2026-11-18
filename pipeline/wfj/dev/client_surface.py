@@ -702,7 +702,8 @@ local ACTS = { "item", "slot", "bag", "container", "action", "spell", "macro", "
   "vote", "roll", "need", "greed", "pass", "decline", "reject", "resign", "surrender", "forfeit", "concede",
   "battle", "find", "search", "request", "submit", "publish", "upload", "connect", "login", "sync", "track",
   "toggle", "summon", "cast", "glyph", "pet", "toy", "heirloom", "transmog", "outfit", "dye", "place", "sort",
-  "party", "raid", "chat", "message", "call", "travel", "customise", "customize",
+  "party", "raid", "chat", "message", "call", "travel", "customise", "customize", "tentative", "rsvp", "attend",
+  "signup", "respond", "available", "mass", "auto", "enable", "disable", "clear", "wipe", "purge",
   "clean", "refresh", "new", "add", "set", "pin", "waypoint", "social", "tweet", "screenshot", "photo", "drag" }
 local AREAS = { "talent", "spellbook", "pagedspells", "loadout", "containerframe", "merchant", "auction", "trade",
   "mailframe", "bankframe", "guildbank", "catalogshop", "storeframe", "macro", "keybind", "binding", "editmode",
@@ -728,7 +729,8 @@ end
 
 -- The action word a name holds, as one of its own words (CloseButton → close; ScrollTarget holds none), or nil.
 local function act(name)
-  local words = name:gsub("(%%l)(%%u)", "%%1 %%2"):gsub("(%%u)(%%u%%l)", "%%1 %%2"):lower()
+  -- an address is not a word: its letters would spell one by chance (`…add…`, `…bid…`)
+  local words = unaddressed(name):gsub("(%%l)(%%u)", "%%1 %%2"):gsub("(%%u)(%%u%%l)", "%%1 %%2"):lower()
   for word in words:gmatch("%%a+") do
     if ACT[word] or (word:sub(-1) == "s" and ACT[word:sub(1, -2)]) then return word end
   end
