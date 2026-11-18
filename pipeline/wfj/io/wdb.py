@@ -163,6 +163,12 @@ LAYOUTS = (
         pad_bits=(32, 96),
         evidence="Forever 1.60.1.70938, 5,215 of 5,215 records (1 with 96 after the string lengths)",
     ),
+    replace(
+        _FOREVER_69913,
+        build=70959,
+        pad_bits=(32, 96),
+        evidence="Forever 1.60.1.70959, 5,530 of 5,530 records (4 with 96 after the string lengths)",
+    ),
 )
 # The layout a new Forever pin starts from: the newest one, so a value a later build's records carry stays
 # allowed.
