@@ -75,6 +75,8 @@ local STATIC_LABELS = {
   setFilters = { NEWS .. ".SetFiltersButton", "GUILD_SET_FILTERS_LINK" },
   eventLog = { "CommunitiesGuildLogFrameTitle", "GUILD_EVENT_LOG" },
   newsFilters = { "CommunitiesGuildNewsFiltersFrame.Title", "GUILD_NEWS_FILTERS" },
+  -- the roster's check box label, written by its OnLoad (communitiesmemberlist.xml:284–290)
+  showOffline = { "CommunitiesFrame.MemberList.ShowOfflineButton.Text", "COMMUNITIES_MEMBER_LIST_SHOW_OFFLINE" },
 }
 local STATIC_ORDER = {}
 for key in pairs(STATIC_LABELS) do STATIC_ORDER[#STATIC_ORDER + 1] = key end
@@ -102,6 +104,14 @@ local COLUMN_KEYS = { "COMMUNITIES_ROSTER_COLUMN_TITLE_NAME", "COMMUNITIES_ROSTE
 local ONLINE_KEYS = { "GUILD_ONLINE_LABEL", "LASTONLINE_MINS", "LASTONLINE_HOURS", "LASTONLINE_DAYS",
   "LASTONLINE_MONTHS", "LASTONLINE_YEARS" }
 
+-- A roster row's Zone column holds a place (a name), or for a member who is not online the client's own line:
+-- "Offline" or how long ago they were (communitiesmemberlist.lua:1293–1303, TimeUtil.GetRecentTimeDate).
+local ROW_PRESENCE = { only = { "COMMUNITIES_PRESENCE_OFFLINE", "LASTONLINE_SECS", "LASTONLINE_MINS",
+  "LASTONLINE_HOURS", "LASTONLINE_DAYS", "LASTONLINE_MONTHS", "LASTONLINE_YEARS" } }
+-- The channel dropdown shows the selected channel's name. A guild's own two channels are named by the game
+-- ("Guild", "Officer"); every other channel is named by a player and left as written.
+local STREAM = { only = { "GUILD", "OFFICER" } }
+
 local function get(key) return Compat.get(SURFACE, key) end
 
 local function declare()
@@ -112,6 +122,7 @@ end
 
 -- A stable record key per pooled header button (records follow the widget, not the index).
 local headerKey = WFJ.Labels.keyer("column.") -- a pooled header's record key
+local zoneKey = WFJ.Labels.keyer("zone.") -- a pooled roster row's Zone column
 
 local ENTRY_TOOLTIP = { only = { "COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT",
   -- a cross-faction member's lines (communitiesmemberlist.lua:1216, 1789–1790), the faction word kept
@@ -132,6 +143,7 @@ function Communities.onRosterRow(a, b)
   WFJ.HelpTooltip.register(row, ENTRY_TOOLTIP)
   local cancel = row.CancelInvitationButton
   if type(cancel) == "table" then WFJ.HelpTooltip.register(cancel, CANCEL_TOOLTIP) end
+  if type(row.Zone) == "table" then WFJ.Labels.show(SURFACE, zoneKey(row.Zone), row.Zone, nil, ROW_PRESENCE) end
   WFJ.PlayerText.follow(row.Note) -- the member's note (communitiesmemberlist.lua:1320)
   WFJ.PlayerText.follow(row.Rank) -- the rank's name, written by the guild master (lua:1313)
 end
@@ -244,6 +256,7 @@ function Communities.setup()
   if hooked then return false end
   hooked = true
   playerText()
+  WFJ.Labels.dropdown(SURFACE, "stream", Compat.resolve("CommunitiesFrame.StreamDropdown"), STREAM)
   local memberList = get("memberList")
   if type(memberList) == "table" and type(memberList.UpdateMemberCount) == "function" then
     hooksecurefunc(memberList, "UpdateMemberCount", Communities.onCount)

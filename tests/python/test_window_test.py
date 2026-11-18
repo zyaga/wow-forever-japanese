@@ -329,6 +329,8 @@ def test_the_character_window_is_read_while_the_player_has_it_open_and_never_ope
     # the test closes windows as it goes: it does not start with this one open
     assert 'print("WFJ test: close the character window first, then run it again")' in run
     assert "WFJScanCharacterRead(function()" in run
+    # asked in chat and mid-screen, and again until it opens: a reload before this step leaves the run unfinished
+    assert "UIErrorsFrame:AddMessage(ASK" in lua and "sinceAsk >= CHARACTER_ASK" in lua
     assert 'db.live["character"] = record' in lua  # every page the player showed, read while it was open
     saved = """
 WFJScanDB = {

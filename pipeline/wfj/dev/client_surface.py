@@ -652,6 +652,7 @@ local LIVE = {
 -- player opens it instead: the test asks at its end, reads it for as long as it stays open (every page the
 -- player shows), and never clicks in it.
 local CHARACTER_WAIT, CHARACTER_READ = 30, 0.5 -- seconds to wait for it to open; between two reads of it
+local CHARACTER_ASK = 6 -- seconds between two askings
 local function characterShown()
   return type(CharacterFrame) == "table" and CharacterFrame:IsShown()
 end
@@ -1318,8 +1319,19 @@ local function WFJScanCharacterRead(done)
   local db = probeDb()
   local record = { english = {}, japanese = 0, boxes = {} }
   local waited, sinceRead, opened = 0, CHARACTER_READ, false
-  print("WFJ test: now open the character window (press C), click through its tabs, then close it")
+  -- said in chat and in the middle of the screen, and again every few seconds until the window opens: one chat
+  -- line is easy to miss, and a reload before this step ends leaves the run unfinished
+  local ASK = "WFJ test: NOT DONE YET. Open the character window (press C), click its tabs, then close it"
+  local sinceAsk = CHARACTER_ASK
   characterReader:SetScript("OnUpdate", function(_, elapsed)
+    if not opened then
+      sinceAsk = sinceAsk + elapsed
+      if sinceAsk >= CHARACTER_ASK then
+        sinceAsk = 0
+        print(ASK)
+        pcall(function() UIErrorsFrame:AddMessage(ASK, 1, 0.82, 0) end)
+      end
+    end
     if characterShown() then
       opened = true
       sinceRead = sinceRead + elapsed

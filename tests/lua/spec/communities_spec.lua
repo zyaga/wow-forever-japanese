@@ -21,7 +21,10 @@ local UI = {
   NOTE_COLON = { "Note:", "メモ:" }, OFFICER_NOTE_COLON = { "Officer's Note", "オフィサーメモ" },
   REMOVE = { "Remove", "削除" }, GROUP_INVITE = { "Group Invite", "グループに招待" },
   FRIENDS_LEVEL_TEMPLATE = { "Level %d %s", "レベル %d %s" }, GUILD_ONLINE_LABEL = { "Online", "オンライン" },
-  LASTONLINE_DAYS = { "%d |4day:days;", "%d日" },
+  LASTONLINE_DAYS = { "%d |4day:days;", "%d日" }, LASTONLINE_MINS = { "< an hour", "1時間未満" },
+  COMMUNITIES_PRESENCE_OFFLINE = { "Offline", "オフライン" }, GUILD = { "Guild", "ギルド" },
+  OFFICER = { "Officer", "オフィサー" },
+  COMMUNITIES_MEMBER_LIST_SHOW_OFFLINE = { "Show Offline Members", "オフラインのメンバーを表示" },
   GUILD_NOTE_EDITLABEL = { "Click here to set a Public Note.", "ここをクリックして公開メモを設定します。" },
   GUILD_OFFICERNOTE_EDITLABEL = { "Click here to set an Officer's Note.", "ここをクリックしてオフィサーメモを設定します。" },
   GUILD_INFO_TITLE = { "Guild Info", "ギルド情報" }, GUILD_MOTD_LABEL = { "Guild Message Of The Day", "今日のギルドメッセージ" },
@@ -100,6 +103,7 @@ local function loadCommunities()
       row = CreateFrame("Button")
       row.NameFrame = { Name = fs() }
       row.Note = fs() -- the member's note (communitiesmemberlist.lua:1320)
+      row.Zone = fs() -- a place, or the client's line for a member who is not online (lua:1293–1303)
       row.Rank = fs() -- the rank's name (lua:1313)
       row.CancelInvitationButton = CreateFrame("Button")
       C.rows[i] = row
@@ -107,6 +111,10 @@ local function loadCommunities()
     list.ScrollBox:initFrame(row, data, C.initEntry)
     return row
   end
+  -- the check box under the roster (communitiesmemberlist.xml:284–290) and the channel dropdown
+  list.ShowOfflineButton = { Text = fs(en("COMMUNITIES_MEMBER_LIST_SHOW_OFFLINE")) }
+  frame.StreamDropdown = { Text = fs() }
+  function frame.StreamDropdown.UpdateText() end
   function list.UpdateMemberCount(self)
     self.MemberCount.text = string.format(en("COMMUNITIES_MEMBER_LIST_MEMBER_COUNT_FORMAT"), C.online, C.total)
   end
@@ -342,6 +350,25 @@ describe("the Communities guild view on Forever", function()
         d:DisplayMember(1, member)
         assert.are.equal("Healer", note:GetText())
         assert.are.equal("Fonts\\FRIZQT__.TTF", note.font.path) -- the record held the widget's own font
+      end)
+
+      it("the roster's check box label, a row's offline line and the guild's own channel name are Japanese; "
+        .. "a place and a player's channel stay as written", function()
+        local list = _G.CommunitiesFrame.MemberList
+        assert.are.equal("オフラインのメンバーを表示", list.ShowOfflineButton.Text:GetText())
+        local row = C.entry(1, { name = "Thrall" })
+        for en, ja in pairs({ ["< an hour"] = "1時間未満", ["Offline"] = "オフライン", ["Orgrimmar"] = "Orgrimmar" }) do
+          row.Zone.text = en
+          WFJ.Communities.onRosterRow(row)
+          assert.are.equal(ja, row.Zone:GetText())
+        end
+        local stream = _G.CommunitiesFrame.StreamDropdown
+        stream.Text.text = "Guild"
+        stream:UpdateText()
+        assert.are.equal("ギルド", stream.Text:GetText())
+        stream.Text.text = "Raid planning"
+        stream:UpdateText()
+        assert.are.equal("Raid planning", stream.Text:GetText())
       end)
 
       it("the applicants column header translates", function()
