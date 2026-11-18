@@ -264,3 +264,38 @@ def test_the_sweeps_face_is_the_addons_bundled_face(root):
     assert f'local JAPANESE_FACE = "{face}"' in client_surface.TEXT_LUA
     # the bytes are written as Lua escapes: kana and kanji lead bytes, never the characters Python would make of them
     assert 'text:find("[\\227-\\233\\239]")' in client_surface.TEXT_LUA
+
+
+def test_a_warning_is_a_problem_and_a_run_that_could_not_watch_for_errors_says_so():
+    saved = """
+WFJScanDB = {
+["probe"] = {
+["test"] = { ["started"] = "2026-11-18 12:10:34", ["finished"] = "2026-11-18 12:11:11", ["build"] = "70959",
+  ["errors"] = { }, ["blocked"] = { }, ["handler"] = "another addon keeps the error handler",
+  ["warnings"] = { ["[load] a frame was shown while it may not be"] = 2 } },
+},
+}
+"""
+    assert client_surface.read_test_problems(saved) == [
+        "errors not watched: another addon keeps the error handler",
+        "warning x2: [load] a frame was shown while it may not be",
+    ]
+    lua = client_surface.TEXT_LUA
+    assert 'watcher:RegisterEvent("LUA_WARNING")' in lua
+    assert "if geterrorhandler() ~= grab then" in lua
+
+
+def test_a_character_in_no_guild_fails_the_guild_pages_instead_of_passing_them():
+    lua = client_surface.TEXT_LUA
+    assert 'db.test.unopened["guild pages"] = "this character is in no guild"' in lua
+    saved = """
+WFJScanDB = {
+["probe"] = {
+["live"] = { ["(nothing open)"] = { ["english"] = { } }, ["guild"] = { ["english"] = { } } },
+["test"] = { ["started"] = "a", ["finished"] = "b", ["build"] = "70959",
+  ["unopened"] = { ["guild pages"] = "this character is in no guild" } },
+},
+}
+"""
+    _info, found = client_surface.read_window_test(saved)
+    assert client_surface.window_test_report(found, {})[0] == ["guild pages\t(did not open)"]

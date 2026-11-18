@@ -1045,6 +1045,12 @@ local function WFJScanLiveSweep(done)
         db.test.unopened = db.test.unopened or {}
         db.test.unopened[window] = "the toggle opened nothing"
       end
+      -- a character in no guild shows none of the guild's pages (the roster, the info tab with the message of the
+      -- day): the run did not look at them, and says so instead of passing them
+      if window == "guild" and type(IsInGuild) == "function" and not IsInGuild() then
+        db.test.unopened = db.test.unopened or {}
+        db.test.unopened["guild pages"] = "this character is in no guild"
+      end
       queue, seen, scrolls, queued, clicks = {}, {}, 0, {}, 0
       for tab in pairs(idle) do seen[tab] = true end
       moreTabs()
@@ -1234,18 +1240,28 @@ SlashCmdList.WFJTEST = function(how)
   pagesOnly = how == "tabs"
   local db = probeDb()
   db.test = { started = date("%%Y-%%m-%%d %%H:%%M:%%S"), build = tostring((select(2, GetBuildInfo()))),
-    errors = {}, blocked = {}, clicks = pagesOnly and "tabs" or "all" }
-  -- every Lua error and every action the client refused an addon while the test runs, each with its count
+    errors = {}, blocked = {}, warnings = {}, clicks = pagesOnly and "tabs" or "all" }
+  -- every Lua error, every warning and every action the client refused an addon while the test runs, each with
+  -- its count
   local shown = geterrorhandler()
-  seterrorhandler(function(message)
+  local function grab(message)
     local key = "[" .. tostring(db.test.part) .. "] " .. tostring(message):sub(1, 400)
     db.test.errors[key] = (db.test.errors[key] or 0) + 1
     return shown(message)
-  end)
+  end
+  seterrorhandler(grab)
+  -- an error-catching addon can keep the handler to itself: the run then sees no error at all, and says so
+  if geterrorhandler() ~= grab then db.test.handler = "another addon keeps the error handler" end
   local watcher = CreateFrame("Frame")
   watcher:RegisterEvent("ADDON_ACTION_BLOCKED")
   watcher:RegisterEvent("ADDON_ACTION_FORBIDDEN")
+  watcher:RegisterEvent("LUA_WARNING") -- its one argument is the warning's text
   watcher:SetScript("OnEvent", function(_, event, addon, action)
+    if event == "LUA_WARNING" then
+      local key = "[" .. tostring(db.test.part) .. "] " .. tostring(addon):sub(1, 400)
+      db.test.warnings[key] = (db.test.warnings[key] or 0) + 1
+      return
+    end
     local key = "[" .. tostring(db.test.part) .. "] " .. event .. " " .. tostring(addon) .. " " .. tostring(action)
     db.test.blocked[key] = (db.test.blocked[key] or 0) + 1
   end)
@@ -1653,10 +1669,14 @@ def read_test_problems(text: str, log: str = "") -> list[str]:
     if test is None:
         return []
     out: list[str] = []
-    for kind in ("errors", "blocked"):
+    words = {"errors": "error", "blocked": "refused", "warnings": "warning"}
+    for kind, word in words.items():
         table = test.get(kind)
         for message, count in (table.named() if table is not None else {}).items():
-            out.append(f"{'error' if kind == 'errors' else 'refused'} x{count}: {' '.join(str(message).split())}")
+            out.append(f"{word} x{count}: {' '.join(str(message).split())}")
+    if test.get("handler"):
+        # the run could not watch for Lua errors: none recorded proves nothing
+        out.append(f"errors not watched: {test.get('handler')}")
     started = str(test.get("started") or "")
     saved = lua_reader.parse_assignments(log).get("WFJ_Log") if log.strip() else None
     if saved is not None and started:
