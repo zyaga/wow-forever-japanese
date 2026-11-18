@@ -322,7 +322,41 @@ WFJScanDB = {
         "error x6: [grabbed] TutorialFrame.lua:338: Usage: GetPrevCompleatedTutorial @ [TutorialFrame.lua]:338"]
 
 
-def test_the_character_window_is_left_closed_and_the_run_says_so():
+def test_the_character_window_is_read_while_the_player_has_it_open_and_never_opened_or_closed():
     lua = client_surface.TEXT_LUA
     assert "ToggleCharacter" not in lua  # opened by an addon, its show script raises an error every time
-    assert 'for name, why in pairs(LEFT_CLOSED) do db.test.unopened[name] = why end' in lua
+    run = lua[lua.index("SlashCmdList.WFJTEST = function(how)"):]
+    # the test closes windows as it goes: it does not start with this one open
+    assert 'print("WFJ test: close the character window first, then run it again")' in run
+    assert "WFJScanCharacterRead(function()" in run
+    assert 'db.live["character"] = record' in lua  # every page the player showed, read while it was open
+    saved = """
+WFJScanDB = {
+["probe"] = {
+["live"] = { ["(nothing open)"] = { ["english"] = { } },
+  ["character"] = { ["english"] = { ["PaperDollFrame.Title"] = "Reputation" }, ["japanese"] = 30, ["boxes"] = { } } },
+["test"] = { ["started"] = "a", ["finished"] = "b", ["build"] = "70959" },
+},
+}
+"""
+    assert client_surface.read_window_test(saved)[1] == {("character", "Reputation")}
+    not_opened = saved.replace('["build"] = "70959"', '["build"] = "70959", ["unopened"] = { ["character"] = "not opened" }')
+    assert ("character", client_surface.NOT_OPENED) in client_surface.read_window_test(not_opened)[1]
+
+
+def test_closed_windows_are_read_without_being_shown_and_listed_to_read():
+    lua = client_surface.TEXT_LUA
+    read = lua[lua.index("local function WFJScanClosedRead(done)"):lua.index("local characterReader")]
+    assert ":Show(" not in read and ":Click(" not in read  # nothing is shown or clicked
+    assert "not tested[top]" in read  # a window the live sweep opened was judged open
+    saved = """
+WFJScanDB = {
+["probe"] = {
+["closed"] = { ["MailFrame"] = { ["InboxPrevPageButton.b2fd54320.Text"] = "Prev" },
+  ["UIParent.b26511d00"] = { ["x"] = "Traits" } },
+["test"] = { ["started"] = "a", ["finished"] = "b", ["build"] = "70959" },
+},
+}
+"""
+    _info, found = client_surface.read_window_test(saved)
+    assert found == {("closed MailFrame", "Prev"), ("closed UIParent.*", "Traits")}

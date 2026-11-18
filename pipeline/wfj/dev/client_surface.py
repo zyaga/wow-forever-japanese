@@ -643,16 +643,18 @@ local LIVE = {
   { "calendar", function() ToggleCalendar() end },
   { "help", function() ToggleHelpFrame() end },
 }
--- Windows the test leaves closed, each with why: a line of the result, so a run never passes one silently.
---   character: its show script turns on the player frame's health and mana numbers and compares them
---     (CharacterFrameMixin:OnShow, blizzard_uipanels_game/camelot/characterframe.lua:710-729;
---     TextStatusBarMixin:UpdateTextStringWithValues, blizzard_textstatusbar/textstatusbar.lua:110). Those numbers
---     are secret to addon code wherever the client's secret restrictions are on, which on this client is
---     everywhere, so the window opened by an addon raises an error every time.
-local LEFT_CLOSED = {
-  character = "an addon that opens it raises an error: its show script compares the player's health, "
-    .. "which addon code may not read",
-}
+-- The character window is never opened or closed by the test. Its show script turns on the player frame's health
+-- and mana numbers and compares them (CharacterFrameMixin:OnShow, blizzard_uipanels_game/camelot/
+-- characterframe.lua:710-729; TextStatusBarMixin:UpdateTextStringWithValues, blizzard_textstatusbar/
+-- textstatusbar.lua:110), and those numbers are secret to addon code wherever the client's secret restrictions
+-- are on, which on this client is everywhere: opened by an addon it raises an error every time. Its hide script
+-- writes the same bars' fields (lua:758-782), so closed by an addon it leaves them tainted for the session. The
+-- player opens it instead: the test asks at its end, reads it for as long as it stays open (every page the
+-- player shows), and never clicks in it.
+local CHARACTER_WAIT, CHARACTER_READ = 30, 0.5 -- seconds to wait for it to open; between two reads of it
+local function characterShown()
+  return type(CharacterFrame) == "table" and CharacterFrame:IsShown()
+end
 local OPEN_TICKS, CLOSED_TICKS = 45, 12
 
 -- The sweeps read what a player with Japanese on sees: with translation off, or English first, every window is
@@ -971,6 +973,8 @@ end
 
 local TAB_TICKS, MAX_PAGES = 15, 150
 
+local tested = {} -- the top-level frames of the windows the live sweep opened
+
 local function WFJScanLiveSweep(done)
   if not japaneseOn() then return end
   if InCombatLockdown() then
@@ -984,8 +988,6 @@ local function WFJScanLiveSweep(done)
   db.test = db.test or {}
   db.test.finished = nil -- a sweep started again: what is saved is no longer the finished run
   db.test.popups = {}
-  db.test.unopened = db.test.unopened or {}
-  for name, why in pairs(LEFT_CLOSED) do db.test.unopened[name] = why end
   local at, ticks, english, pages = 0, 0, 0, 0
   local state, queue, seen, window, roots, scrolls = "closed", nil, nil, nil, nil, 0
   local queued, clicks = {}, 0
@@ -1048,7 +1050,10 @@ local function WFJScanLiveSweep(done)
       record(window)
       roots = {}
       for frame in pairs(rootsOnScreen()) do
-        if not idleRoots[frame] then roots[frame] = true end
+        if not idleRoots[frame] then
+          roots[frame] = true
+          tested[frame] = true
+        end
       end
       db.test.buttons = db.test.buttons or {}
       db.test.buttons[window] = listButtons(roots)
@@ -1237,14 +1242,87 @@ end
 SLASH_WFJOPEN1 = "/wfjopen"
 SlashCmdList.WFJOPEN = WFJScanOpenSweep
 
--- The whole window test (`/wfjtest`): the load walk, the live sweep, then one done line. `probe.test` holds when
--- it ran and on which build, so a result read later is known to be a whole run of that build. The open sweep is
--- not part of it: a window shown bare runs its scripts with none of the data the client gives it, and each raises
--- an error (and can taint the frames it touches) on the character the test runs on. `/wfjopen` still runs it alone.
+-- The closed-window read: every text region that is not on screen, in a window the live sweep did not open, that
+-- holds an English line the dictionary has Japanese for, filed under its window (`probe.closed`). Nothing is
+-- shown: a window shown bare runs its scripts with none of the data the client gives it, and each raises an error
+-- (and can taint the frames it touches) on the character the test runs on. So this reads what a window was built
+-- with and misses what it writes only when it opens; like the open sweep's list it is read against the code,
+-- never a failure (a surface that works from the window's opening code has not run).
+local closedReader = CreateFrame("Frame")
+local function WFJScanClosedRead(done)
+  local db = probeDb()
+  db.closed = {}
+  local frame = EnumerateFrames()
+  closedReader:SetScript("OnUpdate", function()
+    for _ = 1, PER_TICK do
+      if not frame then
+        closedReader:SetScript("OnUpdate", nil)
+        return done()
+      end
+      pcall(function()
+        if frame:IsForbidden() then return end
+        for _, region in ipairs({ frame:GetRegions() }) do
+          if region:GetObjectType() == "FontString" and not region:IsVisible() then
+            local plain = plainOf(region)
+            local top = plain and ENGLISH[plain] and windowOf(region)
+            if top and not tested[top] then
+              local name = tostring(top:GetDebugName())
+              db.closed[name] = db.closed[name] or {}
+              db.closed[name][tostring(region:GetDebugName())] = plain
+            end
+          end
+        end
+      end)
+      frame = EnumerateFrames(frame)
+    end
+  end)
+end
+
+-- The character window, opened by the player (see above): read every half second while it is open, so each page
+-- the player shows is read; it ends when the player closes it. Not opened in time, the run says so.
+local characterReader = CreateFrame("Frame")
+local function WFJScanCharacterRead(done)
+  local db = probeDb()
+  local record = { english = {}, japanese = 0, boxes = {} }
+  local waited, sinceRead, opened = 0, CHARACTER_READ, false
+  print("WFJ test: now open the character window (press C), click through its tabs, then close it")
+  characterReader:SetScript("OnUpdate", function(_, elapsed)
+    if characterShown() then
+      opened = true
+      sinceRead = sinceRead + elapsed
+      if sinceRead < CHARACTER_READ then return end
+      sinceRead = 0
+      local screen = readScreen()
+      for name, text in pairs(screen.english) do record.english[name] = text end
+      for name, font in pairs(screen.boxes) do record.boxes[name] = font end
+      record.japanese = math.max(record.japanese, screen.japanese)
+      return
+    end
+    waited = waited + elapsed
+    if not opened and waited < CHARACTER_WAIT then return end
+    characterReader:SetScript("OnUpdate", nil)
+    if opened then
+      db.live["character"] = record
+    else
+      db.test.unopened = db.test.unopened or {}
+      db.test.unopened["character"] = "not opened: press C when the test asks (an addon cannot open it without an error)"
+    end
+    done()
+  end)
+end
+
+-- The whole window test (`/wfjtest`): the load walk, the live sweep, the closed-window read, the character window
+-- (opened by the player), then one done line. `probe.test` holds when it ran and on which build, so a result read
+-- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
+-- `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
 local testRunning = false
 SlashCmdList.WFJTEST = function(how)
   if not japaneseOn() or InCombatLockdown() then return end
+  if characterShown() then -- the test closes windows as it goes, and must not close this one (see above)
+    print("WFJ test: close the character window first, then run it again")
+    return
+  end
   if testRunning then
     print("WFJ test: already running")
     return
@@ -1309,13 +1387,19 @@ SlashCmdList.WFJTEST = function(how)
     db.test.part = "live"
     WFJScanLiveSweep(function()
       db.opened = nil -- an earlier run's bare-window list is not this run's
-      db.test.part = "done"
-      seterrorhandler(shown)
-      watcher:UnregisterAllEvents()
-      readGrabbed()
-      testRunning = false
-      db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
-      print("WFJ test done: /reload to save, then the result can be read")
+      db.test.part = "closed"
+      WFJScanClosedRead(function()
+        db.test.part = "character"
+        WFJScanCharacterRead(function()
+          db.test.part = "done"
+          seterrorhandler(shown)
+          watcher:UnregisterAllEvents()
+          readGrabbed()
+          testRunning = false
+          db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
+          print("WFJ test done: /reload to save, then the result can be read")
+        end)
+      end)
     end)
   end)
 end
@@ -1688,6 +1772,9 @@ def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
     unopened = probe.get("test").get("unopened") if probe.get("test") is not None else None
     if unopened is not None:
         found |= {(str(window), NOT_OPENED) for window in unopened.named()}
+    closed = probe.get("closed").named() if probe.get("closed") is not None else {}
+    for window, lines in closed.items():
+        found |= {(f"closed {_POOLED.sub('*', str(window))}", str(en)) for en in lines.named().values()}
     opened = probe.get("opened").named() if probe.get("opened") is not None else {}
     for window, record in opened.items():
         still = record.get("still")
@@ -1777,11 +1864,12 @@ def _texts(args: argparse.Namespace) -> int:
     new, gone = window_test_report(found, baseline)
     # a window the open sweep showed did not run the client's opening code, so a surface that works from that
     # code never ran: its English is a list to read against the code, never a failure, like its errors
-    bare = [row for row in new if row.startswith("opened ")]
+    # a closed window read without being shown is the same kind of list
+    bare = [row for row in new if row.startswith(("opened ", "closed "))]
     new = [row for row in new if row not in bare]
     print(f"window test of build {info.get('build')}, run {info.get('started')}: {len(found)} English lines on "
           f"screen, {len(found) - len(new) - len(bare)} allowed by the baseline, {len(new)} new in the windows "
-          f"opened the client's way, {len(bare)} to read in windows shown bare")
+          f"opened the client's way, {len(bare)} to read in closed windows")
     for row in new:
         print(f"NEW   {row}")
     for row in bare:

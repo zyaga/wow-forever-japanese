@@ -23,4 +23,3 @@ achievements	Rogue	a class's name: names stay English
 friends	Rogue	a class's name: names stay English
 group finder	(did not open)	Forever does not load the group finder (blizzard_groupfinder is gated in pipeline/forever_addons.txt), so its toggle does not exist
 dungeon journal	(did not open)	Forever does not load the dungeon journal (blizzard_encounterjournal is gated in pipeline/forever_addons.txt), so its toggle does not exist
-character	(did not open)	the test leaves it closed: an addon that opens the character window raises an error, because its show script compares the player's health, which addon code may not read on this client
