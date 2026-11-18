@@ -357,8 +357,8 @@ describe("the Communities guild view on Forever", function()
         local list = _G.CommunitiesFrame.MemberList
         assert.are.equal("オフラインのメンバーを表示", list.ShowOfflineButton.Text:GetText())
         local row = C.entry(1, { name = "Thrall" })
-        for en, ja in pairs({ ["< an hour"] = "1時間未満", ["Offline"] = "オフライン", ["Orgrimmar"] = "Orgrimmar" }) do
-          row.Zone.text = en
+        for shown, ja in pairs({ ["< an hour"] = "1時間未満", ["Offline"] = "オフライン", ["Orgrimmar"] = "Orgrimmar" }) do
+          row.Zone.text = shown
           WFJ.Communities.onRosterRow(row)
           assert.are.equal(ja, row.Zone:GetText())
         end
