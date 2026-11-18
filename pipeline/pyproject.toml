@@ -52,6 +52,8 @@ max-statements = 60
 # assertion messages are kept on one line so a failure reads as the data it checks; a fixture builder takes
 # the whole record it writes
 "../tests/**" = ["ARG001", "ARG002", "ARG005", "E501", "C901", "PLR0913"]
+# the probe's Lua text is written at the addon's own line length, and the rows around it follow it
+"wfj/dev/client_surface.py" = ["E501"]
 
 [tool.coverage.run]
 source = ["wfj"]

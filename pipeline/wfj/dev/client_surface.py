@@ -46,8 +46,8 @@ import hashlib
 import json
 import re
 import sys
-from pathlib import Path
 from collections.abc import Iterable
+from pathlib import Path
 from typing import Any
 
 from wfj.dev import client_addons
@@ -1621,7 +1621,43 @@ def _loaded(extract: Path, game: str) -> list[Path]:
     return files
 
 
-def main(argv: list[str] | None = None) -> int:
+def _texts(args: argparse.Namespace) -> int:
+    """The `texts` command: the window test's saved result against the baseline. → the exit code."""
+    info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
+    if not info.get("finished"):
+        print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
+        return 2
+    baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
+    new, gone = window_test_report(found, baseline)
+    # a window the open sweep showed did not run the client's opening code, so a surface that works from that
+    # code never ran: its English is a list to read against the code, never a failure, like its errors
+    bare = [row for row in new if row.startswith("opened ")]
+    new = [row for row in new if row not in bare]
+    print(f"window test of build {info.get('build')}, run {info.get('started')}: {len(found)} English lines on "
+          f"screen, {len(found) - len(new) - len(bare)} allowed by the baseline, {len(new)} new in the windows "
+          f"opened the client's way, {len(bare)} to read in windows shown bare")
+    for row in new:
+        print(f"NEW   {row}")
+    for row in bare:
+        print(f"read  {row}")
+    for row in gone:
+        print(f"gone  {row}")
+    log = args.log or args.saved.with_name("WoWForeverJapanese.lua")
+    problems = read_test_problems(args.saved.read_text(encoding="utf-8", errors="replace"),
+                                  log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
+    # the open sweep shows a window without the client's own opening code, so a window that needs data it was
+    # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
+    noted = [row for row in problems if ": [open] " in row]
+    failing = [row for row in problems if row not in noted]
+    print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare)")
+    for row in failing:
+        print(f"ERROR {row}")
+    for row in noted:
+        print(f"noted {row}")
+    return 1 if new or failing else 0
+
+
+def _parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(prog="client_surface", description=__doc__.split("\n\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("build")
@@ -1650,40 +1686,13 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--reference", type=Path, help="the extract of the client the addon works on")
     r.add_argument("--reference-game", choices=games, help="that client's game type")
     r.add_argument("--out", required=True, type=Path)
-    args = ap.parse_args(argv)
+    return ap
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = _parser().parse_args(argv)
     if args.cmd == "texts":
-        info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
-        if not info.get("finished"):
-            print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
-            return 2
-        baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
-        new, gone = window_test_report(found, baseline)
-        # a window the open sweep showed did not run the client's opening code, so a surface that works from that
-        # code never ran: its English is a list to read against the code, never a failure, like its errors
-        bare = [row for row in new if row.startswith("opened ")]
-        new = [row for row in new if row not in bare]
-        print(f"window test of build {info.get('build')}, run {info.get('started')}: {len(found)} English lines on "
-              f"screen, {len(found) - len(new) - len(bare)} allowed by the baseline, {len(new)} new in the windows "
-              f"opened the client's way, {len(bare)} to read in windows shown bare")
-        for row in new:
-            print(f"NEW   {row}")
-        for row in bare:
-            print(f"read  {row}")
-        for row in gone:
-            print(f"gone  {row}")
-        log = args.log or args.saved.with_name("WoWForeverJapanese.lua")
-        problems = read_test_problems(args.saved.read_text(encoding="utf-8", errors="replace"),
-                                      log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
-        # the open sweep shows a window without the client's own opening code, so a window that needs data it was
-        # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
-        noted = [row for row in problems if ": [open] " in row]
-        failing = [row for row in problems if row not in noted]
-        print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare)")
-        for row in failing:
-            print(f"ERROR {row}")
-        for row in noted:
-            print(f"noted {row}")
-        return 1 if new or failing else 0
+        return _texts(args)
     if args.cmd == "build":
         manifest = build(args.addon)
         args.out.write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -1692,10 +1701,9 @@ def main(argv: list[str] | None = None) -> int:
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     if args.cmd == "probe":
         args.out.parent.mkdir(parents=True, exist_ok=True)
-        if args.window_test:
-            text = probe_lua(manifest, walk=True, english=translated_english(args.window_test), at_login=args.walk)
-        else:
-            text = probe_lua(manifest, walk=args.walk)
+        english = translated_english(args.window_test) if args.window_test else ()
+        text = probe_lua(manifest, walk=args.walk or bool(args.window_test), english=english,
+                         at_login=args.walk)
         args.out.write_text(text, encoding="utf-8")
         print(f"probe: {len(probe_names(manifest))} names → {args.out}")
         return 0

@@ -147,7 +147,7 @@ def test_the_sweep_clicks_every_entry_of_a_reused_list_once_and_nothing_that_act
     sweep = client_surface.TEXT_LUA % '  ["Back"] = true,'
     script = tmp_path / "sim.lua"
     script.write_text(head + sweep[sweep.index("-- The text sweep."):] + tail, encoding="utf-8")
-    out = subprocess.run([lua, str(script)], capture_output=True, text=True, timeout=120)
+    out = subprocess.run([lua, str(script)], check=False, capture_output=True, text=True, timeout=120)
     assert out.returncode == 0, out.stderr
     lines = out.stdout.strip().splitlines()
     assert lines[-1] == "clicked 19 | twice:  | missed:", lines[-1]
