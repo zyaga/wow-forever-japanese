@@ -2,6 +2,7 @@
 {"id": "7803a292e7f48651", "field": "text", "en": "Greetings, soldier. Are you here to help the cause?", "hash": "7803a292e7f48651", "src": "vmangos@13b49dc"}
 {"id": "78087075043b67de", "field": "text", "en": "What?  Such a small, frail thing beckons me?  I shall add your bones to my throne, $r!!", "hash": "78087075043b67de", "src": "vmangos@13b49dc"}
 {"id": "7809246c1d5c082f", "field": "text", "en": "The Vault in Ironforge is the closest bank ye'll find in these parts.", "hash": "7809246c1d5c082f", "src": "vmangos@13b49dc"}
+{"id": "780aa32ea4d821c2", "field": "text", "en": "Calder! Again?!", "hash": "780aa32ea4d821c2", "src": "collector@1.60.1.70938"}
 {"id": "78197a05136b2a3e", "field": "text", "en": "Gubber, I don't know how to fish.", "hash": "78197a05136b2a3e", "src": "vmangos@13b49dc"}
 {"id": "7819b466c599ad20", "field": "text", "en": "Yes, and you, Archmage Runeweaver. The High Order is eager to learn more of the Kirin Tor.", "hash": "7819b466c599ad20", "src": "collector@1.60.1.70790"}
 {"id": "781b1cb3b2b18041", "field": "text", "en": "HELP!!!!", "hash": "781b1cb3b2b18041", "src": "vmangos@13b49dc"}
@@ -16,6 +17,7 @@
 {"id": "783ff6e80725f13b", "field": "text", "en": "My vision has darkened, but there are many kinds of sight...", "hash": "783ff6e80725f13b", "src": "vmangos@13b49dc"}
 {"id": "7840947f73845348", "field": "text", "en": "Terenthis, Raene sent me to find you. The Sentinels are in need of help in Ashenvale.", "hash": "7840947f73845348", "src": "vmangos@13b49dc"}
 {"id": "7844ae0217eb2979", "field": "text", "en": "Smear the ash on my face like war paint!", "hash": "7844ae0217eb2979", "src": "vmangos@13b49dc"}
+{"id": "78465e7dd913366e", "field": "text", "en": "There are no words to describe what happened. Banon twisted and contorted horribly. It sounded like every bone in his body was breaking. His mouth filled with razors and his hands became deadly claws. It took twenty gnolls to fell him, and he killed half of them before it was done.", "hash": "78465e7dd913366e", "src": "collector@1.60.1.70888", "npcs": [259620]}
 {"id": "7846f8f039762a5a", "field": "text", "en": "No!  It can't be...", "hash": "7846f8f039762a5a", "src": "vmangos@13b49dc"}
 {"id": "785a78c7e3099649", "field": "text", "en": "I lost my transponder and need another one, Scooty.", "hash": "785a78c7e3099649", "src": "vmangos@13b49dc"}
 {"id": "785b492612a1073f", "field": "text", "en": "To me, my servants!", "hash": "785b492612a1073f", "src": "vmangos@13b49dc"}

@@ -32,5 +32,6 @@
 {"id": "bce7e42122a0711e", "field": "text", "en": "Do you truly believe you can win against the armies of Kel'Thuzad? No army of the living, no power you could possibly bring to bear can destroy our ranks!", "hash": "bce7e42122a0711e", "src": "vmangos@13b49dc"}
 {"id": "bce8a6ccd4155a93", "field": "text", "en": "Many of the supplies the tailors need come by way of Darnassus.  It is not surprising that they all moved there to work.  If you wish to be a tailor then you best head to Darnassus.", "hash": "bce8a6ccd4155a93", "src": "vmangos@13b49dc"}
 {"id": "bcead923d02e7cf2", "field": "text", "en": "*Sigh* You're probably right, Raven. I'm going back on patrol....", "hash": "bcead923d02e7cf2", "src": "vmangos@13b49dc"}
+{"id": "bcebb22fba723035", "field": "text", "en": "If you seek travel to Auberdine in Darkshore, you have come to the right place. Our people welcome any Alliance members who wish to trade, travel, or aid others in our lands.", "hash": "bcebb22fba723035", "src": "collector@1.60.1.70938", "npcs": [276318]}
 {"id": "bcf634b387c34029", "field": "text", "en": "YOU ARE THE LOSE!", "hash": "bcf634b387c34029", "src": "vmangos@13b49dc"}
 {"id": "bcf9cb134cd64457", "field": "text", "en": "The dark void awaits you!", "hash": "bcf9cb134cd64457", "src": "vmangos@13b49dc"}

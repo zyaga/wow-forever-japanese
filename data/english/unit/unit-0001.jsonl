@@ -34,6 +34,7 @@
 {"id": 1266, "field": "name", "en": "Tundra MacGrann", "hash": "5bc3e40b94db7427", "src": "collector@1.60.1.70862"}
 {"id": 1267, "field": "name", "en": "Ragnar Thunderbrew", "hash": "8b04a24fd679958b", "src": "collector@1.60.1.70862"}
 {"id": 1268, "field": "name", "en": "Ozzie Togglevolt", "hash": "cd352c90d77a424b", "src": "collector@1.60.1.70888"}
+{"id": 1269, "field": "name", "en": "Razzle Sprysprocket", "hash": "a7256f58e0541201", "src": "collector@1.60.1.70938"}
 {"id": 1274, "field": "name", "en": "Senator Barin Redstone", "hash": "56f543e35f83ea69", "src": "collector@1.60.1.70862"}
 {"id": 1323, "field": "name", "en": "Osric Strang", "hash": "147f70cf921d35ef", "src": "collector@1.60.1.70862"}
 {"id": 1325, "field": "name", "en": "Jasper Fel", "hash": "adccf9dddef742d8", "src": "collector@1.60.1.70862"}
@@ -105,4 +106,5 @@
 {"id": 1963, "field": "name", "en": "Vidra Hearthstove", "hash": "17bf261a768d33db", "src": "collector@1.60.1.70790"}
 {"id": 1965, "field": "name", "en": "Mountaineer Thalos", "hash": "beb6e438f6860210", "src": "collector@1.60.1.70790"}
 {"id": 1977, "field": "name", "en": "Senator Mehr Stonehallow", "hash": "607d2eb864fc653d", "src": "collector@1.60.1.70790"}
+{"id": 1978, "field": "name", "en": "Deathstalker Erland", "hash": "56276617d0efc17d", "src": "collector@1.60.1.70959"}
 {"id": 1992, "field": "name", "en": "Tarindrella", "hash": "0ea1887499b35bf8", "src": "collector@1.60.1.70170"}

@@ -1,6 +1,7 @@
 {"id": "450deb27cad2c76c", "field": "text", "en": "We must be vigilant to eradicate this plague!", "hash": "450deb27cad2c76c", "src": "vmangos@13b49dc"}
 {"id": "45115ca54fccedb2", "field": "text", "en": "Rally around your Lieutenants and Commanders, soldiers! Keep the savages at bay!", "hash": "45115ca54fccedb2", "src": "vmangos@13b49dc"}
 {"id": "4511ec986b75581e", "field": "text", "en": "Hah! Daryl, you should have seen the look on your face! You half jumped out of your skin!", "hash": "4511ec986b75581e", "src": "vmangos@13b49dc"}
+{"id": "4512128a7c8a1aab", "field": "text", "en": "It's a shame to waste such fine magic on some pointless holy bauble. Oh well...", "hash": "4512128a7c8a1aab", "src": "collector@1.60.1.70938"}
 {"id": "45188c2a052bcf6c", "field": "text", "en": "Please tell me more about Zaetar.", "hash": "45188c2a052bcf6c", "src": "vmangos@13b49dc"}
 {"id": "4518accefc3a2fe2", "field": "text", "en": "Right away, sir.", "hash": "4518accefc3a2fe2", "src": "vmangos@13b49dc"}
 {"id": "451b59393c68e9f4", "field": "text", "en": "Debug message, Thelrin has been summoned.", "hash": "451b59393c68e9f4", "src": "vmangos@13b49dc"}
@@ -14,6 +15,7 @@
 {"id": "454c03f8388404bf", "field": "text", "en": "Call it a day, men!", "hash": "454c03f8388404bf", "src": "vmangos@13b49dc"}
 {"id": "454ce2f021a4bb69", "field": "text", "en": "My task is done!", "hash": "454ce2f021a4bb69", "src": "vmangos@13b49dc"}
 {"id": "454d1a618f0ff202", "field": "text", "en": "I'd like to train in cooking.", "hash": "454d1a618f0ff202", "src": "vmangos@13b49dc"}
+{"id": "454da907f4454c88", "field": "text", "en": "We will see it done.", "hash": "454da907f4454c88", "src": "collector@1.60.1.70888", "npcs": [259620]}
 {"id": "455334ff3ce9e62b", "field": "text", "en": "Oh, shut up.", "hash": "455334ff3ce9e62b", "src": "vmangos@13b49dc"}
 {"id": "45547e1124c5dc59", "field": "text", "en": "%s whispers to $n the secret to opening his strongbox.", "hash": "45547e1124c5dc59", "src": "vmangos@13b49dc"}
 {"id": "455b945896d6dbca", "field": "text", "en": "$n, what are you waiting for?  Find Field Marshal in the Field of Strife and give him the assault orders.  Once he gets the orders, he and his troops will charge into the Horde and take no prisoners!", "hash": "455b945896d6dbca", "src": "vmangos@13b49dc"}

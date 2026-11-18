@@ -19,6 +19,7 @@
 {"id": "076340e59a57e69d", "field": "text", "en": "Cloth is okay. Personally I prefer to work with human skin.", "hash": "076340e59a57e69d", "src": "vmangos@13b49dc"}
 {"id": "0764263620a3657d", "field": "text", "en": "Metal, as with all things, should be used in balance with nature.  Karn Stonehoof has a smithy setup near the pond on the lower rise.  Seek out his wisdom.", "hash": "0764263620a3657d", "src": "vmangos@13b49dc"}
 {"id": "0769ef3d4a261e75", "field": "text", "en": "Hail, $c!  Welcome to the celebration!", "hash": "0769ef3d4a261e75", "src": "vmangos@13b49dc"}
+{"id": "076d1f15279dd869", "field": "text", "en": "Welcome to my barbershop! We offer cuts, colorings, and more.$B$BWe can groom facial hair, perform piercings, reshape tusks and horns, and even modify undead features!$B$BHave a seat and we'll get to work.", "hash": "076d1f15279dd869", "src": "collector@1.60.1.70938", "npcs": [277055]}
 {"id": "07763c5b2326f7f9", "field": "text", "en": "The air is abuzz with energy, Arch Druid. What is the status of the Forest Lord?", "hash": "07763c5b2326f7f9", "src": "vmangos@13b49dc"}
 {"id": "07894e7228418da8", "field": "text", "en": "Having a bad day? Try some cherry pie.", "hash": "07894e7228418da8", "src": "vmangos@13b49dc"}
 {"id": "078d085a8b5b3221", "field": "text", "en": "I caught a fish if you are hungry...", "hash": "078d085a8b5b3221", "src": "vmangos@13b49dc"}

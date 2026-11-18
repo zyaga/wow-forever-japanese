@@ -123,7 +123,11 @@
 {"id": 79946, "field": "objectives", "en": "Speak with Katherine to learn more about Aeonas, and then find him in the Scarlet Monastery.", "hash": "fd437bd2312061e0", "src": "wdb@1.60.1.70938"}
 {"id": 79946, "field": "description", "en": "Due to the... unfortunate nature of why he left the order, it would be bad comedy for Aeonas to die at the hands of the Scarlet Crusade now. The Crusade is an organization of zealots and lunatics and they've been growing increasingly brazen in their willingness to commit violence against anyone who they imagine to be enemies of the light. Go to the Scarlet Monastery in Tirisfal Glades and find out if Aeonas still lives.", "hash": "eb1fc9b464d50d3b", "src": "wdb@1.60.1.70938"}
 {"id": 79947, "field": "title", "en": "Geomancy: The Stone-Cold Truth", "hash": "19d978d89be22e4c", "src": "wdb@1.60.1.70938"}
+{"id": 79947, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "collector@1.60.1.70938"}
+{"id": 79947, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.$B$BIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "collector@1.60.1.70938"}
 {"id": 79948, "field": "title", "en": "Defensive Magics 101", "hash": "5bc13f46576d9197", "src": "wdb@1.60.1.70938"}
+{"id": 79948, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "collector@1.60.1.70938"}
+{"id": 79948, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.$B$BIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "collector@1.60.1.70938"}
 {"id": 79949, "field": "title", "en": "A Web of Lies: Debunking Myths and Legends", "hash": "efc18e04a3a23acb", "src": "wdb@1.60.1.70938"}
 {"id": 79950, "field": "title", "en": "Demons and You", "hash": "6fe9a1ef040c438f", "src": "wdb@1.60.1.70938"}
 {"id": 79951, "field": "title", "en": "Mummies: A Guide to the Unsavory Undead", "hash": "99295356cea4dd84", "src": "wdb@1.60.1.70938"}

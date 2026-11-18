@@ -163,6 +163,7 @@
 {"id": 279415, "field": "description", "en": "All that remains of a manifestation of fiery hatred.", "hash": "627fc455263ded49", "src": "db2@1.60.1.70938"}
 {"id": 279448, "field": "name", "en": "Bloodsplattered Bandana", "hash": "d6df230026469de1", "src": "db2@1.60.1.70938"}
 {"id": 279450, "field": "name", "en": "Fractured Insignia", "hash": "aff8a3f5f1b00d8a", "src": "db2@1.60.1.70938"}
+{"id": 279450, "field": "description", "en": "Use: Combine 6 Operative Insignias.", "hash": "1f4ca0faaad3a7de", "src": "collector@1.60.1.70938"}
 {"id": 279464, "field": "name", "en": "Monster Shoulder (DNT)", "hash": "229e47c0275e0e7c", "src": "db2@1.60.1.70938"}
 {"id": 279465, "field": "name", "en": "Monster Chest (DNT)", "hash": "3b07fbcfa06bd7c9", "src": "db2@1.60.1.70938"}
 {"id": 279466, "field": "name", "en": "Monster Waist (DNT)", "hash": "e88cfe2a4007f1c1", "src": "db2@1.60.1.70938"}

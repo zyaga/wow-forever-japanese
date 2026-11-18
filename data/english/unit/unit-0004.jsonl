@@ -30,8 +30,10 @@
 {"id": 4521, "field": "name", "en": "Treshala Fallowbrook", "hash": "18abb67dd6c9e19f", "src": "collector@1.60.1.70938"}
 {"id": 4551, "field": "name", "en": "Michael Garrett", "hash": "30ec3f6acecb039b", "src": "collector@1.60.1.70790"}
 {"id": 4556, "field": "name", "en": "Gordon Wendham", "hash": "984a2132d9c82521", "src": "collector@1.60.1.70790"}
+{"id": 4568, "field": "name", "en": "Anastasia Hartwell", "hash": "30cac8340906d7d1", "src": "collector@1.60.1.70938"}
 {"id": 4605, "field": "name", "en": "Basil Frye", "hash": "c195455524eff2d8", "src": "collector@1.60.1.70862"}
 {"id": 4606, "field": "name", "en": "Aelthalyste", "hash": "ca8aeefc1a1ddc27", "src": "collector@1.60.1.70862"}
+{"id": 4607, "field": "name", "en": "Father Lankester", "hash": "fdea77baf2765a48", "src": "collector@1.60.1.70938"}
 {"id": 4629, "field": "name", "en": "Trackmaster Zherin", "hash": "745c6c20c4861306", "src": "collector@1.60.1.70888"}
 {"id": 4630, "field": "name", "en": "Pozzik", "hash": "4642d38b6a9a1499", "src": "collector@1.60.1.70888"}
 {"id": 4721, "field": "name", "en": "Zangen Stonehoof", "hash": "c5038a062e651ff4", "src": "collector@1.60.1.70862"}
@@ -39,8 +41,10 @@
 {"id": 4783, "field": "name", "en": "Dawnwatcher Selgorm", "hash": "0f77f926e930e026", "src": "collector@1.60.1.70938"}
 {"id": 4784, "field": "name", "en": "Argent Guard Manados", "hash": "5140ae2a45e8321d", "src": "collector@1.60.1.70938"}
 {"id": 4786, "field": "name", "en": "Dawnwatcher Shaedlass", "hash": "db237a3468636971", "src": "collector@1.60.1.70862"}
+{"id": 4791, "field": "name", "en": "Nazeer Bloodpike", "hash": "fd248f7b20a86707", "src": "collector@1.60.1.70938"}
 {"id": 4792, "field": "name", "en": "\"Swamp Eye\" Jarl", "hash": "fbda46d3644f7e9d", "src": "collector@1.60.1.70888"}
 {"id": 4877, "field": "name", "en": "Jandia", "hash": "69c7af445857dc8c", "src": "collector@1.60.1.70938"}
+{"id": 4926, "field": "name", "en": "Krog", "hash": "0a2acf9f32107d78", "src": "collector@1.60.1.70938"}
 {"id": 4941, "field": "name", "en": "Caz Twosprocket", "hash": "2936807d7b5a0ce8", "src": "collector@1.60.1.70888"}
 {"id": 4944, "field": "name", "en": "Captain Garran Vimes", "hash": "3743ed7a5c60d2b7", "src": "collector@1.60.1.70888"}
 {"id": 4947, "field": "name", "en": "Theramore Lieutenant", "hash": "4f55818bf686ca3e", "src": "collector@1.60.1.70888"}
