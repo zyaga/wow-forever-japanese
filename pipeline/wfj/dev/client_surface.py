@@ -975,6 +975,36 @@ local TAB_TICKS, MAX_PAGES = 15, 150
 
 local tested = {} -- the top-level frames of the windows the live sweep opened
 
+-- The friends window must still hold the player's friends. An addon that runs code while the client builds the
+-- list can leave it empty with no error at all (the client withholds Battle.net data from addon code), so errors
+-- alone prove nothing here: the friends the client counts are held against the friend cards it drew. A count
+-- that may not be read is written down as such, never taken as zero.
+local function friendsDrawn(roots)
+  local function count(fn)
+    local ok, n = pcall(fn)
+    if not ok then return "no such call" end
+    if issecretvalue and issecretvalue(n) then return "secret" end
+    return tonumber(n) or "none"
+  end
+  local out = {
+    battlenet = count(function() return (BNGetNumFriends()) end),
+    game = count(function() return C_FriendList.GetNumFriends() end),
+    listed = count(function() return SocialUIFrame.FriendsList.ScrollBox:GetDataProviderSize() end),
+    drawn = 0,
+  }
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(function()
+      -- a friend card is a row with a FriendName line (FriendsListSocialCardTemplate)
+      if not frame:IsForbidden() and frame:IsVisible() and type(frame.FriendName) == "table" and under(frame, roots) then
+        out.drawn = out.drawn + 1
+      end
+    end)
+    frame = EnumerateFrames(frame)
+  end
+  return out
+end
+
 local function WFJScanLiveSweep(done)
   if not japaneseOn() then return end
   if InCombatLockdown() then
@@ -1057,6 +1087,9 @@ local function WFJScanLiveSweep(done)
       end
       db.test.buttons = db.test.buttons or {}
       db.test.buttons[window] = listButtons(roots)
+      if window == "friends" and type(SocialUIFrame) == "table" and roots[SocialUIFrame] then
+        db.test.friends = friendsDrawn(roots)
+      end
       if next(roots) == nil then
         db.test.unopened = db.test.unopened or {}
         db.test.unopened[window] = "the toggle opened nothing"
@@ -1800,6 +1833,16 @@ def read_test_problems(text: str, log: str = "") -> list[str]:
         table = test.get(kind)
         for message, count in (table.named() if table is not None else {}).items():
             out.append(f"{word} x{count}: {' '.join(str(message).split())}")
+    friends = test.get("friends")
+    if friends is not None:
+        counts = {k: friends.get(k) for k in ("battlenet", "game", "listed", "drawn")}
+        known = [n for n in (counts["battlenet"], counts["game"]) if isinstance(n, (int, float))]
+        if not known:
+            # neither count could be read: the list was not checked, and the run says so
+            out.append(f"friends list not checked: the client's friend counts could not be read ({counts})")
+        elif sum(known) > 0 and not counts["drawn"]:
+            out.append(f"friends list is empty: the client counts {int(sum(known))} friends and the window drew "
+                       f"none ({counts})")
     if test.get("handler"):
         # the run could not watch for Lua errors: none recorded proves nothing
         out.append(f"errors not watched: {test.get('handler')}")

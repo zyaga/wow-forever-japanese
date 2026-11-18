@@ -360,3 +360,24 @@ WFJScanDB = {
 """
     _info, found = client_surface.read_window_test(saved)
     assert found == {("closed MailFrame", "Prev"), ("closed UIParent.*", "Traits")}
+
+
+def _friends(counts: str) -> str:
+    head = 'WFJScanDB = {\n["probe"] = {\n["test"] = { ["started"] = "a", ["finished"] = "b", ["build"] = "70959", '
+    return head + '["friends"] = { ' + counts + " } },\n},\n}\n"
+
+
+def test_a_friends_window_that_lost_its_friends_fails_the_run_though_nothing_errored():
+    lua = client_surface.TEXT_LUA
+    assert "db.test.friends = friendsDrawn(roots)" in lua
+    empty = _friends('["battlenet"] = 14, ["game"] = 2, ["listed"] = 0, ["drawn"] = 0')
+    assert client_surface.read_test_problems(empty) == [
+        "friends list is empty: the client counts 16 friends and the window drew none "
+        "({'battlenet': 14, 'game': 2, 'listed': 0, 'drawn': 0})"]
+    full = _friends('["battlenet"] = 14, ["game"] = 2, ["listed"] = 18, ["drawn"] = 9')
+    assert client_surface.read_test_problems(full) == []
+    nobody = _friends('["battlenet"] = 0, ["game"] = 0, ["listed"] = 0, ["drawn"] = 0')
+    assert client_surface.read_test_problems(nobody) == []  # a character with no friends has an empty list
+    # a count the client keeps from addon code is never read as zero
+    unread = _friends('["battlenet"] = "secret", ["game"] = "secret", ["listed"] = 0, ["drawn"] = 0')
+    assert client_surface.read_test_problems(unread)[0].startswith("friends list not checked:")
