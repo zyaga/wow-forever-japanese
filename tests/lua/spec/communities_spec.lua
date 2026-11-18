@@ -156,7 +156,9 @@ local function loadCommunities()
   local news = CreateFrame("Frame")
   details.News = news
   news.TitleText = fs(en("GUILD_NEWS_TITLE"))
-  news:addRegion(fs(en("GUILD_NEWS")))
+  news:addRegion(news.TitleText) -- the client lists a keyed label among the frame's regions too, and first
+  C.newsHeader = fs(en("GUILD_NEWS")) -- the unnamed header under it: the same English (guildnews.xml:275–286)
+  news:addRegion(C.newsHeader)
   news.NoNews = fs(en("GUILD_NO_GUILD_NEWS"))
   news.SetFiltersButton = Stub.button(nil, en("GUILD_SET_FILTERS_LINK"))
   Stub.namedFontString("CommunitiesGuildLogFrameTitle", en("GUILD_EVENT_LOG"))

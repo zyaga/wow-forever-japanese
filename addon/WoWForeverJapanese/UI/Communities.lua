@@ -136,16 +136,36 @@ function Communities.onRosterRow(a, b)
   WFJ.PlayerText.follow(row.Rank) -- the rank's name, written by the guild master (lua:1313)
 end
 
+-- The news pane holds two labels with one English, "Guild News": its TitleText (GUILD_NEWS_TITLE) and the unnamed
+-- header under it (GUILD_NEWS, guildnews.xml:275–286). A search by text alone finds the TitleText first, so the
+-- header is the region with that text that is not the TitleText. Found once, while both still hold their English.
+local newsHeaderRegion = setmetatable({}, { __mode = "k" }) -- the news frame → its unnamed header
+local function newsHeader()
+  local news = get("region.newsHeader")
+  if type(news) ~= "table" then return nil end
+  if newsHeaderRegion[news] then return newsHeaderRegion[news] end
+  local en = Compat.resolve(REGIONS.newsHeader[2])
+  if type(en) ~= "string" or en == "" then return nil end
+  for _, region in ipairs(WFJ.Frames.regions(news)) do
+    if type(region) == "table" and region ~= news.TitleText and region.GetObjectType
+        and region:GetObjectType() == "FontString" and region:GetText() == en then
+      newsHeaderRegion[news] = region
+      return region
+    end
+  end
+  return nil
+end
+
 -- The labels the client writes once at load. → the number of dictionary words found.
 function Communities.showStatic()
   local items = {}
+  local header = newsHeader() -- before the TitleText is shown: both are found by their English
   for _, key in ipairs(STATIC_ORDER) do
     items[#items + 1] = { key, get("static." .. key), { only = { STATIC_LABELS[key][2] } } }
   end
-  for _, key in ipairs({ "infoHeader", "newsHeader" }) do
-    local k = REGIONS[key][2]
-    items[#items + 1] = { key, WFJ.Labels.region(get("region." .. key), k), { only = { k } } }
-  end
+  local infoKey = REGIONS.infoHeader[2]
+  items[#items + 1] = { "infoHeader", WFJ.Labels.region(get("region.infoHeader"), infoKey), { only = { infoKey } } }
+  items[#items + 1] = { "newsHeader", header, { only = { REGIONS.newsHeader[2] } } }
   return WFJ.Labels.showAll(STATIC, items)
 end
 

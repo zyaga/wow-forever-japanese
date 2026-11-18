@@ -456,7 +456,9 @@ function WFJ.OnLoad()
   step("mail", WFJ.Mail.init)
   step("friends", WFJ.Friends.init)
   step("friends.tooltip", WFJ.FriendsTooltip.init) -- the friends list's own tooltip (zone / realm)
-  step("socialui", WFJ.SocialUI.init) -- the friends window the client shows while its social system is on
+  -- UI/SocialUI (the friends window the client shows while its social system is on) is loaded but not started:
+  -- with it started, a character's Battle.net friends were reported missing from the list. Not started again
+  -- until the cause is found on a test character.
   step("communities", WFJ.Communities.init) -- the guild UI is the Communities window
   -- the rest of the Communities window (chrome, guild benefits, ClubFinder, applicants, dialogs)
   step("communities.frame", WFJ.CommunitiesFrame.init)
