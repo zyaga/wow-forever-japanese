@@ -151,6 +151,13 @@ def test_the_sweep_clicks_every_entry_of_a_reused_list_once_and_nothing_that_act
     assert out.returncode == 0, out.stderr
     lines = out.stdout.strip().splitlines()
     assert lines[-1] == "clicked 19 | twice:  | missed:", lines[-1]
+    # Japanese in the client's face is written down (a label, a typing box, an HTML paragraph); Japanese in the
+    # bundled face and English in any face are not
+    assert [ln for ln in lines if ln.startswith("boxed ")] == [
+        "boxed FakeFrame.Html | Fonts\\FRIZQT__.TTF",
+        "boxed FakeFrame.Motd.Label | Fonts\\FRIZQT__.TTF",
+        "boxed FakeFrame.NoteBox | Fonts\\FRIZQT__.TTF",
+    ]
     clicked = [ln.split("=", 1)[1] for ln in lines if "=" in ln and not ln.startswith("clicked")]
     assert clicked == [
         "Tab 2", "Tab 3",  # the pages first; the page in front is not clicked again
@@ -218,3 +225,42 @@ def test_the_sweep_never_answers_an_invitation_or_sends_a_query():
     lua = client_surface.TEXT_LUA
     for word in ("tentative", "ok", "select", "continue", "who", "calendarview", "whoframe", "guildcontrol"):
         assert f'"{word}"' in lua, word
+
+
+BOXED = """
+WFJScanDB = {
+["probe"] = {
+["test"] = { ["started"] = "2026-11-18 11:00:00", ["finished"] = "2026-11-18 11:01:00", ["build"] = "70959" },
+["live"] = {
+["(nothing open)"] = { ["english"] = { }, ["japanese"] = 2, ["boxes"] = { ["Hud.Line"] = "Fonts\\\\ARIALN.TTF" } },
+["guild"] = { ["english"] = { }, ["japanese"] = 9,
+  ["boxes"] = { ["Hud.Line"] = "Fonts\\\\ARIALN.TTF", ["CommunitiesFrame.Info.MOTD"] = "Fonts\\\\FRIZQT__.TTF" } },
+["guild > CommunitiesFrame.RosterTab"] = { ["english"] = { }, ["japanese"] = 4,
+  ["boxes"] = { ["ScrollTarget.b0462b3b0.Note"] = "Fonts\\\\FRIZQT__.TTF" } },
+},
+},
+}
+"""
+
+
+def test_japanese_in_a_font_without_it_is_a_line_of_the_result():
+    _info, found = client_surface.read_window_test(BOXED)
+    boxes = client_surface.BOXES
+    assert found == {
+        ("always on screen", f"{boxes} Hud.Line"),  # on screen with nothing open: filed once
+        ("guild", f"{boxes} CommunitiesFrame.Info.MOTD"),
+        ("guild > CommunitiesFrame.RosterTab", f"{boxes} ScrollTarget.*.Note"),  # a pooled row, without its address
+    }
+    new, _gone = client_surface.window_test_report(found, {})
+    assert len(new) == 3  # each fails the check until it is fixed or the baseline says why
+    allowed = {("guild", f"{boxes} CommunitiesFrame.Info.MOTD"): "a reason"}
+    assert f"guild\t{boxes} CommunitiesFrame.Info.MOTD" not in client_surface.window_test_report(found, allowed)[0]
+
+
+def test_the_sweeps_face_is_the_addons_bundled_face(root):
+    font = (root / "addon/WoWForeverJapanese/UI/Font.lua").read_text(encoding="utf-8")
+    face = client_surface.JAPANESE_FACE
+    assert f'\\\\Fonts\\\\{face}.ttf"' in font  # Font.PATH names the file the sweep takes as able to draw Japanese
+    assert f'local JAPANESE_FACE = "{face}"' in client_surface.TEXT_LUA
+    # the bytes are written as Lua escapes: kana and kanji lead bytes, never the characters Python would make of them
+    assert 'text:find("[\\227-\\233\\239]")' in client_surface.TEXT_LUA

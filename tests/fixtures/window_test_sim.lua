@@ -1,12 +1,14 @@
 
 -- A stand-in client for the window test's sweep (tests/python/test_window_test.py runs the generated sweep
 -- between this file's two halves): one window with an achievement-style category list (a few rows reused for many entries, one
--- category open at a time, more entries than fit), three tabs, a Delete button and a checkbox.
+-- category open at a time, more entries than fit), three tabs, a Delete button and a checkbox; and Japanese text
+-- in the client's own face (a label, a typing box, an HTML box) beside Japanese in the addon's bundled face.
 local frames, created, log = {}, {}, {}
 UIParent, WorldFrame = { name = "UIParent" }, { name = "WorldFrame" }
 local function region(owner, text)
   return { GetObjectType = function() return "FontString" end, GetText = function() return text() end,
-    IsVisible = function() return owner:IsVisible() end, GetDebugName = function() return owner.name .. ".Label" end }
+    IsVisible = function() return owner:IsVisible() end, GetDebugName = function() return owner.name .. ".Label" end,
+    GetFont = function() return owner.font or "Fonts\\FRIZQT__.TTF", 12, "" end }
 end
 local function frame(name, parent, kind)
   local f = { name = name, parent = parent, kind = kind or "Frame", shown = true, enabled = true, top = 0, left = 0 }
@@ -20,6 +22,8 @@ local function frame(name, parent, kind)
   function f:GetParent() return self.parent end
   function f:GetRegions() if self.label then return region(self, self.label) end end
   function f:GetText() return self.text end
+  function f:GetFont(textType) return self.font or "Fonts\\FRIZQT__.TTF", 12, textType end
+  function f:GetTextData() return self.paragraphs end
   function f:GetScript(which) return which == "OnClick" and self.click or nil end
   function f:GetTop() return self.top end
   function f:GetLeft() return self.left end
@@ -72,6 +76,14 @@ for i = 1, 3 do local tab = frame("FakeFrameTab" .. i, window, "Button"); tab.te
 local delete = frame("FakeFrame.DeleteButton", window, "Button"); delete.text = "Delete"; delete.click = function() error("the Delete button was clicked") end
 local check = frame("FakeFrame.ShowAll", window, "CheckButton"); check.click = function() error("a checkbox was clicked") end
 local hud = frame("ActionButton1", UIParent, "Button"); hud.click = function() error("a button outside the window was clicked") end
+local CLIENT_FACE, BUNDLED_FACE = "Fonts\\FRIZQT__.TTF", "Interface\\AddOns\\WoWForeverJapanese\\Fonts\\ipagui.ttf"
+local motd = frame("FakeFrame.Motd", window); motd.label = function() return "ギルドへようこそ" end; motd.font = CLIENT_FACE
+local ours = frame("FakeFrame.Ours", window); ours.label = function() return "ギルド情報" end; ours.font = BUNDLED_FACE
+local plain = frame("FakeFrame.Plain", window); plain.label = function() return "Welcome to the guild" end; plain.font = CLIENT_FACE
+local note = frame("FakeFrame.NoteBox", window, "EditBox"); note.text = "よろしく"; note.font = CLIENT_FACE
+local typed = frame("FakeFrame.ChatBox", window, "EditBox"); typed.text = "こんにちは"; typed.font = BUNDLED_FACE
+local html = frame("FakeFrame.Html", window, "SimpleHTML"); html.font = CLIENT_FACE
+html.paragraphs = { { text = "Raid at nine", type = "P" }, { text = "九時に集合", type = "P" } }
 function ToggleCharacter() window.shown = true end
 function CloseAllWindows() window.shown = false end
 
@@ -94,4 +106,10 @@ for _, e in ipairs(entries) do
   if not seenEntry[e[1]] then missed[#missed + 1] = e[1] end
   for _, c in ipairs(e[2] or {}) do if not seenEntry[c] then missed[#missed + 1] = c end end
 end
+local boxes = {}
+for name, font in pairs(saved.live and saved.live.character and saved.live.character.boxes or {}) do
+  boxes[#boxes + 1] = "boxed " .. name .. " | " .. font
+end
+table.sort(boxes)
+for _, line in ipairs(boxes) do print(line) end
 print("clicked " .. #log .. " | twice: " .. table.concat(twice, ", ") .. " | missed: " .. table.concat(missed, ", "))

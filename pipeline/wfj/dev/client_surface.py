@@ -658,8 +658,25 @@ local function japaneseOn()
 end
 local opener = CreateFrame("Frame")
 
+-- Japanese on screen in a face that has no Japanese letters is drawn as empty boxes: a guild's message of the day
+-- a player wrote in Japanese, in the client's own font. The addon's bundled face is the one face known to hold
+-- them, so any other face under Japanese text is written down, with the widget's name, under `boxes`.
+local JAPANESE_FACE = "ipagui" -- the bundled face's file name (the addon's Font.PATH)
+local function hasJapanese(text)
+  if type(text) ~= "string" or (issecretvalue and issecretvalue(text)) then return false end
+  return text:find("[\\227-\\233\\239]") ~= nil -- the lead byte of kana, kanji and full-width forms
+end
+local function boxed(font)
+  return type(font) == "string" and not font:lower():find(JAPANESE_FACE, 1, true)
+end
+
 local function readScreen()
-  local record = { english = {}, japanese = 0 }
+  local record = { english = {}, japanese = 0, boxes = {} }
+  local function box(widget, text, ...)
+    if not hasJapanese(text) then return end
+    local font = widget:GetFont(...)
+    if boxed(font) then record.boxes[tostring(widget:GetDebugName())] = font end
+  end
   local frame = EnumerateFrames()
   while frame do
     pcall(function()
@@ -669,9 +686,20 @@ local function readScreen()
           local plain = plainOf(region)
           if plain and ENGLISH[plain] then
             record.english[tostring(region:GetDebugName())] = plain
-          elseif plain and plain:find("[\227-\233]") then
+          elseif plain and hasJapanese(plain) then
             record.japanese = record.japanese + 1
+            pcall(box, region, plain)
           end
+        end
+      end
+      -- text a frame holds itself: what a typing box shows, and a SimpleHTML's paragraphs (it has no GetText;
+      -- GetTextData gives each paragraph with its text type, and the font is asked per text type)
+      local kind = frame:GetObjectType()
+      if kind == "EditBox" then
+        pcall(box, frame, frame:GetText())
+      elseif kind == "SimpleHTML" then
+        for _, node in ipairs(frame:GetTextData()) do
+          if not pcall(box, frame, node.text, node.type) then pcall(box, frame, node.text, "P") end
         end
       end
     end)
@@ -1565,12 +1593,18 @@ ALWAYS = "always on screen"
 # a window the test asked for and did not get: a line of the result like any other, so the baseline can allow it
 # with its reason (a window the test character is too low for)
 NOT_OPENED = "(did not open)"
+# Japanese on screen in a face with no Japanese letters (drawn as empty boxes): a line of the result too, named by
+# its widget, so the baseline can allow one with its reason
+BOXES = "(Japanese in a font without it)"
+# the face the sweep takes as able to draw Japanese: the addon's bundled one, by file name (its Font.PATH)
+JAPANESE_FACE = "ipagui"
 
 
 def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
     """The window test out of a saved-variables file: (when it ran and on which build, the English lines left on
     screen as (window, English)). A live-sweep window is named as the test lists it; a window the open sweep
-    showed is `opened <its frame>`. A line on screen with no window open is filed once, under `always on screen`."""
+    showed is `opened <its frame>`. A line on screen with no window open is filed once, under `always on screen`.
+    Japanese drawn in a face without it is a line as well: (window, `BOXES <widget>`)."""
     from wfj.io import lua_reader
 
     db = lua_reader.parse_assignments(text).get("WFJScanDB")
@@ -1584,11 +1618,18 @@ def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
     idle = live.get("(nothing open)")
     always = idle.get("english").named() if idle is not None and idle.get("english") is not None else {}
     found |= {(ALWAYS, str(en)) for en in always.values()}
+    idle_boxes = idle.get("boxes").named() if idle is not None and idle.get("boxes") is not None else {}
+    found |= {(ALWAYS, f"{BOXES} {_POOLED.sub('*', str(name))}") for name in idle_boxes}
     for window, record in live.items():
-        english = record.get("english")
-        if window == "(nothing open)" or english is None:
+        if window == "(nothing open)":
             continue
-        found |= {(_POOLED.sub("*", str(window)), str(en)) for name, en in english.named().items() if name not in always}
+        where = _POOLED.sub("*", str(window))
+        english, boxes = record.get("english"), record.get("boxes")
+        if english is not None:
+            found |= {(where, str(en)) for name, en in english.named().items() if name not in always}
+        if boxes is not None:
+            found |= {(where, f"{BOXES} {_POOLED.sub('*', str(name))}") for name in boxes.named()
+                      if name not in idle_boxes}
     unopened = probe.get("test").get("unopened") if probe.get("test") is not None else None
     if unopened is not None:
         found |= {(str(window), NOT_OPENED) for window in unopened.named()}
