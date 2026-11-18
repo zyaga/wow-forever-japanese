@@ -61,6 +61,7 @@ local LOG_KEYS = { "GUILDEVENT_TYPE_INVITE", "GUILDEVENT_TYPE_JOIN", "GUILDEVENT
   "GUILDEVENT_TYPE_DEMOTE", "GUILDEVENT_TYPE_REMOVE", "GUILDEVENT_TYPE_QUIT" }
 local LOG_TIME = { "GUILD_BANK_LOG_TIME" }
 local NEWS = { "GUILD_EVENT_FORMAT" }
+local NEWS_TOOLTIP = { only = { "GUILD_MOTD_LABEL" } }
 local EDIT_TITLES = { "GUILD_MOTD_EDITLABEL", "GUILD_INFO_EDITLABEL" }
 local STANDINGS = {}
 for i = 1, 8 do
@@ -181,6 +182,10 @@ function CommunitiesGuild.onNews(button)
   WFJ.Font.restore(fs)
   local n = k.show(newsKey(fs), fs, NEWS)
   if n == 0 then WFJ.PlayerText.shown(fs) end
+  -- a message of the day too long for its row is shown whole in the row's tooltip, under GUILD_MOTD_LABEL
+  -- (guildnews.lua:207–211): a registered owner's tooltip shows that title in Japanese and gives a line holding
+  -- Japanese the bundled face
+  WFJ.HelpTooltip.register(button, NEWS_TOOLTIP)
   return n
 end
 

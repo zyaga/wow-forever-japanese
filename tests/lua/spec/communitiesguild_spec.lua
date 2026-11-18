@@ -126,6 +126,7 @@ describe("the guild info texts of the Communities window", function()
     local own = button.text.font.path
     _G.GuildNewsButton_SetText(button, {}, "MotD: %s", "ようこそ！Welcome!")
     assert.are.equal("MotD: ようこそ！Welcome!", button.text:GetText())
+    assert.is_true(WFJ.HelpTooltip.registered(button)) -- its tooltip shows the whole message (guildnews.lua:207–211)
     assert.are.equal(WFJ.Font.PATH, button.text.font.path)
     _G.GuildNewsButton_SetText(button, {}, "MotD: %s", "Welcome!")
     assert.are.equal(own, button.text.font.path)

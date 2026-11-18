@@ -29,3 +29,4 @@ character	Leather	a skill's name: names stay English
 character	Mail	a skill's name: names stay English
 character	Shield	a skill's name: names stay English
 guild	Veteran	a guild rank's name, set by the guild master: names stay as written
+calendar	Rogue	a class's name: names stay English
