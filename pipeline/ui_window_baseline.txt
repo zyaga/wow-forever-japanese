@@ -23,3 +23,8 @@ achievements	Rogue	a class's name: names stay English
 friends	Rogue	a class's name: names stay English
 group finder	(did not open)	Forever does not load the group finder (blizzard_groupfinder is gated in pipeline/forever_addons.txt), so its toggle does not exist
 dungeon journal	(did not open)	Forever does not load the dungeon journal (blizzard_encounterjournal is gated in pipeline/forever_addons.txt), so its toggle does not exist
+character	Cloth	a skill's name: names stay English
+character	Defense	a skill's name: names stay English
+character	Leather	a skill's name: names stay English
+character	Mail	a skill's name: names stay English
+character	Shield	a skill's name: names stay English
