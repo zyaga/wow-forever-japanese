@@ -180,3 +180,41 @@ def test_the_sweep_never_clicks_an_icon_a_party_button_or_another_addons_bag():
         assert f'"{word}"' in lua, word
     for window in ("EditMode", "BarberShop", "PetBattle"):
         assert f'"{window}"' in lua, window  # the open sweep leaves these closed
+
+
+def test_a_window_that_did_not_open_is_a_line_of_the_result():
+    saved = """
+WFJScanDB = {
+["probe"] = {
+["live"] = {
+["(nothing open)"] = { ["japanese"] = 3, ["english"] = { } },
+["group finder"] = { ["japanese"] = 3, ["english"] = { } },
+},
+["test"] = {
+["finished"] = "2026-11-18 10:00:30",
+["started"] = "2026-11-18 10:00:00",
+["build"] = "70961",
+["unopened"] = { ["group finder"] = "the toggle opened nothing" },
+},
+},
+}
+"""
+    _info, found = client_surface.read_window_test(saved)
+    assert ("group finder", client_surface.NOT_OPENED) in found
+    new, _gone = client_surface.window_test_report(found, {})
+    assert new == ["group finder\t(did not open)"]  # fails the check until the baseline says why
+    allowed = {("group finder", client_surface.NOT_OPENED): "the test character is below the level it needs"}
+    assert client_surface.window_test_report(found, allowed)[0] == []
+
+
+def test_a_sweep_started_again_ends_the_finished_run_and_one_test_runs_at_a_time():
+    lua = client_surface.TEXT_LUA
+    assert lua.count("db.test.finished = nil") == 2  # the live sweep and the open sweep
+    assert 'print("WFJ test: already running")' in lua and "testRunning = false" in lua
+    assert '"[live] click: "' in lua  # a click that raises is counted, not passed over
+
+
+def test_the_sweep_never_answers_an_invitation_or_sends_a_query():
+    lua = client_surface.TEXT_LUA
+    for word in ("tentative", "ok", "select", "continue", "who", "calendarview", "whoframe", "guildcontrol"):
+        assert f'"{word}"' in lua, word

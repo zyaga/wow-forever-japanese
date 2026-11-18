@@ -704,6 +704,8 @@ local ACTS = { "item", "slot", "bag", "container", "action", "spell", "macro", "
   "toggle", "summon", "cast", "glyph", "pet", "toy", "heirloom", "transmog", "outfit", "dye", "place", "sort",
   "party", "raid", "chat", "message", "call", "travel", "customise", "customize", "tentative", "rsvp", "attend",
   "signup", "respond", "available", "mass", "auto", "enable", "disable", "clear", "wipe", "purge",
+  "ok", "select", "continue", "commit", "spend", "complete", "choose", "who", "column", "header", "guild",
+  "officer", "note", "rank", "motd", "info", "permission", "option", "config", "setting", "settings",
   "clean", "refresh", "new", "add", "set", "pin", "waypoint", "social", "tweet", "screenshot", "photo", "drag" }
 local AREAS = { "talent", "spellbook", "pagedspells", "loadout", "containerframe", "merchant", "auction", "trade",
   "mailframe", "bankframe", "guildbank", "catalogshop", "storeframe", "macro", "keybind", "binding", "editmode",
@@ -713,7 +715,8 @@ local AREAS = { "talent", "spellbook", "pagedspells", "loadout", "containerframe
   "clubfinder", "recruitafriend", "channel", "voice", "report", "tooltip", "dropdown", "menu", "chatframe",
   "chatconfig", "actionbar", "microbutton", "minimap", "objectivetracker", "staticpopup",
   "achievementframeachievements", "achievementframesummary", "achievementframecomparison", "shield",
-  "friendslist", "baganator",
+  "friendslist", "baganator", "calendarview", "calendarevent", "calendarinvite", "calendarmass",
+  "calendartexture", "whoframe", "guildcontrol", "guildinfo", "communitiessettings",
   "titlemanager" }
 
 local ACT = {}
@@ -942,6 +945,7 @@ local function WFJScanLiveSweep(done)
   local idle, idleRoots = {}, rootsOnScreen()
   for _, tab in ipairs(tabsOnScreen({})) do idle[taken(tab)] = true end
   db.test = db.test or {}
+  db.test.finished = nil -- a sweep started again: what is saved is no longer the finished run
   db.test.popups = {}
   local at, ticks, english, pages = 0, 0, 0, 0
   local state, queue, seen, window, roots, scrolls = "closed", nil, nil, nil, nil, 0
@@ -1009,6 +1013,10 @@ local function WFJScanLiveSweep(done)
       end
       db.test.buttons = db.test.buttons or {}
       db.test.buttons[window] = listButtons(roots)
+      if next(roots) == nil then
+        db.test.unopened = db.test.unopened or {}
+        db.test.unopened[window] = "the toggle opened nothing"
+      end
       queue, seen, scrolls, queued, clicks = {}, {}, 0, {}, 0
       for tab in pairs(idle) do seen[tab] = true end
       moreTabs()
@@ -1037,6 +1045,10 @@ local function WFJScanLiveSweep(done)
           ticks = 0
           return
         end
+        if not tostring(clicked):find("skip", 1, true) and type(db.test.errors) == "table" then
+          local key = "[live] click: " .. tostring(clicked):sub(1, 300)
+          db.test.errors[key] = (db.test.errors[key] or 0) + 1
+        end
       end
       if scrolls < MAX_SCROLLS and scrollOn(roots) then -- nothing left on screen to click: the list's next rows
         scrolls = scrolls + 1
@@ -1063,6 +1075,8 @@ local function WFJScanLiveSweep(done)
       state = "open"
     else
       db.live[window] = { refused = tostring(err) }
+      db.test.unopened = db.test.unopened or {}
+      db.test.unopened[window] = tostring(err):sub(1, 200)
     end
   end)
 end
@@ -1107,6 +1121,7 @@ local function WFJScanOpenSweep(done)
   end
   local db = probeDb()
   db.opened = {}
+  if type(db.test) == "table" then db.test.finished = nil end
   local groups, order = {}, {}
   local frame = EnumerateFrames()
   while frame do
@@ -1180,8 +1195,14 @@ SlashCmdList.WFJOPEN = WFJScanOpenSweep
 -- The whole window test (`/wfjtest`): the live sweep, then the open sweep, then one done line. `probe.test`
 -- holds when it ran and on which build, so a result read later is known to be a whole run of that build.
 SLASH_WFJTEST1 = "/wfjtest"
+local testRunning = false
 SlashCmdList.WFJTEST = function(how)
   if not japaneseOn() or InCombatLockdown() then return end
+  if testRunning then
+    print("WFJ test: already running")
+    return
+  end
+  testRunning = true
   pagesOnly = how == "tabs"
   local db = probeDb()
   db.test = { started = date("%%Y-%%m-%%d %%H:%%M:%%S"), build = tostring((select(2, GetBuildInfo()))),
@@ -1208,6 +1229,7 @@ SlashCmdList.WFJTEST = function(how)
       WFJScanOpenSweep(function()
         seterrorhandler(shown)
         watcher:UnregisterAllEvents()
+        testRunning = false
         db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
         print("WFJ test done: /reload to save, then the result can be read")
       end)
@@ -1540,6 +1562,9 @@ def by_surface(rows: list[dict[str, Any]], include_suspect: bool = False) -> dic
 # A pooled frame's debug name carries its address (`b0462b3b0`), which changes every session.
 _POOLED = re.compile(r"\b(?=[0-9a-f]*\d)[0-9a-f]{8,}\b")
 ALWAYS = "always on screen"
+# a window the test asked for and did not get: a line of the result like any other, so the baseline can allow it
+# with its reason (a window the test character is too low for)
+NOT_OPENED = "(did not open)"
 
 
 def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
@@ -1564,6 +1589,9 @@ def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
         if window == "(nothing open)" or english is None:
             continue
         found |= {(_POOLED.sub("*", str(window)), str(en)) for name, en in english.named().items() if name not in always}
+    unopened = probe.get("test").get("unopened") if probe.get("test") is not None else None
+    if unopened is not None:
+        found |= {(str(window), NOT_OPENED) for window in unopened.named()}
     opened = probe.get("opened").named() if probe.get("opened") is not None else {}
     for window, record in opened.items():
         still = record.get("still")
