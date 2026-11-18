@@ -3,3 +3,23 @@
 # One per line, tab-separated: <window>	<English>	<reason>. A window is named as the test lists it. A line
 # allowed for a window is allowed on each of its pages. A line in a window the open sweep showed never fails
 # the check (it is listed to read against the code).
+spellbook	Passive	a spell item's line: the client measures it when it refills the page, and Japanese written there taints the action bars (the spellbook leaves every item line as written)
+spellbook	Racial	a spell item's line: the client measures it when it refills the page, and Japanese written there taints the action bars (the spellbook leaves every item line as written)
+spellbook	Racial Passive	a spell item's line: the client measures it when it refills the page, and Japanese written there taints the action bars (the spellbook leaves every item line as written)
+spellbook	Rank 1	a spell item's line: the client measures it when it refills the page, and Japanese written there taints the action bars (the spellbook leaves every item line as written)
+spellbook	Attack	a spell's name: names stay English
+spellbook	Block	a spell's name: names stay English
+spellbook	Dodge	a spell's name: names stay English
+spellbook	Perception	a spell's name: names stay English
+spellbook	Languages	a spell's name: names stay English
+spellbook	Arms	a specialization's name: names stay English
+spellbook	General	a name by the ruling on GENERAL (the default chat window's name); the spellbook's tab shows the same word
+always on screen	General	the default chat window's name: names stay English
+always on screen	Required Money:	a quest line with no parent frame, so it counts as shown and is never drawn until a quest that needs money is open
+always on screen	Hide Unavailable	the reagent picker before it is opened: the client creates it with no parent and no anchor (blizzard_professionstemplates/blizzard_professionsrecipeflyoutinstance.lua:1), so it counts as shown and is never drawn
+always on screen	Reset	the reagent picker before it is opened: the client creates it with no parent and no anchor (blizzard_professionstemplates/blizzard_professionsrecipeflyoutinstance.lua:1), so it counts as shown and is never drawn
+always on screen	You do not own any suitable reagents.	the reagent picker before it is opened: the client creates it with no parent and no anchor (blizzard_professionstemplates/blizzard_professionsrecipeflyoutinstance.lua:1), so it counts as shown and is never drawn
+achievements	Rogue	a class's name: names stay English
+friends	Rogue	a class's name: names stay English
+group finder	(did not open)	Forever does not load the group finder (blizzard_groupfinder is gated in pipeline/forever_addons.txt), so its toggle does not exist
+dungeon journal	(did not open)	Forever does not load the dungeon journal (blizzard_encounterjournal is gated in pipeline/forever_addons.txt), so its toggle does not exist
