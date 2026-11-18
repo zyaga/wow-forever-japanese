@@ -629,7 +629,6 @@ end
 
 local function spells(name) return function() PlayerSpellsUtil[name]() end end
 local LIVE = {
-  { "character", function() ToggleCharacter("PaperDollFrame") end },
   { "spellbook", spells("ToggleSpellBookFrame") },
   { "achievements", function() ToggleAchievementFrame() end },
   { "map", function() ToggleWorldMap() end },
@@ -643,6 +642,16 @@ local LIVE = {
   { "bags", function() ToggleAllBags() end },
   { "calendar", function() ToggleCalendar() end },
   { "help", function() ToggleHelpFrame() end },
+}
+-- Windows the test leaves closed, each with why: a line of the result, so a run never passes one silently.
+--   character: its show script turns on the player frame's health and mana numbers and compares them
+--     (CharacterFrameMixin:OnShow, blizzard_uipanels_game/camelot/characterframe.lua:710-729;
+--     TextStatusBarMixin:UpdateTextStringWithValues, blizzard_textstatusbar/textstatusbar.lua:110). Those numbers
+--     are secret to addon code wherever the client's secret restrictions are on, which on this client is
+--     everywhere, so the window opened by an addon raises an error every time.
+local LEFT_CLOSED = {
+  character = "an addon that opens it raises an error: its show script compares the player's health, "
+    .. "which addon code may not read",
 }
 local OPEN_TICKS, CLOSED_TICKS = 45, 12
 
@@ -975,6 +984,8 @@ local function WFJScanLiveSweep(done)
   db.test = db.test or {}
   db.test.finished = nil -- a sweep started again: what is saved is no longer the finished run
   db.test.popups = {}
+  db.test.unopened = db.test.unopened or {}
+  for name, why in pairs(LEFT_CLOSED) do db.test.unopened[name] = why end
   local at, ticks, english, pages = 0, 0, 0, 0
   local state, queue, seen, window, roots, scrolls = "closed", nil, nil, nil, nil, 0
   local queued, clicks = {}, 0

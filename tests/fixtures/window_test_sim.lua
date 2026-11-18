@@ -84,7 +84,7 @@ local note = frame("FakeFrame.NoteBox", window, "EditBox"); note.text = "よろ�
 local typed = frame("FakeFrame.ChatBox", window, "EditBox"); typed.text = "こんにちは"; typed.font = BUNDLED_FACE
 local html = frame("FakeFrame.Html", window, "SimpleHTML"); html.font = CLIENT_FACE
 html.paragraphs = { { text = "Raid at nine", type = "P" }, { text = "九時に集合", type = "P" } }
-function ToggleCharacter() window.shown = true end
+function ToggleAchievementFrame() window.shown = true end
 function CloseAllWindows() window.shown = false end
 
 --[[SWEEP]]
@@ -107,7 +107,7 @@ for _, e in ipairs(entries) do
   for _, c in ipairs(e[2] or {}) do if not seenEntry[c] then missed[#missed + 1] = c end end
 end
 local boxes = {}
-for name, font in pairs(saved.live and saved.live.character and saved.live.character.boxes or {}) do
+for name, font in pairs(saved.live and saved.live.achievements and saved.live.achievements.boxes or {}) do
   boxes[#boxes + 1] = "boxed " .. name .. " | " .. font
 end
 table.sort(boxes)

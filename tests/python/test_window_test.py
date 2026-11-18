@@ -320,3 +320,9 @@ WFJScanDB = {
 """
     assert client_surface.read_test_problems(saved) == [
         "error x6: [grabbed] TutorialFrame.lua:338: Usage: GetPrevCompleatedTutorial @ [TutorialFrame.lua]:338"]
+
+
+def test_the_character_window_is_left_closed_and_the_run_says_so():
+    lua = client_surface.TEXT_LUA
+    assert "ToggleCharacter" not in lua  # opened by an addon, its show script raises an error every time
+    assert 'for name, why in pairs(LEFT_CLOSED) do db.test.unopened[name] = why end' in lua
