@@ -186,6 +186,7 @@ WFJ.Data.add("name", {
   ["ee94d29cad8beabb"] = { "エス03・アイテム・ナクスラーマス・シャーマン・タンク6ピー・ボーナス", "えすさん・あいてむ・なくすらーます・しゃーまん・たんくろくぴー・ぼーなす", "S03 - Item - Naxxramas - Shaman - Tank 6P Bonus" },
   ["ee95591327100ebd"] = { "パターン：ヘヴィー・スコーピッド・ベルト", "ぱたーん・へゔぃー・すこーぴっど・べると", "Pattern: Heavy Scorpid Belt" },
   ["ee98385bfbeedc7a"] = { "オール・スーティーズ・ヘッド", "おーる・すーてぃーず・へっど", "Ol' Sooty's Head" },
+  ["ee9b6c596506c3dd"] = { "リスト・オブ・ヒロイズム", "りすと・おぶ・ひろいずむ", "Wrists of Heroism" },
   ["ee9ca7683fe8b3f2"] = { "アンビシャス・パースート", "あんびしゃす・ぱーすーと", "Ambitious Pursuit" },
   ["ee9cfb41df8e16da"] = { "ダートフィート・ストンパー", "だーとふぃーと・すとんぱー", "Durtfeet Stompers" },
   ["ee9ec8d614fc7eb3"] = { "アライアンス・シリシスト・センチネル", "あらいあんす・しりしすと・せんちねる", "Alliance Silithyst Sentinel" },

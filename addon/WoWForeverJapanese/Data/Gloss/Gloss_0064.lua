@@ -58,7 +58,6 @@ WFJ.Data.add("gloss", {
   [64055] = "好意\tこうい\tfavor",
   [64056] = "好意\tこうい\tfavor (goodwill)",
   [64057] = "好意\tこうい\tfondness",
-  [64058] = "好意的\tこういてき\tcharitable",
   [64059] = "好意的\tこういてき\tfavorably",
   [64060] = "好感\tこうかん\tfavor",
   [64061] = "好戦的\tこうせんてき\twarlike",

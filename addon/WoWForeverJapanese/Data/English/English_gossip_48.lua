@@ -47,6 +47,7 @@ WFJ.Data.add("english", {
   ["gossip:48c913bcdda90735"] = { text = "current=9 here=8 hero=5 most=3 popular=4 realm=2 standings=10 well=7" },
   ["gossip:48c940835605c8c2"] = { text = "find=6 lead=5 report=1 reporting=1 where=4" },
   ["gossip:48ca3866ec7ef733"] = { text = "stupidity=1" },
+  ["gossip:48d99665b5dbee33"] = { text = "all=7 anything=19 city=8 consorting=25 contain=14 effectively=13 even=21 heard=4 it=12 likely=23 likes=23 mages=6 magical=1 maintaining=10 our=5 outbreak=2 preoccupied=11 protect=17 suffering=3 wards=9 you=22" },
   ["gossip:48da80090a6d7b6c"] = { text = "armorsmith=5 i=1 instead=4 learn=7 once=2 teach=8 way=6 weaponsmith=3" },
   ["gossip:48e5e291893b037a"] = { text = "all=7 influence=2 its=1 see=8 sees=8 sphere=4 what=9 within=5" },
   ["gossip:48ebc4b8a8d2df84"] = { text = "ancient=6 arms=2 find=16 finer=14 greetings=1 handed=9 i=4 magesmiths=7 master=8 mine=13 need=3 secrets=10 trained=5 using=11 weapons=15" },

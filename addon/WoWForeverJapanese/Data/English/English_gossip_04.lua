@@ -16,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:042a6d92d0d971b8"] = { text = "again=3 hey=1 make=2 teach=4" },
   ["gossip:043089abab761be1"] = { text = "controlled=5 eastern=1 flank=2 protects=3" },
   ["gossip:0430ee7f4cd20006"] = { text = "access=5 card=11 engineer=3 engineering=3 gnome=2 greetings=1 ready=12 schemata=4 verification=7" },
+  ["gossip:043c799333ea6c2b"] = { text = "deal=1 exchange=4 hand=7 new=3 per=2 pieces=6 ready=8 your=5" },
   ["gossip:044feb87d63232c3"] = { text = "betterment=4 blood=2 humanity=3 infidel=6 spills=5 your=1" },
   ["gossip:04549609616c244d"] = { text = "and=5 beast=1 cleverness=12 embody=18 knowledge=3 learn=13 look=4 mighty=15 observe=11 owl=9 see=7 spirit=16 wisdom=2 wolf=14 yourself=6" },
   ["gossip:04591db7e2cb5c0e"] = { text = "attack=2 beware=1" },

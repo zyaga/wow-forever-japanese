@@ -181,6 +181,7 @@ WFJ.Data.add("name", {
   ["fcb46ff5b8724072"] = { "タートル・エッグ（オリーブ）", "たーとる・えっぐおりーぶ", "Turtle Egg (Olive)" },
   ["fcb5555c019b5bff"] = { "エンレイジド・アイドル", "えんれいじど・あいどる", "Enraged Idol" },
   ["fcb72aa3623d30e2"] = { "ストーカーズ・メイル・ブレイサー", "すとーかーず・めいる・ぶれいさー", "Stalker's Mail Bracers" },
+  ["fcbd6bb83a1d6478"] = { "ダークマントル・ショルダー", "だーくまんとる・しょるだー", "Darkmantle Shoulders" },
   ["fcbd8c0bc789d3de"] = { "トリゴア・ザ・ラッシャー", "とりごあ・ざ・らっしゃー", "Trigore the Lasher" },
   ["fcbd9fb0e3e18401"] = { "スキーマティック：ブラッドヴァイン・レンズ", "すきーまてぃっく・ぶらっどゔぁいん・れんず", "Schematic: Bloodvine Lens" },
   ["fcbff024329cdf4e"] = { "ヘッド・オブ・ジャマラン", "へっど・おぶ・じゃまらん", "Head of Jammal'an" },

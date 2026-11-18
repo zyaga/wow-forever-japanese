@@ -7,6 +7,7 @@ WFJ.Data.add("english", {
   ["gossip:810faa078f2246ab"] = { text = "all=2 cast=7 high=5 nearby=1 priority=4 spell=6 targets=3" },
   ["gossip:8112d9b1d6e4385d"] = { text = "held=4 if=5 loops=7 overalls=1 snaps=3 top=2 why=6" },
   ["gossip:812b08b804d05dda"] = { text = "but=3 clever=1 easily=6 i=4 lured=8 mortals=2 sanctum=7 so=5" },
+  ["gossip:812b6bcfc3a5f2b6"] = { text = "barrier=2 deal=5 dispel=3 please=1 we=4" },
   ["gossip:81327757c9ec8d35"] = { text = "brzzzzt=1 card=7 detected=8 level=4 security=3 terminal=5" },
   ["gossip:81391daf5e9bd197"] = { text = "give=6 lives=4 oh=1 you=2" },
   ["gossip:8139d78abbcbbd60"] = { text = "all=13 ask=20 awarded=7 beyond=4 call=3 cities=12 during=27 duty=2 effort=26 factions=9 give=22 goes=5 here=24 heroine=6 if=33 instead=29 located=14 major=11 material=30 number=21 raise=16 receive=32 reputation=15 reward=31 seek=34 speak=19 various=8 war=25 way=23" },

@@ -198,6 +198,7 @@ WFJ.Data.add("name", {
   ["07ba985313bd803e"] = { "インドミタブル・ブーツ", "いんどみたぶる・ぶーつ", "Indomitable Boots" },
   ["07ba9b7a4463881f"] = { "セルサマー・ブラッド・ソーセージ", "せるさまー・ぶらっど・そーせーじ", "Thelsamar blood sausage" },
   ["07bc3cd1425c2400"] = { "センチネル", "せんちねる", "sentinel" },
+  ["07c048adf24c56da"] = { "ダララニアン", "だららにあん", "Dalaranian" },
   ["07c0663f17c279a4"] = { "スパークルシェル・サバトン", "すぱーくるしぇる・さばとん", "Sparkleshell Sabatons" },
   ["07c0885cde9d31a7"] = { "ドラゴンマウ・リトリート", "どらごんまう・りとりーと", "Dragonmaw Retreat" },
   ["07c28a7d3fcb2b60"] = { "ブリリアント・レッド・クローク", "ぶりりあんと・れっど・くろーく", "Brilliant Red Cloak" },

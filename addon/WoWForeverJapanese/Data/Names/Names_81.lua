@@ -183,6 +183,7 @@ WFJ.Data.add("name", {
   ["81cafa4d16caf6f5"] = { "レシピ：エリクサー・オブ・ホーリー・パワー", "れしぴ・えりくさー・おぶ・ほーりー・ぱわー", "Recipe: Elixir of Holy Power" },
   ["81cd2c295a1c1503"] = { "リブラム・オブ・レジリエンス", "りぶらむ・おぶ・れじりえんす", "Libram of Resilience" },
   ["81cd6c5341f2a4d9"] = { "スペル・ノート：リング・セフ・オストロフ", "すぺる・のーと・りんぐ・せふ・おすとろふ", "Spell Notes: RING SEFF OSTROF" },
+  ["81cdad0d88d31c7d"] = { "ウエスト・オブ・ザ・ファイブ・サンダー", "うえすと・おぶ・ざ・ふぁいぶ・さんだー", "Waist of The Five Thunders" },
   ["81cec6eabacf0447"] = { "クリティカル・エイム", "くりてぃかる・えいむ", "Critical Aim" },
   ["81cf99a57a5590fb"] = { "ディフェンダーズ・ブレイサー", "でぃふぇんだーず・ぶれいさー", "Defender's Bracers" },
   ["81cfa963c1d06572"] = { "シマリング・アミス", "しまりんぐ・あみす", "Shimmering Amice" },

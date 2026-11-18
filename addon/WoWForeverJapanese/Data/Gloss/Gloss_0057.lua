@@ -63,7 +63,6 @@ WFJ.Data.add("gloss", {
   [57060] = "同胞\tどうほう\tkin",
   [57061] = "同胞\tどうほう\tkin (brethren)",
   [57062] = "同胞\tどうほう\tkin (your people)",
-  [57063] = "同胞\tどうほう\tkind",
   [57064] = "同胞\tどうほう\tkind (brethren)",
   [57065] = "同胞\tどうほう\tmy own kind (brethren)",
   [57066] = "同胞\tどうほう\tmy people",

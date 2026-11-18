@@ -44,6 +44,7 @@ WFJ.Data.add("english", {
   ["gossip:d4c44b6d020b02a9"] = { text = "pet=1 untrain=3" },
   ["gossip:d4c5a3c23c28c047"] = { text = "slain=1" },
   ["gossip:d4c69a0045d274bc"] = { text = "searing=3" },
+  ["gossip:d4c991db0cffdd2c"] = { text = "coming=3 more=2 wait=1" },
   ["gossip:d4d00e5bdd99d209"] = { text = "binds=3 bring=14 cast=8 centuries=9 destroying=12 freedom=15 me=2 might=27 mind=22 my=21 never=24 once=1 perhaps=18 recover=26 seal=4 search=6 spell=7 those=19 thought=17 toll=23 whereabouts=5" },
   ["gossip:d4d543a93bc58a09"] = { text = "getting=4 sweet=1 thanks=5 that=2 thing=3" },
   ["gossip:d4d6d5bd69a53d8b"] = { text = "allowed=11 cursing=3 else=8 fighting=4 handling=2 loitering=1 thinking=6" },

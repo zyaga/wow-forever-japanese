@@ -41,6 +41,7 @@ WFJ.Data.add("english", {
   ["gossip:bff53d84194dec71"] = { text = "bore=33 credo=10 desire=42 dictate=3 done=36 farmstead=6 have=18 honor=2 humans=24 i=25 knights=15 known=28 most=13 much=38 my=5 noble=14 orcs=19 race=1 remain=7 remember=11 respect=12 ruthless=21 tales=32 that=41 this=9 vile=23 while=8 work=37 you=40" },
   ["gossip:bff9af7ec84187c2"] = { text = "ale=4 fire=2 good=5 join=7 mmmmm=1 sure=6" },
   ["gossip:bff9c5c122b44bc1"] = { text = "brew=5 favorite=4 go=1 lad=2 your=3" },
+  ["gossip:bff9db4e456c0cbf"] = { text = "again=1 further=10 here=4 meet=9 sepulcher=5 thank=2 there=8 think=7 way=6 will=12" },
   ["gossip:bffa430ae8fd098e"] = { text = "badges=2 deceased=4 families=6 news=7 send=8 thank=3 these=1" },
   ["gossip:bffb1c55094e8847"] = { text = "balancers=10 big=5 crush=11 finely=8 little=3 ma'am=7 ride=2 think=6 tuned=9 um=1" },
 })

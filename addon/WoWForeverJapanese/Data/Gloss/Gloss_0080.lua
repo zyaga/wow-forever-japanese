@@ -523,7 +523,6 @@ WFJ.Data.add("gloss", {
   [80521] = "抱える\tかかえる\tdoesn't want (on his hands)",
   [80522] = "抱える\tかかえる\thad; was holding",
   [80523] = "抱える\tかかえる\thas",
-  [80524] = "抱える\tかかえる\thas (carries)",
   [80525] = "抱える\tかかえる\thas (holding)",
   [80526] = "抱える\tかかえる\thas (holds)",
   [80527] = "抱える\tかかえる\thave",

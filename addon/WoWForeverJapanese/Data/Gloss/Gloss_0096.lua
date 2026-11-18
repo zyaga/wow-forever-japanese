@@ -421,7 +421,6 @@ WFJ.Data.add("gloss", {
   [96420] = "消え失せる\tきえうせる\tbe gone!",
   [96421] = "消え失せる\tきえうせる\tbegone",
   [96422] = "消え失せる\tきえうせる\tgave way (vanished)",
-  [96423] = "消え失せる\tきえうせる\tget out",
   [96424] = "消え失せる\tきえうせる\tremove yourself (vanish)",
   [96425] = "消え失せる\tきえうせる\twill cease to exist (vanish)",
   [96426] = "消し去る\tけしさる\tI'll wipe (erase)",

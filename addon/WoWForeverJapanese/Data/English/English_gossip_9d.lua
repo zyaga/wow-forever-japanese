@@ -38,6 +38,7 @@ WFJ.Data.add("english", {
   ["gossip:9dcdee345c09313e"] = { text = "better=7 drinks=8 elf=1 no=9 orc=3 smoother=2 stronger=4" },
   ["gossip:9dd21dfb0d72dfdc"] = { text = "meal=1 please=3 save=4 want=2" },
   ["gossip:9dd277c3627eaa01"] = { text = "further=6 greetings=1 insight=7 mage=2 magic=3 provide=8 world=4" },
+  ["gossip:9dd85261b87929c5"] = { text = "barriers=1 hold=3 long=2" },
   ["gossip:9dd8a6482ef64000"] = { text = "training=1" },
   ["gossip:9ddbaea817b296cb"] = { text = "bear=42 blessings=58 body=47 comes=18 druids=13 even=14 face=46 fight=52 foe=45 go=56 heard=29 heart=49 heed=35 if=4 learn=53 move=32 my=27 never=25 now=30 oldest=12 one=8 ready=2 seen=6 strength=37 taught=33 tested=16 testing=16 time=17 truly=20 ultimate=15 what=34 when=19 will=41 wisest=10 with=51 words=28 would=43 you=1 young=7 your=36" },
   ["gossip:9de15a0dc0c25009"] = { text = "driven=14 fine=6 hold=10 lands=13 needle=1 others=7 our=8 pact=9 small=2 stitches=5 strong=4 these=12 thread=3 will=11" },

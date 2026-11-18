@@ -15,6 +15,7 @@ WFJ.Data.add("english", {
   ["gossip:ab3c08ab131831c3"] = { text = "bat=1 level=4 man=2 upper=3" },
   ["gossip:ab3cf01263278059"] = { text = "attack=1 sisters=2 troll=3" },
   ["gossip:ab3ff2b4ad9ebce1"] = { text = "taken=1" },
+  ["gossip:ab48915da57c2112"] = { text = "discoloration=9 emblematic=8 motionless=2 multiple=3 poison=5 suffering=6 wounds=4" },
   ["gossip:ab4a926d92c863bd"] = { text = "farewell=1" },
   ["gossip:ab4b32ac9bbc9549"] = { text = "anchor=9 danger=17 failing=14 gifted=3 home=16 know=1 our=6 plane=7 pylons=5 serve=11 spirits=2 they=12 wind=4" },
   ["gossip:ab4baf5863a4a780"] = { text = "art=6 believe=13 build=3 choice=25 fine=20 finest=5 garbage=12 gnomes=9 listen=10 machine=21 money=2 now=16 or=18 ride=23 statue=14 style=22 that=11 this=1 transportation=7 walking=17 what=8 your=24" },

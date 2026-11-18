@@ -66,6 +66,7 @@ WFJ.Data.add("name", {
   ["2f345065da66ef35"] = { "ハート", "はーと", "heart" },
   ["2f3488ff2dd7e1ea"] = { "トランスポーター・アライバル", "とらんすぽーたー・あらいばる", "Transporter Arrival" },
   ["2f3509b89daf75e8"] = { "スペクトラル・マローダー", "すぺくとらる・まろーだー", "Spectral Marauder" },
+  ["2f352ae8859b6899"] = { "ソウルフォージ・ショルダー", "そうるふぉーじ・しょるだー", "Soulforge Shoulders" },
   ["2f35a355aad2c9f1"] = { "ザンダラー・イリュージョニスツ・ラップ", "ざんだらー・いりゅーじょにすつ・らっぷ", "Zandalar Illusionist's Wraps" },
   ["2f363d8af93b87f5"] = { "ビーコン・トーチ", "びーこん・とーち", "Beacon Torch" },
   ["2f3a35f10fcf8d5f"] = { "ヴァイアル・オブ・クリスタル・ウォーター", "ゔぁいある・おぶ・くりすたる・うぉーたー", "Vial of Crystal Water" },

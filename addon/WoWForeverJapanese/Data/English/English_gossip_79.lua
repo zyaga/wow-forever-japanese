@@ -17,6 +17,7 @@ WFJ.Data.add("english", {
   ["gossip:794e23c6cd0af762"] = { text = "edge=3 find=10 go=6 head=8 room=9 southeast=2 there=5 town=1 upstairs=7" },
   ["gossip:795489290f316ed5"] = { text = "almost=12 body=10 bolstering=27 eyes=4 feel=23 grasps=8 hand=7 intently=2 knees=13 looks=5 passes=16 presence=22 resolve=26 shoot=11 slight=21 spirit=1 ursine=19 warmth=9 within=18 your=3" },
   ["gossip:795904e917dd8c46"] = { text = "arrive=16 begins=28 brave=18 day=14 done=1 everything=6 final=10 gates=21 gathering=7 goods=11 hero=19 lad=2 need=3 now=8 open=22 right=9 ring=20 taken=12 think=4 those=23 war=27 when=26 within=15" },
+  ["gossip:79608f7f6b99a97c"] = { text = "light=1 require=4 training=3 ways=2" },
   ["gossip:7965fd4fd8d6f07b"] = { text = "before=2 kneel=1" },
   ["gossip:796a5f685db25acc"] = { text = "medallion=1 use=2" },
   ["gossip:79732719c4ecf555"] = { text = "bunkers=1 defend=2" },

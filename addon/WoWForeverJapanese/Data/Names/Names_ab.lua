@@ -97,6 +97,7 @@ WFJ.Data.add("name", {
   ["ab7201bae0076369"] = { "プレート・チェストガード・オブ・ザ・シャイニング・ドーン", "ぷれーと・ちぇすとがーど・おぶ・ざ・しゃいにんぐ・どーん", "[PH] Plate Chestguard of the Shining Dawn" },
   ["ab73a25880569cb3"] = { "ロクホラー・ザ・アイス・ロード", "ろくほらー・ざ・あいす・ろーど", "Lokholar the Ice Lord" },
   ["ab74fec37df924cf"] = { "コイフ・オブ・ザ・ファイブ・サンダー", "こいふ・おぶ・ざ・ふぁいぶ・さんだー", "Coif of The Five Thunders" },
+  ["ab752bad0bc19ae3"] = { "ビーストマスターズ・ショルダー", "びーすとますたーず・しょるだー", "Beastmaster's Shoulders" },
   ["ab75f55925be56ce"] = { "ムーングロウ・ドラゴンエッグ", "むーんぐろう・どらごんえっぐ", "Moonglow Dragonegg" },
   ["ab7645dd8abaf9b4"] = { "アドバンスド・マイニング", "あどばんすど・まいにんぐ", "Advanced Mining" },
   ["ab77a12e9fe7e9da"] = { "コラプテッド・ブレス", "こらぷてっど・ぶれす", "Corrupted Breath" },

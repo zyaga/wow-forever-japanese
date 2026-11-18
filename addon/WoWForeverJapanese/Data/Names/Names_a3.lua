@@ -215,6 +215,7 @@ WFJ.Data.add("name", {
   ["a3f670f18aec9484"] = { "ハイ・プリーステス・オブ・ソーリサン", "はい・ぷりーすてす・おぶ・そーりさん", "High Priestess of Thaurissan" },
   ["a3f6ab0293304d7f"] = { "トランスフォーム・ゴースト", "とらんすふぉーむ・ごーすと", "Transform Ghost" },
   ["a3f6af5169983e4e"] = { "トーテミック・レザー・アーマー", "とーてみっく・れざー・あーまー", "Totemic Leather Armor" },
+  ["a3f6dbd57a650d83"] = { "アンダー・シティ", "あんだー・してぃ", "Under City" },
   ["a3f86faa3f4a5b93"] = { "オシリアン・クリスタル", "おしりあん・くりすたる", "Ossirian Crystal" },
   ["a3f91861ed31bee9"] = { "リンリング", "りんりんぐ", "Rinling" },
   ["a3f9cff92a216656"] = { "ウィンター・レベラー・ゴブリン・フィーメール", "うぃんたー・れべらー・ごぶりん・ふぃーめーる", "Winter Reveler - Goblin Female" },

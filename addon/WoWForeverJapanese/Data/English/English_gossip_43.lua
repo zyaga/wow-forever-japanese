@@ -47,6 +47,7 @@ WFJ.Data.add("english", {
   ["gossip:43c56166e54e3d17"] = { text = "allowed=27 any=12 baby=11 board=24 boat=13 bomb=6 breath=19 breathtaking=20 course=1 danger=9 everything=2 exploding=8 faster=14 flames=3 get=16 helium=5 huge=4 like=7 safer=15 smoking=26 speaking=22 there's=10 truly=18 view=17 while=25 zeppelin=23" },
   ["gossip:43d0c85e50ef4dc6"] = { text = "exactly=1" },
   ["gossip:43d0f1da79bcf1aa"] = { text = "another=1 purchase=2" },
+  ["gossip:43d26914a5849adf"] = { text = "double=4 time=1" },
   ["gossip:43d86777bfd306e1"] = { text = "ahead=4 fates=2 lie=5 our=1" },
   ["gossip:43db7a267f63bdd8"] = { text = "focus=6 if=5 our=1 spawn=4" },
   ["gossip:43e049092393e40a"] = { text = "destroy=6 rise=1 servants=2 survivors=8 this=4 world=5" },

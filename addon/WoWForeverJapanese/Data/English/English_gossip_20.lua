@@ -7,7 +7,6 @@ WFJ.Data.add("english", {
   ["gossip:200cac288706d6ca"] = { text = "muhahahaha=5 nature=1 power=2" },
   ["gossip:200db3696ba6b850"] = { text = "i=1 items=3 obtained=4 require=2" },
   ["gossip:200f854daeb5dc76"] = { text = "dare=1 feel=4 my=2 wrath=3" },
-  ["gossip:20282ef334383257"] = { text = "any=3 camp=5 campfire=2 foundation=6 good=1" },
   ["gossip:202b07caa139865b"] = { text = "task=2 what=1" },
   ["gossip:204d6747f07cdd38"] = { text = "ah=1 kindly=2 leave=11 library=9 matter=6 small=5 tend=7 thank=3 this=4 while=8 you=10" },
   ["gossip:204ecd76d4406d97"] = { text = "everything=5 fair=2 free=6 how=7 most=4 profit=8 why=1" },

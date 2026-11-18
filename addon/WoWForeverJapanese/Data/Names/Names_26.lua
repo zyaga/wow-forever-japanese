@@ -186,6 +186,7 @@ WFJ.Data.add("name", {
   ["26a6b34629b575f7"] = { "マローディング・アウルビースト", "まろーでぃんぐ・あうるびーすと", "Marauding Owlbeast" },
   ["26a91f26174a0e2d"] = { "ガイア・シード", "がいあ・しーど", "Gaea seeds" },
   ["26a97fed91f32b0b"] = { "ブーケ・オブ・ホワイト・ローズ", "ぶーけ・おぶ・ほわいと・ろーず", "Bouquet of White Roses" },
+  ["26aa86a0469ae03c"] = { "ソーサラーズ・ショルダー", "そーさらーず・しょるだー", "Sorcerer's Shoulders" },
   ["26aaec61f2130fff"] = { "カレファクトゥス", "かれふぁくとぅす", "Calefactus" },
   ["26ac6aba145e4785"] = { "ティンバーランド・アームガード", "てぃんばーらんど・あーむがーど", "Timberland Armguards" },
   ["26acf876bc7286c0"] = { "ケア・ダロウ・アンユーズド", "けあ・だろう・あんゆーずど", "Caer Darrow UNUSED" },

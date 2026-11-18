@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("area", {
   [7001] = { "Frostwolfに口輪をはめて連れ戻す", 0x7dc976ea, "." },
+  [7027] = { "雄羊に首輪をつけて連れ戻す", 0x5822f708, "." },
   [7046] = { "Scepter of Celebrasを作る", 0x1713f5ed, "." },
   [7141] = { "Drek'tharを倒す。", 0x2d57c617, "." },
   [7142] = { "Vanndar Stormpikeを倒す。", 0xa26a7187, "." },

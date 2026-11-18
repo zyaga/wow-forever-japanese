@@ -33,6 +33,7 @@ WFJ.Data.add("name", {
   ["ae280582fb2549f2"] = { "ランシャラ・ウェイティング", "らんしゃら・うぇいてぃんぐ", "Ranshalla Waiting" },
   ["ae2875b2ad377f37"] = { "リブリーズ・バンドリア", "りぶりーず・ばんどりあ", "Ribbly's Bandolier" },
   ["ae28cf2e559b8010"] = { "ブラザーズ・ハーフ・キー", "ぶらざーず・はーふ・きー", "Brother's Half-Key" },
+  ["ae2c226d031b80ec"] = { "ビーストマスターズ・レッグ", "びーすとますたーず・れっぐ", "Beastmaster's Legs" },
   ["ae2d64612e51b012"] = { "ロフティ・レッグガード", "ろふてぃ・れっぐがーど", "Lofty Legguards" },
   ["ae2ef99d6821f507"] = { "アーケイン・メガボム", "あーけいん・めがぼむ", "Arcane Megabomb" },
   ["ae2f36cdeb7b5f1a"] = { "アズサーラ", "あずさーら", "Azsahra" },

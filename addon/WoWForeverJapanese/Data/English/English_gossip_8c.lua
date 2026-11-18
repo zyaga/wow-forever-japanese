@@ -6,6 +6,7 @@ WFJ.Data.add("english", {
   ["gossip:8c0ca283a5470849"] = { text = "again=2 boring=11 brother=1 details=12 get=16 missy=6 right=14 seat=5 some=7 spare=13 story=4 sure=10 this=3" },
   ["gossip:8c208f546b2d7ad3"] = { text = "doing=3 what=2" },
   ["gossip:8c239ff3cde7fcba"] = { text = "fellowship=1 if=4 master=5 section=7 see=6" },
+  ["gossip:8c24d6d69105057b"] = { text = "found=7 leading=4 northward=3 road=5 side=6 town=2" },
   ["gossip:8c27e8059789c8d8"] = { text = "against=3 agreed=20 asked=9 collected=18 collection=7 flower=11 greetings=1 help=19 many=13 me=6 preparation=5 uses=14 war=4 young=2" },
   ["gossip:8c39187e37e9c8fd"] = { text = "castle=1 entrance=2" },
   ["gossip:8c397c59192d70db"] = { text = "hello=1" },

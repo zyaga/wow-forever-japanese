@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:29038333f70701be"] = { text = "help=4 how=3 today=2 welcome=1" },
   ["gossip:290e3817e57b2bcc"] = { text = "archmage=1 binding=35 blasted=11 body=19 bound=38 cannot=22 far=34 given=15 granted=3 indestructible=28 killed=20 lands=12 lord=14 men=25 my=24 now=27 remaining=8 remnants=26 see=16 soul=17 stones=36 thankfully=31 these=10 they=32 travel=33 units=29 warlock=4 without=18" },
+  ["gossip:290fece6f83a822b"] = { text = "build=3 so=1 teach=4 what=2" },
   ["gossip:2913eeee29c23636"] = { text = "attack=1 destroy=5 unchecked=4" },
   ["gossip:291a94366a55e80b"] = { text = "die=1 trespasser=2" },
   ["gossip:291c1771902e181c"] = { text = "mine=3 soul=2 weakling=5 your=1" },
@@ -15,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:295a9ff295e80c6e"] = { text = "like=5 look=2 more=3" },
   ["gossip:295e24cd57e4154b"] = { text = "battle=3 forces=9 general=2 help=11 lost=5 our=1 quartermaster=6 rebuild=10" },
   ["gossip:296246800b8a70e6"] = { text = "clean=2 keep=6 ok=1 ready=8 remember=9 shield=7 spar=3 sword=5 want=4" },
+  ["gossip:296bb359f1c03c89"] = { text = "course=8 darkest=2 light=4 mace=11 nice=10 nights=3 protect=6 sturdy=9 trust=7 you=5" },
   ["gossip:296d713966d1b1a7"] = { text = "not=5 oh=3 pint=1 take=2" },
   ["gossip:296df46e7ae0a420"] = { text = "apologize=7 assistance=22 certain=12 entirely=4 few=25 forgotten=17 hermit=18 honor=34 identity=2 integrity=33 my=1 old=16 one=29 people=23 person=10 proven=32 regards=3 selflessly=20 those=27 trusted=9 truthful=5 you=8" },
   ["gossip:297b53d2c52abd20"] = { text = "hat=6 head=4 little=5 perhaps=8 use=7 you=1 your=3" },

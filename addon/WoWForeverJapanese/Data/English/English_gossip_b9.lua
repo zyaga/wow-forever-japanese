@@ -31,6 +31,7 @@ WFJ.Data.add("english", {
   ["gossip:b9a39c81facfe77e"] = { text = "best=15 competent=20 composure=9 darkens=7 dispel=14 expression=5 find=3 friend=16 momentarily=6 parlor=4 regaining=10 such=19 this=1 thoughts=13 welcome=21 welcomes=21 where=2 you=18" },
   ["gossip:b9a8b65b3c12c9e6"] = { text = "enough=3 my=1 perhaps=4 work=2" },
   ["gossip:b9b84a0ca441f0b4"] = { text = "me=5 please=1 share=6 sight=3 your=2" },
+  ["gossip:b9c7374a0870a502"] = { text = "but=5 day=2 dust=1 helps=8 here=9 it=6 parches=4 remain=10 sacrifice=11 throat=3 warchief=7 worth=13" },
   ["gossip:b9cbd4b6f95c95fa"] = { text = "ho=8 hurry=9 like=5 ol'=6 sure=2 tell=7 this=3 what=4 yeah=1" },
   ["gossip:b9cf75ad2fac48bd"] = { text = "civility=8 crisis=13 current=12 cursed=2 dangerous=4 hesitate=17 know=5 once=15 resolve=9 she=7 sky=1 we=16 who=3 will=11 willing=11" },
   ["gossip:b9d064f6c850fe04"] = { text = "advice=3 burn=12 magic=8 met=1 my=2 this=4 travel=6 untrained=10 wary=9 world=5" },

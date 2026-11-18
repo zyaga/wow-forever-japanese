@@ -37,7 +37,6 @@ WFJ.Data.add("english", {
   ["gossip:61d6123db6191fb8"] = { text = "crystal=4 this=3 wait=1 yes=2" },
   ["gossip:61d8c94fe553b01d"] = { text = "lured=3 open=1" },
   ["gossip:61dfc5c2ceb6a69b"] = { text = "awaits=4 edge=2 he=5 teach=9 village=1 ways=8 you=3" },
-  ["gossip:61e66bfb76b8c236"] = { text = "city=2 good=7 our=4 pride=5 proud=1 standing=3 what=6" },
   ["gossip:61e7b28d9be5da4a"] = { text = "praise=1 visitors=2" },
   ["gossip:61ec9f54fb2be52c"] = { text = "alone=4 can=18 defend=8 enemies=11 honor=7 i=1 land=10 my=6 rid=12 road=3 seeking=14 this=2 walk=5 ways=13 you=15" },
   ["gossip:61f12c5455340c9d"] = { text = "help=8 here=4 hold=6 many=1 our=5 stakes=2 unstable=7" },

@@ -179,6 +179,7 @@ WFJ.Data.add("name", {
   ["ecc15161a55c8f01"] = { "マジック・アブソープション", "まじっく・あぶそーぷしょん", "Magic Absorption" },
   ["ecc16db39daa8bc9"] = { "クレリアン", "くれりあん", "Krelian" },
   ["ecc37e007b664277"] = { "アミュレット・オブ・シャドウ・シールディング", "あみゅれっと・おぶ・しゃどう・しーるでぃんぐ", "Amulet of Shadow Shielding" },
+  ["ecc5fc2945f8386c"] = { "レッグ・オブ・ヒロイズム", "れっぐ・おぶ・ひろいずむ", "Legs of Heroism" },
   ["ecc6a503999b8968"] = { "レッグプレート・オブ・ザ・ファイブ・サンダー", "れっぐぷれーと・おぶ・ざ・ふぁいぶ・さんだー", "Legplates of the Five Thunders" },
   ["ecc869006df108b2"] = { "ライディング・コドー（ホワイト）", "らいでぃんぐ・こどーほわいと", "Riding Kodo (White)" },
   ["eccb31d453cb4ccc"] = { "セナリウス・リザービスツ・レッグガード", "せなりうす・りざーびすつ・れっぐがーど", "Cenarion Reservist's Legguards" },

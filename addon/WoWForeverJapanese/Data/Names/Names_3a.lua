@@ -181,6 +181,7 @@ WFJ.Data.add("name", {
   ["3aec13da08874e49"] = { "オーネイト・レッグガード", "おーねいと・れっぐがーど", "Ornate Legguards" },
   ["3aedef3e43921b47"] = { "ワウ・バラエティ・ショー・ヘルス・ドレイン！", "わう・ばらえてぃ・しょー・へるす・どれいん", "WoW Variety Show - Health Drain!" },
   ["3aee8422e674bc51"] = { "ブッチャー・ドレイン", "ぶっちゃー・どれいん", "Butcher Drain" },
+  ["3aeeb4fa66be98ca"] = { "デスミスト・リスト", "ですみすと・りすと", "Deathmist Wrists" },
   ["3af0612b23e36516"] = { "キーン・スキニング・ナイフ", "きーん・すきにんぐ・ないふ", "Keen Skinning Knife" },
   ["3af2da116d09fd4b"] = { "ハンド・オブ・デクストレン・ウォード", "はんど・おぶ・でくすとれん・うぉーど", "Hand of Dextren Ward" },
   ["3af4ca9a21782eca"] = { "ウィンドフューリー・ウィンド・ウィッチ", "うぃんどふゅーりー・うぃんど・うぃっち", "Windfury Wind Witch" },

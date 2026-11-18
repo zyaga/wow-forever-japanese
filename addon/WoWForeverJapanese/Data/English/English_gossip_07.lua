@@ -23,6 +23,7 @@ WFJ.Data.add("english", {
   ["gossip:076340e59a57e69d"] = { text = "cloth=1 human=5 okay=2 personally=4 prefer=9 skin=6 work=7" },
   ["gossip:0764263620a3657d"] = { text = "all=2 balance=6 his=15 lower=9 metal=1 nature=5 near=12 pond=11 rise=10 seek=17 smithy=13 things=3 used=8 wisdom=16" },
   ["gossip:0769ef3d4a261e75"] = { text = "celebration=2 hail=1 welcome=3" },
+  ["gossip:076d1f15279dd869"] = { text = "barbershop=2 can=19 colorings=5 cuts=4 even=15 features=17 groom=10 hair=9 horns=13 modify=18 my=1 piercings=11 reshape=14 tusks=12 undead=16 welcome=3" },
   ["gossip:07763c5b2326f7f9"] = { text = "abuzz=3 air=1 energy=2 status=5" },
   ["gossip:07894e7228418da8"] = { text = "bad=1 day=2 pie=3 try=4" },
   ["gossip:078d085a8b5b3221"] = { text = "caught=4 fish=3 hungry=2" },

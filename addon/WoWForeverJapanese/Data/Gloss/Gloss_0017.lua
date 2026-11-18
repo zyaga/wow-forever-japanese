@@ -382,7 +382,6 @@ WFJ.Data.add("gloss", {
   [17380] = "つかむ\tつかむ\tsnatch (grab)",
   [17381] = "つかむ\tつかむ\ttake (seize)",
   [17382] = "つかむ\tつかむ\twe shall find (seize)",
-  [17383] = "つかむ\tつかむ\twin",
   [17384] = "つかむ\tつかむ\tyou've got (grasped)",
   [17385] = "つがい\tつがい\tmate",
   [17386] = "つがい\tつがい\tmates",

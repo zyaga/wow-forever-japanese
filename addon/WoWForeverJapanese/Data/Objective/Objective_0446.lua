@@ -7,6 +7,7 @@ WFJ.Data.add("objective", {
   [446848] = { "Katherineと話して詳しく聞く", 0xecdd7040, "." },
   [446867] = { "Katherine the Pureに報告する", 0x25a79fba, "." },
   [446870] = { "Scarlet MonasteryでAeonasを見つける", 0x1ce66fcf, "." },
+  [446894] = { "Aeonasを癒す", 0xc42b2f46, "." },
   [446941] = { "StormwindのCathedral of LightでAeonasと会う", 0x9bfb9295, "." },
   [446962] = { "KatherineからAeonasについてさらに聞く", 0xd0000aeb, "." },
 })

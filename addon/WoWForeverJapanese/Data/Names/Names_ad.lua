@@ -152,6 +152,7 @@ WFJ.Data.add("name", {
   ["ada0e22066cb283e"] = { "サモン・テイムド・キャット", "さもん・ていむど・きゃっと", "Summon Tamed Cat" },
   ["ada1b6fb27f1061d"] = { "ルーン・オブ・ザ・アセイラント", "るーん・おぶ・ざ・あせいらんと", "Rune of the Assailant" },
   ["ada2d71fd5ba2d83"] = { "スカルクラッシャー・メイス", "すかるくらっしゃー・めいす", "Skullcrusher Mace" },
+  ["ada2ee8acd7c501c"] = { "ビーストマスターズ・ヘルム", "びーすとますたーず・へるむ", "Beastmaster's Helm" },
   ["ada485bcf00a5c8d"] = { "ザーラズ・ジャーナル", "ざーらず・じゃーなる", "Zarla's Journal" },
   ["ada5839331283311"] = { "ラプソディズ・カリムドア・カクテル", "らぷそでぃず・かりむどあ・かくてる", "Rhapsody's Kalimdor Kocktail" },
   ["ada687869032e756"] = { "シグネット・リング・オブ・ザ・ブロンズ・ドラゴンフライト・ディーピーエス・アール3・ディーエヌディー", "しぐねっと・りんぐ・おぶ・ざ・ぶろんず・どらごんふらいと・でぃーぴーえす・あーるさん・でぃーえぬでぃー", "Signet Ring of the Bronze Dragonflight DPS R3 DND" },

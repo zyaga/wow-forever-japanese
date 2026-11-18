@@ -40,6 +40,7 @@ WFJ.Data.add("english", {
   ["gossip:05b18b4e7c5122a8"] = { text = "better=2 luck=3 time=1" },
   ["gossip:05ba76ca917d1353"] = { text = "ago=6 caught=4 fished=7 mask=9 me=12 months=5 night=15 odd=2 one=17 pretty=1 story=10 that=14 things=3 think=18 told=11 weird=8" },
   ["gossip:05bc3297103a996c"] = { text = "get=2 work=1" },
+  ["gossip:05c036cc38d1a8a9"] = { text = "ah=1 ghost=7 lass=5 like=9 look=10 seen=8 time=2 you're=3" },
   ["gossip:05c080b6a0ef9606"] = { text = "here=2 his=9 i=1 know=7 or=8 perhaps=6 progeny=10 tell=5 why=4" },
   ["gossip:05c67f80fbb215f3"] = { text = "aid=9 appear=8 experience=6 inconsiderable=3 matter=11 skill=2 sufficient=5 your=1" },
   ["gossip:05cf2f558b1e4000"] = { text = "fool=5 hides=3 island=2 kind=7 muster=9 there=6 threat=8" },

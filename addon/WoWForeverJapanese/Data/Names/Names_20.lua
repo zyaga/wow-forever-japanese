@@ -187,6 +187,7 @@ WFJ.Data.add("name", {
   ["20a3050056f306dd"] = { "ポリモーフト・ピッグ", "ぽりもーふと・ぴっぐ", "Polymorphed Pig" },
   ["20a387075ee28f64"] = { "ポリモーフト・ラット", "ぽりもーふと・らっと", "Polymorphed Rat" },
   ["20a3dae433bec7ab"] = { "トレッド・オブ・ザ・ファイブ・サンダー", "とれっど・おぶ・ざ・ふぁいぶ・さんだー", "Treads of The Five Thunders" },
+  ["20a52a7e5db22f7b"] = { "フェラルハート・ヘルム", "ふぇらるはーと・へるむ", "Feralheart Helm" },
   ["20a52e8cf2e9ddc7"] = { "ハイドロスポーン", "はいどろすぽーん", "Hydrospawn" },
   ["20a5380ce0a9a77d"] = { "ブルーティッシュ・リヴァーポー・アックス", "ぶるーてぃっしゅ・りゔぁーぽー・あっくす", "Brutish Riverpaw Axe" },
   ["20a7bdb3ed6666f8"] = { "クラックリング・キャンプファイア", "くらっくりんぐ・きゃんぷふぁいあ", "Crackling Campfire" },

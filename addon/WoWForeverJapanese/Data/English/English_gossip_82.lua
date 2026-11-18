@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:820416bc52658acb"] = { text = "aren't=2 something=1" },
   ["gossip:8204cbeafc364eac"] = { text = "but=8 danger=13 forests=2 hidden=12 know=7 learned=10 me=4 much=14 part=5 still=9 that=16 these=1" },
+  ["gossip:820a964421c70800"] = { text = "ancient=4 barrier=6 deal=5 drop=7 unfortunately=1" },
   ["gossip:821d4c7de8bddf8a"] = { text = "goods=2 hello=1" },
   ["gossip:821fc9d6d8ed9b12"] = { text = "faith=1" },
   ["gossip:8223514b518d388b"] = { text = "armor=38 around=8 chitin=32 chosen=19 come=7 comes=7 common=43 deadliness=30 despise=24 enemy=44 formidable=20 home=6 i=1 knowledge=2 learned=28 lightness=34 mindless=10 much=31 my=47 old=5 opponents=21 own=14 reasons=15 respect=26 seem=46 so=4 strength=33 teach=49 their=29 them=23 this=16 trade=48 undead=11 unlife=18 unlike=12 we=42 work=39" },

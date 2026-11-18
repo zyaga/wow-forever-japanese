@@ -49,6 +49,7 @@ WFJ.Data.add("english", {
   ["gossip:1dd4ae0a97be2fb2"] = { text = "like=5 noise=2 roar=4 sounded=6 what=3" },
   ["gossip:1dd57f161bc69942"] = { text = "but=6 coming=2 fine=4 going=3 stop=1" },
   ["gossip:1dd5bd420fc3b22d"] = { text = "down=5 lies=6 now=1 path=4 sense=2 this=3" },
+  ["gossip:1ddbf80a4e335ac3"] = { text = "move=1 piling=2" },
   ["gossip:1de08fdd54d62f1e"] = { text = "come=5 i=1 land=4 men=8 plague=7 sunder=9 women=6" },
   ["gossip:1de2dddb582ecc7b"] = { text = "this=1" },
   ["gossip:1deec6dc64282f28"] = { text = "ancestors=17 create=21 creation=8 difficult=3 dish=7 dwindling=10 enjoy=9 every=6 eye=2 fun=22 home=12 hope=34 i=5 ingredients=14 lacking=16 many=15 new=19 our=11 recipes=18 remind=32 seem=4 take=28 these=29 traditional=13 untrained=1 variations=20 where=27 winds=25 you=26" },

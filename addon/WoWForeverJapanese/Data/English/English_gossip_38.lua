@@ -17,6 +17,7 @@ WFJ.Data.add("english", {
   ["gossip:3855296bbae878eb"] = { text = "break=4 chunks=3 dwindles=6 rock=2 strength=1" },
   ["gossip:385543de761d16e2"] = { text = "attack=2 currently=1" },
   ["gossip:385b413122b3fe6d"] = { text = "directions=1" },
+  ["gossip:3862455c48880fa8"] = { text = "abomination=10 electrical=7 giant=6 heart=8 least=4 might=13 next=9 once=1 salvage=12 start=3 that=5" },
   ["gossip:3865634957333e9b"] = { text = "aid=17 alternative=10 but=4 elves=5 get=15 leave=13 needless=2 peace=6 seek=18 speak=9 strife=3 such=1 us=8 what=11" },
   ["gossip:3872e3b9252b4a75"] = { text = "destroyed=1 ready=3" },
   ["gossip:387776bd33949a67"] = { text = "aid=2 apprentice=9 before=3 fundamental=6 he=11 i=1 kind=12 learn=5 need=14 patient=13 teach=16 things=7 what=15 you=4" },

@@ -6,6 +6,7 @@ WFJ.Data.add("english", {
   ["gossip:5128192218294558"] = { text = "come=7 gates=11 high=6 if=9 knowledge=4 seen=3 south=12 speak=8 weather=1 with=5" },
   ["gossip:512a9d88853c0164"] = { text = "no=5 peace=7 quarrel=3 us=6 we=1 you=2" },
   ["gossip:512ff5764aa91700"] = { text = "about=29 alive=32 and=33 angry=35 blood=27 chunks=24 covered=25 cracked=2 definitely=31 died=1 drenched=30 excuse=4 food=14 he=18 layers=28 orc=7 orcs=7 really=34 stood=20 sure=17 their=26 there=19 toe=22 world=11 wouldn't=10" },
+  ["gossip:51319ae3c765a54e"] = { text = "sale=1 show=2" },
   ["gossip:513e239330ee24f8"] = { text = "activated=3 destruct=1 sequence=2" },
   ["gossip:514585e49a114ecd"] = { text = "came=6 dwarves=1 now=3 originally=5 telling=8 that=7" },
   ["gossip:5147dfd0f490920c"] = { text = "big=3 can't=19 cloud=5 done=23 driven=14 even=18 first=12 get=16 gray=4 land=13 luck=8 mess=21 now=15 raining=9 sky=2 something=22 sometimes=1 think=11 us=7" },

@@ -11,6 +11,7 @@ WFJ.Data.add("english", {
   ["gossip:731632f999e325be"] = { text = "improved=8 incredibly=7 retrieve=5 something=3 this=1 throw=4 water=2 when=6" },
   ["gossip:731860393c93ece7"] = { text = "bring=19 bugs=7 days=14 go=17 goods=12 honor=18 if=6 last=11 magic=3 relish=10 sands=2 scepter=4 someone=1 soon=9 together=5 war=8 way=13 within=15" },
   ["gossip:731a2773c63eac90"] = { text = "adventures=10 check=2 luck=11 may=8 periodically=1 take=5 tasks=6 time=3 you=4" },
+  ["gossip:733068e172cf6967"] = { text = "among=4 artifacts=35 beguiled=23 brought=39 but=30 dark=25 ends=26 favored=7 fed=29 great=36 hilt=52 interest=37 it=51 key=42 led=18 lust=32 manner=33 most=6 once=1 only=54 our=2 own=24 people=17 power=31 powerful=34 shores=15 study=55 surviving=53 tome=49 tower=48 towns=13 traitor=20 twin=12 very=14" },
   ["gossip:7339521ec497a4dc"] = { text = "ground=1 herb=2 picks=3" },
   ["gossip:733a4a5ff9907240"] = { text = "before=6 last=7 merit=3 one=9 skill=2 take=5 test=8" },
   ["gossip:733e95cce530931e"] = { text = "agony=34 aid=10 aiding=10 ask=53 both=28 charge=45 choice=8 compelled=20 correct=7 critical=31 end=30 ended=30 endures=33 fact=4 gain=14 here=2 his=40 important=26 lure=15 may=18 me=36 my=44 neither=23 now=39 own=25 personal=13 quest=50 reason=24 rousted=37 step=5 this=29 torment=41 you=1" },

@@ -621,7 +621,6 @@ WFJ.Data.add("gloss", {
   [65619] = "安心\tあんしん\tin good hands (at ease)",
   [65620] = "安心\tあんしん\trelief",
   [65621] = "安心\tあんしん\tsafe",
-  [65622] = "安心\tあんしん\tsecurity",
   [65623] = "安心させる\tあんしんさせる\tput (my mind) at ease",
   [65624] = "安心させる\tあんしんさせる\tput my worries to rest",
   [65625] = "安心する\tあんしんする\tat ease (relieved)",

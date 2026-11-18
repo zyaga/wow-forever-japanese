@@ -62,7 +62,7 @@ WFJ.Data.add("spell", {
   [1301703] = { "PenanceとPrayer of Mendingのクールダウンを$D1短縮します。", nil, 0x54018d12, nil, "um" },
   [1301706] = { "Devouring Plagueのクールダウンを$D1短縮します。", nil, 0x07f80f57, nil, "um" },
   [1301707] = { "追跡されません。", "追跡されません。", 0x9bd2adf2, 0x90c3da9a, "uu" },
-  [1301708] = { "EnvenomとEviscerateのコストをエネルギー$N1減少させます。", nil, 0x8f9d8c39, nil, "um" },
+  [1301708] = { "EviscerateとDeath Markの消費エネルギーが$N1減少します。", nil, 0x0a4deea4, nil, "um" },
   [1301709] = { "Stormstrikeのクールダウンを$D1短縮します。", nil, 0xcc42fbad, nil, "um" },
   [1301711] = { "Lava Burstのクールダウンを$D1短縮します。", nil, 0xc7834c12, nil, "um" },
   [1301713] = { "Riptideのクールダウンを$D1短縮します。", nil, 0x60ae184e, nil, "um" },

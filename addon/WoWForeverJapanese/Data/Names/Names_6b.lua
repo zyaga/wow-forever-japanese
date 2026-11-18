@@ -164,6 +164,7 @@ WFJ.Data.add("name", {
   ["6bb444f2223f4277"] = { "メジャー・スペルブラスティング・ポーション", "めじゃー・すぺるぶらすてぃんぐ・ぽーしょん", "Major Spellblasting Potion" },
   ["6bb481e382da918c"] = { "ニレン・アンデマー", "にれん・あんでまー", "Nillen Andemar" },
   ["6bb682f6bc1bd706"] = { "インビュー・アキュラシー", "いんびゅー・あきゅらしー", "Imbue Accuracy" },
+  ["6bb7eda1b4f10b35"] = { "ソウルフォージ・グローブ", "そうるふぉーじ・ぐろーぶ", "Soulforge Gloves" },
   ["6bba109ab8a93c78"] = { "エンシェント", "えんしぇんと", "ancients" },
   ["6bba90d75b94b159"] = { "デファイアス・ジェイルブレイカー", "でふぁいあす・じぇいるぶれいかー", "Defias Jailbreakers" },
   ["6bbfa8ca68bc6ad7"] = { "デッドマンズ・クロッシング", "でっどまんず・くろっしんぐ", "Deadman's Crossing" },

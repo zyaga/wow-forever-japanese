@@ -111,6 +111,7 @@ WFJ.Data.add("name", {
   ["8c7fb5c503a0d832"] = { "レッド・スケルタル・ホース", "れっど・すけるたる・ほーす", "Red Skeletal Horse" },
   ["8c7ffe0a8322ec05"] = { "プラン：グリーンハンマー", "ぷらん・ぐりーんはんまー", "Plans: Greenhammer" },
   ["8c804d3b400b7644"] = { "デスガード・ファルガン", "ですがーど・ふぁるがん", "Deathguard Falgan" },
+  ["8c805a77aab403da"] = { "ソウルフォージ・リスト", "そうるふぉーじ・りすと", "Soulforge Wrists" },
   ["8c807960bc0c5f45"] = { "リブラム・オブ・ディスカバリー", "りぶらむ・おぶ・でぃすかばりー", "Libram of Discovery" },
   ["8c80b3133e7275ce"] = { "ブロークン・カルティスト・グローブ", "ぶろーくん・かるてぃすと・ぐろーぶ", "Broken Cultist Gloves" },
   ["8c81ae9c15febc24"] = { "バンデッド・ガントレット", "ばんでっど・がんとれっと", "Banded Gauntlets" },

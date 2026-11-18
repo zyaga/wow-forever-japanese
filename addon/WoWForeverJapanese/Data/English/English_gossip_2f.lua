@@ -7,6 +7,7 @@ WFJ.Data.add("english", {
   ["gossip:2f1fe33adea234f2"] = { text = "all=6 assault=14 beacon=7 bodied=4 damndest=9 fleet=2 home=16 it=10 my=13 plant=11 request=8 rock=3 soldiers=5" },
   ["gossip:2f228cc32a5a6d0f"] = { text = "die=1" },
   ["gossip:2f22a41595777a25"] = { text = "becoming=4 my=1 next=2 thank=5 victim=3" },
+  ["gossip:2f27e81e2ff0b867"] = { text = "fire=1" },
   ["gossip:2f2e2a9d73df1dec"] = { text = "supplies=1 thanks=2" },
   ["gossip:2f2ec0662a30f4a9"] = { text = "inspects=1" },
   ["gossip:2f3173f2d1f40847"] = { text = "death=1 escape=3 only=2" },

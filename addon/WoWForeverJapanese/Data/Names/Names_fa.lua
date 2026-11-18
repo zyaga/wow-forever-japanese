@@ -217,6 +217,7 @@ WFJ.Data.add("name", {
   ["fae970887384ecab"] = { "ジェネラルズ・ドラゴンハイド・レッグガード", "じぇねらるず・どらごんはいど・れっぐがーど", "General's Dragonhide Legguards" },
   ["faeb196c233afe51"] = { "チョラッシュ・ランダム・エフェクト（シャーマン）", "ちょらっしゅ・らんだむ・えふぇくとしゃーまん", "Cho'Rush Random Effect (Shaman)" },
   ["faec8062ba228056"] = { "ガンルル", "がんるる", "Gan'rul" },
+  ["faee7adbaf63aa91"] = { "チェスト・オブ・ヒロイズム", "ちぇすと・おぶ・ひろいずむ", "Chest of Heroism" },
   ["faef8b1592dfb653"] = { "リーパー", "りーぱー", "reaper" },
   ["faefe750f32b3cdd"] = { "ビジョン・ダスト", "びじょん・だすと", "Vision Dust" },
   ["faf01dd0601e3fff"] = { "クラッグ・ボア・リブ", "くらっぐ・ぼあ・りぶ", "Crag Boar Ribs" },

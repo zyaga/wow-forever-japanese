@@ -165,6 +165,7 @@ WFJ.Data.add("name", {
   ["5fb2b732d681f793"] = { "プレミア・ドレッドウィーヴ・マントル", "ぷれみあ・どれっどうぃーゔ・まんとる", "Premier Dreadweave Mantle" },
   ["5fb3354b9300422e"] = { "セナリウス・ロジスティクス・バッジ", "せなりうす・ろじすてぃくす・ばっじ", "Cenarion Logistics Badge" },
   ["5fb53e383952ab5c"] = { "デプリケイテッド・モトルド・ボア・ステーキ", "でぷりけいてっど・もとるど・ぼあ・すてーき", "Deprecated Mottled Boar Steaks" },
+  ["5fb6f9e3219ccde1"] = { "ビーストマスターズ・リスト", "びーすとますたーず・りすと", "Beastmaster's Wrists" },
   ["5fb8cf4c16fd1d2b"] = { "プライドロード・ブーツ", "ぷらいどろーど・ぶーつ", "Pridelord Boots" },
   ["5fb92b9867943d15"] = { "テネル・リーフランナー", "てねる・りーふらんなー", "Tenell Leafrunner" },
   ["5fb93168151f714d"] = { "ソウルフォージ・レッグプレート", "そうるふぉーじ・れっぐぷれーと", "Soulforge Legplates" },

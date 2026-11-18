@@ -386,7 +386,6 @@ WFJ.Data.add("gloss", {
   [136385] = "頼む\tたのむ\tasked (gave)",
   [136386] = "頼む\tたのむ\tasked (me)",
   [136387] = "頼む\tたのむ\tasked (my)",
-  [136388] = "頼む\tたのむ\tasked (sent you to)",
   [136389] = "頼む\tたのむ\tasked (was asked)",
   [136390] = "頼む\tたのむ\tasked for",
   [136391] = "頼む\tたのむ\tasked me",

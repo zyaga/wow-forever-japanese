@@ -46,6 +46,7 @@ WFJ.Data.add("english", {
   ["gossip:2ce519cc8259a31f"] = { text = "dead=2 hahah=3 rawww=1" },
   ["gossip:2cedad5e7a2d93be"] = { text = "again=4 always=8 burgeoning=1 good=6 hero=2 our=9 returns=3 see=5 village=10 welcome=11 you=7" },
   ["gossip:2cf0167fe11d2f55"] = { text = "next=1" },
+  ["gossip:2cf1dd7a40663f8b"] = { text = "and=16 armor=13 chest=12 come=17 debt=5 enjoy=14 head=11 hope=15 miss=1 new=10 owe=6 protects=20 repay=9 such=3 time=18 you=2" },
   ["gossip:2cf418e3e6a6ffd1"] = { text = "alas=1 considered=7 deeds=10 friend=6 friendly=12 mounts=16 my=15 prove=13 selection=17 true=5 us=11 words=8 you=2" },
   ["gossip:2cf4253c5738520c"] = { text = "attacks=7 clutch=2 end=6 hatch=4 launch=8 next=1 ready=10 sire=5 soon=3 will=11" },
   ["gossip:2cf72490d8304be2"] = { text = "across=12 back=29 believe=26 blood=24 closely=6 coughs=25 deals=21 die=35 evil=15 groans=1 hands=23 here=31 host=17 i=13 listen=7 made=22 manner=34 may=5 me=28 mortal=8 now=32 searched=14 so=18 still=2 this=33 time=3 turned=30 villainy=20 wretched=19" },

@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:b582c73874ee3fc6"] = { text = "crunch=7 crunchy=2 elves=1 good=3 sound=4 talk=8 you=5" },
   ["gossip:b59c2b0cc999b393"] = { text = "claim=10 destitute=19 ear=4 family=22 i=1 knight=20 liege=2 offer=24 reward=17 show=5 slay=14 some=18 then=16 would=11" },
   ["gossip:b59c6af2db2d0e75"] = { text = "fun=4 most=3 purchases=1" },
+  ["gossip:b59ec91e5d53d243"] = { text = "how=1" },
   ["gossip:b5a255bc0dddc12c"] = { text = "started=1" },
   ["gossip:b5a2aa091036d576"] = { text = "associates=3 great=5 my=2 thank=1 these=4 things=6 will=8" },
   ["gossip:b5a450cf7f3d53f0"] = { text = "alright=1 where=2" },
