@@ -228,6 +228,7 @@ function GuildBank.setup()
   if hooked or type(frame) ~= "table" then return false end
   hooked = true
   WFJ.Labels.forbidNames(GuildBank.NEVER_TOUCH) -- its widgets exist only now
+  WFJ.PlayerText.each(WFJ.PlayerText.box, { "GuildBankTabInfoEditBox" }) -- a tab's info text: its font only
   for _, method in ipairs({ "Update", "UpdateTabs", "UpdateTabBuyingInfo" }) do
     if type(frame[method]) == "function" then hooksecurefunc(frame, method, GuildBank.show) end
   end

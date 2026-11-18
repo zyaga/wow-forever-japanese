@@ -46,6 +46,8 @@ local function build()
   _G.GuildControlUI_RankOrder_Update = function()
     local row = _G.GuildControlUIRankOrderFrameRank1 or CreateFrame("Frame", "GuildControlUIRankOrderFrameRank1")
     row.upButton, row.downButton, row.deleteButton = Stub.button(nil, ""), Stub.button(nil, ""), Stub.button(nil, "")
+    row.nameBox = row.nameBox or Stub.fontString("") -- the rank's name (blizzard_guildcontrolui.lua:550)
+    row.nameBox:SetText("Officer")
   end
   _G.GuildControlUI_BankTabPermissions_Update = function()
     local row = CreateFrame("Frame", "GuildControlBankTab1")
@@ -98,7 +100,8 @@ C.suite(getfenv(1), {
       frame.dropdown:UpdateText()
       assert.are.equal("ギルドランク", frame.dropdown.Text:GetText())
     end },
-    { "rows created by a pane update: bank tab labels translate, rank buttons own their tooltips", function(frame)
+    { "rows created by a pane update: bank tab labels translate, rank buttons own their tooltips",
+      function(frame, WFJ)
       frame:Show()
       _G.GuildControlUI_BankTabPermissions_Update()
       local row = _G.GuildControlBankTab1
@@ -106,6 +109,9 @@ C.suite(getfenv(1), {
       assert.are.equal("購入", row.buy.button:GetText())
       assert.are.equal("Purchase", row.owned.tabName:GetText()) -- a tab named "Purchase"
       _G.GuildControlUI_RankOrder_Update()
+      local nameBox = _G.GuildControlUIRankOrderFrameRank1.nameBox
+      assert.are.equal(WFJ.Font.PATH, nameBox.font.path) -- a rank's name: its font only
+      assert.are.equal("Officer", nameBox:GetText())
       C.tooltip(_G.GuildControlUIRankOrderFrameRank1.upButton,
         { en("GUILD_RAISERANK_BUTTON_TOOLTIP"), en("ERR_GUILD_RANK_IN_USE") })
       assert.are.equal("クリックでこのランクを上げる", _G.GameTooltipTextLeft1:GetText())

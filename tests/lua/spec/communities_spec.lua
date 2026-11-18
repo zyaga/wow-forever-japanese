@@ -99,6 +99,7 @@ local function loadCommunities()
     if not row then
       row = CreateFrame("Button")
       row.NameFrame = { Name = fs() }
+      row.Note = fs() -- the member's note (communitiesmemberlist.lua:1320)
       row.CancelInvitationButton = CreateFrame("Button")
       C.rows[i] = row
     end
@@ -143,6 +144,14 @@ local function loadCommunities()
   info.EditMOTDButton = Stub.button(nil, en("GUILD_EDIT_TEXT_LINK"))
   info.EditDetailsButton = Stub.button(nil, en("GUILD_EDIT_TEXT_LINK"))
   info.MOTDScrollFrame = { MOTD = fs() }
+  -- the guild information: the details scroll frame's child holds it (guildinfo.xml:251–265)
+  info.DetailsFrame = { child = { Details = fs() } }
+  function info.DetailsFrame.GetScrollChild(self) return self.child end
+  -- the box the message of the day and the guild information are edited in (guildinfo.xml:328)
+  C.editBox = fs()
+  C.editBox.scripts = {}
+  function C.editBox.HookScript(self, name, fn) self.scripts[name] = fn end
+  _G.CommunitiesGuildTextEditFrame = { Container = { ScrollFrame = { EditBox = C.editBox } } }
   local news = CreateFrame("Frame")
   details.News = news
   news.TitleText = fs(en("GUILD_NEWS_TITLE"))
@@ -210,6 +219,7 @@ describe("the Communities guild view on Forever", function()
     H.uiTeardown()
     Stub.keys.alt = false
     _G.CommunitiesFrame, _G.CommunitiesGuildInfoFrame_UpdateChallenges = nil, nil
+    _G.CommunitiesGuildTextEditFrame = nil
   end)
 
   for _, order in ipairs({ { true, "loaded at login" }, { false, "loaded on demand" } }) do
@@ -284,6 +294,50 @@ describe("the Communities guild view on Forever", function()
           assert.are.equal("Close", d.NoteBackground.PersonalNoteText:GetText()) -- a member's own note
           assert.are.equal("Close", d.OfficerNoteBackground.OfficerNoteText:GetText())
         end)
+
+      it("the message of the day, the guild information and a roster note wear the bundled face only while "
+        .. "they hold Japanese; the box they are edited in always; with the addon off too", function()
+        local info, face = _G.CommunitiesFrame.GuildDetailsFrame.Info, WFJ.Font.PATH
+        local row = C.entry(1, { name = "Thrall" })
+        assert.are.equal(face, C.editBox.font.path)
+        C.editBox.font.path = "Fonts\\FRIZQT__.TTF" -- the client put its font back
+        C.editBox.scripts.OnShow(C.editBox)
+        assert.are.equal(face, C.editBox.font.path)
+        for _, on in ipairs({ true, false }) do
+          WFJ.State.enabled = on
+          for _, w in ipairs({ info.MOTDScrollFrame.MOTD, info.DetailsFrame.child.Details, row.Note }) do
+            w:SetText("今夜9時にレイドです")
+            assert.are.equal(face, w.font.path)
+            assert.are.equal("今夜9時にレイドです", w:GetText())
+            assert.is_true(unrecorded(w)) -- never a translation record: the text is the player's
+            w:SetText("Raid at nine")
+            assert.are.equal("Fonts\\FRIZQT__.TTF", w.font.path)
+          end
+        end
+        -- the pooled row drawn again for a member with no Japanese in the note
+        row.Note:SetText("メインタンク")
+        C.entry(1, { name = "Jaina" })
+        row.Note:SetText("alt")
+        assert.are.equal("Fonts\\FRIZQT__.TTF", row.Note.font.path)
+      end)
+
+      it("a member's note in Japanese wears the bundled face; the placeholder and an English note after it "
+        .. "have the widget's own font", function()
+        local d = _G.CommunitiesFrame.GuildMemberDetailFrame
+        local note, face = d.NoteBackground.PersonalNoteText, WFJ.Font.PATH
+        local member = { name = "Thrall", level = 60, class = "Shaman", zone = "Orgrimmar", rank = "Warchief" }
+        member.note = "ヒーラーです"
+        d:DisplayMember(1, member)
+        assert.are.equal("ヒーラーです", note:GetText())
+        assert.are.equal(face, note.font.path)
+        member.note = nil -- the placeholder: a dictionary line, shown by its record
+        d:DisplayMember(1, member)
+        assert.are.equal("ここをクリックして公開メモを設定します。", note:GetText())
+        member.note = "Healer"
+        d:DisplayMember(1, member)
+        assert.are.equal("Healer", note:GetText())
+        assert.are.equal("Fonts\\FRIZQT__.TTF", note.font.path) -- the record held the widget's own font
+      end)
 
       it("the applicants column header translates", function()
         _G.CommunitiesFrame.MemberList.ColumnDisplay:LayoutColumns({ "CLUB_FINDER_APPLICANTS",

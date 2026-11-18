@@ -38,6 +38,7 @@ function Applicants.onRow(row)
   for _, field in ipairs({ "Name", "Level", "ItemLevel", "Note" }) do
     if type(row[field]) == "table" then WFJ.Labels.forbid(row[field]) end
   end
+  WFJ.PlayerText.follow(row.Note) -- the applicant's message: its font only (clubfinderapplicantlist.lua:102)
   local id = rowKey(row)
   k.show(id .. ".status", row.RequestStatus, STATUS)
   k.show(id .. ".allSpec", row.AllSpec, { "NONE" })

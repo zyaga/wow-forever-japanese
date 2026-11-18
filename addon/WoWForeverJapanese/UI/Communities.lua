@@ -40,6 +40,8 @@
 --     CancelInvitationButton's tooltip COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP (communitiesmemberlist.xml:67–71).
 --   The extra guild column CLUB_FINDER_APPLICANTS is a roster header (EXTRA_GUILD_COLUMNS, lua:168–171).
 -- Never touched: member names, ranks, zones, notes, the MOTD and guild info text, guild names.
+-- Their font only (UI/PlayerText): the MOTD, the guild info text, a member's two notes and a roster row's note wear
+--   the bundled face while they hold Japanese; the box the MOTD and the info text are edited in always does.
 local _, WFJ = ...
 local Communities = {}
 WFJ.Communities = Communities
@@ -129,6 +131,7 @@ function Communities.onRosterRow(a, b)
   WFJ.HelpTooltip.register(row, ENTRY_TOOLTIP)
   local cancel = row.CancelInvitationButton
   if type(cancel) == "table" then WFJ.HelpTooltip.register(cancel, CANCEL_TOOLTIP) end
+  WFJ.PlayerText.follow(row.Note) -- the member's note (communitiesmemberlist.lua:1320)
 end
 
 -- The labels the client writes once at load. → the number of dictionary words found.
@@ -165,15 +168,38 @@ function Communities.onColumns()
   return n
 end
 
+-- A note widget holds the client's placeholder (a dictionary line) or the member's own note. The font a note in
+-- Japanese was given comes off first, so the placeholder's record holds the widget's own font; a note that is not
+-- the placeholder then gets the bundled face when it holds Japanese. → 1 | 0
+local function showNote(recKey, key, placeholder)
+  local fs = get(key)
+  WFJ.Font.restore(fs)
+  local n = WFJ.Labels.show(SURFACE, recKey, fs, nil, { only = { placeholder } })
+  if n == 0 then WFJ.PlayerText.shown(fs) end
+  return n
+end
+
 -- hooksecurefunc target (GuildMemberDetailFrame:DisplayMember). → the number of dictionary words found.
 function Communities.onDetail()
   local show = WFJ.Labels.show
   local n = show(SURFACE, "detailLevel", get("level"), nil, { only = { "FRIENDS_LEVEL_TEMPLATE" } })
     + show(SURFACE, "detailOnline", get("online"), nil, { only = ONLINE_KEYS })
-    + show(SURFACE, "personalNote", get("personalNote"), nil, { only = { "GUILD_NOTE_EDITLABEL" } })
-    + show(SURFACE, "officerNote", get("officerNote"), nil, { only = { "GUILD_OFFICERNOTE_EDITLABEL" } })
+    + showNote("personalNote", "personalNote", "GUILD_NOTE_EDITLABEL")
+    + showNote("officerNote", "officerNote", "GUILD_OFFICERNOTE_EDITLABEL")
   WFJ.Render.updateBanner(SURFACE)
   return n
+end
+
+-- The guild info tab's player-written text: the MOTD (a SimpleHTML, guildinfo.xml:176), the guild information (the
+-- details scroll frame's child has no key of its own, xml:251–265) and the box both are edited in (xml:328).
+local function playerText()
+  local P = WFJ.PlayerText
+  P.each(P.follow, { INFO .. ".MOTDScrollFrame.MOTD" })
+  P.each(function(scroll)
+    local child = type(scroll.GetScrollChild) == "function" and scroll:GetScrollChild() or nil
+    if type(child) == "table" then P.follow(child.Details) end
+  end, { INFO .. ".DetailsFrame" })
+  P.each(P.box, { "CommunitiesGuildTextEditFrame.Container.ScrollFrame.EditBox" })
 end
 
 -- hooksecurefunc target (CommunitiesGuildInfoFrame_UpdateChallenges). → 1 | 0
@@ -195,6 +221,7 @@ function Communities.setup()
   WFJ.Labels.title(SURFACE, get("frame"), TITLE)
   if hooked then return false end
   hooked = true
+  playerText()
   local memberList = get("memberList")
   if type(memberList) == "table" and type(memberList.UpdateMemberCount) == "function" then
     hooksecurefunc(memberList, "UpdateMemberCount", Communities.onCount)
