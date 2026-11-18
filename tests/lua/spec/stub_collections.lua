@@ -93,6 +93,7 @@ local function buildMounts(parent)
   m.MountCount = countBox("MountCount", "TOTAL_MOUNTS")
   m.MountButton = Stub.button("MountJournalMountButton", en("MOUNT"))
   m.searchBox = frame("EditBox", "MountJournalSearchBox")
+  m.searchBox.Instructions = fs(en("SEARCH")) -- the placeholder, a label of its own
   m.FilterDropdown = dropdown("FilterDropdown", en("FILTER"))
   local display = frame("Frame", nil, "MountDisplay")
   m.MountDisplay = display
@@ -312,6 +313,7 @@ C.UI = {
   NEW_CAPS = { "NEW", "新規" }, FILTER = { "Filter", "フィルター" },
   HEIRLOOMS_CATEGORY_HEAD = { "Head", "頭" }, HEIRLOOMS_CATEGORY_WEAPON = { "Weapons", "武器" },
   HEIRLOOMS_PVP = { "PvP", "PvP戦" },
+  SEARCH = { "Search", "検索" },
   TOTAL_MOUNTS = { "Total Mounts", "マウント総数" }, MOUNT = { "Mount", "騎乗" }, UNWRAP = { "Unwrap", "開封" },
   BINDING_NAME_DISMOUNT = { "Dismount", "降りる" },
   MOUNT_UNWRAP_TOOLTIP = { "Open to receive your new mount.", "開封して新しいマウントを受け取ります。" },

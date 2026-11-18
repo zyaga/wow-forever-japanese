@@ -9032,6 +9032,11 @@ AchievementTitle:62032  # Experienced Spelunker (+1)
 AchievementTitle:62033  # Master Spelunker (+1)
 AchievementTitle:62034  # Conquerer of the Wilds (+1)
 AchievementTitle:62035  # Conquerer of the Deeps (+1)
+AchievementTitle:62041  # Rank 3: a challenge card's label in the challenge list
+AchievementTitle:62042  # Rank 7: a challenge card's label in the challenge list
+AchievementTitle:62043  # Rank 10: a challenge card's label in the challenge list
+AchievementTitle:62044  # Rank 13: a challenge card's label in the challenge list
+AchievementTitle:62045  # Rank 14: a challenge card's label in the challenge list
 AchievementTitle:62046  # Master of Alterac Valley (+1)
 AchievementTitle:62047  # Master of Arathi Basin (+1)
 AchievementTitle:62048  # Master of Warsong Gulch (+1)

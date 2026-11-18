@@ -153,7 +153,9 @@ local TITLE_KEYS = {
   RAID_LOCKOUT = { any = "CALENDAR_EVENTNAME_FORMAT_RAID_LOCKOUT", button = true },
   RAID_RESET = { any = "CALENDAR_EVENTNAME_FORMAT_RAID_RESET", button = true },
 }
-local HOLIDAY = { only = { "CALENDAR_HOLIDAYFRAME_BEGINSENDS" } }
+-- the holiday view's text: the description inside the begins / ends template, or, for a holiday with no start or
+-- end time, the description alone (lua:2477–2482). The opts are built per index (Labels.familiesWith).
+local HOLIDAY_KEYS = { "CALENDAR_HOLIDAYFRAME_BEGINSENDS" }
 local RAID = { only = { "CALENDAR_RAID_LOCKOUT_DESCRIPTION", "CALENDAR_RAID_RESET_DESCRIPTION" } }
 local CANDIDATES = {
   frame = { "CalendarFrame" }, filter = { "CalendarFrame.FilterButton" }, month = { "CalendarMonthName" },
@@ -421,7 +423,7 @@ end
 -- GetText and is not a button.
 function Calendar.onHoliday()
   local fs, refit = WFJ.Labels.scrolling(get("holiday"))
-  return WFJ.Labels.show(SURFACE, "holiday", fs, refit, HOLIDAY)
+  return WFJ.Labels.show(SURFACE, "holiday", fs, refit, WFJ.Labels.familiesWith(HOLIDAY_KEYS, "HolidayDescription"))
 end
 
 function Calendar.onRaid()
