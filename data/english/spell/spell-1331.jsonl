@@ -1,1 +1,13 @@
-{"id": 1331408, "field": "name", "en": "Update Interactions", "hash": "4f1abef90f8abe56", "src": "db2@1.60.1.70938"}
+{"id": 1331318, "field": "name", "en": "Smash", "hash": "bfa6c905fc6a3a62", "src": "db2@1.60.1.70959"}
+{"id": 1331318, "field": "description", "en": "Smashes the ground, inflicting $s1 damage to nearby enemies.", "hash": "5f3f516bb94830de", "src": "db2@1.60.1.70959"}
+{"id": 1331324, "field": "name", "en": "Mark of Flames", "hash": "1ea717568af78119", "src": "db2@1.60.1.70959"}
+{"id": 1331324, "field": "description", "en": "Increases the Fire damage taken by an enemy by $s1 for $d.", "hash": "47f59a65200f1538", "src": "db2@1.60.1.70959"}
+{"id": 1331324, "field": "aura", "en": "Fire damage dealt is increased by $s1.", "hash": "6062b330df142f04", "src": "db2@1.60.1.70959"}
+{"id": 1331408, "field": "name", "en": "Update Interactions", "hash": "4f1abef90f8abe56", "src": "db2@1.60.1.70959"}
+{"id": 1331671, "field": "name", "en": "Resting", "hash": "0ebee6536cdf344b", "src": "db2@1.60.1.70959"}
+{"id": 1331671, "field": "description", "en": "Resting.", "hash": "8bafdccab782f187", "src": "db2@1.60.1.70959"}
+{"id": 1331671, "field": "aura", "en": "Resting.", "hash": "8bafdccab782f187", "src": "db2@1.60.1.70959"}
+{"id": 1331725, "field": "name", "en": "Camper's Lure", "hash": "a68710b03bd13de0", "src": "db2@1.60.1.70959"}
+{"id": 1331725, "field": "description", "en": "When applied to your fishing pole, increases Fishing by $ec1 for 5 minutes.", "hash": "026590ab494bdaf9", "src": "db2@1.60.1.70959"}
+{"id": 1331727, "field": "name", "en": "Fishing Skill +60", "hash": "78d65a0d206cc147", "src": "db2@1.60.1.70959"}
+{"id": 1331727, "field": "description", "en": "Increased Fishing +$s1.", "hash": "325349e2fba78797", "src": "db2@1.60.1.70959"}
