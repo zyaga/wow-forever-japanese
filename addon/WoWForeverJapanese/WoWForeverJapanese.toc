@@ -2415,6 +2415,7 @@ UI\Friends.lua
 UI\FriendsTooltip.lua
 UI\Communities.lua
 UI\CommunitiesKit.lua
+UI\SocialUI.lua
 UI\CommunitiesFrame.lua
 UI\CommunitiesGuild.lua
 UI\ClubFinder.lua
