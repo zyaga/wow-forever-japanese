@@ -46,6 +46,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/TextWatch.lua", "UI/TaintWatch.lua",  # ADR-058: text followed from our own frame, the taint watch
         "UI/HtmlText.lua",
         "UI/PlayerText.lua",  # a player's own text in the bundled face, after the font and the HTML adapter
+        "UI/IconPicker.lua",  # the labels every name-and-icon popup shares, before the windows that have one
         "UI/LoadOnDemand.lua",
         "UI/HelpTooltip.lua", "UI/TooltipData.lua",
         # ADR-030: shared helpers

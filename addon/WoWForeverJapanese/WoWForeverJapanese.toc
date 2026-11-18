@@ -2393,6 +2393,7 @@ UI\TextWatch.lua
 UI\TaintWatch.lua
 UI\HtmlText.lua
 UI\PlayerText.lua
+UI\IconPicker.lua
 UI\LoadOnDemand.lua
 UI\HelpTooltip.lua
 UI\TooltipData.lua

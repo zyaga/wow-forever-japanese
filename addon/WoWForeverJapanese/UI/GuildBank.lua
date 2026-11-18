@@ -238,6 +238,7 @@ function GuildBank.setup()
   end
   registerTabs(frame)
   hookLog()
+  WFJ.IconPicker.setup(SURFACE, Compat.resolve("GuildBankPopupFrame"))
   if type(frame.IsShown) == "function" and frame:IsShown() then GuildBank.show() end
   return true
 end

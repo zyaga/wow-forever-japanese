@@ -314,6 +314,7 @@ function Character.init()
   end
   local popup = get("gearPopup")
   if type(popup) == "table" then
+    WFJ.IconPicker.setup(SURFACE, popup)
     if type(popup.SetSelectedIconText) == "function" then
       hooksecurefunc(popup, "SetSelectedIconText", Character.onIconText)
     end

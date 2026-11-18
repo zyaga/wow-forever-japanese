@@ -106,6 +106,7 @@ local function loadCommunities()
       row.Zone = fs() -- a place, or the client's line for a member who is not online (lua:1293–1303)
       row.Rank = fs() -- the rank's name (lua:1313)
       row.CancelInvitationButton = CreateFrame("Button")
+      function row:RefreshExpandedColumns() self.Zone.text = self.zoneNow end -- the client's rewrite (lua:1242)
       C.rows[i] = row
     end
     list.ScrollBox:initFrame(row, data, C.initEntry)
@@ -362,6 +363,9 @@ describe("the Communities guild view on Forever", function()
           WFJ.Communities.onRosterRow(row)
           assert.are.equal(ja, row.Zone:GetText())
         end
+        row.zoneNow = "< an hour" -- rewritten by the client with no new initialization of the row
+        row:RefreshExpandedColumns()
+        assert.are.equal("1時間未満", row.Zone:GetText())
         local stream = _G.CommunitiesFrame.StreamDropdown
         stream.Text.text = "|cff40ff40Guild|r" -- as the client writes it: the name in the channel's chat colour
         stream:UpdateText()

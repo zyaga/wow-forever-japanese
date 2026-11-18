@@ -189,5 +189,7 @@ function Bank.init()
   hooked = true
   Bank.showStatic()
   hookWriters(frame)
+  local panel = frame.BankPanel
+  WFJ.IconPicker.setup(SURFACE, type(panel) == "table" and panel.TabSettingsMenu or nil)
   return true
 end

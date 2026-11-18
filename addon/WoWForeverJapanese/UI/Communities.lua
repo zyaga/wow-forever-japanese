@@ -131,6 +131,11 @@ local ENTRY_TOOLTIP = { only = { "COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT",
 local CANCEL_TOOLTIP = { only = { "COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP" } }
 local INVITE_HEADER = { only = { "COMMUNITIES_MEMBER_LIST_PENDING_INVITE_HEADER" } }
 
+local zoneHooked = setmetatable({}, { __mode = "k" })
+local function showZone(row)
+  if type(row.Zone) == "table" then WFJ.Labels.show(SURFACE, zoneKey(row.Zone), row.Zone, nil, ROW_PRESENCE) end
+end
+
 -- One pooled roster entry after its initializer ran (ScrollUtil's initialized-frame callback: (owner, frame,
 -- elementData) for a new entry, (frame, elementData) for the iterateExisting pass). Returns nothing: ForEachFrame stops
 -- at the first truthy return (see UI/Raid.onRow).
@@ -143,7 +148,13 @@ function Communities.onRosterRow(a, b)
   WFJ.HelpTooltip.register(row, ENTRY_TOOLTIP)
   local cancel = row.CancelInvitationButton
   if type(cancel) == "table" then WFJ.HelpTooltip.register(cancel, CANCEL_TOOLTIP) end
-  if type(row.Zone) == "table" then WFJ.Labels.show(SURFACE, zoneKey(row.Zone), row.Zone, nil, ROW_PRESENCE) end
+  -- the client rewrites the columns without initializing the row again (RefreshExpandedColumns, lua:1242, from
+  -- SetExpanded and the member events), so the Zone line is shown after each rewrite as well
+  if not zoneHooked[row] and type(row.RefreshExpandedColumns) == "function" then
+    zoneHooked[row] = true
+    hooksecurefunc(row, "RefreshExpandedColumns", showZone)
+  end
+  showZone(row)
   WFJ.PlayerText.follow(row.Note) -- the member's note (communitiesmemberlist.lua:1320)
   WFJ.PlayerText.follow(row.Rank) -- the rank's name, written by the guild master (lua:1313)
 end
