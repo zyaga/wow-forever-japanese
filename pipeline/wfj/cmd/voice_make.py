@@ -379,13 +379,35 @@ def cast_rows(root: Path, cfg: dict[str, Any], today: str) -> list[dict[str, Any
     return rows
 
 
+def cast_changes(before: dict[int, dict[str, str]], rows: list[dict[str, Any]]) -> list[str]:
+    """Every speaker whose voice is not the one the last cast gave it, one line each: the lines it speaks are
+    made again in the new voice, so a cast that moves a voice says so. A voice moves when Spoken's newest corpus
+    names a set for a speaker cast by the project's own rows before, or names another set."""
+    out = []
+    for r in sorted(rows, key=lambda r: int(r["creature"])):
+        old = before.get(int(r["creature"]))
+        if old is None:
+            continue
+        was, now = (old.get("voice"), old.get("female")), (r.get("voice"), r.get("female"))
+        if was != now:
+            out.append(f"{r['creature']}: {old.get('voice')} ({old.get('row')}) → {r.get('voice')} ({r.get('row')})")
+    return out
+
+
 def run_cast(cfg: dict[str, Any], root: Path) -> int:
+    path = root / "voice" / "voices.jsonl"
+    before = read_cast(root) if path.exists() else {}
     rows = cast_rows(root, cfg, datetime.date.today().isoformat())
-    _write(root / "voice" / "voices.jsonl", rows)
+    _write(path, rows)
     by_row = Counter(r["row"] for r in rows)
     print(f"voice cast: {len(rows)} creatures → data/voice/voices.jsonl")
     for name, n in by_row.most_common():
         print(f"voice cast: {n:5d}  {name}")
+    changed = cast_changes(before, rows)
+    if changed:
+        print(f"voice cast: {len(changed)} speaker(s) changed voice since the last cast; their lines are made again:")
+        for line in changed:
+            print(f"voice cast:   {line}")
     return 0
 
 
