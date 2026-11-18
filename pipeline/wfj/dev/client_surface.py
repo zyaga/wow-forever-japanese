@@ -1226,8 +1226,10 @@ end
 SLASH_WFJOPEN1 = "/wfjopen"
 SlashCmdList.WFJOPEN = WFJScanOpenSweep
 
--- The whole window test (`/wfjtest`): the live sweep, then the open sweep, then one done line. `probe.test`
--- holds when it ran and on which build, so a result read later is known to be a whole run of that build.
+-- The whole window test (`/wfjtest`): the load walk, the live sweep, then one done line. `probe.test` holds when
+-- it ran and on which build, so a result read later is known to be a whole run of that build. The open sweep is
+-- not part of it: a window shown bare runs its scripts with none of the data the client gives it, and each raises
+-- an error (and can taint the frames it touches) on the character the test runs on. `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
 local testRunning = false
 SlashCmdList.WFJTEST = function(how)
@@ -1252,6 +1254,32 @@ SlashCmdList.WFJTEST = function(how)
   seterrorhandler(grab)
   -- an error-catching addon can keep the handler to itself: the run then sees no error at all, and says so
   if geterrorhandler() ~= grab then db.test.handler = "another addon keeps the error handler" end
+  -- BugGrabber is that addon for most players: it sets its own handler, makes seterrorhandler do nothing
+  -- (BugGrabber.lua:573-574) and keeps every error, warning and refused action in a list other addons may read
+  -- (GetDB, each entry with its message, stack and a counter, :455-466). The counters before the run are kept, so
+  -- what the run added is known when it ends.
+  local grabber = type(BugGrabber) == "table" and BugGrabber or nil
+  local function grabbed()
+    local ok, list = pcall(function() return grabber:GetDB() end)
+    return ok and type(list) == "table" and list or nil
+  end
+  local before = {}
+  for _, e in ipairs(grabber and grabbed() or {}) do
+    if type(e) == "table" then before[tostring(e.message)] = tonumber(e.counter) or 1 end
+  end
+  local function readGrabbed()
+    local list = grabber and grabbed()
+    if not list then return end
+    for _, e in ipairs(list) do
+      local added = type(e) == "table" and (tonumber(e.counter) or 1) - (before[tostring(e.message)] or 0) or 0
+      if added > 0 then
+        local where = tostring(e.stack or ""):match("[^\\n]+") or ""
+        local key = "[grabbed] " .. tostring(e.message):sub(1, 300) .. " @ " .. where:sub(1, 140)
+        db.test.errors[key] = (db.test.errors[key] or 0) + added
+      end
+    end
+    db.test.handler = nil -- the errors were watched after all
+  end
   local watcher = CreateFrame("Frame")
   watcher:RegisterEvent("ADDON_ACTION_BLOCKED")
   watcher:RegisterEvent("ADDON_ACTION_FORBIDDEN")
@@ -1269,14 +1297,14 @@ SlashCmdList.WFJTEST = function(how)
   WFJScanWalk(function()
     db.test.part = "live"
     WFJScanLiveSweep(function()
-      db.test.part = "open"
-      WFJScanOpenSweep(function()
-        seterrorhandler(shown)
-        watcher:UnregisterAllEvents()
-        testRunning = false
-        db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
-        print("WFJ test done: /reload to save, then the result can be read")
-      end)
+      db.opened = nil -- an earlier run's bare-window list is not this run's
+      db.test.part = "done"
+      seterrorhandler(shown)
+      watcher:UnregisterAllEvents()
+      readGrabbed()
+      testRunning = false
+      db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
+      print("WFJ test done: /reload to save, then the result can be read")
     end)
   end)
 end

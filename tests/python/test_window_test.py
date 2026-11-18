@@ -299,3 +299,24 @@ WFJScanDB = {
 """
     _info, found = client_surface.read_window_test(saved)
     assert client_surface.window_test_report(found, {})[0] == ["guild pages\t(did not open)"]
+
+
+def test_the_test_shows_no_window_bare_and_reads_the_error_catchers_list():
+    lua = client_surface.TEXT_LUA
+    run = lua[lua.index("SlashCmdList.WFJTEST = function(how)"):]
+    assert "WFJScanOpenSweep" not in run  # a window shown bare errors on the character the test runs on
+    assert "SlashCmdList.WFJOPEN = WFJScanOpenSweep" in lua  # still there to run alone
+    assert "db.opened = nil" in run  # an earlier run's bare-window list is not read as this run's
+    assert "grabber:GetDB()" in run and "readGrabbed()" in run
+    # what the run added: the counter after, less the counter before it started
+    assert '(tonumber(e.counter) or 1) - (before[tostring(e.message)] or 0)' in run
+    saved = """
+WFJScanDB = {
+["probe"] = {
+["test"] = { ["started"] = "a", ["finished"] = "b", ["build"] = "70959", ["blocked"] = { },
+  ["errors"] = { ["[grabbed] TutorialFrame.lua:338: Usage: GetPrevCompleatedTutorial @ [TutorialFrame.lua]:338"] = 6 } },
+},
+}
+"""
+    assert client_surface.read_test_problems(saved) == [
+        "error x6: [grabbed] TutorialFrame.lua:338: Usage: GetPrevCompleatedTutorial @ [TutorialFrame.lua]:338"]
