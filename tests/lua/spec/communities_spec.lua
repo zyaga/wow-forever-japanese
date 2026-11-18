@@ -100,6 +100,7 @@ local function loadCommunities()
       row = CreateFrame("Button")
       row.NameFrame = { Name = fs() }
       row.Note = fs() -- the member's note (communitiesmemberlist.lua:1320)
+      row.Rank = fs() -- the rank's name (lua:1313)
       row.CancelInvitationButton = CreateFrame("Button")
       C.rows[i] = row
     end
@@ -305,7 +306,9 @@ describe("the Communities guild view on Forever", function()
         assert.are.equal(face, C.editBox.font.path)
         for _, on in ipairs({ true, false }) do
           WFJ.State.enabled = on
-          for _, w in ipairs({ info.MOTDScrollFrame.MOTD, info.DetailsFrame.child.Details, row.Note }) do
+          local rankText = _G.CommunitiesFrame.GuildMemberDetailFrame.RankText
+          for _, w in ipairs({ info.MOTDScrollFrame.MOTD, info.DetailsFrame.child.Details, row.Note, row.Rank,
+            rankText }) do
             w:SetText("今夜9時にレイドです")
             assert.are.equal(face, w.font.path)
             assert.are.equal("今夜9時にレイドです", w:GetText())

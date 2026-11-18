@@ -171,10 +171,17 @@ end
 local newsKey = WFJ.Labels.keyer("news.")
 
 -- GuildNewsButton_SetText post-hook: an event row's text (GUILD_EVENT_FORMAT only). → 1 | 0
+-- Every other row is left as written; one of them holds the guild's message of the day (GuildNewsButton_SetMOTD,
+-- blizzard_framexml/guildutil.lua:46–49), a player's own text, which wears the bundled face while it holds
+-- Japanese (UI/PlayerText). The font a row was given comes off first: the rows are pooled, and an event row's
+-- record must hold the row's own font.
 function CommunitiesGuild.onNews(button)
   local fs = type(button) == "table" and button.text or nil
   if type(fs) ~= "table" then return 0 end
-  return k.show(newsKey(fs), fs, NEWS)
+  WFJ.Font.restore(fs)
+  local n = k.show(newsKey(fs), fs, NEWS)
+  if n == 0 then WFJ.PlayerText.shown(fs) end
+  return n
 end
 
 -- CommunitiesGuildTextEditFrame_SetType post-hook. → 1 | 0

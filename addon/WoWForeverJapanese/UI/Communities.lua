@@ -40,8 +40,9 @@
 --     CancelInvitationButton's tooltip COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP (communitiesmemberlist.xml:67–71).
 --   The extra guild column CLUB_FINDER_APPLICANTS is a roster header (EXTRA_GUILD_COLUMNS, lua:168–171).
 -- Never touched: member names, ranks, zones, notes, the MOTD and guild info text, guild names.
--- Their font only (UI/PlayerText): the MOTD, the guild info text, a member's two notes and a roster row's note wear
---   the bundled face while they hold Japanese; the box the MOTD and the info text are edited in always does.
+-- Their font only (UI/PlayerText): the MOTD, the guild info text, a member's two notes and rank, and a roster
+--   row's note and rank wear the bundled face while they hold Japanese; the box the MOTD and the info text are
+--   edited in always does.
 local _, WFJ = ...
 local Communities = {}
 WFJ.Communities = Communities
@@ -132,6 +133,7 @@ function Communities.onRosterRow(a, b)
   local cancel = row.CancelInvitationButton
   if type(cancel) == "table" then WFJ.HelpTooltip.register(cancel, CANCEL_TOOLTIP) end
   WFJ.PlayerText.follow(row.Note) -- the member's note (communitiesmemberlist.lua:1320)
+  WFJ.PlayerText.follow(row.Rank) -- the rank's name, written by the guild master (lua:1313)
 end
 
 -- The labels the client writes once at load. → the number of dictionary words found.
@@ -194,7 +196,7 @@ end
 -- details scroll frame's child has no key of its own, xml:251–265) and the box both are edited in (xml:328).
 local function playerText()
   local P = WFJ.PlayerText
-  P.each(P.follow, { INFO .. ".MOTDScrollFrame.MOTD" })
+  P.each(P.follow, { INFO .. ".MOTDScrollFrame.MOTD", DETAIL .. ".RankText" }) -- RankText: guildroster.lua:148
   P.each(function(scroll)
     local child = type(scroll.GetScrollChild) == "function" and scroll:GetScrollChild() or nil
     if type(child) == "table" then P.follow(child.Details) end

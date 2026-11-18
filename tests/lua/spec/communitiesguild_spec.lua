@@ -121,6 +121,14 @@ describe("the guild info texts of the Communities window", function()
     alt(false)
     _G.GuildNewsButton_SetText(button, {}, "%s", "Guild") -- another news row: a name, never matched
     assert.are.equal("Guild", button.text:GetText())
+    -- the message of the day row (GuildNewsButton_SetMOTD): the player's text, in the bundled face while it holds
+    -- Japanese, as written; the same pooled row drawn again without Japanese has its own font back
+    local own = button.text.font.path
+    _G.GuildNewsButton_SetText(button, {}, "MotD: %s", "ようこそ！Welcome!")
+    assert.are.equal("MotD: ようこそ！Welcome!", button.text:GetText())
+    assert.are.equal(WFJ.Font.PATH, button.text.font.path)
+    _G.GuildNewsButton_SetText(button, {}, "MotD: %s", "Welcome!")
+    assert.are.equal(own, button.text.font.path)
   end)
 
   it("the text-edit dialog's title follows its type", function()
