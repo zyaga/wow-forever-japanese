@@ -1,0 +1,5 @@
+# The English lines a Forever window may keep on screen, each with why (a name, or a line a module leaves as
+# written). `make window-test` fails on a line the window test finds that is not here.
+# One per line, tab-separated: <window>	<English>	<reason>. A window is named as the test lists it. A line
+# allowed for a window is allowed on each of its pages. A line in a window the open sweep showed never fails
+# the check (it is listed to read against the code).

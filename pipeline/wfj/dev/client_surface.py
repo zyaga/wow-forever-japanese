@@ -3,7 +3,8 @@
     python -m wfj.dev.client_surface build --addon <addon dir> --out surface-manifest.json
     python -m wfj.dev.client_surface probe --manifest surface-manifest.json --out <dir>/WFJScanProbe.lua
     python -m wfj.dev.client_surface report --manifest surface-manifest.json --probe <saved WFJScan.lua> \
-        [--source <dir of extracted client UI>] --out verdicts.json
+        [--source <dir of extracted client UI> [--game standard]] \
+        [--reference <the other client's extract> --reference-game camelot] --out verdicts.json
 
 `build` reads the addon's Lua and lists every client name it needs, so the list cannot go stale by hand:
 
@@ -46,7 +47,10 @@ import json
 import re
 import sys
 from pathlib import Path
+from collections.abc import Iterable
 from typing import Any
+
+from wfj.dev import client_addons
 
 SKIP_DIRS = ("Data",)  # generated shards: translated text, not code
 # UI modules with no window of their own (key capture, the reveal binding, slash commands, the
@@ -310,14 +314,22 @@ def summary(manifest: dict[str, Any]) -> list[str]:
     return lines
 
 
+def partial(name: str) -> bool:
+    """A name that starts or ends with a dot (`.BackButton`, `InspectPVPFrame.MainInfoFrame.`): one piece of a
+    longer name the surface joins at run time (`LISTING .. ".BackButton"`). There is no global of that name to
+    ask a client for."""
+    return name.startswith(".") or name.endswith(".")
+
+
 def probe_names(manifest: dict[str, Any]) -> list[tuple[str, str]]:
     """(kind, name) to ask the client about, deduped. A dynamic entry has no name to ask for, and a `method`
     entry is a method on an object (`hooksecurefunc(frame, "Update")`); asking `_G` for it means nothing, so
-    it is reported from its surface's own verdict instead."""
+    it is reported from its surface's own verdict instead. A piece of a longer name is left out for the same
+    reason."""
     out: list[tuple[str, str]] = []
     seen: set[tuple[str, str]] = set()
     for e in manifest["entries"]:
-        if not e.get("name") or e["kind"] == "method":
+        if not e.get("name") or e["kind"] == "method" or partial(e["name"]):
             continue
         key = (e["kind"], e["name"])
         if key not in seen:
@@ -457,9 +469,771 @@ SlashCmdList["WFJPROBE"] = function(arg)
 end
 """
 
-def probe_lua(manifest: dict[str, Any]) -> str:
+WALK_LUA = """
+-- The load walk. After login, outside combat, it asks the client to load each load-on-demand Blizzard addon a
+-- surface waits for, a few per frame, so every surface sets up in one session without its window being opened
+-- by hand. It opens nothing. The client's answer per addon is saved under `probe.walk`. On a client people play
+-- on it does not run at login: the window test runs it first (`WFJScanWalk`).
+local WALK = { %s }
+local AT_LOGIN = %s
+local PER_FRAME = 3
+local walker = CreateFrame("Frame")
+local nextAt = 1
+local walked, afterWalk = false, nil
+
+local function probeDb()
+  local db = type(WFJScanDB) == "table" and WFJScanDB.probe
+  if type(db) ~= "table" then db = sweep() end
+  db.walk = db.walk or {}
+  db.readings = db.readings or {}
+  return db
+end
+
+local function walk()
+  if InCombatLockdown() then return end
+  local db = probeDb()
+  for _ = 1, PER_FRAME do
+    local addon = WALK[nextAt]
+    if not addon then
+      walker:SetScript("OnUpdate", nil)
+      walked = true
+      print("WFJ probe: load walk done, " .. #WALK .. " addons; /reload to save")
+      if afterWalk then
+        local go = afterWalk
+        afterWalk = nil
+        go()
+      elseif WFJScanTextSweep then
+        WFJScanTextSweep()
+      end
+      return
+    end
+    nextAt = nextAt + 1
+    if C_AddOns.IsAddOnLoaded(addon) then
+      db.walk[addon] = "already loaded"
+    else
+      local ok, loaded, reason = pcall(C_AddOns.LoadAddOn, addon)
+      db.walk[addon] = (ok and loaded) and "loaded" or ("refused: " .. (ok and tostring(reason) or "error"))
+    end
+  end
+end
+
+-- Runs the walk when it has not run, then `done`.
+function WFJScanWalk(done)
+  if walked then return done() end
+  afterWalk = done
+  walker:SetScript("OnUpdate", walk)
+end
+
+-- What the client restricts for addon code, written down where the player happens to be: the instance type
+-- and the map id are part of each record's name, so the open world and a dungeon keep separate answers.
+local function reading(what, fn)
+  local ok, value = pcall(fn)
+  local _, instance = IsInInstance()
+  local place = tostring(instance) .. " map " .. tostring(C_Map.GetBestMapForUnit("player"))
+  probeDb().readings[what .. " @ " .. place] = ok and tostring(value) or "no such API"
+end
+
+walker:RegisterEvent("PLAYER_ENTERING_WORLD")
+walker:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+walker:RegisterEvent("PLAYER_TARGET_CHANGED")
+walker:RegisterEvent("QUEST_DETAIL")
+local started = false
+walker:SetScript("OnEvent", function(self, event)
+  if event == "PLAYER_TARGET_CHANGED" then
+    if UnitExists("target") and not UnitIsPlayer("target") then
+      reading("npc identity secret", function() return C_Secrets.ShouldUnitIdentityBeSecret("target") end)
+    end
+  elseif event == "QUEST_DETAIL" then
+    reading("quest text secret", function() return issecretvalue(GetQuestText()) end)
+  else
+    reading("secret restrictions", function() return C_Secrets.HasSecretRestrictions() end)
+    reading("map restriction", function()
+      return C_RestrictedActions.GetAddOnRestrictionState(Enum.AddOnRestrictionType.Map)
+    end)
+    if not started and AT_LOGIN then
+      started = true
+      self:SetScript("OnUpdate", walk)
+    end
+  end
+end)
+"""
+
+
+# Addons the walk never loads: the event log opens its window and starts recording as soon as it loads.
+WALK_SKIP = frozenset({"Blizzard_EventTrace"})
+
+
+TEXT_LUA = """
+-- The text sweep. After the load walk it reads every frame's text regions and writes down each one that still
+-- holds an English line the dictionary has Japanese for, with the region's name, under `probe.english`. A window
+-- the addon reaches shows Japanese there, so what is listed is text no surface touched. `/wfjtext` runs it again
+-- (with a window open, to read what that window writes when it shows).
+local ENGLISH = {
+%s
+}
+local PER_TICK = 400
+local sweeper = CreateFrame("Frame")
+
+function WFJScanTextSweep()
+  local db = probeDb()
+  db.english = {}
+  local found, seen = 0, 0
+  local frame = EnumerateFrames()
+  sweeper:SetScript("OnUpdate", function()
+    for _ = 1, PER_TICK do
+      if not frame then
+        sweeper:SetScript("OnUpdate", nil)
+        print("WFJ probe: text sweep done, " .. found .. " English lines in " .. seen .. " frames; /reload to save")
+        return
+      end
+      seen = seen + 1
+      pcall(function()
+        if frame:IsForbidden() then return end
+        for _, region in ipairs({ frame:GetRegions() }) do
+          if region:GetObjectType() == "FontString" then
+            local text = region:GetText()
+            if type(text) == "string" and not (issecretvalue and issecretvalue(text)) then
+              local plain = (text:gsub("|c%%x%%x%%x%%x%%x%%x%%x%%x", ""):gsub("|r", ""))
+              if ENGLISH[plain] then
+                local rec = db.english[plain] or { n = 0, at = {} }
+                rec.n = rec.n + 1
+                if #rec.at < 3 then
+                  rec.at[#rec.at + 1] = tostring(region:GetDebugName()) .. (region:IsVisible() and " (visible)" or "")
+                end
+                db.english[plain] = rec
+                found = found + 1
+              end
+            end
+          end
+        end
+      end)
+      frame = EnumerateFrames(frame)
+    end
+  end)
+end
+
+SLASH_WFJTEXT1 = "/wfjtext"
+SlashCmdList.WFJTEXT = WFJScanTextSweep
+
+-- The live sweep (`/wfjlive`, out of combat). A surface puts its Japanese on from the functions the client runs
+-- when a window opens, so text in a closed window, or in one shown by a bare Show, proves nothing. This opens the
+-- player's main windows one at a time through the client's own toggle functions, reads every text region on screen
+-- (the English ones that have Japanese by name, the Japanese ones as a count), clicks through every tab the window
+-- shows and every tab a page shows in turn, reading each page, and closes the window. A window is saved under its
+-- name and a page under `<window> > <the tab's name>`, in `probe.live`.
+local function plainOf(region)
+  local text = region:GetText()
+  if type(text) ~= "string" or (issecretvalue and issecretvalue(text)) then return nil end
+  return (text:gsub("|c%%x%%x%%x%%x%%x%%x%%x%%x", ""):gsub("|r", ""))
+end
+
+local function spells(name) return function() PlayerSpellsUtil[name]() end end
+local LIVE = {
+  { "character", function() ToggleCharacter("PaperDollFrame") end },
+  { "spellbook", spells("ToggleSpellBookFrame") },
+  { "achievements", function() ToggleAchievementFrame() end },
+  { "map", function() ToggleWorldMap() end },
+  { "quest log", function() ToggleQuestLog() end },
+  { "collections", function() ToggleCollectionsJournal(1) end },
+  { "group finder", function() PVEFrame_ToggleFrame() end },
+  { "dungeon journal", function() ToggleEncounterJournal() end },
+  { "friends", function() ToggleFriendsFrame(1) end },
+  { "guild", function() ToggleGuildFrame() end },
+  { "professions", function() ToggleProfessionsBook() end },
+  { "bags", function() ToggleAllBags() end },
+  { "calendar", function() ToggleCalendar() end },
+  { "help", function() ToggleHelpFrame() end },
+}
+local OPEN_TICKS, CLOSED_TICKS = 45, 12
+
+-- The sweeps read what a player with Japanese on sees: with translation off, or English first, every window is
+-- English and the answer means nothing.
+local function japaneseOn()
+  local settings = type(WFJ_DB) == "table" and WFJ_DB.settings
+  if type(settings) == "table" and (settings.enabled == false or settings.direction == "en") then
+    print("WFJ probe: translation is off (or English first). Turn Japanese on, then run it again")
+    return false
+  end
+  return true
+end
+local opener = CreateFrame("Frame")
+
+local function readScreen()
+  local record = { english = {}, japanese = 0 }
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(function()
+      if frame:IsForbidden() or not frame:IsVisible() then return end
+      for _, region in ipairs({ frame:GetRegions() }) do
+        if region:GetObjectType() == "FontString" and region:IsVisible() then
+          local plain = plainOf(region)
+          if plain and ENGLISH[plain] then
+            record.english[tostring(region:GetDebugName())] = plain
+          elseif plain and plain:find("[\227-\233]") then
+            record.japanese = record.japanese + 1
+          end
+        end
+      end
+    end)
+    frame = EnumerateFrames(frame)
+  end
+  return record
+end
+
+-- What the test clicks in an open window. It finds the buttons itself: every button of the window that is on
+-- screen, enabled, has a click script and is not protected. Two kinds are clicked:
+--   a page switcher by name: a tab (CharacterFrameTab2, CollectionsJournal.MountsTab, PaperDollSidebarTab1,
+--     CommunitiesFrame.RosterTab, or one a tab system made, which carries a tabID) and the group finder's and PvP
+--     window's side buttons (…GroupButton<n>, …CategoryButton<n>);
+--   any other plain button, unless its name or its window says it does something: buys, sells, deletes, sends,
+--     accepts, joins, queues, casts, uses an item, spends a talent, changes a setting. Those words are below; a
+--     button is left alone when the last two parts of its name hold one of ACTS, or any part holds one of AREAS.
+-- A checkbox is never clicked (it changes a setting), nor a button outside the window (the action bars, the chat,
+-- the minimap), nor a menu's entries (a menu is a window of its own).
+local ACTS = { "item", "slot", "bag", "container", "action", "spell", "macro", "loot", "buy", "purchase", "sell",
+  "bid", "post", "auction", "delete", "destroy", "abandon", "leave", "quit", "logout", "exit", "close", "cancel",
+  "accept", "confirm", "okay", "yes", "apply", "save", "send", "invite", "kick", "remove", "disband", "reset",
+  "learn", "train", "upgrade", "craft", "create", "join", "queue", "enter", "start", "summon", "mount", "equip",
+  "use", "refund", "unlock", "activate", "pay", "claim", "collect", "report", "ignore", "block", "friend",
+  "whisper", "share", "sign", "donate", "deposit", "withdraw", "repair", "socket", "enchant", "trade", "mail",
+  "swap", "rename", "promote", "demote", "shop", "store", "checkout", "redeem", "favorite", "wrap", "dismiss",
+  "release", "revive", "heal", "cage", "edit", "unlearn", "respec", "reforge", "scrap", "obliterate", "convert",
+  "transfer", "lock", "ticket", "url", "link", "copy", "import", "export", "move", "pickup", "ready", "role",
+  "vote", "roll", "need", "greed", "pass", "decline", "reject", "resign", "surrender", "forfeit", "concede",
+  "battle", "find", "search", "request", "submit", "publish", "upload", "connect", "login", "sync", "track",
+  "toggle", "summon", "cast", "glyph", "pet", "toy", "heirloom", "transmog", "outfit", "dye", "place", "sort",
+  "clean", "refresh", "new", "add", "set", "pin", "waypoint", "social", "tweet", "screenshot", "photo", "drag" }
+local AREAS = { "talent", "spellbook", "pagedspells", "loadout", "containerframe", "merchant", "auction", "trade",
+  "mailframe", "bankframe", "guildbank", "catalogshop", "storeframe", "macro", "keybind", "binding", "editmode",
+  "settingspanel", "helpframe", "worldmap", "questmap", "toybox", "heirloom", "wardrobe", "transmog", "barber",
+  "petbattle", "stable", "housing", "houseeditor", "voidstorage", "itemupgrade", "scrapping", "reforge",
+  "azerite", "runeforge", "soulbind", "covenant", "garrison", "orderhall", "calendarcreate", "communitiesticket",
+  "clubfinder", "recruitafriend", "channel", "voice", "report", "tooltip", "dropdown", "menu", "chatframe",
+  "chatconfig", "actionbar", "microbutton", "minimap", "objectivetracker", "staticpopup",
+  "achievementframeachievements", "achievementframesummary", "achievementframecomparison", "shield",
+  "titlemanager" }
+
+local ACT = {}
+for _, word in ipairs(ACTS) do ACT[word] = true end
+
+-- The action word a name holds, as one of its own words (CloseButton → close; ScrollTarget holds none), or nil.
+local function act(name)
+  local words = name:gsub("(%%l)(%%u)", "%%1 %%2"):gsub("(%%u)(%%u%%l)", "%%1 %%2"):lower()
+  for word in words:gmatch("%%a+") do
+    if ACT[word] or (word:sub(-1) == "s" and ACT[word:sub(1, -2)]) then return word end
+  end
+  return nil
+end
+
+local function holds(text, words)
+  for _, word in ipairs(words) do
+    if text:find(word, 1, true) then return word end
+  end
+  return nil
+end
+
+-- What the test does with a button, and why: "page" for a page switcher, "button" for another button that is safe
+-- to click, or nil with the reason it is left alone.
+local function verdict(button)
+  local kind = button:GetObjectType()
+  if kind ~= "Button" and kind ~= "CheckButton" then return nil, "not a button" end
+  local name = tostring(button:GetDebugName())
+  if name:find("^ChatFrame%%d") or name:find("ChatConfig", 1, true) or name:find("Tooltip", 1, true) then
+    return nil, "chat or tooltip"
+  end
+  local page = button.tabID ~= nil or name:find("Tab%%d*$") or name:find("GroupButton%%d+$")
+    or name:find("CategoryButton%%d+$")
+  if not button:IsEnabled() then return nil, page and "page, disabled (the page in front, or locked)" or "disabled" end
+  if page then
+    -- the dungeon journal's tabs run a call the client refuses to addon code (it answers with its blocked notice)
+    if name:find("^EncounterJournal") then return nil, "the client refuses this tab to an addon" end
+    return "page"
+  end
+  if kind ~= "Button" then return nil, "a checkbox" end
+  if not button:GetScript("OnClick") then return nil, "no click script" end
+  local lower = name:lower()
+  local area = holds(lower, AREAS)
+  if area then return nil, "area: " .. area end
+  local does = act(name:match("([^.]*%%.?[^.]*)$") or name) -- the last two parts of the name
+  if does then return nil, "act: " .. does end
+  return "button"
+end
+
+local function clickable(button)
+  if not button:IsVisible() then return nil end
+  return (verdict(button))
+end
+
+-- The top-level frames on screen: a window's buttons are the ones under a frame that was not there before it opened.
+local function rootsOnScreen()
+  local roots = {}
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(function()
+      if not frame:IsForbidden() and frame:IsVisible() and frame:GetParent() == UIParent then roots[frame] = true end
+    end)
+    frame = EnumerateFrames(frame)
+  end
+  return roots
+end
+
+local function under(frame, roots)
+  for _ = 1, 40 do
+    if not frame then return false end
+    if roots[frame] then return true end
+    frame = frame:GetParent()
+  end
+  return false
+end
+
+-- What a button shows: its own text, or its first text region's (a list row's label).
+local function caption(button)
+  local text = button:GetText()
+  if type(text) == "string" and text ~= "" then return text end
+  for _, region in ipairs({ button:GetRegions() }) do
+    if region:GetObjectType() == "FontString" then
+      local label = region:GetText()
+      if type(label) == "string" and label ~= "" then return label end
+    end
+  end
+  return ""
+end
+
+-- A button as its place in the window and what it shows now. A list's rows are a few frames the client reuses
+-- for one entry after another, and gives back in any order: the entry is the same wherever it is drawn, so the
+-- row's own address is left out of its name. Rows that show no text count as one.
+local function taken(button)
+  local ok, text = pcall(caption, button)
+  local name = tostring(button:GetDebugName()):gsub("b%%x%%x%%x%%x%%x%%x%%x%%x+", "*")
+  return name .. "|" .. (ok and text or "")
+end
+
+-- A category list longer than its window (the achievement window's): moved down a step so its further rows are
+-- drawn. → true when a list moved.
+local SCROLL_STEP, MAX_SCROLLS = 0.12, 14
+local function scrollOn(roots)
+  local moved = false
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(function()
+      if frame:IsForbidden() or not frame:IsVisible() or type(frame.SetScrollPercentage) ~= "function" then return end
+      if not tostring(frame:GetDebugName()):find("Categories.ScrollBox$") or not under(frame, roots) then return end
+      local at = frame:GetScrollPercentage() or 0
+      if frame:HasScrollableExtent() and at < 0.999 then
+        frame:SetScrollPercentage(math.min(1, at + SCROLL_STEP))
+        moved = true
+      end
+    end)
+    frame = EnumerateFrames(frame)
+  end
+  return moved
+end
+
+-- `/wfjtest tabs` clicks page switchers only: the first run on a client, before the list of other buttons the
+-- test would click (`probe.test.buttons`) has been read.
+local pagesOnly = false
+
+-- The buttons of the open window to click, page switchers first. `skip` holds the ones already taken.
+local function tabsOnScreen(skip, roots)
+  local pages, buttons = {}, {}
+  -- the cheap questions first: the client holds tens of thousands of frames and nearly all are not buttons on screen
+  local function visit(frame)
+    if frame:IsForbidden() then return end
+    local type = frame:GetObjectType()
+    if (type ~= "Button" and type ~= "CheckButton") or not frame:IsVisible() or frame:IsProtected() then return end
+    if roots ~= nil and not under(frame, roots) then return end
+    if skip[taken(frame)] then return end
+    local kind = clickable(frame)
+    if kind then
+      local list = kind == "page" and pages or buttons
+      list[#list + 1] = frame
+    end
+  end
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(visit, frame)
+    frame = EnumerateFrames(frame)
+  end
+  local function byPlace(a, b) -- top to bottom, then left to right
+    local top, other = a:GetTop() or 0, b:GetTop() or 0
+    if math.abs(top - other) > 4 then return top > other end
+    return (a:GetLeft() or 0) < (b:GetLeft() or 0)
+  end
+  pcall(table.sort, pages, byPlace)
+  pcall(table.sort, buttons, byPlace)
+  if not pagesOnly then
+    for _, button in ipairs(buttons) do pages[#pages + 1] = button end
+  end
+  return pages
+end
+
+-- Every button of the open window with what the test decides about it, for reading afterwards: one line each,
+-- `<name> | <what it shows> | <page, button, or why it is left alone>`. Pooled rows of one kind are listed once.
+local MAX_LISTED = 500
+local function listButtons(roots)
+  local out, listed = {}, {}
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(function()
+      if frame:IsForbidden() or not frame:IsVisible() then return end
+      local kind = frame:GetObjectType()
+      if (kind ~= "Button" and kind ~= "CheckButton") or not under(frame, roots) then return end
+      local what, why
+      if frame:IsProtected() then
+        what, why = nil, "protected"
+      else
+        what, why = verdict(frame)
+      end
+      local name = tostring(frame:GetDebugName()):gsub("b%%x%%x%%x%%x%%x%%x%%x%%x+", "*")
+      local ok, text = pcall(caption, frame)
+      local line = name .. " | " .. (ok and text or "") .. " | " .. (what or why or "?")
+      local once = name .. "|" .. (what or why or "?")
+      if #out < MAX_LISTED and (not name:find("*", 1, true) or not listed[once]) then
+        listed[once] = true
+        out[#out + 1] = line
+      end
+    end)
+    frame = EnumerateFrames(frame)
+  end
+  return out
+end
+
+-- A click can raise a confirmation or leave a menu open: both are put away before the next click, unanswered.
+local function putAway()
+  local raised = false
+  for i = 1, 4 do
+    local popup = _G["StaticPopup" .. i]
+    if popup and popup:IsShown() then
+      raised = true
+      pcall(popup.Hide, popup)
+    end
+  end
+  pcall(function() Menu.GetManager():CloseMenus() end)
+  return raised
+end
+
+local TAB_TICKS, MAX_PAGES = 15, 150
+
+local function WFJScanLiveSweep(done)
+  if not japaneseOn() then return end
+  if InCombatLockdown() then
+    print("WFJ probe: the live sweep does not run in combat")
+    return
+  end
+  local db = probeDb()
+  db.live = { ["(nothing open)"] = readScreen() }
+  local idle, idleRoots = {}, rootsOnScreen()
+  for _, tab in ipairs(tabsOnScreen({})) do idle[taken(tab)] = true end
+  db.test = db.test or {}
+  db.test.popups = {}
+  local at, ticks, english, pages = 0, 0, 0, 0
+  local state, queue, seen, window, roots, scrolls = "closed", nil, nil, nil, nil, 0
+  local queued, clicks = {}, 0
+  local function record(name)
+    local screen = readScreen()
+    for _ in pairs(screen.english) do english = english + 1 end
+    db.live[name] = screen
+    pages = pages + 1
+  end
+  -- What is on screen and not clicked yet joins the front of the queue, in screen order: what a click brought up
+  -- (a category's own entries) is clicked next, while it is still shown. `seen` holds what was clicked, so a row
+  -- that scrolled away before its turn is found again when the list brings it back.
+  -- The queue holds entries (a button's place and what it shows), not frames: a list draws one entry in one row
+  -- now and another later, so the row to click is looked up when the entry's turn comes.
+  local function moreTabs()
+    local fresh = {}
+    for _, tab in ipairs(tabsOnScreen(seen, roots)) do
+      local key = taken(tab)
+      if not queued[key] then
+        queued[key] = true
+        fresh[#fresh + 1] = key
+      end
+    end
+    for i = #fresh, 1, -1 do table.insert(queue, 1, fresh[i]) end
+  end
+  -- Every entry drawn now with its button. An entry missing from it is not drawn (it comes back when the list
+  -- scrolls). Read once for a run of entries: reading the client's frames is the slow part.
+  local function drawn()
+    local map = {}
+    for _, tab in ipairs(tabsOnScreen(seen, roots)) do
+      local key = taken(tab)
+      if not map[key] then map[key] = tab end
+    end
+    return map
+  end
+  -- Clicks `tab` when it is still there and still new. A list's rows that are not categories (a mount, a friend)
+  -- are sampled: two of a kind show what a row's page looks like.
+  local function click(key, map)
+    queued[key] = nil
+    local tab = not seen[key] and clicks < MAX_PAGES and map[key] or nil
+    if not tab then error("skip") end
+    -- a run of like buttons: a list's rows (one name but for the row's address) or numbered ones (a calendar's days)
+    local kind = tostring(tab:GetDebugName()):gsub("b%%x%%x%%x%%x%%x%%x%%x%%x+", "*"):gsub("%%d+", "#")
+    if verdict(tab) == "button" and (kind:find("*", 1, true) or kind:find("#", 1, true))
+      and not kind:find("Categor", 1, true) then
+      local sampled = seen["#" .. kind] or 0
+      if sampled >= 2 then error("skip") end
+      seen["#" .. kind] = sampled + 1
+    end
+    seen[key] = true
+    clicks = clicks + 1
+    tab:Click()
+    return tab
+  end
+  opener:SetScript("OnUpdate", function()
+    if InCombatLockdown() then return end
+    ticks = ticks + 1
+    if state == "open" then
+      if ticks < OPEN_TICKS then return end
+      record(window)
+      roots = {}
+      for frame in pairs(rootsOnScreen()) do
+        if not idleRoots[frame] then roots[frame] = true end
+      end
+      db.test.buttons = db.test.buttons or {}
+      db.test.buttons[window] = listButtons(roots)
+      queue, seen, scrolls, queued, clicks = {}, {}, 0, {}, 0
+      for tab in pairs(idle) do seen[tab] = true end
+      moreTabs()
+      state, ticks = "tabs", TAB_TICKS
+      return
+    end
+    if state == "tabs" then
+      if ticks < TAB_TICKS then return end
+      if queue.scrolled then
+        queue.scrolled = nil
+        moreTabs()
+      end
+      if queue.shown then
+        local name = tostring(queue.shown:GetDebugName())
+        record(window .. " > " .. name) -- read before a menu the click opened is put away
+        if putAway() then db.test.popups[name] = true end
+        moreTabs() -- a page can carry buttons of its own
+        queue.shown = nil
+      end
+      local map
+      while queue[1] do -- the entries passed over cost nothing more: the next one is tried at once
+        map = map or drawn()
+        local ok, clicked = pcall(click, table.remove(queue, 1), map)
+        if ok then
+          queue.shown = clicked
+          ticks = 0
+          return
+        end
+      end
+      if scrolls < MAX_SCROLLS and scrollOn(roots) then -- nothing left on screen to click: the list's next rows
+        scrolls = scrolls + 1
+        queue.scrolled = true
+        ticks = 0
+        return
+      end
+      pcall(CloseAllWindows)
+      state, ticks = "closed", 0
+      return
+    end
+    if ticks < CLOSED_TICKS then return end
+    at, ticks = at + 1, 0
+    if not LIVE[at] then
+      opener:SetScript("OnUpdate", nil)
+      print("WFJ probe: live sweep done, " .. #LIVE .. " windows, " .. pages .. " pages, " .. english
+        .. " English lines on screen; /reload to save")
+      if type(done) == "function" then done() end
+      return
+    end
+    window = LIVE[at][1]
+    local ok, err = pcall(LIVE[at][2])
+    if ok then
+      state = "open"
+    else
+      db.live[window] = { refused = tostring(err) }
+    end
+  end)
+end
+
+SLASH_WFJLIVE1 = "/wfjlive"
+SlashCmdList.WFJLIVE = WFJScanLiveSweep
+
+-- The open sweep (`/wfjopen`, out of combat): every closed window that holds an English line the dictionary has
+-- Japanese for is shown, read and hidden again, one at a time. It reaches the windows no key opens (a merchant,
+-- the mail, a garrison table). A window shown this way did not run the client's own opening code, so a surface
+-- that works from that code has not run either: the live sweep is the proof for the windows it covers, and this
+-- one lists the rest to read. Windows that would alarm (a trial's logout timer, the death and movie frames) are
+-- left closed. Saved under `probe.opened`.
+local ALARMING = { "Tooltip", "DropDown", "Cinematic", "Movie", "Trial", "Ghost", "Death", "Logout", "Splash",
+  "StaticPopup", "GMChat", "Survey", "RatingMenu", "Kiosk", "Subscription", "Destiny", "BossBanner", "LevelUp",
+  "Toast", "ReadyCheck", "ReadyPopup", "ReadyDialog", "RoleCheck", "RolePoll", "Invite", "Report", "Behavioral" }
+
+local function windowOf(region)
+  local frame, top = region:GetParent(), nil
+  while frame and frame ~= UIParent and frame ~= WorldFrame do
+    top = frame
+    frame = frame:GetParent()
+  end
+  return top
+end
+
+local function alarming(name)
+  for _, word in ipairs(ALARMING) do
+    if name:find(word, 1, true) then return true end
+  end
+  return false
+end
+
+local shower = CreateFrame("Frame")
+
+local function WFJScanOpenSweep(done)
+  if not japaneseOn() then return end
+  if InCombatLockdown() then
+    print("WFJ probe: the open sweep does not run in combat")
+    return
+  end
+  local db = probeDb()
+  db.opened = {}
+  local groups, order = {}, {}
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(function()
+      if frame:IsForbidden() then return end
+      for _, region in ipairs({ frame:GetRegions() }) do
+        if region:GetObjectType() == "FontString" and not region:IsVisible() then
+          local plain = plainOf(region)
+          local top = plain and ENGLISH[plain] and windowOf(region)
+          local name = top and tostring(top:GetDebugName()) or ""
+          if top and not top:IsForbidden() and not top:IsProtected() and not top:IsShown() and not alarming(name) then
+            if not groups[top] then
+              groups[top] = {}
+              order[#order + 1] = top
+            end
+            table.insert(groups[top], region)
+          end
+        end
+      end
+    end)
+    frame = EnumerateFrames(frame)
+  end
+  local at, wait, still, fixed, hidden = 0, 0, 0, 0, 0
+  local current
+  shower:SetScript("OnUpdate", function()
+    if InCombatLockdown() then return end
+    if current then
+      wait = wait + 1
+      if wait < 4 then return end
+      local record = { still = {}, fixed = 0, hidden = 0 }
+      for _, region in ipairs(groups[current]) do
+        pcall(function()
+          local plain = plainOf(region)
+          if not region:IsVisible() then
+            record.hidden = record.hidden + 1
+            hidden = hidden + 1
+          elseif plain and ENGLISH[plain] then
+            record.still[tostring(region:GetDebugName())] = plain
+            still = still + 1
+          else
+            record.fixed = record.fixed + 1
+            fixed = fixed + 1
+          end
+        end)
+      end
+      db.opened[tostring(current:GetDebugName())] = record
+      pcall(current.Hide, current)
+      current = nil
+      return
+    end
+    at = at + 1
+    current = order[at]
+    wait = 0
+    if not current then
+      shower:SetScript("OnUpdate", nil)
+      print("WFJ probe: open sweep done, " .. #order .. " windows: " .. still .. " still English, " .. fixed
+        .. " Japanese once shown, " .. hidden .. " on pages not showing; /reload to save")
+      if type(done) == "function" then done() end
+      return
+    end
+    if not pcall(current.Show, current) then
+      db.opened[tostring(current:GetDebugName())] = { refused = true }
+      current = nil
+    end
+  end)
+end
+
+SLASH_WFJOPEN1 = "/wfjopen"
+SlashCmdList.WFJOPEN = WFJScanOpenSweep
+
+-- The whole window test (`/wfjtest`): the live sweep, then the open sweep, then one done line. `probe.test`
+-- holds when it ran and on which build, so a result read later is known to be a whole run of that build.
+SLASH_WFJTEST1 = "/wfjtest"
+SlashCmdList.WFJTEST = function(how)
+  if not japaneseOn() or InCombatLockdown() then return end
+  pagesOnly = how == "tabs"
+  local db = probeDb()
+  db.test = { started = date("%%Y-%%m-%%d %%H:%%M:%%S"), build = tostring((select(2, GetBuildInfo()))),
+    errors = {}, blocked = {}, clicks = pagesOnly and "tabs" or "all" }
+  -- every Lua error and every action the client refused an addon while the test runs, each with its count
+  local shown = geterrorhandler()
+  seterrorhandler(function(message)
+    local key = "[" .. tostring(db.test.part) .. "] " .. tostring(message):sub(1, 400)
+    db.test.errors[key] = (db.test.errors[key] or 0) + 1
+    return shown(message)
+  end)
+  local watcher = CreateFrame("Frame")
+  watcher:RegisterEvent("ADDON_ACTION_BLOCKED")
+  watcher:RegisterEvent("ADDON_ACTION_FORBIDDEN")
+  watcher:SetScript("OnEvent", function(_, event, addon, action)
+    local key = "[" .. tostring(db.test.part) .. "] " .. event .. " " .. tostring(addon) .. " " .. tostring(action)
+    db.test.blocked[key] = (db.test.blocked[key] or 0) + 1
+  end)
+  db.test.part = "load"
+  WFJScanWalk(function()
+    db.test.part = "live"
+    WFJScanLiveSweep(function()
+      db.test.part = "open"
+      WFJScanOpenSweep(function()
+        seterrorhandler(shown)
+        watcher:UnregisterAllEvents()
+        db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
+        print("WFJ test done: /reload to save, then the result can be read")
+      end)
+    end)
+  end)
+end
+"""
+
+
+def _lua_string(text: str) -> str:
+    out = text.replace("\\", "\\\\").replace('"', '\\"').replace("\r", "\\r").replace("\n", "\\n")
+    return f'"{out}"'
+
+
+def walk_addons(manifest: dict[str, Any]) -> list[str]:
+    """The load-on-demand Blizzard addons the manifest's surfaces wait for, sorted, less `WALK_SKIP`."""
+    return sorted({addon for e in manifest["entries"] for addon in e.get("lod", ())} - WALK_SKIP)
+
+
+def translated_english(data: Path) -> list[str]:
+    """The English of every interface line that ships Japanese under `data` (none when the folder has no such
+    lines): what the window test looks for on screen."""
+    japanese = {}
+    for path in sorted((data / "ui").glob("*.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            row = json.loads(line) if line.strip() else {}
+            if row.get("ja"):
+                japanese[row["id"]] = row["ja"]
+    out = []
+    for path in sorted((data / "english" / "ui").glob("*.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            row = json.loads(line) if line.strip() else {}
+            # a line whose Japanese is its English (a name) is not English left on screen
+            if row.get("en") and japanese.get(row.get("id"), row["en"]) != row["en"]:
+                out.append(row["en"])
+    return out
+
+
+def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[str] = (),
+              at_login: bool = True) -> str:
     """The probe as one Lua file for the scan dev addon: every manifest name with its surface, checked at
-    login, saved under `WFJScanDB.probe` for `report`."""
+    login, saved under `WFJScanDB.probe` for `report`. With `walk` it also loads every load-on-demand addon a
+    surface waits for and records what the client restricts (`read_walk` reads both back); with `at_login`
+    false that loading waits for the window test."""
     surfaces = {(e["kind"], e["name"]): e["surface"] for e in manifest["entries"] if e.get("name")}
     rows = [f'  {{"{kind}","{name}","{surfaces[(kind, name)]}"}},' for kind, name in probe_names(manifest)]
     probed = set(surfaces.values())
@@ -467,7 +1241,14 @@ def probe_lua(manifest: dict[str, Any]) -> str:
                    if e.get("windowless") and e["surface"] in probed})
     stamp = hashlib.sha256("\n".join(rows).encode("utf-8")).hexdigest()[:12]
     windowless_lua = " ".join(f'["{s}"] = true,' for s in bare)
-    return PROBE_LUA % (stamp, "\n".join(rows), windowless_lua)
+    lua = PROBE_LUA % (stamp, "\n".join(rows), windowless_lua)
+    if walk:
+        lua += WALK_LUA % (", ".join(f'"{addon}"' for addon in walk_addons(manifest)), "true" if at_login else "false")
+        # the English lines that have Japanese: a text region still holding one was reached by no surface
+        lines = sorted({t for t in english if "%" not in t and re.search(r"[A-Za-z]{2}", t)})
+        if lines:
+            lua += TEXT_LUA % "\n".join(f"  [{_lua_string(t)}] = true," for t in lines)
+    return lua
 
 
 # a dotted name of any depth (Enum.TooltipDataType.Item), as `_RESOLVE` and Core/Compat.lua accept
@@ -479,6 +1260,9 @@ _SV_BUILD = re.compile(r'\["build"\]\s*=\s*\{(.*?)\}', re.S)
 _SV_LOADED = re.compile(r'\["loaded"\]\s*=\s*\{(.*?)\n\t?\}', re.S)
 _SV_ASKED = re.compile(r'\["asked"\]\s*=\s*\{(.*?)\n\t?\}', re.S)
 _SV_ASKED_ENTRY = re.compile(r'\["([a-z_0-9.]+)"\]\s*=\s*(\d+)')
+_SV_WALK = re.compile(r'\["walk"\]\s*=\s*\{(.*?)\n\t*\}', re.S)
+_SV_READINGS = re.compile(r'\["readings"\]\s*=\s*\{(.*?)\n\t*\}', re.S)
+_SV_PAIR = re.compile(r'\["([^"]+)"\]\s*=\s*"([^"]*)"')
 
 
 _SV_PROBE = re.compile(r'^\t\["probe"\]\s*=\s*\{\n(.*?)^\t\}', re.M | re.S)
@@ -505,6 +1289,16 @@ def asked_surfaces(text: str) -> dict[str, int] | None:
     return {s: int(n) for s, n in _SV_ASKED_ENTRY.findall(m.group(1))}
 
 
+def read_walk(text: str) -> tuple[dict[str, str], dict[str, str]]:
+    """The probe's load walk (Blizzard addon → the client's answer) and its restriction readings
+    (`<what> @ <instance type> map <id>` → value) out of a saved-variables file. Both empty for a probe made
+    without the walk."""
+    section = probe_section(text)
+    walk, readings = _SV_WALK.search(section), _SV_READINGS.search(section)
+    return (dict(_SV_PAIR.findall(walk.group(1))) if walk else {},
+            dict(_SV_PAIR.findall(readings.group(1))) if readings else {})
+
+
 def read_saved_variables(text: str) -> dict[str, str]:
     """The probe's saved answers (`WFJScanDB.probe`, or an older `WFJProbeDB`) → name → yes / no. The probe
     records what each name *is* (`frame`, `function`, `no`), so anything but `no` counts as present. `build`
@@ -528,20 +1322,103 @@ def read_saved_variables(text: str) -> dict[str, str]:
 
 
 
-def source_hits(source: Path | None, names: list[str]) -> dict[str, str]:
-    """name → the extracted client file it appears in, or "" when absent. No source dir: {}."""
-    if source is None:
-        return {}
-    files = [p for p in source.rglob("*") if p.is_file()]
-    texts = {p: p.read_text(encoding="utf-8", errors="replace") for p in files}
+_WORD = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
+
+
+def _read(files: list[Path]) -> tuple[list[str], dict[str, set[int]]]:
+    """The files' texts, and for each word the indexes of the files that hold it."""
+    texts = [p.read_text(encoding="utf-8", errors="replace") for p in files]
+    holders: dict[str, set[int]] = {}
+    for i, text in enumerate(texts):
+        for word in set(_WORD.findall(text)):
+            holders.setdefault(word, set()).add(i)
+    return texts, holders
+
+
+def _hits(
+    files: list[Path], texts: list[str], holders: dict[str, set[int]], names: list[str]
+) -> dict[str, str]:
     hits: dict[str, str] = {}
     for name in names:
         hits[name] = ""
-        for p, text in texts.items():
-            if re.search(rf"(?<![A-Za-z0-9_]){re.escape(name)}(?![A-Za-z0-9_])", text):
-                hits[name] = p.name
+        words = _WORD.findall(name)
+        if not words:
+            continue
+        # A name can only be in a file that holds every word of it, so the pattern runs on those files alone:
+        # a name no file has costs a set lookup, not a pass over the extract.
+        candidates = set.intersection(*(holders.get(w, set()) for w in words))
+        # a piece that starts with a dot follows its frame (`self.BackButton`), so nothing is asked of what
+        # comes before it
+        before = "" if name.startswith(".") else r"(?<![A-Za-z0-9_])"
+        after = "" if name.endswith(".") else r"(?![A-Za-z0-9_])"
+        pattern = re.compile(before + re.escape(name) + after)
+        for i in sorted(candidates):
+            if pattern.search(texts[i]):
+                hits[name] = files[i].name
                 break
     return hits
+
+
+def _missing(holders: dict[str, set[int]], names: list[str]) -> dict[str, list[str]]:
+    return {name: [w for w in _WORD.findall(name) if w not in holders] for name in names}
+
+
+_PARENT_SUFFIX = re.compile(r"\$parent([A-Za-z0-9_]+)")
+_INHERITS = re.compile(
+    r'CreateFrame\(\s*"[^"]*"\s*,[^,()]*,[^,()]*,\s*"([^"]+)"|CreateFontString\([^,()]*,[^,()]*,\s*"([^"]+)"'
+)
+
+
+def unbuildable(files: list[Path], names: list[str]) -> dict[str, list[str]]:
+    """name → the words of it nothing in `files` can build; a name with none is left out. A word is buildable
+    when a file holds it, or when it is a buildable word followed by a suffix XML writes after `$parent`
+    (`<Button name="$parentCloseButton">` under `JournalFrame` is `JournalFrameCloseButton`). Unlike
+    `missing_words` this needs no second client to compare with, so it can judge a name only this client has:
+    a word it reports is a typo or a guess."""
+    words: set[str] = set()
+    suffixes: set[str] = set()
+    for path in files:
+        text = path.read_text(encoding="utf-8", errors="replace")
+        words.update(_WORD.findall(text))
+        suffixes.update(_PARENT_SUFFIX.findall(text))
+    known: dict[str, bool] = {}
+
+    def buildable(word: str) -> bool:
+        if word not in known:
+            known[word] = word in words or any(
+                len(s) < len(word) and word.endswith(s) and buildable(word[: -len(s)]) for s in suffixes
+            )
+        return known[word]
+
+    out = {name: [w for w in _WORD.findall(name) if not buildable(w)] for name in names}
+    return {name: gone for name, gone in out.items() if gone}
+
+
+def inherited(code: str) -> list[str]:
+    """The frame templates and font objects a file's code (comments stripped) creates its widgets with."""
+    groups = (group for m in _INHERITS.finditer(code) for group in m.groups() if group)
+    return sorted({t.strip() for group in groups for t in group.split(",")})
+
+
+def _under(source: Path) -> list[Path]:
+    return [p for p in source.rglob("*") if p.is_file()]
+
+
+def source_hits(source: Path | None, names: list[str], files: list[Path] | None = None) -> dict[str, str]:
+    """name → the extracted client file it appears in, or "" when absent. No source dir: {}. `files` narrows
+    the search to those files (a game type's load set); without it every file under `source` is read."""
+    if source is None:
+        return {}
+    files = _under(source) if files is None else files
+    return _hits(files, *_read(files), names)
+
+
+def missing_words(files: list[Path], names: list[str]) -> dict[str, list[str]]:
+    """name → the words of it that none of `files` holds. A frame's children are named one by one in the
+    client's XML (`parentKey="DetailFrame"`), so a dotted name is rarely written out whole and `source_hits`
+    cannot say it is gone. A word no loaded file has is the proof: nothing the client loads can build that
+    name."""
+    return _missing(_read(files)[1], names)
 
 
 def verdict(entry: dict[str, Any], probe: dict[str, str], hits: dict[str, str],
@@ -559,6 +1436,10 @@ def verdict(entry: dict[str, Any], probe: dict[str, str], hits: dict[str, str],
     if entry["kind"] == "method":
         # `hooksecurefunc(frame, "Update")`: it exists if the frame does, which the frame's own row answers
         return "unknown", "method hook on a client object; judged by its surface's frames"
+    if partial(name):
+        where = hits.get(name, "")
+        found = f" · source: {where}" if where else " · source: absent" if hits else " · no source"
+        return "unknown", "part of a name the surface joins at run time" + found
     answer = probe.get(f"{entry['kind']}|{name}")
     in_source = hits.get(name, "")
     if answer == "yes":
@@ -589,13 +1470,35 @@ def _absent_verdict(entry: dict[str, Any], probe: dict[str, str], hits: dict[str
 
 
 def report(manifest: dict[str, Any], probe: dict[str, str], source: Path | None,
-           asked: dict[str, int] | None = None) -> dict[str, Any]:
-    names = [e["name"] for e in manifest["entries"] if e.get("name")]
-    hits = source_hits(source, sorted(set(names)))
+           asked: dict[str, int] | None = None, files: list[Path] | None = None,
+           reference: list[Path] | None = None) -> dict[str, Any]:
+    """`reference` is the files another client loads, the client the addon is known to work on. With it every
+    named row gets `lacks`: the words of the name that client's files have and this one's do not, unless this
+    client's probe found the name. Words neither client's files have prove nothing (a string table entry, a
+    function the client builds in, a frame named by its template), so only the difference counts."""
+    names = sorted({e["name"] for e in manifest["entries"] if e.get("name")})
+    hits: dict[str, str] = {}
+    here: dict[str, list[str]] = {}
+    there: dict[str, list[str]] = {}
+    if source is not None:
+        files = _under(source) if files is None else files
+        texts, holders = _read(files)
+        hits = _hits(files, texts, holders, names)
+        if reference is not None:
+            here, there = _missing(holders, names), missing_words(reference, names)
     rows = []
     for e in manifest["entries"]:
         v, why = verdict(e, probe, hits, asked)
-        rows.append({**e, "verdict": v, "evidence": why})
+        row = {**e, "verdict": v, "evidence": why}
+        if hits:
+            # the file that has the name, "" when no file read has it, None for an entry with no name
+            row["source"] = hits.get(e["name"]) if e.get("name") else None
+        if reference is not None:
+            name = e.get("name")
+            found = probe.get(f"{e['kind']}|{name}") == "yes"
+            row["lacks"] = None if not name else (
+                [] if found else [w for w in here.get(name, []) if w not in there.get(name, [])])
+        rows.append(row)
     unclassified = [r for r in rows if r["verdict"] not in ("works", "names only", "rework", "unknown")]
     if unclassified:
         raise SystemExit(f"client_surface: {len(unclassified)} entries unclassified")
@@ -616,6 +1519,108 @@ def by_surface(rows: list[dict[str, Any]], include_suspect: bool = False) -> dic
     return out
 
 
+# A pooled frame's debug name carries its address (`b0462b3b0`), which changes every session.
+_POOLED = re.compile(r"\bb[0-9a-f]{8,}\b")
+ALWAYS = "always on screen"
+
+
+def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
+    """The window test out of a saved-variables file: (when it ran and on which build, the English lines left on
+    screen as (window, English)). A live-sweep window is named as the test lists it; a window the open sweep
+    showed is `opened <its frame>`. A line on screen with no window open is filed once, under `always on screen`."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    if probe is None:
+        return {}, set()
+    test = probe.get("test").named() if probe.get("test") is not None else {}
+    info = {str(k): str(v) for k, v in test.items() if isinstance(v, (str, int, float))}
+    found: set[tuple[str, str]] = set()
+    live = probe.get("live").named() if probe.get("live") is not None else {}
+    idle = live.get("(nothing open)")
+    always = idle.get("english").named() if idle is not None and idle.get("english") is not None else {}
+    found |= {(ALWAYS, str(en)) for en in always.values()}
+    for window, record in live.items():
+        english = record.get("english")
+        if window == "(nothing open)" or english is None:
+            continue
+        found |= {(_POOLED.sub("*", str(window)), str(en)) for name, en in english.named().items() if name not in always}
+    opened = probe.get("opened").named() if probe.get("opened") is not None else {}
+    for window, record in opened.items():
+        still = record.get("still")
+        if still is not None:
+            found |= {(f"opened {_POOLED.sub('*', str(window))}", str(en)) for en in still.named().values()}
+    return info, found
+
+
+def read_test_problems(text: str, log: str = "") -> list[str]:
+    """What went wrong while the window test ran, one line each: the Lua errors and the actions the client refused
+    an addon, as the scan addon counted them, and, from the shipped addon's own saved file (`log`), its recorded
+    errors and failed load steps since the test started."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    test = probe.get("test") if probe is not None else None
+    if test is None:
+        return []
+    out: list[str] = []
+    for kind in ("errors", "blocked"):
+        table = test.get(kind)
+        for message, count in (table.named() if table is not None else {}).items():
+            out.append(f"{'error' if kind == 'errors' else 'refused'} x{count}: {' '.join(str(message).split())}")
+    started = str(test.get("started") or "")
+    saved = lua_reader.parse_assignments(log).get("WFJ_Log") if log.strip() else None
+    if saved is not None and started:
+        errors = saved.get("errors")
+        for row in (errors.positional() if errors is not None else []):
+            if str(row.get("last") or "") >= started:
+                out.append(f"addon error x{row.get('n') or 1}: {' '.join(str(row.get('msg')).split())}")
+        entries = saved.get("entries")
+        for row in (entries.positional() if entries is not None else []):
+            if row.get("kind") == "init" and str(row.get("at") or "") >= started:
+                out.append(f"addon load step failed: {row.get('msg')}: {' '.join(str(row.get('err')).split())}")
+    return sorted(set(out))
+
+
+def _line(text: str) -> str:
+    return text.replace("\\", "\\\\").replace("\t", "\\t").replace("\r", "\\r").replace("\n", "\\n")
+
+
+def read_window_baseline(text: str) -> dict[tuple[str, str], str]:
+    """The English lines a window may keep, with why: `<window>\\t<English>\\t<reason>` per line."""
+    out: dict[tuple[str, str], str] = {}
+    for n, raw in enumerate(text.splitlines(), 1):
+        if not raw.strip() or raw.startswith("#"):
+            continue
+        parts = raw.split("\t")
+        if len(parts) != 3 or not parts[2].strip():
+            raise ValueError(f"window baseline line {n}: expected <window> <English> <reason>, tab-separated")
+        out[(parts[0], parts[1])] = parts[2].strip()
+    return out
+
+
+def window_test_report(found: set[tuple[str, str]], baseline: dict[tuple[str, str], str]) -> tuple[list[str], list[str]]:
+    """(the lines on screen in English that the baseline does not allow, the baseline lines no longer seen), each
+    as `<window>\\t<English>`, sorted."""
+    seen = {(w, _line(en)) for w, en in found}
+    # a line the baseline allows for a window is allowed on every page of it (`<window> > <tab>`)
+    allowed = {(w, en) for w, en in seen if (w, en) in baseline or (w.split(" > ")[0], en) in baseline}
+    used = {(w.split(" > ")[0], en) for w, en in allowed} | allowed
+    return (sorted(f"{w}\t{en}" for w, en in seen - allowed),
+            sorted(f"{w}\t{en}" for w, en in set(baseline) - used))
+
+
+def _loaded(extract: Path, game: str) -> list[Path]:
+    """A game type's loaded files, or an exit: an extract with no file loaded is a mistyped path, and as a
+    reference it would call every name buildable."""
+    files = client_addons.loaded_files(extract, game)
+    if not files:
+        raise SystemExit(f"client_surface: {game} loads no file under {extract}; is it a client UI extract?")
+    return files
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="client_surface", description=__doc__.split("\n\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -625,13 +1630,60 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("probe")
     p.add_argument("--manifest", required=True, type=Path)
     p.add_argument("--out", required=True, type=Path, help="the probe's Lua file, inside the scan dev addon")
+    p.add_argument("--walk", action="store_true",
+                   help="also load every load-on-demand addon a surface waits for, and record restrictions")
+    p.add_argument("--window-test", type=Path, metavar="DATA",
+                   help="also carry the window test (/wfjtest) for the interface lines that ship Japanese under this "
+                   "data folder; the load-on-demand addons are loaded when the test starts, not at login")
+    t = sub.add_parser("texts", help="the window test's result against the baseline: exit 1 on a new English line")
+    t.add_argument("--saved", required=True, type=Path, help="the client's WFJScan.lua SavedVariables file")
+    t.add_argument("--baseline", required=True, type=Path)
+    t.add_argument("--log", type=Path, help="the shipped addon's SavedVariables file, for its recorded errors "
+                   "(default: WoWForeverJapanese.lua beside --saved)")
     r = sub.add_parser("report")
     r.add_argument("--manifest", required=True, type=Path)
     r.add_argument("--probe", required=True, type=Path,
                    help="the client's WFJScan.lua SavedVariables file (or an older WFJProbe.lua)")
     r.add_argument("--source", type=Path)
+    games = sorted(client_addons.GAMES)
+    r.add_argument("--game", choices=games, help="read only the files of --source this game type loads")
+    r.add_argument("--reference", type=Path, help="the extract of the client the addon works on")
+    r.add_argument("--reference-game", choices=games, help="that client's game type")
     r.add_argument("--out", required=True, type=Path)
     args = ap.parse_args(argv)
+    if args.cmd == "texts":
+        info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
+        if not info.get("finished"):
+            print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
+            return 2
+        baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
+        new, gone = window_test_report(found, baseline)
+        # a window the open sweep showed did not run the client's opening code, so a surface that works from that
+        # code never ran: its English is a list to read against the code, never a failure, like its errors
+        bare = [row for row in new if row.startswith("opened ")]
+        new = [row for row in new if row not in bare]
+        print(f"window test of build {info.get('build')}, run {info.get('started')}: {len(found)} English lines on "
+              f"screen, {len(found) - len(new) - len(bare)} allowed by the baseline, {len(new)} new in the windows "
+              f"opened the client's way, {len(bare)} to read in windows shown bare")
+        for row in new:
+            print(f"NEW   {row}")
+        for row in bare:
+            print(f"read  {row}")
+        for row in gone:
+            print(f"gone  {row}")
+        log = args.log or args.saved.with_name("WoWForeverJapanese.lua")
+        problems = read_test_problems(args.saved.read_text(encoding="utf-8", errors="replace"),
+                                      log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
+        # the open sweep shows a window without the client's own opening code, so a window that needs data it was
+        # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
+        noted = [row for row in problems if ": [open] " in row]
+        failing = [row for row in problems if row not in noted]
+        print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare)")
+        for row in failing:
+            print(f"ERROR {row}")
+        for row in noted:
+            print(f"noted {row}")
+        return 1 if new or failing else 0
     if args.cmd == "build":
         manifest = build(args.addon)
         args.out.write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -640,7 +1692,11 @@ def main(argv: list[str] | None = None) -> int:
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     if args.cmd == "probe":
         args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_text(probe_lua(manifest), encoding="utf-8")
+        if args.window_test:
+            text = probe_lua(manifest, walk=True, english=translated_english(args.window_test), at_login=args.walk)
+        else:
+            text = probe_lua(manifest, walk=args.walk)
+        args.out.write_text(text, encoding="utf-8")
         print(f"probe: {len(probe_names(manifest))} names → {args.out}")
         return 0
     raw = args.probe.read_text(encoding="utf-8", errors="replace")
@@ -655,7 +1711,17 @@ def main(argv: list[str] | None = None) -> int:
             f"(e.g. {', '.join(x.split('|')[1] for x in unanswered[:3])}); the probe file is from another "
             "manifest or an interrupted run; re-run the probe and try again"
         )
-    result = report(manifest, answers, args.source, asked_surfaces(raw))
+    files = None
+    if args.game:
+        if args.source is None:
+            raise SystemExit("client_surface: --game narrows --source to a game type's files; give --source")
+        files = _loaded(args.source, args.game)
+    reference = None
+    if args.reference:
+        if not (args.game and args.reference_game):
+            raise SystemExit("client_surface: --reference needs --game and --reference-game")
+        reference = _loaded(args.reference, args.reference_game)
+    result = report(manifest, answers, args.source, asked_surfaces(raw), files, reference)
     args.out.write_text(json.dumps(result, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     counted = [r for r in result["rows"] if not r.get("suspect")]
     for surface, counts in sorted(by_surface(result["rows"]).items()):
@@ -666,6 +1732,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"build {result['build']} · {len(counted)} counted entries "
           f"({len(result['rows']) - len(counted)} suspect held back) · "
           + " · ".join(f"{v} {n}" for v, n in sorted(totals.items())))
+    if reference is not None:
+        lacking = sorted({r["surface"] for r in result["rows"] if r.get("lacks")})
+        print(f"{len(lacking)} surfaces name something this client cannot build: " + " ".join(lacking))
     if result["asked"] is None:
         print("probe predates /wfjprobe: an absence outside a load-on-demand surface is occasion-blind",
               file=sys.stderr)

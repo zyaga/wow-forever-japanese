@@ -21,6 +21,7 @@ TREE = {
         "[Family]\\NotHere.lua [AllowLoadGameType mainline] [ExcludeLoadGameType camelot]\n"
         "Glue\\Login.lua [AllowLoad glue]\n"
         "Shared\\Missing.lua\n"
+        "[Game]\\Only.lua [AllowLoadGameType standard]\n"
     ),
     "blizzard_panels/shared/always.lua": "self:SetTitle(PANEL_TITLE);\n",
     "blizzard_panels/mainline/frame.xml": '<Ui><Script file="Frame.lua"/><Include file="..\\Shared\\Inc.xml"/></Ui>',
@@ -32,6 +33,7 @@ TREE = {
     "blizzard_panels/mainline/both.lua": "",
     "blizzard_panels/mainline/nothere.lua": "",
     "blizzard_panels/glue/login.lua": "",
+    "blizzard_panels/standard/only.lua": "window:SetTitle(RETAIL_TITLE)\n",
     # header states
     "blizzard_ondemand/blizzard_ondemand.toc": "## LoadOnDemand: 1\nMain.lua\n",
     "blizzard_ondemand/main.lua": "",
@@ -42,6 +44,7 @@ TREE = {
     "blizzard_retail/blizzard_retail.toc": "## AllowLoadGameType: standard\n## LoadOnDemand: 1\nMain.lua\n",
     "blizzard_retail/main.lua": "",
     "blizzard_journal/blizzard_journal.toc": "## AllowLoadGameType: standard, classic\nMain.lua\n",
+    "blizzard_journal/main.lua": "",
     "blizzard_excluded/blizzard_excluded.toc": "## ExcludeLoadGameType: camelot\nMain.lua\n",
     # the _Mainline TOC wins over the plain one
     "blizzard_two/blizzard_two.toc": "Plain.lua\n",
@@ -60,8 +63,8 @@ def _tree(tmp_path: Path) -> Path:
     return addons
 
 
-def _sweep(tmp_path: Path) -> dict[str, tuple[str, list[str]]]:
-    return {addon: (state, files) for addon, state, files in client_addons.sweep(_tree(tmp_path))}
+def _sweep(tmp_path: Path, **game) -> dict[str, tuple[str, list[str]]]:
+    return {addon: (state, files) for addon, state, files in client_addons.sweep(_tree(tmp_path), **game)}
 
 
 def test_header_states(tmp_path):
@@ -124,3 +127,79 @@ def test_main_output_and_usage(tmp_path):
         assert client_addons.main(["--files", str(addons), "Blizzard_Two"]) == 0
     assert out.getvalue().split() == ["blizzard_two/mainline.lua"]
     assert client_addons.main([]) == 2 and client_addons.main(["--files", str(addons)]) == 2
+
+
+def test_header_states_for_the_standard_game_type(tmp_path):
+    rows = _sweep(tmp_path, game="standard")
+    assert rows["blizzard_retail"] == ("lod", ["blizzard_retail/main.lua"])
+    assert rows["blizzard_journal"] == ("login", ["blizzard_journal/main.lua"])  # a list naming standard
+    assert rows["blizzard_excluded"][0] == "login"  # only camelot is excluded
+    assert rows["blizzard_login"][0] == "glue"
+    assert rows["blizzard_two"] == ("lod", ["blizzard_two/mainline.lua"])  # standard is in the mainline family
+
+
+def test_the_standard_load_set(tmp_path):
+    files = _sweep(tmp_path, game="standard")["blizzard_panels"][1]
+    assert files == [
+        "blizzard_panels/shared/always.lua",
+        "blizzard_panels/mainline/frame.xml",
+        "blizzard_panels/mainline/frame.lua",
+        "blizzard_panels/shared/inc.xml",
+        "blizzard_panels/mainline/retail.lua",  # gated standard
+        "blizzard_panels/mainline/both.lua",
+        "blizzard_panels/mainline/nothere.lua",  # mainline, and only camelot is excluded
+        "blizzard_panels/standard/only.lua",  # [Game] → Standard
+    ]  # the camelot-only line and its Camelot folder never appear
+
+
+def test_gate_takes_the_game_type():
+    assert client_addons.gate([("AllowLoadGameType", "standard, classic, wowhack")], "standard") == "load"
+    assert client_addons.gate([("AllowLoadGameType", "mainline")], "standard") == "load"
+    assert client_addons.gate([("AllowLoadGameType", "vanilla, Camelot")], "standard") == "gated"
+    assert client_addons.gate([("ExcludeLoadGameType", "camelot")], "standard") == "load"
+    assert client_addons.gate([("ExcludeLoadGameType", "Standard")], "standard") == "gated"
+
+
+def test_titles_follow_the_game_type(tmp_path):
+    found = client_addons.titles(_tree(tmp_path), game="standard")
+    assert found == [
+        ("blizzard_panels", "blizzard_panels/shared/always.lua", 1, "PANEL_TITLE"),
+        ("blizzard_panels", "blizzard_panels/standard/only.lua", 1, "RETAIL_TITLE"),
+    ]
+
+
+def test_main_takes_a_game_type(tmp_path):
+    addons = _tree(tmp_path)
+    out = io.StringIO()
+    with redirect_stdout(out):
+        assert client_addons.main(["--game", "standard", str(addons)]) == 0
+    lines = out.getvalue().splitlines()
+    assert lines[0].startswith("# GENERATED") and "standard" in lines[0] and "camelot" not in lines[0]
+    assert "blizzard_panels login 8" in lines and "blizzard_retail lod 1" in lines
+    out = io.StringIO()
+    with redirect_stdout(out):
+        assert client_addons.main(["--game", "standard", "--files", str(addons), "Blizzard_Retail"]) == 0
+    assert out.getvalue().split() == ["blizzard_retail/main.lua"]
+    assert client_addons.main(["--game", "wrath", str(addons)]) == 2  # a game type the tool has no rules for
+
+
+def test_the_default_game_type_is_camelot(tmp_path):
+    addons = _tree(tmp_path)
+    assert client_addons.sweep(addons) == client_addons.sweep(addons, game="camelot")
+    out = io.StringIO()
+    with redirect_stdout(out):
+        client_addons.main([str(addons)])
+    assert out.getvalue().splitlines()[0] == (
+        "# GENERATED by `python -m wfj.dev.client_addons` from the Forever (camelot) UI extract's TOCs."
+    )
+
+
+def test_main_refuses_a_folder_with_no_addons_and_a_flag_where_the_folder_goes(tmp_path, capsys):
+    empty = tmp_path / "nothing"
+    empty.mkdir()
+    assert client_addons.main([str(empty)]) == 2  # a mistyped path must not print an empty list as if it were one
+    assert client_addons.main([str(tmp_path / "absent")]) == 2
+    addons = _tree(tmp_path)
+    assert client_addons.main(["--titles", "--game", "standard", str(addons)]) == 2  # --game comes first
+    captured = capsys.readouterr()
+    assert captured.out == "" and "no Blizzard addon" in captured.err and "--game" in captured.err
