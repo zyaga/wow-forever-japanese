@@ -896,6 +896,19 @@ local function scrollOn(roots)
   return moved
 end
 
+-- The lists scrollOn moved, back at their first row: the window is left as the player had it.
+local function scrollBack(roots)
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(function()
+      if frame:IsForbidden() or type(frame.SetScrollPercentage) ~= "function" then return end
+      if not tostring(frame:GetDebugName()):find("Categories.ScrollBox$") or not under(frame, roots) then return end
+      frame:SetScrollPercentage(0)
+    end)
+    frame = EnumerateFrames(frame)
+  end
+end
+
 -- `/wfjtest tabs` clicks page switchers only: the first run on a client, before the list of other buttons the
 -- test would click (`probe.test.buttons`) has been read.
 local pagesOnly = false
@@ -1147,6 +1160,7 @@ local function WFJScanLiveSweep(done)
         ticks = 0
         return
       end
+      if scrolls > 0 then scrollBack(roots) end
       pcall(CloseAllWindows)
       state, ticks = "closed", 0
       return
@@ -1974,9 +1988,33 @@ def _loaded(extract: Path, game: str) -> list[Path]:
     return files
 
 
+_FOLDER_PRODUCT = {"_forever_": "wowf", "_classic_era_": "wow_classic_era", "_retail_": "wow"}
+
+
+def client_build_beside(saved: Path) -> str | None:
+    """The build number the client that wrote `saved` is on now, read from the install's `.build.info` when
+    `saved` lies inside a client folder (`_forever_/WTF/…`); None anywhere else. A result saved before the
+    client updated is a run of the build before, and says nothing about this one."""
+    from wfj.io import casc
+
+    for folder in saved.resolve().parents:
+        product = _FOLDER_PRODUCT.get(folder.name)
+        if product:
+            try:
+                version = casc.read_build_info(folder.parent, product).version
+            except casc.CascError:
+                return None
+            return version.rsplit(".", 1)[-1] or None
+    return None
+
+
 def _texts(args: argparse.Namespace) -> int:
     """The `texts` command: the window test's saved result against the baseline. → the exit code."""
     info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
+    now = client_build_beside(args.saved)
+    if now and info.get("build") and now != info["build"]:
+        print(f"window test: the saved run is of build {info['build']} and the client is on {now} now: "
+              "run /wfjtest again on this build")
     if not info.get("finished") and info.get("part") == "character":
         print("window test: the run stopped while waiting for the character window; the rest is read below")
     elif not info.get("finished"):

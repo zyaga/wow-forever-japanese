@@ -112,4 +112,5 @@ for name, font in pairs(saved.live and saved.live.achievements and saved.live.ac
 end
 table.sort(boxes)
 for _, line in ipairs(boxes) do print(line) end
+print("list left at " .. offset)
 print("clicked " .. #log .. " | twice: " .. table.concat(twice, ", ") .. " | missed: " .. table.concat(missed, ", "))

@@ -151,6 +151,7 @@ def test_the_sweep_clicks_every_entry_of_a_reused_list_once_and_nothing_that_act
     assert out.returncode == 0, out.stderr
     lines = out.stdout.strip().splitlines()
     assert lines[-1] == "clicked 19 | twice:  | missed:", lines[-1]
+    assert "list left at 0" in lines  # the list the run scrolled is back at its first row
     # Japanese in the client's face is written down (a label, a typing box, an HTML paragraph); Japanese in the
     # bundled face and English in any face are not
     assert [ln for ln in lines if ln.startswith("boxed ")] == [
@@ -423,3 +424,19 @@ WFJScanDB = {
     assert client_surface.read_missing_strings(saved) == (3, ["TOOLTIP_ITEM_STAT_A", "TOOLTIP_ITEM_STAT_B"])
     assert client_surface.read_missing_strings("WFJScanDB = {\n}\n") == (0, [])
 
+
+
+
+def test_the_saved_runs_build_is_held_to_the_clients(tmp_path):
+    """A result saved before the client updated is a run of the build before: the reader finds the client's
+    build beside the saved file and says so."""
+    install = tmp_path / "World of Warcraft"
+    saved = install / "_forever_" / "WTF" / "Account" / "A" / "SavedVariables" / "WFJScan.lua"
+    saved.parent.mkdir(parents=True)
+    saved.write_text("WFJScanDB = {}\n", encoding="utf-8")
+    assert client_surface.client_build_beside(saved) is None  # no .build.info: nothing to compare with
+    (install / ".build.info").write_text(
+        "Product!STRING:0|Version!STRING:0|Build Key!HEX:16|Active!DEC:1\n"
+        "wowf|1.60.1.70959|abcd|1\nwow|12.1.5.70783|ef01|1\n", encoding="utf-8")
+    assert client_surface.client_build_beside(saved) == "70959"
+    assert client_surface.client_build_beside(tmp_path / "elsewhere" / "WFJScan.lua") is None
