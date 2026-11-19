@@ -816,6 +816,8 @@ REVIEWED_VARIABLE_SURFACES = frozenset({
     "DialogueUI.lua:S.title",  # Dialogue UI's quest title: its quest window's surfaces, read from its S table
     "DialogueUI.lua:el.surface",
     "Gossip.lua:SURFACE",
+    "IconPicker.lua:how.surface",  # the name-and-icon popup: each owner window names its own surface
+    "IconPicker.lua:surface",
     "ItemText.lua:SURFACE",
     "LabelTree.lua:f.surface",
     "LabelTree.lua:surface",

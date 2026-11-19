@@ -22,6 +22,8 @@ end
 
 local function dress(box)
   local path, size, flags = box:GetFont()
+  -- a font the client keeps secret can be neither compared nor set again: the box keeps what it has
+  if secret(path) or secret(size) or secret(flags) then return false end
   if path == Font.PATH then return true end
   return box:SetFont(Font.PATH, Font.size(size) or Font.DEFAULT_SIZE, flags or "") ~= false
 end
@@ -72,8 +74,8 @@ local followed = setmetatable({}, { __mode = "k" }) -- widget → what its font 
 
 -- Shown text the client rewrites: PlayerText.shown for what the widget holds now and after every SetText. A
 -- SimpleHTML's font is read and set through its paragraph text type (UI/HtmlText's adapter)
--- [unverified: that plain SimpleHTML text draws with the P font; in-game check: the guild message of the day in
--- Japanese]. → true when the widget was hooked now
+-- [verified in game: plain SimpleHTML text draws with the P font, on the guild message of the day in Japanese].
+-- → true when the widget was hooked now
 function PlayerText.follow(widget)
   if type(widget) ~= "table" or type(widget.SetText) ~= "function" or followed[widget] then return false end
   local target, now = widget, nil

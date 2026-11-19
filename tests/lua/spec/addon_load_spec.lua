@@ -32,7 +32,7 @@ local TAIL = {
   "UI/Trainer.lua", "UI/GossipChrome.lua", "UI/Merchant.lua", "UI/Bank.lua", "UI/Bags.lua", "UI/Mail.lua",
   "UI/Friends.lua", "UI/FriendsTooltip.lua", "UI/Communities.lua",
   -- the rest of the Communities window
-  "UI/CommunitiesKit.lua", "UI/SocialUI.lua", "UI/CommunitiesFrame.lua", "UI/CommunitiesGuild.lua", "UI/ClubFinder.lua",
+  "UI/CommunitiesKit.lua", "UI/CommunitiesFrame.lua", "UI/CommunitiesGuild.lua", "UI/ClubFinder.lua",
   "UI/ClubFinderApplicants.lua", "UI/CommunitiesDialogs.lua",
   "UI/Raid.lua", "UI/MicroMenu.lua", "UI/Gamepad.lua", "UI/Menus.lua",
   "UI/MenusTags.lua", "UI/MenusUnit.lua", "UI/MenusUntagged.lua", "UI/HelpTips.lua",
@@ -98,8 +98,7 @@ local WINDOW_NAMESPACES = { "character", "reputation", "skills", "spellbook", "t
   "timemanager", "combattext", "cooldownviewer", "damagemeter", "deathrecap", "gamepadedit",
   "gamepad", "hudlabels", "help",
   "help.hudtips", "help.minimap", "pvpmatch", "queuestatus", "raidmanager", "unitframes", "groupfinder",
-  "channels", "quickjoin", "recentallies", "recruitafriend", "socialui", "reportframe", "helpframe",
-  "statusnotices",
+  "channels", "quickjoin", "recentallies", "recruitafriend", "reportframe", "helpframe", "statusnotices",
   "bnettoast", "settingspanel", "settingstutorials", "quickkeybind", "colorpicker", "chatconfig",
   "texttospeech", "chattabs", "combatlog", "addonlist", "scripterrors", "splash", "eventtrace", "chromietime",
   "alerts", "errors", "chatsystem", "speech", "bossbanner", "cinematic", "coinpickup", "combatfeedback",

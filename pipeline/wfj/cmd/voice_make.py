@@ -382,7 +382,14 @@ def cast_rows(root: Path, cfg: dict[str, Any], today: str) -> list[dict[str, Any
 def cast_changes(before: dict[int, dict[str, str]], rows: list[dict[str, Any]]) -> list[str]:
     """Every speaker whose voice is not the one the last cast gave it, one line each: the lines it speaks are
     made again in the new voice, so a cast that moves a voice says so. A voice moves when Spoken's newest
-    corpus names a set for a speaker cast by the project's own rows before, or names another set."""
+    corpus names a set for a speaker cast by the project's own rows before, or names another set. A speaker's
+    second voice (the one for its female form) is named when it has one, and a speaker the cast no longer
+    holds is listed as removed."""
+
+    def text(row: dict[str, str]) -> str:
+        second = f" + {row['female']}" if row.get("female") else ""
+        return f"{row.get('voice')}{second} ({row.get('row')})"
+
     out = []
     for r in sorted(rows, key=lambda r: int(r["creature"])):
         old = before.get(int(r["creature"]))
@@ -390,8 +397,9 @@ def cast_changes(before: dict[int, dict[str, str]], rows: list[dict[str, Any]]) 
             continue
         was, now = (old.get("voice"), old.get("female")), (r.get("voice"), r.get("female"))
         if was != now:
-            before_text = f"{old.get('voice')} ({old.get('row')})"
-            out.append(f"{r['creature']}: {before_text} → {r.get('voice')} ({r.get('row')})")
+            out.append(f"{r['creature']}: {text(old)} → {text(r)}")
+    cast = {int(r["creature"]) for r in rows}
+    out += [f"{creature}: {text(before[creature])} → removed" for creature in sorted(set(before) - cast)]
     return out
 
 

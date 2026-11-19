@@ -1,6 +1,7 @@
 """The window test: the scan addon opens the client's windows and saves the English lines left on screen; these
 read that file and hold the result to the baseline of lines a window may keep."""
 
+import argparse
 import shutil
 import subprocess
 
@@ -184,7 +185,7 @@ def test_a_pooled_frames_address_is_recognised_whatever_it_starts_with():
 def test_the_sweep_never_clicks_an_icon_a_party_button_or_another_addons_bag():
     lua = client_surface.TEXT_LUA
     assert 'return nil, "an icon with no words"' in lua
-    for word in ("party", "raid", "friendslist", "baganator"):
+    for word in ("party", "raid", "friendslist", "communitieslist", "baganator"):
         assert f'"{word}"' in lua, word
     for window in ("EditMode", "BarberShop", "PetBattle"):
         assert f'"{window}"' in lua, window  # the open sweep leaves these closed
@@ -427,7 +428,7 @@ WFJScanDB = {
 
 
 
-def test_the_saved_runs_build_is_held_to_the_clients(tmp_path):
+def test_the_saved_runs_build_is_held_to_the_clients(tmp_path, capsys):
     """A result saved before the client updated is a run of the build before: the reader finds the client's
     build beside the saved file and says so."""
     install = tmp_path / "World of Warcraft"
@@ -440,3 +441,10 @@ def test_the_saved_runs_build_is_held_to_the_clients(tmp_path):
         "wowf|1.60.1.70959|abcd|1\nwow|12.1.5.70783|ef01|1\n", encoding="utf-8")
     assert client_surface.client_build_beside(saved) == "70959"
     assert client_surface.client_build_beside(tmp_path / "elsewhere" / "WFJScan.lua") is None
+    # a finished run of the build before fails the read, whatever it found
+    saved.write_text(
+        'WFJScanDB = {\n["probe"] = {\n["live"] = { ["(nothing open)"] = { ["english"] = { } } },\n'
+        '["test"] = { ["started"] = "a", ["finished"] = "b", ["build"] = "70938" },\n},\n}\n', encoding="utf-8")
+    args = argparse.Namespace(saved=saved, baseline=tmp_path / "none.txt", log=None)
+    assert client_surface._texts(args) == 2
+    assert "is of build 70938 and the client is on 70959 now" in capsys.readouterr().out

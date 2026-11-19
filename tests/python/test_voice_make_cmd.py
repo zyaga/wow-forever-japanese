@@ -520,5 +520,7 @@ def test_a_cast_names_every_speaker_whose_voice_moved():
             {"creature": 2, "voice": "b", "row": "set x"},  # unchanged
             {"creature": 3, "voice": "c", "row": "female", "female": "e"},  # its female voice moved
             {"creature": 4, "voice": "z", "row": "male"}]  # a new speaker: nothing to make again
+    before[5] = {"creature": 5, "voice": "g", "row": "male"}  # no longer cast
     assert voice_make.cast_changes(before, rows) == [
-        "1: a (male) → q (set humanmalestandardnpc)", "3: c (female) → c (female)"]
+        "1: a (male) → q (set humanmalestandardnpc)", "3: c + d (female) → c + e (female)",
+        "5: g (male) → removed"]

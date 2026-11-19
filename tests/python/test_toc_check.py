@@ -58,7 +58,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/FriendsTooltip.lua",  # the friends list's own tooltip
         "UI/Communities.lua",
         # the rest of the Communities window
-        "UI/CommunitiesKit.lua", "UI/SocialUI.lua", "UI/CommunitiesFrame.lua", "UI/CommunitiesGuild.lua", "UI/ClubFinder.lua",
+        "UI/CommunitiesKit.lua", "UI/CommunitiesFrame.lua", "UI/CommunitiesGuild.lua", "UI/ClubFinder.lua",
         "UI/ClubFinderApplicants.lua", "UI/CommunitiesDialogs.lua", "UI/Raid.lua",
         "UI/MicroMenu.lua",
         "UI/Gamepad.lua", "UI/Menus.lua", "UI/MenusTags.lua", "UI/MenusUnit.lua", "UI/MenusUntagged.lua",  # menu entries; Gamepad loads before MenusUntagged

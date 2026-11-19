@@ -289,8 +289,6 @@ do
       "PROFESSIONS_TRACK_RECIPE", "PROFESSIONS_INSUFFICIENT_REAGENTS", "PROFESSIONS_MISSING_REQUIREMENT",
       "PROFESSIONS_RECIPE_COOLDOWN", "PROFESSIONS_ORDERS_NOT_ENOUGH_REAGENTS", "TRANSMOG_SITUATIONS_NO_VALID_OPTIONS",
       "CLICK_BINDING_MACRO_TITLE",
-      -- the friends window's notice in place of the BattleTag (socialuitemplates.lua:302–304)
-      "SOCIAL_UI_BATTLE_NET_UNAVAILABLE_NOTICE",
       -- the guild window's channel dropdown: a channel's name in its chat colour (communitiesstreams.lua:10–12)
       "GUILD", "OFFICER",
       -- the auction house quality filter's entries, each in its quality colour

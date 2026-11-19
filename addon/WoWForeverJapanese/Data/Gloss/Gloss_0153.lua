@@ -24,7 +24,6 @@ WFJ.Data.add("gloss", {
   [153021] = "もの\tもの\t(any) things",
   [153022] = "もの\tもの\t(ours) own",
   [153023] = "もの\tもの\tstuff (thing)",
-  [153024] = "やり遂げる\tやりとげる\thave (you) done (it)",
   [153025] = "やり遂げる\tやりとげる\twill see (it) done",
   [153026] = "やる\tやる\tdid (follow)",
   [153027] = "ようだ\tようだ\tlooks to",
@@ -282,7 +281,6 @@ WFJ.Data.add("gloss", {
   [153279] = "置く\tおく\tset (it) (for me)",
   [153280] = "者\tもの\tcreatures (those ones)",
   [153281] = "者\tもの\tthe likes (person)",
-  [153282] = "聞き続ける\tききつづける\tcontinue listening",
   [153283] = "聞く\tきく\t(you've) likely heard",
   [153284] = "脈動\tみゃくどう\tpulses",
   [153285] = "臆する\tおくする\tdare (do not flinch)",
@@ -874,4 +872,6 @@ WFJ.Data.add("gloss", {
   [153871] = "高める\tたかめる\tI will augment (raise)",
   [153872] = "高める\tたかめる\tbolster (raise)",
   [153873] = "作品\tさくひん\twork (a piece he made)",
+  [153874] = "やり遂げる\tやりとげる\tto accomplish, to see through",
+  [153875] = "聞き続ける\tききつづける\tkeep listening",
 })

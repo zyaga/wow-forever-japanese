@@ -762,7 +762,7 @@ local AREAS = { "talent", "spellbook", "pagedspells", "loadout", "containerframe
   "clubfinder", "recruitafriend", "channel", "voice", "report", "tooltip", "dropdown", "menu", "chatframe",
   "chatconfig", "actionbar", "microbutton", "minimap", "objectivetracker", "staticpopup",
   "achievementframeachievements", "achievementframesummary", "achievementframecomparison", "shield",
-  "friendslist", "baganator", "calendarview", "calendarevent", "calendarinvite", "calendarmass",
+  "friendslist", "communitieslist", "baganator", "calendarview", "calendarevent", "calendarinvite", "calendarmass",
   "calendartexture", "whoframe", "guildcontrol", "guildinfo", "communitiessettings",
   "titlemanager" }
 
@@ -1470,9 +1470,21 @@ SlashCmdList.WFJTEST = function(how)
   end
   db.test.strings = { asked = #KEYS, missing = missing }
   db.test.part = "load"
+  -- a fight that starts during the load walk would end the live sweep before it began, and the run with it: the
+  -- sweep waits for the fight to end
+  local function outOfCombat(fn)
+    if not InCombatLockdown() then return fn() end
+    print("WFJ test: waiting for combat to end")
+    local waiter = CreateFrame("Frame")
+    waiter:SetScript("OnUpdate", function(self)
+      if InCombatLockdown() then return end
+      self:SetScript("OnUpdate", nil)
+      fn()
+    end)
+  end
   WFJScanWalk(function()
     db.test.part = "live"
-    WFJScanLiveSweep(function()
+    outOfCombat(function() WFJScanLiveSweep(function()
       db.opened = nil -- an earlier run's bare-window list is not this run's
       db.test.part = "closed"
       WFJScanClosedRead(function()
@@ -1487,7 +1499,7 @@ SlashCmdList.WFJTEST = function(how)
           print("WFJ test done: /reload to save, then the result can be read")
         end)
       end)
-    end)
+    end) end)
   end)
 end
 """
@@ -2002,7 +2014,8 @@ def client_build_beside(saved: Path) -> str | None:
         if product:
             try:
                 version = casc.read_build_info(folder.parent, product).version
-            except casc.CascError:
+            except casc.CascError as exc:
+                print(f"window test: the client's build could not be read ({exc}); the saved run's build is not checked")
                 return None
             return version.rsplit(".", 1)[-1] or None
     return None
@@ -2015,6 +2028,7 @@ def _texts(args: argparse.Namespace) -> int:
     if now and info.get("build") and now != info["build"]:
         print(f"window test: the saved run is of build {info['build']} and the client is on {now} now: "
               "run /wfjtest again on this build")
+        return 2
     if not info.get("finished") and info.get("part") == "character":
         print("window test: the run stopped while waiting for the character window; the rest is read below")
     elif not info.get("finished"):

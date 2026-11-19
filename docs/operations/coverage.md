@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-18 at commit `f0a391a98`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-19 at commit `3f37ee1ae`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -367,7 +367,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 |---|---|---|---|---|---|---|
 | quest | 22,244 | 22,244 | 100.0% | 198 | 352,178 | 100.0% |
 | gossip | 11,546 | 11,546 | 100.0% | 0 | 113,133 | 100.0% |
-| ui | 15,306 | 15,298 | 99.9% | 0 | 47,665 | 100.0% |
+| ui | 15,306 | 15,306 | 100.0% | 0 | 47,674 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,629 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages
@@ -382,9 +382,9 @@ translation uses for it. The pairs are read off the meanings the readings alread
 |---|---|---|---|---|
 | quest | 22,236 | 454,025 | 413,539 | 91.1% |
 | gossip | 11,540 | 149,141 | 136,880 | 91.8% |
-| ui | 14,310 | 48,598 | 43,716 | 90.0% |
+| ui | 14,318 | 48,606 | 43,724 | 90.0% |
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
-| **All** | | **696,499** | **635,055** | **91.2%** |
+| **All** | | **696,507** | **635,063** | **91.2%** |
 
 A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
 the client fills in are not counted, and neither are the words that take no card by design: the

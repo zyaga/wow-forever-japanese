@@ -63,6 +63,9 @@ EXHAUSTION_LABEL  # asked for by UI/HudLabels.lua: the client passes the string 
 FACTION_INACTIVE  # asked for by UI/Reputation.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 FACTION_OTHER  # asked for by UI/Reputation.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 FRIENDS_LIST  # asked for by UI/Friends.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
+ICON_FILTER_ALL  # the name-and-icon popup's filter dropdown (UI/IconPicker.lua): the client builds the name from the filter kind ("ICON_FILTER_" .. strupper(key), blizzard_sharedxml/mainline/shareduipaneltemplates.lua:1907), so no scanned file names it
+ICON_FILTER_ITEM  # the name-and-icon popup's filter dropdown (UI/IconPicker.lua): the client builds the name from the filter kind ("ICON_FILTER_" .. strupper(key), blizzard_sharedxml/mainline/shareduipaneltemplates.lua:1907), so no scanned file names it
+ICON_FILTER_SPELL  # the name-and-icon popup's filter dropdown (UI/IconPicker.lua): the client builds the name from the filter kind ("ICON_FILTER_" .. strupper(key), blizzard_sharedxml/mainline/shareduipaneltemplates.lua:1907), so no scanned file names it
 INSTANCE_CHAT_LEADER  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 INT_SPELL_DURATION_DAYS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 INT_SPELL_DURATION_HOURS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
