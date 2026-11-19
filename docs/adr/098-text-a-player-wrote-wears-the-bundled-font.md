@@ -46,8 +46,8 @@ everyone in the guild. The chat input box already wore the bundled face for the 
   the bundled one, so a window that shows player text without this rule is found by a run, with the widget's name.
 - A SimpleHTML box's font is read and set through its paragraph text type. That plain text in such a box draws with
   the paragraph font was checked in game on the guild's message of the day.
-- Places not covered yet are listed in the module docs: the guild news row's tooltip and the calendar events players
-  write.
+- A typing box with a placeholder swaps between two font objects as it empties and fills, so a box is dressed again
+  each time the client sets its font object.
 
 ## Alternatives considered
 

@@ -28,13 +28,15 @@ end
 
 local boxes = setmetatable({}, { __mode = "k" })
 
--- A typing box in the bundled face at its own size and flags, now and whenever it shows (the client may have put
--- its font object back since). → true when the box wears it
+-- A typing box in the bundled face at its own size and flags, now, whenever it shows and whenever the client gives
+-- it a font object again (a box with a placeholder swaps between two font objects as it empties and fills,
+-- eventeditbox.lua:127–138). → true when the box wears it
 function PlayerText.box(box)
   if type(box) ~= "table" or type(box.GetFont) ~= "function" or type(box.SetFont) ~= "function" then return false end
   if not boxes[box] and type(box.HookScript) == "function" then
     boxes[box] = true
     box:HookScript("OnShow", dress)
+    if type(box.SetFontObject) == "function" then hooksecurefunc(box, "SetFontObject", dress) end
   end
   return dress(box)
 end

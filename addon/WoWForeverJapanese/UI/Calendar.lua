@@ -172,6 +172,8 @@ local CANDIDATES = {
   viewDate = { "CalendarViewEventDateLabel" }, createDate = { "CalendarCreateEventDateLabel" },
   holiday = { "CalendarViewHolidayFrame.ScrollingFont" }, raid = { "CalendarViewRaidFrame.ScrollingFont" },
   textureName = { "CalendarCreateEventTextureName" },
+  viewDescription = { "CalendarViewEventDescriptionContainer.ScrollingFont" },
+  createDescription = { "CalendarCreateEventDescriptionContainer.ScrollingEditBox" },
   difficultyDropdown = { "CalendarCreateEventFrame.DifficultyOptionDropdown" },
 }
 -- global writer → the hook target it runs
@@ -299,9 +301,25 @@ local function showLockedTitle()
   return WFJ.Labels.show(SURFACE, "viewTitle", get("viewTitle"), nil, LOCKED_TITLE)
 end
 
+-- An event a player made: its title and description are that player's text, never translated, and wear the bundled
+-- face while they hold Japanese (UI/PlayerText). The description is a ScrollingFontTemplate frame (xml:507): its
+-- height was measured in the client's font (scrolltemplates.lua:347–358), so it is fitted again after the font.
+-- The font a title was given comes off first, so a record made for it holds the widget's own font.
+local function showPlayerDescription()
+  local fs, refit = WFJ.Labels.scrolling(get("viewDescription"))
+  if not fs then return false end
+  local dressed = WFJ.PlayerText.shown(fs)
+  refit()
+  return dressed
+end
+
 function Calendar.onViewEvent()
+  WFJ.Font.restore(get("viewTitle"))
+  local locked = showLockedTitle()
+  if locked == 0 then WFJ.PlayerText.shown(get("viewTitle")) end
+  showPlayerDescription()
   return showTitled("typeName", get("typeName"), EVENT_TYPE) + show("viewHeader", "viewHeader", VIEW_HEADER)
-    + show("viewCreator", "viewCreator", CREATOR) + show("viewDate", "viewDate", DATE) + showLockedTitle()
+    + show("viewCreator", "viewCreator", CREATOR) + show("viewDate", "viewDate", DATE) + locked
 end
 
 -- The day's event `eventIndex` as the client reads it (C_Calendar.GetDayEvent, lua:1553, 2092, 4316). → table | nil
@@ -332,10 +350,13 @@ function Calendar.onDayEvents(index)
       local name = "CalendarDayButton" .. d .. "EventButton" .. i
       local recKey = "event." .. d .. "." .. i
       local eventButton = Compat.resolve(name)
+      local text1 = Compat.resolve(name .. "Text1")
+      WFJ.Font.restore(text1)
       if buttonTitled(dayEvent(dayButton, type(eventButton) == "table" and eventButton.eventIndex or nil)) then
-        n = n + showTitled(recKey, Compat.resolve(name .. "Text1"), EVENT_NAME)
+        n = n + showTitled(recKey, text1, EVENT_NAME)
       else
         WFJ.SurfaceState.drop(SURFACE, recKey)
+        WFJ.PlayerText.shown(text1) -- a title a player typed: its font only
       end
     end
   end
@@ -345,14 +366,17 @@ end
 local pickerKey = WFJ.Labels.keyer("picker.") -- a pooled picker button's record key
 
 -- CalendarEventPickerFrame_InitButton(button, elementData): the pooled button's Title, a raid lockout / reset event's
--- only (the event is elementData.index of the picker's day button, lua:4310–4316).
+-- only (the event is elementData.index of the picker's day button, lua:4310–4316). Any other title is a player's or
+-- a holiday's own: its font only (UI/PlayerText).
 function Calendar.onPickerButton(button, elementData)
   if type(button) ~= "table" or type(button.Title) ~= "table" then return 0 end
   local picker = Compat.resolve("CalendarEventPickerFrame")
   local index = type(elementData) == "table" and elementData.index or nil
   local recKey = pickerKey(button.Title)
+  WFJ.Font.restore(button.Title)
   if not buttonTitled(dayEvent(type(picker) == "table" and picker.dayButton or nil, index)) then
     WFJ.SurfaceState.drop(SURFACE, recKey)
+    WFJ.PlayerText.shown(button.Title)
     return 0
   end
   return showTitled(recKey, button.Title, EVENT_NAME)
@@ -477,6 +501,19 @@ function Calendar.onInviteRow(a, b)
   if type(row) == "table" then WFJ.HelpTooltip.register(row, INVITE_ROW_TOOLTIP) end
 end
 
+-- The boxes an event's title and description are typed in, in the bundled face. The description's box is inside a
+-- ScrollingEditBoxTemplate frame (xml:857; GetEditBox, scrolltemplates.lua:123). → the number dressed
+function Calendar.typingBoxes()
+  local P = WFJ.PlayerText
+  local n = P.each(P.box, { "CalendarCreateEventTitleEdit" })
+  local scrolling = get("createDescription")
+  if type(scrolling) == "table" and type(scrolling.GetEditBox) == "function" then
+    local ok, box = pcall(scrolling.GetEditBox, scrolling)
+    if ok and P.box(box) then n = n + 1 end
+  end
+  return n
+end
+
 local hooked = false
 
 -- Blizzard_Calendar's part: runs once the addon is loaded (now, or on its ADDON_LOADED). → true when set up.
@@ -486,6 +523,7 @@ function Calendar.setup()
   if type(frame) ~= "table" or type(get("filter")) ~= "table" then return false end -- not the mainline calendar
   WFJ.Labels.forbidNames(Calendar.NEVER_TOUCH) -- its widgets exist only now (Main's registration found none)
   Calendar.showStatic()
+  Calendar.typingBoxes()
   for _, target in pairs(WRITERS) do Calendar[target]() end
   if hooked then return false end
   hooked = true
