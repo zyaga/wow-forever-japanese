@@ -381,8 +381,8 @@ def cast_rows(root: Path, cfg: dict[str, Any], today: str) -> list[dict[str, Any
 
 def cast_changes(before: dict[int, dict[str, str]], rows: list[dict[str, Any]]) -> list[str]:
     """Every speaker whose voice is not the one the last cast gave it, one line each: the lines it speaks are
-    made again in the new voice, so a cast that moves a voice says so. A voice moves when Spoken's newest corpus
-    names a set for a speaker cast by the project's own rows before, or names another set."""
+    made again in the new voice, so a cast that moves a voice says so. A voice moves when Spoken's newest
+    corpus names a set for a speaker cast by the project's own rows before, or names another set."""
     out = []
     for r in sorted(rows, key=lambda r: int(r["creature"])):
         old = before.get(int(r["creature"]))
@@ -390,7 +390,8 @@ def cast_changes(before: dict[int, dict[str, str]], rows: list[dict[str, Any]]) 
             continue
         was, now = (old.get("voice"), old.get("female")), (r.get("voice"), r.get("female"))
         if was != now:
-            out.append(f"{r['creature']}: {old.get('voice')} ({old.get('row')}) → {r.get('voice')} ({r.get('row')})")
+            before_text = f"{old.get('voice')} ({old.get('row')})"
+            out.append(f"{r['creature']}: {before_text} → {r.get('voice')} ({r.get('row')})")
     return out
 
 
@@ -405,7 +406,8 @@ def run_cast(cfg: dict[str, Any], root: Path) -> int:
         print(f"voice cast: {n:5d}  {name}")
     changed = cast_changes(before, rows)
     if changed:
-        print(f"voice cast: {len(changed)} speaker(s) changed voice since the last cast; their lines are made again:")
+        count = f"{len(changed)} speaker(s) changed voice since the last cast"
+        print(f"voice cast: {count}; their lines are made again:")
         for line in changed:
             print(f"voice cast:   {line}")
     return 0
