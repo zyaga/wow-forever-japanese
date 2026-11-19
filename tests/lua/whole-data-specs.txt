@@ -1,0 +1,3 @@
+# Spec files that walk the whole data set. Under coverage they run without the hook (tests/lua/run-specs.sh,
+# PLAIN): they check the data, and the code they call is counted by the specs written for it.
+tests/lua/spec/uistrings_names_spec.lua

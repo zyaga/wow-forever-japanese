@@ -39,6 +39,28 @@ def run_folder(tmp_path_factory) -> Path:
     return tmp_path_factory.getbasetemp().parent
 
 
+def pytest_collection_modifyitems(config, items):
+    """WFJ_SHARD=k/n keeps the k-th of n shares of the test files, so n runs with k = 1..n cover every test once
+    and the suite can be spread over n machines. Files are dealt out by how many tests they hold, largest
+    first, so no share gets all the big files. A file is never split: its module fixtures run once."""
+    shard = os.environ.get("WFJ_SHARD")
+    if not shard:
+        return
+    k, n = (int(part) for part in shard.split("/"))
+    if not 1 <= k <= n:
+        raise pytest.UsageError(f"WFJ_SHARD is k/n with 1 <= k <= n, got {shard}")
+    counts: dict[str, int] = {}
+    for item in items:
+        counts[item.nodeid.split("::", 1)[0]] = counts.get(item.nodeid.split("::", 1)[0], 0) + 1
+    order = sorted(counts, key=lambda f: (-counts[f], f))
+    mine = {f for i, f in enumerate(order) if i % n == k - 1}
+    kept = [item for item in items if item.nodeid.split("::", 1)[0] in mine]
+    dropped = [item for item in items if item.nodeid.split("::", 1)[0] not in mine]
+    if dropped:
+        config.hook.pytest_deselected(items=dropped)
+        items[:] = kept
+
+
 @pytest.fixture(scope="session")
 def root() -> Path:
     return ROOT
