@@ -236,15 +236,18 @@ def measure(root: Path) -> dict[str, Any]:
     ui_keys, ui_excluded = _ui_lists(repo)
     # tooltip lines a batch can never take (a code drafting cannot place): their reason, stated
     blocked: dict[tuple[str, Any, str], str] = {}
+    loaded: dict[str, list[dict[str, Any]]] = {}  # each English type read once, for the checks and the count
     tooltip_kinds = (("item_description", "item"), ("spell_description", "spell"), ("spell_aura", "spell"))
     for kind, type_ in tooltip_kinds:
-        for (id_, field), reason in undraftable(root, kind).items():
+        for (id_, field), reason in undraftable(root, kind, loaded).items():
             blocked[(type_, id_, field)] = reason
     for type_, fields in SURFACE_FIELDS.items():
-        en = [ln for ln in english.load(type_) if ln["field"] in fields]
+        if type_ not in loaded:
+            loaded[type_] = english.load(type_)
+        en = [ln for ln in loaded[type_] if ln["field"] in fields]
         names = set(objective_names(repo, NAMES_LISTS[type_])) if type_ in NAMES_LISTS else set()
         ja = {(ln["id"], ln["field"]): ln for ln in store.load(type_)}
-        titles = ({ln["id"]: ln["en"] for ln in english.load("quest") if ln["field"] == "title"}
+        titles = ({ln["id"]: ln["en"] for ln in loaded["quest"] if ln["field"] == "title"}
                   if type_ == "quest" else {})
         done = named = uncounted = 0
         nothing: Counter[str] = Counter()
