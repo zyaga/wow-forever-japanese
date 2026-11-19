@@ -185,22 +185,6 @@ jobs:
       - run: ls coverage-lua.* | lua tests/lua/merge-coverage.lua luacov.stats.out
       - run: make coverage-lua-report LUA=lua
 
-  probe:
-    # Temporary: how long the slowest spec files take with no coverage hook.
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: ./.github/actions/lua-toolchain
-      - run: |
-          for f in uistrings_names slash intro addon_load readings; do
-            start=$(date +%s)
-            busted --lua=lua "tests/lua/spec/${f}_spec.lua" > /dev/null 2>&1 || echo "$f failed"
-            echo "$(( $(date +%s) - start )) s  $f (no coverage)"
-          done
-
   text:
     # Pull requests only. The title, body, branch name and commit messages are
     # public: no path on someone's machine, no tracker id, a noreply address on every commit, and nothing the

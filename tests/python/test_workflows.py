@@ -96,7 +96,8 @@ def test_every_job_that_runs_on_a_runner_has_a_time_limit(root):
 
 def test_pull_request_checks_keep_no_token_and_cancel_only_their_own_older_run(root):
     text = _workflows(root)["pr.yml"]
-    assert text.count("persist-credentials: false") == 3  # validate, lua, text
+    # every job checks the code out and none keeps the token
+    assert text.count("persist-credentials: false") == text.count("uses: actions/checkout@") == 7
     # a push to main or a release has no pull request number: its group is its own run, never cancelled
     assert "group: pr-${{ github.event.pull_request.number || github.run_id }}\n  cancel-in-progress: true" in text
 
@@ -115,15 +116,25 @@ def test_an_edit_of_the_pull_request_text_runs_nothing(root):
     assert "pip install" not in job and "pip install" not in lua
 
 
-def test_the_two_test_suites_run_in_two_jobs(root):
-    """The wait for a pull request is the longer suite, not both in a row: pytest under coverage in
-    validate, busted under luacov in lua."""
+def test_each_check_runs_in_a_job_of_its_own_and_each_suite_on_several_machines(root):
+    """The wait for a pull request is the slowest single job, not the sum: the data check, lint and the two
+    suites run beside each other, each suite's test files are dealt out over several machines, and the
+    coverage floor of a suite is checked once, over the counts of all its machines."""
     text = _workflows(root)["pr.yml"]
-    assert _keys(_block(text, "jobs"), 2) == ["validate", "lua", "text"]
-    validate, lua = _block(text, "validate", 2), _block(text, "lua", 2)
-    assert "run: make coverage-py\n" in validate and "coverage-lua" not in validate
-    assert "run: make coverage-lua LUA=lua\n" in lua and "coverage-py" not in lua
-    assert "make lint" in validate and "make validate" in validate and "make " not in lua.replace("make coverage-lua LUA=lua", "")
+    names = ["validate", "lint", "python", "python-coverage", "lua", "lua-coverage", "text"]
+    assert _keys(_block(text, "jobs"), 2) == names
+    job = {name: _block(text, name, 2) for name in names}
+    assert "make validate" in job["validate"] and "make lint" not in job["validate"]
+    assert "run: make lint LUA=lua\n" in job["lint"]
+    for suite, run, report in (("python", "make coverage-py-run", "make coverage-py-report"),
+                               ("lua", "make coverage-lua-run", "make coverage-lua-report LUA=lua")):
+        tests, floor = job[suite], job[f"{suite}-coverage"]
+        assert "shard: [1, 2, 3, 4]" in tests and "fail-fast: false" in tests and run in tests
+        assert "actions/upload-artifact@" in tests and "report" not in tests
+        assert f"needs: {suite}\n" in floor and "actions/download-artifact@" in floor
+        assert f"run: {report}\n" in floor and run not in floor
+    # the share a machine runs is the whole suite split by its matrix value, the same count on both sides
+    assert "WFJ_SHARD: ${{ matrix.shard }}/4" in job["python"] and 'SHARD="$SHARD/4"' in job["lua"]
 
 
 def test_workflows_agree_on_one_python_version(root):

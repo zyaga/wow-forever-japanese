@@ -47,7 +47,9 @@ list="$OUT/files.txt"
 find "$SPECS" -name '*_spec.lua' | sort > "$list"
 if [ -n "$SHARD" ]; then
   k=${SHARD%/*} n=${SHARD#*/}
+  case "$SHARD" in */*) ;; *) k= ;; esac
   case "$k$n" in *[!0-9]* | "") echo "run-specs: SHARD is k/n, got $SHARD"; exit 1 ;; esac
+  [ -n "$k" ] && [ -n "$n" ] || { echo "run-specs: SHARD is k/n, got $SHARD"; exit 1; }
   if [ "$n" -lt 1 ] || [ "$k" -lt 1 ] || [ "$k" -gt "$n" ]; then
     echo "run-specs: SHARD is k/n with 1 <= k <= n, got $SHARD"
     exit 1

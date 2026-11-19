@@ -404,3 +404,25 @@ def test_a_flight_point_is_exported_with_its_parts(tmp_path):
     (row,) = [json.loads(r) for r in (tmp_path / "out" / "batch-000.jsonl").read_text().splitlines()]
     assert row["kinds"] == {"taxi": 1}
     assert row["parts"] == [["Sentinel Hill", "センチネル・ヒル", "せんちねる・ひる"], None]
+
+
+@pytest.mark.parametrize(
+    ("ja", "reading", "parts"),
+    [
+        ("スロール", "すろーる", [("スロール", "すろーる")]),
+        ("アイアン・フォージ", "あいあん・ふぉーじ", [("アイアン", "あいあん"), ("・", "・"), ("フォージ", "ふぉーじ")]),
+        ("アイアン・フォージ", "あいあんふぉーじ", [("アイアン", "あいあん"), ("・", ""), ("フォージ", "ふぉーじ")]),
+        ("森の番人", "もりのばんにん", [("森", "もり"), ("の", "の"), ("番人", "ばんにん")]),
+        ("マスター整備士", "ますたーせいびし", [("マスター", "ますたー"), ("整備士", "せいびし")]),
+    ],
+)
+def test_align_gives_each_part_of_a_name_its_reading(ja, reading, parts):
+    assert names.align(ja, reading) == parts
+
+
+@pytest.mark.parametrize(
+    ("ja", "reading"),
+    [("ノスリ", "すのり"), ("スロール", "すろーるず"), ("森の番人", "もりばんにん"), ("スロール", "")],
+)
+def test_align_refuses_a_reading_that_does_not_fit(ja, reading):
+    assert names.align(ja, reading) is None

@@ -111,3 +111,33 @@ def test_the_stats_of_each_file_are_added_up_into_one(root: Path, tmp_path: Path
                        check=False)
     assert r.returncode == 0, r.stdout + r.stderr
     assert out.read_text(encoding="utf-8") == "4:x.lua\n2 1 2 7 \n2:y.lua\n0 5 \n"
+
+
+def test_the_shares_of_a_split_run_cover_every_file_once(run):
+    files = {f"{c}_spec.lua": PASSES for c in "abcde"}
+    seen = []
+    for k in (1, 2, 3):
+        r = run(files, SHARD=f"{k}/3")
+        assert r.returncode == 0, r.stdout + r.stderr
+        seen += [name for name in files if name in r.stdout.split("slowest files", 1)[1]]
+    assert sorted(seen) == sorted(files)
+    assert "2 files, 4 successes" in run(files, SHARD="1/3").stdout  # a_spec and d_spec
+
+
+@pytest.mark.parametrize("shard", ["0/3", "4/3", "x/3", "2", "1/0"])
+def test_a_share_that_names_no_part_of_the_run_is_refused(run, shard):
+    r = run({"a_spec.lua": PASSES}, SHARD=shard)
+    assert r.returncode != 0 and "SHARD is k/n" in r.stdout
+
+
+def test_a_file_on_the_plain_list_runs_without_the_coverage_hook(run, tmp_path: Path):
+    if _tool("luacov") is None:
+        pytest.skip("no luacov")
+    files = {"a_spec.lua": PASSES, "b_spec.lua": PASSES}
+    plain = tmp_path / "plain.txt"
+    plain.write_text(f"# walks the whole data set\n{tmp_path / 'specs' / 'b_spec.lua'}\n", encoding="utf-8")
+    r = run(files, COVERAGE="1", PLAIN=str(plain))
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "2 files, 4 successes" in r.stdout  # the plain file still runs and still counts
+    stats = {p.name for p in (tmp_path / "out").glob("*.stats")}
+    assert len(stats) == 1 and "a_spec" in next(iter(stats))
