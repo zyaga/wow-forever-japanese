@@ -185,6 +185,28 @@ jobs:
       - run: ls coverage-lua.* | lua tests/lua/merge-coverage.lua luacov.stats.out
       - run: make coverage-lua-report LUA=lua
 
+  probe:
+    # Temporary: the slowest spec files under coverage, on each interpreter.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/lua-toolchain
+      - run: |
+          start=$(date +%s)
+          sudo apt-get install -y -q luajit > /dev/null 2>&1 || echo "no luajit package"
+          echo "$(( $(date +%s) - start )) s  apt-get install luajit"
+          luajit -v || true
+          for lua in lua luajit; do
+            for f in slash intro addon_load; do
+              start=$(date +%s)
+              LUACOV_STATS="/tmp/$lua-$f.stats" busted --lua="$lua" --coverage "tests/lua/spec/${f}_spec.lua" > "/tmp/$lua-$f.log" 2>&1 || { echo "$lua $f failed"; tail -5 "/tmp/$lua-$f.log"; }
+              echo "$(( $(date +%s) - start )) s  $f under coverage on $lua"
+            done
+          done
+
   text:
     # Pull requests only. The title, body, branch name and commit messages are
     # public: no path on someone's machine, no tracker id, a noreply address on every commit, and nothing the
