@@ -1,5 +1,6 @@
-# Spec files that walk the whole data set. Under coverage they run without the hook (tests/lua/run-specs.sh,
+# Spec files that walk the whole data set, one per line. Under coverage they run without the hook (tests/lua/run-specs.sh,
 # PLAIN): the hook is called for every line they run, which makes them ten times slower, and the code they pass
 # through is counted by the specs written for it. A spec that loads the whole addon stays under the hook: the
 # load paths it runs are counted nowhere else.
 tests/lua/spec/uistrings_names_spec.lua
+tests/lua/spec/readings_shipped_spec.lua
