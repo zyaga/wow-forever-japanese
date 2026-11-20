@@ -317,15 +317,16 @@ def test_toolchain_versions_are_single_sourced(root):
 
 
 def test_every_lua_job_runs_the_action_before_make(root):
-    """Both code jobs of pr.yml take the toolchain from the one action; a per-step time limit is not a
-    composite-step key, so the build is bounded by each job's own limit."""
+    """Every job of pr.yml that runs a Lua tool takes the toolchain from the one action; a per-step time limit
+    is not a composite-step key, so the build is bounded by each job's own limit."""
     ci = (root / WORKFLOW).read_text(encoding="utf-8")
     jobs = re.findall(r"(?m)^  ([\w-]+):\n((?:    .*\n|\n)+)", ci.split("\njobs:\n", 1)[1])
     lua_jobs = [(name, body) for name, body in jobs if "uses: ./.github/actions/lua-toolchain\n" in body]
-    assert [name for name, _ in lua_jobs] == ["validate", "lua"]
+    assert [name for name, _ in lua_jobs] == ["validate", "lint", "python", "lua", "lua-coverage"]
     for name, body in lua_jobs:
         assert re.search(r"(?m)^    timeout-minutes: \d+$", body), name
-        assert body.index("actions/lua-toolchain") < body.index("run: make "), name
+        make = re.search(r"run: make (?!coverage-py-report)", body)  # the Python report needs no Lua
+        assert make and body.index("actions/lua-toolchain") < make.start(), name
     assert "leafo/" not in ci and "actions/cache" not in ci  # the toolchain lives in the action only
 
 
@@ -390,8 +391,6 @@ def test_setup_python_caches_pip(root):
 def test_gate_steps_in_order(root):
     ci = (root / WORKFLOW).read_text(encoding="utf-8")
     gates = [
-        "      - run: make lint LUA=lua\n",
-        "      - run: make coverage-py\n",
         "      - run: make luac LUA=lua\n",
         "      - run: make toc-check\n",
         '      - run: make validate LUA=lua VALIDATE_FLAGS="${BASE_REF:+--base origin/$BASE_REF}"\n'
@@ -400,8 +399,10 @@ def test_gate_steps_in_order(root):
     ]
     positions = [ci.index(g) for g in gates]
     assert positions == sorted(positions)
-    assert _steps(ci, indent=6)[-1].startswith(gates[-1])
-    assert ci.count("      - run: make coverage-lua LUA=lua\n") == 1  # the lua job's one gate
+    validate = ci[ci.index("  validate:\n"):ci.index("  lint:\n")]
+    assert _steps(validate, indent=6)[-1].startswith(gates[-1])
+    for gate in ("make lint LUA=lua", "make coverage-py-report", "make coverage-lua-report LUA=lua"):
+        assert ci.count(f"      - run: {gate}\n") == 1, gate  # one job owns each of the other gates
 
 
 def test_no_expression_is_spliced_into_a_run_script(root):

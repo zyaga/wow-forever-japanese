@@ -206,6 +206,7 @@ def group(
     """One row per distinct drafter English, first appearance order, every (id, field) sharing it. With
     `items` (quest kinds), each row also lists the objective item names of all its targets."""
     rows: dict[str, dict[str, Any]] = {}
+    refs: set[str] = set()
     for ln in lines:
         en = model_english(ln["en"], player_tokens=kind not in TEMPLATE_KINDS)
         # Book pages group by the English hash, the addon's key for a page (ADR-022): pages whose English
@@ -214,9 +215,10 @@ def group(
         row = rows.get(group_key)
         if row is None:
             ref = hashing.key(en)[:REF_LEN]
-            if any(r["ref"] == ref for r in rows.values()):
+            if ref in refs:
                 # never seen; fail rather than merge two texts under one ref
                 raise SystemExit(f"translate_batch: ref collision {ref}")
+            refs.add(ref)
             row = rows[group_key] = {"ref": ref, "kind": kind, "en": en, "targets": []}
             if items is not None:
                 row["items"] = []
@@ -479,15 +481,24 @@ def _in_scope(
     return english
 
 
-def undraftable(data: Path, kind: str) -> dict[tuple[Any, str], str]:
+def undraftable(
+    data: Path, kind: str, loaded: dict[str, list[dict[str, Any]]] | None = None
+) -> dict[tuple[Any, str], str]:
     """The tooltip lines of `kind` a batch can never take, with the reason `cut` gives when it leaves them out
     (a template code drafting cannot place, an inclusion it cannot splice, branches the addon could never tell
-    apart). `make coverage` states them as the reason the line has no Japanese. → {(id, field): reason}"""
+    apart). `make coverage` states them as the reason the line has no Japanese. → {(id, field): reason}
+    `loaded` is the English a caller has already read, by type, so several kinds read each file once."""
     if kind not in TEMPLATE_KINDS:
         return {}
     type_, field = KINDS[kind]
-    english = [ln for ln in Store(data, english=True).load(type_) if ln["field"] == field]
-    kept, not_expanded = expand_included(kind, english, spell_english(data))
+    store = Store(data, english=True)
+    loaded = loaded if loaded is not None else {}
+    for t in (type_, "spell"):
+        if t not in loaded:
+            loaded[t] = store.load(t)
+    english = [ln for ln in loaded[type_] if ln["field"] == field]
+    spells = {(ln["id"], ln["field"]): ln["en"] for ln in loaded["spell"]}
+    kept, not_expanded = expand_included(kind, english, spells)
     out = {(ln["id"], ln["field"]): reason for ln, reason in not_expanded}
     rows = [r for r in group(kind, kept, None) if _cuttable(kind, r["en"])]
     _annotate_slots(rows)

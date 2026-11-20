@@ -31,9 +31,11 @@ test-py: ## pytest over pipeline/ and tests/python, in parallel
 
 # The Lua specs run one busted process per file, as many at once as the machine has cores (JOBS=n to change it,
 # JOBS=1 for one at a time); each file's output is in build/lua-tests/ and a failing file's is printed.
+# A file in tests/lua/split-specs.txt runs as several processes, each with a share of its tests.
 # luarocks path makes the rocks visible to $(LUA).
 LUA_ROCKS_PATH = eval "$$($(LUAROCKS) --lua-version=5.1 path)"
-LUA_SPECS = LUA="$(LUA)" BUSTED="$(BUSTED)" $(if $(JOBS),JOBS=$(JOBS)) sh tests/lua/run-specs.sh
+LUA_SPECS = LUA="$(LUA)" BUSTED="$(BUSTED)" $(if $(JOBS),JOBS=$(JOBS)) $(if $(SHARD),SHARD=$(SHARD)) \
+	PLAIN=tests/lua/whole-data-specs.txt SPLIT=tests/lua/split-specs.txt sh tests/lua/run-specs.sh
 
 test-lua: ## busted specs under tests/lua, one process per file, in parallel (LuaJIT = Lua 5.1 semantics)
 	$(LUA_ROCKS_PATH); $(LUA_SPECS)
@@ -43,13 +45,25 @@ test-lua: ## busted specs under tests/lua, one process per file, in parallel (Lu
 COV_PY_MIN  ?= 89
 COV_LUA_MIN ?= 98
 
-coverage-py: ## pytest under coverage.py; fails below COV_PY_MIN percent of the pipeline's lines
-	cd pipeline && $(PY) -m coverage erase && $(PY) -m coverage run -m pytest -q $(PYTEST_PARALLEL) ../tests/python && \
-		$(PY) -m coverage combine -q && $(PY) -m coverage report --fail-under=$(COV_PY_MIN)
+# Each suite's coverage is two steps, so the checks can run the tests on several machines (WFJ_SHARD=k/n for
+# pytest, SHARD=k/n for busted), add the counts up and report once. Run by hand, each target does both.
+coverage-py: coverage-py-run coverage-py-report ## pytest under coverage.py; fails below COV_PY_MIN percent of the pipeline's lines
 
-coverage-lua: ## busted under luacov; fails below COV_LUA_MIN percent of the addon's logic lines (generated Data excluded)
+coverage-py-run: ## the pytest half: the tests under coverage.py, their counts left in pipeline/.coverage [PYTEST_ARGS=...]
+	cd pipeline && $(PY) -m coverage erase && $(PY) -m coverage run -m pytest -q $(PYTEST_PARALLEL) $(PYTEST_ARGS) ../tests/python && \
+		$(PY) -m coverage combine -q
+
+coverage-py-report: ## the report half: fails below COV_PY_MIN percent
+	cd pipeline && $(PY) -m coverage report --fail-under=$(COV_PY_MIN)
+
+coverage-lua: coverage-lua-run coverage-lua-report ## busted under luacov; fails below COV_LUA_MIN percent of the addon's logic lines (generated Data excluded)
+
+coverage-lua-run: ## the busted half: the specs under luacov, their counts left in luacov.stats.out [SHARD=k/n]
 	rm -f luacov.stats.out luacov.report.out
-	$(LUA_ROCKS_PATH); COVERAGE=1 $(LUA_SPECS) && $(LUACOV)
+	$(LUA_ROCKS_PATH); COVERAGE=1 $(LUA_SPECS)
+
+coverage-lua-report: ## the report half: fails below COV_LUA_MIN percent
+	$(LUA_ROCKS_PATH); $(LUACOV)
 	@test -s luacov.report.out || { echo "coverage-lua: no report written"; exit 1; }
 	@total=$$(awk '/^Total/ {print $$NF}' luacov.report.out | tr -d '%'); \
 	echo "coverage-lua: $$total% (floor $(COV_LUA_MIN)%)"; \

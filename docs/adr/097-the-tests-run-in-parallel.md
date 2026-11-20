@@ -3,7 +3,7 @@
 - **Status:** Accepted
 - **Date:** 2026-11-16
 - **Deciders:** the maintainer
-- **Related:** [Testing strategy](../testing/strategy.md) · [Local setup](../operations/local-setup.md)
+- **Related:** [Testing strategy](../testing/strategy.md) · [Local setup](../operations/local-setup.md) · [ADR-099](099-the-checks-are-spread-over-several-machines.md) replaces point 6
 
 ## Context
 
