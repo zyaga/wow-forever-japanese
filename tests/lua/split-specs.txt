@@ -1,0 +1,10 @@
+# Spec files that run in several processes, each with a share of the file's tests (tests/lua/run-specs.sh,
+# SPLIT): `<path> <parts>`. These load the whole addon before each test, which takes seconds under the coverage
+# hook, so one process for the file is the slowest thing in a run. Every test in a file listed here must stand
+# on its own (set up in before_each), because a process runs only some of them. addon_load_spec is slow too but
+# loads the addon once and walks it test after test, so it stays whole.
+tests/lua/spec/slash_spec.lua 4
+tests/lua/spec/intro_spec.lua 3
+tests/lua/spec/readings_spec.lua 3
+tests/lua/spec/init_guard_spec.lua 2
+tests/lua/spec/compat_routing_bindings_spec.lua 2

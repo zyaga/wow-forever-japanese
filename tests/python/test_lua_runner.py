@@ -141,3 +141,36 @@ def test_a_file_on_the_plain_list_runs_without_the_coverage_hook(run, tmp_path: 
     assert "2 files, 4 successes" in r.stdout  # the plain file still runs and still counts
     stats = {p.name for p in (tmp_path / "out").glob("*.stats")}
     assert len(stats) == 1 and "a_spec" in next(iter(stats))
+
+
+FIVE = """describe("a file of five tests", function()
+  for i = 1, 5 do it("test " .. i, function() assert.are.equal(i, i) end) end
+end)
+"""
+
+
+def test_a_file_on_the_split_list_runs_in_parts_that_cover_each_of_its_tests_once(run, tmp_path: Path):
+    files = {"a_spec.lua": FIVE, "b_spec.lua": PASSES}
+    split = tmp_path / "split.txt"
+    split.write_text(f"# loads the whole addon before each test\n{tmp_path / 'specs' / 'a_spec.lua'} 3\n",
+                     encoding="utf-8")
+    r = run(files, SPLIT=str(split))
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "4 files, 7 successes" in r.stdout  # three parts of a_spec (2 + 2 + 1 tests) and b_spec
+    logs = sorted(p.name for p in (tmp_path / "out").glob("*a_spec.lua@*.log"))
+    assert [name.rsplit("@", 1)[1] for name in logs] == ["1_3.log", "2_3.log", "3_3.log"]
+
+
+def test_the_parts_of_a_split_file_are_spread_over_the_machines(run, tmp_path: Path):
+    split = tmp_path / "split.txt"
+    split.write_text(f"{tmp_path / 'specs' / 'a_spec.lua'} 2\n", encoding="utf-8")
+    for k, successes in ((1, 3), (2, 2)):
+        r = run({"a_spec.lua": FIVE}, SPLIT=str(split), SHARD=f"{k}/2")
+        assert r.returncode == 0, r.stdout + r.stderr
+        assert f"1 files, {successes} successes" in r.stdout
+
+
+def test_every_file_on_the_split_list_exists_and_names_its_parts(root: Path):
+    rows = [ln.split() for ln in (root / "tests/lua/split-specs.txt").read_text(encoding="utf-8").splitlines()
+            if ln and not ln.startswith("#")]
+    assert rows and all(len(r) == 2 and (root / r[0]).is_file() and int(r[1]) > 1 for r in rows)

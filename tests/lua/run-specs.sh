@@ -4,12 +4,14 @@
 # the next. `make test-lua` and `make coverage-lua` call it.
 #
 #   LUA=<interpreter> BUSTED=<busted> [SPECS=tests/lua] [OUT=build/lua-tests] [JOBS=n] [COVERAGE=1] \
-#     [SHARD=k/n] [PLAIN=<list file>] sh tests/lua/run-specs.sh
+#     [SHARD=k/n] [PLAIN=<list file>] [SPLIT=<list file>] sh tests/lua/run-specs.sh
 #
 # SHARD=k/n runs every n-th file of the sorted list, starting at the k-th: n runs with k = 1..n cover every
 # file once, so the suite can be spread over n machines. PLAIN names a file of spec paths, one per line (`#`
 # comments), that run without the coverage hook even under COVERAGE=1: a spec that walks the whole data set
-# runs its loop thousands of times, and the hook is called for every line of it.
+# runs its loop thousands of times, and the hook is called for every line of it. SPLIT names a file of
+# `<spec path> <parts>` lines: such a file runs as that many processes, each with a share of its tests
+# (tests/lua/part.lua), listed as `<path>@k/n`; the shares are spread over the machines like files are.
 # JOBS defaults to the machine's cores. Each file's output goes to OUT/<file>.log. A file fails when busted
 # exits non-zero or prints no result line. With COVERAGE=1 each process writes its luacov counts to
 # OUT/<file>.stats (through LUACOV_STATS, which .luacov reads), and they are added up into luacov.stats.out.
@@ -18,15 +20,23 @@ set -u
 name_of() { printf '%s' "$1" | tr '/' '_'; }
 
 if [ "${1:-}" = "--one" ]; then
-  name=$(name_of "$2")
+  entry=$2
+  name=$(name_of "$entry")
+  file=${entry%@*}
   : > "$OUT/$name.rc"
-  if [ "$COVERAGE" = 1 ] && ! { [ -n "$PLAIN" ] && grep -qxF "$2" "$PLAIN"; }; then
+  set -- "$file"
+  if [ "$file" != "$entry" ]; then
+    WFJ_PART=${entry#*@}
+    export WFJ_PART
+    set -- --helper="$(dirname "$0")/part.lua" "$file"
+  fi
+  if [ "$COVERAGE" = 1 ] && ! { [ -n "$PLAIN" ] && grep -qxF "$file" "$PLAIN"; }; then
     LUACOV_STATS="$OUT/$name.stats"
     export LUACOV_STATS
     : > "$LUACOV_STATS"
-    "$BUSTED" --lua="$LUA" --coverage "$2" > "$OUT/$name.log" 2>&1
+    "$BUSTED" --lua="$LUA" --coverage "$@" > "$OUT/$name.log" 2>&1
   else
-    "$BUSTED" --lua="$LUA" "$2" > "$OUT/$name.log" 2>&1
+    "$BUSTED" --lua="$LUA" "$@" > "$OUT/$name.log" 2>&1
   fi
   echo $? > "$OUT/$name.rc"
   exit 0
@@ -39,12 +49,18 @@ BUSTED=${BUSTED:-busted}
 COVERAGE=${COVERAGE:-}
 PLAIN=${PLAIN:-}
 SHARD=${SHARD:-}
+SPLIT=${SPLIT:-}
 JOBS=${JOBS:-$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 2)}
 export SPECS OUT LUA BUSTED COVERAGE PLAIN
 
 mkdir -p "$OUT" || exit 1
 list="$OUT/files.txt"
 find "$SPECS" -name '*_spec.lua' | sort > "$list"
+if [ -n "$SPLIT" ]; then
+  awk 'NR == FNR { if ($0 !~ /^#/ && NF == 2) parts[$1] = $2; next }
+       $0 in parts { for (k = 1; k <= parts[$0]; k++) print $0 "@" k "/" parts[$0]; next }
+       { print }' "$SPLIT" "$list" > "$list.split" && mv "$list.split" "$list"
+fi
 if [ -n "$SHARD" ]; then
   k=${SHARD%/*} n=${SHARD#*/}
   case "$SHARD" in */*) ;; *) k= ;; esac

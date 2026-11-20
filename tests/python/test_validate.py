@@ -15,9 +15,14 @@ PROV = provenance(
 )
 
 
-def test_committed_repo_validates(root, plan_report):
-    planned, report = plan_report
-    assert validate.validate(root / "data", root / ADDON, None, planned, report["meaning_numbers"]) == []
+def _says_and_finds(word: str) -> list[str]:
+    print(f"validate: {word}")
+    return [f"{word}: wrong"]
+
+
+def test_a_rule_run_elsewhere_hands_back_its_problems_and_what_it_printed(capsys):
+    assert validate._held(_says_and_finds, "names") == (["names: wrong"], "validate: names\n")
+    assert capsys.readouterr().out == ""
 
 
 def test_hand_edit_of_a_shard_or_the_toc_block_fails(root, tmp_path, planned):

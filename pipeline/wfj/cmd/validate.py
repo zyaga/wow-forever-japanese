@@ -31,15 +31,21 @@ Rules, each a function returning problems:
      lack a current kana line are printed, not returned: tests/python/test_names.py and test_kana.py own those
      gates.
 `luac -p` over the generated files is `make luac` (part of `make validate`); the pipeline runs no Lua.
+
+The four slow rules (5, 8, 9 and 10) read the store without needing each other, so each runs in a process
+of its own while this one runs the rest. What they print is held and shown in the order above.
 """
 
 from __future__ import annotations
 
 import argparse
+import contextlib
+import io
 import json
 import re
 import subprocess
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -518,40 +524,59 @@ def rule_numbers(store: Store, text: str) -> list[str]:
     return [f"regenerate: {glosses.NUMBERS_FILE} differs from a regeneration; {hint}"]
 
 
-def validate(
-    root: Path,
-    addon_dir: Path,
-    base: str | None,
-    planned: dict[str, str] | None = None,
-    numbers: str | None = None,
-) -> list[str]:
-    """`planned` / `numbers`: the store's plan and its numbers file text (report `meaning_numbers`) when the
-    caller already holds them; computed here otherwise."""
-    if planned is not None and numbers is None:
-        raise ValueError("validate: a caller passing `planned` passes its `meaning_numbers` too")
-    store, english = Store(root), Store(root, english=True)
-    if planned is None:
-        report: dict[str, Any] = {}
-        try:
-            planned = generate.plan(store, generate.vectors_rows(root), report)
-            numbers = report.get("meaning_numbers", "")
-        except ValueError:
-            planned = None  # rule_regenerate reports it
-    problems = rule_schema(root, store, english)
-    problems += rule_provenance(root, store, base)
-    problems += rule_collisions(english)
-    problems += rule_referential(store, english)
-    problems += rule_regenerate(root, store, addon_dir, planned)
-    if numbers is not None:
-        problems += rule_numbers(store, numbers)
-    problems += rule_placeholders(store, english)
-    problems += rule_ui(
-        store, english, ui_arg_kinds(addon_dir), ui_chat_families(addon_dir), ui_own(addon_dir)
+def _held(rule: Callable[..., list[str]], *args: Any) -> tuple[list[str], str]:
+    """A rule's problems and what it printed, for a rule run in another process."""
+    out = io.StringIO()
+    with contextlib.redirect_stdout(out):
+        problems = rule(*args)
+    return problems, out.getvalue()
+
+
+def _regenerate(root: Path, addon_dir: Path) -> list[str]:
+    """Rule 5 whole: the plan, the files on disk against it, and the meaning numbers. The plan is the
+    slowest step of the gate and large, so the rules that read it run where it is made."""
+    store = Store(root)
+    report: dict[str, Any] = {}
+    try:
+        planned = generate.plan(store, generate.vectors_rows(root), report)
+    except ValueError as exc:
+        return [f"regenerate: {exc}"]
+    return rule_regenerate(root, store, addon_dir, planned) + rule_numbers(
+        store, report.get("meaning_numbers", "")
     )
-    problems += rule_objective(store)
-    problems += rule_voice(root)
-    problems += rule_readings(store)
-    problems += rule_names(root)
+
+
+def _readings(root: Path) -> list[str]:
+    return rule_readings(Store(root))
+
+
+def validate(root: Path, addon_dir: Path, base: str | None) -> list[str]:
+    store, english = Store(root), Store(root, english=True)
+    with ProcessPoolExecutor(max_workers=4) as pool:
+        slow = [
+            pool.submit(_held, rule, *args)
+            for rule, args in (
+                (_regenerate, (root, addon_dir)),
+                (rule_voice, (root,)),
+                (_readings, (root,)),
+                (rule_names, (root,)),
+            )
+        ]
+        problems = rule_schema(root, store, english)
+        problems += rule_provenance(root, store, base)
+        problems += rule_collisions(english)
+        problems += rule_referential(store, english)
+        ours = rule_placeholders(store, english)
+        ours += rule_ui(
+            store, english, ui_arg_kinds(addon_dir), ui_chat_families(addon_dir), ui_own(addon_dir)
+        )
+        ours += rule_objective(store)
+        (regenerated, said), *rest = (f.result() for f in slow)
+    print(said, end="")
+    problems += regenerated + ours
+    for found, said in rest:
+        print(said, end="")
+        problems += found
     return problems
 
 

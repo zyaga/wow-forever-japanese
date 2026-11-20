@@ -31,10 +31,11 @@ test-py: ## pytest over pipeline/ and tests/python, in parallel
 
 # The Lua specs run one busted process per file, as many at once as the machine has cores (JOBS=n to change it,
 # JOBS=1 for one at a time); each file's output is in build/lua-tests/ and a failing file's is printed.
+# A file in tests/lua/split-specs.txt runs as several processes, each with a share of its tests.
 # luarocks path makes the rocks visible to $(LUA).
 LUA_ROCKS_PATH = eval "$$($(LUAROCKS) --lua-version=5.1 path)"
 LUA_SPECS = LUA="$(LUA)" BUSTED="$(BUSTED)" $(if $(JOBS),JOBS=$(JOBS)) $(if $(SHARD),SHARD=$(SHARD)) \
-	PLAIN=tests/lua/whole-data-specs.txt sh tests/lua/run-specs.sh
+	PLAIN=tests/lua/whole-data-specs.txt SPLIT=tests/lua/split-specs.txt sh tests/lua/run-specs.sh
 
 test-lua: ## busted specs under tests/lua, one process per file, in parallel (LuaJIT = Lua 5.1 semantics)
 	$(LUA_ROCKS_PATH); $(LUA_SPECS)
