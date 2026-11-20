@@ -2,8 +2,10 @@ import fcntl
 import json
 import os
 import pickle
+import re
 import subprocess
 import sys
+from collections import Counter
 from collections.abc import Callable
 from pathlib import Path
 from typing import TypeVar
@@ -46,16 +48,16 @@ def pytest_collection_modifyitems(config, items):
     shard = os.environ.get("WFJ_SHARD")
     if not shard:
         return
-    k, n = (int(part) for part in shard.split("/"))
+    match = re.fullmatch(r"(\d+)/(\d+)", shard)
+    k, n = (int(part) for part in match.groups()) if match else (0, 0)
     if not 1 <= k <= n:
         raise pytest.UsageError(f"WFJ_SHARD is k/n with 1 <= k <= n, got {shard}")
-    counts: dict[str, int] = {}
-    for item in items:
-        counts[item.nodeid.split("::", 1)[0]] = counts.get(item.nodeid.split("::", 1)[0], 0) + 1
+    files = [item.nodeid.split("::", 1)[0] for item in items]
+    counts = Counter(files)
     order = sorted(counts, key=lambda f: (-counts[f], f))
     mine = {f for i, f in enumerate(order) if i % n == k - 1}
-    kept = [item for item in items if item.nodeid.split("::", 1)[0] in mine]
-    dropped = [item for item in items if item.nodeid.split("::", 1)[0] not in mine]
+    kept = [item for item, f in zip(items, files, strict=True) if f in mine]
+    dropped = [item for item, f in zip(items, files, strict=True) if f not in mine]
     if dropped:
         config.hook.pytest_deselected(items=dropped)
         items[:] = kept

@@ -30,6 +30,8 @@ if [ "${1:-}" = "--one" ]; then
     export WFJ_PART
     set -- --helper="$(dirname "$0")/part.lua" "$file"
   fi
+  # removed for every file: a file run without the hook must not leave an earlier run's counts to be added up
+  rm -f "$OUT/$name.stats"
   if [ "$COVERAGE" = 1 ] && ! { [ -n "$PLAIN" ] && grep -qxF "$file" "$PLAIN"; }; then
     LUACOV_STATS="$OUT/$name.stats"
     export LUACOV_STATS

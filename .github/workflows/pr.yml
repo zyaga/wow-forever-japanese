@@ -139,6 +139,8 @@ jobs:
         with:
           pattern: coverage-py-*
           merge-multiple: true
+      # a machine whose counts did not arrive would lower the total, or pass a floor it never ran under
+      - run: test "$(ls coverage-py.* | wc -l)" -eq 4
       - run: cd pipeline && python -m coverage combine -q ../coverage-py.*
       - run: make coverage-py-report
 
@@ -182,6 +184,7 @@ jobs:
         with:
           pattern: coverage-lua-*
           merge-multiple: true
+      - run: test "$(ls coverage-lua.* | wc -l)" -eq 4
       - run: ls coverage-lua.* | lua tests/lua/merge-coverage.lua luacov.stats.out
       - run: make coverage-lua-report LUA=lua
 

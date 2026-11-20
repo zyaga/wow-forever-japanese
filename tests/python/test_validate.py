@@ -25,6 +25,30 @@ def test_a_rule_run_elsewhere_hands_back_its_problems_and_what_it_printed(capsys
     assert capsys.readouterr().out == ""
 
 
+def test_the_gate_hands_back_what_every_rule_found_in_rule_order(root, tmp_path, capsys):
+    """The four slow rules run in processes of their own. A problem any of them finds still reaches the
+    result, in the order the rules are listed, and what they print still shows."""
+    en = [english_line(1, "title", "X", "d311f9a5c36057a2", "pfquest@7786596")]
+    line = _q(1, "title", "一", "trusted", "d311f9a5c36057a2")
+    data = _tree(tmp_path, [line, dict(line, ja="乙")], en)
+    (tmp_path / "vectors").mkdir()
+    shutil.copy(root / "vectors/hash_vectors.jsonl", tmp_path / "vectors/hash_vectors.jsonl")
+    (data / "voice").mkdir()
+    (data / "voice/voices.jsonl").write_text('{"creature": 0}\n', encoding="utf-8")
+    (data / "name").mkdir()
+    (data / "name/name-00.jsonl").write_text(
+        '{"id": "zz", "status": "nope", "en": "", "ja": ""}\n', encoding="utf-8"
+    )
+    problems = validate.validate(data, root / ADDON, None)
+    first: dict[str, int] = {}
+    for i, problem in enumerate(problems):
+        first.setdefault(problem.split(":")[0].split(" ")[0], i)
+    assert problems[first["quest"]] == "quest 1/title: duplicate line"
+    assert first["quest"] < first["regenerate"] < first["voice"] < first["name"]
+    assert problems[first["voice"]] == "voice voices: bad creature 0"
+    assert "validate: readings: " in capsys.readouterr().out
+
+
 def test_hand_edit_of_a_shard_or_the_toc_block_fails(root, tmp_path, planned):
     addon = tmp_path / "WoWForeverJapanese"
     shutil.copytree(root / ADDON, addon, ignore=shutil.ignore_patterns("Fonts"))
