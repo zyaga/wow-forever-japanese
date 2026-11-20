@@ -1,9 +1,11 @@
 {"id": 5081, "field": "name", "en": "Connor Rivers", "hash": "6904865566c73aa3", "src": "collector@1.60.1.70888"}
 {"id": 5082, "field": "name", "en": "Vincent Hyal", "hash": "8436e67d802eb459", "src": "collector@1.60.1.70888"}
 {"id": 5083, "field": "name", "en": "Clerk Lendry", "hash": "3e4535e93ffdedaf", "src": "collector@1.60.1.70888"}
+{"id": 5087, "field": "name", "en": "Do'gol", "hash": "70eb28327405b4fe", "src": "collector@1.60.1.70938"}
 {"id": 5111, "field": "name", "en": "Innkeeper Firebrew", "hash": "474ed2127ccca54a", "src": "collector@1.60.1.70790"}
 {"id": 5144, "field": "name", "en": "Bink", "hash": "08f3b95c15ae6786", "src": "collector@1.60.1.70938"}
 {"id": 5149, "field": "name", "en": "Brandur Ironhammer", "hash": "c1d9f9d9c20576a0", "src": "collector@1.60.1.70862"}
+{"id": 5204, "field": "name", "en": "Apothecary Zinge", "hash": "eaa5d18836b95b58", "src": "collector@1.60.1.70959"}
 {"id": 5387, "field": "name", "en": "High Explorer Magellas", "hash": "92d118a7c89448d2", "src": "collector@1.60.1.70938"}
 {"id": 5396, "field": "name", "en": "Captain Pentigast", "hash": "f6259add233a10d9", "src": "collector@1.60.1.70862"}
 {"id": 5398, "field": "name", "en": "Warug", "hash": "044673a81ab18786", "src": "collector@1.60.1.70862"}
@@ -19,22 +21,29 @@
 {"id": 5640, "field": "name", "en": "Keldran", "hash": "a0d981484a9126c2", "src": "collector@1.60.1.70938"}
 {"id": 5642, "field": "name", "en": "Vahlarriel Demonslayer", "hash": "82eed3e0a518b7fa", "src": "collector@1.60.1.70862"}
 {"id": 5644, "field": "name", "en": "Dalinda Malem", "hash": "137557ced1848e00", "src": "collector@1.60.1.70862"}
+{"id": 5651, "field": "name", "en": "Patrick Garrett", "hash": "6bc7c7928e5aef10", "src": "collector@1.60.1.70938"}
 {"id": 5667, "field": "name", "en": "Venya Marthand", "hash": "83b4addaa594244e", "src": "collector@1.60.1.70862"}
 {"id": 5675, "field": "name", "en": "Carendin Halgar", "hash": "426caabf205a74f6", "src": "collector@1.60.1.70862"}
 {"id": 5688, "field": "name", "en": "Innkeeper Renee", "hash": "ab56991f40219fe8", "src": "collector@1.60.1.70790"}
+{"id": 5690, "field": "name", "en": "Clyde Kellen", "hash": "e6de7d10ab40f064", "src": "collector@1.60.1.70840"}
 {"id": 5694, "field": "name", "en": "High Sorcerer Andromath", "hash": "ade0a64ec47a62a7", "src": "collector@1.60.1.70888"}
 {"id": 5724, "field": "name", "en": "Ageron Kargal", "hash": "6a3a0d9ea258b4b3", "src": "collector@1.60.1.70862"}
 {"id": 5752, "field": "name", "en": "Corporal Melkins", "hash": "c3b21fd4693488c9", "src": "collector@1.60.1.70862"}
+{"id": 5759, "field": "name", "en": "Nurse Neela", "hash": "458ae2f6b31b7e6c", "src": "collector@1.60.1.70840"}
+{"id": 5765, "field": "name", "en": "Ruzan", "hash": "af32023debfbbb41", "src": "collector@1.60.1.70888"}
 {"id": 5767, "field": "name", "en": "Nalpak", "hash": "579762ecb350cacc", "src": "collector@1.60.1.70862"}
 {"id": 5768, "field": "name", "en": "Ebru", "hash": "0958cf04a21ce8db", "src": "collector@1.60.1.70862"}
 {"id": 5769, "field": "name", "en": "Arch Druid Hamuul Runetotem", "hash": "68a649d6f06afbd3", "src": "collector@1.60.1.70790"}
 {"id": 5770, "field": "name", "en": "Nara Wildmane", "hash": "a9a75b816d8ebbbc", "src": "collector@1.60.1.70862"}
+{"id": 5875, "field": "name", "en": "Gan'rul Bloodeye", "hash": "bee30b139b1688d3", "src": "collector@1.60.1.70938"}
 {"id": 5884, "field": "name", "en": "Mai'ah", "hash": "5b9910e797c3f284", "src": "collector@1.60.1.70790"}
 {"id": 5888, "field": "name", "en": "Seer Ravenfeather", "hash": "20a087aff84b11a0", "src": "collector@1.60.1.70790"}
 {"id": 5891, "field": "name", "en": "Minor Manifestation of Earth", "hash": "48b4f0a0b474a8a9", "src": "collector@1.60.1.70790"}
 {"id": 5895, "field": "name", "en": "Minor Manifestation of Water", "hash": "84ac40c668e0488a", "src": "collector@1.60.1.70938"}
 {"id": 5899, "field": "name", "en": "Brine", "hash": "95eb475c11a10638", "src": "collector@1.60.1.70862"}
+{"id": 5900, "field": "name", "en": "Telf Joolam", "hash": "c16e0781c218ab88", "src": "collector@1.60.1.70938"}
 {"id": 5901, "field": "name", "en": "Islen Waterseer", "hash": "4d0dd7ba2acf5b67", "src": "collector@1.60.1.70862"}
 {"id": 5905, "field": "name", "en": "Prate Cloudseer", "hash": "0d3dc7808a80eb7a", "src": "collector@1.60.1.70938"}
 {"id": 5906, "field": "name", "en": "Xanis Flameweaver", "hash": "7990a745e31c8c20", "src": "collector@1.60.1.70938"}
+{"id": 5907, "field": "name", "en": "Kranal Fiss", "hash": "58e7ed66906930f5", "src": "collector@1.60.1.70938"}
 {"id": 5911, "field": "name", "en": "Grunt Logmar", "hash": "81613893e1ba791c", "src": "collector@1.60.1.70862"}

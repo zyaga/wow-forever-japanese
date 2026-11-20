@@ -1,5 +1,6 @@
 {"id": "9504c07d83234d64", "field": "text", "en": "Master Nesingwary has a big hunt ahead of him.  I find helping him prepare for a day in the jungle is much more relaxing than helping him ready for combat.  Although I do miss some of those glorious moments on the battlefield.", "hash": "9504c07d83234d64", "src": "vmangos@13b49dc"}
 {"id": "95062a863bb6ca1f", "field": "text", "en": "Good work, one and all!  The Scourge at the castle have been defeated.", "hash": "95062a863bb6ca1f", "src": "vmangos@13b49dc"}
+{"id": "95074dc701121123", "field": "text", "en": "<Continue listening.>", "hash": "95074dc701121123", "src": "collector@1.60.1.70888", "npcs": [259620]}
 {"id": "9514cfda25ca2fb3", "field": "text", "en": "Kill her! Take the farm!", "hash": "9514cfda25ca2fb3", "src": "vmangos@13b49dc"}
 {"id": "952031770d5eefb4", "field": "text", "en": "By the Light! This is not good. There's something you don't understand, $n.", "hash": "952031770d5eefb4", "src": "vmangos@13b49dc"}
 {"id": "9521b42d8c75c952", "field": "text", "en": "Aaahh... Very good. Now scat!", "hash": "9521b42d8c75c952", "src": "vmangos@13b49dc"}
@@ -31,11 +32,13 @@
 {"id": "95916e3c7f1be40d", "field": "text", "en": "Smell ugly near. Me smell you ugly.", "hash": "95916e3c7f1be40d", "src": "vmangos@13b49dc"}
 {"id": "9593cf89f72bab46", "field": "text", "en": "My back is killing me today.", "hash": "9593cf89f72bab46", "src": "vmangos@13b49dc"}
 {"id": "959522b13d831fdc", "field": "text", "en": "Report to the Image of Archmage Modera near the City of Dalaran.", "hash": "959522b13d831fdc", "src": "wdb@1.60.1.70245"}
+{"id": "959548c0b13c5600", "field": "text", "en": "HnnhhnNNHHnnggg!", "hash": "959548c0b13c5600", "src": "collector@1.60.1.70938"}
 {"id": "9596a2dd51f925cf", "field": "text", "en": "I need help recovering a missing piece of my Haruspex's Garb, Maywiki.", "hash": "9596a2dd51f925cf", "src": "vmangos@13b49dc"}
 {"id": "959f27613d5af873", "field": "text", "en": "Hey, there's one!", "hash": "959f27613d5af873", "src": "vmangos@13b49dc"}
 {"id": "95a312df7baa87a8", "field": "text", "en": "Where is Elder Graveborn?", "hash": "95a312df7baa87a8", "src": "vmangos@13b49dc"}
 {"id": "95a5244834da6e71", "field": "text", "en": "Ah, one of my favorite customers. You look to be of a warlock of some power, $n. I am pleased to meet you. If there is anything I can do for you, please, just ask.$B$BMy brother and I feel that it will be your kind who lead us into the next great era. One with such power... such control... it's only a matter of time before the Legion itself bends to your will.$B$BI am but a little envious.", "hash": "95a5244834da6e71", "src": "vmangos@13b49dc"}
 {"id": "95aeb2482dc5ecfd", "field": "text", "en": "Our veterans are leaving the field.  We need more supplies!", "hash": "95aeb2482dc5ecfd", "src": "vmangos@13b49dc"}
+{"id": "95b56775d3fb3bde", "field": "text", "en": "What would you ask of death?", "hash": "95b56775d3fb3bde", "src": "collector@1.60.1.70938", "npcs": [2278]}
 {"id": "95bccce13c608720", "field": "text", "en": "The time for war is almost upon us, $c! Both the Horde and the Alliance have finished with their preparations. All of our war materiel is being shipped to Silithus as we speak. I'd expect it all to arrive within $2113w days. When all is assembled there, the one who has completed the arduous task of reassembling the Scepter of the Shifting Sands will bang it against the Scarab Gong and open the gates to Ahn'Qiraj. Then battle shall be joined as has not been seen in ages!$B$BLok'tar Ogar!", "hash": "95bccce13c608720", "src": "vmangos@13b49dc"}
 {"id": "95c42a96ddd37f7a", "field": "text", "en": "Such devastation... what a horrible mess...", "hash": "95c42a96ddd37f7a", "src": "vmangos@13b49dc"}
 {"id": "95cdc6898d910068", "field": "text", "en": "Through the gem, Elune channeled her infinite wisdom...", "hash": "95cdc6898d910068", "src": "vmangos@13b49dc"}

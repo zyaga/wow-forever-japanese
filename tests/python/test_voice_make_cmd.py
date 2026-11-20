@@ -292,7 +292,10 @@ def test_the_cast_command_writes_voices_and_counts_rows(world, capsys):
     assert rows == {1992: ("f", "female"), 2079: ("m", "male"), 3000: ("m", "narrator")}
     out = capsys.readouterr().out.splitlines()
     assert out[0] == "voice cast: 3 creatures → data/voice/voices.jsonl"
-    assert sorted(out[1:]) == ["voice cast:     1  female", "voice cast:     1  male", "voice cast:     1  narrator"]
+    assert sorted(out[1:4]) == ["voice cast:     1  female", "voice cast:     1  male", "voice cast:     1  narrator"]
+    # the world's earlier cast gave 3000 another voice: the cast says whose voice moved
+    assert out[4:] == ["voice cast: 1 speaker(s) changed voice since the last cast; their lines are made again:",
+                       "voice cast:   3000: old (elder, female) → m (narrator)"]
 
 
 def test_the_plan_command_prints_what_would_be_made(world, capsys):
@@ -505,3 +508,19 @@ def test_a_local_engine_keeps_every_wav_in_the_archive_named_as_a_remote_run_nam
     name = line_key("よく来たな。", Path("set-copy-a.wav"), "copy", 7, 0.5) + ".wav"
     assert (tmp_path / "local-2026-11-14-120000" / "wav" / name).read_bytes() == wav
     assert inner.entered
+
+
+
+def test_a_cast_names_every_speaker_whose_voice_moved():
+    from wfj.cmd import voice_make
+
+    before = {1: {"creature": 1, "voice": "a", "row": "male"}, 2: {"creature": 2, "voice": "b", "row": "set x"},
+              3: {"creature": 3, "voice": "c", "row": "female", "female": "d"}}
+    rows = [{"creature": 1, "voice": "q", "row": "set humanmalestandardnpc"},  # Spoken now names its set
+            {"creature": 2, "voice": "b", "row": "set x"},  # unchanged
+            {"creature": 3, "voice": "c", "row": "female", "female": "e"},  # its female voice moved
+            {"creature": 4, "voice": "z", "row": "male"}]  # a new speaker: nothing to make again
+    before[5] = {"creature": 5, "voice": "g", "row": "male"}  # no longer cast
+    assert voice_make.cast_changes(before, rows) == [
+        "1: a (male) → q (set humanmalestandardnpc)", "3: c + d (female) → c + e (female)",
+        "5: g (male) → removed"]

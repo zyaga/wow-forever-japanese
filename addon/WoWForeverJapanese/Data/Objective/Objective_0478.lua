@@ -9,4 +9,6 @@ WFJ.Data.add("objective", {
   [478913] = { "Darkspear Islandsで勝利する", 0x730d9ec8, "." },
   [478914] = { "Darkspear Islandsで勝利する", 0x730d9ec8, "." },
   [478915] = { "Darkspear Islandsで勝利する", 0x730d9ec8, "." },
+  [478960] = { "少なくとも3つの拠点を支配した状態でDarkspear Islandsで勝利する", 0xc3101b1c, "." },
+  [478961] = { "少なくとも3つの拠点を支配した状態でDarkspear Islandsで勝利する", 0xc3101b1c, "." },
 })

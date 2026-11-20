@@ -182,6 +182,7 @@ WFJ.Data.add("name", {
   ["ebba91bb02484586"] = { "ニトロ・ブースト", "にとろ・ぶーすと", "Nitro Boosts" },
   ["ebbb4eec3908a6ba"] = { "ライチャス・オーラ3", "らいちゃす・おーらさん", "Righteous Aura III" },
   ["ebbc06d75469fe51"] = { "ブラッド・ガードズ・プレート・グローブ", "ぶらっど・がーどず・ぷれーと・ぐろーぶ", "Blood Guard's Plate Gloves" },
+  ["ebbd3ca37185847a"] = { "フィッシン・コンテスト", "ふぃっしん・こんてすと", "Fishin Contest" },
   ["ebbdc9d64ced3176"] = { "プラン：クラウディ・スカイフォージド・チェーンメイル", "ぷらん・くらうでぃ・すかいふぉーじど・ちぇーんめいる", "Plans: Cloudy Skyforged Chainmail" },
   ["ebbdd2eb4606600f"] = { "ルーン・オブ・ラセレイト", "るーん・おぶ・らせれいと", "Rune of Lacerate" },
   ["ebc0180f01e10d29"] = { "フェイスガード・オブ・ヒロイズム", "ふぇいすがーど・おぶ・ひろいずむ", "Faceguard of Heroisml" },

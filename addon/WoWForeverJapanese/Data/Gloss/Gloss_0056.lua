@@ -114,7 +114,6 @@ WFJ.Data.add("gloss", {
   [56111] = "古い\tふるい\tolder (old)",
   [56112] = "古い\tふるい\toldest (old)",
   [56113] = "古い\tふるい\tole (old)",
-  [56114] = "古い\tふるい\ttime-honored (old)",
   [56115] = "古い\tふるい\twas ancient (old)",
   [56116] = "古き\tふるき\told",
   [56117] = "古き友\tふるきとも\told friend",

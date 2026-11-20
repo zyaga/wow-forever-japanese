@@ -24,6 +24,7 @@
 {"id": "e869997534a32420", "field": "text", "en": "May the light guide your path and aid you in your journies. If you need any assistance browsing, I will be right over here.", "hash": "e869997534a32420", "src": "vmangos@13b49dc"}
 {"id": "e86dbe4bb06d9d31", "field": "text", "en": "I would like to whisper my secret code to you to receive my Panda Cub pet.", "hash": "e86dbe4bb06d9d31", "src": "vmangos@13b49dc"}
 {"id": "e8738bbe6b7606b2", "field": "text", "en": "With Ouro slain the way is clear to the final chamber. I am able to transport you there, if you desire.", "hash": "e8738bbe6b7606b2", "src": "vmangos@13b49dc"}
+{"id": "e87462a1214079b9", "field": "text", "en": "Ah, my lucidity is returning more and more.$B$BThis orb bears the burden of a deep corruptive force. We will have to purify it before it will be of use in restoring the Dawn Waker.", "hash": "e87462a1214079b9", "src": "collector@1.60.1.70938", "npcs": [273642]}
 {"id": "e877f3e7f5c00ea3", "field": "text", "en": "For the time being, that area is free of Scourge influence. I fear it will only be a matter of time before they return.", "hash": "e877f3e7f5c00ea3", "src": "vmangos@13b49dc"}
 {"id": "e88413e700a0b553", "field": "text", "en": "The markings of this tablet show ancient diagrams and hold dire words of power.$B$BYou believe it is an alchemical recipe, but it is beyond your skill...", "hash": "e88413e700a0b553", "src": "vmangos@13b49dc"}
 {"id": "e8880c7c3ce83a37", "field": "text", "en": "My scepter will once again become whole!", "hash": "e8880c7c3ce83a37", "src": "vmangos@13b49dc"}

@@ -28,7 +28,6 @@ WFJ.Data.add("english", {
   ["gossip:5475eaabd126ccac"] = { text = "call=4 them=3" },
   ["gossip:5476cf471d3f99fe"] = { text = "found=6 parts=3 rods=5 seen=4 these=2" },
   ["gossip:547ad6651b4db0be"] = { text = "advance=13 beyond=5 corner=6 could=15 expertise=3 help=14 level=4 master=9 my=2 skills=12 you=1 your=11" },
-  ["gossip:547dd283aa1c2e09"] = { text = "ah=1 ghost=8 just=2 lad=7 like=10 look=12 matter=6 seen=9 you're=5" },
   ["gossip:54805afa085bc7f7"] = { text = "cover=8 going=9 my=2 room=5 should=7 stuff=3 that=4 this=1" },
   ["gossip:5486f890fa35a178"] = { text = "regards=3 silently=1 you=2" },
   ["gossip:54875ae89acbe73d"] = { text = "destroy=10 good=9 know=6 own=8 what=3 you=1" },
@@ -47,5 +46,6 @@ WFJ.Data.add("english", {
   ["gossip:54d897bcfd74b026"] = { text = "hm=1 if=4 might=8 secret=6 trick=7 zombies=5" },
   ["gossip:54e373b88a8e9fc5"] = { text = "mine=1" },
   ["gossip:54e625a461c246da"] = { text = "access=2 discs=3 pedestal=1 returned=4" },
+  ["gossip:54f820a6faf44a62"] = { text = "bring=3 excellent=1 more=2" },
   ["gossip:54fbe825a7169532"] = { text = "allies=12 among=4 armies=20 blow=9 dealt=10 destroyed=18 dismantled=22 enemies=7 finally=17 heroes=2 his=19 leader=14 merciless=13 one=5 our=6 relieved=15 scourge=16 soldiers=1 vicious=8 wholly=21 you=3" },
 })

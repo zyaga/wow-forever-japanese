@@ -71,7 +71,7 @@ WFJ.Data.add("item", {
   [286604] = { "このコンパニオンの召喚方法を習得します。", 0x42caee1b, "u" },
   [286612] = { "かかっているImmobilizing効果を解除し、$D1の間、Immobilizing効果を受けなくなります。", 0x949e3aa9, "u" },
   [286613] = { "Un'Goroの王は、その支配に挑む者をすべて食らいました。", 0x23c05b82, "u" },
-  [286616] = { "Feral Combatが+$N1上昇します。", 0x5338bc25, "u" },
+  [286616] = { "Feral Combatが+$N1上昇します。", 0x3029c093, "u" },
   [286644] = { "この槍は使う前に鍛え直す必要があります。槍を鍛え直すには、Mithril Barsが40個、Truesilver Barsが10個、Aquamarineが8個、Solid Grinding Stoneが4個、Elemental Fireが2個必要です。", 0xb280519c, "u" },
   [286645] = { "数え切れぬ者が足を踏み入れましたが、出てきた者はわずかでした。", 0x333af11b, "u" },
   [286646] = { "Underwater Breathの持続時間が通常より$N1%長くなります。", 0x7c55adcc, "u" },

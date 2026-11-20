@@ -176,6 +176,7 @@ WFJ.Data.add("name", {
   ["98ed92c82214be1f"] = { "テスト・エーキュー・リソース・シルク・バンデージ", "てすと・えーきゅー・りそーす・しるく・ばんでーじ", "Test AQ Resource - Silk Bandage" },
   ["98ee12e1afb46173"] = { "ハクゾア", "はくぞあ", "Hahk'Zor" },
   ["98ef8ead7d5983f9"] = { "ドリームウィーヴ・ベスト", "どりーむうぃーゔ・べすと", "Dreamweave Vest" },
+  ["98f44fe9a1c1bcde"] = { "ストームパイク・ラム・ライダー", "すとーむぱいく・らむ・らいだー", "Stormpike Ram Riders" },
   ["98f5ed8fbff03cb7"] = { "ストーンスプリンター・ディガー", "すとーんすぷりんたー・でぃがー", "Stonesplinter Digger" },
   ["98f6021aee2cd95e"] = { "メロディアス・ラプチャー", "めろでぃあす・らぷちゃー", "Melodious Rapture" },
   ["98f6e4501c9f8f7a"] = { "ジェー・ディー・エス・ワーク・テーブル", "じぇー・でぃー・えす・わーく・てーぶる", "J.D.'s Work Table" },

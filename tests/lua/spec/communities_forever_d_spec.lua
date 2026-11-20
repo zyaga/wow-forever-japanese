@@ -132,6 +132,14 @@ local function en(key) return _G[key] end
 local function fs(text) return Stub.fontString(text or "") end
 local function btn(text) return Stub.button(nil, text or "") end
 local function frame(name) local f = CreateFrame("Frame"); f.name = name; return f end
+-- a box a player types into: an edit box with a font of its own
+local function typing()
+  local box = CreateFrame("EditBox")
+  box.font = { "Fonts\\ARIALN.TTF", 12, "" }
+  function box:GetFont() return self.font[1], self.font[2], self.font[3] end
+  function box:SetFont(p, s, f) self.font = { p, s, f }; return true end
+  return box
+end
 
 -- A WowStyle1Dropdown: its selection text is written by UpdateText (Labels.dropdown's writer).
 local function dropdown(label)
@@ -227,6 +235,7 @@ local function loadWindow()
     end)
     return row
   end
+  CF.ChatEditBox = typing() -- communitiesframe.xml:507
   -- the invitation panel (communitiesinvitationframe.lua:36–86)
   local inv = CreateFrame("Frame")
   inv.name = "InvitationFrame"
@@ -320,6 +329,8 @@ function C.loadFinder(CF)
   p.RequestToJoinFrame = rtj
   rtj.DialogLabel, rtj.ClubName, rtj.RecruitingSpecDescriptions = fs(en("CLUB_FINDER_REQUEST_TO_JOIN")), fs(), fs()
   rtj.Apply = btn(en("CLUB_FINDER_APPLY"))
+  rtj.ClubDescription = fs() -- clubfinder.lua:352
+  rtj.MessageFrame = { MessageScroll = { EditBox = typing() } }
   function rtj.Initialize(self) -- lua:444–451
     self.ClubName:SetText(self.card.cardInfo.name)
     self.RecruitingSpecDescriptions:SetText(en("CLUB_FINDER_RECRUITING_ONE_SPEC"):format("Holy", "Priest"))
@@ -351,7 +362,7 @@ function C.loadFinder(CF)
     local row = C.applicants[i]
     if not row then
       row = CreateFrame("Button")
-      row.Name, row.Level, row.RequestStatus, row.AllSpec = fs(), fs(), fs(), fs()
+      row.Name, row.Level, row.RequestStatus, row.AllSpec, row.Note = fs(), fs(), fs(), fs(), fs()
       row.InviteButton = CreateFrame("Button")
       row.InviteButton.Text = fs(en("INVITE"))
       C.applicants[i] = row
@@ -370,8 +381,8 @@ end
 function C.loadDialogs(CF)
   local sd = CreateFrame("Frame", "CommunitiesSettingsDialog")
   sd.DialogLabel, sd.NameLabel = fs(en("COMMUNITIES_SETTINGS_LABEL")), fs(en("COMMUNITIES_SETTINGS_NAME_LABEL"))
-  sd.NameEdit = CreateFrame("EditBox")
-  sd.Description = { EditBox = CreateFrame("EditBox") }
+  sd.NameEdit = typing()
+  sd.Description = { EditBox = typing() }
   sd.Description.EditBox.Instructions = fs()
   sd.ClubFinderPostingBannedError = fs()
   sd.Accept = btn(en("ACCEPT"))
@@ -386,7 +397,7 @@ function C.loadDialogs(CF)
   end
   local es = frame("EditStreamDialog")
   CF.EditStreamDialog = es
-  es.TitleLabel, es.NameLabel, es.NameEdit = fs(), fs(en("COMMUNITIES_CHANNEL_NAME_LABEL")), CreateFrame("EditBox")
+  es.TitleLabel, es.NameLabel, es.NameEdit = fs(), fs(en("COMMUNITIES_CHANNEL_NAME_LABEL")), typing()
   function es.ShowCreateDialog(self) self.TitleLabel:SetText(en("COMMUNITIES_CREATE_CHANNEL")) end
   function es.ShowEditDialog(self, _, stream)
     self.TitleLabel:SetText(en("COMMUNITIES_EDIT_CHANNEL"))
@@ -464,6 +475,32 @@ describe("the rest of the Communities window on Forever", function()
   for _, order in ipairs({ { true, "loaded at login" }, { false, "loaded on demand" } }) do
     describe("Blizzard_Communities " .. order[2], function()
       before_each(function() setup(order[1]) end)
+
+      it("player-written text: a typing box wears the bundled face, shown text only while it holds Japanese",
+        function()
+          local CF, face = _G.CommunitiesFrame, WFJ.Font.PATH
+          local sd, finder = _G.CommunitiesSettingsDialog, CF.GuildFinderFrame
+          local rtj = finder.RequestToJoinFrame
+          for _, box in ipairs({ sd.NameEdit, sd.Description.EditBox, CF.EditStreamDialog.NameEdit, CF.ChatEditBox,
+            rtj.MessageFrame.MessageScroll.EditBox }) do
+            assert.are.same({ face, 12, "" }, box.font)
+          end
+          assert.is_nil(finder.OptionsList.SearchBox.font) -- a search box is not a player's text
+          finder.GuildCards:BuildCardList() -- the cards are seen
+          local card = finder.GuildCards.Cards[1]
+          local row = C.applicant(1, { name = "Approved", level = 60, status = "CLUB_FINDER_APPROVED" })
+          local inv = CF.InvitationFrame
+          for _, w in ipairs({ inv.Name, inv.Description, card.Name, card.Description, rtj.ClubName,
+            rtj.ClubDescription, row.Note }) do
+            local own = w.font.path
+            w:SetText("日本語のギルドです")
+            assert.are.equal(face, w.font.path)
+            assert.are.equal("日本語のギルドです", w:GetText())
+            w:SetText("An English guild")
+            assert.are.equal(own, w.font.path)
+            assert.are.equal("An English guild", w:GetText())
+          end
+        end)
 
       it("the frame's chrome: title, buttons, chat word, control button, posting countdown, rename alert", function()
         local CF = _G.CommunitiesFrame

@@ -251,6 +251,16 @@ describe("the calendar's holiday description", function()
     for _, name in ipairs(GLOBALS) do _G[name] = nil end
   end)
 
+  it("a holiday with no start or end time shows its description alone: the row's Japanese", function()
+    local sf = _G.CalendarViewHolidayFrame.ScrollingFont
+    sf:SetText("The Faire is in town. Come!") -- lua:2477, 2482: no begins / ends template
+    assert.are.equal(1, WFJ.Calendar.onHoliday())
+    assert.are.equal("移動遊園地がやって来た。おいで！", sf.fs:GetText())
+    sf:SetText("A holiday nobody translated.")
+    assert.are.equal(0, WFJ.Calendar.onHoliday())
+    assert.are.equal("A holiday nobody translated.", sf.fs:GetText())
+  end)
+
   it("a HolidayDescription row's Japanese fills the template, the dates kept; Alt shows the English", function()
     local sf = _G.CalendarViewHolidayFrame.ScrollingFont
     _G.CalendarViewHolidayFrame_Update()

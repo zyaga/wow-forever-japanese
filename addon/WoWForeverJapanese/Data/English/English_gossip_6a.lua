@@ -16,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:6a3a78badaec92f7"] = { text = "ask=26 come=16 directions=25 elevators=13 find=7 follow=12 here=2 north=9 one=4 out=10 path=11 rise=20 take=19 teaches=3 there=23 top=21 trainer=6 unfortunately=1 up=22 village=8" },
   ["gossip:6a5a6a771d66177d"] = { text = "arrive=16 begins=28 brave=18 day=14 done=1 everything=6 final=10 gates=21 gathering=7 goods=11 hero=19 lad=2 need=3 now=8 open=22 right=9 ring=20 taken=12 think=4 those=23 war=27 when=26 within=15" },
   ["gossip:6a5aac8497250bcc"] = { text = "curse=1 ends=2" },
+  ["gossip:6a5c3b9a45edb23d"] = { text = "amount=13 attacked=1 blade=22 die=8 doing=15 ferocity=5 forge=23 gathered=34 get=30 good=18 his=4 i=12 known=2 list=28 materials=27 need=26 prepared=31 put=19 research=14 return=37 started=39 stubborn=7 think=24 trick=17 well=10 what=33 will=21" },
   ["gossip:6a6aa69d4766ddb8"] = { text = "between=12 end=8 front=13 house=11 last=3 look=1 northwest=7 saw=4 stables=10 standing=14 town=6" },
   ["gossip:6a6fb20d1921b65a"] = { text = "beneath=1 breaks=3 cocoon=2" },
   ["gossip:6a733a6c4e8937ca"] = { text = "battlemaster=1" },

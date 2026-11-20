@@ -286,7 +286,6 @@ WFJ.Data.add("gloss", {
   [51283] = "割く\tさく\tspend (spare)",
   [51284] = "割く\tさく\ttake (spare) time",
   [51285] = "割く\tさく\tto spare",
-  [51286] = "割く\tさく\ttook (the time) for us",
   [51287] = "割く\tさく\twaste (spare)",
   [51288] = "割く\tさく\twill spare",
   [51289] = "割に合う\tわりにあう\tdon't get paid enough (not worth it)",

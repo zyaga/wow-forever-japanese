@@ -978,7 +978,6 @@ WFJ.Data.add("gloss", {
   [137977] = "骨だらけ\tほねだらけ\tbony (full of bones)",
   [137978] = "骨の折れる\tほねのおれる\ttough (back-breaking)",
   [137979] = "骨の髄\tほねのずい\tmarrow (from your bones)",
-  [137980] = "骨の髄まで\tほねのずいまで\tthrough and through",
   [137981] = "骨ばる\tほねばる\tboney",
   [137982] = "骨ばる\tほねばる\tbony",
   [137983] = "骨を折らせる\tほねをおらせる\tmake (you) toil",

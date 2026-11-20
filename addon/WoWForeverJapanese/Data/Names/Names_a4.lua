@@ -217,6 +217,7 @@ WFJ.Data.add("name", {
   ["a4f76e7e14346abe"] = { "グリフォン・クローク", "ぐりふぉん・くろーく", "Gryphon Cloak" },
   ["a4f797c14550592f"] = { "コールド・スナップ", "こーるど・すなっぷ", "Cold Snap" },
   ["a4fc63c9dd362f90"] = { "スローン・ウェポン・トレーナー", "すろーん・うぇぽん・とれーなー", "Thrown Weapon Trainer" },
+  ["a4fe3b0bbc7999a1"] = { "ショルダー・オブ・ヒロイズム", "しょるだー・おぶ・ひろいずむ", "Shoulders of Heroism" },
   ["a4ff2b94dda8fd68"] = { "ベルギロス", "べるぎろす", "Belguilos" },
   ["a4ffb642dbaa0d54"] = { "エラニカス・ザ・チェーンド", "えらにかす・ざ・ちぇーんど", "Eranikus the Chained" },
   ["a4ffb665d65ab711"] = { "ジャーナル・ページ", "じゃーなる・ぺーじ", "Journal Page" },

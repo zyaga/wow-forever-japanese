@@ -162,6 +162,7 @@ WFJ.Data.add("name", {
   ["74a5cdfdecb0c26b"] = { "サン・オブ・ソーリサン", "さん・おぶ・そーりさん", "Sons of Thaurissan" },
   ["74a75aeaa0938f5b"] = { "レピュテーション・ラチェット＋500", "れぴゅてーしょん・らちぇっとぷらすごひゃく", "Reputation - Ratchet +500" },
   ["74a86ba613ea8f7c"] = { "バスランズ・ヘア", "ばすらんず・へあ", "Bathran's Hair" },
+  ["74aa7c07546460dd"] = { "ネファリアンズ・リミット", "ねふぁりあんず・りみっと", "Nefarian's Remit" },
   ["74ab9196b1260c7a"] = { "テレサ", "てれさ", "Theresa" },
   ["74af5dd6e13bf99b"] = { "ステイヴ・オブ・ザ・エンシェント・キーパー", "すていゔ・おぶ・ざ・えんしぇんと・きーぱー", "Stave of the Ancient Keepers" },
   ["74af6496f49c3340"] = { "クトゥーン・トランスフォーメーション・ビジュアル", "くとぅーん・とらんすふぉーめーしょん・びじゅある", "C'Thun Transformation Visual" },

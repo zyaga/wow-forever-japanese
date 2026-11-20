@@ -26,6 +26,8 @@
 -- false, camelot/blizzard_collectionsconstants.lua:1; lua:1042–1044), the Skyriding flyout (shown only when
 -- DragonridingUtil.IsDragonridingUnlocked(), lua:1170–1173), the filter and right-click menus (UI/Menus).
 -- Never touched: mount names, source and lore text (client tables), the search box, the count.
+-- The search box's placeholder is a label of its own, written once with SEARCH by SearchBoxTemplate_OnLoad
+--   (blizzard_sharedxml/shared/inputbox/inputboxtemplates.lua:175–178): shown; what the player types is not read.
 local _, WFJ = ...
 local MountJournal = {}
 WFJ.MountJournal = MountJournal
@@ -45,6 +47,7 @@ local STATIC_LABELS = { -- record key → { candidate, the one key it shows }
   infoNew = { INFO .. ".New", "NEW_CAPS" },
   togglePlayer = { "MountJournal.MountDisplay.ModelScene.TogglePlayer.TogglePlayerText", "MOUNT_JOURNAL_PLAYER" },
   slotRequirement = { "MountJournal.BottomLeftInset.SlotRequirementLabel", "MOUNT_EQUIPMENT_UNLOCK_REQUIREMENT" },
+  searchHint = { "MountJournal.searchBox.Instructions", "SEARCH" },
 }
 local STATIC_ORDER = {}
 for key in pairs(STATIC_LABELS) do STATIC_ORDER[#STATIC_ORDER + 1] = key end

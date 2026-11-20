@@ -154,6 +154,7 @@ WFJ.Data.add("name", {
   ["d9a2bd98ffe92b6e"] = { "グリマリング・メイル・レッグガード", "ぐりまりんぐ・めいる・れっぐがーど", "Glimmering Mail Legguards" },
   ["d9a308219b9c2727"] = { "ブラックフォージ・ガードル", "ぶらっくふぉーじ・がーどる", "Blackforge Girdle" },
   ["d9a585f453f38ebb"] = { "デリシャス・ケイヴ・モールド", "でりしゃす・けいゔ・もーるど", "Delicious Cave Mold" },
+  ["d9aa3151ade76127"] = { "ソウルフォージ・ウエスト", "そうるふぉーじ・うえすと", "Soulforge Waist" },
   ["d9ab171a970808dc"] = { "レベル15・テスト・ギア・レザー・ハンター・ローグ", "れべるじゅうご・てすと・ぎあ・れざー・はんたー・ろーぐ", "Level 15 Test Gear Leather - Hunter/Rogue" },
   ["d9ace7c86f20d16c"] = { "フロストウィーヴ・ローブ", "ふろすとうぃーゔ・ろーぶ", "Frostweave Robe" },
   ["d9ad1745663585e8"] = { "インプルーブド・フロスト・ノヴァ", "いんぷるーぶど・ふろすと・のゔぁ", "Improved Frost Nova" },

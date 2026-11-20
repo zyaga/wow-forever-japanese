@@ -68,7 +68,6 @@ WFJ.Data.add("gloss", {
   [27065] = "まみれ\tまみれ\tcovered in",
   [27066] = "まみれ\tまみれ\tirradiated (covered in)",
   [27067] = "まみれている\tまみれている\tdripping (covered in)",
-  [27068] = "まみれる\tまみれる\tare covered",
   [27069] = "まみれる\tまみれる\tcovered",
   [27070] = "まみれる\tまみれる\tcovered in",
   [27071] = "まみれる\tまみれる\tis covered",

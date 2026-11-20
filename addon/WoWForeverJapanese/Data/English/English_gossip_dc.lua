@@ -24,6 +24,7 @@ WFJ.Data.add("english", {
   ["gossip:dc688d6afbacd0f0"] = { text = "present=1" },
   ["gossip:dc6ec8139ae1e445"] = { text = "boots=8 children=4 force=3 hand=2 hides=6 line=9 my=1 your=5" },
   ["gossip:dc6f78ab4f426685"] = { text = "excuses=5 heads=4 i=1 not=6 their=3 want=2" },
+  ["gossip:dc6f9e78ef75a6a1"] = { text = "already=36 and=18 arts=38 basics=42 before=26 camp=7 campfire=20 camps=7 care=9 center=6 check=41 complete=23 cooks=32 craft=4 culinary=37 fire=33 folk=10 head=14 learn=43 make=34 most=11 need=15 now=2 own=3 remember=19 set=8 start=25 teach=35 test=12 town=5 wilderness=13 without=21" },
   ["gossip:dc75077e9ec884f3"] = { text = "continue=19 could=5 education=18 ever=4 finest=27 guide=10 i=2 known=26 much=29 now=15 seek=23 send=21 she=24 skill=6 spirits=9 steel=7 student=12 surpassed=14 teach=30 teacher=13 you=1 your=17" },
   ["gossip:dc758d1e7f91b06c"] = { text = "better=38 can=13 cave=5 cloak=16 consider=25 considering=25 decide=40 fight=30 given=15 harder=26 i=2 know=39 leaving=6 left=21 my=23 option=7 options=7 or=22 own=19 see=3 stealthfully=10 strengths=37 this=4 use=17 way=11 well=1 wounds=24 you=18 your=36" },
   ["gossip:dc8ca5f2e9a5c28a"] = { text = "advantage=13 believe=14 cave=6 day=4 discovered=7 energy=11 first=3 here=1 our=12 stone=9 this=5" },

@@ -289,6 +289,8 @@ do
       "PROFESSIONS_TRACK_RECIPE", "PROFESSIONS_INSUFFICIENT_REAGENTS", "PROFESSIONS_MISSING_REQUIREMENT",
       "PROFESSIONS_RECIPE_COOLDOWN", "PROFESSIONS_ORDERS_NOT_ENOUGH_REAGENTS", "TRANSMOG_SITUATIONS_NO_VALID_OPTIONS",
       "CLICK_BINDING_MACRO_TITLE",
+      -- the guild window's channel dropdown: a channel's name in its chat colour (communitiesstreams.lua:10–12)
+      "GUILD", "OFFICER",
       -- the auction house quality filter's entries, each in its quality colour
       "ITEM_QUALITY0_DESC", "ITEM_QUALITY1_DESC", "ITEM_QUALITY2_DESC", "ITEM_QUALITY3_DESC", "ITEM_QUALITY4_DESC",
       "ITEM_QUALITY5_DESC" },

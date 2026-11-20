@@ -151,6 +151,7 @@ WFJ.Data.add("name", {
   ["2b8b95799fe0aec5"] = { "モンスター・ガン、トーレン・ブレード・シルバー", "もんすたー・がんとーれん・ぶれーど・しるばー", "Monster - Gun, Tauren Blade Silver" },
   ["2b8cb310d34cc0a6"] = { "エリック・マルーフ・テスト・ガイ", "えりっく・まるーふ・てすと・がい", "[PH] Eric Maloof Test Guy" },
   ["2b8ea2e033d901b0"] = { "サンダリング・シャウト", "さんだりんぐ・しゃうと", "Sundering Shout" },
+  ["2b8ed1aa7a37dd16"] = { "グローブ・オブ・ヒロイズム", "ぐろーぶ・おぶ・ひろいずむ", "Gloves of Heroism" },
   ["2b950af426584e22"] = { "テスト・アーケイン・レジスト・メイル・ロックボックス", "てすと・あーけいん・れじすと・めいる・ろっくぼっくす", "Test Arcane Resist Mail LockBox" },
   ["2b95755d579dd85b"] = { "インプルーブド・パワー・ワード：フォーティチュード", "いんぷるーぶど・ぱわー・わーど・ふぉーてぃちゅーど", "Improved Power Word: Fortitude" },
   ["2b95d766e9d4cfbf"] = { "アラーナ・ストームウォーカー", "あらーな・すとーむうぉーかー", "Alaana Stormwalker" },

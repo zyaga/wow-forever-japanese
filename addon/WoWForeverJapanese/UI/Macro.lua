@@ -109,6 +109,7 @@ function Macro.setup()
     body:HookScript("OnTextChanged", Macro.onCharLimit)
   end
   local popup = get("popup")
+  WFJ.IconPicker.setup(SURFACE, popup, true) -- the header and the two buttons are this module's static labels
   if type(popup) == "table" and type(popup.SetSelectedIconText) == "function" then
     hooksecurefunc(popup, "SetSelectedIconText", Macro.onIconText)
   end

@@ -733,7 +733,6 @@ WFJ.Data.add("gloss", {
   [104731] = "知り合い\tしりあい\tknew each other (acquaintances)",
   [104732] = "知り合い\tしりあい\tsomeone I know",
   [104733] = "知り合い\tしりあい\tsomeone you knew (acquaintance)",
-  [104734] = "知り合いになる\tしりあいになる\thave been acquainting myself",
   [104735] = "知り合う\tしりあう\tonce you get to know",
   [104736] = "知り合う\tしりあう\tto have met",
   [104737] = "知り合う\tしりあう\tto make (your) acquaintance",

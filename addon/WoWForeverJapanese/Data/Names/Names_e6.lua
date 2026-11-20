@@ -146,6 +146,7 @@ WFJ.Data.add("name", {
   ["e6a228bcb6e529b5"] = { "バッグ・オブ・ペット・トリート", "ばっぐ・おぶ・ぺっと・とりーと", "Bag of Pet Treats" },
   ["e6a3fa377bb45afd"] = { "アウェイクン・アースン・ドワーフ", "あうぇいくん・あーすん・どわーふ", "Awaken Earthen Dwarf" },
   ["e6a51e01da796d70"] = { "ブラック・ハンドラップ", "ぶらっく・はんどらっぷ", "Black Handwraps" },
+  ["e6a72d6b1b142da1"] = { "ルミナリアン", "るみなりあん", "Luminarian" },
   ["e6a9c9492f09f661"] = { "ウェポン・クレート", "うぇぽん・くれーと", "Weapon Crate" },
   ["e6aaf35a1b10d774"] = { "スワインタスク・シャンク", "すわいんたすく・しゃんく", "Swinetusk Shank" },
   ["e6ad1e9582f9f641"] = { "バンド・オブ・ザ・ベター・ハーフ", "ばんど・おぶ・ざ・べたー・はーふ", "Band of the Better Half" },

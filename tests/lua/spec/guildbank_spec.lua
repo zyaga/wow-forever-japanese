@@ -33,6 +33,11 @@ local function en(key) return _G[key] end
 
 local function build()
   local frame = CreateFrame("Frame", "GuildBankFrame")
+  -- the tab info box (blizzard_guildbankui.xml:757): a tab's text, written by whoever may edit the tab
+  local info = Stub.fontString("")
+  info.scripts = {}
+  function info.HookScript(self, name, fn) self.scripts[name] = fn end
+  _G.GuildBankTabInfoEditBox = info
   for i, key in ipairs({ "GUILD_BANK", "GUILD_BANK_LOG", "GUILD_BANK_MONEY_LOG", "GUILD_BANK_TAB_INFO" }) do
     Stub.button("GuildBankFrameTab" .. i, en(key))
   end
@@ -72,10 +77,20 @@ end
 C.suite(getfenv(1), {
   title = "the guild bank on Forever", module = "GuildBank", file = "UI/GuildBank.lua",
   addon = "Blizzard_GuildBankUI", root = "GuildBankFrame", ui = UI, build = build,
-  globals = { "GuildBankFrame", "GuildBankPopupFrame", "GuildBankMessageFrame", "GuildBankFrameTab1",
+  globals = { "GuildBankFrame", "GuildBankPopupFrame", "GuildBankMessageFrame", "GuildBankTabInfoEditBox",
+    "GuildBankFrameTab1",
     "GuildBankFrameTab2",
     "GuildBankFrameTab3", "GuildBankFrameTab4" },
   cases = {
+    { "the tab info box wears the bundled face, whatever it holds, and its text is left as written", function(_, WFJ)
+      local info = _G.GuildBankTabInfoEditBox
+      assert.are.equal(WFJ.Font.PATH, info.font.path)
+      info:SetText("素材はタブ2へ")
+      info.font.path = "Fonts\\FRIZQT__.TTF" -- the client put its font back
+      info.scripts.OnShow(info)
+      assert.are.equal(WFJ.Font.PATH, info.font.path)
+      assert.are.equal("素材はタブ2へ", info:GetText())
+    end },
     { "tabs, buttons, the error message and the popup header are Japanese; Alt shows English; hide releases",
       function(frame, WFJ)
         frame:Show()

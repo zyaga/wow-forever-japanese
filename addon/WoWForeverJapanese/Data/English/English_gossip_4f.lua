@@ -16,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:4f59dfa4d4992c4c"] = { text = "father=3 get=2 gone=4 inside=1 safe=7 while=5" },
   ["gossip:4f5c84d507f53f93"] = { text = "attack=2 currently=1" },
   ["gossip:4f71376c5ee51c1d"] = { text = "cheated=1" },
+  ["gossip:4f717e35e6780119"] = { text = "before=4 hurry=5 more=2 show=3 them=1" },
   ["gossip:4f770c9a355e7429"] = { text = "exalted=1" },
   ["gossip:4f7adc392cf21656"] = { text = "around=1 based=2 boxes=5 keeps=6 locked=4 supplies=3" },
   ["gossip:4f7b14158b41d5bf"] = { text = "beloved=6 chance=9 cheers=11 city=7 help=3 people=5 superb=1 taking=8 you=10 your=2" },

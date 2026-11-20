@@ -158,6 +158,7 @@ WFJ.Data.add("name", {
   ["e8a67a7888b5f496"] = { "ホード・ア2・タワー・プリ・バナー・ビッグ", "ほーど・あに・たわー・ぷり・ばなー・びっぐ", "[PH] Horde A2 Tower Pre-Banner BIG" },
   ["e8a776d618231fe1"] = { "ブラッドスパッタード・サバトン", "ぶらっどすぱったーど・さばとん", "Bloodspattered Sabatons" },
   ["e8a798b175018dd7"] = { "サモフランジ・マニュアル・ページ", "さもふらんじ・まにゅある・ぺーじ", "Samophlange Manual Page" },
+  ["e8a84991da6bd56f"] = { "ディセーブル・オール・マウント", "でぃせーぶる・おーる・まうんと", "Disable ALL Mounts" },
   ["e8a8939fbeb6b9eb"] = { "ワットエバーオサウルス", "わっとえばーおさうるす", "Whateverosaur" },
   ["e8a948d6fd177798"] = { "スレトニング・ゲイズ", "すれとにんぐ・げいず", "Threatening Gaze" },
   ["e8a9c1317a519c77"] = { "ヒューマノイド", "ひゅーまのいど", "humanoid" },

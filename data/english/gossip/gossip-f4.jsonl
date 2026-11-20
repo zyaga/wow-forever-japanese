@@ -15,10 +15,12 @@
 {"id": "f4372b394bc98022", "field": "text", "en": "I've seen the skycutters sailing through the sky more and more recently. It's good to know that they are running again. If only the elders would tell us what is going on. They only tell us that nothing has changed and we still have no contact with the other islands.$B$BI can't help but wonder what this means...", "hash": "f4372b394bc98022", "src": "collector@1.60.1.70790", "npcs": [254100]}
 {"id": "f438343f439bebe6", "field": "text", "en": "I made it to the last waypoint.  Yay!", "hash": "f438343f439bebe6", "src": "vmangos@13b49dc"}
 {"id": "f43a752b1ae32b14", "field": "text", "en": "I don't think there's any fish in these canals.", "hash": "f43a752b1ae32b14", "src": "vmangos@13b49dc"}
+{"id": "f440027011b7f16a", "field": "text", "en": "Freedom! Yes.", "hash": "f440027011b7f16a", "src": "collector@1.60.1.70938"}
 {"id": "f44d3f68bdfe603d", "field": "text", "en": "Die in the name of Ragnaros!", "hash": "f44d3f68bdfe603d", "src": "vmangos@13b49dc"}
 {"id": "f452db3c5a222f8b", "field": "text", "en": "Yes. Have you considered Lord Tyrosus's offer? The Argent Dawn is prepared to welcome you and your people with open arms.", "hash": "f452db3c5a222f8b", "src": "collector@1.60.1.70790"}
 {"id": "f461001ec2d60924", "field": "text", "en": "You waste my time, go talk with my student Basil.", "hash": "f461001ec2d60924", "src": "vmangos@13b49dc"}
 {"id": "f46824e69663cc78", "field": "text", "en": "The Warchief brings change that will bring the Horde victory!  Look for Swart inside the barracks on the east side of town.", "hash": "f46824e69663cc78", "src": "vmangos@13b49dc"}
+{"id": "f4684aab4a56f2f9", "field": "text", "en": "Orcs don't kill humans. Weapons do. And I make weapons.", "hash": "f4684aab4a56f2f9", "src": "collector@1.60.1.70938", "npcs": [256657]}
 {"id": "f4684f836fbb8f15", "field": "text", "en": "I prefer my food raw, but if you like yours cooked Denni'ka can show you how to light a fire.  Find her at Survival of the Fittest, a hut on the shore of the lake next to the Spirit Lodge.  Look for it up above and to the west of the Valley of Strength.", "hash": "f4684f836fbb8f15", "src": "vmangos@13b49dc"}
 {"id": "f469305efaad3546", "field": "text", "en": "Fools! These eggs are more precious than you know!", "hash": "f469305efaad3546", "src": "vmangos@13b49dc"}
 {"id": "f470fc0654e9af2d", "field": "text", "en": "This is gonna leave a mark!", "hash": "f470fc0654e9af2d", "src": "vmangos@13b49dc"}

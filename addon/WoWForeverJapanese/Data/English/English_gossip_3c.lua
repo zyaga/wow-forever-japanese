@@ -55,5 +55,6 @@ WFJ.Data.add("english", {
   ["gossip:3cde6c4ddf81e71c"] = { text = "down=1 huh=4" },
   ["gossip:3cf1722af894056d"] = { text = "attack=2 currently=1" },
   ["gossip:3cfbfae599c85f1c"] = { text = "any=12 brought=2 but=15 elementals=3 feats=11 gone=4 homes=7 magic=13 maintain=8 our=6 powers=17 replicated=14 they=5 us=1 used=10 weak=18" },
+  ["gossip:3cfdf310eb449eca"] = { text = "aid=34 already=29 always=18 and=21 anyway=9 avenge=30 avenged=30 can=43 death=27 debt=19 debts=19 done=38 front=15 happen=7 he=5 himself=16 i=3 if=31 monster=14 owe=25 pay=20 shield=11 still=33 stunned=4 that=13 we=17 what=6 when=2 you=32" },
   ["gossip:3cfefadfd72ed5a5"] = { text = "anyways=4 fate=6 fools=3 like=1 run=2 sealed=7 your=5" },
 })

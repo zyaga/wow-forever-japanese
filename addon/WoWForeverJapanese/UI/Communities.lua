@@ -40,6 +40,9 @@
 --     CancelInvitationButton's tooltip COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP (communitiesmemberlist.xml:67–71).
 --   The extra guild column CLUB_FINDER_APPLICANTS is a roster header (EXTRA_GUILD_COLUMNS, lua:168–171).
 -- Never touched: member names, ranks, zones, notes, the MOTD and guild info text, guild names.
+-- Their font only (UI/PlayerText): the MOTD, the guild info text, a member's two notes and rank, and a roster
+--   row's note and rank wear the bundled face while they hold Japanese; the box the MOTD and the info text are
+--   edited in always does.
 local _, WFJ = ...
 local Communities = {}
 WFJ.Communities = Communities
@@ -72,6 +75,8 @@ local STATIC_LABELS = {
   setFilters = { NEWS .. ".SetFiltersButton", "GUILD_SET_FILTERS_LINK" },
   eventLog = { "CommunitiesGuildLogFrameTitle", "GUILD_EVENT_LOG" },
   newsFilters = { "CommunitiesGuildNewsFiltersFrame.Title", "GUILD_NEWS_FILTERS" },
+  -- the roster's check box label, written by its OnLoad (communitiesmemberlist.xml:284–290)
+  showOffline = { "CommunitiesFrame.MemberList.ShowOfflineButton.Text", "COMMUNITIES_MEMBER_LIST_SHOW_OFFLINE" },
 }
 local STATIC_ORDER = {}
 for key in pairs(STATIC_LABELS) do STATIC_ORDER[#STATIC_ORDER + 1] = key end
@@ -99,6 +104,14 @@ local COLUMN_KEYS = { "COMMUNITIES_ROSTER_COLUMN_TITLE_NAME", "COMMUNITIES_ROSTE
 local ONLINE_KEYS = { "GUILD_ONLINE_LABEL", "LASTONLINE_MINS", "LASTONLINE_HOURS", "LASTONLINE_DAYS",
   "LASTONLINE_MONTHS", "LASTONLINE_YEARS" }
 
+-- A roster row's Zone column holds a place (a name), or for a member who is not online the client's own line:
+-- "Offline" or how long ago they were (communitiesmemberlist.lua:1293–1303, TimeUtil.GetRecentTimeDate).
+local ROW_PRESENCE = { only = { "COMMUNITIES_PRESENCE_OFFLINE", "LASTONLINE_SECS", "LASTONLINE_MINS",
+  "LASTONLINE_HOURS", "LASTONLINE_DAYS", "LASTONLINE_MONTHS", "LASTONLINE_YEARS" } }
+-- The channel dropdown shows the selected channel's name. A guild's own two channels are named by the game
+-- ("Guild", "Officer"); every other channel is named by a player and left as written.
+local STREAM = { only = { "GUILD", "OFFICER" } }
+
 local function get(key) return Compat.get(SURFACE, key) end
 
 local function declare()
@@ -109,6 +122,7 @@ end
 
 -- A stable record key per pooled header button (records follow the widget, not the index).
 local headerKey = WFJ.Labels.keyer("column.") -- a pooled header's record key
+local zoneKey = WFJ.Labels.keyer("zone.") -- a pooled roster row's Zone column
 
 local ENTRY_TOOLTIP = { only = { "COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT",
   -- a cross-faction member's lines (communitiesmemberlist.lua:1216, 1789–1790), the faction word kept
@@ -116,6 +130,11 @@ local ENTRY_TOOLTIP = { only = { "COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT",
   "CROSS_FACTION_INVITE_TOOLTIP" } }
 local CANCEL_TOOLTIP = { only = { "COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP" } }
 local INVITE_HEADER = { only = { "COMMUNITIES_MEMBER_LIST_PENDING_INVITE_HEADER" } }
+
+local zoneHooked = setmetatable({}, { __mode = "k" })
+local function showZone(row)
+  if type(row.Zone) == "table" then WFJ.Labels.show(SURFACE, zoneKey(row.Zone), row.Zone, nil, ROW_PRESENCE) end
+end
 
 -- One pooled roster entry after its initializer ran (ScrollUtil's initialized-frame callback: (owner, frame,
 -- elementData) for a new entry, (frame, elementData) for the iterateExisting pass). Returns nothing: ForEachFrame stops
@@ -129,18 +148,47 @@ function Communities.onRosterRow(a, b)
   WFJ.HelpTooltip.register(row, ENTRY_TOOLTIP)
   local cancel = row.CancelInvitationButton
   if type(cancel) == "table" then WFJ.HelpTooltip.register(cancel, CANCEL_TOOLTIP) end
+  -- the client rewrites the columns without initializing the row again (RefreshExpandedColumns, lua:1242, from
+  -- SetExpanded and the member events), so the Zone line is shown after each rewrite as well
+  if not zoneHooked[row] and type(row.RefreshExpandedColumns) == "function" then
+    zoneHooked[row] = true
+    hooksecurefunc(row, "RefreshExpandedColumns", showZone)
+  end
+  showZone(row)
+  WFJ.PlayerText.follow(row.Note) -- the member's note (communitiesmemberlist.lua:1320)
+  WFJ.PlayerText.follow(row.Rank) -- the rank's name, written by the guild master (lua:1313)
+end
+
+-- The news pane holds two labels with one English, "Guild News": its TitleText (GUILD_NEWS_TITLE) and the unnamed
+-- header under it (GUILD_NEWS, guildnews.xml:275–286). A search by text alone finds the TitleText first, so the
+-- header is the region with that text that is not the TitleText. Found once, while both still hold their English.
+local newsHeaderRegion = setmetatable({}, { __mode = "k" }) -- the news frame → its unnamed header
+local function newsHeader()
+  local news = get("region.newsHeader")
+  if type(news) ~= "table" then return nil end
+  if newsHeaderRegion[news] then return newsHeaderRegion[news] end
+  local en = Compat.resolve(REGIONS.newsHeader[2])
+  if type(en) ~= "string" or en == "" then return nil end
+  for _, region in ipairs(WFJ.Frames.regions(news)) do
+    if type(region) == "table" and region ~= news.TitleText and region.GetObjectType
+        and region:GetObjectType() == "FontString" and region:GetText() == en then
+      newsHeaderRegion[news] = region
+      return region
+    end
+  end
+  return nil
 end
 
 -- The labels the client writes once at load. → the number of dictionary words found.
 function Communities.showStatic()
   local items = {}
+  local header = newsHeader() -- before the TitleText is shown: both are found by their English
   for _, key in ipairs(STATIC_ORDER) do
     items[#items + 1] = { key, get("static." .. key), { only = { STATIC_LABELS[key][2] } } }
   end
-  for _, key in ipairs({ "infoHeader", "newsHeader" }) do
-    local k = REGIONS[key][2]
-    items[#items + 1] = { key, WFJ.Labels.region(get("region." .. key), k), { only = { k } } }
-  end
+  local infoKey = REGIONS.infoHeader[2]
+  items[#items + 1] = { "infoHeader", WFJ.Labels.region(get("region.infoHeader"), infoKey), { only = { infoKey } } }
+  items[#items + 1] = { "newsHeader", header, { only = { REGIONS.newsHeader[2] } } }
   return WFJ.Labels.showAll(STATIC, items)
 end
 
@@ -165,15 +213,38 @@ function Communities.onColumns()
   return n
 end
 
+-- A note widget holds the client's placeholder (a dictionary line) or the member's own note. The font a note in
+-- Japanese was given comes off first, so the placeholder's record holds the widget's own font; a note that is not
+-- the placeholder then gets the bundled face when it holds Japanese. → 1 | 0
+local function showNote(recKey, key, placeholder)
+  local fs = get(key)
+  WFJ.Font.restore(fs)
+  local n = WFJ.Labels.show(SURFACE, recKey, fs, nil, { only = { placeholder } })
+  if n == 0 then WFJ.PlayerText.shown(fs) end
+  return n
+end
+
 -- hooksecurefunc target (GuildMemberDetailFrame:DisplayMember). → the number of dictionary words found.
 function Communities.onDetail()
   local show = WFJ.Labels.show
   local n = show(SURFACE, "detailLevel", get("level"), nil, { only = { "FRIENDS_LEVEL_TEMPLATE" } })
     + show(SURFACE, "detailOnline", get("online"), nil, { only = ONLINE_KEYS })
-    + show(SURFACE, "personalNote", get("personalNote"), nil, { only = { "GUILD_NOTE_EDITLABEL" } })
-    + show(SURFACE, "officerNote", get("officerNote"), nil, { only = { "GUILD_OFFICERNOTE_EDITLABEL" } })
+    + showNote("personalNote", "personalNote", "GUILD_NOTE_EDITLABEL")
+    + showNote("officerNote", "officerNote", "GUILD_OFFICERNOTE_EDITLABEL")
   WFJ.Render.updateBanner(SURFACE)
   return n
+end
+
+-- The guild info tab's player-written text: the MOTD (a SimpleHTML, guildinfo.xml:176), the guild information (the
+-- details scroll frame's child has no key of its own, xml:251–265) and the box both are edited in (xml:328).
+local function playerText()
+  local P = WFJ.PlayerText
+  P.each(P.follow, { INFO .. ".MOTDScrollFrame.MOTD", DETAIL .. ".RankText" }) -- RankText: guildroster.lua:148
+  P.each(function(scroll)
+    local child = type(scroll.GetScrollChild) == "function" and scroll:GetScrollChild() or nil
+    if type(child) == "table" then P.follow(child.Details) end
+  end, { INFO .. ".DetailsFrame" })
+  P.each(P.box, { "CommunitiesGuildTextEditFrame.Container.ScrollFrame.EditBox" })
 end
 
 -- hooksecurefunc target (CommunitiesGuildInfoFrame_UpdateChallenges). → 1 | 0
@@ -195,6 +266,8 @@ function Communities.setup()
   WFJ.Labels.title(SURFACE, get("frame"), TITLE)
   if hooked then return false end
   hooked = true
+  playerText()
+  WFJ.Labels.dropdown(SURFACE, "stream", Compat.resolve("CommunitiesFrame.StreamDropdown"), STREAM)
   local memberList = get("memberList")
   if type(memberList) == "table" and type(memberList.UpdateMemberCount) == "function" then
     hooksecurefunc(memberList, "UpdateMemberCount", Communities.onCount)

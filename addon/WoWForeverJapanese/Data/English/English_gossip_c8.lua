@@ -6,6 +6,7 @@ WFJ.Data.add("english", {
   ["gossip:c8190c8f52da4b66"] = { text = "before=3 code=9 familiar=2 gift=13 give=14 given=10 hail=1 if=5 met=4 secret=8 surely=7 tell=12" },
   ["gossip:c81bb68a07518bb7"] = { text = "bank=1 dock=4 found=6 house=2 near=5 side=3" },
   ["gossip:c81e765f6b63a379"] = { text = "bank=1 desire=2 find=11 heart=4 take=5 there=6 travels=3 treasures=8 your=7" },
+  ["gossip:c822c4966e26cffc"] = { text = "aid=26 arcane=8 bear=21 burden=19 far=27 further=5 i=15 indeed=2 know=16 knowledge=9 member=11 research=1 seek=12 sufficient=7 that=13 useful=3 who=14 with=10 you=4" },
   ["gossip:c824892fa09c0607"] = { text = "come=1 yourselves=2" },
   ["gossip:c82650503c79b173"] = { text = "us=1" },
   ["gossip:c831ef185946328b"] = { text = "city=5 halt=1 lockdown=6 order=2 restored=3" },

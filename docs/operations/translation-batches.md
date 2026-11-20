@@ -396,6 +396,45 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70938 → 1.60.1.70959, with nine players' sends (2026-11-18)
+
+Read from the caches the client saved at its exit on 2026-11-18, after the WFJScan sweep and its slow recheck. A first
+pass ran earlier that day on the caches a `/reload` had saved while the game was open; the exit's quest cache held the
+same quests, and its hotfix cache moved one stat line on three items and a spell and added one spell.
+Quest cache: 5,530 records (5,421 quests and 109 placeholders), read with 70938's layout, pinned again for 70959 (four
+records carry 96 after their string lengths); 318 quest ids it holds that 70938's cache did not, and 3 that 70938's
+held and this one did not answer (859, 7939, 99234). Client tables: 63, with the hotfix cache of that exit (5,755 rows
+replaced, 5,577 added, 6 removed). The wago.tools cross-check: no value differs; the rows wago has and ours lacks are
+the same encrypted sections as on 70938 (ItemSparse 26, Spell and SpellName 357, ItemEffect 24, QuestV2 12,
+GlobalStrings 1, SpellItemEnchantment 1); QuestV2's highest id 99,670. The UI extract: 4,496 files, 14 differ from
+70938 (the mail window's cash-on-delivery button gains a tooltip while that service is off, the micro menu's alert
+order, the bags' controller navigation, the addon list's name format, a link colour, the tutorials' load list); none
+moves a window the addon hooks. The mail tooltip's string is not in this build's string table and is not listed. The
+creature cache: 978 records, read with 70938's layout, pinned for 70959. Served text: no new column. Client-table rows:
+six new NPC lines, shipped by the gossip surface.
+
+The import order of 70888 again (`make import-shared-english`, `make import-client CLIENT=forever`, `make
+import-served`): no line fell back to Classic Era's English.
+
+The English Collector: the maintainer's file (2 gossip lines and 5 quest texts added) and nine players' sends, issues
+#162, #165 to #168, #170, #172, #173 and #176, read with `make collector-intake ISSUE=N`: 79 gossip lines, 43 quest
+texts, 1 item and 64 NPC names added, 12 quest texts replaced, nothing rejected. Five quest texts that a send recorded
+with the player's race or the character's gender form written out ("skyborne" for `$r`, "lass" for "lad", "sister" for
+"brother") keep the wording they had: the turn-ins of quests 153, 1638, 91282 and 94947 and the progress of 92551.
+
+| Type | Reworded (shipped line now stale) | English the build no longer serves (stays stale, listed) | Drafted |
+|---|---|---|---|
+| quest | 8 machine lines redrafted (4 turn-ins, 3 progress, 1 objectives); 2 lines that failed the rules before were redrafted too (92551 progress, which held a written-out race, and 91282's turn-in, which named another keep) | none | 83 titles, 67 objectives, 66 descriptions, 21 progress, 27 turn-ins; word lists for all, and for 98 lines of quests that started shipping |
+| gossip | 0 | none | 81, with word lists |
+| item | 4 machine lines redrafted (3 of them replacing a wording ruled accepted before, now ruled `reject` as superseded), 3 re-verified unchanged ("Increases" became "Increased"); 2 hand-written lines whose effect the build replaced (22345, 22401) ruled for a redraft and redrafted | 51 hand-written stat lines (49 of the translators' and 2 corrections: critical strike, hit, haste, dodge, parry, attack power): the build draws those stats itself and the items carry no such effect text | 9 descriptions |
+| spell | 8 machine lines redrafted (1 replacing a wording ruled accepted before), 1 re-verified unchanged | none | 9 descriptions, 3 auras |
+| ui | 0 | none | 5 rank titles of the challenges page and the icon picker's 3 filter words, in the Japanese the same English already ships |
+| objective, area, book | 0 | none | 5 objectives (18 that are only a mount's name listed in `pipeline/objective_names.txt`), 4 areas; the 11 book pages are pictures or a name with dates, nothing to translate |
+
+Names: 19 words in new names had no katakana spelling and were spelled; `wfj names check` is 0. Voice: speakers, voice
+sets, display ids and casting were matched to Spoken's newest corpus; it named a set for 9 new speakers and moved no
+voice. 14 new speakers were given a casting profile.
+
 ### 1.60.1.70888 → 1.60.1.70938, with twenty-three players' sends (2026-11-16)
 
 Read from the caches the client saved at its exit on 2026-11-16, after the WFJScan sweep and its slow recheck.

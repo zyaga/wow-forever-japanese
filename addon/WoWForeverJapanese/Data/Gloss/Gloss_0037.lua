@@ -716,7 +716,6 @@ WFJ.Data.add("gloss", {
   [37716] = "不安定化する\tふあんていかする\tdestabilizes",
   [37717] = "不完全\tふかんぜん\timperfect",
   [37718] = "不完全\tふかんぜん\tincomplete",
-  [37719] = "不寛容\tふかんよう\tintolerance",
   [37720] = "不寛容\tふかんよう\tintolerant",
   [37721] = "不審\tふしん\tunusual (suspicious)",
   [37722] = "不屈\tふくつ\tdauntless (indomitable)",

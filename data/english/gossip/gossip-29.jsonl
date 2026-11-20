@@ -1,5 +1,6 @@
 {"id": "29038333f70701be", "field": "text", "en": "Welcome to Kibler's Exotic Pets! How can you help me today??", "hash": "29038333f70701be", "src": "vmangos@13b49dc"}
 {"id": "290e3817e57b2bcc", "field": "text", "en": "The archmage Allistarj of the Shadowsworn was granted three. Lady Sevine, warlock of the Shadowsworn was also granted three. The remaining three were given to Grol the Destroyer, lord of the Dreadmaul ogres of these blasted lands.$B$BYou see, $n, without a soul, the body cannot be killed. The remnants of my men are now indestructible fighting units. Thankfully, they are bound in how far they can travel by the stones of binding.", "hash": "290e3817e57b2bcc", "src": "vmangos@13b49dc"}
+{"id": "290fece6f83a822b", "field": "text", "en": "So, what can you teach me to build?", "hash": "290fece6f83a822b", "src": "collector@1.60.1.70938", "npcs": [251684]}
 {"id": "2913eeee29c23636", "field": "text", "en": "The West Frostwolf Tower is under attack!  If left unchecked, the Horde will destroy it!", "hash": "2913eeee29c23636", "src": "vmangos@13b49dc"}
 {"id": "291a94366a55e80b", "field": "text", "en": "Die, trespasser!", "hash": "291a94366a55e80b", "src": "vmangos@13b49dc"}
 {"id": "291c1771902e181c", "field": "text", "en": "Your soul is mine, weakling.", "hash": "291c1771902e181c", "src": "vmangos@13b49dc"}
@@ -11,6 +12,7 @@
 {"id": "295a9ff295e80c6e", "field": "text", "en": "Look out! It sounds like more of them!", "hash": "295a9ff295e80c6e", "src": "vmangos@13b49dc"}
 {"id": "295e24cd57e4154b", "field": "text", "en": "Our general, Vanndar Stormpike, has fallen in battle!  The battle is lost!$B$BSpeak with our quartermaster and help rebuild our forces.", "hash": "295e24cd57e4154b", "src": "vmangos@13b49dc"}
 {"id": "296246800b8a70e6", "field": "text", "en": "Ok, I want a good clean spar. Remember to keep your sword up and shield ready.", "hash": "296246800b8a70e6", "src": "vmangos@13b49dc"}
+{"id": "296bb359f1c03c89", "field": "text", "en": "In the darkest of nights, trust in the light to protect you. Of course, having a nice, sturdy mace doesn't hurt either.", "hash": "296bb359f1c03c89", "src": "collector@1.60.1.70862", "npcs": [248840]}
 {"id": "296d713966d1b1a7", "field": "text", "en": "I'll take a pint of Dark Iron ale.  Oh, you're not the $gwaiter:waitress;?", "hash": "296d713966d1b1a7", "src": "vmangos@13b49dc"}
 {"id": "296df46e7ae0a420", "field": "text", "en": "I must apologize for not being entirely truthful with you in regards to my identity. I had to be certain that you could be trusted - few people would have selflessly lent assistance to an old and forgotten hermit.$B$BYou have proven yourself as one of those people: A person of integrity and honor.", "hash": "296df46e7ae0a420", "src": "vmangos@13b49dc"}
 {"id": "2979499edbff8498", "field": "text", "en": "Did Crest send you?", "hash": "2979499edbff8498", "src": "vmangos@13b49dc"}

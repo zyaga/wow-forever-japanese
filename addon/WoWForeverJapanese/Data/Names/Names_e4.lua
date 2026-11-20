@@ -64,6 +64,7 @@ WFJ.Data.add("name", {
   ["e43d7793988fbfe0"] = { "バックルド・ブーツ", "ばっくるど・ぶーつ", "Buckled Boots" },
   ["e43e5a47ec45f213"] = { "エボンホールド・ショルダーパッド", "えぼんほーるど・しょるだーぱっど", "Ebonhold Shoulderpads" },
   ["e43f2134583d8ca1"] = { "グラスハイド・バジリスク", "ぐらすはいど・ばじりすく", "Glasshide Basilisk" },
+  ["e43f62c3d5c5f146"] = { "スカーレット・トラッキング", "すかーれっと・とらっきんぐ", "[DNT] Scarlet Tracking" },
   ["e440732a4f9ea578"] = { "テイランズ・サファリング・エフェクト", "ていらんず・さふぁりんぐ・えふぇくと", "Taelan's Suffering Effect" },
   ["e444f4a1581fc434"] = { "エングレイブ・グローブ・リビング・ボム", "えんぐれいぶ・ぐろーぶ・りびんぐ・ぼむ", "Engrave Gloves - Living Bomb" },
   ["e4463f07dcd1ce0a"] = { "ライジング・アゴニー", "らいじんぐ・あごにー", "Writhing Agony" },

@@ -531,7 +531,6 @@ WFJ.Data.add("gloss", {
   [98531] = "無事\tぶじ\tbe safe",
   [98532] = "無事\tぶじ\tdoing well (safe)",
   [98533] = "無事\tぶじ\tin good condition (safe)",
-  [98534] = "無事\tぶじ\tin one piece",
   [98535] = "無事\tぶじ\tin one piece (safe)",
   [98536] = "無事\tぶじ\tin one piece (safely)",
   [98537] = "無事\tぶじ\tin one piece; safely",

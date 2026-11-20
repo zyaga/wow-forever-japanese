@@ -21,6 +21,7 @@ WFJ.Data.add("english", {
   ["gossip:9b5f74b6d19420c4"] = { text = "begins=3 creation=1 rite=2" },
   ["gossip:9b638fcc2fbf421f"] = { text = "all=2 but=6 close=13 day=15 despair=9 drag=8 find=18 hold=14 memories=12 reckoning=16 terrible=3 them=7 those=11 tragedies=4 we=1 witness=5" },
   ["gossip:9b71f8162f391658"] = { text = "demon=4 face=6 know=2 me=5 you=1 yourself=3" },
+  ["gossip:9b85adf017f285af"] = { text = "greetings=1" },
   ["gossip:9b868dd05d5fa6a6"] = { text = "mon=5" },
   ["gossip:9b8721dbe9ea2238"] = { text = "cooking=1 don't=13 go=8 good=3 knowledge=4 recipes=9 see=12 seems=5 show=11 some=10 trade=2 usually=14" },
   ["gossip:9b8a5153e177fe8f"] = { text = "careful=13 done=4 helped=8 here=1 know=10 little=7 my=2 others=5 past=15 sure=9 this=11 work=3 you=6" },

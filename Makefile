@@ -123,7 +123,7 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70938
+forever_BUILD       := 1.60.1.70959
 forever_SRC         := db2
 forever_PRODUCT     := wowf
 # Set only while the quest cache data/ holds is older than the tables: a quest cache needs the scan in game, the
@@ -398,6 +398,11 @@ family-rows: ## regenerate pipeline/family_rows.txt (client-table rows no ui_key
 	@test -f "$(call client_dir,forever)/tables-source.txt" || { echo "family-rows: no tables at $(call client_dir,forever) (make tables-extract)"; exit 1; }
 	cd pipeline && $(PY) -m wfj.dev.family_rows "$(call client_dir,forever)" ui_keys.txt family_rows.txt > family_rows.txt.tmp && mv family_rows.txt.tmp family_rows.txt
 	@! grep -n "^[^#].*  ?  " pipeline/family_rows.txt || { echo "family-rows: the rows above are new: list each in ui_keys.txt (then rerun) or give it a reason"; exit 1; }
+
+window-test: ## the in-game window test's result (/wfjtest, then /reload) against the baseline of English a Forever window may keep; exit 1 on a new line or an error: SAVED=<the client's WFJScan.lua SavedVariables file>
+	@test -n "$(SAVED)" || { echo "usage: make window-test SAVED=<.../SavedVariables/WFJScan.lua>"; exit 2; }
+	@s="$(SAVED)"; case "$$s" in /*) ;; *) s="$(CURDIR)/$$s" ;; esac; \
+		cd pipeline && $(PY) -m wfj.dev.client_surface texts --saved "$$s" --baseline ui_window_baseline.txt
 
 forever-titles: ## list every SetTitle( call site in the camelot load sets (the input of pipeline/forever_titles.txt): [FOREVER_UI=<Interface/AddOns>]
 	@test -d "$(FOREVER_UI)" || { echo "forever-titles: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }

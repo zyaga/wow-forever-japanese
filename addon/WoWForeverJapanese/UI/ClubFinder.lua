@@ -155,6 +155,9 @@ function ClubFinder.watchCard(card)
   for _, field in ipairs({ "Name", "Description", "MemberCount" }) do
     if type(card[field]) == "table" then WFJ.Labels.forbid(card[field]) end
   end
+  -- a guild's or community's own name and description: their font only (clubfinder.lua:1246, 1406, 2064)
+  WFJ.PlayerText.follow(card.Name)
+  WFJ.PlayerText.follow(card.Description)
   k.show(cardKey(card) .. ".join", card.RequestJoin, { "CLUB_FINDER_REQUEST_TO_JOIN" })
   k.show(cardKey(card) .. ".reported", card.ReportedDescription, { "CLUB_FINDER_THANK_YOU_REPORTED" })
   k.after(card, "UpdateCard", ClubFinder.onCard)
@@ -238,6 +241,18 @@ function ClubFinder.setup()
   k.showList(dialogLabels())
   if hooked then return false end
   hooked = true
+  -- player-written text, its font only (UI/PlayerText): a club's name and description, and the boxes a request's
+  -- message and a recruitment message are typed into (the two lists are ClubFinder.NEVER_TOUCH's, by kind)
+  local shown, typed = {}, {}
+  for _, path in ipairs(ClubFinder.NEVER_TOUCH) do
+    if path:find("%.EditBox$") then
+      if not path:find("MinIlvlOnly", 1, true) then typed[#typed + 1] = path end
+    elseif not path:find("SearchBox", 1, true) then
+      shown[#shown + 1] = path
+    end
+  end
+  WFJ.PlayerText.each(WFJ.PlayerText.follow, shown)
+  WFJ.PlayerText.each(WFJ.PlayerText.box, typed)
   setupPanel("guild.", k.get("guild"))
   setupPanel("community.", k.get("community"))
   local ci, rd = k.get("invitation"), k.get("recruitment")

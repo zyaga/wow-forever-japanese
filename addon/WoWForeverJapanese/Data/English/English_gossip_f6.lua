@@ -20,6 +20,7 @@ WFJ.Data.add("english", {
   ["gossip:f64a38d679891c06"] = { text = "and=6 anything=4 busy=8 chasing=10 danger=1 like=2 our=7 reports=3 stories=9 time=11" },
   ["gossip:f64af4a53ee70a4c"] = { text = "command=3 day=1 deem=13 dream=7 me=10 my=6 serve=5 that=11 under=4 worthy=12 your=2" },
   ["gossip:f64cfee276a1a590"] = { text = "challenge=2 failed=3 your=1" },
+  ["gossip:f6510123edb3c379"] = { text = "approaching=12 foot=8 heard=13 mesa=7 need=5 set=9 skills=3 soon=10 stealth=2 work=4 you=1" },
   ["gossip:f652f6b91595bf6e"] = { text = "believers=6 come=3 death=7 only=2 righteous=1 saved=5 what=4" },
   ["gossip:f653239efcfa4c0e"] = { text = "get=4 know=12 lot=8 me=5 that=7 water=1 weren't=6 what=10" },
   ["gossip:f662e235a69ab910"] = { text = "acquire=3" },

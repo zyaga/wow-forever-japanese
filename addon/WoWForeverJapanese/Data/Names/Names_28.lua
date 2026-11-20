@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("name", {
   ["2800b3ef3b1cb186"] = { "バッカニアズ・パンツ", "ばっかにあず・ぱんつ", "Buccaneer's Pants" },
+  ["2801e10c6b23d6f2"] = { "ヴァーチュアス・チェスト", "ゔぁーちゅあす・ちぇすと", "Virtuous Chest" },
   ["28020e91f53358cf"] = { "ステディ・バスタード・ソード", "すてでぃ・ばすたーど・そーど", "Steady Bastard Sword" },
   ["28035800862d8a4c"] = { "スカルスプリッター・チーフ", "すかるすぷりったー・ちーふ", "Skullsplitter Chief" },
   ["2803e029f0fec4d8"] = { "クローク・オブ・ハーミティック・ブリス", "くろーく・おぶ・はーみてぃっく・ぶりす", "Cloak of Hermitic Bliss" },

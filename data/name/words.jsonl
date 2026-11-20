@@ -249,6 +249,7 @@
 {"en": "Aku'Mai", "ja": "アクマイ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Aku'mai", "ja": "アクマイ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Akubar", "ja": "アクバー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
+{"en": "al", "ja": "エーエル", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118b@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Al'Aketh", "ja": "アルアケス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Al'Akir", "ja": "アラキア", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
 {"en": "Al'Ameth", "ja": "アルアメス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
@@ -2072,6 +2073,7 @@
 {"en": "Bogen", "ja": "ボーゲン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Boggy", "ja": "ボギー", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
 {"en": "Bogling", "ja": "ボグリング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
+{"en": "boie", "ja": "ボイ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "boil", "ja": "ボイル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-000@2026-11-11", "imported": "2026-11-11"}}
 {"en": "boiled", "ja": "ボイルド", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-000@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Boiler", "ja": "ボイラー", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
@@ -2550,6 +2552,7 @@
 {"en": "Bruuz", "ja": "ブルーズ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Bryan", "ja": "ブライアン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Bryllia", "ja": "ブリリア", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
+{"en": "bs", "ja": "ビーエス", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118b@2026-11-18", "imported": "2026-11-18"}}
 {"en": "btft", "ja": "ビーティーエフティー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-respell-010@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Bubba", "ja": "ババ", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
 {"en": "Bubble", "ja": "バブル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
@@ -2761,6 +2764,7 @@
 {"en": "camouflaged", "ja": "カモフラージュド", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Camp", "ja": "キャンプ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
 {"en": "camp", "ja": "キャンプ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
+{"en": "camper", "ja": "キャンパー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Campfire", "ja": "キャンプファイア", "check": false, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-vocabulary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "camping", "ja": "キャンピング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Campsite", "ja": "キャンプサイト", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
@@ -2958,6 +2962,7 @@
 {"en": "celebrate", "ja": "セレブレイト", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
 {"en": "celebration", "ja": "セレブレーション", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Celebrian", "ja": "セレブリアン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
+{"en": "celerity", "ja": "セレリティ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Celes", "ja": "セレス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Celestial", "ja": "セレスティアル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Celestine", "ja": "セレスティン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-001@2026-11-10", "imported": "2026-11-10"}}
@@ -4141,6 +4146,7 @@
 {"en": "dala", "ja": "ダラ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
 {"en": "Dalar", "ja": "ダラー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Dalaran", "ja": "ダララン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-005@2026-11-10", "imported": "2026-11-10"}}
+{"en": "dalaranian", "ja": "ダララニアン", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "daldorah", "ja": "ダルドラ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-019@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Dalewind", "ja": "デイルウィンド", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Dalia", "ja": "ダリア", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
@@ -4839,6 +4845,7 @@
 {"en": "Dirtwalker", "ja": "ダートウォーカー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Dirtwood", "ja": "ダートウッド", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Dirty", "ja": "ダーティー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-002@2026-11-11", "imported": "2026-11-11"}}
+{"en": "disable", "ja": "ディセーブル", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Disabled", "ja": "ディセーブルド", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-002@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Disallow", "ja": "ディスアロウ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-002@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Disarm", "ja": "ディスアーム", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-002@2026-11-11", "imported": "2026-11-11"}}
@@ -6700,6 +6707,7 @@
 {"en": "fisher", "ja": "フィッシャー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-003@2026-11-11", "imported": "2026-11-11"}}
 {"en": "fisherman", "ja": "フィッシャーマン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-003@2026-11-11", "imported": "2026-11-11"}}
 {"en": "fishery", "ja": "フィッシャリー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
+{"en": "fishin", "ja": "フィッシン", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Fishing", "ja": "フィッシング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-003@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Fishliver", "ja": "フィッシュリバー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-003@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Fishmaster", "ja": "フィッシュマスター", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-003@2026-11-11", "imported": "2026-11-11"}}
@@ -9751,6 +9759,7 @@
 {"en": "Jacken", "ja": "ジャッケン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-005@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Jacket", "ja": "ジャケット", "check": false, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-vocabulary-001@2026-11-10", "imported": "2026-11-10"}}
 {"en": "jackhammer", "ja": "ジャックハンマー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
+{"en": "jacko", "ja": "ジャッコ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Jacks", "ja": "ジャック", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-review@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Jackseed", "ja": "ジャックシード", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-005@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Jackson", "ja": "ジャクソン", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
@@ -11402,6 +11411,7 @@
 {"en": "LumberPile", "ja": "ランバーパイル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-005@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Lumere", "ja": "ルメール", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Lumina", "ja": "ルミナ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
+{"en": "luminarian", "ja": "ルミナリアン", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "luminary", "ja": "ルミナリー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
 {"en": "Luminescent", "ja": "ルミネセント", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-005@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Luminous", "ja": "ルミナス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-005@2026-11-11", "imported": "2026-11-11"}}
@@ -18169,6 +18179,7 @@
 {"en": "Steamfizzle", "ja": "スチームフィズル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
 {"en": "steaming", "ja": "スチーミング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-008@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Steamsaw", "ja": "スチームソー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
+{"en": "steamsaws", "ja": "スチームソー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Steamsmith", "ja": "スチームスミス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-008@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Steamwheedle", "ja": "スチームホイードル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Steed", "ja": "スティード", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-008@2026-11-11", "imported": "2026-11-11"}}
@@ -20942,6 +20953,7 @@
 {"en": "Waitress", "ja": "ウェイトレス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names4-002@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Wake", "ja": "ウェイク", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-009@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Wakening", "ja": "ウェイクニング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-009@2026-11-11", "imported": "2026-11-11"}}
+{"en": "waker", "ja": "ウェイカー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "waking", "ja": "ウェイキング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-009@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Waldin", "ja": "ウォルディン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-012@2026-11-10", "imported": "2026-11-10"}}
 {"en": "waldir", "ja": "ウォルディア", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-repull-70938@2026-11-16", "imported": "2026-11-16"}}
@@ -21515,6 +21527,7 @@
 {"en": "witness", "ja": "ウィットネス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-009@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Wixxrak", "ja": "ウィクスラク", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-012@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Wizard", "ja": "ウィザード", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-009@2026-11-11", "imported": "2026-11-11"}}
+{"en": "wizardry", "ja": "ウィザードリー", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "wizards", "ja": "ウィザード", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-009@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Wizardweave", "ja": "ウィザードウィーヴ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-012@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Wizbang", "ja": "ウィズバング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-012@2026-11-10", "imported": "2026-11-10"}}
@@ -21586,6 +21599,7 @@
 {"en": "Woollies", "ja": "ウーリー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-009@2026-11-11", "imported": "2026-11-11"}}
 {"en": "wooly", "ja": "ウーリー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-009@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Woolybush", "ja": "ウーリーブッシュ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-012@2026-11-10", "imported": "2026-11-10"}}
+{"en": "woot", "ja": "ウート", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-1118@2026-11-18", "imported": "2026-11-18"}}
 {"en": "Worb", "ja": "ウォーブ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-012@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Word", "ja": "ワード", "check": false, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-vocabulary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Wordeen", "ja": "ワーディーン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-012@2026-11-10", "imported": "2026-11-10"}}

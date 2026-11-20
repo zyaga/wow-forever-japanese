@@ -29,6 +29,7 @@ WFJ.Data.add("english", {
   ["gossip:e869997534a32420"] = { text = "aid=6 assistance=9 browsing=8 guide=4 i=11 journies=5 light=1 need=10 path=3 right=12 your=2" },
   ["gossip:e86dbe4bb06d9d31"] = { text = "code=2 pet=4 receive=5 secret=1 whisper=3" },
   ["gossip:e8738bbe6b7606b2"] = { text = "chamber=4 clear=6 desire=7 final=3 slain=1 there=8 transport=9 way=5" },
+  ["gossip:e87462a1214079b9"] = { text = "ah=1 bears=10 before=13 corruptive=8 deep=7 force=9 it=14 lucidity=2 orb=6 purify=15 restoring=11 returning=4 use=12" },
   ["gossip:e877f3e7f5c00ea3"] = { text = "area=3 fear=10 free=5 influence=4 return=8 that=2 they=7 time=1" },
   ["gossip:e88413e700a0b553"] = { text = "alchemical=11 ancient=4 beyond=16 diagrams=5 dire=7 hold=10 markings=3 power=8 recipe=12 skill=15 tablet=2 this=1 words=9 your=14" },
   ["gossip:e8880c7c3ce83a37"] = { text = "become=5 my=1 once=3 scepter=2 whole=4" },

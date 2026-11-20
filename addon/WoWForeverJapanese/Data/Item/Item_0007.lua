@@ -166,6 +166,7 @@ WFJ.Data.add("item", {
   [7991] = { "Mithril Plate Shouldersの作り方を習得します。", 0xebb005c1, "u" },
   [7992] = { "Blue Glittering Axeの作り方を習得します。", 0xb0932c04, "u" },
   [7993] = { "Dazzling Mithril Rapierの作り方を習得します。", 0xdae5ff68, "u" },
+  [7994] = { "Orcish War Leggingsの作り方を習得します。", 0x20fd8b38, "u" },
   [7995] = { "Mithril Plate Bracersの作り方を習得します。", 0x2f79e0c3, "u" },
   [7996] = { "Fishingが+$N1上昇します。", 0x325349e2, "u" },
 })

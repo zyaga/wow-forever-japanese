@@ -80,6 +80,7 @@ WFJ.Data.add("name", {
   ["0f495c3fbd62c432"] = { "パッツ・ファイアワーク・ガイ・パープル・ビッグ", "ぱっつ・ふぁいあわーく・がい・ぱーぷる・びっぐ", "Pat's Firework Guy - PURPLE BIG" },
   ["0f49cabf91b7e15f"] = { "プレーンズ・ハンター・リストガード", "ぷれーんず・はんたー・りすとがーど", "Plains Hunter Wristguards" },
   ["0f4a50855aefca39"] = { "サモン・ファーム・チキン", "さもん・ふぁーむ・ちきん", "Summon Farm Chicken" },
+  ["0f4d9a265b37cdd1"] = { "ショルダー・オブ・ザ・ファイブ・サンダー", "しょるだー・おぶ・ざ・ふぁいぶ・さんだー", "Shoulders of The Five Thunders" },
   ["0f4e55fba6ed35d2"] = { "ダガースパイン・マローダー", "だがーすぱいん・まろーだー", "Daggerspine Marauder" },
   ["0f4e7c9b5bdd2d52"] = { "エルナリアン・ベスト", "えるなりあん・べすと", "Elunarian Vest" },
   ["0f4fa99c798fcdfb"] = { "サモン・ミニオン（トラップ：ゴースト・グール））", "さもん・みにおんとらっぷ・ごーすと・ぐーる", "[PH] Summon Minion (trap: ghost/ghoul))" },

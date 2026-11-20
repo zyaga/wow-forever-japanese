@@ -32,6 +32,7 @@ WFJ.Data.add("english", {
   ["gossip:987f4f82472ea873"] = { text = "alright=3 engineering=9 error=7 fold=10 fun=14 rejoined=11 seen=8 then=2 ways=6 well=1 yeti=13 your=5" },
   ["gossip:9881ac00cd0d1c6b"] = { text = "where=1" },
   ["gossip:9882698b5d57dd19"] = { text = "get=6 got=3 great=1 rest=7 samples=2 work=5" },
+  ["gossip:9884fc85caa0e285"] = { text = "not=3 right=1" },
   ["gossip:9886e8adbc5c74b2"] = { text = "almost=3 cauldron=5 handful=4 part=11 plague=1 point=2 top=8" },
   ["gossip:9887d85727bd54ec"] = { text = "beasts=6 champion=3 greetings=1 i=2 master=7 servant=4 wilds=5" },
   ["gossip:988ac7f632b5f98b"] = { text = "composure=1 regains=2" },

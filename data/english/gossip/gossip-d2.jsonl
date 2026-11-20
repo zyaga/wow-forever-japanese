@@ -17,6 +17,7 @@
 {"id": "d299426d276a1c64", "field": "text", "en": "You want the Hall of Legends. It's high above the Valley of Strength on the west side. If you're not an officer you can't get in, but you can still talk to Sergeant Ba'sha outside.", "hash": "d299426d276a1c64", "src": "vmangos@13b49dc"}
 {"id": "d2a0e6a69382621a", "field": "text", "en": "So... the Earthen were made out of stone?", "hash": "d2a0e6a69382621a", "src": "vmangos@13b49dc"}
 {"id": "d2a58e9fb644ea16", "field": "text", "en": "Hey Knot - I'm a Tailor.  Think you could teach me how to make the ogre suit?", "hash": "d2a58e9fb644ea16", "src": "vmangos@13b49dc"}
+{"id": "d2ae026180ad4b65", "field": "text", "en": "Get them out of the halls; we don't need idle snooping.", "hash": "d2ae026180ad4b65", "src": "collector@1.60.1.70938"}
 {"id": "d2af1bb5f3135845", "field": "text", "en": "I cannot teach you tribal leatherworking, $n. You must go to Tanaris and find the home of Narain Soothfancy. Once there, consult the book \"Soothsaying for Dummies.\"", "hash": "d2af1bb5f3135845", "src": "vmangos@13b49dc"}
 {"id": "d2b403e1d9b2559e", "field": "text", "en": "For the Horde!", "hash": "d2b403e1d9b2559e", "src": "vmangos@13b49dc"}
 {"id": "d2b49a6a4ba496d7", "field": "text", "en": "%s is visibly shaken by the death of Emperor Thaurissan.", "hash": "d2b49a6a4ba496d7", "src": "vmangos@13b49dc"}

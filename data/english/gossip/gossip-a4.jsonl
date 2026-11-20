@@ -24,6 +24,7 @@
 {"id": "a462c1ca921ba66e", "field": "text", "en": "%s mumbles incoherent words.", "hash": "a462c1ca921ba66e", "src": "vmangos@13b49dc"}
 {"id": "a469a7d611475ede", "field": "text", "en": "Well, well, what do you know, sparky, we did it. Everything's collected and ready to go. We're just waiting on those Horde yahoos now, and once they get their act together it's off to the races at Ahn'Qiraj!", "hash": "a469a7d611475ede", "src": "vmangos@13b49dc"}
 {"id": "a46d7584cac56406", "field": "text", "en": "Outside... of Zephras? From the other provinces? We haven't had contact with the other islands for years...?", "hash": "a46d7584cac56406", "src": "collector@1.60.1.70790"}
+{"id": "a472b38985e235ea", "field": "text", "en": "Thank you, stranger. I'd have never expected a $C to do such a thing for me. I am in your debt.", "hash": "a472b38985e235ea", "src": "collector@1.60.1.70862"}
 {"id": "a47990d975e978e9", "field": "text", "en": "Our cause falls on deaf ears beyond the thick, stone walls of Stormwind.", "hash": "a47990d975e978e9", "src": "vmangos@13b49dc"}
 {"id": "a47b29f63ca02f75", "field": "text", "en": "Quid pro quo! I'll teach you what I know, but first I want you to perform a small task...", "hash": "a47b29f63ca02f75", "src": "vmangos@13b49dc"}
 {"id": "a47bb9c64034299c", "field": "text", "en": "Follow, $n.  I will soon begin the summoning...", "hash": "a47bb9c64034299c", "src": "vmangos@13b49dc"}
@@ -34,6 +35,8 @@
 {"id": "a48bcd2b37db8ce7", "field": "text", "en": "I am an orc of medicine, $r. If you have come here to learn, I shall do my best to teach.", "hash": "a48bcd2b37db8ce7", "src": "vmangos@13b49dc"}
 {"id": "a48f50df5aefdf40", "field": "text", "en": "%s spies you tampering with the camp's fruit stores and attacks you!", "hash": "a48f50df5aefdf40", "src": "vmangos@13b49dc"}
 {"id": "a4904eb18c5bd00f", "field": "text", "en": "If you're trying to be friendly, save your breath.  Better yet, just stop breathing all together.", "hash": "a4904eb18c5bd00f", "src": "vmangos@13b49dc"}
+{"id": "a495362b823eb73e", "field": "text", "en": "It gladdens me to think that one of Luminarian's masterworks has been found. I wonder if any others are hidden here on Zephras?", "hash": "a495362b823eb73e", "src": "collector@1.60.1.70938"}
+{"id": "a495b34e5552802b", "field": "text", "en": "The $C trainer can be found near the Windshaper's standing stones, on the western edge of town.", "hash": "a495b34e5552802b", "src": "collector@1.60.1.70938", "npcs": [253474]}
 {"id": "a4a5680b352c5bc3", "field": "text", "en": "Not one word....", "hash": "a4a5680b352c5bc3", "src": "vmangos@13b49dc"}
 {"id": "a4a7dc5fc1f51173", "field": "text", "en": "My lady, I am unworthy of your prayer. Truly, you are an angel of light. Please, assist me in returning to the barrow den so that I may return to the Dream. I, like Malfurion, also have a love awaiting me... I must return to her... to protect her...", "hash": "a4a7dc5fc1f51173", "src": "vmangos@13b49dc"}
 {"id": "a4ab681fd14d5d73", "field": "text", "en": "No, Walt, I'm still alive. That shot you took at me back in Ratchet only missed my heart by an inch.", "hash": "a4ab681fd14d5d73", "src": "collector@1.60.1.70862"}

@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:a6a7e05bd62136d9"] = { text = "dirty=6 just=5 no=3 why=2 you=1" },
   ["gossip:a6a7ef1da95339ce"] = { text = "default=2" },
   ["gossip:a6afae77ff7e31e8"] = { text = "across=8 began=11 both=35 chained=36 cursed=23 desert=24 destruction=9 during=13 greetings=1 here=39 i=30 initial=19 invasion=20 know=41 lives=15 lost=16 march=10 most=18 must=43 nearly=4 one=32 past=5 present=34 remain=27 stationed=40 this=6 traveler=2 war=12 why=37" },
+  ["gossip:a6ba2f33e293085d"] = { text = "more=1 watch=3" },
   ["gossip:a6bc5ebd60b63fed"] = { text = "adventurer=3 drink=1 fancy=2 finest=6 selection=7 world=4" },
   ["gossip:a6c88e9e8bb44a2a"] = { text = "almighty=8 fear=7 i=3 infused=5 master=13 my=12 one=14 pathetic=1 power=4 serve=11 wrath=9" },
   ["gossip:a6d637c7dfef399e"] = { text = "degrees=2 temperature=1" },

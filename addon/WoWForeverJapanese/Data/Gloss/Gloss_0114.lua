@@ -396,7 +396,6 @@ WFJ.Data.add("gloss", {
   [114394] = "若い\tわかい\tcub (young)",
   [114395] = "若い\tわかい\tfledgling (young)",
   [114396] = "若い\tわかい\tis young",
-  [114397] = "若い\tわかい\tlad (young one)",
   [114398] = "若い\tわかい\tnot getting any younger",
   [114399] = "若い\tわかい\tthe lad (young one)",
   [114400] = "若い\tわかい\tto be young (becoming young)",
