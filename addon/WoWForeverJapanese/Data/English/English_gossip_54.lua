@@ -23,7 +23,6 @@ WFJ.Data.add("english", {
   ["gossip:5456b59aef3be5f0"] = { text = "anything=2 else=1" },
   ["gossip:545b411e79de6056"] = { text = "cannot=4 hide=2 me=1" },
   ["gossip:546dd6cb0dae420d"] = { text = "bear=1 looks=6 nothing=7 patiently=4 says=8 you=5" },
-  ["gossip:547275386e1e1645"] = { text = "already=35 and=17 arts=37 basics=41 before=26 camp=6 campfire=19 camps=6 care=8 center=5 check=40 complete=22 cooks=31 craft=3 culinary=36 fire=32 folk=9 head=13 learn=42 make=33 most=10 need=14 now=1 oh=16 one=28 own=2 remember=18 set=7 someone=39 start=25 teach=34 test=11 town=4 train=38 want=43 wilderness=12 without=20" },
   ["gossip:547414273202a272"] = { text = "face=2 we=1" },
   ["gossip:5475eaabd126ccac"] = { text = "call=4 them=3" },
   ["gossip:5476cf471d3f99fe"] = { text = "found=6 parts=3 rods=5 seen=4 these=2" },

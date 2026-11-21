@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-21 at commit `f086296d2`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-21 at commit `b6e1cdd47`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,15 +9,15 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 23,794 | 23,724 | 63 | 100.0% | 7 |
-| NPC dialogue (gossip, speech) | 11,686 | 11,686 | 0 | 100.0% | 0 |
+| Quest text | 23,821 | 23,724 | 63 | 99.9% | 34 |
+| NPC dialogue (gossip, speech) | 11,731 | 11,686 | 0 | 99.6% | 45 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 710 | 590 | 120 | 100.0% | 0 |
 | Exploration / event objectives | 249 | 247 | 2 | 100.0% | 0 |
-| Item descriptions | 10,630 | 10,629 | 0 | 100.0% | 1 |
+| Item descriptions | 10,637 | 10,630 | 0 | 99.9% | 7 |
 | Spell tooltips + auras | 25,945 | 25,897 | 1 | 99.8% | 47 |
 | Interface strings | 16,124 | 16,124 | 0 | 100.0% | 0 |
-| **All** | **90,395** | | | **99.9%** | **55** |
+| **All** | **90,474** | | | **99.9%** | **133** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 339, gossip 94, item 907, spell 301, ui 313.
@@ -39,12 +39,15 @@ professions, internal strings): quest 339, gossip 94, item 907, spell 301, ui 31
 
 | Surface | Why | Lines |
 |---|---|---|
+| Quest text | no Japanese yet | 27 |
 | Quest text | rejected: alignment_failed:Orgrimmar | 2 |
 | Quest text | rejected: alignment_failed:Felicia | 1 |
 | Quest text | rejected: alignment_failed:Tyr's | 1 |
 | Quest text | rejected: alignment_failed:Royal Apothecary Society | 1 |
 | Quest text | rejected: numbers_changed:5 | 1 |
 | Quest text | rejected: alignment_failed:shen'dorei | 1 |
+| NPC dialogue (gossip, speech) | no Japanese yet | 45 |
+| Item descriptions | no Japanese yet | 6 |
 | Item descriptions | no Japanese yet: the template has too many optional parts for one translation | 1 |
 | Spell tooltips + auras | no Japanese yet: the template includes a spell the Forever tables do not hold | 34 |
 | Spell tooltips + auras | no Japanese yet: the template has too many optional parts for one translation | 8 |
@@ -380,11 +383,11 @@ translation uses for it. The pairs are read off the meanings the readings alread
 
 | Type | Lines with English and a word list | Words that can take a card | With one | Done |
 |---|---|---|---|---|
-| quest | 22,236 | 454,025 | 413,539 | 91.1% |
+| quest | 22,236 | 454,016 | 413,517 | 91.1% |
 | gossip | 11,540 | 149,141 | 136,880 | 91.8% |
 | ui | 14,318 | 48,606 | 43,724 | 90.0% |
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
-| **All** | | **696,507** | **635,063** | **91.2%** |
+| **All** | | **696,498** | **635,041** | **91.2%** |
 
 A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
 the client fills in are not counted, and neither are the words that take no card by design: the
@@ -401,10 +404,10 @@ outnumber lines.
 
 | Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
 |---|---|---|---|---|---|---|
-| Quest offer | 4,159 | 4,235 | 3,920 | 303 | 12 | 320 |
-| Quest progress | 3,261 | 3,285 | 3,190 | 50 | 45 | 136 |
-| Quest turn-in | 4,409 | 4,435 | 4,325 | 56 | 54 | 216 |
-| NPC talk (greetings, gossip, quest text keyed by its English) | 2,382 | 2,973 | 2,925 | 18 | 30 | 3 |
+| Quest offer | 4,160 | 4,236 | 3,920 | 303 | 13 | 320 |
+| Quest progress | 3,268 | 3,292 | 3,190 | 50 | 52 | 136 |
+| Quest turn-in | 4,416 | 4,442 | 4,325 | 56 | 61 | 216 |
+| NPC talk (greetings, gossip, quest text keyed by its English) | 2,385 | 2,977 | 2,925 | 18 | 34 | 3 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex, and per NPC voice) | 50 | 3,600 | 3,600 | 0 | 0 | 0 |
 
@@ -417,8 +420,8 @@ Shipped Japanese the voice does not read, by reason.
 | Why | Lines |
 |---|---|
 | NPC speech in chat, or other NPC text no voiced window shows (from VMaNGOS) | 8,855 |
-| No speaker found for the quest | 988 |
-| Collected in game with no known speaker | 413 |
+| No speaker found for the quest | 973 |
+| Collected in game with no known speaker | 410 |
 | HTML book page (keeps the client's layout) | 38 |
 | A quest log line (the completion text the tracker shows) | 35 |
 | NPC text with no known speaker | 2 |

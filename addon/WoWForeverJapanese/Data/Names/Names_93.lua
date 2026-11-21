@@ -36,6 +36,7 @@ WFJ.Data.add("name", {
   ["932a630e3ef3a95f"] = { "ヘヴィー・ラメラー・ガントレット", "へゔぃー・らめらー・がんとれっと", "Heavy Lamellar Gauntlets" },
   ["932af0dcffc05928"] = { "ウェイウォッチャー・リストガード", "うぇいうぉっちゃー・りすとがーど", "Waywatcher Wristguards" },
   ["932c8823b6f3a9d1"] = { "アルアケス・ミット", "あるあけす・みっと", "Al'Aketh Mitts" },
+  ["932cc9741c556a48"] = { "キャプティブ・ファイア・エレメンタル", "きゃぷてぃぶ・ふぁいあ・えれめんたる", "Captive Fire Elemental" },
   ["932d2a91e5c8cb49"] = { "テンプル・ガーデン・アンユーズド", "てんぷる・がーでん・あんゆーずど", "The Temple Gardens UNUSED" },
   ["932d2d414692aac5"] = { "アンキラージ・テスト・アイテム・ビー・レザー・ベルト", "あんきらーじ・てすと・あいてむ・びー・れざー・べると", "AHNQIRAJ TEST ITEM B LEATHER BELT" },
   ["932d8e395f3c5c2d"] = { "ウォーモンガーズ・バックラー", "うぉーもんがーず・ばっくらー", "Warmonger's Buckler" },
