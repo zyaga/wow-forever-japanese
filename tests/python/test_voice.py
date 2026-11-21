@@ -191,6 +191,23 @@ def test_the_committed_voice_tables_validate(root):
     assert rule_voice(root / "data") == []
 
 
+def test_the_narrator_reads_no_quest_the_database_cannot_know(root):
+    """The narrator reads a quest line only when a source says an object or item starts or ends the quest. The
+    open database holds no quest the Forever client added (ids from 90000), so it can say that of none of them:
+    a narrator row of such a quest must name a source that saw the object or item itself. A row here means an
+    NPC nobody named is being read in the narrator's voice again."""
+    import json
+
+    rows = [json.loads(ln) for ln in (root / "data/voice/speakers.jsonl").read_text(encoding="utf-8").splitlines()]
+    wrong = [
+        r["key"] for r in rows
+        if r["speaker"] == voice.NARRATOR and r["key"][0].isdigit() and int(r["key"].split("-")[0]) >= 90000
+        and r["provenance"]["source"].split("@")[0] not in ("forever-vo", "dondata", "collector")
+    ]
+    assert wrong == [], f"{len(wrong)} narrator line(s) of quests no source saw an object or item for: {wrong[:5]}"
+    assert any(r["key"] == "95603-description" and isinstance(r["speaker"], int) for r in rows)
+
+
 # ---- the text the engine reads ---------------------------------------------------------------------------
 
 

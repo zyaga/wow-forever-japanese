@@ -211,7 +211,8 @@ end
 -- Tells the Collector who is showing this panel's prose (the offer, the progress text or the turn-in): the NPC's
 -- creature id, its sex and the display id this client drew it with, when the voice panel has seen it. Every time,
 -- whether or not the line ships Japanese: the voice of a line is cast from the NPC that says it. `unit` is the
--- token the window names its NPC by.
+-- token the window names its NPC by. UnitSex on an NPC unit [unverified on Forever; in-game check in
+-- docs/testing/strategy.md]: a value that is not 2 or 3 is stored as not known.
 function QuestFrame.recordSpeaker(id, panel, unit)
   local guid = call("unitGUID", unit)
   local creature = WFJ.Collector.creatureId(guid)
@@ -274,7 +275,7 @@ function QuestFrame.showPanel(panelName)
   -- The quest giver, as the window names it: UnitName("questnpc") [verified: classic_era Classic/QuestFrame.lua:118];
   -- UnitGUID accepts the same token [likely].
   WFJ.Collector.recordNpc(call("unitGUID", "questnpc"), call("unitName", "questnpc"))
-  QuestFrame.recordSpeaker(id, panel, "questnpc")
+  pcall(QuestFrame.recordSpeaker, id, panel, "questnpc") -- never raises into the client's quest window
   -- every time, translation on or off: UI/VoicePlayer remembers who showed this quest line, for replays from the
   -- quest log, where no NPC is on screen
   pcall(WFJ.State.fire, "questShown", id, panelName)

@@ -160,7 +160,7 @@ def _player(raw: Any) -> tuple[str, str] | None:
 
 QUEST_NPC = "questnpc"  # the collector kind of a QuestNpc: its text is "<creature id>:<sex>:<display id>"
 QUEST_NPC_FIELDS = ("description", "progress", "completion")
-_QUEST_NPC_TEXT = re.compile(r"^(\d{1,10}):(\d):(\d{1,10})$")
+_QUEST_NPC_TEXT = re.compile(r"([0-9]{1,10}):([0-9]):([0-9]{1,10})")
 _SEX = {0: None, 2: "male", 3: "female"}  # UnitSex: 2 male, 3 female; 0 when the client gave none
 
 
@@ -174,7 +174,7 @@ def check_quest_npc(key: Any, raw: Any, builds: list[Any]) -> tuple[QuestNpc | N
         return None, "bad_key"
     if fld not in QUEST_NPC_FIELDS:
         return None, "bad_field"
-    m = _QUEST_NPC_TEXT.match(text) if isinstance(text, str) else None
+    m = _QUEST_NPC_TEXT.fullmatch(text) if isinstance(text, str) else None
     if not m or not 1 <= quest <= MAX_ID or e.get("n") is not None:
         return None, "bad_id"
     creature, sex, display = (int(g) for g in m.groups())

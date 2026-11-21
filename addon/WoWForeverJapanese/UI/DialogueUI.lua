@@ -293,7 +293,8 @@ local function render(el)
     local log = WFJ.VoiceQuestLog
     local display, from
     if log and type(log.displayFor) == "function" then display, from = log.displayFor(creature) end
-    C.recordQuestNpc(el.questID, el.key, guid, type(sex) == "function" and sex("npc") or nil,
+    -- UnitSex on an NPC unit [unverified on Forever; in-game check in docs/testing/strategy.md]
+    pcall(C.recordQuestNpc, el.questID, el.key, guid, type(sex) == "function" and sex("npc") or nil,
       from == "saved" and display or nil)
   end
   WFJ.Render.show(el.surface, el.key, h, el.en, el.area, el.kind, el.id, { live = el.live })
