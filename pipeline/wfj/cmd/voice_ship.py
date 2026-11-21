@@ -240,7 +240,7 @@ def interface_of(root: Path) -> str:
     raise ValueError(f"{toc}: no ## Interface line")
 
 
-def write(
+def write(  # noqa: PLR0913 - where to write, what to write, and the build's facts, one parameter each
     out: Path,
     table: Table,
     packs: Sequence[Pack],
@@ -249,8 +249,10 @@ def write(
     store: Path,
     interface: str,
     versions: Mapping[str, str],
+    not_made: Sequence[str] = (),
 ) -> None:
-    """Every pack folder and the entry folder under `out`, replacing what a previous build left there."""
+    """Every pack folder and the entry folder under `out`, replacing what a previous build left there.
+    `not_made`: the lines with no voice yet, which the entry lists for the addon."""
     out.mkdir(parents=True, exist_ok=True)
     for old in out.glob(f"{vp.PREFIX}*"):
         if old.is_dir():
@@ -284,8 +286,8 @@ def write(
     (dest / "README.txt").write_text(
         voice_pack.entry_readme_text(e.title, [(p.title, p.holds) for p in table.packs]), encoding="utf-8"
     )
-    (dest / "Packs.lua").write_text(voice_pack.entry_packs_text([p.folder for p in table.packs]),
-                                    encoding="utf-8")
+    (dest / "Packs.lua").write_text(
+        voice_pack.entry_packs_text([p.folder for p in table.packs], not_made), encoding="utf-8")
 
 
 def check_zip(path: Path, folder: str, files: Sequence[str] | None) -> list[str]:
@@ -486,8 +488,10 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
     else:
         versions = {p.project.folder: vp.version(day, p.digest) for p in packs}
         versions[table.entry.folder] = vp.version(day, vp.entry_hash(required(table), interface))
-    write(Path(a.out), table, packs, cfg, voice_make.audio_record(root), store, interface, versions)
-    print(f"voice pack: wrote {len(packs)} packs and the entry under {a.out}")
+    silent = voice_make.not_made(root, dict(cfg))
+    write(Path(a.out), table, packs, cfg, voice_make.audio_record(root), store, interface, versions, silent)
+    print(f"voice pack: wrote {len(packs)} packs and the entry under {a.out}"
+          + (f"; the entry lists {len(silent)} line(s) with no voice yet" if silent else ""))
     return table, packs, plan, versions
 
 

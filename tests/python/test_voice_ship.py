@@ -1047,3 +1047,23 @@ def test_the_entry_lists_its_packs_for_the_addon():
         "})",
     ]
     assert voice_pack.toc_text("11508", None).rstrip().endswith("Packs.lua")
+
+
+def test_the_entry_also_lists_the_lines_with_no_voice_yet():
+    """The addon says so on a window whose translated line has no voice. An entry with nothing to list is byte
+    for byte what it was, and an addon without the function skips the list."""
+    from wfj.emit import voice_pack
+
+    folders = ["WoWForeverJapanese_VoiceOther"]
+    plain = voice_pack.entry_packs_text(folders)
+    assert voice_pack.entry_packs_text(folders, []) == plain
+    text = voice_pack.entry_packs_text(folders, ["95603-description", "g-0123456789abcdef"])
+    assert text.startswith(plain)
+    assert text[len(plain):].splitlines() == [
+        "if WoWForeverJapanese_VoiceNotMade then",
+        "  WoWForeverJapanese_VoiceNotMade({",
+        '    "95603-description",',
+        '    "g-0123456789abcdef",',
+        "  })",
+        "end",
+    ]

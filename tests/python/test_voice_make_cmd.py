@@ -373,6 +373,21 @@ def test_the_owed_command_writes_the_list(world, capsys):
     assert voice_make.read_owed(world.tmp / "none.txt") == []
 
 
+def test_the_lines_with_no_voice_are_the_shipped_ones_no_pack_will_carry(world):
+    """What the entry pack lists: a quest line nobody names a speaker for, a line whose speaker has no voice,
+    and a line whose file is still to be remade. A line in step is not listed."""
+    _made(world)
+    assert voice_make.not_made(world.data, CFG) == []
+    _recast(world, 2079, "old")  # 456-description's file is now in another voice: owed
+    assert voice_make.not_made(world.data, CFG) == ["456-description"]
+    rows = voice_make._rows(world.data / "voice" / "speakers.jsonl")
+    voice_make._write(world.data / "voice" / "speakers.jsonl", [r for r in rows if r["key"] != "456-completion"])
+    assert voice_make.not_made(world.data, CFG) == ["456-completion", "456-description"]  # nobody names its speaker
+    voice_make._write(world.data / "voice" / "speakers.jsonl", [
+        {**r, "speaker": 4444} if r["key"].startswith("g-") else r for r in rows])  # a speaker with no voice
+    assert voice_make.not_made(world.data, CFG) == ["456-description", "g-0123456789abcdef"]
+
+
 def test_the_plan_command_prints_what_would_be_made(world, capsys):
     assert voice_make.run(["plan", "--config", str(world.cfg)]) == 0
     out = capsys.readouterr().out.splitlines()
