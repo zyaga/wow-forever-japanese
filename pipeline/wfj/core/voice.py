@@ -325,7 +325,7 @@ def voices_of(row: Mapping[str, Any], cast: Mapping[int, Mapping[str, str]], nar
               book_narrator: str) -> tuple[str, list[str]]:
     """(the line's main voice, its other voices). The main voice is its main speaker's (a mixed-gender
     creature's male casting), the narrator's for a line no creature says; the others are every other voice
-    a speaker of the line is cast to, sorted."""
+    a speaker of the line is cast to, sorted. A speaker with no cast row adds no voice."""
     sp = row["speaker"]
     if sp == NARRATOR:
         main = book_narrator if row["key"].startswith("b-") else narrator
@@ -333,7 +333,7 @@ def voices_of(row: Mapping[str, Any], cast: Mapping[int, Mapping[str, str]], nar
         main = cast[sp]["voice"]
     other: set[str] = set()
     for c in (sp, *row.get("others", ())):
-        if isinstance(c, int):
+        if isinstance(c, int) and c in cast:
             other.add(cast[c]["voice"])
             if cast[c].get("female"):
                 other.add(cast[c]["female"])
@@ -343,16 +343,23 @@ def voices_of(row: Mapping[str, Any], cast: Mapping[int, Mapping[str, str]], nar
 
 def jobs(rows: Iterable[Mapping[str, Any]], cast: Mapping[int, Mapping[str, str]], narrator: str,
          book_narrator: str, lines: Mapping[str, str]) -> list[Job]:
-    """Every file the rows need, for the keys that ship Japanese."""
+    """Every file the rows need, for the keys that ship Japanese. A line whose main speaker has no cast
+    voice gets no file: it stays silent until that NPC is cast, never read in another voice."""
     out: list[Job] = []
     for row in rows:
         key = row["key"]
-        if key not in lines:
+        if key not in lines or (row["speaker"] != NARRATOR and row["speaker"] not in cast):
             continue
         main, other = voices_of(row, cast, narrator, book_narrator)
         out.append(Job(key, key, main))
         out += [Job(f"{key}_{v}", key, v) for v in other]
     return out
+
+
+def uncast(rows: Iterable[Mapping[str, Any]], cast: Collection[int]) -> list[int]:
+    """The creatures that speak a line and have no cast voice, sorted."""
+    who = {c for row in rows for c in (row["speaker"], *row.get("others", ())) if isinstance(c, int)}
+    return sorted(who - set(cast))
 
 
 def in_step(
@@ -377,7 +384,8 @@ def in_step(
 
 
 def speaker_problems(speakers: list[dict[str, Any]], voices: list[dict[str, Any]]) -> list[str]:
-    """`wfj validate` over data/voice/: shape, provenance, duplicates, and a voice for every speaker."""
+    """`wfj validate` over data/voice/: shape, provenance and duplicates. A speaker with no voice row is
+    not a problem here: its lines are silent, and `uncast` lists it for the report."""
     problems: list[str] = []
     seen: set[str] = set()
     for row in speakers:
@@ -410,10 +418,6 @@ def speaker_problems(speakers: list[dict[str, Any]], voices: list[dict[str, Any]
         if not isinstance(row.get("row"), str) or not row["row"]:
             problems.append(f"voice voices {c}: row must name the cast row that chose the voice")
         problems += _provenance(row, f"voice voices {c}")
-    for row in speakers:
-        for sp in (row.get("speaker"), *row.get("others", [])):
-            if isinstance(sp, int) and sp not in has_voice:
-                problems.append(f"voice speakers {row.get('key')}: creature {sp} has no voice row")
     return problems
 
 

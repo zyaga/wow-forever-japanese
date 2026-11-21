@@ -29,6 +29,7 @@ ns.EXTRA_QUESTS = {
 ns.QUEST_ENDS = {
 [5]={1450,36.5,40.1,272},
 [6]={1450,36.5,40.1},
+[8]={1429,24.6,58.2,0},
 }
 ns.EXTRA_GIVERS = {
 [7]={3169,3354},
@@ -58,7 +59,7 @@ def test_an_item_start_is_marked_and_never_a_giver(tmp_path):
 def test_a_turn_in_with_no_creature_is_an_object_never_a_creature(tmp_path):
     found = _read(tmp_path)
     assert found.enders == {5: (272,)}
-    assert found.object_ends == {6}
+    assert found.object_ends == {6, 8}  # no fourth field, or the id 0
 
 
 def test_no_text_of_the_files_is_read(tmp_path):

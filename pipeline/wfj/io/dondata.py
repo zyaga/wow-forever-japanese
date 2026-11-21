@@ -17,7 +17,7 @@ from pathlib import Path
 ATT_FILE, EXTRA_FILE = "ATT_Quests.lua", "Extra_Quests.lua"  # as saved by `make voice-dondata-fetch`
 GIVERS_FIELD = 6  # ATT_QUESTS / EXTRA_QUESTS: map, x, y, faction, level, prereqs, givers, flags, ...
 FLAGS_FIELD = 7
-ENDER_FIELD = 3  # QUEST_ENDS: uiMapID, x, y, npcID; a turn-in at an object has no fourth field
+ENDER_FIELD = 3  # QUEST_ENDS: uiMapID, x, y, npcID; a turn-in at an object has no fourth field, or the id 0
 
 _ROW = re.compile(r"^\[(\d+)\]=\{(.*)\},?\s*$")
 
@@ -77,7 +77,7 @@ def _ids(field: str) -> tuple[int, ...]:
     """The ids of a `{1,2}` list field, in order; `nil` and anything quoted hold none."""
     if not field.startswith("{"):
         return ()
-    return tuple(dict.fromkeys(int(n) for n in re.findall(r"\d+", field)))
+    return tuple(dict.fromkeys(int(n) for n in re.findall(r"\d+", field) if int(n) > 0))
 
 
 def _inline_keys(path: Path, table: str) -> frozenset[int]:
@@ -100,13 +100,13 @@ def read(att: Path, extra: Path) -> QuestNpcs:
             elif len(f) > GIVERS_FIELD and (who := _ids(f[GIVERS_FIELD])):
                 givers[quest] = who
     for quest, f in _rows(extra, "EXTRA_GIVERS"):
-        who = tuple(dict.fromkeys(int(n) for n in f if n.strip().isdigit()))
+        who = tuple(dict.fromkeys(int(n) for n in f if n.strip().isdigit() and int(n) > 0))
         if who and quest not in item_starts:
             givers[quest] = who
     enders: dict[int, tuple[int, ...]] = {}
     object_ends: set[int] = set()
     for quest, f in _rows(extra, "QUEST_ENDS"):
-        if len(f) > ENDER_FIELD and f[ENDER_FIELD].strip().isdigit():
+        if len(f) > ENDER_FIELD and f[ENDER_FIELD].strip().isdigit() and int(f[ENDER_FIELD]) > 0:
             enders[quest] = (int(f[ENDER_FIELD]),)
         else:
             object_ends.add(quest)

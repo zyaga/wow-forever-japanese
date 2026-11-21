@@ -152,6 +152,24 @@ def test_validate_accepts_good_tables(tmp_path):
     assert rule_voice(data) == []
 
 
+def test_a_line_whose_speaker_has_no_voice_makes_no_file():
+    """A named NPC nobody has cast yet is silent: no file in the narrator's voice or anyone else's."""
+    cast = {200: {"voice": "m"}}
+    rows = [{"key": "1-description", "speaker": 100}, {"key": "2-description", "speaker": 200, "others": [300]}]
+    jobs = voice.jobs(rows, cast, "n", "b", {"1-description": "あ", "2-description": "い"})
+    assert [(j.stem, j.voice) for j in jobs] == [("2-description", "m")]
+    assert voice.uncast(rows, cast) == [100, 300]
+
+
+def test_a_speaker_with_no_voice_row_is_reported_not_refused(tmp_path):
+    data = _rows(
+        tmp_path,
+        [{"key": "456-description", "speaker": 3000, "provenance": SRC}],
+        [{"creature": 2079, "voice": "aidacalm", "row": "male", "provenance": SRC}],
+    )
+    assert rule_voice(data) == []
+
+
 def test_validate_rejects_bad_tables(tmp_path):
     data = _rows(
         tmp_path,
@@ -165,7 +183,6 @@ def test_validate_rejects_bad_tables(tmp_path):
     problems = rule_voice(data)
     for want in ("duplicate", "bad key '456-objectives'", "speaker must be", "bad key 'g-xyz'",
                  "provenance must be an object", "voice must be a roster voice id", "row must name the cast row",
-                 "creature 3000 has no voice row",
                  "voice voices 2079: duplicate", "source must be name@version", "imported must be a date"):
         assert any(want in p for p in problems), want
 
