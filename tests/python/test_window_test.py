@@ -145,7 +145,7 @@ def test_the_sweep_clicks_every_entry_of_a_reused_list_once_and_nothing_that_act
     if lua is None:
         pytest.skip("no Lua interpreter")
     head, tail = (root / "tests/fixtures/window_test_sim.lua").read_text(encoding="utf-8").split("--[[SWEEP]]\n")
-    sweep = client_surface.TEXT_LUA % ('  ["Back"] = true,', '  "BACK",')
+    sweep = client_surface.TEXT_LUA % ('  ["Back"] = true,', '  "BACK",', "  [5] = 2,")
     script = tmp_path / "sim.lua"
     script.write_text(head + sweep[sweep.index("-- The text sweep."):] + tail, encoding="utf-8")
     out = subprocess.run([lua, str(script)], check=False, capture_output=True, text=True, timeout=120)

@@ -138,7 +138,7 @@ end
 -- Japanese went onto the use line above it and the flavour line was folded away. Its English is plain text
 -- then, so the line it was written for is the one whose words are that English, found by the entry's hash (the
 -- addon holds no English). No such line, or two: the run is left as it was.
-local function bare(text, pre)
+local function unprefixed(text, pre)
   for _, p in ipairs(pre) do
     if text:sub(1, #p) == p then return (text:sub(#p + 1):gsub("^%s+", "")) end
   end
@@ -153,7 +153,7 @@ function Tooltip.runLineOf(h1, texts, first, last)
   if h1 == nil or not N or not Hh then return nil end
   local pre, found = prefixes(), nil
   for row = first, last do
-    if texts[row] ~= "" and (Hh.h32x2(N.v1(bare(texts[row], pre)))) == h1 then
+    if texts[row] ~= "" and (Hh.h32x2(N.v1(unprefixed(texts[row], pre)))) == h1 then
       if found then return nil end
       found = row
     end
