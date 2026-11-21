@@ -35,6 +35,15 @@ def test_a_build_with_no_pinned_layout_is_refused(fixture, tmp_path):
     assert creature_cache.read_build(path) == 99999
 
 
+def test_a_cache_of_build_70959_reads_with_its_pinned_layout(fixture, tmp_path):
+    buf = bytearray(fixture.read_bytes())
+    struct.pack_into("<I", buf, 4, 70959)  # the records are laid out as in 70938
+    path = tmp_path / "creaturecache.wdb"
+    path.write_bytes(bytes(buf))
+    build, displays = read_displays(path)
+    assert build == 70959 and displays[8419] == [7729, 7730]
+
+
 def test_a_file_that_is_not_a_creature_cache_is_refused(root):
     quest = next((root / "tests/fixtures/wdb").glob("*.wdb"))
     with pytest.raises(CreatureCacheError, match="not a creature cache"):
