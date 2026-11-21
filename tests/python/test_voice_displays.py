@@ -138,3 +138,60 @@ def test_the_committed_displays_ship_after_the_error_recordings(root, planned):
 def test_a_bad_or_repeated_displays_row_is_refused(row, why):
     with pytest.raises(ValueError, match=why):
         generate._check_displays([{"creature": 1, "display": 2}, row])
+
+
+# ---- the NPC a player's quest window showed (data/voice/quest-npcs.jsonl) -----------------------------------
+
+SEND = {"source": "collector@1.60.1.70959", "imported": "2026-11-21"}
+
+
+def _npc(quest, creature, field="description", **more):
+    return {"quest": quest, "field": field, "creature": creature, **more, "provenance": SEND}
+
+
+def test_a_display_a_players_quest_window_showed_fills_in_where_no_cache_has_the_creature():
+    seen = voice_displays.seen_displays([_npc(1, 5, display=77), _npc(2, 6, display=88), _npc(3, 7)])
+    assert seen == {5: ("collector@1.60.1.70959", 77), 6: ("collector@1.60.1.70959", 88)}
+    got = voice_displays.display_rows({5, 6, 7}, [(70959, {6: [61]})], {5: [50], 7: [70]}, VM, [], "2026-11-21",
+                                      seen)
+    assert [(r["creature"], r["display"], r["provenance"]["source"]) for r in got] == [
+        (5, 77, "collector@1.60.1.70959"),  # the client drew it for a player: ahead of VMaNGOS
+        (6, 61, "creaturecache@70959"),     # the client's own cache still wins
+        (7, 70, VM),
+    ]
+    # once a send named it, VMaNGOS never takes the row back
+    assert voice_displays.display_rows({5}, [], {5: [50]}, VM, got[:1], "2026-11-22") == got[:1]
+
+
+def test_sends_that_disagree_give_the_display_most_of_them_name():
+    rows = [_npc(1, 5, display=77), _npc(2, 5, display=78), _npc(3, 5, display=78), _npc(1, 9, display=4),
+            _npc(2, 9, display=3)]
+    assert voice_displays.seen_displays(rows) == {5: (SEND["source"], 78), 9: (SEND["source"], 3)}
+
+
+def test_a_sex_is_taken_only_where_every_send_agrees():
+    rows = [_npc(1, 5, sex="female"), _npc(2, 5, sex="female"), _npc(1, 6, sex="male"), _npc(2, 6, sex="female"),
+            _npc(1, 7)]
+    assert voice_displays.seen_sexes(rows) == {5: ("female", SEND["source"])}
+
+
+@pytest.mark.parametrize(("row", "why"), [
+    ({"quest": 0, "field": "description", "creature": 5, "provenance": SEND}, "positive numbers"),
+    (_npc(1, 5, field="title"), "is not one of description, progress, completion"),
+    (_npc(1, 5, sex="unknown"), "is not male or female"),
+    (_npc(1, 5, display=0), "display must be a positive number"),
+    ({"quest": 1, "field": "progress", "creature": 5, "provenance": {"source": "vmangos@1", "imported": "x"}},
+     "must name a collector send"),
+    (_npc(1, 5, name="Marshal"), "holds more than numbers and provenance"),
+])
+def test_a_bad_quest_npc_row_is_refused(row, why):
+    problems = voice_displays.quest_npc_problems([row])
+    assert len(problems) == 1 and why in problems[0], problems
+
+
+def test_good_quest_npc_rows_pass_and_a_repeat_is_refused():
+    good = [_npc(1, 5, sex="male", display=77), _npc(1, 6), _npc(1, 5, field="completion")]
+    assert voice_displays.quest_npc_problems(good) == []
+    assert voice_displays.quest_npc_problems([]) == []
+    twice = voice_displays.quest_npc_problems([_npc(1, 5), _npc(1, 5)])
+    assert len(twice) == 1 and "names creature 5 twice" in twice[0]

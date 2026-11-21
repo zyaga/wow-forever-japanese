@@ -69,7 +69,7 @@ Numbers only: no English, and never the GUID. It goes through `Collector.record`
 
 Why it exists: the voice of a line is cast from the NPC that says it, and no public data names the NPCs the Forever server added. So it is stored whether or not the line ships Japanese, and whether or not it was voiced.
 
-Like NPC names, these entries hold no line to translate (`Collector.RIDERS = { npc, questnpc }`). They are never looked up, never pruned as translated, never counted as unsent lines, and never a reason to send by themselves: they ride along with a send that carries at least one line. An older addon version that loads a file holding them drops the unknown kind without an error.
+Like NPC names, these entries hold no line to translate (`Collector.RIDERS = { npc, questnpc }`). They are never looked up, never pruned as translated, never counted as unsent lines, and never a reason to send by themselves: they ride along with a send that carries at least one line. An older addon version that loads a file holding them drops the unknown kind without an error. A quest NPC entry never pushes a send out of link mode: when the lines alone fit the link, `CollectorSend.withinLink` adds as many of these entries as still fit and leaves the rest unsent, so they ride with a later send; lines too long for a link are pasted with every entry.
 
 ### What is recorded
 | Kind | Fields | Call site | English source |

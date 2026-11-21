@@ -64,6 +64,42 @@ local function encode(payload)
   return CollectorSend.PREFIX .. s
 end
 
+-- → the link `text` rides in, or nil when it is too long for one
+local function linkOf(text)
+  if not text or #text > CollectorSend.URL_BUDGET then return nil end
+  local link = CollectorSend.ISSUE_URL .. "&dump=" .. CollectorSend.percentEncode(text)
+  return #link <= CollectorSend.URL_BUDGET and link or nil
+end
+
+-- A quest NPC record is three numbers that help cast a voice. It rides along, but it must never be why a send
+-- stops fitting a link and has to be pasted: when the lines alone fit, as many records as still fit go with them
+-- and the rest stay unsent for a later send. → the shorter list | nil (no record to leave, or the lines alone do
+-- not fit a link either)
+local RECORD = "questnpc"
+function CollectorSend.withinLink(list, version)
+  local lines, records = {}, {}
+  for _, item in ipairs(list) do
+    if item.entry.t == RECORD then records[#records + 1] = item else lines[#lines + 1] = item end
+  end
+  if #records == 0 then return nil end
+  local function with(k)
+    local some = {}
+    for _, item in ipairs(lines) do some[#some + 1] = item end
+    for i = 1, k do some[#some + 1] = records[i] end
+    table.sort(some, function(x, y) return x.key < y.key end)
+    return linkOf(encode(CollectorSend.payload(some, version))) and some or nil
+  end
+  local best = with(0)
+  if not best then return nil end
+  local lo, hi = 0, #records - 1 -- every record is known not to fit
+  while lo < hi do
+    local mid = math.floor((lo + hi + 1) / 2)
+    local some = with(mid)
+    if some then best, lo = some, mid else hi = mid - 1 end
+  end
+  return best
+end
+
 function CollectorSend.pack(all)
   local list, shipped, shippedList, names = WFJ.Collector.pending(all)
   -- NPC names ride along with the lines and are not counted as lines
@@ -73,6 +109,10 @@ function CollectorSend.pack(all)
     result.mode = "readonly" -- a file from a newer version of the addon: this one neither reads nor sends it
     return result
   end
+  local version = tostring(deps and type(deps.version) == "function" and deps.version() or "?")
+  if #list > 0 and not linkOf(encode(CollectorSend.payload(list, version))) then
+    list = CollectorSend.withinLink(list, version) or list
+  end
   for i, item in ipairs(list) do result.sent[i] = { key = item.key, h = item.entry.h } end
   -- a line that ships in Japanese now needs no sending: marking it keeps the unsent count honest
   for _, item in ipairs(shippedList) do result.sent[#result.sent + 1] = item end
@@ -80,16 +120,13 @@ function CollectorSend.pack(all)
     result.mode = "empty"
     return result
   end
-  local version = deps and type(deps.version) == "function" and deps.version() or "?"
-  local text = encode(CollectorSend.payload(list, tostring(version)))
+  local text = encode(CollectorSend.payload(list, version))
+  local link = linkOf(text)
   if not text then
     result.mode = "unavailable"
-  elseif #text <= CollectorSend.URL_BUDGET then
-    local link = CollectorSend.ISSUE_URL .. "&dump=" .. CollectorSend.percentEncode(text)
-    if #link <= CollectorSend.URL_BUDGET then
-      result.mode, result.text, result.url = "link", text, link
-      return result
-    end
+  elseif link then
+    result.mode, result.text, result.url = "link", text, link
+    return result
   end
   if text and #text <= CollectorSend.PASTE_BUDGET then
     result.mode, result.text = "paste", text
