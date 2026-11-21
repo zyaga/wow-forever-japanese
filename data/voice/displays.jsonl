@@ -808,6 +808,7 @@
 {"creature": 3936, "display": 2035, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 3945, "display": 11353, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}}
 {"creature": 3955, "display": 2068, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
+{"creature": 3961, "display": 2058, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-21"}}
 {"creature": 3963, "display": 2066, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 3964, "display": 4181, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 3967, "display": 2053, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
@@ -929,6 +930,7 @@
 {"creature": 4608, "display": 2618, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 4609, "display": 2624, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 4611, "display": 2623, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
+{"creature": 4612, "display": 1201, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-21"}}
 {"creature": 4613, "display": 2621, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 4616, "display": 12955, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 4618, "display": 4898, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
@@ -1890,6 +1892,7 @@
 {"creature": 13319, "display": 13445, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13320, "display": 13450, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13322, "display": 5564, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
+{"creature": 13377, "display": 13439, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-21"}}
 {"creature": 13417, "display": 13341, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13418, "display": 13342, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13420, "display": 13344, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
@@ -1901,13 +1904,18 @@
 {"creature": 13434, "display": 13350, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13435, "display": 13356, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13436, "display": 13355, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
+{"creature": 13437, "display": 13470, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-21"}}
+{"creature": 13438, "display": 13471, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-21"}}
+{"creature": 13439, "display": 13472, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-21"}}
 {"creature": 13441, "display": 13415, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
+{"creature": 13442, "display": 13403, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-21"}}
 {"creature": 13444, "display": 13369, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13445, "display": 13370, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13446, "display": 13662, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13447, "display": 13383, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13448, "display": 13402, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13449, "display": 13842, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
+{"creature": 13577, "display": 13714, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-21"}}
 {"creature": 13597, "display": 13793, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13598, "display": 13671, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 13602, "display": 13644, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
