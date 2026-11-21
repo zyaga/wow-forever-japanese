@@ -1,0 +1,4 @@
+- **NPCs speak in their own voice.** A quest line whose speaker the addon could not name was read by one narrator, an old tauren man, whatever the NPC's race or sex. Each line is now read in the voice of the NPC who says it.
+- **Silent beats wrong.** A line whose NPC is not known yet, or whose voice is not made yet, stays quiet. Some lines that had a voice are silent until the next voice pack release.
+- **The window tells you.** With a voice pack installed, a translated line with no voice yet shows `[音声なし / No Voice Yet]`. A setting on the Voice page turns the message off.
+- **Your Collector helps find the voices.** For each quest window you open it also keeps three numbers about the NPC (its id, its sex and its model id). Nothing about your character, and nothing is sent unless you send it.
