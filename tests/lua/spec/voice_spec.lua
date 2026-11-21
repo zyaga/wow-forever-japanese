@@ -1083,6 +1083,18 @@ describe("Core/Voice: the lines with no voice yet", function()
     assert.is_true(V.silent("gossip", "greeting", "gossip", "0123456789abcdef"))
   end)
 
+  it("the quest log's pane says so for a quest's offer, and is still no surface that plays by itself", function()
+    loadPack()
+    V.notMade({ "2-description", "2-progress" })
+    assert.is_true(V.silent("questmap.info", "description", "quest.description", 2))
+    assert.is_false(V.silent("questmap.info", "progress", "quest.progress", 2)) -- the pane shows the offer only
+    assert.is_false(V.silent("questmap.info", "description", "quest.description", 3)) -- not listed
+    assert.is_nil(V.KINDS["questmap.info"])
+    settings["voice.offer"] = false
+    assert.is_false(V.silent("questmap.info", "description", "quest.description", 2))
+    settings["voice.offer"] = true
+  end)
+
   it("says nothing with no pack loaded, or with no list (an older entry pack)", function()
     V.notMade({ "2-description" })
     assert.is_false(silent())

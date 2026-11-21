@@ -454,6 +454,8 @@ TOOLTIPS = """
 WFJScanDB = {
 ["probe"] = {
 ["test"] = { ["started"] = "2026-11-21 17:00:00", ["finished"] = "2026-11-21 17:05:00", ["build"] = "70959" },
+["novoice"] = { ["quests"] = 3, ["said"] = 2, ["pack"] = true, ["listed"] = 40,
+  ["wrong"] = { ["783"] = "says it has no voice, and the voice pack does not list it" } },
 ["tooltips"] = { ["read"] = 120, ["japanese"] = 110, ["unread"] = 4, ["items"] = 9,
   ["wrong"] = { ["408498"] = "3 numbers in the Japanese, 4 on this client" },
   ["changed"] = { ["17"] = "2 numbers in the Japanese, 3 on this client" },
@@ -497,8 +499,11 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     assert "tooltips: 120 spells read (110 in Japanese, 4 the client had not loaded), 9 items; 1 spells left" in out
     assert "read  changed spell\t17\t2 numbers in the Japanese, 3 on this client" in out
     assert "ERROR tooltip numbers in the wrong places: spell 408498" in out
+    assert "no-voice message: 3 quests read in the quest log, 2 said they have no voice; voice pack loaded, 40" in out
+    assert "ERROR no-voice message: quest 783 says it has no voice, and the voice pack does not list it" in out
     fine = TOOLTIPS.replace('["408498"] = "3 numbers in the Japanese, 4 on this client"', "").replace(
-        '["279845"] = "one Japanese paragraph over 2 lines"', "")
+        '["279845"] = "one Japanese paragraph over 2 lines"', "").replace(
+        '["783"] = "says it has no voice, and the voice pack does not list it"', "")
     saved.write_text(fine, encoding="utf-8")
     assert client_surface._texts(args) == 0
 
@@ -516,3 +521,30 @@ def test_the_test_addon_carries_each_filled_spells_count_and_reads_tooltips_afte
     # nothing is clicked or used: tooltips are only shown
     body = lua[lua.index("local function readItems"):lua.index("local function WFJScanTooltipRead")]
     assert "UseContainerItem" not in body and "PickupContainerItem" not in body and ":Click(" not in body
+
+
+def test_the_no_voice_read_fails_on_a_wrong_message_and_on_a_log_with_no_quest():
+    record = client_surface.read_no_voice(TOOLTIPS)
+    assert record == {"quests": 3, "said": 2, "listed": 40, "pack": True, "refused": "",
+                      "wrong": [("783", "says it has no voice, and the voice pack does not list it")]}
+    assert client_surface.no_voice_problems(record) == [
+        "no-voice message: quest 783 says it has no voice, and the voice pack does not list it"]
+    assert client_surface.read_no_voice(SAVED) is None
+    assert client_surface.no_voice_problems(None)[0].startswith("no-voice message not read: this run's test addon")
+    empty = {**record, "quests": 0, "wrong": []}
+    assert client_surface.no_voice_problems(empty) == [
+        "no-voice message not read: the quest log holds no quest (take one, then run it again)"]
+    assert client_surface.no_voice_problems({**empty, "refused": "boom"}) == ["no-voice message not read: boom"]
+    assert client_surface.no_voice_problems({**empty, "quests": 2}) == []
+
+
+def test_the_no_voice_read_keeps_the_voice_entrys_own_list_and_shows_quests_the_clients_way():
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    # the list is taken as the addon is handed it, so the read holds the pane to the same lines
+    assert 'hooksecurefunc("WoWForeverJapanese_VoiceNotMade", function(list)' in lua
+    assert "pcall(QuestMapFrame_ShowQuestDetails, quests[at])" in lua
+    assert 'listedNoVoice[showing .. "-description"] == true' in lua
+    assert lua.index("WFJScanTooltipRead(function()") < lua.index("outOfCombat(function() WFJScanNoVoiceRead(")
+    assert lua.index("WFJScanNoVoiceRead(function()") < lua.index("WFJScanCharacterRead(function()\n")
+    body = lua[lua.index("local function WFJScanNoVoiceRead"):lua.index("-- The character window, opened by")]
+    assert "AbandonQuest" not in body and "SetAbandonQuest" not in body and ":Click(" not in body

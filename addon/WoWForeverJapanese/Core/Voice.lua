@@ -333,6 +333,11 @@ local function kindSettingOf(surface, recKey)
   return byKey and (byKey[recKey] or (type(recKey) == "string" and byKey[(recKey:gsub("%d+$", ""))])) or nil
 end
 
+-- A window that shows a voiced line and reads it only when asked: the quest log's details pane, whose play button
+-- reads the quest's offer (UI/VoiceQuestLog). It is no surface of KINDS, since nothing there plays by itself, but
+-- its banner says when that offer has no voice, as the quest window's does.
+Voice.SHOWN_ONLY = { ["questmap.info"] = { description = "voice.offer" } }
+
 -- The entry names the lines that ship Japanese and have no voice: a line whose speaker nobody could name, one
 -- whose speaker has no voice yet, one whose audio is still to be made. Only well-formed pack keys are kept. An
 -- entry built before the list existed names none.
@@ -349,7 +354,7 @@ end
 -- (kind, id), has no voice yet: the entry lists it, and it would be read aloud if it had one (voice and its
 -- kind on, a pack loaded, Japanese showing). The message has a setting of its own.
 function Voice.silent(surface, recKey, kind, id)
-  local kindSetting = kindSettingOf(surface, recKey)
+  local kindSetting = kindSettingOf(surface, recKey) or (Voice.SHOWN_ONLY[surface] or {})[recKey]
   if not kindSetting or not VOICED[kind] or not lines or not notMade then return false end
   if not (setting("voice.enabled") and setting(kindSetting) and setting("voice.mark")) then return false end
   if (type(deps.enabled) == "function" and not deps.enabled())

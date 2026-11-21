@@ -1484,6 +1484,127 @@ local function WFJScanTooltipRead(done)
   end)
 end
 
+-- The no-voice read. With a voice pack, a translated line the pack lists as having no voice yet says so on its
+-- window: `[音声なし / No Voice Yet]`. The quest and NPC talk windows need an NPC, so the run reads the one window
+-- it can open by itself: the quest log, one quest of the character's at a time, shown the client's way. What the
+-- pane says is held to the list the voice entry gave the addon, kept here as it was handed over, into
+-- `probe.novoice`:
+--   wrong   a quest whose pane says the wrong thing: the message for a line not listed (or with no pack), no
+--           message for a listed line that shows its Japanese, or both messages at once. A failure.
+-- A character with no quest in its log reads nothing, and the result says so.
+local NO_VOICE, NOT_TRANSLATED = "音声なし", "未翻訳"
+local NOVOICE_TICKS = 20 -- frames between showing a quest and reading its pane
+local listedNoVoice -- the pack keys the voice entry listed, as a set; nil when it listed none
+local packWatcher = CreateFrame("Frame")
+packWatcher:RegisterEvent("ADDON_LOADED")
+packWatcher:SetScript("OnEvent", function(self, _, name)
+  if name ~= "WoWForeverJapanese" then return end
+  self:UnregisterAllEvents()
+  if type(WoWForeverJapanese_VoiceNotMade) ~= "function" then return end
+  hooksecurefunc("WoWForeverJapanese_VoiceNotMade", function(list)
+    listedNoVoice = nil
+    if type(list) ~= "table" then return end
+    listedNoVoice = {}
+    for _, key in ipairs(list) do listedNoVoice[key] = true end
+  end)
+end)
+
+local function voicePackLoaded()
+  for i = 1, C_AddOns.GetNumAddOns() do
+    local name = C_AddOns.GetAddOnInfo(i)
+    if type(name) == "string" and name:find("^WoWForeverJapanese_Voice") and C_AddOns.IsAddOnLoaded(i) then
+      return true
+    end
+  end
+  return false
+end
+
+-- whether the addon's settings leave the message on for a quest's offer (a setting never changed is on)
+local function messageOn()
+  local settings = type(WFJ_DB) == "table" and WFJ_DB.settings
+  if type(settings) ~= "table" then return true end
+  return settings["voice.enabled"] ~= false and settings["voice.offer"] ~= false and settings["voice.mark"] ~= false
+end
+
+-- the two messages as the quest log's pane shows them now → says no voice, says not translated
+local function paneSays()
+  local noVoice, notTranslated = false, false
+  local frame = EnumerateFrames()
+  while frame do
+    pcall(function()
+      if frame:IsForbidden() or not frame:IsVisible() then return end
+      for _, region in ipairs({ frame:GetRegions() }) do
+        if region:GetObjectType() == "FontString" and region:IsVisible() then
+          local text = plainOf(region)
+          if text and text:find(NO_VOICE, 1, true) then noVoice = true end
+          if text and text:find(NOT_TRANSLATED, 1, true) then notTranslated = true end
+        end
+      end
+    end)
+    frame = EnumerateFrames(frame)
+  end
+  return noVoice, notTranslated
+end
+
+local noVoiceReader = CreateFrame("Frame")
+local function WFJScanNoVoiceRead(done)
+  local db = probeDb()
+  local record = { quests = 0, said = 0, pack = voicePackLoaded(), listed = 0, wrong = {} }
+  db.novoice = record
+  for _ in pairs(listedNoVoice or {}) do record.listed = record.listed + 1 end
+  local quests = {}
+  local ok, err = pcall(function()
+    for i = 1, C_QuestLog.GetNumQuestLogEntries() do
+      local info = C_QuestLog.GetInfo(i)
+      if type(info) == "table" and not info.isHeader and not info.isHidden and type(info.questID) == "number" then
+        quests[#quests + 1] = info.questID
+      end
+    end
+    if #quests > 0 and not (QuestMapFrame and QuestMapFrame:IsVisible()) then
+      ToggleQuestLog()
+      record.opened = true
+    end
+  end)
+  if not ok then
+    record.refused = tostring(err)
+    return done()
+  end
+  if #quests == 0 then return done() end
+  local at, ticks, showing = 0, 0, nil
+  noVoiceReader:SetScript("OnUpdate", function()
+    ticks = ticks + 1
+    if ticks < NOVOICE_TICKS then return end
+    ticks = 0
+    if showing then
+      local said, missing = paneSays()
+      local listed = listedNoVoice ~= nil and listedNoVoice[showing .. "-description"] == true
+      record.quests = record.quests + 1
+      if said then record.said = record.said + 1 end
+      local what
+      if said and missing then
+        what = "says both that it has no voice and that it is not translated"
+      elseif said and not record.pack then
+        what = "says it has no voice, with no voice pack loaded"
+      elseif said and not listed then
+        what = "says it has no voice, and the voice pack does not list it"
+      elseif listed and record.pack and messageOn() and not said and not missing then
+        what = "the voice pack lists it with no voice, and the pane does not say so"
+      end
+      if what then record.wrong[tostring(showing)] = what end
+      showing = nil
+    end
+    at = at + 1
+    if at > #quests then
+      noVoiceReader:SetScript("OnUpdate", nil)
+      if record.opened then pcall(ToggleQuestLog) end -- closed again, the way it was opened
+      record.opened = nil
+      return done()
+    end
+    local fine, why = pcall(QuestMapFrame_ShowQuestDetails, quests[at])
+    if fine then showing = quests[at] else record.refused = tostring(why) end
+  end)
+end
+
 -- The character window, opened by the player (see above): read every half second while it is open, so each page
 -- the player shows is read; it ends when the player closes it. Not opened in time, the run says so. What was read
 -- is kept from the first read on, and a reload while the window is open ends the run as closing it does: the
@@ -1540,7 +1661,7 @@ local function WFJScanCharacterRead(done)
 end
 
 -- The whole window test (`/wfjtest`): the load walk, the live sweep, the closed-window read, the tooltip read, the
--- character window (opened by the player), then one done line. `probe.test` holds when it ran and on which build, so a result read
+-- no-voice read, the character window (opened by the player), then one done line. `probe.test` holds when it ran and on which build, so a result read
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
@@ -1638,16 +1759,19 @@ SlashCmdList.WFJTEST = function(how)
         db.test.part = "tooltips"
         -- in a fight the client hides a tooltip's rows from addons: nothing could be read
         outOfCombat(function() WFJScanTooltipRead(function()
-          db.test.part = "character"
-          WFJScanCharacterRead(function()
-            db.test.part = "done"
-            seterrorhandler(shown)
-            watcher:UnregisterAllEvents()
-            readGrabbed()
-            testRunning = false
-            db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
-            print("WFJ test done: /reload to save, then the result can be read")
-          end)
+          db.test.part = "novoice"
+          outOfCombat(function() WFJScanNoVoiceRead(function()
+            db.test.part = "character"
+            WFJScanCharacterRead(function()
+              db.test.part = "done"
+              seterrorhandler(shown)
+              watcher:UnregisterAllEvents()
+              readGrabbed()
+              testRunning = false
+              db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
+              print("WFJ test done: /reload to save, then the result can be read")
+            end)
+          end) end)
         end) end)
       end)
     end) end)
@@ -2118,6 +2242,41 @@ def tooltip_problems(tooltips: dict[str, Any] | None) -> list[str]:
     return out
 
 
+def read_no_voice(text: str) -> dict[str, Any] | None:
+    """The window test's no-voice read out of a saved-variables file, or None when the run had none: how many
+    quests of the quest log it read (`quests`), how many said they have no voice (`said`), whether a voice
+    pack was loaded (`pack`), how many lines the voice entry listed (`listed`), why it could not read
+    (`refused`), and `wrong`: (quest id, what its pane said that it should not)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("novoice") if probe is not None else None
+    if record is None:
+        return None
+    wrong = record.get("wrong")
+    return {
+        "quests": int(record.get("quests") or 0), "said": int(record.get("said") or 0),
+        "listed": int(record.get("listed") or 0), "pack": bool(record.get("pack")),
+        "refused": str(record.get("refused") or ""),
+        "wrong": sorted((str(k), str(v)) for k, v in (wrong.named() if wrong is not None else {}).items()),
+    }
+
+
+def no_voice_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the no-voice read found wrong, one line each. A run that read no quest proves nothing about the
+    message and says so: the character needs a quest in its log."""
+    if record is None:
+        return ["no-voice message not read: this run's test addon has no such read (make scan-install, then "
+                "run it again)"]
+    out = [f"no-voice message: quest {i} {said}" for i, said in record["wrong"]]
+    if record["refused"]:
+        out.append(f"no-voice message not read: {record['refused']}")
+    elif not record["quests"]:
+        out.append("no-voice message not read: the quest log holds no quest (take one, then run it again)")
+    return out
+
+
 def read_test_problems(text: str, log: str = "") -> list[str]:
     """What went wrong while the window test ran, one line each: the Lua errors and the actions the client refused
     an addon, as the scan addon counted them, and, from the shipped addon's own saved file (`log`), its recorded
@@ -2220,6 +2379,23 @@ def client_build_beside(saved: Path) -> str | None:
     return None
 
 
+def _own_reads(saved: str) -> list[str]:
+    """Prints what the tooltip read and the no-voice read saw and gives back their problems."""
+    tooltips = read_tooltips(saved)
+    if tooltips is not None:
+        print(f"tooltips: {tooltips['read']} spells read ({tooltips['japanese']} in Japanese, "
+              f"{tooltips['unread']} the client had not loaded), {tooltips['items']} items; "
+              f"{len(tooltips['changed'])} spells left English because the game changed them")
+        for id_, said in tooltips["changed"]:
+            print(f"read  changed spell\t{id_}\t{said}")
+    no_voice = read_no_voice(saved)
+    if no_voice is not None:
+        print(f"no-voice message: {no_voice['quests']} quests read in the quest log, {no_voice['said']} said they "
+              f"have no voice; voice pack {'loaded' if no_voice['pack'] else 'not loaded'}, "
+              f"{no_voice['listed']} lines listed with no voice")
+    return tooltip_problems(tooltips) + no_voice_problems(no_voice)
+
+
 def _texts(args: argparse.Namespace) -> int:
     """The `texts` command: the window test's saved result against the baseline. → the exit code."""
     info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
@@ -2266,14 +2442,7 @@ def _texts(args: argparse.Namespace) -> int:
                                   log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
     # the open sweep shows a window without the client's own opening code, so a window that needs data it was
     # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
-    tooltips = read_tooltips(args.saved.read_text(encoding="utf-8", errors="replace"))
-    if tooltips is not None:
-        print(f"tooltips: {tooltips['read']} spells read ({tooltips['japanese']} in Japanese, "
-              f"{tooltips['unread']} the client had not loaded), {tooltips['items']} items; "
-              f"{len(tooltips['changed'])} spells left English because the game changed them")
-        for id_, said in tooltips["changed"]:
-            print(f"read  changed spell\t{id_}\t{said}")
-    problems += tooltip_problems(tooltips)
+    problems += _own_reads(args.saved.read_text(encoding="utf-8", errors="replace"))
     noted = [row for row in problems if ": [open] " in row]
     failing = [row for row in problems if row not in noted]
     print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare)")
