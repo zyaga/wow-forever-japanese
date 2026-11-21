@@ -110,8 +110,10 @@ function CollectorSend.pack(all)
     return result
   end
   local version = tostring(deps and type(deps.version) == "function" and deps.version() or "?")
-  if #list > 0 and not linkOf(encode(CollectorSend.payload(list, version))) then
-    list = CollectorSend.withinLink(list, version) or list
+  local text = #list > 0 and encode(CollectorSend.payload(list, version)) or nil
+  if text and not linkOf(text) then
+    local shorter = CollectorSend.withinLink(list, version)
+    if shorter then list, text = shorter, encode(CollectorSend.payload(shorter, version)) end
   end
   for i, item in ipairs(list) do result.sent[i] = { key = item.key, h = item.entry.h } end
   -- a line that ships in Japanese now needs no sending: marking it keeps the unsent count honest
@@ -120,7 +122,6 @@ function CollectorSend.pack(all)
     result.mode = "empty"
     return result
   end
-  local text = encode(CollectorSend.payload(list, version))
   local link = linkOf(text)
   if not text then
     result.mode = "unavailable"
