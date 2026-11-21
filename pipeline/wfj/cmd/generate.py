@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections.abc import Sequence
 from pathlib import Path
@@ -153,6 +154,65 @@ def branch_variants(
         else:
             shipped[key] = reason
     return shipped, refused
+
+
+_FILLED = re.compile(r"\$[ND]\d")
+# a count no live line has: the line stays English until it is drafted again
+NEVER_FITS = -1
+
+
+def value_counts(
+    type_: str,
+    lines: list[dict[str, Any]],
+    english_store: Store,
+    en_by: dict[tuple[int, str], str] | None = None,
+) -> dict[tuple[int, str], int]:
+    """(id, field) → how many numbers the client prints for the line's English (`align.value_slots`), for
+    every shipped item / spell line whose Japanese is filled from the live line and keeps no conditional.
+    The line's `$N<k>` are numbered to that English. On a client whose template has gained or lost a number
+    every later placeholder would take another value, and the gate cannot tell: each number it fills in is
+    in the live line. So the addon shows the line only while the live line holds exactly this many.
+    A stale line was numbered against English that has changed since: it gets the count only while every
+    placeholder still fits the English as it stands, else `NEVER_FITS`. A line whose numbers cannot be
+    counted from the template (or with no English in the store) gets none and is gated as before."""
+    todo = [
+        ln for ln in lines
+        if lua_writer.shipped(ln) and _FILLED.search(str(ln.get("ja") or ""))
+        and not align.has_branches(str(ln.get("ja") or ""))
+    ]
+    if not todo:
+        return {}
+    if en_by is None:
+        en_by = {(ln["id"], ln["field"]): ln["en"] for ln in english_store.load(type_)}
+    spells = en_by if type_ == "spell" else {
+        (ln["id"], ln["field"]): ln["en"] for ln in english_store.load("spell")
+    }
+    out: dict[tuple[int, str], int] = {}
+    for ln in todo:
+        key = (ln["id"], ln["field"])
+        raw = en_by.get(key)
+        if raw is None:
+            continue
+        if "$@" in raw:
+            x = align.expand_inclusions(raw, spells)
+            if x.text is None:
+                continue
+            raw = x.text
+        en = model_english(raw, player_tokens=False)
+        n = align.value_slots(en)
+        if n is None:
+            continue
+        out[key] = n if ln["status"] != "stale" or _still_fits(en, ln["ja"]) else NEVER_FITS
+    return out
+
+
+def _still_fits(en: str, ja: str) -> bool:
+    """Whether a Japanese numbered against earlier English still points at the right values of `en`: every
+    code slot is carried by its own placeholder and no placeholder points past the last value."""
+    n, d = align.value_slots(en) or 0, align.duration_slots(en) or 0
+    if max(align.fill_indices(ja), default=0) > n or max(align.duration_indices(ja), default=0) > d:
+        return False
+    return align.slot_problems(en, ja) == []
 
 
 def _branch_english(
@@ -378,8 +438,14 @@ def _plan_id_types(
         if report is not None and refused:
             report.setdefault("branch_refused", {})[type_] = refused
         # a refused branch line ships nothing: the addon shows the English with the missing marker
+        values = value_counts(type_, lines, english_store, en_by) if type_ in ("item", "spell") else None
+        if report is not None and values:
+            outdated = sorted(k for k, n in values.items() if n == NEVER_FITS)
+            if outdated:
+                report.setdefault("values_outdated", {})[type_] = outdated
         rows = lua_writer.rows(
-            type_, [ln for ln in lines if (ln["id"], ln["field"]) not in refused], female, masked, branches
+            type_, [ln for ln in lines if (ln["id"], ln["field"]) not in refused], female, masked, branches,
+            values,
         )
         counts[type_] = len(rows)
         _note_versions(english, lines)
@@ -815,6 +881,10 @@ def run(argv: Sequence[str]) -> int:
     if refused:  # branch lines shipped as English, and why
         print(f"generate: {len(refused)} branch lines ship English: " + "; ".join(refused[:20])
               + (f" … {len(refused) - 20} more" if len(refused) > 20 else ""))
+    outdated = [f"{t} {i}/{f}" for t, keys in report.get("values_outdated", {}).items() for i, f in keys]
+    if outdated:  # stale lines whose placeholders no longer fit their English
+        print(f"generate: {len(outdated)} stale lines numbered for other English ship English: "
+              + "; ".join(outdated[:20]) + (f" … {len(outdated) - 20} more" if len(outdated) > 20 else ""))
     for rel in result["deleted"]:
         print(f"  deleted {rel}", file=sys.stderr)
     return 0

@@ -51,6 +51,7 @@ def rows(
     female: dict[tuple[int, str], tuple[str, str]] | None = None,
     masked: dict[tuple[int, str], tuple[str, str, str | None]] | None = None,
     branches: dict[tuple[int, str], list[tuple[str, ...]]] | None = None,
+    values: dict[tuple[int, str], int] | None = None,
 ) -> dict[int, list[str]]:
     """{id: [slot literals…]} for a numeric-id type; ids with no shipped field are absent.
     `female` (quest only): (id, field) → (English hash, female-variant key). A row with any field
@@ -63,7 +64,11 @@ def rows(
     masked live line can equal, so it stays marked (ADR-003).
     `branches` (ADR-043; item / spell): (id, field) → [(variant Japanese, shape)…] for a line whose
     Japanese keeps `$?` conditionals. That slot ships as a table, `{ "<variant 1>", …, shape = { … } }`,
-    which the addon's `Align.checkVariants` chooses from."""
+    which the addon's `Align.checkVariants` chooses from.
+    `values` (item / spell): (id, field) → how many numbers the client prints for the English the line's
+    placeholders are numbered to. A row with any such field gets one count per field after the status
+    string (`nil` for a field without one, trailing ones left off); the addon shows the line only while
+    the live line holds that many."""
     slots = schema.SLOTS[type_]
     fields = slots["fields"]
     by_id: dict[int, dict[str, dict[str, Any]]] = {}
@@ -109,6 +114,11 @@ def rows(
             ]
             if any(fem):
                 out[id_] += [h1_literal(k) if k else "nil" for k in fem]
+        if values and "values" in slots:
+            counted = [values.get((id_, f)) if f in got else None for f in fields]
+            while counted and counted[-1] is None:
+                counted.pop()
+            out[id_] += ["nil" if c is None else str(c) for c in counted]
     return out
 
 

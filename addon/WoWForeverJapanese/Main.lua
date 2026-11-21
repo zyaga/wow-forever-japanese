@@ -364,8 +364,8 @@ function WFJ.OnLoad()
     -- the runtime gate for unaligned entries (ADR-007). The duration renderer is UIStrings',
     -- so a `$D<k>` in a tooltip translation copies the live line's duration with the unit the
     -- client chose instead of the Japanese naming one.
-    align = function(ja, lines, nameScope)
-      return WFJ.Align.check(ja, lines, nameScope, spellDuration)
+    align = function(ja, lines, nameScope, count)
+      return WFJ.Align.check(ja, lines, nameScope, spellDuration, count)
     end,
     -- a branch line's variants (ADR-043), the one that fits the live line
     alignVariants = function(variants, shapes, lines, nameScope)
@@ -378,7 +378,7 @@ function WFJ.OnLoad()
     expand = expand, -- {name}/{class}/{race} per player
     -- a trusted line's `$N<k>` / `$D<k>` filled from the live text, with no gate: a quest's
     -- count is in the line the player is shown, not in the text the server sent.
-    fillValues = function(ja, live) return WFJ.Align.fillValues(ja, live, spellDuration) end,
+    fillValues = function(ja, live, count) return WFJ.Align.fillValues(ja, live, spellDuration, count) end,
     fill = function(ja, args) return WFJ.UIIndex:fill(ja, args) end, -- UI templates get the live values
     -- the quest live check: the stale marker follows the client's English (ADR-019)
     fingerprints = function(text, masked) return WFJ.Collector.fingerprints(text, collectorPlayer(), masked) end,

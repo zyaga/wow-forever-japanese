@@ -29,15 +29,17 @@ WFJ.MARKER_INLINE_COLOR = "|cffffd100"
 -- Generated-data layout (ADR-008; twin of pipeline/wfj/emit/schema.py, parity-tested in data_spec):
 -- a row is positional: field slots, then one h1 (first 32 bits of the English hash) per field at slot+hash,
 -- then the status string (one char per field: "." trusted · "s" stale · "u" unaligned · "m" not shipped).
+-- An item or spell row may end with one count per field at slot+values: how many numbers the client prints for
+-- the English the Japanese is numbered to (Core/Align.check shows the line only while the live line has as many).
 -- The row's *key* is always the game id; slots never move without a schema bump.
 WFJ.SLOTS = {
   -- female: offset to a field's female-variant h1 (slots 12..16), only on rows with gendered English
   quest = { fields = { "title", "objectives", "description", "progress", "completion" }, hash = 5, status = 11,
     female = 11 },
-  item = { fields = { "description" }, hash = 1, status = 3 },
+  item = { fields = { "description" }, hash = 1, status = 3, values = 3 },
   -- `aura` is the buff / debuff wording of a spell, a different string from its tooltip
   -- `description` under the same id. Two fields, so the row is text,text,h1,h1,status.
-  spell = { fields = { "description", "aura" }, hash = 2, status = 5 },
+  spell = { fields = { "description", "aura" }, hash = 2, status = 5, values = 5 },
   ui = { fields = { "text" }, hash = 1, status = 3 }, -- keyed by global-string name / ItemSubClass:c:s
   -- An objective's own text, keyed by QuestObjective id; found by h1 (Core/Objectives.lua, ADR-031)
   objective = { fields = { "text" }, hash = 1, status = 3 },

@@ -496,3 +496,36 @@ describe("Translator: branch lines (ADR-043)", function()
     assert.are.equal("leave", (T3.resolve("items", "spell.description", 1, {})))
   end)
 end)
+
+describe("Translator.resolve: an entry's value count reaches the gate", function()
+  local WFJ, T, flags
+  before_each(function()
+    WFJ = {}
+    H.loadPure("Core/Translator.lua", "WoWForeverJapanese", WFJ)
+    flags = { entry = nil }
+    T = WFJ.Translator.new({
+      enabled = function() return true end, areaEnabled = function() return true end,
+      showsEnglish = function() return false end,
+      lookup = function() return flags.entry end,
+      marker = function() return false end,
+      align = function(_, _, _, count) flags.align = { count = count }; return true end,
+      fillValues = function(ja, _, count) flags.fill = { count = count }; return ja end,
+    })
+  end)
+
+  it("a gated line: align gets the entry's values, nil when it ships none", function()
+    flags.entry = { ja = "$N1ダメージ", status = "u", values = 1 }
+    T.resolve("spells", "spell.description", 17, { lines = { "Deals 240 damage" } })
+    assert.are.same({ count = 1 }, flags.align)
+    flags.entry = { ja = "$N1ダメージ", status = "s" }
+    T.resolve("spells", "spell.description", 17, { lines = { "Deals 240 damage" } })
+    assert.are.same({}, flags.align)
+  end)
+
+  it("a trusted line: fillValues gets them", function()
+    flags.entry = { ja = "$N1ダメージ", status = ".", values = 1 }
+    local a = T.resolve("spells", "spell.description", 17, { lines = { "Deals 240 damage" } })
+    assert.are.equal("apply", a)
+    assert.are.same({ count = 1 }, flags.fill)
+  end)
+end)

@@ -2,5 +2,5 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [371206] = { nil, "定命の者よ、お前は今やC'Thunに仕えている。", nil, 0x2b32d8f8, "mu" },
-  [371656] = { nil, "移動速度が$N1%上昇しています。", nil, 0xd5c3ac7c, "mu" },
+  [371656] = { nil, "移動速度が$N1%上昇しています。", nil, 0xd5c3ac7c, "mu", nil, 1 },
 })

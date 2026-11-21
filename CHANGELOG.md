@@ -22,6 +22,7 @@ an old setting stops working). A release moves those lines under its version num
 - Japanese that players write in the guild and community windows showed as empty boxes. It now shows in the addon's font, with translation on or off: the message of the day, the guild information, member and officer notes, rank names, the guild news line that repeats the message of the day, community names and descriptions, the guild finder's text, a guild bank tab's notes, and the title and description of a calendar event a player made. The boxes you type them in show Japanese as you type. Text with no Japanese keeps the game's own font.
 - The name-and-icon popup shows its labels in Japanese wherever the game uses it: equipment sets, macros, guild bank tabs, bank tabs and transmog outfits.
 - In the guild window, the "Show Offline Members" box, an offline member's last-seen line, the names of the guild's own chat channels and the news pane's heading are Japanese.
+- An item or spell tooltip no longer shows its numbers in the wrong places when the game has added or removed a number in that tooltip since the translation was made. Such a tooltip stays English until its translation follows.
 - A holiday's description on the calendar, the mount journal's search hint and the rank titles on the challenges page are Japanese.
 
 ## 0.14.0 - 2026-11-16

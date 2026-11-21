@@ -4,7 +4,8 @@
 --   "none"   no usable translation: payload { reason?, marker="missing"? }
 --   "apply"  payload { ja, marker="stale"? }
 -- deps = { enabled(), areaEnabled(area), showsEnglish(), lookup(kind, id) → {ja, status}|nil,
---          marker(name) → bool, align(ja, lines) → ok[, text] [optional; absent = unaligned entries fail closed],
+--          marker(name) → bool, align(ja, lines, nameScope, count) → ok[, text] [optional; absent = unaligned
+--            entries fail closed; `count` is the entry's `values`, how many numbers its English prints],
 --          alignVariants(variants, shapes, lines, nameScope) → ok[, text] [optional; an entry with
 --            `variants` (a branch line, ADR-043) goes through it on the gated path; absent → fails closed],
 --          alignSections(sections, lines, nameScope) → ok[, text] [optional; an entry with `sections` (a
@@ -47,14 +48,14 @@ function Translator.new(deps)
   -- A UI template's captured arguments, then the values the server fills into a quest line: a
   -- `$N<k>` count in `Collect $1oa Lady's Tear Moss.` is not in the text the server sent, only in the line
   -- the player is shown. nil from either is fail-closed and the caller leaves the line English.
-  local function filled(ja, ctx)
+  local function filled(ja, ctx, count)
     if ctx ~= nil and ctx.args ~= nil and deps.fill ~= nil then
       ja = deps.fill(ja, ctx.args)
       if type(ja) ~= "string" then return nil end
     end
     if deps.fillValues == nil then return ja end
     local live = ctx and (ctx.live or (ctx.lines and table.concat(ctx.lines, "\n")))
-    return deps.fillValues(ja, live)
+    return deps.fillValues(ja, live, count)
   end
 
   -- → true (live English differs from the checked English) · false (matches) · nil (no live check possible)
@@ -98,7 +99,7 @@ function Translator.new(deps)
     local type_ = type(kind) == "string" and kind:match("^%a+") or kind
     local gated = status == "unaligned" or (status == "stale" and GATED[type_] == true)
     if (status == "trusted" or status == "stale") and not gated then
-      ja = filled(ja, ctx)
+      ja = filled(ja, ctx, entry.values)
       if ja == nil or ja == "" then return none("fill_failed") end
     end
     if (status == "trusted" or status == "stale") and not gated then
@@ -110,7 +111,7 @@ function Translator.new(deps)
     elseif gated then
       if deps.align == nil then return none("unaligned_ungated") end
       -- align → ok[, text]: `text` is the Japanese with live values filled in; a bare `true` keeps entry.ja.
-      local ok, text = deps.align(entry.ja, ctx and ctx.lines, ctx and ctx.nameScope)
+      local ok, text = deps.align(entry.ja, ctx and ctx.lines, ctx and ctx.nameScope, entry.values)
       if not ok then return none("align_failed") end
       local payload = { ja = shown((type(text) == "string" and text ~= "") and text or entry.ja) }
       if status == "stale" and deps.marker("stale") then payload.marker = "stale" end
