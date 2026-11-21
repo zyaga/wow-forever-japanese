@@ -512,6 +512,33 @@ def test_validate_flags_a_cast_out_of_step_with_the_config(world, capsys):
     assert capsys.readouterr().out == "validate: voice: 3 files; 3 in step, 0 stale, 0 not made\n"
 
 
+def test_validate_counts_the_silent_lines_the_uncast_speakers_and_the_owed_files(world, capsys):
+    from wfj.cmd.validate import rule_voice
+
+    ruled = {"source": "maintainer", "imported": "2026-10-08"}
+    voice_make._write(world.data / "voice" / "profiles.jsonl", [
+        {"creature": 1992, "race": "nightelf", "gender": "female", "provenance": {"race": ruled, "gender": ruled}},
+        {"creature": 2079, "race": "nightelf", "gender": "male", "provenance": {"race": ruled, "gender": ruled}},
+        {"creature": 3000, "provenance": {}},
+    ])
+    cfg = voice_make.load_config(world.cfg)
+    voice_make._write(world.data / "voice" / "voices.jsonl", voice_make.cast_rows(world.data, cfg, "2026-10-08"))
+    voice_make.generate(world.data, "all", cfg, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
+    rows = voice_make._rows(world.data / "voice" / "speakers.jsonl")
+    voice_make._write(world.data / "voice" / "speakers.jsonl", [
+        {**r, "speaker": 3000} if r["key"] == "456-description" else r
+        for r in rows if r["key"] != "456-completion"])
+    _recast(world, 1992, "m")
+    assert rule_voice(world.data, world.cfg) == [
+        "voice voices: 1 creature(s) not cast as voice.toml casts them now (e.g. [1992]); run make voice-cast"]
+    out = capsys.readouterr().out.splitlines()
+    assert out == [
+        "validate: voice: 1 files; 1 in step, 0 stale, 0 not made",
+        "validate: voice: 1 quest line(s) nobody names a speaker for are not voiced, e.g. 456-completion",
+        "validate: voice: 1 speaker(s) have no voice yet and their 1 line(s) are not voiced, e.g. 3000",
+    ]
+
+
 def test_validate_reports_a_broken_config(world):
     from wfj.cmd.validate import rule_voice
 
