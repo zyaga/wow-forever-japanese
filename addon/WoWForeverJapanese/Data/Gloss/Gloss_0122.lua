@@ -728,6 +728,7 @@ WFJ.Data.add("gloss", {
   [122728] = "話\tはなし\tthing (story)",
   [122729] = "話\tはなし\tthing to say (story)",
   [122730] = "話\tはなし\tthings (stories)",
+  [122731] = "話\tはなし\tthings (talk)",
   [122732] = "話\tはなし\tthis (story)",
   [122733] = "話\tはなし\tto hear (story)",
   [122734] = "話\tはなし\ttold (story)",

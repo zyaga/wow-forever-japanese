@@ -620,6 +620,7 @@ WFJ.Data.add("gloss", {
   [72621] = "心\tこころ\theart (心を奪われる: lose one's heart)",
   [72622] = "心\tこころ\theart (無私の心で: selflessly)",
   [72623] = "心\tこころ\thearts",
+  [72624] = "心\tこころ\thearts and minds",
   [72625] = "心\tこころ\tinner (heart)",
   [72626] = "心\tこころ\tinside (heart)",
   [72627] = "心\tこころ\tmentally (mind)",

@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-21 at commit `4901b375a`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-21 at commit `974d1426f`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,7 +9,7 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 23,821 | 23,751 | 63 | 100.0% | 7 |
+| Quest text | 23,821 | 23,755 | 63 | 100.0% | 3 |
 | NPC dialogue (gossip, speech) | 11,731 | 11,730 | 1 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 710 | 590 | 120 | 100.0% | 0 |
@@ -17,7 +17,7 @@
 | Item descriptions | 10,637 | 10,636 | 0 | 100.0% | 1 |
 | Spell tooltips + auras | 25,945 | 25,897 | 1 | 99.8% | 47 |
 | Interface strings | 16,124 | 16,124 | 0 | 100.0% | 0 |
-| **All** | **90,474** | | | **99.9%** | **55** |
+| **All** | **90,474** | | | **99.9%** | **51** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 339, gossip 94, item 907, spell 301, ui 313.
@@ -42,10 +42,6 @@ professions, internal strings): quest 339, gossip 94, item 907, spell 301, ui 31
 |---|---|---|
 | Quest text | rejected: alignment_failed:Orgrimmar | 2 |
 | Quest text | rejected: alignment_failed:Felicia | 1 |
-| Quest text | rejected: alignment_failed:Tyr's | 1 |
-| Quest text | rejected: alignment_failed:Royal Apothecary Society | 1 |
-| Quest text | rejected: numbers_changed:5 | 1 |
-| Quest text | rejected: alignment_failed:shen'dorei | 1 |
 | Item descriptions | no Japanese yet: the template has too many optional parts for one translation | 1 |
 | Spell tooltips + auras | no Japanese yet: the template includes a spell the Forever tables do not hold | 34 |
 | Spell tooltips + auras | no Japanese yet: the template has too many optional parts for one translation | 8 |
@@ -366,7 +362,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 22,271 | 22,271 | 100.0% | 198 | 352,711 | 100.0% |
+| quest | 22,275 | 22,275 | 100.0% | 194 | 352,810 | 100.0% |
 | gossip | 11,590 | 11,590 | 100.0% | 0 | 113,563 | 100.0% |
 | ui | 15,306 | 15,306 | 100.0% | 0 | 47,674 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,629 | 100.0% |
@@ -381,11 +377,11 @@ translation uses for it. The pairs are read off the meanings the readings alread
 
 | Type | Lines with English and a word list | Words that can take a card | With one | Done |
 |---|---|---|---|---|
-| quest | 22,263 | 454,798 | 414,228 | 91.1% |
+| quest | 22,267 | 454,921 | 414,343 | 91.1% |
 | gossip | 11,584 | 149,770 | 137,458 | 91.8% |
 | ui | 14,318 | 48,606 | 43,724 | 90.0% |
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
-| **All** | | **697,909** | **636,330** | **91.2%** |
+| **All** | | **698,032** | **636,445** | **91.2%** |
 
 A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
 the client fills in are not counted, and neither are the words that take no card by design: the
@@ -404,7 +400,7 @@ outnumber lines.
 |---|---|---|---|---|---|---|
 | Quest offer | 4,160 | 4,236 | 3,920 | 303 | 13 | 320 |
 | Quest progress | 3,277 | 3,301 | 3,190 | 50 | 61 | 136 |
-| Quest turn-in | 4,429 | 4,455 | 4,325 | 56 | 74 | 216 |
+| Quest turn-in | 4,432 | 4,458 | 4,325 | 59 | 74 | 216 |
 | NPC talk (greetings, gossip, quest text keyed by its English) | 2,401 | 2,993 | 2,925 | 18 | 50 | 3 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex, and per NPC voice) | 50 | 3,600 | 3,600 | 0 | 0 | 0 |

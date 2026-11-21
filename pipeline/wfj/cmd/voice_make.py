@@ -529,10 +529,11 @@ def _owed_state(root: Path, cfg: dict[str, Any]) -> tuple[list[str], list[str], 
     jobs = file_jobs(root, cfg, "all", lines, players_of("all"))
     audio = audio_record(root)
     state, _, _ = step_state(root, cfg, jobs, lines, audio)
-    voiced = {j.key for j in jobs}
     spare = set(audio) - {j.stem for j in jobs}
-    # a line that ships Japanese and has no file to make now: nobody can name its speaker's voice
-    silent = {f for f in spare if audio[f].get("key") in lines and audio[f].get("key") not in voiced}
+    # a recording of a line that ships Japanese and that no file to make now stands for: nobody can name the
+    # voice of the line's speaker, or of one of its speakers (a line two NPCs say has a file per voice, and
+    # the one whose NPC lost its voice is spare while the other is still made)
+    silent = {f for f in spare if audio[f].get("key") in lines}
     return sorted({*state["missing"], *state["stale"]}), sorted(silent), sorted(spare - silent)
 
 

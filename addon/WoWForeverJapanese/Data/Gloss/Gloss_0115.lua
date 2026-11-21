@@ -411,6 +411,7 @@ WFJ.Data.add("gloss", {
   [115410] = "蘇る\tよみがえる\tlive (revive)",
   [115411] = "蘇る\tよみがえる\treanimate",
   [115412] = "蘇る\tよみがえる\treplenish (revive)",
+  [115413] = "蘇る\tよみがえる\tresurrect",
   [115414] = "蘇る\tよみがえる\tresurrected",
   [115415] = "蘇る\tよみがえる\treturn (revive)",
   [115416] = "蘇る\tよみがえる\treturns (has come back)",

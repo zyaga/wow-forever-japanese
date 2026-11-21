@@ -356,6 +356,17 @@ def test_a_line_that_went_silent_keeps_its_record_and_owes_nothing(world):
     assert voice_make.owed_problems(world.data, CFG, []) == []
 
 
+def test_a_spare_recording_of_a_line_still_voiced_is_kept_like_a_silent_lines(world):
+    """A line two NPCs say has a file per voice. When one of them loses its voice the line is still made in
+    the other's, and the lost one's recording stays on the record: never packed, never a left-over."""
+    _made(world)
+    rec = voice_make.audio_record(world.data)
+    rows = [*rec.values(), {**rec["456-completion"], "file": "456-completion_gone"}]
+    voice_make._write(world.data / "voice" / voice_make.AUDIO, rows)
+    assert voice_make.owed(world.data, CFG) == ([], ["456-completion_gone"])
+    assert voice_make.owed_problems(world.data, CFG, []) == []
+
+
 def test_a_record_no_shipped_line_uses_is_still_a_problem(world):
     _made(world)
     rec = voice_make.audio_record(world.data)

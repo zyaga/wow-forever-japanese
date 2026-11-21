@@ -655,6 +655,7 @@ WFJ.Data.add("gloss", {
   [101654] = "用いる\tもちいる\thad used",
   [101655] = "用いる\tもちいる\thas used",
   [101656] = "用いる\tもちいる\tis used",
+  [101657] = "用いる\tもちいる\tmake use of",
   [101658] = "用いる\tもちいる\tmust use",
   [101659] = "用いる\tもちいる\tput into (used)",
   [101660] = "用いる\tもちいる\tserving (used)",

@@ -281,6 +281,7 @@ WFJ.Data.add("gloss", {
   [52281] = "努力\tどりょく\ttrying (effort)",
   [52282] = "努力\tどりょく\twork (effort)",
   [52283] = "努力し続ける\tどりょくしつづける\tkeep trying",
+  [52284] = "努力する\tどりょくする\teffort",
   [52285] = "努力する\tどりょくする\tmaking the effort",
   [52286] = "努力する\tどりょくする\tstrive",
   [52287] = "努力する\tどりょくする\tstrive (strove)",
