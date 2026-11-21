@@ -334,8 +334,8 @@ local function kindSettingOf(surface, recKey)
 end
 
 -- A window that shows a voiced line and reads it only when asked: the quest log's details pane, whose play button
--- reads the quest's offer (UI/VoiceQuestLog). It is no surface of KINDS, since nothing there plays by itself, but
--- its banner says when that offer has no voice, as the quest window's does.
+-- reads the quest's offer (the log's own voice module under UI/). It is no surface of KINDS, since nothing there
+-- plays by itself, but its banner says when that offer has no voice, as the quest window's does.
 Voice.SHOWN_ONLY = { ["questmap.info"] = { description = "voice.offer" } }
 
 -- The entry names the lines that ship Japanese and have no voice: a line whose speaker nobody could name, one
