@@ -52,6 +52,12 @@ function WoWForeverJapanese_ExpectVoicePacks(list)
   WFJ.Voice.expect(list)
 end
 
+-- The voice entry addon also names the lines that ship Japanese and have no voice yet, so their window can say so.
+function WoWForeverJapanese_VoiceNotMade(list)
+  WFJ.Voice.notMade(list)
+  if WFJ.loaded and WFJ.State then pcall(WFJ.State.fire, "voice") end
+end
+
 -- The one reader of the player's own name / class / race / sex, shared by Core/Placeholders (the corpus tokens)
 -- and Core/Collector (English normalization). Read at call time rather than cached at load. Each API
 -- is guarded: a client without one leaves that token literal and makes the collector refuse (no_player) instead of

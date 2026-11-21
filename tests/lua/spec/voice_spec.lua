@@ -814,7 +814,7 @@ describe("voice settings: shown only with a pack", function()
       end
       return n
     end
-    assert.are.equal(20, hiddenVoice()) -- the thirteen voice settings and the voice panel's seven
+    assert.are.equal(21, hiddenVoice()) -- the fourteen voice settings and the voice panel's seven
     WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
     assert.are.equal(0, hiddenVoice())
     assert.is_true(WFJ.Settings.get("voice.enabled")) -- on by default
@@ -1040,5 +1040,83 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     WFJ.VoiceErrors.refresh()
     WFJ.VoiceErrors.restore()
     assert.are.equal(1, writes)
+  end)
+end)
+
+-- The entry pack names the lines that ship Japanese and have no voice (a speaker nobody could name, a speaker
+-- with no voice yet, audio still to be made). The banner says so for such a line while it shows its Japanese.
+describe("Core/Voice: the lines with no voice yet", function()
+  local WFJ, V
+  local settings, revealed, enabled
+
+  before_each(function()
+    WFJ = {}
+    H.loadPure("Core/Hash.lua", nil, WFJ)
+    H.loadPure("Core/Voice.lua", nil, WFJ)
+    V = WFJ.Voice
+    settings = { ["voice.enabled"] = true, ["voice.offer"] = true, ["voice.progress"] = true,
+      ["voice.turnin"] = true, ["voice.greeting"] = true, ["voice.books"] = true, ["voice.mark"] = true }
+    revealed, enabled = false, true
+    V.init({
+      lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
+      hash = WFJ.Hash.key,
+      setting = function(id) return settings[id] end,
+      revealed = function() return revealed end,
+      enabled = function() return enabled end,
+    })
+  end)
+
+  local function loadPack()
+    V.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {
+      ["2-progress"] = { "2-progress.mp3", WFJ.Hash.key(DATA["quest.progress"][2].ja), 1 } } })
+  end
+
+  local function silent(kind, id)
+    return V.silent("questframe.detail", "description", kind or "quest.description", id or 2)
+  end
+
+  it("is silent for a listed line while a pack is loaded, voice is on and Japanese shows", function()
+    loadPack()
+    V.notMade({ "2-description", "g-0123456789abcdef" })
+    assert.is_true(silent())
+    assert.is_false(silent("quest.description", 3)) -- not listed
+    assert.is_true(V.silent("gossip", "greeting", "gossip", "0123456789abcdef"))
+  end)
+
+  it("says nothing with no pack loaded, or with no list (an older entry pack)", function()
+    V.notMade({ "2-description" })
+    assert.is_false(silent())
+    loadPack()
+    V.notMade(nil)
+    assert.is_false(silent())
+  end)
+
+  it("says nothing while voice, the line's kind or the message is off, or English is showing", function()
+    loadPack()
+    V.notMade({ "2-description" })
+    for _, id in ipairs({ "voice.enabled", "voice.offer", "voice.mark" }) do
+      settings[id] = false
+      assert.is_false(silent(), id)
+      settings[id] = true
+    end
+    revealed = true
+    assert.is_false(silent())
+    revealed, enabled = false, false
+    assert.is_false(silent())
+    enabled = true
+    assert.is_true(silent())
+  end)
+
+  it("a line a loaded pack carries is not silent, whatever the list says", function()
+    loadPack()
+    V.notMade({ "2-progress" })
+    assert.is_false(V.silent("questframe.progress", "progress", "quest.progress", 2))
+  end)
+
+  it("keeps only well-formed pack keys and says nothing for a kind that is never voiced", function()
+    loadPack()
+    V.notMade({ "2-description", 7, "../evil", "2-title", {} })
+    assert.is_true(silent())
+    assert.is_false(V.silent("questframe.detail", "title", "quest.title", 2))
   end)
 end)

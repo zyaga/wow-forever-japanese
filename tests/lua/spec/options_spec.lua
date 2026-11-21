@@ -148,7 +148,7 @@ describe("Settings pages from the registry and PAGES", function()
     O.build()
     local rows
     for _, page in ipairs(O.PAGES) do if page.id == "voice" then rows = page.sections[1].rows end end
-    assert.are.same({ "voice.enabled", "voice.muteDialog", "voice.button", "voice.errorVoice" }, rows)
+    assert.are.same({ "voice.enabled", "voice.muteDialog", "voice.button", "voice.mark", "voice.errorVoice" }, rows)
     local ctl = control("voice.errorVoice")
     local items, groups = ctl.dropdown:menuItems()
     assert.are.same({ "Orc", "Dwarf" }, groups) -- a race whose voices no pack carries has no submenu

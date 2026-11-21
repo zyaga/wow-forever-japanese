@@ -328,6 +328,34 @@ local function kindSettingOf(surface, recKey)
   return byKey and (byKey[recKey] or (type(recKey) == "string" and byKey[(recKey:gsub("%d+$", ""))])) or nil
 end
 
+-- The entry names the lines that ship Japanese and have no voice: a line whose speaker nobody could name, one
+-- whose speaker has no voice yet, one whose audio is still to be made. Only well-formed pack keys are kept. An
+-- entry built before the list existed names none.
+local notMade
+function Voice.notMade(list)
+  notMade = nil
+  if type(list) ~= "table" then return end
+  notMade = {}
+  for _, key in ipairs(list) do
+    if type(key) == "string" and (key:match("^%d+%-%a+$") or key:match("^[gb]%-%x+$")) then notMade[key] = true end
+  end
+end
+
+-- Whether the window should say that the line shown on `surface` under record key `recKey`, rendered as
+-- (kind, id), has no voice yet: the entry lists it, no loaded pack carries it, and it would be read aloud if it
+-- had one (voice and its kind on, a pack loaded, Japanese showing). The message has a setting of its own.
+function Voice.silent(surface, recKey, kind, id)
+  local kindSetting = kindSettingOf(surface, recKey)
+  if not kindSetting or not VOICED[kind] or not lines or not notMade then return false end
+  if not (setting("voice.enabled") and setting(kindSetting) and setting("voice.mark")) then return false end
+  if (type(deps.enabled) == "function" and not deps.enabled())
+    or (type(deps.revealed) == "function" and deps.revealed()) then
+    return false
+  end
+  local key = Voice.packKey(kind, id)
+  return key ~= nil and notMade[key] == true and lines[key] == nil
+end
+
 -- → the account's record of lines heard, when the kind is kept to its first hearing, else nil
 local function heardRecord(kindSetting)
   local once = Voice.ONCE[kindSetting]

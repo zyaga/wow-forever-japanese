@@ -212,11 +212,18 @@ local function updateBanner(surface)
   local seen, names = {}, {}
   for s, b in pairs(banners) do
     if b == fs then
-      for _, rec in pairs(SS.records(s)) do
+      for key, rec in pairs(SS.records(s)) do
         local ctx = rec.meta and rec.meta.ctx
         if not (ctx and ctx.follow) then
-          local _, _, _, marker = desiredOf(rec)
+          local _, _, action, marker = desiredOf(rec)
           if marker and not seen[marker] then seen[marker] = true; names[#names + 1] = marker end
+          -- a line that shows its Japanese and that a voice pack would read, but has no voice yet
+          local voice = WFJ.Voice
+          if action == "apply" and not seen.novoice and voice and type(voice.silent) == "function"
+            and voice.silent(s, key, rec.meta.kind, rec.meta.id) then
+            seen.novoice = true
+            names[#names + 1] = "novoice"
+          end
         end
       end
     end
@@ -486,3 +493,5 @@ WFJ.State.on("enabled", function() Render.refresh() end)
 WFJ.State.on("area", function() Render.refresh() end)
 WFJ.State.on("language", function() Render.refresh() end)
 WFJ.State.on("markers", function() Render.refresh() end)
+-- a voice setting changed, or a voice pack loaded: the banners' "no voice yet" message may come or go
+WFJ.State.on("voice", function() Render.refresh() end)

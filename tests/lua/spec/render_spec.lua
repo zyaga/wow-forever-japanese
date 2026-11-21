@@ -226,6 +226,39 @@ describe("Render: refresh on state, per-FontString font", function()
     assert.are.same({ "F.ttf", 14, "OUTLINE" }, { q:GetFont() })
   end)
 
+  it("banner: a line that shows its Japanese and has no voice yet says so; an untranslated line never does",
+    function()
+      local asked = {}
+      WFJ.Voice = { silent = function(surface, key, kind, id)
+        asked[#asked + 1] = { surface, key, kind, id }
+        return id == 1
+      end }
+      local b = Stub.fontString("")
+      b:Hide()
+      R.setBanner("quest", b)
+      local q = Stub.fontString("Quest text")
+      showQuest(q, 1) -- translated, and the voice says it has none
+      assert.are.equal("クエスト1", q:GetText())
+      assert.are.equal(WFJ.MARKER.novoice, b:GetText())
+      assert.is_true(b:IsShown())
+      assert.are.same({ "quest", "description", "quest", 1 }, asked[#asked])
+
+      local u = Stub.fontString("Untranslated", "F.ttf", 12, "")
+      S.set("marker.missing", true)
+      asked = {}
+      R.show("quest", "progress", u, "Untranslated", "quests", "quest", 999)
+      -- the untranslated line adds only its own message, and the voice is never asked about it
+      assert.are.equal(WFJ.MARKER.missing .. "  " .. WFJ.MARKER.novoice, b:GetText())
+      for _, a in ipairs(asked) do assert.are_not.equal(999, a[4]) end
+
+      WFJ.Voice.silent = function() return false end
+      R.refresh("quest")
+      assert.are.equal(WFJ.MARKER.missing, b:GetText())
+      WFJ.Voice = nil
+      R.refresh("quest") -- no voice module at all: no message, no error
+      assert.are.equal(WFJ.MARKER.missing, b:GetText())
+    end)
+
   it("banner: a registered FontString carries the surface's marker messages; the text widgets stay clean", function()
     local b = Stub.fontString("")
     b:Hide()
