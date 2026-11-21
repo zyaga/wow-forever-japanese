@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
+import datetime
+import json
 import re
 from collections import Counter
 from collections.abc import Iterable
@@ -20,7 +22,7 @@ from wfj.core.hashing import key as hash_key
 from wfj.core.model import english_line, validate_line
 from wfj.core.normalize import female_variant, normalize_for, normalize_v1
 from wfj.io import forever_vo, tables_stamp, vmangos, wago, wdb
-from wfj.io.collector_dump import Dump, read_dump
+from wfj.io.collector_dump import Dump, QuestNpc, read_dump
 from wfj.io.jsonl_store import Store
 from wfj.io.lua_reader import as_int_id, parse_assignment
 from wfj.paths import data_root
@@ -520,6 +522,52 @@ def _merge_entry(
         notes["differs"].append(f"  {type_} {en.id_} {en.field} (kept {cur['src']})")
 
 
+QUEST_NPCS = Path("voice") / "quest-npcs.jsonl"
+
+
+def merge_quest_npcs(rows: list[dict[str, Any]], found: Iterable[QuestNpc], today: str) -> Counter:
+    """Merges who the players' quest windows showed into the quest NPC rows, in place. A new quest line is
+    added; the same NPC gains the sex or display id an earlier send did not know and never loses one; another
+    NPC in that window replaces the row (the game's newer answer). → Counter of added / changed."""
+    by = {(r["quest"], r["field"]): r for r in rows}
+    c: Counter = Counter()
+    for q in found:
+        new = {"quest": q.quest, "field": q.field, "creature": q.creature,
+               **({"sex": q.sex} if q.sex else {}), **({"display": q.display} if q.display else {}),
+               "provenance": {"source": f"collector@{q.build}", "imported": today}}
+        old = by.get((q.quest, q.field))
+        if old is None:
+            rows.append(new)
+            by[(q.quest, q.field)] = new
+            c["added"] += 1
+        elif old["creature"] != q.creature:
+            old.clear()
+            old.update(new)
+            c["changed"] += 1
+        else:
+            gained = {k: new[k] for k in ("sex", "display") if k in new and k not in old}
+            if gained:
+                kept = old.pop("provenance")
+                old.update(gained)
+                old["provenance"] = {**kept, **new["provenance"]}
+                c["changed"] += 1
+    rows.sort(key=lambda r: (r["quest"], r["field"]))
+    return c
+
+
+def import_quest_npcs(dump: Dump) -> Counter:
+    """Writes the dump's quest NPCs into data/voice/quest-npcs.jsonl; an unchanged table is not rewritten."""
+    path = data_root() / QUEST_NPCS
+    rows = []
+    if path.is_file():
+        rows = [json.loads(ln) for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    c = merge_quest_npcs(rows, dump.quest_npcs, datetime.date.today().isoformat())
+    if c["added"] or c["changed"]:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+    return c
+
+
 def import_dump(dump: Dump, label: str) -> int:
     """Merge a read dump into `data/english/` (run_collector's rules) and print its table. `label` names
     where it came from (a file name, or an issue) on the summary line. → 0"""
@@ -546,6 +594,9 @@ def import_dump(dump: Dump, label: str) -> int:
         print(f"{type_:6} {c['added']:6} {c['unchanged']:9} {c['replaced']:8} {c['differs']:7}")
     if "gossip" in counts:
         print(f"gossip lines that gained an NPC: {counts['gossip']['npcs']}")
+    if dump.quest_npcs:
+        npcs = import_quest_npcs(dump)
+        print(f"quest NPCs: {npcs['added']} added, {npcs['changed']} changed (data/voice/quest-npcs.jsonl)")
     rejected = ", ".join(f"{r} {n}" for r, n in sorted(dump.rejected.items())) or "none"
     print(f"rejected: {rejected}")
     if notes["replaced"]:  # what a review of the data diff should look at first

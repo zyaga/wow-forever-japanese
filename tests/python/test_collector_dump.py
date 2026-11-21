@@ -132,3 +132,44 @@ def test_a_spell_aura_entry_is_read_as_the_spell_aura_field():
     (e,) = d.entries
     assert (e.type_, e.id_, e.field) == ("spell", 774, "aura")
     assert not d.rejected
+
+
+# ---- who gave or took a quest: numbers only -------------------------------------------------------------
+
+
+def test_quest_npc_entries_are_read_apart_from_the_english():
+    """A questnpc entry holds "<creature id>:<sex>:<display id>" for the NPC a quest window showed. It is no
+    English line: it never reaches the entries the English import reads."""
+    from wfj.io.collector_dump import QuestNpc
+
+    d = read_dump(
+        dump(
+            entry("quest", 2, "completion", "$N, well done."),
+            entry("questnpc", 95603, "description", "262031:3:15524"),
+            entry("questnpc", 7, "progress", "3100:0:0"),
+        )
+    )
+    assert not d.rejected
+    assert [(en.type_, en.id_) for en in d.entries] == [("quest", 2)]
+    assert d.quest_npcs == [
+        QuestNpc(7, "progress", 3100, None, None, "1.15.9.69722"),
+        QuestNpc(95603, "description", 262031, "female", 15524, "1.15.9.69722"),
+    ]
+
+
+@pytest.mark.parametrize(
+    ("line", "reason"),
+    [
+        (entry("questnpc", 7, "title", "3100:2:0"), "bad_field"),
+        (entry("questnpc", 7, "description", "3100:2"), "bad_id"),
+        (entry("questnpc", 7, "description", "0:2:0"), "bad_id"),
+        (entry("questnpc", 7, "description", "3100:9:0"), "bad_id"),
+        (entry("questnpc", 7, "description", "3100:2:x"), "bad_id"),
+        (entry("questnpc", 7, "description", "3100:2:0", h="0" * 16), "hash_mismatch"),
+        (entry("questnpc", 7, "description", "3100:2:0", b=9), "no_build"),
+        (entry("questnpc", 7, "description", "3100:2:0", n=[5]), "bad_id"),
+    ],
+)
+def test_a_quest_npc_entry_that_is_not_three_numbers_is_rejected(line, reason):
+    d = read_dump(dump(line))
+    assert d.rejected == {reason: 1} and not d.quest_npcs and not d.entries

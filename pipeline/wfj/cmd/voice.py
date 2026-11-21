@@ -112,7 +112,8 @@ def build_tables(  # noqa: PLR0913 - the data, the database, and one optional ou
     its commit) a quest line Spoken gives to one creature is spoken by that creature, whatever the other
     sources say: the two voices of a line a player hears with both addons are then the same NPC's. With
     `dondata_files` (DonData's two quest files and their commit) a quest line no other source names is spoken
-    by the creature those files name. A quest line nobody names has no row: it is not voiced."""
+    by the creature those files name. The NPC a player's own quest window showed (the Collector's quest NPCs)
+    wins over all of them. A quest line nobody names has no row: it is not voiced."""
     cfg = voice.SCOPES[scope]
     whole = cfg["quests"] is None
     src = f"vmangos@{commit}"
@@ -138,6 +139,7 @@ def build_tables(  # noqa: PLR0913 - the data, the database, and one optional ou
         _follow_spoken(q_speakers, others, captured_src, sorted(quest_keys), *spoken_corpus)
     if dondata_files is not None:
         _follow_dondata(q_speakers, others, captured_src, sorted(quest_keys), *dondata_files)
+    _follow_collector(q_speakers, others, captured_src, sorted(quest_keys), root)
     q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
     creatures = {c for q in quests for c in (*starters.get(q, ()), *enders.get(q, ()))}
     creatures |= {s for s in q_speakers.values() if isinstance(s, int)}
@@ -227,6 +229,26 @@ def _follow_dondata(
         else:
             continue
         sources[key] = dondata.source(commit)
+
+
+def _follow_collector(
+    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str],
+    keys: Iterable[str], root: Path,
+) -> None:
+    """Gives each quest line of `keys` the NPC a player's own quest window showed for it (the Collector's
+    quest NPCs, data/voice/quest-npcs.jsonl). It is what the game itself said, so it is applied last and wins
+    over every other source."""
+    rows = read_rows(voice_dir(root) / "quest-npcs.jsonl")
+    seen = {voice.quest_key(r["quest"], r["field"]): r for r in rows}
+    for key in keys:
+        row = seen.get(key)
+        if row is None:
+            continue
+        who = int(row["creature"])
+        sources[key] = row["provenance"]["source"]
+        if speakers.get(key) != who:
+            speakers[key] = who
+            others[key] = [c for c in others.get(key, []) if c != who]
 
 
 def _conditional_speakers(

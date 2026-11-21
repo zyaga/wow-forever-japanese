@@ -299,3 +299,28 @@ def test_a_quest_dondata_says_an_item_starts_is_the_narrators(world, monkeypatch
     rows, _ = cmd.build_tables(
         world.data, world.db, "sha", "all", TODAY, dondata_files=_dondata(world.tmp / "dd", att))
     assert _by_key(rows)["459-description"] == ("narrator", "dondata@f7693f2")
+
+
+def test_who_a_players_quest_window_showed_wins_over_every_other_source(world, monkeypatch):
+    """The Collector's quest NPCs (data/voice/quest-npcs.jsonl) are what the game itself showed: they name the
+    speaker ahead of the database, Spoken, the captures and DonData, and name a line nobody else names."""
+    _fake_cache(monkeypatch)
+    seen = {"source": "collector@1.60.1.70959", "imported": "2026-11-21"}
+    vf.write_rows(world.data / "voice" / "quest-npcs.jsonl", [
+        {"quest": 457, "field": "description", "creature": 6906, "sex": "male", "provenance": seen},
+        {"quest": 459, "field": "description", "creature": 3597, "provenance": seen},
+        {"quest": 999, "field": "description", "creature": 1, "provenance": seen},  # no such shipped line
+    ])
+    corpus = _spoken(
+        world.tmp / "spoken",
+        {"lineId": "q:457:accept", "source": "accept", "questId": 457, "npcId": 1992, "npcType": "creature"},
+    )
+    rows, report = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, None, None, (corpus, "0123456789abcdef"),
+        _dondata(world.tmp / "dd"))
+    by = _by_key(rows)
+    assert by["457-description"] == (6906, "collector@1.60.1.70959")  # the database 2079, Spoken 1992
+    assert by["459-description"] == (3597, "collector@1.60.1.70959")  # DonData said 6906
+    assert by["457-completion"] == (1992, "vmangos@sha")  # a line the Collector did not see is unchanged
+    assert "999-description" not in by
+    assert "459-description: nobody named, not voiced" not in report["quest"]

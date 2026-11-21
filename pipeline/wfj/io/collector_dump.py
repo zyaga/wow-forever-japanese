@@ -66,11 +66,24 @@ class Entry:
     player: tuple[str, str] | None = None  # (class, race) of the character that recorded a `$C` / `$R` line
 
 
+@dataclass(frozen=True)
+class QuestNpc:
+    """Who a quest window showed for one of the quest's lines: numbers only, never English."""
+
+    quest: int
+    field: str  # description (the offer), progress or completion (the turn-in)
+    creature: int
+    sex: str | None  # male or female, as the client's UnitSex said; None when it did not
+    display: int | None  # the display id the player's client drew the NPC with, when it had
+    build: str
+
+
 @dataclass
 class Dump:
     version: int
     entries: list[Entry]
     rejected: Counter = field(default_factory=Counter)
+    quest_npcs: list[QuestNpc] = field(default_factory=list)
 
 
 def _int(v: Any) -> int | None:
@@ -145,6 +158,38 @@ def _player(raw: Any) -> tuple[str, str] | None:
     return parts[0].strip(), parts[1].strip()
 
 
+QUEST_NPC = "questnpc"  # the collector kind of a QuestNpc: its text is "<creature id>:<sex>:<display id>"
+QUEST_NPC_FIELDS = ("description", "progress", "completion")
+_QUEST_NPC_TEXT = re.compile(r"^(\d{1,10}):(\d):(\d{1,10})$")
+_SEX = {0: None, 2: "male", 3: "female"}  # UnitSex: 2 male, 3 female; 0 when the client gave none
+
+
+def check_quest_npc(key: Any, raw: Any, builds: list[Any]) -> tuple[QuestNpc | None, str | None]:
+    """→ (who a quest window showed, None) or (None, reason), for an entry of kind `questnpc`."""
+    if not isinstance(key, str) or not isinstance(raw, Table):
+        return None, "bad_key"
+    e = raw.named()
+    fld, quest, text = e.get("f"), _int(e.get("i")), e.get("e")
+    if not isinstance(fld, str) or quest is None or key != f"{QUEST_NPC}:{quest}:{fld}":
+        return None, "bad_key"
+    if fld not in QUEST_NPC_FIELDS:
+        return None, "bad_field"
+    m = _QUEST_NPC_TEXT.match(text) if isinstance(text, str) else None
+    if not m or not 1 <= quest <= MAX_ID or e.get("n") is not None:
+        return None, "bad_id"
+    creature, sex, display = (int(g) for g in m.groups())
+    if not 1 <= creature <= MAX_ID or sex not in _SEX or display > MAX_ID:
+        return None, "bad_id"
+    h = e.get("h")
+    if not isinstance(h, str) or h != hash_key(normalize_v1(text)):
+        return None, "hash_mismatch"
+    b = _int(e.get("b"))
+    build = builds[b - 1] if b is not None and 1 <= b <= len(builds) else None
+    if not isinstance(build, str) or not _BUILD.match(build):
+        return None, "no_build"
+    return QuestNpc(quest, fld, creature, _SEX[sex], display or None, build), None
+
+
 def _address_problem(key: str, kind: Any, fld: Any, id_: int | str | None) -> str | None:
     """Why an entry's kind, field and id do not make a valid address matching its key, or None."""
     if not isinstance(kind, str) or not isinstance(fld, str) or id_ is None or key != f"{kind}:{id_}:{fld}":
@@ -196,10 +241,24 @@ def read_dump(text: str) -> Dump:
         if seen[key] > 1:  # a real client cannot write one key twice: every copy is dropped, and reported
             out.rejected["duplicate_key"] += 1
             continue
-        entry, reason = check_entry(key, raw, builds)
-        if entry is None:
-            out.rejected[reason] += 1
-        else:
-            out.entries.append(entry)
-    out.entries.sort(key=lambda en: (en.type_, en.id_, en.field))
+        add(out, key, raw, builds)
+    sort(out)
     return out
+
+
+def add(out: Dump, key: Any, raw: Any, builds: list[Any]) -> None:
+    """Checks one stored entry and puts it where it belongs: an English line in `entries`, who a quest window
+    showed in `quest_npcs`, or its reason in `rejected`."""
+    is_npc = isinstance(raw, Table) and raw.named().get("t") == QUEST_NPC
+    found, reason = (check_quest_npc if is_npc else check_entry)(key, raw, builds)
+    if found is None:
+        out.rejected[reason] += 1
+    elif isinstance(found, QuestNpc):
+        out.quest_npcs.append(found)
+    else:
+        out.entries.append(found)
+
+
+def sort(out: Dump) -> None:
+    out.entries.sort(key=lambda en: (en.type_, en.id_, en.field))
+    out.quest_npcs.sort(key=lambda q: (q.quest, q.field))
