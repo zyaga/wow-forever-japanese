@@ -227,6 +227,8 @@ def kind_samples(root: Path, cfg: dict[str, Any], db: Path) -> dict[str, dict[st
         if r["key"] not in lines:
             continue
         sp = r["speaker"]
+        if sp != voice.NARRATOR and sp not in kind_of:
+            continue  # a speaker with no profile row yet has no kind to judge a voice for
         kind = (
             ("book narrator" if r["key"].startswith("b-") else "narrator")
             if sp == voice.NARRATOR
