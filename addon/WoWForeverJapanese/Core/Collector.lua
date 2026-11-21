@@ -718,7 +718,8 @@ function Collector.disclose()
   if not db or not deps or readOnly or db.disclosed or not deps.enabled() then return false end
   deps.print("WFJ: this addon records English game text it has no data for (quest text, NPC dialogue with the ids "
     .. "of the NPCs who said it, item and spell descriptions, NPC names) in SavedVariables\\WoWForeverJapanese.lua, "
-    .. "so it can be translated later. "
+    .. "so it can be translated later, and for each quest window the id, sex and model id of the NPC that showed it, "
+    .. "so the line gets the right voice. "
     .. "Your character's name is replaced; next to a line that names your class or race, the class and race are "
     .. "noted; no account, realm or location is stored (wording that depends on your "
     .. "character's gender is kept as the game shows it). Nothing leaves your disk unless you send it.")

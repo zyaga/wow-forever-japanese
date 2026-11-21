@@ -561,7 +561,7 @@ _Avoid_: protected widget (protected means secure / taint in WoW), excluded widg
 → [Addon modules](architecture/addon-modules.md)
 
 **Collector**:
-The addon module (`Core/Collector.lua`) that records the [[Live English]] the addon has no [[Known English]] for (quest text, NPC gossip with the ids of the NPCs that said it, item and spell descriptions, quest-giver NPC names) into the [[Collector dump]], in Blizzard's own tokens: the player's name as `$N`, and in quest and gossip text the class and race as `$C` / `$R`. Text naming the player anywhere else is refused. It lets the [[English source]] grow with text only clients see, and measures the untranslated gap. On by default (`collector.enabled`), disclosed once in chat.
+The addon module (`Core/Collector.lua`) that records the [[Live English]] the addon has no [[Known English]] for (quest text, NPC gossip with the ids of the NPCs that said it, item and spell descriptions, quest-giver NPC names) into the [[Collector dump]], with a [[Quest NPC]] entry (numbers only) for each quest window shown, in Blizzard's own tokens: the player's name as `$N`, and in quest and gossip text the class and race as `$C` / `$R`. Text naming the player anywhere else is refused. It lets the [[English source]] grow with text only clients see, and measures the untranslated gap. On by default (`collector.enabled`), disclosed once in chat.
 _Avoid_: scraper, dump mode, logger, tracker
 → [Collector](systems/collector.md) · [ADR-013](adr/013-collector-english.md)
 
@@ -644,7 +644,7 @@ _Avoid_: mode, decision, result
 → [Addon modules](architecture/addon-modules.md)
 
 **Stale marker**:
-A short message, `[要更新 / English Changed]`, shown for a translated element whose entry is [[Stale]], telling the player to hold the modifier and read the [[Live English]]. With the missing-translation message (`[未翻訳 / Not Translated]`), the [[Word-reading box]] and [[Word card]], and the [[Minimap button]], it is one of the few additions the addon makes to the screen ([Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away)). In the quest window both markers appear on one banner line beside the portrait; elsewhere they are inline above the text.
+A short message, `[要更新 / English Changed]`, shown for a translated element whose entry is [[Stale]], telling the player to hold the modifier and read the [[Live English]]. With the missing-translation message (`[未翻訳 / Not Translated]`), the [[No-voice marker]], the [[Word-reading box]] and [[Word card]], and the [[Minimap button]], it is one of the few additions the addon makes to the screen ([Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away)). In the quest window both markers appear on one banner line beside the portrait; elsewhere they are inline above the text.
 
 **Word-reading box**:
 The small box above a Japanese [[Word]] (the game's own tooltip frame) in quest or gossip prose, in a [[Window label]] or on a plain-text [[Book page]], showing that word's whole [[Reading]] while the mouse is on it; the word is tinted gold at the same time. Nothing is drawn until the mouse is on a word, it never shows while English shows, and the `readings.enabled` setting turns it off. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
@@ -758,7 +758,7 @@ _Avoid_: voice addon, sound pack, part (a [[Pack part]] is one of the packs of a
 → [Voice over](systems/voice.md) · [ADR-061](adr/061-voice-over-from-a-separate-pack.md) · [ADR-062](adr/062-voice-cast-per-speaker-in-step-with-the-text.md)
 
 **Voice entry**:
-The addon players install for the voice, "WoW Forever Japanese Voice" (`WoWForeverJapanese_Voice`): no audio of its own; on CurseForge its file requires the main addon and every [[Voice pack]], so the app installs them all from one click. Its list of required projects is the one place that says what the voice consists of. Its `Packs.lua` names the same packs to the addon, which says at login which of them did not load.
+The addon players install for the voice, "WoW Forever Japanese Voice" (`WoWForeverJapanese_Voice`): no audio of its own; on CurseForge its file requires the main addon and every [[Voice pack]], so the app installs them all from one click. Its list of required projects is the one place that says what the voice consists of. Its `Packs.lua` names the same packs to the addon, which says at login which of them did not load. It also lists the pack keys of the [[Silent line]]s, so their window can show the [[No-voice marker]].
 _Avoid_: voice pack (it holds none), installer, bundle
 → [Voice over](systems/voice.md) · [Voice over runbook](operations/voice.md)
 
@@ -778,7 +778,7 @@ _Avoid_: [[Source hash]] (that's the English side), audio hash
 → [Voice over](systems/voice.md) · [Readings](systems/readings.md)
 
 **Speaker**:
-The creature that says a voiced line, by creature id: the quest's starter for its offer, its ender for progress and turn-in, the creature whose greeting it is for a gossip line. Recorded in `data/voice/speakers.jsonl` (with the others who say the line too); a creature id the [[Collector]] recorded wins over VMaNGOS. A speaker's voice comes from [[Casting]].
+The creature that says a voiced line, by creature id: the quest's starter for its offer, its ender for progress and turn-in, the creature whose greeting it is for a gossip line. Recorded in `data/voice/speakers.jsonl` (with the others who say the line too); a creature id the [[Collector]] recorded wins over every other source (a [[Quest NPC]] for a quest line), then Spoken's corpus, VMaNGOS, forever-vo's captures and DonData's quest files. A quest line nobody names has no speaker and is a [[Silent line]]. A speaker's voice comes from [[Casting]]; a speaker with no known race or gender has none.
 _Avoid_: NPC (too broad), voice actor, quest giver (only one of the cases)
 → [Voice over](systems/voice.md) · [Data model](architecture/data-model.md#voice-over-tables)
 
@@ -848,9 +848,24 @@ _Avoid_: audio version, lock file
 → [Voice over runbook](operations/voice.md)
 
 **Narrator**:
-The voice that reads a line no creature says: the offer of a quest an item or object starts, or a creature whose display has no gender. Book and letter pages have a book narrator of their own. Both are [[Roster]] voices chosen at the audition.
-_Avoid_: system voice, default voice
-→ [Voice over](systems/voice.md)
+The voice that reads a quest line no creature says, and only when a source says so: the offer of a quest an item or object starts, the progress and turn-in text of a quest an object ends. It never reads a line whose speaker is simply not known; that is a [[Silent line]]. Book and letter pages have a book narrator of their own. Both are [[Roster]] voices chosen at the audition.
+_Avoid_: system voice, default voice, fallback voice
+→ [Voice over](systems/voice.md) · [ADR-103](adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)
+
+**Silent line**:
+A line that ships Japanese and has no voice yet, so no pack carries it: a quest line nobody names a [[Speaker]] for, a line whose speaker has no known race or gender (no voice in the cast), or a line with [[Owed audio]]. It is never read in the [[Narrator]]'s voice or a guessed one. The [[Voice entry]] lists its pack key, and its window shows the [[No-voice marker]].
+_Avoid_: missing line (the pack's `missing` reason covers any key a pack lacks), muted line, unvoiced surface (objectives are never voiced at all)
+→ [Voice over](systems/voice.md) · [ADR-103](adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)
+
+**No-voice marker**:
+A short message, `[音声なし / No Voice Yet]`, shown on a window's banner like the [[Stale marker]] for a [[Silent line]] that shows its Japanese. It shows only while a voice pack is loaded and voice, that line's kind and the `voice.mark` setting are on; a line with no Japanese shows only the missing-translation message. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
+_Avoid_: mute marker, missing-voice warning
+→ [Voice over](systems/voice.md#a-line-with-no-voice-yet-voicesilent-uirenderlua) · [Settings](systems/settings.md)
+
+**Owed audio**:
+The voice files a merged change still has to remake: each is missing, or was made in another voice or from other Japanese. `pipeline/voice-owed.txt` lists them, one file stem per line (`make voice-owed`). The audio gate passes only while the list names exactly the files out of step, so it empties itself when they are remade. An owed file is in no pack.
+_Avoid_: stale audio (one of the two cases), backlog, missing audio
+→ [Voice over runbook](operations/voice.md#a-change-that-merges-before-its-audio-is-remade) · [ADR-103](adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)
 
 **Voice panel**:
 The panel that shows a voiced line while it plays: the speaking NPC's head, their name and title as the client showed them, and the line's Japanese a sentence at a time, turned and marked in step with the voice from the line's [[Voice timing]] (a soft tint on the word being said), with word cards, plus pause, play again, whole text and close. Resume picks up at the sentence the line was paused in. With it on, a line outlives its window and the reveal key shows the line's English without stopping the voice. Panel size Off turns it off.
@@ -866,6 +881,11 @@ _Avoid_: queue box, playlist, backlog
 The quest NPC the addon saw show a quest line (creature id, sex, name, title), saved in `WFJ_DB.voiceSpeakers` each time the quest window shows it, and used when that line is played from the quest log. Kept on the player's machine, never shipped; not the [[Speaker]] table in `data/voice/`.
 _Avoid_: speaker table, cached NPC, quest giver record
 → [Voice over](systems/voice.md) · [Data model](architecture/data-model.md)
+
+**Quest NPC**:
+The [[Collector]]'s record of who gave or took a quest in its window: entry kind `questnpc`, key `questnpc:<quest id>:<field>` (`description`, `progress` or `completion`), text `<creature id>:<sex>:<display id>` (0 where not known). Numbers only, never English or the GUID, stored for every quest window whether or not the line is translated or voiced. It holds no line to translate, so it is never counted as unsent and rides along with a send. The import writes it to `data/voice/quest-npcs.jsonl`, where it names the line's [[Speaker]] ahead of every other source. Not the [[Remembered speaker]], which stays on the player's machine.
+_Avoid_: quest giver (it covers the turn-in NPC too), speaker entry, remembered speaker
+→ [Collector](systems/collector.md#quest-npcs) · [Data model](architecture/data-model.md#voice-over-tables) · [ADR-103](adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)
 
 **Display id**:
 The number of the model the client draws a creature with, from the client's own model data that ships with each patch. The [[Voice panel]] draws a speaker who is not on screen from it (`SetDisplayInfo`): the one this player's client drew for that NPC (`WFJ_DB.voiceDisplays`, kept on the player's machine), else the one shipped in `data/voice/displays.jsonl` (from the client's creature cache, else VMaNGOS). Unlike a creature id, it needs no creature cache, which every client build empties.
