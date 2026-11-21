@@ -313,6 +313,66 @@ def test_a_creature_spoken_gives_a_voice_set_is_not_unknown(world):
     assert voice_make.unknown(world.data) == {3000}
 
 
+# ---- audio owed: a line recast or given a speaker before its audio is remade ------------------------------
+
+
+def _made(world):
+    voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
+
+
+def _recast(world, creature, voice_id):
+    rows = voice_make._rows(world.data / "voice" / "voices.jsonl")
+    voice_make._write(world.data / "voice" / "voices.jsonl",
+                      [{**r, "voice": voice_id} if r["creature"] == creature else r for r in rows])
+
+
+def test_nothing_is_owed_while_every_file_is_in_step(world):
+    _made(world)
+    assert voice_make.owed(world.data, CFG) == ([], [])
+    assert voice_make.owed_problems(world.data, CFG, []) == []
+
+
+def test_a_recast_line_is_owed_and_the_gate_holds_the_list_to_it(world):
+    _made(world)
+    _recast(world, 2079, "old")  # 456-description was made in the voice m
+    assert voice_make.owed(world.data, CFG) == (["456-description"], [])
+    unlisted = voice_make.owed_problems(world.data, CFG, [])
+    assert len(unlisted) == 1 and "456-description" in unlisted[0] and "not listed" in unlisted[0]
+    assert voice_make.owed_problems(world.data, CFG, ["456-description"]) == []
+    extra = voice_make.owed_problems(world.data, CFG, ["456-description", "456-completion"])
+    assert len(extra) == 1 and "456-completion" in extra[0] and "in step" in extra[0]
+
+
+def test_a_line_that_went_silent_keeps_its_record_and_owes_nothing(world):
+    """A line whose speaker nobody can name any more makes no file. Its old recording stays on the record
+    (nothing is deleted) and is never packed; it is not a file to remake."""
+    _made(world)
+    rows = voice_make._rows(world.data / "voice" / "speakers.jsonl")
+    voice_make._write(world.data / "voice" / "speakers.jsonl", [r for r in rows if r["key"] != "456-completion"])
+    assert voice_make.owed(world.data, CFG) == ([], ["456-completion"])
+    assert voice_make.owed_problems(world.data, CFG, []) == []
+
+
+def test_a_record_no_shipped_line_uses_is_still_a_problem(world):
+    _made(world)
+    rec = voice_make.audio_record(world.data)
+    rows = [*rec.values(), {**rec["456-completion"], "file": "999-description", "key": "999-description"}]
+    voice_make._write(world.data / "voice" / voice_make.AUDIO, rows)
+    problems = voice_make.owed_problems(world.data, CFG, [])
+    assert len(problems) == 1 and "999-description" in problems[0] and "no line uses" in problems[0]
+
+
+def test_the_owed_command_writes_the_list(world, capsys):
+    _made(world)
+    _recast(world, 2079, "old")
+    out = world.tmp / "voice-owed.txt"
+    assert voice_make.run(["owed", "--config", str(world.cfg), "--out", str(out)]) == 0
+    assert out.read_text(encoding="utf-8") == "456-description\n"
+    assert "voice owed: 1 file(s) to remake, 0 line(s) silent" in capsys.readouterr().out
+    assert voice_make.read_owed(out) == ["456-description"]
+    assert voice_make.read_owed(world.tmp / "none.txt") == []
+
+
 def test_the_plan_command_prints_what_would_be_made(world, capsys):
     assert voice_make.run(["plan", "--config", str(world.cfg)]) == 0
     out = capsys.readouterr().out.splitlines()

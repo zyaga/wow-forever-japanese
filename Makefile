@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-owed voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -563,6 +563,9 @@ voice-speed: ## slow (1 cloned-voice engine in the background, the default) or f
 
 voice-cast: ## data/voice/voices.jsonl: each speaking creature's voice from the profiles, the cast rows, the set picks and cloned_packs
 	cd pipeline && $(PY) -m wfj voice cast
+
+voice-owed: ## pipeline/voice-owed.txt: the voice files that are missing or were made in another voice, when a change merges before its audio is remade (they are left out of the packs; the list empties when they are remade)
+	cd pipeline && $(PY) -m wfj voice owed
 
 voice-sync: ## commit and push the audio store's new files, and pin that audio commit in pipeline/voice-audio-commit.txt
 	cd pipeline && $(PY) -m wfj voice store-sync --store "$(VOICE_STORE)"

@@ -590,19 +590,16 @@ def test_audio_in_step():
     """The gate: every voiced line of the committed data has a recorded audio file made from the Japanese it
     ships, in the voice its speaker is cast in, with the roster's current settings (data/voice/audio.jsonl).
     A pull request that adds or changes a voiced line, or recasts a voice, without remaking its audio fails
-    here. Remake with `make voice-generate` (docs/operations/voice.md)."""
+    here. Remake with `make voice-generate` (docs/operations/voice.md). A change that merges before its audio
+    is remade lists the files it owes in pipeline/voice-owed.txt (`make voice-owed`): they are left out of
+    the packs, and the list must name exactly the files out of step, so it empties when they are remade."""
     data = ROOT / "data"
     cfg = voice_make.load_config(ROOT / "pipeline" / "voice.toml")
     lines = voice_make.shipped_lines(data)
     jobs = voice_make.file_jobs(data, cfg, "all", lines, voice_make.players_of("all"))
     assert len(jobs) > 10_000  # the whole game, not an empty scope
-    state, _, _ = voice_make.step_state(data, cfg, jobs, lines, voice_make.audio_record(data))
-    missing, stale = state["missing"], state["stale"]
-    assert not missing, f"{len(missing)} voiced line(s) have no audio, e.g. {missing[:5]}: run make voice-generate"
-    assert not stale, (f"{len(stale)} audio file(s) were made from other Japanese or another voice, "
-                       f"e.g. {stale[:5]}: run make voice-generate")
-    unused = sorted(set(voice_make.audio_record(data)) - {j.stem for j in jobs})
-    assert not unused, f"{len(unused)} recorded file(s) no line uses, e.g. {unused[:5]}: run make voice-generate"
+    listed = voice_make.read_owed(ROOT / "pipeline" / voice_make.OWED_FILE)
+    assert voice_make.owed_problems(data, cfg, listed) == []
 
 
 def test_every_voiced_line_is_timed_from_its_own_recording():

@@ -306,7 +306,7 @@ def run(argv: Sequence[str]) -> int:
            "sets": ("voice_sets", "run", 1), "displays": ("voice_displays", "run", 1),
            "audition": ("voice_audition", "run", 1),
            **{v: ("voice_make", "run", 0)
-              for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel")},
+              for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel", "owed")},
            "speed": ("voice_make", "run_speed", 1),
            "time": ("voice_time", "run", 1),
            "reencode": ("voice_reencode", "run", 1),
