@@ -251,6 +251,8 @@
 {"id": 81947, "field": "title", "en": "Sanguine Sorcery", "hash": "b07ca90062e39043", "src": "wdb@1.60.1.70959"}
 {"id": 81949, "field": "title", "en": "Legends of the Tidesages", "hash": "caf7c331c2292471", "src": "wdb@1.60.1.70959"}
 {"id": 81952, "field": "title", "en": "Everyday Etiquette", "hash": "cb655342bbe93a80", "src": "wdb@1.60.1.70959"}
+{"id": 81952, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "collector@1.60.1.70959"}
+{"id": 81952, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.$B$BIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "collector@1.60.1.70959"}
 {"id": 81953, "field": "title", "en": "Stonewrought Design", "hash": "eff6b9fbc8236e9d", "src": "wdb@1.60.1.70959"}
 {"id": 81954, "field": "title", "en": "Venomous Journeys", "hash": "12b3333fea2e7a71", "src": "wdb@1.60.1.70959"}
 {"id": 81955, "field": "title", "en": "A Mind of Metal", "hash": "db1a6c5d87da9b03", "src": "wdb@1.60.1.70959"}

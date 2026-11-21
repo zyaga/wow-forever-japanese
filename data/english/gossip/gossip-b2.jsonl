@@ -25,9 +25,11 @@
 {"id": "b265b6ae9e9dadff", "field": "text", "en": "$n!  You're back!  And not a moment too soon!", "hash": "b265b6ae9e9dadff", "src": "vmangos@13b49dc"}
 {"id": "b26678fe3a7a13c3", "field": "text", "en": "Skinning?  The only thing ye look like ye could skin is yer own knee!  Ha!  Now why don't you go see Balthus Stoneflayer so he can teach you how to properly skin some animals.  You'll find him in Finespindle's Leather Goods on the northern side of The Great Forge.", "hash": "b26678fe3a7a13c3", "src": "vmangos@13b49dc"}
 {"id": "b26ce58a29567893", "field": "text", "en": "Well now, ye'll need papers to form a guild, and Jondor Steelbrow can help you get started with the process.  He can be found over at the Ironforge Visitor's Center when yer ready to get started.", "hash": "b26ce58a29567893", "src": "vmangos@13b49dc"}
+{"id": "b274d66176cdc9f3", "field": "text", "en": "What business do you have in the Echo Isles, $C?", "hash": "b274d66176cdc9f3", "src": "collector@1.60.1.70959", "npcs": [266881]}
 {"id": "b27a12ca5eac02a2", "field": "text", "en": "There is no way out.", "hash": "b27a12ca5eac02a2", "src": "vmangos@13b49dc"}
 {"id": "b27b004e0924c762", "field": "text", "en": "A faint whisper is heard from within the stone...$B$BGreetings, little one.  Do you have news for the Templar?", "hash": "b27b004e0924c762", "src": "vmangos@13b49dc"}
 {"id": "b280f0fca835d403", "field": "text", "en": "Rogues' Quarter attacked by Scourge!  Help!", "hash": "b280f0fca835d403", "src": "vmangos@13b49dc"}
+{"id": "b2889926490d84fe", "field": "text", "en": "Ah. I can see the village. I should be safe from here. Thank you.", "hash": "b2889926490d84fe", "src": "collector@1.60.1.70959"}
 {"id": "b2923cdd41ed192d", "field": "text", "en": "Deeply inhale the fragrance from the songflower.", "hash": "b2923cdd41ed192d", "src": "vmangos@13b49dc"}
 {"id": "b297a32b0ddc1e40", "field": "text", "en": "Well met, $C.  If you're here for business, then get yourself a brew and we'll have ourselves a talk.", "hash": "b297a32b0ddc1e40", "src": "vmangos@13b49dc"}
 {"id": "b2a61f0ef906f540", "field": "text", "en": "Five and five years, and he still searches for her, though she was no beauty, and there were many ladies that would take her place.", "hash": "b2a61f0ef906f540", "src": "vmangos@13b49dc"}

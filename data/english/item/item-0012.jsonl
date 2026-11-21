@@ -8,6 +8,7 @@
 {"id": 12006, "field": "name", "en": "Meadow Ring", "hash": "3d4034d76091b69b", "src": "db2@1.60.1.70959"}
 {"id": 12006, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70862"}
 {"id": 12007, "field": "name", "en": "Prairie Ring", "hash": "9d50773273fc448b", "src": "db2@1.60.1.70959"}
+{"id": 12007, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70959"}
 {"id": 12008, "field": "name", "en": "Savannah Ring", "hash": "aded6c69558fbd07", "src": "db2@1.60.1.70959"}
 {"id": 12009, "field": "name", "en": "Tundra Ring", "hash": "9f9b38c3513b9bd2", "src": "db2@1.60.1.70959"}
 {"id": 12009, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}

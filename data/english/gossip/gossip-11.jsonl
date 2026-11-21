@@ -39,3 +39,4 @@
 {"id": "11e1703b3eae47b7", "field": "text", "en": "TASTE THE FLAMES OF SULFURON!", "hash": "11e1703b3eae47b7", "src": "vmangos@13b49dc"}
 {"id": "11eb9742b56f775c", "field": "text", "en": "Hoha! I'd welcome the challenge from old weakbelly!", "hash": "11eb9742b56f775c", "src": "vmangos@13b49dc"}
 {"id": "11f56b4ed6e17393", "field": "text", "en": "Greetings.  I'm a mage trainer, and you're a mage.", "hash": "11f56b4ed6e17393", "src": "vmangos@13b49dc"}
+{"id": "11fcbde0d8097aa7", "field": "text", "en": "Have you found anything recently?", "hash": "11fcbde0d8097aa7", "src": "collector@1.60.1.70959", "npcs": [185403, 185404]}

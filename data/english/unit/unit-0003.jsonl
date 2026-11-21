@@ -10,14 +10,20 @@
 {"id": 3065, "field": "name", "en": "Yaw Sharpmane", "hash": "1aa3081537e9263d", "src": "collector@1.60.1.70790"}
 {"id": 3066, "field": "name", "en": "Narm Skychaser", "hash": "09c6647ec1c9d088", "src": "collector@1.60.1.70938"}
 {"id": 3067, "field": "name", "en": "Pyall Silentstride", "hash": "44833ed8f8c207b8", "src": "collector@1.60.1.70790"}
+{"id": 3139, "field": "name", "en": "Gar'Thok", "hash": "510e657b463bbe23", "src": "collector@1.60.1.70959"}
+{"id": 3140, "field": "name", "en": "Lar Prowltusk", "hash": "9eaf2cb8f579ed78", "src": "collector@1.60.1.70959"}
+{"id": 3142, "field": "name", "en": "Orgnil Soulscar", "hash": "d01c37c0a98654bd", "src": "collector@1.60.1.70959"}
 {"id": 3143, "field": "name", "en": "Gornek", "hash": "6d86979bf1dfcd1d", "src": "collector@1.60.1.70009"}
 {"id": 3145, "field": "name", "en": "Zureetha Fargaze", "hash": "ac4a12dffb1cd848", "src": "collector@1.60.1.70205"}
 {"id": 3147, "field": "name", "en": "Furl Scornbrow", "hash": "43c0e1534dc5d6bd", "src": "collector@1.60.1.70840"}
 {"id": 3153, "field": "name", "en": "Frang", "hash": "dc20085a6d88e60d", "src": "collector@1.60.1.70205"}
+{"id": 3155, "field": "name", "en": "Rwag", "hash": "0b1c36df23bfbe2c", "src": "collector@1.60.1.70959"}
 {"id": 3156, "field": "name", "en": "Nartok", "hash": "586647dc13a3505c", "src": "collector@1.60.1.70888"}
 {"id": 3159, "field": "name", "en": "Kzan Thornslash", "hash": "d8292a56763d6748", "src": "collector@1.60.1.70205"}
 {"id": 3175, "field": "name", "en": "Krunn", "hash": "33e9d4af1782ae8f", "src": "collector@1.60.1.70790"}
+{"id": 3188, "field": "name", "en": "Master Gadrin", "hash": "0f15b87638f631eb", "src": "collector@1.60.1.70959"}
 {"id": 3191, "field": "name", "en": "Cook Torka", "hash": "d39e8ad00d932052", "src": "collector@1.60.1.70790"}
+{"id": 3194, "field": "name", "en": "Vel'rin Fang", "hash": "bf9ae09783e05183", "src": "collector@1.60.1.70959"}
 {"id": 3209, "field": "name", "en": "Brave Windfeather", "hash": "c6935c84354eaff0", "src": "collector@1.60.1.70790"}
 {"id": 3216, "field": "name", "en": "Neeru Fireblade", "hash": "868b3608d150a7d7", "src": "collector@1.60.1.70790"}
 {"id": 3222, "field": "name", "en": "Brave Wildrunner", "hash": "6ea11a0a61d267b3", "src": "collector@1.60.1.70790"}
@@ -25,6 +31,7 @@
 {"id": 3287, "field": "name", "en": "Hana'zua", "hash": "ce871d9362ce9a86", "src": "collector@1.60.1.70205"}
 {"id": 3292, "field": "name", "en": "Brewmaster Drohn", "hash": "1ffc4a67ff0c38b6", "src": "collector@1.60.1.70790"}
 {"id": 3294, "field": "name", "en": "Ophek", "hash": "79d8a6aa44c034a2", "src": "collector@1.60.1.70938"}
+{"id": 3304, "field": "name", "en": "Master Vornal", "hash": "c3754d80dca76be7", "src": "collector@1.60.1.70959"}
 {"id": 3310, "field": "name", "en": "Doras", "hash": "b8a21fe54af6ec79", "src": "collector@1.60.1.70862"}
 {"id": 3336, "field": "name", "en": "Takrin Pathseeker", "hash": "47e1f16d5a0504e4", "src": "collector@1.60.1.70790"}
 {"id": 3337, "field": "name", "en": "Kargal Battlescar", "hash": "719e93a39fd726c4", "src": "collector@1.60.1.70790"}
@@ -41,6 +48,7 @@
 {"id": 3391, "field": "name", "en": "Gazlowe", "hash": "d6cf2ede3e3cb4c2", "src": "collector@1.60.1.70790"}
 {"id": 3401, "field": "name", "en": "Shenthul", "hash": "f822da3b7a511190", "src": "collector@1.60.1.70790"}
 {"id": 3402, "field": "name", "en": "Zando'zan", "hash": "b5f8d527207a3b52", "src": "collector@1.60.1.70790"}
+{"id": 3404, "field": "name", "en": "Jandi", "hash": "20131cb1b8e5e165", "src": "collector@1.60.1.70959"}
 {"id": 3412, "field": "name", "en": "Nogg", "hash": "0a90eb3dce5e8f3b", "src": "collector@1.60.1.70862"}
 {"id": 3419, "field": "name", "en": "Apothecary Zamah", "hash": "e9931e98c780b807", "src": "collector@1.60.1.70790"}
 {"id": 3421, "field": "name", "en": "Feegly the Exiled", "hash": "e0cd95624be2a6ce", "src": "collector@1.60.1.70938"}
@@ -74,8 +82,11 @@
 {"id": 3584, "field": "name", "en": "Therylune", "hash": "5f4a8d8611c3b982", "src": "collector@1.60.1.70862"}
 {"id": 3585, "field": "name", "en": "Therysil", "hash": "b67995895a154454", "src": "collector@1.60.1.70862"}
 {"id": 3595, "field": "name", "en": "Shanda", "hash": "ba92ff074802f532", "src": "collector@1.60.1.70170"}
+{"id": 3596, "field": "name", "en": "Ayanna Everstride", "hash": "6d5a4d6767c3787a", "src": "collector@1.60.1.70959"}
 {"id": 3597, "field": "name", "en": "Mardant Strongoak", "hash": "db4a20c0457c8efd", "src": "collector@1.60.1.70170"}
 {"id": 3600, "field": "name", "en": "Laurna Morninglight", "hash": "9373f76138765e61", "src": "collector@1.60.1.70205"}
+{"id": 3602, "field": "name", "en": "Kal", "hash": "0013d5b229c7ee49", "src": "collector@1.60.1.70959"}
+{"id": 3603, "field": "name", "en": "Cyndra Kindwhisper", "hash": "ea5511ca5ca7ebd8", "src": "collector@1.60.1.70959"}
 {"id": 3604, "field": "name", "en": "Malorne Bladeleaf", "hash": "c5176fed365c82b7", "src": "collector@1.60.1.70790"}
 {"id": 3608, "field": "name", "en": "Aldia", "hash": "838e6da9ce6cdc51", "src": "collector@1.60.1.70205"}
 {"id": 3615, "field": "name", "en": "Devrak", "hash": "cbfad6108d9a33da", "src": "collector@1.60.1.70938"}

@@ -698,11 +698,15 @@
 {"id": 11963, "field": "name", "en": "Penance Spaulders", "hash": "ea0da981d7f3cf28", "src": "db2@1.60.1.70959"}
 {"id": 11964, "field": "name", "en": "Swiftstrike Cudgel", "hash": "30258e239f68842a", "src": "db2@1.60.1.70959"}
 {"id": 11965, "field": "name", "en": "Quartz Ring", "hash": "11d16a4e3f620f5e", "src": "db2@1.60.1.70959"}
+{"id": 11965, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 11966, "field": "name", "en": "Small Sack of Coins", "hash": "29d5be39e419b2b9", "src": "db2@1.60.1.70959"}
 {"id": 11967, "field": "name", "en": "Zircon Band", "hash": "5dd59f98eca3ef79", "src": "db2@1.60.1.70959"}
+{"id": 11967, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70959"}
 {"id": 11968, "field": "name", "en": "Amber Hoop", "hash": "726f170b4ab61378", "src": "db2@1.60.1.70959"}
+{"id": 11968, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70959"}
 {"id": 11969, "field": "name", "en": "Jacinth Circle", "hash": "85040b0c6207364b", "src": "db2@1.60.1.70959"}
 {"id": 11970, "field": "name", "en": "Spinel Ring", "hash": "f36e5529b182d8e6", "src": "db2@1.60.1.70959"}
+{"id": 11970, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.70938"}
 {"id": 11971, "field": "name", "en": "Amethyst Band", "hash": "fbbd10695ae2f2c9", "src": "db2@1.60.1.70959"}
 {"id": 11972, "field": "name", "en": "Carnelian Loop", "hash": "4160af1b887f0eae", "src": "db2@1.60.1.70959"}
 {"id": 11973, "field": "name", "en": "Hematite Link", "hash": "69968c90c55d8136", "src": "db2@1.60.1.70959"}

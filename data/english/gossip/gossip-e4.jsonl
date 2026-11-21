@@ -9,6 +9,7 @@
 {"id": "e435ee5d43176b00", "field": "text", "en": "%s begins countdown.", "hash": "e435ee5d43176b00", "src": "vmangos@13b49dc"}
 {"id": "e447ceb36a00054e", "field": "text", "en": "My son could design a faster car than that clunky goblin junk heap!", "hash": "e447ceb36a00054e", "src": "vmangos@13b49dc"}
 {"id": "e44886f9f676177d", "field": "text", "en": "The gate is in sight! We're going to make it! But first, I need to take a breather.", "hash": "e44886f9f676177d", "src": "vmangos@13b49dc"}
+{"id": "e44cb975b562f91d", "field": "text", "en": "I don't know how it started, but it hardly matters now. We need to extinguish it!", "hash": "e44cb975b562f91d", "src": "collector@1.60.1.70959"}
 {"id": "e44ef0ae88fb7579", "field": "text", "en": "What happens when the Earthen destabilize?", "hash": "e44ef0ae88fb7579", "src": "vmangos@13b49dc"}
 {"id": "e454cb1ea7b3e4eb", "field": "text", "en": "I'm getting ready to travel up the ridge, $n. I could use some help -- would you like to come with me?", "hash": "e454cb1ea7b3e4eb", "src": "vmangos@13b49dc"}
 {"id": "e461be3415be40f2", "field": "text", "en": "For Darrowshire!", "hash": "e461be3415be40f2", "src": "vmangos@13b49dc"}

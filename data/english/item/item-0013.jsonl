@@ -418,6 +418,7 @@
 {"id": 13375, "field": "name", "en": "Crest of Retribution", "hash": "bcd7629f4f65af26", "src": "db2@1.60.1.70959"}
 {"id": 13375, "field": "description", "en": "Deals $17496s1 Physical damage every time you block.", "hash": "f3de62c41a726559", "src": "db2@1.60.1.70959"}
 {"id": 13376, "field": "name", "en": "Royal Tribunal Cloak", "hash": "daa0d0271dba9d32", "src": "db2@1.60.1.70959"}
+{"id": 13376, "field": "description", "en": "Equip: Increases damage and healing done by magical spells and effects by up to 5.", "hash": "48243c367fa8a860", "src": "collector@1.60.1.70959"}
 {"id": 13377, "field": "name", "en": "Miniature Cannon Balls", "hash": "2f278fd99280c3fe", "src": "db2@1.60.1.70959"}
 {"id": 13378, "field": "name", "en": "Songbird Blouse", "hash": "3f0b61194611ddc9", "src": "db2@1.60.1.70959"}
 {"id": 13379, "field": "name", "en": "Piccolo of the Flaming Fire", "hash": "0b540b01e7a9094e", "src": "db2@1.60.1.70959"}

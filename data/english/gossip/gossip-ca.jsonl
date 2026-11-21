@@ -29,6 +29,7 @@
 {"id": "ca92a331b593145c", "field": "text", "en": "Make it quick, outsider.", "hash": "ca92a331b593145c", "src": "collector@1.60.1.70862", "npcs": [253139]}
 {"id": "ca93a585590a00d3", "field": "text", "en": "Get it over with you filthy $r.$B$B<Kharan lowers his head, exposing his stubby neck.>", "hash": "ca93a585590a00d3", "src": "vmangos@13b49dc"}
 {"id": "ca9ab18f1492f88b", "field": "text", "en": "You seek to harm me, $r?", "hash": "ca9ab18f1492f88b", "src": "vmangos@13b49dc"}
+{"id": "ca9b2f7899f9849e", "field": "text", "en": "<The kodo seems determined to eat all of the dark purple berries that have been mixed into their feed.>", "hash": "ca9b2f7899f9849e", "src": "collector@1.60.1.70959", "npcs": [269141]}
 {"id": "ca9e5f3843c55267", "field": "text", "en": "Tower Point East holds the pass between the Field of Strife and Horde territories to the south.$B$BIt is controlled by the Horde.The East Frostwolf Tower protects the gate between Frostwolf Village and Frostwolf Keep.$B$BIt is controlled by the Horde.", "hash": "ca9e5f3843c55267", "src": "vmangos@13b49dc"}
 {"id": "caa43405850da915", "field": "text", "en": "I have lost my Scythe of the Unseen Path. Are you able to replace it for me?", "hash": "caa43405850da915", "src": "vmangos@13b49dc"}
 {"id": "caab579f6374c3ab", "field": "text", "en": "Now you're gonna get it good, $n!", "hash": "caab579f6374c3ab", "src": "vmangos@13b49dc"}

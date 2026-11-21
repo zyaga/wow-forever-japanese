@@ -6,6 +6,8 @@
 {"id": 11072, "field": "name", "en": "Kitta Firewind", "hash": "d0309d54ca0b9b7d", "src": "collector@1.60.1.70938"}
 {"id": 11218, "field": "name", "en": "Kerlonian Evershade", "hash": "a88f290111cb9f71", "src": "collector@1.60.1.70862"}
 {"id": 11219, "field": "name", "en": "Liladris Moonriver", "hash": "fe59d6dcec5c1d5b", "src": "collector@1.60.1.70862"}
+{"id": 11259, "field": "name", "en": "Nataka Longhorn", "hash": "54c286f6e581397c", "src": "collector@1.60.1.70959"}
+{"id": 11317, "field": "name", "en": "Jinar'Zillen", "hash": "87d29da06c92443b", "src": "collector@1.60.1.70959"}
 {"id": 11378, "field": "name", "en": "Foreman Thazz'ril", "hash": "d466e581849b776c", "src": "collector@1.60.1.70205"}
 {"id": 11401, "field": "name", "en": "Priestess Alathea", "hash": "60d1ffedc7012956", "src": "collector@1.60.1.70790"}
 {"id": 11406, "field": "name", "en": "High Priest Rohan", "hash": "bacc2e441750f888", "src": "collector@1.60.1.70862"}
@@ -25,3 +27,4 @@
 {"id": 11862, "field": "name", "en": "Tsunaman", "hash": "e8fc488f4aecd9f1", "src": "collector@1.60.1.70862"}
 {"id": 11863, "field": "name", "en": "Azore Aldamort", "hash": "40ecce28fd983de9", "src": "collector@1.60.1.70862"}
 {"id": 11864, "field": "name", "en": "Tammra Windfield", "hash": "2378b00530c212b2", "src": "collector@1.60.1.70938"}
+{"id": 11877, "field": "name", "en": "Roon Wildmane", "hash": "0c8c1512f0f1947b", "src": "collector@1.60.1.70959"}

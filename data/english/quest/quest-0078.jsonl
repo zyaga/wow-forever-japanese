@@ -41,6 +41,8 @@
 {"id": 78147, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "collector@1.60.1.70938"}
 {"id": 78147, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.$B$BIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "collector@1.60.1.70938"}
 {"id": 78148, "field": "title", "en": "Runes of the Sorcerer-Kings", "hash": "7777a31c3caa27e2", "src": "wdb@1.60.1.70959"}
+{"id": 78148, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "collector@1.60.1.70959"}
+{"id": 78148, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.$B$BIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "collector@1.60.1.70959"}
 {"id": 78149, "field": "title", "en": "Fury of the Land", "hash": "53dc86ff12e2ae24", "src": "wdb@1.60.1.70959"}
 {"id": 78149, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "forever-vo@025070f"}
 {"id": 78149, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.\r\n\r\nIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "forever-vo@025070f"}

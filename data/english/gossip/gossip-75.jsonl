@@ -21,6 +21,7 @@
 {"id": "754f2d1bba106f03", "field": "text", "en": "You surrendered.  I win.", "hash": "754f2d1bba106f03", "src": "vmangos@13b49dc"}
 {"id": "7553545abe2251a2", "field": "text", "en": "I cannot leave my post here, $n, but there is a task that must be taken care of. Can I trust you to see it done?", "hash": "7553545abe2251a2", "src": "vmangos@13b49dc"}
 {"id": "7554b2bae0ae97d9", "field": "text", "en": "This moonlight will take you to Thunder Bluff.  Use it when you want to leave the festival.", "hash": "7554b2bae0ae97d9", "src": "vmangos@13b49dc"}
+{"id": "756807086bdded5c", "field": "text", "en": "Va, i waldir Eloderung. Ash nud vassild va noth ko i valesh hamerung? Algos A bur uden nud i wirsh ko bor?", "hash": "756807086bdded5c", "src": "collector@1.60.1.70938", "npcs": [257008]}
 {"id": "756b717639c72a0d", "field": "text", "en": "Show me what I have access to, Lokhtos.", "hash": "756b717639c72a0d", "src": "vmangos@13b49dc"}
 {"id": "7577c31e4de605b1", "field": "text", "en": "Now let us place this rare earth in my planter...", "hash": "7577c31e4de605b1", "src": "vmangos@13b49dc"}
 {"id": "7577e9e6d5992cda", "field": "text", "en": "Phew! Glad to be back from that creepy cave.", "hash": "7577e9e6d5992cda", "src": "vmangos@13b49dc"}

@@ -1,3 +1,4 @@
+{"id": 4046, "field": "name", "en": "Magatha Grimtotem", "hash": "966854a92102c594", "src": "collector@1.60.1.70959"}
 {"id": 4047, "field": "name", "en": "Zor Lonetree", "hash": "4364217695f02a96", "src": "collector@1.60.1.70790"}
 {"id": 4048, "field": "name", "en": "Falfindel Waywarder", "hash": "6345ddee1802a81d", "src": "collector@1.60.1.70888"}
 {"id": 4049, "field": "name", "en": "Seereth Stonebreak", "hash": "9d4223f04545e294", "src": "collector@1.60.1.70862"}
@@ -8,6 +9,7 @@
 {"id": 4081, "field": "name", "en": "Lomac Gearstrip", "hash": "94264fad7aa81435", "src": "collector@1.60.1.70888"}
 {"id": 4088, "field": "name", "en": "Elanaria", "hash": "521e2628c7c074f7", "src": "collector@1.60.1.70862"}
 {"id": 4092, "field": "name", "en": "Lariia", "hash": "615acc1d44e45398", "src": "collector@1.60.1.70790"}
+{"id": 4156, "field": "name", "en": "Astaia", "hash": "cee4e0e26b84c55b", "src": "collector@1.60.1.70959"}
 {"id": 4198, "field": "name", "en": "Braelyn Firehand", "hash": "cae8c4fb532bed3d", "src": "collector@1.60.1.70938"}
 {"id": 4200, "field": "name", "en": "Laird", "hash": "432d414b62e34bdf", "src": "collector@1.60.1.70840"}
 {"id": 4201, "field": "name", "en": "Ziz Fizziks", "hash": "6cf0b9999a7e24a0", "src": "collector@1.60.1.70888"}
@@ -26,6 +28,8 @@
 {"id": 4484, "field": "name", "en": "Feero Ironhand", "hash": "62b2cbb6b3390a58", "src": "collector@1.60.1.70862"}
 {"id": 4485, "field": "name", "en": "Belgrom Rockmaul", "hash": "108027948da48252", "src": "collector@1.60.1.70938"}
 {"id": 4486, "field": "name", "en": "Genavie Callow", "hash": "06d81b7d8b8b0119", "src": "collector@1.60.1.70938"}
+{"id": 4488, "field": "name", "en": "Parqual Fintallas", "hash": "52a51a4eb2f8b822", "src": "collector@1.60.1.70959"}
+{"id": 4489, "field": "name", "en": "Braug Dimspirit", "hash": "66cf6934d3c8cf1e", "src": "collector@1.60.1.70959"}
 {"id": 4503, "field": "name", "en": "Mudcrush Durtfeet", "hash": "f75ea88d22a856fa", "src": "collector@1.60.1.70888"}
 {"id": 4521, "field": "name", "en": "Treshala Fallowbrook", "hash": "18abb67dd6c9e19f", "src": "collector@1.60.1.70938"}
 {"id": 4551, "field": "name", "en": "Michael Garrett", "hash": "30ec3f6acecb039b", "src": "collector@1.60.1.70790"}
@@ -44,6 +48,7 @@
 {"id": 4791, "field": "name", "en": "Nazeer Bloodpike", "hash": "fd248f7b20a86707", "src": "collector@1.60.1.70938"}
 {"id": 4792, "field": "name", "en": "\"Swamp Eye\" Jarl", "hash": "fbda46d3644f7e9d", "src": "collector@1.60.1.70888"}
 {"id": 4877, "field": "name", "en": "Jandia", "hash": "69c7af445857dc8c", "src": "collector@1.60.1.70938"}
+{"id": 4880, "field": "name", "en": "\"Stinky\" Ignatz", "hash": "88f11bd947626c41", "src": "collector@1.60.1.70959"}
 {"id": 4926, "field": "name", "en": "Krog", "hash": "0a2acf9f32107d78", "src": "collector@1.60.1.70938"}
 {"id": 4941, "field": "name", "en": "Caz Twosprocket", "hash": "2936807d7b5a0ce8", "src": "collector@1.60.1.70888"}
 {"id": 4944, "field": "name", "en": "Captain Garran Vimes", "hash": "3743ed7a5c60d2b7", "src": "collector@1.60.1.70888"}
