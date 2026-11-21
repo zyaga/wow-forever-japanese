@@ -297,6 +297,11 @@ Voice.soundPath = pathOf
 local VOICED = { ["quest.description"] = true, ["quest.progress"] = true, ["quest.completion"] = true,
   gossip = true, book = true }
 
+-- The pack keys the voice entry lists as having no voice yet (Voice.notMade), or nil when it lists none. A
+-- listed line is never played, even from a loaded pack: a pack built before its speaker was known still holds
+-- its recording in another voice.
+local notMade
+
 -- A shipped line's main recording, whatever the settings say, for the study card and the word list's export
 -- (UI/StudyVoice). → the registry's record (files in order as { file, seconds }, marks, folder; not to be changed)
 -- and the shipped Japanese, or nil and why: "kind" (never voiced) · "nopack" · "missing" · "stale"
@@ -304,7 +309,7 @@ function Voice.line(kind, id)
   local key = VOICED[kind] and Voice.packKey(kind, id)
   if not key then return nil, "kind" end
   if not lines then return nil, "nopack" end
-  local entry = lines[key]
+  local entry = not (notMade and notMade[key]) and lines[key] or nil
   local shipped = entry and type(deps.lookup) == "function" and deps.lookup(kind, id) or nil
   if type(shipped) ~= "table" or type(shipped.ja) ~= "string" then return nil, "missing" end
   if type(deps.hash) ~= "function" or deps.hash(shipped.ja) ~= entry.jaHash then return nil, "stale" end
@@ -331,7 +336,6 @@ end
 -- The entry names the lines that ship Japanese and have no voice: a line whose speaker nobody could name, one
 -- whose speaker has no voice yet, one whose audio is still to be made. Only well-formed pack keys are kept. An
 -- entry built before the list existed names none.
-local notMade
 function Voice.notMade(list)
   notMade = nil
   if type(list) ~= "table" then return end
@@ -342,8 +346,8 @@ function Voice.notMade(list)
 end
 
 -- Whether the window should say that the line shown on `surface` under record key `recKey`, rendered as
--- (kind, id), has no voice yet: the entry lists it, no loaded pack carries it, and it would be read aloud if it
--- had one (voice and its kind on, a pack loaded, Japanese showing). The message has a setting of its own.
+-- (kind, id), has no voice yet: the entry lists it, and it would be read aloud if it had one (voice and its
+-- kind on, a pack loaded, Japanese showing). The message has a setting of its own.
 function Voice.silent(surface, recKey, kind, id)
   local kindSetting = kindSettingOf(surface, recKey)
   if not kindSetting or not VOICED[kind] or not lines or not notMade then return false end
@@ -353,7 +357,7 @@ function Voice.silent(surface, recKey, kind, id)
     return false
   end
   local key = Voice.packKey(kind, id)
-  return key ~= nil and notMade[key] == true and lines[key] == nil
+  return key ~= nil and notMade[key] == true
 end
 
 -- → the account's record of lines heard, when the kind is kept to its first hearing, else nil
@@ -378,7 +382,7 @@ function Voice.decide(surface, recKey, kind, id, who, peek)
   end
   if not lines then return nil, "nopack" end
   local key = Voice.packKey(kind, id)
-  local entry = key and lines[key]
+  local entry = key and not (notMade and notMade[key]) and lines[key]
   if not entry then
     if not peek then Voice.counts.missing = Voice.counts.missing + 1 end
     return nil, "missing"

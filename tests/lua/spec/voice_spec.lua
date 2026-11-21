@@ -1107,11 +1107,19 @@ describe("Core/Voice: the lines with no voice yet", function()
     assert.is_true(silent())
   end)
 
-  it("a line a loaded pack carries is not silent, whatever the list says", function()
-    loadPack()
-    V.notMade({ "2-progress" })
-    assert.is_false(V.silent("questframe.progress", "progress", "quest.progress", 2))
-  end)
+  it("a listed line a loaded pack still carries is not played: the list wins over an older pack's recording",
+    function()
+      -- a pack built before the line's speaker was known still holds its recording in another voice
+      loadPack()
+      assert.is_string((V.decide("questframe.progress", "progress", "quest.progress", 2)))
+      assert.is_table((V.line("quest.progress", 2)))
+      V.notMade({ "2-progress" })
+      assert.are.same({ nil, "missing" }, { V.decide("questframe.progress", "progress", "quest.progress", 2) })
+      assert.are.same({ nil, "missing" }, { V.line("quest.progress", 2) })
+      assert.is_true(V.silent("questframe.progress", "progress", "quest.progress", 2))
+      V.notMade({}) -- the entry stops listing it once its audio is remade
+      assert.is_string((V.decide("questframe.progress", "progress", "quest.progress", 2)))
+    end)
 
   it("keeps only well-formed pack keys and says nothing for a kind that is never voiced", function()
     loadPack()

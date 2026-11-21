@@ -226,6 +226,26 @@ describe("Render: refresh on state, per-FontString font", function()
     assert.are.same({ "F.ttf", 14, "OUTLINE" }, { q:GetFont() })
   end)
 
+  it("no banner (Dialogue UI's windows, a book page): the no-voice message goes inline, above the Japanese",
+    function()
+      WFJ.Voice = { silent = function(surface, key, kind, id)
+        return surface == "quest" and key == "description" and kind == "quest" and id == 1
+      end }
+      local q = Stub.fontString("Quest text")
+      showQuest(q, 1) -- translated, and the voice says it has none
+      assert.are.equal(inl("novoice") .. "\nクエスト1", q:GetText())
+      local s2 = Stub.fontString("Quest text")
+      -- a stale line (its own record) that also has no voice: both messages, the stale one first
+      R.show("quest", "progress", s2, s2:GetText(), "quests", "quest", 2)
+      WFJ.Voice.silent = function() return true end
+      R.refresh("quest")
+      assert.are.equal(inl("stale") .. "\n" .. inl("novoice") .. "\nクエスト2", s2:GetText())
+      WFJ.Voice.silent = function() return false end
+      R.refresh("quest")
+      assert.are.equal("クエスト1", q:GetText())
+      WFJ.Voice = nil
+    end)
+
   it("banner: a line that shows its Japanese and has no voice yet says so; an untranslated line never does",
     function()
       local asked = {}
