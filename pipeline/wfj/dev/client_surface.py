@@ -1353,6 +1353,7 @@ end
 -- A spell whose text the client has not loaded yet is not read, and counted.
 local TOOLTIP_MS = 8 -- per frame
 local TOOLTIP_SAY = 3000 -- spells between two progress lines
+local TOOLTIP_SETTLE = 3 -- seconds between asking for the last spell and reading the first tooltip
 local tooltipReader = CreateFrame("Frame")
 
 -- how many values the addon reads off a line (Core/Align.values): icons out, digit runs with their points and
@@ -1463,10 +1464,32 @@ local function WFJScanTooltipRead(done)
   end
   local ok, err = pcall(readItems, record)
   if not ok then record.refused = "items: " .. tostring(err) end
+  -- The client holds a spell's text only once it has loaded that spell: asked cold, all but the character's own
+  -- spells answer with nothing. So every spell is asked for first, the answers are given a moment to arrive, and
+  -- only then are the tooltips read.
+  local load = type(C_Spell) == "table" and C_Spell.RequestLoadSpellData
+  local cached = type(C_Spell) == "table" and C_Spell.IsSpellDataCached
+  local asking, waited = type(load) == "function" and 0 or #ids, 0
   local at, said = 0, 0
-  print("WFJ test: reading " .. #ids .. " spell tooltips")
-  tooltipReader:SetScript("OnUpdate", function()
+  print("WFJ test: loading " .. #ids .. " spells, then reading their tooltips")
+  tooltipReader:SetScript("OnUpdate", function(_, elapsed)
     local t0 = debugprofilestop()
+    if asking < #ids then
+      while asking < #ids and debugprofilestop() - t0 < TOOLTIP_MS do
+        asking = asking + 1
+        if not (type(cached) == "function" and cached(ids[asking])) then pcall(load, ids[asking]) end
+      end
+      if asking - said >= TOOLTIP_SAY then
+        said = asking
+        print("WFJ test: spells loading " .. asking .. "/" .. #ids)
+      end
+      if asking >= #ids then said = 0 end
+      return
+    end
+    if waited < TOOLTIP_SETTLE then
+      waited = waited + (elapsed or 0)
+      return
+    end
     while at < #ids and debugprofilestop() - t0 < TOOLTIP_MS do
       at = at + 1
       local fine, why = pcall(readSpell, record, ids[at], describe)

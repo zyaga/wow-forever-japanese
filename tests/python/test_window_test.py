@@ -518,6 +518,9 @@ def test_the_test_addon_carries_each_filled_spells_count_and_reads_tooltips_afte
     assert 'if not (last and text:sub(last, s - 1) == " to ") then n = n + 1 end' in lua
     assert lua.index("WFJScanClosedRead(function()") < lua.index("outOfCombat(function() WFJScanTooltipRead(")
     assert lua.index("WFJScanTooltipRead(function()") < lua.index("WFJScanCharacterRead(function()\n")
+    # a spell's text is asked for before its tooltip is read: asked cold, the client answers with nothing
+    assert lua.index("pcall(load, ids[asking])") < lua.index("pcall(readSpell, record, ids[at], describe)")
+    assert "if waited < TOOLTIP_SETTLE then" in lua
     # nothing is clicked or used: tooltips are only shown
     body = lua[lua.index("local function readItems"):lua.index("local function WFJScanTooltipRead")]
     assert "UseContainerItem" not in body and "PickupContainerItem" not in body and ":Click(" not in body
