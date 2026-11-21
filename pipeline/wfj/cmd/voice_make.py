@@ -357,7 +357,8 @@ def cast_rows(root: Path, cfg: dict[str, Any], today: str) -> list[dict[str, Any
     are unchanged keeps its old date. A creature whose race or gender nobody knows gets no row (`unknown`):
     its lines stay silent rather than be read in a voice that is a guess."""
     overrides = {int(r["creature"]): r["voice"] for r in _rows(root / "voice" / "overrides.jsonl")}
-    known = [p for p in _rows(root / "voice" / "profiles.jsonl") if int(p["creature"]) not in unknown(root)]
+    nobody = unknown(root)
+    known = [p for p in _rows(root / "voice" / "profiles.jsonl") if int(p["creature"]) not in nobody]
     result = casting.cast(known, cfg["cast"], cfg["narrator"], overrides)
     if cfg.get("cloned_packs"):
         from wfj.cmd import voice_store  # it imports this module

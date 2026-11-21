@@ -11,7 +11,6 @@ from __future__ import annotations
 import argparse
 import dataclasses
 import datetime
-import json
 import re
 from collections import Counter
 from collections.abc import Iterable
@@ -23,7 +22,7 @@ from wfj.core.model import english_line, validate_line
 from wfj.core.normalize import female_variant, normalize_for, normalize_v1
 from wfj.io import forever_vo, tables_stamp, vmangos, wago, wdb
 from wfj.io.collector_dump import Dump, QuestNpc, read_dump
-from wfj.io.jsonl_store import Store
+from wfj.io.jsonl_store import Store, dumps, read_jsonl
 from wfj.io.lua_reader import as_int_id, parse_assignment
 from wfj.paths import data_root
 
@@ -558,13 +557,11 @@ def merge_quest_npcs(rows: list[dict[str, Any]], found: Iterable[QuestNpc], toda
 def import_quest_npcs(dump: Dump) -> Counter:
     """Writes the dump's quest NPCs into data/voice/quest-npcs.jsonl; an unchanged table is not rewritten."""
     path = data_root() / QUEST_NPCS
-    rows = []
-    if path.is_file():
-        rows = [json.loads(ln) for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    rows = read_jsonl(path)
     c = merge_quest_npcs(rows, dump.quest_npcs, datetime.date.today().isoformat())
     if c["added"] or c["changed"]:
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+        path.write_text("".join(dumps(r) + "\n" for r in rows), encoding="utf-8")
     return c
 
 

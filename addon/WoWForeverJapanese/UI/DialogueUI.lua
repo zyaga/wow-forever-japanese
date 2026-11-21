@@ -287,13 +287,12 @@ local function render(el)
   end
   -- who shows the quest's offer, progress text or turn-in: the Collector keeps the NPC for the line's voice, as on
   -- the client's own quest window (a field with no speaker is refused there)
-  if C and el.questID and type(C.recordQuestNpc) == "function" and WFJ.Collector.creatureId(guid) then
+  local creature = C and el.questID and type(C.recordQuestNpc) == "function" and C.creatureId(guid)
+  if creature then
     local sex = Compat.resolve("UnitSex")
     local log = WFJ.VoiceQuestLog
     local display, from
-    if log and type(log.displayFor) == "function" then
-      display, from = log.displayFor(WFJ.Collector.creatureId(guid))
-    end
+    if log and type(log.displayFor) == "function" then display, from = log.displayFor(creature) end
     C.recordQuestNpc(el.questID, el.key, guid, type(sex) == "function" and sex("npc") or nil,
       from == "saved" and display or nil)
   end
