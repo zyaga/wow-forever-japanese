@@ -17,6 +17,7 @@ WFJ.Data.add("english", {
   ["gossip:2c329816d8779967"] = { text = "guarded=3 papers=2 speak=4 these=1" },
   ["gossip:2c3784f1a3be122e"] = { text = "danger=1 hurt=3" },
   ["gossip:2c3922bbc70af359"] = { text = "greetings=1 humble=2 servant=3 today=4 what=7 you=5" },
+  ["gossip:2c4d35afaf9d922c"] = { text = "but=8 careful=1 case=12 cautionary=13 distance=14 finish=3 follow=5 keep=15 out=6 trouble=10 we=2" },
   ["gossip:2c501f082c9e96b8"] = { text = "life=2 money=1 take=3" },
   ["gossip:2c5522e4b7cef8e5"] = { text = "fitting=2 make=4 sacrifice=3 will=5 you=1" },
   ["gossip:2c5d489e2161afc2"] = { text = "children=7 deaths=8 hermit=24 hungry=14 i=1 inept=12 left=2 living=25 maniac=15 near=23 power=13 remain=3 serve=17 shelter=22 such=11 under=16 woods=21" },

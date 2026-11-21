@@ -1034,6 +1034,7 @@
 {"creature": 5386, "display": 5081, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
 {"creature": 5387, "display": 3596, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}}
 {"creature": 5391, "display": 4553, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
+{"creature": 5392, "display": 3396, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-21"}}
 {"creature": 5393, "display": 6776, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 5394, "display": 4897, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 5395, "display": 4694, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
@@ -1087,6 +1088,7 @@
 {"creature": 5565, "display": 3448, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}}
 {"creature": 5566, "display": 3445, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
 {"creature": 5567, "display": 3444, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
+{"creature": 5570, "display": 3458, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}}
 {"creature": 5591, "display": 3508, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 5592, "display": 3511, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 5593, "display": 3519, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
@@ -1209,6 +1211,7 @@
 {"creature": 6287, "display": 4990, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 6289, "display": 4993, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 6290, "display": 4992, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
+{"creature": 6291, "display": 4986, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}}
 {"creature": 6293, "display": 4987, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
 {"creature": 6294, "display": 4988, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}}
 {"creature": 6297, "display": 5019, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-13"}}
@@ -2388,6 +2391,8 @@
 {"creature": 267334, "display": 145044, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}}
 {"creature": 267683, "display": 9473, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
 {"creature": 267684, "display": 10661, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
+{"creature": 267687, "display": 6569, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-21"}}
+{"creature": 267688, "display": 9476, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-21"}}
 {"creature": 268425, "display": 145449, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-21"}}
 {"creature": 268568, "display": 145509, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
 {"creature": 268743, "display": 147507, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-21"}}
@@ -2403,6 +2408,9 @@
 {"creature": 275491, "display": 148281, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
 {"creature": 276170, "display": 148491, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
 {"creature": 276316, "display": 148587, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
+{"creature": 276734, "display": 14376, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-21"}}
+{"creature": 276735, "display": 14377, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-21"}}
+{"creature": 276736, "display": 14374, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-21"}}
 {"creature": 276783, "display": 14346, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-13"}}
 {"creature": 276786, "display": 14582, "provenance": {"source": "creaturecache@70938", "imported": "2026-11-16"}}
 {"creature": 277024, "display": 148768, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}}

@@ -43,4 +43,5 @@ WFJ.Data.add("english", {
   ["gossip:11e1703b3eae47b7"] = { text = "taste=2" },
   ["gossip:11eb9742b56f775c"] = { text = "challenge=5 hoha=1 old=4 weakbelly=3 welcome=6" },
   ["gossip:11f56b4ed6e17393"] = { text = "greetings=1 mage=3 trainer=4" },
+  ["gossip:11fcbde0d8097aa7"] = { text = "anything=2 found=3 recently=1" },
 })

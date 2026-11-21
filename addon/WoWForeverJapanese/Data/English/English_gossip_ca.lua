@@ -34,6 +34,7 @@ WFJ.Data.add("english", {
   ["gossip:ca92a331b593145c"] = { text = "make=2 outsider=3 quick=1" },
   ["gossip:ca93a585590a00d3"] = { text = "exposing=8 filthy=3 get=2 head=4 lowers=5 neck=7 stubby=6" },
   ["gossip:ca9ab18f1492f88b"] = { text = "harm=2 me=1 seek=4" },
+  ["gossip:ca9b2f7899f9849e"] = { text = "all=6 berries=5 dark=3 determined=8 eat=7 feed=1 mixed=2 purple=4" },
   ["gossip:ca9e5f3843c55267"] = { text = "between=3 controlled=7 gate=9 holds=5 pass=4 protects=10 south=1 territories=2" },
   ["gossip:caa43405850da915"] = { text = "lost=1" },
   ["gossip:caab579f6374c3ab"] = { text = "good=2 now=1" },

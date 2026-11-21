@@ -24,6 +24,7 @@ WFJ.Data.add("english", {
   ["gossip:ab593ca5d68421b4"] = { text = "destroy=5 foot=2 ground=1 infidels=4 minions=3" },
   ["gossip:ab732bb5b4c9204e"] = { text = "ah=1 good=2 nicely=5 rendered=6 spores=4 thank=7 these=3" },
   ["gossip:ab7c4fb4338e0f80"] = { text = "crafting=1 forge=13 grab=10 hammer=9 impressive=7 indeed=6 lad=5 now=8 real=11 see=14 skill=2 some=3 weapon=12" },
+  ["gossip:ab7c548867b67a8d"] = { text = "better=1 inside=4 return=5" },
   ["gossip:ab80a6a2c601769b"] = { text = "alive=3 people=2 right=1" },
   ["gossip:ab871658e529b35c"] = { text = "attacks=1" },
   ["gossip:ab87313e73085937"] = { text = "finds=3 hide=5 this=1" },

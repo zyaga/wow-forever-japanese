@@ -38,6 +38,7 @@ WFJ.Data.add("name", {
   ["d2229217be6930b1"] = { "ランカー・ブーツ", "らんかー・ぶーつ", "Rancor Boots" },
   ["d222a38e4aa8143b"] = { "サモン・オカメインコ", "さもん・おかめいんこ", "Summon Cockatiel" },
   ["d222c42cd40d5f4b"] = { "ピアレス・グローブ", "ぴあれす・ぐろーぶ", "Peerless Gloves" },
+  ["d22327b32d5d7d9b"] = { "クロモ・クラシック・メカノストライダー", "くろも・くらしっく・めかのすとらいだー", "Chromo-Classic Mechanostrider" },
   ["d2238dac7c13664b"] = { "ワウ・バラエティ・ショー・ヘルシー・コンペティション！", "わう・ばらえてぃ・しょー・へるしー・こんぺてぃしょん", "WoW Variety Show - Healthy Competition!" },
   ["d2245616ed6d81db"] = { "リデュースト・フロスト・コスト", "りでゅーすと・ふろすと・こすと", "Reduced Frost Cost" },
   ["d224b4b63a233059"] = { "ピーブイピー・クロス・レッグ・ホード", "ぴーぶいぴー・くろす・れっぐ・ほーど", "PVP Cloth Legs Horde" },

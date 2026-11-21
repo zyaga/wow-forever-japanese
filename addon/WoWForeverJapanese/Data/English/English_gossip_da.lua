@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:daa1d45ccd51afff"] = { text = "attack=1" },
   ["gossip:daaa0a59904ead20"] = { text = "amongst=21 call=9 delighted=6 forms=20 hibernate=17 hold=11 many=15 place=26 purest=19 sister=2 soon=8 that=27 time=12 train=3 training=3 ultimate=24 walk=22 welcome=1 years=16 you=10 your=23" },
   ["gossip:daab03fd650fd222"] = { text = "anvils=6 course=2 dwarf=17 fine=14 help=19 only=11 smith=4 think=13 way=15 weight=8 what=5 worth=7 yeah=1" },
+  ["gossip:dabe28023df107fb"] = { text = "farm=3 help=1 husband=6 know=7 safe=4 sure=5 thank=2" },
   ["gossip:dabfbae4c1e147ce"] = { text = "country=2 flavor=1 welcome=3" },
   ["gossip:dac62edd5cb5e4ec"] = { text = "all=3 made=2 preparations=1" },
   ["gossip:dac893fd0261506c"] = { text = "cavalry=1 unleash=2" },

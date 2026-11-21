@@ -34,6 +34,7 @@ WFJ.Data.add("english", {
   ["gossip:b8d2d3f6f0c0383d"] = { text = "catch=4 how=3 lure=1" },
   ["gossip:b8d3bf1a82465ebe"] = { text = "anywhere=1 civilization=17 crater=25 enough=9 far=10 guess=23 guessing=29 help=32 just=30 know=27 like=26 means=15 more=31 near=18 no=19 not=2 now=28 other=7 protected=21 races=8 sorry=33 sure=4 unaffected=13 valley=24" },
   ["gossip:b8dd03ddf5a84caa"] = { text = "and=2 because=8 go=7 i=3 miss=12 or=10 out=6 sad=1 sick=4 treating=11 trick=9" },
+  ["gossip:b8ddd0a8a4f33c28"] = { text = "edge=4 found=8 inside=7 medic=2 northeast=3 tower=6 town=1" },
   ["gossip:b8e04228229255c0"] = { text = "hands=2 killed=5 orcs=4 that's=1" },
   ["gossip:b8e287f3409dd7e8"] = { text = "what=2 you=1" },
   ["gossip:b8e50c0081dca17e"] = { text = "singing=1 telegram=2" },

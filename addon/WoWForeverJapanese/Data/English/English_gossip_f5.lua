@@ -43,6 +43,7 @@ WFJ.Data.add("english", {
   ["gossip:f5c9c938fb01a63a"] = { text = "discipline=1 prepare=3" },
   ["gossip:f5cf13e5ef7bcd29"] = { text = "and=2 appeared=24 corruption=17 exist=16 formed=1 infancy=4 insane=14 known=22 madness=12 motion=19 noble=5 now=7 one=23 order=6 see=10 wheels=18 you=8 zealotry=15" },
   ["gossip:f5d26f82c26f8e7c"] = { text = "all=4 any=18 ashamed=10 assistance=5 battle=36 behalf=27 but=12 efforts=31 favorably=33 fight=1 get=3 greater=21 honor=22 join=37 lend=15 look=34 more=20 need=6 now=16 our=26 past=17 say=7 skills=14 sure=29 time=19 we=9 well=25 will=35 you=13 your=30" },
+  ["gossip:f5d6ecc4edaf665c"] = { text = "damping=9 extra=5 movement=6 reads=2 ride=4 smooth=3 tag=1 terrain=8 tracking=7" },
   ["gossip:f5deca345165a6dc"] = { text = "end=3 nightmare=2" },
   ["gossip:f5eb8d533ee0b7dd"] = { text = "charge=25 collected=37 collectors=11 comes=14 counted=35 effort=3 fighting=26 gathering=21 good=8 goods=19 greetings=1 helping=5 here=10 i=24 interested=6 involved=27 last=34 obtaining=32 organizing=23 prepared=16 stockpiles=20 store=30 those=28 time=13 various=18 war=2 when=15" },
   ["gossip:f5ee7552a36bc30b"] = { text = "adjust=8 adventurer=39 attacks=3 blades=12 brothers=11 but=44 day=26 destroy=29 far=17 former=31 friends=32 i=28 kill=27 life=6 members=34 mindless=21 mostly=1 occasional=4 often=18 paladins=9 put=15 puts=15 quite=7 random=38 rather=43 skirmish=5 some=37 still=45 stings=47 those=14 thrall=22 upon=13 usual=2 wanders=23 when=25 worst=20" },

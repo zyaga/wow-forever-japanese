@@ -142,6 +142,7 @@ WFJ.Data.add("name", {
   ["cf79f78c24ebca10"] = { "ドーンストーカー・ハンドガード", "どーんすとーかー・はんどがーど", "Dawnstalker Handguards" },
   ["cf7b27f331b51abd"] = { "ルナー・スフィア", "るなー・すふぃあ", "Lunar Sphere" },
   ["cf7b3d7a70c37d68"] = { "ディバウアラー", "でぃばうあらー", "Devourers" },
+  ["cf7dfd8c20d0e0e2"] = { "エレクトリック・ブルー・メカ・ターボ・ランナー", "えれくとりっく・ぶるー・めか・たーぼ・らんなー", "Electric Blue Mecha-turbo Runner" },
   ["cf7ed0eea4e0f041"] = { "フォール・オブ・グルバシ", "ふぉーる・おぶ・ぐるばし", "Fall of Gurubashi" },
   ["cf8183cfc37749d3"] = { "スリップキクス・サビー", "すりっぷきくす・さびー", "Slip'kik's Savvy" },
   ["cf8186b1b99bcdf0"] = { "サムズ・ベーシック・キャンプファイア", "さむず・べーしっく・きゃんぷふぁいあ", "Sam's Basic Campfire" },

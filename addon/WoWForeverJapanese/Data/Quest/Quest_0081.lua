@@ -87,7 +87,7 @@ WFJ.Data.add("quest", {
   [81944] = { "新たに見いだした目的……", nil, nil, nil, nil, 0xae495662, nil, nil, nil, nil, ".mmmm" },
   [81947] = { "Sanguine Sorcery", nil, nil, nil, nil, 0xb07ca900, nil, nil, nil, nil, ".mmmm" },
   [81949] = { "Legends of the Tidesages", nil, nil, nil, nil, 0xcaf7c331, nil, nil, nil, nil, ".mmmm" },
-  [81952] = { "Everyday Etiquette", nil, nil, nil, nil, 0xcb655342, nil, nil, nil, nil, ".mmmm" },
+  [81952] = { "Everyday Etiquette", nil, nil, "我々のコレクションに加えるものを持ってきてくれたのか？", "ありがとうございます、{name}。あなたの尽力のおかげで、私たちの知識は広がっていきます。\n\n図書館の役に立ちそうな魔法の書物をほかにも見つけたら、ぜひ私のところへ持ってきてください。", 0xcb655342, nil, nil, 0x1400fbf0, 0xe184a784, ".mm.." },
   [81953] = { "Stonewrought Design", nil, nil, nil, nil, 0xeff6b9fb, nil, nil, nil, nil, ".mmmm" },
   [81954] = { "Venomous Journeys", nil, nil, nil, nil, 0x12b3333f, nil, nil, nil, nil, ".mmmm" },
   [81955] = { "A Mind of Metal", nil, nil, nil, nil, 0xdb1a6c5d, nil, nil, nil, nil, ".mmmm" },

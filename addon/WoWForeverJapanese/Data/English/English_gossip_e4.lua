@@ -12,6 +12,7 @@ WFJ.Data.add("english", {
   ["gossip:e440eb18a233c820"] = { text = "arm=6 citizen=2 greetings=1 lend=7 safety=3" },
   ["gossip:e447ceb36a00054e"] = { text = "car=9 design=10 faster=8 goblin=6 heap=7 junk=4 my=1 son=2 that=3" },
   ["gossip:e44886f9f676177d"] = { text = "but=4 first=5 gate=1 make=3 sight=2" },
+  ["gossip:e44cb975b562f91d"] = { text = "extinguish=7 how=1 know=3 matters=6 now=4 started=2" },
   ["gossip:e44ef0ae88fb7579"] = { text = "destabilize=1 happens=3 what=2" },
   ["gossip:e454cb1ea7b3e4eb"] = { text = "come=8 help=6 ready=4 ridge=2 travel=3" },
   ["gossip:e46379f649dc27e5"] = { text = "blade=2 penetrates=5 shield=4 slow=1" },

@@ -19,6 +19,7 @@ WFJ.Data.add("english", {
   ["gossip:6e71bef2a3b7686b"] = { text = "direction=9 gnome=5 one=7 profession=3 sure=1 teach=4" },
   ["gossip:6e77023504d95a88"] = { text = "central=8 northwestern=10 plateau=9 real=17 shops=12 talent=18 talk=15 tauren=14 tell=7 you=3" },
   ["gossip:6e77c0a32083f24c"] = { text = "heard=5 hiding=4 mean=2 oh=1" },
+  ["gossip:6e79c0434b7d7c95"] = { text = "smell=2" },
   ["gossip:6e7a9f59aed08c4d"] = { text = "attackers=18 battlezone=8 beacon=5 central=7 coordinates=14 crater=10 defend=20 eastern=9 fleet=1 its=13 lock=15 ready=3 this=4 until=16" },
   ["gossip:6e7fe384655d5a70"] = { text = "doing=2 only=7 spit=4 thing=3" },
   ["gossip:6e86f52afa1e3b07"] = { text = "controlled=5 north=3 territory=1" },

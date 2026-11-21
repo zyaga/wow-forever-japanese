@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:eea9435210a288bc"] = { text = "class=1 trainer=2" },
   ["gossip:eeb1d09f8a19dc1b"] = { text = "halls=3 heard=4 laughter=1 once=2" },
   ["gossip:eeb256eb48b4e7b7"] = { text = "mage=4 talking=2 what=1" },
+  ["gossip:eeb686aa8e7c8dcb"] = { text = "figurine=7 home=11 love=9 more=1 now=10 peaceful=2 rest=8 times=3 together=4 us=6" },
   ["gossip:eebb4d82be606285"] = { text = "brought=13 come=4 one=9 our=11 place=6 right=5 save=2 world=1" },
   ["gossip:eec5ba073b58ce7b"] = { text = "after=26 aptitude=29 architect=4 cause=37 come=15 creations=36 despicable=7 destruction=38 hammer=2 handed=5 harness=21 he=18 him=16 inept=23 little=9 man=12 motive=8 my=1 new=3 one=31 potential=27 power=20 stopped=17 talent=10 this=39 too=22 true=19 use=28 with=30 world=40" },
   ["gossip:eec5d52f4de40bf5"] = { text = "what=1" },

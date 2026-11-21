@@ -7,6 +7,7 @@ WFJ.Data.add("english", {
   ["gossip:800b0ac73a57ce42"] = { text = "carry=3 him=1" },
   ["gossip:80135bc0cc1c6dbf"] = { text = "come=2 i=5 master=4 my=3 waiting=6 yes=1" },
   ["gossip:80176c121afced13"] = { text = "behind=6 great=9 paladins=3 priests=4 research=11 skills=7 train=8 true=2 truths=10 walls=5 yes=1" },
+  ["gossip:801833c5671141b9"] = { text = "embers=2 gone=3 last=1" },
   ["gossip:8026003f044a17ba"] = { text = "adventures=4 away=11 busy=8 heard=6 how=2 learned=15 like=9 now=10 see=16 tales=5 travels=1 what=13 while=12 your=3" },
   ["gossip:802760c26da61e3e"] = { text = "interfere=4 nature=2 progress=3 tribe=1" },
   ["gossip:802e37b7d2c376c1"] = { text = "goodly=4 hope=3 imposition=1" },

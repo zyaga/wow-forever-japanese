@@ -20,6 +20,7 @@ WFJ.Data.add("english", {
   ["gossip:4a583d7f4489607f"] = { text = "fish=5 hook=2 our=8 water=4 worm=1" },
   ["gossip:4a6d6aa8cb401786"] = { text = "affairs=2 corruptor=8 demonic=1 face=9 great=7 meddling=3 mortal=5" },
   ["gossip:4a71710a5f536154"] = { text = "bellows=5 betters=16 commander=14 cultist=6 errands=18 lordship=9 merely=20 or=15 ring=10 run=19 sense=8 stone=4 thunderous=1 truly=13 voice=3 you=12 your=7" },
+  ["gossip:4a7301c27496bfae"] = { text = "artifacts=9 forever=24 forgotten=18 i=2 intervention=21 lost=8 older=13 our=6 partner=4 people=7 remembered=15 tales=17 telling=19 they=22 traveler=1 unearth=10 vanish=25 working=11 world=23" },
   ["gossip:4a74aefe9356e2dc"] = { text = "delivery=1 help=2 ready=5" },
   ["gossip:4a8050c2b12837c9"] = { text = "master=1" },
   ["gossip:4a8a5cfc4ddde639"] = { text = "but=4 darkness=2 eternal=5 invisible=6 shadows=3 we=1" },

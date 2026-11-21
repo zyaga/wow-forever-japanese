@@ -1,6 +1,6 @@
 - **NPCs speak in their own voice.** A quest line whose speaker the addon could not name was read by one narrator, whatever the NPC's race or sex. Each line is now read in the voice of the NPC who says it, and a line whose NPC or voice is not known yet stays quiet.
 - **The window tells you.** With a voice pack installed, a translated line with no voice yet shows `[音声なし / No Voice Yet]`. A setting on the Voice page turns the message off.
 - **Japanese you type in the guild window now shows.** The message of the day, guild information, notes, rank names and the guild news used to show Japanese as empty boxes. They now draw in the addon's font, and the boxes you type them in show Japanese as you type.
-- **Forever 1.60.1.70959 in Japanese**, with what players sent: 81 NPC lines, 48 quest progress and turn-in texts, new quest titles, objectives and descriptions, and 21 item and spell tooltips.
+- **Forever 1.60.1.70959 in Japanese**, with what players sent: 125 NPC lines, 75 quest progress and turn-in texts, new quest titles, objectives and descriptions, and 27 item and spell tooltips.
 - **Your Collector helps find the voices.** For each quest window you open it also keeps three numbers about the NPC (its id, its sex and its model id). Nothing about your character, and nothing is sent unless you send it.
 - **More windows in Japanese:** more of the guild window, the name-and-icon popup, a holiday's description on the calendar, the mount journal's search hint and the rank titles on the challenges page.

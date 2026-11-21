@@ -40,4 +40,6 @@ WFJ.Data.add("english", {
   ["gossip:5adeed438e646800"] = { text = "about=3 energies=2 other=7 right=5 say=13 see=14 so=1 subject=10 tome=8 what=12" },
   ["gossip:5adff2e1bb9c5bbb"] = { text = "help=2 how=1" },
   ["gossip:5ae42b45f5540714"] = { text = "fight=2 grace=3 something=5 teach=4 use=9 various=7 weapons=8" },
+  ["gossip:5af37d407bacde5b"] = { text = "death=3 escape=1 even=4" },
+  ["gossip:5afec27db36f9b5b"] = { text = "accidents=11 alive=22 came=4 chance=24 got=25 help=20 just=1 make=23 multiple=12 problems=8 ran=6 shambles=18 sick=15 thanks=21 time=3 trouble=5 worried=16 your=19" },
 })

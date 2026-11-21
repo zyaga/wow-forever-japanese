@@ -38,6 +38,7 @@ WFJ.Data.add("english", {
   ["gossip:37979c6abee80670"] = { text = "bones=5 come=3 dust=6 enough=2 grind=7 prattling=1 their=4" },
   ["gossip:37aa2264b4a9c10d"] = { text = "all=7 beasts=9 day=1 elf=5 forget=4 hands=10 immensely=11 made=2 sacrifices=3 suffered=12 these=8 we=6" },
   ["gossip:37af0b57b68b1399"] = { text = "accounted=6 business=10 giant=3 gone=11 housing=4 instead=7 my=1 plan=2 underwater=8 weaving=9" },
+  ["gossip:37b903f4f3b7dd61"] = { text = "adept=11 anything=13 beguilement=2 deception=3 demon=7 false=15 guard=5 hearts=9 incubus=1 lower=6 merely=19 mortals=8 offer=12 prey=20 swaying=10 you=4" },
   ["gossip:37c0bb88adcd758f"] = { text = "bag=5 follow=4 me=1 put=7 waiting=2 where=6 you=3" },
   ["gossip:37c1ae49f409f37f"] = { text = "alchemists=4 because=14 choice=25 come=2 cure=7 far=20 feel=22 find=8 found=28 hard=11 heard=13 help=17 i=1 illness=6 immediately=33 inside=30 long=10 me=15 needed=36 own=5 place=19 sickness=29 studying=12 suggested=18 tearing=32 their=34 welcome=21" },
   ["gossip:37c49ad5514c16fd"] = { text = "ah=7 fossil=4 maybe=10 mysterious=3 now=1 put=6 that=2 there=8 up=9 where=5" },

@@ -212,6 +212,7 @@ WFJ.Data.add("name", {
   ["7ad524ebfdec8139"] = { "ウォーン・メイル・グローブ", "うぉーん・めいる・ぐろーぶ", "Worn Mail Gloves" },
   ["7ad7bf0c9669bee6"] = { "ストールン・スクロール", "すとーるん・すくろーる", "Stolen Scroll" },
   ["7ad7da6c61709e75"] = { "ウェイリング・デス", "うぇいりんぐ・です", "Wailing Death" },
+  ["7ad8e6066a9d0edd"] = { "タラリアン", "たらりあん", "Talarian" },
   ["7ad9b63d446f761e"] = { "ロックト・キャビネット", "ろっくと・きゃびねっと", "Locked Cabinet" },
   ["7ada681876baa95e"] = { "マーシャルズ・シルク・レギンス", "まーしゃるず・しるく・れぎんす", "Marshal's Silk Leggings" },
   ["7adbc9ee108078a5"] = { "ソウル・オブ・ザ・ライフウィーバー", "そうる・おぶ・ざ・らいふうぃーばー", "Soul of the Lifeweaver" },

@@ -2347,6 +2347,7 @@ Data\Gloss\Gloss_0150.lua
 Data\Gloss\Gloss_0151.lua
 Data\Gloss\Gloss_0152.lua
 Data\Gloss\Gloss_0153.lua
+Data\Gloss\Gloss_0154.lua
 # >>>
 Core\Lookup.lua
 Core\Readings.lua

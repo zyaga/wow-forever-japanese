@@ -11,7 +11,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Added
 - With a voice pack installed, a translated line that has no voice yet says so on its window: `[音声なし / No Voice Yet]`. A setting on the Voice page, Mark lines with no voice yet, turns the message off.
-- Japanese for what Forever 1.60.1.70959 added and for what nine players sent with the English Collector: 81 NPC lines, 48 quest progress and turn-in texts, new quest titles, objectives and descriptions (with word cards), and 21 item and spell tooltips.
+- Japanese for what Forever 1.60.1.70959 added and for what players sent with the English Collector in 23 sends: 125 NPC lines, 75 quest progress and turn-in texts, new quest titles, objectives and descriptions (with word cards), and 27 item and spell tooltips.
 
 ### Changed
 - The English Collector also keeps three numbers for each quest window you open: the id, the sex and the model id of the NPC that shows it, also for quests already in Japanese. They let each line be read in that NPC's own voice. No text and nothing about your character is added, and nothing is sent unless you send it.

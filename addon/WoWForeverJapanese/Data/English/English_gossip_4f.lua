@@ -7,6 +7,7 @@ WFJ.Data.add("english", {
   ["gossip:4f1bc461163ff1f7"] = { text = "and=2 don't=5 either=4 i=3 money=1" },
   ["gossip:4f37a64ab6915f7c"] = { text = "destination=1 guidance=2 require=3" },
   ["gossip:4f3b63f79fd8f2c8"] = { text = "body=3 function=4 sir=1" },
+  ["gossip:4f3f7378ab400526"] = { text = "both=5 cause=16 corralled=9 damage=15 depicting=21 effigy=23 figures=20 gave=24 history=26 hope=17 last=18 late=1 overrun=6 recovered=19 ruins=8 sites=4 stymied=3 them=7 there=10 together=27 upstairs=29 while=12 wooden=22 work=2" },
   ["gossip:4f3fdb8dafdd90d9"] = { text = "burned=3 magic=2 unleashed=1" },
   ["gossip:4f4367f1a940a885"] = { text = "ah=1 check=8 fossil=4 gave=5 her=7 mysterious=3 remember=2" },
   ["gossip:4f4487c6bdccb942"] = { text = "curiosity=2 price=3 such=1" },

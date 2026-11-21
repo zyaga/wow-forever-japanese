@@ -37,6 +37,7 @@ WFJ.Data.add("english", {
   ["gossip:8ac5f2674f930b0a"] = { text = "bend=13 custodians=2 island=5 magic=9 master=10 our=11 place=7 this=4 ways=1 we=3" },
   ["gossip:8ac6a9d3f236ddb9"] = { text = "bandits=6 bring=14 crates=10 find=12 handle=17 here=13 intercepting=5 late=3 lying=11 other=9 payment=19 rest=15 routes=4 thank=2 thieves=7 uprising=8 work=1" },
   ["gossip:8ac6ded5b124ceb7"] = { text = "see=2 something=1 think=3" },
+  ["gossip:8acbf2ece2ac846e"] = { text = "clear=4 moment=1 take=2 think=5" },
   ["gossip:8acd9973891e3199"] = { text = "rogue=1 smell=2" },
   ["gossip:8ad4b0f8063e9c2e"] = { text = "behalf=2 continued=12 efforts=13 heroes=6 like=5 suffer=10 surely=9 thank=14 tribe=1 without=7 working=3 you=4" },
   ["gossip:8add11d98b1b84e2"] = { text = "duty=1 ensure=6 hands=14 homeland=9 our=13 plains=2 punishment=15 safety=5 tauren=8 those=4 threaten=11 travel=3" },
