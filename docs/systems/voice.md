@@ -101,12 +101,14 @@ A line with sentences prefers them over a whole file from another pack. A line w
 - A new line of a window that will not play (no file, `missing`, `stale`, `notext`; its kind switched off, `off`; or English showing, `english`) hides that window's button, so the button never replays the previous line. With the panel Off it also stops that window's line; with the panel on the line playing goes on (it may be another NPC's, kept after its window closed).
 
 ### A line with no voice yet (`Voice.silent`, `UI/Render.lua`)
-A translated line that no pack carries shows the marker `[音声なし / No Voice Yet]` (`WFJ.MARKER.novoice`) on its window's banner, beside the stale and missing markers ([ADR-103](../adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)). `Render`'s `updateBanner` asks `Voice.silent(surface, recKey, kind, id)` for each record that shows its Japanese. It answers true only when all of these hold:
+A translated line the voice entry lists as having no voice shows the marker `[音声なし / No Voice Yet]` (`WFJ.MARKER.novoice`) on its window's banner, beside the stale and missing markers, and on a line above the text where the window has no banner (Dialogue UI's windows, the book window) ([ADR-103](../adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)). `Render` asks `Voice.silent(surface, recKey, kind, id)` for each record that shows its Japanese (`noVoice`, used by `updateBanner` and by the inline path). It answers true only when all of these hold:
 
 - the surface and record are a voiced kind (`Voice.KINDS`), and a voice pack is loaded;
 - `voice.enabled`, the kind's setting and `voice.mark` are on;
 - translation is on and English is not showing;
-- the entry's list names the line's pack key, and no loaded pack carries that key.
+- the entry's list names the line's pack key.
+
+A listed line is never played: `Voice.decide` and `Voice.line` answer `missing` for it even when a loaded pack still carries a recording, because a pack built before the line's speaker was known holds that recording in another voice. The entry stops listing the line once its audio is remade.
 
 A line that ships no Japanese shows only the missing-translation marker. With no voice pack loaded, or with an older entry that has no list, the message never shows. A voice setting changing or a pack loading fires State `voice`, and `Render.refresh` redraws the banners. The message is one of the on-screen additions [Principles §3](../architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
 
