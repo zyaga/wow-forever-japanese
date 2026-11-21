@@ -448,3 +448,71 @@ def test_the_saved_runs_build_is_held_to_the_clients(tmp_path, capsys):
     args = argparse.Namespace(saved=saved, baseline=tmp_path / "none.txt", log=None)
     assert client_surface._texts(args) == 2
     assert "is of build 70938 and the client is on 70959 now" in capsys.readouterr().out
+
+
+TOOLTIPS = """
+WFJScanDB = {
+["probe"] = {
+["test"] = { ["started"] = "2026-11-21 17:00:00", ["finished"] = "2026-11-21 17:05:00", ["build"] = "70959" },
+["tooltips"] = { ["read"] = 120, ["japanese"] = 110, ["unread"] = 4, ["items"] = 9,
+  ["wrong"] = { ["408498"] = "3 numbers in the Japanese, 4 on this client" },
+  ["changed"] = { ["17"] = "2 numbers in the Japanese, 3 on this client" },
+  ["folded"] = { ["279845"] = "one Japanese paragraph over 2 lines" } },
+},
+}
+"""
+
+
+def test_the_tooltip_read_fails_on_moved_numbers_and_a_line_written_over_and_lists_what_the_game_changed():
+    tooltips = client_surface.read_tooltips(TOOLTIPS)
+    assert tooltips == {
+        "read": 120, "japanese": 110, "unread": 4, "items": 9, "refused": "",
+        "wrong": [("408498", "3 numbers in the Japanese, 4 on this client")],
+        "changed": [("17", "2 numbers in the Japanese, 3 on this client")],
+        "folded": [("279845", "one Japanese paragraph over 2 lines")],
+    }
+    # a spell left English because the game changed it is a list to draft from, never a failure
+    assert client_surface.tooltip_problems(tooltips) == [
+        "tooltip numbers in the wrong places: spell 408498 (3 numbers in the Japanese, 4 on this client)",
+        "tooltip lines written over: item 279845 (one Japanese paragraph over 2 lines)",
+    ]
+
+
+def test_a_run_that_read_no_tooltip_fails_instead_of_passing():
+    assert client_surface.read_tooltips(SAVED) is None
+    assert client_surface.tooltip_problems(None)[0].startswith("tooltips not read: this run's test addon")
+    clean = {"read": 0, "japanese": 0, "unread": 9, "items": 0, "refused": "", "wrong": [], "changed": [],
+             "folded": []}
+    assert client_surface.tooltip_problems(clean) == ["tooltips not read: no spell tooltip could be read"]
+    assert client_surface.tooltip_problems({**clean, "refused": "items: boom"}) == ["tooltips not read: items: boom"]
+    assert client_surface.tooltip_problems({**clean, "read": 5}) == []
+
+
+def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_changed(tmp_path, capsys):
+    saved = tmp_path / "WFJScan.lua"
+    saved.write_text(TOOLTIPS, encoding="utf-8")
+    args = argparse.Namespace(saved=saved, baseline=tmp_path / "none.txt", log=None)
+    assert client_surface._texts(args) == 1
+    out = capsys.readouterr().out
+    assert "tooltips: 120 spells read (110 in Japanese, 4 the client had not loaded), 9 items; 1 spells left" in out
+    assert "read  changed spell\t17\t2 numbers in the Japanese, 3 on this client" in out
+    assert "ERROR tooltip numbers in the wrong places: spell 408498" in out
+    fine = TOOLTIPS.replace('["408498"] = "3 numbers in the Japanese, 4 on this client"', "").replace(
+        '["279845"] = "one Japanese paragraph over 2 lines"', "")
+    saved.write_text(fine, encoding="utf-8")
+    assert client_surface._texts(args) == 0
+
+
+def test_the_test_addon_carries_each_filled_spells_count_and_reads_tooltips_after_the_closed_windows(root):
+    counts = client_surface.spell_value_counts(root / "data")
+    assert len(counts) > 10000 and all(n >= 0 for n in counts.values())
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"],
+                                   values={5: 2, 3: 1})
+    assert "local VALUES = {\n  [3] = 1,\n  [5] = 2,\n}" in lua
+    # the count is read the way the addon reads a line's values, and a fight is waited out first
+    assert 'if not (last and text:sub(last, s - 1) == " to ") then n = n + 1 end' in lua
+    assert lua.index("WFJScanClosedRead(function()") < lua.index("outOfCombat(function() WFJScanTooltipRead(")
+    assert lua.index("WFJScanTooltipRead(function()") < lua.index("WFJScanCharacterRead(function()\n")
+    # nothing is clicked or used: tooltips are only shown
+    body = lua[lua.index("local function readItems"):lua.index("local function WFJScanTooltipRead")]
+    assert "UseContainerItem" not in body and "PickupContainerItem" not in body and ":Click(" not in body

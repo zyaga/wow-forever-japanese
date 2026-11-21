@@ -46,7 +46,7 @@ import hashlib
 import json
 import re
 import sys
-from collections.abc import Iterable
+from collections.abc import Iterable, Mapping
 from pathlib import Path
 from typing import Any
 
@@ -574,6 +574,11 @@ local ENGLISH = {
 -- The dictionary's interface strings by name. The addon reads each one's English from the client to match a line
 -- on screen, so a string the client does not hand to addon code can be matched by nothing; the test lists them.
 local KEYS = {
+%s
+}
+-- Each spell whose Japanese is filled from the live tooltip, with how many numbers the English it is numbered to
+-- prints: the tooltip read checks the client's own line against it.
+local VALUES = {
 %s
 }
 local PER_TICK = 400
@@ -1337,6 +1342,148 @@ local function WFJScanClosedRead(done)
   end)
 end
 
+-- The tooltip read. No sweep above opens a tooltip, so a tooltip whose numbers sat in the wrong places, or whose
+-- flavour line was written over its use line, was seen by no run. This shows the tooltip of every spell in
+-- `VALUES` and of every item the character wears or carries, the way the client shows them, and reads each
+-- against the client's own tooltip data (which the addon never changes), into `probe.tooltips`:
+--   wrong    a spell shown in Japanese although its line holds another count of numbers than the Japanese is
+--            numbered to: every later number is in the wrong place. A failure.
+--   changed  a spell left English because of that: the game changed its tooltip and the Japanese is to follow
+--   folded   an item whose one Japanese paragraph stands for several of its lines, the others blanked
+-- A spell whose text the client has not loaded yet is not read, and counted.
+local TOOLTIP_MS = 8 -- per frame
+local TOOLTIP_SAY = 3000 -- spells between two progress lines
+local tooltipReader = CreateFrame("Frame")
+
+-- how many values the addon reads off a line (Core/Align.values): icons out, digit runs with their points and
+-- commas, none glued to a Latin letter, "A to B" one value
+local function valueCount(text)
+  text = text:gsub("||", "\\1"):gsub("|T[^|]*|t", " ")
+  local n, last = 0, nil
+  for s, tok, e in text:gmatch("()([%%d%%.,]+)()") do
+    if tok:find("%%d") and not text:sub(s - 1, s - 1):find("%%a") and not text:sub(e, e):find("%%a") then
+      if not (last and text:sub(last, s - 1) == " to ") then n = n + 1 end
+      last = e
+    end
+  end
+  return n
+end
+
+local function shownRow(i)
+  local region = _G["GameTooltipTextLeft" .. i]
+  local text = region and region:GetText()
+  if type(text) ~= "string" or (issecretvalue and issecretvalue(text)) then return nil end
+  return text
+end
+
+local function readable(text)
+  return type(text) == "string" and text ~= "" and not (issecretvalue and issecretvalue(text))
+end
+
+local function readSpell(record, id, describe)
+  local english = describe(id)
+  if not readable(english) then
+    record.unread = record.unread + 1
+    return
+  end
+  local data = C_TooltipInfo.GetSpellByID(id)
+  local row
+  for i, line in ipairs(type(data) == "table" and type(data.lines) == "table" and data.lines or {}) do
+    if line.leftText == english then row = i end
+  end
+  if not row then
+    record.unread = record.unread + 1
+    return
+  end
+  GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+  GameTooltip:SetSpellByID(id)
+  record.read = record.read + 1
+  local live, shown = valueCount(english), shownRow(row)
+  local said = VALUES[id] .. " numbers in the Japanese, " .. live .. " on this client"
+  if hasJapanese(shown) then
+    record.japanese = record.japanese + 1
+    if live ~= VALUES[id] then record.wrong[tostring(id)] = said end
+  elseif live ~= VALUES[id] then
+    record.changed[tostring(id)] = said
+  end
+end
+
+-- one item's tooltip, already shown, against its data
+local function readItem(record, id, data)
+  if type(id) ~= "number" or type(data) ~= "table" or type(data.lines) ~= "table" then return end
+  record.items = record.items + 1
+  local lines = data.lines
+  for i = 2, #lines do
+    local shown, english = shownRow(i), lines[i].leftText
+    if hasJapanese(shown) and readable(english) and shown ~= english and not shown:find("\\n") then
+      local folded, j = 0, i + 1
+      while lines[j] and (shownRow(j) == " " or lines[j].leftText == "") do
+        if readable(lines[j].leftText) then folded = folded + 1 end
+        j = j + 1
+      end
+      if folded > 0 then
+        record.folded[tostring(id)] = "one Japanese paragraph over " .. (folded + 1) .. " lines"
+      end
+    end
+  end
+end
+
+local function readItems(record)
+  for slot = 1, 19 do
+    local id = GetInventoryItemID("player", slot)
+    if id then
+      GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+      GameTooltip:SetInventoryItem("player", slot)
+      readItem(record, id, C_TooltipInfo.GetInventoryItem("player", slot))
+    end
+  end
+  for bag = 0, 4 do
+    for slot = 1, C_Container.GetContainerNumSlots(bag) or 0 do
+      local id = C_Container.GetContainerItemID(bag, slot)
+      if id then
+        GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+        GameTooltip:SetBagItem(bag, slot)
+        readItem(record, id, C_TooltipInfo.GetBagItem(bag, slot))
+      end
+    end
+  end
+end
+
+local function WFJScanTooltipRead(done)
+  local db = probeDb()
+  local record = { read = 0, unread = 0, japanese = 0, items = 0, wrong = {}, changed = {}, folded = {} }
+  db.tooltips = record
+  local describe = type(C_Spell) == "table" and C_Spell.GetSpellDescription or GetSpellDescription
+  local ids = {}
+  for id in pairs(VALUES) do ids[#ids + 1] = id end
+  table.sort(ids)
+  if type(describe) ~= "function" or type(C_TooltipInfo) ~= "table" then
+    record.refused = "this client has no spell description or tooltip data to read"
+    return done()
+  end
+  local ok, err = pcall(readItems, record)
+  if not ok then record.refused = "items: " .. tostring(err) end
+  local at, said = 0, 0
+  print("WFJ test: reading " .. #ids .. " spell tooltips")
+  tooltipReader:SetScript("OnUpdate", function()
+    local t0 = debugprofilestop()
+    while at < #ids and debugprofilestop() - t0 < TOOLTIP_MS do
+      at = at + 1
+      local fine, why = pcall(readSpell, record, ids[at], describe)
+      if not fine then record.refused = "spell " .. ids[at] .. ": " .. tostring(why) end
+    end
+    if at - said >= TOOLTIP_SAY then
+      said = at
+      print("WFJ test: spell tooltips " .. at .. "/" .. #ids)
+    end
+    if at < #ids then return end
+    tooltipReader:SetScript("OnUpdate", nil)
+    GameTooltip:Hide()
+    print("WFJ test: spell tooltips done")
+    done()
+  end)
+end
+
 -- The character window, opened by the player (see above): read every half second while it is open, so each page
 -- the player shows is read; it ends when the player closes it. Not opened in time, the run says so. What was read
 -- is kept from the first read on, and a reload while the window is open ends the run as closing it does: the
@@ -1392,8 +1539,8 @@ local function WFJScanCharacterRead(done)
   end)
 end
 
--- The whole window test (`/wfjtest`): the load walk, the live sweep, the closed-window read, the character window
--- (opened by the player), then one done line. `probe.test` holds when it ran and on which build, so a result read
+-- The whole window test (`/wfjtest`): the load walk, the live sweep, the closed-window read, the tooltip read, the
+-- character window (opened by the player), then one done line. `probe.test` holds when it ran and on which build, so a result read
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
@@ -1488,16 +1635,20 @@ SlashCmdList.WFJTEST = function(how)
       db.opened = nil -- an earlier run's bare-window list is not this run's
       db.test.part = "closed"
       WFJScanClosedRead(function()
-        db.test.part = "character"
-        WFJScanCharacterRead(function()
-          db.test.part = "done"
-          seterrorhandler(shown)
-          watcher:UnregisterAllEvents()
-          readGrabbed()
-          testRunning = false
-          db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
-          print("WFJ test done: /reload to save, then the result can be read")
-        end)
+        db.test.part = "tooltips"
+        -- in a fight the client hides a tooltip's rows from addons: nothing could be read
+        outOfCombat(function() WFJScanTooltipRead(function()
+          db.test.part = "character"
+          WFJScanCharacterRead(function()
+            db.test.part = "done"
+            seterrorhandler(shown)
+            watcher:UnregisterAllEvents()
+            readGrabbed()
+            testRunning = false
+            db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
+            print("WFJ test done: /reload to save, then the result can be read")
+          end)
+        end) end)
       end)
     end) end)
   end)
@@ -1549,8 +1700,19 @@ def translated_keys(data: Path) -> list[str]:
     return out
 
 
+def spell_value_counts(data: Path) -> dict[int, int]:
+    """Each shipped spell description that is filled from the live tooltip, with how many numbers its English
+    prints (`generate.value_counts`): what the window test's tooltip read holds the client's line to. A line
+    that waits for a redraft (it ships a count no line has) is left out: it is English by design."""
+    from wfj.cmd import generate
+    from wfj.io.jsonl_store import Store
+
+    counts = generate.value_counts("spell", Store(data).load("spell"), Store(data, english=True))
+    return {int(i): n for (i, field), n in counts.items() if field == "description" and n >= 0}
+
+
 def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[str] = (),
-              at_login: bool = True, keys: Iterable[str] = ()) -> str:
+              at_login: bool = True, keys: Iterable[str] = (), values: Mapping[int, int] | None = None) -> str:
     """The probe as one Lua file for the scan dev addon: every manifest name with its surface, checked at
     login, saved under `WFJScanDB.probe` for `report`. With `walk` it also loads every load-on-demand addon a
     surface waits for and records what the client restricts (`read_walk` reads both back); with `at_login`
@@ -1569,7 +1731,8 @@ def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[st
         lines = sorted({t for t in english if "%" not in t and re.search(r"[A-Za-z]{2}", t)})
         if lines:
             lua += TEXT_LUA % ("\n".join(f"  [{_lua_string(t)}] = true," for t in lines),
-                               "\n".join(f'  "{k}",' for k in sorted(set(keys))))
+                               "\n".join(f'  "{k}",' for k in sorted(set(keys))),
+                               "\n".join(f"  [{i}] = {n}," for i, n in sorted((values or {}).items())))
     return lua
 
 
@@ -1919,6 +2082,42 @@ def read_missing_strings(text: str) -> tuple[int, list[str]]:
     return int(strings.get("asked") or 0), names
 
 
+def read_tooltips(text: str) -> dict[str, Any] | None:
+    """The window test's tooltip read out of a saved-variables file, or None when the run had none: how many
+    spell tooltips it read (`read`), how many showed Japanese (`japanese`), how many the client had not loaded
+    (`unread`), how many items (`items`), why it could not read (`refused`), and three lists of (id, what was
+    seen): `wrong` (a spell in Japanese whose line holds another count of numbers than the Japanese is numbered
+    to), `changed` (a spell left English for that reason: the game changed its tooltip) and `folded` (an item
+    whose one Japanese paragraph stands for several lines)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("tooltips") if probe is not None else None
+    if record is None:
+        return None
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("read", "japanese", "unread", "items")}
+    out["refused"] = str(record.get("refused") or "")
+    for kind in ("wrong", "changed", "folded"):
+        table = record.get(kind)
+        out[kind] = sorted((str(k), str(v)) for k, v in (table.named() if table is not None else {}).items())
+    return out
+
+
+def tooltip_problems(tooltips: dict[str, Any] | None) -> list[str]:
+    """What the tooltip read found wrong, one line each. A run whose test addon had no tooltip read says so: its
+    result proves nothing about tooltips."""
+    if tooltips is None:
+        return ["tooltips not read: this run's test addon has no tooltip read (make scan-install, then run it again)"]
+    out = [f"tooltip numbers in the wrong places: spell {i} ({said})" for i, said in tooltips["wrong"]]
+    out += [f"tooltip lines written over: item {i} ({said})" for i, said in tooltips["folded"]]
+    if tooltips["refused"]:
+        out.append(f"tooltips not read: {tooltips['refused']}")
+    elif not tooltips["read"]:
+        out.append("tooltips not read: no spell tooltip could be read")
+    return out
+
+
 def read_test_problems(text: str, log: str = "") -> list[str]:
     """What went wrong while the window test ran, one line each: the Lua errors and the actions the client refused
     an addon, as the scan addon counted them, and, from the shipped addon's own saved file (`log`), its recorded
@@ -2067,6 +2266,14 @@ def _texts(args: argparse.Namespace) -> int:
                                   log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
     # the open sweep shows a window without the client's own opening code, so a window that needs data it was
     # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
+    tooltips = read_tooltips(args.saved.read_text(encoding="utf-8", errors="replace"))
+    if tooltips is not None:
+        print(f"tooltips: {tooltips['read']} spells read ({tooltips['japanese']} in Japanese, "
+              f"{tooltips['unread']} the client had not loaded), {tooltips['items']} items; "
+              f"{len(tooltips['changed'])} spells left English because the game changed them")
+        for id_, said in tooltips["changed"]:
+            print(f"read  changed spell\t{id_}\t{said}")
+    problems += tooltip_problems(tooltips)
     noted = [row for row in problems if ": [open] " in row]
     failing = [row for row in problems if row not in noted]
     print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare)")
@@ -2123,8 +2330,9 @@ def main(argv: list[str] | None = None) -> int:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         english = translated_english(args.window_test) if args.window_test else ()
         keys = translated_keys(args.window_test) if args.window_test else ()
+        values = spell_value_counts(args.window_test) if args.window_test else None
         text = probe_lua(manifest, walk=args.walk or bool(args.window_test), english=english,
-                         at_login=args.walk, keys=keys)
+                         at_login=args.walk, keys=keys, values=values)
         args.out.write_text(text, encoding="utf-8")
         print(f"probe: {len(probe_names(manifest))} names → {args.out}")
         return 0
