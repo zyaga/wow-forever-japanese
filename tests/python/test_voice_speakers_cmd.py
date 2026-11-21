@@ -324,3 +324,21 @@ def test_who_a_players_quest_window_showed_wins_over_every_other_source(world, m
     assert by["457-completion"] == (1992, "vmangos@sha")  # a line the Collector did not see is unchanged
     assert "999-description" not in by
     assert "459-description: nobody named, not voiced" not in report["quest"]
+
+
+def test_another_wording_of_a_quest_offer_follows_the_offers_own_speaker(world, monkeypatch):
+    """A quest's offer may have another wording for a class or race, keyed by its English. When the cache names
+    no giver for it, it is said by whoever says the quest's own offer, after every source: never the narrator
+    because the database lacks the quest."""
+    g = voice.gossip_key
+    key = g(voice.gossip_id(vf.COND))
+    _fake_cache(monkeypatch, (459, ((1, 0, vf.COND),)))  # quest 459: no giver in the cache, none in the database
+    rows, _ = cmd.build_tables(world.data, world.db, "sha", "all", TODAY, Path("cache.wdb"))
+    assert key not in _by_key(rows)  # nobody names the quest's giver: not voiced
+    rows, _ = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, Path("cache.wdb"), dondata_files=_dondata(world.tmp / "dd"))
+    assert _by_key(rows)[key] == (6906, "wdb@70245")  # DonData names the offer's NPC: the other wording is theirs
+    att = ATT.replace('[459]={1,1.0,1.0,"A",1,nil,{6906},nil', '[459]={1,1.0,1.0,"A",1,nil,nil,"i"')
+    rows, _ = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, Path("cache.wdb"), dondata_files=_dondata(world.tmp / "dd2", att))
+    assert _by_key(rows)[key] == ("narrator", "wdb@70245")  # an item starts it: the narrator's, as the offer is

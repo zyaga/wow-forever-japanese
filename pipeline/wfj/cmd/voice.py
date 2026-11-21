@@ -179,7 +179,8 @@ def build_tables(  # noqa: PLR0913 - the data, the database, and one optional ou
     ]
     if wdb_path is not None:
         have = {r["key"] for r in speakers}
-        conditional = _conditional_speakers(wdb_path, quests, starters, gossip_shipped, have)
+        conditional = _conditional_speakers(
+            wdb_path, quests, starters, objects, q_speakers, gossip_shipped, have)
         speakers += [row(k, s, f"wdb@{b}") for k, (s, b) in sorted(conditional.items())]
         report["conditional"] = [f"{k}: {s}" for k, (s, _) in sorted(conditional.items())]
     if whole:  # each plain-text book page: its signer if one cast creature has that name, else the narrator
@@ -251,11 +252,14 @@ def _follow_collector(
             others[key] = [c for c in others.get(key, []) if c != who]
 
 
-def _conditional_speakers(
-    path: Path, quests: set[int], starters: dict[int, list[int]], shipped_keys: set[str], have: set[str]
+def _conditional_speakers(  # noqa: PLR0913 - the cache, the scope, and what is known of each quest's offer
+    path: Path, quests: set[int], starters: dict[int, list[int]], objects: set[int],
+    offers: dict[str, int | str], shipped_keys: set[str], have: set[str],
 ) -> dict[str, tuple[int | str, int]]:
     """{pack key: (speaker, cache build)} for the scoped quests' conditional descriptions that ship: the giver
-    the cache names, else the quest's lowest starter, else the narrator."""
+    the cache names, else whoever says the quest's own offer after every source (`offers`, by quest key), else
+    the quest's lowest starter, else the narrator when an object or item starts the quest. Another wording of
+    an offer nobody names has no entry: it is not voiced."""
     cache = wdb.read_quests(path)
     out: dict[str, tuple[int | str, int]] = {}
     for q in cache.quests:
@@ -266,8 +270,11 @@ def _conditional_speakers(
             key = voice.gossip_key(k)
             if not en or k not in shipped_keys or key in have or key in out:
                 continue
-            who = giver or min(starters.get(q.id, []), default=None)
-            out[key] = (who if who else voice.NARRATOR, cache.build)
+            who = (giver or offers.get(voice.quest_key(q.id, "description"))
+                   or min(starters.get(q.id, []), default=None)
+                   or (voice.NARRATOR if q.id in objects else None))
+            if who:
+                out[key] = (who, cache.build)
     return out
 
 
