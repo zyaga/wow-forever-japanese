@@ -70,9 +70,8 @@ def test_the_whole_game_reads_quests_gossip_conditional_text_and_books(world, mo
 def test_a_scope_reads_only_its_quests_and_creatures_and_lists_english_with_no_japanese(world):
     rows, report = cmd.build_tables(world.data, world.db, "sha", "shadowglen", TODAY)
     assert sorted(_by_key(rows)) == ["456-completion", "456-description", "457-completion", "457-description",
-                                     "459-description", voice.gossip_key(voice.gossip_id(vf.HELLO))]
-    assert _by_key(rows)["459-description"] == ("narrator", "vmangos@sha")
-    assert report["quest"] == ["459-description: no creature in the database, narrator"]
+                                     voice.gossip_key(voice.gossip_id(vf.HELLO))]
+    assert report["quest"] == ["459-description: nobody named, not voiced"]  # no row: never the narrator
     assert report["missing"] == ["458-description"]  # English in scope, no Japanese shipped
     assert "conditional" not in report
 
@@ -137,9 +136,9 @@ def test_the_speakers_command_writes_the_table_and_prints_its_report(world, caps
     dates = {r["key"]: r["provenance"]["imported"] for r in rows}
     assert dates["456-description"] == "2000-01-01" and dates["456-completion"] == today
     out = capsys.readouterr().out.splitlines()
-    assert out[:3] == ["voice speakers: 6 lines, 3 creatures,", "voice speakers: 1 narrator lines",
+    assert out[:3] == ["voice speakers: 5 lines, 3 creatures,", "voice speakers: 0 narrator lines",
                        "voice speakers: 0 lines with several speakers"]
-    assert "voice speakers: quest: 459-description: no creature in the database, narrator" in out
+    assert "voice speakers: quest: 459-description: nobody named, not voiced" in out
     assert "voice speakers: missing: 458-description" in out
 
 
@@ -239,3 +238,64 @@ def test_spoken_names_one_creature_per_quest_line_or_none(tmp_path):
         {"source": "gossip", "questId": None, "npcId": 40, "npcType": "creature"},
     )
     assert spoken.read_quest_speakers(corpus) == {(1, "description"): 10, (1, "progress"): 11, (1, "completion"): 12}
+
+
+# ---- a quest line nobody names ----------------------------------------------------------------------------
+
+ATT = """ns.ATT_QUESTS = {
+[457]={1,1.0,1.0,"A",1,nil,{5555},nil,nil,nil,nil,nil,"Named by the database too"},
+[459]={1,1.0,1.0,"A",1,nil,{6906},nil,nil,nil,nil,nil,"Only named here"},
+}
+"""
+EXTRA = """ns.QUEST_ENDS = {
+[459]={1,1.0,1.0,6906},
+}
+"""
+
+
+def _dondata(folder: Path, att: str = ATT, extra: str = EXTRA) -> tuple[Path, Path, str]:
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "ATT_Quests.lua").write_text(att, encoding="utf-8")
+    (folder / "Extra_Quests.lua").write_text(extra, encoding="utf-8")
+    return folder / "ATT_Quests.lua", folder / "Extra_Quests.lua", "f7693f23ae6646551cb1eb062224a1304151a0aa"
+
+
+def test_a_quest_line_nobody_names_has_no_row_and_is_reported(world, monkeypatch):
+    _fake_cache(monkeypatch)
+    rows, report = cmd.build_tables(world.data, world.db, "sha", "all", TODAY)
+    assert "459-description" not in _by_key(rows)
+    assert "459-description: nobody named, not voiced" in report["quest"]
+
+
+def test_dondata_names_a_line_only_when_no_other_source_does(world, monkeypatch):
+    _fake_cache(monkeypatch)
+    rows, report = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, dondata_files=_dondata(world.tmp / "dd"))
+    by = _by_key(rows)
+    assert by["459-description"] == (6906, "dondata@f7693f2")
+    assert by["457-description"] == (2079, "vmangos@sha")  # the database names its giver: DonData's 5555 is unused
+    assert "459-description: nobody named, not voiced" not in report["quest"]
+
+
+def test_a_capture_or_spoken_names_a_line_ahead_of_dondata(world, monkeypatch):
+    _fake_cache(monkeypatch)
+    cap = _captures(world.tmp / "fvo", {"event": "accept", "questID": 459, "npc": 1992})
+    rows, _ = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, None, (cap, "abc"), None, _dondata(world.tmp / "dd"))
+    assert _by_key(rows)["459-description"] == (1992, "forever-vo@abc")
+    corpus = _spoken(
+        world.tmp / "spoken",
+        {"lineId": "q:459:accept", "source": "accept", "questId": 459, "npcId": 2079, "npcType": "creature"},
+    )
+    rows, _ = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, None, None, (corpus, "0123456789abcdef"),
+        _dondata(world.tmp / "dd2"))
+    assert _by_key(rows)["459-description"] == (2079, "spoken@0123456")  # a line with no row before Spoken
+
+
+def test_a_quest_dondata_says_an_item_starts_is_the_narrators(world, monkeypatch):
+    _fake_cache(monkeypatch)
+    att = ATT.replace('[459]={1,1.0,1.0,"A",1,nil,{6906},nil', '[459]={1,1.0,1.0,"A",1,nil,nil,"i"')
+    rows, _ = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, dondata_files=_dondata(world.tmp / "dd", att))
+    assert _by_key(rows)["459-description"] == ("narrator", "dondata@f7693f2")

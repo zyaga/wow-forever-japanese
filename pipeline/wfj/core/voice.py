@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 import zlib
-from collections.abc import Iterable, Mapping, Sequence
+from collections.abc import Collection, Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from typing import Any
 
@@ -40,6 +40,7 @@ SCOPES: dict[str, dict[str, Any]] = {
 # description is the offer the quest giver reads, progress and completion the turn-in NPC's lines
 FIELDS = ("description", "progress", "completion")
 NARRATOR = "narrator"
+NOBODY = "nobody named, not voiced"  # the report line of a quest line no source names a speaker for
 PLAYER_WORD = "冒険者"  # the pack is made before anyone plays: it cannot know the name, class or race
 
 _TOKEN = re.compile(r"\{(name|class|race)\}")
@@ -156,11 +157,15 @@ def quest_speakers(
     objects: set[int],
     enders: dict[int, list[int]],
     others: dict[str, list[int]] | None = None,
+    object_ends: Collection[int] = (),
 ) -> tuple[dict[str, int | str], list[str]]:
-    """{pack key: creature id or "narrator"} for quest keys, and the conflicts reported. The offer is read by
-    the creature that starts the quest; an object or item start (no creature) is the narrator. Progress and
-    turn-in are read by the creature that ends it. Two creatures for one line: the lowest id is its main
-    speaker, reported; the rest go into `others` when it is given (each may have a voice of its own)."""
+    """{pack key: creature id or "narrator"} for quest keys, and what is reported. The offer is read by the
+    creature that starts the quest, progress and turn-in by the creature that ends it. The narrator reads only
+    what no creature says: the offer of a quest in `objects` (an object or item starts it), the progress and
+    turn-in of a quest in `object_ends`. A line with no creature and no such source has no entry, so it is
+    not voiced: an NPC nobody named must never speak in the narrator's voice. Two creatures for one line: the
+    lowest id is its main speaker, reported; the rest go into `others` when it is given (each may have a
+    voice of its own)."""
     out: dict[str, int | str] = {}
     problems: list[str] = []
     for key in sorted(keys):
@@ -168,9 +173,10 @@ def quest_speakers(
         quest = int(quest_s)
         who = starters.get(quest, []) if field == "description" else enders.get(quest, [])
         if not who:
-            out[key] = NARRATOR
-            if field != "description" or quest not in objects:
-                problems.append(f"{key}: no creature in the database, narrator")
+            if quest in (objects if field == "description" else object_ends):
+                out[key] = NARRATOR
+            else:
+                problems.append(f"{key}: {NOBODY}")
             continue
         if len(who) > 1:
             problems.append(f"{key}: creatures {who}, took {min(who)}")

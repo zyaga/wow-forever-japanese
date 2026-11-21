@@ -14,6 +14,7 @@ from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
 
+ATT_FILE, EXTRA_FILE = "ATT_Quests.lua", "Extra_Quests.lua"  # as saved by `make voice-dondata-fetch`
 GIVERS_FIELD = 6  # ATT_QUESTS / EXTRA_QUESTS: map, x, y, faction, level, prereqs, givers, flags, ...
 FLAGS_FIELD = 7
 ENDER_FIELD = 3  # QUEST_ENDS: uiMapID, x, y, npcID; a turn-in at an object has no fourth field

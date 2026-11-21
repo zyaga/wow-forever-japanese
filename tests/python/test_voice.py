@@ -102,9 +102,16 @@ def test_quest_speakers_follow_start_and_end():
     got, problems = voice.quest_speakers(keys, {1: [100], 2: [101, 102]}, {3}, {1: [103]})
     assert got == {
         "1-description": 100, "1-progress": 103, "1-completion": 103,
-        "2-description": 101, "3-description": "narrator", "4-description": "narrator",
+        "2-description": 101, "3-description": "narrator",
     }
-    assert problems == ["2-description: creatures [101, 102], took 101", "4-description: no creature in the database, narrator"]
+    assert problems == ["2-description: creatures [101, 102], took 101", "4-description: nobody named, not voiced"]
+
+
+def test_the_narrator_reads_only_what_an_object_or_item_starts_or_ends():
+    keys = ["5-description", "5-completion", "5-progress", "6-completion", "7-description"]
+    got, problems = voice.quest_speakers(keys, {}, {7}, {}, object_ends={5})
+    assert got == {"5-completion": "narrator", "5-progress": "narrator", "7-description": "narrator"}
+    assert problems == ["5-description: nobody named, not voiced", "6-completion: nobody named, not voiced"]
 
 
 def test_gossip_speakers_prefer_the_collector_and_report_missing():

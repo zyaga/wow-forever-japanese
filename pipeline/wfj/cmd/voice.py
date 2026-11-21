@@ -17,13 +17,13 @@ import argparse
 import datetime
 import json
 import sys
-from collections.abc import Sequence
+from collections.abc import Iterable, Sequence
 from pathlib import Path
 from typing import Any
 
 from wfj.core import voice
 from wfj.emit.lua_writer import shipped
-from wfj.io import forever_vo, spoken, vmangos, wdb
+from wfj.io import dondata, forever_vo, spoken, vmangos, wdb
 from wfj.io.jsonl_store import Store, dumps
 from wfj.paths import data_root
 
@@ -69,33 +69,50 @@ def _keep_date(rows: list[dict[str, Any]], old: list[dict[str, Any]], id_field: 
     return out
 
 
-def _follow_spoken(
-    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str], corpus: Path,
-    commit: str,
+def _follow_captures(
+    speakers: dict[str, int | str], sources: dict[str, str], keys: Iterable[str], folder: Path, commit: str
 ) -> None:
-    """Gives each quest line the creature Spoken names for it, where that is another speaker than the one
-    it has, and records Spoken as the line's source."""
+    """Gives each quest line of `keys` that no creature speaks yet the speaker the players' captures saw in
+    its window: a creature, or the narrator for an object."""
+    seen = forever_vo.read_quest_speakers(folder)
+    for key in keys:
+        q, f = key.split("-", 1)
+        who = voice.captured_speaker(seen.get((int(q), f), []))
+        if speakers.get(key, voice.NARRATOR) == voice.NARRATOR and who is not None:
+            speakers[key] = who
+            sources[key] = f"forever-vo@{commit}"
+
+
+def _follow_spoken(
+    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str],
+    keys: Iterable[str], corpus: Path, commit: str,
+) -> None:
+    """Gives each quest line of `keys` the creature Spoken names for it, where that is another speaker than
+    the one it has (or it has none), and records Spoken as the line's source."""
     named = spoken.read_quest_speakers(corpus)
-    for key, sp in speakers.items():
+    for key in keys:
         q, f = key.split("-", 1)
         who = named.get((int(q), f))
-        if who is not None and sp != who:
+        if who is not None and speakers.get(key) != who:
             speakers[key] = who
             sources[key] = spoken.source(commit)
             if who in others.get(key, ()):
                 others[key] = [c for c in others[key] if c != who]
 
 
-def build_tables(
+def build_tables(  # noqa: PLR0913 - the data, the database, and one optional outside source per parameter
     root: Path, db: Path, commit: str, scope: str, today: str, wdb_path: Path | None = None,
     captures: tuple[Path, str] | None = None, spoken_corpus: tuple[Path, str] | None = None,
+    dondata_files: tuple[Path, Path, str] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, list[str]]]:
     """(speakers rows, report) for the scope. A speakers row names the line's main speaker and,
     when several creatures say it, the `others` (each may be cast to a voice of its own). With `wdb_path`
     (the pinned quest cache) a quest's conditional descriptions, keyed by their English (ADR-054), are read
     by the giver the cache names, else by the quest's starter. With `spoken_corpus` (Spoken's line corpus and
     its commit) a quest line Spoken gives to one creature is spoken by that creature, whatever the other
-    sources say: the two voices of a line a player hears with both addons are then the same NPC's."""
+    sources say: the two voices of a line a player hears with both addons are then the same NPC's. With
+    `dondata_files` (DonData's two quest files and their commit) a quest line no other source names is spoken
+    by the creature those files name. A quest line nobody names has no row: it is not voiced."""
     cfg = voice.SCOPES[scope]
     whole = cfg["quests"] is None
     src = f"vmangos@{commit}"
@@ -103,26 +120,24 @@ def build_tables(
     quest_lines = store.load("quest")
     if whole:
         starters, objects, enders = vmangos.read_all_quest_speakers(db)
+        object_ends = vmangos.read_object_ends(db)
         quest_keys = voice.shipped_quest(quest_lines, None)
         quests = {int(k.split("-", 1)[0]) for k in quest_keys}
     else:
         quests = set(cfg["quests"])
         starters, objects, enders = vmangos.read_quest_speakers(db, quests)
+        object_ends = vmangos.read_object_ends(db, quests)
         quest_keys = voice.shipped_quest(quest_lines, quests)
     others: dict[str, list[int]] = {}
-    q_speakers, q_problems = voice.quest_speakers(quest_keys, starters, objects, enders, others)
+    q_speakers, q_problems = voice.quest_speakers(quest_keys, starters, objects, enders, others, object_ends)
     # a quest the open database lacks (one Forever added): who the players' captures saw in the window
     captured_src: dict[str, str] = {}
     if captures is not None:
-        seen = forever_vo.read_quest_speakers(captures[0])
-        for key, sp in q_speakers.items():
-            q, f = key.split("-", 1)
-            who = voice.captured_speaker(seen.get((int(q), f), []))
-            if sp == voice.NARRATOR and who is not None:
-                q_speakers[key] = who
-                captured_src[key] = f"forever-vo@{captures[1]}"
+        _follow_captures(q_speakers, captured_src, sorted(quest_keys), *captures)
     if spoken_corpus is not None:
-        _follow_spoken(q_speakers, others, captured_src, *spoken_corpus)
+        _follow_spoken(q_speakers, others, captured_src, sorted(quest_keys), *spoken_corpus)
+    if dondata_files is not None:
+        _follow_dondata(q_speakers, others, captured_src, sorted(quest_keys), *dondata_files)
     q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
     creatures = {c for q in quests for c in (*starters.get(q, ()), *enders.get(q, ()))}
     creatures |= {s for s in q_speakers.values() if isinstance(s, int)}
@@ -189,6 +204,31 @@ def book_readers(root: Path, db: Path, have: set[str]) -> dict[str, int | str]:
     return voice.book_speakers(pages, names, cast)
 
 
+def _follow_dondata(
+    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str],
+    keys: Iterable[str], att: Path, extra: Path, commit: str,
+) -> None:
+    """Names the quest lines of `keys` that no other source named, from DonData's quest files: the creature
+    that gives the quest (the offer) or takes it (progress, turn-in), or the narrator where the files say an
+    item starts it or it is turned in at an object."""
+    found = dondata.read(att, extra)
+    for key in keys:
+        if key in speakers:
+            continue
+        q, f = key.split("-", 1)
+        offer = f == "description"
+        who = (found.givers if offer else found.enders).get(int(q), ())
+        if who:
+            speakers[key] = min(who)
+            if len(who) > 1:
+                others[key] = sorted(set(who) - {min(who)})
+        elif int(q) in (found.item_starts if offer else found.object_ends):
+            speakers[key] = voice.NARRATOR
+        else:
+            continue
+        sources[key] = dondata.source(commit)
+
+
 def _conditional_speakers(
     path: Path, quests: set[int], starters: dict[int, list[int]], shipped_keys: set[str], have: set[str]
 ) -> dict[str, tuple[int | str, int]]:
@@ -222,6 +262,8 @@ def run_speakers(a: argparse.Namespace) -> int:
         root, Path(a.vmangos), a.commit, a.scope, today, Path(a.wdb) if a.wdb else None,
         (Path(a.forever_vo), a.forever_vo_commit) if a.forever_vo else None,
         (Path(a.spoken), a.spoken_commit) if a.spoken else None,
+        (Path(a.dondata) / dondata.ATT_FILE, Path(a.dondata) / dondata.EXTRA_FILE, a.dondata_commit)
+        if a.dondata else None,
     )
     d = voice_dir(root)
     speakers = _keep_date(speakers, read_rows(d / "speakers.jsonl"), "key")
@@ -287,6 +329,9 @@ def run(argv: Sequence[str]) -> int:
     sp.add_argument("--forever-vo-commit", default="")
     sp.add_argument("--spoken", help="Spoken's corpus.json.gz: the creature it gives a quest line speaks it")
     sp.add_argument("--spoken-commit", default="")
+    sp.add_argument("--dondata", help="the folder of DonData's two quest files: who gives and takes a quest "
+                    "no other source names")
+    sp.add_argument("--dondata-commit", default="")
     a = p.parse_args(list(argv))
     try:
         return run_speakers(a)
