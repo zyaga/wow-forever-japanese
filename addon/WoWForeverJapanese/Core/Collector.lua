@@ -46,8 +46,13 @@ Collector.KINDS = {
   item = { description = true },
   spell = { description = true, aura = true }, -- aura: the buff / debuff tooltip line
   npc = { name = true },
+  -- who gave or took a quest in its window: numbers only, "<creature id>:<sex>:<display id>" (0 = not known)
+  questnpc = { description = true, progress = true, completion = true },
   gossip = { text = true }, -- id = the gossip key (16 hex), not a game id
 }
+-- Kinds that hold no line to translate: never looked up, never dropped as translated, and no reason to send by
+-- themselves. They ride along with a send that carries at least one line.
+Collector.RIDERS = { npc = true, questnpc = true }
 -- Server text that carries Blizzard's player tokens ($N / $C / $R): the player's name, class and race become tokens.
 local TOKEN_KINDS = { quest = true, gossip = true }
 Collector.NPC_CAP = 32 -- creature ids kept per gossip entry (a generic "Goodbye" would otherwise grow without bound)
@@ -394,7 +399,7 @@ local function covered(kind, id, field, e, h1, p, keys)
     end
     return false
   end
-  if kind == "npc" then return false end
+  if Collector.RIDERS[kind] then return false end
   local entry = deps.lookup(kind .. "." .. field, id) -- field-qualified: spell has two fields
   if type(entry) ~= "table" then
     -- an item with no text of its own shows its "Equip:" stat lines through the dictionary (UI/Tooltip): covered
@@ -692,6 +697,21 @@ function Collector.recordNpc(guid, name)
   return Collector.record("npc", id, "name", name)
 end
 
+-- Who gave or took a quest, as its window showed: the NPC's creature id, its sex as UnitSex gives it (2 male,
+-- 3 female) and its display id, each 0 when not known. Stored for every quest window, whether or not the line
+-- ships Japanese: the voice of a line is cast from the NPC that says it, and no data names the NPCs the server
+-- added. Numbers only; the GUID itself is never stored.
+function Collector.recordQuestNpc(quest, field, guid, sex, display)
+  local id = Collector.creatureId(guid)
+  if not id then return "refused", "no_creature" end
+  local function whole(v, max)
+    return type(v) == "number" and v >= 1 and v <= max and v == math.floor(v) and v or 0
+  end
+  local s = whole(sex, 3)
+  local text = ("%d:%d:%d"):format(id, s >= 2 and s or 0, whole(display, 2 ^ 31 - 1))
+  return Collector.record("questnpc", quest, field, text)
+end
+
 -- ── Disclosure, status, clear ──────────────────────────────────────────────
 
 function Collector.disclose()
@@ -764,7 +784,7 @@ function Collector.pending(all)
   local sent = type(db.sent) == "table" and db.sent or {}
   for key, e in pairs(db.entries) do
     if all or sent[key] ~= e.h then
-      if e.t == "npc" then
+      if Collector.RIDERS[e.t] then
         names[#names + 1] = { key = key, entry = e }
       else
         local ok, yes = pcall(storedCovered, e)
@@ -793,7 +813,7 @@ function Collector.unsentCount()
   local sent = type(db.sent) == "table" and db.sent or {}
   local n = 0
   for key, e in pairs(db.entries) do
-    if sent[key] ~= e.h and e.t ~= "npc" then
+    if sent[key] ~= e.h and not Collector.RIDERS[e.t] then
       local ok, yes = pcall(storedCovered, e)
       if not (ok and yes) then n = n + 1 end
     end
@@ -809,7 +829,7 @@ function Collector.prune()
   if not db or not deps or readOnly or type(db.entries) ~= "table" then return 0 end
   local covers = {}
   for key, e in pairs(db.entries) do
-    if e.t ~= "npc" then
+    if not Collector.RIDERS[e.t] then
       local ok, yes = pcall(storedCovered, e)
       if ok and yes then covers[#covers + 1] = key end
     end

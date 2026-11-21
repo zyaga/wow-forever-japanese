@@ -431,6 +431,85 @@ describe("Core/Collector", function()
     end)
   end)
 
+  -- Who gives and takes a quest: numbers only (the NPC's creature id, its sex and its display id), under the
+  -- quest and the field its window showed, so the pipeline can cast the line's voice from the real NPC.
+  describe("quest NPCs", function()
+    local GUID = "Creature-0-4372-0-17-262031-0000A1B2C3"
+
+    it("stores the creature id, sex and display id under questnpc:<quest>:<field>, and no English", function()
+      local db = C.load(nil, deps())
+      assert.are.equal("recorded", C.recordQuestNpc(95603, "description", GUID, 3, 15524))
+      local e = db.entries["questnpc:95603:description"]
+      assert.are.equal("262031:3:15524", e.e)
+      assert.are.equal("questnpc", e.t)
+      assert.are.equal(95603, e.i)
+      assert.is_nil(e.n)
+      assert.is_nil(e.p)
+      assert.are.equal("seen", C.recordQuestNpc(95603, "description", GUID, 3, 15524))
+    end)
+
+    it("stores it when the line already ships Japanese: nothing is looked up", function()
+      local db = C.load(nil, deps())
+      shipped["quest.description"] = { [95603] = { h1 = 1, ja = "日本語" } }
+      assert.are.equal("recorded", C.recordQuestNpc(95603, "description", GUID, 3, 15524))
+      assert.is_table(db.entries["questnpc:95603:description"])
+      assert.are.same({}, lookups)
+    end)
+
+    it("an unknown sex or display id is stored as 0, and a display learned later replaces the entry", function()
+      local db = C.load(nil, deps())
+      assert.are.equal("recorded", C.recordQuestNpc(7, "progress", GUID, nil, nil))
+      assert.are.equal("262031:0:0", db.entries["questnpc:7:progress"].e)
+      assert.are.equal("replaced", C.recordQuestNpc(7, "progress", GUID, 2, 900))
+      assert.are.equal("262031:2:900", db.entries["questnpc:7:progress"].e)
+      assert.are.equal("recorded", C.recordQuestNpc(7, "completion", GUID, 9, -4))
+      assert.are.equal("262031:0:0", db.entries["questnpc:7:completion"].e)
+    end)
+
+    it("stores nothing for a unit that is no creature, a secret GUID, a field with no speaker or the setting off",
+      function()
+        local db = C.load(nil, deps())
+        assert.are.same({ "refused", "no_creature" },
+          { C.recordQuestNpc(7, "description", "Player-4372-0ABCDEF1", 2, 1) })
+        assert.are.same({ "refused", "no_creature" },
+          { C.recordQuestNpc(7, "description", "GameObject-0-4372-0-17-1617-00002B4A1D", 2, 1) })
+        assert.are.same({ "refused", "bad_kind" }, { C.recordQuestNpc(7, "title", GUID, 2, 1) })
+        local client = { issecretvalue = function(v) return v == GUID end }
+        WFJ.Compat.init(function(name) return client[name] end)
+        assert.are.same({ "refused", "no_creature" }, { C.recordQuestNpc(7, "description", GUID, 2, 1) })
+        WFJ.Compat.init(function() return nil end)
+        on = false
+        assert.are.equal("off", (C.recordQuestNpc(7, "description", GUID, 2, 1)))
+        assert.is_nil(next(db.entries))
+      end)
+
+    it("survives a reload of the saved table and counts toward the size", function()
+      local db = C.load(nil, deps())
+      C.recordQuestNpc(95603, "description", GUID, 3, 15524)
+      local bytes = db.bytes
+      assert.is_true(bytes > 0)
+      local again = C.load(db, deps())
+      assert.is_table(again.entries["questnpc:95603:description"])
+      assert.are.equal(bytes, again.bytes)
+    end)
+
+    it("is never pruned as translated, and rides along with a send instead of counting as a line", function()
+      C.load(nil, deps())
+      C.recordQuestNpc(95603, "description", GUID, 3, 15524)
+      assert.are.equal(0, C.prune())
+      assert.are.equal(0, C.unsentCount())
+      local alone = C.pending()
+      assert.are.equal(0, #alone) -- nothing to send by itself
+      assert.are.equal("recorded", C.record("quest", 2, "title", "A title"))
+      local list, _, _, riding = C.pending()
+      assert.are.equal(2, #list)
+      assert.are.equal(1, riding)
+      assert.are.equal(1, C.unsentCount())
+      local all = C.pending(true)
+      assert.are.equal(2, #all)
+    end)
+  end)
+
   describe("per-session memo", function()
     it("the same text for the same key answers without normalizing, hashing or looking up again", function()
       C.load(nil, deps())

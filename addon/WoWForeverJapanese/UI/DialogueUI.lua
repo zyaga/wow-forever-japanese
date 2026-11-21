@@ -285,6 +285,18 @@ local function render(el)
     -- a description that is another wording of the quest for this character is not the quest's own
     C.record("quest", el.questID, el.key, el.en)
   end
+  -- who shows the quest's offer, progress text or turn-in: the Collector keeps the NPC for the line's voice, as on
+  -- the client's own quest window (a field with no speaker is refused there)
+  if C and el.questID and type(C.recordQuestNpc) == "function" and WFJ.Collector.creatureId(guid) then
+    local sex = Compat.resolve("UnitSex")
+    local log = WFJ.VoiceQuestLog
+    local display, from
+    if log and type(log.displayFor) == "function" then
+      display, from = log.displayFor(WFJ.Collector.creatureId(guid))
+    end
+    C.recordQuestNpc(el.questID, el.key, guid, type(sex) == "function" and sex("npc") or nil,
+      from == "saved" and display or nil)
+  end
   WFJ.Render.show(el.surface, el.key, h, el.en, el.area, el.kind, el.id, { live = el.live })
   h.shown = true -- a show that failed half way is shown anew next time
   -- UI/VoicePlayer remembers who showed a quest line, for replays from the quest log
