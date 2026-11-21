@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -445,10 +445,11 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 
 # Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine unpacked in
 # build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
-voice-speakers: voice-levels voice-spoken-fetch ## data/voice/ speakers for the voice scope: the creature Spoken gives a quest line, else the pinned VMaNGOS database, captures and the collector's NPC ids
+voice-speakers: voice-levels voice-spoken-fetch voice-dondata-fetch ## data/voice/ speakers for the voice scope: the creature Spoken gives a quest line, else the pinned VMaNGOS database, captures and the collector's NPC ids, else DonData's quest files; a quest line nobody names gets no speaker
 	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
 		--wdb "$(call quest_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA) \
-		--spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
+		--spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT) \
+		--dondata "$(DONDATA_FILES)" --dondata-commit $(DONDATA_COMMIT)
 
 voice-match: voice-speakers ## who speaks each line and with which voice, matched to the newest Spoken: speakers, then sets, then the cast, on one fetch (runs before any audio is made; run it before counting a run)
 	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
@@ -495,6 +496,33 @@ voice-spoken-fetch: ## build/spoken: the Spoken addon's newest line corpus; its 
 		fi; \
 		if [ "$$new" != "$$(cat "$(SPOKEN_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(SPOKEN_PIN)"; fi; \
 		echo "voice-spoken-fetch: Spoken at $$new"
+
+# Who gives and who takes a quest that no other source names comes from DonData's quest files
+# (github.com/WoW-Forever-Addons/dondata): Data/ATT_Quests.lua, derived from AllTheThings (MIT), and
+# Data/Extra_Quests.lua, DonData's own (GPL-3.0). Only quest ids and creature ids are read. Every run takes the
+# newest commit and records it in pipeline/dondata-commit.txt, committed with the voice tables. When DonData cannot
+# be reached the recorded commit is used again and the run says so.
+DONDATA_PIN = $(CURDIR)/pipeline/dondata-commit.txt
+DONDATA_DIR = $(REPO_ROOT)/build/dondata
+DONDATA_RAW = https://raw.githubusercontent.com/WoW-Forever-Addons/dondata
+# Read when a recipe runs, so a target that follows voice-dondata-fetch sees the commit it just recorded.
+DONDATA_COMMIT = $(shell cat "$(DONDATA_PIN)" 2>/dev/null)
+DONDATA_FILES = $(DONDATA_DIR)/$(DONDATA_COMMIT)
+
+voice-dondata-fetch: ## build/dondata: DonData's two quest files at its newest commit; the commit goes to pipeline/dondata-commit.txt
+	@new=$$(git ls-remote https://github.com/WoW-Forever-Addons/dondata HEAD 2>/dev/null | cut -f1); \
+		if [ -z "$$new" ]; then echo "voice-dondata-fetch: DonData could not be reached; using the commit in pipeline/dondata-commit.txt"; new=$$(cat "$(DONDATA_PIN)" 2>/dev/null); fi; \
+		test -n "$$new" || { echo "voice-dondata-fetch: no commit in pipeline/dondata-commit.txt"; exit 1; }; \
+		d="$(DONDATA_DIR)/$$new"; mkdir -p "$$d"; \
+		for pair in "ATT_Quests.lua:ns.ATT_QUESTS" "Extra_Quests.lua:ns.QUEST_ENDS"; do \
+			f="$${pair%%:*}"; table="$${pair##*:}"; \
+			if [ ! -f "$$d/$$f" ]; then \
+				curl -sfL -o "$$d/$$f.part" "$(DONDATA_RAW)/$$new/Data/$$f" && grep -q "^$$table = {" "$$d/$$f.part" && mv "$$d/$$f.part" "$$d/$$f" \
+					|| { echo "voice-dondata-fetch: $$f at $$new could not be downloaded whole; nothing changed"; exit 1; }; \
+			fi; \
+		done; \
+		if [ "$$new" != "$$(cat "$(DONDATA_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(DONDATA_PIN)"; fi; \
+		echo "voice-dondata-fetch: DonData at $$new"
 
 voice-displays: ## data/voice/displays.jsonl: each speaking creature's display id, from the copied creature caches, else VMaNGOS (rerun after creature-copy or voice-speakers)
 	cd pipeline && $(PY) -m wfj voice displays --creatures "$(CREATURES)" --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA)
