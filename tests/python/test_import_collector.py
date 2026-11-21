@@ -336,3 +336,46 @@ def test_a_line_carrying_the_player_name_in_capitals_is_left_out(tmp_path: Path,
         "The earth calls to you, $N. Go to it.",
         "RUN! The bridge is falling.",
     }
+
+
+# ---- who gave or took a quest ---------------------------------------------------------------------------
+
+
+def _quest_npcs(data: Path) -> list[dict]:
+    import json
+
+    path = data / "voice" / "quest-npcs.jsonl"
+    if not path.is_file():
+        return []
+    return [json.loads(ln) for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+
+
+def test_a_dump_s_quest_npcs_go_to_the_voice_data_not_the_english(tmp_path: Path, monkeypatch, capsys):
+    data = _data_dir(tmp_path, monkeypatch)
+    first = dump(entry("questnpc", 95603, "description", "262031:3:0"), entry("questnpc", 7, "progress", "3100:2:900"))
+    assert run(["english", "collector", _write(tmp_path, first)]) == 0
+    rows = _quest_npcs(data)
+    assert [(r["quest"], r["field"], r["creature"], r.get("sex"), r.get("display")) for r in rows] == [
+        (7, "progress", 3100, "male", 900), (95603, "description", 262031, "female", None)]
+    assert all(r["provenance"]["source"] == "collector@1.15.9.69722" for r in rows)
+    assert "quest NPCs: 2 added" in capsys.readouterr().out
+    assert _snapshot(data) == {}  # no English line was written for them
+    before = (data / "voice" / "quest-npcs.jsonl").read_bytes()
+    assert run(["english", "collector", _write(tmp_path, first)]) == 0
+    assert (data / "voice" / "quest-npcs.jsonl").read_bytes() == before  # the same send again changes nothing
+
+
+def test_a_later_dump_fills_what_an_earlier_one_did_not_know_and_another_npc_is_kept_too(tmp_path: Path, monkeypatch):
+    data = _data_dir(tmp_path, monkeypatch)
+    assert run(["english", "collector", _write(tmp_path, dump(entry("questnpc", 9, "description", "500:0:0")))]) == 0
+    assert run(["english", "collector", _write(tmp_path, dump(entry("questnpc", 9, "description", "500:3:77")))]) == 0
+    (row,) = _quest_npcs(data)
+    assert (row["creature"], row["sex"], row["display"]) == (500, "female", 77)
+    # a send that knows less never erases what is known
+    assert run(["english", "collector", _write(tmp_path, dump(entry("questnpc", 9, "description", "500:0:0")))]) == 0
+    (row,) = _quest_npcs(data)
+    assert (row["creature"], row["sex"], row["display"]) == (500, "female", 77)
+    # another NPC in that window (a quest several NPCs give) is one more row, so two players' sends never flip it
+    assert run(["english", "collector", _write(tmp_path, dump(entry("questnpc", 9, "description", "600:2:0")))]) == 0
+    assert [(r["quest"], r["field"], r["creature"], r.get("sex")) for r in _quest_npcs(data)] == [
+        (9, "description", 500, "female"), (9, "description", 600, "male")]

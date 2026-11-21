@@ -91,12 +91,45 @@ def _part_pattern(kind: str, text: str) -> str:
     return f"(?:[{re.escape(_PUNCT)}]|ぷらす)*" if kind == "punct" else ".+?"  # "+" may be read aloud
 
 
+def _fit(parts: list[tuple[str, str]], i: int, reading: str, pos: int) -> list[str] | None:
+    """The reading of each part from `parts[i]` on, read from `reading[pos:]` to its end, or None. It takes
+    what `_part_pattern`'s pattern takes, in the same order of preference: a kana part as written, a run of
+    punctuation as long as it can be, any other part as short as it can be."""
+    if i == len(parts):
+        return [] if pos == len(reading) else None
+    kind, text = parts[i]
+    if kind in ("katakana", "hiragana"):
+        said = hiragana(text)
+        rest = _fit(parts, i + 1, reading, pos + len(said)) if reading.startswith(said, pos) else None
+        return None if rest is None else [said, *rest]
+    if kind == "punct":
+        ends = [pos]
+        while True:
+            end = ends[-1]
+            if reading[end : end + 1] and reading[end] in _PUNCT:
+                ends.append(end + 1)
+            elif reading.startswith("ぷらす", end):  # "+" may be read aloud
+                ends.append(end + 3)
+            else:
+                break
+        ends.reverse()
+    else:
+        line_end = reading.find("\n", pos)
+        ends = list(range(pos + 1, (len(reading) if line_end < 0 else line_end) + 1))
+    for end in ends:
+        rest = _fit(parts, i + 1, reading, end)
+        if rest is not None:
+            return [reading[pos:end], *rest]
+    return None
+
+
 def align(ja: str, reading: str) -> list[tuple[str, str]] | None:
     """[(part of the Japanese, its reading)], or None when the reading does not fit the name: every kana part
-    must be read as written (a typo such as ノスリ read すのり does not fit)."""
+    must be read as written (a typo such as ノスリ read すのり does not fit). Matched by hand: a pattern per
+    name would be compiled once for each of tens of thousands of names."""
     parts = _parts(ja)
-    m = re.fullmatch("".join(f"({_part_pattern(k, t)})" for k, t in parts), reading)
-    return [(t, r) for (_, t), r in zip(parts, m.groups(), strict=True)] if m else None
+    said = _fit(parts, 0, reading, 0)
+    return None if said is None else [(t, r) for (_, t), r in zip(parts, said, strict=True)]
 
 
 def spoken(ja: str, reading: str) -> str | None:

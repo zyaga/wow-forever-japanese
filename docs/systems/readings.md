@@ -189,7 +189,7 @@ A span that splits a UTF-8 character is **not a Lua error**: the client exits, a
 - `addon/WoWForeverJapanese/Core/Settings.lua`, `UI/Options.lua`, `UI/OptionsText.lua`, `UI/Slash.lua`: setting, page row, help line, debug line
 - `data/reading/` (with `meaning-numbers.tsv`), `addon/WoWForeverJapanese/Data/Reading/`, `addon/WoWForeverJapanese/Data/Gloss/`
 - `pipeline/wfj/core/english_cards.py`, `pipeline/wfj/core/pronunciation.py`, `data/english/common-words.jsonl`, `data/english/pronunciation.tsv`, `addon/WoWForeverJapanese/Data/English/`: the English word card's data
-- `tests/python/test_readings.py`, `tests/python/test_english_cards.py`, `tests/lua/spec/readings_spec.lua`, `tests/lua/spec/readings_english_spec.lua`
+- `tests/python/test_readings.py`, `tests/python/test_english_cards.py`, `tests/lua/spec/readings_spec.lua`, `tests/lua/spec/readings_shipped_spec.lua`, `tests/lua/spec/readings_english_spec.lua`
 
 ## Invariants
 - Every span call goes through `spanAreas`; nothing reaches the client with an index off a character boundary or with text holding `|`.

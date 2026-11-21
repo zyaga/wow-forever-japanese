@@ -47,6 +47,7 @@ globals = {
   "WFJ_OnAddonCompartmentClick", "WFJ_OnAddonCompartmentEnter", "WFJ_OnAddonCompartmentLeave",
   "WoWForeverJapanese_RegisterVoice", -- the voice pack calls it from its own chunk (ADR-061)
   "WoWForeverJapanese_ExpectVoicePacks", -- the voice entry names its packs from its own chunk
+  "WoWForeverJapanese_VoiceNotMade", -- and the lines that have no voice yet
 }
 
 files["addon/WoWForeverJapanese/Data/"] = { ignore = { ".*" } }

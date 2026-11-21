@@ -17,13 +17,13 @@ import argparse
 import datetime
 import json
 import sys
-from collections.abc import Sequence
+from collections.abc import Iterable, Sequence
 from pathlib import Path
 from typing import Any
 
 from wfj.core import voice
 from wfj.emit.lua_writer import shipped
-from wfj.io import forever_vo, spoken, vmangos, wdb
+from wfj.io import dondata, forever_vo, spoken, vmangos, wdb
 from wfj.io.jsonl_store import Store, dumps
 from wfj.paths import data_root
 
@@ -69,33 +69,51 @@ def _keep_date(rows: list[dict[str, Any]], old: list[dict[str, Any]], id_field: 
     return out
 
 
-def _follow_spoken(
-    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str], corpus: Path,
-    commit: str,
+def _follow_captures(
+    speakers: dict[str, int | str], sources: dict[str, str], keys: Iterable[str], folder: Path, commit: str
 ) -> None:
-    """Gives each quest line the creature Spoken names for it, where that is another speaker than the one
-    it has, and records Spoken as the line's source."""
+    """Gives each quest line of `keys` that no creature speaks yet the speaker the players' captures saw in
+    its window: a creature, or the narrator for an object."""
+    seen = forever_vo.read_quest_speakers(folder)
+    for key in keys:
+        q, f = key.split("-", 1)
+        who = voice.captured_speaker(seen.get((int(q), f), []))
+        if speakers.get(key, voice.NARRATOR) == voice.NARRATOR and who is not None:
+            speakers[key] = who
+            sources[key] = f"forever-vo@{commit}"
+
+
+def _follow_spoken(
+    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str],
+    keys: Iterable[str], corpus: Path, commit: str,
+) -> None:
+    """Gives each quest line of `keys` the creature Spoken names for it, where that is another speaker than
+    the one it has (or it has none), and records Spoken as the line's source."""
     named = spoken.read_quest_speakers(corpus)
-    for key, sp in speakers.items():
+    for key in keys:
         q, f = key.split("-", 1)
         who = named.get((int(q), f))
-        if who is not None and sp != who:
+        if who is not None and speakers.get(key) != who:
             speakers[key] = who
             sources[key] = spoken.source(commit)
             if who in others.get(key, ()):
                 others[key] = [c for c in others[key] if c != who]
 
 
-def build_tables(
+def build_tables(  # noqa: PLR0913 - the data, the database, and one optional outside source per parameter
     root: Path, db: Path, commit: str, scope: str, today: str, wdb_path: Path | None = None,
     captures: tuple[Path, str] | None = None, spoken_corpus: tuple[Path, str] | None = None,
+    dondata_files: tuple[Path, Path, str] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, list[str]]]:
     """(speakers rows, report) for the scope. A speakers row names the line's main speaker and,
     when several creatures say it, the `others` (each may be cast to a voice of its own). With `wdb_path`
     (the pinned quest cache) a quest's conditional descriptions, keyed by their English (ADR-054), are read
     by the giver the cache names, else by the quest's starter. With `spoken_corpus` (Spoken's line corpus and
     its commit) a quest line Spoken gives to one creature is spoken by that creature, whatever the other
-    sources say: the two voices of a line a player hears with both addons are then the same NPC's."""
+    sources say: the two voices of a line a player hears with both addons are then the same NPC's. With
+    `dondata_files` (DonData's two quest files and their commit) a quest line no other source names is spoken
+    by the creature those files name. The NPC a player's own quest window showed (the Collector's quest NPCs)
+    wins over all of them. A quest line nobody names has no row: it is not voiced."""
     cfg = voice.SCOPES[scope]
     whole = cfg["quests"] is None
     src = f"vmangos@{commit}"
@@ -103,26 +121,25 @@ def build_tables(
     quest_lines = store.load("quest")
     if whole:
         starters, objects, enders = vmangos.read_all_quest_speakers(db)
+        object_ends = vmangos.read_object_ends(db)
         quest_keys = voice.shipped_quest(quest_lines, None)
         quests = {int(k.split("-", 1)[0]) for k in quest_keys}
     else:
         quests = set(cfg["quests"])
         starters, objects, enders = vmangos.read_quest_speakers(db, quests)
+        object_ends = vmangos.read_object_ends(db, quests)
         quest_keys = voice.shipped_quest(quest_lines, quests)
     others: dict[str, list[int]] = {}
-    q_speakers, q_problems = voice.quest_speakers(quest_keys, starters, objects, enders, others)
+    q_speakers, q_problems = voice.quest_speakers(quest_keys, starters, objects, enders, others, object_ends)
     # a quest the open database lacks (one Forever added): who the players' captures saw in the window
     captured_src: dict[str, str] = {}
     if captures is not None:
-        seen = forever_vo.read_quest_speakers(captures[0])
-        for key, sp in q_speakers.items():
-            q, f = key.split("-", 1)
-            who = voice.captured_speaker(seen.get((int(q), f), []))
-            if sp == voice.NARRATOR and who is not None:
-                q_speakers[key] = who
-                captured_src[key] = f"forever-vo@{captures[1]}"
+        _follow_captures(q_speakers, captured_src, sorted(quest_keys), *captures)
     if spoken_corpus is not None:
-        _follow_spoken(q_speakers, others, captured_src, *spoken_corpus)
+        _follow_spoken(q_speakers, others, captured_src, sorted(quest_keys), *spoken_corpus)
+    if dondata_files is not None:
+        _follow_dondata(q_speakers, others, captured_src, sorted(quest_keys), *dondata_files)
+    _follow_collector(q_speakers, others, captured_src, sorted(quest_keys), root)
     q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
     creatures = {c for q in quests for c in (*starters.get(q, ()), *enders.get(q, ()))}
     creatures |= {s for s in q_speakers.values() if isinstance(s, int)}
@@ -162,7 +179,8 @@ def build_tables(
     ]
     if wdb_path is not None:
         have = {r["key"] for r in speakers}
-        conditional = _conditional_speakers(wdb_path, quests, starters, gossip_shipped, have)
+        conditional = _conditional_speakers(
+            wdb_path, quests, starters, objects, q_speakers, others, gossip_shipped, have)
         speakers += [row(k, s, f"wdb@{b}") for k, (s, b) in sorted(conditional.items())]
         report["conditional"] = [f"{k}: {s}" for k, (s, _) in sorted(conditional.items())]
     if whole:  # each plain-text book page: its signer if one cast creature has that name, else the narrator
@@ -189,23 +207,94 @@ def book_readers(root: Path, db: Path, have: set[str]) -> dict[str, int | str]:
     return voice.book_speakers(pages, names, cast)
 
 
-def _conditional_speakers(
-    path: Path, quests: set[int], starters: dict[int, list[int]], shipped_keys: set[str], have: set[str]
+def _follow_dondata(
+    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str],
+    keys: Iterable[str], att: Path, extra: Path, commit: str,
+) -> None:
+    """Names the quest lines of `keys` that no other source named, from DonData's quest files: the creature
+    that gives the quest (the offer) or takes it (progress, turn-in), or the narrator where the files say an
+    item starts it or it is turned in at an object."""
+    found = dondata.read(att, extra)
+    for key in keys:
+        if key in speakers:
+            continue
+        q, f = key.split("-", 1)
+        offer = f == "description"
+        who = (found.givers if offer else found.enders).get(int(q), ())
+        if who:
+            speakers[key] = min(who)
+            if len(who) > 1:
+                others[key] = sorted(set(who) - {min(who)})
+        elif int(q) in (found.item_starts if offer else found.object_ends):
+            speakers[key] = voice.NARRATOR
+        else:
+            continue
+        sources[key] = dondata.source(commit)
+
+
+def _follow_collector(
+    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str],
+    keys: Iterable[str], root: Path,
+) -> None:
+    """Gives each quest line of `keys` the NPCs players' own quest windows showed for it (the Collector's
+    quest NPCs, data/voice/quest-npcs.jsonl). It is what the game itself said, so it is applied last and wins
+    over every other source. A line's main speaker stays when it is one of the NPCs seen, else the lowest id
+    seen leads; the other NPCs seen, and a creature another source named, are kept as its other speakers, so
+    a quest several NPCs give plays each one's own voice. A row that names no creature is left out."""
+    seen: dict[str, dict[int, str]] = {}
+    for r in read_rows(voice_dir(root) / "quest-npcs.jsonl"):
+        who, quest, field = r.get("creature"), r.get("quest"), r.get("field")
+        if isinstance(who, int) and isinstance(quest, int) and isinstance(field, str):
+            source = (r.get("provenance") or {}).get("source", "collector")
+            seen.setdefault(voice.quest_key(quest, field), {})[who] = source
+    for key in keys:
+        found = seen.get(key)
+        if not found:
+            continue
+        before = speakers.get(key)
+        main = before if before in found else min(found)
+        rest = {*others.get(key, ()), *found, *([before] if isinstance(before, int) else [])} - {main}
+        speakers[key], sources[key] = main, found[main]
+        if rest:
+            others[key] = sorted(rest)
+        else:
+            others.pop(key, None)
+
+
+def _conditional_speakers(  # noqa: PLR0913 - the cache, the scope, and what is known of each quest's offer
+    path: Path, quests: set[int], starters: dict[int, list[int]], objects: set[int],
+    offers: dict[str, int | str], others: dict[str, list[int]], shipped_keys: set[str], have: set[str],
 ) -> dict[str, tuple[int | str, int]]:
     """{pack key: (speaker, cache build)} for the scoped quests' conditional descriptions that ship: the giver
-    the cache names, else the quest's lowest starter, else the narrator."""
+    the cache names, else whoever says the quest's own offer after every source (`offers`, by quest key), else
+    the quest's lowest starter, else the narrator when an object or item starts the quest. A wording several
+    quests show is one line: the first quest's speaker leads and the other quests' creatures go into `others`,
+    and it has no entry when any of those quests' offers has nobody named, so no quest's window plays another
+    quest's NPC. Another wording of an offer nobody names has no entry: it is not voiced."""
     cache = wdb.read_quests(path)
-    out: dict[str, tuple[int | str, int]] = {}
+    said: dict[str, list[int | str | None]] = {}
     for q in cache.quests:
         if q.id not in quests:
             continue
         for _, giver, en in q.conditional:
             k = voice.gossip_id(en or "")
             key = voice.gossip_key(k)
-            if not en or k not in shipped_keys or key in have or key in out:
+            if not en or k not in shipped_keys or key in have:
                 continue
-            who = giver or min(starters.get(q.id, []), default=None)
-            out[key] = (who if who else voice.NARRATOR, cache.build)
+            who = (giver or offers.get(voice.quest_key(q.id, "description"))
+                   or min(starters.get(q.id, []), default=None)
+                   or (voice.NARRATOR if q.id in objects else None))
+            said.setdefault(key, []).append(who)
+    out: dict[str, tuple[int | str, int]] = {}
+    for key, who in said.items():
+        if any(w is None for w in who):
+            continue
+        main = who[0]
+        assert main is not None
+        out[key] = (main, cache.build)
+        rest = sorted({w for w in who if isinstance(w, int)} - {main})
+        if rest:
+            others[key] = rest
     return out
 
 
@@ -222,6 +311,8 @@ def run_speakers(a: argparse.Namespace) -> int:
         root, Path(a.vmangos), a.commit, a.scope, today, Path(a.wdb) if a.wdb else None,
         (Path(a.forever_vo), a.forever_vo_commit) if a.forever_vo else None,
         (Path(a.spoken), a.spoken_commit) if a.spoken else None,
+        (Path(a.dondata) / dondata.ATT_FILE, Path(a.dondata) / dondata.EXTRA_FILE, a.dondata_commit)
+        if a.dondata else None,
     )
     d = voice_dir(root)
     speakers = _keep_date(speakers, read_rows(d / "speakers.jsonl"), "key")
@@ -264,7 +355,7 @@ def run(argv: Sequence[str]) -> int:
            "sets": ("voice_sets", "run", 1), "displays": ("voice_displays", "run", 1),
            "audition": ("voice_audition", "run", 1),
            **{v: ("voice_make", "run", 0)
-              for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel")},
+              for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel", "owed")},
            "speed": ("voice_make", "run_speed", 1),
            "time": ("voice_time", "run", 1),
            "reencode": ("voice_reencode", "run", 1),
@@ -287,6 +378,9 @@ def run(argv: Sequence[str]) -> int:
     sp.add_argument("--forever-vo-commit", default="")
     sp.add_argument("--spoken", help="Spoken's corpus.json.gz: the creature it gives a quest line speaks it")
     sp.add_argument("--spoken-commit", default="")
+    sp.add_argument("--dondata", help="the folder of DonData's two quest files: who gives and takes a quest "
+                    "no other source names")
+    sp.add_argument("--dondata-commit", default="")
     a = p.parse_args(list(argv))
     try:
         return run_speakers(a)

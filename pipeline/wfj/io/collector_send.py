@@ -4,8 +4,8 @@ file a player attached to the same issue when the string was too long to paste.
 String: `WFJC1:` + URL-safe Base64 of zlib-compressed JSON `{v, a, b, e}`: the format version, the addon
 version, the builds, and the entries in the dump's own fields (`t, i, f, h, e, b, n, p`; `b` indexes
 this `b`).
-Every entry goes through the same `check_entry` as a dump file, so a string cannot carry anything a file could
-not. Nothing in it is trusted: sizes are capped before decompressing and parsing.
+Every entry goes through the same checks as a dump file's (`collector_dump.add`), so a string cannot carry
+anything a file could not. Nothing in it is trusted: sizes are capped before decompressing and parsing.
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ from collections import Counter
 from dataclasses import dataclass
 from typing import Any
 
-from wfj.io.collector_dump import Dump, check_entry, read_dump
+from wfj.io.collector_dump import Dump, add, read_dump
 from wfj.io.lua_reader import Table
 
 PREFIX = "WFJC1:"
@@ -104,12 +104,9 @@ def decode(text: str) -> Send:
         except RecursionError:
             out.rejected["bad_key"] += 1
             continue
-        entry, reason = check_entry(key, table, builds)
-        if entry is None:
-            out.rejected[reason] += 1
-        else:
-            out.entries.append(entry)
+        add(out, key, table, builds)
     out.entries.sort(key=lambda en: (en.type_, str(en.id_), en.field))
+    out.quest_npcs.sort(key=lambda q: (q.quest, q.field))
     addon = data.get("a") if isinstance(data.get("a"), str) else ""
     return Send(out, addon, "string")
 

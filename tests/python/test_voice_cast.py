@@ -103,9 +103,26 @@ def test_validate_checks_profiles():
 
 
 def test_the_committed_profiles_are_complete():
+    """Every creature that gets a voice has an age. A creature whose race or gender nobody knows gets no voice
+    (it is silent until its model is known), so it owes no age yet."""
     rows = voice_make._rows(ROOT / "data" / "voice" / "profiles.jsonl")
     assert casting.problems(rows) == []
-    assert casting.missing_age(rows) == []
+    assert casting.missing_age([r for r in rows if r.get("race") and r.get("gender")]) == []
+
+
+def test_the_committed_voices_are_exactly_the_speakers_someone_can_name_a_voice_for():
+    """A speaking creature has a voice when its race and gender are known, Spoken gives it a voice set, or a
+    ruling names its voice, and only then: a creature nobody can name a voice for is silent, never cast on a
+    guess."""
+    data = ROOT / "data" / "voice"
+    speakers = voice_make._rows(data / "speakers.jsonl")
+    who = {c for r in speakers for c in (r["speaker"], *r.get("others", ())) if isinstance(c, int)}
+    voiced = {int(r["creature"]) for r in voice_make._rows(data / "voices.jsonl")}
+    unknown = voice_make.unknown(ROOT / "data")
+    profiled = {int(r["creature"]) for r in voice_make._rows(data / "profiles.jsonl")}
+    assert who <= profiled  # every speaker has a profile row, known or not
+    assert (who - unknown) - voiced == set(), "a speaker with a known race and gender has no voice: make voice-cast"
+    assert (who & voiced) & unknown == set(), "a speaker nobody can name a voice for has one"
 
 
 # ---- casting ---------------------------------------------------------------------------------------------

@@ -58,9 +58,10 @@ The Makefile uses `.venv` automatically. The Lua rocks (busted, luacheck, luacov
 | `make data` | rebuild `data/` from the pinned inputs, then check and generate (needs the inputs, see local setup) |
 | `make package` | build and check a release zip locally; nothing is uploaded |
 
-CI runs three jobs beside each other on every pull request: `make lint`, `make coverage-py`, `make luac`,
-`make toc-check` and `make validate` in one, `make coverage-lua` in another, and a small third that checks
-the pull request's title, body, branch name and commits.
+CI runs each check as a job of its own on every pull request, all beside each other: `make lint`; the data
+gate (`make luac`, `make toc-check`, `make validate`); the Python tests on four machines and the Lua tests on
+four, each followed by a short job that adds up the coverage and holds it to its floor; and a small job that
+checks the pull request's title, body, branch name and commits.
 The two coverage targets run the same tests as `make test`, so run `make test` locally. Commit with a GitHub
 noreply address; the check refuses a personal one.
 

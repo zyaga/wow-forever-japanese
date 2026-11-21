@@ -283,19 +283,123 @@ def test_a_key_that_plays_another_lines_file_and_shows_its_japanese_keeps_the_ti
 
 def test_the_cast_command_writes_voices_and_counts_rows(world, capsys):
     voice_make._write(world.data / "voice" / "profiles.jsonl", [
-        {"creature": 1992, "gender": "female", "provenance": {}},
-        {"creature": 2079, "gender": "male", "provenance": {}},
+        {"creature": 1992, "race": "nightelf", "gender": "female", "provenance": {}},
+        {"creature": 2079, "race": "nightelf", "gender": "male", "provenance": {}},
         {"creature": 3000, "provenance": {}},
+        {"creature": 3001, "gender": "female", "provenance": {}},
     ])
     assert voice_make.run(["cast", "--config", str(world.cfg)]) == 0
     rows = {r["creature"]: (r["voice"], r["row"]) for r in voice_make._rows(world.data / "voice" / "voices.jsonl")}
-    assert rows == {1992: ("f", "female"), 2079: ("m", "male"), 3000: ("m", "narrator")}
+    # 3000 and 3001: nobody knows their race, so they get no voice (never the narrator's, never a guess)
+    assert rows == {1992: ("f", "female"), 2079: ("m", "male")}
     out = capsys.readouterr().out.splitlines()
-    assert out[0] == "voice cast: 3 creatures → data/voice/voices.jsonl"
-    assert sorted(out[1:4]) == ["voice cast:     1  female", "voice cast:     1  male", "voice cast:     1  narrator"]
-    # the world's earlier cast gave 3000 another voice: the cast says whose voice moved
-    assert out[4:] == ["voice cast: 1 speaker(s) changed voice since the last cast; their lines are made again:",
-                       "voice cast:   3000: old (elder, female) → m (narrator)"]
+    assert out[0] == "voice cast: 2 creatures → data/voice/voices.jsonl"
+    assert sorted(out[1:3]) == ["voice cast:     1  female", "voice cast:     1  male"]
+    # the world's earlier cast gave 3000 a voice: the cast says whose voice moved or went
+    assert out[3:] == ["voice cast: 1 speaker(s) changed voice since the last cast; their lines are made again:",
+                       "voice cast:   3000: old (elder, female) → removed",
+                       "voice cast: 2 creature(s) with no known race or gender get no voice"]
+
+
+def test_a_creature_spoken_gives_a_voice_set_is_not_unknown(world):
+    """Spoken names a voice by race and gender for the NPCs it voices: that is no guess, so such a creature
+    keeps its voice though our own tables know nothing of its model. So does one with a ruling."""
+    voice_make._write(world.data / "voice" / "profiles.jsonl", [
+        {"creature": 3000, "provenance": {}},
+        {"creature": 3001, "provenance": {}},
+        {"creature": 3002, "provenance": {}},
+    ])
+    voice_make._write(world.data / "voice" / "creature-sets.jsonl", [
+        {"creature": 3001, "female": "orcfemalewarriornpc", "provenance": {"source": "spoken@abc", "imported": "x"}},
+    ])
+    voice_make._write(world.data / "voice" / "overrides.jsonl", [{"creature": 3002, "voice": "m"}])
+    assert voice_make.unknown(world.data) == {3000}
+
+
+# ---- audio owed: a line recast or given a speaker before its audio is remade ------------------------------
+
+
+def _made(world):
+    voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
+
+
+def _recast(world, creature, voice_id):
+    rows = voice_make._rows(world.data / "voice" / "voices.jsonl")
+    voice_make._write(world.data / "voice" / "voices.jsonl",
+                      [{**r, "voice": voice_id} if r["creature"] == creature else r for r in rows])
+
+
+def test_nothing_is_owed_while_every_file_is_in_step(world):
+    _made(world)
+    assert voice_make.owed(world.data, CFG) == ([], [])
+    assert voice_make.owed_problems(world.data, CFG, []) == []
+
+
+def test_a_recast_line_is_owed_and_the_gate_holds_the_list_to_it(world):
+    _made(world)
+    _recast(world, 2079, "old")  # 456-description was made in the voice m
+    assert voice_make.owed(world.data, CFG) == (["456-description"], [])
+    unlisted = voice_make.owed_problems(world.data, CFG, [])
+    assert len(unlisted) == 1 and "456-description" in unlisted[0] and "not listed" in unlisted[0]
+    assert voice_make.owed_problems(world.data, CFG, ["456-description"]) == []
+    extra = voice_make.owed_problems(world.data, CFG, ["456-description", "456-completion"])
+    assert len(extra) == 1 and "456-completion" in extra[0] and "in step" in extra[0]
+
+
+def test_a_line_that_went_silent_keeps_its_record_and_owes_nothing(world):
+    """A line whose speaker nobody can name any more makes no file. Its old recording stays on the record
+    (nothing is deleted) and is never packed; it is not a file to remake."""
+    _made(world)
+    rows = voice_make._rows(world.data / "voice" / "speakers.jsonl")
+    voice_make._write(world.data / "voice" / "speakers.jsonl", [r for r in rows if r["key"] != "456-completion"])
+    assert voice_make.owed(world.data, CFG) == ([], ["456-completion"])
+    assert voice_make.owed_problems(world.data, CFG, []) == []
+
+
+def test_a_record_no_shipped_line_uses_is_still_a_problem(world):
+    _made(world)
+    rec = voice_make.audio_record(world.data)
+    rows = [*rec.values(), {**rec["456-completion"], "file": "999-description", "key": "999-description"}]
+    voice_make._write(world.data / "voice" / voice_make.AUDIO, rows)
+    problems = voice_make.owed_problems(world.data, CFG, [])
+    assert len(problems) == 1 and "999-description" in problems[0] and "no line uses" in problems[0]
+
+
+def test_the_owed_command_writes_the_list(world, capsys):
+    _made(world)
+    _recast(world, 2079, "old")
+    out = world.tmp / "voice-owed.txt"
+    assert voice_make.run(["owed", "--config", str(world.cfg), "--out", str(out)]) == 0
+    assert out.read_text(encoding="utf-8") == "456-description\n"
+    assert "voice owed: 1 file(s) to remake, 0 line(s) silent" in capsys.readouterr().out
+    assert voice_make.read_owed(out) == ["456-description"]
+    assert voice_make.read_owed(world.tmp / "none.txt") == []
+
+
+def test_the_lines_with_no_voice_are_the_shipped_ones_no_pack_will_carry(world):
+    """What the entry pack lists: a quest line nobody names a speaker for, a line whose speaker has no voice,
+    and a line whose file is still to be remade. A line in step is not listed."""
+    _made(world)
+    assert voice_make.not_made(world.data, CFG) == []
+    _recast(world, 2079, "old")  # 456-description's file is now in another voice: owed
+    assert voice_make.not_made(world.data, CFG) == ["456-description"]
+    rows = voice_make._rows(world.data / "voice" / "speakers.jsonl")
+    voice_make._write(world.data / "voice" / "speakers.jsonl", [r for r in rows if r["key"] != "456-completion"])
+    assert voice_make.not_made(world.data, CFG) == ["456-completion", "456-description"]  # nobody names its speaker
+    voice_make._write(world.data / "voice" / "speakers.jsonl", [
+        {**r, "speaker": 4444} if r["key"].startswith("g-") else r for r in rows])  # a speaker with no voice
+    assert voice_make.not_made(world.data, CFG) == ["456-description", "g-0123456789abcdef"]
+
+
+def test_a_key_that_plays_a_listed_lines_audio_is_listed_too(world, monkeypatch):
+    """A quest's text repeated under another id is shown under a key of its own and plays the quest's file. When
+    that file has no voice, the repeat's window must be able to say so as well."""
+    _made(world)
+    monkeypatch.setattr(voice_make, "aliases", lambda _root: {
+        "g-aaaaaaaaaaaaaaaa": "456-description", "g-bbbbbbbbbbbbbbbb": "456-completion"})
+    assert voice_make.not_made(world.data, CFG) == []  # both sources are in step
+    _recast(world, 2079, "old")  # 456-description is owed
+    assert voice_make.not_made(world.data, CFG) == ["456-description", "g-aaaaaaaaaaaaaaaa"]
 
 
 def test_the_plan_command_prints_what_would_be_made(world, capsys):
@@ -427,14 +531,41 @@ def test_validate_flags_a_cast_out_of_step_with_the_config(world, capsys):
     assert capsys.readouterr().out == "validate: voice: 3 files; 0 in step, 0 stale, 3 not made\n"
     ruled = {"source": "maintainer", "imported": "2026-10-08"}
     voice_make._write(world.data / "voice" / "profiles.jsonl", [
-        {"creature": 1992, "gender": "female", "provenance": {"gender": ruled}},
-        {"creature": 2079, "gender": "male", "provenance": {"gender": ruled}},
+        {"creature": 1992, "race": "nightelf", "gender": "female", "provenance": {"race": ruled, "gender": ruled}},
+        {"creature": 2079, "race": "nightelf", "gender": "male", "provenance": {"race": ruled, "gender": ruled}},
     ])
     cfg = voice_make.load_config(world.cfg)
     voice_make._write(world.data / "voice" / "voices.jsonl", voice_make.cast_rows(world.data, cfg, "2026-10-08"))
     voice_make.generate(world.data, "all", cfg, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
     assert rule_voice(world.data, world.cfg) == []
     assert capsys.readouterr().out == "validate: voice: 3 files; 3 in step, 0 stale, 0 not made\n"
+
+
+def test_validate_counts_the_silent_lines_the_uncast_speakers_and_the_owed_files(world, capsys):
+    from wfj.cmd.validate import rule_voice
+
+    ruled = {"source": "maintainer", "imported": "2026-10-08"}
+    voice_make._write(world.data / "voice" / "profiles.jsonl", [
+        {"creature": 1992, "race": "nightelf", "gender": "female", "provenance": {"race": ruled, "gender": ruled}},
+        {"creature": 2079, "race": "nightelf", "gender": "male", "provenance": {"race": ruled, "gender": ruled}},
+        {"creature": 3000, "provenance": {}},
+    ])
+    cfg = voice_make.load_config(world.cfg)
+    voice_make._write(world.data / "voice" / "voices.jsonl", voice_make.cast_rows(world.data, cfg, "2026-10-08"))
+    voice_make.generate(world.data, "all", cfg, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
+    rows = voice_make._rows(world.data / "voice" / "speakers.jsonl")
+    voice_make._write(world.data / "voice" / "speakers.jsonl", [
+        {**r, "speaker": 3000} if r["key"] == "456-description" else r
+        for r in rows if r["key"] != "456-completion"])
+    _recast(world, 1992, "m")
+    assert rule_voice(world.data, world.cfg) == [
+        "voice voices: 1 creature(s) not cast as voice.toml casts them now (e.g. [1992]); run make voice-cast"]
+    out = capsys.readouterr().out.splitlines()
+    assert out == [
+        "validate: voice: 1 files; 1 in step, 0 stale, 0 not made",
+        "validate: voice: 1 quest line(s) nobody names a speaker for are not voiced, e.g. 456-completion",
+        "validate: voice: 1 speaker(s) have no voice yet and their 1 line(s) are not voiced, e.g. 3000",
+    ]
 
 
 def test_validate_reports_a_broken_config(world):

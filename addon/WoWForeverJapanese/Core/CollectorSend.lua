@@ -102,7 +102,7 @@ function CollectorSend.pack(all)
   for i, item in ipairs(result.sent) do
     if WFJ.Collector.onDisk(item.key, item.h) then
       kept[#kept + 1] = item
-    elseif i <= #list and item.key:sub(1, 4) ~= "npc:" then
+    elseif i <= #list and not WFJ.Collector.RIDERS[list[i].entry.t] then
       result.later = result.later + 1
     end
   end

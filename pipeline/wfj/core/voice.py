@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 import zlib
-from collections.abc import Iterable, Mapping, Sequence
+from collections.abc import Collection, Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from typing import Any
 
@@ -40,6 +40,7 @@ SCOPES: dict[str, dict[str, Any]] = {
 # description is the offer the quest giver reads, progress and completion the turn-in NPC's lines
 FIELDS = ("description", "progress", "completion")
 NARRATOR = "narrator"
+NOBODY = "nobody named, not voiced"  # the report line of a quest line no source names a speaker for
 PLAYER_WORD = "冒険者"  # the pack is made before anyone plays: it cannot know the name, class or race
 
 _TOKEN = re.compile(r"\{(name|class|race)\}")
@@ -156,11 +157,15 @@ def quest_speakers(
     objects: set[int],
     enders: dict[int, list[int]],
     others: dict[str, list[int]] | None = None,
+    object_ends: Collection[int] = (),
 ) -> tuple[dict[str, int | str], list[str]]:
-    """{pack key: creature id or "narrator"} for quest keys, and the conflicts reported. The offer is read by
-    the creature that starts the quest; an object or item start (no creature) is the narrator. Progress and
-    turn-in are read by the creature that ends it. Two creatures for one line: the lowest id is its main
-    speaker, reported; the rest go into `others` when it is given (each may have a voice of its own)."""
+    """{pack key: creature id or "narrator"} for quest keys, and what is reported. The offer is read by the
+    creature that starts the quest, progress and turn-in by the creature that ends it. The narrator reads only
+    what no creature says: the offer of a quest in `objects` (an object or item starts it), the progress and
+    turn-in of a quest in `object_ends`. A line with no creature and no such source has no entry, so it is
+    not voiced: an NPC nobody named must never speak in the narrator's voice. Two creatures for one line: the
+    lowest id is its main speaker, reported; the rest go into `others` when it is given (each may have a
+    voice of its own)."""
     out: dict[str, int | str] = {}
     problems: list[str] = []
     for key in sorted(keys):
@@ -168,9 +173,10 @@ def quest_speakers(
         quest = int(quest_s)
         who = starters.get(quest, []) if field == "description" else enders.get(quest, [])
         if not who:
-            out[key] = NARRATOR
-            if field != "description" or quest not in objects:
-                problems.append(f"{key}: no creature in the database, narrator")
+            if quest in (objects if field == "description" else object_ends):
+                out[key] = NARRATOR
+            else:
+                problems.append(f"{key}: {NOBODY}")
             continue
         if len(who) > 1:
             problems.append(f"{key}: creatures {who}, took {min(who)}")
@@ -319,7 +325,7 @@ def voices_of(row: Mapping[str, Any], cast: Mapping[int, Mapping[str, str]], nar
               book_narrator: str) -> tuple[str, list[str]]:
     """(the line's main voice, its other voices). The main voice is its main speaker's (a mixed-gender
     creature's male casting), the narrator's for a line no creature says; the others are every other voice
-    a speaker of the line is cast to, sorted."""
+    a speaker of the line is cast to, sorted. A speaker with no cast row adds no voice."""
     sp = row["speaker"]
     if sp == NARRATOR:
         main = book_narrator if row["key"].startswith("b-") else narrator
@@ -327,7 +333,7 @@ def voices_of(row: Mapping[str, Any], cast: Mapping[int, Mapping[str, str]], nar
         main = cast[sp]["voice"]
     other: set[str] = set()
     for c in (sp, *row.get("others", ())):
-        if isinstance(c, int):
+        if isinstance(c, int) and c in cast:
             other.add(cast[c]["voice"])
             if cast[c].get("female"):
                 other.add(cast[c]["female"])
@@ -337,16 +343,23 @@ def voices_of(row: Mapping[str, Any], cast: Mapping[int, Mapping[str, str]], nar
 
 def jobs(rows: Iterable[Mapping[str, Any]], cast: Mapping[int, Mapping[str, str]], narrator: str,
          book_narrator: str, lines: Mapping[str, str]) -> list[Job]:
-    """Every file the rows need, for the keys that ship Japanese."""
+    """Every file the rows need, for the keys that ship Japanese. A line whose main speaker has no cast
+    voice gets no file: it stays silent until that NPC is cast, never read in another voice."""
     out: list[Job] = []
     for row in rows:
         key = row["key"]
-        if key not in lines:
+        if key not in lines or (row["speaker"] != NARRATOR and row["speaker"] not in cast):
             continue
         main, other = voices_of(row, cast, narrator, book_narrator)
         out.append(Job(key, key, main))
         out += [Job(f"{key}_{v}", key, v) for v in other]
     return out
+
+
+def uncast(rows: Iterable[Mapping[str, Any]], cast: Collection[int]) -> list[int]:
+    """The creatures that speak a line and have no cast voice, sorted."""
+    who = {c for row in rows for c in (row["speaker"], *row.get("others", ())) if isinstance(c, int)}
+    return sorted(who - set(cast))
 
 
 def in_step(
@@ -371,7 +384,8 @@ def in_step(
 
 
 def speaker_problems(speakers: list[dict[str, Any]], voices: list[dict[str, Any]]) -> list[str]:
-    """`wfj validate` over data/voice/: shape, provenance, duplicates, and a voice for every speaker."""
+    """`wfj validate` over data/voice/: shape, provenance and duplicates. A speaker with no voice row is
+    not a problem here: its lines are silent, and `uncast` lists it for the report."""
     problems: list[str] = []
     seen: set[str] = set()
     for row in speakers:
@@ -404,10 +418,6 @@ def speaker_problems(speakers: list[dict[str, Any]], voices: list[dict[str, Any]
         if not isinstance(row.get("row"), str) or not row["row"]:
             problems.append(f"voice voices {c}: row must name the cast row that chose the voice")
         problems += _provenance(row, f"voice voices {c}")
-    for row in speakers:
-        for sp in (row.get("speaker"), *row.get("others", [])):
-            if isinstance(sp, int) and sp not in has_voice:
-                problems.append(f"voice speakers {row.get('key')}: creature {sp} has no voice row")
     return problems
 
 

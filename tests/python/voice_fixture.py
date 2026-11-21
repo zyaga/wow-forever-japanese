@@ -31,7 +31,8 @@ def make_speaker_db(path: Path) -> Path:
     """Quest 456 and 457 start at 2079; 456 ends at 2079, 457 at 1992; an object starts 458; 3597 has a
     gossip menu and 9000 a quest window greeting."""
     db = sqlite3.connect(path)
-    for t in ("creature_questrelation", "creature_involvedrelation", "gameobject_questrelation"):
+    for t in ("creature_questrelation", "creature_involvedrelation", "gameobject_questrelation",
+              "gameobject_involvedrelation"):
         db.execute(f"CREATE TABLE {t} (id INT, quest INT, patch_min INT, patch_max INT)")
     db.execute(
         "CREATE TABLE creature_template (entry INT, patch INT, name TEXT, subname TEXT, type INT, rank INT,"

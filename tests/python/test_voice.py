@@ -102,9 +102,16 @@ def test_quest_speakers_follow_start_and_end():
     got, problems = voice.quest_speakers(keys, {1: [100], 2: [101, 102]}, {3}, {1: [103]})
     assert got == {
         "1-description": 100, "1-progress": 103, "1-completion": 103,
-        "2-description": 101, "3-description": "narrator", "4-description": "narrator",
+        "2-description": 101, "3-description": "narrator",
     }
-    assert problems == ["2-description: creatures [101, 102], took 101", "4-description: no creature in the database, narrator"]
+    assert problems == ["2-description: creatures [101, 102], took 101", "4-description: nobody named, not voiced"]
+
+
+def test_the_narrator_reads_only_what_an_object_or_item_starts_or_ends():
+    keys = ["5-description", "5-completion", "5-progress", "6-completion", "7-description"]
+    got, problems = voice.quest_speakers(keys, {}, {7}, {}, object_ends={5})
+    assert got == {"5-completion": "narrator", "5-progress": "narrator", "7-description": "narrator"}
+    assert problems == ["5-description: nobody named, not voiced", "6-completion: nobody named, not voiced"]
 
 
 def test_gossip_speakers_prefer_the_collector_and_report_missing():
@@ -145,6 +152,24 @@ def test_validate_accepts_good_tables(tmp_path):
     assert rule_voice(data) == []
 
 
+def test_a_line_whose_speaker_has_no_voice_makes_no_file():
+    """A named NPC nobody has cast yet is silent: no file in the narrator's voice or anyone else's."""
+    cast = {200: {"voice": "m"}}
+    rows = [{"key": "1-description", "speaker": 100}, {"key": "2-description", "speaker": 200, "others": [300]}]
+    jobs = voice.jobs(rows, cast, "n", "b", {"1-description": "あ", "2-description": "い"})
+    assert [(j.stem, j.voice) for j in jobs] == [("2-description", "m")]
+    assert voice.uncast(rows, cast) == [100, 300]
+
+
+def test_a_speaker_with_no_voice_row_is_reported_not_refused(tmp_path):
+    data = _rows(
+        tmp_path,
+        [{"key": "456-description", "speaker": 3000, "provenance": SRC}],
+        [{"creature": 2079, "voice": "aidacalm", "row": "male", "provenance": SRC}],
+    )
+    assert rule_voice(data) == []
+
+
 def test_validate_rejects_bad_tables(tmp_path):
     data = _rows(
         tmp_path,
@@ -158,13 +183,29 @@ def test_validate_rejects_bad_tables(tmp_path):
     problems = rule_voice(data)
     for want in ("duplicate", "bad key '456-objectives'", "speaker must be", "bad key 'g-xyz'",
                  "provenance must be an object", "voice must be a roster voice id", "row must name the cast row",
-                 "creature 3000 has no voice row",
                  "voice voices 2079: duplicate", "source must be name@version", "imported must be a date"):
         assert any(want in p for p in problems), want
 
 
 def test_the_committed_voice_tables_validate(root):
     assert rule_voice(root / "data") == []
+
+
+def test_the_narrator_reads_no_quest_the_database_cannot_know(root):
+    """The narrator reads a quest line only when a source says an object or item starts or ends the quest. The
+    open database holds no quest the Forever client added (ids from 90000), so it can say that of none of them:
+    a narrator row of such a quest must name a source that saw the object or item itself. A row here means an
+    NPC nobody named is being read in the narrator's voice again."""
+    import json
+
+    rows = [json.loads(ln) for ln in (root / "data/voice/speakers.jsonl").read_text(encoding="utf-8").splitlines()]
+    wrong = [
+        r["key"] for r in rows
+        if r["speaker"] == voice.NARRATOR and r["key"][0].isdigit() and int(r["key"].split("-")[0]) >= 90000
+        and r["provenance"]["source"].split("@")[0] not in ("forever-vo", "dondata", "collector")
+    ]
+    assert wrong == [], f"{len(wrong)} narrator line(s) of quests no source saw an object or item for: {wrong[:5]}"
+    assert any(r["key"] == "95603-description" and isinstance(r["speaker"], int) for r in rows)
 
 
 # ---- the text the engine reads ---------------------------------------------------------------------------
@@ -566,19 +607,16 @@ def test_audio_in_step():
     """The gate: every voiced line of the committed data has a recorded audio file made from the Japanese it
     ships, in the voice its speaker is cast in, with the roster's current settings (data/voice/audio.jsonl).
     A pull request that adds or changes a voiced line, or recasts a voice, without remaking its audio fails
-    here. Remake with `make voice-generate` (docs/operations/voice.md)."""
+    here. Remake with `make voice-generate` (docs/operations/voice.md). A change that merges before its audio
+    is remade lists the files it owes in pipeline/voice-owed.txt (`make voice-owed`): they are left out of
+    the packs, and the list must name exactly the files out of step, so it empties when they are remade."""
     data = ROOT / "data"
     cfg = voice_make.load_config(ROOT / "pipeline" / "voice.toml")
     lines = voice_make.shipped_lines(data)
     jobs = voice_make.file_jobs(data, cfg, "all", lines, voice_make.players_of("all"))
     assert len(jobs) > 10_000  # the whole game, not an empty scope
-    state, _, _ = voice_make.step_state(data, cfg, jobs, lines, voice_make.audio_record(data))
-    missing, stale = state["missing"], state["stale"]
-    assert not missing, f"{len(missing)} voiced line(s) have no audio, e.g. {missing[:5]}: run make voice-generate"
-    assert not stale, (f"{len(stale)} audio file(s) were made from other Japanese or another voice, "
-                       f"e.g. {stale[:5]}: run make voice-generate")
-    unused = sorted(set(voice_make.audio_record(data)) - {j.stem for j in jobs})
-    assert not unused, f"{len(unused)} recorded file(s) no line uses, e.g. {unused[:5]}: run make voice-generate"
+    listed = voice_make.read_owed(ROOT / "pipeline" / voice_make.OWED_FILE)
+    assert voice_make.owed_problems(data, cfg, listed) == []
 
 
 def test_every_voiced_line_is_timed_from_its_own_recording():

@@ -111,3 +111,66 @@ def test_the_stats_of_each_file_are_added_up_into_one(root: Path, tmp_path: Path
                        check=False)
     assert r.returncode == 0, r.stdout + r.stderr
     assert out.read_text(encoding="utf-8") == "4:x.lua\n2 1 2 7 \n2:y.lua\n0 5 \n"
+
+
+def test_the_shares_of_a_split_run_cover_every_file_once(run):
+    files = {f"{c}_spec.lua": PASSES for c in "abcde"}
+    seen = []
+    for k in (1, 2, 3):
+        r = run(files, SHARD=f"{k}/3")
+        assert r.returncode == 0, r.stdout + r.stderr
+        seen += [name for name in files if name in r.stdout.split("slowest files", 1)[1]]
+    assert sorted(seen) == sorted(files)
+    assert "2 files, 4 successes" in run(files, SHARD="1/3").stdout  # a_spec and d_spec
+
+
+@pytest.mark.parametrize("shard", ["0/3", "4/3", "x/3", "2", "1/0"])
+def test_a_share_that_names_no_part_of_the_run_is_refused(run, shard):
+    r = run({"a_spec.lua": PASSES}, SHARD=shard)
+    assert r.returncode != 0 and "SHARD is k/n" in r.stdout
+
+
+def test_a_file_on_the_plain_list_runs_without_the_coverage_hook(run, tmp_path: Path):
+    if _tool("luacov") is None:
+        pytest.skip("no luacov")
+    files = {"a_spec.lua": PASSES, "b_spec.lua": PASSES}
+    plain = tmp_path / "plain.txt"
+    plain.write_text(f"# walks the whole data set\n{tmp_path / 'specs' / 'b_spec.lua'}\n", encoding="utf-8")
+    r = run(files, COVERAGE="1", PLAIN=str(plain))
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "2 files, 4 successes" in r.stdout  # the plain file still runs and still counts
+    stats = {p.name for p in (tmp_path / "out").glob("*.stats")}
+    assert len(stats) == 1 and "a_spec" in next(iter(stats))
+
+
+FIVE = """describe("a file of five tests", function()
+  for i = 1, 5 do it("test " .. i, function() assert.are.equal(i, i) end) end
+end)
+"""
+
+
+def test_a_file_on_the_split_list_runs_in_parts_that_cover_each_of_its_tests_once(run, tmp_path: Path):
+    files = {"a_spec.lua": FIVE, "b_spec.lua": PASSES}
+    split = tmp_path / "split.txt"
+    split.write_text(f"# loads the whole addon before each test\n{tmp_path / 'specs' / 'a_spec.lua'} 3\n",
+                     encoding="utf-8")
+    r = run(files, SPLIT=str(split))
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "4 files, 7 successes" in r.stdout  # three parts of a_spec (2 + 2 + 1 tests) and b_spec
+    logs = sorted(p.name for p in (tmp_path / "out").glob("*a_spec.lua@*.log"))
+    assert [name.rsplit("@", 1)[1] for name in logs] == ["1_3.log", "2_3.log", "3_3.log"]
+
+
+def test_the_parts_of_a_split_file_are_spread_over_the_machines(run, tmp_path: Path):
+    split = tmp_path / "split.txt"
+    split.write_text(f"{tmp_path / 'specs' / 'a_spec.lua'} 2\n", encoding="utf-8")
+    for k, successes in ((1, 3), (2, 2)):
+        r = run({"a_spec.lua": FIVE}, SPLIT=str(split), SHARD=f"{k}/2")
+        assert r.returncode == 0, r.stdout + r.stderr
+        assert f"1 files, {successes} successes" in r.stdout
+
+
+def test_every_file_on_the_split_list_exists_and_names_its_parts(root: Path):
+    rows = [ln.split() for ln in (root / "tests/lua/split-specs.txt").read_text(encoding="utf-8").splitlines()
+            if ln and not ln.startswith("#")]
+    assert rows and all(len(r) == 2 and (root / r[0]).is_file() and int(r[1]) > 1 for r in rows)

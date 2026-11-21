@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-owed voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -31,9 +31,11 @@ test-py: ## pytest over pipeline/ and tests/python, in parallel
 
 # The Lua specs run one busted process per file, as many at once as the machine has cores (JOBS=n to change it,
 # JOBS=1 for one at a time); each file's output is in build/lua-tests/ and a failing file's is printed.
+# A file in tests/lua/split-specs.txt runs as several processes, each with a share of its tests.
 # luarocks path makes the rocks visible to $(LUA).
 LUA_ROCKS_PATH = eval "$$($(LUAROCKS) --lua-version=5.1 path)"
-LUA_SPECS = LUA="$(LUA)" BUSTED="$(BUSTED)" $(if $(JOBS),JOBS=$(JOBS)) sh tests/lua/run-specs.sh
+LUA_SPECS = LUA="$(LUA)" BUSTED="$(BUSTED)" $(if $(JOBS),JOBS=$(JOBS)) $(if $(SHARD),SHARD=$(SHARD)) \
+	PLAIN=tests/lua/whole-data-specs.txt SPLIT=tests/lua/split-specs.txt sh tests/lua/run-specs.sh
 
 test-lua: ## busted specs under tests/lua, one process per file, in parallel (LuaJIT = Lua 5.1 semantics)
 	$(LUA_ROCKS_PATH); $(LUA_SPECS)
@@ -43,13 +45,25 @@ test-lua: ## busted specs under tests/lua, one process per file, in parallel (Lu
 COV_PY_MIN  ?= 89
 COV_LUA_MIN ?= 98
 
-coverage-py: ## pytest under coverage.py; fails below COV_PY_MIN percent of the pipeline's lines
-	cd pipeline && $(PY) -m coverage erase && $(PY) -m coverage run -m pytest -q $(PYTEST_PARALLEL) ../tests/python && \
-		$(PY) -m coverage combine -q && $(PY) -m coverage report --fail-under=$(COV_PY_MIN)
+# Each suite's coverage is two steps, so the checks can run the tests on several machines (WFJ_SHARD=k/n for
+# pytest, SHARD=k/n for busted), add the counts up and report once. Run by hand, each target does both.
+coverage-py: coverage-py-run coverage-py-report ## pytest under coverage.py; fails below COV_PY_MIN percent of the pipeline's lines
 
-coverage-lua: ## busted under luacov; fails below COV_LUA_MIN percent of the addon's logic lines (generated Data excluded)
+coverage-py-run: ## the pytest half: the tests under coverage.py, their counts left in pipeline/.coverage [PYTEST_ARGS=...]
+	cd pipeline && $(PY) -m coverage erase && $(PY) -m coverage run -m pytest -q $(PYTEST_PARALLEL) $(PYTEST_ARGS) ../tests/python && \
+		$(PY) -m coverage combine -q
+
+coverage-py-report: ## the report half: fails below COV_PY_MIN percent
+	cd pipeline && $(PY) -m coverage report --fail-under=$(COV_PY_MIN)
+
+coverage-lua: coverage-lua-run coverage-lua-report ## busted under luacov; fails below COV_LUA_MIN percent of the addon's logic lines (generated Data excluded)
+
+coverage-lua-run: ## the busted half: the specs under luacov, their counts left in luacov.stats.out [SHARD=k/n]
 	rm -f luacov.stats.out luacov.report.out
-	$(LUA_ROCKS_PATH); COVERAGE=1 $(LUA_SPECS) && $(LUACOV)
+	$(LUA_ROCKS_PATH); COVERAGE=1 $(LUA_SPECS)
+
+coverage-lua-report: ## the report half: fails below COV_LUA_MIN percent
+	$(LUA_ROCKS_PATH); $(LUACOV)
 	@test -s luacov.report.out || { echo "coverage-lua: no report written"; exit 1; }
 	@total=$$(awk '/^Total/ {print $$NF}' luacov.report.out | tr -d '%'); \
 	echo "coverage-lua: $$total% (floor $(COV_LUA_MIN)%)"; \
@@ -436,10 +450,11 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 
 # Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine unpacked in
 # build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
-voice-speakers: voice-levels voice-spoken-fetch ## data/voice/ speakers for the voice scope: the creature Spoken gives a quest line, else the pinned VMaNGOS database, captures and the collector's NPC ids
+voice-speakers: voice-levels voice-spoken-fetch voice-dondata-fetch ## data/voice/ speakers for the voice scope: the creature Spoken gives a quest line, else the pinned VMaNGOS database, captures and the collector's NPC ids, else DonData's quest files; a quest line nobody names gets no speaker
 	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
 		--wdb "$(call quest_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA) \
-		--spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
+		--spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT) \
+		--dondata "$(DONDATA_FILES)" --dondata-commit $(DONDATA_COMMIT)
 
 voice-match: voice-speakers ## who speaks each line and with which voice, matched to the newest Spoken: speakers, then sets, then the cast, on one fetch (runs before any audio is made; run it before counting a run)
 	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
@@ -487,6 +502,33 @@ voice-spoken-fetch: ## build/spoken: the Spoken addon's newest line corpus; its 
 		if [ "$$new" != "$$(cat "$(SPOKEN_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(SPOKEN_PIN)"; fi; \
 		echo "voice-spoken-fetch: Spoken at $$new"
 
+# Who gives and who takes a quest that no other source names comes from DonData's quest files
+# (github.com/WoW-Forever-Addons/dondata): Data/ATT_Quests.lua, derived from AllTheThings (MIT), and
+# Data/Extra_Quests.lua, DonData's own (GPL-3.0). Only quest ids and creature ids are read. Every run takes the
+# newest commit and records it in pipeline/dondata-commit.txt, committed with the voice tables. When DonData cannot
+# be reached the recorded commit is used again and the run says so.
+DONDATA_PIN = $(CURDIR)/pipeline/dondata-commit.txt
+DONDATA_DIR = $(REPO_ROOT)/build/dondata
+DONDATA_RAW = https://raw.githubusercontent.com/WoW-Forever-Addons/dondata
+# Read when a recipe runs, so a target that follows voice-dondata-fetch sees the commit it just recorded.
+DONDATA_COMMIT = $(shell cat "$(DONDATA_PIN)" 2>/dev/null)
+DONDATA_FILES = $(DONDATA_DIR)/$(DONDATA_COMMIT)
+
+voice-dondata-fetch: ## build/dondata: DonData's two quest files at its newest commit; the commit goes to pipeline/dondata-commit.txt
+	@new=$$(git ls-remote https://github.com/WoW-Forever-Addons/dondata HEAD 2>/dev/null | cut -f1); \
+		if [ -z "$$new" ]; then echo "voice-dondata-fetch: DonData could not be reached; using the commit in pipeline/dondata-commit.txt"; new=$$(cat "$(DONDATA_PIN)" 2>/dev/null); fi; \
+		test -n "$$new" || { echo "voice-dondata-fetch: no commit in pipeline/dondata-commit.txt"; exit 1; }; \
+		d="$(DONDATA_DIR)/$$new"; mkdir -p "$$d"; \
+		for pair in "ATT_Quests.lua:ns.ATT_QUESTS" "Extra_Quests.lua:ns.QUEST_ENDS"; do \
+			f="$${pair%%:*}"; table="$${pair##*:}"; \
+			if [ ! -f "$$d/$$f" ]; then \
+				curl -sfL -o "$$d/$$f.part" "$(DONDATA_RAW)/$$new/Data/$$f" && grep -q "^$$table = {" "$$d/$$f.part" && mv "$$d/$$f.part" "$$d/$$f" \
+					|| { echo "voice-dondata-fetch: $$f at $$new could not be downloaded whole; nothing changed"; exit 1; }; \
+			fi; \
+		done; \
+		if [ "$$new" != "$$(cat "$(DONDATA_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(DONDATA_PIN)"; fi; \
+		echo "voice-dondata-fetch: DonData at $$new"
+
 voice-displays: ## data/voice/displays.jsonl: each speaking creature's display id, from the copied creature caches, else VMaNGOS (rerun after creature-copy or voice-speakers)
 	cd pipeline && $(PY) -m wfj voice displays --creatures "$(CREATURES)" --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA)
 
@@ -526,6 +568,9 @@ voice-speed: ## slow (1 cloned-voice engine in the background, the default) or f
 
 voice-cast: ## data/voice/voices.jsonl: each speaking creature's voice from the profiles, the cast rows, the set picks and cloned_packs
 	cd pipeline && $(PY) -m wfj voice cast
+
+voice-owed: ## pipeline/voice-owed.txt: the voice files that are missing or were made in another voice, when a change merges before its audio is remade (they are left out of the packs; the list empties when they are remade)
+	cd pipeline && $(PY) -m wfj voice owed
 
 voice-sync: ## commit and push the audio store's new files, and pin that audio commit in pipeline/voice-audio-commit.txt
 	cd pipeline && $(PY) -m wfj voice store-sync --store "$(VOICE_STORE)"

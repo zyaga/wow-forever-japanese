@@ -70,6 +70,13 @@ def speaking(root: Path) -> set[int]:
 def build(root: Path, db: Path, commit: str, client: Path, today: str) -> tuple[list[dict[str, Any]], dict]:
     who = speaking(root)
     creatures = vmangos.read_creatures(db, who)
+    in_database = len(creatures)
+    # a creature the database lacks (one Forever added) is still drawn with a display the client's creature
+    # cache named: that display gives its race and gender
+    for r in _rows(root / "voice" / "displays.jsonl"):
+        if int(r["creature"]) in who:
+            shown = {"type": 0, "leader": False, "displays": [int(r["display"])]}
+            creatures.setdefault(int(r["creature"]), shown)
     displays, client_src = creature_tables.read(client)
     vm_genders = vmangos.read_creature_genders(db, who)
     vm_src = f"vmangos@{commit}"
@@ -79,7 +86,7 @@ def build(root: Path, db: Path, commit: str, client: Path, today: str) -> tuple[
     rows = casting.build(who, table_facts, _rows(root / "voice" / PROFILES), today)
     stats = {
         "speakers": len(who),
-        "not in the database": sum(c not in creatures for c in who),
+        "not in the database": len(who) - in_database,
         **{f"{f} from the tables": sum(f in table_facts[c] for c in who) for f in casting.FIELDS},
         "still need judgement": sum(bool(casting.needs_judgement(r)) for r in rows),
     }

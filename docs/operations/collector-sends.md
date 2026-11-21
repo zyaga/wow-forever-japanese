@@ -31,9 +31,10 @@ Take only issues labelled `collector-ok`. The comment never shows the English: r
    - It prints `english collector: issue #N · <entries> entries · builds …`, the per-type table (added, unchanged, replaced, differs), the rejected counts, then a `replaced:` list (`  <type> <id> <field> (was <src>)`) and the `differs` list.
    - A new gossip line that is an existing `$N` line with one word in capitals where the `$N` goes is left out (`left out (a player's name printed in capitals): gossip <key>`): an addon before 0.9.0 recorded the player's name when the client printed it in capitals, and such a line can match no other player's screen.
 2. **Review, then check.** Read the `replaced:` list first: each line there is English the send put in place of another source's, and it is what the data diff should be checked against. Then `make check`. Collector quest and gossip English is consulted, so the import can move a quest line's hash and make it `stale`. Review the delta (`git diff data/`) before going on.
-3. **Generate and validate.** `make generate validate VALIDATE_FLAGS="--base origin/main"`.
-4. **Coverage.** `make coverage`, committed in the same branch.
-5. **Ship.** Open a pull request with `Fixes #N` in the body. Fill the Data table: the English lines added and replaced, by source (`collector@<build>`); no translation changes provenance.
+3. **Quest NPCs.** When the intake prints `quest NPCs: N added, M changed`, the send named who gave or took a quest (`data/voice/quest-npcs.jsonl`). Run `make voice-match`: it names those lines' speakers from the send ahead of every other source and casts them. A line whose speaker changed owes audio: remake it with `make voice-generate`, or, when the audio is remade in a later run, list it with `make voice-owed` ([Voice runbook](voice.md)). Commit `data/voice/` and `pipeline/voice-owed.txt` with the send.
+4. **Generate and validate.** `make generate validate VALIDATE_FLAGS="--base origin/main"`.
+5. **Coverage.** `make coverage`, committed in the same branch.
+6. **Ship.** Open a pull request with `Fixes #N` in the body. Fill the Data table: the English lines added and replaced, by source (`collector@<build>`); no translation changes provenance.
 
 ## Verify
 

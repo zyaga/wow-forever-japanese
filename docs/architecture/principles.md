@@ -46,6 +46,8 @@ The only other things the addon adds to the screen, each of which a player can t
 - the **stale marker**, on a line whose English changed since it was translated;
 - the **missing-translation marker**, on a line with no Japanese yet (not on compact rows such as the quest
   tracker);
+- the **no-voice marker**, only with a voice pack installed, on a line that shows its Japanese and has no voice
+  yet (its speaker is not known, or its audio is not made);
 - the **word card**: pointing at a Japanese word in quest or NPC prose, a plain-text window label or a plain-text
   book page shows its reading and, where there is one, its dictionary form and a short English meaning. Nothing is
   drawn until the pointer is on a word, and never while English is showing. In English first its mirror is the

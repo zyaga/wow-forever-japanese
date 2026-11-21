@@ -23,7 +23,9 @@ the 421 creatures VMaNGOS also has, 410 first displays are one of VMaNGOS's four
 Forever replaced).
 A later full cache of the same build: all 1,764 records read this way and every display list adds up; most
 creatures have one to six displays, one has eleven.
-1.60.1.70959: all 978 records read this way, with one to six displays each.
+
+1.60.1.70959: the same layout. All 994 records of the client's full cache read this way and every display list
+adds up; for the 877 creatures VMaNGOS also has, 860 first displays are one of VMaNGOS's four.
 """
 
 from __future__ import annotations

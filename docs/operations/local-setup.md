@@ -67,6 +67,7 @@ The Lua and luarocks versions CI uses are the inputs of `.github/actions/lua-too
 | `make luac` | every addon Lua file (the generated `Data/` shards included) must load |
 | `make coverage-py` | pytest under coverage.py; fails below `COV_PY_MIN` percent of the pipeline's lines |
 | `make coverage-lua` | busted under luacov; fails below `COV_LUA_MIN` percent of the addon's logic lines (generated `Data/` excluded) |
+| `make coverage-py-run`, `coverage-py-report`, `coverage-lua-run`, `coverage-lua-report` | the two halves of each coverage target: the tests, then the floor. CI runs the first half on four machines and the second once, on their counts added up |
 | `make lint` | `lint-py` + `lint-lua` + `lint-core-gate` + `lint-no-english-in-addon` + `lint-public` (which includes the private-paths check) |
 | `make lint-py` | `ruff check` over `pipeline/` and `tests/python` |
 | `make lint-lua` | `luacheck addon/WoWForeverJapanese tests/lua` |
