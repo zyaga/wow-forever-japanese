@@ -70,6 +70,21 @@ def test_build_takes_the_tables_and_keeps_a_ruling(world):
     }
 
 
+def test_a_creature_the_database_lacks_takes_race_and_gender_from_its_cached_display(world):
+    """An NPC Forever added is in no open database. Its display id, read from the client's creature cache
+    (data/voice/displays.jsonl), still names its model, so the client's tables give its race and gender."""
+    vf.write_rows(world.data / "voice" / "displays.jsonl", [
+        {"creature": 5555, "display": 1001, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}},
+        {"creature": 2079, "display": 9999, "provenance": {"source": "creaturecache@70959", "imported": "2026-11-21"}},
+    ])
+    rows, stats = voice_cast.build(world.data, world.db, "sha", world.client, "2026-11-21")
+    by = {r["creature"]: r for r in rows}
+    assert (by[5555]["race"], by[5555]["gender"]) == ("nightelf", "male")
+    assert by[5555]["provenance"]["race"]["source"] == "client@1.60.1.70245"
+    assert by[2079]["race"] == "nightelf"  # a creature the database has keeps the database's displays
+    assert stats["not in the database"] == 1 and stats["race from the tables"] == 4
+
+
 def test_the_build_command_writes_profiles_and_prints_the_numbers(world, capsys):
     assert _build(world) == 0
     assert sorted(_profiles(world)) == [1992, 2079, 3597, 5555, 9000]

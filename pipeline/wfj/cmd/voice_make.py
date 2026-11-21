@@ -340,11 +340,25 @@ def _main_checkout() -> Path:
 # ---- cast ------------------------------------------------------------------------------------------------
 
 
+def unknown(root: Path) -> set[int]:
+    """The profiled creatures nobody can name a voice for: no known race or no known gender, no voice set from
+    Spoken (which names a voice by race and gender for the NPCs it voices) and no ruling."""
+    named = {int(r["creature"]) for r in _rows(root / "voice" / "overrides.jsonl")}
+    named |= set(voice_sets_cmd.creature_sets(root))
+    return {
+        int(p["creature"])
+        for p in _rows(root / "voice" / "profiles.jsonl")
+        if not (p.get("race") and p.get("gender")) and int(p["creature"]) not in named
+    }
+
+
 def cast_rows(root: Path, cfg: dict[str, Any], today: str) -> list[dict[str, Any]]:
     """voices.jsonl rows from the profiles, the cast rows and the overrides. A row whose voice and cast row
-    are unchanged keeps its old date."""
+    are unchanged keeps its old date. A creature whose race or gender nobody knows gets no row (`unknown`):
+    its lines stay silent rather than be read in a voice that is a guess."""
     overrides = {int(r["creature"]): r["voice"] for r in _rows(root / "voice" / "overrides.jsonl")}
-    result = casting.cast(_rows(root / "voice" / "profiles.jsonl"), cfg["cast"], cfg["narrator"], overrides)
+    known = [p for p in _rows(root / "voice" / "profiles.jsonl") if int(p["creature"]) not in unknown(root)]
+    result = casting.cast(known, cfg["cast"], cfg["narrator"], overrides)
     if cfg.get("cloned_packs"):
         from wfj.cmd import voice_store  # it imports this module
 
@@ -386,6 +400,8 @@ def run_cast(cfg: dict[str, Any], root: Path) -> int:
     print(f"voice cast: {len(rows)} creatures → data/voice/voices.jsonl")
     for name, n in by_row.most_common():
         print(f"voice cast: {n:5d}  {name}")
+    if left := len(unknown(root)):
+        print(f"voice cast: {left} creature(s) with no known race or gender get no voice")
     return 0
 
 

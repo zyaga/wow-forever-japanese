@@ -103,9 +103,11 @@ def test_validate_checks_profiles():
 
 
 def test_the_committed_profiles_are_complete():
+    """Every creature that gets a voice has an age. A creature whose race or gender nobody knows gets no voice
+    (it is silent until its model is known), so it owes no age yet."""
     rows = voice_make._rows(ROOT / "data" / "voice" / "profiles.jsonl")
     assert casting.problems(rows) == []
-    assert casting.missing_age(rows) == []
+    assert casting.missing_age([r for r in rows if r.get("race") and r.get("gender")]) == []
 
 
 # ---- casting ---------------------------------------------------------------------------------------------

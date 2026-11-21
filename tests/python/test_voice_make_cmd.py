@@ -283,16 +283,34 @@ def test_a_key_that_plays_another_lines_file_and_shows_its_japanese_keeps_the_ti
 
 def test_the_cast_command_writes_voices_and_counts_rows(world, capsys):
     voice_make._write(world.data / "voice" / "profiles.jsonl", [
-        {"creature": 1992, "gender": "female", "provenance": {}},
-        {"creature": 2079, "gender": "male", "provenance": {}},
+        {"creature": 1992, "race": "nightelf", "gender": "female", "provenance": {}},
+        {"creature": 2079, "race": "nightelf", "gender": "male", "provenance": {}},
         {"creature": 3000, "provenance": {}},
+        {"creature": 3001, "gender": "female", "provenance": {}},
     ])
     assert voice_make.run(["cast", "--config", str(world.cfg)]) == 0
     rows = {r["creature"]: (r["voice"], r["row"]) for r in voice_make._rows(world.data / "voice" / "voices.jsonl")}
-    assert rows == {1992: ("f", "female"), 2079: ("m", "male"), 3000: ("m", "narrator")}
+    # 3000 and 3001: nobody knows their race, so they get no voice (never the narrator's, never a guess)
+    assert rows == {1992: ("f", "female"), 2079: ("m", "male")}
     out = capsys.readouterr().out.splitlines()
-    assert out[0] == "voice cast: 3 creatures → data/voice/voices.jsonl"
-    assert sorted(out[1:]) == ["voice cast:     1  female", "voice cast:     1  male", "voice cast:     1  narrator"]
+    assert out[0] == "voice cast: 2 creatures → data/voice/voices.jsonl"
+    assert sorted(out[1:]) == ["voice cast:     1  female", "voice cast:     1  male",
+                               "voice cast: 2 creature(s) with no known race or gender get no voice"]
+
+
+def test_a_creature_spoken_gives_a_voice_set_is_not_unknown(world):
+    """Spoken names a voice by race and gender for the NPCs it voices: that is no guess, so such a creature
+    keeps its voice though our own tables know nothing of its model. So does one with a ruling."""
+    voice_make._write(world.data / "voice" / "profiles.jsonl", [
+        {"creature": 3000, "provenance": {}},
+        {"creature": 3001, "provenance": {}},
+        {"creature": 3002, "provenance": {}},
+    ])
+    voice_make._write(world.data / "voice" / "creature-sets.jsonl", [
+        {"creature": 3001, "female": "orcfemalewarriornpc", "provenance": {"source": "spoken@abc", "imported": "x"}},
+    ])
+    voice_make._write(world.data / "voice" / "overrides.jsonl", [{"creature": 3002, "voice": "m"}])
+    assert voice_make.unknown(world.data) == {3000}
 
 
 def test_the_plan_command_prints_what_would_be_made(world, capsys):
@@ -424,8 +442,8 @@ def test_validate_flags_a_cast_out_of_step_with_the_config(world, capsys):
     assert capsys.readouterr().out == "validate: voice: 3 files; 0 in step, 0 stale, 3 not made\n"
     ruled = {"source": "maintainer", "imported": "2026-10-08"}
     voice_make._write(world.data / "voice" / "profiles.jsonl", [
-        {"creature": 1992, "gender": "female", "provenance": {"gender": ruled}},
-        {"creature": 2079, "gender": "male", "provenance": {"gender": ruled}},
+        {"creature": 1992, "race": "nightelf", "gender": "female", "provenance": {"race": ruled, "gender": ruled}},
+        {"creature": 2079, "race": "nightelf", "gender": "male", "provenance": {"race": ruled, "gender": ruled}},
     ])
     cfg = voice_make.load_config(world.cfg)
     voice_make._write(world.data / "voice" / "voices.jsonl", voice_make.cast_rows(world.data, cfg, "2026-10-08"))
