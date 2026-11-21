@@ -320,6 +320,8 @@ def test_who_a_players_quest_window_showed_wins_over_every_other_source(world, m
         _dondata(world.tmp / "dd"))
     by = _by_key(rows)
     assert by["457-description"] == (6906, "collector@1.60.1.70959")  # the database 2079, Spoken 1992
+    # the speaker the other sources named is kept as another speaker of the line, not lost
+    assert {r["key"]: r.get("others") for r in rows}["457-description"] == [1992]
     assert by["459-description"] == (3597, "collector@1.60.1.70959")  # DonData said 6906
     assert by["457-completion"] == (1992, "vmangos@sha")  # a line the Collector did not see is unchanged
     assert "999-description" not in by
@@ -342,3 +344,20 @@ def test_another_wording_of_a_quest_offer_follows_the_offers_own_speaker(world, 
     rows, _ = cmd.build_tables(
         world.data, world.db, "sha", "all", TODAY, Path("cache.wdb"), dondata_files=_dondata(world.tmp / "dd2", att))
     assert _by_key(rows)[key] == ("narrator", "wdb@70245")  # an item starts it: the narrator's, as the offer is
+
+
+def test_several_npcs_seen_for_one_quest_line_all_speak_it_and_a_known_main_speaker_stays(world, monkeypatch):
+    _fake_cache(monkeypatch)
+    seen = {"source": "collector@1.60.1.70959", "imported": "2026-11-21"}
+    vf.write_rows(world.data / "voice" / "quest-npcs.jsonl", [
+        {"quest": 457, "field": "description", "creature": 6906, "provenance": seen},
+        {"quest": 457, "field": "description", "creature": 2079, "provenance": seen},  # the database's giver too
+        {"quest": 459, "field": "description", "creature": 3597, "provenance": seen},
+        {"quest": 459, "field": "description", "creature": 1992, "provenance": seen},
+        {"quest": 456, "field": "description"},  # a row with no creature is skipped, not a crash
+    ])
+    rows, _ = cmd.build_tables(world.data, world.db, "sha", "all", TODAY)
+    by = {r["key"]: (r["speaker"], r.get("others"), r["provenance"]["source"]) for r in rows}
+    assert by["457-description"] == (2079, [6906], "collector@1.60.1.70959")  # the main speaker it had is one seen
+    assert by["459-description"] == (1992, [3597], "collector@1.60.1.70959")  # nobody before: the lowest id leads
+    assert by["456-description"] == (2079, None, "vmangos@sha")

@@ -525,32 +525,29 @@ QUEST_NPCS = Path("voice") / "quest-npcs.jsonl"
 
 
 def merge_quest_npcs(rows: list[dict[str, Any]], found: Iterable[QuestNpc], today: str) -> Counter:
-    """Merges who the players' quest windows showed into the quest NPC rows, in place. A new quest line is
-    added; the same NPC gains the sex or display id an earlier send did not know and never loses one; another
-    NPC in that window replaces the row (the game's newer answer). → Counter of added / changed."""
-    by = {(r["quest"], r["field"]): r for r in rows}
+    """Merges who the players' quest windows showed into the quest NPC rows, in place: one row per quest line
+    and NPC. A new NPC for a line is added beside the ones already seen (several NPCs may give one quest, so
+    two players' sends never replace each other); the same NPC gains the sex or display id an earlier send did
+    not know and never loses one. → Counter of added / changed."""
+    by = {(r["quest"], r["field"], r["creature"]): r for r in rows}
     c: Counter = Counter()
     for q in found:
         new = {"quest": q.quest, "field": q.field, "creature": q.creature,
                **({"sex": q.sex} if q.sex else {}), **({"display": q.display} if q.display else {}),
                "provenance": {"source": f"collector@{q.build}", "imported": today}}
-        old = by.get((q.quest, q.field))
+        old = by.get((q.quest, q.field, q.creature))
         if old is None:
             rows.append(new)
-            by[(q.quest, q.field)] = new
+            by[(q.quest, q.field, q.creature)] = new
             c["added"] += 1
-        elif old["creature"] != q.creature:
-            old.clear()
-            old.update(new)
+            continue
+        gained = {k: new[k] for k in ("sex", "display") if k in new and k not in old}
+        if gained:
+            kept = old.pop("provenance")
+            old.update(gained)
+            old["provenance"] = {**kept, **new["provenance"]}
             c["changed"] += 1
-        else:
-            gained = {k: new[k] for k in ("sex", "display") if k in new and k not in old}
-            if gained:
-                kept = old.pop("provenance")
-                old.update(gained)
-                old["provenance"] = {**kept, **new["provenance"]}
-                c["changed"] += 1
-    rows.sort(key=lambda r: (r["quest"], r["field"]))
+    rows.sort(key=lambda r: (r["quest"], r["field"], r["creature"]))
     return c
 
 

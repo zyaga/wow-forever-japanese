@@ -365,7 +365,7 @@ def test_a_dump_s_quest_npcs_go_to_the_voice_data_not_the_english(tmp_path: Path
     assert (data / "voice" / "quest-npcs.jsonl").read_bytes() == before  # the same send again changes nothing
 
 
-def test_a_later_dump_fills_what_an_earlier_one_did_not_know_and_a_new_npc_replaces(tmp_path: Path, monkeypatch):
+def test_a_later_dump_fills_what_an_earlier_one_did_not_know_and_another_npc_is_kept_too(tmp_path: Path, monkeypatch):
     data = _data_dir(tmp_path, monkeypatch)
     assert run(["english", "collector", _write(tmp_path, dump(entry("questnpc", 9, "description", "500:0:0")))]) == 0
     assert run(["english", "collector", _write(tmp_path, dump(entry("questnpc", 9, "description", "500:3:77")))]) == 0
@@ -375,7 +375,7 @@ def test_a_later_dump_fills_what_an_earlier_one_did_not_know_and_a_new_npc_repla
     assert run(["english", "collector", _write(tmp_path, dump(entry("questnpc", 9, "description", "500:0:0")))]) == 0
     (row,) = _quest_npcs(data)
     assert (row["creature"], row["sex"], row["display"]) == (500, "female", 77)
-    # another NPC in that window is the newer truth
+    # another NPC in that window (a quest several NPCs give) is one more row, so two players' sends never flip it
     assert run(["english", "collector", _write(tmp_path, dump(entry("questnpc", 9, "description", "600:2:0")))]) == 0
-    (row,) = _quest_npcs(data)
-    assert (row["creature"], row.get("sex"), row.get("display")) == (600, "male", None)
+    assert [(r["quest"], r["field"], r["creature"], r.get("sex")) for r in _quest_npcs(data)] == [
+        (9, "description", 500, "female"), (9, "description", 600, "male")]

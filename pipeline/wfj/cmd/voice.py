@@ -236,20 +236,29 @@ def _follow_collector(
     speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str],
     keys: Iterable[str], root: Path,
 ) -> None:
-    """Gives each quest line of `keys` the NPC a player's own quest window showed for it (the Collector's
+    """Gives each quest line of `keys` the NPCs players' own quest windows showed for it (the Collector's
     quest NPCs, data/voice/quest-npcs.jsonl). It is what the game itself said, so it is applied last and wins
-    over every other source."""
-    rows = read_rows(voice_dir(root) / "quest-npcs.jsonl")
-    seen = {voice.quest_key(r["quest"], r["field"]): r for r in rows}
+    over every other source. A line's main speaker stays when it is one of the NPCs seen, else the lowest id
+    seen leads; the other NPCs seen, and a creature another source named, are kept as its other speakers, so
+    a quest several NPCs give plays each one's own voice. A row that names no creature is left out."""
+    seen: dict[str, dict[int, str]] = {}
+    for r in read_rows(voice_dir(root) / "quest-npcs.jsonl"):
+        who, quest, field = r.get("creature"), r.get("quest"), r.get("field")
+        if isinstance(who, int) and isinstance(quest, int) and isinstance(field, str):
+            source = (r.get("provenance") or {}).get("source", "collector")
+            seen.setdefault(voice.quest_key(quest, field), {})[who] = source
     for key in keys:
-        row = seen.get(key)
-        if row is None:
+        found = seen.get(key)
+        if not found:
             continue
-        who = int(row["creature"])
-        sources[key] = row["provenance"]["source"]
-        if speakers.get(key) != who:
-            speakers[key] = who
-            others[key] = [c for c in others.get(key, []) if c != who]
+        before = speakers.get(key)
+        main = before if before in found else min(found)
+        rest = {*others.get(key, ()), *found, *([before] if isinstance(before, int) else [])} - {main}
+        speakers[key], sources[key] = main, found[main]
+        if rest:
+            others[key] = sorted(rest)
+        else:
+            others.pop(key, None)
 
 
 def _conditional_speakers(  # noqa: PLR0913 - the cache, the scope, and what is known of each quest's offer
