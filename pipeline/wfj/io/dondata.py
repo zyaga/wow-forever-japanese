@@ -88,12 +88,23 @@ def _inline_keys(path: Path, table: str) -> frozenset[int]:
     return frozenset()
 
 
+def _required(path: Path, table: str) -> list[tuple[int, list[str]]]:
+    """The rows of a table the files always hold. None found means the file changed its shape (a renamed
+    table, rows written another way): the run stops, since reading nothing would take away every speaker the
+    files named."""
+    rows = list(_rows(path, table))
+    if not rows:
+        raise ValueError(
+            f"{path.name}: no rows of ns.{table} were read; DonData changed how it writes the file")
+    return rows
+
+
 def read(att: Path, extra: Path) -> QuestNpcs:
     """Who gives and takes each quest, from the two files."""
     givers: dict[int, tuple[int, ...]] = {}
     item_starts = set(_inline_keys(extra, "EXTRA_ITEM_STARTS"))
-    for path, table in ((att, "ATT_QUESTS"), (extra, "EXTRA_QUESTS")):
-        for quest, f in _rows(path, table):
+    for rows in (_required(att, "ATT_QUESTS"), _rows(extra, "EXTRA_QUESTS")):
+        for quest, f in rows:
             flags = f[FLAGS_FIELD] if len(f) > FLAGS_FIELD else "nil"
             if flags.startswith('"') and "i" in flags:
                 item_starts.add(quest)
@@ -105,9 +116,10 @@ def read(att: Path, extra: Path) -> QuestNpcs:
             givers[quest] = who
     enders: dict[int, tuple[int, ...]] = {}
     object_ends: set[int] = set()
-    for quest, f in _rows(extra, "QUEST_ENDS"):
-        if len(f) > ENDER_FIELD and f[ENDER_FIELD].strip().isdigit() and int(f[ENDER_FIELD]) > 0:
-            enders[quest] = (int(f[ENDER_FIELD]),)
-        else:
+    for quest, f in _required(extra, "QUEST_ENDS"):
+        who = f[ENDER_FIELD].strip() if len(f) > ENDER_FIELD else "0"
+        if who.isdigit() and int(who) > 0:
+            enders[quest] = (int(who),)
+        elif who == "0":  # no id, or the id 0: turned in at an object; anything else names nobody
             object_ends.add(quest)
     return QuestNpcs(givers, enders, frozenset(item_starts), frozenset(object_ends))

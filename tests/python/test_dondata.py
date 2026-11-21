@@ -70,3 +70,32 @@ def test_no_text_of_the_files_is_read(tmp_path):
 
 def test_the_source_names_the_first_seven_of_the_commit():
     assert dondata.source("f7693f23ae6646551cb1eb062224a1304151a0aa") == "dondata@f7693f2"
+
+
+def test_a_file_without_its_tables_is_refused_not_read_as_empty(tmp_path):
+    """DonData is fetched at its newest commit on every run. If it renames a table or changes how rows are
+    written, the reader must stop the run: reading nothing would quietly take every speaker it named away."""
+    import pytest
+
+    (tmp_path / "att.lua").write_text(ATT.replace("ns.ATT_QUESTS = {", "ns.QUESTS = {"), encoding="utf-8")
+    (tmp_path / "extra.lua").write_text(EXTRA, encoding="utf-8")
+    with pytest.raises(ValueError, match="ATT_QUESTS"):
+        dondata.read(tmp_path / "att.lua", tmp_path / "extra.lua")
+    (tmp_path / "att.lua").write_text(ATT, encoding="utf-8")
+    (tmp_path / "extra.lua").write_text(EXTRA.replace("[5]={1450,36.5,40.1,272},", "  [5] = { 1450, 36.5, 40.1, 272 },")
+                                        .replace("[6]={1450,36.5,40.1},\n", "").replace("[8]={1429,24.6,58.2,0},\n", ""),
+                                        encoding="utf-8")
+    with pytest.raises(ValueError, match="QUEST_ENDS"):
+        dondata.read(tmp_path / "att.lua", tmp_path / "extra.lua")
+
+
+def test_a_turn_in_field_that_is_no_plain_id_names_nobody(tmp_path):
+    """Only a missing id or the id 0 means a turn-in at an object. Anything else the reader does not understand
+    names nobody, so the narrator never reads an NPC's turn-in on a misread row."""
+    (tmp_path / "att.lua").write_text(ATT, encoding="utf-8")
+    (tmp_path / "extra.lua").write_text(
+        EXTRA.replace("[5]={1450,36.5,40.1,272},", "[5]={1450,36.5,40.1,272},\n[11]={1450,36.5,40.1,{272,273}},"),
+        encoding="utf-8")
+    found = dondata.read(tmp_path / "att.lua", tmp_path / "extra.lua")
+    assert 11 not in found.enders and 11 not in found.object_ends
+    assert found.object_ends == {6, 8}
