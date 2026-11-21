@@ -12,7 +12,7 @@ WFJ_Collector = {
 	["builds"] = {
 		"1.15.9.69722", -- [1]
 	},
-	["bytes"] = 2595,
+	["bytes"] = 3269,
 	["capped"] = false,
 	["disclosed"] = true,
 	["entries"] = {
@@ -115,6 +115,38 @@ WFJ_Collector = {
 			["h"] = "d313a4dc7441910c",
 			["i"] = 9999,
 			["t"] = "quest",
+		},
+		["questnpc:2:completion"] = {
+			["b"] = 1,
+			["e"] = "3100:2:0",
+			["f"] = "completion",
+			["h"] = "dd046f28ab9844d7",
+			["i"] = 2,
+			["t"] = "questnpc",
+		},
+		["questnpc:2:description"] = {
+			["b"] = 1,
+			["e"] = "3100:2:0",
+			["f"] = "description",
+			["h"] = "dd046f28ab9844d7",
+			["i"] = 2,
+			["t"] = "questnpc",
+		},
+		["questnpc:2:progress"] = {
+			["b"] = 1,
+			["e"] = "3100:2:0",
+			["f"] = "progress",
+			["h"] = "dd046f28ab9844d7",
+			["i"] = 2,
+			["t"] = "questnpc",
+		},
+		["questnpc:9999:description"] = {
+			["b"] = 1,
+			["e"] = "3100:2:0",
+			["f"] = "description",
+			["h"] = "dd046f28ab9844d7",
+			["i"] = 9999,
+			["t"] = "questnpc",
 		},
 		["spell:17:description"] = {
 			["b"] = 1,

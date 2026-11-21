@@ -66,7 +66,8 @@ def test_decode_reads_every_fixture_entry(root):
     entries, builds = fixture_send(root)
     send = decode(pack(entries, builds, addon="0.1.0-alpha.5"))
     assert send.addon == "0.1.0-alpha.5" and send.source == "string"
-    assert len(send.dump.entries) == len(entries) == 12
+    # twelve English lines, and who showed the four quest panels of the scripted session
+    assert (len(send.dump.entries), len(send.dump.quest_npcs), len(entries)) == (12, 4, 16)
     assert not send.dump.rejected
     goodbye = [en for en in send.dump.entries if en.en == "Goodbye."]
     assert goodbye and goodbye[0].npcs == (68, 295)
