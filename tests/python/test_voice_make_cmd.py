@@ -388,6 +388,17 @@ def test_the_lines_with_no_voice_are_the_shipped_ones_no_pack_will_carry(world):
     assert voice_make.not_made(world.data, CFG) == ["456-description", "g-0123456789abcdef"]
 
 
+def test_a_key_that_plays_a_listed_lines_audio_is_listed_too(world, monkeypatch):
+    """A quest's text repeated under another id is shown under a key of its own and plays the quest's file. When
+    that file has no voice, the repeat's window must be able to say so as well."""
+    _made(world)
+    monkeypatch.setattr(voice_make, "aliases", lambda _root: {
+        "g-aaaaaaaaaaaaaaaa": "456-description", "g-bbbbbbbbbbbbbbbb": "456-completion"})
+    assert voice_make.not_made(world.data, CFG) == []  # both sources are in step
+    _recast(world, 2079, "old")  # 456-description is owed
+    assert voice_make.not_made(world.data, CFG) == ["456-description", "g-aaaaaaaaaaaaaaaa"]
+
+
 def test_the_plan_command_prints_what_would_be_made(world, capsys):
     assert voice_make.run(["plan", "--config", str(world.cfg)]) == 0
     out = capsys.readouterr().out.splitlines()

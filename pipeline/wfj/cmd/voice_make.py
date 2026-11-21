@@ -514,13 +514,17 @@ def owed(root: Path, cfg: dict[str, Any]) -> tuple[list[str], list[str]]:
 
 def not_made(root: Path, cfg: dict[str, Any]) -> list[str]:
     """The pack keys of the lines that ship Japanese and that no pack will carry, sorted: a quest's offer,
-    progress or turn-in nobody names a speaker for, a line whose speaker has no voice yet, and a line whose
-    file is still to be remade. The entry pack lists them so the line's window can say it has no voice yet."""
+    progress or turn-in nobody names a speaker for, a line whose speaker has no voice yet, a line whose file
+    is still to be remade, and every key that plays such a line's file. The entry pack lists them so the
+    line's window can say it has no voice yet."""
     lines = shipped_lines(root)
     packed, _, _ = pack_tables(root, cfg, "all")
     quest = set(voice.shipped_quest(Store(root).load("quest"), None))
     spoken = {r["key"] for r in scoped_rows(root, "all")}
-    return sorted(k for k in (quest | spoken) if k in lines and k not in packed)
+    silent = {k for k in (quest | spoken) if k in lines and k not in packed}
+    # a key shown under another line's audio (a quest's text repeated under another id) is silent with it
+    silent |= {alias for alias, src in aliases(root).items() if src in silent and alias not in packed}
+    return sorted(silent)
 
 
 def read_owed(path: Path) -> list[str]:
