@@ -361,3 +361,18 @@ def test_several_npcs_seen_for_one_quest_line_all_speak_it_and_a_known_main_spea
     assert by["457-description"] == (2079, [6906], "collector@1.60.1.70959")  # the main speaker it had is one seen
     assert by["459-description"] == (1992, [3597], "collector@1.60.1.70959")  # nobody before: the lowest id leads
     assert by["456-description"] == (2079, None, "vmangos@sha")
+
+
+def test_a_wording_several_quests_share_is_said_by_all_their_npcs_or_by_nobody(world, monkeypatch):
+    """Two quests may show the same other wording of their offers. It is one line with one key, so it is voiced
+    only when every quest that shows it has a named speaker: otherwise the window of the quest nobody names
+    would play another quest's NPC."""
+    g = voice.gossip_key
+    key = g(voice.gossip_id(vf.COND))
+    _fake_cache(monkeypatch, (456, ((1, 0, vf.COND),)), (459, ((1, 0, vf.COND),)))
+    rows, _ = cmd.build_tables(world.data, world.db, "sha", "all", TODAY, Path("cache.wdb"))
+    assert key not in _by_key(rows)  # quest 459's offer has nobody named
+    rows, _ = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, Path("cache.wdb"), dondata_files=_dondata(world.tmp / "dd"))
+    by = {r["key"]: (r["speaker"], r.get("others")) for r in rows}
+    assert by[key] == (2079, [6906])  # quest 456's giver leads; quest 459's is its other speaker

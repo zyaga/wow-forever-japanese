@@ -853,12 +853,12 @@ _Avoid_: system voice, default voice, fallback voice
 → [Voice over](systems/voice.md) · [ADR-103](adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)
 
 **Silent line**:
-A line that ships Japanese and has no voice yet, so no pack carries it: a quest line nobody names a [[Speaker]] for, a line whose speaker has no known race or gender (no voice in the cast), or a line with [[Owed audio]]. It is never read in the [[Narrator]]'s voice or a guessed one. The [[Voice entry]] lists its pack key, and its window shows the [[No-voice marker]].
+A line that ships Japanese and has no voice yet, so it is never played, even from an older pack that still carries a recording of it: a quest line nobody names a [[Speaker]] for, a line whose speaker has no known race or gender (no voice in the cast), or a line with [[Owed audio]]. It is never read in the [[Narrator]]'s voice or a guessed one. The [[Voice entry]] lists its pack key, and its window shows the [[No-voice marker]].
 _Avoid_: missing line (the pack's `missing` reason covers any key a pack lacks), muted line, unvoiced surface (objectives are never voiced at all)
 → [Voice over](systems/voice.md) · [ADR-103](adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)
 
 **No-voice marker**:
-A short message, `[音声なし / No Voice Yet]`, shown on a window's banner like the [[Stale marker]] for a [[Silent line]] that shows its Japanese. It shows only while a voice pack is loaded and voice, that line's kind and the `voice.mark` setting are on; a line with no Japanese shows only the missing-translation message. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
+A short message, `[音声なし / No Voice Yet]`, shown on a window's banner like the [[Stale marker]], or on a line above the text where a window has no banner, for a [[Silent line]] that shows its Japanese. It shows only while a voice pack is loaded and voice, that line's kind and the `voice.mark` setting are on; a line with no Japanese shows only the missing-translation message. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
 _Avoid_: mute marker, missing-voice warning
 → [Voice over](systems/voice.md#a-line-with-no-voice-yet-voicesilent-uirenderlua) · [Settings](systems/settings.md)
 

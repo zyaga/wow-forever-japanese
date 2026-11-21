@@ -180,7 +180,7 @@ def build_tables(  # noqa: PLR0913 - the data, the database, and one optional ou
     if wdb_path is not None:
         have = {r["key"] for r in speakers}
         conditional = _conditional_speakers(
-            wdb_path, quests, starters, objects, q_speakers, gossip_shipped, have)
+            wdb_path, quests, starters, objects, q_speakers, others, gossip_shipped, have)
         speakers += [row(k, s, f"wdb@{b}") for k, (s, b) in sorted(conditional.items())]
         report["conditional"] = [f"{k}: {s}" for k, (s, _) in sorted(conditional.items())]
     if whole:  # each plain-text book page: its signer if one cast creature has that name, else the narrator
@@ -263,27 +263,38 @@ def _follow_collector(
 
 def _conditional_speakers(  # noqa: PLR0913 - the cache, the scope, and what is known of each quest's offer
     path: Path, quests: set[int], starters: dict[int, list[int]], objects: set[int],
-    offers: dict[str, int | str], shipped_keys: set[str], have: set[str],
+    offers: dict[str, int | str], others: dict[str, list[int]], shipped_keys: set[str], have: set[str],
 ) -> dict[str, tuple[int | str, int]]:
     """{pack key: (speaker, cache build)} for the scoped quests' conditional descriptions that ship: the giver
     the cache names, else whoever says the quest's own offer after every source (`offers`, by quest key), else
-    the quest's lowest starter, else the narrator when an object or item starts the quest. Another wording of
-    an offer nobody names has no entry: it is not voiced."""
+    the quest's lowest starter, else the narrator when an object or item starts the quest. A wording several
+    quests show is one line: the first quest's speaker leads and the other quests' creatures go into `others`,
+    and it has no entry when any of those quests' offers has nobody named, so no quest's window plays another
+    quest's NPC. Another wording of an offer nobody names has no entry: it is not voiced."""
     cache = wdb.read_quests(path)
-    out: dict[str, tuple[int | str, int]] = {}
+    said: dict[str, list[int | str | None]] = {}
     for q in cache.quests:
         if q.id not in quests:
             continue
         for _, giver, en in q.conditional:
             k = voice.gossip_id(en or "")
             key = voice.gossip_key(k)
-            if not en or k not in shipped_keys or key in have or key in out:
+            if not en or k not in shipped_keys or key in have:
                 continue
             who = (giver or offers.get(voice.quest_key(q.id, "description"))
                    or min(starters.get(q.id, []), default=None)
                    or (voice.NARRATOR if q.id in objects else None))
-            if who:
-                out[key] = (who, cache.build)
+            said.setdefault(key, []).append(who)
+    out: dict[str, tuple[int | str, int]] = {}
+    for key, who in said.items():
+        if any(w is None for w in who):
+            continue
+        main = who[0]
+        assert main is not None
+        out[key] = (main, cache.build)
+        rest = sorted({w for w in who if isinstance(w, int)} - {main})
+        if rest:
+            others[key] = rest
     return out
 
 

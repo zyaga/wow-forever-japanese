@@ -30,11 +30,11 @@ Both are guesses a player hears as wrong. A line with no voice is better than a 
 
 ## Consequences
 
-- On the committed data, 805 quest lines moved from the narrator to a named NPC, 101 more are confirmed as the narrator's (an item or object), and 514 quest lines are left with nobody named. Of the offers that have another wording for a class or race, 26 now follow their quest's NPC and 5 are left unvoiced.
+- On the committed data, 805 quest lines moved from the narrator to a named NPC, 101 more are confirmed as the narrator's (an item or object), and 514 quest lines are left with nobody named. Of the offers that have another wording for a class or race, 23 now follow their quest's NPC and 8 are left unvoiced (3 of those because another quest that shows the same wording has nobody named).
 - Of 2,823 speaking creatures, 2,654 have a voice and 169 have none; their 405 lines are not voiced. 48 creatures gained a voice, 4 lost a guessed one, and 1 was recast to its real race and gender.
-- 430 files are owed a remake. Until the next voice run, those lines are silent in a newly built pack, and 924 recordings of lines that are silent now stay on the record unused.
+- 427 files are owed a remake. Until the next voice run, those lines are silent in a newly built pack, and 927 recordings of lines that are silent now stay on the record unused.
 - Fewer lines are voiced than before, on purpose. A player with a voice pack sees the message on those lines and can turn it off.
-- The entry's `Packs.lua` grows by the list (1,371 keys today, about 33 KB). An entry with nothing to list is byte for byte what it was. An addon without the function skips the list, and an older entry with no list shows no message.
+- The entry's `Packs.lua` grows by the list (1,368 keys today, about 33 KB). An entry with nothing to list is byte for byte what it was. An addon without the function skips the list, and an older entry with no list shows no message.
 - An older addon version that loads a saved Collector file with `questnpc` entries drops the unknown kind without an error.
 - Every send from a player now improves the cast: the Collector's quest NPCs name speakers no public data has, and they win over every other source.
 - The repository gains one more outside source to credit and one more pinned commit to keep (`pipeline/dondata-commit.txt`).
