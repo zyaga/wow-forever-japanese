@@ -17,6 +17,8 @@ local DATA = {
     -- issue #87, Gnarled Necromancer's Staff: its description is the second of two Equip lines in a row
     [251534] = { ja = "Silverpine ForestとHillsbrad Foothillsでの移動速度が$N1%上昇します。", status = "u" },
     [900] = { ja = "移動速度が$N1%上昇します。", status = "u" }, -- names nothing: fits any line with a number
+    -- a flavour line: no name or number, so it fits any line; h1 is the hash of its English
+    [279845] = { ja = "計り知れない知識と引き換えの、ささやかな賞品。", status = "u", h1 = 0x55c1ba1b },
   },
   ["spell.description"] = {
     [17] = { ja = "味方にシールドを張り、$N1ダメージを吸収します。$N2秒間持続します。", status = "u" },
@@ -116,6 +118,26 @@ describe("UI/Tooltip: item and spell tooltips", function()
       Stub.setItemTooltip(tt, "|Hitem:900:0:0:0:0:0:0:0|h[Two Speeds]|h",
         { "Two Speeds", "Equip: Increases movement speed by 3%.", "Equip: Increases movement speed by 5%." })
       assert.are.equal(WFJ.Render.BLANK, fs("GameTooltip", 3):GetText())
+    end)
+
+    it("a Japanese with no name or number goes on the line whose words are its English", function()
+      Stub.setItemTooltip(tt, "|Hitem:279845:0:0:0:0:0:0:0|h[Solid Gold Band]|h",
+        { "Solid Gold Band", "Use: Opens the way to the vault.",
+          '"A small prize in exchange for tremendous knowledge."' })
+      assert.are.equal("Use: Opens the way to the vault.", fs("GameTooltip", 2):GetText())
+      assert.are.equal(DATA["item.description"][279845].ja, fs("GameTooltip", 3):GetText())
+      assert.are.equal(3, TT.runLineOf(0x55c1ba1b, { "n", "Use: x", '"A small prize in exchange for tremendous '
+        .. 'knowledge."' }, 2, 3))
+      assert.is_nil(TT.runLineOf(nil, { "n", "Use: x", "y" }, 2, 3))
+    end)
+
+    it("with no line that is its English, or two, the run is kept whole, as before", function()
+      Stub.setItemTooltip(tt, "|Hitem:279845:0:0:0:0:0:0:0|h[Solid Gold Band]|h",
+        { "Solid Gold Band", "Use: Opens the way to the vault.", '"A prize."' })
+      assert.are.equal(DATA["item.description"][279845].ja, fs("GameTooltip", 2):GetText())
+      assert.are.equal(WFJ.Render.BLANK, fs("GameTooltip", 3):GetText())
+      local twice = '"A small prize in exchange for tremendous knowledge."'
+      assert.is_nil(TT.runLineOf(0x55c1ba1b, { "n", twice, twice }, 2, 3))
     end)
   end)
 
