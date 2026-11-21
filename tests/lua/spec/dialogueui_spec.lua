@@ -280,6 +280,9 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       local found = false
       for k in pairs(collected.entries) do if k:find("^quest:2:") then found = true end end
       assert.is_true(found)
+      -- and who showed the quest's offer: the NPC's creature id, its sex and no display id known yet
+      assert.are.equal("6740:2:0", collected.entries["questnpc:2:description"].e)
+      assert.is_nil(collected.entries["questnpc:2:objectives"])
     end)
 
     it("a pooled row that showed Japanese gets Dialogue UI's font back for English", function()

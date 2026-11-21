@@ -156,12 +156,22 @@ local function colourRuns(ja, runs)
 end
 Render.colourRuns = colourRuns
 
+-- Whether a record that shows its Japanese is a line a voice pack would read and that has no voice yet: its window
+-- says so, on its banner or, where it has none, on a line above the text.
+local function noVoice(rec)
+  local voice = WFJ.Voice
+  local m = rec.meta
+  return voice ~= nil and type(voice.silent) == "function" and m ~= nil
+    and voice.silent(rec.surface, rec.key, m.kind, m.id) == true
+end
+
 local function desiredOf(rec)
   local m = rec.meta or {}
   local action, payload = translator.resolve(m.area, m.kind, m.id, m.ctx)
   local inline = banners[rec.surface] == nil
   if action == "apply" then
     local prefix = (inline and payload.marker) and inlineMarker(rec, payload.marker) or ""
+    if inline and noVoice(rec) then prefix = prefix .. inlineMarker(rec, "novoice") end
     local ja = payload.ja
     if m.ctx and m.ctx.partColors then ja = colourParts(ja, m.ctx.partColors) end
     if m.ctx and m.ctx.runColours then ja = colourRuns(ja, m.ctx.runColours) end
@@ -215,8 +225,13 @@ local function updateBanner(surface)
       for _, rec in pairs(SS.records(s)) do
         local ctx = rec.meta and rec.meta.ctx
         if not (ctx and ctx.follow) then
-          local _, _, _, marker = desiredOf(rec)
+          local _, _, action, marker = desiredOf(rec)
           if marker and not seen[marker] then seen[marker] = true; names[#names + 1] = marker end
+          -- a line that shows its Japanese and that a voice pack would read, but has no voice yet
+          if action == "apply" and not seen.novoice and noVoice(rec) then
+            seen.novoice = true
+            names[#names + 1] = "novoice"
+          end
         end
       end
     end
@@ -486,3 +501,5 @@ WFJ.State.on("enabled", function() Render.refresh() end)
 WFJ.State.on("area", function() Render.refresh() end)
 WFJ.State.on("language", function() Render.refresh() end)
 WFJ.State.on("markers", function() Render.refresh() end)
+-- a voice setting changed, or a voice pack loaded: the banners' "no voice yet" message may come or go
+WFJ.State.on("voice", function() Render.refresh() end)

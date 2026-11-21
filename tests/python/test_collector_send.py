@@ -66,7 +66,8 @@ def test_decode_reads_every_fixture_entry(root):
     entries, builds = fixture_send(root)
     send = decode(pack(entries, builds, addon="0.1.0-alpha.5"))
     assert send.addon == "0.1.0-alpha.5" and send.source == "string"
-    assert len(send.dump.entries) == len(entries) == 12
+    # twelve English lines, and who showed the four quest panels of the scripted session
+    assert (len(send.dump.entries), len(send.dump.quest_npcs), len(entries)) == (12, 4, 16)
     assert not send.dump.rejected
     goodbye = [en for en in send.dump.entries if en.en == "Goodbye."]
     assert goodbye and goodbye[0].npcs == (68, 295)
@@ -310,3 +311,16 @@ def test_intake_lists_the_lines_it_replaces(tmp_path: Path, monkeypatch, capsys)
     assert collector.run(["intake", "--file", str(saved), "--number", "5"]) == 0
     out = capsys.readouterr().out
     assert "replaced:\n  quest 7 title (was pfquest@7786596)" in out
+
+
+def test_a_send_string_carries_who_gave_a_quest_apart_from_its_english():
+    from wfj.io.collector_dump import QuestNpc
+
+    send = decode(pack(
+        [entry("quest", 2, "title", "A title"), entry("questnpc", 95603, "description", "262031:3:15524"),
+         entry("questnpc", 7, "progress", "nobody")],
+        ["1.60.1.70959"],
+    ))
+    assert [(en.type_, en.id_) for en in send.dump.entries] == [("quest", 2)]
+    assert send.dump.quest_npcs == [QuestNpc(95603, "description", 262031, "female", 15524, "1.60.1.70959")]
+    assert send.dump.rejected == {"bad_id": 1}

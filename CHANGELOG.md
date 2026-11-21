@@ -9,6 +9,15 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- With a voice pack installed, a translated line that has no voice yet says so on its window: `[音声なし / No Voice Yet]`. A setting on the Voice page, Mark lines with no voice yet, turns the message off.
+
+### Changed
+- The English Collector also keeps three numbers for each quest window you open: the id, the sex and the model id of the NPC that shows it, also for quests already in Japanese. They let each line be read in that NPC's own voice. No text and nothing about your character is added, and nothing is sent unless you send it.
+
+### Fixed
+- NPCs no longer speak in the narrator's voice. A quest line whose speaker the addon could not name was read by one narrator, an old tauren man, whatever the NPC's race or sex. Each line is now read in the voice of the NPC who says it. A line whose NPC is not known yet, or whose voice is not made yet, stays silent instead of being read in the wrong voice, so some lines that had a voice are quiet until the next voice pack release.
+
 ## 0.14.0 - 2026-11-16
 
 ### Added

@@ -441,6 +441,9 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
         ["quest:2:objectives"] = "Bring Sharptalon's Claw to Senani Thunderheart.",
         ["quest:2:progress"] = "Did you get it?",
         ["npc:3100:name"] = "Senani Thunderheart",
+        -- who showed each panel: creature id, sex (the stub's UnitSex is 2) and no display id known yet
+        ["questnpc:2:description"] = "3100:2:0", ["questnpc:2:progress"] = "3100:2:0",
+        ["questnpc:2:completion"] = "3100:2:0",
       }
       local got = {}
       for key, e in pairs(db.entries) do got[key] = e.e end

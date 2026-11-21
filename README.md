@@ -167,7 +167,7 @@ that page only.
 
 **English it has no Japanese for.** When the game shows English the addon has no translation for (quest text, NPC
 dialogue with the id of the NPC who said it, item and spell descriptions, NPC names), the addon notes that English
-in its saved settings file, so it can be translated later. It saves your class and race, because some game lines change depending on them. It never saves your character's name, account, realm or location. Nothing is sent anywhere unless you send it yourself. It is on by
+in its saved settings file, so it can be translated later. It saves your class and race, because some game lines change depending on them. For every quest window you open it also keeps three numbers about the NPC that shows it (its id, its sex and its model id), also for quests already in Japanese, so each line can be read in that NPC's own voice. It never saves your character's name, account, realm or location. Nothing is sent anywhere unless you send it yourself. It is on by
 default, the addon says so in chat the first time, and you can turn it off under **English Collector** in the
 settings.
 
@@ -378,7 +378,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 ![アドオンの設定画面](docs/images/settings.jpg)
 
-**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。キャラクター名、アカウント、レルム、位置は保存されません。自分で送らない限り、どこにも送信されません。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
+**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。クエストウィンドウを開くたびに、表示した NPC の数値 3 つ（ID、性別、モデル ID）も記録されます。すでに日本語になっているクエストでも記録され、その行をその NPC 自身の声で読み上げるために使われます。キャラクター名、アカウント、レルム、位置は保存されません。自分で送らない限り、どこにも送信されません。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
 
 **記録した英語の送り方。** 設定の **英語テキスト収集** ページで **英語を送る** をクリックします（`/wfj collector send` と入力しても同じです）。まだ送っていない行が 1 つのリンクにまとめられたウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、入力済みの GitHub の Issue フォームが開きます。ウィンドウに 2 つ目の欄があるときは、リンクに入りきらない長さです。その文字列もフォームの欄に貼り付けてください。Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しい行だけを送ります。その時点で翻訳がある行は除かれます。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に `/reload` してください）。
 

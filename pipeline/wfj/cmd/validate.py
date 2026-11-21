@@ -633,7 +633,30 @@ def rule_voice(root: Path, config: Path | None = None) -> list[str]:
     stale, missing = len(state["stale"]), len(state["missing"])
     print(f"validate: voice: {len(jobs)} files; {len(jobs) - stale - missing} in step, {stale} stale,"
           f" {missing} not made")
+    for line in _silent_report(root, speakers, cast, cfg_path):
+        print(f"validate: voice: {line}")
     return problems
+
+
+def _silent_report(
+    root: Path, speakers: list[dict[str, Any]], cast: dict[int, Any], cfg_path: Path
+) -> list[str]:
+    """What is not voiced and why, each with an example: quest lines nobody names a speaker for, speakers with
+    no voice yet, and the files listed as owed. Nothing to say prints nothing."""
+    out = []
+    named = {r["key"] for r in speakers}
+    nobody = sorted(set(voice.shipped_quest(Store(root).load("quest"), None)) - named)
+    if nobody:
+        out.append(f"{len(nobody)} quest line(s) nobody names a speaker for are not voiced, e.g. {nobody[0]}")
+    uncast = voice.uncast(speakers, cast)
+    if uncast:
+        theirs = sum(1 for r in speakers if r["speaker"] in set(uncast))
+        out.append(f"{len(uncast)} speaker(s) have no voice yet and their {theirs} line(s) are not voiced, "
+                   f"e.g. {uncast[0]}")
+    owed = voice_make.read_owed(cfg_path.parent / voice_make.OWED_FILE)
+    if owed:
+        out.append(f"{len(owed)} file(s) are owed a remake and left out of the packs, e.g. {owed[0]}")
+    return out
 
 
 def run(argv: Sequence[str]) -> int:

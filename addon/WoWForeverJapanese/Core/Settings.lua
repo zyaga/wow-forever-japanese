@@ -284,6 +284,10 @@ Settings.define{ id = "voice.muteDialog", kind = "boolean", default = true, hidd
 Settings.define{ id = "voice.button", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Show the play / pause button on the window when the voice panel is not showing",
   ja = "音声パネルが出ていないとき、ウィンドウに再生／一時停止ボタンを表示", apply = voiceChanged }
+-- A line that shows its Japanese and has no voice yet (its speaker is not known, or its audio is not made) says so
+-- on its window's banner, like the other markers (Core/Voice.silent, UI/Render).
+Settings.define{ id = "voice.mark", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Mark lines with no voice yet", ja = "音声がまだない行に印を付ける", apply = voiceChanged }
 -- The voice panel (UI/VoicePanel). Core/VoiceQueue.opt reads these; a change redraws the panel (State "voicePanel")
 -- and never stops the line playing, except switching the panel off.
 local function panelChanged() WFJ.State.fire("voicePanel") end

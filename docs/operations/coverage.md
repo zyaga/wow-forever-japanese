@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-16 at commit `ecc9aecaf`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-21 at commit `27f75123d`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -399,10 +399,10 @@ outnumber lines.
 
 | Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
 |---|---|---|---|---|---|---|
-| Quest offer | 5,037 | 5,111 | 5,111 | 0 | 0 | 1,517 |
-| Quest progress | 3,221 | 3,245 | 3,245 | 0 | 0 | 190 |
-| Quest turn-in | 4,370 | 4,396 | 4,396 | 0 | 0 | 282 |
-| NPC talk (greetings, gossip, quest text keyed by its English) | 2,378 | 2,968 | 2,968 | 0 | 0 | 34 |
+| Quest offer | 4,150 | 4,226 | 3,920 | 303 | 3 | 320 |
+| Quest progress | 3,216 | 3,240 | 3,193 | 47 | 0 | 135 |
+| Quest turn-in | 4,358 | 4,384 | 4,332 | 52 | 0 | 215 |
+| NPC talk (greetings, gossip, quest text keyed by its English) | 2,356 | 2,947 | 2,925 | 21 | 1 | 3 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex, and per NPC voice) | 50 | 3,600 | 3,600 | 0 | 0 | 0 |
 
@@ -415,8 +415,8 @@ Shipped Japanese the voice does not read, by reason.
 | Why | Lines |
 |---|---|
 | NPC speech in chat, or other NPC text no voiced window shows (from VMaNGOS) | 8,855 |
-| Collected in game with no known speaker | 351 |
+| No speaker found for the quest | 905 |
+| Collected in game with no known speaker | 361 |
 | HTML book page (keeps the client's layout) | 38 |
-| A quest log line (the completion text the tracker shows) | 20 |
+| A quest log line (the completion text the tracker shows) | 32 |
 | NPC text with no known speaker | 2 |
-| No speaker found for the quest | 1 |

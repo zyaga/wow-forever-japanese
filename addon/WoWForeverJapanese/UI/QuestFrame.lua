@@ -108,6 +108,7 @@ local CANDIDATES = {
   getQuestID        = { "GetQuestID" },
   unitGUID          = { "UnitGUID" },
   unitName          = { "UnitName" },
+  unitSex           = { "UnitSex" },
   -- reward headers and the timer
   mapRewardsFrame   = { "MapQuestInfoRewardsFrame" },
   timerFrame        = { "QuestInfoTimerFrame" },
@@ -207,6 +208,25 @@ function QuestFrame.fieldSource(id, field, en)
   return "quest." .. field, id
 end
 
+-- Tells the Collector who is showing this panel's prose (the offer, the progress text or the turn-in): the NPC's
+-- creature id, its sex and the display id this client drew it with, when the voice panel has seen it. Every time,
+-- whether or not the line ships Japanese: the voice of a line is cast from the NPC that says it. `unit` is the
+-- token the window names its NPC by. UnitSex on an NPC unit [unverified on Forever; in-game check in
+-- docs/testing/strategy.md]: a value that is not 2 or 3 is stored as not known.
+function QuestFrame.recordSpeaker(id, panel, unit)
+  local guid = call("unitGUID", unit)
+  local creature = WFJ.Collector.creatureId(guid)
+  if not creature then return end
+  local log = WFJ.VoiceQuestLog
+  local display, from
+  if log and type(log.displayFor) == "function" then display, from = log.displayFor(creature) end
+  if from ~= "saved" then display = nil end -- a shipped display id is our own data, not what this client drew
+  local sex = call("unitSex", unit)
+  for _, spec in ipairs(panel) do
+    if KEYED_FIELDS[spec[1]] then WFJ.Collector.recordQuestNpc(id, spec[1], guid, sex, display) end
+  end
+end
+
 -- Hands every field of one panel to Render. The other panels' records are forgotten first (their widgets are
 -- hidden and may be rewritten by the client before we see them again). Returns the number of records shown.
 function QuestFrame.showPanel(panelName)
@@ -255,6 +275,7 @@ function QuestFrame.showPanel(panelName)
   -- The quest giver, as the window names it: UnitName("questnpc") [verified: classic_era Classic/QuestFrame.lua:118];
   -- UnitGUID accepts the same token [likely].
   WFJ.Collector.recordNpc(call("unitGUID", "questnpc"), call("unitName", "questnpc"))
+  pcall(QuestFrame.recordSpeaker, id, panel, "questnpc") -- never raises into the client's quest window
   -- every time, translation on or off: UI/VoicePlayer remembers who showed this quest line, for replays from the
   -- quest log, where no NPC is on screen
   pcall(WFJ.State.fire, "questShown", id, panelName)

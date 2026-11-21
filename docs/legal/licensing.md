@@ -72,6 +72,27 @@ Machine-drafted lines are marked `machine` in their provenance, with the model t
 Players whose corrections ship through a fix report are credited by the name they chose in `ATTRIBUTION.md`; the
 report form says so before they send it.
 
+## Who says a quest line
+
+The voice over's speaker table (`data/voice/speakers.jsonl`) holds pack keys and creature ids, never text. Each
+row's provenance names where the pair came from. These outside sources name the NPC who gives a quest or takes
+it; only quest ids and creature ids are read from each, and no text or code of theirs is stored.
+
+| Source | What | License of the copy |
+|---|---|---|
+| The addon's own collector | the NPC a player's own quest window showed (`data/voice/quest-npcs.jsonl`) | numbers the client showed |
+| [Spoken](https://github.com/rusty-key/spoken-wow) | the creature its line corpus names for a quest line | MIT |
+| VMaNGOS world database | quest starters and enders, and the quests an object or item starts or ends | GPL-2.0 |
+| forever-vo player captures | the NPC a player's capture saw in the quest window | MIT |
+| [DonData](https://github.com/WoW-Forever-Addons/dondata), `Data/ATT_Quests.lua` | quest givers and the quests an item starts, derived from [AllTheThings](https://github.com/ATTWoWAddon/AllTheThings)' Forever database | MIT, copyright AllTheThings WoW Addon |
+| DonData, `Data/Extra_Quests.lua` | the NPC a quest is turned in to, more givers, more item starts | GPL-3.0 |
+
+DonData is used only for a quest line no other source names, at the commit recorded in
+`pipeline/dondata-commit.txt` ([ADR-103](../adr/103-npc-lines-are-never-read-in-the-narrators-voice.md)). Its
+files are read on the maintainer's machine and are not part of this repository or the addon. The MIT notice
+AllTheThings asks for is reproduced in [`ATTRIBUTION.md`](../../ATTRIBUTION.md). Questie's data was considered
+and is not used: its licence text is unclear for older contributions.
+
 ## Font: IPA UI Gothic
 
 `addon/WoWForeverJapanese/Fonts/ipagui.ttf` is **IPA UI Gothic**, redistributed **unmodified under the IPA Font

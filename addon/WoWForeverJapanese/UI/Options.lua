@@ -48,7 +48,7 @@ Options.PAGES = {
   { id = "voice", title = "page.voice", requires = function() return WFJ.Voice ~= nil and WFJ.Voice.hasPack() end,
     sections = {
     { title = "section.voice",
-      rows = { "voice.enabled", "voice.muteDialog", "voice.button", "voice.errorVoice" } },
+      rows = { "voice.enabled", "voice.muteDialog", "voice.button", "voice.mark", "voice.errorVoice" } },
     { title = "section.voiceKinds", columns = 2,
       rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors",
         "voice.study", "voice.questOnce", "voice.greetingOnce" } },

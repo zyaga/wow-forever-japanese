@@ -247,6 +247,39 @@ repository or the voice addons. No voice actor is named. The audio files are not
 - Spoken (https://github.com/rusty-key/spoken-wow), under the MIT License (below): which voice set each NPC speaks
   with (`data/voice/creature-sets.jsonl`, provenance `spoken@<commit>`) follows Spoken's assignment, taken from its
   committed line corpus at a pinned commit. No code of Spoken was copied.
+- DonData (https://github.com/WoW-Forever-Addons/dondata): which NPC gives a quest and which NPC it is turned in
+  to, for quest lines no other source names a speaker for (`data/voice/speakers.jsonl`, rows with the source
+  `dondata@<commit>`). Two of its files are read at a recorded commit (`pipeline/dondata-commit.txt`), on the
+  maintainer's machine only:
+  - `Data/ATT_Quests.lua`, derived from AllTheThings' Forever database
+    (https://github.com/ATTWoWAddon/AllTheThings), under the MIT License (below): quest givers, and the quests
+    an item starts;
+  - `Data/Extra_Quests.lua`, DonData's own, under GPL-3.0: the NPC a quest is turned in to, more quest givers,
+    and more quests an item starts.
+
+  Only quest ids and creature ids are read. No text and no code of either file is stored, and the files
+  themselves are not part of this repository or the addon.
+
+## AllTheThings license
+
+> MIT License
+>
+> Copyright (c) 2026 AllTheThings WoW Addon
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+> associated documentation files (the "Software"), to deal in the Software without restriction, including
+> without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
+> following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all copies or substantial
+> portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+> LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+> EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+> AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+> OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Japanese names
 

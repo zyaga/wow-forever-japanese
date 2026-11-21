@@ -186,6 +186,22 @@ def read_quest_speakers(
     return starters, objects, enders
 
 
+_OBJECT_END_NEEDS = {"gameobject_involvedrelation": ("id", "quest")}
+
+
+def read_object_ends(path: Path, quests: set[int] | None = None) -> set[int]:
+    """The quests an object ends (a turn-in at a shrine, a crate, a sign): of `quests`, or of every quest
+    when None."""
+    db = _connect(path, _OBJECT_END_NEEDS)
+    try:
+        if quests is None:
+            rows = _query(db, path, "SELECT DISTINCT quest FROM gameobject_involvedrelation")
+            return {int(r[0]) for r in rows}
+        return set(_relations(db, path, "gameobject_involvedrelation", quests))
+    finally:
+        db.close()
+
+
 def read_creature_lines(path: Path, creatures: set[int]) -> list[tuple[int, str]]:
     """(creature id, English) for the gossip window greeting of each creature's gossip menu (every text of the
     menu, male and female wording) and its quest window greeting; sorted, distinct, empty text skipped."""

@@ -340,11 +340,26 @@ def _main_checkout() -> Path:
 # ---- cast ------------------------------------------------------------------------------------------------
 
 
+def unknown(root: Path) -> set[int]:
+    """The profiled creatures nobody can name a voice for: no known race or no known gender, no voice set from
+    Spoken (which names a voice by race and gender for the NPCs it voices) and no ruling."""
+    named = {int(r["creature"]) for r in _rows(root / "voice" / "overrides.jsonl")}
+    named |= set(voice_sets_cmd.creature_sets(root))
+    return {
+        int(p["creature"])
+        for p in _rows(root / "voice" / "profiles.jsonl")
+        if not (p.get("race") and p.get("gender")) and int(p["creature"]) not in named
+    }
+
+
 def cast_rows(root: Path, cfg: dict[str, Any], today: str) -> list[dict[str, Any]]:
     """voices.jsonl rows from the profiles, the cast rows and the overrides. A row whose voice and cast row
-    are unchanged keeps its old date."""
+    are unchanged keeps its old date. A creature whose race or gender nobody knows gets no row (`unknown`):
+    its lines stay silent rather than be read in a voice that is a guess."""
     overrides = {int(r["creature"]): r["voice"] for r in _rows(root / "voice" / "overrides.jsonl")}
-    result = casting.cast(_rows(root / "voice" / "profiles.jsonl"), cfg["cast"], cfg["narrator"], overrides)
+    nobody = unknown(root)
+    known = [p for p in _rows(root / "voice" / "profiles.jsonl") if int(p["creature"]) not in nobody]
+    result = casting.cast(known, cfg["cast"], cfg["narrator"], overrides)
     if cfg.get("cloned_packs"):
         from wfj.cmd import voice_store  # it imports this module
 
@@ -386,6 +401,8 @@ def run_cast(cfg: dict[str, Any], root: Path) -> int:
     print(f"voice cast: {len(rows)} creatures → data/voice/voices.jsonl")
     for name, n in by_row.most_common():
         print(f"voice cast: {n:5d}  {name}")
+    if left := len(unknown(root)):
+        print(f"voice cast: {left} creature(s) with no known race or gender get no voice")
     return 0
 
 
@@ -468,6 +485,76 @@ def step_state(root: Path, cfg: dict[str, Any], jobs: Sequence[voice.Job], lines
     texts = voice_texts(root, cfg, lines, values)
     state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said_hashes(lines, values, texts))
     return state, values, texts
+
+
+OWED_FILE = "voice-owed.txt"  # beside voice.toml: the files to remake, one stem per line
+
+
+def _owed_state(root: Path, cfg: dict[str, Any]) -> tuple[list[str], list[str], list[str]]:
+    """(the files to remake, the silent lines' old recordings, the recordings no line uses) over the whole
+    game with every player and NPC error voice, each sorted."""
+    lines = shipped_lines(root)
+    jobs = file_jobs(root, cfg, "all", lines, players_of("all"))
+    audio = audio_record(root)
+    state, _, _ = step_state(root, cfg, jobs, lines, audio)
+    voiced = {j.key for j in jobs}
+    spare = set(audio) - {j.stem for j in jobs}
+    # a line that ships Japanese and has no file to make now: nobody can name its speaker's voice
+    silent = {f for f in spare if audio[f].get("key") in lines and audio[f].get("key") not in voiced}
+    return sorted({*state["missing"], *state["stale"]}), sorted(silent), sorted(spare - silent)
+
+
+def owed(root: Path, cfg: dict[str, Any]) -> tuple[list[str], list[str]]:
+    """(the files to remake, the recordings of lines that are silent now). A file is to remake when it is
+    missing or was made in another voice or from other Japanese. A silent line's recording is kept on the
+    record, never packed and never remade until its speaker has a voice."""
+    remake, silent, _ = _owed_state(root, cfg)
+    return remake, silent
+
+
+def not_made(root: Path, cfg: dict[str, Any]) -> list[str]:
+    """The pack keys of the lines that ship Japanese and that no pack will carry, sorted: a quest's offer,
+    progress or turn-in nobody names a speaker for, a line whose speaker has no voice yet, a line whose file
+    is still to be remade, and every key that plays such a line's file. The entry pack lists them so the
+    line's window can say it has no voice yet."""
+    lines = shipped_lines(root)
+    packed, _, _ = pack_tables(root, cfg, "all")
+    quest = set(voice.shipped_quest(Store(root).load("quest"), None))
+    spoken = {r["key"] for r in scoped_rows(root, "all")}
+    silent = {k for k in (quest | spoken) if k in lines and k not in packed}
+    # a key shown under another line's audio (a quest's text repeated under another id) is silent with it
+    silent |= {alias for alias, src in aliases(root).items() if src in silent and alias not in packed}
+    return sorted(silent)
+
+
+def read_owed(path: Path) -> list[str]:
+    """The stems listed in the owed file; no file lists none."""
+    if not path.is_file():
+        return []
+    return [ln.strip() for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+
+
+def owed_problems(root: Path, cfg: dict[str, Any], listed: Sequence[str]) -> list[str]:
+    """The gate: the files to remake are exactly the listed ones. A file out of step that is not listed was
+    changed without being recorded as owed; a listed file that is in step should have left the list when it
+    was remade; a recording no shipped line uses is left over."""
+    remake, _, unused = _owed_state(root, cfg)
+    out = []
+    if extra := sorted(set(remake) - set(listed)):
+        out.append(f"{len(extra)} voice file(s) are missing or out of step and not listed as owed, e.g. "
+                   f"{extra[:5]}: run make voice-generate, or make voice-owed when the audio is owed")
+    if done := sorted(set(listed) - set(remake)):
+        out.append(f"{len(done)} file(s) listed as owed are in step, e.g. {done[:5]}: run make voice-owed")
+    if unused:
+        out.append(f"{len(unused)} recorded file(s) no line uses, e.g. {unused[:5]}: run make voice-generate")
+    return out
+
+
+def run_owed(cfg: dict[str, Any], root: Path, out: Path) -> int:
+    remake, silent = owed(root, cfg)
+    out.write_text("".join(f"{f}\n" for f in remake), encoding="utf-8")
+    print(f"voice owed: {len(remake)} file(s) to remake, {len(silent)} line(s) silent → {out.name}")
+    return 0
 
 
 def plan(
@@ -1142,7 +1229,7 @@ def pack_tables(
     for r in rows:
         if r["key"] in out and out[r["key"]]["variants"]:
             for c in (r["speaker"], *r.get("others", ())):
-                if isinstance(c, int):
+                if isinstance(c, int) and c in cast:
                     v = cast[c]
                     creatures[c] = (v["voice"], v["female"]) if v.get("female") else v["voice"]
     for alias, src in aliases(root).items():
@@ -1206,10 +1293,16 @@ def record_hashes(root: Path, store: Path) -> tuple[int, list[str]]:
     return filled, odd
 
 
-def run(argv: Sequence[str]) -> int:
+def _run_table_verb(a: argparse.Namespace, cfg: dict[str, Any], root: Path) -> int:
+    if a.cmd == "cast":
+        return run_cast(cfg, root)
+    return run_owed(cfg, root, Path(a.out) if a.out else Path(a.config).resolve().parent / OWED_FILE)
+
+
+def _parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="wfj voice")
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel"):
+    for name in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel", "owed"):
         sp = sub.add_parser(name)
         sp.add_argument("--config", default="voice.toml")
         sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
@@ -1229,7 +1322,13 @@ def run(argv: Sequence[str]) -> int:
             sp.add_argument("--out", required=True, help="the remote run's folder")
         if name == "relevel":
             sp.add_argument("runs", nargs="+", help="remote run folders whose WAVs the files were made from")
-    a = p.parse_args(list(argv))
+        if name == "owed":
+            sp.add_argument("--out", help="the list to write (default: voice-owed.txt beside the config)")
+    return p
+
+
+def run(argv: Sequence[str]) -> int:
+    a = _parser().parse_args(list(argv))
     root = data_root()
     store = store_dir(a.store)
     if a.cmd == "status":
@@ -1244,8 +1343,8 @@ def run(argv: Sequence[str]) -> int:
         return 1 if odd else 0
     try:
         cfg = load_config(Path(a.config))
-        if a.cmd == "cast":
-            return run_cast(cfg, root)
+        if a.cmd in ("cast", "owed"):  # the verbs that read only the config and the data
+            return _run_table_verb(a, cfg, root)
         players = players_of(a.players)
         if a.cmd == "plan":
             return run_plan(cfg, root, a.scope, players)

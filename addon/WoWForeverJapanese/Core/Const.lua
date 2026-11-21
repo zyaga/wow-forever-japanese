@@ -17,10 +17,11 @@ WFJ.QUEST_TITLES_JAPANESE = false
 -- Marker messages: a short bilingual message, never a glyph, so it reads at a glance. A surface with a banner
 -- FontString (the quest window: the stone band under the NPC name) shows them there in MARKER_COLOR; a surface
 -- without one gets them inline, on their own line above prose or before a single-line title (UI/Render.lua).
--- Besides these two and the word card (UI/Readings), the addon adds nothing to the screen.
+-- `novoice` is shown only with a voice pack installed, for a line that shows its Japanese and has no voice yet.
 WFJ.MARKER = {
   stale = "[要更新 / English Changed]",
   missing = "[未翻訳 / Not Translated]",
+  novoice = "[音声なし / No Voice Yet]",
 }
 WFJ.MARKER_COLOR = { r = 1, g = 0.82, b = 0 } -- gold, the client's own notice colour on its stone frames
 WFJ.MARKER_INLINE_COLOR = "|cffffd100"
