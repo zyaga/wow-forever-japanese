@@ -70,6 +70,28 @@ describe("the guild master NPC's window on Forever", function()
     assert.are.equal("Available Services", _G.AvailableServicesText:GetText())
   end)
 
+  it("with names on the NPC's name shows its Japanese on each show; closing gives it back", function()
+    local frame = install()
+    _G.UnitIsPlayer = function() return false end
+    finally(function() _G.UnitIsPlayer = nil; WFJ.State.setNames(false) end)
+    WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+    WFJ.State.setNames(true)
+    WFJ.Labels.forbidNames(WFJ.GuildRegistrar.NEVER_TOUCH)
+    assert.is_true(WFJ.GuildRegistrar.init())
+    _G.GuildRegistrarFrameNpcNameText.text = "Thrall" -- GuildRegistrar_OnShow, before the addon's hook
+    frame:Show()
+    assert.are.equal("スロール", _G.GuildRegistrarFrameNpcNameText:GetText())
+    assert.are.equal("Cancel", _G.GuildRegistrarText:GetText()) -- the NPC's greeting is not a name
+    G.alt(WFJ, true)
+    assert.are.equal("Thrall", _G.GuildRegistrarFrameNpcNameText:GetText())
+    G.alt(WFJ, false)
+    frame:Hide()
+    assert.are.equal("Thrall", _G.GuildRegistrarFrameNpcNameText:GetText())
+    _G.GuildRegistrarFrameNpcNameText.text = "Purchase" -- an NPC named like a dictionary word, with no Japanese
+    frame:Show()
+    assert.are.equal("Purchase", _G.GuildRegistrarFrameNpcNameText:GetText())
+  end)
+
   it("the purchase button's trial tooltip translates inside its colour", function()
     install()
     assert.is_true(WFJ.GuildRegistrar.init())

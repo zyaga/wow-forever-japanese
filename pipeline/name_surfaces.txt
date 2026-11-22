@@ -49,7 +49,7 @@ UI/GossipChrome.lua	GossipFrameTitleText	japanese	after each SetTitle and each s
 UI/QuestFrame.lua	QuestFrame title	japanese	the quest giver; a quest a player shares is left
 UI/Merchant.lua	merchant tab title	japanese	shown from the merchant tab's own update
 UI/Trainer.lua	trainer window title	japanese	after each SetTitle; a pet trainer's title is the pet's own name and stays
-UI/GuildRegistrar.lua	GuildRegistrarFrameNpcNameText	todo
+UI/GuildRegistrar.lua	GuildRegistrarFrameNpcNameText	japanese	on each show
 UI/GuildRename.lua	GuildRenameFrame.TitleContainer.TitleText	todo
 UI/Tabard.lua	TabardFrameNameText	todo	check what the client writes there
 UI/ObliterumForge.lua	ObliterumForgeFrame.TitleContainer.TitleText	todo
