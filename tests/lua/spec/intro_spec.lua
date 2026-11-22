@@ -62,6 +62,31 @@ describe("Core/Intro", function()
     assert.are.equal(0, shown)
   end)
 
+  it("owes the names question once to a player who answered the first one before it existed", function()
+    local db, shown = { settings = {}, intro = true, asked = true }, 0
+    local function show() shown = shown + 1 end
+    I.prepare(db, false)
+    assert.is_false(db.askedNames)
+    assert.is_true(I.namesOwed(db))
+    assert.is_true(I.run(db, show))
+    assert.is_true(db.askedNames)
+    assert.is_false(I.namesOwed(db))
+    I.prepare(db, false) -- the next login
+    assert.is_false(I.run(db, show))
+    assert.are.equal(1, shown)
+    assert.is_false(I.namesOwed(nil))
+    assert.is_false(I.namesOwed({}))
+  end)
+
+  it("a first install is asked both questions in its one window", function()
+    local db, shown = {}, 0
+    I.prepare(db, true)
+    assert.is_true(I.namesOwed(db))
+    assert.is_true(I.run(db, function() shown = shown + 1 end))
+    assert.is_true(db.intro and db.asked and db.askedNames)
+    assert.are.equal(1, shown)
+  end)
+
   it("owes the question once to a player who already had the addon, and never again", function()
     local db, shown = { settings = {} }, 0
     local function show() shown = shown + 1 end

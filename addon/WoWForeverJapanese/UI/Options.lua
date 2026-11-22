@@ -27,6 +27,7 @@ Options.PAGES = {
     { rows = { "mainWelcome" } }, -- the way back to the welcome window's question
     { title = "section.translation", columns = 2, rows = { "enabled", "minimapButton" }, gap = 4 },
     { rows = { "direction" } }, -- which language shows first: its dropdown takes the row
+    { rows = { "names.japanese" } }, -- names in Japanese or the client's English
     { title = "section.keys", rows = { "modifier", "toggleKey" } },
     { title = "section.areas", columns = 3,
       rows = { "area.quests", "area.gossip", "area.books", "area.itemTooltips", "area.spellTooltips",

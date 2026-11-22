@@ -10,9 +10,8 @@ WFJ.SCHEMA = 1
 WFJ.AREAS = { "quests", "gossip", "items", "spells", "ui", "books" }
 
 -- A quest's title is a name: what a player searches a guide for, links in chat and says to a party member. It
--- stays the client's English, like every other name. The Japanese titles still ship and every surface still knows
--- how to show one: true brings them back (Main hands this to the policy layer as the switch of kind "quest.title").
-WFJ.QUEST_TITLES_JAPANESE = false
+-- follows the names switch (WFJ.State.names) like every other name: the client's English until the player picks
+-- Japanese names. Main hands that switch to the policy layer for kinds "quest.title" and "name".
 
 -- Marker messages: a short bilingual message, never a glyph, so it reads at a glance. A surface with a banner
 -- FontString (the quest window: the stone band under the NPC name) shows them there in MARKER_COLOR; a surface

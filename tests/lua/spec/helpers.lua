@@ -48,7 +48,7 @@ function H.loadChunks(relpaths, ns, addonName)
   -- a spec that loads its own files covers the Japanese quest titles: the switch on, as its own Translator (built
   -- with no `kindOff`) has it. The shipped default is covered by `uiSetup`'s `titlesOff` and by addon_load_spec,
   -- which loads the whole addon through its own loader.
-  ns.QUEST_TITLES_JAPANESE = true
+  if ns.State then ns.State.names = true end
   return ns
 end
 
@@ -114,7 +114,7 @@ function H.uiSetup(WFJ, ui, opts)
   WFJ.Compat.init(function(name) return _G[name] end)
   WFJ.Settings.load(nil, 1, {})
   -- the specs cover the Japanese titles (the switch on) unless one asks for the shipped default, `titlesOff`
-  WFJ.QUEST_TITLES_JAPANESE = not opts.titlesOff
+  WFJ.State.names = not opts.titlesOff
   local function h1(text) return (WFJ.Hash.h32x2(WFJ.Normalize.v1(text))) end
   local rows = {}
   H._uiGlobals = {}

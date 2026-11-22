@@ -414,23 +414,23 @@ describe("addon loads in TOC order and answers /wfj version", function()
   end)
 
   it("ships with quest titles left to the client, wired into the policy layer as one switch", function()
-    assert.is_false(WFJ.QUEST_TITLES_JAPANESE)
+    assert.is_false(WFJ.State.names)
     local en = "Kobold Camp Cleanup"
     local _, _, action = WFJ.Render.preview("spec", en, nil, "quests", "quest.title", 7, { live = en })
     assert.are.equal("leave", action)
-    WFJ.QUEST_TITLES_JAPANESE = true
-    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
+    WFJ.State.names = true
+    finally(function() WFJ.State.names = false end)
     _, _, action = WFJ.Render.preview("spec", en, nil, "quests", "quest.title", 7, { live = en })
     assert.are_not.equal("leave", action)
   end)
 
   it("wires Lookup into the Translator: a trusted quest title renders through Render.show", function()
-    WFJ.QUEST_TITLES_JAPANESE = true -- the sample here is a title
-    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
+    WFJ.State.names = true -- the sample here is a title
+    finally(function() WFJ.State.names = false end)
     -- quest 7 (quest 2's title is the item name "Sharptalon's Claw", English letters by rule)
     local fs = Stub.fontString("Kobold Camp Cleanup", "Fonts\\FRIZQT__.TTF", 12, "")
     WFJ.Render.show("quest", "title", fs, "Kobold Camp Cleanup", "quests", "quest.title", 7)
-    assert.are.equal("Koboldキャンプの掃討", fs:GetText())
+    assert.are.equal("コボルドキャンプの掃討", fs:GetText())
     WFJ.Render.release("quest")
     assert.are.equal("Kobold Camp Cleanup", fs:GetText())
     local itemId = next(WFJ.Data.item)
@@ -456,18 +456,19 @@ describe("addon loads in TOC order and answers /wfj version", function()
   function()
     local sex, class = _G.UnitSex, _G.UnitClass
     _G.UnitSex, _G.UnitClass = nil, nil
-    WFJ.QUEST_TITLES_JAPANESE = true -- the sample here is a title
-    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
+    WFJ.State.names = true -- the sample here is a title
+    finally(function() WFJ.State.names = false end)
     local title = Stub.fontString("Kobold Camp Cleanup", "Fonts\\FRIZQT__.TTF", 12, "")
     assert.has_no.errors(function()
       WFJ.Render.show("quest", "title", title, "Kobold Camp Cleanup", "quests", "quest.title", 7)
     end)
-    assert.are.equal("Koboldキャンプの掃討", title:GetText())
+    assert.are.equal("コボルドキャンプの掃討", title:GetText())
     local fs = Stub.fontString("Good.", "Fonts\\FRIZQT__.TTF", 12, "")
     assert.has_no.errors(function()
       WFJ.Render.show("quest", "completion", fs, "Good.", "quests", "quest.completion", 791)
     end)
-    assert.are.equal("実にいいね、Reyn。あらゆる本物の{class}は戦場でのこのバッグの使い方を知ってるものさ。\n\nHordeの名の下に戦わんとするお前の意志に敬礼！", fs:GetText())
+    -- names are on in this test (the title above), so the name inside the line shows in Japanese too
+    assert.are.equal("実にいいね、Reyn。あらゆる本物の{class}は戦場でのこのバッグの使い方を知ってるものさ。\n\nホードの名の下に戦わんとするお前の意志に敬礼！", fs:GetText())
     WFJ.Render.release("quest")
     -- the collector reads the same guarded reader: a missing UnitClass is a refusal, not an error
     WFJ.Settings.set("collector.enabled", true)

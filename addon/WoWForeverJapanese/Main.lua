@@ -270,6 +270,11 @@ function WFJ.OnLoad()
     return WFJ.Settings.load(WFJ_DB, WFJ.SCHEMA, WFJ.Settings.MIGRATIONS)
   end) or WFJ_DB
   step("intro.prepare", function() WFJ.Intro.prepare(WFJ_DB, fresh) end)
+  -- after the settings and the welcome flags: the name tables stay in memory only for a player who uses them
+  step("names", function()
+    WFJ.Names.settle(WFJ.Settings.get("names.japanese"), WFJ.Intro.namesOwed(WFJ_DB))
+    WFJ.State.setNames(WFJ.Settings.get("names.japanese") and WFJ.Names.loaded())
+  end)
   step("reports", function() WFJ.Reports.load(WFJ_DB) end) -- pending fixes live in WFJ_DB.reports
   step("forget", function() -- saved tables of mechanisms the addon no longer has
     if type(WFJ_DB) == "table" then WFJ_DB.buffIdentity, WFJ_DB.timeRule = nil, nil end
@@ -358,7 +363,15 @@ function WFJ.OnLoad()
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
     showsEnglish = WFJ.Modifier.english,
-    kindOff = function(kind) return kind == "quest.title" and not WFJ.QUEST_TITLES_JAPANESE end,
+    -- names are the client's English until the player picks Japanese names; a quest's title is a name
+    kindOff = function(kind) return (kind == "quest.title" or kind == "name") and not WFJ.State.names end,
+    -- the English names inside a shown line, in Japanese. Interface lines are left: their Latin words are the
+    -- client's own (PvP, FPS), not names. An HTML book page keeps its tags.
+    names = function(ja, kind)
+      if not WFJ.State.names or type(kind) ~= "string" or kind:match("^%a+") == "ui" then return ja end
+      return WFJ.Names.inText(ja, kind == "book" and ja:find("^%s*<[Hh][Tt][Mm][Ll]") ~= nil)
+    end,
+    name = WFJ.Names.item, -- a widget that holds only a name; an item's may carry a suffix
     lookup = WFJ.Lookup.get,
     marker = function(name) return WFJ.Settings.get("marker." .. name) end,
     -- the runtime gate for unaligned entries (ADR-007). The duration renderer is UIStrings',

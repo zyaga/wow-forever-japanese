@@ -249,7 +249,7 @@ local function showField(pane, field, en, id)
     -- live: the API English, for the stale marker's live check (ADR-019); a quest gets one missing marker: on its
     -- title, or on its description while titles stay the client's English (the title is then never marked)
     WFJ.Render.show(pane.info, field, shown, en, "quests", "quest." .. field, id,
-      { live = en, compact = field ~= (WFJ.QUEST_TITLES_JAPANESE and "title" or "description") })
+      { live = en, compact = field ~= (WFJ.State.names and "title" or "description") })
     return 1
   end
   WFJ.SurfaceState.drop(pane.info, field)

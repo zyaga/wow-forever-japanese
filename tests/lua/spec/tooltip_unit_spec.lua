@@ -57,9 +57,9 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
     local questFor = WFJ.TooltipUnit.questFor
     WFJ.TooltipUnit.questFor = function(title) return title == "Wolf Pelts" and 5 or nil end
     finally(function() WFJ.Lookup, WFJ.TooltipUnit.questFor = lookup, questFor end)
-    WFJ.QUEST_TITLES_JAPANESE = false
+    WFJ.State.names = false
     assert.is_nil(WFJ.UIStrings.questTitle("Wolf Pelts"))
-    WFJ.QUEST_TITLES_JAPANESE = true
+    WFJ.State.names = true
     assert.are.equal("狼の毛皮", WFJ.UIStrings.questTitle("Wolf Pelts"))
   end)
 

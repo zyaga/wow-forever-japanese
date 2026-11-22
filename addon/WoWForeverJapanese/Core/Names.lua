@@ -10,6 +10,9 @@
 --                                with `html` the tags of an HTML page stay too.
 --   Names.loaded()            → whether any name row is in memory
 --   Names.drop()              → lets the rows go (the names setting is off: nothing reads them this session)
+--   Names.settle(on, owed)    → at login: keeps the rows for a player who has names on, or who has not been
+--                                asked the names question yet (the welcome window's pick then applies at once);
+--                                lets them go for everyone else, so names cost no memory while they are off
 -- Names.inText is the twin of wfj.core.names.replace_runs (LATIN_RUN, trim_run and the markup it steps over);
 -- vectors/name_vectors.lua holds the two together and must stay byte-identical.
 local _, WFJ = ...
@@ -73,6 +76,10 @@ function Names.drop()
   WFJ.Data.name = {}
   WFJ.Data.counts.name = 0
   cache, cached = {}, 0
+end
+
+function Names.settle(on, owed)
+  if not on and not owed then Names.drop() end
 end
 
 -- The markup a shown line can hold, in the order the pipeline's pattern tries it. Each is anchored at the scan

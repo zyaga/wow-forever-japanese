@@ -52,6 +52,20 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
     assert.is_false(WFJ.Names.loaded())
   end)
 
+  it("keeps the tables at login only for a player who has names on or has not been asked yet", function()
+    local function loadedAfter(on, owed)
+      WFJ.Names.drop()
+      WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+      WFJ.Names.settle(on, owed)
+      return WFJ.Names.loaded()
+    end
+    assert.is_true(loadedAfter(true, false))
+    assert.is_true(loadedAfter(false, true))
+    assert.is_true(loadedAfter(true, true))
+    assert.is_false(loadedAfter(false, false))
+    assert.is_false(loadedAfter(nil, nil))
+  end)
+
   it("writes every vector line with its names in Japanese, as the pipeline does", function()
     WFJ.Data.add("name", V.names)
     assert.is_true(#V.lines >= 300)
