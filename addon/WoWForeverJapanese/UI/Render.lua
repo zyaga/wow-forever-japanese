@@ -169,7 +169,11 @@ local function desiredOf(rec)
   local m = rec.meta or {}
   local action, payload = translator.resolve(m.area, m.kind, m.id, m.ctx)
   local inline = banners[rec.surface] == nil
+  -- the names the policy layer wrote into this line in Japanese, and a name widget's own name: UI/Readings lays a
+  -- name card on each. Kept on the record only while the Japanese shows.
+  rec.names, rec.nameCard = nil, nil
   if action == "apply" then
+    rec.names, rec.nameCard = payload.names, payload.name
     local prefix = (inline and payload.marker) and inlineMarker(rec, payload.marker) or ""
     if inline and noVoice(rec) then prefix = prefix .. inlineMarker(rec, "novoice") end
     local ja = payload.ja
