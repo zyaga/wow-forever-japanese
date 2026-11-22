@@ -101,8 +101,9 @@ H.UI_FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/Stat
   "Core/Modifier.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/SurfaceState.lua", "Core/Normalize.lua",
   "Core/Hash.lua", "Core/Collector.lua", "Core/Diag.lua", "Core/Perf.lua",
-  "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua",
-  "UI/HtmlText.lua",
+  "Core/Data.lua", "Core/Names.lua",
+  "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua",
+  "UI/TextWatch.lua", "UI/HtmlText.lua",
   "UI/LoadOnDemand.lua", "UI/HelpTooltip.lua" }
 
 -- Builds the ui index and the translator the way Main does, over `ui` = { KEY = { English, Japanese } }.

@@ -4,15 +4,12 @@ local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
 local SECRET = {}
-local FILES = {}
-for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
-for _, f in ipairs({ "Core/Data.lua", "Core/Names.lua", "UI/NameLabels.lua" }) do FILES[#FILES + 1] = f end
 
 describe("name widgets", function()
   local WFJ, fs, players
   before_each(function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
-    WFJ = H.loadChunks(FILES)
+    WFJ = H.loadChunks(H.UI_FILES)
     H.uiSetup(WFJ, {})
     WFJ.Data.add("name", {
       [WFJ.Names.key("Thrall")] = "スロール\tすろーる",
