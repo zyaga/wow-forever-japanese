@@ -66,6 +66,18 @@ def test_no_served_text_is_left_without_japanese_or_a_reason(store_coverage: dic
     assert not gaps, f"served lines with no Japanese and no stated reason: {gaps} (docs/operations/coverage.md)"
 
 
+def test_an_npc_line_left_english_on_purpose_states_why_and_ships_no_japanese(root: Path):
+    from wfj.emit import lua_writer
+    from wfj.io.jsonl_store import Store
+
+    left = coverage.gossip_left_english(root)
+    assert left and all(len(reason) > 20 for reason in left.values())
+    english = {ln["id"] for ln in Store(root / "data", english=True).load("gossip")}
+    shipped = {ln["id"] for ln in Store(root / "data").load("gossip") if lua_writer.shipped(ln)}
+    assert set(left) <= english, "a key with no English line"
+    assert not set(left) & shipped, "a line listed as left English ships Japanese"
+
+
 def test_make_coverage_refuses_an_inventory_from_another_build(capsys):
     assert coverage.main(["--build", "0.0.0.0"]) == 1
     assert "run `make served-columns`" in capsys.readouterr().out

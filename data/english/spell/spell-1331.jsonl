@@ -1,1 +1,27 @@
-{"id": 1331408, "field": "name", "en": "Update Interactions", "hash": "4f1abef90f8abe56", "src": "db2@1.60.1.70938"}
+{"id": 1331002, "field": "name", "en": "Eternal Night", "hash": "0bce4aed1e2dd57c", "src": "db2@1.60.1.71037"}
+{"id": 1331006, "field": "name", "en": "Umbral Pull", "hash": "13636e6598063702", "src": "db2@1.60.1.71037"}
+{"id": 1331071, "field": "name", "en": "Wrath", "hash": "068926d83b1c1c5d", "src": "db2@1.60.1.71037"}
+{"id": 1331071, "field": "description", "en": "Hurls a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "b05756c5b4997492", "src": "db2@1.60.1.71037"}
+{"id": 1331079, "field": "name", "en": "Moonfire", "hash": "eda7a4c188a2324b", "src": "db2@1.60.1.71037"}
+{"id": 1331079, "field": "description", "en": "Burns the enemy, inflicting $s2 Arcane damage and inflicts $s1 Arcane damage every $t1 sec for $d.", "hash": "9329959a7943939a", "src": "db2@1.60.1.71037"}
+{"id": 1331079, "field": "aura", "en": "$s1 Arcane damage inflicted every $t1 sec.", "hash": "d8708d964c16c02d", "src": "db2@1.60.1.71037"}
+{"id": 1331088, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.71037"}
+{"id": 1331089, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.71037"}
+{"id": 1331089, "field": "aura", "en": "Attack speed increased by $s1%. Damage increased by $s3%.", "hash": "b581f80793239c78", "src": "db2@1.60.1.71037"}
+{"id": 1331092, "field": "name", "en": "Demoralizing Roar", "hash": "c5003e5f4f80db28", "src": "db2@1.60.1.71037"}
+{"id": 1331092, "field": "description", "en": "Reduces the melee attack power of nearby enemies by $s1 for $d.", "hash": "7d2c89200e8517b0", "src": "db2@1.60.1.71037"}
+{"id": 1331092, "field": "aura", "en": "Melee attack power reduced by $s1.", "hash": "100ea0c6aa28746c", "src": "db2@1.60.1.71037"}
+{"id": 1331288, "field": "name", "en": "Hate to Zero", "hash": "daf34d4e6cd26c20", "src": "db2@1.60.1.71037"}
+{"id": 1331318, "field": "name", "en": "Smash", "hash": "bfa6c905fc6a3a62", "src": "db2@1.60.1.71037"}
+{"id": 1331318, "field": "description", "en": "Smashes the ground, inflicting $s1 damage to nearby enemies.", "hash": "5f3f516bb94830de", "src": "db2@1.60.1.71037"}
+{"id": 1331324, "field": "name", "en": "Mark of Flames", "hash": "1ea717568af78119", "src": "db2@1.60.1.71037"}
+{"id": 1331324, "field": "description", "en": "Increases the Fire damage taken by an enemy by $s1 for $d.", "hash": "47f59a65200f1538", "src": "db2@1.60.1.71037"}
+{"id": 1331324, "field": "aura", "en": "Fire damage dealt is increased by $s1.", "hash": "6062b330df142f04", "src": "db2@1.60.1.71037"}
+{"id": 1331408, "field": "name", "en": "Update Interactions", "hash": "4f1abef90f8abe56", "src": "db2@1.60.1.71037"}
+{"id": 1331671, "field": "name", "en": "Resting", "hash": "0ebee6536cdf344b", "src": "db2@1.60.1.71037"}
+{"id": 1331671, "field": "description", "en": "Resting.", "hash": "8bafdccab782f187", "src": "db2@1.60.1.71037"}
+{"id": 1331671, "field": "aura", "en": "Resting.", "hash": "8bafdccab782f187", "src": "db2@1.60.1.71037"}
+{"id": 1331725, "field": "name", "en": "Camper's Lure", "hash": "a68710b03bd13de0", "src": "db2@1.60.1.71037"}
+{"id": 1331725, "field": "description", "en": "When applied to your fishing pole, increases Fishing by $ec1 for 5 minutes.", "hash": "026590ab494bdaf9", "src": "db2@1.60.1.71037"}
+{"id": 1331727, "field": "name", "en": "Fishing Skill +60", "hash": "78d65a0d206cc147", "src": "db2@1.60.1.71037"}
+{"id": 1331727, "field": "description", "en": "Increased Fishing +$s1.", "hash": "325349e2fba78797", "src": "db2@1.60.1.71037"}

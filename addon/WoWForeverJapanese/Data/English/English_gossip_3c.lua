@@ -10,6 +10,7 @@ WFJ.Data.add("english", {
   ["gossip:3c2731429e952d58"] = { text = "ale=13 bah=17 care=4 flat=15 him=10 like=8 lot=3 outside=5 probably=14 shop=6 that=7 their=2 there=12 warlocks=1" },
   ["gossip:3c2891460f4e74d1"] = { text = "cooks=1 dwarven=4 hums=6 old=3 tune=5" },
   ["gossip:3c38b2fec588570b"] = { text = "going=2 may=7 me=3 speak=4 venture=1 work=5" },
+  ["gossip:3c3c5e7961c53694"] = { text = "abuse=5 body=9 clear=7 found=2 his=10 interrogation=13 learned=14 lines=15 man=4 mind=8 much=12 poor=3 suffered=6 we=1" },
   ["gossip:3c48d177aac9af36"] = { text = "book=1 diagrams=5 familiar=14 foreign=12 hundreds=3 pages=2 recognize=8 schematics=6 shape=7 some=11 various=4" },
   ["gossip:3c4eaab6fb106123"] = { text = "and=1 final=3 now=2 step=4" },
   ["gossip:3c4ebd91eb0b5630"] = { text = "against=11 assist=7 assistance=12 audience=2 can=8 chamber=3 find=4 getting=6 need=13 she=5 where=10 will=9" },
@@ -55,5 +56,6 @@ WFJ.Data.add("english", {
   ["gossip:3cde6c4ddf81e71c"] = { text = "down=1 huh=4" },
   ["gossip:3cf1722af894056d"] = { text = "attack=2 currently=1" },
   ["gossip:3cfbfae599c85f1c"] = { text = "any=12 brought=2 but=15 elementals=3 feats=11 gone=4 homes=7 magic=13 maintain=8 our=6 powers=17 replicated=14 they=5 us=1 used=10 weak=18" },
+  ["gossip:3cfdf310eb449eca"] = { text = "aid=34 already=29 always=18 and=21 anyway=9 avenge=30 avenged=30 can=43 death=27 debt=19 debts=19 done=38 front=15 happen=7 he=5 himself=16 i=3 if=31 monster=14 owe=25 pay=20 shield=11 still=33 stunned=4 that=13 we=17 what=6 when=2 you=32" },
   ["gossip:3cfefadfd72ed5a5"] = { text = "anyways=4 fate=6 fools=3 like=1 run=2 sealed=7 your=5" },
 })

@@ -40,6 +40,7 @@ WFJ.Data.add("english", {
   ["gossip:49d70cb91e3182b1"] = { text = "breathes=3 relief=1 sigh=2" },
   ["gossip:49da27023461b0a1"] = { text = "i=2 instruct=3 please=1" },
   ["gossip:49e150e92d8dff51"] = { text = "adventure=13 beast=9 choose=10 happy=7 help=11 husband=6 interested=4 looking=14 mount=2 purchasing=3 right=8 sure=18 use=19 welcome=1 well=15" },
+  ["gossip:49e3db01a142fb22"] = { text = "family=2 handful=6 hard=9 me=7 really=1 stuffy=4 wizards=5" },
   ["gossip:49e5578d03825cda"] = { text = "beast=1 ways=2" },
   ["gossip:49e7f9b9be13657f"] = { text = "breathe=2 last=1" },
   ["gossip:49e92c34807026b1"] = { text = "battle=1 creations=4 my=3 ready=2" },

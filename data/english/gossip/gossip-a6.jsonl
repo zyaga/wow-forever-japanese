@@ -7,6 +7,7 @@
 {"id": "a6180a3afc03d027", "field": "text", "en": "What, you don't have a token to give me? Don't you love me?", "hash": "a6180a3afc03d027", "src": "vmangos@13b49dc"}
 {"id": "a61ba2574f53deb7", "field": "text", "en": "Night, all. I'm gonna sit up for a bit. Maybe Darcy'll come by.", "hash": "a61ba2574f53deb7", "src": "vmangos@13b49dc"}
 {"id": "a622579f8fb0a329", "field": "text", "en": "Engineering will provide you with the skills and knowledge to dismantle your opponents! Let me show you how...", "hash": "a622579f8fb0a329", "src": "vmangos@13b49dc"}
+{"id": "a62d7012f22df758", "field": "text", "en": "Death's Head cannot be stopped! We'll wash away this land and pave way for the one true master!", "hash": "a62d7012f22df758", "src": "collector@1.60.1.71037"}
 {"id": "a62f01073ffc465e", "field": "text", "en": "With pleasure... just let me savor this moment for a minute longer.", "hash": "a62f01073ffc465e", "src": "vmangos@13b49dc"}
 {"id": "a6355b9b0d4c61d2", "field": "text", "en": "%s blushes.", "hash": "a6355b9b0d4c61d2", "src": "vmangos@13b49dc"}
 {"id": "a63a645d6e883743", "field": "text", "en": "Keep your voice down, stranger. You do not want to disrupt the Master's meditations.", "hash": "a63a645d6e883743", "src": "vmangos@13b49dc"}
@@ -32,6 +33,7 @@
 {"id": "a6a7e05bd62136d9", "field": "text", "en": "Tilloa is that you?  Why no!  It's just some dirty $r!", "hash": "a6a7e05bd62136d9", "src": "vmangos@13b49dc"}
 {"id": "a6a7ef1da95339ce", "field": "text", "en": "Zul'Farrak - Weegli Blastfuse - Greeting default.", "hash": "a6a7ef1da95339ce", "src": "vmangos@13b49dc"}
 {"id": "a6afae77ff7e31e8", "field": "text", "en": "Greetings, traveler. It was here, nearly 1,000 years past, that the Qiraji began their march of destruction across Kalimdor.$B$BThousands of lives were lost during the war, most in this cursed desert during the initial invasion.$B$BI am one of only a few that remain, chained to both the past and the present. I know not why I am to remain stationed here but I know that I must.", "hash": "a6afae77ff7e31e8", "src": "vmangos@13b49dc"}
+{"id": "a6ba2f33e293085d", "field": "text", "en": "More of them, watch out!", "hash": "a6ba2f33e293085d", "src": "collector@1.60.1.70888"}
 {"id": "a6bc5ebd60b63fed", "field": "text", "en": "Fancy a drink, adventurer? I have the finest selection from around the world.", "hash": "a6bc5ebd60b63fed", "src": "collector@1.60.1.70938", "npcs": [4963]}
 {"id": "a6c88e9e8bb44a2a", "field": "text", "en": "How pathetic. I am infused with the power of the Soulflayer. I fear nothing but the wrath of the almighty Hakkar. I serve no one but my master, Jin.", "hash": "a6c88e9e8bb44a2a", "src": "vmangos@13b49dc"}
 {"id": "a6d637c7dfef399e", "field": "text", "en": "The temperature is 564 degrees Kraklenheit.", "hash": "a6d637c7dfef399e", "src": "vmangos@13b49dc"}

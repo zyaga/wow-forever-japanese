@@ -311,9 +311,41 @@ local function findDialog(which, data)
   return found
 end
 
+-- The dialogs a member's note is typed into (gamedialogdefs.lua:1788–2011). The dialog frames, and so their edit
+-- boxes, are shared by every dialog type: the box wears the bundled face only while one of these shows it, and has
+-- its own font back for any other dialog and when the dialog hides. Its font only; what is typed is the player's.
+local NOTE_DIALOGS = { SET_GUILDPLAYERNOTE = true, SET_GUILDOFFICERNOTE = true, SET_GUILD_COMMUNITIY_NOTE = true,
+  SET_COMMUNITY_MEMBER_NOTE = true }
+local noteHooked = setmetatable({}, { __mode = "k" })
+
+local function editBoxOf(dialog)
+  local box = type(dialog.GetEditBox) == "function" and dialog:GetEditBox() or dialog.EditBox or dialog.editBox
+  return type(box) == "table" and box or nil
+end
+
+-- → true when the dialog's box wears the bundled face
+function Popups.dressNote(which, dialog)
+  local box = type(dialog) == "table" and editBoxOf(dialog) or nil
+  if not box then return false end
+  if not NOTE_DIALOGS[which] then
+    WFJ.Font.restore(box)
+    return false
+  end
+  if not noteHooked[dialog] and type(dialog.HookScript) == "function" then
+    noteHooked[dialog] = true
+    dialog:HookScript("OnHide", function(self)
+      local shown = editBoxOf(self)
+      if shown then WFJ.Font.restore(shown) end
+    end)
+  end
+  return WFJ.Font.bundle(box) ~= nil
+end
+
 -- hooksecurefunc target (StaticPopup_Show): (which, text_arg1, text_arg2, data, …). → words found
 function Popups.onShowCall(which, _, _, data)
-  return Popups.onShow(findDialog(which, data))
+  local dialog = findDialog(which, data)
+  Popups.dressNote(which, dialog)
+  return Popups.onShow(dialog)
 end
 
 -- What StaticPopup_OnUpdate left on screen last frame, per dialog: a frame where nothing changed costs one GetText

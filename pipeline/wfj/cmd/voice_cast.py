@@ -83,6 +83,12 @@ def build(root: Path, db: Path, commit: str, client: Path, today: str) -> tuple[
     table_facts = {
         c: casting.facts(creatures.get(c), displays, client_src, vm_src, vm_genders.get(c)) for c in who
     }
+    # the sex a player's quest window showed for an NPC whose model no table knows
+    from wfj.cmd import voice_displays
+
+    for c, (sex, source) in voice_displays.seen_sexes(_rows(root / voice_displays.QUEST_NPCS)).items():
+        if c in who and "gender" not in table_facts[c]:
+            table_facts[c]["gender"] = (sex, source)
     rows = casting.build(who, table_facts, _rows(root / "voice" / PROFILES), today)
     stats = {
         "speakers": len(who),

@@ -34,6 +34,7 @@ WFJ.Data.add("gossip", {
   ["ca92a331b593145c"] = { "手短にしろ、よそ者。", "." },
   ["ca93a585590a00d3"] = { "さっさと終わらせろ、薄汚い{race}め。\n\n<Kharanは頭を垂れ、短い首をさらけ出した。>", "." },
   ["ca9ab18f1492f88b"] = { "私に危害を加えるつもりか、{race}?", "." },
+  ["ca9b2f7899f9849e"] = { "<kodoは、餌に混ぜられた濃い紫色の実をすべて食べ尽くすつもりのようだ。>", "." },
   ["ca9e5f3843c55267"] = { "Tower Point Eastは、Field of Strifeと南のHorde領との間の道を押さえている。\n\nここはHordeが支配している。The East Frostwolf Towerは、Frostwolf VillageとFrostwolf Keepの間の門を守っている。\n\nここはHordeが支配している。", "." },
   ["caa43405850da915"] = { "Scythe of the Unseen Pathを失くしてしまった。代わりのものを用意してもらえるだろうか?", "." },
   ["caab579f6374c3ab"] = { "さあ、痛い目を見るぞ、{name}！", "." },

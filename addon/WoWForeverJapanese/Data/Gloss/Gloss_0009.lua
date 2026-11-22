@@ -258,7 +258,6 @@ WFJ.Data.add("gloss", {
   [9255] = "これだけ\tこれだけ\tthis many",
   [9256] = "これだけ\tこれだけ\tthis much",
   [9257] = "これだけ\tこれだけ\tthis much (all of)",
-  [9258] = "これだけ\tこれだけ\tthis much (enough)",
   [9259] = "これだけは\tこれだけは\tthis much",
   [9260] = "これっぽっち\tこれっぽっち\tany (the least bit)",
   [9261] = "これっぽっち\tこれっぽっち\tone bit",

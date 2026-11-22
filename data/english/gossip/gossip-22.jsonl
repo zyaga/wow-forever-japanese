@@ -1,3 +1,4 @@
+{"id": "2205f04b042d088d", "field": "text", "en": "Curse detected. Clearing.", "hash": "2205f04b042d088d", "src": "collector@1.60.1.70938"}
 {"id": "220f936943e19a5e", "field": "text", "en": "Well done, young rogue. Well done, indeed....", "hash": "220f936943e19a5e", "src": "vmangos@13b49dc"}
 {"id": "2213664152c6b268", "field": "text", "en": "Okothos will train you, $n.", "hash": "2213664152c6b268", "src": "vmangos@13b49dc"}
 {"id": "221732b87fd9d720", "field": "text", "en": "Guse? Jeztor? Are they... flat spin?? Seas of Southshore??", "hash": "221732b87fd9d720", "src": "vmangos@13b49dc"}
@@ -27,9 +28,11 @@
 {"id": "22b5d6c11828c714", "field": "text", "en": "What has brought you to the Earthen Ring?", "hash": "22b5d6c11828c714", "src": "forever-vo@025070f", "npcs": [262558]}
 {"id": "22b67b17851ec7c7", "field": "text", "en": "We hunger for vengeance.", "hash": "22b67b17851ec7c7", "src": "vmangos@13b49dc"}
 {"id": "22c0cffb3350b748", "field": "text", "en": "%s shakes his head in disappointment.", "hash": "22c0cffb3350b748", "src": "vmangos@13b49dc"}
+{"id": "22c64b8d9930cb41", "field": "text", "en": "I need to rest a moment before going to Farholde. I'll make it back on my own. You can go to Cornelius and send word of my rescue.", "hash": "22c64b8d9930cb41", "src": "collector@1.60.1.71037"}
 {"id": "22c6dd33a60368c5", "field": "text", "en": "Yes? I am quite busy.", "hash": "22c6dd33a60368c5", "src": "collector@1.60.1.70938", "npcs": [252085]}
 {"id": "22c7db75d4734b0a", "field": "text", "en": "I am not fooled by your disguise, temptress. Your time to die has come.", "hash": "22c7db75d4734b0a", "src": "vmangos@13b49dc"}
 {"id": "22caaa705eca4eaa", "field": "text", "en": "Silence, servant! Vengeance will be mine! Death to Stormwind! Death by chicken!", "hash": "22caaa705eca4eaa", "src": "vmangos@13b49dc"}
+{"id": "22d6f1a626f5c459", "field": "text", "en": "If you want something done right, you send me to do it.", "hash": "22d6f1a626f5c459", "src": "collector@1.60.1.70888", "npcs": [258023]}
 {"id": "22e176cf0c106888", "field": "text", "en": "Get a rope!", "hash": "22e176cf0c106888", "src": "vmangos@13b49dc"}
 {"id": "22e899d1750412b6", "field": "text", "en": "Well hello there ladies. Heard about the new plague?", "hash": "22e899d1750412b6", "src": "vmangos@13b49dc"}
 {"id": "22e92603ceeba523", "field": "text", "en": "I have lost my Kris of Unspoken Names. Are you able to replace it for me?", "hash": "22e92603ceeba523", "src": "vmangos@13b49dc"}

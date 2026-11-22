@@ -26,6 +26,7 @@
 {"id": "1886c61786c2ce13", "field": "text", "en": "Hello, $c.  I hope you've come to bolster our ranks.  Beasts and thieves are spilling into our beloved Elwynn, and we barely have enough men to keep the roads safe!$B$BAnd if you haven't done so, read that notice about Hogger.  He's a beast in yonder woods that must be dealt with.", "hash": "1886c61786c2ce13", "src": "vmangos@13b49dc"}
 {"id": "18890b157610edb1", "field": "text", "en": "Why do you run from me Fluffy!", "hash": "18890b157610edb1", "src": "vmangos@13b49dc"}
 {"id": "188a2dc1369726b4", "field": "text", "en": "The Old Gods will be restored.  You will not be allowed to interfere!", "hash": "188a2dc1369726b4", "src": "vmangos@13b49dc"}
+{"id": "188d55c3847a7427", "field": "text", "en": "ssSSLIMES!! Rrraagh...", "hash": "188d55c3847a7427", "src": "collector@1.60.1.70938", "npcs": [4612]}
 {"id": "188e9130c0a2e877", "field": "text", "en": "Anu therador mali $c.  Where can I guide you to?", "hash": "188e9130c0a2e877", "src": "vmangos@13b49dc"}
 {"id": "1891f964e2b192a6", "field": "text", "en": "Chapter on Arcane Crystals and Arcanite.", "hash": "1891f964e2b192a6", "src": "vmangos@13b49dc"}
 {"id": "18a307ae9775aedf", "field": "text", "en": "%s leans down to examine his shot.", "hash": "18a307ae9775aedf", "src": "vmangos@13b49dc"}

@@ -22,6 +22,7 @@ WFJ.Data.add("english", {
   ["gossip:4c834dcc0c390b14"] = { text = "browse=2 goods=1" },
   ["gossip:4c887eed0324aa99"] = { text = "late=1 sorry=2" },
   ["gossip:4c88bf80671f8b58"] = { text = "died=6 like=4 me=3 my=1 trees=2 withered=5" },
+  ["gossip:4c8d049fb72f721f"] = { text = "unsafe=1" },
   ["gossip:4c8d8104454bc8be"] = { text = "business=2 get=3" },
   ["gossip:4c8e1ddf6602bec9"] = { text = "face=1" },
   ["gossip:4c9a0b1a0bc0fca9"] = { text = "brewing=3 evil=1 sense=4" },

@@ -8,6 +8,7 @@
 {"id": "3c2891460f4e74d1", "field": "text", "en": "Khara hums an old dwarven tune while she cooks.", "hash": "3c2891460f4e74d1", "src": "vmangos@13b49dc"}
 {"id": "3c3069d6e4586916", "field": "text", "en": "Yes, $c?", "hash": "3c3069d6e4586916", "src": "vmangos@13b49dc"}
 {"id": "3c38b2fec588570b", "field": "text", "en": "If you're going to venture into Blackrock Depths, come speak with me. I may have some work for you.", "hash": "3c38b2fec588570b", "src": "vmangos@13b49dc"}
+{"id": "3c3c5e7961c53694", "field": "text", "en": "It's clear that poor man we found has suffered abuse. His mind and body are broken, but much of what he had to say lines up with what we learned from Hendel's interrogation...", "hash": "3c3c5e7961c53694", "src": "collector@1.60.1.70888"}
 {"id": "3c48d177aac9af36", "field": "text", "en": "Hundreds of various diagrams and schematics begin to take shape on the pages of the book. You recognize some of the diagrams while others remain foreign but familiar.", "hash": "3c48d177aac9af36", "src": "vmangos@13b49dc"}
 {"id": "3c4eaab6fb106123", "field": "text", "en": "And now... the final step!", "hash": "3c4eaab6fb106123", "src": "vmangos@13b49dc"}
 {"id": "3c4ebd91eb0b5630", "field": "text", "en": "In the King's audience chamber you will find the Lady Hoteshem.  She can assist you in getting to Arathi Basin where The League of Arathor is in need of assistance against The Defilers.", "hash": "3c4ebd91eb0b5630", "src": "vmangos@13b49dc"}
@@ -57,4 +58,5 @@
 {"id": "3cee35cfee2d5757", "field": "text", "en": "<Remain Silent>", "hash": "3cee35cfee2d5757", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "3cf1722af894056d", "field": "text", "en": "Are the Eastern Plaguelands currently under attack?", "hash": "3cf1722af894056d", "src": "vmangos@13b49dc"}
 {"id": "3cfbfae599c85f1c", "field": "text", "en": "The elementals who brought us here are gone. Any feats they used to maintain our homes can be replicated with highborne magic, but our powers have grown weak in Skywall.", "hash": "3cfbfae599c85f1c", "src": "collector@1.60.1.70790"}
+{"id": "3cfdf310eb449eca", "field": "text", "en": "When it was over I was stunned. He knew what would happen and he threw himself in front of that creature anyway to shield me.$B$BWe windshapers always pay our debts, and I owe him a debt. We've already avenged his death, but we can still avenge what was done to him by that monster, if you are still willing to lend me aid.", "hash": "3cfdf310eb449eca", "src": "collector@1.60.1.70888", "npcs": [259620]}
 {"id": "3cfefadfd72ed5a5", "field": "text", "en": "Run if you like fools!  Your fate is sealed anyways!", "hash": "3cfefadfd72ed5a5", "src": "vmangos@13b49dc"}

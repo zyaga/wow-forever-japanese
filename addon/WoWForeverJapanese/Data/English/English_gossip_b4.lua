@@ -55,6 +55,7 @@ WFJ.Data.add("english", {
   ["gossip:b4da25df243d924e"] = { text = "hey=1 stop=2" },
   ["gossip:b4dc8bc32bdf1f98"] = { text = "aid=10 almost=33 cognitive=30 common=21 comparable=25 completely=34 compromised=35 cunning=39 degenerative=18 designated=23 destabilizes=3 driving=42 factors=43 first=14 force=37 initiating=13 its=29 maintains=28 matrix=2 nomenclature=22 number=12 only=40 potential=5 power=32 processing=31 product=19 psyche=41 representation=11 results=6 stamina=27 strength=26 strong=38 synthesis=1 variant=15 visual=9 when=4 will=36" },
   ["gossip:b4e313d6361f6f3e"] = { text = "challenge=4 domain=2 me=3 my=1 who=5" },
+  ["gossip:b4e3e373a7bf3e13"] = { text = "bindings=3 cipher=5 contents=6 help=12 magic=2 shadow=4 start=13 suspected=1 understand=7 weeks=8 work=10 your=9" },
   ["gossip:b4e7f4843c1d8373"] = { text = "destroy=2 who=1" },
   ["gossip:b4edf195d8dbdd2f"] = { text = "collect=6 our=1 still=5 supplies=4 units=2 upgraded=3" },
   ["gossip:b4ef9550c59da1da"] = { text = "closer=8 her=15 just=13 makes=6 middle=11 outside=14 rise=12 scrap=1 seek=16 show=10 us=7 used=3 way=9" },

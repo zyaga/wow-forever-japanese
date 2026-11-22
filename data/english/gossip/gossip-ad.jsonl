@@ -48,3 +48,4 @@
 {"id": "adec48ed53a8abd7", "field": "text", "en": "A slippery tile causes you to lose your footing.", "hash": "adec48ed53a8abd7", "src": "vmangos@13b49dc"}
 {"id": "adf45c92d9ba3ba3", "field": "text", "en": "These once beautiful woods suffer under a terrible curse!  Corrupting forces twist the life here into shadows of their former selves.  If you are not an agent of this corruption, then perhaps you can aid me in reclaiming Felwood!", "hash": "adf45c92d9ba3ba3", "src": "vmangos@13b49dc"}
 {"id": "adf8b400a3dc7c2a", "field": "text", "en": "I guess so!", "hash": "adf8b400a3dc7c2a", "src": "vmangos@13b49dc"}
+{"id": "adfb5cd498d495d7", "field": "text", "en": "Warug, would you be willing to part with those broken tears I gave you earlier?", "hash": "adfb5cd498d495d7", "src": "collector@1.60.1.70888", "npcs": [5398]}

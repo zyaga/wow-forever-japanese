@@ -49,7 +49,7 @@ from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from typing import Any
 
-from wfj.cmd import check, generate, voice_make
+from wfj.cmd import check, generate, voice_displays, voice_make
 from wfj.cmd.voice import read_rows, voice_dir
 from wfj.core import (
     casting,
@@ -599,6 +599,7 @@ def rule_voice(root: Path, config: Path | None = None) -> list[str]:
     d = voice_dir(root)
     speakers, voices = read_rows(d / "speakers.jsonl"), read_rows(d / "voices.jsonl")
     problems = voice.speaker_problems(speakers, voices) + casting.problems(read_rows(d / "profiles.jsonl"))
+    problems += voice_displays.quest_npc_problems(read_rows(d / "quest-npcs.jsonl"))
     cfg_path = config or root.parent / "pipeline" / "voice.toml"
     if not cfg_path.is_file() or not voices:
         return problems

@@ -17,6 +17,7 @@
 {"id": "2344417af8ca62b3", "field": "text", "en": "Aw! The captured sprite darters didn't make it. What will we do?", "hash": "2344417af8ca62b3", "src": "vmangos@13b49dc"}
 {"id": "23469fa273f901b7", "field": "text", "en": "You must leave the bar!", "hash": "23469fa273f901b7", "src": "vmangos@13b49dc"}
 {"id": "2346b1df4b7931cd", "field": "text", "en": "You are not known to my people.  A kodo is a mighty steed, and it is the product of love and care by my people; such is not given onto strangers.  Until the elders of Thunder Bluff consider you to be exalted, I cannot offer you the sale of a kodo.", "hash": "2346b1df4b7931cd", "src": "vmangos@13b49dc"}
+{"id": "234882a5593e56ac", "field": "text", "en": "Yes... YES! IT LIVES!!", "hash": "234882a5593e56ac", "src": "collector@1.60.1.70938"}
 {"id": "2353a2049c378bbc", "field": "text", "en": "You are mine now children.  You will grow up to be a strong part of the horde!", "hash": "2353a2049c378bbc", "src": "vmangos@13b49dc"}
 {"id": "2357ac0b58311782", "field": "text", "en": "It was the Lieutenants of Ragnaros, Geddon and Garr, who would perpetrate the betrayal against my Lord. Thunderaan was caught unaware.", "hash": "2357ac0b58311782", "src": "vmangos@13b49dc"}
 {"id": "235d92a861d61050", "field": "text", "en": "I was searching for materials to build my latest and greatest invention, the portable remote control shredder unit, when these trolls clubbed me and dragged me into the depths of their cave.$B$BReturn me to safety and I will lend my aid to your cause, $r.", "hash": "235d92a861d61050", "src": "vmangos@13b49dc"}
@@ -47,6 +48,7 @@
 {"id": "23dc5d661041e5b2", "field": "text", "en": "[PH] Ok, I'm outta here... see you in Ragnaros' Lair... l8", "hash": "23dc5d661041e5b2", "src": "vmangos@13b49dc"}
 {"id": "23e64d1f34a71555", "field": "text", "en": "Come, $n. The lake is just around the bend.", "hash": "23e64d1f34a71555", "src": "vmangos@13b49dc"}
 {"id": "23e973225c96986f", "field": "text", "en": "What's going on here? Piznik! I knew we shouldn't have let you stick around!", "hash": "23e973225c96986f", "src": "vmangos@13b49dc"}
+{"id": "23ea7bb32068dc49", "field": "text", "en": "There is still much work to be done to strengthen ties between the Wildhammers and the dwarves of Ironforge, but I am honored to be a part of that process.", "hash": "23ea7bb32068dc49", "src": "collector@1.60.1.70862", "npcs": [270054]}
 {"id": "23f61b227cbc3b2f", "field": "text", "en": "Hey Vi'el, show me your wares!", "hash": "23f61b227cbc3b2f", "src": "vmangos@13b49dc"}
 {"id": "23fca8c6a1cfe773", "field": "text", "en": "The humans claimed much of the Dustwallow Marsh for themselves, but the Stonemaul clan, with our help, has been able to push them back.", "hash": "23fca8c6a1cfe773", "src": "vmangos@13b49dc"}
 {"id": "23fd961c559963f6", "field": "text", "en": "Justice is done!", "hash": "23fd961c559963f6", "src": "vmangos@13b49dc"}

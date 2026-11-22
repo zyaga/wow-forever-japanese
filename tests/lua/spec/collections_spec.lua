@@ -125,6 +125,7 @@ describe("the Collections window on Forever", function()
         function()
           local m = _G.MountJournal
           assert.are.equal("マウント総数", m.MountCount.Label:GetText())
+          assert.are.equal("検索", m.searchBox.Instructions:GetText()) -- the search box's placeholder
           assert.are.equal("キャラクターを表示", m.MountDisplay.ModelScene.TogglePlayer.TogglePlayerText:GetText())
           assert.are.equal("マウント装備はレベル20で解放", m.BottomLeftInset.SlotRequirementLabel:GetText())
           assert.are.equal("マウント装備でマウントを強化しよう", m.BottomLeftInset.SlotLabel:GetText())

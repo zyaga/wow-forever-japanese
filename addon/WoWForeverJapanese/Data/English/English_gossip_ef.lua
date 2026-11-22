@@ -35,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:efbcb898d7bd298f"] = { text = "aptitude=19 bountiful=24 but=2 cultivating=12 grow=18 more=5 novice=16 nurturing=11 receive=14 results=25 rewarding=6 seeds=10 show=20 skill=3 something=17 special=9 those=21 yes=1" },
   ["gossip:efbddc1533965f86"] = { text = "breaks=5 finds=3 hope=6 how=10 legs=4 like=7 marsh=9 pinkskin=2 survives=11 that=1" },
   ["gossip:efc1f8e715ce3db7"] = { text = "inspects=2 shells=1" },
+  ["gossip:efc5fd5e6d68a513"] = { text = "answer=13 blood=2 crime=12 need=6 remind=5 responsible=9 skyseer=1 spilled=3 this=11 those=10 we=8" },
   ["gossip:efcc104f5f9f8282"] = { text = "units=1 upgrade=2" },
   ["gossip:efcfc9c47e2b934c"] = { text = "guard=12 quite=9 tailor=3 tailors=3 talented=7 there=11 though=6 well=1" },
   ["gossip:efd58f4d2355cd25"] = { text = "child=2 soon=1" },

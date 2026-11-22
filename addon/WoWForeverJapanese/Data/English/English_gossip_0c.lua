@@ -42,6 +42,7 @@ WFJ.Data.add("english", {
   ["gossip:0cc22a5d855551e1"] = { text = "command=3 day=1 deem=13 dream=7 me=10 my=6 serve=5 that=11 under=4 worthy=12 your=2" },
   ["gossip:0cc503fe1cbc72dc"] = { text = "dinner=2 head=6 ready=3 should=4 soon=1 well=7" },
   ["gossip:0cc9a0c74ac8dddb"] = { text = "books=1 bring=2" },
+  ["gossip:0cce01f29c49d9bf"] = { text = "cleansing=8 corruption=2 drawn=10 elementals=7 feel=3 quilboar=4 ritual=9 summoning=5 their=1 twisted=6" },
   ["gossip:0cd755bb93a2a6f2"] = { text = "here=1 paladins=2 train=3 true=4" },
   ["gossip:0cdb9d7db7f84173"] = { text = "coincidence=3 say=4 this=2 why=1" },
   ["gossip:0ce0cd79712ab35a"] = { text = "check=4 excused=1" },
@@ -49,6 +50,7 @@ WFJ.Data.add("english", {
   ["gossip:0ce4a78cb5d05b41"] = { text = "check=11 he=12 liking=7 new=1 probably=4 recently=5 rooms=10 see=14 spells=2 staying=6 teach=3 want=15" },
   ["gossip:0ce5be55cf6513ab"] = { text = "good=5 happy=11 serve=9 smiling=3 trust=7 welcome=1 you=8" },
   ["gossip:0cf52af1ece19c39"] = { text = "begins=2 work=1" },
+  ["gossip:0cf68231c826de3e"] = { text = "arrived=2 bound=1" },
   ["gossip:0cf87b604bb00f19"] = { text = "besides=9 can't=2 he=17 help=1 i=7 know=8 knows=8 lot=19 potions=3 pots=11 talk=16 watch=12 you=5" },
   ["gossip:0cff03d7217afbb7"] = { text = "and=7 aptitude=18 arcane=13 followers=4 gain=6 help=24 hungry=12 if=20 knowledge=5 lost=8 never=11 next=21 old=1 power=14 reclaim=10 seek=16 steps=22 take=23 ways=2 what=9 wield=15" },
 })

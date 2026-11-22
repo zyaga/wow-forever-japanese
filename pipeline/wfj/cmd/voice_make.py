@@ -394,13 +394,45 @@ def cast_rows(root: Path, cfg: dict[str, Any], today: str) -> list[dict[str, Any
     return rows
 
 
+def cast_changes(before: dict[int, dict[str, str]], rows: list[dict[str, Any]]) -> list[str]:
+    """Every speaker whose voice is not the one the last cast gave it, one line each: the lines it speaks are
+    made again in the new voice, so a cast that moves a voice says so. A voice moves when Spoken's newest
+    corpus names a set for a speaker cast by the project's own rows before, or names another set. A speaker's
+    second voice (the one for its female form) is named when it has one, and a speaker the cast no longer
+    holds is listed as removed."""
+
+    def text(row: dict[str, str]) -> str:
+        second = f" + {row['female']}" if row.get("female") else ""
+        return f"{row.get('voice')}{second} ({row.get('row')})"
+
+    out = []
+    for r in sorted(rows, key=lambda r: int(r["creature"])):
+        old = before.get(int(r["creature"]))
+        if old is None:
+            continue
+        was, now = (old.get("voice"), old.get("female")), (r.get("voice"), r.get("female"))
+        if was != now:
+            out.append(f"{r['creature']}: {text(old)} → {text(r)}")
+    cast = {int(r["creature"]) for r in rows}
+    out += [f"{creature}: {text(before[creature])} → removed" for creature in sorted(set(before) - cast)]
+    return out
+
+
 def run_cast(cfg: dict[str, Any], root: Path) -> int:
+    path = root / "voice" / "voices.jsonl"
+    before = read_cast(root) if path.exists() else {}
     rows = cast_rows(root, cfg, datetime.date.today().isoformat())
-    _write(root / "voice" / "voices.jsonl", rows)
+    _write(path, rows)
     by_row = Counter(r["row"] for r in rows)
     print(f"voice cast: {len(rows)} creatures → data/voice/voices.jsonl")
     for name, n in by_row.most_common():
         print(f"voice cast: {n:5d}  {name}")
+    changed = cast_changes(before, rows)
+    if changed:
+        count = f"{len(changed)} speaker(s) changed voice since the last cast"
+        print(f"voice cast: {count}; their lines are made again:")
+        for line in changed:
+            print(f"voice cast:   {line}")
     if left := len(unknown(root)):
         print(f"voice cast: {left} creature(s) with no known race or gender get no voice")
     return 0
@@ -497,10 +529,11 @@ def _owed_state(root: Path, cfg: dict[str, Any]) -> tuple[list[str], list[str], 
     jobs = file_jobs(root, cfg, "all", lines, players_of("all"))
     audio = audio_record(root)
     state, _, _ = step_state(root, cfg, jobs, lines, audio)
-    voiced = {j.key for j in jobs}
     spare = set(audio) - {j.stem for j in jobs}
-    # a line that ships Japanese and has no file to make now: nobody can name its speaker's voice
-    silent = {f for f in spare if audio[f].get("key") in lines and audio[f].get("key") not in voiced}
+    # a recording of a line that ships Japanese and that no file to make now stands for: nobody can name the
+    # voice of the line's speaker, or of one of its speakers (a line two NPCs say has a file per voice, and
+    # the one whose NPC lost its voice is spare while the other is still made)
+    silent = {f for f in spare if audio[f].get("key") in lines}
     return sorted({*state["missing"], *state["stale"]}), sorted(silent), sorted(spare - silent)
 
 

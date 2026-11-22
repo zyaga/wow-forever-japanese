@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:fed6e23ecb7263b5"] = { text = "brave=11 creatures=6 eh=1 greetings=2 help=18 here=9 hermit=17 maybe=19 old=16 one=12 those=4 wandering=5 way=10 young=3" },
   ["gossip:fee6b2338d50b7da"] = { text = "aptitude=1 if=3 teach=4" },
   ["gossip:fee728b8ff6a70d7"] = { text = "grrr=1" },
+  ["gossip:fee8e5965f9931f3"] = { text = "fate=5 he=3 like=2 saved=7 sorry=1 terrible=4 you=6" },
   ["gossip:feed8b4912ccb144"] = { text = "acquaintance=8 adventures=38 city=14 difficult=30 emissary=6 ever=26 expecting=7 fallen=21 forward=48 friend=29 further=46 gnomes=28 graciously=32 happy=10 home=13 hope=40 how=2 however=25 learn=44 lost=24 more=43 opened=36 opportunities=45 our=12 people=5 present=23 recently=19 time=20 times=20 very=9 well=39 wish=11 wonderful=3 yes=1 your=4" },
   ["gossip:feef59dc9f06d473"] = { text = "always=12 arts=3 book=14 find=10 gates=6 magical=2 north=7 nose=15 sure=9 there=13 training=4 well=1" },
   ["gossip:fef919db0d64e7f4"] = { text = "grrrrr=1" },

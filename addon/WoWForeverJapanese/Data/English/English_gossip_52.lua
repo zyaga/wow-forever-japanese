@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:520096fa4f44b190"] = { text = "defend=2 forth=4 hive=1" },
   ["gossip:520132ac126c66c2"] = { text = "best=5 days=2 indoors=3 stay=4 welcome=1" },
+  ["gossip:52023674332e846e"] = { text = "approximately=26 carved=24 dates=28 depicting=4 elves=3 encroached=8 excavated=7 fascinating=5 forced=11 gave=18 glean=37 him=9 hours=13 house=15 information=35 investigating=21 just=12 male=31 me=17 native=22 rest=2 returned=16 ruins=10 since=19 statuette=6 they=32 who=33 wood=23 years=25 yes=1" },
   ["gossip:520a02e2d3718d69"] = { text = "mean=7 that=6 visitation=3" },
   ["gossip:5213a7ce7ac32eec"] = { text = "another=10 better=4 guidance=2 heed=5 learn=16 lies=13 little=3 one=7 path=9 perhaps=17 something=15 spirits=1 with=12 your=8" },
   ["gossip:5214288d6f67c0df"] = { text = "answer=12 any=11 it=3 nice=2 questions=9 show=7 whatever=4" },

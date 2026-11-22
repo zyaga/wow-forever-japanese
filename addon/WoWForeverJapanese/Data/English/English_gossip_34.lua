@@ -18,6 +18,7 @@ WFJ.Data.add("english", {
   ["gossip:342f677df94e4d3b"] = { text = "air=19 but=13 churning=17 clearly=27 coming=7 constructs=1 faint=5 faintly=5 good=24 listless=15 machine=9 metal=2 only=18 plates=3 powering=10 present=12 repair=25 sound=6 this=8 underneath=4 unit=23 wind=11" },
   ["gossip:34309a001085cfe3"] = { text = "carved=3 find=11 i=1 it=7 light=9 read=5 stone=2 way=10 words=4 you=6" },
   ["gossip:3434132e025ab68f"] = { text = "interfere=2 who=3" },
+  ["gossip:34364a71841be7fb"] = { text = "achievement=11 fauna=2 flora=1 grand=10 honor=13 nature=3 our=6 talents=7 testament=8 with=4 witness=12 working=5" },
   ["gossip:34392e088a20b537"] = { text = "better=5 daughter=3 eat=2 feel=4 this=1" },
   ["gossip:34476c1713471aff"] = { text = "bad=9 called=15 childhood=10 disgusting=14 done=1 enough=8 family=4 jobs=5 lives=6 lost=7 men=16 mill=2 pfah=19 place=12 released=3 see=18 spent=11 taken=17 those=13" },
   ["gossip:34480b3ff3fce9bb"] = { text = "controlled=6 eastern=1 entrance=2 neither=4 protects=3 side=5" },

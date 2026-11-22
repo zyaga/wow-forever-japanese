@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:edaf8a2a65d15f12"] = { text = "alive=23 all=13 burdens=6 doing=26 friend=16 greetings=1 here=4 honor=28 one=2 past=20 place=18 present=19 refuge=9 sacred=17 spirits=21 them=24 welcome=3 world=5 yourself=27" },
   ["gossip:edaff3f88712cc94"] = { text = "miss=3 what=1" },
   ["gossip:edc39fcb28f90a13"] = { text = "adopted=36 against=4 bolster=11 children=35 dimensional=13 diminishing=8 dubbed=38 during=1 elected=15 fell=30 fort=26 frustrated=7 guilt=31 keep=24 mad=33 men=16 newly=37 noble=23 progress=5 quickly=18 ranks=10 retreated=41 ruin=29 shadow=28 siege=25 slaughtered=17 summon=14 themselves=20 turned=22 undead=3 wizards=2 wizards'=2" },
+  ["gossip:edc97f2ea3d132e4"] = { text = "glory=1" },
   ["gossip:edc9a19f8cef9d83"] = { text = "tell=2" },
   ["gossip:edd59effacc3deb8"] = { text = "discuss=7 first=6 know=5 yet=4" },
   ["gossip:edd7e4bcf709b71f"] = { text = "lost=1 mean=2" },

@@ -17,6 +17,7 @@ WFJ.Data.add("english", {
   ["gossip:3e5197d48dc6d9c3"] = { text = "attire=2 domination=4 fashion=5 forget=3 student's=1 think=8 vital=7" },
   ["gossip:3e5f7fb395f26f17"] = { text = "concern=8 counsel=3 discuss=5 gone=1 i=2 matters=6 we=4 your=7" },
   ["gossip:3e626e5d37be14ce"] = { text = "friend=4 help=6 hurts=2 my=3 please=5" },
+  ["gossip:3e671d2faf4c3670"] = { text = "decontamination=6 misters=7 new=3 radiation=4 reads=2 sensors=5 tag=1" },
   ["gossip:3e67fb231b00d003"] = { text = "burning=18 circle=15 city=19 directly=21 end=14 existence=13 eyes=2 gates=20 into=16 leads=22 miserable=12 poor=10 souls=11 step=17 stranger=7 therein=8 tragedy=6 trapped=9 within=5 your=1" },
   ["gossip:3e692c40473b582b"] = { text = "arrive=12 back=8 catch=11 chef=1 elevators=10 further=17 head=7 heading=9 lumbering=14 one=15 south=5 talk=16 those=13 town=4 training=3" },
   ["gossip:3e6ad2144be79bdd"] = { text = "research=4 send=6 size=2 this=1 wait=7" },

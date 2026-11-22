@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:83959312ba26ef73"] = { text = "another=1 falls=5 fool=3 trap=4" },
   ["gossip:839c020b966934f6"] = { text = "both=20 built=1 dead=24 exchange=12 existed=29 family=3 find=21 finer=26 foul=8 given=4 granted=17 ground=2 immortality=16 its=18 land=7 learn=10 magics=9 mirror=27 never=28 owner=19 place=11 this=6 undeath=15 vain=23" },
   ["gossip:83b7b9da5d6d810e"] = { text = "fear=2 senses=3 your=1" },
+  ["gossip:83be086fc41d5e8a"] = { text = "agent=7 answer=13 highlands=8 killed=9 little=4 mage=5 oh=1 rich=3 that=2 them=12 who=11 your=6" },
   ["gossip:83beb7b4e9b26858"] = { text = "abstracts=22 assist=67 between=25 cannot=33 commerce=56 common=46 crafts=47 crates=61 currency=8 day=41 earn=69 engaging=38 ensures=29 ensuring=29 equitable=27 ever=17 fair=26 fluctuating=18 gold=5 internal=55 kind=57 known=16 liquidated=31 materials=49 members=24 needed=43 needs=43 organization=23 otherwise=54 ourselves=10 own=12 plenty=68 recovering=62 rely=58 shady=36 silver=20 some=35 sort=4 still=51 such=45 suppose=40 swift=65 system=13 trade=11 true=6 universal=7 use=53 value=21 waylaid=60 we=9 well=2 writs=64 yes=1" },
   ["gossip:83bf808ed9ac2f31"] = { text = "bit=7 but=4 left=8 maybe=9 nice=1 not=6 perfect=5 shot=2" },
   ["gossip:83c32533fd1131c2"] = { text = "grumble=1" },

@@ -10,11 +10,12 @@
 --   Align.fill(ja, values, durations, icons)  $N<k> → values[k], $D<k> → durations[k], $I<k> → icons[k]
 --                                         nil when one has no value
 --   Align.textures(text)                  → text without its `|T…|t` icon escapes, { the escapes }
---   Align.fillValues(ja, scope, duration)  → text: $N/$D filled from `scope`, WITHOUT the names and
+--   Align.fillValues(ja, scope, duration, count)  → text: $N/$D filled from `scope`, WITHOUT the names and
 --                                         numbers gate: a trusted line's text was checked offline, and
 --                                         only the values the server fills in come from the live line.
 --                                         nil when a placeholder cannot be filled (fail closed); the
 --                                         Japanese unchanged when it holds no placeholder at all.
+--                                         `count` (optional): as for `check`
 --   Align.splitTail(ja, scope)            a trailing `$T` (name-list tail) → head, { scope, text } | ja, nil
 --                                         | nil (a misplaced `$T`, or a live text with fewer lines than the head)
 --   Align.variantKey(scope, duration)     (ADR-064) the key of a live line's wording with its values masked,
@@ -27,10 +28,12 @@
 --   Align.gate(entry, lines, duration)  → ok, text: what the tooltip shows for a shipped item / spell entry
 --                                         against live lines, by the Translator's status rules (UI/Tooltip set
 --                                         bonus lines, the Collector's covered check through Main)
---   Align.check(ja, lines, nameScope, duration)  → ok, text: the Translator's `align` dependency; `nameScope`
---                                         (optional) is extra text names may come from (the tooltip's name line),
---                                         never numbers; `duration` (optional) is UIStrings' duration renderer,
---                                         without which a $D placeholder fails closed
+--   Align.check(ja, lines, nameScope, duration, count)  → ok, text: the Translator's `align` dependency;
+--                                         `nameScope` (optional) is extra text names may come from (the tooltip's
+--                                         name line), never numbers; `duration` (optional) is UIStrings' duration
+--                                         renderer, without which a $D placeholder fails closed; `count`
+--                                         (optional) is how many values the English the Japanese is numbered to
+--                                         prints: a live line with more or fewer fails closed
 -- Consumers: Main (the Translator's `align` dep; surfaces reach it only through Translator), align_spec.
 local _, WFJ = ...
 local Align = {}
@@ -404,34 +407,44 @@ function Align.splitTail(ja, scope)
   return head, { scope = brk and scope:sub(1, brk - 1) or scope, text = brk and scope:sub(brk) or "" }
 end
 
+-- A Japanese line's `$N<k>` are numbered to the values of the English it was written against. A client whose
+-- template has gained or lost a number shows a line where every later value has moved, and the names and
+-- numbers gate cannot tell: each number it would fill in is in the live line. So a line that ships the count
+-- of its English is shown only while the live line holds exactly as many values. No count: no such check.
+local function sameCount(values, count)
+  return count == nil or #values == count
+end
+
 -- $N<k> / $D<k> filled from the live text, with no gate. A quest line is `trusted`: its names and
 -- numbers were checked offline against the English, so re-checking them here would reject a good translation
 -- over a count the server fills in. Only the placeholders are resolved, and a placeholder that cannot be
 -- filled fails closed to English, exactly as in `check`.
-function Align.fillValues(ja, scope, duration)
+function Align.fillValues(ja, scope, duration, count)
   if type(ja) ~= "string" then return nil end
   if ja:find(TAIL, 1, true) then -- the head filled from the live head, the live tail appended
     if type(scope) ~= "string" then return nil end
     local head, tail = Align.splitTail(ja, scope)
-    local text = head and Align.fillValues(head, tail.scope, duration)
+    local text = head and Align.fillValues(head, tail.scope, duration, count)
     return text and (text .. tail.text) or nil
   end
   if not ja:find("%$[NDI]%d") then return ja end -- nothing to fill: never a failure
   if type(scope) ~= "string" or scope == "" then return nil end
   local plain, icons = Align.textures(scope)
-  return (Align.fill(ja, Align.values(plain), durationsFor(ja, plain, duration), icons))
+  local values = Align.values(plain)
+  if not sameCount(values, count) then return nil end
+  return (Align.fill(ja, values, durationsFor(ja, plain, duration), icons))
 end
 
 -- The Translator's `align` dep: → ok, text. Every name and number of the filled Japanese must occur in the
 -- lines about to be replaced; a name may also come from `nameScope` (the tooltip's own name line: "Hearthstoneの
 -- 場所に戻ります" names the item), which never supplies numbers or values. Any doubt → false: English stays.
-function Align.check(ja, lines, nameScope, duration)
+function Align.check(ja, lines, nameScope, duration, count)
   if type(ja) ~= "string" or type(lines) ~= "table" or #lines == 0 then return false end
   local scope = table.concat(lines, "\n")
   local head, tail = Align.splitTail(ja, scope)
   if head == nil then return false end
-  if tail ~= nil then
-    local ok, text = Align.check(head, { tail.scope }, nameScope, duration)
+  if tail ~= nil then -- the count is the head's: the tail prints names
+    local ok, text = Align.check(head, { tail.scope }, nameScope, duration, count)
     if not ok then return false end
     return true, text .. tail.text
   end
@@ -439,6 +452,7 @@ function Align.check(ja, lines, nameScope, duration)
   -- before its names and numbers are checked (an icon path is neither)
   local plain, icons = Align.textures(scope)
   local values = Align.values(plain)
+  if not sameCount(values, count) then return false end
   local text = Align.fill(ja, values, durationsFor(ja, plain, duration), icons)
   if text == nil then return false end
   local checked = Align.textures(text)
@@ -585,10 +599,10 @@ function Align.gate(entry, lines, duration)
   end
   if type(entry.ja) ~= "string" or entry.ja == "" then return false end
   if status == "." then
-    local text = Align.fillValues(entry.ja, table.concat(lines, "\n"), duration)
+    local text = Align.fillValues(entry.ja, table.concat(lines, "\n"), duration, entry.values)
     if text == nil then return false end
     return true, text
   end
   if not gated then return false end
-  return Align.check(entry.ja, lines, nil, duration)
+  return Align.check(entry.ja, lines, nil, duration, entry.values)
 end

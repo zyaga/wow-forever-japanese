@@ -6,6 +6,7 @@ WFJ.Data.add("english", {
   ["gossip:e3253541f4db25e4"] = { text = "advisor=15 allowed=22 amiss=18 believe=27 felt=19 gruesome=4 happen=21 i=7 it=20 known=16 lifts=2 most=13 revealing=6 scars=5 several=3 something=17 tabard=1 there=8 trusted=14" },
   ["gossip:e3265b41ce5f9d45"] = { text = "anger=1 explodes=2 goes=4 rage=3" },
   ["gossip:e334ffbbe6e83322"] = { text = "death=1 escape=2" },
+  ["gossip:e338525cd47263b3"] = { text = "approach=2 me=1 outsider=3" },
   ["gossip:e34340678584c24a"] = { text = "corruption=8 drives=4 druids=1 even=13 here=12 itself=3 lands=10 nature=2 our=9 say=6 spread=11 time=5 yet=7" },
   ["gossip:e34566939eda6618"] = { text = "begin=9 cocky=3 competence=5 demonstrated=6 now=8 okay=1 since=7 though=4 well=2" },
   ["gossip:e3490fa6ccf4be47"] = { text = "all=2 collecting=1 completed=6 day=12 done=3 finished=4 fun=24 gates=20 gong=18 goods=5 like=14 open=21 real=23 ring=19 shipped=7 someone=16 that=17 then=22 until=11" },

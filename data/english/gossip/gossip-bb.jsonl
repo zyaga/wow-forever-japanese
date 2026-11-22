@@ -27,6 +27,7 @@
 {"id": "bbc9a7a7f1219fe0", "field": "text", "en": "Who controls the Dun Baldar South Bunker?", "hash": "bbc9a7a7f1219fe0", "src": "vmangos@13b49dc"}
 {"id": "bbcefed8fa5e8bc6", "field": "text", "en": "The transmogrifier", "hash": "bbcefed8fa5e8bc6", "src": "collector@1.60.1.70862", "npcs": [1423, 3296]}
 {"id": "bbd6059af83f376d", "field": "text", "en": "In grizzly times a druid can be a dear friend to those around them.  Ask any of the druids in the Cenarion Enclave and they will tell you the same.", "hash": "bbd6059af83f376d", "src": "vmangos@13b49dc"}
+{"id": "bbf15a941c200c1f", "field": "text", "en": "Our tide...is rising...", "hash": "bbf15a941c200c1f", "src": "collector@1.60.1.70959"}
 {"id": "bbf52fbc4c8626fe", "field": "text", "en": "Need a little help here.  That $n saw me.", "hash": "bbf52fbc4c8626fe", "src": "vmangos@13b49dc"}
 {"id": "bbf8281a2bddfa7e", "field": "text", "en": "Chugga-chugga, woo-woo!  Happy Hallow's End, $n!", "hash": "bbf8281a2bddfa7e", "src": "vmangos@13b49dc"}
 {"id": "bbf836df93d60425", "field": "text", "en": "It was during the Elemental Sundering that the Firelord, Ragnaros, would seek to consume my Lord, Thunderaan, Prince of Air.$B$B<Demitrian bows his head, his face contorted in rage.>$B$BSpeak his name and I shall decorate this ravaged camp with your entrails. Be silent and listen.\n", "hash": "bbf836df93d60425", "src": "vmangos@13b49dc"}

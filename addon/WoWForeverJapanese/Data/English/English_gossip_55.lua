@@ -11,6 +11,7 @@ WFJ.Data.add("english", {
   ["gossip:553fc8849097a676"] = { text = "go=9 i=4 learned=3 much=2 teach=5 you=1" },
   ["gossip:5545c28a8f3fd120"] = { text = "meow=1" },
   ["gossip:55463d22b5917413"] = { text = "defeat=2" },
+  ["gossip:5558120f02fd1e8a"] = { text = "both=4 brief=2 hail=1 much=6" },
   ["gossip:5561061882d6bcd3"] = { text = "learn=2 recipe=1" },
   ["gossip:556298a83a615972"] = { text = "beyond=3 disregarded=6 powers=4 understanding=2 you=1" },
   ["gossip:5564c7c348d17f34"] = { text = "air=28 alien=16 always=11 and=44 arrived=40 bereft=48 birthed=22 denizens=53 found=35 guests=37 here=19 home=8 how=55 kinship=34 millennia=5 now=49 other=52 our=7 past=33 people=21 perceive=56 place=13 plane=29 potentially=45 presence=43 protection=47 realm=4 remember=1 somewhat=15 spirits=36 telling=57 terrestrial=23 their=42 this=3 us=54 we=10 world=24" },

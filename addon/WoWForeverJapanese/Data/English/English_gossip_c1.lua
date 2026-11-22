@@ -3,9 +3,11 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:c1001c3f5ffa1cd4"] = { text = "attack=1 destroy=4 unchecked=3" },
   ["gossip:c1038cf54ed7d476"] = { text = "body=1 falls=3 ground=2 heap=5 lifeless=4" },
+  ["gossip:c1043a95164d10a9"] = { text = "among=5 done=1 elements=14 focus=17 ground=34 know=2 mark=9 more=23 now=31 open=24 other=13 place=7 power=22 ready=27 shamans=4 soil=12 speak=37 spells=16 stone=11 take=33 through=36 tied=15 tools=10 totem=3 totems=3 trainers=29 wiser=19" },
   ["gossip:c1063221546e3be3"] = { text = "arts=4 finer=8 him=6 look=12 stealth=3 talk=2 teacher=9 then=1" },
   ["gossip:c11cfefd5874bcb5"] = { text = "momma=4 right=2 yes=1" },
   ["gossip:c11eacf43d2e2c82"] = { text = "actions=4 come=7 faith=2 guides=5 know=8 my=1" },
+  ["gossip:c129794c8f0b10d2"] = { text = "busy=6 coins=1 little=3 neat=2 piles=4 stacking=5" },
   ["gossip:c13766548658c2f4"] = { text = "prevail=2 we=1" },
   ["gossip:c1386a7d03d5eb5a"] = { text = "babes=4 cradle=2 fact=17 fresh=3 here=7 i=1 near=15 require=13 sad=19 skill=10 stand=22 students=12 teach=5 there=21 ye=9" },
   ["gossip:c14030101bc1bad2"] = { text = "jail=2 ours=3 your=1" },

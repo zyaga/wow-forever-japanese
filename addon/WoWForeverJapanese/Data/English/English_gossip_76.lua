@@ -47,5 +47,6 @@ WFJ.Data.add("english", {
   ["gossip:76d79b9c6dee4a33"] = { text = "drive=14 enemies=6 hello=1 here=2 know=9 must=10 our=5 saturated=7 survive=11 them=13" },
   ["gossip:76dcf9595036598a"] = { text = "here=1 orders=2 quickly=3" },
   ["gossip:76dfa605246d1849"] = { text = "actually=1 each=14 front=21 i=2 leeches=7 local=17 maggots=8 medicines=4 near=20 own=15 prefer=6 sort=11 stables=19 standing=22 thing=12 traditional=3 well=13" },
+  ["gossip:76e41fc77f08eb86"] = { text = "apologies=14 attached=17 certainly=3 curio=16 feel=9 foolish=19 frivolous=15 handed=4 know=11 lost=13 me=7 probably=18 regardless=21 sale=25 selling=2 sorry=22 sound=20 statue=1 think=8 time=24 when=5 words=12" },
   ["gossip:76f46cdab011fd67"] = { text = "begins=2" },
 })

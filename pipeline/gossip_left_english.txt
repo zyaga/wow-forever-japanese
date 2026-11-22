@@ -1,0 +1,4 @@
+# NPC lines that ship no Japanese on purpose. One `<16-hex key>  # reason` per line.
+# tests/python/test_coverage.py: every key here is an NPC line in data/english/gossip with no shipped Japanese,
+# and every line has a reason.
+756807086bdded5c  # a line said in a game language the recording character does not speak: the client shows made-up words, never the same sentence a speaker sees

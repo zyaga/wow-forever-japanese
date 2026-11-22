@@ -11,12 +11,21 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Added
 - With a voice pack installed, a translated line that has no voice yet says so on its window: `[音声なし / No Voice Yet]`. A setting on the Voice page, Mark lines with no voice yet, turns the message off.
+- Japanese for what Forever 1.60.1.70959 and 1.60.1.71037 added and for what players sent with the English Collector in 28 sends: 264 NPC lines, 318 quest progress and turn-in texts, 129 new quest titles with their objectives and descriptions (with word cards), and 45 item and spell tooltips.
 
 ### Changed
 - The English Collector also keeps three numbers for each quest window you open: the id, the sex and the model id of the NPC that shows it, also for quests already in Japanese. They let each line be read in that NPC's own voice. No text and nothing about your character is added, and nothing is sent unless you send it.
+- Quest texts and item and spell tooltips the game reworded on 1.60.1.70959 and 1.60.1.71037 follow the new wording.
 
 ### Fixed
 - NPCs no longer speak in the narrator's voice. A quest line whose speaker the addon could not name was read by one narrator, an old tauren man, whatever the NPC's race or sex. Each line is now read in the voice of the NPC who says it. A line whose NPC is not known yet, or whose voice is not made yet, stays silent instead of being read in the wrong voice, so some lines that had a voice are quiet until the next voice pack release.
+- Japanese that players write in the guild and community windows showed as empty boxes. It now shows in the addon's font, with translation on or off: the message of the day, the guild information, member and officer notes, rank names, the guild news line that repeats the message of the day, community names and descriptions, the guild finder's text, a guild bank tab's notes, and the title and description of a calendar event a player made. The boxes you type them in show Japanese as you type. Text with no Japanese keeps the game's own font.
+- The name-and-icon popup shows its labels in Japanese wherever the game uses it: equipment sets, macros, guild bank tabs, bank tabs and transmog outfits.
+- In the guild window, the "Show Offline Members" box, an offline member's last-seen line, the names of the guild's own chat channels and the news pane's heading are Japanese.
+- An item or spell tooltip no longer shows its numbers in the wrong places when the game has added or removed a number in that tooltip since the translation was made. Such a tooltip stays English until its translation follows.
+- An item's flavour text no longer appears on its "Use:" line with the flavour line left empty. It happened on an item whose tooltip has more lines than its translation was written for.
+- The quest log says `[音声なし / No Voice Yet]` for a quest whose offer has no voice yet, as the quest window does.
+- A holiday's description on the calendar, the mount journal's search hint and the rank titles on the challenges page are Japanese.
 
 ## 0.14.0 - 2026-11-16
 

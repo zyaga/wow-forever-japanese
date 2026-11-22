@@ -134,8 +134,35 @@ end
 -- above its description ("Equip: Increases movement speed by 2% in …") had the 26 filled into the description's one
 -- number and its spell power line folded away. When the description's Japanese fits exactly one line of the run on
 -- its own (every name and number of it found in that line, the Translator's own check), the run is that line; the
--- run's other lines are then matched as stat lines, as on an item with no description. No line or more than one
--- line fitting, or a Japanese of more than one paragraph, leaves the run as it was.
+-- run's other lines are then matched as stat lines, as on an item with no description. No line fitting, or a
+-- Japanese of more than one paragraph, leaves the run as it was.
+-- A Japanese with no name or number of its own fits every line, so that check cannot place it: a flavour line's
+-- Japanese went onto the use line above it and the flavour line was folded away. Its English is plain text
+-- then, so the line it was written for is the one whose words are that English, found by the entry's hash (the
+-- addon holds no English). No such line, or two: the run is left as it was.
+local function unprefixed(text, pre)
+  for _, p in ipairs(pre) do
+    if text:sub(1, #p) == p then return (text:sub(#p + 1):gsub("^%s+", "")) end
+  end
+  if #text > 2 and text:sub(1, 1) == '"' and text:sub(-1) == '"' then return text:sub(2, -2) end
+  return text
+end
+
+-- The one line of the run that is the English with this hash, without its trigger word ("Use:") or the quotes
+-- around a flavour line. → row | nil
+function Tooltip.runLineOf(h1, texts, first, last)
+  local N, Hh = WFJ.Normalize, WFJ.Hash
+  if h1 == nil or not N or not Hh then return nil end
+  local pre, found = prefixes(), nil
+  for row = first, last do
+    if texts[row] ~= "" and (Hh.h32x2(N.v1(unprefixed(texts[row], pre)))) == h1 then
+      if found then return nil end
+      found = row
+    end
+  end
+  return found
+end
+
 -- → first, last, { [row] = { key, args } | false } for the other lines | nil
 function Tooltip.narrowRun(id, texts, first, last, nameScope)
   if not first or not last or last == first then return first, last, nil end
@@ -146,13 +173,14 @@ function Tooltip.narrowRun(id, texts, first, last, nameScope)
   -- a Japanese of several paragraphs is written for several lines of the run (a use line and its flavour text)
   if type(ja) ~= "string" or ja:find("\n") or type(align) ~= "table" or not index then return first, last, nil end
   local function duration(text) return index:duration(text, true) end -- a spell's `$d` forms, as Main's gate reads
-  local fit
+  local fit, fits = nil, 0
   for row = first, last do
     if texts[row] ~= "" and align.check(ja, { texts[row] }, nameScope, duration) then
-      if fit then return first, last, nil end
-      fit = row
+      fits = fits + 1
+      fit = fit or row
     end
   end
+  if fits > 1 then fit = Tooltip.runLineOf(entry.h1, texts, first, last) end
   if not fit then return first, last, nil end
   local others = {}
   for row = first, last do

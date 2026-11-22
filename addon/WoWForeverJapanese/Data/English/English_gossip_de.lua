@@ -6,6 +6,7 @@ WFJ.Data.add("english", {
   ["gossip:de027b039a1ff333"] = { text = "assailed=36 attack=29 chest=2 deep=38 design=4 doomed=25 enemies=46 first=11 gave=16 glad=49 gold=6 him=37 i=19 ingenious=3 kept=20 key=9 keys=9 later=34 lose=24 lost=30 mate=15 my=1 next=28 pulled=39 requires=10 share=48 silver=7 sure=44 them=23 two=45 unlock=5 us=35 we=22 when=40" },
   ["gossip:de042fc3773d35c8"] = { text = "returns=2" },
   ["gossip:de0ed23fa5c69377"] = { text = "blood=7 drink=8 eyes=2 glow=5 know=6 orc=1 red=4 why=3" },
+  ["gossip:de14f7681fb9ef6a"] = { text = "any=8 clatter=3 hear=5 heart=1 makings=13 quiet=4 soil=7 speak=11 stone=6 teach=15 tongue=9 ye=12" },
   ["gossip:de1ca14b0e9f89ae"] = { text = "blow=6 end=3 go=9 help=8 house=5 northwest=2 see=10 town=1" },
   ["gossip:de1d11697b8554a6"] = { text = "destroyed=2 i=1 reborn=5 will=3" },
   ["gossip:de2ccab9315dd6df"] = { text = "citizen=2 welcome=1" },

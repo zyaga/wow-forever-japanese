@@ -10,6 +10,7 @@ WFJ.Data.add("english", {
   ["gossip:42440e1a999c70c7"] = { text = "create=33 doll=13 enchantment=32 first=1 foul=16 found=22 inside=25 jinxed=23 lieutenants=2 litter=18 look=26 most=4 piles=20 place=17 powerful=5 primal=8 punctured=12 refuse=19 second=10 taken=7 these=14 things=27 this=15 token=9 you=29" },
   ["gossip:424713c980e460e8"] = { text = "arguing=38 dam=48 depressed=24 despondent=27 empire=14 far=44 greed=47 hear=40 horrible=3 house=7 i=20 just=2 life=9 manor=12 master=28 night=34 noticed=26 often=30 oh=1 once=8 paranoia=31 progressed=21 rage=32 reaching=13 residence=17 sir=6 speak=45 splendor=10 their=46 understood=43 we=42" },
   ["gossip:424859d8fad328a9"] = { text = "all=11 ask=19 awarded=7 beyond=3 cities=13 during=27 duty=1 effort=26 factions=9 give=21 here=24 heroine=6 if=33 lieu=29 located=14 major=12 material=30 number=20 one=17 raise=16 receive=32 reputation=15 reward=31 seek=34 speak=18 various=8 war=25 way=23" },
+  ["gossip:425541a1588dc2ac"] = { text = "against=1 and=17 brutal=20 chance=13 constant=5 foes=10 freedom=2 lies=23 only=8 our=9 politics=15 ready=24 research=16 shrewd=14 struggle=4 survival=12 talk=25 they=7 weaknesses=19 yet=6" },
   ["gossip:425ba620a07ef2b1"] = { text = "invisibility=1 liquor=2 ready=3" },
   ["gossip:425c8d8abde775d4"] = { text = "between=3 controlled=9 holds=5 neither=7 pass=4 side=8 south=1 territories=2" },
   ["gossip:4260fded613356fe"] = { text = "call=3 me=1 some=4" },

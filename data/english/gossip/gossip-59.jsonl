@@ -3,6 +3,7 @@
 {"id": "590651c9a032f8d1", "field": "text", "en": "This is the very first thing I say to the player.  Huzzah!", "hash": "590651c9a032f8d1", "src": "vmangos@13b49dc"}
 {"id": "59084f8382710854", "field": "text", "en": "I am well versed in over 4 languages.", "hash": "59084f8382710854", "src": "vmangos@13b49dc"}
 {"id": "590e03ab77b2c0ae", "field": "text", "en": "Look fierce!  You are Kolkar, so act like one!", "hash": "590e03ab77b2c0ae", "src": "vmangos@13b49dc"}
+{"id": "59123fa8a6f76c55", "field": "text", "en": "The spirit of strength does not always refer to physical strength. To face adversity both from within and without is what it means to take my shape.", "hash": "59123fa8a6f76c55", "src": "collector@1.60.1.70959", "npcs": [255853]}
 {"id": "5919bbb6c34933c5", "field": "text", "en": "Ayessa Dawnsinger. The Supreme Magister of the High Order awaits your reply to his inquiry.", "hash": "5919bbb6c34933c5", "src": "collector@1.60.1.70790"}
 {"id": "591ac4e82386eeb1", "field": "text", "en": "The nearest bank ye'll find is The Vault in Ironforge, $glad : lass;. ", "hash": "591ac4e82386eeb1", "src": "vmangos@13b49dc"}
 {"id": "591eff86501b58bb", "field": "text", "en": "Thank you, you're a great audience!  I'll be here all week!", "hash": "591eff86501b58bb", "src": "vmangos@13b49dc"}
@@ -38,6 +39,7 @@
 {"id": "59b076b1cc44d5f9", "field": "text", "en": "Och!  That Daryl Riknussun is a brilliant cook!  He makes a chilli so hot ye could temper steel with it!  I don't think he'll teach ye the recipe, but he'll certainly help ye to become a good cook.  Ye'll find him at the Bronze Kettle o'er on the northeastern side of The Great Forge.", "hash": "59b076b1cc44d5f9", "src": "vmangos@13b49dc"}
 {"id": "59b902625fae0055", "field": "text", "en": "Go, Reginald. May the light guide your hand.", "hash": "59b902625fae0055", "src": "vmangos@13b49dc"}
 {"id": "59b9a69338e1572e", "field": "text", "en": "%s obviously beaten, tries to run.", "hash": "59b9a69338e1572e", "src": "vmangos@13b49dc"}
+{"id": "59be14025be5ac64", "field": "text", "en": "I've been waiting for ages!", "hash": "59be14025be5ac64", "src": "collector@1.60.1.70959"}
 {"id": "59c1ccd90ce3170e", "field": "text", "en": "Bah, it's not here.  I wonder where I left it last...", "hash": "59c1ccd90ce3170e", "src": "vmangos@13b49dc"}
 {"id": "59c5fb3f7e39d764", "field": "text", "en": "Place Rend's head on the stake.", "hash": "59c5fb3f7e39d764", "src": "vmangos@13b49dc"}
 {"id": "59c6fe82171f4200", "field": "text", "en": "If you truly have the desire to learn this profession, then I would point you in the direction of Ainethil, a skilled alchemist at the Craftsmen's Terrace in northern Darnassus.", "hash": "59c6fe82171f4200", "src": "vmangos@13b49dc"}

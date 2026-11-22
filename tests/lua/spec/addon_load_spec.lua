@@ -23,7 +23,7 @@ local TAIL = {
   "UI/VoiceErrors.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua",
   "UI/TextWatch.lua",
   "UI/TaintWatch.lua",
-  "UI/HtmlText.lua",
+  "UI/HtmlText.lua", "UI/PlayerText.lua", "UI/IconPicker.lua",
   "UI/LoadOnDemand.lua",
   "UI/HelpTooltip.lua", "UI/TooltipData.lua",
   -- shared helpers (ADR-030)

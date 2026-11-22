@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:f90326be822bcf2b"] = { text = "all=1 bumping=8 done=2 little=4 modifications=3 should=6 speed=5 think=10" },
   ["gossip:f904d1942e4ce694"] = { text = "available=4 exclusively=3 here=2 time=1" },
+  ["gossip:f90607301d09b14f"] = { text = "good=1" },
   ["gossip:f90f34dd10fe5438"] = { text = "day=1 what=2" },
   ["gossip:f912b74482bab818"] = { text = "base=7 blow=15 commanded=10 dwindling=23 earned=35 elite=5 falter=19 fatal=14 forces=6 line=18 no=1 numbers=21 opposition=4 ranks=33 rapid=13 soldier=27 that=2 their=11 they=31 those=32 trifled=30 warned=26 will=24" },
   ["gossip:f91c878ad48cf614"] = { text = "again=15 all=12 enjoy=8 here=9 mortals=2 respite=7 seeing=16 soon=19 tell=13 transpired=10 wait=14 well=1 will=18" },

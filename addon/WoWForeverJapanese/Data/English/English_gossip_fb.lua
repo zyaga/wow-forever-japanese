@@ -21,6 +21,7 @@ WFJ.Data.add("english", {
   ["gossip:fb70539fecdfa3b6"] = { text = "ago=3 hour=2 hungry=4 time=1" },
   ["gossip:fb71e752003f5645"] = { text = "adventure=5 ask=14 complete=19 far=1 first=16 folks=9 if=15 lands=2 me=12 near=3 odd=7 queer=8 question=13 simple=17 task=18" },
   ["gossip:fb74c862027cfe18"] = { text = "pant=3 so=1 tired=2" },
+  ["gossip:fb775334b1264389"] = { text = "alone=28 arts=12 but=33 challenges=37 duty=45 even=20 face=38 feel=46 find=21 implausible=17 impossible=19 impressive=3 knowledge=42 master=13 may=8 me=1 my=25 noticed=2 now=40 people=35 pride=32 rogue=15 seen=39 shadows=5 share=44 stealth=10 subtlety=11 talent=6 tribe=43 unimaginable=36 years=23 you=4" },
   ["gossip:fb77df1ea00811b2"] = { text = "no=2 oh=1 time=3" },
   ["gossip:fb7c06d353b2b603"] = { text = "anvil=10 beats=11 fury=9 knowing=3 och=1 see=8 skill=6 talk=12 teach=14 what=13 worth=4" },
   ["gossip:fb7d22a32a8c73f0"] = { text = "components=6 construct=4 now=1 removed=7 somewhere=3 tell=9 who=8 your=5" },

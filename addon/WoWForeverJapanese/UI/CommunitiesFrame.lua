@@ -205,6 +205,11 @@ function CommunitiesFrame.setup()
   for _, t in ipairs(TOOLTIPS) do k.tooltip(under(t[1], t[2]), t[3]) end
   if hooked then return false end
   hooked = true
+  -- player-written text, its font only (UI/PlayerText): the window's chat box, and a community's name and
+  -- description on an invitation (communitiesinvitationframe.lua:68, 156)
+  WFJ.PlayerText.each(WFJ.PlayerText.box, { CF .. ".ChatEditBox" })
+  WFJ.PlayerText.each(WFJ.PlayerText.follow, { CF .. ".InvitationFrame.Name", CF .. ".InvitationFrame.Description",
+    CF .. ".TicketFrame.Name", CF .. ".TicketFrame.Description" })
   local frame = k.get("frame")
   k.after(k.get("control"), "Update", CommunitiesFrame.onControl)
   k.after(frame, "SetClubFinderPostingExpirationText", CommunitiesFrame.onPosting)

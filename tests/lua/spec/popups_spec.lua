@@ -204,6 +204,27 @@ describe("the StaticPopup dialogs on Forever", function()
   end)
   after_each(function() X.teardown(NAMES) end)
 
+  it("a note dialog's edit box wears the bundled face while it shows; any other dialog's has its own font", function()
+    local D, d = _G.StaticPopupDialogs, _G.StaticPopup1
+    D.SET_GUILDPLAYERNOTE = { text = "Set the note", button1 = _G.ACCEPT, hasEditBox = 1 }
+    d.EditBox, d.scripts = Stub.fontString(""), {}
+    function d:HookScript(name, fn) self.scripts[name] = fn end
+    local own, face = d.EditBox.font.path, WFJ.Font.PATH
+    _G.StaticPopup_Show("SET_GUILDPLAYERNOTE")
+    assert.are.equal(face, d.EditBox.font.path)
+    d.shown = false
+    d.scripts.OnHide(d)
+    assert.are.equal(own, d.EditBox.font.path)
+    _G.StaticPopup_Show("SET_GUILDPLAYERNOTE")
+    assert.are.equal(face, d.EditBox.font.path)
+    d.shown = false -- the frame taken for another dialog without its hide script having run
+    _G.StaticPopup_Show("DELETE_ITEM", "Hearthstone")
+    assert.are.equal(own, d.EditBox.font.path)
+    assert.are.equal("", d.EditBox:GetText()) -- nothing is written into the box
+    _G.StaticPopup2.shown = false
+    assert.is_false(WFJ.Popups.dressNote("SET_GUILDPLAYERNOTE", _G.StaticPopup2)) -- a dialog with no edit box
+  end)
+
   it("the remove-friend confirmation: the caller's line with the friend's name kept; Alt shows English", function()
     local d = _G.StaticPopup_Show("CONFIRM_REMOVE_BN_FRIEND",
       string.format(_G.REMOVE_TITLE_FRIEND_CONFIRMATION, "Reyn"))

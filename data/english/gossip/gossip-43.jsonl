@@ -16,6 +16,7 @@
 {"id": "433dfbac107ce504", "field": "text", "en": "%s wimpers.", "hash": "433dfbac107ce504", "src": "vmangos@13b49dc"}
 {"id": "43425db52bcfef66", "field": "text", "en": "%s gnaws at the bait ravenously.", "hash": "43425db52bcfef66", "src": "vmangos@13b49dc"}
 {"id": "434764915c4df11a", "field": "text", "en": "The Wildhammer dwarves might have fast steeds, but can those Aerie Peak gryphons stand the heat of The Great Forge?  I think not!", "hash": "434764915c4df11a", "src": "vmangos@13b49dc"}
+{"id": "434b3346031a3d30", "field": "text", "en": "Stay still, I'm going to cut you out. Hopefully, you'll still have your feet.", "hash": "434b3346031a3d30", "src": "collector@1.60.1.71037"}
 {"id": "4352061725627201", "field": "text", "en": "The spirits of Stonetalon still rage, $n.", "hash": "4352061725627201", "src": "vmangos@13b49dc"}
 {"id": "43542d62edf59c2d", "field": "text", "en": "Stormpike soldiers, aid and protect us! The Forest Lord has granted us his protection. The gateway must now be opened!", "hash": "43542d62edf59c2d", "src": "vmangos@13b49dc"}
 {"id": "4356812cacf5af2a", "field": "text", "en": "%s snores loudly and cuddles up next to A-Me 01.", "hash": "4356812cacf5af2a", "src": "vmangos@13b49dc"}
@@ -30,6 +31,7 @@
 {"id": "43869d0fcbf631cb", "field": "text", "en": "All of the preparations are complete now, $c. We await the last of the materiel to be sent to Silithus, which should be in less than a day's time. Then once the organization there is done with, someone will have to come forward and ring the gong on the Scarab Dais with the Scepter of the Shifting Sands. That is when the Ahn'Qiraj War will begin. May the Earth Mother watch over all of us then.", "hash": "43869d0fcbf631cb", "src": "vmangos@13b49dc"}
 {"id": "438eb82ce39cc25f", "field": "text", "en": "No, Leonid. Our place is here. Our fledgling order must find our identity amongst our kind. I know how you feel about the Forsaken... that our 'condition' is something to be cured.", "hash": "438eb82ce39cc25f", "src": "collector@1.60.1.70790"}
 {"id": "43912074bf2dc3ba", "field": "text", "en": "Great, let's get started... ha! Fooled you! Surely you didn't think it would be that simple. You'll need to prove your mettle just like everyone else!", "hash": "43912074bf2dc3ba", "src": "vmangos@13b49dc"}
+{"id": "43a75ba928bbad26", "field": "text", "en": "I'm home, Elodrius.", "hash": "43a75ba928bbad26", "src": "collector@1.60.1.70959"}
 {"id": "43a7ae12f8f34cec", "field": "text", "en": "Bijou knows where treasures are hidden.", "hash": "43a7ae12f8f34cec", "src": "vmangos@13b49dc"}
 {"id": "43af2d862cf65a11", "field": "text", "en": "Looking for these???? You'll never have em!", "hash": "43af2d862cf65a11", "src": "vmangos@13b49dc"}
 {"id": "43b0337ed10f973d", "field": "text", "en": "I know the way, insect. There is no need to prod me as if I were cattle.", "hash": "43b0337ed10f973d", "src": "vmangos@13b49dc"}
@@ -42,6 +44,7 @@
 {"id": "43c56166e54e3d17", "field": "text", "en": "Of course there's no danger in everything catching flames and exploding like a huge helium bomb. This baby will get you to Undercity faster and safer than any boat, and the view is truly breathtaking. Speaking of breath, smoking is not allowed while on board the zeppelin", "hash": "43c56166e54e3d17", "src": "vmangos@13b49dc"}
 {"id": "43d0c85e50ef4dc6", "field": "text", "en": "My thoughts exactly.", "hash": "43d0c85e50ef4dc6", "src": "vmangos@13b49dc"}
 {"id": "43d0f1da79bcf1aa", "field": "text", "en": "I wish to purchase another Elune's Candle.", "hash": "43d0f1da79bcf1aa", "src": "vmangos@13b49dc"}
+{"id": "43d26914a5849adf", "field": "text", "en": "We do not have much time; double your efforts.", "hash": "43d26914a5849adf", "src": "collector@1.60.1.70938"}
 {"id": "43d86777bfd306e1", "field": "text", "en": "Our fates lie ahead...", "hash": "43d86777bfd306e1", "src": "vmangos@13b49dc"}
 {"id": "43db7a267f63bdd8", "field": "text", "en": "We must focus if we are to spawn our dragonflight!", "hash": "43db7a267f63bdd8", "src": "vmangos@13b49dc"}
 {"id": "43e049092393e40a", "field": "text", "en": "Rise, servants of the Nightmare! Rise and destroy this world! Let there be no survivors...", "hash": "43e049092393e40a", "src": "vmangos@13b49dc"}

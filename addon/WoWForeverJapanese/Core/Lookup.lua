@@ -1,10 +1,12 @@
 -- Core/Lookup.lua: the only read path over WFJ.Data. Consumers: Main (Translator's `lookup` dep,
 -- through which every surface reads), UI/Slash (`/wfj debug quest|item|spell|gossip`), UI/Options (header counts
 -- via Data.meta). Pure: no globals, no frames.
---   Lookup.get(kind, id)  → { ja, status, h1[, h1f] } | { variants, shapes, status, h1 } | nil
+--   Lookup.get(kind, id)  → { ja, status, h1[, h1f][, values] } | { variants, shapes, status, h1 } | nil
 --                            kind = "<type>.<field>" (a one-field type may be bare: "ui")
 --                                                        | a keyed type (id = the key → Lookup.keyed)
 --                                         h1f: quest only, the h1 of the English's female variant (ADR-024)
+--                                         values: item / spell only, how many numbers the client prints for
+--                                         the English the line's `$N<k>` are numbered to (Align.check)
 --                                         variants / shapes (ADR-043): a branch line's slot is a table
 --                                         { "<variant 1>", …, shape = { "<values>/<durations>", … } } (item /
 --                                         spell only); `ja` is nil and the Translator picks with
@@ -47,7 +49,8 @@ function Lookup.get(kind, id)
   local ja = row[i]
   if ja == nil then return nil end
   local entry = { status = row[slots.status]:sub(i, i), h1 = row[i + slots.hash],
-    h1f = slots.female and row[i + slots.female] or nil }
+    h1f = slots.female and row[i + slots.female] or nil,
+    values = slots.values and row[i + slots.values] or nil }
   if type(ja) == "table" and ja.sections then
     entry.sections = ja.sections -- a sectioned line: shown paragraph by paragraph (Align.sections)
   elseif type(ja) == "table" then

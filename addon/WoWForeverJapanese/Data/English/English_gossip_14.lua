@@ -38,6 +38,7 @@ WFJ.Data.add("english", {
   ["gossip:14bfce19a57454a4"] = { text = "alive=4 our=1" },
   ["gossip:14c07581a22807cf"] = { text = "bound=7 me=6 mine=2 now=5 spirit=4 you=1 your=3" },
   ["gossip:14c61c47430c3f7f"] = { text = "arrived=8 artifacts=24 elves=10 expedition=12 first=11 form=19 gonna=5 hives=21 initially=7 join=13 long=3 lost=23 one=4 ordinary=16 party=18 routine=14 search=25 seat=2 then=1 various=20 venture=22 we=6" },
+  ["gossip:14c929c34b348233"] = { text = "land=8 many=6 misuse=9 practice=4 protected=10 us=11 world=1" },
   ["gossip:14ca0a0a5e14f3b8"] = { text = "additional=31 all=35 appropriate=38 associated=8 both=4 considerations=36 consult=41 control=15 data=39 dynamics=10 executed=21 external=2 fields=37 forces=5 information=32 internal=3 lightly=24 matrix=9 means=17 reestablish=16 related=34 repository=40 scheduled=28 scheduling=28 seeded=6 such=22 tactics=23 this=26 upset=11 use=19 visitation=18 when=12 worlds=7" },
   ["gossip:14cae8baec438061"] = { text = "coming=9 fury=6 gale=2 his=4 land=1 mindless=5 northwest=8 sound=7" },
   ["gossip:14cb7f48b4949a38"] = { text = "another=17 anywhere=2 arrives=19 berth=12 best=3 comfortable=20 cuisine=5 due=18 finest=10 first=13 interested=6 not=7 oh=4 say=1 ship=11 soon=15 travel=9 welcome=14 well=8" },

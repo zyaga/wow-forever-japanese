@@ -31,6 +31,7 @@
 {"id": "88e0c485f95125db", "field": "text", "en": "Tell me about Alterac Valley.", "hash": "88e0c485f95125db", "src": "vmangos@13b49dc"}
 {"id": "88e6ea0c1bd6d4df", "field": "text", "en": "Looking for this: [Red Scepter Shard]? Come and get it...", "hash": "88e6ea0c1bd6d4df", "src": "vmangos@13b49dc"}
 {"id": "88e99a84064c4fe4", "field": "text", "en": "Welcome to my forge, Blacksmith. Let me share with you a little secret. No one, no one in the world can you trust. Not men, not women, not beasts ... this you can trust, Steel.", "hash": "88e99a84064c4fe4", "src": "vmangos@13b49dc"}
+{"id": "88ec891319cdc5a8", "field": "text", "en": "A visitor to Shen'dralas? To what do we owe the pleasure?", "hash": "88ec891319cdc5a8", "src": "collector@1.60.1.70888", "npcs": [255385]}
 {"id": "88f0299019d303e0", "field": "text", "en": "That's it, everything's been collected by both sides. Now it's all being transported over to Silithus and should be there in less than a day. Once that's done and someone rings the gong on the Scarab Dais with the Scepter of the Shifting Sands, the war is on!", "hash": "88f0299019d303e0", "src": "vmangos@13b49dc"}
 {"id": "88f6671794611742", "field": "text", "en": "$n! Help!", "hash": "88f6671794611742", "src": "vmangos@13b49dc"}
 {"id": "88fd3722fdc0a9b5", "field": "text", "en": "Thank you, old friend. You have done the right thing.", "hash": "88fd3722fdc0a9b5", "src": "vmangos@13b49dc"}

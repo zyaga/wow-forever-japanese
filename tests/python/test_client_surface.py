@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+from wfj.dev import client_addons
 from wfj.dev import client_surface as cs
 
 ADDON = """
@@ -669,3 +670,355 @@ def test_report_reads_the_scan_addons_saved_file(addon: Path, tmp_path: Path, ca
     assert result["build"] == "16001"
     assert {r["name"]: r["verdict"] for r in result["rows"] if r.get("name")}["QuestFrame"] == "works"
     assert "questframe:" in capsys.readouterr().out
+
+
+# --- a second client: the source side is the files a game type loads, and a member name is not a global ---
+
+def _extract(tmp_path: Path) -> Path:
+    """A two-addon UI extract: one file the standard game type loads, one only camelot loads."""
+    addons = tmp_path / "ui" / "interface" / "addons"
+    files = {
+        "blizzard_quest/blizzard_quest.toc": "Shared\\Quest.lua\n[Game]\\Skills.lua [AllowLoadGameType camelot]\n",
+        "blizzard_quest/shared/quest.lua": "QuestFrame = CreateFrame('Frame')\nself.BackButton:SetText(BACK)\n",
+        "blizzard_quest/camelot/skills.lua": "SkillsFrame = CreateFrame('Frame')\nQuestFrame.Extra = 1\n",
+    }
+    for rel, body in files.items():
+        f = addons / rel
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(body, encoding="utf-8")
+    return tmp_path / "ui"
+
+
+def test_source_hits_reads_only_the_files_it_is_given(tmp_path: Path):
+    source = _extract(tmp_path)
+    loaded = [source / "interface/addons/blizzard_quest/shared/quest.lua"]
+    names = ["QuestFrame", "SkillsFrame", "QuestFrame.Extra", ".BackButton", "QuestFram"]
+    everywhere = cs.source_hits(source, names)
+    assert everywhere["SkillsFrame"] == "skills.lua" and everywhere["QuestFrame.Extra"] == "skills.lua"
+    assert everywhere["QuestFram"] == ""  # a part of a longer name is not the name
+    hits = cs.source_hits(source, names, loaded)
+    assert hits == {"QuestFrame": "quest.lua", "SkillsFrame": "", "QuestFrame.Extra": "", ".BackButton": "quest.lua",
+                    "QuestFram": ""}
+
+
+def _loaded(source: Path, game: str) -> list[Path]:
+    return client_addons.loaded_files(source, game)
+
+
+def test_the_loaded_files_are_the_game_types(tmp_path: Path):
+    source = _extract(tmp_path)
+    standard = {p.name for p in _loaded(source, "standard")}
+    camelot = {p.name for p in _loaded(source, "camelot")}
+    assert standard == {"quest.lua"} and camelot == {"quest.lua", "skills.lua"}
+    # the AddOns folder itself is accepted too
+    assert {p.name for p in _loaded(source / "interface" / "addons", "standard")} == {"quest.lua"}
+
+
+def test_a_member_name_is_not_asked_of_the_client_and_is_judged_by_the_source():
+    manifest = {"entries": [
+        {"kind": "global", "name": ".BackButton", "surface": "groupfinder"},
+        {"kind": "global", "name": "QuestFrame", "surface": "questframe"},
+    ]}
+    assert cs.probe_names(manifest) == [("global", "QuestFrame")]
+    prefix = {"kind": "global", "name": "InspectPVPFrame.MainInfoFrame.", "surface": "inspect"}
+    assert cs.probe_names({"entries": [prefix]}) == []  # a name that ends with a dot is a piece too
+    v, why = cs.verdict(manifest["entries"][0], {}, {".BackButton": "quest.lua"})
+    assert v == "unknown" and "part of a name" in why and "quest.lua" in why
+    v, why = cs.verdict(manifest["entries"][0], {}, {".BackButton": ""})
+    assert v == "unknown" and "source: absent" in why
+
+
+def test_report_rows_say_where_the_source_has_the_name(tmp_path: Path):
+    source = _extract(tmp_path)
+    manifest = {"entries": [
+        {"kind": "global", "name": "QuestFrame", "surface": "questframe"},
+        {"kind": "global", "name": "SkillsFrame", "surface": "skills"},
+        {"kind": "global", "name": None, "dynamic": 'p .. "Row"', "surface": "skills"},
+    ]}
+    rows = cs.report(manifest, {}, source, None, _loaded(source, "standard"))["rows"]
+    assert [r.get("source") for r in rows] == ["quest.lua", "", None]
+    assert all("lacks" not in r for r in rows)  # no other client to compare with
+    assert "source" not in cs.report(manifest, {}, None)["rows"][0]  # no source given: nothing to say
+
+
+def _report_args(tmp_path: Path, names: list[str]) -> tuple[list[str], Path]:
+    """The `report` command line over the two-addon extract, for a probe that found no `SkillsFrame`."""
+    import json
+
+    source = _extract(tmp_path)
+    manifest = tmp_path / "m.json"
+    manifest.write_text(json.dumps({"addon": "x", "entries": [
+        {"kind": "global", "name": name, "surface": "skills", "file": "UI/Skills.lua"} for name in names
+    ]}), encoding="utf-8")
+    saved = tmp_path / "WFJScan.lua"
+    saved.write_text(SAVED_SCAN.replace('\t\t\t["global|QuestFrame|questframe"] = "frame",\n',
+                                        '\t\t\t["global|SkillsFrame|skills"] = "no",\n'), encoding="utf-8")
+    out = tmp_path / "v.json"
+    return ["report", "--manifest", str(manifest), "--probe", str(saved), "--source", str(source),
+            "--out", str(out)], out
+
+
+def test_report_with_a_game_type_reads_that_load_set(tmp_path: Path, capsys):
+    import json
+
+    args, out = _report_args(tmp_path, ["SkillsFrame", ".BackButton"])
+    assert cs.main([*args, "--game", "standard"]) == 0
+    rows = {r["name"]: r for r in json.loads(out.read_text(encoding="utf-8"))["rows"]}
+    assert rows["SkillsFrame"]["source"] == ""  # only a file standard does not load has it
+    assert cs.main([*args, "--game", "camelot"]) == 0
+    rows = {r["name"]: r for r in json.loads(out.read_text(encoding="utf-8"))["rows"]}
+    assert rows["SkillsFrame"]["source"] == "skills.lua"
+    with pytest.raises(SystemExit):
+        cs.main([a for a in args if a not in ("--source", args[args.index("--source") + 1])] + ["--game", "standard"])
+    capsys.readouterr()
+
+
+def test_missing_words_proves_a_dotted_name_cannot_be_built(tmp_path: Path):
+    source = _extract(tmp_path)
+    loaded = _loaded(source, "standard")
+    names = ["QuestFrame.BackButton", "QuestFrame.Extra", "SkillsFrame.BackButton", ".BackButton"]
+    # QuestFrame.BackButton is written out nowhere, yet both of its words are in a loaded file: not proven gone
+    assert cs.source_hits(source, names, loaded)["QuestFrame.BackButton"] == ""
+    assert cs.missing_words(loaded, names) == {
+        "QuestFrame.BackButton": [], "QuestFrame.Extra": ["Extra"], "SkillsFrame.BackButton": ["SkillsFrame"],
+        ".BackButton": [],
+    }
+
+
+def test_lacks_is_what_the_other_client_can_build_and_this_one_cannot(tmp_path: Path):
+    source = _extract(tmp_path)
+    manifest = {"entries": [
+        {"kind": "global", "name": "SkillsFrame", "surface": "skills"},
+        {"kind": "global", "name": "QuestFrame.Extra", "surface": "questframe"},
+        {"kind": "global", "name": "QuestFrame", "surface": "questframe"},
+        # in neither client's files (a string table entry, a C function): the files prove nothing about it
+        {"kind": "global", "name": "ITEM_SET_BONUS", "surface": "tooltip"},
+        {"kind": "global", "name": None, "dynamic": 'p .. "Row"', "surface": "skills"},
+    ]}
+    standard, camelot = _loaded(source, "standard"), _loaded(source, "camelot")
+    rows = cs.report(manifest, {}, source, None, standard, reference=camelot)["rows"]
+    assert [r.get("lacks") for r in rows] == [["SkillsFrame"], ["Extra"], [], [], None]
+    # the client itself answering "it is here" outranks what the files suggest
+    found = {"global|SkillsFrame": "yes"}
+    rows = cs.report(manifest, found, source, None, standard, reference=camelot)["rows"]
+    assert rows[0]["lacks"] == [] and rows[1]["lacks"] == ["Extra"]
+
+
+def test_report_takes_a_reference_client_on_the_command_line(tmp_path: Path, capsys):
+    import json
+
+    args, out = _report_args(tmp_path, ["SkillsFrame"])
+    args += ["--game", "standard"]
+    source = args[args.index("--source") + 1]
+    assert cs.main([*args, "--reference", source, "--reference-game", "camelot"]) == 0
+    assert json.loads(out.read_text(encoding="utf-8"))["rows"][0]["lacks"] == ["SkillsFrame"]
+    assert "1 surfaces name something this client cannot build: skills" in capsys.readouterr().out
+    with pytest.raises(SystemExit):
+        cs.main([*args, "--reference", source])  # a reference needs its game type
+
+
+def test_report_refuses_a_game_type_it_has_no_rules_for_and_an_extract_with_nothing_loaded(tmp_path: Path, capsys):
+    args, _out = _report_args(tmp_path, ["SkillsFrame"])
+    source = args[args.index("--source") + 1]
+    with pytest.raises(SystemExit):
+        cs.main([*args, "--game", "wrath"])
+    nothing = tmp_path / "nothing"
+    nothing.mkdir()
+    # an empty reference would call every name buildable: a wrong path must not read as "nothing is missing"
+    with pytest.raises(SystemExit, match="no file"):
+        cs.main([*args, "--game", "standard", "--reference", str(nothing), "--reference-game", "camelot"])
+    with pytest.raises(SystemExit, match="no file"):
+        cs.main([*[a if a != source else str(nothing) for a in args], "--game", "standard"])
+    capsys.readouterr()
+
+
+def test_unbuildable_names_have_a_word_no_file_can_build(tmp_path):
+    xml = tmp_path / "frame.xml"
+    xml.write_text(
+        '<Frame name="JournalFrame"><Frames><Button name="$parentCloseButton" parentKey="Close"/>'
+        '<Frame name="$parentTab1"/></Frames></Frame>', encoding="utf-8")
+    lua = tmp_path / "frame.lua"
+    lua.write_text("function JournalFrameMixin:UpdateTabs() end\n", encoding="utf-8")
+    names = ["JournalFrame", "JournalFrame.Close", "JournalFrameCloseButton", "JournalFrameTab1", "UpdateTabs",
+             "JournalFrameTab1CloseButton", "JournalFrame.Clsoe", "JournelFrameCloseButton", "UpdateTab",
+             "CloseButton"]
+    assert cs.unbuildable([xml, lua], names) == {
+        "JournalFrame.Clsoe": ["Clsoe"],  # a key no file names
+        "JournelFrameCloseButton": ["JournelFrameCloseButton"],  # no frame the `$parent` name could hang from
+        "UpdateTab": ["UpdateTab"],  # a word is whole or missing: `UpdateTabs` does not hold it
+        "CloseButton": ["CloseButton"],  # a `$parent` suffix alone is no name
+    }
+
+
+def test_inherited_lists_the_templates_and_font_objects_a_file_creates_with():
+    text = (
+        'local f = CreateFrame("Frame", "X", UIParent, "TooltipBackdropTemplate, SecureHandlerTemplate")\n'
+        'local t = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")\n'
+        'local plain = CreateFrame("Button", nil, f)\n'
+        '-- CreateFrame("Frame", nil, f, "InACommentTemplate")\n'
+    )
+    assert cs.inherited(cs.code_only(text)) == [
+        "GameFontNormal", "SecureHandlerTemplate", "TooltipBackdropTemplate"]
+
+
+# --- the load walk -----------------------------------------------------------------------------------------
+# With the walk, the probe loads every load-on-demand Blizzard addon a surface waits for, by itself, and writes
+# down what the client restricts where the player happens to be. Without it the probe is what it was.
+
+_WALK_MANIFEST = {"entries": [
+    {"kind": "global", "name": "QuestFrame", "surface": "questframe"},
+    {"kind": "global", "name": "GoneFrame", "surface": "questframe"},
+    {"kind": "global", "name": "TrainerFrame", "surface": "trainer", "lod": ["Blizzard_TrainerUI"]},
+]}
+
+
+def test_the_probe_without_the_walk_is_what_it_was():
+    import hashlib
+
+    plain = cs.probe_lua(_WALK_MANIFEST)
+    assert hashlib.sha256(plain.encode()).hexdigest() == "b3bbaa06d3b88f2c0b72a461545f24cd665fbfcfc88218272c57cfe6daed14ab"
+    assert plain == cs.probe_lua(_WALK_MANIFEST, walk=False)
+    assert "LoadAddOn" not in plain
+
+
+_WALK_HARNESS = '''
+unpack = unpack or table.unpack
+function strsplit(sep, s) local t = {} for p in s:gmatch("[^.]+") do t[#t + 1] = p end return unpack(t) end
+local frames = {}
+function CreateFrame()
+  local f = { scripts = {}, events = {} }
+  function f:RegisterEvent(e) self.events[e] = true end
+  function f:UnregisterEvent(e) self.events[e] = nil end
+  function f:HasScript() return true end
+  function f:SetScript(name, fn) self.scripts[name] = fn end
+  frames[#frames + 1] = f
+  return f
+end
+function GetBuildInfo() return "12.1.5", "70783", "Nov 1 2026", 120105 end
+SlashCmdList = {}
+QuestFrame = {}
+local printed = {}
+function print(line) printed[#printed + 1] = line end
+local function fire(event, ...)
+  for _, f in ipairs(frames) do
+    if f.events[event] and f.scripts.OnEvent then f.scripts.OnEvent(f, event, ...) end
+  end
+end
+local function tick()
+  for _, f in ipairs(frames) do
+    if f.scripts.OnUpdate then f.scripts.OnUpdate(f, 0.01) end
+  end
+end
+-- the client
+local combat, loadedNow, asked = false, {}, {}
+function InCombatLockdown() return combat end
+C_AddOns = {
+  IsAddOnLoaded = function(name) return loadedNow[name] == true end,
+  LoadAddOn = function(name)
+    asked[#asked + 1] = name
+    if name == "Blizzard_Refused" then return false, "DISABLED" end
+    if name == "Blizzard_Broken" then error("the client raised") end
+    loadedNow[name] = true
+    fire("ADDON_LOADED", name)
+    return true
+  end,
+}
+local instance, map = "none", 84
+function IsInInstance() return instance ~= "none", instance end
+C_Map = { GetBestMapForUnit = function() return map end }
+C_Secrets = { HasSecretRestrictions = function() return true end,
+              ShouldUnitIdentityBeSecret = function() return instance ~= "none" end }
+Enum = { AddOnRestrictionType = { Map = 4 } }
+C_RestrictedActions = { GetAddOnRestrictionState = function(kind) return instance ~= "none" and kind or 0 end }
+local target
+function UnitExists(unit) return unit == "target" and target ~= nil end
+function UnitIsPlayer() return target == "player" end
+function issecretvalue(value) return value == "<secret>" end
+function GetQuestText() return instance ~= "none" and "<secret>" or "Kill ten boars." end
+'''
+
+
+def _walk_chunk(manifest) -> str:
+    return _WALK_HARNESS + cs.probe_lua(manifest, walk=True) + "\nfire('PLAYER_LOGIN')\n"
+
+
+def test_the_walk_loads_each_addon_a_surface_waits_for_after_login_and_outside_combat(tmp_path: Path):
+    manifest = {"entries": [
+        {"kind": "global", "name": "QuestFrame", "surface": "questframe"},
+        {"kind": "global", "name": "A", "surface": "a", "lod": ["Blizzard_Refused", "Blizzard_Already"]},
+        {"kind": "global", "name": "B", "surface": "b", "lod": ["Blizzard_Broken"]},
+        {"kind": "global", "name": "C", "surface": "c", "lod": ["Blizzard_Late", "Blizzard_Already"]},
+        {"kind": "global", "name": "D", "surface": "d", "lod": ["Blizzard_Last"]},
+    ]}
+    out = _run_lua(tmp_path, _walk_chunk(manifest) + '''
+loadedNow.Blizzard_Already = true
+tick()
+io.write(#asked, " ")                       -- nothing before the world is entered
+combat = true
+fire("PLAYER_ENTERING_WORLD", true, false)
+tick()
+io.write(#asked, " ")                       -- nothing in combat
+combat = false
+tick()
+io.write(#asked, " ")                       -- three per frame in sorted order: one of them was loaded already
+tick() tick()
+local w = WFJScanDB.probe.walk
+local function us(text) return (tostring(text):gsub(" ", "_")) end
+io.write(#asked, " ", table.concat(asked, ","), " ")
+io.write(us(w.Blizzard_Already), " ", us(w.Blizzard_Broken), " ", us(w.Blizzard_Late), " ",
+  us(w.Blizzard_Refused), " ", tostring(WFJScanDB.probe.loaded.Blizzard_Late), " ")
+tick()
+io.write(#asked, " ", us(printed[#printed]), "\\n")   -- done: it asks nothing more
+''')
+    assert out == [
+        "0", "0", "2", "4", "Blizzard_Broken,Blizzard_Last,Blizzard_Late,Blizzard_Refused",
+        "already_loaded", "refused:_error", "loaded", "refused:_DISABLED", "true", "4",
+        "WFJ_probe:_load_walk_done,_5_addons;_/reload_to_save",
+    ]
+
+
+def test_the_walk_writes_down_what_the_client_restricts_where_the_player_is(tmp_path: Path):
+    out = _run_lua(tmp_path, _walk_chunk(_WALK_MANIFEST) + '''
+fire("PLAYER_ENTERING_WORLD", true, false)
+target = "npc"
+fire("PLAYER_TARGET_CHANGED")
+target = "player"
+fire("PLAYER_TARGET_CHANGED")                -- a player is not asked about
+fire("QUEST_DETAIL")
+instance, map, target = "party", 300, "npc"
+fire("ZONE_CHANGED_NEW_AREA")
+fire("PLAYER_TARGET_CHANGED")
+fire("QUEST_DETAIL")
+local keys = {}
+for key, value in pairs(WFJScanDB.probe.readings) do keys[#keys + 1] = key .. " = " .. value end
+table.sort(keys)
+io.write(table.concat(keys, "\\n"), "\\n")
+''')
+    assert " ".join(out) == " ".join(["map", "restriction", "@", "none", "map", "84", "=", "0", "map", "restriction", "@", "party", "map", "300", "=", "4", "npc", "identity", "secret", "@", "none", "map", "84", "=", "false", "npc", "identity", "secret", "@", "party", "map", "300", "=", "true", "quest", "text", "secret", "@", "none", "map", "84", "=", "false", "quest", "text", "secret", "@", "party", "map", "300", "=", "true", "secret", "restrictions", "@", "none", "map", "84", "=", "true", "secret", "restrictions", "@", "party", "map", "300", "=", "true"])
+
+
+def test_a_client_without_those_apis_is_recorded_not_raised(tmp_path: Path):
+    out = _run_lua(tmp_path, _walk_chunk(_WALK_MANIFEST) + '''
+C_Secrets, C_RestrictedActions, issecretvalue = nil, nil, nil
+fire("PLAYER_ENTERING_WORLD", true, false)
+fire("QUEST_DETAIL")
+local r = WFJScanDB.probe.readings
+io.write(r["secret restrictions @ none map 84"], "|", r["map restriction @ none map 84"], "|",
+  r["quest text secret @ none map 84"], "\\n")
+''')
+    assert " ".join(out) == "no such API|no such API|no such API"
+
+
+def test_the_saved_walk_and_readings_are_read_back():
+    sv = (
+        'WFJScanDB = {\n\t["probe"] = {\n\t\t["answers"] = {\n\t\t\t["global|QuestFrame|questframe"] = "frame",\n'
+        '\t\t},\n\t\t["walk"] = {\n\t\t\t["Blizzard_TrainerUI"] = "loaded",\n'
+        '\t\t\t["Blizzard_Refused"] = "refused: DISABLED",\n\t\t},\n\t\t["readings"] = {\n'
+        '\t\t\t["map restriction @ party map 300"] = "4",\n\t\t},\n\t},\n}\n'
+    )
+    assert cs.read_walk(sv) == (
+        {"Blizzard_TrainerUI": "loaded", "Blizzard_Refused": "refused: DISABLED"},
+        {"map restriction @ party map 300": "4"},
+    )
+    assert cs.read_saved_variables(sv) == {"global|QuestFrame": "yes", "value|global|QuestFrame": "frame"}
+    assert cs.read_walk('WFJScanDB = {\n\t["probe"] = {\n\t\t["answers"] = {\n\t\t},\n\t},\n}\n') == ({}, {})

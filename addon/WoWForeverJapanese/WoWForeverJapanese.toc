@@ -44,6 +44,7 @@ Data\Quest\Quest_0081.lua
 Data\Quest\Quest_0082.lua
 Data\Quest\Quest_0083.lua
 Data\Quest\Quest_0084.lua
+Data\Quest\Quest_0085.lua
 Data\Quest\Quest_0086.lua
 Data\Quest\Quest_0087.lua
 Data\Quest\Quest_0088.lua
@@ -177,6 +178,7 @@ Data\Item\Item_0286.lua
 Data\Item\Item_0287.lua
 Data\Item\Item_0288.lua
 Data\Item\Item_0289.lua
+Data\Item\Item_0291.lua
 Data\Spell\Spell_0000.lua
 Data\Spell\Spell_0001.lua
 Data\Spell\Spell_0002.lua
@@ -456,6 +458,7 @@ Data\Spell\Spell_1327.lua
 Data\Spell\Spell_1328.lua
 Data\Spell\Spell_1329.lua
 Data\Spell\Spell_1330.lua
+Data\Spell\Spell_1331.lua
 Data\Objective\Objective_0380.lua
 Data\Objective\Objective_0381.lua
 Data\Objective\Objective_0382.lua
@@ -467,6 +470,7 @@ Data\Objective\Objective_0446.lua
 Data\Objective\Objective_0447.lua
 Data\Objective\Objective_0448.lua
 Data\Objective\Objective_0449.lua
+Data\Objective\Objective_0451.lua
 Data\Objective\Objective_0452.lua
 Data\Objective\Objective_0457.lua
 Data\Objective\Objective_0459.lua
@@ -1580,6 +1584,7 @@ Data\English\English_quest_0081.lua
 Data\English\English_quest_0082.lua
 Data\English\English_quest_0083.lua
 Data\English\English_quest_0084.lua
+Data\English\English_quest_0085.lua
 Data\English\English_quest_0086.lua
 Data\English\English_quest_0087.lua
 Data\English\English_quest_0088.lua
@@ -2150,6 +2155,7 @@ Data\Reading\Reading_quest_0081.lua
 Data\Reading\Reading_quest_0082.lua
 Data\Reading\Reading_quest_0083.lua
 Data\Reading\Reading_quest_0084.lua
+Data\Reading\Reading_quest_0085.lua
 Data\Reading\Reading_quest_0086.lua
 Data\Reading\Reading_quest_0087.lua
 Data\Reading\Reading_quest_0088.lua
@@ -2343,6 +2349,9 @@ Data\Gloss\Gloss_0149.lua
 Data\Gloss\Gloss_0150.lua
 Data\Gloss\Gloss_0151.lua
 Data\Gloss\Gloss_0152.lua
+Data\Gloss\Gloss_0153.lua
+Data\Gloss\Gloss_0154.lua
+Data\Gloss\Gloss_0155.lua
 Data\Names\Names_00.lua
 Data\Names\Names_01.lua
 Data\Names\Names_02.lua
@@ -2650,6 +2659,8 @@ UI\NameLabels.lua
 UI\TextWatch.lua
 UI\TaintWatch.lua
 UI\HtmlText.lua
+UI\PlayerText.lua
+UI\IconPicker.lua
 UI\LoadOnDemand.lua
 UI\HelpTooltip.lua
 UI\TooltipData.lua

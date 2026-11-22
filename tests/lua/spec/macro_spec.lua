@@ -22,6 +22,10 @@ local UI = {
   ICON_SELECTION_TITLE_CURRENT = { "Current Icon", "現在のアイコン" },
   ICON_SELECTION_CLICK = { "Click to view in the list", "クリックで一覧に表示" },
   ICON_SELECTION_NOTINLIST = { "Not in the list", "一覧にありません" },
+  -- the icon picker's own labels, the same on every popup of its template
+  MACRO_POPUP_CHOOSE_ICON = { "Choose an Icon:", "アイコンを選択:" },
+  ICON_SELECTION_DRAG = { "Drag an icon here", "アイコンをここにドラッグ" },
+  ICON_FILTER_ALL = { "All Icons", "すべてのアイコン" },
   CLICK_BINDING_BUTTON_DISABLED = { "Not available while in Click Cast Bindings", "クリックキャスト設定中は使用できません" },
 }
 
@@ -57,6 +61,9 @@ local function loadMacroUI()
   box.EditBoxHeaderText = fs(en("MACRO_POPUP_TEXT"))
   box.OkayButton, box.CancelButton = Stub.button(nil, en("OKAY")), Stub.button(nil, en("CANCEL"))
   box.IconSelectorEditBox = CreateFrame("EditBox")
+  box.IconSelectionText = fs(en("MACRO_POPUP_CHOOSE_ICON")) -- shareduipaneltemplates.xml:1745
+  box.IconDragArea = { IconDragAreaContent = { IconDragText = fs(en("ICON_SELECTION_DRAG")) } } -- xml:1834
+  box.IconTypeDropdown = { Text = fs(en("ICON_FILTER_ALL")), UpdateText = function() end } -- lua:1922–1930
   box.SelectedIconArea = { SelectedIconText = { SelectedIconHeader = fs(en("ICON_SELECTION_TITLE_CURRENT")),
     SelectedIconDescription = fs() } }
   function popup.SetSelectedIconText(self, inList)
@@ -133,6 +140,9 @@ describe("the macro window on Forever", function()
         assert.are.equal("マクロ名を入力 (最大16文字):", box.EditBoxHeaderText:GetText())
         assert.are.equal("OK", box.OkayButton:GetText())
         assert.are.equal("現在のアイコン", box.SelectedIconArea.SelectedIconText.SelectedIconHeader:GetText())
+        assert.are.equal("アイコンを選択:", box.IconSelectionText:GetText())
+        assert.are.equal("アイコンをここにドラッグ", box.IconDragArea.IconDragAreaContent.IconDragText:GetText())
+        assert.are.equal("すべてのアイコン", box.IconTypeDropdown.Text:GetText())
         alt(true)
         assert.are.equal("Reyn Specific Macros", _G.MacroFrameTab2:GetText())
         assert.are.equal("Create Macros", (_G.MacroFrame:GetRegions()):GetText())

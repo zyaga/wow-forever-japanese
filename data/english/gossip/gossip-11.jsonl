@@ -1,3 +1,4 @@
+{"id": "1100bc7a072c1551", "field": "text", "en": "Freedom! Let's put some distance between us and them. Stay close.", "hash": "1100bc7a072c1551", "src": "collector@1.60.1.71037"}
 {"id": "110e558557122d71", "field": "text", "en": "%s laughs.", "hash": "110e558557122d71", "src": "vmangos@13b49dc"}
 {"id": "110f1054b8426e4c", "field": "text", "en": "At last, it ends....", "hash": "110f1054b8426e4c", "src": "vmangos@13b49dc"}
 {"id": "11122d4a8048ba48", "field": "text", "en": "Come on Dadanga!  March girl, march!", "hash": "11122d4a8048ba48", "src": "vmangos@13b49dc"}
@@ -16,6 +17,7 @@
 {"id": "115737abbbfc4f32", "field": "text", "en": "What do you know about this note?", "hash": "115737abbbfc4f32", "src": "collector@1.60.1.70938", "npcs": [4722]}
 {"id": "1160118dd366a083", "field": "text", "en": "You don't have the stomach for the gryphon ride, huh.  Well lucky for you, we have an alternative where you can keep your feet on the ground... more or less.  It's the gnomish mover of people, the Deeprun Tram.  Conveniently located in the back of the Dwarven District.", "hash": "1160118dd366a083", "src": "vmangos@13b49dc"}
 {"id": "116a9aeedca84590", "field": "text", "en": "Word is that Vance Undergloom has taken a permanent room upstairs at the Gallows' End Tavern at the southeast end of town.  I think he's just off the reading room.", "hash": "116a9aeedca84590", "src": "vmangos@13b49dc"}
+{"id": "116aca847c94812c", "field": "text", "en": "Thank you, $C. Let's get moving.", "hash": "116aca847c94812c", "src": "collector@1.60.1.70888"}
 {"id": "1185c09dddd658f0", "field": "text", "en": "The land, the water, and the sky are all as one. It is your eyes that deceive you with such separation. The Earthmother is all those things and more.", "hash": "1185c09dddd658f0", "src": "vmangos@13b49dc"}
 {"id": "1186c284f4ee0bf8", "field": "text", "en": "Aye, tell your friend there Tongus if he dont take care of his tab here, i'll be making an appearance with old Steelhead!", "hash": "1186c284f4ee0bf8", "src": "vmangos@13b49dc"}
 {"id": "118de952e0841ddd", "field": "text", "en": "Killian Hagey teach skinning in Rogues' Quarter on inner ring.", "hash": "118de952e0841ddd", "src": "vmangos@13b49dc"}
@@ -38,3 +40,4 @@
 {"id": "11e1703b3eae47b7", "field": "text", "en": "TASTE THE FLAMES OF SULFURON!", "hash": "11e1703b3eae47b7", "src": "vmangos@13b49dc"}
 {"id": "11eb9742b56f775c", "field": "text", "en": "Hoha! I'd welcome the challenge from old weakbelly!", "hash": "11eb9742b56f775c", "src": "vmangos@13b49dc"}
 {"id": "11f56b4ed6e17393", "field": "text", "en": "Greetings.  I'm a mage trainer, and you're a mage.", "hash": "11f56b4ed6e17393", "src": "vmangos@13b49dc"}
+{"id": "11fcbde0d8097aa7", "field": "text", "en": "Have you found anything recently?", "hash": "11fcbde0d8097aa7", "src": "collector@1.60.1.70959", "npcs": [185403, 185404]}

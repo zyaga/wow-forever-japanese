@@ -35,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:eca969df24856432"] = { text = "calling=5 help=4 lets=3 pitched=1 screech=2" },
   ["gossip:eca969ec2485643f"] = { text = "calling=5 help=4 lets=3 pitched=1 screech=2" },
   ["gossip:ecad8b5cf1cceac3"] = { text = "cat=1 tell=3" },
+  ["gossip:ecaec3ff316367bb"] = { text = "chair=2 come=7 grab=4 like=3 open=1 order=5 take=6" },
   ["gossip:ecb65cd1c5f98213"] = { text = "assumed=15 control=14 court=6 current=11 decisions=19 destroy=31 divide=29 empire=28 foolish=17 forces=23 heads=26 herself=8 illusion=3 indeed=1 late=22 made=20 member=7 military=18 mother=2 movement=24 now=32 she=10 such=16 trickery=4 understand=34 us=25 used=5 within=30 wonder=21 yet=9" },
   ["gossip:ecb7559d040cb7ff"] = { text = "head=7 lad=12 mattock=6 me=3 my=5 near=4 now=9 one=2 send=11 taste=8 where=10" },
   ["gossip:eccb14a675bfef8e"] = { text = "again=10 cat=4 claw=8 dragged=3 enter=18 i=14 like=5 rain=1 scratch=7 see=19 then=9 what=20 you=6" },

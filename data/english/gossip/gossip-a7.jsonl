@@ -1,11 +1,13 @@
 {"id": "a70eb060dd7e325e", "field": "text", "en": "Dear $g boy:girl;, you have arrived just in time to assist the Kargath Expeditionary Force.\n", "hash": "a70eb060dd7e325e", "src": "vmangos@13b49dc"}
 {"id": "a71009919b945413", "field": "text", "en": "Find me something good, you dogs!", "hash": "a71009919b945413", "src": "vmangos@13b49dc"}
+{"id": "a71739cdb1f06868", "field": "text", "en": "<The tag on the mechanostrider reads:$B$BThe Chromo-Classic Mechanostrider! Now with hydraulic equilibrium enhancers and mithril tailpipe dampers.>", "hash": "a71739cdb1f06868", "src": "collector@1.60.1.70959", "npcs": [267688]}
 {"id": "a71bb7efd79a0f6f", "field": "text", "en": "We have won $2219W battles against the Scourge.  Take heart, $n.  While many battles lie ahead, heroes, heroes from every realm have risen to fight them.", "hash": "a71bb7efd79a0f6f", "src": "vmangos@13b49dc"}
 {"id": "a72659562c67bee0", "field": "text", "en": "%s drops his shoulders and exposes his neck.", "hash": "a72659562c67bee0", "src": "vmangos@13b49dc"}
 {"id": "a72767537355b96e", "field": "text", "en": "%s lets out a long, drawn out sigh.", "hash": "a72767537355b96e", "src": "vmangos@13b49dc"}
 {"id": "a72a6be135dce4ba", "field": "text", "en": "I will destroy you...", "hash": "a72a6be135dce4ba", "src": "vmangos@13b49dc"}
 {"id": "a736441c346a2ef4", "field": "text", "en": "All hands to battle stations! Naga incoming!", "hash": "a736441c346a2ef4", "src": "vmangos@13b49dc"}
 {"id": "a7370b86067de9ff", "field": "text", "en": "Nethergarde keep always needs more supplies - supplies to help our mages in their research, and supplies to keep our defenders in top fighting shape.", "hash": "a7370b86067de9ff", "src": "vmangos@13b49dc"}
+{"id": "a7372c04315d0679", "field": "text", "en": "No reason, thank you, Alvarion. I'd like to ask you something else.", "hash": "a7372c04315d0679", "src": "collector@1.60.1.70959", "npcs": [252448]}
 {"id": "a737bdadcacfef5c", "field": "text", "en": "Let me install these Gyromechanic Gears and Restabilization Cogs and we'll fire up The Recombobulator.", "hash": "a737bdadcacfef5c", "src": "vmangos@13b49dc"}
 {"id": "a747f3db4f0edd9d", "field": "text", "en": "Thank you, $n.  May the Light bless you, $Gbrother:sister;, and guide your path.", "hash": "a747f3db4f0edd9d", "src": "vmangos@13b49dc"}
 {"id": "a748415fa65fae51", "field": "text", "en": "Barnil, I seem to have misplaced Chapter I.", "hash": "a748415fa65fae51", "src": "vmangos@13b49dc"}
@@ -25,6 +27,7 @@
 {"id": "a7ac0ebc77c0e5a8", "field": "text", "en": "Our champion units are equipped!  Beware, alliance!", "hash": "a7ac0ebc77c0e5a8", "src": "vmangos@13b49dc"}
 {"id": "a7b384d672c0bce2", "field": "text", "en": "Onward! The front lines await!", "hash": "a7b384d672c0bce2", "src": "vmangos@13b49dc"}
 {"id": "a7b76a8343a59492", "field": "text", "en": "Are the Burning Steppes currently under attack?", "hash": "a7b76a8343a59492", "src": "vmangos@13b49dc"}
+{"id": "a7b839b4281a6b48", "field": "text", "en": "Indeed it could have. Most importantly, you are unharmed, Cyriden?", "hash": "a7b839b4281a6b48", "src": "collector@1.60.1.70959"}
 {"id": "a7b901b39fdddc68", "field": "text", "en": "Elune's secrets are many, but they are not to be shared with just anyone. ", "hash": "a7b901b39fdddc68", "src": "vmangos@13b49dc"}
 {"id": "a7bc0efdbea0836f", "field": "text", "en": "Not a challenge at all it seems. Let us see how you handle your second test. Lysta, bring forth the minions of the Lich King.", "hash": "a7bc0efdbea0836f", "src": "vmangos@13b49dc"}
 {"id": "a7bd9ab46177e972", "field": "text", "en": "The Scarlet Crusade will scour these lands!", "hash": "a7bd9ab46177e972", "src": "vmangos@13b49dc"}

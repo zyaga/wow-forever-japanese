@@ -1,3 +1,4 @@
+{"id": "47048efff5734e35", "field": "text", "en": "I've got a bit of tech from the boys at SI:7 command. It's gonna cast this glamour on you to make you look like a Theramore soldier. I need you to get into Jaina's tower and relieve the guard on the top floor of duty. Tell 'im it's happy hour at the inn or somethin' to get him outta yer hair.$B$BThen, just hang about until you hear somethin' about this mystery man.$B$BI'd do it meself, but if Jaina sees through it, she'll know that SI:7 is involved. I've got orders to ensure that doesn't happen.", "hash": "47048efff5734e35", "src": "collector@1.60.1.70888", "npcs": [260271]}
 {"id": "470624840a954cc6", "field": "text", "en": "%s acknowledges your obeisance and then waves dismissively at you.", "hash": "470624840a954cc6", "src": "vmangos@13b49dc"}
 {"id": "4707eb0798b00d9c", "field": "text", "en": "Think I'm starting to wear a rut in the paving stones.", "hash": "4707eb0798b00d9c", "src": "vmangos@13b49dc"}
 {"id": "47081091b9bbca8f", "field": "text", "en": "Seek out Shandrina in Silverwind Refuge.  She can sell you the \"Expert Cookbook\".", "hash": "47081091b9bbca8f", "src": "vmangos@13b49dc"}
@@ -24,6 +25,7 @@
 {"id": "47733f5831ce46ea", "field": "text", "en": "The doctor is in!", "hash": "47733f5831ce46ea", "src": "vmangos@13b49dc"}
 {"id": "4777cab0f4b94a53", "field": "text", "en": "Shamans, much like myself, but orders of magnitude more powerful. This power and their knowledge of the elemental planes is the key to our survival.", "hash": "4777cab0f4b94a53", "src": "collector@1.60.1.70790"}
 {"id": "477a91cae8aca68e", "field": "text", "en": "Who goes there?", "hash": "477a91cae8aca68e", "src": "vmangos@13b49dc"}
+{"id": "477b6f3587faf3a6", "field": "text", "en": "Learn about Dual Talent Specialization.", "hash": "477b6f3587faf3a6", "src": "collector@1.60.1.70959", "npcs": [5117, 5479, 5497, 5515, 5516]}
 {"id": "4781d4e0e5d2bc8c", "field": "text", "en": "What am I paying you for? The kodos are nearly dead!", "hash": "4781d4e0e5d2bc8c", "src": "vmangos@13b49dc"}
 {"id": "478fe4851f87445d", "field": "text", "en": "Anything else?", "hash": "478fe4851f87445d", "src": "vmangos@13b49dc"}
 {"id": "479148e52539864d", "field": "text", "en": "Byancie's skill in First Aid has proven useful on numerous occasions.  You can find her just north of the Inn in Dolanaar if you wish to learn from her.", "hash": "479148e52539864d", "src": "vmangos@13b49dc"}

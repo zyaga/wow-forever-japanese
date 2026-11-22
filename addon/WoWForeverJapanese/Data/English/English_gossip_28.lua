@@ -32,6 +32,7 @@ WFJ.Data.add("english", {
   ["gossip:28de61b30d49dee0"] = { text = "body=7 bones=1 but=11 darkness=4 eyes=3 feels=10 good=12 my=13 only=5 own=15 pain=8 see=6 things=16 weak=2 will=14" },
   ["gossip:28e1c40960d1c573"] = { text = "mortal=2 reckless=1" },
   ["gossip:28e5daf7fb0dca0f"] = { text = "color=8 extra=6 grips=5 reads=3 sleek=7 tag=1" },
+  ["gossip:28f00bd562a8b78d"] = { text = "arrived=1 ready=3 time=2" },
   ["gossip:28f3f62a99478c78"] = { text = "beckoning=2 crest=3 heed=8 hold=5 my=6 summons=7 your=1" },
   ["gossip:28f4f57a46522564"] = { text = "any=7 arcane=3 dark=8 delvings=4 demonic=2 goes=5 greetings=1 late=6 secrets=9 uncovered=10" },
   ["gossip:28f65ef0f3de230e"] = { text = "just=4 my=1 spinner=2" },

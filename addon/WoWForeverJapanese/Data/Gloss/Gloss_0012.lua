@@ -790,7 +790,6 @@ WFJ.Data.add("gloss", {
   [12792] = "する\tする\tyou have done",
   [12793] = "する\tする\tyou have done (for him)",
   [12794] = "する\tする\tyou have to do",
-  [12795] = "する\tする\tyou look (have)",
   [12796] = "する\tする\tyou may do",
   [12797] = "する\tする\tyou want to do?",
   [12798] = "する\tする\tyou'll (do for us)",

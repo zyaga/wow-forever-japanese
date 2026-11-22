@@ -52,6 +52,7 @@ WFJ.Data.add("english", {
   ["gossip:a0e315cfd9898417"] = { text = "alright=1 caravan=2 go=8 gotten=5 leaving=3 move=6 time=7 word=4" },
   ["gossip:a0eb60f95b96ba00"] = { text = "and=2 appear=13 creatures=11 deal=22 death=4 demons=5 dwindles=20 enemies=3 ever=6 foul=10 glory=1 hope=19 only=21 pose=9 returning=17 seem=14 sometimes=26 threat=8 wish=27" },
   ["gossip:a0f3dbf8a8aa7c50"] = { text = "assure=9 may=4 return=7 stopping=3 this=8 time=1 us=2 we=5" },
+  ["gossip:a0f41dc7d7a77233"] = { text = "alternative=34 anchors=12 bind=21 brief=6 chose=25 compelling=33 creation=28 crystals=11 debate=38 decision=31 demon=23 design=44 dissent=40 eager=42 fled=53 hold=20 i=43 opportunity=46 ordered=29 our=16 permanently=18 plane=17 prince=37 proposed=35 protested=32 put=10 pylons=27 requires=5 silence=41 similar=26 some=30 someone=14 something=13 somewhere=15 stay=51 story=1 study=45 time=4 ultimately=36 unsafe=52 used=22 walls=49 within=50 you=3" },
   ["gossip:a0f4c252a192cfc5"] = { text = "casts=2 servants=1" },
   ["gossip:a0f6fbad7623b508"] = { text = "get=2 this=1" },
   ["gossip:a0fa45a87b055e5c"] = { text = "bomb=10 disguised=9 find=13 ho=1 lost=11 miss=2 mouse=8 step=5 watch=6 would=7" },

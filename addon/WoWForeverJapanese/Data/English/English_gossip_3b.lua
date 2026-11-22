@@ -35,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:3b94ee06e8676e2e"] = { text = "again=4 body=3 broken=2 collapses=1 rises=5" },
   ["gossip:3b94f9aac673cf9f"] = { text = "belongs=21 evocative=13 examine=4 flipping=15 gently=6 gleams=7 hands=1 herself=11 inscription=17 it=5 love=19 moon=9 necklace=3 perhaps=20 shape=10 silver=2 small=8" },
   ["gossip:3ba6a37f99b5c574"] = { text = "citizen=2 greetings=1 how=4 today=3" },
+  ["gossip:3bb06e201e9652a3"] = { text = "ram=1" },
   ["gossip:3bb49b77f727d647"] = { text = "brought=3 destroy=13 he=10 however=18 manifestation=12 my=11 nothing=6 once=7 only=5 out=8 recover=21 scepter=19 shard=20 this=23 understand=1 wants=2 way=22 will=17" },
   ["gossip:3bc278a509a38933"] = { text = "aid=4 commencement=3 delighted=5 grab=7 pursuit=2 spinner=6 your=1" },
   ["gossip:3bcebb4f7703b915"] = { text = "explain=4 how=2 scepter=1 works=3" },

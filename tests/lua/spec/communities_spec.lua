@@ -21,7 +21,10 @@ local UI = {
   NOTE_COLON = { "Note:", "メモ:" }, OFFICER_NOTE_COLON = { "Officer's Note", "オフィサーメモ" },
   REMOVE = { "Remove", "削除" }, GROUP_INVITE = { "Group Invite", "グループに招待" },
   FRIENDS_LEVEL_TEMPLATE = { "Level %d %s", "レベル %d %s" }, GUILD_ONLINE_LABEL = { "Online", "オンライン" },
-  LASTONLINE_DAYS = { "%d |4day:days;", "%d日" },
+  LASTONLINE_DAYS = { "%d |4day:days;", "%d日" }, LASTONLINE_MINS = { "< an hour", "1時間未満" },
+  COMMUNITIES_PRESENCE_OFFLINE = { "Offline", "オフライン" }, GUILD = { "Guild", "ギルド" },
+  OFFICER = { "Officer", "オフィサー" },
+  COMMUNITIES_MEMBER_LIST_SHOW_OFFLINE = { "Show Offline Members", "オフラインのメンバーを表示" },
   GUILD_NOTE_EDITLABEL = { "Click here to set a Public Note.", "ここをクリックして公開メモを設定します。" },
   GUILD_OFFICERNOTE_EDITLABEL = { "Click here to set an Officer's Note.", "ここをクリックしてオフィサーメモを設定します。" },
   GUILD_INFO_TITLE = { "Guild Info", "ギルド情報" }, GUILD_MOTD_LABEL = { "Guild Message Of The Day", "今日のギルドメッセージ" },
@@ -99,12 +102,20 @@ local function loadCommunities()
     if not row then
       row = CreateFrame("Button")
       row.NameFrame = { Name = fs() }
+      row.Note = fs() -- the member's note (communitiesmemberlist.lua:1320)
+      row.Zone = fs() -- a place, or the client's line for a member who is not online (lua:1293–1303)
+      row.Rank = fs() -- the rank's name (lua:1313)
       row.CancelInvitationButton = CreateFrame("Button")
+      function row:RefreshExpandedColumns() self.Zone.text = self.zoneNow end -- the client's rewrite (lua:1242)
       C.rows[i] = row
     end
     list.ScrollBox:initFrame(row, data, C.initEntry)
     return row
   end
+  -- the check box under the roster (communitiesmemberlist.xml:284–290) and the channel dropdown
+  list.ShowOfflineButton = { Text = fs(en("COMMUNITIES_MEMBER_LIST_SHOW_OFFLINE")) }
+  frame.StreamDropdown = { Text = fs() }
+  function frame.StreamDropdown.UpdateText() end
   function list.UpdateMemberCount(self)
     self.MemberCount.text = string.format(en("COMMUNITIES_MEMBER_LIST_MEMBER_COUNT_FORMAT"), C.online, C.total)
   end
@@ -143,10 +154,20 @@ local function loadCommunities()
   info.EditMOTDButton = Stub.button(nil, en("GUILD_EDIT_TEXT_LINK"))
   info.EditDetailsButton = Stub.button(nil, en("GUILD_EDIT_TEXT_LINK"))
   info.MOTDScrollFrame = { MOTD = fs() }
+  -- the guild information: the details scroll frame's child holds it (guildinfo.xml:251–265)
+  info.DetailsFrame = { child = { Details = fs() } }
+  function info.DetailsFrame.GetScrollChild(self) return self.child end
+  -- the box the message of the day and the guild information are edited in (guildinfo.xml:328)
+  C.editBox = fs()
+  C.editBox.scripts = {}
+  function C.editBox.HookScript(self, name, fn) self.scripts[name] = fn end
+  _G.CommunitiesGuildTextEditFrame = { Container = { ScrollFrame = { EditBox = C.editBox } } }
   local news = CreateFrame("Frame")
   details.News = news
   news.TitleText = fs(en("GUILD_NEWS_TITLE"))
-  news:addRegion(fs(en("GUILD_NEWS")))
+  news:addRegion(news.TitleText) -- the client lists a keyed label among the frame's regions too, and first
+  C.newsHeader = fs(en("GUILD_NEWS")) -- the unnamed header under it: the same English (guildnews.xml:275–286)
+  news:addRegion(C.newsHeader)
   news.NoNews = fs(en("GUILD_NO_GUILD_NEWS"))
   news.SetFiltersButton = Stub.button(nil, en("GUILD_SET_FILTERS_LINK"))
   Stub.namedFontString("CommunitiesGuildLogFrameTitle", en("GUILD_EVENT_LOG"))
@@ -210,6 +231,7 @@ describe("the Communities guild view on Forever", function()
     H.uiTeardown()
     Stub.keys.alt = false
     _G.CommunitiesFrame, _G.CommunitiesGuildInfoFrame_UpdateChallenges = nil, nil
+    _G.CommunitiesGuildTextEditFrame = nil
   end)
 
   for _, order in ipairs({ { true, "loaded at login" }, { false, "loaded on demand" } }) do
@@ -284,6 +306,74 @@ describe("the Communities guild view on Forever", function()
           assert.are.equal("Close", d.NoteBackground.PersonalNoteText:GetText()) -- a member's own note
           assert.are.equal("Close", d.OfficerNoteBackground.OfficerNoteText:GetText())
         end)
+
+      it("the message of the day, the guild information and a roster note wear the bundled face only while "
+        .. "they hold Japanese; the box they are edited in always; with the addon off too", function()
+        local info, face = _G.CommunitiesFrame.GuildDetailsFrame.Info, WFJ.Font.PATH
+        local row = C.entry(1, { name = "Thrall" })
+        assert.are.equal(face, C.editBox.font.path)
+        C.editBox.font.path = "Fonts\\FRIZQT__.TTF" -- the client put its font back
+        C.editBox.scripts.OnShow(C.editBox)
+        assert.are.equal(face, C.editBox.font.path)
+        for _, on in ipairs({ true, false }) do
+          WFJ.State.enabled = on
+          local rankText = _G.CommunitiesFrame.GuildMemberDetailFrame.RankText
+          for _, w in ipairs({ info.MOTDScrollFrame.MOTD, info.DetailsFrame.child.Details, row.Note, row.Rank,
+            rankText }) do
+            w:SetText("今夜9時にレイドです")
+            assert.are.equal(face, w.font.path)
+            assert.are.equal("今夜9時にレイドです", w:GetText())
+            assert.is_true(unrecorded(w)) -- never a translation record: the text is the player's
+            w:SetText("Raid at nine")
+            assert.are.equal("Fonts\\FRIZQT__.TTF", w.font.path)
+          end
+        end
+        -- the pooled row drawn again for a member with no Japanese in the note
+        row.Note:SetText("メインタンク")
+        C.entry(1, { name = "Jaina" })
+        row.Note:SetText("alt")
+        assert.are.equal("Fonts\\FRIZQT__.TTF", row.Note.font.path)
+      end)
+
+      it("a member's note in Japanese wears the bundled face; the placeholder and an English note after it "
+        .. "have the widget's own font", function()
+        local d = _G.CommunitiesFrame.GuildMemberDetailFrame
+        local note, face = d.NoteBackground.PersonalNoteText, WFJ.Font.PATH
+        local member = { name = "Thrall", level = 60, class = "Shaman", zone = "Orgrimmar", rank = "Warchief" }
+        member.note = "ヒーラーです"
+        d:DisplayMember(1, member)
+        assert.are.equal("ヒーラーです", note:GetText())
+        assert.are.equal(face, note.font.path)
+        member.note = nil -- the placeholder: a dictionary line, shown by its record
+        d:DisplayMember(1, member)
+        assert.are.equal("ここをクリックして公開メモを設定します。", note:GetText())
+        member.note = "Healer"
+        d:DisplayMember(1, member)
+        assert.are.equal("Healer", note:GetText())
+        assert.are.equal("Fonts\\FRIZQT__.TTF", note.font.path) -- the record held the widget's own font
+      end)
+
+      it("the roster's check box label, a row's offline line and the guild's own channel name are Japanese; "
+        .. "a place and a player's channel stay as written", function()
+        local list = _G.CommunitiesFrame.MemberList
+        assert.are.equal("オフラインのメンバーを表示", list.ShowOfflineButton.Text:GetText())
+        local row = C.entry(1, { name = "Thrall" })
+        for shown, ja in pairs({ ["< an hour"] = "1時間未満", ["Offline"] = "オフライン", ["Orgrimmar"] = "Orgrimmar" }) do
+          row.Zone.text = shown
+          WFJ.Communities.onRosterRow(row)
+          assert.are.equal(ja, row.Zone:GetText())
+        end
+        row.zoneNow = "< an hour" -- rewritten by the client with no new initialization of the row
+        row:RefreshExpandedColumns()
+        assert.are.equal("1時間未満", row.Zone:GetText())
+        local stream = _G.CommunitiesFrame.StreamDropdown
+        stream.Text.text = "|cff40ff40Guild|r" -- as the client writes it: the name in the channel's chat colour
+        stream:UpdateText()
+        assert.are.equal("|cff40ff40ギルド|r", stream.Text:GetText())
+        stream.Text.text = "Raid planning"
+        stream:UpdateText()
+        assert.are.equal("Raid planning", stream.Text:GetText())
+      end)
 
       it("the applicants column header translates", function()
         _G.CommunitiesFrame.MemberList.ColumnDisplay:LayoutColumns({ "CLUB_FINDER_APPLICANTS",

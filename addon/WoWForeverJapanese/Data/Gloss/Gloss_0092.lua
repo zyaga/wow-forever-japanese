@@ -102,7 +102,6 @@ WFJ.Data.add("gloss", {
   [92099] = "歓迎する\tかんげいする\twould like to welcome",
   [92100] = "歓迎する\tかんげいする\twould welcome",
   [92101] = "歓迎する\tかんげいする\tyou are welcomed",
-  [92102] = "歓迎をする\tかんげいをする\twill give (them) a welcoming",
   [92103] = "止まり木\tとまりぎ\tperches",
   [92104] = "止まる\tとまる\talmost stopped",
   [92105] = "止まる\tとまる\tare stopped",

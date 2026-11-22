@@ -103,6 +103,35 @@ describe("Core/CollectorSend", function()
     assert.are.equal(1, pk.later)
   end)
 
+  it("quest NPC records never push a send out of a link: what fits rides, the rest waits", function()
+    local GUID = "Creature-0-1-0-1-6740-0000000001"
+    C.record("quest", 7, "title", "A Title")
+    for quest = 101, 110 do C.recordQuestNpc(quest, "description", GUID, 3, 15524) end
+    -- each entry costs 100 characters, and the link has room for the line and four records
+    local overhead = #(S.ISSUE_URL .. "&dump=WFJC1%3A")
+    local sizes = {}
+    S.init({ version = function() return "1.2.3" end, encode = function(payload)
+      sizes[#sizes + 1] = #payload.e
+      return string.rep("A", S.URL_BUDGET - overhead - 500 + 100 * #payload.e)
+    end })
+    local pk = S.pack()
+    assert.are.equal("link", pk.mode)
+    assert.are.equal(1, pk.count) -- the one line; records are never counted
+    assert.are.equal(5, #pk.sent) -- the line and the four records that rode with it
+    assert.are.equal(5, sizes[#sizes])
+    -- the six left behind stay unsent, and ride with the next send
+    local kinds = {}
+    for _, item in ipairs(pk.sent) do kinds[item.key:match("^%a+")] = (kinds[item.key:match("^%a+")] or 0) + 1 end
+    assert.are.same({ quest = 1, questnpc = 4 }, kinds)
+    -- lines that do not fit a link by themselves are pasted whole, records and all
+    S.init({ version = function() return "1.2.3" end, encode = function(payload)
+      return string.rep("A", S.URL_BUDGET + 100 * #payload.e)
+    end })
+    pk = S.pack()
+    assert.are.equal("paste", pk.mode)
+    assert.are.equal(11, #pk.sent)
+  end)
+
   it("file mode marks only the lines the saved file held when it loaded", function()
     local saved = { version = 1, builds = { "1.15.9.69722" }, entries = {
       ["quest:2:title"] = { t = "quest", i = 2, f = "title", h = "0123456789abcdef", e = "Old Title", b = 1 } } }

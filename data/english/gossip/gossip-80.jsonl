@@ -1,8 +1,10 @@
+{"id": "800464b6fbaec75f", "field": "text", "en": "As I said, the creature that attacked us fled when I singed its backside with lightning, but not before biting Banon. On our way back to town, the gnolls surrounded us and took us captive.$B$BIt wasn't until they started to pull us out of the boat on Fenris Isle that... the change started.", "hash": "800464b6fbaec75f", "src": "collector@1.60.1.70888", "npcs": [259620]}
 {"id": "8004836af7028ed9", "field": "text", "en": "Our units are not upgraded, and I don't have enough supplies to upgrade them.", "hash": "8004836af7028ed9", "src": "vmangos@13b49dc"}
 {"id": "800a0e611446178b", "field": "text", "en": "From way downtown!", "hash": "800a0e611446178b", "src": "vmangos@13b49dc"}
 {"id": "800b0ac73a57ce42", "field": "text", "en": "<Pick him up and carry him.>", "hash": "800b0ac73a57ce42", "src": "collector@1.60.1.70790", "npcs": [253002]}
 {"id": "80135bc0cc1c6dbf", "field": "text", "en": "Yes, come. My master and I shall be waiting.", "hash": "80135bc0cc1c6dbf", "src": "vmangos@13b49dc"}
 {"id": "80176c121afced13", "field": "text", "en": "Yes, that is true. Paladins and priests alike train their skills and research great truths behind the walls of the Cathedral.", "hash": "80176c121afced13", "src": "vmangos@13b49dc"}
+{"id": "801833c5671141b9", "field": "text", "en": "The last of the embers are gone.", "hash": "801833c5671141b9", "src": "collector@1.60.1.70959"}
 {"id": "8019d546ce4a4816", "field": "text", "en": "GOSSIP_OPTION_AUCTIONEER", "hash": "8019d546ce4a4816", "src": "vmangos@13b49dc"}
 {"id": "8026003f044a17ba", "field": "text", "en": "How are your travels, $n? $g Sumi and Tumi missed you, you should say hi after your lesson : I have heard tales of your adventures, sounds like you have been busy;. Now let's see what you've learned while you were away.", "hash": "8026003f044a17ba", "src": "vmangos@13b49dc"}
 {"id": "802760c26da61e3e", "field": "text", "en": "The Blackwood tribe must not be permitted to interfere with the progress of nature.", "hash": "802760c26da61e3e", "src": "vmangos@13b49dc"}
@@ -23,6 +25,7 @@
 {"id": "8079f5031219a006", "field": "text", "en": "FREEEEEEEEEEDDOOOOMM!", "hash": "8079f5031219a006", "src": "vmangos@13b49dc"}
 {"id": "80827c057bff1927", "field": "text", "en": "It's getting away!", "hash": "80827c057bff1927", "src": "vmangos@13b49dc"}
 {"id": "8089ceaaa0eba938", "field": "text", "en": "Ograbisi needs new hat!", "hash": "8089ceaaa0eba938", "src": "vmangos@13b49dc"}
+{"id": "8091575b2f27a78d", "field": "text", "en": "Greetings, $N. You will have to forgive me for not being able to rise and introduce myself properly. I am still recovering from a recent encounter.$B$BI am Mus'hale, an adventurer much like yourself, with a desire to learn of all the various cultures I encounter on my travels.", "hash": "8091575b2f27a78d", "src": "collector@1.60.1.70938", "npcs": [269647]}
 {"id": "8096c9edfa84ac47", "field": "text", "en": "The Nightmare cannot be stopped!", "hash": "8096c9edfa84ac47", "src": "vmangos@13b49dc"}
 {"id": "8099c1545ddded05", "field": "text", "en": "Ow!  OK, I'll get back to work, $n!", "hash": "8099c1545ddded05", "src": "vmangos@13b49dc"}
 {"id": "809e98e4cb6a439e", "field": "text", "en": "Name, rank and serial number, soldier.\n", "hash": "809e98e4cb6a439e", "src": "vmangos@13b49dc"}

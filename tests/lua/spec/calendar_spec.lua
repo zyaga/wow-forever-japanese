@@ -169,7 +169,8 @@ local GLOBALS = { "CalendarFrame", "CalendarMonthName", "CalendarYearName", "Cal
   "CalendarCreateEventFrame_Update", "CalendarTexturePickerTitleFrame_Update", "CalendarEventPickerFrame",
   "CalendarViewHolidayFrame_Update", "CalendarViewRaidFrame_Update",
   "CalendarViewEventInviteListStatusSortButton", "CalendarViewEventInviteListClassSortButton",
-  "CalendarViewEventInviteList" }
+  "CalendarViewEventInviteList", "CalendarViewEventDescriptionContainer",
+  "CalendarCreateEventDescriptionContainer" }
 for i = 1, 7 do GLOBALS[#GLOBALS + 1] = "CalendarWeekday" .. i .. "Name" end
 for i = 1, 42 do GLOBALS[#GLOBALS + 1] = "CalendarDayButton" .. i end
 
@@ -383,6 +384,54 @@ describe("the calendar on Forever", function()
       end)
     end)
   end
+
+  it("an event a player wrote wears the bundled face while it holds Japanese; its typing boxes always do", function()
+    local CLIENT = "Fonts\\FRIZQT__.TTF"
+    boot()
+    loadCalendar(true)
+    local titleBox = Stub.namedFontString("CalendarCreateEventTitleEdit", "")
+    function titleBox.HookScript() end
+    local descBox = Stub.fontString("")
+    function descBox.HookScript() end
+    local editor = CreateFrame("Frame")
+    function editor.GetEditBox() return descBox end
+    _G.CalendarCreateEventDescriptionContainer = { ScrollingEditBox = editor }
+    local desc = Stub.scrollingFont("")
+    desc.GetText = nil
+    _G.CalendarViewEventDescriptionContainer = { ScrollingFont = desc }
+    assert.is_true(WFJ.Calendar.init())
+    -- the typing boxes, and again after the client swaps the placeholder's font object for the text's
+    assert.are.equal(WFJ.Font.PATH, titleBox.font.path)
+    assert.are.equal(WFJ.Font.PATH, descBox.font.path)
+    descBox:SetFontObject({ font = { path = CLIENT, size = 10, flags = "" } })
+    assert.are.same({ path = WFJ.Font.PATH, size = 10, flags = "" }, descBox.font)
+    -- a title and a description in Japanese
+    local title = _G.CalendarViewEventTitle
+    title:SetText("レイドの夜")
+    desc:SetText("八時に集合")
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal("レイドの夜", title:GetText())
+    assert.are.equal(WFJ.Font.PATH, title.font.path)
+    assert.are.equal("八時に集合", desc.fs:GetText())
+    assert.are.equal(WFJ.Font.PATH, desc.fs.font.path)
+    assert.are.equal(desc.fs:GetHeight(), desc.container.height) -- fitted again in the new font
+    -- with translation off too: the text is the player's
+    WFJ.State.setEnabled(false)
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal(WFJ.Font.PATH, title.font.path)
+    WFJ.State.setEnabled(true)
+    -- the next event has no Japanese: both have the client's font back
+    title:SetText("Raid night")
+    desc:SetText("Meet at eight")
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal(CLIENT, title.font.path)
+    assert.are.equal(CLIENT, desc.fs.font.path)
+    -- a locked event: the dictionary's form around the title the player typed, in the bundled face
+    title:SetText(string.format(en("CALENDAR_VIEW_EVENTTITLE_LOCKED"), "レイドの夜"))
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal("|cff7f7f7fレイドの夜|r |cffffd200(ロック中)|r", title:GetText())
+    assert.are.equal(WFJ.Font.PATH, title.font.path)
+  end)
 
   it("hooks install once", function()
     setup(true)

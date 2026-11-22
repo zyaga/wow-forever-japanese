@@ -517,3 +517,59 @@ describe("Core/Align.variantKey and keyed variants", function()
     assert.are.equal("5回復。", text)
   end)
 end)
+
+-- A line numbered for English that prints another count of values. Every number it fills in is in the live line,
+-- so the names and numbers gate passes it; only the count tells that the values have moved.
+describe("the count of values a line is numbered to", function()
+  local A
+  setup(function()
+    local ns = {}
+    H.loadPure("Core/Align.lua", "WoWForeverJapanese", ns)
+    A = ns.Align
+  end)
+  local OLD = "一定の確率でコストを$N1%軽減します。最大$N2回まで重なります。"
+  local NEW = "$N1%の確率でコストを$N2%軽減します。最大$N3回まで重なります。"
+  local SHORT = { "You have a chance to reduce the cost by 20%. Stacks up to 5 times." }
+  local LONG = { "You have a 12% chance to reduce the cost by 20%. Stacks up to 5 times." }
+
+  it("without a count, a line numbered for a shorter template passes with the wrong values", function()
+    local ok, text = A.check(OLD, LONG)
+    assert.is_true(ok)
+    assert.are.equal("一定の確率でコストを12%軽減します。最大20回まで重なります。", text)
+  end)
+
+  it("with its count, it is shown on the line it was numbered for and on no other", function()
+    assert.are.same({ true, "一定の確率でコストを20%軽減します。最大5回まで重なります。" }, { A.check(OLD, SHORT, nil, nil, 2) })
+    assert.is_false((A.check(OLD, LONG, nil, nil, 2)))
+    assert.are.same({ true, "12%の確率でコストを20%軽減します。最大5回まで重なります。" }, { A.check(NEW, LONG, nil, nil, 3) })
+    assert.is_false((A.check(NEW, SHORT, nil, nil, 3)))
+    assert.is_false((A.check(NEW, LONG, nil, nil, -1))) -- the count of a line that waits for a redraft
+  end)
+
+  it("counts what `values` reads: a range is one value, a glued digit and an icon's path are none", function()
+    assert.are.same({ true, "14～22のダメージ。" }, { A.check("$N1のダメージ。", { "Deals 14 to 22 damage." }, nil, nil, 1) })
+    assert.is_false((A.check("$N1のダメージ。", { "Deals 14 to 22 damage." }, nil, nil, 2)))
+    local icon = { "|TInterface\\Icons\\inv_misc_food_15:16|t Restores 50 health with the Mk2." }
+    assert.is_true((A.check("$I1 体力を$N1回復する。", icon, nil, nil, 1)))
+  end)
+
+  it("a name-list tail is not counted: the count is the head's", function()
+    local live = { "You know 2 languages.\nCommon 2\nDarnassian" }
+    assert.are.same({ true, "2個の言語を話せます。\nCommon 2\nDarnassian" }, { A.check("$N1個の言語を話せます。$T", live, nil, nil, 1) })
+    assert.is_false((A.check("$N1個の言語を話せます。$T", live, nil, nil, 2)))
+  end)
+
+  it("the gate hands an entry's count on, for a gated and for a trusted line", function()
+    for _, status in ipairs({ "u", "s", "." }) do
+      assert.is_false(A.gate({ ja = OLD, status = status, values = 2 }, LONG), status)
+      assert.is_true((A.gate({ ja = NEW, status = status, values = 3 }, LONG)), status)
+      assert.is_true((A.gate({ ja = OLD, status = status }, LONG)), status) -- no count: gated as before
+    end
+  end)
+
+  it("fillValues takes the count too, and a line with nothing to fill never fails on it", function()
+    assert.is_nil(A.fillValues(OLD, LONG[1], nil, 2))
+    assert.are.equal("12%の確率でコストを20%軽減します。最大5回まで重なります。", A.fillValues(NEW, LONG[1], nil, 3))
+    assert.are.equal("変わりません。", A.fillValues("変わりません。", LONG[1], nil, 9))
+  end)
+end)

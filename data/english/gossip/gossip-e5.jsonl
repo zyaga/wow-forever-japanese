@@ -35,6 +35,7 @@
 {"id": "e5be11aa0c9e171c", "field": "text", "en": "I have lost my Hammer of the Gathering Storm. Are you able to replace it for me?", "hash": "e5be11aa0c9e171c", "src": "vmangos@13b49dc"}
 {"id": "e5bed1d8fe46c2e6", "field": "text", "en": "Ticket redemption here!  Get your tickets turned into prizes!  Step right up!", "hash": "e5bed1d8fe46c2e6", "src": "vmangos@13b49dc"}
 {"id": "e5c8150fb77d7bec", "field": "text", "en": "Not now.  Have you any tasks for me?", "hash": "e5c8150fb77d7bec", "src": "vmangos@13b49dc"}
+{"id": "e5cacbc181a227ca", "field": "text", "en": "Kirin Tor! Stand down! We'll need all the help we can get.", "hash": "e5cacbc181a227ca", "src": "collector@1.60.1.70938"}
 {"id": "e5d0230c48c30a68", "field": "text", "en": "Welcome to the Great Forge $g lad : lass;. It may be cold outside but we keep it nice and hot down 'ere. Grab a hammer, strike that anvil and show me ye've got what it takes to be a Blacksmith of the Great Forge!", "hash": "e5d0230c48c30a68", "src": "vmangos@13b49dc"}
 {"id": "e5d5708eccbcd53e", "field": "text", "en": "Oh, I'm sorry, but you know more about leather than I do at this point. Talk to Faldron over there if you wish to learn more.", "hash": "e5d5708eccbcd53e", "src": "vmangos@13b49dc"}
 {"id": "e5dbebcf5cd41ef1", "field": "text", "en": "%s becomes enraged from seeing a cub die!", "hash": "e5dbebcf5cd41ef1", "src": "vmangos@13b49dc"}

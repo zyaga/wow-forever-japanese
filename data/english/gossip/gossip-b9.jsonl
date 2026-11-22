@@ -13,6 +13,7 @@
 {"id": "b943fc6d057a01c6", "field": "text", "en": "Very well. Cut another lump of flesh from one of these specimens. Let us test what you've learned so far, and we can progress from there.", "hash": "b943fc6d057a01c6", "src": "vmangos@13b49dc"}
 {"id": "b94aaee4bd134e3a", "field": "text", "en": "FINE! And how, dare I ask, am I supposed to acquire an arcanite buoy?", "hash": "b94aaee4bd134e3a", "src": "vmangos@13b49dc"}
 {"id": "b94ecc483fed1e0a", "field": "text", "en": "There's nothing I can teach you, other than maybe a better eye for color and detail. Talk to Simon Tanner over there; he knows a lot of advanced techniques for working with leather.", "hash": "b94ecc483fed1e0a", "src": "vmangos@13b49dc"}
+{"id": "b94fb899f89f3802", "field": "text", "en": "<The strider peers at you; its gaze is impatient and it almost seems to bounce with excitement.>", "hash": "b94fb899f89f3802", "src": "collector@1.60.1.71037", "npcs": [267306]}
 {"id": "b9557bd20758387a", "field": "text", "en": "What I wouldn't give to be out on the open plains on a day like this... but, my duty binds me.", "hash": "b9557bd20758387a", "src": "vmangos@13b49dc"}
 {"id": "b95a2ed589607960", "field": "text", "en": "I shall return in time..", "hash": "b95a2ed589607960", "src": "vmangos@13b49dc"}
 {"id": "b961267a80835fa8", "field": "text", "en": "I have lost my Confessor's Mantle and require a replacement, Al'tabim.", "hash": "b961267a80835fa8", "src": "vmangos@13b49dc"}
@@ -29,6 +30,7 @@
 {"id": "b99bf28cb7b0e2fb", "field": "text", "en": "Thanks again, $n.  Now I'll use this indurium to beef up my car!", "hash": "b99bf28cb7b0e2fb", "src": "vmangos@13b49dc"}
 {"id": "b9a8b65b3c12c9e6", "field": "text", "en": "Perhaps my work was enough...", "hash": "b9a8b65b3c12c9e6", "src": "collector@1.60.1.70938"}
 {"id": "b9b84a0ca441f0b4", "field": "text", "en": "Earthseer, please share your far sight with me.", "hash": "b9b84a0ca441f0b4", "src": "collector@1.60.1.70862", "npcs": [264936]}
+{"id": "b9c7374a0870a502", "field": "text", "en": "The dust of the Barrens parches my throat more and more every day, $N. But it is worth the sacrifice to remain here if it helps the Horde and the warchief.", "hash": "b9c7374a0870a502", "src": "collector@1.60.1.70938", "npcs": [3428]}
 {"id": "b9cbd4b6f95c95fa", "field": "text", "en": "Yeah, sure, go ahead and tell ol' Greatfather Winter what you'd like for this Winter's Veil.$B$BHo ho hurry up.", "hash": "b9cbd4b6f95c95fa", "src": "vmangos@13b49dc"}
 {"id": "b9cf75ad2fac48bd", "field": "text", "en": "I don't know who is more dangerous, the Al'Aketh, or the sky-cursed Windshapers! So be it. If she is not willing to resolve this with civility, we will not hesitate once the current crisis is over.", "hash": "b9cf75ad2fac48bd", "src": "collector@1.60.1.70790"}
 {"id": "b9d064f6c850fe04", "field": "text", "en": "Well met, $c.  My advice to you is this: As you travel the world, be wary of magic for it will burn the untrained.", "hash": "b9d064f6c850fe04", "src": "vmangos@13b49dc"}
