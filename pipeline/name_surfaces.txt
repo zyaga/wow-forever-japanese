@@ -9,6 +9,8 @@
 #     player-typed        a player's, guild's, pet's, channel's, macro's or set's name: not a game name
 #     text-box            a box the player types in, or a search box: it needs the client's English
 #     secret              the client hides the value from addons (a unit's name in combat in an instance)
+#     protected           the client measures the widget on the way to a protected action: text written there
+#                         taints that action, and it is then blocked in combat (docs/architecture/client-limits.md)
 #     not-a-game-name     a number, a date, a dictionary word, prose, or a kind the name list does not hold
 # A module's NEVER_TOUCH widget must have a line here (the test reads the modules). A name with no line in the name
 # list stays English whatever its mark says.
@@ -60,10 +62,10 @@ UI/VoicePanel.lua	the speaking NPC's name and title	todo
 UI/ClickBinding.lua	the tutorial's ThrallName	todo
 
 # units
-UI/UnitFrames.lua	target, focus, target-of-target, boss and party frame Name	japanese	after each UnitFrame_Update; never a player or a pet; a name the client hides stays
+UI/UnitFrames.lua	target, focus, target-of-target, boss and party frame Name	japanese	after each UnitFrame_Update; never a player or a pet; a name the client hides stays. Not proven in game yet: these are the client's secure frames, and the window test's run in and out of combat decides whether this line stays
 UI/UnitFrames.lua	PlayerName	english player-typed
 UI/UnitFrames.lua	PetName	english player-typed
-UI/UnitFrames.lua	nameplates and raid-style frames of creatures	japanese	after each CompactUnitFrame_UpdateName; never a player or a pet; a forbidden nameplate and a name the client hides stay
+UI/UnitFrames.lua	nameplates and raid-style frames of creatures	japanese	after each CompactUnitFrame_UpdateName; never a player or a pet; a forbidden nameplate and a name the client hides stay. Not proven in game yet: these are the client's secure frames, and the window test's run in and out of combat decides whether this line stays
 UI/CastingBar.lua	PlayerCastingBarFrame.CastTargetNameText	todo	a unit's name: never a player
 UI/CastingBar.lua	the bar's spell name	todo
 UI/CastingBar.lua	PlayerCastingBarFrame.CastTimeText	english not-a-game-name	a number
@@ -87,7 +89,7 @@ UI/Wardrobe.lua	the set details' Name, LongName and Label	todo
 UI/ChatSystem.lua	item, spell and quest links in chat lines	todo	only the link's label
 
 # spell and other game names on the game's own windows
-UI/SpellBook.lua	spell rows	todo
+UI/SpellBook.lua	spell rows	english protected	the client measures each row when it refills the page; Japanese there blocked the action bars in combat (traced in game, ADR-058)
 UI/Trainer.lua	service rows	todo
 UI/Talents.lua	talent and tree names	todo
 UI/CooldownViewer.lua	the two alert Name widgets	todo
