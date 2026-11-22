@@ -15,6 +15,7 @@
 5519-completion
 5519-progress
 5981-completion
+5981-description
 5981-progress
 6131-completion
 6131-description

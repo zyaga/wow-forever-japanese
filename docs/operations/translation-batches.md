@@ -435,6 +435,53 @@ Names: 19 words in new names had no katakana spelling and were spelled; `wfj nam
 sets, display ids and casting were matched to Spoken's newest corpus; it named a set for 9 new speakers and moved no
 voice. 14 new speakers were given a casting profile.
 
+### Fourteen players' sends on 1.60.1.70959 (2026-11-21)
+
+Issues #178 to #181 and #183 to #192, read with `make collector-intake ISSUE=N` after the change that reads each
+quest line in its own NPC's voice was merged. The sends also carry, for each quest window, the NPC's id, sex and
+display id. The new lines were drafted with their word lists; three turn-in texts and one objectives text that the
+merge had dropped were drafted again. A creature pass in game answered 428 of 428 NPCs the voice had no model for;
+their displays, races and sexes come from the client's creature cache.
+
+### 1.60.1.70959 → 1.60.1.71037, with five players' sends (2026-11-22)
+
+Read from the caches the client saved at its exit on 2026-11-22, after the WFJScan sweep and its slow recheck. The
+tables were imported first, while the scan ran, from the hotfix cache of the exit before; they were read again after
+the exit with no change to a shipped line.
+Quest cache: 5,727 records, read with 70959's layout, pinned again for 71037 (four records carry 96 after their string
+lengths); 197 quest ids it holds that 70959's cache did not, and none that 70959's held and this one did not answer.
+26 quests that no earlier build answered are now answered with an empty record, so the 46 stand-in lines held for them
+are gone; none had Japanese. Client tables: 63. The wago.tools cross-check: one value differs (spell 1289451's name,
+"Wrath" in the client's cache and "Lightning Bolt" on wago; the client's value is kept), and the rows wago has and ours
+lacks are the same sections as on 70959 (ItemSparse 26, Spell and SpellName 357, ItemEffect 24, QuestV2 12,
+GlobalStrings 1, SpellItemEnchantment 1); QuestV2's highest id 99,670. The UI extract: 4,497 files, 8 differ from
+70959 (the friends list reads whether a friend is on the same realm another way, the target frame hides the level
+beside a skull, controller navigation, one new file that turns the talent tutorial off); none moves a window the addon
+hooks and none adds text. The creature cache: read with 70959's layout, pinned for 71037. Served text: no new column.
+Client-table rows: new NPC lines only, shipped by the gossip surface.
+
+The import order of 70888 again (`make import-shared-english`, `make import-client CLIENT=forever`, `make
+import-served`): a first run of `make import-english` put Classic Era's English on 935 item and 19 spell lines only an
+earlier hotfix cache carried, and was put back; in this order no line fell back.
+
+The English Collector: the maintainer's file (22 gossip lines and 73 quest texts added, 4 quest texts replaced, 57
+quest NPC records) and five players' sends, issues #195 and #197 to #200.
+
+What was drafted, in two passes (`draft-r71037-h-sg12` for the sends and the tables, `draft-r71037-q-sg12` for the
+quest cache): 139 NPC lines, 73 progress and 158 turn-in texts, 46 quest titles, 43 objectives and 43 descriptions, 11
+item and 7 spell tooltips, and 7 spell tooltips the build reworded, each quest and NPC line with its word list. Nineteen
+quests of one family (a writ, its work order and its delivery) follow the wording of the ones that already ship. One
+hand-corrected item line (item 3663) is kept as written: the build points it at another text with the same wording.
+
+Hand-written lines that start shipping: the 197 newly answered quests bring 45 hand-written lines out of `rejected`.
+On three of them (quest 5201's description and turn-in, quest 5981's description) a garbled word-for-word variant won
+over a clean hand-written variant of the same line; the garbled variant is ruled `reject`. Quest 5981's clean
+description wrote the number 4000 where the English writes 4,000 and failed the numbers rule, so it ships as a
+correction with the number written as the English writes it. Each of the 50 hand-written and earlier machine lines
+that started shipping got its word list.
+
+Names: 20 new name words spelled. Voice: 129 speakers given an age and cast; four ghosts moved to the ghost voice.
+
 ### 1.60.1.70888 → 1.60.1.70938, with twenty-three players' sends (2026-11-16)
 
 Read from the caches the client saved at its exit on 2026-11-16, after the WFJScan sweep and its slow recheck.
