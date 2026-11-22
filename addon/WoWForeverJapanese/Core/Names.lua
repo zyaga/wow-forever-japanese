@@ -1,0 +1,215 @@
+-- Core/Names.lua: the Japanese of a name, the read path over WFJ.Data.name (ADR-078, ADR-082). Pure: no globals,
+-- no frames. A name's Japanese is stored under the hash of its English, so the English the client shows is the key.
+--   Names.key(english)        → the 16-hex key the pipeline stores the name under (names.name_id)
+--   Names.of(english)         → ja, reading | nil
+--   Names.item(english)       → ja, reading | nil: the whole name, else an item name and its suffix
+--                                ("Bandit Cloak of the Owl": the two names joined as the words of one name are)
+--   Names.inText(ja[, html])  → text, spans: a shown Japanese line with each English name inside it written in
+--                                its Japanese; spans = { { first, last, english, reading }, … } are byte positions
+--                                in `text`. Markup, a count after a name and a run with no name stay as written;
+--                                with `html` the tags of an HTML page stay too.
+--   Names.loaded()            → whether any name row is in memory
+--   Names.drop()              → lets the rows go (the names setting is off: nothing reads them this session)
+-- Names.inText is the twin of wfj.core.names.replace_runs (LATIN_RUN, trim_run and the markup it steps over);
+-- vectors/name_vectors.lua holds the two together and must stay byte-identical.
+local _, WFJ = ...
+local Names = {}
+WFJ.Names = Names
+
+local JOIN = "・" -- between the words of one name
+local APOSTROPHE = "’"
+
+-- English → { ja, reading } | false. Dropped whole when it grows past what a session's game names need: a filled-in
+-- value can be any text (a player's name), and those would pile up for as long as the session lasts.
+local CACHE_MAX = 8192
+local cache, cached = {}, 0
+
+function Names.key(english)
+  return WFJ.Hash.key(WFJ.Normalize.v1(english))
+end
+
+function Names.of(english)
+  if type(english) ~= "string" or english == "" then return nil end
+  local hit = cache[english]
+  if hit == nil then
+    local row = WFJ.Data.name[Names.key(english)]
+    local ja, reading
+    if type(row) == "string" then ja, reading = row:match("^([^\t]*)\t(.*)$") end
+    hit = ja and ja ~= "" and { ja, reading } or false
+    if cached >= CACHE_MAX then cache, cached = {}, 0 end
+    cache[english] = hit
+    cached = cached + 1
+  end
+  if not hit then return nil end
+  return hit[1], hit[2]
+end
+
+function Names.item(english)
+  local ja, reading = Names.of(english)
+  if ja then return ja, reading end
+  if type(english) ~= "string" then return nil end
+  -- a suffix is written last, so the split nearest the end is tried first
+  local at = #english
+  while true do
+    local first
+    for i = at, 1, -1 do
+      if english:sub(i, i + 3) == " of " then first = i; break end
+    end
+    if not first then return nil end
+    local itemJa, itemReading = Names.of(english:sub(1, first - 1))
+    local suffixJa, suffixReading = Names.of(english:sub(first + 1))
+    if itemJa and suffixJa then
+      return itemJa .. JOIN .. suffixJa, itemReading .. JOIN .. suffixReading
+    end
+    at = first - 1
+  end
+end
+
+function Names.loaded()
+  return WFJ.Data.count("name") > 0
+end
+
+function Names.drop()
+  WFJ.Data.name = {}
+  WFJ.Data.counts.name = 0
+  cache, cached = {}, 0
+end
+
+-- The markup a shown line can hold, in the order the pipeline's pattern tries it. Each is anchored at the scan
+-- position; only these four bytes can begin one.
+local MARKUP_START = "[{$|%%]"
+local MARKUP = {
+  "^{[a-z]+}", "^%$%?[^%[]*", "^%$[0-9]*[A-Za-z][0-9]*", "^|[cC]%x%x%x%x%x%x%x%x", "^|cn[A-Z0-9_]+:", "^|[rR]",
+  "^|H[^|]*|h", "^|h", "^|T[^|]*|t", "^|n", "^%%[0-9$]*[sd]", "^%%[A-Z][0-9]+",
+}
+
+-- → the position after the markup that begins at `i`, or nil
+local function markupEnd(text, i, html)
+  if html and text:byte(i) == 60 then -- "<"
+    local _, last = text:find("^<[^>]*>", i)
+    return last and last + 1 or nil
+  end
+  for n = 1, #MARKUP do
+    local _, last = text:find(MARKUP[n], i)
+    if last then return last + 1 end
+  end
+  return nil
+end
+
+-- The length of the run's word characters at `i`: letters, digits and the punctuation a name carries.
+local function wordEnd(text, i)
+  while true do
+    local b = text:byte(i)
+    if b == nil then return i end
+    if (b >= 48 and b <= 57) or (b >= 65 and b <= 90) or (b >= 97 and b <= 122)
+      or b == 39 or b == 46 or b == 38 or b == 45 then
+      i = i + 1
+    elseif text:sub(i, i + 2) == APOSTROPHE then
+      i = i + 3
+    else
+      return i
+    end
+  end
+end
+
+local function isLetter(b)
+  return b ~= nil and ((b >= 65 and b <= 90) or (b >= 97 and b <= 122))
+end
+
+local function isAlnum(b)
+  return isLetter(b) or (b ~= nil and b >= 48 and b <= 57)
+end
+
+-- → first, afterLast of the next run of Latin words at or after `i` (words joined by single spaces), or nil
+local function nextRun(text, i, stop)
+  local first = i
+  while first < stop and not isLetter(text:byte(first)) do first = first + 1 end
+  if first >= stop then return nil end
+  local e = wordEnd(text, first + 1)
+  while text:byte(e) == 32 and isAlnum(text:byte(e + 1)) do e = wordEnd(text, e + 2) end
+  if e > stop then e = stop end
+  return first, e
+end
+
+local function endsWithApostrophe(s, last)
+  return last >= 3 and s:sub(last - 2, last) == APOSTROPHE
+end
+
+-- The name in a run: a count after it and edge punctuation left out (names.trim_run).
+local function trimRun(raw)
+  local run, n = raw, 1
+  while n > 0 do run, n = run:gsub(" [0-9][0-9.,]*$", "") end
+  while true do
+    local b = run:byte(#run)
+    if b == 46 or b == 39 or b == 45 or b == 38 then
+      run = run:sub(1, -2)
+    elseif endsWithApostrophe(run, #run) then
+      run = run:sub(1, -4)
+    else
+      break
+    end
+  end
+  run = run:gsub("%s+$", "")
+  -- a count written onto the name ("cloth60"): the digits from the first one that follows a lower-case letter,
+  -- an apostrophe or a full stop
+  local block = #run + 1
+  while block > 1 and run:sub(block - 1, block - 1):find("^[0-9.,]") do block = block - 1 end
+  for p = block, #run do
+    local b = run:byte(p)
+    if b >= 48 and b <= 57 and p > 1 then
+      local before = run:byte(p - 1)
+      if (before >= 97 and before <= 122) or before == 39 or before == 46 or endsWithApostrophe(run, p - 1) then
+        return run:sub(1, p - 1)
+      end
+    end
+  end
+  return run
+end
+
+function Names.inText(ja, html)
+  local out, spans, len = {}, {}, 0
+  local function put(s)
+    if s ~= "" then
+      out[#out + 1] = s
+      len = len + #s
+    end
+  end
+  -- the plain text from `i` up to `stop`
+  local function plain(i, stop)
+    while i < stop do
+      local first, e = nextRun(ja, i, stop)
+      if not first then break end
+      put(ja:sub(i, first - 1))
+      local raw = ja:sub(first, e - 1)
+      local run = trimRun(raw)
+      local name, reading
+      if run ~= "" and run:find("[A-Za-z]") then name, reading = Names.of(run) end
+      if name then
+        spans[#spans + 1] = { first = len + 1, last = len + #name, english = run, reading = reading }
+        put(name)
+        put(raw:sub(#run + 1))
+      else
+        put(raw)
+      end
+      i = e
+    end
+    put(ja:sub(i, stop - 1))
+  end
+
+  local n, at, i = #ja, 1, 1
+  local start = html and "[{$|%%<]" or MARKUP_START
+  while true do
+    local m = ja:find(start, i)
+    if not m then break end
+    local after = markupEnd(ja, m, html)
+    if after then
+      plain(at, m)
+      put(ja:sub(m, after - 1))
+      at, i = after, after
+    else
+      i = m + 1
+    end
+  end
+  plain(at, n + 1)
+  return table.concat(out), spans
+end

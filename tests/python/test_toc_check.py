@@ -19,7 +19,7 @@ def test_real_toc_fields_and_load_order(root):
     # Dependency order as shipped: Core, then Data, the generated block, the Lookup slot, then the UI modules.
     head = ["Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua"]
     tail = [
-        "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua",
+        "Core/Lookup.lua", "Core/Names.lua", "Core/Readings.lua", "Core/Glosses.lua",
         "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
         "Core/Voice.lua",  # the voice packs' registry, before the settings that read it
         "Core/ErrorVoices.lua",  # the voices the character's error lines may speak in, and that setting
@@ -112,7 +112,7 @@ def test_real_toc_fields_and_load_order(root):
         generated,
         key=lambda f: (
             ["Meta", "Vectors", "ErrorSounds", "Displays", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
-             "English", "Reading", "Gloss"].index(
+             "English", "Reading", "Gloss", "Names"].index(
                 f.split("/")[1].split("_")[0].replace(".lua", "")
             ),
             f,

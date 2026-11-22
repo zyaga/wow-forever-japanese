@@ -2601,6 +2601,7 @@ Data\Names\Names_fe.lua
 Data\Names\Names_ff.lua
 # >>>
 Core\Lookup.lua
+Core\Names.lua
 Core\Readings.lua
 Core\Glosses.lua
 Core\Align.lua
