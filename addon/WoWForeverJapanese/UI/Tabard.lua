@@ -9,7 +9,8 @@
 -- - Writer: TabardFrame_UpdateButtons writes TabardFrameGreetingText = TABARDVENDORGREETING,
 --   TABARDVENDORNOGUILDGREETING, PERSONALTABARDVENDORGREETING or PERSONALTABARDVENDORUNOWNEDGREETING
 --   (tabardframe.lua:90–106); a global called by name from TabardFrame_Open (:26) and the OnEvent (:64): post-hooked.
--- Never touched: TabardFrameNameText (the designer NPC's name, tabardframe.lua:23).
+-- Never read as a dictionary word: TabardFrameNameText (the designer NPC's name, written by TabardFrame_Open before
+-- the window shows, tabardframe.lua:23). While names are on the show pass gives it the NPC's Japanese name.
 -- Release on TabardFrame's OnHide.
 local _, WFJ = ...
 local Tabard = {}
@@ -28,6 +29,7 @@ local GREETING = { only = { "TABARDVENDORGREETING", "TABARDVENDORNOGUILDGREETING
 local CANDIDATES = {
   frame = { "TabardFrame" }, greeting = { "TabardFrameGreetingText" }, cost = { "TabardFrameCostLabel" },
   accept = { "TabardFrameAcceptButton" }, cancel = { "TabardFrameCancelButton" },
+  npcName = { "TabardFrameNameText" },
 }
 for i = 1, #ROWS do CANDIDATES["row" .. i] = { "TabardFrameCustomization" .. i .. "Text" } end
 
@@ -48,6 +50,7 @@ function Tabard.onShow()
     { "greeting", get("greeting"), GREETING },
   }
   for i = 1, #ROWS do list[#list + 1] = { "row" .. i, get("row" .. i), { only = ROWS } } end
+  WFJ.NameLabels.unit(SURFACE, "npcName", get("npcName"), "npc")
   return WFJ.Labels.showAll(SURFACE, list)
 end
 

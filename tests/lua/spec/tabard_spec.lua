@@ -69,6 +69,27 @@ describe("the tabard designer on Forever", function()
     assert.are.equal("Accept", _G.TabardFrameAcceptButton:GetText())
   end)
 
+  it("with names on the designer NPC's name shows its Japanese on each show; closing gives it back", function()
+    local frame = install()
+    _G.UnitIsPlayer = function() return false end
+    finally(function() _G.UnitIsPlayer = nil; WFJ.State.setNames(false) end)
+    WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+    WFJ.State.setNames(true)
+    WFJ.Labels.forbidNames(WFJ.Tabard.NEVER_TOUCH)
+    assert.is_true(WFJ.Tabard.init())
+    _G.TabardFrameNameText.text = "Thrall" -- TabardFrame_Open, before the window shows
+    frame:Show()
+    assert.are.equal("スロール", _G.TabardFrameNameText:GetText())
+    G.alt(WFJ, true)
+    assert.are.equal("Thrall", _G.TabardFrameNameText:GetText())
+    G.alt(WFJ, false)
+    frame:Hide()
+    assert.are.equal("Thrall", _G.TabardFrameNameText:GetText())
+    _G.TabardFrameNameText.text = "Border" -- an NPC named like a dictionary word, with no Japanese
+    frame:Show()
+    assert.are.equal("Border", _G.TabardFrameNameText:GetText())
+  end)
+
   it("wrong-typed names degrade without error; hooks install once", function()
     local frame = install()
     _G.TabardFrameCostLabel = 1
