@@ -500,6 +500,7 @@ end
 WFJ.State.on("enabled", function() Render.refresh() end)
 WFJ.State.on("area", function() Render.refresh() end)
 WFJ.State.on("language", function() Render.refresh() end)
+WFJ.State.on("names", function() Render.refresh() end) -- names switched between English and Japanese
 WFJ.State.on("markers", function() Render.refresh() end)
 -- a voice setting changed, or a voice pack loaded: the banners' "no voice yet" message may come or go
 WFJ.State.on("voice", function() Render.refresh() end)

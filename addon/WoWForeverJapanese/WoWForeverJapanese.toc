@@ -2646,6 +2646,7 @@ UI\VoiceQuestLog.lua
 UI\VoiceErrors.lua
 UI\ButtonText.lua
 UI\Labels.lua
+UI\NameLabels.lua
 UI\TextWatch.lua
 UI\TaintWatch.lua
 UI\HtmlText.lua

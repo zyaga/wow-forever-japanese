@@ -130,7 +130,11 @@ function H.uiSetup(WFJ, ui, opts)
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
     showsEnglish = WFJ.Modifier.english,
-    kindOff = opts.titlesOff and function(kind) return kind == "quest.title" end or nil,
+    kindOff = function(kind)
+      if kind == "name" then return not WFJ.State.names end
+      return opts.titlesOff == true and kind == "quest.title"
+    end,
+    name = function(english) if WFJ.Names then return WFJ.Names.item(english) end end,
     lookup = function(kind, id)
       if kind == "ui" then local r = rows[id]; return r and { ja = r[1], status = r[3] } end
       return opts.lookup and opts.lookup(kind, id) or nil
