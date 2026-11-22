@@ -42,7 +42,7 @@ UI/WorldMap.lua	area names and the map's title	todo
 UI/Tracker.lua	UIWidgetObjectiveTracker.Header.Text	japanese	a zone name, after each SetHeader
 UI/Tracker.lua	ObjectiveTrackerTopBannerFrame.Title	todo	check what the client writes there
 UI/Tracker.lua	ScenarioObjectiveTracker.StageBlock.Name	todo	a stage's name
-UI/QuestMap.lua	quest log zone headers	todo
+UI/QuestMap.lua	quest log zone headers	japanese	a header that is no sort word
 
 # an NPC's name on its window
 UI/GossipChrome.lua	GossipFrameTitleText	japanese	after each SetTitle and each show

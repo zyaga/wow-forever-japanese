@@ -682,7 +682,9 @@ function QuestMap.onListUpdate()
     end
     -- the category headers (ADR-042) (QuestLogQuests_AddStandardHeaderButton → button:SetText(info.title),
     -- mainline/questmapframe.lua:2042–2046; ListHeaderVisualTemplate's title region). A header is a zone name or a
-    -- QuestSort word ("Seasonal", "Epic"); only the QuestSort family is matched, so a zone name is never changed.
+    -- QuestSort word ("Seasonal", "Epic"); only the QuestSort family is matched, so a zone name is never read as a
+    -- dictionary word. A header that is no sort word is a place: while names are on it shows the place's Japanese
+    -- from the name list, under the same record.
     local headers = type(scroll) == "table" and scroll.headerFramePool or nil
     if type(headers) == "table" and type(headers.EnumerateActive) == "function" then
       for header in headers:EnumerateActive() do
@@ -692,7 +694,10 @@ function QuestMap.onListUpdate()
             local okT, title = pcall(header.GetTitleRegion, header)
             if okT and type(title) == "table" then fs = title end
           end
-          WFJ.Labels.show(LIST, listHeaderKey(header), fs, nil, WFJ.Labels.families("QuestSort"))
+          local key = listHeaderKey(header)
+          if WFJ.Labels.show(LIST, key, fs, nil, WFJ.Labels.families("QuestSort")) == 0 then
+            WFJ.NameLabels.show(LIST, key, fs)
+          end
         end
       end
     end
