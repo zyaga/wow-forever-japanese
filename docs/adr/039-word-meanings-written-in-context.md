@@ -9,6 +9,7 @@
   ([principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away)); it is widened to window
   labels by [ADR-041](041-word-cards-on-window-labels.md). The in-game checks are the word card checklist in
   [Testing strategy](../testing/strategy.md).
+- **Superseded in part by:** [ADR-104](104-the-frozen-tooltip-and-word-cards-on-tooltip-text.md): item and spell translation batches write meanings too.
 - **Date:** 2026-09-25
 
 ## Context

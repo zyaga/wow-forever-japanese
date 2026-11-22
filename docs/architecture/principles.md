@@ -69,11 +69,14 @@ The only other things the addon adds to the screen, each of which a player can t
   tracker);
 - the **no-voice marker**, only with a voice pack installed, on a line that shows its Japanese and has no voice
   yet (its speaker is not known, or its audio is not made);
-- the **word card**: pointing at a Japanese word in quest or NPC prose, a plain-text window label or a plain-text
-  book page shows its reading and, where there is one, its dictionary form and a short English meaning. Nothing is
+- the **word card**: pointing at a Japanese word in quest or NPC prose, a plain-text window label, a plain-text
+  book page or a frozen tooltip shows its reading and, where there is one, its dictionary form and a short English meaning. Nothing is
   drawn until the pointer is on a word, and never while English is showing. In English first its mirror is the
   **English word card**: pointing at an English word in the same places shows how it is said and the Japanese word
   the translation uses for it in that line, with its reading;
+- the **frozen tooltip**: a key press draws a copy of the tooltip showing, in place, that stays until the key again
+  or Esc, so the mouse can rest on its Japanese and take word cards. The game's own tooltip is never held open or
+  changed ([ADR-104](../adr/104-the-frozen-tooltip-and-word-cards-on-tooltip-text.md));
 - the **minimap button** that opens the fix-report window;
 - the **welcome window**, shown once to every player (a first install at its first login, a player who already had
   the addon the first time a version with the question loads): it asks what the player is here for (study Japanese,

@@ -37,7 +37,7 @@ One batch goes from untranslated English to imported, checked, generated `machin
    # --src PREFIX          only English from one source, e.g. db2@1.60.1.70170
    ```
    It prints `in scope (<kind>, sg<N>): L lines · U unique · C English chars` (everything still to draft) and the same for the batch. With `--ids`, a further line lists the ids it could not take and why (a hand-written variant without `--held-back`, no English, or no prose); nothing listed is dropped silently. A slot kind may also print `left out (<kind>): N rows whose value count the template cannot give`.
-2. **Draft.** Give the drafting model the style guide, the glossary and the batch file, with the [drafting prompt](#drafting-prompt). It writes `batches/<batch>.draft.jsonl`. For a quest, gossip, UI or plain-text book batch it also writes the lines' `words` ([Readings for a batch](#readings-for-a-batch)).
+2. **Draft.** Give the drafting model the style guide, the glossary and the batch file, with the [drafting prompt](#drafting-prompt). It writes `batches/<batch>.draft.jsonl`. For a quest, gossip, UI, plain-text book, item or spell batch it also writes the lines' `words` ([Readings for a batch](#readings-for-a-batch)).
 3. **Lint** the draft:
    ```sh
    python3 -m wfj.dev.translate_lint batches/progress-01.jsonl batches/progress-01.draft.jsonl
@@ -104,8 +104,8 @@ The rules catch a changed number, a missing name, a cut-off paragraph, never a w
 
    | verdict | when | the row carries |
    |---|---|---|
-   | **match** | the Japanese says what the English says (a free rendering is fine) | quest: `words` for that Japanese |
-   | **correct** | a small defect (a typo, a wrong particle or kanji, a mangled or translated name, a wrong number), fixed by the smallest edit to the translator's text | `kind`, `problem`, the corrected `ja`; quest: `words` for it |
+   | **match** | the Japanese says what the English says (a free rendering is fine) | quest, item, spell: `words` for that Japanese |
+   | **correct** | a small defect (a typo, a wrong particle or kanji, a mangled or translated name, a wrong number), fixed by the smallest edit to the translator's text | `kind`, `problem`, the corrected `ja`; quest, item, spell: `words` for it |
    | **redraft** | the meaning is wrong, garbled, another quest's text, or cut off | `kind`, `problem`; no `ja`, no `words` |
 
    Names stay English: a translated name is a `correct`.
@@ -119,7 +119,7 @@ The rules catch a changed number, a missing name, a cut-off paragraph, never a w
    ```
    A `correct` becomes a `correction` variant (`translator` = the corrected variant's translator, `source: correction@<date>`, `corrects` = its source, a note saying the model drafted the edit and the maintainer ruled it); an earlier correction on the line is ruled `reject` as superseded. A `redraft` puts `ruling: reject` on every hand-written variant of the line, so it ships nothing until the redraft lands.
 6. **Word lists.** `wfj readings import` of `audit.words.jsonl`, and, once the corrections are applied and generated, `audit.correct-words.jsonl`, dry run first each time.
-7. **Redrafts.** Cut the ruled lines per kind with `--held-back --ids`, draft (quest rows with `words`), lint, expand, import.
+7. **Redrafts.** Cut the ruled lines per kind with `--held-back --ids`, draft (quest, item and spell rows with `words`), lint, expand, import.
 8. **Accept rulings** on each machine winner that replaced a shipping hand-written line; `validate --base` requires them.
 
 `apply_review` has three more scopes. `--scope stale` (the default) reviews stale hand-written lines after a client build moved their English: `keep` re-stamps the English baseline and leaves the Japanese alone; `correct` edits the person's Japanese as little as the new English needs, never retranslating it. `--scope templates` rewrites a hand-written tooltip line with `$N` / `$D` / `$I` placeholders (and the branch skeleton where the English has one) as a correction. `--scope stat-words` takes the rows `draft_stat_words --corrections` writes (below).
@@ -132,7 +132,7 @@ Some tooltip English includes another spell's text (`$@spelldesc<id>`, `$@spellt
 - **Tail rows after a multi-line head.** A `"tail": true` row's English ends in a list of spell names (Languages, Armor Proficiency, the Riding skills, the Shaman totem lists, the Paladin and Hunter ability lists); the row shows the head only. The Japanese translates the head, keeps the English head's line breaks (one break in the Japanese per break in the English head: `tail_breaks` refuses any other count) and ends in `$T`; the addon copies the live list after those breaks.
 - **An expandkey row** keeps the skeleton `$?expandkey[…][]`: the first branch is the rows the client adds when the tooltip is expanded, the else is empty. A row whose English writes a blank line between a branch and its else (`[A]`, a blank line, `[B]`) keeps that blank line in the Japanese.
 - **Keyed branch rows.** Branches that differ only in their words, not their numbers (`$?s436895[Increases all damage you deal by $s1%.][Increases the damage you deal with physical attacks in all forms by $s1%.]`), are drafted since this change: translate each branch faithfully to its own wording, and where the branches differ only in a plural (`$lsecond:seconds;` against a bare word) write the same Japanese in both brackets. The pipeline tells the branches apart by a hash of each wording; the drafter does nothing else.
-- **Draft** with no `words` (tooltips take no readings), then have a second model read a random 100 lines against the English before import.
+- **Draft** with `words` ([Readings for a batch](#readings-for-a-batch)): tooltip text takes readings, shown on a frozen tooltip ([ADR-104](../adr/104-the-frozen-tooltip-and-word-cards-on-tooltip-text.md)). A branch row's words are checked against the whole stored line. Then have a second model read a random 100 lines against the English before import.
 - **Lint** checks a branch row per variant, an icon row for its `$I<k>` and a tail row for its `$T` and its head's line breaks.
 
 A lint pass does not prove the addon will show a branch line: it shows a variant only when exactly one variant passes on the live line (`Align.checkVariants`). A variant that another variant also passes on its line shows English there; it still ships, because dropping it would let the other variant pass alone on the wrong line. Inline icons rest on an unverified claim (that `$@spellicon` prints as a `|T…|t` escape in the tooltip line), so until the in-game check in [Testing](../testing/strategy.md) passes, an icon line may show English; it never shows wrong text.
@@ -192,7 +192,7 @@ Write pipeline/batches/<batch>.draft.jsonl: one JSON object per line, {"ref": "<
 Every ref exactly once. Nothing else in the file. Do not print the translations back; reply only with the row count written.
 ```
 
-For a quest, gossip, UI or plain-text book batch, add the word-list rules ([Readings for a batch](#readings-for-a-batch)) and ask for `{"ref", "ja", "words"}` rows. For a redraft after lint, give the failing refs with their reasons and ask for only those rows to be replaced in the same draft file.
+For a quest, gossip, UI, plain-text book, item or spell batch, add the word-list rules ([Readings for a batch](#readings-for-a-batch)) and ask for `{"ref", "ja", "words"}` rows. For a redraft after lint, give the failing refs with their reasons and ask for only those rows to be replaced in the same draft file.
 
 ## Lint reasons
 
@@ -220,7 +220,7 @@ A draft row fails with one reason per problem (`translate_lint.py`; the name rul
 - Branch rows: `branch_skeleton` (the Japanese does not keep the English's `$?<cond>[…][…]` conditionals), `branch_index:<N|D><k>` (a placeholder in a branch that does not print that value), `v<i>:<reason>` (variant i fails a reason above against its own English), `branches_indistinguishable` (no variant could ever show, and no variant key tells the wordings apart).
 - Tail rows: `tail_missing` (the English ends in a name list and the Japanese does not end in `$T`), `tail_unexpected` (a `$T` with no list), `tail_misplaced` (a `$T` that is not the one last token), `tail_chain` (the Japanese writes a `$?` or `$@` itself), `tail_breaks` (the Japanese head has a different number of line breaks than the English head).
 - `speaker:<english>→<japanese>`: on NPC speech, the count of `%s` (the speaker's name, filled in by the client) differs, or the Japanese carries a `%` the English does not.
-- `words:<problem>` / `words_unexpected`: the row's `words` fail the readings import's rules, or `words` sit on a kind that takes no readings.
+- `words:<problem>` / `words_unexpected`: the row's `words` fail the readings import's rules, or `words` sit on a kind that takes no readings (objective or area text).
 - `glossary:<term>`: the English has a `required` glossary term (a race or class word) and the Japanese neither uses the glossary's rendering nor keeps the word in English letters as part of a name (`Murloc Warrior`).
 
 ## Not-names list
@@ -269,7 +269,7 @@ NPC speech (says, yells, whispers, emotes and boss emotes) is gossip-kind text k
 
 ## Readings for a batch
 
-Every batch that adds or changes shipped quest, gossip, UI or plain-text book Japanese also writes those lines' word lists with meanings: the word card a player sees when pointing at a word ([Readings](../systems/readings.md), [ADR-036](../adr/036-readings-hover-word-lists.md), [ADR-039](../adr/039-word-meanings-written-in-context.md), [ADR-041](../adr/041-word-cards-on-window-labels.md), [ADR-044](../adr/044-area-text-and-book-word-cards.md)). Item, spell, objective and area text take none, and neither does an HTML book page (it keeps the client's layout).
+Every batch that adds or changes shipped quest, gossip, UI, plain-text book, item or spell Japanese also writes those lines' word lists with meanings: the word card a player sees when pointing at a word ([Readings](../systems/readings.md), [ADR-036](../adr/036-readings-hover-word-lists.md), [ADR-039](../adr/039-word-meanings-written-in-context.md), [ADR-041](../adr/041-word-cards-on-window-labels.md), [ADR-044](../adr/044-area-text-and-book-word-cards.md), [ADR-104](../adr/104-the-frozen-tooltip-and-word-cards-on-tooltip-text.md)). Item and spell text shows its cards on a frozen tooltip. Objective and area text take none, and neither does an HTML book page (it keeps the client's layout).
 
 **The entry.** Each word is a 5-item entry: `[word as written, its reading, dictionary form, reading of the dictionary form, meaning in this sentence]`. A word is the whole inflected unit; kana words that carry meaning are listed too; names are English and get nothing; no ASCII in a word; a kanji numeral and its counter are one word; a `$N<k>` inside a name is a placeholder. The meaning uses the game's own word where the Japanese translates it (倒して for "Kill …" → "kill (defeat)"), but never repeats the whole English line of two or more words ([Principles §4](../architecture/principles.md#4-the-addon-never-ships-stored-english)); a test checks this across the store. The import still accepts a 2-item entry (word, reading); `validate` then counts a word without a meaning.
 
@@ -287,10 +287,18 @@ Every batch that adds or changes shipped quest, gossip, UI or plain-text book Ja
 
 **Lines that got Japanese without words** (a line whose Japanese changed, a row lint warned about) take a separate flow after the lines are imported and generated:
 
-1. **Ids**: one per line (quest ids, 16-hex gossip keys, UI string keys, or book page ids).
-2. **Export**: `wfj readings export --type quest|gossip|ui|book --ids <file> --out <file>`, one row `{type, id, field, ja, ja_hash, en}` per shipped line with something to annotate and no current reading (a line holding a `|` escape is left out: it takes no readings). `--all` takes every such line; `--class machine|human|correction` keeps only lines whose shipped variant has that class. `en` is batch input only: the import ignores it and it is never stored or shipped.
+1. **Ids**: one per line (quest ids, 16-hex gossip keys, UI string keys, book page ids, or item or spell ids).
+2. **Export**: `wfj readings export --type quest|gossip|ui|book|item|spell --ids <file> --out <file>`, one row `{type, id, field, ja, ja_hash, en}` per shipped line with something to annotate and no current reading (a line holding a `|` escape is left out: it takes no readings). `--all` takes every such line; `--class machine|human|correction` keeps only lines whose shipped variant has that class. `en` is batch input only: the import ignores it and it is never stored or shipped.
 3. **Words**: the model adds 5-item `words` to each row, keeping `ja_hash`, and saves `<name>.words.jsonl`.
 4. **Import, generate, validate** as above. For a large pass, have a second model check a random 100 words per round against a pass bar before importing.
+
+**Tooltip lines** (item and spell text) are written once per distinct line: many ids carry the same Japanese (an item and the spell it casts, the ranks of a spell).
+
+1. **Export**: `wfj readings export-tooltips --out batches/<name>.jsonl`, one row per distinct shipped Japanese across item and spell text that no current reading covers (`--all`: every distinct line). The row names the first line that carries it. A line holding an escape sequence is left out and listed (`left out spell <id>/description: holds an escape sequence`).
+2. **Words**: the model adds 5-item `words` to each row, as above.
+3. **Import**: `wfj readings import` as above. After writing an item or spell row it gives every other id with the same Japanese the same words and provenance (`spread`).
+4. **Spread** alone: `wfj readings spread --dry-run`, then without `--dry-run`, gives a line added later the words of a read line that says the same. A line with a current reading of its own, a correction among them, is left alone.
+5. **Generate and validate** as above. The words are checked against the stored text; `generate` ships a hand-written line with its manual breaks joined, which moves no word.
 
 **Fixing a wrong reading: `--correction`.** Write the line's whole fixed `words` list with its current `ja_hash` and import it as a correction:
 ```sh

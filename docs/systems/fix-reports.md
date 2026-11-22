@@ -186,7 +186,7 @@ The replaced variant moves to `conflicts`; a replaced `correction` gets a `rejec
 
 ### Readings
 
-Every `use` / `rewrite` of a quest, gossip, ui or plain book line imports its `words` through `readings import`'s writer (`import_rows`) as machine reading records, `source` `readings@report-N`, `ja_hash` of the new Japanese. None for `item`, `spell`, `objective`, `area`, an HTML book page, a line holding `|` (the word box refuses it), or a `keep`.
+Every `use` / `rewrite` of a quest, gossip, ui, plain book, item or spell line imports its `words` through `readings import`'s writer (`import_rows`) as machine reading records, `source` `readings@report-N`, `ja_hash` of the new Japanese. None for `objective`, `area`, an HTML book page, a line holding `|` (the word box refuses it), or a `keep`.
 
 ### Attribution and reply
 
