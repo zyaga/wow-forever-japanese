@@ -172,6 +172,17 @@ describe("name widgets", function()
       assert.are.equal("Thrall", frame.TitleContainer.TitleText:GetText())
     end)
 
+    it("a window named after an object, with no unit behind it, shows the name with no player check", function()
+      _G.UnitIsPlayer = function() error("no unit is asked about for an object's window") end
+      frame:SetTitle("Thrall")
+      assert.are.equal(1, WFJ.NameLabels.title("spec", frame, "title", false))
+      assert.are.equal("スロール", frame.TitleContainer.TitleText:GetText())
+      frame:SetTitle("Nobody Known")
+      assert.are.equal("Nobody Known", frame.TitleContainer.TitleText:GetText())
+      frame:SetTitle("Thrall")
+      assert.are.equal("スロール", frame.TitleContainer.TitleText:GetText())
+    end)
+
     it("takes a window with no title text, or no window, without an error", function()
       assert.are.equal(0, WFJ.NameLabels.title("spec", {}))
       assert.are.equal(0, WFJ.NameLabels.title("spec", nil))
