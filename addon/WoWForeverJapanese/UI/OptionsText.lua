@@ -67,6 +67,10 @@ Text.T = {
   ["button.defaults"] = { en = "Defaults", ja = "初期設定に戻す" },
   ["defaults.confirm"] = { en = "Click again to reset this page", ja = "もう一度クリックでこのページを初期化" },
   ["about.intro"] = { en = "Show the welcome window again", ja = "ようこそ画面をもう一度表示" },
+  -- names in Japanese, turned on in a session that let the name tables go at login
+  ["names.reload"] = { en = "Japanese names start after the interface reloads.",
+    ja = "名前の日本語表示は、インターフェースの再読み込み後に始まります。" },
+  ["names.reloadButton"] = { en = "Reload now", ja = "今すぐ再読み込み" },
   ["section.about"] = { en = "This version", ja = "このバージョン" },
   ["section.report"] = { en = "Report something", ja = "報告する" },
   ["section.translation"] = { en = "Translation", ja = "翻訳" },

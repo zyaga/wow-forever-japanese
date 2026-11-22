@@ -2,7 +2,8 @@ local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local Loader = require("tests.lua.spec.loader")
 
-local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Data/Meta.lua", "Core/State.lua",
+local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua",
+  "Core/Names.lua", "Data/Meta.lua", "Core/State.lua",
   "Core/Settings.lua", "Core/ErrorVoices.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua",
   "Core/Fsrs.lua", "Core/Study.lua",
   "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua",
@@ -349,6 +350,34 @@ describe("Settings pages from the registry and PAGES", function()
     items[2].setSelected()
     assert.are.equal("en", S.get("direction"))
     assert.is_true(WFJ.State.showsEnglish())
+  end)
+
+  it("names in Japanese: a reload line and button show only when it is on and the name tables were let go",
+  function()
+    local reloads = 0
+    _G.ReloadUI = function() reloads = reloads + 1 end
+    finally(function() _G.ReloadUI = nil end)
+    local row = O.namesReload
+    assert.is_table(row)
+    WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+    O.refresh()
+    assert.is_false(row.label:IsShown()) -- off: nothing to say
+    assert.is_false(row.button:IsShown())
+    S.set("names.japanese", true) -- the tables are in memory: names show at once
+    assert.is_true(WFJ.State.names)
+    assert.is_false(row.label:IsShown())
+    S.set("names.japanese", false)
+    WFJ.Names.drop() -- as at a login with names off
+    S.set("names.japanese", true)
+    assert.is_false(WFJ.State.names)
+    assert.is_true(row.label:IsShown())
+    assert.is_true(row.button:IsShown())
+    assert.are.equal(ja("names.reload"), row.label:GetText())
+    row.button.scripts.OnClick(row.button, "LeftButton")
+    assert.are.equal(1, reloads)
+    S.set("names.japanese", false) -- off again: English at once, nothing to reload for
+    assert.is_false(row.label:IsShown())
+    assert.is_false(row.button:IsShown())
   end)
 
   it("reflects values, a click sets the setting, and OnShow re-reads a slash-side change", function()

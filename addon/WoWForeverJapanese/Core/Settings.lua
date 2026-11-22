@@ -215,7 +215,10 @@ Settings.define{ id = "direction", kind = "choice", choices = { "ja", "en" }, de
 -- is off, so turning it on takes a reload; turning it off shows English at once.
 Settings.define{ id = "names.japanese", kind = "boolean", default = false,
   label = "Show names in Japanese", ja = "名前を日本語で表示",
-  apply = function(v) WFJ.State.setNames(v and WFJ.Names.loaded()) end }
+  apply = function(v)
+    WFJ.State.setNames(v and WFJ.Names.loaded())
+    WFJ.State.fire("namesSetting", v) -- also when names could not switch (the settings page's reload line)
+  end }
 Settings.define{ id = "modifier", kind = "key", default = "alt", label = "Hold to show the other language",
   ja = "押している間はもう一方の言語を表示", normalize = function(v) return WFJ.Modifier.normalize(v) end,
   check = notToggleKey, apply = function(v) WFJ.Modifier.setKey(v) end } -- ADR-018
