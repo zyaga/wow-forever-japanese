@@ -558,8 +558,8 @@ describe("UI/QuestFrame: the greeting panel's NPC text is gossip", function()
   local WFJ, SS, QF, data, db
   local FILES_G = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
     "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Collector.lua",
-    "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "Core/Data.lua", "Core/Names.lua",
-    "UI/NameLabels.lua", "UI/QuestFrame.lua" }
+    "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "Core/Data.lua",
+    "Core/Names.lua", "UI/NameLabels.lua", "UI/QuestFrame.lua" }
   local PLAYER = { name = "Reyn", class = "Hunter", race = "Night Elf" }
   local GREETING = "Hail, Reyn. I have work for a hunter like you."
 
