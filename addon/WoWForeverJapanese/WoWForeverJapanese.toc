@@ -2828,6 +2828,7 @@ UI\Scan.lua
 UI\OptionsText.lua
 UI\OptionsWidgets.lua
 UI\KeyCapture.lua
+UI\BindingNames.lua
 UI\FixWindow.lua
 UI\CollectorSendWindow.lua
 UI\WordsWindow.lua

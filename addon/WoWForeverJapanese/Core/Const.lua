@@ -51,12 +51,6 @@ for _, slots in pairs(WFJ.SLOTS) do
 end
 WFJ.STATUS = { ["."] = "trusted", s = "stale", u = "unaligned", m = "missing" }
 
--- Keybinding globals read by Bindings.xml (auto-loaded, not in the TOC).
+-- The Keybindings section the addon's bindings sit in (Bindings.xml category; auto-loaded, not in the TOC). The
+-- bindings' own names are written by UI/BindingNames, in the player's language.
 BINDING_HEADER_WFJ = "WoW Forever Japanese"
-BINDING_NAME_WFJ_TOGGLE = "Toggle translation"
-BINDING_NAME_WFJ_FREEZE_TOOLTIP = "Freeze the tooltip (word cards)"
-BINDING_NAME_WFJ_VOICE_PAUSE = "Voice: pause / resume"
-BINDING_NAME_WFJ_VOICE_REPLAY = "Voice: play the line again"
-BINDING_NAME_WFJ_STUDY = "Study words: open / collapse the card"
--- Hidden (Bindings.xml hidden="true"); the name explains itself if a client lists it anyway (ADR-018).
-BINDING_NAME_WFJ_REVEAL = "Hold to show the other language (set in WoW Forever Japanese settings)"
