@@ -43,15 +43,6 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
     assert.are.equal(2, calls)
   end)
 
-  it("forgets what it answered when the tables are let go", function()
-    WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
-    assert.are.equal("スロール", (WFJ.Names.of("Thrall")))
-    WFJ.Names.drop()
-    assert.are.equal(0, WFJ.Data.count("name"))
-    assert.is_nil(WFJ.Names.of("Thrall"))
-    assert.is_false(WFJ.Names.loaded())
-  end)
-
   it("gives a filled-in value its Japanese: a name as written, or a link with only its label changed", function()
     WFJ.Data.add("name", {
       [WFJ.Names.key("Linen Cloth")] = "リネン・クロス\tりねん・くろす",
@@ -64,20 +55,6 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
     assert.is_nil(WFJ.Names.value("|Hitem:1|h[Unknown Thing]|h"))
     assert.is_nil(WFJ.Names.value("Reyn"))
     assert.is_nil(WFJ.Names.value(nil))
-  end)
-
-  it("keeps the tables at login only for a player who has names on or has not been asked yet", function()
-    local function loadedAfter(on, owed)
-      WFJ.Names.drop()
-      WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
-      WFJ.Names.settle(on, owed)
-      return WFJ.Names.loaded()
-    end
-    assert.is_true(loadedAfter(true, false))
-    assert.is_true(loadedAfter(false, true))
-    assert.is_true(loadedAfter(true, true))
-    assert.is_false(loadedAfter(false, false))
-    assert.is_false(loadedAfter(nil, nil))
   end)
 
   it("writes every vector line with its names in Japanese, as the pipeline does", function()

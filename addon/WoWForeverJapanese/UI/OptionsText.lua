@@ -71,10 +71,6 @@ Text.T = {
   ["intro.names.ask"] = { en = "How should names show?", ja = "名前の表示は？" },
   ["intro.names.english"] = { en = "English names", ja = "英語の名前" },
   ["intro.names.japanese"] = { en = "Japanese names", ja = "日本語の名前" },
-  -- names in Japanese, turned on in a session that let the name tables go at login
-  ["names.reload"] = { en = "Japanese names start after the interface reloads.",
-    ja = "名前の日本語表示は、インターフェースの再読み込み後に始まります。" },
-  ["names.reloadButton"] = { en = "Reload now", ja = "今すぐ再読み込み" },
   ["section.about"] = { en = "This version", ja = "このバージョン" },
   ["section.report"] = { en = "Report something", ja = "報告する" },
   ["section.translation"] = { en = "Translation", ja = "翻訳" },

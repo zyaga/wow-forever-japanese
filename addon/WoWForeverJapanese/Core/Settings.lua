@@ -211,14 +211,10 @@ Settings.define{ id = "direction", kind = "choice", choices = { "ja", "en" }, de
   choiceText = { ja = "Japanese first", en = "English first" },
   apply = function(v) WFJ.State.setDirection(v) end }
 -- Names of people, places, creatures, items and spells in Japanese instead of the client's English. English until
--- the player picks Japanese. It shows only while the name tables are in memory: they are let go at login while this
--- is off, so turning it on takes a reload; turning it off shows English at once.
+-- the player picks Japanese. The name tables are always in memory, so it switches at once both ways.
 Settings.define{ id = "names.japanese", kind = "boolean", default = false,
   label = "Show names in Japanese", ja = "名前を日本語で表示",
-  apply = function(v)
-    WFJ.State.setNames(v and WFJ.Names.loaded())
-    WFJ.State.fire("namesSetting", v) -- also when names could not switch (the settings page's reload line)
-  end }
+  apply = function(v) WFJ.State.setNames(v) end }
 Settings.define{ id = "modifier", kind = "key", default = "alt", label = "Hold to show the other language",
   ja = "押している間はもう一方の言語を表示", normalize = function(v) return WFJ.Modifier.normalize(v) end,
   check = notToggleKey, apply = function(v) WFJ.Modifier.setKey(v) end } -- ADR-018

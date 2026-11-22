@@ -32,8 +32,8 @@ IntroWindow.step = "pick" -- "pick": the question and its three cards; "info": w
 IntroWindow.selected = nil -- the card clicked on the first page; nothing is written until Confirm
 IntroWindow.names = false -- the names choice clicked on the first page: Japanese names, or the client's English
 -- The example both name options show: one NPC's name as the client writes it and as the name tables spell it. The
--- Japanese is read from the tables, so it is drawn as it will look; the spelling here stands in when they were let
--- go at login.
+-- Japanese is read from the tables, so it is drawn as it will look; the spelling here stands in should the name
+-- ever lose its line.
 local EXAMPLE, EXAMPLE_JA = "Marshal McBride", "マーシャル・マクブライド"
 local NAME_GAP, NAME_H = 12, 54
 local NAME_W = math.floor((TEXT_WIDTH - NAME_GAP) / 2)

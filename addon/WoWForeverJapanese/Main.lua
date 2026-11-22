@@ -270,11 +270,6 @@ function WFJ.OnLoad()
     return WFJ.Settings.load(WFJ_DB, WFJ.SCHEMA, WFJ.Settings.MIGRATIONS)
   end) or WFJ_DB
   step("intro.prepare", function() WFJ.Intro.prepare(WFJ_DB, fresh) end)
-  -- after the settings and the welcome flags: the name tables stay in memory only for a player who uses them
-  step("names", function()
-    WFJ.Names.settle(WFJ.Settings.get("names.japanese"), WFJ.Intro.namesOwed(WFJ_DB))
-    WFJ.State.setNames(WFJ.Settings.get("names.japanese") and WFJ.Names.loaded())
-  end)
   step("reports", function() WFJ.Reports.load(WFJ_DB) end) -- pending fixes live in WFJ_DB.reports
   step("forget", function() -- saved tables of mechanisms the addon no longer has
     if type(WFJ_DB) == "table" then WFJ_DB.buffIdentity, WFJ_DB.timeRule = nil, nil end

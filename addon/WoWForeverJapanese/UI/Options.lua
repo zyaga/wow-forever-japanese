@@ -27,8 +27,7 @@ Options.PAGES = {
     { rows = { "mainWelcome" } }, -- the way back to the welcome window's question
     { title = "section.translation", columns = 2, rows = { "enabled", "minimapButton" }, gap = 4 },
     { rows = { "direction" } }, -- which language shows first: its dropdown takes the row
-    -- names in Japanese or the client's English; the line under it shows only when turning it on needs a reload
-    { rows = { "names.japanese", "namesReload" } },
+    { rows = { "names.japanese" } }, -- names in Japanese or the client's English
     { title = "section.keys", rows = { "modifier", "toggleKey" } },
     { title = "section.areas", columns = 3,
       rows = { "area.quests", "area.gossip", "area.books", "area.itemTooltips", "area.spellTooltips",
@@ -535,35 +534,6 @@ function A.mainWelcome(page, x, y, width)
   local b = W.button(page, en, ja, 220, function() WFJ.IntroWindow.open() end)
   b:SetPoint("TOPRIGHT", page, "TOPLEFT", x + width, y + 4)
   return W.labelHeight(l, 30)
-end
-
--- Names in Japanese need the name tables, which a login with names off lets go. Turned on in such a session, the
--- setting is saved and this line says a reload starts it, with the button that reloads. Hidden otherwise: off needs
--- nothing, and on with the tables in memory shows names at once.
-function A.namesReload(page, x, y, width)
-  local en, ja = Text.get("names.reload")
-  local l = W.label(page, en, ja, x, y, width - 200)
-  en, ja = Text.get("names.reloadButton")
-  local b = W.button(page, en, ja, 160, function()
-    local reload = WFJ.Compat.resolve("ReloadUI")
-    if type(reload) == "function" then reload() end
-  end)
-  b:SetPoint("TOPRIGHT", page, "TOPLEFT", x + width, y + 4)
-  local function fill()
-    -- `l.en` is the line a label shows (its second line stays empty)
-    if S.get("names.japanese") and not WFJ.Names.loaded() then
-      l.en:Show()
-      b:Show()
-    else
-      l.en:Hide()
-      b:Hide()
-    end
-  end
-  fill()
-  Options.refreshers[#Options.refreshers + 1] = fill
-  WFJ.State.on("namesSetting", fill) -- the setting changed, whether or not names could switch at once
-  Options.namesReload = { label = l.en, button = b }
-  return 26
 end
 
 -- Opens the welcome window again (UI/IntroWindow), for a player who closed it or never saw it.

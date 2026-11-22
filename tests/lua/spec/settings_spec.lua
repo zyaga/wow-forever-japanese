@@ -58,18 +58,16 @@ describe("Settings registry", function()
     for id, v in pairs(DEFAULTS) do assert.are.equal(v, S.get(id), id) end
   end)
 
-  it("names.japanese shows names in Japanese only while the name tables are in memory", function()
-    WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+  it("names.japanese switches names at once both ways, and a saved on is on from the load", function()
     S.load(nil, 1, {})
     assert.is_false(WFJ.State.names)
     assert.is_true(S.set("names.japanese", true))
     assert.is_true(WFJ.State.names)
     assert.is_true(S.set("names.japanese", false))
     assert.is_false(WFJ.State.names)
-    WFJ.Names.drop()
-    assert.is_true(S.set("names.japanese", true)) -- saved for the next login; nothing to show names from now
-    assert.is_true(S.get("names.japanese"))
-    assert.is_false(WFJ.State.names)
+    S.load({ schema = 1, settings = { ["names.japanese"] = true } }, 1, {})
+    assert.is_true(WFJ.State.names)
+    WFJ.State.setNames(false)
   end)
 
   it("rejects a wrong type / a choice outside choices and leaves the stored value", function()

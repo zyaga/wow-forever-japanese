@@ -67,21 +67,17 @@ describe("Core/Intro", function()
     local function show() shown = shown + 1 end
     I.prepare(db, false)
     assert.is_false(db.askedNames)
-    assert.is_true(I.namesOwed(db))
     assert.is_true(I.run(db, show))
     assert.is_true(db.askedNames)
-    assert.is_false(I.namesOwed(db))
     I.prepare(db, false) -- the next login
     assert.is_false(I.run(db, show))
     assert.are.equal(1, shown)
-    assert.is_false(I.namesOwed(nil))
-    assert.is_false(I.namesOwed({}))
   end)
 
   it("a first install is asked both questions in its one window", function()
     local db, shown = {}, 0
     I.prepare(db, true)
-    assert.is_true(I.namesOwed(db))
+    assert.is_false(db.askedNames)
     assert.is_true(I.run(db, function() shown = shown + 1 end))
     assert.is_true(db.intro and db.asked and db.askedNames)
     assert.are.equal(1, shown)
@@ -295,7 +291,7 @@ describe("UI/IntroWindow, the window", function()
       f.confirm.scripts.OnClick(f.confirm)
       assert.are.same({ "en", true, true }, settings())
       assert.is_true(WFJ.Settings.get("names.japanese"))
-      assert.is_true(WFJ.State.names) -- this login kept the name tables for the answer: no reload
+      assert.is_true(WFJ.State.names) -- at once: the name tables are always in memory
       assert.is_true(f.infoPage:IsShown())
       -- back to English names, by the same two clicks
       f.back.scripts.OnClick(f.back)
@@ -317,12 +313,6 @@ describe("UI/IntroWindow, the window", function()
       IW.open()
       assert.is_true(IW.names)
       assert.is_true(f.nameCards[true].picked)
-    end)
-
-    it("the example is drawn even when the name tables were let go", function()
-      WFJ.Names.drop()
-      local f = IW.open()
-      assert.are.equal("マーシャル・マクブライド", f.nameCards[true].example:GetText())
     end)
   end)
 

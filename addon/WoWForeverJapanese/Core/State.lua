@@ -8,9 +8,7 @@
 -- Japanese (UI/VoicePlayer); "voice"(), fired by the voice settings' apply. "words"(), fired by Core/Words when
 -- the word list changes (a save, Remove last, Clear all): Core/Study, UI/WordsWindow, UI/StudyWindow and UI/Options
 -- follow it. "names"(bool), fired by setNames when names switch between the client's English and their Japanese
--- (the `names.japanese` setting, while the name tables are in memory): quest titles follow it too.
--- "namesSetting"(bool), fired by that setting's apply on every change, also when the tables were let go and names
--- cannot switch until a reload (UI/Options shows its reload line).
+-- (the `names.japanese` setting): quest titles follow it too.
 local _, WFJ = ...
 local State = { enabled = true, modifierHeld = false, areas = {}, direction = "ja", names = false }
 WFJ.State = State
