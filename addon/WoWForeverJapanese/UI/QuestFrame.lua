@@ -447,10 +447,16 @@ function QuestFrame.onGreeting()
   return n
 end
 
+-- The quest giver's name on the title plate: QuestFrame:SetTitle(UnitName("questnpc")) [verified: mainline/
+-- questframe.lua:117]. Its own surface, so a panel that forgets its prose never drops it. While names are on it
+-- shows the NPC's Japanese name; a quest another player shares names that player, and is left as written.
+local NPC = "questframe.npc"
+QuestFrame.NPC = NPC
+
 function QuestFrame.release()
   local n = 0
   for _, surface in ipairs(QuestFrame.SURFACES) do n = n + WFJ.Render.release(surface) end
-  return n + WFJ.Render.release(QuestFrame.GREETING)
+  return n + WFJ.Render.release(QuestFrame.GREETING) + WFJ.Render.release(NPC)
 end
 
 local hooked = false
@@ -497,6 +503,7 @@ function QuestFrame.init(d)
     hooksecurefunc("QuestFrameGreetingPanel_OnShow", QuestFrame.onGreeting)
   end
   hookScript("frame", "OnHide", QuestFrame.release)
+  WFJ.NameLabels.title(NPC, Compat.get(DECLARE, "frame"), "title", "questnpc") -- now, and after every SetTitle
   hookScript("timerFrame", "OnUpdate", QuestFrame.showTimer)
   if type(Compat.get(DECLARE, "showRewards")) == "function" then
     hooksecurefunc("QuestInfo_ShowRewards", QuestFrame.onShowRewards)

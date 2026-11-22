@@ -623,7 +623,11 @@ function Stub.installQuestAPI()
   Stub.quest = { id = 0, title = "", description = "", objectives = "", progress = "", completion = "" }
 
   -- frames [verified: QuestFrame.xml]
-  CreateFrame("Frame", "QuestFrame")
+  local questFrame = CreateFrame("Frame", "QuestFrame")
+  -- the title plate: QuestFrame:SetTitle(UnitName("questnpc")) → TitleContainer.TitleText [verified: mainline/
+  -- questframe.lua:117, blizzard_sharedxml/portraitframe.lua:11–13]. Unnamed, as in the client.
+  questFrame.TitleContainer = { TitleText = Stub.fontString("") }
+  function questFrame.SetTitle(self, text) self.TitleContainer.TitleText.text = text end
   CreateFrame("Frame", "QuestFrameProgressPanel")
   for _, n in ipairs({ "QuestDetailScrollFrame", "QuestRewardScrollFrame", "QuestProgressScrollFrame",
     "QuestDetailScrollChildFrame", "QuestRewardScrollChildFrame" }) do
