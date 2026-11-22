@@ -255,14 +255,14 @@ def keyed_text(type_: str, nn: str, shard_rows: dict[str, list[str]]) -> str:
 
 
 def names_text(nn: str, lines: Iterable[dict[str, Any]]) -> str:
-    """One shard of the Japanese names (ADR-078): `[English hash] = { Japanese, reading, English }` for the
-    names it is given (the ones with Japanese). Generated beside the addon but not in the TOC: the names
-    setting loads them."""
-    entries = (
-        (lua_string(ln["id"]), [lua_string(ln["ja"]), lua_string(ln["reading"]), lua_string(ln["en"])])
-        for ln in sorted(lines, key=lambda ln: ln["id"])
-    )
-    return _add_text("name", f"data/name/name-{nn}.jsonl", entries)
+    """One shard of the Japanese names (ADR-078): `[English hash] = "Japanese<TAB>reading"` for the names it
+    is given (the ones with Japanese). The English is not written: the client shows it, and the key is its
+    hash. One string per name keeps a loaded table small."""
+    out = [HEADER.format(src=f"data/name/name-{nn}.jsonl"), "local _, WFJ = ...", 'WFJ.Data.add("name", {']
+    for ln in sorted(lines, key=lambda ln: ln["id"]):
+        out.append(f"  [{lua_string(ln['id'])}] = {lua_string(ln['ja'] + chr(9) + ln['reading'])},")
+    out.append("})")
+    return "\n".join(out) + "\n"
 
 
 def _packed_word(entry: list[str], meanings: dict[tuple[str, str, str], int]) -> str:

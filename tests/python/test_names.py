@@ -9,8 +9,10 @@ from pathlib import Path
 
 import pytest
 
+from wfj.cmd import generate
 from wfj.cmd import names as cmd
 from wfj.core import names
+from wfj.emit import lua_writer
 from wfj.io.names_store import load_lines, load_words, save_lines
 
 TODAY = "2026-11-10"
@@ -426,3 +428,26 @@ def test_align_gives_each_part_of_a_name_its_reading(ja, reading, parts):
 )
 def test_align_refuses_a_reading_that_does_not_fit(ja, reading):
     assert names.align(ja, reading) is None
+
+
+def test_a_generated_name_row_is_its_japanese_and_reading_without_the_english():
+    line = trusted("Thrall", "スロール", "すろーる")
+    text = lua_writer.names_text("00", [line])
+    assert f'["{line["id"]}"] = "スロール\\tすろーる",' in text
+    assert "Thrall" not in text
+    assert 'WFJ.Data.add("name", {' in text
+
+
+def test_name_tables_load_last_in_the_toc():
+    planned = {
+        "Data/Names/Names_0a.lua": "",
+        "Data/Meta.lua": "",
+        "Data/Names/Names_00.lua": "",
+        "Data/Quest/Quest_0000.lua": "",
+    }
+    assert generate.toc_files(planned) == [
+        "Data/Meta.lua",
+        "Data/Quest/Quest_0000.lua",
+        "Data/Names/Names_00.lua",
+        "Data/Names/Names_0a.lua",
+    ]

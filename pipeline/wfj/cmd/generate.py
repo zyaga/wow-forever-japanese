@@ -322,8 +322,8 @@ NAMES_DIR = "Data/Names"
 
 
 def _plan_names(root: Path) -> dict[str, str]:
-    """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. They are left out of
-    the TOC: nothing loads them until the names setting does (ADR-078)."""
+    """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. The TOC lists them
+    last; the addon keeps them in memory only while the names setting is on."""
     by_shard: dict[str, list[dict[str, Any]]] = {}
     for ln in load_name_lines(root):
         if ln["status"] == "trusted":
@@ -700,7 +700,8 @@ def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
 
 def toc_files(planned: dict[str, str]) -> list[str]:
     """Load order inside the generated block: Meta, Vectors, the error recordings, the displays, then shards
-    by type then range."""
+    by type then range, then the name tables."""
+    names = sorted(p for p in planned if p.startswith(f"{NAMES_DIR}/"))
     shards = [p for p in planned if p not in FIXED and not p.startswith(f"{NAMES_DIR}/")]
     order = {t: i for i, t in enumerate(schema.TOC_ORDER)}
 
@@ -708,7 +709,7 @@ def toc_files(planned: dict[str, str]) -> list[str]:
         return next(t for t, pre in schema.FILE_PREFIX.items() if rel.startswith(f"Data/{pre}/"))
 
     shards.sort(key=lambda p: (order[type_of(p)], p))
-    return [*(p for p in FIXED if p in planned), *shards]
+    return [*(p for p in FIXED if p in planned), *shards, *names]
 
 
 def toc_with_block(toc_text: str, files: list[str]) -> str:
