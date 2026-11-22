@@ -121,6 +121,19 @@ describe("name widgets", function()
     assert.are.equal("スロール", fs:GetText())
   end)
 
+  it("never touches a unit a player controls: a pet's name is the player's own", function()
+    _G.UnitPlayerControlled = function(unit) return unit == "pet" end
+    finally(function() _G.UnitPlayerControlled = nil end)
+    assert.are.equal(0, WFJ.NameLabels.unit("spec", "name", fs, "pet"))
+    assert.are.equal("Thrall", fs:GetText())
+    assert.are.equal(1, WFJ.NameLabels.unit("spec", "name", fs, "target"))
+    assert.are.equal("スロール", fs:GetText())
+    WFJ.Render.release("spec")
+    _G.UnitPlayerControlled = function() return SECRET end -- an answer the client hides: the name stays
+    assert.are.equal(0, WFJ.NameLabels.unit("spec", "name", fs, "target"))
+    assert.are.equal("Thrall", fs:GetText())
+  end)
+
   it("never reads, hashes or writes a name the client hides", function()
     fs.text = SECRET
     local hashed, key = 0, WFJ.Hash.key

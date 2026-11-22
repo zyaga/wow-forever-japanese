@@ -10,9 +10,9 @@
 --     forge): the name shows with no player check. Under the record key the surface's own title uses, so a
 --     dictionary title a surface already shows on that widget ("Buyback") is left as it is: one record owns the
 --     widget.
--- Both guards live here so no surface repeats them: a value the client hides from addons (a unit's name in
--- combat inside an instance) is never read, compared, hashed or written, and a player's name is not a game name
--- even when an NPC shares it.
+-- The guards live here so no surface repeats them: a value the client hides from addons (a unit's name in
+-- combat inside an instance) is never read, compared, hashed or written; a player's name is not a game name
+-- even when an NPC shares it; and a unit a player controls (a pet) carries the name its player gave it.
 local _, WFJ = ...
 local NameLabels = {}
 WFJ.NameLabels = NameLabels
@@ -59,6 +59,12 @@ function NameLabels.unit(surface, recKey, widget, unit, area)
   local player = type(isPlayer) == "function" and isPlayer(unit)
   -- anything but a plain false is a player, or an answer the client hides: the name stays as written
   if player ~= false then
+    WFJ.SurfaceState.drop(surface, recKey)
+    return 0
+  end
+  -- a unit a player controls (a pet) carries a name its player gave it; any answer but a plain false leaves it
+  local controlled = WFJ.Compat.resolve("UnitPlayerControlled")
+  if type(controlled) == "function" and controlled(unit) ~= false then
     WFJ.SurfaceState.drop(surface, recKey)
     return 0
   end

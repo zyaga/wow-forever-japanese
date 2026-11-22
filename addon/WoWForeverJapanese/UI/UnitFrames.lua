@@ -40,6 +40,7 @@ UnitFrames.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
 -- Names: every unit name widget of the named frames (the compact frames' `name` is pooled and never addressed here).
+-- Never read as dictionary words; a creature's name shows its Japanese through onUnitUpdate while names are on.
 UnitFrames.NEVER_TOUCH = {
   "PlayerFrame.PlayerFrameContent.PlayerFrameContentMain.PlayerName", "PlayerName",
   "TargetFrame.TargetFrameContent.TargetFrameContentMain.Name",
@@ -64,7 +65,19 @@ local GLOBAL_HOOKS = {
   { "CompactRaidGroup_InitializeForGroup", "onGroupInit" },
   { "CompactPartyFrame_Generate", "onPartyGenerate" },
   { "UnitFrame_UpdateTooltip", "onUnitTooltip" },
+  { "UnitFrame_Update", "onUnitUpdate" },
 }
+
+-- hooksecurefunc target (UnitFrame_Update): the one writer of a unit frame's name, self.name:SetText(GetUnitName(
+-- self.unit, isParty)) [verified: mainline/unitframe.lua:144–166], called by name from the target, focus, target-of-
+-- target, boss, pet and party frames. While names are on a creature's name shows its Japanese. UI/NameLabels keeps
+-- out a player, a unit a player controls (a pet, whose name its player gave) and a name the client hides from
+-- addons, which it does in combat inside an instance: there the client's text stays. → 1 | 0
+local nameKey = WFJ.Labels.keyer("name.")
+function UnitFrames.onUnitUpdate(frame)
+  if type(frame) ~= "table" or type(frame.name) ~= "table" or type(frame.unit) ~= "string" then return 0 end
+  return WFJ.NameLabels.unit(SURFACE, nameKey(frame.name), frame.name, frame.unit)
+end
 
 local function declareAll()
   for _, name in ipairs(TARGET_STYLE) do Compat.declare(SURFACE, name, { name }) end

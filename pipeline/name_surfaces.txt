@@ -60,7 +60,7 @@ UI/VoicePanel.lua	the speaking NPC's name and title	todo
 UI/ClickBinding.lua	the tutorial's ThrallName	todo
 
 # units
-UI/UnitFrames.lua	target, focus and target-of-target Name	todo	never a player; hidden in combat in an instance (secret)
+UI/UnitFrames.lua	target, focus, target-of-target, boss and party frame Name	japanese	after each UnitFrame_Update; never a player or a pet; a name the client hides stays
 UI/UnitFrames.lua	PlayerName	english player-typed
 UI/UnitFrames.lua	PetName	english player-typed
 UI/UnitFrames.lua	nameplates of creatures	todo	never a player; hidden in combat in an instance (secret)
