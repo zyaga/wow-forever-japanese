@@ -7,6 +7,10 @@
 --                                      a word the text lacks is skipped; a match on part of a guard span is passed over
 --   Readings.lookup(kind, id, text) → locate(words(kind, id), text, tokenSpans(text)) | nil
 --   Readings.tokenSpans(text)       → { { first, last }, … }: every class / race word standing alone in `text`
+--   Readings.withNames(spans, text, names)
+--                                   → `spans` plus a span for each name the addon wrote into `text` in Japanese
+--                                      (names = { { ja, english, reading }, … } in text order, from the policy
+--                                      layer's payload): its card gives the reading and the English name
 --   Readings.englishLookup(kind, id, text)
 --                                   → { { first, last, word, reading, card }, … }: the English words of `text` that
 --                                      have a Japanese word, for the English word card (English first); nil for a
@@ -264,4 +268,34 @@ function Readings.withTokenWords(spans, text, exclude)
   end
   if added then table.sort(out, function(a, b) return a.first < b.first end) end
   return out
+end
+
+-- `spans` plus a span for every name in `names`, found in `text` in order (each one after the one before it, so a
+-- name said twice gets two spans). A name's span carries `name = true` and the card of a name: its reading and its
+-- English name. A listed word that touches a name's span is left out: a word never anchors inside a name. A name
+-- the text no longer holds is skipped.
+function Readings.withNames(spans, text, names)
+  local out = {}
+  for i, sp in ipairs(spans or {}) do out[i] = sp end
+  if type(text) ~= "string" or type(names) ~= "table" or names[1] == nil then return out end
+  local found, from = {}, 1
+  for _, n in ipairs(names) do
+    if type(n) == "table" and type(n.ja) == "string" and n.ja ~= "" then
+      local s, e = text:find(n.ja, from, true)
+      if s then
+        local reading = type(n.reading) == "string" and n.reading ~= "" and n.reading or n.ja
+        found[#found + 1] = { first = s, last = e, word = n.ja, reading = reading, name = true,
+          card = { lemma = n.ja, lemmaReading = reading, meaning = n.english } }
+        from = e + 1
+      end
+    end
+  end
+  if found[1] == nil then return out end
+  local kept = {}
+  for _, sp in ipairs(out) do
+    if not overlaps(found, sp.first, sp.last) then kept[#kept + 1] = sp end
+  end
+  for _, sp in ipairs(found) do kept[#kept + 1] = sp end
+  table.sort(kept, function(a, b) return a.first < b.first end)
+  return kept
 end
