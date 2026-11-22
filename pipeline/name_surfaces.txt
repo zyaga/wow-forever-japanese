@@ -50,7 +50,7 @@ UI/QuestFrame.lua	QuestFrame title	japanese	the quest giver; a quest a player sh
 UI/Merchant.lua	merchant tab title	japanese	shown from the merchant tab's own update
 UI/Trainer.lua	trainer window title	japanese	after each SetTitle; a pet trainer's title is the pet's own name and stays
 UI/GuildRegistrar.lua	GuildRegistrarFrameNpcNameText	japanese	on each show
-UI/GuildRename.lua	GuildRenameFrame.TitleContainer.TitleText	todo
+UI/GuildRename.lua	GuildRenameFrame.TitleContainer.TitleText	japanese	after each SetTitle
 UI/Tabard.lua	TabardFrameNameText	japanese	the designer NPC's name, on each show
 UI/ObliterumForge.lua	ObliterumForgeFrame.TitleContainer.TitleText	todo
 UI/ScrappingMachine.lua	ScrappingMachineFrame.TitleContainer.TitleText	todo
