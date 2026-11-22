@@ -69,8 +69,8 @@ UI/CastingBar.lua	the bar's spell name	todo
 UI/CastingBar.lua	PlayerCastingBarFrame.CastTimeText	english not-a-game-name	a number
 
 # item names on the game's own windows
-UI/Merchant.lua	merchant item rows	todo
-UI/Merchant.lua	MerchantBuyBackItemName	todo
+UI/Merchant.lua	merchant item rows	japanese	on both tabs, after each update
+UI/Merchant.lua	MerchantBuyBackItemName	japanese	after each update
 UI/Loot.lua	loot rows	japanese	an item row's name; a money row is left
 UI/GroupLoot.lua	MasterLooterFrame.Item.ItemName and roll frames	todo
 UI/LootHistory.lua	loot history rows	todo
