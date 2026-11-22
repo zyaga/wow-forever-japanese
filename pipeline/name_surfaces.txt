@@ -1,0 +1,149 @@
+# Every widget or text slot of the Forever client that holds a name, and what the addon does with it while
+# Japanese names are on. One line each, tab-separated:
+#   <module>  <widget or slot>  <mark>  <note>
+# Marks:
+#   japanese            shows the name's Japanese (UI/NameLabels, the policy layer's names step, or a value kind)
+#   todo                a game name the addon does not show in Japanese yet; tests/python/test_name_surfaces.py
+#                       fails while any line carries it
+#   english <reason>    stays as the client writes it, for one of these reasons:
+#     player-typed        a player's, guild's, pet's, channel's, macro's or set's name: not a game name
+#     text-box            a box the player types in, or a search box: it needs the client's English
+#     secret              the client hides the value from addons (a unit's name in combat in an instance)
+#     not-a-game-name     a number, a date, a dictionary word, prose, or a kind the name list does not hold
+# A module's NEVER_TOUCH widget must have a line here (the test reads the modules). A name with no line in the name
+# list stays English whatever its mark says.
+
+# names inside text
+Core/Translator.lua	quest objectives, description, progress, completion	japanese	the names step, before the player's own name is filled in
+Core/Translator.lua	NPC talk, book and letter pages (plain and HTML)	japanese	the names step; an HTML page keeps its tags
+Core/Translator.lua	item and spell tooltip text, objective lines, area text	japanese	the names step
+Core/Translator.lua	quest titles	japanese	the shipped Japanese title, on every surface that shows one
+Core/Translator.lua	interface lines (kind ui)	english not-a-game-name	their Latin words are the client's own (PvP, FPS); a value inside one is a line below
+Core/UIStringKeys.lua	FACTION_CONTROLLED_TERRITORY value	japanese	value kind name
+Core/UIStringKeys.lua	ERR_ZONE_EXPLORED value	japanese	value kind name
+Core/UIStringKeys.lua	LOOT_ITEM_SELF value (an item's link)	japanese	only the link's label changes
+Core/UIStringKeys.lua	other interface lines whose value is a game name	todo	loot, quest, reputation, skill and kill lines: each key's value kind
+
+# tooltips
+UI/Tooltip.lua	item, spell and aura tooltip name line	japanese	record name.L<i>; comparison tooltips by the name's text
+UI/TooltipUnit.lua	a creature's or object's name, title and faction lines	japanese	never a player, a pet or a unit with no readable guid
+UI/TooltipUnit.lua	a player's and a pet's tooltip	english player-typed
+UI/Taxi.lua	flight point name on the route map's tooltip	todo
+UI/FlightMap.lua	flight point and zone names on the flight map's tooltips	todo
+UI/MapPins.lua	a pin's tooltip name line	todo
+UI/ItemSocketing.lua	ItemSocketingDescriptionTextLeft1	todo	the socketed item's name
+
+# place names
+UI/ZoneText.lua	ZoneTextString	japanese
+UI/ZoneText.lua	SubZoneTextString	japanese
+UI/Minimap.lua	MinimapZoneText	todo
+UI/WorldMap.lua	area names and the map's title	todo
+UI/Tracker.lua	UIWidgetObjectiveTracker.Header.Text	todo	a zone name
+UI/Tracker.lua	ObjectiveTrackerTopBannerFrame.Title	todo	check what the client writes there
+UI/Tracker.lua	ScenarioObjectiveTracker.StageBlock.Name	todo	a stage's name
+UI/QuestMap.lua	quest log zone headers	todo
+
+# an NPC's name on its window
+UI/GossipChrome.lua	GossipFrameTitleText	japanese	after each SetTitle and each show
+UI/QuestFrame.lua	QuestFrame title	japanese	the quest giver; a quest a player shares is left
+UI/Merchant.lua	merchant tab title	japanese	shown from the merchant tab's own update
+UI/Trainer.lua	trainer window title	todo
+UI/GuildRegistrar.lua	GuildRegistrarFrameNpcNameText	todo
+UI/GuildRename.lua	GuildRenameFrame.TitleContainer.TitleText	todo
+UI/Tabard.lua	TabardFrameNameText	todo	check what the client writes there
+UI/ObliterumForge.lua	ObliterumForgeFrame.TitleContainer.TitleText	todo
+UI/ScrappingMachine.lua	ScrappingMachineFrame.TitleContainer.TitleText	todo
+UI/ItemInteraction.lua	ItemInteractionFrame title	todo
+UI/Bank.lua	BankFrameTitleText	english not-a-game-name	the title is a dictionary line, matched by key
+UI/VoicePanel.lua	the speaking NPC's name and title	todo
+UI/ClickBinding.lua	the tutorial's ThrallName	todo
+
+# units
+UI/UnitFrames.lua	target, focus and target-of-target Name	todo	never a player; hidden in combat in an instance (secret)
+UI/UnitFrames.lua	PlayerName	english player-typed
+UI/UnitFrames.lua	PetName	english player-typed
+UI/UnitFrames.lua	nameplates of creatures	todo	never a player; hidden in combat in an instance (secret)
+UI/CastingBar.lua	PlayerCastingBarFrame.CastTargetNameText	todo	a unit's name: never a player
+UI/CastingBar.lua	the bar's spell name	todo
+UI/CastingBar.lua	PlayerCastingBarFrame.CastTimeText	english not-a-game-name	a number
+
+# item names on the game's own windows
+UI/Merchant.lua	merchant item rows	todo
+UI/Merchant.lua	MerchantBuyBackItemName	todo
+UI/Loot.lua	loot rows	todo
+UI/GroupLoot.lua	MasterLooterFrame.Item.ItemName and roll frames	todo
+UI/LootHistory.lua	loot history rows	todo
+UI/Bags.lua	a bag's title	todo	an item's name
+UI/QuestFrame.lua	quest reward and required item buttons	todo
+UI/Mail.lua	attached item names	todo
+UI/Trade.lua	traded item names	todo
+UI/AuctionHouse.lua	the six ItemDisplay name widgets and the result rows	todo
+UI/BlackMarket.lua	the hot item's Name and the rows	todo
+UI/ItemUpgrade.lua	ItemUpgradeFrame.ItemInfo.ItemName	todo
+UI/Crafting.lua	the form's OutputText, OutputSubText and RecraftingOutputText	todo
+UI/CustomerOrders.lua	the form's RecipeName and RecraftRecipeName	todo
+UI/Wardrobe.lua	the set details' Name, LongName and Label	todo
+UI/ChatSystem.lua	item, spell and quest links in chat lines	todo	only the link's label
+
+# spell and other game names on the game's own windows
+UI/SpellBook.lua	spell rows	todo
+UI/Trainer.lua	service rows	todo
+UI/Talents.lua	talent and tree names	todo
+UI/CooldownViewer.lua	the two alert Name widgets	todo
+UI/MountJournal.lua	the mount's Name	todo
+UI/Skills.lua	SkillsFrame.SkillDetailFrame.Title and Subtitle	todo
+UI/Reputation.lua	ReputationFrame.ReputationDetailFrame.Title and the faction rows	todo
+UI/MajorFactionToast.lua	MajorFactionUnlockToast.FactionName	todo
+UI/Currency.lua	the currency detail's Title and Subtitle	todo
+UI/ChatSystem.lua	an NPC's name before its spoken line	todo
+
+# never a game name
+UI/Inspect.lua	InspectFrame.TitleContainer.TitleText	english player-typed
+UI/Inspect.lua	InspectGuildFrame.guildName	english player-typed
+UI/Trade.lua	TradeFramePlayerNameText, TradeFrameRecipientNameText	english player-typed
+UI/Petition.lua	PetitionFrameCharterName, PetitionFrameMasterName, PetitionFrameMasterTitle	english player-typed
+UI/GuildInvite.lua	GuildInviteFrameInviterName, GuildInviteFrameGuildName	english player-typed
+UI/Communities.lua	the member detail's Name, ZoneText, RankText and the message of the day	english player-typed
+UI/CommunitiesFrame.lua	invitation and ticket Name and Description	english player-typed
+UI/ClubFinder.lua	a club's Name and Description	english player-typed
+UI/CommunitiesDialogs.lua	the ticket manager's LinkIDText	english not-a-game-name	an invite link's id
+UI/Channels.lua	ChannelFrame.ChannelRoster.ChannelName	english player-typed
+UI/Macro.lua	the macro's text and names	english player-typed
+UI/Mail.lua	OpenMailSender.Name, OpenMailSubject	english player-typed	a sender is a player or an NPC and the text does not say which
+UI/PetJournal.lua	the pet card's subName	english player-typed
+UI/GroupFinder.lua	the listing tooltip's leader Name and Comment	english player-typed
+UI/BNetToast.lua	the toast's three lines	english player-typed
+UI/Popups.lua	BattleNetInviteFrame.InviteeName	english player-typed
+UI/Calendar.lua	event titles and descriptions, holiday and raid headers	english player-typed
+UI/CustomerOrders.lua	OrderRecipientTarget, OrderRecipientDisplay.CrafterValue	english player-typed
+UI/PvPRank.lua	PVPRankFrame.DetailFrame.Title	english not-a-game-name	a rank's title: the name list holds no ranks
+UI/BlackMarket.lua	the hot item's Seller, Type, Level and the bid price	english not-a-game-name
+UI/MountJournal.lua	the mount's Source and Lore	english not-a-game-name	prose
+UI/GamepadEdit.lua	the binding's ActionName	english not-a-game-name
+UI/Stable.lua	PetStableLevelText	english not-a-game-name	a number
+UI/Splash.lua	SplashFrame.Label	english not-a-game-name
+UI/Cinematic.lua	MovieFrame.CloseDialog.Summary	english not-a-game-name
+UI/Achievement.lua	the points and the compared player's name	english player-typed
+UI/Collections.lua	HeirloomsJournal.ClassDropdown.Text	english not-a-game-name	a class word
+UI/Wardrobe.lua	the class dropdown's Text	english not-a-game-name	a class word
+UI/BarberShop.lua	BarberShopFrame.SDToggleButton.Text	english not-a-game-name
+UI/RaidManager.lua	the member count and role filters	english not-a-game-name	numbers
+UI/PvPMatch.lua	the faction tabs and the header	english not-a-game-name	a faction word with a count
+UI/GuildControl.lua	the two dropdown texts and the gold box	english player-typed	rank and bank tab names
+UI/GuildBank.lua	the tab info box	english player-typed
+UI/TextToSpeech.lua	the two voice dropdowns and the volume label	english not-a-game-name
+UI/TimeManager.lua	the clock and stopwatch tickers	english not-a-game-name	numbers
+UI/CoinPickup.lua	CoinPickupText	english not-a-game-name	a number
+UI/ItemText.lua	ItemTextCurrentPage	english not-a-game-name	a number
+UI/LossOfControl.lua	LossOfControlFrame.TimeLeft.NumberText	english not-a-game-name	a number
+UI/Legacy.lua	the points widgets	english not-a-game-name	numbers
+UI/RecruitAFriend.lua	the recruit list's count	english not-a-game-name	a number
+UI/CurrencyTransfer.lua	the two balance amounts	english not-a-game-name	numbers
+UI/MountJournal.lua	MountJournal.MountCount.Count	english not-a-game-name	a number
+UI/ItemUpgrade.lua	ItemUpgradeFrame.ItemInfo.UpgradeProgress	english not-a-game-name	a number
+UI/ScriptErrors.lua	the error text and the index label	english not-a-game-name
+UI/CooldownViewer.lua	the layout dropdown's Text	english player-typed	a layout's name
+UI/ChatConfig.lua	the four example strings	english not-a-game-name	examples the client composes
+
+# boxes the player types in
+UI/*	every search box and edit box in NEVER_TOUCH	english text-box	a search needs the client's English; an edit box holds the player's own text
