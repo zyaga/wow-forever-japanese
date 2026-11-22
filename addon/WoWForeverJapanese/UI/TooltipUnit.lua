@@ -13,10 +13,11 @@
 -- tooltip whose owner it does not have registered as foreign, forgetting every record on its surface, which put the
 -- client's English straight back over these lines. Records here are keyed by line, re-rendered on a modifier change
 -- like every surface's, and released on the tooltip's OnHide so a later item or spell tooltip never inherits them.
--- Only lines 2 and below are read, and only against the keys below: line 1 is the unit's name, and a guild line
--- ("<Guild>"), a title or any server line matches none of them, so it stays as the client wrote it (names stay
--- in English). A race, class or pet family inside a level line is kept as shown; a creature type ("Humanoid") takes
--- its CreatureType row. A player's tooltip never takes the creature-type templates: "Level 60 Undead" is the same
+-- Only lines 2 and below are read as dictionary lines, and only against the keys below: line 1 is the unit's name,
+-- and a guild line ("<Guild>"), a title or any server line matches none of them. Those stay as the client wrote
+-- them, except while names are on: then a creature's or object's name, its title and its faction show their
+-- Japanese (a player's and a pet's never do). A race, class or pet family inside a level line is kept as shown; a
+-- creature type ("Humanoid") takes its CreatureType row. A player's tooltip never takes the creature-type templates: "Level 60 Undead" is the same
 -- text for an Undead player (race, stays English) and an undead creature, and only the unit tells them apart
 -- (C_PlayerInfo.GUIDIsPlayer on the tooltip data's guid, as blizzard_objectapi/mainline/playerlocation.lua:59 does).
 -- A client with no tooltip data processor is left untouched (init returns false).
@@ -77,6 +78,28 @@ local function isPlayer(data)
   return info.GUIDIsPlayer(guid) == true
 end
 TooltipUnit.isPlayer = isPlayer
+
+-- Whether the tooltip's name lines may show a game name's Japanese: only for a unit the client says is a creature,
+-- a vehicle or a game object. A player and a pet a player named are not game names, and a unit whose guid is
+-- missing or hidden cannot be told from one, so its lines stay as written. → boolean
+local NAMED_BY_THE_GAME = { Creature = true, Vehicle = true, GameObject = true }
+local function gameNamed(data)
+  local guid = type(data) == "table" and data.guid or nil
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(isSecret) == "function" and isSecret(guid) then return false end
+  if type(guid) ~= "string" then return false end
+  return NAMED_BY_THE_GAME[guid:match("^(%a+)%-") or ""] == true and not isPlayer(data)
+end
+TooltipUnit.gameNamed = gameNamed
+
+-- A line that is exactly a game name (the unit's name, the title under it, its faction), in Japanese. → 1 | 0
+local function showName(row, fs, refit)
+  local text = fs:GetText()
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(isSecret) == "function" and isSecret(text) then return 0 end
+  if type(text) ~= "string" or text == "" or not WFJ.Names.of(text) then return 0 end
+  return WFJ.Render.show(SURFACE, "L" .. row, fs, text, "ui", "name", text, { refit = refit }) and 1 or 0
+end
 local MAX_LINES = 30 -- a unit tooltip is a handful of lines; the walk stops at the client's own count anyway
 
 local refitting = false
@@ -238,8 +261,15 @@ function TooltipUnit.onUnit(tt, data)
       return 1
     end
   end
-  -- line 1 is the unit's or object's name: never read, never written; a minimap mouseover starts with a quest title
+  -- line 1 is the unit's or object's name: never a dictionary word; a minimap mouseover starts with a quest title.
+  -- While names are on, a creature's or object's name shows its Japanese, and so does any later line that is
+  -- exactly a name and no dictionary line (the title under the name, the faction).
   local first = kinds[1] == "QuestTitle" and 1 or 2
+  local named = WFJ.State.names and gameNamed(data)
+  if named and first == 2 then
+    local fs = Compat.resolve(name .. "TextLeft1")
+    if type(fs) == "table" then n = n + showName(1, fs, refit) end
+  end
   for i = first, lines do
     local fs = Compat.resolve(name .. "TextLeft" .. i)
     if type(fs) == "table" then
@@ -254,7 +284,9 @@ function TooltipUnit.onUnit(tt, data)
         end
         notes[#notes + 1] = ("row %d quest title: %s"):format(i, id and ("quest " .. id) or why)
       else
-        n = n + WFJ.Labels.show(SURFACE, "L" .. i, fs, refit, only)
+        local shown = WFJ.Labels.show(SURFACE, "L" .. i, fs, refit, only)
+        if shown == 0 and named then shown = showName(i, fs, refit) end
+        n = n + shown
       end
     end
   end

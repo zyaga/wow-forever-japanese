@@ -75,6 +75,84 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
 
+  describe("with names on", function()
+    local SECRET = {}
+    -- as `hover`, with the tooltip data the client hands the post-call (the unit's guid)
+    local function hoverUnit(lines, data)
+      tt:SetOwner(_G.UIParent, "ANCHOR_CURSOR")
+      tt:SetText(lines[1])
+      for i = 2, #lines do tt:AddLine(lines[i]) end
+      for _, fn in ipairs(Stub.tooltipPostCalls[2] or {}) do fn(tt, data) end
+      tt:Show()
+    end
+    local CREATURE = { guid = "Creature-0-1-0-0-6-000000" }
+
+    before_each(function()
+      _G.C_PlayerInfo = { GUIDIsPlayer = function(guid) return guid:find("^Player%-") ~= nil end }
+      _G.issecretvalue = function(v) return v == SECRET end
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Kobold Vermin")] = "コボルド・バーミン\tこぼるど・ばーみん",
+        [WFJ.Names.key("Innkeeper")] = "インキーパー\tいんきーぱー",
+        [WFJ.Names.key("Stormwind")] = "ストームウィンド\tすとーむうぃんど",
+      })
+      WFJ.State.setNames(true)
+    end)
+    after_each(function()
+      WFJ.State.setNames(false)
+      _G.C_PlayerInfo, _G.issecretvalue = nil, nil
+      Stub.keys.alt = false
+    end)
+
+    it("a creature's name, its title and its faction show their Japanese; the reveal key gives them back",
+    function()
+      hoverUnit({ "Kobold Vermin", "Innkeeper", "Level 1 Humanoid", "Stormwind", "Some Unknown Line" }, CREATURE)
+      assert.are.equal("コボルド・バーミン", left(1))
+      assert.are.equal("インキーパー", left(2))
+      assert.are.equal("レベル1 Humanoid", left(3))
+      assert.are.equal("ストームウィンド", left(4))
+      assert.are.equal("Some Unknown Line", left(5))
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("Kobold Vermin", left(1))
+      assert.are.equal("Innkeeper", left(2))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("コボルド・バーミン", left(1))
+      tt:Hide()
+      assert.are.equal(0, WFJ.SurfaceState.count("tooltip.unit"))
+    end)
+
+    it("a player's tooltip is never touched, even one named like a creature", function()
+      hoverUnit({ "Kobold Vermin", "Innkeeper", "Level 1 Human" }, { guid = "Player-1-0000001" })
+      assert.are.equal("Kobold Vermin", left(1))
+      assert.are.equal("Innkeeper", left(2))
+    end)
+
+    it("a pet, a unit the client gives no guid for and a hidden guid keep their names", function()
+      hoverUnit({ "Kobold Vermin", "Level 1 Beast" }, { guid = "Pet-0-1-0-0-6-000000" })
+      assert.are.equal("Kobold Vermin", left(1))
+      hoverUnit({ "Kobold Vermin", "Level 1 Beast" }, nil)
+      assert.are.equal("Kobold Vermin", left(1))
+      hoverUnit({ "Kobold Vermin", "Level 1 Beast" }, { guid = SECRET })
+      assert.are.equal("Kobold Vermin", left(1))
+    end)
+
+    it("a name the client hides is never read or written", function()
+      tt:SetOwner(_G.UIParent, "ANCHOR_CURSOR")
+      tt:SetText("x")
+      _G.GameTooltipTextLeft1.text = SECRET
+      assert.has_no.errors(function()
+        for _, fn in ipairs(Stub.tooltipPostCalls[2] or {}) do fn(tt, CREATURE) end
+      end)
+      assert.are.equal(SECRET, _G.GameTooltipTextLeft1.text)
+    end)
+
+    it("with names off nothing on the name line is written", function()
+      WFJ.State.setNames(false)
+      hoverUnit({ "Kobold Vermin", "Innkeeper", "Level 1 Humanoid" }, CREATURE)
+      assert.are.equal("Kobold Vermin", left(1))
+      assert.are.equal("Innkeeper", left(2))
+    end)
+  end)
+
   it("a game object's lock and requirement lines take their client-table rows; its name stays", function()
     tt:SetOwner(_G.UIParent, "ANCHOR_CURSOR")
     tt:SetText("Battered Chest")
