@@ -53,7 +53,7 @@ UI/GuildRegistrar.lua	GuildRegistrarFrameNpcNameText	japanese	on each show
 UI/GuildRename.lua	GuildRenameFrame.TitleContainer.TitleText	japanese	after each SetTitle
 UI/Tabard.lua	TabardFrameNameText	japanese	the designer NPC's name, on each show
 UI/ObliterumForge.lua	ObliterumForgeFrame.TitleContainer.TitleText	todo
-UI/ScrappingMachine.lua	ScrappingMachineFrame.TitleContainer.TitleText	todo
+UI/ScrappingMachine.lua	ScrappingMachineFrame.TitleContainer.TitleText	japanese	the machine's name, after each SetTitle
 UI/ItemInteraction.lua	ItemInteractionFrame title	todo
 UI/Bank.lua	BankFrameTitleText	english not-a-game-name	the title is a dictionary line, matched by key
 UI/VoicePanel.lua	the speaking NPC's name and title	todo
