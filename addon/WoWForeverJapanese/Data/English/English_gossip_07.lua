@@ -28,6 +28,7 @@ WFJ.Data.add("english", {
   ["gossip:07763c5b2326f7f9"] = { text = "abuzz=3 air=1 energy=2 status=5" },
   ["gossip:07894e7228418da8"] = { text = "bad=1 day=2 pie=3 try=4" },
   ["gossip:078d085a8b5b3221"] = { text = "caught=4 fish=3 hungry=2" },
+  ["gossip:078dafc9b4a1b6d4"] = { text = "broaden=6 halls=10 knowledge=2 learn=12 much=13 others=1 our=9 outside=11 own=4 seek=3 time=7" },
   ["gossip:079023dd5e954503"] = { text = "access=24 accurate=13 arcane=16 business=26 census=5 city=3 discipline=20 i=1 know=34 liberation=8 mental=19 methods=17 officer=4 please=28 populace=12 proceed=29 rate=30 records=23 sharpened=18 should=35 since=9 these=22 track=14 tried=15 we=10 working=6" },
   ["gossip:0790819de82e15c4"] = { text = "aren't=5 glorious=4 quite=3 these=1 trees=2" },
   ["gossip:0791aec9a33a2a25"] = { text = "able=4 lost=1" },

@@ -16,6 +16,7 @@
 {"id": "5829558283463b5b", "field": "text", "en": "Hail, traveler.  My eyesight may be poor but I can sense the footsteps of a $c from a mile away.  For years I defended Stormwind with pride but once my eyes failed me, I was forced to retire.", "hash": "5829558283463b5b", "src": "vmangos@13b49dc"}
 {"id": "5831ac24a88a3d36", "field": "text", "en": "Stay back vile creatures!", "hash": "5831ac24a88a3d36", "src": "vmangos@13b49dc"}
 {"id": "5834a2f0832e56f8", "field": "text", "en": "Wanna buy a cockroach?", "hash": "5834a2f0832e56f8", "src": "vmangos@13b49dc"}
+{"id": "58371811e38e6ec5", "field": "text", "en": "How may I help you today?", "hash": "58371811e38e6ec5", "src": "collector@1.60.1.70862", "npcs": [252019]}
 {"id": "584447a109b1b683", "field": "text", "en": "My machines are the future! They'll destroy you all!", "hash": "584447a109b1b683", "src": "vmangos@13b49dc"}
 {"id": "58477f3229ac1906", "field": "text", "en": "Whatever. The revolting, unkempt Horde filth...", "hash": "58477f3229ac1906", "src": "vmangos@13b49dc"}
 {"id": "585665da265a5615", "field": "text", "en": "%s tosses the sword into the shallow pool.", "hash": "585665da265a5615", "src": "vmangos@13b49dc"}
@@ -46,6 +47,7 @@
 {"id": "58c9f986cbecad8f", "field": "text", "en": "Hi Ho, Hi Ho, and all that... let's get a move on.", "hash": "58c9f986cbecad8f", "src": "vmangos@13b49dc"}
 {"id": "58ce7406d4f88db5", "field": "text", "en": "If you're looking for information that the Cenarion Circle might have archived somewhere, then I'm the one to talk to.  Then again, you need to know what information you're looking for first before I can really help you.$B$BSee how that works?  Brilliant!", "hash": "58ce7406d4f88db5", "src": "vmangos@13b49dc"}
 {"id": "58d22665a1372849", "field": "text", "en": "Your leader takes residence at the doorstep to Naxxramas. Do you think he does not feel the pressure?\n", "hash": "58d22665a1372849", "src": "vmangos@13b49dc"}
+{"id": "58e2b6d802172940", "field": "text", "en": "Oi! You... I need another drink, get yer butt over here!", "hash": "58e2b6d802172940", "src": "collector@1.60.1.70888"}
 {"id": "58e4fb8bcb1c29ef", "field": "text", "en": "I'd love to get one of those written fortunes you mentioned!  I've got the space in my inventory for it.", "hash": "58e4fb8bcb1c29ef", "src": "vmangos@13b49dc"}
 {"id": "58e5d795eafd567b", "field": "text", "en": "I am one of the Seven, and it is our doom to stand sentry.  Forever.", "hash": "58e5d795eafd567b", "src": "vmangos@13b49dc"}
 {"id": "58e6a056dc9d1378", "field": "text", "en": "Warg, are you about ready to eat? I am gonna get it started.", "hash": "58e6a056dc9d1378", "src": "vmangos@13b49dc"}

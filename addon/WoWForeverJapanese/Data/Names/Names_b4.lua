@@ -200,6 +200,7 @@ WFJ.Data.add("name", {
   ["b4ca82e3d0bb5459"] = { "スキーマティック：ビズニックス247エックス128・アキュラスコープ", "すきーまてぃっく・びずにっくすにひゃくよんじゅうななえっくすひゃくにじゅうはち・あきゅらすこーぷ", "Schematic: Biznicks 247x128 Accurascope" },
   ["b4ca962f291309d6"] = { "モンスター・ボウ、スカイボーン", "もんすたー・ぼうすかいぼーん", "Monster - Bow, Skyborne" },
   ["b4d19d8b8dd9bac0"] = { "ロック・ゴーレム・ブルワーク", "ろっく・ごーれむ・ぶるわーく", "Rock Golem Bulwark" },
+  ["b4d393b60c9e8719"] = { "ジズプリンク", "じずぷりんく", "Zizplink" },
   ["b4d3cf61beeafe5d"] = { "フィールド・マーシャルズ・ドラゴンハイド・ヘルム", "ふぃーるど・まーしゃるず・どらごんはいど・へるむ", "Field Marshal's Dragonhide Helm" },
   ["b4d70388c4eafec0"] = { "ソウル・エングレイビング", "そうる・えんぐれいびんぐ", "Soul Engraving" },
   ["b4d82465af3c5f5b"] = { "フレンジード・ドラゴンフライト・モルト", "ふれんじーど・どらごんふらいと・もると", "Frenzied Dragonflight Molt" },

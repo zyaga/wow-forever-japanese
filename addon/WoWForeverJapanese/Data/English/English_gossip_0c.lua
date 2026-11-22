@@ -42,6 +42,7 @@ WFJ.Data.add("english", {
   ["gossip:0cc22a5d855551e1"] = { text = "command=3 day=1 deem=13 dream=7 me=10 my=6 serve=5 that=11 under=4 worthy=12 your=2" },
   ["gossip:0cc503fe1cbc72dc"] = { text = "dinner=2 head=6 ready=3 should=4 soon=1 well=7" },
   ["gossip:0cc9a0c74ac8dddb"] = { text = "books=1 bring=2" },
+  ["gossip:0cce01f29c49d9bf"] = { text = "cleansing=8 corruption=2 drawn=10 elementals=7 feel=3 quilboar=4 ritual=9 summoning=5 their=1 twisted=6" },
   ["gossip:0cd755bb93a2a6f2"] = { text = "here=1 paladins=2 train=3 true=4" },
   ["gossip:0cdb9d7db7f84173"] = { text = "coincidence=3 say=4 this=2 why=1" },
   ["gossip:0ce0cd79712ab35a"] = { text = "check=4 excused=1" },

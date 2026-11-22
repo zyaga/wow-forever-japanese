@@ -40,6 +40,7 @@ WFJ.Data.add("english", {
   ["gossip:9ad10c3fe0187b0a"] = { text = "hatches=1" },
   ["gossip:9ad2ec2ae065d566"] = { text = "shop=2 welcome=3 what=4" },
   ["gossip:9ad864a1d74d3d23"] = { text = "aid=5 begin=11 given=3 it=8 ready=6 us=4 use=9 when=7" },
+  ["gossip:9adef6c33b24455e"] = { text = "hear=3 voices=2" },
   ["gossip:9ae4b040d9993ae8"] = { text = "likes=2 time=5 waste=4 you=1" },
   ["gossip:9ae61f4ffeb52ff1"] = { text = "hope=11 potion=2 worth=8 wow=1" },
   ["gossip:9ae8536442f19a09"] = { text = "able=9 adventuring=1 all=7 check=15 collectors=14 efforts=3 gather=8 gathering=8 guilds=2 help=20 here=11 however=10 need=5 other=13 resources=17 still=19 thanks=4 think=6 vital=16" },

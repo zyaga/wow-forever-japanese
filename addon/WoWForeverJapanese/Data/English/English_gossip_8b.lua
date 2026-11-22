@@ -28,6 +28,7 @@ WFJ.Data.add("english", {
   ["gossip:8b97ce3a2cc4dcc0"] = { text = "creation=6 cult=4 or=3 real=2 what=1" },
   ["gossip:8b99c393aa88ce9e"] = { text = "healer=3 test=2" },
   ["gossip:8b9e2c705c4ce07b"] = { text = "check=20 cooked=10 help=16 home=23 killed=9 late=2 like=18 need=5 others=14 roast=4 salted=11 them=19" },
+  ["gossip:8b9e3b1a9a4dc38c"] = { text = "add=17 change=14 excellent=1 find=5 hesitate=6 new=15 passes=9 return=8 rewards=16 tend=18 tomes=4 work=2" },
   ["gossip:8ba6030feea6990d"] = { text = "manners=1 sonny=5 time=4 ya=3" },
   ["gossip:8ba7bea14ccae981"] = { text = "truly=1" },
   ["gossip:8bb14995d052b45d"] = { text = "end=1" },

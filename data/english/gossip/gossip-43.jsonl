@@ -16,6 +16,7 @@
 {"id": "433dfbac107ce504", "field": "text", "en": "%s wimpers.", "hash": "433dfbac107ce504", "src": "vmangos@13b49dc"}
 {"id": "43425db52bcfef66", "field": "text", "en": "%s gnaws at the bait ravenously.", "hash": "43425db52bcfef66", "src": "vmangos@13b49dc"}
 {"id": "434764915c4df11a", "field": "text", "en": "The Wildhammer dwarves might have fast steeds, but can those Aerie Peak gryphons stand the heat of The Great Forge?  I think not!", "hash": "434764915c4df11a", "src": "vmangos@13b49dc"}
+{"id": "434b3346031a3d30", "field": "text", "en": "Stay still, I'm going to cut you out. Hopefully, you'll still have your feet.", "hash": "434b3346031a3d30", "src": "collector@1.60.1.71037"}
 {"id": "4352061725627201", "field": "text", "en": "The spirits of Stonetalon still rage, $n.", "hash": "4352061725627201", "src": "vmangos@13b49dc"}
 {"id": "43542d62edf59c2d", "field": "text", "en": "Stormpike soldiers, aid and protect us! The Forest Lord has granted us his protection. The gateway must now be opened!", "hash": "43542d62edf59c2d", "src": "vmangos@13b49dc"}
 {"id": "4356812cacf5af2a", "field": "text", "en": "%s snores loudly and cuddles up next to A-Me 01.", "hash": "4356812cacf5af2a", "src": "vmangos@13b49dc"}

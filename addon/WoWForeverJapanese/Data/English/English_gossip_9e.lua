@@ -47,10 +47,12 @@ WFJ.Data.add("english", {
   ["gossip:9ece08b033ed6461"] = { text = "ambush=20 dealings=11 father=19 he=13 his=18 i=7 known=5 lamb=16 led=15 lesser=3 like=17 nods=1 one=6 slaughter=14 suspect=8 through=12" },
   ["gossip:9ed27eb919146298"] = { text = "anyone=1 anything=2 happened=5 see=3 what=4" },
   ["gossip:9ed2d4aa4072b44a"] = { text = "axe=2 massive=1 over=3 raises=4" },
+  ["gossip:9ed4006839e5a0ef"] = { text = "crack=4 eggs=3 loosen=2 screws=1" },
   ["gossip:9eda8579d6317070"] = { text = "taxes=2 these=1 you=4" },
   ["gossip:9eda8ab4169c0aed"] = { text = "her=1 train=3" },
   ["gossip:9eed8e55e53851a7"] = { text = "already=16 catastrophe=39 collected=20 discovered=14 emphasize=34 enough=35 epic=37 fragments=6 frankly=36 grasp=28 greatstaff=27 he=15 held=25 i=1 importance=32 keeping=29 know=47 lieutenants=24 most=22 other=42 plans=13 proportion=38 reform=11 result=44 several=19 staff=4 this=2 tracked=7 trusted=23 various=5 what=43 which=21 world=3" },
   ["gossip:9ef0022309174478"] = { text = "defend=2 guardians=1" },
+  ["gossip:9ef2a488e535746a"] = { text = "crystals=3 i=1 repaired=2 tell=4" },
   ["gossip:9ef5491b516ab143"] = { text = "light=3 place=1" },
   ["gossip:9efd8ba135b5f04d"] = { text = "arrived=3 awaits=5 guest=2 milord=1 presence=4" },
 })

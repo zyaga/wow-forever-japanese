@@ -1,6 +1,7 @@
 {"id": 167, "field": "name", "en": "Morhan Coppertongue", "hash": "2b9a80809968d5a4", "src": "collector@1.60.1.70862"}
 {"id": 196, "field": "name", "en": "Eagan Peltskinner", "hash": "798f9e22deee0162", "src": "collector@1.60.1.70205"}
 {"id": 197, "field": "name", "en": "Marshal McBride", "hash": "05b6c4b4e27e9037", "src": "collector@1.60.1.70205"}
+{"id": 228, "field": "name", "en": "Avette Fellwood", "hash": "ef91bda88c09bca7", "src": "collector@1.60.1.70959"}
 {"id": 233, "field": "name", "en": "Farmer Saldean", "hash": "8b5ed31f0d463516", "src": "collector@1.60.1.70862"}
 {"id": 234, "field": "name", "en": "Gryan Stoutmantle", "hash": "18dcddd9c5dbad03", "src": "collector@1.60.1.70790"}
 {"id": 235, "field": "name", "en": "Salma Saldean", "hash": "c8876533935aa8af", "src": "collector@1.60.1.70862"}
@@ -59,6 +60,7 @@
 {"id": 464, "field": "name", "en": "Guard Parker", "hash": "d761b71b63513191", "src": "collector@1.60.1.70862"}
 {"id": 466, "field": "name", "en": "General Marcus Jonathan", "hash": "901e03f048939a82", "src": "collector@1.60.1.70888"}
 {"id": 467, "field": "name", "en": "The Defias Traitor", "hash": "b2581e52b2e459ba", "src": "collector@1.60.1.70862"}
+{"id": 469, "field": "name", "en": "Lieutenant Doren", "hash": "f37c701d306d1ffc", "src": "collector@1.60.1.70862"}
 {"id": 482, "field": "name", "en": "Elling Trias", "hash": "514ccaf452d42625", "src": "collector@1.60.1.70862"}
 {"id": 483, "field": "name", "en": "Elaine Trias", "hash": "ed933e2feff9ea68", "src": "collector@1.60.1.70862"}
 {"id": 491, "field": "name", "en": "Quartermaster Lewis", "hash": "d792fc1299c0ed9a", "src": "collector@1.60.1.70862"}
@@ -97,10 +99,12 @@
 {"id": 900, "field": "name", "en": "Bailiff Conacher", "hash": "c3d938200cb20abe", "src": "collector@1.60.1.70888"}
 {"id": 903, "field": "name", "en": "Guard Howe", "hash": "d0c8fe6faaa2aaa9", "src": "collector@1.60.1.70862"}
 {"id": 911, "field": "name", "en": "Llane Beshere", "hash": "73e720b95120bac7", "src": "collector@1.60.1.70374"}
+{"id": 912, "field": "name", "en": "Thran Khorman", "hash": "de78fb04dccc1766", "src": "collector@1.60.1.71037"}
 {"id": 913, "field": "name", "en": "Lyria Du Lac", "hash": "5abfce4897786564", "src": "collector@1.60.1.70425"}
 {"id": 915, "field": "name", "en": "Jorik Kerridan", "hash": "80a9ee06c9ffd01e", "src": "collector@1.60.1.70205"}
 {"id": 925, "field": "name", "en": "Brother Sammuel", "hash": "7af8183e26c7ee92", "src": "collector@1.60.1.70205"}
 {"id": 926, "field": "name", "en": "Bromos Grummner", "hash": "4e2f38c3fbd0cc98", "src": "collector@1.60.1.70790"}
+{"id": 927, "field": "name", "en": "Brother Wilhelm", "hash": "17a7d93f27f9f331", "src": "collector@1.60.1.71037"}
 {"id": 928, "field": "name", "en": "Lord Grayson Shadowbreaker", "hash": "74c8e64a6453435f", "src": "collector@1.60.1.70888"}
 {"id": 944, "field": "name", "en": "Marryk Nurribit", "hash": "4c3275b80a9408e2", "src": "collector@1.60.1.70205"}
 {"id": 951, "field": "name", "en": "Brother Paxton", "hash": "757cdd9945f7c8fd", "src": "collector@1.60.1.70205"}

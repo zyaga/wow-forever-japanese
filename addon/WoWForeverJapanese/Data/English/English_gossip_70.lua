@@ -19,6 +19,7 @@ WFJ.Data.add("english", {
   ["gossip:7056536daf6369ee"] = { text = "again=1 brightly=17 colored=18 end=23 i=10 indeed=3 misery=22 more=5 nothing=13 now=9 or=20 pity=4 returned=2 rope=25 string=19 this=21 time=14 wish=11" },
   ["gossip:705c13c4629487a3"] = { text = "already=1 back=2 now=3 what=4" },
   ["gossip:705da94e11e2095b"] = { text = "all=7 here=1 master=6 sees=8 step=2 watch=4" },
+  ["gossip:7078bb18a07e71bf"] = { text = "guests=2 meddling=4 our=3 uninvited=1" },
   ["gossip:707e6c157f87b98d"] = { text = "altar=1 done=3 glowing=2" },
   ["gossip:707f7fd2c89d93a1"] = { text = "business=3 dangerous=2 delivery=6 just=5 left=7 minutes=9 this=1" },
   ["gossip:7080001b8cb18849"] = { text = "buff=1 shot=2" },

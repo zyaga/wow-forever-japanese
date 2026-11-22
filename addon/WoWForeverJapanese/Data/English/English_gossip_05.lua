@@ -31,7 +31,6 @@ WFJ.Data.add("english", {
   ["gossip:058ddfe7d8da643a"] = { text = "dangers=4 face=5 sisters=1 sort=3" },
   ["gossip:059016173c5e548a"] = { text = "base=2 forfeit=3 mortals=5 puny=4 your=1" },
   ["gossip:059880d0c7a604bc"] = { text = "bows=3 clan=1 especially=4" },
-  ["gossip:059931e76084837b"] = { text = "got=3 morsel=5 there=1 what=2" },
   ["gossip:059d1ee446e3bef0"] = { text = "always=12 armor=5 blade=1 enchanter=11 enchantments=20 him=25 how=23 improve=19 needed=13 never=4 properly=21 sharp=2 show=24 such=14 talented=10 tough=6 weapons=17 weave=22" },
   ["gossip:059da8ba7eca6811"] = { text = "dogs=1 slay=2" },
   ["gossip:05a582cde9aa5c98"] = { text = "continue=2 story=1" },

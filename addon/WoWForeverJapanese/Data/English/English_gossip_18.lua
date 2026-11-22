@@ -20,6 +20,7 @@ WFJ.Data.add("english", {
   ["gossip:18490e97868b7520"] = { text = "base=14 bluff=13 direct=25 elevator=15 follow=12 further=23 get=9 great=3 home=4 many=21 north=1 ride=16 rise=17 road=11 teach=5 there=8 those=6 top=18 village=10" },
   ["gossip:1850cdbc59808e13"] = { text = "appear=10 arrived=9 excellent=1 insects=3 just=4 legion=6 meddlesome=2 mortals=12 my=5 welcome=11" },
   ["gossip:1854f1fa6ece625d"] = { text = "alone=7 ancient=1 assistance=4 faith=14 he=11 much=13 obviously=15 powerful=2 send=8 wait=5 warlock=3 you=6" },
+  ["gossip:185979130a28e4bf"] = { text = "promised=1 reward=2" },
   ["gossip:185b0da5fc262897"] = { text = "death=2 light=6 means=3 my=1 nothing=4 prevail=8" },
   ["gossip:185b6b435893f088"] = { text = "dear=2 you=1" },
   ["gossip:1864902635b24b32"] = { text = "avenged=5 severed=3 strands=2" },

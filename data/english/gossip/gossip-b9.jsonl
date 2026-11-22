@@ -13,6 +13,7 @@
 {"id": "b943fc6d057a01c6", "field": "text", "en": "Very well. Cut another lump of flesh from one of these specimens. Let us test what you've learned so far, and we can progress from there.", "hash": "b943fc6d057a01c6", "src": "vmangos@13b49dc"}
 {"id": "b94aaee4bd134e3a", "field": "text", "en": "FINE! And how, dare I ask, am I supposed to acquire an arcanite buoy?", "hash": "b94aaee4bd134e3a", "src": "vmangos@13b49dc"}
 {"id": "b94ecc483fed1e0a", "field": "text", "en": "There's nothing I can teach you, other than maybe a better eye for color and detail. Talk to Simon Tanner over there; he knows a lot of advanced techniques for working with leather.", "hash": "b94ecc483fed1e0a", "src": "vmangos@13b49dc"}
+{"id": "b94fb899f89f3802", "field": "text", "en": "<The strider peers at you; its gaze is impatient and it almost seems to bounce with excitement.>", "hash": "b94fb899f89f3802", "src": "collector@1.60.1.71037", "npcs": [267306]}
 {"id": "b9557bd20758387a", "field": "text", "en": "What I wouldn't give to be out on the open plains on a day like this... but, my duty binds me.", "hash": "b9557bd20758387a", "src": "vmangos@13b49dc"}
 {"id": "b95a2ed589607960", "field": "text", "en": "I shall return in time..", "hash": "b95a2ed589607960", "src": "vmangos@13b49dc"}
 {"id": "b961267a80835fa8", "field": "text", "en": "I have lost my Confessor's Mantle and require a replacement, Al'tabim.", "hash": "b961267a80835fa8", "src": "vmangos@13b49dc"}

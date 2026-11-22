@@ -38,6 +38,7 @@ WFJ.Data.add("english", {
   ["gossip:aece2f49d5584b76"] = { text = "hm=1 recipe=5 teach=7 useful=4 yes=2 you=3" },
   ["gossip:aed0a54bb5658151"] = { text = "cause=12 death=8 energies=6 focused=7 healing=4 i=2 life=1 others=3 pain=11 see=13" },
   ["gossip:aed393389edc4f50"] = { text = "burns=3 complete=7 consumes=26 done=1 icon=13 it=20 just=16 now=4 once=2 our=28 plane=18 power=12 present=8 remember=17 respect=21 serves=23 this=11 those=22 travels=9 trial=6 use=15 way=29 well=14 your=5" },
+  ["gossip:aed68b159600c6ac"] = { text = "camp=2 go=3 handled=5 meantime=7 recover=1 situation=4 tell=6" },
   ["gossip:aed93e2e0d387838"] = { text = "above=12 battle=13 betrayal=41 bite=42 called=32 came=29 clashing=19 corpses=1 darkness=10 death=7 gnashing=21 grinding=22 gruesome=24 he=30 iron=18 me=2 muffled=14 only=16 piled=4 silence=28 sound=20 sounds=15 talk=36 terrible=25 upon=3 where=33" },
   ["gossip:aedcb130117e9754"] = { text = "where=1" },
   ["gossip:aede8afc27a36bd2"] = { text = "drive=7 evil=6 lands=5 smite=3 these=4 wicked=1" },

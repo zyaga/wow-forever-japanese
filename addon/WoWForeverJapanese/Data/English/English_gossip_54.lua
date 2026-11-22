@@ -20,6 +20,7 @@ WFJ.Data.add("english", {
   ["gossip:5433e25c11890db6"] = { text = "became=45 become=29 beings=37 bore=25 capital=28 deal=15 decrepit=35 disgusting=46 fortune=6 hold=8 house=38 human=13 impossible=44 land=7 lifespan=2 mage=14 named=11 necromancy=22 order=10 passed=32 past=4 place=30 powerful=12 preserve=9 residence=41 school=23 shudders=19 sprang=24 suspect=18 their=27 this=20 upkeep=42 various=39 we=17 week=31 well=3 wings=40" },
   ["gossip:54344ef2cca8a1f5"] = { text = "deceit=1 feel=5 little=6 our=3 tolerate=2 wrath=4" },
   ["gossip:54347f35fea83f19"] = { text = "attack=1 destroy=3 unchecked=2" },
+  ["gossip:543a5da2d6dee4bf"] = { text = "contents=2 inscribe=5 my=3 scroll=1 work=4" },
   ["gossip:5456b59aef3be5f0"] = { text = "anything=2 else=1" },
   ["gossip:5456db4b853e98b3"] = { text = "dampers=8 eco=5 elongated=3 friendly=6 reads=2 shields=4 tag=1 tailpipe=7" },
   ["gossip:545b411e79de6056"] = { text = "cannot=4 hide=2 me=1" },

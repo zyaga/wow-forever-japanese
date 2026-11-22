@@ -46,6 +46,7 @@ WFJ.Data.add("english", {
   ["gossip:abebbe2832d34bad"] = { text = "complete=5 continues=8 me=2 slip=9 speaking=3 time=7 trial=4 work=1" },
   ["gossip:abefe34077e6348b"] = { text = "alms=3 poor=1" },
   ["gossip:abf9a1190530c364"] = { text = "anvil=5 course=1 his=10 lad=14 listen=13 near=6 right=4 show=3 skilled=18 there=7 well=12 where=2 words=11 work=8" },
+  ["gossip:abfa4f3da37c8c63"] = { text = "brow=7 fingers=4 furrows=8 know=15 left=2 markings=3 mess=14 more=12 needed=10 runs=5 skull=1 work=11 you=13" },
   ["gossip:abfabad31af1bceb"] = { text = "continues=2 meditations=1" },
   ["gossip:abfc0333115044c2"] = { text = "yes=1" },
   ["gossip:abfff480a5656143"] = { text = "coming=5 headed=9 hive=1 ma'am=6 something=2 straight=7" },

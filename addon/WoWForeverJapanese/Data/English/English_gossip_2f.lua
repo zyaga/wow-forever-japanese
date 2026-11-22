@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:2f091418286d3b44"] = { text = "blessings=1 seek=2" },
   ["gossip:2f10642dd904156f"] = { text = "greet=1" },
+  ["gossip:2f17308ebf8e1990"] = { text = "access=14 active=5 available=18 bars=13 combat=16 consume=20 easily=8 performed=17 resources=19 set=2 sets=2 specializations=7 switch=9 switching=9 talent=3 two=6" },
   ["gossip:2f18362adab2b04b"] = { text = "complicated=1 engineering=5 meager=4 schematics=2 talents=6 your=3" },
   ["gossip:2f1fe33adea234f2"] = { text = "all=6 assault=14 beacon=7 bodied=4 damndest=9 fleet=2 home=16 it=10 my=13 plant=11 request=8 rock=3 soldiers=5" },
   ["gossip:2f228cc32a5a6d0f"] = { text = "die=1" },
@@ -15,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:2f349dbc5dc94a08"] = { text = "acquisition=18 core=12 elemental=14 find=25 fortified=3 i=7 know=9 may=21 mineral=5 one=8 our=10 planes=15 rebirth=1 source=6 such=16 things=17 this=24 vessel=2 world=11" },
   ["gossip:2f3b7a3810dfb218"] = { text = "beast=4 like=5 lured=3 me=6 originally=2 this=1 wonder=8" },
   ["gossip:2f3f907fbb253fd9"] = { text = "drifting=3 hope=8 i=5 left=7 like=4 love=1 wind=2" },
+  ["gossip:2f424216b0e45106"] = { text = "friend=1 life=3 you=2" },
   ["gossip:2f43aa16ded6c892"] = { text = "cell=3 he=1 killed=8 last=2 they=7 unless=6" },
   ["gossip:2f469ce17223b464"] = { text = "bait=7 biting=15 cast=10 easy=2 enough=13 fish=14 fishing=14 just=11 line=3 pole=5 put=8 real=1 take=6 water=9 with=4" },
   ["gossip:2f49a04cfed729d6"] = { text = "breathes=5 cleansed=6 druid=2 earth=3 still=4 watch=1 yearns=9" },

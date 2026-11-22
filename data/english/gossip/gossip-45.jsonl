@@ -42,4 +42,5 @@
 {"id": "45e537292af1f836", "field": "text", "en": "Every item that I have for sale I acquired myself.  You have my personal guarantee of authenticity.", "hash": "45e537292af1f836", "src": "vmangos@13b49dc"}
 {"id": "45ea7653376cdbf0", "field": "text", "en": "At dis point you know as much as I do, mon. Maybe you go see Magar in Orgrimmar. He not be da happiest tailor around, but he help you anyway.", "hash": "45ea7653376cdbf0", "src": "vmangos@13b49dc"}
 {"id": "45f90ffaf7fadf5f", "field": "text", "en": "Where is Elder Thunderhorn?", "hash": "45f90ffaf7fadf5f", "src": "vmangos@13b49dc"}
+{"id": "45f9155da7b87ff7", "field": "text", "en": "I'm happy Gazlowe gave me the opportunity to be here and all, but this place is more dangerous than I thought it'd be. It's also really hot. And dusty. And it smells kinda weird. Ah, well! Hopefully it will be good for business.", "hash": "45f9155da7b87ff7", "src": "collector@1.60.1.71037", "npcs": [3293]}
 {"id": "45fe0e32dc25b569", "field": "text", "en": "Get your present from the pile.", "hash": "45fe0e32dc25b569", "src": "vmangos@13b49dc"}

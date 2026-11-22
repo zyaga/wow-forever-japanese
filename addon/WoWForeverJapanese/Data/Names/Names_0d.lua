@@ -196,6 +196,7 @@ WFJ.Data.add("name", {
   ["0dab0fa5cf43c242"] = { "キル・クレジット（ディーエヌティー）", "きる・くれじっとでぃーえぬてぃー", "Kill Credit (DNT)" },
   ["0dabcf6f80a5cf3a"] = { "スワッシュバックラーズ・アイパッチ", "すわっしゅばっくらーず・あいぱっち", "Swashbuckler's Eyepatch" },
   ["0dad2d0f3f7d6c37"] = { "プレミア・ウォーロードズ・フェルウィーヴ・ローブ", "ぷれみあ・うぉーろーどず・ふぇるうぃーゔ・ろーぶ", "Premier Warlord's Felweave Robe" },
+  ["0dadae6499dae6e6"] = { "ムーンスチール・ブロードソーズ", "むーんすちーる・ぶろーどそーず", "Moonsteel Broadswords" },
   ["0daf2b547a2c023f"] = { "クリプトストーカー・ガードル", "くりぷとすとーかー・がーどる", "Cryptstalker Girdle" },
   ["0db1c45460998eb1"] = { "ニトログリセリン", "にとろぐりせりん", "nitroglycerin" },
   ["0db1eb06cafaf0eb"] = { "ヴォールト・オブ・アイアンフォージ", "ゔぉーると・おぶ・あいあんふぉーじ", "Vault of Ironforge" },

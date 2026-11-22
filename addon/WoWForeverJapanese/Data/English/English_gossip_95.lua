@@ -40,6 +40,7 @@ WFJ.Data.add("english", {
   ["gossip:959f27613d5af873"] = { text = "hey=1 one=3" },
   ["gossip:95a312df7baa87a8"] = { text = "where=1" },
   ["gossip:95a5244834da6e71"] = { text = "ah=1 anything=11 ask=17 bends=36 brother=18 control=32 customers=2 envious=41 era=22 feel=28 great=21 i=19 itself=33 just=16 lead=24 little=40 look=8 matter=38 meet=9 next=20 one=3 please=10 pleased=10 power=5 some=4 such=29 time=37 us=23 warlock=7 will=35 your=25" },
+  ["gossip:95aa4c0080fc1c83"] = { text = "drink=1 ear=3 like=4" },
   ["gossip:95aeb2482dc5ecfd"] = { text = "field=2 leaving=3 more=4 need=6 supplies=5 veterans=1" },
   ["gossip:95b56775d3fb3bde"] = { text = "ask=3 death=1 what=2" },
   ["gossip:95bccce13c608720"] = { text = "ages=30 all=8 arduous=21 arrive=14 assembled=18 bang=26 battle=33 completed=23 days=11 expect=15 finished=5 gates=27 joined=34 materiel=7 one=24 open=28 our=6 preparations=4 reassembling=20 seen=31 shipped=10 speak=9 task=22 then=29 there=17 time=2 upon=3 war=1 when=19 within=12" },

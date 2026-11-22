@@ -26,6 +26,7 @@ WFJ.Data.add("english", {
   ["gossip:15659934c0168c4e"] = { text = "end=4 pain=2 soon=3 your=1" },
   ["gossip:1567258266a5178e"] = { text = "against=27 allergy=25 although=24 asked=3 bread=18 brought=8 butter=10 dagger=16 far=21 foe=26 followed=14 formidable=30 i=2 instructions=13 nut=9 quite=29 salve=5 spread=17 this=1 use=22 venomous=4 will=23 you=7" },
   ["gossip:156ee335d5bf510c"] = { text = "and=9 bandits=8 beasts=6 citizen=3 dangers=12 guard=2 highlands=1 looming=10 many=13 murderous=7 roaming=5 threat=11 wild=4" },
+  ["gossip:157327a3e570b7b3"] = { text = "assignment=3 full=1 give=4 story=2" },
   ["gossip:1581be8f2f519a2e"] = { text = "bunnies=5 catch=2 likes=7 pappy=1 rifle=4" },
   ["gossip:1583d3e954e5eb2d"] = { text = "aid=20 beg=8 favor=7 heard=11 intent=14 noble=15 pleas=10 please=18 praise=5 spirits=2 trust=17 us=19 you=4" },
   ["gossip:1590342b0d7a5efc"] = { text = "any=5 clothing=2 important=7 inside=10 job=6 look=12 natural=17 needle=15 other=4 she=14 should=13 tribe=1 way=16" },

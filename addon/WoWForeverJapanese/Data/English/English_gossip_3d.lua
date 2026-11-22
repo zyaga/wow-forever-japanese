@@ -35,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:3dabce995e68b107"] = { text = "adding=17 again=3 better=23 give=21 good=5 here=20 hey=1 killin'=9 mojo=16 mon=2 more=15 see=4 talisman=14 talking=11 tribe=6 word=19 your=8" },
   ["gossip:3db750c4c4cd346d"] = { text = "aid=17 assist=19 barren=9 behalf=13 bounty=2 but=6 crops=3 farmers=10 fled=12 land=15 like=18 most=11 now=7 once=1 replenishing=16 soil=8 supplied=4 this=14 told=5" },
   ["gossip:3dbdb4902e01c32d"] = { text = "my=1" },
+  ["gossip:3dbe858821feccb8"] = { text = "history=4 home=12 important=6 someone=5 stay=9 sure=11 view=10 we=8" },
   ["gossip:3dc0dff54b79e582"] = { text = "human=5 now=1 you=3" },
   ["gossip:3dc2fe4952d957ab"] = { text = "dead=3 king=2 old=1 unpossible=5" },
   ["gossip:3dcaaaa53fa711bf"] = { text = "activity=9 although=6 any=4 check=13 demonic=8 sightings=11 some=10 there=12 trainers=3 warlock=2 what=1" },
@@ -42,6 +43,7 @@ WFJ.Data.add("english", {
   ["gossip:3dd27061dcb14c28"] = { text = "dreams=15 edge=13 ever=8 foes=7 his=2 madness=12 near=14 nightmares=4 now=11 power=5" },
   ["gossip:3dd99992570c7926"] = { text = "cart=1 come=5 fire=6 how=2 quickly=4 this=3" },
   ["gossip:3dda1f2599d93798"] = { text = "effort=2 war=1 what=3" },
+  ["gossip:3de1b621ff888370"] = { text = "ancient=8 called=11 city=9 commonly=12 content=40 days=10 elements=18 gardens=23 halls=25 haunted=33 heard=14 i=29 lands=35 marvelous=20 memories=32 mountains=4 my=6 once=1 our=19 over=5 part=2 past=31 people=7 reminiscing=39 return=26 smothered=24 southern=3 still=30 structures=21 time=16 watching=36 worn=22 yearn=28 you=13" },
   ["gossip:3deebb3ba568bda6"] = { text = "hooray=1" },
   ["gossip:3df2828cc71739dc"] = { text = "captain=4 fallen=2 honor=5 our=3 slain=1 unleash=7" },
 })

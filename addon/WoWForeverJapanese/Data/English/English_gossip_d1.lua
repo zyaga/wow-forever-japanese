@@ -22,6 +22,7 @@ WFJ.Data.add("english", {
   ["gossip:d14900cc98a23317"] = { text = "antlers=9 breathes=15 dust=2 energy=19 eyes=4 happen=22 he=8 heavy=13 joy=6 light=7 like=12 magical=18 reindeer=5 relief=11 seem=23 shakes=10 sigh=14 sprinkle=3 swell=20 you=1" },
   ["gossip:d14f2db9464e82e6"] = { text = "assistant=8 basics=3 learned=5 my=7 perhaps=12 should=11 spoken=9 wanderer=6 yet=2 you=1" },
   ["gossip:d150dad95418fa96"] = { text = "happening=3 wha=1" },
+  ["gossip:d1527109a8a046ce"] = { text = "moment=1" },
   ["gossip:d1567b2caa3a977f"] = { text = "what=1 why=2" },
   ["gossip:d156903a02fccd9b"] = { text = "another=1 center=12 city=11 items=7 material=2 obsessed=9 our=10 precious=6 probably=15 store=14 well=5" },
   ["gossip:d172757d4ea2762d"] = { text = "time=3 well=1" },

@@ -6,8 +6,10 @@
 {"id": 5111, "field": "name", "en": "Innkeeper Firebrew", "hash": "474ed2127ccca54a", "src": "collector@1.60.1.70790"}
 {"id": 5144, "field": "name", "en": "Bink", "hash": "08f3b95c15ae6786", "src": "collector@1.60.1.70938"}
 {"id": 5149, "field": "name", "en": "Brandur Ironhammer", "hash": "c1d9f9d9c20576a0", "src": "collector@1.60.1.70862"}
+{"id": 5150, "field": "name", "en": "Nissa Firestone", "hash": "65f723625835cc6a", "src": "collector@1.60.1.70888"}
 {"id": 5165, "field": "name", "en": "Hulfdan Blackbeard", "hash": "42d34d110bf624b9", "src": "collector@1.60.1.71037"}
 {"id": 5204, "field": "name", "en": "Apothecary Zinge", "hash": "eaa5d18836b95b58", "src": "collector@1.60.1.70959"}
+{"id": 5384, "field": "name", "en": "Brohann Caskbelly", "hash": "b9767cc3d9794145", "src": "collector@1.60.1.70862"}
 {"id": 5387, "field": "name", "en": "High Explorer Magellas", "hash": "92d118a7c89448d2", "src": "collector@1.60.1.70938"}
 {"id": 5392, "field": "name", "en": "Yarr Hammerstone", "hash": "39d423a318a20e67", "src": "collector@1.60.1.71037"}
 {"id": 5395, "field": "name", "en": "Felgur Twocuts", "hash": "bdf698a0ad05f939", "src": "collector@1.60.1.70959"}
@@ -18,7 +20,13 @@
 {"id": 5502, "field": "name", "en": "Shylamiir", "hash": "d3e6e67d670ef777", "src": "collector@1.60.1.70888"}
 {"id": 5504, "field": "name", "en": "Sheldras Moontree", "hash": "c057f46cb44e1c56", "src": "collector@1.60.1.70790"}
 {"id": 5513, "field": "name", "en": "Gelman Stonehand", "hash": "7ff9d9ce56eae8b0", "src": "collector@1.60.1.70450"}
+{"id": 5516, "field": "name", "en": "Ulfir Ironbeard", "hash": "3520f1aee983922d", "src": "collector@1.60.1.70888"}
 {"id": 5543, "field": "name", "en": "Clarice Foster", "hash": "a640c58cbbf19930", "src": "collector@1.60.1.70790"}
+{"id": 5591, "field": "name", "en": "Dar", "hash": "001200790dfe1408", "src": "collector@1.60.1.71037"}
+{"id": 5598, "field": "name", "en": "Atal'ai Exile", "hash": "bd5dabf63ece55ef", "src": "collector@1.60.1.70888"}
+{"id": 5634, "field": "name", "en": "Rhapsody Shindigger", "hash": "18625738bf504af7", "src": "collector@1.60.1.70862"}
+{"id": 5635, "field": "name", "en": "Falstad Wildhammer", "hash": "e6afdde0860d33cb", "src": "collector@1.60.1.70862"}
+{"id": 5636, "field": "name", "en": "Gryphon Master Talonaxe", "hash": "f343f271db1534c0", "src": "collector@1.60.1.70862"}
 {"id": 5637, "field": "name", "en": "Roetten Stonehammer", "hash": "0e444bfc6a54de3d", "src": "collector@1.60.1.70862"}
 {"id": 5638, "field": "name", "en": "Kreldig Ungor", "hash": "b0e48b394e45d7a1", "src": "collector@1.60.1.70862"}
 {"id": 5639, "field": "name", "en": "Craven Drok", "hash": "40280b8123b26f7f", "src": "collector@1.60.1.70938"}
@@ -54,3 +62,4 @@
 {"id": 5907, "field": "name", "en": "Kranal Fiss", "hash": "58e7ed66906930f5", "src": "collector@1.60.1.70938"}
 {"id": 5911, "field": "name", "en": "Grunt Logmar", "hash": "81613893e1ba791c", "src": "collector@1.60.1.70862"}
 {"id": 5941, "field": "name", "en": "Lau'Tiki", "hash": "98d3171b89dd9e4c", "src": "collector@1.60.1.70959"}
+{"id": 5955, "field": "name", "en": "Tooga", "hash": "d17cbedf2db6d7f8", "src": "collector@1.60.1.70888"}

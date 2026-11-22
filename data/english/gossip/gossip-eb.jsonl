@@ -18,6 +18,7 @@
 {"id": "eb4d8f6bac8f0b05", "field": "text", "en": "Feeling underpowered", "hash": "eb4d8f6bac8f0b05", "src": "vmangos@13b49dc"}
 {"id": "eb514c407c4f000f", "field": "text", "en": "Game? Are you crazy?", "hash": "eb514c407c4f000f", "src": "vmangos@13b49dc"}
 {"id": "eb5ee44c460be3f4", "field": "text", "en": "And they're off!", "hash": "eb5ee44c460be3f4", "src": "vmangos@13b49dc"}
+{"id": "eb70cfe9af39fda3", "field": "text", "en": "<The Marshal is covered in wounds and his breathing is shallow.>", "hash": "eb70cfe9af39fda3", "src": "collector@1.60.1.70888", "npcs": [257250]}
 {"id": "eb717850c107007c", "field": "text", "en": "Looks like the last of the goods we've collected is going to be shipped out to Silithus sometime in the next day. And once that's done, someone will have to come along and ring the gong on the Scarab Dais, outside of Ahn'Qiraj, to open the gates. That's when our bandages will come in handy.", "hash": "eb717850c107007c", "src": "vmangos@13b49dc"}
 {"id": "eb75d69a0f9064b2", "field": "text", "en": "A darkness had fallen over my eyes, but you tore me from my unholy reverie.  You saved me, $n.$B$BAnd now I beg you... to forgive me.", "hash": "eb75d69a0f9064b2", "src": "vmangos@13b49dc"}
 {"id": "eb7bac46e653a8f1", "field": "text", "en": "The Affray has begun.  $n, get ready to fight!", "hash": "eb7bac46e653a8f1", "src": "vmangos@13b49dc"}

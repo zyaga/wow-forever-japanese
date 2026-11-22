@@ -20,6 +20,7 @@ WFJ.Data.add("english", {
   ["gossip:6a6aa69d4766ddb8"] = { text = "between=12 end=8 front=13 house=11 last=3 look=1 northwest=7 saw=4 stables=10 standing=14 town=6" },
   ["gossip:6a6fb20d1921b65a"] = { text = "beneath=1 breaks=3 cocoon=2" },
   ["gossip:6a733a6c4e8937ca"] = { text = "battlemaster=1" },
+  ["gossip:6a757f3860c0af6e"] = { text = "get=1 see=2" },
   ["gossip:6a76b473ee5e52c4"] = { text = "attacks=1" },
   ["gossip:6a7bc57783a09c2c"] = { text = "accept=13 adventurers=6 assist=7 behalf=3 beneficial=16 deeds=25 different=11 duty=9 enter=28 greetings=1 hand=20 i=2 most=15 my=8 once=19 our=26 quantities=12 received=5 recognition=35 records=27 result=30 service=34 set=18 signets=10 will=37 you=14 your=24" },
   ["gossip:6a8019341d73b343"] = { text = "misplaced=1 replacement=3 seem=2 supply=5" },
@@ -39,6 +40,7 @@ WFJ.Data.add("english", {
   ["gossip:6adac1bfdb09581e"] = { text = "eye=2 look=5 lost=4 our=1 say=6 you=3" },
   ["gossip:6ae0fe469ee558a0"] = { text = "feel=2 power=1" },
   ["gossip:6ae33a6f62505abf"] = { text = "create=3 crest=2 guild=1" },
+  ["gossip:6aeee7790083880c"] = { text = "intruders=1" },
   ["gossip:6af22cd3b4d8ea0f"] = { text = "base=1 returned=2" },
   ["gossip:6af9e0946435e937"] = { text = "better=3 can't=4 degrees=2 sigh=1" },
 })

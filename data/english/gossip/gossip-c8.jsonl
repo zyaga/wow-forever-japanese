@@ -16,6 +16,7 @@
 {"id": "c844f02cebc00d2c", "field": "text", "en": "This one is slightly better than the last. However, it still suffers from the same flimsy bone structure as the others. When you summon one of these, you are on the right path.", "hash": "c844f02cebc00d2c", "src": "vmangos@13b49dc"}
 {"id": "c84a62dcd44ac730", "field": "text", "en": "We serve Thrall with great pride.  We'll travel as far as is needed to vanquish the enemy.", "hash": "c84a62dcd44ac730", "src": "vmangos@13b49dc"}
 {"id": "c854482cd468b490", "field": "text", "en": "We shall earn our deaths at the very least!", "hash": "c854482cd468b490", "src": "vmangos@13b49dc"}
+{"id": "c85a471985228757", "field": "text", "en": "Bring me some of that magic gobbledygook and I'll make it worth your time, I swear.", "hash": "c85a471985228757", "src": "collector@1.60.1.70888", "npcs": [260873]}
 {"id": "c8620fb75095e29b", "field": "text", "en": "Look, there! By Hive'Regal! Is that... a sandworm?!", "hash": "c8620fb75095e29b", "src": "vmangos@13b49dc"}
 {"id": "c86a58cf5369c5c6", "field": "text", "en": "If you seek to become my student, you'll need to complete an assignment for me. Prove yourself worthy, and I might even consider rewarding you.", "hash": "c86a58cf5369c5c6", "src": "vmangos@13b49dc"}
 {"id": "c872702994b68e0f", "field": "text", "en": "Death is merely a doorway to rebirth. The brood shall rise again.", "hash": "c872702994b68e0f", "src": "vmangos@13b49dc"}

@@ -9,6 +9,7 @@
 {"id": "f855dbdf3bab6b02", "field": "text", "en": "The mortals have fallen! The new age of the Blackrock legion is at hand!", "hash": "f855dbdf3bab6b02", "src": "vmangos@13b49dc"}
 {"id": "f85da2b44f6e9764", "field": "text", "en": "Lava? Pay no mind to all of that, friend. Look around you. Take in the joys that nature has to offer.", "hash": "f85da2b44f6e9764", "src": "vmangos@13b49dc"}
 {"id": "f869d21e57e4296b", "field": "text", "en": "Hegnar Rumbleshot, at your service!", "hash": "f869d21e57e4296b", "src": "vmangos@13b49dc"}
+{"id": "f86c1e49c4906695", "field": "text", "en": "Ah, it's you! The one who \"borrowed\" our mana sieve. As much as I would love to give you a very stern talking to for mishandling precious artifacts, the fact that we can communicate at all is a sign you must have done something right with it.$B$BDespite that, I must insist you do not touch it again. Ever.", "hash": "f86c1e49c4906695", "src": "collector@1.60.1.70888", "npcs": [255486]}
 {"id": "f86d4d23ee9341ea", "field": "text", "en": "Hello there $g mister : ma'am;... do you have a little time that you could help us out?  Please?", "hash": "f86d4d23ee9341ea", "src": "vmangos@13b49dc"}
 {"id": "f8709a27513dc3dd", "field": "text", "en": "What was that?! Trey? TREY!?", "hash": "f8709a27513dc3dd", "src": "vmangos@13b49dc"}
 {"id": "f87ad0cf3169f31d", "field": "text", "en": "Aren't you a little short for your kind?", "hash": "f87ad0cf3169f31d", "src": "vmangos@13b49dc"}

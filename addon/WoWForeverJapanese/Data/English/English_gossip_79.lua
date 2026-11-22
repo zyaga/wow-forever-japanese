@@ -25,6 +25,7 @@ WFJ.Data.add("english", {
   ["gossip:7975ff0f822eb05a"] = { text = "now=1 put=6 silver=3 spool=4 that=2 where=5" },
   ["gossip:7982de9e5d48913e"] = { text = "claims=2 control=4 graveyard=1 unchallenged=3 will=5" },
   ["gossip:798ab2ffffebca76"] = { text = "held=1 join=3 us=2" },
+  ["gossip:7995e48c8f7134f0"] = { text = "really=2 time=1 yourself=3" },
   ["gossip:799e91d2d1d4c595"] = { text = "bomb=10 disguised=9 find=13 ho=1 lost=11 miss=2 mouse=8 step=5 watch=6 would=7" },
   ["gossip:79a6fcdf3c4599f3"] = { text = "action=13 appoint=12 barriers=7 behind=8 deaths=2 decided=14 guardian=16 i=19 impenetrable=5 magic=6 nods=1 seal=10 staff=9 that=17 watcher=11" },
   ["gossip:79a8b471d790490e"] = { text = "amongst=20 built=38 city=39 complete=18 construction=17 corruption=1 driven=16 efforts=34 entrance=40 evil=15 hearts=4 here=42 hero=28 honor=35 honorable=11 i=7 live=21 madness=14 minds=5 my=33 nation=2 new=26 once=10 passed=30 people=3 placed=43 planned=37 race=13 seep=6 this=12 tomb=32 watched=9 way=24 will=23" },

@@ -122,6 +122,7 @@ WFJ.Data.add("name", {
   ["6c814df326a339a5"] = { "アースクエイク", "あーすくえいく", "Earthquake" },
   ["6c81a73dc4a73015"] = { "リストラティブ・ポーション", "りすとらてぃぶ・ぽーしょん", "Restorative Potion" },
   ["6c82c61a7689feee"] = { "デスストーカー・ヴィンセント・デバッグ", "ですすとーかー・ゔぃんせんと・でばっぐ", "[UNUSED] Deathstalker Vincent DEBUG" },
+  ["6c836766f6c7d5da"] = { "キュービック・ドラコニア", "きゅーびっく・どらこにあ", "cubic draconia" },
   ["6c87feef37a4359d"] = { "クリムゾン・キャノン", "くりむぞん・きゃのん", "Crimson Cannon" },
   ["6c8a1ec616244c84"] = { "シャッタード・オーブ・フラグメント", "しゃったーど・おーぶ・ふらぐめんと", "Shattered Orb Fragment" },
   ["6c8a21a11cccc881"] = { "クラフツマンズ・リット：フィールド・リペア・ボット74・ア", "くらふつまんず・りっと・ふぃーるど・りぺあ・ぼっとななじゅうよん・あ", "Craftsman's Writ: Field Repair Bot 74A" },

@@ -626,6 +626,7 @@ WFJ.Data.add("gloss", {
   [150625] = "高揚\tこうよう\teuphoria",
   [150626] = "高笑いする\tたかわらいする\tcackles",
   [150627] = "魔導師\tまどうし\tthe magister",
+  [150628] = "魔法\tまほう\tenchanted",
   [150629] = "魔法\tまほう\tmagic (it)",
   [150630] = "魔法をかける\tまほうをかける\thave given magic",
   [150631] = "魔界\tまかい\tfel (demon realm)",

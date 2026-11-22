@@ -48,5 +48,6 @@ WFJ.Data.add("english", {
   ["gossip:45e537292af1f836"] = { text = "acquired=6 every=4 guarantee=13 i=1 item=3 my=11 myself=5 personal=12 sale=2" },
   ["gossip:45ea7653376cdbf0"] = { text = "anyway=14 he=8 help=16 know=5 mon=6 point=1 see=7 tailor=12 you=2" },
   ["gossip:45f90ffaf7fadf5f"] = { text = "where=1" },
+  ["gossip:45f9155da7b87ff7"] = { text = "business=11 dangerous=6 dusty=8 happy=3 hot=7 opportunity=2 place=4 smells=10 thought=5 weird=9" },
   ["gossip:45fe0e32dc25b569"] = { text = "get=3 pile=1 present=2" },
 })

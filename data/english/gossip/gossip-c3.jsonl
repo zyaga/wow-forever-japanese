@@ -47,3 +47,4 @@
 {"id": "c3f3142a693132e9", "field": "text", "en": "I am the head of the family.  Me.  ME!!!", "hash": "c3f3142a693132e9", "src": "vmangos@13b49dc"}
 {"id": "c3f8d5a7f08b707e", "field": "text", "en": "You are unfit to train with me, stranger. Spend some time with my assistant Jhag over there. ", "hash": "c3f8d5a7f08b707e", "src": "vmangos@13b49dc"}
 {"id": "c3f8e2baea461564", "field": "text", "en": "Ah yes, another who will stoke the fires and forge the weapons of war. Of course I will teach you how.", "hash": "c3f8e2baea461564", "src": "vmangos@13b49dc"}
+{"id": "c3ff77c6877398fd", "field": "text", "en": "Whatever you want, spit it out already. I've got a long shift ahead of me.", "hash": "c3ff77c6877398fd", "src": "collector@1.60.1.70959", "npcs": [259352]}

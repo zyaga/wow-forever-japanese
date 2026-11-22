@@ -49,5 +49,6 @@ WFJ.Data.add("english", {
   ["gossip:f5ee7552a36bc30b"] = { text = "adjust=8 adventurer=39 attacks=3 blades=12 brothers=11 but=44 day=26 destroy=29 far=17 former=31 friends=32 i=28 kill=27 life=6 members=34 mindless=21 mostly=1 occasional=4 often=18 paladins=9 put=15 puts=15 quite=7 random=38 rather=43 skirmish=5 some=37 still=45 stings=47 those=14 thrall=22 upon=13 usual=2 wanders=23 when=25 worst=20" },
   ["gossip:f5f4190a7d71d4e2"] = { text = "called=1 ever=6 heard=4 place=2" },
   ["gossip:f5f9b8d891b84a71"] = { text = "brotha=2 close=6 me=4 okay=1" },
+  ["gossip:f5fb9ce3732516d6"] = { text = "artifact=2 care=8 crafted=6 friend=3 get=10 plenty=11 powerful=1 time=7" },
   ["gossip:f5fbb234b3f530dc"] = { text = "honor=5 hunt=7 knowledge=3 learn=9 much=4 upon=2 with=6 you=1" },
 })

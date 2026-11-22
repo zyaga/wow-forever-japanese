@@ -25,6 +25,7 @@ WFJ.Data.add("english", {
   ["gossip:3754a3f5a21c1b3c"] = { text = "close=2 fiends=5 guard=3 right=1 shadows=6 these=4" },
   ["gossip:3759afdda241ba5b"] = { text = "rule=1" },
   ["gossip:3759fb74a489bda2"] = { text = "glad=4 that=1 though=5 trench=3 wretched=2" },
+  ["gossip:375b939ea8e3e5b7"] = { text = "adventurous=28 air=13 approves=31 beak=26 beyond=23 body=7 bounds=22 clacks=27 companion=32 curious=24 delight=37 eyes=4 feathers=10 fixes=6 golden=3 legs=18 little=12 near=2 new=34 part=20 rider=33 scars=19 seem=16 seems=16 stretch=8 strider=1 trapped=15 traveling=36 wispy=9 within=14 worlds=35 you=5" },
   ["gossip:3760c4cd6598ccb5"] = { text = "extinguish=4 go=6 require=2 rune=3 vial=1" },
   ["gossip:376246537b648590"] = { text = "track=1" },
   ["gossip:37631c03eccbd320"] = { text = "nothing=1" },

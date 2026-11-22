@@ -85,7 +85,7 @@ WFJ.Data.add("quest", {
   [81919] = { "屈服させて", "Calefactus the Unleashedの邪悪な生き血を、Blasted LandsにいるBloodmage Lynnoreのところへ持って行ってください。", "あなたが見つけた鎖の輪から道具を作りました。言うなれば、一種の「投げ縄」ですね。\n\nこの鎖に宿る力は悪魔を縛るのに最も適していますが、Calefactusはdark portalの向こうから来たのかもしれないので、彼にも効くはずです。\n\n彼を倒したら、felの生き血のサンプルを持ってきてください。あれほど異常な存在は、さらに研究する価値があります。\n\nこの荒れ地のどこにCalefactusが今いるのかはわかりませんが、あなたなら追い詰められると信じていますよ、{class}。", nil, nil, 0xb6bb40d0, 0x9ba8c702, 0xb8868e2e, nil, nil, "...mm" },
   [81924] = { "守護者たちの知恵", "Feralas、Azshara、Hinterlandsの守護霊たちに自分の力を示し、FeralasにいるTyrisiusのところへ戻ってください。", "そなたが求めるKaldoreiの知識は、この廃墟の中には見つからぬ、{class}。もはやここにはない。\n\nだが、形あるものは廃墟と化したが、霊的なものは残っている。\n\nAzshara、Hinterlands、Feralasの守護霊たちを探すがよい。その祠を見れば彼らだとわかるであろう。彼らに己の力を示し、その言葉に耳を傾けよ。そうすれば彼らの知恵はそなたに受け継がれ、ここで多くが失われたように、時の流れの中に失われることはないであろう。", nil, nil, 0x4f79aec6, 0x65bf2ad5, 0x7831b7f8, nil, nil, "...mm" },
   [81944] = { "新たに見いだした目的……", nil, nil, nil, nil, 0xae495662, nil, nil, nil, nil, ".mmmm" },
-  [81947] = { "Sanguine Sorcery", nil, nil, nil, nil, 0xb07ca900, nil, nil, nil, nil, ".mmmm" },
+  [81947] = { "Sanguine Sorcery", nil, nil, "私たちの蔵書に加えるものを持ってきてくれたのですか？", "ありがとうございます、{name}。あなたの尽力のおかげで、私たちの知識は広がっていきます。\n\n図書館の役に立ちそうな魔法の書物をほかにも見つけたら、ぜひ私のところへ持ってきてください。", 0xb07ca900, nil, nil, 0x1400fbf0, 0xe184a784, ".mm.." },
   [81949] = { "Legends of the Tidesages", nil, nil, nil, nil, 0xcaf7c331, nil, nil, nil, nil, ".mmmm" },
   [81952] = { "Everyday Etiquette", nil, nil, "我々のコレクションに加えるものを持ってきてくれたのか？", "ありがとうございます、{name}。あなたの尽力のおかげで、私たちの知識は広がっていきます。\n\n図書館の役に立ちそうな魔法の書物をほかにも見つけたら、ぜひ私のところへ持ってきてください。", 0xcb655342, nil, nil, 0x1400fbf0, 0xe184a784, ".mm.." },
   [81953] = { "Stonewrought Design", nil, nil, nil, nil, 0xeff6b9fb, nil, nil, nil, nil, ".mmmm" },

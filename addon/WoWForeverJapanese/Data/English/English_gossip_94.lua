@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:9490256d7c9e0c6d"] = { text = "joy=3 looks=1 weeps=5" },
   ["gossip:94910dcf2ef35f4a"] = { text = "ancestors=2 defend=12 guild=9 honor=11 individual=3 numbers=5 organizing=10 our=1 safety=6 strong=4 teach=8" },
   ["gossip:94940f7139ec6315"] = { text = "found=3 gems=6 harvest=7 lower=1 ores=5 precious=4 proper=8 rise=2 teach=10 way=9" },
+  ["gossip:94984e4c79ed0c66"] = { text = "armorsmith=2 before=7 begin=6 career=5 chance=13 glory=15 last=12 lifetime=16 new=4 now=11 otherwise=14 step=8 this=1 yourself=17" },
   ["gossip:949dd18551be2003"] = { text = "bags=5 component=3 correct=1 go=7 looking=4 spell=2" },
   ["gossip:94a44003124ddfae"] = { text = "animals=3 good=13 him=11 if=10 learn=9 leather=4 profession=8 provides=6 skins=1 speak=12 supply=5" },
   ["gossip:94a71a9488bb1ca6"] = { text = "enough=5 finer=1 gold=6 lesson=4 points=2 provided=7 teach=3" },

@@ -22,6 +22,7 @@ WFJ.Data.add("english", {
   ["gossip:f44d3f68bdfe603d"] = { text = "die=3 name=1" },
   ["gossip:f45201221f7a1663"] = { text = "day=1 lass=2 service=4" },
   ["gossip:f452db3c5a222f8b"] = { text = "arms=7 considered=3 offer=2 people=6 prepared=9 welcome=8 yes=1 you=4 your=5" },
+  ["gossip:f460b37f2a862f4d"] = { text = "almost=6 approach=2 beak=38 bear=50 bounce=7 brown=8 clacks=39 claws=20 clear=11 colored=15 companion=47 determination=45 dirt=22 equally=33 evaluating=24 excitement=5 feathers=9 gazes=26 impressed=46 itself=29 lets=4 letting=4 long=19 preens=18 prove=31 rider=35 soft=21 spirited=12 strider=1 tan=13 timber=14 understanding=32 warble=3 warbles=3 wing=16 you=25 young=10" },
   ["gossip:f461001ec2d60924"] = { text = "my=1 student=5 talk=6 time=2" },
   ["gossip:f46824e69663cc78"] = { text = "barracks=9 bring=3 brings=3 change=4 inside=10 look=11 side=7 town=6 victory=2" },
   ["gossip:f4684aab4a56f2f9"] = { text = "and=6 humans=2 i=7 kill=3 make=9 orcs=1 weapons=4" },

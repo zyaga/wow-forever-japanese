@@ -183,6 +183,7 @@ WFJ.Data.add("name", {
   ["54c0257d61e87fd7"] = { "ナイトメア・インカージョン：ダスクウッド・ミッション1", "ないとめあ・いんかーじょん・だすくうっど・みっしょんいち", "Nightmare Incursions: Duskwood Mission I" },
   ["54c0258a61e87fe4"] = { "ナイトメア・インカージョン：ダスクウッド・ミッション5", "ないとめあ・いんかーじょん・だすくうっど・みっしょんご", "Nightmare Incursions: Duskwood Mission V" },
   ["54c0258c61e87fe6"] = { "ナイトメア・インカージョン：ダスクウッド・ミッション10", "ないとめあ・いんかーじょん・だすくうっど・みっしょんじゅう", "Nightmare Incursions: Duskwood Mission X" },
+  ["54c082cbf00584c8"] = { "ロア・オブ", "ろあ・おぶ", "Loa of" },
   ["54c0b39bc245afa7"] = { "ラヴェナー", "らゔぇなー", "The Ravener" },
   ["54c286f6e581397c"] = { "ナタカ・ロングホーン", "なたか・ろんぐほーん", "Nataka Longhorn" },
   ["54c34a2e3876cf74"] = { "ウォーグレイヴ・オブ・アジノス（ライト）", "うぉーぐれいゔ・おぶ・あじのすらいと", "Warglaive of Azzinoth (Right)" },

@@ -104,6 +104,7 @@ WFJ.Data.add("name", {
   ["1d7ba1228ba3792c"] = { "メリサー・スタッグヘルム", "めりさー・すたっぐへるむ", "Melithar Staghelm" },
   ["1d7c4846ea5eb035"] = { "レッドストーン・バジリスク", "れっどすとーん・ばじりすく", "redstone basilisk" },
   ["1d7c6a389b7e5e11"] = { "チャンピオン・ウォリアー", "ちゃんぴおん・うぉりあー", "Champion Warrior" },
+  ["1d7ebe6479ce23de"] = { "ラナス・ナイトストライド", "らなす・ないとすとらいど", "Ranath Nightstride" },
   ["1d7ee6d768a4ff0e"] = { "ヤウラー", "やうらー", "Yowler" },
   ["1d7fe9f3ad799c75"] = { "グレイヴ・セプター", "ぐれいゔ・せぷたー", "Grave Scepter" },
   ["1d832ed9287e70c9"] = { "ブラックフォージ・ケープ", "ぶらっくふぉーじ・けーぷ", "Blackforge Cape" },

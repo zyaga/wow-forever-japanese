@@ -9,6 +9,7 @@
 {"id": 4081, "field": "name", "en": "Lomac Gearstrip", "hash": "94264fad7aa81435", "src": "collector@1.60.1.70888"}
 {"id": 4088, "field": "name", "en": "Elanaria", "hash": "521e2628c7c074f7", "src": "collector@1.60.1.70862"}
 {"id": 4092, "field": "name", "en": "Lariia", "hash": "615acc1d44e45398", "src": "collector@1.60.1.70790"}
+{"id": 4146, "field": "name", "en": "Jocaste", "hash": "20efbdc1a9df8054", "src": "collector@1.60.1.71037"}
 {"id": 4156, "field": "name", "en": "Astaia", "hash": "cee4e0e26b84c55b", "src": "collector@1.60.1.70959"}
 {"id": 4198, "field": "name", "en": "Braelyn Firehand", "hash": "cae8c4fb532bed3d", "src": "collector@1.60.1.70938"}
 {"id": 4200, "field": "name", "en": "Laird", "hash": "432d414b62e34bdf", "src": "collector@1.60.1.70840"}
@@ -30,6 +31,7 @@
 {"id": 4486, "field": "name", "en": "Genavie Callow", "hash": "06d81b7d8b8b0119", "src": "collector@1.60.1.70938"}
 {"id": 4488, "field": "name", "en": "Parqual Fintallas", "hash": "52a51a4eb2f8b822", "src": "collector@1.60.1.70959"}
 {"id": 4489, "field": "name", "en": "Braug Dimspirit", "hash": "66cf6934d3c8cf1e", "src": "collector@1.60.1.70959"}
+{"id": 4495, "field": "name", "en": "Gnome Pit Boss", "hash": "5fa3eacc76d5e340", "src": "collector@1.60.1.70888"}
 {"id": 4503, "field": "name", "en": "Mudcrush Durtfeet", "hash": "f75ea88d22a856fa", "src": "collector@1.60.1.70888"}
 {"id": 4521, "field": "name", "en": "Treshala Fallowbrook", "hash": "18abb67dd6c9e19f", "src": "collector@1.60.1.70938"}
 {"id": 4551, "field": "name", "en": "Michael Garrett", "hash": "30ec3f6acecb039b", "src": "collector@1.60.1.70790"}
@@ -38,10 +40,15 @@
 {"id": 4605, "field": "name", "en": "Basil Frye", "hash": "c195455524eff2d8", "src": "collector@1.60.1.70862"}
 {"id": 4606, "field": "name", "en": "Aelthalyste", "hash": "ca8aeefc1a1ddc27", "src": "collector@1.60.1.70862"}
 {"id": 4607, "field": "name", "en": "Father Lankester", "hash": "fdea77baf2765a48", "src": "collector@1.60.1.70938"}
+{"id": 4618, "field": "name", "en": "Martek the Exiled", "hash": "8475249c143c40b8", "src": "collector@1.60.1.70862"}
 {"id": 4629, "field": "name", "en": "Trackmaster Zherin", "hash": "745c6c20c4861306", "src": "collector@1.60.1.70888"}
 {"id": 4630, "field": "name", "en": "Pozzik", "hash": "4642d38b6a9a1499", "src": "collector@1.60.1.70888"}
+{"id": 4706, "field": "name", "en": "Razzeric", "hash": "024d3fb5afacbf0e", "src": "collector@1.60.1.70862"}
+{"id": 4708, "field": "name", "en": "Shreev", "hash": "bcd7cb99882fe7e7", "src": "collector@1.60.1.70888"}
+{"id": 4709, "field": "name", "en": "Zamek", "hash": "38ee3f42a395b515", "src": "collector@1.60.1.70862"}
 {"id": 4721, "field": "name", "en": "Zangen Stonehoof", "hash": "c5038a062e651ff4", "src": "collector@1.60.1.70862"}
 {"id": 4722, "field": "name", "en": "Rau Cliffrunner", "hash": "163050ffa7732601", "src": "collector@1.60.1.70938"}
+{"id": 4772, "field": "name", "en": "Ultham Ironhorn", "hash": "2fc60d004d13bf28", "src": "collector@1.60.1.70888"}
 {"id": 4783, "field": "name", "en": "Dawnwatcher Selgorm", "hash": "0f77f926e930e026", "src": "collector@1.60.1.70938"}
 {"id": 4784, "field": "name", "en": "Argent Guard Manados", "hash": "5140ae2a45e8321d", "src": "collector@1.60.1.70938"}
 {"id": 4786, "field": "name", "en": "Dawnwatcher Shaedlass", "hash": "db237a3468636971", "src": "collector@1.60.1.70862"}
@@ -49,6 +56,7 @@
 {"id": 4792, "field": "name", "en": "\"Swamp Eye\" Jarl", "hash": "fbda46d3644f7e9d", "src": "collector@1.60.1.70888"}
 {"id": 4877, "field": "name", "en": "Jandia", "hash": "69c7af445857dc8c", "src": "collector@1.60.1.70938"}
 {"id": 4880, "field": "name", "en": "\"Stinky\" Ignatz", "hash": "88f11bd947626c41", "src": "collector@1.60.1.70959"}
+{"id": 4921, "field": "name", "en": "Guard Byron", "hash": "6eddad66e45c56a5", "src": "collector@1.60.1.70888"}
 {"id": 4926, "field": "name", "en": "Krog", "hash": "0a2acf9f32107d78", "src": "collector@1.60.1.70938"}
 {"id": 4941, "field": "name", "en": "Caz Twosprocket", "hash": "2936807d7b5a0ce8", "src": "collector@1.60.1.70888"}
 {"id": 4944, "field": "name", "en": "Captain Garran Vimes", "hash": "3743ed7a5c60d2b7", "src": "collector@1.60.1.70888"}

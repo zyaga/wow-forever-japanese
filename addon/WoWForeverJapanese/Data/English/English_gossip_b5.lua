@@ -25,6 +25,7 @@ WFJ.Data.add("english", {
   ["gossip:b575f8198261f81f"] = { text = "before=4 friendly=7 need=8 riding=1 skill=2 teach=3 tribe=5 trolls=6" },
   ["gossip:b580b68328f12661"] = { text = "and=11 anyone=14 ask=15 before=2 bought=7 business=4 came=1 dead=16 everything=6 great=3 prices=12 sold=9" },
   ["gossip:b582c73874ee3fc6"] = { text = "crunch=7 crunchy=2 elves=1 good=3 sound=4 talk=8 you=5" },
+  ["gossip:b584a27067070d8a"] = { text = "came=4 circumstance=3 down=10 frame=8 gnoll=1 hand=6 motions=11 question=5 spittle=2 up=9 we=12 your=7" },
   ["gossip:b59c2b0cc999b393"] = { text = "claim=10 destitute=19 ear=4 family=22 i=1 knight=20 liege=2 offer=24 reward=17 show=5 slay=14 some=18 then=16 would=11" },
   ["gossip:b59c6af2db2d0e75"] = { text = "fun=4 most=3 purchases=1" },
   ["gossip:b59ec91e5d53d243"] = { text = "how=1" },

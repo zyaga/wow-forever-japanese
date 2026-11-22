@@ -18,8 +18,10 @@
 {"id": "6c6128e15a0d0edf", "field": "text", "en": "Thanks for the helmets, $n.  These will really reduce our medical bills...", "hash": "6c6128e15a0d0edf", "src": "vmangos@13b49dc"}
 {"id": "6c62f3e7c7c2c854", "field": "text", "en": "Swift and sure. Cut a tendon here, slit an artery there. I can show you how to turn any knife into a perfect killing machine.", "hash": "6c62f3e7c7c2c854", "src": "vmangos@13b49dc"}
 {"id": "6c6447f489af9b94", "field": "text", "en": "%s reads the ancient text $n fetched for him...", "hash": "6c6447f489af9b94", "src": "vmangos@13b49dc"}
+{"id": "6c67eb4fa439bcf8", "field": "text", "en": "Please, do your best to find Randal's uncle and urge him to take in the boy.", "hash": "6c67eb4fa439bcf8", "src": "collector@1.60.1.70888"}
 {"id": "6c6eea75570e4c08", "field": "text", "en": "%s waves goodbye to everyone.", "hash": "6c6eea75570e4c08", "src": "vmangos@13b49dc"}
 {"id": "6c7093dc099ced94", "field": "text", "en": "A friend of the Zandalrian! You have ventured deep into the lair of the Blood God, $c. You will do well to listen to what I have to say.$B$BMany thousands of years ago, while the indigenous trolls of the Zul'Aman empire were battling the invading high elf heathens, great magic was stolen from Zanza. This magic was used by the high elves to enchant their weapons and armor to assist in conquering the trolls of the region.", "hash": "6c7093dc099ced94", "src": "vmangos@13b49dc"}
+{"id": "6c71f2e1b6e03f03", "field": "text", "en": "Quickly, let's go before we raise too much of an alarm.", "hash": "6c71f2e1b6e03f03", "src": "collector@1.60.1.71037"}
 {"id": "6c76459a1bc81c7e", "field": "text", "en": "%s staggers backwards as the arrow lodges itself deeply in his chest.", "hash": "6c76459a1bc81c7e", "src": "vmangos@13b49dc"}
 {"id": "6c7b7e9a9fca7758", "field": "text", "en": "The Frostwolf Graveyard is along the side of the road, not far north of Frostwolf Village.$B$BNeither side controls it.", "hash": "6c7b7e9a9fca7758", "src": "vmangos@13b49dc"}
 {"id": "6c7f0d86124b4a13", "field": "text", "en": "Where is the First Aid trainer?", "hash": "6c7f0d86124b4a13", "src": "collector@1.60.1.70205", "npcs": [247229]}

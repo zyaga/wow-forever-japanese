@@ -47,6 +47,7 @@ WFJ.Data.add("english", {
   ["gossip:89df9e8de9968157"] = { text = "ales=11 around=1 brews=7 check=2 dwarven=10 fine=6 go=4 if=5 sample=9 shame=13 sure=8 tavern=3 ya=15" },
   ["gossip:89e0bdcca491cf48"] = { text = "enough=4 fear=1 foul=7 land=6 not=3 rid=9 taint=8" },
   ["gossip:89e52da8df5c6eeb"] = { text = "bloom=7 call=10 elves=8 ends=13 fell=3 it=9 lovers=2 serve=14 surely=11 tree=6 two=1 where=4 will=15 your=12" },
+  ["gossip:89e71d4fd3bf1eb8"] = { text = "dark=5 discuss=4 guide=9 matters=6 place=3 us=8 welcome=2" },
   ["gossip:89ea302d1d1395f4"] = { text = "all=30 apprentice=43 breath=1 compilation=31 course=5 desire=13 dying=10 fat=36 final=12 grumbles=3 handbook=16 help=6 information=21 it=8 its=18 know=27 learned=28 life=24 miserable=23 my=9 pages=19 past=25 probably=40 sitting=39 something=2 take=17 that=41 this=15 wish=11 years=26" },
   ["gossip:89eb0bbc0658b3e0"] = { text = "bed=4 beds=4 cool=2 covers=1 find=7 good=6 grass=3 keeps=11 luxury=13 suitable=16 taste=14 those=15 though=8" },
   ["gossip:89edb16e93002123"] = { text = "this=1" },

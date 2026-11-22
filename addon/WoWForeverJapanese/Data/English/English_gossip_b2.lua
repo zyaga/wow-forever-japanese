@@ -8,6 +8,7 @@ WFJ.Data.add("english", {
   ["gossip:b20ad28fd1e5f24d"] = { text = "ancient=4 diagrams=5 dire=7 hold=10 inscrutable=14 markings=3 meaning=12 power=8 show=6 tablet=2 their=11 this=1 words=9 you=13" },
   ["gossip:b214108108cd3871"] = { text = "against=23 all=6 ancient=4 armies=22 born=16 cause=2 consume=12 defense=26 depravity=10 destroy=33 effort=36 enemy=28 eternal=15 evil=5 extinguish=8 first=24 great=13 hatred=19 its=9 last=25 life=7 needs=38 rise=27 strike=29 surely=31 things=18 united=3 us=32 war=35 we=1 will=34 world=11 you=37" },
   ["gossip:b21585ebb764ad48"] = { text = "better=7 i=1 job=8 much=6 now=11 teach=4 what=3 you=2" },
+  ["gossip:b21690e5c438d888"] = { text = "eternal=2 i=1" },
   ["gossip:b21db46ea478a3cc"] = { text = "cave=5 doing=8 elf=3 inside=6 like=2 you=1" },
   ["gossip:b2276c81ee78e3ee"] = { text = "served=1" },
   ["gossip:b227e05612c466a7"] = { text = "where=1" },

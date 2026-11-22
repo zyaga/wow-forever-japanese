@@ -41,6 +41,7 @@ WFJ.Data.add("english", {
   ["gossip:e2dd289201d1bedd"] = { text = "away=7 barrel=4 enough=2 far=3 now=1 poison=6 see=5" },
   ["gossip:e2e7c36a5a98e7d9"] = { text = "bit=2 not=9 now=13 ready=17 real=14 shaped=16 smith=15 still=1 unbalanced=4 unsure=5 weak=3 work=7 you=11 youngling=10 your=6" },
   ["gossip:e2e8fb9064b4b18a"] = { text = "big=2 bramble=4 get=6 mess=5 see=8 think=9 this=1 twisted=3 way=7" },
+  ["gossip:e2ec5c9e9f9ca706"] = { text = "ascension=2 my=1 none=3 stop=4" },
   ["gossip:e2f3f3259baa88a3"] = { text = "allow=3 base=1 day=8 even=7 expand=2 grow=12 may=13 miniscule=6 their=5 threaten=10 us=9" },
   ["gossip:e2f7f6c1d3e959e5"] = { text = "and=6 deadlines=5 lots=2 miss=7 not=11 sort=9" },
   ["gossip:e2fd2d7caa451eb2"] = { text = "course=1 help=2" },

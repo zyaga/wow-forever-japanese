@@ -148,6 +148,7 @@ WFJ.Data.add("name", {
   ["d6afb50a81f13998"] = { "トリート", "とりーと", "treats" },
   ["d6b2e59ff5f36061"] = { "シルヴェストリス", "しるゔぇすとりす", "Sylvestris" },
   ["d6b2eabaf2554dcf"] = { "スリー・コーナー", "すりー・こーなー", "Three Corners" },
+  ["d6b6c92d6e2e68de"] = { "フィズグリンブル", "ふぃずぐりんぶる", "Fizzgrimble" },
   ["d6b75fb86eb97005"] = { "デファイアス・トラッパー", "でふぁいあす・とらっぱー", "Defias Trapper" },
   ["d6b80d564e136e4a"] = { "ティー・インターセクション", "てぃー・いんたーせくしょん", "T-intersection" },
   ["d6b9c0ee92b043e7"] = { "パターン：スカイコーラーズ・メイル・ベルト", "ぱたーん・すかいこーらーず・めいる・べると", "Pattern: Skycaller's Mail Belt" },

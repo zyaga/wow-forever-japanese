@@ -28,6 +28,7 @@ WFJ.Data.add("english", {
   ["gossip:b07aac8264affc72"] = { text = "blade=8 edge=9 maintained=11 pillar=3 race=2 strength=6 sturdy=7 through=10 will=5" },
   ["gossip:b08195900d7337fd"] = { text = "fortune=3 here=1 your=2" },
   ["gossip:b092e1e568336dcd"] = { text = "boar=2 superb=3" },
+  ["gossip:b0943f6de44cf021"] = { text = "accept=35 air=10 bit=15 bounds=18 breath=13 chill=9 closer=31 freed=19 frosty=12 ground=6 head=24 hoof=5 impatient=16 impressed=33 inclines=27 look=23 paws=7 pen=17 ram=1 ready=20 rider=34 side=26 snort=8 visible=14 walking=2 you=22" },
   ["gossip:b09c9139bc485ebc"] = { text = "above=15 after=2 bandage=5 fighting=1 guess=9 hut=12 lake=18 look=19 needs=8 next=10 seek=14 someone=7 us=3 warriors=4 west=16" },
   ["gossip:b09e2326883f388d"] = { text = "among=3 elementals=2 fire=6 he=10 heard=9 hope=13 loses=11 noble=4 servants=7 war=8 water=1" },
   ["gossip:b0a04ac6deab3125"] = { text = "advances=12 all=11 ground=13 intact=15 nestled=9 northern=7 point=5 power=2 reaches=8 south=10 strongest=4 valley=6" },

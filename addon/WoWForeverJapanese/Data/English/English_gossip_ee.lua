@@ -41,6 +41,7 @@ WFJ.Data.add("english", {
   ["gossip:eec5ba073b58ce7b"] = { text = "after=26 aptitude=29 architect=4 cause=37 come=15 creations=36 despicable=7 destruction=38 hammer=2 handed=5 harness=21 he=18 him=16 inept=23 little=9 man=12 motive=8 my=1 new=3 one=31 potential=27 power=20 stopped=17 talent=10 this=39 too=22 true=19 use=28 with=30 world=40" },
   ["gossip:eec5d52f4de40bf5"] = { text = "what=1" },
   ["gossip:eece0a3c52fb1bb6"] = { text = "where=1" },
+  ["gossip:eee43f3ce06c0d4d"] = { text = "clan=7 demonstrated=16 die=9 fierce=14 gratitude=28 hand=23 i=25 know=20 longer=32 loyalty=15 motivations=19 our=6 outsider=1 outsiders=1 perform=5 potential=21 recognize=24 recruit=2 send=10 strategies=4 underhanded=3 unwelcome=12 us=30 you=11" },
   ["gossip:eee4addf320086c8"] = { text = "can=26 earn=25 errands=19 favor=24 human=2 land=12 live=5 mage=3 myself=14 north=4 powerful=1 reason=10 rumored=7 said=27 some=8 that=6 unknown=9 visitors=17 welcome=18 willing=21" },
   ["gossip:eeeb56bf63adc9b0"] = { text = "amidst=6 appear=7 conflagration=5 forces=2 his=1 northwest=3 tumultuous=4" },
   ["gossip:eefa55b4c7e65f03"] = { text = "carries=6 commands=3 i=1 question=4 without=5" },

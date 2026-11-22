@@ -77,6 +77,7 @@ WFJ.Data.add("name", {
   ["bb48718dbb9202d1"] = { "フェラルハート・ウエスト", "ふぇらるはーと・うえすと", "Feralheart Waist" },
   ["bb4879647ce2fd87"] = { "アズシャラ・レイクリスト", "あずしゃら・れいくりすと", "Azshara Leycryst" },
   ["bb48b7902dedc527"] = { "ウェル・バランスド・アックス", "うぇる・ばらんすど・あっくす", "Well Balanced Axe" },
+  ["bb49268cefc49e18"] = { "ヘヴィー・ミスリル・アックス", "へゔぃー・みすりる・あっくす", "Heavy Mithril Axes" },
   ["bb49cd7ae70c3fe1"] = { "エス03・アイテム・ティーエーキュー・シャーマン・エレメンタル4ピー・ボーナス", "えすさん・あいてむ・てぃーえーきゅー・しゃーまん・えれめんたるよんぴー・ぼーなす", "S03 - Item - TAQ - Shaman - Elemental 4P Bonus" },
   ["bb4bcc3addecef01"] = { "レステンドリセズ・ワンド", "れすてんどりせず・わんど", "Lethtendris's Wand" },
   ["bb4e8ed968f71304"] = { "ロスト・ワン・シーア", "ろすと・わん・しーあ", "Lost One Seer" },

@@ -29,12 +29,12 @@ or Japanese)
 
 | | In Japanese |
 |---|---|
-| Quests | 5,803 |
-| NPC dialogue lines | 11,732 |
+| Quests | 5,850 |
+| NPC dialogue lines | 11,871 |
 | Book pages | 923 |
 | Letter pages | 209 |
-| Item tooltips | 11,246 |
-| Spell tooltips | 20,357 |
+| Item tooltips | 11,259 |
+| Spell tooltips | 20,361 |
 | UI | 16,124 |
 
 ## Install
@@ -302,12 +302,12 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 | | 日本語化済み |
 |---|---|
-| クエスト | 5,803 |
-| NPC の会話 | 11,732 行 |
+| クエスト | 5,850 |
+| NPC の会話 | 11,871 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
-| アイテムのツールチップ | 11,246 |
-| 呪文のツールチップ | 20,357 |
+| アイテムのツールチップ | 11,259 |
+| 呪文のツールチップ | 20,361 |
 | UI | 16,124 |
 
 ### インストール

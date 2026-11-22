@@ -19,6 +19,7 @@ WFJ.Data.add("english", {
   ["gossip:7c6445af1c30858e"] = { text = "coming=2 fast=1 fight=3 prepare=4" },
   ["gossip:7c6ea0467ed113bd"] = { text = "come=3 magics=5 shrine=2 there=4 with=1 work=6" },
   ["gossip:7c6edaf46f72278d"] = { text = "blacksmith=2 blood=3 find=13 go=8 greatest=19 i=16 known=17 my=14 name=9 one=21 right=7 smith=12 smiths=12 teacher=15 ye=4" },
+  ["gossip:7c6f74a3fe0f60b2"] = { text = "after=3 become=13 decision=17 er=11 it's=8 late=14 maker=10 right=16 this=2 trust=18 turn=5 way=6 weaponsmith=12" },
   ["gossip:7c71093c08857ed4"] = { text = "barracks=4 look=5 side=2 town=1" },
   ["gossip:7c74f7fdb80e0300"] = { text = "care=4 deep=15 go=12 hands=9 just=2 light=7 living=6 many=5 mistrust=14 pain=11 paladins=13 suffered=10 well=1 wielders=8" },
   ["gossip:7c757fcf5aa765dc"] = { text = "and=7 cause=9 collections=4 need=1 needed=5 smelted=12" },

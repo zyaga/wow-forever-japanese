@@ -115,6 +115,7 @@ WFJ.Data.add("name", {
   ["187d8429c33f7cb1"] = { "ゴルゲレ・デスポーン", "ごるげれ・ですぽーん", "Gol'gere Despawn" },
   ["187dbee2eb42844e"] = { "パターン：レッド・リネン・ベスト", "ぱたーん・れっど・りねん・べすと", "Pattern: Red Linen Vest" },
   ["187fc7c1eeb74699"] = { "ブラックソーン・リッジ・アンユーズド", "ぶらっくそーん・りっじ・あんゆーずど", "Blackthorn Ridge UNUSED" },
+  ["187fed265b8bdfe3"] = { "グリーサー", "ぐりーさー", "Greaser" },
   ["1880bf7f5a4af7d3"] = { "マジカリー・フォーティファイド・レッグガード", "まじかりー・ふぉーてぃふぁいど・れっぐがーど", "Magically Fortified Legguards" },
   ["1882a2dedf0dfe71"] = { "サモン・トラッキング・ハウンド", "さもん・とらっきんぐ・はうんど", "Summon Tracking Hound" },
   ["188478b0c6bfd7b8"] = { "クラソック・モルテンフィスト", "くらそっく・もるてんふぃすと", "Krathok Moltenfist" },

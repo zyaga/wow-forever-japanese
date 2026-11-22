@@ -24,6 +24,7 @@ WFJ.Data.add("english", {
   ["gossip:d35d8995dd5667d4"] = { text = "ago=1 and=25 came=30 ended=2 fall=19 halls=11 held=13 inside=12 kin=5 look=22 our=4 sacrificed=8 sealed=16 should=21 themselves=7 these=10 us=17 vowed=24 we=29 when=3 while=15" },
   ["gossip:d37193b3d2e1da56"] = { text = "and=17 any=13 become=25 body=22 both=29 brother=39 call=31 cause=10 element=15 end=28 evil=14 fight=19 friend=2 friends=30 i=3 known=4 member=8 mercilessly=18 met=1 my=38 one=24 organization=6 our=9 political=21 proud=7 simple=11 stamping=33 surfaces=12 we=20 wide=5 wish=26" },
   ["gossip:d37358a8a6e18bff"] = { text = "bet=1 left=3 tent=2" },
+  ["gossip:d3775b7236b3aa74"] = { text = "clear=3 man=1" },
   ["gossip:d37fee43db118da1"] = { text = "lost=1 new=2 one=3 require=4" },
   ["gossip:d388dda45a3b8fc0"] = { text = "alarm=1 cries=3" },
   ["gossip:d38906b13db67a30"] = { text = "cover=4 enough=5 gold=6 points=1 provided=7 teach=2" },

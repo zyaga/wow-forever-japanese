@@ -164,6 +164,7 @@ WFJ.Data.add("name", {
   ["fdc7e7751f02e0d1"] = { "ウォーソング・アウトライダー・マーク", "うぉーそんぐ・あうとらいだー・まーく", "Warsong Outrider Mark" },
   ["fdc800eeb04cd673"] = { "1.60.0・アイテム・ティア1・パラディン・レトリビューション4ピー・ボーナス・エーピー・バーサス・アンデッド", "いちてんろくじゅうてんぜろ・あいてむ・てぃあいち・ぱらでぃん・れとりびゅーしょんよんぴー・ぼーなす・えーぴー・ばーさす・あんでっど", "1.60.0 - Item - Tier 1 - Paladin - Retribution 4P Bonus - AP vs. Undead" },
   ["fdc948e78ba28bda"] = { "キュイルブーイ・ブーツ", "きゅいるぶーい・ぶーつ", "Cuirboulli Boots" },
+  ["fdcc4af98d63d517"] = { "フロストセイバー・シャイ・ロタム", "ふろすとせいばー・しゃい・ろたむ", "frostsaber Shy-Rotam" },
   ["fdccce5b9f892a24"] = { "ビッグ・バッド・バッシャー", "びっぐ・ばっど・ばっしゃー", "Big Bad Basher" },
   ["fdceeec64aa797f0"] = { "ジェネラルズ・チェーン・グリーヴ", "じぇねらるず・ちぇーん・ぐりーゔ", "General's Chain Greaves" },
   ["fdcff68ae01a024d"] = { "メドウズブルック", "めどうずぶるっく", "Meadowsbrook" },

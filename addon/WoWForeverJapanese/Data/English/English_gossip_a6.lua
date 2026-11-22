@@ -10,6 +10,7 @@ WFJ.Data.add("english", {
   ["gossip:a6180a3afc03d027"] = { text = "don't=5 give=3 love=7 me=2 token=4 what=1" },
   ["gossip:a61ba2574f53deb7"] = { text = "all=2 bit=4 come=6 maybe=7 night=1 sit=5" },
   ["gossip:a622579f8fb0a329"] = { text = "dismantle=2 how=8 knowledge=5 opponents=1 provide=6 show=9 skills=4" },
+  ["gossip:a62d7012f22df758"] = { text = "land=4 master=8 one=6 pave=10 stopped=2 true=7 wash=5 way=9" },
   ["gossip:a62f01073ffc465e"] = { text = "moment=4 pleasure=1 savor=5 this=3" },
   ["gossip:a6355b9b0d4c61d2"] = { text = "blushes=2" },
   ["gossip:a63a645d6e883743"] = { text = "disrupt=6 meditations=5 stranger=3 voice=1" },

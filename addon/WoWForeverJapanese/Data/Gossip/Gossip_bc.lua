@@ -8,6 +8,7 @@ WFJ.Data.add("gossip", {
   ["bc1a6fd81248ccf0"] = { "お前の言う者が誰か分かるぞ、{class}。Warrior's TerraceにいるBrogun Stoneshieldを訪ねるがいい。", "." },
   ["bc208cc1cecd88a5"] = { "%sは立ち止まった。", "." },
   ["bc20a2fc8548276c"] = { "この像だけを話し相手にしないでくれ。出てきて遊ぼう！", "." },
+  ["bc27c379000a0fde"] = { "できている。上の部屋へのポータルを開いてくれ。", "." },
   ["bc2ee1fbb7dbff09"] = { "その通りだ、{name}。破滅の歯車は今や、避けがたくHakkarの真の復活へと回っている！", "." },
   ["bc2fdfeb847f7a36"] = { "ギャアアア！！！", "." },
   ["bc32c0adba0a7581"] = { "TharnariunのためにRabid Thistle Bearを放せ。", "." },

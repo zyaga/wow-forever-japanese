@@ -41,9 +41,11 @@
 {"id": "9ece08b033ed6461", "field": "text", "en": "<High Inquisitor Fairbanks nods.>$B$BAye, the lesser Mograine, the one known as the Scarlet Commander, through - what I suspect - the dealings of the Grand Crusader. He led his father to the ambush like a lamb to the slaughter.", "hash": "9ece08b033ed6461", "src": "vmangos@13b49dc"}
 {"id": "9ed27eb919146298", "field": "text", "en": "Anyone see anything? What happened?", "hash": "9ed27eb919146298", "src": "vmangos@13b49dc"}
 {"id": "9ed2d4aa4072b44a", "field": "text", "en": "%s raises his massive axe over Grark.", "hash": "9ed2d4aa4072b44a", "src": "vmangos@13b49dc"}
+{"id": "9ed4006839e5a0ef", "field": "text", "en": "Ah well, gotta crack a few eggs to loosen the screws.", "hash": "9ed4006839e5a0ef", "src": "collector@1.60.1.70888"}
 {"id": "9eda8579d6317070", "field": "text", "en": "I can't take these taxes! F.I.C.A. me? F.I.C.A. YOU!", "hash": "9eda8579d6317070", "src": "vmangos@13b49dc"}
 {"id": "9eda8ab4169c0aed", "field": "text", "en": "Did you have to house train her, Gerard?", "hash": "9eda8ab4169c0aed", "src": "vmangos@13b49dc"}
 {"id": "9eed8e55e53851a7", "field": "text", "en": "I have tracked the various fragments of the staff across this world and in doing so, discovered Kel'Thuzad's plans to reform the staff. He has already collected several of the staff's fragments - which are being held by his most trusted lieutenants.$B$BI cannot emphasize enough the importance of keeping the greatstaff of the Guardian out of Kel'Thuzad's grasp. Frankly, I do not know what the result would be, other than a catastrophe of epic proportion.", "hash": "9eed8e55e53851a7", "src": "vmangos@13b49dc"}
 {"id": "9ef0022309174478", "field": "text", "en": "Guardians! Defend Sen'jin!", "hash": "9ef0022309174478", "src": "vmangos@13b49dc"}
+{"id": "9ef2a488e535746a", "field": "text", "en": "Tell me about the crystals I repaired.", "hash": "9ef2a488e535746a", "src": "collector@1.60.1.70888", "npcs": [253471]}
 {"id": "9ef5491b516ab143", "field": "text", "en": "This is the place. Let's light it.", "hash": "9ef5491b516ab143", "src": "vmangos@13b49dc"}
 {"id": "9efd8ba135b5f04d", "field": "text", "en": "Milord, your guest has arrived. He awaits your presence.", "hash": "9efd8ba135b5f04d", "src": "vmangos@13b49dc"}

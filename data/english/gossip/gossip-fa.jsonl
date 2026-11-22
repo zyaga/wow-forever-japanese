@@ -31,6 +31,7 @@
 {"id": "fa927e8dd793b11d", "field": "text", "en": "You big meanie! Who put you up to this?", "hash": "fa927e8dd793b11d", "src": "vmangos@13b49dc"}
 {"id": "fa9452f5b9603d29", "field": "text", "en": "Smashes the dead, twisted claw.", "hash": "fa9452f5b9603d29", "src": "vmangos@13b49dc"}
 {"id": "fa9dfb70db881b31", "field": "text", "en": "What have you got there, $n?$B$B<Malyfous points to the unfired plate gauntlets hanging out of your pack.>", "hash": "fa9dfb70db881b31", "src": "vmangos@13b49dc"}
+{"id": "faa4fdc6ccd8ab63", "field": "text", "en": "Hiya! Did you happen on our little hideaway by chance or has our name finally spread far beyond this little clearing in the jungle? In any case, make yourself at home but DO NOT TOUCH my tools unless you intend to buy them.", "hash": "faa4fdc6ccd8ab63", "src": "collector@1.60.1.70888", "npcs": [2687]}
 {"id": "fab53a0e24d9a723", "field": "text", "en": "It is good to see you again, Doctor $n. I have been following your progress and I dare say that it is time you learned some of the more advanced bandaging techniques.$B$BReturn to me from time to time, as your skill advances, and I shall teach you all that I know.", "hash": "fab53a0e24d9a723", "src": "vmangos@13b49dc"}
 {"id": "faba5c25e517b848", "field": "text", "en": "Nat, I want to buy your mudskunk lures!", "hash": "faba5c25e517b848", "src": "vmangos@13b49dc"}
 {"id": "fac9c38c1f8c1b69", "field": "text", "en": "Protect the flight!  These intruders die now!", "hash": "fac9c38c1f8c1b69", "src": "vmangos@13b49dc"}

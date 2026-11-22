@@ -29,6 +29,7 @@ WFJ.Data.add("english", {
   ["gossip:046d179af467e865"] = { text = "become=3 brewing=5 help=14 meantime=11 my=1 needs=9 perhaps=16 potions=4 skill=6 students=2" },
   ["gossip:04771e61596b0d33"] = { text = "come=1 die=11 end=6 face=7 mortals=3 puny=2 secrets=9 with=10" },
   ["gossip:04776961d5829808"] = { text = "ago=2 already=15 bear=50 caverns=17 caves=12 corruption=19 destined=29 entered=13 failed=45 fell=24 free=9 great=51 however=14 i=3 it=48 know=47 long=1 may=41 minds=33 mission=44 my=37 now=36 our=32 overcame=21 passages=27 poisoning=34 rest=39 sadness=52 sisters=4 soon=20 spirit=8 spread=18 these=11 too=23 tortured=7 toxins=31 uncle=6 wander=28 we=22" },
+  ["gossip:047aa5b390c8fc43"] = { text = "actions=5 allies=3 gruesome=1 our=2 pleased=6 your=4" },
   ["gossip:047bd7b6f8fa9160"] = { text = "but=2 experience=7 me=3 more=6 need=8 training=4 trenches=9 try=1" },
   ["gossip:0484cbdca305c452"] = { text = "all=7 bars=22 but=26 civilization=11 don't=2 engineer=20 fantastic=10 find=17 fix=4 help=27 hmm=1 i'm=3 make=21 need=5 oh=8 rewarded=29 skilled=18 takes=24 that=6 think=25 too=15 well=28" },
   ["gossip:048ee8f1a126dabe"] = { text = "bring=5 my=1 satisfy=3 suspicions=2" },

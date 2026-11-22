@@ -44,6 +44,7 @@ Data\Quest\Quest_0081.lua
 Data\Quest\Quest_0082.lua
 Data\Quest\Quest_0083.lua
 Data\Quest\Quest_0084.lua
+Data\Quest\Quest_0085.lua
 Data\Quest\Quest_0086.lua
 Data\Quest\Quest_0087.lua
 Data\Quest\Quest_0088.lua
@@ -1583,6 +1584,7 @@ Data\English\English_quest_0081.lua
 Data\English\English_quest_0082.lua
 Data\English\English_quest_0083.lua
 Data\English\English_quest_0084.lua
+Data\English\English_quest_0085.lua
 Data\English\English_quest_0086.lua
 Data\English\English_quest_0087.lua
 Data\English\English_quest_0088.lua
@@ -2153,6 +2155,7 @@ Data\Reading\Reading_quest_0081.lua
 Data\Reading\Reading_quest_0082.lua
 Data\Reading\Reading_quest_0083.lua
 Data\Reading\Reading_quest_0084.lua
+Data\Reading\Reading_quest_0085.lua
 Data\Reading\Reading_quest_0086.lua
 Data\Reading\Reading_quest_0087.lua
 Data\Reading\Reading_quest_0088.lua
@@ -2348,6 +2351,7 @@ Data\Gloss\Gloss_0151.lua
 Data\Gloss\Gloss_0152.lua
 Data\Gloss\Gloss_0153.lua
 Data\Gloss\Gloss_0154.lua
+Data\Gloss\Gloss_0155.lua
 # >>>
 Core\Lookup.lua
 Core\Readings.lua

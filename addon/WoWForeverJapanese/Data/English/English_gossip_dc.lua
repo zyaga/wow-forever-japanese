@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:dc067e67c7d32d14"] = { text = "beasts=2 from=3 honorable=7 local=1 materials=4 role=8 supplied=5 sure=6" },
   ["gossip:dc10f5e84728daaa"] = { text = "contact=10 enough=11 his=4 i=1 lifeforce=5 lost=3 my=7 powers=8 sense=6 strong=12 yet=9" },
   ["gossip:dc11fd2f5e220f14"] = { text = "and=5 catch=4 mark=2" },
+  ["gossip:dc12d3eceb2959a9"] = { text = "advisor=1 answer=4 questions=2" },
   ["gossip:dc149fe8bb7e5ac4"] = { text = "attack=8 besieged=7 friend=2 gathers=12 hail=1 holiday=13 ill=3 loom=10 our=5 over=9 strength=11 times=4 town=6" },
   ["gossip:dc196b735d38840f"] = { text = "brave=1 defender=4 freedom=3 salute=5 valiant=2" },
   ["gossip:dc237f7478039df3"] = { text = "care=5 entrust=9 myself=4 task=2 time=6 you=8" },

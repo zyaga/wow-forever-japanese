@@ -29,6 +29,7 @@ WFJ.Data.add("english", {
   ["gossip:bbc6bc0f21103b74"] = { text = "drawn=2 magnet=1" },
   ["gossip:bbc9a7a7f1219fe0"] = { text = "controls=2 who=1" },
   ["gossip:bbd6059af83f376d"] = { text = "any=11 around=4 ask=12 dear=7 druid=3 friend=8 grizzly=1 same=13 those=5 times=2 will=16" },
+  ["gossip:bbf15a941c200c1f"] = { text = "our=1 rising=3 tide=2" },
   ["gossip:bbf52fbc4c8626fe"] = { text = "little=1 that=4" },
   ["gossip:bbf8281a2bddfa7e"] = { text = "happy=2" },
   ["gossip:bbf836df93d60425"] = { text = "bows=9 camp=19 consume=5 contorted=13 decorate=22 during=6 entrails=21 face=11 head=8 his=10 listen=24 my=2 name=15 rage=12 ravaged=18 silent=23 this=17 your=20" },

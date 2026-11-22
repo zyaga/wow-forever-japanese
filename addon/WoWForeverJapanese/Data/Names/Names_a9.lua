@@ -214,6 +214,7 @@ WFJ.Data.add("name", {
   ["a9abb81edea6ba44"] = { "1.60.0・アイテム・ティア1・ハンター4ピー・ボーナス・エーピー・バーサス・ビースト", "いちてんろくじゅうてんぜろ・あいてむ・てぃあいち・はんたーよんぴー・ぼーなす・えーぴー・ばーさす・びーすと", "1.60.0 - Item - Tier 1 - Hunter 4P Bonus - AP vs. Beasts" },
   ["a9ac4272c9ba27d0"] = { "ワーラクシス", "わーらくしす", "Whirlaxis" },
   ["a9acff3c5a4d6896"] = { "デュラビリティ・ベルト", "でゅらびりてぃ・べると", "Durability Belt" },
+  ["a9ad5fced3c7c0f2"] = { "ノーミッシュ・バトル・チキンズ", "のーみっしゅ・ばとる・ちきんず", "Gnomish Battle Chickens" },
   ["a9ad78df7e7e7021"] = { "モンスター・ボウ、ブラック", "もんすたー・ぼうぶらっく", "Monster - Bow, Black" },
   ["a9ae95f05b47e338"] = { "サモン・アンダーシティ・デスガード", "さもん・あんだーしてぃ・ですがーど", "Summon Undercity Deathguard" },
   ["a9aebf685fe5729c"] = { "デスポーン・グロブ", "ですぽーん・ぐろぶ", "Despawn Globs" },

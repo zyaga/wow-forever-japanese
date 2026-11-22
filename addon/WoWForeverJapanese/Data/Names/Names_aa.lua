@@ -116,6 +116,7 @@ WFJ.Data.add("name", {
   ["aa5d54c3511b3504"] = { "オーガ", "おーが", "ogres" },
   ["aa5f0d4b3cf1e162"] = { "ブルー・ドラゴンスケール・ブレストプレート", "ぶるー・どらごんすけーる・ぶれすとぷれーと", "Blue Dragonscale Breastplate" },
   ["aa60c28224a766f8"] = { "スローン・ボルター", "すろーん・ぼるたー", "Thrawn Boltar" },
+  ["aa65c58dc905ba7e"] = { "ウィキッド・レザー・ベルト", "うぃきっど・れざー・べると", "Wicked Leather Belts" },
   ["aa6656288c8bc1a2"] = { "ウェイレイド・サプライ：エリクサー・オブ・ファイアパワー", "うぇいれいど・さぷらい・えりくさー・おぶ・ふぁいあぱわー", "Waylaid Supplies: Elixir of Firepower" },
   ["aa666eb1d6025c98"] = { "ベルグロムズ・リベンジ", "べるぐろむず・りべんじ", "Belgrom's Revenge" },
   ["aa6cc6a1d8b12ac1"] = { "ボックス・オー・スクワール", "ぼっくす・おー・すくわーる", "Box o' Squirrels" },

@@ -20,6 +20,7 @@ WFJ.Data.add("english", {
   ["gossip:873e53ad9401fbd7"] = { text = "already=34 and=24 barely=1 blood=7 bold=16 brazenly=10 center=31 contained=2 dead=35 domain=12 either=19 eyes=6 foot=13 forget=26 forgive=21 fury=3 here=28 never=25 once=27 our=11 slow=23 so=9 spilling=8 step=14 stupid=18 very=15 we=20 weren't=32 with=4 you=5 yourself=29" },
   ["gossip:8743c613911c68c0"] = { text = "already=5 done=6 no=3 problem=2 sorry=4 thought=7 yeah=1" },
   ["gossip:8743f489559e88f0"] = { text = "children=8 come=6 enter=5 evil=2 my=7 this=1 world=4" },
+  ["gossip:874df863fd5e2af2"] = { text = "hills=1 made=2 see=4" },
   ["gossip:87513fb57afc6821"] = { text = "ask=7 battle=11 chance=4 especially=1 fight=3 head=15 me=6 orcs=2 plenty=12 speak=16 time=8 way=18" },
   ["gossip:875ad23f73d5ce46"] = { text = "bears=1" },
   ["gossip:8762d206bf1e83ec"] = { text = "learn=4 they=1 when=2" },

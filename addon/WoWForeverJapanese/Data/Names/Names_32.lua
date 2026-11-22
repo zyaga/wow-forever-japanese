@@ -218,6 +218,7 @@ WFJ.Data.add("name", {
   ["32da2f7d2e2a997f"] = { "ロック・ストーカー・ファング", "ろっく・すとーかー・ふぁんぐ", "Rock Stalker Fang" },
   ["32db537ebc7f81b1"] = { "デス・タロン・ファイアタン", "です・たろん・ふぁいあたん", "[NOT USED] Death Talon Firetongue" },
   ["32dd43ed6c0c339a"] = { "ワイルド・ヘッドドレス", "わいるど・へっどどれす", "Wild Headdress" },
+  ["32e04371ee81bfab"] = { "キャスティング・スピード", "きゃすてぃんぐ・すぴーど", "Casting speed" },
   ["32e06bdbb8d1598e"] = { "エス03・アイテム・ティー1・シャーマン・エレメンタル4ピー・ボーナス", "えすさん・あいてむ・てぃーいち・しゃーまん・えれめんたるよんぴー・ぼーなす", "S03 - Item - T1 - Shaman - Elemental 4P Bonus" },
   ["32e13b7160e49098"] = { "チャージド・スコーピッド・レギンス", "ちゃーじど・すこーぴっど・れぎんす", "Charged Scorpid Leggings" },
   ["32e17449c46d70a5"] = { "ピーブイピー・プレート・ショルダー・アライアンス", "ぴーぶいぴー・ぷれーと・しょるだー・あらいあんす", "PVP Plate Shoulder Alliance" },
@@ -246,6 +247,7 @@ WFJ.Data.add("name", {
   ["32fa1458ea61a79d"] = { "プラン：フロストガード", "ぷらん・ふろすとがーど", "Plans: Frostguard" },
   ["32fb83916edaaa78"] = { "ブラックスミシング・サプライヤー", "ぶらっくすみしんぐ・さぷらいやー", "Blacksmithing Supplier" },
   ["32fb83926edaaa79"] = { "ブラックスミシング・サプライ", "ぶらっくすみしんぐ・さぷらい", "Blacksmithing Supplies" },
+  ["32fd849d85f3cd38"] = { "ラギッド・アーマー・キット", "らぎっど・あーまー・きっと", "rugged armor kits" },
   ["32fd9455ef587038"] = { "クリーニグ・スナールスナウト", "くりーにぐ・すなーるすなうと", "Kreenig Snarlsnout" },
   ["32fdf5559f840c81"] = { "テスティング・トーテム・パッシブ", "てすてぃんぐ・とーてむ・ぱっしぶ", "Testing Totem Passive" },
 })

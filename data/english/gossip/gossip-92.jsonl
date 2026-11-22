@@ -11,6 +11,7 @@
 {"id": "923a1e322356c681", "field": "text", "en": "Greetings, citizen.", "hash": "923a1e322356c681", "src": "vmangos@13b49dc"}
 {"id": "925a6722bd118d98", "field": "text", "en": "What brings you to this part of the world, $n?", "hash": "925a6722bd118d98", "src": "vmangos@13b49dc"}
 {"id": "925a95d4e38eff3c", "field": "text", "en": "Don't be alarmed... while my gryphons may not be entirely whole, they will still carry you faithfully to your destination. Tell me... which tower do you seek?", "hash": "925a95d4e38eff3c", "src": "vmangos@13b49dc"}
+{"id": "92626d4c2b722209", "field": "text", "en": "<This man is critically injured, its a miracle he is still breathing>", "hash": "92626d4c2b722209", "src": "collector@1.60.1.70959"}
 {"id": "9265a84de18f2313", "field": "text", "en": "I can't come down.  I am scared.", "hash": "9265a84de18f2313", "src": "vmangos@13b49dc"}
 {"id": "926f4b2f2a1c0752", "field": "text", "en": "I...have...failed. ", "hash": "926f4b2f2a1c0752", "src": "vmangos@13b49dc"}
 {"id": "928d0889f561ed5b", "field": "text", "en": "Oh dear, I am running dangerously low on supplies! What is taking that blasted goblin so long?", "hash": "928d0889f561ed5b", "src": "vmangos@13b49dc"}

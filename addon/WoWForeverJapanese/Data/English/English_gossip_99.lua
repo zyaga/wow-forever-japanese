@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:9985e6205ef6f272"] = { text = "aid=4 battle=2 ever=11 greater=12 honor=6 join=14 need=5 now=1 opportunities=9 repute=7 well=10 your=3" },
   ["gossip:998915a77fd56677"] = { text = "calling=4 chest=1 help=3 pounds=2" },
   ["gossip:998f06fc0f809486"] = { text = "lost=1" },
+  ["gossip:99915d847442c801"] = { text = "goner=1 thought=2" },
   ["gossip:99b287032fdd1ca7"] = { text = "almost=6 approximately=5 degrees=3 ding=1 exactly=2 somewhere=7 well=4" },
   ["gossip:99b6083ac8e2b2c0"] = { text = "affliction=31 appears=35 become=46 before=47 contain=28 curse=19 first=25 gathered=40 go=42 group=39 how=16 humans=37 i=18 infect=34 it=5 know=2 large=38 machinations=9 otherwise=12 our=24 ourselves=32 own=8 priority=26 put=48 refugees=44 research=22 responsible=6 servants=45 spreads=17 stop=20 such=33 thing=3 this=30 wall=41 way=21 while=23" },
   ["gossip:99b71b9393d3e6c9"] = { text = "abandoned=15 after=2 another=3 ashore=18 attack=1 avenge=45 between=27 but=24 danger=29 day=40 fear=32 few=11 fiends=44 hopes=47 i=9 know=39 lies=30 much=28 my=13 now=17 our=37 plight=38 ruin=42 sailors=12 sanctuary=26 see=7 ship=14 so=8 someone=36 soon=19 strike=22 survive=5 surviving=5 that=6 this=34 town=20 us=41 watery=43 we=16 write=35" },

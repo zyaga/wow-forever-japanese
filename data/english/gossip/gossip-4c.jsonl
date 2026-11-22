@@ -17,6 +17,7 @@
 {"id": "4c834dcc0c390b14", "field": "text", "en": "I want to browse your goods.", "hash": "4c834dcc0c390b14", "src": "vmangos@13b49dc"}
 {"id": "4c887eed0324aa99", "field": "text", "en": "Sorry that we are late, Ayessa.", "hash": "4c887eed0324aa99", "src": "collector@1.60.1.70790"}
 {"id": "4c88bf80671f8b58", "field": "text", "en": "My trees.... they have withered up and died just like me.", "hash": "4c88bf80671f8b58", "src": "vmangos@13b49dc"}
+{"id": "4c8d049fb72f721f", "field": "text", "en": "Why did it become unsafe?", "hash": "4c8d049fb72f721f", "src": "collector@1.60.1.70888", "npcs": [253471]}
 {"id": "4c8d8104454bc8be", "field": "text", "en": "Let's get down to business!", "hash": "4c8d8104454bc8be", "src": "vmangos@13b49dc"}
 {"id": "4c8e1ddf6602bec9", "field": "text", "en": "Face the Might of Kalimdor!", "hash": "4c8e1ddf6602bec9", "src": "vmangos@13b49dc"}
 {"id": "4c9a0b1a0bc0fca9", "field": "text", "en": "I sense evil brewing. . . .", "hash": "4c9a0b1a0bc0fca9", "src": "vmangos@13b49dc"}

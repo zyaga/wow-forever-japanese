@@ -29,6 +29,7 @@ WFJ.Data.add("english", {
   ["gossip:969b268ca889719c"] = { text = "acquire=11 assistance=3 city=17 greater=5 honor=12 however=6 imagine=4 implore=24 need=2 our=1 reputation=13 seek=21 there=10 this=7 time=9 too=14" },
   ["gossip:96a20ec6b4b146e1"] = { text = "contract=1" },
   ["gossip:96a54621cff021fa"] = { text = "yes=1" },
+  ["gossip:96b759832bffb6d6"] = { text = "all=41 arrival=24 before=25 below=13 bodies=19 bones=18 brave=32 claim=36 clan=34 come=27 cursed=26 eager=43 first=31 frivolous=4 generations=28 horrors=30 i=39 least=8 our=23 place=22 power=35 proved=12 roaming=20 rule=42 rumors=1 running=6 see=17 tasks=5 true=2 undead=21 unfortunate=7 valley=14 what=16 worth=11 you=3" },
   ["gossip:96b78eb3413f9f4a"] = { text = "back=1 killing=2" },
   ["gossip:96b7ade5f54b1d41"] = { text = "easy=3 killing=2 you=1" },
   ["gossip:96c0673ae1b34209"] = { text = "ask=8 capacity=2 filled=3 help=6 leave=12 me=10 need=7 one=5 others=4 studies=11 time=14 waste=13" },

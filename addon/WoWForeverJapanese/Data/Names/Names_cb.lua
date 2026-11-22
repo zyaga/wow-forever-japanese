@@ -113,6 +113,7 @@ WFJ.Data.add("name", {
   ["cb6bfc1cd49e5445"] = { "ブラッド・ガードズ・レザー・ヘッドバンド", "ぶらっど・がーどず・れざー・へっどばんど", "Blood Guard's Leather Headband" },
   ["cb6d862bec93f3b4"] = { "ドント・トラスト・ミー！・アイム・ネームド・ビリー！", "どんと・とらすと・みー・あいむ・ねーむど・びりー", "Don't trust me! I'm named Billy!" },
   ["cb6e76f02fa245d1"] = { "プラン：シャイニング・ミスリル・ブレストプレート", "ぷらん・しゃいにんぐ・みすりる・ぶれすとぷれーと", "Plans: Shining Mithril Breastplate" },
+  ["cb6ef96141209da6"] = { "トーヴ・レッドストーン", "とーゔ・れっどすとーん", "Tove Redstone" },
   ["cb7057aa4422cf4e"] = { "ダーモット", "だーもっと", "Dermot" },
   ["cb7295d4b07827c5"] = { "セーフ・ティー・エマージェンシー・リッパー", "せーふ・てぃー・えまーじぇんしー・りっぱー", "SAF-T Emergency Ripper" },
   ["cb74c12822fde23f"] = { "アンイールディング・フェイス", "あんいーるでぃんぐ・ふぇいす", "Unyielding Faith" },
@@ -234,6 +235,7 @@ WFJ.Data.add("name", {
   ["cbfad6108d9a33da"] = { "デヴラク", "でゔらく", "Devrak" },
   ["cbfb55c288fa3e02"] = { "ビリバブ・コグスピナー", "びりばぶ・こぐすぴなー", "Billibub Cogspinner" },
   ["cbfd8c45b64c7c46"] = { "ブリトル・キー", "ぶりとる・きー", "Brittle Key" },
+  ["cbfe85839a6bd45e"] = { "ウィキッド・レザー・ヘッドバンド", "うぃきっど・れざー・へっどばんど", "Wicked Leather Headbands" },
   ["cbff4c2615b35fce"] = { "レシルゴア", "れしるごあ", "Rethilgore" },
   ["cbffb4fbfe199c69"] = { "グリムトーテム・ポスト", "ぐりむとーてむ・ぽすと", "Grimtotem Post" },
 })

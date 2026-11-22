@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:5f11176fb33ea092"] = { text = "critters=12 dwell=11 friendly=13 landscape=8 left=4 step=15 turning=9 twisted=7 watch=16 within=10" },
   ["gossip:5f1a58a2f928dd70"] = { text = "alive=16 all=26 around=1 blue=12 bright=15 but=17 cells=29 dark=20 face=8 fend=32 guards=25 here=3 left=27 like=22 look=2 overhead=11 prison=23 prisoners=28 quite=19 skies=13 so=14 themselves=31 wind=10 yes=18" },
   ["gossip:5f1af88608e4e7ce"] = { text = "all=8 arrive=18 conflict=5 day=16 even=11 gates=25 gathered=9 gong=23 last=14 need=6 open=26 prepared=10 ring=24 sent=13 should=19 start=28 things=7 true=1 upcoming=4 war=27 we=3 within=17 young=2" },
+  ["gossip:5f1d80f4e089a39f"] = { text = "agree=1 hidden=8 his=2 information=3 need=6 prison=9 really=7 treat=5 valid=4" },
   ["gossip:5f1d8b5f779acf7e"] = { text = "assist=6 journey=5 seek=4 wisely=1" },
   ["gossip:5f2034b3dc0f0dc5"] = { text = "best=5 blood=13 but=9 courses=17 days=3 find=20 glorious=6 here=1 matter=22 spent=2 still=11 time=21 veins=16 victory=19 we=10 young=12" },
   ["gossip:5f20f53d54289d3b"] = { text = "gimme=3 riding=1 turtle=2" },

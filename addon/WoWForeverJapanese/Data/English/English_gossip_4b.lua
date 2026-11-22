@@ -9,6 +9,7 @@ WFJ.Data.add("english", {
   ["gossip:4b1e2440b561472d"] = { text = "bug=27 but=13 charge=19 collecting=22 here=6 like=5 one=26 others=16 pack=9 ready=11 shipped=10 some=23 still=21 told=12 wants=1 what=8 whatever=20" },
   ["gossip:4b227f5b918117ba"] = { text = "grabs=3 part=1 pocket=4 puts=5" },
   ["gossip:4b270be50342ef0d"] = { text = "designed=6 gnomes=9 ha=14 invaders=3 keep=19 lost=12 lucky=15 pet=18 puny=8 quickly=11 those=7 thwart=4 track=17 turns=1 would=13" },
+  ["gossip:4b28af07601b9390"] = { text = "place=1" },
   ["gossip:4b300e449902451b"] = { text = "aid=2 brood=4 me=1 my=3" },
   ["gossip:4b35894ce93db0b4"] = { text = "blows=12 elements=2 enemies=8 might=7 reel=13 shall=14 soon=4 stirring=3 their=6 they=10 unleash=9 we=5 yes=1" },
   ["gossip:4b362f1a27d62a78"] = { text = "chapter=1" },

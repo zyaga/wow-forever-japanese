@@ -17,6 +17,7 @@ WFJ.Data.add("english", {
   ["gossip:2b52ce4214d7f49a"] = { text = "all=2 any=8 beautiful=10 blooms=11 flowers=5 healthy=4 occasion=9 only=3 provide=12 supplier=6 we=1" },
   ["gossip:2b5371183e3e2aa7"] = { text = "accepting=64 all=7 basis=41 earth=10 elements=8 even=35 excellent=1 fickle=36 forget=58 foundation=12 gain=51 greater=48 it=14 its=43 laws=44 life=40 like=33 make=62 never=57 now=59 observing=45 only=30 other=31 path=68 patience=20 prepared=4 proper=26 protect=24 realize=69 represents=13 respect=27 secrets=56 shares=55 shown=28 shows=6 stamina=18 strength=16 success=3 that=25 things=11 will=52 wisdom=50 you=23 your=2" },
   ["gossip:2b54644aeea279af"] = { text = "dragon=2 filth=1 guards=4 monster=7 seize=8 this=6" },
+  ["gossip:2b5d9e442afb463a"] = { text = "gathered=2 materials=1" },
   ["gossip:2b65e1b1e2d11a8a"] = { text = "become=7 desperate=6 fear=1 our=2 situation=3" },
   ["gossip:2b6861fa4f83a9d8"] = { text = "care=5 lead=4 near=1 need=7 preferably=8 prints=2 someone=6" },
   ["gossip:2b70707ef7435e81"] = { text = "about=3 blasphemous=7 demons=8 feet=4 help=11 taller=5 these=6 two=9" },

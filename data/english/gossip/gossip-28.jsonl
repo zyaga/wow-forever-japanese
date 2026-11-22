@@ -31,6 +31,7 @@
 {"id": "28de61b30d49dee0", "field": "text", "en": "My bones are weak, my eyes see only darkness, and my body feels only pain; but these things are good because my will is my own.", "hash": "28de61b30d49dee0", "src": "vmangos@13b49dc"}
 {"id": "28e1c40960d1c573", "field": "text", "en": "Reckless mortal!", "hash": "28e1c40960d1c573", "src": "vmangos@13b49dc"}
 {"id": "28e5daf7fb0dca0f", "field": "text", "en": "<The tag on the mechanostrider reads:$B$BCrimson-Blastdasher XL 300. Now with extra terrain grips and a sleek new color!>", "hash": "28e5daf7fb0dca0f", "src": "collector@1.60.1.70790", "npcs": [267683]}
+{"id": "28f00bd562a8b78d", "field": "text", "en": "Good, you've arrived. We haven't much time. Are you ready?", "hash": "28f00bd562a8b78d", "src": "collector@1.60.1.71037"}
 {"id": "28f3f62a99478c78", "field": "text", "en": "Azure Templar!  I hold your crest of beckoning.  Heed my summons!", "hash": "28f3f62a99478c78", "src": "vmangos@13b49dc"}
 {"id": "28f4f57a46522564", "field": "text", "en": "Greetings, $n.  How goes your delvings into the demonic and arcane?  Have you uncovered any dark secrets of late?", "hash": "28f4f57a46522564", "src": "vmangos@13b49dc"}
 {"id": "28f65ef0f3de230e", "field": "text", "en": "Where's my spinner? I just had it here somewhere...", "hash": "28f65ef0f3de230e", "src": "vmangos@13b49dc"}

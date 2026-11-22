@@ -35,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:859e286ab2af55cd"] = { text = "listened=6 mother=1 oh=2" },
   ["gossip:85ac331aa31605ba"] = { text = "again=5 one=2 try=6 useless=4 wow=1" },
   ["gossip:85af21342cbf9d50"] = { text = "bazaar=1 business=2 good=3 him=6 right=5" },
+  ["gossip:85be39641a49b9d5"] = { text = "what=1" },
   ["gossip:85be89d98dc58094"] = { text = "i=1 love=2" },
   ["gossip:85c82867611e0e77"] = { text = "beyond=15 cradle=3 even=6 heavens=11 known=5 larger=7 now=4 our=1 part=9 people=2 pierce=13 possessing=20 see=16 skysight=19 so=17 strong=18 that=14 themselves=12 those=21 world=8" },
   ["gossip:85cf09aa02268fb9"] = { text = "life=2" },

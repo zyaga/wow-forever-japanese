@@ -6,6 +6,7 @@
 {"id": "4b1e2440b561472d", "field": "text", "en": "Looks like we have as many lean wolf steaks as the Horde wants. They told me to pack up what we have here and ready it to be shipped it out to Cenarion Hold in Silithus. But it looks like some of the others here might still be collecting whatever it is that they're in charge of. Go bug one of them.", "hash": "4b1e2440b561472d", "src": "vmangos@13b49dc"}
 {"id": "4b227f5b918117ba", "field": "text", "en": "%s grabs a part and puts it in his pocket...", "hash": "4b227f5b918117ba", "src": "vmangos@13b49dc"}
 {"id": "4b270be50342ef0d", "field": "text", "en": "The twists and turns of Orgrimmar are designed to thwart invaders. Can you imagine how quickly one of those puny gnomes would get lost in here? Ha! If it was lucky, I'd track it down and keep it as a pet.", "hash": "4b270be50342ef0d", "src": "vmangos@13b49dc"}
+{"id": "4b28af07601b9390", "field": "text", "en": "What is this place?", "hash": "4b28af07601b9390", "src": "collector@1.60.1.70888", "npcs": [253471]}
 {"id": "4b300e449902451b", "field": "text", "en": "Aid me my brood!", "hash": "4b300e449902451b", "src": "vmangos@13b49dc"}
 {"id": "4b35894ce93db0b4", "field": "text", "en": "Yes, $n. The elements are stirring. Soon, we will unleash their might upon our enemies. They shall reel from the blows!", "hash": "4b35894ce93db0b4", "src": "vmangos@13b49dc"}
 {"id": "4b362f1a27d62a78", "field": "text", "en": "Chapter on Enchanted Scarlet Thread.", "hash": "4b362f1a27d62a78", "src": "vmangos@13b49dc"}

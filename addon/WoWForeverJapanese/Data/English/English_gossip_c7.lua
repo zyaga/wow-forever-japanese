@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:c78f657f01008e83"] = { text = "forest=1 haste=5 needed=4 spirits=2" },
   ["gossip:c79de958b2d3a532"] = { text = "fixed=3 hooray=4" },
   ["gossip:c79ea1ef619dcea9"] = { text = "all=37 batch=3 bring=4 can=36 collecting=13 collection=27 elixirs=10 even=22 far=30 forced=16 gather=38 hello=1 here=39 if=34 make=11 managed=32 me=26 please=43 potions=9 prepare=19 properly=18 results=21 tasked=29 terrible=23 them=12 this=14 together=33 tragic=17 war=7 we=6 young=2" },
+  ["gossip:c7b32c218fbf38cf"] = { text = "mission=1 tell=2" },
   ["gossip:c7bc02be18b51221"] = { text = "got=5 looking=3 outfit=4 say=1" },
   ["gossip:c7c46378ea1c97fb"] = { text = "happened=3 more=4 road=1 tell=6 what=2" },
   ["gossip:c7c502d956ab2d36"] = { text = "all=35 bumpy=33 but=8 crash=38 engineer=14 flash=31 good=3 i=17 lightning=30 long=41 or=19 perhaps=15 question=4 remember=6 remembering=6 sky=26 soaring=27 something=9 that=1 then=29 things=5 think=23 though=39 time=7 very=2 what=18 who=21" },

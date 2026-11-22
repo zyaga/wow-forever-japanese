@@ -14,6 +14,7 @@ WFJ.Data.add("english", {
   ["gossip:482f9835976dab38"] = { text = "last=1 move=2 prepares=5 sting=4 victim=3" },
   ["gossip:4831641bff523a32"] = { text = "idiot=2" },
   ["gossip:4831e05b60f220de"] = { text = "all=6 ancient=2 ask=5 asked=5 done=7 greetings=1 i=4 me=9 one=3" },
+  ["gossip:483d59b594688c3b"] = { text = "anything=1 interest=2" },
   ["gossip:484682169ba0bfa8"] = { text = "hour=5 next=1 show=2 stick=4 sure=3" },
   ["gossip:4847c75ccf98be50"] = { text = "bleed=6 cut=3 dry=5 throats=2" },
   ["gossip:4848fcdd0e3ee432"] = { text = "delay=2 inevitable=1 only=3" },

@@ -25,6 +25,7 @@ WFJ.Data.add("english", {
   ["gossip:81c05ce0d517a74e"] = { text = "feel=3 i=1 me=9 once=4 she=8 touch=5 upon=10 yes=11" },
   ["gossip:81c24cc15d2107f1"] = { text = "all=7 here=1 master=6 sees=8 step=2 watch=4" },
   ["gossip:81cb4a3e5a28288e"] = { text = "help=2" },
+  ["gossip:81d4e5b745777f84"] = { text = "call=4 discretion=1 thanks=2" },
   ["gossip:81d821a181edac52"] = { text = "all=12 begin=20 collected=4 day=10 done=15 gong=16 hello=1 materiel=7 really=18 rung=17 shipped=9 speak=8 war=5" },
   ["gossip:81dfde81550caf9f"] = { text = "hand=2 ready=3 stack=1 whenever=5" },
   ["gossip:81e45bc911596f64"] = { text = "begin=3 carry=4 march=2 well=1" },

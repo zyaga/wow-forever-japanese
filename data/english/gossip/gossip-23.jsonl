@@ -48,6 +48,7 @@
 {"id": "23dc5d661041e5b2", "field": "text", "en": "[PH] Ok, I'm outta here... see you in Ragnaros' Lair... l8", "hash": "23dc5d661041e5b2", "src": "vmangos@13b49dc"}
 {"id": "23e64d1f34a71555", "field": "text", "en": "Come, $n. The lake is just around the bend.", "hash": "23e64d1f34a71555", "src": "vmangos@13b49dc"}
 {"id": "23e973225c96986f", "field": "text", "en": "What's going on here? Piznik! I knew we shouldn't have let you stick around!", "hash": "23e973225c96986f", "src": "vmangos@13b49dc"}
+{"id": "23ea7bb32068dc49", "field": "text", "en": "There is still much work to be done to strengthen ties between the Wildhammers and the dwarves of Ironforge, but I am honored to be a part of that process.", "hash": "23ea7bb32068dc49", "src": "collector@1.60.1.70862", "npcs": [270054]}
 {"id": "23f61b227cbc3b2f", "field": "text", "en": "Hey Vi'el, show me your wares!", "hash": "23f61b227cbc3b2f", "src": "vmangos@13b49dc"}
 {"id": "23fca8c6a1cfe773", "field": "text", "en": "The humans claimed much of the Dustwallow Marsh for themselves, but the Stonemaul clan, with our help, has been able to push them back.", "hash": "23fca8c6a1cfe773", "src": "vmangos@13b49dc"}
 {"id": "23fd961c559963f6", "field": "text", "en": "Justice is done!", "hash": "23fd961c559963f6", "src": "vmangos@13b49dc"}

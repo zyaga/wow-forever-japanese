@@ -1,18 +1,27 @@
 {"id": 6019, "field": "name", "en": "Hornizz Brimbuzzle", "hash": "33b1468887ba9188", "src": "collector@1.60.1.70938"}
 {"id": 6031, "field": "name", "en": "Tormus Deepforge", "hash": "9d447a97ef89128b", "src": "collector@1.60.1.70862"}
+{"id": 6034, "field": "name", "en": "Lotherias", "hash": "0fbbc7d38a58ea62", "src": "collector@1.60.1.70862"}
 {"id": 6089, "field": "name", "en": "Harry Burlguard", "hash": "1ca578b40493d274", "src": "collector@1.60.1.70450"}
 {"id": 6090, "field": "name", "en": "Bartleby", "hash": "46ad25003d8b6ee2", "src": "collector@1.60.1.70450"}
 {"id": 6094, "field": "name", "en": "Byancie", "hash": "2d2369675d78467e", "src": "collector@1.60.1.70790"}
 {"id": 6114, "field": "name", "en": "Muren Stormpike", "hash": "d9ddd0b2c5a8385d", "src": "collector@1.60.1.70862"}
 {"id": 6121, "field": "name", "en": "Remen Marcot", "hash": "75261419edd3c707", "src": "collector@1.60.1.70790"}
+{"id": 6122, "field": "name", "en": "Gakin the Darkbinder", "hash": "8d05dcb543fcc5ef", "src": "collector@1.60.1.70959"}
 {"id": 6142, "field": "name", "en": "Mathiel", "hash": "a9224821b8d19265", "src": "collector@1.60.1.70862"}
 {"id": 6166, "field": "name", "en": "Yorus Barleybrew", "hash": "cd09cdbf0b2c778e", "src": "collector@1.60.1.70888"}
 {"id": 6169, "field": "name", "en": "Klockmort Spannerspan", "hash": "e7370e5cbbc9f939", "src": "collector@1.60.1.70862"}
+{"id": 6171, "field": "name", "en": "Duthorian Rall", "hash": "1eda275356555aa4", "src": "collector@1.60.1.71037"}
+{"id": 6172, "field": "name", "en": "Henze Faulk", "hash": "0692262afe56d163", "src": "collector@1.60.1.71037"}
+{"id": 6173, "field": "name", "en": "Gazin Tenorm", "hash": "c06dad8c66c59efa", "src": "collector@1.60.1.71037"}
+{"id": 6174, "field": "name", "en": "Stephanie Turner", "hash": "c94ce42704d70594", "src": "collector@1.60.1.71037"}
 {"id": 6175, "field": "name", "en": "John Turner", "hash": "0a50bb445cba268b", "src": "collector@1.60.1.70862"}
+{"id": 6176, "field": "name", "en": "Bath'rah the Windwatcher", "hash": "480c9ad14122d87c", "src": "collector@1.60.1.71037"}
 {"id": 6177, "field": "name", "en": "Narm Faulk", "hash": "f2da758431b238a2", "src": "collector@1.60.1.70862"}
 {"id": 6178, "field": "name", "en": "Muiredon Battleforge", "hash": "5ee65bd1fd1ad478", "src": "collector@1.60.1.70862"}
 {"id": 6179, "field": "name", "en": "Tiza Battleforge", "hash": "1b8577f59f6af821", "src": "collector@1.60.1.70862"}
 {"id": 6236, "field": "name", "en": "Klannoc Macleod", "hash": "4c2655705ca48783", "src": "collector@1.60.1.70888"}
+{"id": 6244, "field": "name", "en": "Takar the Seer", "hash": "d7da587372031d68", "src": "collector@1.60.1.70959"}
+{"id": 6247, "field": "name", "en": "Doan Karhan", "hash": "03970f1709cfc9c3", "src": "collector@1.60.1.70959"}
 {"id": 6286, "field": "name", "en": "Zarrin", "hash": "22994a3bde26025a", "src": "collector@1.60.1.70205"}
 {"id": 6287, "field": "name", "en": "Radnaal Maneweaver", "hash": "013125d2128e8e8d", "src": "collector@1.60.1.71037"}
 {"id": 6289, "field": "name", "en": "Rand Rhobart", "hash": "50377bb271493b2e", "src": "collector@1.60.1.70862"}
@@ -25,6 +34,7 @@
 {"id": 6446, "field": "name", "en": "Therzok", "hash": "74b10f5104831be6", "src": "collector@1.60.1.70862"}
 {"id": 6467, "field": "name", "en": "Mennet Carkad", "hash": "e1e85fb2d4112e4e", "src": "collector@1.60.1.70790"}
 {"id": 6522, "field": "name", "en": "Andron Gant", "hash": "86b11dc9cdd37115", "src": "collector@1.60.1.70790"}
+{"id": 6546, "field": "name", "en": "Tabetha", "hash": "5daa544ae6e61ccd", "src": "collector@1.60.1.70888"}
 {"id": 6569, "field": "name", "en": "Gnoarn", "hash": "5b8e97ae37239f37", "src": "collector@1.60.1.70790"}
 {"id": 6577, "field": "name", "en": "Bingles Blastenheimer", "hash": "62a1154a873eeef2", "src": "collector@1.60.1.70862"}
 {"id": 6579, "field": "name", "en": "Shoni the Shilent", "hash": "27160bb385ce336d", "src": "collector@1.60.1.70862"}
@@ -39,5 +49,6 @@
 {"id": 6786, "field": "name", "en": "Ukor", "hash": "0b8002799c562b87", "src": "collector@1.60.1.70790"}
 {"id": 6806, "field": "name", "en": "Tannok Frosthammer", "hash": "b7df0b93e510858c", "src": "collector@1.60.1.70938"}
 {"id": 6826, "field": "name", "en": "Talvash del Kissel", "hash": "e1058bc7296f4a7f", "src": "collector@1.60.1.70888"}
+{"id": 6868, "field": "name", "en": "Jarkal Mossmeld", "hash": "3d8e0d35b02f86cf", "src": "collector@1.60.1.71037"}
 {"id": 6886, "field": "name", "en": "Onin MacHammar", "hash": "475182532b0a0cc3", "src": "collector@1.60.1.71037"}
 {"id": 6928, "field": "name", "en": "Innkeeper Grosk", "hash": "ebfdfeb7de4f8c2f", "src": "collector@1.60.1.70790"}

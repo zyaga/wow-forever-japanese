@@ -231,6 +231,7 @@ WFJ.Data.add("name", {
   ["fff254626c94d9ed"] = { "スキーマティック：スウィフトフェザー・アロー", "すきーまてぃっく・すうぃふとふぇざー・あろー", "Schematic: Swiftfeather Arrow" },
   ["fff6dd1622f8f90d"] = { "フォーミュラ：エンチャント・ウェポン・ディスマントル", "ふぉーみゅら・えんちゃんと・うぇぽん・でぃすまんとる", "Formula: Enchant Weapon - Dismantle" },
   ["fff7bc8efe30485d"] = { "ソルトストーン・アームスプリント", "そるとすとーん・あーむすぷりんと", "Saltstone Armsplints" },
+  ["fff7c785e6d92314"] = { "オーネイト・ミスリル・ヘルム", "おーねいと・みすりる・へるむ", "Ornate Mithril Helms" },
   ["fff99deebb8f9012"] = { "ウィンドシェイパー・ノービス・シーア", "うぃんどしぇいぱー・のーびす・しーあ", "Windshaper Novice Seers" },
   ["fffa0f4485be4854"] = { "アマニ・エンパイア", "あまに・えんぱいあ", "Amani Empire" },
   ["fffb6e346478442e"] = { "グルバシ・モージョー・マッドネス", "ぐるばし・もーじょー・まっどねす", "Gurubashi Mojo Madness" },

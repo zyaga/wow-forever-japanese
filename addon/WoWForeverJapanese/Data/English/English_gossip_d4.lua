@@ -49,6 +49,7 @@ WFJ.Data.add("english", {
   ["gossip:d4d543a93bc58a09"] = { text = "getting=4 sweet=1 thanks=5 that=2 thing=3" },
   ["gossip:d4d6d5bd69a53d8b"] = { text = "allowed=11 cursing=3 else=8 fighting=4 handling=2 loitering=1 thinking=6" },
   ["gossip:d4d77240963518da"] = { text = "brood=1" },
+  ["gossip:d4db3e84d76b93c0"] = { text = "lion=3 me=1 slain=4 talking=2" },
   ["gossip:d4e3d3f078fa7a3f"] = { text = "where=1" },
   ["gossip:d4e48356dc5cc8e7"] = { text = "find=7 presence=5 speak=3 then=1 you=2" },
   ["gossip:d4e550e46bef0ba5"] = { text = "next=2 so=1 what=3" },
