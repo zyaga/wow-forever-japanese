@@ -7,7 +7,8 @@
 -- Dynamic: MerchantFrame_Update calls MerchantFrame_UpdateMerchantInfo / _UpdateBuybackInfo by global name
 -- (mainline/merchantframe.lua:192–217), so post-hooks on those two globals follow every refresh:
 --   title: UpdateMerchantInfo writes MerchantFrame:SetTitle(UnitName("npc")) (a name: its record is dropped, never
---     matched), and UpdateBuybackInfo SetTitle(MERCHANT_BUYBACK) (lua:274–275, 532–533) → TitleContainer.TitleText
+--     matched as a dictionary word; while names are on it shows the NPC's Japanese name, UI/NameLabels), and
+--     UpdateBuybackInfo SetTitle(MERCHANT_BUYBACK) (lua:274–275, 532–533) → TitleContainer.TitleText
 --     (blizzard_sharedxml/portraitframe.lua:11–13), shown with `only`. A global MerchantFrameTitleText is tried first
 --     (whether the `$parent` name resolves through the unnamed TitleContainer is an in-game check).
 --   page: MerchantPageText, SetFormattedText(MERCHANT_PAGE_NUMBER, page, pages) (lua:280), a template like
@@ -72,6 +73,9 @@ local BUYBACK_TITLE = { only = { "MERCHANT_BUYBACK" } }
 -- hooksecurefunc target: the merchant tab was written. → the number of dictionary words found.
 function Merchant.onMerchantInfo()
   WFJ.SurfaceState.drop(SURFACE, "ui.title") -- the NPC name now: the buyback title's record goes
+  -- the NPC's name: its Japanese while names are on, under the title's own record. Shown from here and not from
+  -- a hook on SetTitle: the buyback tab writes a dictionary title through the same SetTitle
+  WFJ.NameLabels.unit(SURFACE, "ui.title", get("nameText"), "npc")
   return WFJ.Labels.showAll(SURFACE, { { "ui.page", get("pageText") } })
 end
 

@@ -4,6 +4,10 @@
 -- as they do for a translated line. A name with no Japanese keeps the client's text and gets no record.
 --   NameLabels.show(surface, recKey, widget[, area]) → 1 when the name shows in Japanese (or is still ours), else 0
 --   NameLabels.unit(surface, recKey, widget, unit[, area]) → the same for a unit's name; a player's is never touched
+--   NameLabels.title(surface, frame[, recKey[, unit]]) → the same for a window whose title bar is its NPC's name
+--     (frame:SetTitle(UnitName("npc")) → TitleContainer.TitleText): shown now and after every later SetTitle. `unit`
+--     is "npc" unless given. Under the record key the surface's own title uses, so a dictionary title a surface
+--     already shows on that widget ("Buyback") is left as it is: one record owns the widget.
 -- Both guards live here so no surface repeats them: a value the client hides from addons (a unit's name in
 -- combat inside an instance) is never read, compared, hashed or written, and a player's name is not a game name
 -- even when an NPC shares it.
@@ -57,4 +61,19 @@ function NameLabels.unit(surface, recKey, widget, unit, area)
     return 0
   end
   return NameLabels.show(surface, recKey, widget, area)
+end
+
+local titleHooked = setmetatable({}, { __mode = "k" })
+
+function NameLabels.title(surface, frame, recKey, unit)
+  if type(frame) ~= "table" then return 0 end
+  local container = frame.TitleContainer
+  local text = type(container) == "table" and container.TitleText or nil
+  if type(text) ~= "table" then return 0 end
+  recKey, unit = recKey or "title", unit or "npc"
+  if not titleHooked[frame] and type(frame.SetTitle) == "function" then
+    titleHooked[frame] = true
+    hooksecurefunc(frame, "SetTitle", function() NameLabels.unit(surface, recKey, text, unit) end)
+  end
+  return NameLabels.unit(surface, recKey, text, unit)
 end

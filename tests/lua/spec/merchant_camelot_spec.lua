@@ -82,6 +82,26 @@ describe("the merchant on the Forever client", function()
     for i = 1, 12 do assert.are.equal(0, _G["MerchantItem" .. i .. "Name"].calls.addonSetText) end
   end)
 
+  it("with names on the merchant tab's title is the NPC's name in Japanese; the buyback title stays the"
+    .. " dictionary's; hiding restores English", function()
+    _G.UnitIsPlayer = function() return false end
+    finally(function() _G.UnitIsPlayer = nil; WFJ.State.setNames(false) end)
+    WFJ.Data.add("name", { [WFJ.Names.key("Merchant Buyback")] = "マーチャント・バイバック\tまーちゃんと・ばいばっく" })
+    WFJ.State.setNames(true)
+    CI.openMerchant()
+    assert.are.equal("マーチャント・バイバック", title():GetText())
+    alt(true)
+    assert.are.equal("Merchant Buyback", title():GetText())
+    alt(false)
+    CI.merchantTab(2)
+    assert.are.equal("商人の買い戻し", title():GetText())
+    CI.merchantTab(1)
+    assert.are.equal("マーチャント・バイバック", title():GetText())
+    _G.MerchantFrame:Hide()
+    assert.are.equal("Merchant Buyback", title():GetText())
+    assert.are.equal(0, SS.count("merchant"))
+  end)
+
   it("the sell-junk and guild-repair tooltips are Japanese, the money lines verbatim", function()
     CI.hover(_G.MerchantSellAllJunkButton)
     assert.are.equal("ガラクタをすべて売る", left(1))

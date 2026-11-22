@@ -134,6 +134,50 @@ describe("name widgets", function()
     assert.are.equal(0, fs.calls.addonSetText)
   end)
 
+  describe("a window whose title is its NPC's name", function()
+    local frame
+    before_each(function()
+      frame = { TitleContainer = { TitleText = Stub.fontString("", "Fonts\\FRIZQT__.TTF", 12, "") } }
+      function frame:SetTitle(text) self.TitleContainer.TitleText.text = text end
+    end)
+
+    it("shows the name in Japanese now and after every later SetTitle, hooking the window once", function()
+      frame:SetTitle("Thrall")
+      assert.are.equal(1, WFJ.NameLabels.title("spec", frame))
+      assert.are.equal("スロール", frame.TitleContainer.TitleText:GetText())
+      frame:SetTitle("Nobody Known")
+      assert.are.equal("Nobody Known", frame.TitleContainer.TitleText:GetText())
+      frame:SetTitle("Thrall")
+      assert.are.equal("スロール", frame.TitleContainer.TitleText:GetText())
+      local writes = frame.TitleContainer.TitleText.calls.addonSetText
+      WFJ.NameLabels.title("spec", frame) -- asked again: no second hook, so one write per SetTitle
+      frame:SetTitle("Nobody Known")
+      frame:SetTitle("Thrall")
+      assert.are.equal(writes + 1, frame.TitleContainer.TitleText.calls.addonSetText)
+    end)
+
+    it("leaves a title another record already shows in Japanese (a dictionary title on the same widget)", function()
+      local text = frame.TitleContainer.TitleText
+      frame:SetTitle("Thrall")
+      WFJ.Render.show("spec", "title", text, "Thrall", "ui", "name", "Thrall")
+      local writes = text.calls.addonSetText
+      assert.are.equal(1, WFJ.NameLabels.title("spec", frame))
+      assert.are.equal(writes, text.calls.addonSetText)
+    end)
+
+    it("a player's window (a trade partner, an inspected player) keeps the name", function()
+      players.npc = true
+      frame:SetTitle("Thrall")
+      assert.are.equal(0, WFJ.NameLabels.title("spec", frame))
+      assert.are.equal("Thrall", frame.TitleContainer.TitleText:GetText())
+    end)
+
+    it("takes a window with no title text, or no window, without an error", function()
+      assert.are.equal(0, WFJ.NameLabels.title("spec", {}))
+      assert.are.equal(0, WFJ.NameLabels.title("spec", nil))
+    end)
+  end)
+
   it("takes no widget, an empty widget and a hidden unit without an error", function()
     assert.are.equal(0, WFJ.NameLabels.show("spec", "name", nil))
     fs.text = ""
