@@ -530,7 +530,7 @@ WFJ.Data.add("reading", {
   ["ui:BOOSTED_CHAR_SPELL_TEMPLOCK"] = { text = "一時的に=いちじてきに=36321 ロック=ロック=35599 中=ちゅう=38495" },
   ["ui:BOSSES"] = { text = "ボス=ボス=34959" },
   ["ui:BOSSES_KILLED"] = { text = "ボス=ボス=34959 撃破=げきは=84420" },
-  ["ui:BOSS_ALIVE"] = { text = "在席=ざいせき=60101" },
+  ["ui:BOSS_ALIVE"] = { text = "未討伐=みとうばつ=155450" },
   ["ui:BOSS_BANNER_LOOT_SET"] = { text = "セット=セット=33398" },
   ["ui:BOSS_KILL_SUBTITLE"] = { text = "倒した=たおした=45561" },
   ["ui:BOSS_YOU_DEFEATED"] = { text = "撃破=げきは=84420" },

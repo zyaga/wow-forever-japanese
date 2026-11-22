@@ -406,7 +406,6 @@ WFJ.Data.add("english", {
   ["ui:BONUS_REPUTATION_TOOLTIP"] = { text = "account=2 bonus=7 faction=4 gain=6 reputation=5 this=3 unlocked=8 your=1" },
   ["ui:BOOSTED_CHAR_SPELL_TEMPLOCK"] = { text = "temporarily=1" },
   ["ui:BOSSES"] = { text = "bosses=1" },
-  ["ui:BOSS_ALIVE"] = { text = "available=1" },
   ["ui:BOSS_BANNER_LOOT_SET"] = { text = "set=1" },
   ["ui:BOSS_KILL_SUBTITLE"] = { text = "defeated=1" },
   ["ui:BOUNTY_TUTORIAL_BOUNTY_FINISHED"] = { text = "collect=4 emissary=1 reward=3 visit=2" },

@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-22 at commit `8e059e303`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-22 at commit `b2e828070`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -380,9 +380,9 @@ translation uses for it. The pairs are read off the meanings the readings alread
 |---|---|---|---|---|
 | quest | 22,667 | 462,950 | 421,290 | 91.0% |
 | gossip | 11,723 | 152,152 | 139,565 | 91.7% |
-| ui | 14,318 | 48,606 | 43,724 | 90.0% |
+| ui | 14,318 | 48,606 | 43,723 | 90.0% |
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
-| **All** | | **708,443** | **645,499** | **91.1%** |
+| **All** | | **708,443** | **645,498** | **91.1%** |
 
 A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
 the client fills in are not counted, and neither are the words that take no card by design: the

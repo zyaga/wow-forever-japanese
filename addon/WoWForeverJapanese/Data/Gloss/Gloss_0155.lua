@@ -446,4 +446,5 @@ WFJ.Data.add("gloss", {
   [155447] = "真心\tまごころ\tloyalty (sincerity)",
   [155448] = "約\tやく\taround",
   [155449] = "脅威\tきょうい\tdanger",
+  [155450] = "未討伐\tみとうばつ\tnot yet defeated",
 })

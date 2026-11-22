@@ -553,7 +553,7 @@ WFJ.Data.add("ui", {
   ["BOOSTED_CHAR_SPELL_TEMPLOCK"] = { "一時的にロック中", 0xaa479b19, "." },
   ["BOSSES"] = { "ボス:", 0x969b55ea, "." },
   ["BOSSES_KILLED"] = { "ボス撃破 %d/%d", 0xe396fdc4, "." },
-  ["BOSS_ALIVE"] = { "在席", 0x08bd63f8, "." },
+  ["BOSS_ALIVE"] = { "未討伐", 0x08bd63f8, "." },
   ["BOSS_BANNER_LOOT_SET"] = { "セット: %s", 0xcd267777, "." },
   ["BOSS_KILL_SUBTITLE"] = { "を倒した", 0x36d57d7f, "." },
   ["BOSS_YOU_DEFEATED"] = { "撃破", 0xf9cd9a33, "." },

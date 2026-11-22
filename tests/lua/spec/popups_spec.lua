@@ -33,6 +33,7 @@ local UI = {
   CONFIRM_TALENT_WIPE_1 = { "Do you want to unlearn all of your talents?", "すべてのタレントを忘れますか？" },
   CANCEL = { "Cancel", "キャンセル" },
   ACCEPT = { "Accept", "承諾" }, DECLINE = { "Decline", "辞退" },
+  SELECT_YOUR_ROLE = { "Select Your Role", "ロールを選択" },
   -- the group voice-chat join (mainline/gamedialogdefs.lua:1567–1590): text "", its OnShow writes the line
   VOICE_CHAT_JOIN_GROUP_TEXT = { "This group is using voice chat for easier communication.",
     "このグループは連絡を取りやすくするためにボイスチャットを使っています。" },
@@ -318,6 +319,20 @@ describe("the StaticPopup dialogs on Forever", function()
     tt:AddLine(_G.YES)
     tt:Show()
     assert.are.equal("Yes", _G.GameTooltipTextLeft1:GetText())
+  end)
+
+  it("the role poll and the plain message box show their words; a name in the message box stays", function()
+    local function button(text) return Stub.button(nil, text) end
+    local title, accept = Stub.fontString(_G.SELECT_YOUR_ROLE), button(_G.ACCEPT)
+    _G.RolePollPopup = { GetRegions = function() return title end, GetChildren = function() return accept end }
+    _G.StaticPopupSpecial_Show = function() end
+    WFJ.Popups.onSpecial(_G.RolePollPopup)
+    assert.are.equal(UI.SELECT_YOUR_ROLE[2], title:GetText())
+    local message, okay = Stub.fontString("Some Addon"), button(_G.OKAY)
+    local box = { GetRegions = function() return message end, GetChildren = function() return okay end }
+    WFJ.Popups.onBasic(box)
+    assert.are.equal("Some Addon", message:GetText())
+    assert.are.equal(0, WFJ.Popups.onBasic(nil))
   end)
 
   it("the add-friend dialog: its info and error lines translate; the BattleTag title and a dropped key stay English",

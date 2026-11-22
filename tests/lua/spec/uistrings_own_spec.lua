@@ -54,6 +54,21 @@ describe("Core/UIStrings OWN", function()
     assert.are.equal(2, index.counts.owned)
   end)
 
+  it("a boss not yet defeated in an instance lock owns its word; the friends status keeps the English", function()
+    local t = ns()
+    assert.is_true(t.UIStrings.OWN.BOSS_ALIVE)
+    assert.is_nil(t.UIStrings.OWN.FRIENDS_LIST_AVAILABLE)
+    local function h1(text) return (t.Hash.h32x2(t.Normalize.v1(text))) end
+    local EN = { BOSS_ALIVE = "Available", FRIENDS_LIST_AVAILABLE = "Available" }
+    local rows = {
+      BOSS_ALIVE = { "未討伐", h1("Available"), "." },
+      FRIENDS_LIST_AVAILABLE = { "在席", h1("Available"), "." },
+    }
+    local index = t.UIStrings.build({ rows = rows, english = function(k) return EN[k] end, hash = h1 })
+    assert.are.equal("FRIENDS_LIST_AVAILABLE", (index:match("Available")))
+    assert.are.equal("BOSS_ALIVE", (index:matchOnly("Available", { "BOSS_ALIVE", "BOSS_DEAD", "LOCKED" })))
+  end)
+
   it("the shipped OWN table holds plain keys only", function()
     local t = ns()
     for key in pairs(t.UIStrings.OWN) do

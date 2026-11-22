@@ -74,6 +74,9 @@ local CANDIDATES = {
   shownHeader = { "CooldownViewerSettings.GroupBuffFilter.shownSection.Header.Name" },
   hiddenHeader = { "CooldownViewerSettings.GroupBuffFilter.hiddenSection.Header.Name" },
   alert = { ALERT }, groupAlert = { GROUP_ALERT },
+  -- the settings window's two layout dialogs (cooldownviewersettingsdialogs.xml:3, 9), built from Edit Mode's
+  -- dialog templates: only their Cancel button's word is this surface's
+  layoutDialog = { "CooldownViewerLayoutDialog" }, importDialog = { "CooldownViewerImportLayoutDialog" },
   tooltip = { "GameTooltip" }, isSecret = { "issecretvalue" }, categoryEnum = { "Enum.CooldownViewerCategory" },
 }
 
@@ -250,6 +253,17 @@ local function hookAlert(which)
   pass()
 end
 
+local CANCEL = { only = { "CANCEL" } }
+
+-- HookScript target (a layout dialog's OnShow): its Cancel button. → the number of words found
+function CooldownViewer.showDialog(which)
+  local frame = get(which)
+  if type(frame) ~= "table" then return 0 end
+  local n = WFJ.Labels.show(SURFACE, which .. ".cancel", frame.CancelButton, nil, CANCEL)
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
 local hooked = false
 
 -- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
@@ -262,6 +276,12 @@ function CooldownViewer.init()
     hooksecurefunc(frame, "RefreshLayout", CooldownViewer.onRefreshLayout)
   end
   if type(frame.HookScript) == "function" then frame:HookScript("OnShow", CooldownViewer.showStatic) end
+  for _, which in ipairs({ "layoutDialog", "importDialog" }) do
+    local dialog = get(which)
+    if type(dialog) == "table" and type(dialog.HookScript) == "function" then
+      dialog:HookScript("OnShow", function() CooldownViewer.showDialog(which) end)
+    end
+  end
   for _, key in ipairs({ "spellsTab", "aurasTab", "groupTab" }) do
     WFJ.HelpTooltip.register(get(key), TAB_TOOLTIP)
   end

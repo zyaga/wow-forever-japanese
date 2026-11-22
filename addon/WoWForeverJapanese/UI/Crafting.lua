@@ -83,6 +83,10 @@ local Compat = WFJ.Compat
 local ADDON = "Blizzard_Professions"
 local PAGE = "ProfessionsFrame.CraftingPage"
 local FORM = PAGE .. ".SchematicForm"
+-- the recipe a link in chat opens (InspectRecipeFrame:Open, blizzard_professionstemplates/
+-- blizzard_professions.lua:664): the same schematic form on its own window
+-- (blizzard_professionsinspectrecipe.xml:5-9)
+local INSPECT = "InspectRecipeFrame.SchematicForm"
 
 Crafting.NEVER_TOUCH = { PAGE .. ".RecipeList.SearchBox", PAGE .. ".MinimizedSearchBox",
   PAGE .. ".CreateMultipleInputBox", FORM .. ".OutputText", FORM .. ".OutputSubText", FORM .. ".RecraftingOutputText" }
@@ -103,6 +107,11 @@ local CANDIDATES = {
   requiredTools = { FORM .. ".RequiredTools" }, recraftTools = { FORM .. ".RecraftingRequiredTools" },
   trackRecipe = { FORM .. ".TrackRecipeCheckbox.Text" }, outputBox = { PAGE .. ".CraftingOutputLog.ScrollBox" },
   tooltip = { "GameTooltip" },
+  inspectForm = { INSPECT }, inspectReagents = { INSPECT .. ".Reagents.Label" },
+  inspectOptional = { INSPECT .. ".OptionalReagents.Label" },
+  inspectFinishing = { INSPECT .. ".FinishingReagents.Label" },
+  inspectFirstCraft = { INSPECT .. ".FirstCraftBonus.Text" },
+  inspectSource = { INSPECT .. ".RecipeSourceButton.Text" }, inspectTrack = { INSPECT .. ".TrackRecipeCheckbox.Text" },
 }
 
 local function only(...) return { only = { ... } } end
@@ -139,6 +148,18 @@ local FORM_WRITTEN = {
     "PROFESSIONS_REAGENT_CONTAINER_ENCHANT_LABEL") },
   { "cooldown", only("COOLDOWN_EXPIRES_AT_MIDNIGHT", "TRADESKILL_CHARGES_REMAINING") },
   { "requiredTools", TOOLS }, { "recraftTools", TOOLS }, { "trackRecipe", only("PROFESSIONS_TRACK_RECIPE") },
+}
+
+-- the inspect window's form: the same labels as the crafting page's, under its own names
+local INSPECT_LABELS = {
+  { "inspectReagents", only("PROFESSIONS_REAGENT_CONTAINER_LABEL") },
+  { "inspectFinishing", only("PROFESSIONS_CRAFTING_FINISHING_HEADER") },
+  { "inspectFirstCraft", only("PROFESSIONS_FIRST_CRAFT") },
+  { "inspectSource", only("TRADESKILL_NEXT_RANK_HEADER", "TRADESKILL_UNLEARNED_RECIPE_HEADER",
+    "PROFESSIONS_RECIPE_UNLEARNED") },
+  { "inspectOptional", only("PROFESSIONS_OPTIONAL_REAGENT_CONTAINER_LABEL",
+    "PROFESSIONS_REAGENT_CONTAINER_ENCHANT_LABEL") },
+  { "inspectTrack", only("PROFESSIONS_TRACK_RECIPE") },
 }
 
 local function get(key) return Compat.get(SURFACE, key) end
@@ -201,6 +222,9 @@ end
 
 -- hooksecurefunc target (SchematicForm:Init): the words the form rewrites per recipe. → the number found.
 function Crafting.onFormInit() return showList(FORM_WRITTEN) + Crafting.showEnchantSlot() end
+
+-- hooksecurefunc target (the inspect window's SchematicForm:Init / :Update): its labels. → the number found.
+function Crafting.onInspect() return showList(INSPECT_LABELS) end
 
 -- hooksecurefunc target (OpenProfessionsItemFlyout(anchorTo, owner, behavior)): the flyout's two fixed words. → the
 -- number found.
@@ -300,6 +324,12 @@ function Crafting.setup()
   end
   if type(form) == "table" and type(form.UpdateRecipeDescription) == "function" then
     hooksecurefunc(form, "UpdateRecipeDescription", Crafting.onDescription)
+  end
+  local inspect = get("inspectForm")
+  for _, method in ipairs({ "Init", "Update" }) do
+    if type(inspect) == "table" and type(inspect[method]) == "function" then
+      hooksecurefunc(inspect, method, Crafting.onInspect)
+    end
   end
   for _, key in ipairs({ "createButton", "createAllButton" }) do
     local button = get(key)

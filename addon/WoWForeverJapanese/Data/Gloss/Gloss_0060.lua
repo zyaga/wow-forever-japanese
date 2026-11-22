@@ -101,7 +101,6 @@ WFJ.Data.add("gloss", {
   [60098] = "在住\tざいじゅう\tresident",
   [60099] = "在処\tありか\tWhere to find (whereabouts)",
   [60100] = "在席\tざいせき\tavailable (at your seat)",
-  [60101] = "在席\tざいせき\tavailable (present)",
   [60102] = "在庫\tざいこ\tinventories",
   [60103] = "在庫\tざいこ\tinventory",
   [60104] = "在庫\tざいこ\tstock",
