@@ -4,7 +4,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
-  "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua",
+  "Core/Collector.lua", "Core/Data.lua", "Core/Names.lua", "UI/Font.lua", "UI/Render.lua",
   "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/TooltipUnit.lua" }
 
 local DATA = {
@@ -47,7 +47,10 @@ describe("UI/Tooltip: item and spell tooltips", function()
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function(n) return S.get("marker." .. n) end,
       align = WFJ.Align.check,
+      kindOff = function(kind) return kind == "name" and not WFJ.State.names end,
+      name = WFJ.Names.item,
     }))
+    WFJ.State.names = false -- the shipped default; the names cases turn it on
     assert.are.equal(6, TT.init())
     tt = _G.GameTooltip
     Stub.spellDescriptions[17] =
@@ -323,6 +326,54 @@ describe("UI/Tooltip: item and spell tooltips", function()
     ns.Compat.init(function(name) return _G[name] end)
     assert.are.equal(5, ns.Tooltip.init())
     assert.is_truthy(table.concat(ns.Compat.unresolved(), ","):find("tooltip.ItemRefShoppingTooltip2", 1, true))
+  end)
+
+  describe("with names on", function()
+    before_each(function()
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Tough Jerky")] = "タフ・ジャーキー\tたふ・じゃーきー",
+        [WFJ.Names.key("Power Word: Shield")] = "パワー・ワード・シールド\tぱわー・わーど・しーるど",
+      })
+      WFJ.State.setNames(true)
+    end)
+    after_each(function() WFJ.State.setNames(false) end)
+
+    it("an item's name line shows its Japanese in the bundled font; the reveal key and a hide give it back",
+    function()
+      Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
+      assert.are.equal("タフ・ジャーキー", fs("GameTooltip", 1):GetText())
+      assert.are.equal(WFJ.Font.PATH, (fs("GameTooltip", 1):GetFont()))
+      assert.are.equal(DATA["item.description"][117].ja, fs("GameTooltip", 2):GetText())
+      assert.are.equal("Sell Price: 5c", fs("GameTooltip", 3):GetText())
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("Tough Jerky", fs("GameTooltip", 1):GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("タフ・ジャーキー", fs("GameTooltip", 1):GetText())
+      tt:Hide()
+      assert.are.equal("Tough Jerky", fs("GameTooltip", 1):GetText())
+      assert.are.equal(0, SS.count("tooltip.GameTooltip"))
+    end)
+
+    it("an item with no Japanese name keeps its name line unwritten", function()
+      Stub.setItemTooltip(tt, "|Hitem:724:0:0:0:0:0:0:0|h[x]|h", { "Goretusk Liver Pie",
+        "Use: Restores 243 health over 21 sec. If you spend at least 10 seconds eating you will become well fed "
+          .. "and gain 4 Stamina and Spirit for 15 min.", '"Tastes like liver."' })
+      assert.are.equal("Goretusk Liver Pie", fs("GameTooltip", 1):GetText())
+      assert.are.equal(0, fs("GameTooltip", 1).calls.SetText)
+    end)
+
+    it("the item tooltips area off leaves the name with the rest of the tooltip", function()
+      S.set("area.itemTooltips", false)
+      Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
+      assert.are.equal("Tough Jerky", fs("GameTooltip", 1):GetText())
+      S.set("area.itemTooltips", true)
+    end)
+
+    it("a spell's name line shows its Japanese", function()
+      Stub.setSpellTooltip(tt, 17, { "Power Word: Shield", "45 Mana", "Instant cast",
+        "Draws on the soul of the friendly target to shield them, absorbing 44 damage. Lasts 30 sec." })
+      assert.are.equal("パワー・ワード・シールド", fs("GameTooltip", 1):GetText())
+    end)
   end)
 
   it("modifier restores every line and refits once; release on OnHide", function()

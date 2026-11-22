@@ -17,8 +17,10 @@
 -- type, "Speed 2.60", a spell's "Rank 1" beside its name), is matched against the UI dictionary (WFJ.UIIndex: exact,
 -- template, label) and shown as record "ui.L<i>" / "ui.R<i>" with the captured values. Never a description line and
 -- never the NAME: the left line whose text is the item / spell name, and left line 1 of a tooltip whose first line is
--- its name. A comparison tooltip puts its "Currently Equipped" header on line 1 and the name on line 2 (seen in game),
--- so there line 1 is a header and the name is found by its text.
+-- its name. The name line is never a dictionary word; while names are on it shows the name's Japanese as record
+-- "name.L<i>" (kind "name", Core/Names), under the tooltip's own area. A comparison tooltip puts its "Currently
+-- Equipped" header on line 1 and the name on line 2 (seen in game), so there line 1 is a header and the name is
+-- found by its text.
 -- The run of an item with no translation gets its "Equip: <stat template>" lines as ui records (showEquipLines).
 -- Auras: a buff or debuff tooltip is GameTooltip:SetUnitAura / SetUnitBuff / SetUnitDebuff or their
 -- *ByAuraInstanceID twins: buff frame, target of target, party, raid, compact frames [verified: Forever
@@ -261,9 +263,10 @@ local HEADED = { ShoppingTooltip1 = true, ShoppingTooltip2 = true, ItemRefShoppi
 
 -- `sets`: { [row] = { key, args } | false } from setBonuses: a set bonus line written with its spell's Japanese, or
 -- (false) left English whole, never half translated.
-local function showStructural(surface, frame, lines, first, last, refit, name, skip, sets)
+local function showStructural(surface, frame, lines, first, last, refit, name, skip, sets, area)
   local index = WFJ.UIIndex
-  if not index then return 0 end
+  -- without the dictionary there are no structural lines to match; the name line needs only the name tables
+  if not index and not WFJ.State.names then return 0 end
   local n = 0
   local headed = HEADED[frame:GetName()]
   local sides = { { "L", lines }, { "R", Tooltip.lines(frame, "Right") } }
@@ -276,10 +279,16 @@ local function showStructural(surface, frame, lines, first, last, refit, name, s
           or (headed and name == nil and i == 2))
         local set
         if side[1] == "L" and sets then set = sets[i] end
+        -- the name line: the name's Japanese while names are on, under the tooltip's own area; a name with no
+        -- Japanese is left unwritten
+        if isName and l and l.text ~= "" and WFJ.State.names and WFJ.Names.item(l.text)
+          and WFJ.Render.show(surface, "name.L" .. i, l.fs, l.text, area, "name", l.text, { refit = refit }) then
+          n = n + 1
+        end
         if set ~= nil and set ~= false and l then
           local ctx = { args = set.args, refit = refit }
           if WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", set.key, ctx) then n = n + 1 end
-        elseif set == nil and l and l.text ~= "" and not isName then
+        elseif index and set == nil and l and l.text ~= "" and not isName then
           local key, args, runs
           if l.text:find("|c%x%x%x%x%x%x%x%x") then
             -- a line the client coloured ("|cffff2020-11|r Armor"): matched as written, else without the colour
@@ -578,7 +587,7 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs, le
       written = written + showRun(surface, area, kind, learn.id, lines, learn.row, learn.row, refit, nil, "learn")
     end
     return written + WFJ.Perf.call("tooltip.item.structural", showStructural, surface, frame, lines, first, last,
-      refit, name, learn and learn.row, sets)
+      refit, name, learn and learn.row, sets, area)
   end)
   inRefit[frame] = false
   if not ok then error(n, 0) end
