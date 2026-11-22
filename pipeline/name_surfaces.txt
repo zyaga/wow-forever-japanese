@@ -48,7 +48,7 @@ UI/QuestMap.lua	quest log zone headers	japanese	a header that is no sort word
 UI/GossipChrome.lua	GossipFrameTitleText	japanese	after each SetTitle and each show
 UI/QuestFrame.lua	QuestFrame title	japanese	the quest giver; a quest a player shares is left
 UI/Merchant.lua	merchant tab title	japanese	shown from the merchant tab's own update
-UI/Trainer.lua	trainer window title	todo
+UI/Trainer.lua	trainer window title	japanese	after each SetTitle; a pet trainer's title is the pet's own name and stays
 UI/GuildRegistrar.lua	GuildRegistrarFrameNpcNameText	todo
 UI/GuildRename.lua	GuildRenameFrame.TitleContainer.TitleText	todo
 UI/Tabard.lua	TabardFrameNameText	todo	check what the client writes there

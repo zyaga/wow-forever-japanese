@@ -70,6 +70,10 @@ describe("trainer and raid on the Forever client", function()
     -- Blizzard_TrainerUI (mainline) loaded: the frame, the train button, and the writers.
     local function loadTrainerUI()
       frame = CreateFrame("Frame", "ClassTrainerFrame")
+      -- the title plate: ClassTrainerFrame:SetTitle(UnitName(unit)), unit "npc" or, at a pet trainer, "pet"
+      -- (blizzard_trainerui.lua:440–449)
+      frame.TitleContainer = { TitleText = Stub.fontString("") }
+      function frame.SetTitle(self, text) self.TitleContainer.TitleText.text = text end
       frame.trainingPoints = { text = Stub.fontString("") }
       -- the filter dropdown (WowStyle1DropdownTemplate: DropdownSelectionTextMixin, MenuTemplates.lua:520–644; xml:231)
       dropdownCalls = { SetText = 0 }
@@ -195,6 +199,34 @@ describe("trainer and raid on the Forever client", function()
         row(1, { name = "Heroic Strike", sub = "Grandmaster" }) -- not a dictionary entry: not this template
         assert.are.equal("(Grandmaster)", b.nameSubText:GetText())
       end)
+
+    it("with names on the trainer's name on the title shows its Japanese; a pet trainer's title is the pet's"
+      .. " own name and stays", function()
+      local kind = 0
+      _G.Enum = _G.Enum or {}
+      local hadType = _G.Enum.TrainerType
+      _G.Enum.TrainerType = { Class = 0, Pet = 3 }
+      _G.C_Trainer = { GetTrainerType = function() return kind end }
+      _G.UnitIsPlayer = function() return false end
+      finally(function()
+        _G.Enum.TrainerType, _G.C_Trainer, _G.UnitIsPlayer = hadType, nil, nil
+        WFJ.State.setNames(false)
+      end)
+      WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+      WFJ.State.setNames(true)
+      loadTrainerUI()
+      WFJ.Trainer.init()
+      local title = frame.TitleContainer.TitleText
+      frame:SetTitle("Thrall")
+      assert.are.equal("スロール", title:GetText())
+      frame:Hide()
+      assert.are.equal("Thrall", title:GetText())
+      frame:SetTitle("Nobody Known")
+      assert.are.equal("Nobody Known", title:GetText())
+      kind = 3 -- a pet trainer: the title names the player's pet, here one named like an NPC
+      frame:SetTitle("Thrall")
+      assert.are.equal("Thrall", title:GetText())
+    end)
 
     it("a pet trainer: the points label and each row's cost translate on UpdateTrainingPoints", function()
       loadTrainerUI()

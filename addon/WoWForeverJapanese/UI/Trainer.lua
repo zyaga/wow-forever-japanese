@@ -118,6 +118,24 @@ function Trainer.release()
   return WFJ.Render.release(SURFACE)
 end
 
+-- The title plate: ClassTrainerFrame_Update writes ClassTrainerFrame:SetTitle(UnitName(unit)), unit "npc" or, at a
+-- pet trainer, "pet" [verified: blizzard_trainerui/mainline/blizzard_trainerui.lua:440–449]. The trainer's name
+-- shows its Japanese while names are on. A pet trainer's title is the player's own pet, a name the player gave:
+-- it stays as written. → 1 | 0
+function Trainer.onTitle()
+  local frame = Compat.get(SURFACE, "frame")
+  local container = type(frame) == "table" and frame.TitleContainer or nil
+  local text = type(container) == "table" and container.TitleText or nil
+  local trainer, kinds = Compat.resolve("C_Trainer"), Compat.resolve("Enum.TrainerType")
+  local pet = type(trainer) == "table" and type(trainer.GetTrainerType) == "function" and type(kinds) == "table"
+    and trainer.GetTrainerType() == kinds.Pet
+  if pet or type(text) ~= "table" then
+    WFJ.SurfaceState.drop(SURFACE, "title")
+    return 0
+  end
+  return WFJ.NameLabels.unit(SURFACE, "title", text, "npc")
+end
+
 -- Client names. Declared again at setup: a declare clears Compat's memo, which may hold `false` for a load-on-demand
 -- name looked up before the addon loaded.
 local function declare()
@@ -143,6 +161,7 @@ function Trainer.setup()
     hooksecurefunc("ClassTrainerFrame_UpdateTrainingPoints", Trainer.onTrainingPoints)
   end
   if type(frame.HookScript) == "function" then frame:HookScript("OnHide", Trainer.release) end
+  if type(frame.SetTitle) == "function" then hooksecurefunc(frame, "SetTitle", Trainer.onTitle) end
   local train = Compat.get(SURFACE, "train")
   if type(train) == "table" then WFJ.HelpTooltip.register(train, { only = TRAIN_HELP_KEYS }) end
   if type(frame.trainingPoints) == "table" then
