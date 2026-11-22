@@ -17,8 +17,9 @@
 -- and a guild line ("<Guild>"), a title or any server line matches none of them. Those stay as the client wrote
 -- them, except while names are on: then a creature's or object's name, its title and its faction show their
 -- Japanese (a player's and a pet's never do). A race, class or pet family inside a level line is kept as shown; a
--- creature type ("Humanoid") takes its CreatureType row. A player's tooltip never takes the creature-type templates: "Level 60 Undead" is the same
--- text for an Undead player (race, stays English) and an undead creature, and only the unit tells them apart
+-- creature type ("Humanoid") takes its CreatureType row. A player's tooltip never takes the creature-type
+-- templates: "Level 60 Undead" is the same text for an Undead player (race, stays English) and an undead
+-- creature, and only the unit tells them apart
 -- (C_PlayerInfo.GUIDIsPlayer on the tooltip data's guid, as blizzard_objectapi/mainline/playerlocation.lua:59 does).
 -- A client with no tooltip data processor is left untouched (init returns false).
 local _, WFJ = ...
