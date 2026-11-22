@@ -42,6 +42,8 @@ local function installMinimap()
   _G.UIParent = CreateFrame("Frame", "UIParent")
   local cluster = CreateFrame("Frame", "MinimapCluster")
   _G.MinimapZoneText = Stub.namedFontString("MinimapZoneText", "Raid")
+  -- the client's writer, called by name on every zone change [verified: mainline/minimap.lua:169–170, 372, 409]
+  _G.Minimap_Update = function() _G.MinimapZoneText.text = M.zone end
   local zone = CreateFrame("Button")
   cluster.ZoneTextButton = zone
   zone:SetScript("OnEnter", function(self)
@@ -132,7 +134,7 @@ describe("the minimap cluster's help tooltips on Forever", function()
     H.uiTeardown()
     Stub.keys.alt = false
     for _, n in ipairs({ "MinimapCluster", "Minimap", "GameTimeFrame", "AddonCompartmentFrame", "MinimapZoneText",
-      "UIParent", "MinimapBackdrop" }) do _G[n] = nil end
+      "UIParent", "MinimapBackdrop", "Minimap_Update" }) do _G[n] = nil end
   end)
 
   it("the zone button: the territory word and the map hint translate; zone and subzone names stay English", function()
@@ -145,6 +147,33 @@ describe("the minimap cluster's help tooltips on Forever", function()
     Stub.keys.alt = true
     WFJ.Modifier.refresh()
     assert.are.equal(en("CONTESTED_TERRITORY"), tip(3))
+  end)
+
+  it("with names on the zone text over the minimap shows the place's Japanese after each update", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Valley of Trials")] = "バレー・オブ・トライアルズ\tばれー・おぶ・とらいあるず" })
+    WFJ.State.setNames(true)
+    finally(function() WFJ.State.setNames(false) end)
+    M.zone = "Valley of Trials"
+    _G.Minimap_Update()
+    assert.are.equal("バレー・オブ・トライアルズ", _G.MinimapZoneText:GetText())
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("Valley of Trials", _G.MinimapZoneText:GetText())
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    assert.are.equal("バレー・オブ・トライアルズ", _G.MinimapZoneText:GetText())
+    M.zone = "Somewhere Unknown" -- a place with no Japanese keeps the client's text
+    _G.Minimap_Update()
+    assert.are.equal("Somewhere Unknown", _G.MinimapZoneText:GetText())
+    M.zone = "Raid" -- a place named like a dictionary word is never shown as that word
+    _G.Minimap_Update()
+    assert.are.equal("Raid", _G.MinimapZoneText:GetText())
+  end)
+
+  it("with names off the zone text over the minimap is never written", function()
+    M.zone = "Valley of Trials"
+    _G.Minimap_Update()
+    assert.are.equal(0, _G.MinimapZoneText.calls.addonSetText)
   end)
 
   it("a faction-controlled zone translates around the faction's name, which is kept as written", function()
