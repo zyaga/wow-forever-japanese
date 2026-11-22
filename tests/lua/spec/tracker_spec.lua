@@ -238,6 +238,23 @@ describe("the objective tracker's other modules on Forever (surface tracker)", f
     assert.are.equal(ja("TRACKER_HEADER_CAMPAIGN_QUESTS"), header("CampaignQuestObjectiveTracker"):GetText())
   end)
 
+  it("with names on the widget module's zone header shows the place's Japanese after each SetHeader", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Elwynn Forest")] = "エルウィン・フォレスト\tえるうぃん・ふぉれすと" })
+    WFJ.State.setNames(true)
+    finally(function() WFJ.State.setNames(false) end)
+    local zone = header("UIWidgetObjectiveTracker")
+    _G.UIWidgetObjectiveTracker:SetHeader("Elwynn Forest")
+    assert.are.equal("エルウィン・フォレスト", zone:GetText())
+    alt(true)
+    assert.are.equal("Elwynn Forest", zone:GetText())
+    alt(false)
+    assert.are.equal("エルウィン・フォレスト", zone:GetText())
+    _G.UIWidgetObjectiveTracker:SetHeader("Somewhere Unknown") -- a place with no Japanese keeps the client's text
+    assert.are.equal("Somewhere Unknown", zone:GetText())
+    _G.UIWidgetObjectiveTracker:SetHeader("Dungeon") -- a place named like a dictionary word is never that word
+    assert.are.equal("Dungeon", zone:GetText())
+  end)
+
   it("the bonus module's relabel and the scenario module's direct write are followed; a scenario name stays English",
     function()
       _G.BonusObjectiveTracker:LayoutContents(true)

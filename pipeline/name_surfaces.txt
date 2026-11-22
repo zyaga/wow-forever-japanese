@@ -39,7 +39,7 @@ UI/ZoneText.lua	SubZoneTextString	japanese
 UI/Minimap.lua	MinimapZoneText	japanese	after each Minimap_Update
 UI/Minimap.lua	the zone button's tooltip: zone and subzone lines	todo
 UI/WorldMap.lua	area names and the map's title	todo
-UI/Tracker.lua	UIWidgetObjectiveTracker.Header.Text	todo	a zone name
+UI/Tracker.lua	UIWidgetObjectiveTracker.Header.Text	japanese	a zone name, after each SetHeader
 UI/Tracker.lua	ObjectiveTrackerTopBannerFrame.Title	todo	check what the client writes there
 UI/Tracker.lua	ScenarioObjectiveTracker.StageBlock.Name	todo	a stage's name
 UI/QuestMap.lua	quest log zone headers	todo
