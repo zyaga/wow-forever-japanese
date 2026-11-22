@@ -216,6 +216,36 @@ def latin_runs(ja: str) -> list[str]:
     return out
 
 
+_HTML_TAG = re.compile(r"<[^>]*>")
+
+
+def replace_runs(ja: str, lookup: Callable[[str], str | None], *, html: bool = False) -> str:
+    """A shown line with each English name written in its Japanese: the text between markup is read by
+    `LATIN_RUN` and `trim_run`, as `latin_runs` reads it, and a run `lookup` knows is replaced. Markup, a
+    count after a name, and a run with no name stay as written. On an HTML page the tags stay too. The
+    addon's Core/Names.lua does the same; vectors/name_vectors hold the two together."""
+
+    def one(m: re.Match[str]) -> str:
+        raw = m.group(0)
+        run = trim_run(raw)
+        name = lookup(run) if run and has_latin(run) else None
+        return raw if name is None else name + raw[len(run) :]
+
+    out, at = [], 0
+    marks = [m.span() for m in _MARKUP.finditer(ja)]
+    if html:
+        marks += [m.span() for m in _HTML_TAG.finditer(ja)]
+    marks.sort()
+    for first, last in marks:
+        if first < at:
+            continue  # a mark inside an HTML tag already kept
+        out.append(LATIN_RUN.sub(one, ja[at:first]))
+        out.append(ja[first:last])
+        at = last
+    out.append(LATIN_RUN.sub(one, ja[at:]))
+    return "".join(out)
+
+
 def words_of(en: str) -> list[str]:
     """The words of an English name the glossary is matched on: split on spaces and hyphens, a possessive
     "'s" and edge punctuation dropped."""

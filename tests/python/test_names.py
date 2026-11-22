@@ -451,3 +451,52 @@ def test_name_tables_load_last_in_the_toc():
         "Data/Names/Names_00.lua",
         "Data/Names/Names_0a.lua",
     ]
+
+
+JA_NAMES = {
+    "Stormwind": "ストームウィンド",
+    "Kobold Vermin": "コボルド・バーミン",
+    "Zul'Gurub": "ズルグルブ",
+    "mageweave cloth": "メイジウィーブ・クロス",
+    "Linen Cloth": "リネン・クロス",
+}
+
+
+@pytest.mark.parametrize(
+    ("ja", "out"),
+    [
+        ("StormwindでKobold Verminを10匹倒せ。", "ストームウィンドでコボルド・バーミンを10匹倒せ。"),
+        ("Zul'Gurub、そしてUnknown Place。", "ズルグルブ、そしてUnknown Place。"),
+        ("mageweave cloth60枚を集めよ。", "メイジウィーブ・クロス60枚を集めよ。"),
+        ("Kobold Vermin 10", "コボルド・バーミン 10"),
+        ("|cffffd100Stormwind|rへ行け、{name}。", "|cffffd100ストームウィンド|rへ行け、{name}。"),
+        ("|Hitem:2589::::|h[Linen Cloth]|hを$N1枚。", "|Hitem:2589::::|h[リネン・クロス]|hを$N1枚。"),
+        ("|TInterface\\Icons\\Stormwind:16|t Stormwind", "|TInterface\\Icons\\Stormwind:16|t ストームウィンド"),
+        ("%sはStormwindにいる。%d", "%sはストームウィンドにいる。%d"),
+        ("名前なし。", "名前なし。"),
+    ],
+)
+def test_replace_runs_puts_each_names_japanese_where_its_english_stood(ja, out):
+    assert names.replace_runs(ja, JA_NAMES.get) == out
+
+
+def test_replace_runs_leaves_html_tags_alone_on_an_html_page():
+    page = "<HTML><BODY><H1 align=\"center\">Stormwind</H1><P>Kobold Verminの話。</P></BODY></HTML>"
+    want = "<HTML><BODY><H1 align=\"center\">ストームウィンド</H1><P>コボルド・バーミンの話。</P></BODY></HTML>"
+    assert names.replace_runs(page, {**JA_NAMES, "BODY": "ボディ", "P": "ピー", "HTML": "x"}.get, html=True) == want
+
+
+def test_the_name_vectors_are_current_and_cover_every_shape(root, tmp_path):
+    from wfj.dev import gen_name_vectors
+
+    gen_name_vectors.write(root / "data", tmp_path)
+    for name in ("name_vectors.jsonl", "name_vectors.lua"):
+        made = (tmp_path / name).read_text(encoding="utf-8")
+        assert made == (root / "vectors" / name).read_text(encoding="utf-8"), f"{name}: run make vectors"
+    rows = [json.loads(r) for r in (root / "vectors" / "name_vectors.jsonl").read_text(encoding="utf-8").splitlines()]
+    hashes = [r["en"] for r in rows if r["t"] == "hash"]
+    lines = [r for r in rows if r["t"] == "line"]
+    assert len(hashes) >= 200 and len(lines) >= 300
+    for shape, test in gen_name_vectors.SHAPES.items():
+        assert any(test(en) for en in hashes), shape
+    assert any(r["html"] for r in lines) and any(r["ja"] != r["out"] for r in lines)

@@ -87,10 +87,11 @@ lint-core-gate: ## Core/ never touches a frame (docs/architecture/principles.md)
 lint-no-english-in-addon: ## ADR-002: nothing under addon/ may reference data/english
 	@if grep -rEn 'data/english' $(ADDON)/ ; then echo "lint-no-english-in-addon: addon references data/english"; exit 1; else echo "lint-no-english-in-addon: ok"; fi
 
-vectors: ## regenerate vectors/{hash,align,report}_vectors.{jsonl,lua} (the Python ↔ Lua contracts)
+vectors: ## regenerate vectors/{hash,align,report,name}_vectors.{jsonl,lua} (the Python ↔ Lua contracts)
 	cd pipeline && $(PY) -m wfj.dev.gen_vectors ../vectors
 	cd pipeline && $(PY) -m wfj.dev.gen_align_vectors ../vectors
 	cd pipeline && $(PY) -m wfj.dev.gen_report_vectors ../vectors
+	cd pipeline && $(PY) -m wfj.dev.gen_name_vectors ../vectors
 
 lint-no-private-paths: ## no tracked file is a symlink or sits under a path the checkout keeps private
 	cd pipeline && $(PY) -m wfj public-check paths
