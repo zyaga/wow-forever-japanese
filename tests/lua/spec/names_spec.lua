@@ -52,6 +52,20 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
     assert.is_false(WFJ.Names.loaded())
   end)
 
+  it("gives a filled-in value its Japanese: a name as written, or a link with only its label changed", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Linen Cloth")] = "リネン・クロス\tりねん・くろす",
+      [WFJ.Names.key("Horde")] = "ホード\tほーど",
+    })
+    assert.are.equal("ホード", WFJ.Names.value("Horde"))
+    assert.are.equal("|cffffffff|Hitem:2589::::::::1:::::|h[リネン・クロス]|h|r",
+      WFJ.Names.value("|cffffffff|Hitem:2589::::::::1:::::|h[Linen Cloth]|h|r"))
+    assert.are.equal("|Hitem:2589|h[リネン・クロス]|hx2", WFJ.Names.value("|Hitem:2589|h[Linen Cloth]|hx2"))
+    assert.is_nil(WFJ.Names.value("|Hitem:1|h[Unknown Thing]|h"))
+    assert.is_nil(WFJ.Names.value("Reyn"))
+    assert.is_nil(WFJ.Names.value(nil))
+  end)
+
   it("keeps the tables at login only for a player who has names on or has not been asked yet", function()
     local function loadedAfter(on, owed)
       WFJ.Names.drop()

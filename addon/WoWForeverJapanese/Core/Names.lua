@@ -8,6 +8,9 @@
 --                                its Japanese; spans = { { first, last, english, reading }, … } are byte positions
 --                                in `text`. Markup, a count after a name and a run with no name stay as written;
 --                                with `html` the tags of an HTML page stay too.
+--   Names.value(text)         → a value the client filled into a line, in Japanese: the name's Japanese when
+--                                `text` is a name, a link with only its bracketed label changed when the label
+--                                is one, nil for anything else
 --   Names.loaded()            → whether any name row is in memory
 --   Names.drop()              → lets the rows go (the names setting is off: nothing reads them this session)
 --   Names.settle(on, owed)    → at login: keeps the rows for a player who has names on, or who has not been
@@ -66,6 +69,17 @@ function Names.item(english)
     end
     at = first - 1
   end
+end
+
+function Names.value(text)
+  if type(text) ~= "string" then return nil end
+  -- a link: its payload and colour stay byte for byte, the label is the name
+  local before, label, after = text:match("^(.*|h%[)(.-)(%]|h.*)$")
+  if label then
+    local ja = Names.item(label)
+    return ja and (before .. ja .. after) or nil
+  end
+  return (Names.item(text))
 end
 
 function Names.loaded()

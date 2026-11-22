@@ -396,6 +396,11 @@ function WFJ.OnLoad()
     -- the quest live check: the stale marker follows the client's English (ADR-019)
     fingerprints = function(text, masked) return WFJ.Collector.fingerprints(text, collectorPlayer(), masked) end,
   })) end)
+  -- a game name the client fills into an interface line, in Japanese while names are on
+  WFJ.UIStrings.name = function(text)
+    if WFJ.State.names then return WFJ.Names.value(text) end
+    return nil
+  end
   step("modifier", WFJ.Modifier.refresh)
   -- Tab fonts across PanelTemplates state changes, Lua-built help tooltips, and the readiness of
   -- load-on-demand Blizzard addons (their ADDON_LOADED is forwarded below; ADR-016). Before the surfaces.

@@ -46,6 +46,8 @@ UIStrings.ARGS = {
   -- a quest's title inside a system line ("The Balance of Nature completed."): its Japanese title when exactly one
   -- quest title answers it (UIStrings.questTitle, set by UI/TooltipUnit), else as written
   ERR_QUEST_ACCEPTED_S = { [1] = "questTitle" }, ERR_QUEST_COMPLETE_S = { [1] = "questTitle" },
+  -- a place or an item the client names inside a system line: its Japanese while names are on (UIStrings.name)
+  ERR_ZONE_EXPLORED = { [1] = "name" }, LOOT_ITEM_SELF = { [1] = "name" },
   ERR_QUEST_FAILED_S = { [1] = "questTitle" }, ERR_QUEST_FAILED_BAG_FULL_S = { [1] = "questTitle" },
   ERR_QUEST_FAILED_MAX_COUNT_S = { [1] = "questTitle" }, ERR_QUEST_FORCE_REMOVED_S = { [1] = "questTitle" },
   ERR_QUEST_PUSH_ALREADY_DONE_TO_RECIPIENT_S = { [1] = "text", [2] = "questTitle" },
@@ -245,7 +247,7 @@ UIStrings.ARGS = {
   GUILD_RENAME_OPTIONS_RENAME_COOLDOWN = { [1] = "time" }, SL_SET_CONVERSION_RECHARGE_TIME = { [1] = "time" },
   -- "Time Left: %s": the black market's AUCTION_TIME_LEFT<n> word or a bonus objective's "5 min", one shape
   -- for the shared English. Any text after "Time Left:" matches; a value that is no entry is kept as written
-  BLACK_MARKET_HOT_ITEM_TIME_LEFT = { [1] = "entryOrText" }, FACTION_CONTROLLED_TERRITORY = { [1] = "text" },
+  BLACK_MARKET_HOT_ITEM_TIME_LEFT = { [1] = "entryOrText" }, FACTION_CONTROLLED_TERRITORY = { [1] = "name" },
   TIME_IN_QUEUE = { [1] = "time" }, LFG_STATISTIC_AVERAGE_WAIT = { [1] = "time" },
   PVP_LEAVE_BUTTON_TIME = { [1] = "entry", [2] = "text" }, DEATH_RECAP_CAST_BY_TT = { [1] = "text", [2] = "text" },
   PVP_RATING_PREVIOUS = { [1] = "text" }, PVP_RATING_GAINED = { [1] = "text" }, PVP_RATING_NEW = { [1] = "text" },

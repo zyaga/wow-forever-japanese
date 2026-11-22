@@ -235,7 +235,10 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   -- written (UIStrings.FAMILY_KINDS), never any other entry, so a class, spec or pet-family name stays English
   creatureType = "([^%.]-)", holidayDescription = "(.-)", customizationChoice = "(.-)",
   customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)", petLoyalty = "(.-)",
-  petFoodList = "([^%.]-)", questTitle = "(.-)" }
+  petFoodList = "([^%.]-)", questTitle = "(.-)",
+  -- a game name (a place, a faction, an item's link): its Japanese while names are on (UIStrings.name, set by
+  -- Main), else as written
+  name = "(.-)" }
 -- a template with more `|4` groups is not indexed (counted `unsupported`). 4 for TIME_DAYHOURMINUTESECOND
 -- (the /played duration, the only listed key with 4): the chat line holds its raw form, which is always matched
 local MAX_PLURAL_GROUPS = 4
@@ -467,6 +470,9 @@ function Index:core(text, allow, list)
           elseif kinds[argIndex] == "questTitle" then
             local resolve = UIStrings.questTitle
             args[argIndex] = type(resolve) == "function" and resolve(caps[i]) or caps[i]
+          elseif kinds[argIndex] == "name" then
+            local resolve = UIStrings.name
+            args[argIndex] = type(resolve) == "function" and resolve(caps[i]) or caps[i]
           elseif UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]] then
             args[argIndex] = self:familyList(caps[i], UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]])
           elseif kinds[argIndex] == "entryList" then
@@ -486,7 +492,7 @@ end
 local TEXT_KINDS = { text = true, words = true, skill = true, entry = true, entryOrText = true, entryList = true,
   verbatim = true, creatureType = true, holidayDescription = true, customizationChoice = true,
   customizationSource = true, restState = true, itemSubClassMask = true, petLoyalty = true,
-  petFoodList = true, questTitle = true }
+  petFoodList = true, questTitle = true, name = true }
   -- a family argument is free text too
 -- The enclosing keys whose `entry` argument may itself be a template that carries text (none yet): every other
 -- `entry` is an exact entry or a template whose arguments are numbers, times, percentages or dictionary words, so
@@ -757,6 +763,8 @@ function Index.formatArgs(_, key, en, ...) -- called as index:formatArgs; the in
   for i, kind in pairs(kinds or {}) do
     if kind == "questTitle" and type(args[i]) == "string" and type(UIStrings.questTitle) == "function" then
       args[i] = UIStrings.questTitle(args[i]) or args[i]
+    elseif kind == "name" and type(args[i]) == "string" and type(UIStrings.name) == "function" then
+      args[i] = UIStrings.name(args[i]) or args[i]
     end
   end
   return args
