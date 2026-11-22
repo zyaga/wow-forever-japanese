@@ -93,12 +93,15 @@ local function installUnitFrames()
   -- the client's one writer of a unit frame's name: self.name:SetText(GetUnitName(self.unit, isParty))
   -- [verified: mainline/unitframe.lua:144–166], called by name from the target, focus, pet and party frames
   _G.UnitFrame_Update = function(self) if self.name then self.name.text = self.nextName end end
+  -- the writer of a nameplate's and a raid-style frame's name: frame.name:SetText(GetUnitName(frame.unit, …))
+  -- [verified: shared/compactunitframe.lua:826–857], called by name
+  _G.CompactUnitFrame_UpdateName = function(frame) frame.name.text = frame.nextName end
 end
 
 local GLOBALS = { "TargetFrame", "FocusFrame", "Boss1TargetFrame", "PartyFrame", "CompactPartyFrame",
   "CompactUnitFrame_UpdateStatusText", "CompactUnitFrame_UpdateCenterStatusIcon",
   "CompactRaidGroup_InitializeForGroup", "CompactPartyFrame_Generate", "UnitFrame_UpdateTooltip", "issecretvalue",
-  "UnitFrame_Update", "UnitIsPlayer", "UnitPlayerControlled" }
+  "UnitFrame_Update", "UnitIsPlayer", "UnitPlayerControlled", "CompactUnitFrame_UpdateName" }
 
 describe("the unit frames' fixed words on Forever", function()
   local WFJ
@@ -176,6 +179,33 @@ describe("the unit frames' fixed words on Forever", function()
       _G.UnitFrame_Update(frame)
       assert.are.equal("Kobold Vermin", frame.name:GetText())
       assert.are.equal(0, frame.name.calls.addonSetText)
+    end)
+
+    it("a creature's nameplate shows its Japanese after the client's update; a player's stays", function()
+      local plate = { name = Stub.fontString(""), unit = "nameplate3", nextName = "Kobold Vermin" }
+      _G.CompactUnitFrame_UpdateName(plate)
+      assert.are.equal("コボルド・バーミン", plate.name:GetText())
+      plate.nextName = "Nobody Known" -- the plate reused for a creature with no Japanese
+      _G.CompactUnitFrame_UpdateName(plate)
+      assert.are.equal("Nobody Known", plate.name:GetText())
+      local raid = { name = Stub.fontString(""), unit = "party1", nextName = "Kobold Vermin" }
+      _G.CompactUnitFrame_UpdateName(raid)
+      assert.are.equal("Kobold Vermin", raid.name:GetText())
+      assert.are.equal(0, raid.name.calls.addonSetText)
+    end)
+
+    it("a nameplate the client keeps from addons is never looked into, and a hidden name is never read", function()
+      -- a forbidden frame: any field but IsForbidden raises, as on the client
+      local forbidden = setmetatable({}, { __index = function(_, k)
+        if k == "IsForbidden" then return function() return true end end
+        if k == "name" then return { text = "x" } end -- the client's own writer may read it
+        error("addon code looked into a forbidden nameplate: " .. tostring(k))
+      end })
+      rawset(forbidden, "nextName", "Kobold Vermin")
+      assert.has_no.errors(function() _G.CompactUnitFrame_UpdateName(forbidden) end)
+      local plate = { name = Stub.fontString(""), unit = "nameplate3", nextName = SECRET }
+      assert.has_no.errors(function() _G.CompactUnitFrame_UpdateName(plate) end)
+      assert.are.equal(SECRET, plate.name.text)
     end)
 
     it("a name the client hides is never read, and a frame with no name or no unit raises nothing", function()

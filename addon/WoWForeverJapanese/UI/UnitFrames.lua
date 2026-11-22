@@ -66,6 +66,7 @@ local GLOBAL_HOOKS = {
   { "CompactPartyFrame_Generate", "onPartyGenerate" },
   { "UnitFrame_UpdateTooltip", "onUnitTooltip" },
   { "UnitFrame_Update", "onUnitUpdate" },
+  { "CompactUnitFrame_UpdateName", "onCompactName" },
 }
 
 -- hooksecurefunc target (UnitFrame_Update): the one writer of a unit frame's name, self.name:SetText(GetUnitName(
@@ -76,6 +77,18 @@ local GLOBAL_HOOKS = {
 local nameKey = WFJ.Labels.keyer("name.")
 function UnitFrames.onUnitUpdate(frame)
   if type(frame) ~= "table" or type(frame.name) ~= "table" or type(frame.unit) ~= "string" then return 0 end
+  return WFJ.NameLabels.unit(SURFACE, nameKey(frame.name), frame.name, frame.unit)
+end
+
+-- hooksecurefunc target (CompactUnitFrame_UpdateName): the writer of a nameplate's and a raid-style frame's name,
+-- frame.name:SetText(GetUnitName(frame.unit, …)) [verified: shared/compactunitframe.lua:826–857], called by name.
+-- The same rule as onUnitUpdate, with one more guard: a nameplate the client keeps from addons (a hostile one inside
+-- an instance) is forbidden, and looking into it raises, so it is asked first and left alone. → 1 | 0
+function UnitFrames.onCompactName(frame)
+  if type(frame) ~= "table" then return 0 end
+  local ok, forbidden = pcall(function() return frame.IsForbidden ~= nil and frame:IsForbidden() end)
+  if not ok or forbidden then return 0 end
+  if type(frame.name) ~= "table" or type(frame.unit) ~= "string" then return 0 end
   return WFJ.NameLabels.unit(SURFACE, nameKey(frame.name), frame.name, frame.unit)
 end
 

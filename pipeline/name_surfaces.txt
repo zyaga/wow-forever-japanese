@@ -63,7 +63,7 @@ UI/ClickBinding.lua	the tutorial's ThrallName	todo
 UI/UnitFrames.lua	target, focus, target-of-target, boss and party frame Name	japanese	after each UnitFrame_Update; never a player or a pet; a name the client hides stays
 UI/UnitFrames.lua	PlayerName	english player-typed
 UI/UnitFrames.lua	PetName	english player-typed
-UI/UnitFrames.lua	nameplates of creatures	todo	never a player; hidden in combat in an instance (secret)
+UI/UnitFrames.lua	nameplates and raid-style frames of creatures	japanese	after each CompactUnitFrame_UpdateName; never a player or a pet; a forbidden nameplate and a name the client hides stay
 UI/CastingBar.lua	PlayerCastingBarFrame.CastTargetNameText	todo	a unit's name: never a player
 UI/CastingBar.lua	the bar's spell name	todo
 UI/CastingBar.lua	PlayerCastingBarFrame.CastTimeText	english not-a-game-name	a number
