@@ -885,7 +885,12 @@ def test_an_ascii_word_fails():
 
 
 def test_words_on_a_kind_without_readings_fail():
-    assert tl.words_problems("item_description", "森を守る。", [["森", "もり"]]) == ["words_unexpected"]
+    assert tl.words_problems("objective", "森を守る。", [["森", "もり"]]) == ["words_unexpected"]
+
+
+def test_tooltip_rows_take_words_checked_like_any_other():
+    assert tl.words_problems("item_description", "森を守る。", [["森", "もり"]]) == []
+    assert tl.words_problems("spell_aura", "森を守る。", [["海", "うみ"]]) != []
 
 
 def test_a_quest_row_with_kanji_and_no_words_passes_with_a_warning(tmp_path, capsys, root: Path):

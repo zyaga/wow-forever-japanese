@@ -97,6 +97,77 @@ def export_rows(
     return rows
 
 
+def _current_hashes(root: Path) -> dict[str, dict[str, Any]]:
+    """Japanese hash → a current tooltip reading record for that Japanese (the first by type and id)."""
+    store = reading_store(root)
+    out: dict[str, dict[str, Any]] = {}
+    for type_ in readings.TOOLTIP_TYPES:
+        japanese = readings.shipped_japanese(Store(root).load(type_))
+        for rec in readings.check(type_, store.load(type_), japanese)["current"]:
+            out.setdefault(rec["ja_hash"], rec)
+    return out
+
+
+def export_tooltip_rows(root: Path, *, every: bool = False) -> dict[str, Any]:
+    """The tooltip lines that need readings, one row for each distinct Japanese across item and spell text
+    (the row names the first line that carries it; `spread` gives the others the same words).
+    → {"rows": [row], "left": [str], "shipped": n}; `left` names each line the export leaves out for an escape
+    sequence. A line with nothing to annotate is left out silently, as in `export`."""
+    have = set() if every else set(_current_hashes(root))
+    rows: list[dict[str, Any]] = []
+    left: list[str] = []
+    seen: set[str] = set()
+    shipped = 0
+    for type_ in readings.TOOLTIP_TYPES:
+        japanese = readings.shipped_japanese(Store(root).load(type_))
+        english = {(ln["id"], ln["field"]): ln["en"] for ln in Store(root, english=True).load(type_)}
+        shipped += len(japanese)
+        order = {f: n for n, f in enumerate(readings.TYPES[type_])}
+        for (id_, field), ja in sorted(japanese.items(), key=lambda kv: (kv[0][0], order[kv[0][1]])):
+            if not readings.annotatable(ja):
+                continue
+            if readings.holds_escape(ja):
+                left.append(f"{type_} {id_}/{field}: holds an escape sequence")
+                continue
+            h = readings.ja_hash(ja)
+            if h in seen or h in have:
+                continue
+            seen.add(h)
+            row: dict[str, Any] = {"type": type_, "id": id_, "field": field, "ja": ja, "ja_hash": h}
+            en = english.get((id_, field))
+            if isinstance(en, str):
+                row["en"] = en
+            rows.append(row)
+    return {"rows": rows, "left": left, "shipped": shipped}
+
+
+def spread_store(root: Path, *, dry_run: bool = False) -> dict[str, Any]:
+    """Every tooltip line with no current reading that says what a read line says takes that line's words and
+    provenance. A line with a current reading of its own is left alone, a correction among them.
+    → {"lines": n, "by_type": {type: n}}."""
+    source = _current_hashes(root)
+    store = reading_store(root)
+    lines = 0
+    by_type: dict[str, int] = {}
+    for type_ in readings.TOOLTIP_TYPES:
+        japanese = readings.shipped_japanese(Store(root).load(type_))
+        recs = {(r["id"], r["field"]): r for r in store.load(type_)}
+        changed = False
+        for key, ja in sorted(japanese.items(), key=lambda kv: (kv[0][0], kv[0][1])):
+            h = readings.ja_hash(ja)
+            old = recs.get(key)
+            src = source.get(h)
+            if src is None or (old is not None and old["ja_hash"] == h):
+                continue
+            recs[key] = readings.record(key[0], key[1], ja, src["words"], dict(src["provenance"]))
+            changed = True
+            lines += 1
+            by_type[type_] = by_type.get(type_, 0) + 1
+        if changed and not dry_run:
+            store.save(type_, recs.values())
+    return {"lines": lines, "by_type": by_type}
+
+
 def _well_formed(
     rows: list[dict[str, Any]], shape_prov: dict[str, Any], rejected: list[str]
 ) -> dict[str, dict[tuple[int | str, str], dict[str, Any]]]:
@@ -191,7 +262,11 @@ def import_rows(
             by_type[type_] = by_type.get(type_, 0) + 1
         if not dry_run and by_type.get(type_):
             store.save(type_, merged.values())
-    return {"written": written, "rejected": rejected, "kept": kept, "by_type": by_type}
+    spread = {"lines": 0, "by_type": {}}
+    if not dry_run and any(by_type.get(t) for t in readings.TOOLTIP_TYPES):
+        # a tooltip line is written once: every other id with that Japanese takes the same words
+        spread = spread_store(root)
+    return {"written": written, "rejected": rejected, "kept": kept, "by_type": by_type, "spread": spread}
 
 
 def read_batch(path: Path) -> list[dict[str, Any]]:
@@ -237,6 +312,23 @@ def fill_store(root: Path, *, dry_run: bool = False) -> dict[str, Any]:
     return {"lines": lines, "places": places, "by_type": by_type, "left": left}
 
 
+def _run_tooltips(a: argparse.Namespace, root: Path) -> int:
+    """`export-tooltips` and `spread`: tooltip text, written once for each distinct line."""
+    if a.cmd == "export-tooltips":
+        res = export_tooltip_rows(root, every=a.all)
+        for line in res["left"]:
+            print(f"  left out {line}")
+        a.out.write_text("".join(dumps(r) + "\n" for r in res["rows"]), encoding="utf-8")
+        print(f"readings export-tooltips: {len(res['rows'])} distinct lines of {res['shipped']} shipped "
+              f"→ {a.out} · left out {len(res['left'])}")
+        return 0
+    res = spread_store(root, dry_run=a.dry_run)
+    verb = "would fill" if a.dry_run else "filled"
+    n = res["lines"]
+    print(f"readings spread: {verb} {n} line{'' if n == 1 else 's'} · by type {res['by_type']}")
+    return 0
+
+
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj readings")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -262,8 +354,17 @@ def run(argv: Sequence[str]) -> int:
     i.add_argument("--dry-run", action="store_true")
     f = sub.add_parser("fill-repeats", help="give every repeated word its card at each place")
     f.add_argument("--dry-run", action="store_true")
+    t = sub.add_parser(
+        "export-tooltips", help="item and spell lines that need readings, one row per distinct line"
+    )
+    t.add_argument("--all", action="store_true", help="every distinct line, not only those nobody has read")
+    t.add_argument("--out", required=True, type=Path)
+    s = sub.add_parser("spread", help="give a tooltip line the words of a read line that says the same")
+    s.add_argument("--dry-run", action="store_true")
     a = p.parse_args(list(argv))
     root = data_root()
+    if a.cmd in ("export-tooltips", "spread"):
+        return _run_tooltips(a, root)
     if a.cmd == "fill-repeats":
         res = fill_store(root, dry_run=a.dry_run)
         for line in res["left"]:

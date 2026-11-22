@@ -18,14 +18,15 @@ no English are counted and left out: there is nothing to judge them against.
 The model writes `<part>.verdicts.jsonl` beside each part, one row per part row, in order:
 `{"type", "id", "field", "ja_hash", "verdict", "kind"?, "problem"?, "ja"?, "words"?}`.
 
-- `match`: the Japanese says what the English says. A quest row carries `words` for that Japanese.
-- `correct`: a small defect, fixed by the smallest edit: `ja` is the corrected Japanese; a quest row carries
-  `words` for it.
+- `match`: the Japanese says what the English says. A quest, item or spell row carries `words` for that
+  Japanese.
+- `correct`: a small defect, fixed by the smallest edit: `ja` is the corrected Japanese; a quest, item or
+  spell row carries `words` for it.
 - `redraft`: the meaning is wrong, garbled, another quest's text, or cut off; the whole line is redrafted
   later (with its own words); no `ja`, no `words`.
 
-`correct` and `redraft` name a `kind` (`KINDS`) and a short `problem`. Item and spell rows never carry `words`
-(tooltip text has no readings).
+`correct` and `redraft` name a `kind` (`KINDS`) and a short `problem`. A UI row's words are written in their
+own pass (`audit_ui`).
 
 `check` runs the same checks as `report` on one part's verdicts and writes nothing (the audit agent's check).
 
@@ -185,7 +186,7 @@ def verdict_problems(part: dict[str, Any], v: dict[str, Any]) -> list[str]:
         return ["a split is for UI rows only"]
     if v.get("kind") in audit_ui.UI_KINDS:
         return [f"kind {v['kind']} is for UI rows only"]
-    quest = part["type"] == "quest"
+    takes_words = part["type"] in ("quest", *readings.TOOLTIP_TYPES)
     if verdict == "match":
         if v.get("ja") not in (None, part["ja"]):
             p.append("a match carries no new `ja`")
@@ -203,14 +204,15 @@ def verdict_problems(part: dict[str, Any], v: dict[str, Any]) -> list[str]:
     if verdict == "redraft" and v.get("ja") not in (None, part["ja"]):
         p.append("a redraft carries no `ja` (the redraft batch writes it)")
     shipped = v.get("ja") if verdict == "correct" else part["ja"]
-    owed = quest and verdict != "redraft" and isinstance(shipped, str) and readings.annotatable(shipped)
+    owed = takes_words and verdict != "redraft" and isinstance(shipped, str) and readings.annotatable(shipped)
     return p + _words_problems(v, shipped, owed)
 
 
 def _words_problems(v: dict[str, Any], shipped: Any, owed: bool) -> list[str]:
-    """The problems with a verdict's `words`, which a quest line that keeps annotatable Japanese owes."""
+    """The problems with a verdict's `words`, which a quest, item or spell line that keeps annotatable
+    Japanese owes."""
     if "words" in v and not owed:
-        return ["words where none are owed (item / spell text, a redraft, or nothing to annotate)"]
+        return ["words where none are owed (a redraft, or nothing to annotate)"]
     if not owed:
         return []
     if not v.get("words"):

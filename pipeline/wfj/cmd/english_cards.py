@@ -28,6 +28,8 @@ def card_records(store: Store) -> dict[str, list[dict[str, Any]]]:
     english_store = Store(store.root, english=True)
     out: dict[str, list[dict[str, Any]]] = {}
     for type_ in readings.TYPES:
+        if type_ in readings.TOOLTIP_TYPES:
+            continue  # English first shows the client's own tooltip: no English cards there
         lines = store.load(type_)
         result = readings.check(
             type_, generate.reading_store_of(store).load(type_), readings.shipped_japanese(lines)

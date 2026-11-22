@@ -983,3 +983,103 @@ def test_check_reports_a_reading_that_misses_a_repeat():
     """`validate` fails on it: a build cannot ship a word whose second place has no card."""
     result = _check([_rec(ja=JOKE, words=[JOKE_CARD])], japanese={(456, "description"): JOKE})
     assert result["problems"] == ["reading quest 456/description: '冗談' stands again with no card (wfj readings fill-repeats)"]
+
+
+# ── tooltip text (item, spell) ───────────────────────────────────────────────
+
+TIP_JA = "ホームに設定した場所へ戻ります。"
+TIP_WORDS = [["設定した", "せっていした"], ["場所", "ばしょ"], ["戻ります", "もどります"]]
+
+
+def _machine_line(id_, field, ja):
+    return _line(id_, field, ja) | {"provenance": {"class": "machine", "model": "m", "source": "draft-x@2026-09-18",
+                                                   "imported": "2026-09-18"}}
+
+
+@pytest.fixture
+def tips(data):
+    Store(data).save("item", [_machine_line(6948, "description", TIP_JA), _machine_line(7, "description", "森の木の枝。"),
+                              _machine_line(8, "description", "|cffffd100森|rの石。")])
+    Store(data).save("spell", [_machine_line(8690, "description", TIP_JA), _machine_line(8690, "aura", "場所を覚えている。")])
+    return data
+
+
+def test_item_and_spell_text_take_readings():
+    assert readings.TYPES["item"] == ["description"] and readings.TYPES["spell"] == ["description", "aura"]
+    rec = readings.record(6948, "description", TIP_JA, TIP_WORDS, dict(MACHINE))
+    assert readings.check("item", [rec], {(6948, "description"): TIP_JA})["current"] == [rec]
+    aura = readings.record(8690, "aura", "場所を覚えている。", [["場所", "ばしょ"], ["覚えている", "おぼえている"]], dict(MACHINE))
+    assert readings.check("spell", [aura], {(8690, "aura"): "場所を覚えている。"})["current"] == [aura]
+    assert "objective" not in readings.TYPES and "area" not in readings.TYPES
+
+
+def test_words_written_from_the_stored_text_hold_for_the_text_the_addon_ships():
+    # a hand-written line keeps its manual break in data; generate ships it joined. The words are checked against
+    # the stored text, and the same words stand in the same order in the shipped one.
+    from wfj.core import tooltip_text
+
+    stored = "ホームに設定した場所へ\n戻ります。"
+    line = _line(6948, "description", stored)  # human provenance: its breaks are joined
+    assert readings.word_problems(stored, TIP_WORDS) == []
+    shipped = tooltip_text.shipped_ja(line, "Returns you to your home.")
+    assert "\n" not in shipped
+    assert readings.word_problems(shipped, TIP_WORDS) == []
+
+
+def test_tooltip_export_writes_one_row_for_each_distinct_japanese(tips, tmp_path, capsys):
+    out = tmp_path / "tips.jsonl"
+    assert cmd.run(["export-tooltips", "--out", str(out)]) == 0
+    rows = [json.loads(x) for x in out.read_text(encoding="utf-8").splitlines()]
+    # item 6948 and spell 8690 say the same thing: one row, under the first of them
+    assert [(r["type"], r["id"], r["field"]) for r in rows] == [
+        ("item", 7, "description"), ("item", 6948, "description"), ("spell", 8690, "aura")]
+    assert rows[1]["ja"] == TIP_JA and rows[1]["ja_hash"] == readings.ja_hash(TIP_JA)
+    printed = capsys.readouterr().out
+    assert "3 distinct lines" in printed and "5 shipped" in printed
+    assert "item 8/description: holds an escape sequence" in printed
+
+
+def test_tooltip_import_gives_every_line_with_the_same_japanese_the_same_words(tips, tmp_path):
+    row = _row(words=TIP_WORDS, ja=TIP_JA, id_=6948, type_="item")
+    assert _import(_batch(tmp_path, [row])) == 0
+    item = {(r["id"], r["field"]): r for r in Store(tips / "reading").load("item")}
+    spell = {(r["id"], r["field"]): r for r in Store(tips / "reading").load("spell")}
+    assert item[(6948, "description")]["words"] == TIP_WORDS
+    assert spell[(8690, "description")]["words"] == TIP_WORDS
+    assert spell[(8690, "description")]["provenance"] == item[(6948, "description")]["provenance"]
+    assert (8690, "aura") not in spell and (7, "description") not in item
+    # a second export has only the lines nobody has written yet
+    out = tmp_path / "again.jsonl"
+    assert cmd.run(["export-tooltips", "--out", str(out)]) == 0
+    assert [json.loads(x)["id"] for x in out.read_text(encoding="utf-8").splitlines()] == [7, 8690]
+
+
+def test_spread_fills_a_new_line_that_says_what_a_read_line_says_and_keeps_a_correction(tips, tmp_path, capsys):
+    Store(tips / "reading").save("item", [readings.record(6948, "description", TIP_JA, TIP_WORDS, dict(MACHINE))])
+    fixed = [["設定した", "せっていした"], ["場所", "ところ"], ["戻ります", "もどります"]]
+    Store(tips / "reading").save("spell", [readings.record(8690, "description", TIP_JA, fixed, dict(CORRECTION))])
+    Store(tips).save("item", [*Store(tips).load("item"), _machine_line(9, "description", TIP_JA)])
+    assert cmd.run(["spread", "--dry-run"]) == 0
+    assert len(Store(tips / "reading").load("item")) == 1
+    assert cmd.run(["spread"]) == 0
+    item = {r["id"]: r for r in Store(tips / "reading").load("item")}
+    assert item[9]["words"] == TIP_WORDS and item[9]["ja_hash"] == readings.ja_hash(TIP_JA)
+    assert Store(tips / "reading").load("spell")[0]["words"] == fixed  # a line with its own reading is left alone
+    assert "1 line" in capsys.readouterr().out
+
+
+def test_tooltip_text_ships_no_english_word_card_rows(tips):
+    from wfj.cmd import english_cards
+
+    Store(tips / "reading").save("item", [readings.record(6948, "description", TIP_JA, TIP_WORDS, dict(MACHINE))])
+    assert "item" not in english_cards.card_records(Store(tips)) and "spell" not in english_cards.card_records(Store(tips))
+
+
+def test_generate_emits_item_and_spell_reading_shards(tips):
+    Store(tips / "reading").save("item", [readings.record(6948, "description", TIP_JA, TIP_WORDS, dict(MACHINE))])
+    Store(tips / "reading").save("spell", [readings.record(8690, "description", TIP_JA, TIP_WORDS, dict(MACHINE))])
+    planned = generate.plan(Store(tips), [])
+    files = {rel: text for rel, text in planned.items() if "Reading_item" in rel or "Reading_spell" in rel}
+    assert sorted(files) == ["Data/Reading/Reading_item_0006.lua", "Data/Reading/Reading_spell_0008.lua"]
+    assert '["item:6948"] = { description = "' in files["Data/Reading/Reading_item_0006.lua"]
+    assert '["spell:8690"] = { description = "' in files["Data/Reading/Reading_spell_0008.lua"]

@@ -24,14 +24,23 @@ from wfj.core.hashing import key as hash_key
 from wfj.emit.lua_writer import shipped
 
 # The types whose text the addon can show readings on: quest window / quest map fields, gossip greetings,
-# the UI dictionary (ADR-041), hoverable where a plain-text window label shows one of its strings, and
-# book / letter pages (ADR-044), stored by page id, shipped under the page's English hash.
+# the UI dictionary (ADR-041), hoverable where a plain-text window label shows one of its strings,
+# book / letter pages (ADR-044), stored by page id, shipped under the page's English hash, and tooltip text
+# (item and spell lines, ADR-104), hoverable on a frozen tooltip.
 TYPES: dict[str, list[str]] = {
     "quest": model.FIELDS["quest"],
     "gossip": model.FIELDS["gossip"],
     "ui": model.FIELDS["ui"],
     "book": model.FIELDS["book"],
+    "item": model.FIELDS["item"],
+    "spell": model.FIELDS["spell"],
 }
+# Tooltip text. Many ids carry the same line (an item and the spell it casts, the ranks of a spell), so a
+# line is written once and every id with that Japanese takes the same words (`wfj readings spread`). Its
+# words are checked against the stored text: generate ships a hand-written line with its manual breaks
+# joined, which moves no word and changes no order. It ships no English word card rows: English first shows
+# the client's own tooltip.
+TOOLTIP_TYPES = ("item", "spell")
 KEYS = ("id", "field", "ja_hash", "words", "provenance")
 PROVENANCE_CLASSES = ("machine", "correction")
 

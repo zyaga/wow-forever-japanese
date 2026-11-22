@@ -510,8 +510,8 @@ def render(m: dict[str, Any], stamp: str) -> str:
         done = _pct(r["with_words"], r["lines"])
         out.append(f"| {type_} | {r['lines']:,} | {r['with_words']:,} | {done} | "
                    f"{r['stale']:,} | {r['words']:,} | {_pct(r['with_meaning'], r['words'])} |")
-    out += ["", "Item, spell, objective and area text take no word cards; HTML book pages",
-            "and lines holding a `|` escape are not counted."]
+    out += ["", "Item and spell text shows its word cards on a frozen tooltip. Objective and area text",
+            "take none; HTML book pages and lines holding a `|` escape are not counted."]
     out += _render_english_cards(m.get("english_cards") or {})
     out += _render_voice(m.get("voice") or {})
     out.append("")

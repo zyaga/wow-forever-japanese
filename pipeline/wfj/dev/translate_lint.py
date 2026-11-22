@@ -91,7 +91,7 @@ checked with the import's own rules (`readings.word_problems`):
 
 - `words:<problem>`: a word not found after the previous one, with no kanji, holding an ASCII character, or
   with a non-kana reading
-- `words_unexpected`: `words` on a kind that gets no readings (tooltips, books, objectives)
+- `words_unexpected`: `words` on a kind that gets no readings (objectives, area text)
 
 A quest or gossip row whose Japanese holds a kanji and that has no `words` passes, with a warning: its
 readings are still owed (`wfj readings export` picks the line up later).

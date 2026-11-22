@@ -94,10 +94,10 @@ def test_good_verdicts_pass_and_words_are_checked_against_the_corrected_japanese
     assert audit_batch.verdict_problems(part, {**ok, "words": WORDS})  # words for the old text are refused
 
 
-def test_item_rows_never_carry_words_and_a_row_out_of_order_is_named():
+def test_item_rows_owe_words_like_quest_rows_and_a_row_out_of_order_is_named():
     part = _part("item")
-    assert audit_batch.verdict_problems(part, _v(part, verdict="match")) == []
-    assert audit_batch.verdict_problems(part, _v(part, verdict="match", words=WORDS))
+    assert audit_batch.verdict_problems(part, _v(part, verdict="match")) == ["words missing"]
+    assert audit_batch.verdict_problems(part, _v(part, verdict="match", words=WORDS)) == []
     assert "does not match" in audit_batch.verdict_problems(part, {**_v(part, verdict="match"), "id": 2})[0]
 
 
