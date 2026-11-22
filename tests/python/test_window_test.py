@@ -501,11 +501,16 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     assert "ERROR tooltip numbers in the wrong places: spell 408498" in out
     assert "no-voice message: 3 quests read in the quest log, 2 said they have no voice; voice pack loaded, 40" in out
     assert "ERROR no-voice message: quest 783 says it has no voice, and the voice pack does not list it" in out
+    # a run saved by a test addon from before the names read is told to install the current one
+    assert "ERROR names not read: this run's test addon has no such read" in out
     fine = TOOLTIPS.replace('["408498"] = "3 numbers in the Japanese, 4 on this client"', "").replace(
         '["279845"] = "one Japanese paragraph over 2 lines"', "").replace(
-        '["783"] = "says it has no voice, and the voice pack does not list it"', "")
+        '["783"] = "says it has no voice, and the voice pack does not list it"', "").replace(
+        '["tooltips"] = {', '["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", '
+        '["english"] = "Reyn", ["shown"] = "Reyn" } } },\n["tooltips"] = {')
     saved.write_text(fine, encoding="utf-8")
     assert client_surface._texts(args) == 0
+    assert "names: 1 read, 0 shown in Japanese" in capsys.readouterr().out
 
 
 def test_the_test_addon_carries_each_filled_spells_count_and_reads_tooltips_after_the_closed_windows(root):
@@ -551,3 +556,59 @@ def test_the_no_voice_read_keeps_the_voice_entrys_own_list_and_shows_quests_the_
     assert lua.index("WFJScanNoVoiceRead(function()") < lua.index("WFJScanCharacterRead(function()\n")
     body = lua[lua.index("local function WFJScanNoVoiceRead"):lua.index("-- The character window, opened by")]
     assert "AbandonQuest" not in body and "SetAbandonQuest" not in body and ":Click(" not in body
+
+
+NAMES = """
+WFJScanDB = {
+["probe"] = {
+["test"] = { ["started"] = "2026-11-22 17:00:00", ["finished"] = "2026-11-22 17:05:00", ["build"] = "70959" },
+["names"] = { ["on"] = true, ["rows"] = {
+  { ["kind"] = "item", ["english"] = "Hearthstone", ["shown"] = "ハースストーン" },
+  { ["kind"] = "item", ["english"] = "Worn Shortsword", ["shown"] = "Worn Shortsword" },
+  { ["kind"] = "spell", ["english"] = "Unknown New Spell", ["shown"] = "Unknown New Spell" },
+  { ["kind"] = "zone", ["english"] = "Elwynn Forest", ["shown"] = "エルウィン・フォレスト" },
+  { ["kind"] = "player", ["english"] = "Thrall", ["shown"] = "スロール" },
+  { ["kind"] = "unit", ["english"] = "Kobold Vermin", ["shown"] = "コボルド" },
+} },
+},
+}
+"""
+JAPANESE = {"Hearthstone": "ハースストーン", "Worn Shortsword": "ウォーン・ショートソード",
+            "Elwynn Forest": "エルウィン・フォレスト", "Thrall": "スロール", "Kobold Vermin": "コボルド・バーミン"}
+
+
+def test_the_names_read_fails_on_a_name_left_english_a_wrong_japanese_and_a_players_name_changed():
+    record = client_surface.read_names(NAMES)
+    assert record["on"] is True and record["refused"] == "" and len(record["rows"]) == 6
+    assert record["rows"][0] == ("item", "Hearthstone", "ハースストーン")
+    assert client_surface.names_problems(record, JAPANESE) == [
+        "name left English: item Worn Shortsword (its Japanese is ウォーン・ショートソード)",
+        "name not as the name list spells it: unit Kobold Vermin shows コボルド, the list has コボルド・バーミン",
+        "player's name changed: Thrall shows スロール",
+    ]
+    # a name the list has no line for stays the client's English: nothing to report
+    assert not any("Unknown New Spell" in p for p in client_surface.names_problems(record, JAPANESE))
+
+
+def test_the_names_read_says_why_it_proved_nothing():
+    assert client_surface.read_names(TOOLTIPS) is None
+    assert client_surface.names_problems(None, JAPANESE)[0].startswith("names not read: this run's test addon")
+    off = {"on": False, "refused": "", "rows": []}
+    assert client_surface.names_problems(off, JAPANESE) == [
+        "names not read: Japanese names are off (/wfj intro, pick Japanese names, Confirm, then run it again)"]
+    assert client_surface.names_problems({**off, "on": True}, JAPANESE) == [
+        "names not read: nothing with a name could be read"]
+    assert client_surface.names_problems({**off, "on": True, "refused": "boom"}, JAPANESE) == [
+        "names not read: boom"]
+
+
+def test_the_names_read_runs_after_the_no_voice_read_and_only_shows_tooltips():
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    assert lua.index("WFJScanNoVoiceRead(function()") < lua.index("outOfCombat(function() WFJScanNamesRead(")
+    assert lua.index("WFJScanNamesRead(function()") < lua.index("WFJScanCharacterRead(function()\n")
+    body = lua[lua.index("local function WFJScanNamesRead"):lua.index("-- The character window, opened by")]
+    assert "UseContainerItem" not in body and "PickupContainerItem" not in body and ":Click(" not in body
+    # a player's name and a name the client hides are never taken for a game name
+    assert "UnitIsPlayer" in body and "readable(" in body
+    # the names setting is read, never written: the run shows what this player sees
+    assert 'settings["names.japanese"] == true' in lua and "names.japanese\"] =" not in body

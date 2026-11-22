@@ -1628,6 +1628,84 @@ local function WFJScanNoVoiceRead(done)
   end)
 end
 
+-- The names read. With Japanese names on, a widget that holds a game name shows the name's Japanese. The run reads
+-- the names it can reach by itself and keeps each one's English and what was shown, into `probe.names`; the name
+-- list is held to them when the result is read:
+--   item    the name line of every item the character wears or carries
+--   spell   the name line of every spell the tooltip read asks for
+--   zone    the zone banner, written the client's way
+--   unit    the target's name line, when the character has a creature targeted
+--   player  the player's own name line: a player's name is never a game name and must stay as written
+-- The names setting is read, never written: the run shows what this player sees. With names off it reads nothing
+-- and the result says so.
+local NAMES_MAX = 600 -- rows kept: every bag full is under 200 items
+local function namesOn()
+  local settings = type(WFJ_DB) == "table" and WFJ_DB.settings
+  return type(settings) == "table" and settings["names.japanese"] == true
+end
+
+local function WFJScanNamesRead(done)
+  local db = probeDb()
+  local record = { on = namesOn(), rows = {} }
+  db.names = record
+  if not record.on then return done() end
+  local seen = {}
+  local function keep(kind, english, shown)
+    if not readable(english) or not readable(shown) or #record.rows >= NAMES_MAX then return end
+    local key = kind .. " " .. english
+    if seen[key] then return end
+    seen[key] = true
+    record.rows[#record.rows + 1] = { kind = kind, english = english, shown = shown }
+  end
+  -- the tooltip on screen: its first line against the name the client's own data gives it
+  local function nameLine(kind, data)
+    local lines = type(data) == "table" and type(data.lines) == "table" and data.lines or nil
+    if lines and lines[1] then keep(kind, lines[1].leftText, shownRow(1)) end
+  end
+  local ok, err = pcall(function()
+    for slot = 1, 19 do
+      if GetInventoryItemID("player", slot) then
+        GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+        GameTooltip:SetInventoryItem("player", slot)
+        nameLine("item", C_TooltipInfo.GetInventoryItem("player", slot))
+      end
+    end
+    for bag = 0, 4 do
+      for slot = 1, C_Container.GetContainerNumSlots(bag) or 0 do
+        if C_Container.GetContainerItemID(bag, slot) then
+          GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+          GameTooltip:SetBagItem(bag, slot)
+          nameLine("item", C_TooltipInfo.GetBagItem(bag, slot))
+        end
+      end
+    end
+    for id in pairs(VALUES) do
+      local data = C_TooltipInfo.GetSpellByID(id)
+      if type(data) == "table" then
+        GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+        GameTooltip:SetSpellByID(id)
+        nameLine("spell", data)
+      end
+    end
+    GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+    GameTooltip:SetUnit("player")
+    keep("player", UnitName("player"), shownRow(1))
+    if UnitExists("target") and UnitIsPlayer("target") == false then
+      GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+      GameTooltip:SetUnit("target")
+      keep("unit", UnitName("target"), shownRow(1))
+    end
+    GameTooltip:Hide()
+    -- the zone banner, written by the client's own handler, as on a zone change
+    if type(ZoneText_OnEvent) == "function" and ZoneTextFrame and ZoneTextString then
+      ZoneText_OnEvent(ZoneTextFrame, "ZONE_CHANGED_NEW_AREA")
+      keep("zone", GetZoneText(), ZoneTextString:GetText())
+    end
+  end)
+  if not ok then record.refused = tostring(err) end
+  done()
+end
+
 -- The character window, opened by the player (see above): read every half second while it is open, so each page
 -- the player shows is read; it ends when the player closes it. Not opened in time, the run says so. What was read
 -- is kept from the first read on, and a reload while the window is open ends the run as closing it does: the
@@ -1684,7 +1762,7 @@ local function WFJScanCharacterRead(done)
 end
 
 -- The whole window test (`/wfjtest`): the load walk, the live sweep, the closed-window read, the tooltip read, the
--- no-voice read, the character window (opened by the player), then one done line. `probe.test` holds when it ran and on which build, so a result read
+-- no-voice read, the names read, the character window (opened by the player), then one done line. `probe.test` holds when it ran and on which build, so a result read
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
@@ -1784,6 +1862,9 @@ SlashCmdList.WFJTEST = function(how)
         outOfCombat(function() WFJScanTooltipRead(function()
           db.test.part = "novoice"
           outOfCombat(function() WFJScanNoVoiceRead(function()
+            db.test.part = "names"
+            -- in a fight the client hides a tooltip's rows and a unit's name from addons
+            outOfCombat(function() WFJScanNamesRead(function()
             db.test.part = "character"
             WFJScanCharacterRead(function()
               db.test.part = "done"
@@ -1794,6 +1875,7 @@ SlashCmdList.WFJTEST = function(how)
               db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
               print("WFJ test done: /reload to save, then the result can be read")
             end)
+            end) end)
           end) end)
         end) end)
       end)
@@ -2300,6 +2382,55 @@ def no_voice_problems(record: dict[str, Any] | None) -> list[str]:
     return out
 
 
+def read_names(text: str) -> dict[str, Any] | None:
+    """The window test's names read out of a saved-variables file, or None when the run had none: whether
+    Japanese names were on (`on`), why it could not read (`refused`), and `rows`: (kind, the client's English,
+    what the widget showed) for every name it read."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("names") if probe is not None else None
+    if record is None:
+        return None
+    rows = record.get("rows")
+    return {
+        "on": bool(record.get("on")), "refused": str(record.get("refused") or ""),
+        "rows": [(str(r.get("kind")), str(r.get("english")), str(r.get("shown")))
+                 for r in (rows.positional() if rows is not None else [])],
+    }
+
+
+def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -> list[str]:
+    """What the names read found wrong, one line each, held to the name list (`japanese`: English name → its
+    Japanese). A name the list has a line for must show that Japanese; a name it has none for stays the client's
+    English; a player's name is never changed. A run with names off, or one that read nothing, proves nothing
+    and says so."""
+    if record is None:
+        return ["names not read: this run's test addon has no such read (make scan-install, then run it again)"]
+    if record["refused"]:
+        return [f"names not read: {record['refused']}"]
+    if not record["on"]:
+        return ["names not read: Japanese names are off (/wfj intro, pick Japanese names, Confirm, then run it "
+                "again)"]
+    if not record["rows"]:
+        return ["names not read: nothing with a name could be read"]
+    out = []
+    for kind, english, shown in record["rows"]:
+        want = japanese.get(english)
+        if kind == "player":
+            if shown != english:
+                out.append(f"player's name changed: {english} shows {shown}")
+        elif want is None:
+            if shown != english:
+                out.append(f"name changed with no line in the name list: {kind} {english} shows {shown}")
+        elif shown == english:
+            out.append(f"name left English: {kind} {english} (its Japanese is {want})")
+        elif shown != want:
+            out.append(f"name not as the name list spells it: {kind} {english} shows {shown}, the list has {want}")
+    return sorted(out)
+
+
 def read_test_problems(text: str, log: str = "") -> list[str]:
     """What went wrong while the window test ran, one line each: the Lua errors and the actions the client refused
     an addon, as the scan addon counted them, and, from the shipped addon's own saved file (`log`), its recorded
@@ -2403,7 +2534,7 @@ def client_build_beside(saved: Path) -> str | None:
 
 
 def _own_reads(saved: str) -> list[str]:
-    """Prints what the tooltip read and the no-voice read saw and gives back their problems."""
+    """Prints what the tooltip read, the no-voice read and the names read saw and gives back their problems."""
     tooltips = read_tooltips(saved)
     if tooltips is not None:
         print(f"tooltips: {tooltips['read']} spells read ({tooltips['japanese']} in Japanese, "
@@ -2416,7 +2547,16 @@ def _own_reads(saved: str) -> list[str]:
         print(f"no-voice message: {no_voice['quests']} quests read in the quest log, {no_voice['said']} said they "
               f"have no voice; voice pack {'loaded' if no_voice['pack'] else 'not loaded'}, "
               f"{no_voice['listed']} lines listed with no voice")
-    return tooltip_problems(tooltips) + no_voice_problems(no_voice)
+    names = read_names(saved)
+    japanese: dict[str, str] = {}
+    if names is not None and names["rows"]:
+        from wfj.io.names_store import load_lines
+        from wfj.paths import data_root
+
+        japanese = {ln["en"]: ln["ja"] for ln in load_lines(data_root()) if ln.get("status") == "trusted"}
+        shown = sum(1 for _, english, text in names["rows"] if text != english)
+        print(f"names: {len(names['rows'])} read, {shown} shown in Japanese")
+    return tooltip_problems(tooltips) + no_voice_problems(no_voice) + names_problems(names, japanese)
 
 
 def _texts(args: argparse.Namespace) -> int:
