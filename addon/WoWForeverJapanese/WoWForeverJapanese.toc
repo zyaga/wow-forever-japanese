@@ -2705,6 +2705,7 @@ UI\QuestMap.lua
 UI\TimeLine.lua
 UI\Tooltip.lua
 UI\TooltipUnit.lua
+UI\TooltipFreeze.lua
 UI\GameMenu.lua
 UI\Gossip.lua
 UI\ItemText.lua

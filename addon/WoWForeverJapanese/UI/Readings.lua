@@ -147,6 +147,15 @@ end
 
 -- ── The box ───────────────────────────────────────────────────────────────
 
+-- A solid fill under a box's tooltip border: the border's own centre lets the text behind show through, which makes
+-- a card over other text hard to read. Drawn on the box itself, so it sits under the border frame.
+function View.solid(frame)
+  local fill = frame:CreateTexture(nil, "BACKGROUND")
+  fill:SetPoint("TOPLEFT", frame, "TOPLEFT", 3, -3)
+  fill:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -3, 3)
+  fill:SetColorTexture(0.04, 0.04, 0.07, 1)
+end
+
 local box, boxText
 local function ensureBox()
   if box then return box end
@@ -154,6 +163,7 @@ local function ensureBox()
   -- Blizzard_SharedXML/Shared/Tooltip/SharedTooltipTemplates.xml, Blizzard_SharedXML.toc:160–161]
   box = CreateFrame("Frame", nil, Compat.resolve("UIParent"), "TooltipBackdropTemplate")
   box:SetFrameStrata("TOOLTIP")
+  View.solid(box)
   -- a template font first, so SetText never meets a FontString without one if the bundled font is refused
   boxText = box:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
   boxText:SetPoint("CENTER", box, "CENTER", 0, 0)

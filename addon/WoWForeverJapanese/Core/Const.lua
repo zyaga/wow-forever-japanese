@@ -54,6 +54,7 @@ WFJ.STATUS = { ["."] = "trusted", s = "stale", u = "unaligned", m = "missing" }
 -- Keybinding globals read by Bindings.xml (auto-loaded, not in the TOC).
 BINDING_HEADER_WFJ = "WoW Forever Japanese"
 BINDING_NAME_WFJ_TOGGLE = "Toggle translation"
+BINDING_NAME_WFJ_FREEZE_TOOLTIP = "Freeze the tooltip (word cards)"
 BINDING_NAME_WFJ_VOICE_PAUSE = "Voice: pause / resume"
 BINDING_NAME_WFJ_VOICE_REPLAY = "Voice: play the line again"
 BINDING_NAME_WFJ_STUDY = "Study words: open / collapse the card"
