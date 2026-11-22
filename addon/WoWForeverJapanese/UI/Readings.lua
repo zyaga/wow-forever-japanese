@@ -39,6 +39,12 @@ View.SURFACES = {
   ["dialogueui.title"] = true, -- the quest title in its page header, as the client's quest window's title
 }
 
+-- Surfaces the addon draws itself as a copy of text shown elsewhere, each line carrying its own words (`rec.spans`)
+-- and the kind and id of the line it copies: the frozen tooltip (UI/TooltipFreeze). A line there takes cards
+-- whatever its kind, a window word among them: the copy is a frame of ours the mouse can rest on, which the
+-- tooltip it copies is not.
+View.COPIES = { ["tooltip.frozen"] = true }
+
 -- The frame a box over `anchor` belongs under: UIParent, unless the text sits in a window outside it (Dialogue UI
 -- draws its windows with no parent and fades UIParent out while they show, which would hide a box under UIParent
 -- with it). → that window's top frame, or UIParent
@@ -357,6 +363,7 @@ end
 local function takesCards(rec, fs)
   local m = rec.meta
   if not m or type(fs) ~= "table" or type(fs.CalculateScreenAreaFromCharacterSpan) ~= "function" then return false end
+  if View.COPIES[rec.surface] then return rec.spans ~= nil end
   -- a label in a window (a Button's text or a menu entry is an adapter without the span call: refused above); a
   -- widget that holds only a name (a title bar) is one too
   if m.kind == "ui" or m.kind == "name" then return not View.nonWindow(rec.surface) and inWindow(fs) end

@@ -580,6 +580,7 @@ local function onEvent(self, event, name, ...)
   elseif event == "PLAYER_REGEN_ENABLED" then
     WFJ.RevealBinding.flush() -- a modifier change made in combat
     WFJ.NamePlateSetting.flush() -- a nameplate setting asked for in combat
+    WFJ.TooltipFreeze.offerKey(WFJ_DB) -- an offer a login in combat could not make
     WFJ.QuestMap.onCombatEnded() -- the map's quest list keeps the client's English in combat
     WFJ.ChatUnlisted.flush() -- chat lines that waited for combat to end
     WFJ.Options.setCombat(false)
@@ -597,7 +598,10 @@ local function onEvent(self, event, name, ...)
     WFJ.Modifier.refresh()
   elseif event == "PLAYER_ENTERING_WORLD" then
     local isLogin, isReload = name, ... -- PLAYER_ENTERING_WORLD(isInitialLogin, isReloadingUi)
-    if isLogin or isReload then WFJ.RevealBinding.apply() end -- again once bindings are loaded
+    if isLogin or isReload then
+      WFJ.RevealBinding.apply() -- again once bindings are loaded
+      step("freezekey", function() WFJ.TooltipFreeze.offerKey(WFJ_DB) end) -- once per account
+    end
     WFJ.Modifier.refresh()
     local disclosed = WFJ.Collector.disclose() -- once per dump, after the chat frame is up
     -- never on a zone change; time() is the client's clock [verified: forever-ui-1.60.1.70170

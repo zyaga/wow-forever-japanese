@@ -724,6 +724,25 @@ describe("Readings", function()
       assert.are.equal(1, R.readingErrors)
     end)
 
+    it("the reading box draws a solid fill under its border, so text behind it never shows through", function()
+      local fs = questFs()
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      local cover = coverOf(fs)
+      cover.scripts.OnEnter(cover)
+      local word = cover.words[1]
+      Stub.cursor = { 100 + word.rects[1].left + 1, 200 + 5 }
+      cover.scripts.OnUpdate(cover)
+      local solid = false
+      for _, f in ipairs(Stub.frames) do
+        if f.template == "TooltipBackdropTemplate" and f:IsShown() then
+          for _, t in ipairs(f.children) do
+            if t.layer == "BACKGROUND" and t.color and t.color[4] == 1 then solid = true end
+          end
+        end
+      end
+      assert.is_true(solid)
+    end)
+
     it("a refused font waits: the words attach once the font is applied", function()
       Stub.fontSetFails = true
       local fs = questFs()
