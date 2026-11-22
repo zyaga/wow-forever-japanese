@@ -1,0 +1,2 @@
+{"id": 1320643, "field": "aura", "ja_hash": "f1e5f66e764b7508", "words": [["水中", "すいちゅう", "水中", "すいちゅう", "underwater"], ["呼吸できます", "こきゅうできます", "呼吸する", "こきゅうする", "can breathe"]], "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "readings@tooltip-words-pilot", "imported": "2026-11-22"}}
+{"id": 1320726, "field": "aura", "ja_hash": "dba456138283e8fd", "words": [["上昇しています", "じょうしょうしています", "上昇する", "じょうしょうする", "increased"]], "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "readings@tooltip-words-pilot", "imported": "2026-11-22"}}
