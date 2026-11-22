@@ -1,7 +1,8 @@
 -- Core/Readings.lua: whole-word readings (ADR-036), the read path over WFJ.Data.reading and where each word sits
 -- in the text on screen. Pure: no globals, no frames. The display is UI/Readings.lua.
 --   Readings.words(kind, id)        → { word, reading, gloss, … } | nil; gloss = meaning number or false
---                                      kind = "quest.<field>" | "gossip" | "ui" | "book"
+--                                      kind = "quest.<field>" | "gossip" | "ui" | "book" | "item.description" |
+--                                      "spell.description" | "spell.aura"
 --   Readings.locate(words, text[, guards])
 --                                   → { { first, last, word, reading, gloss }, … }: byte positions, found in order;
 --                                      a word the text lacks is skipped; a match on part of a guard span is passed over
@@ -21,6 +22,8 @@ local _, WFJ = ...
 local Readings = {}
 WFJ.Readings = Readings
 
+local TOOLTIP_FIELDS = { item = { description = true }, spell = { description = true, aura = true } }
+
 local function split(kind)
   if kind == "gossip" then return "gossip", "text" end
   if kind == "ui" then return "ui", "text" end -- ["ui:<KEY>"] (ADR-041)
@@ -28,6 +31,9 @@ local function split(kind)
   if type(kind) ~= "string" then return nil end
   local field = kind:match("^quest%.(%a+)$")
   if field then return "quest", field end
+  -- tooltip text, shown with word cards on a frozen tooltip (UI/TooltipFreeze): ["item:<id>"], ["spell:<id>"]
+  local type_, own = kind:match("^(%a+)%.(%a+)$")
+  if TOOLTIP_FIELDS[type_] and TOOLTIP_FIELDS[type_][own] then return type_, own end
   return nil
 end
 

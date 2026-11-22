@@ -244,6 +244,21 @@ function KeyCapture.setToggle(key)
   return true
 end
 
+-- Gives `action` the key `key` as its first key, and only when nothing is in the way: the action has no key yet
+-- and the key has no action (the client answers "" for a key nothing is bound to). It never takes a key from
+-- another action. Out of combat only, with the same writers as the toggle key.
+-- → "bound" | "taken" (nothing written, and nothing to ask again) | nil (combat, or a client that cannot say: ask
+-- again later)
+function KeyCapture.offerDefault(action, key)
+  local getKey, set, save, current = writers()
+  local actionOf = api("bindingAction")
+  if not getKey or not actionOf or inCombat() ~= false then return nil end
+  if getKey(action) ~= nil or (actionOf(key) or "") ~= "" then return "taken" end
+  if not set(key, action) then return "taken" end
+  save(current())
+  return "bound"
+end
+
 function KeyCapture.clearToggle()
   local getKey, set, save, current = writers()
   if not getKey or inCombat() ~= false then return false end

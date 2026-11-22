@@ -148,8 +148,28 @@ describe("Readings", function()
       H.loadPure("Core/Readings.lua", nil, ns)
       assert.is_nil(ns.Readings.lookup("quest.title", 456, "x"))
       assert.is_nil(ns.Readings.lookup("quest.description", 457, "x"))
-      assert.is_nil(ns.Readings.lookup("item.description", 456, "x"))
+      assert.is_nil(ns.Readings.lookup("item.description", 456, "x")) -- no item row
+      assert.is_nil(ns.Readings.lookup("area", 456, "x"))
+      assert.is_nil(ns.Readings.lookup("item.name", 456, "x"))
       assert.is_nil(ns.Readings.words("gossip", nil))
+    end)
+
+    it("tooltip text: an item's description and a spell's description and aura have rows of their own", function()
+      local ns = { Data = { reading = {
+        ["item:6948"] = { description = "場所=ばしょ=7 戻ります=もどります=8" },
+        ["spell:10"] = { description = "氷=こおり=1", aura = "受けます=うけます=2" },
+      } } }
+      H.loadPure("Core/Readings.lua", nil, ns)
+      local text = "ホームに設定した場所へ戻ります。"
+      local spans = ns.Readings.lookup("item.description", 6948, text)
+      assert.are.equal(2, #spans)
+      assert.are.equal("場所", text:sub(spans[1].first, spans[1].last))
+      assert.are.equal(8, spans[2].gloss)
+      assert.are.equal("こおり", ns.Readings.lookup("spell.description", 10, "氷の破片")[1].reading)
+      assert.are.equal("うけます", ns.Readings.lookup("spell.aura", 10, "ダメージを受けます。")[1].reading)
+      -- a field the type does not have finds nothing
+      assert.is_nil(ns.Readings.lookup("item.aura", 6948, text))
+      assert.is_nil(ns.Readings.lookup("spell.title", 10, "氷"))
     end)
   end)
 

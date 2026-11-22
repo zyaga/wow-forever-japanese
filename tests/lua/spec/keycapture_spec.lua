@@ -120,6 +120,41 @@ describe("UI/KeyCapture: capturing a key on the settings page", function()
     for _, c in ipairs(Stub.bindingCalls) do assert.are_not.equal("SaveBindings", c[1]) end
     _G.SetBinding = realSet
   end)
+  describe("offerDefault: a first key for a binding, only when nothing is in its way", function()
+    it("binds the key and saves when the binding has no key and the key no action", function()
+      assert.are.equal("bound", KC.offerDefault("WFJ_FREEZE_TOOLTIP", "CTRL-F"))
+      assert.are.same({ { "SetBinding", "CTRL-F", "WFJ_FREEZE_TOOLTIP" }, { "SaveBindings", 2 } }, Stub.bindingCalls)
+    end)
+
+    it("never takes a key another action holds", function()
+      Stub.bindings["CTRL-F"] = "ACTIONBUTTON5"
+      assert.are.equal("taken", KC.offerDefault("WFJ_FREEZE_TOOLTIP", "CTRL-F"))
+      assert.are.same({}, Stub.bindingCalls)
+      assert.are.equal("ACTIONBUTTON5", Stub.bindings["CTRL-F"])
+    end)
+
+    it("leaves a binding that already has a key alone", function()
+      Stub.bindings["F9"] = "WFJ_FREEZE_TOOLTIP"
+      assert.are.equal("taken", KC.offerDefault("WFJ_FREEZE_TOOLTIP", "CTRL-F"))
+      assert.are.same({}, Stub.bindingCalls)
+    end)
+
+    it("decides nothing in combat, so the caller asks again", function()
+      Stub.combat = true
+      assert.is_nil(KC.offerDefault("WFJ_FREEZE_TOOLTIP", "CTRL-F"))
+      assert.are.same({}, Stub.bindingCalls)
+      Stub.combat = false
+      assert.are.equal("bound", KC.offerDefault("WFJ_FREEZE_TOOLTIP", "CTRL-F"))
+    end)
+
+    it("saves nothing when the client refuses the key", function()
+      local realSet = _G.SetBinding
+      _G.SetBinding = function() return false end
+      assert.are.equal("taken", KC.offerDefault("WFJ_FREEZE_TOOLTIP", "CTRL-F"))
+      _G.SetBinding = realSet
+      for _, c in ipairs(Stub.bindingCalls) do assert.are_not.equal("SaveBindings", c[1]) end
+    end)
+  end)
 end)
 
 describe("KeyCapture.parseChord", function()
@@ -154,4 +189,5 @@ describe("KeyCapture.parseChord", function()
     end
     assert.is_nil(KC.parseChord(nil))
   end)
+
 end)
