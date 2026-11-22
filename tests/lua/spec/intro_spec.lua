@@ -263,6 +263,69 @@ describe("UI/IntroWindow, the window", function()
     assert.is_true(f.pickPage:IsShown())
   end)
 
+  describe("the names choice under the cards", function()
+    it("shows English names and Japanese names in both languages, each with the example as it will look",
+    function()
+      local f = IW.open()
+      local english, japanese = f.nameCards[false], f.nameCards[true]
+      assert.are.equal(T["intro.names.ask"].ja, f.namesAsk.ja:GetText())
+      assert.are.equal(T["intro.names.ask"].en, f.namesAsk.en:GetText())
+      assert.are.equal(T["intro.names.english"].ja .. " / " .. T["intro.names.english"].en, english.label:GetText())
+      assert.are.equal(T["intro.names.japanese"].ja .. " / " .. T["intro.names.japanese"].en,
+        japanese.label:GetText())
+      assert.are.equal("Marshal McBride", english.example:GetText())
+      assert.are.equal("マーシャル・マクブライド", japanese.example:GetText())
+      for _, region in ipairs({ f.namesAsk.ja, english, japanese }) do assert.is_table(region.point) end
+      -- names are English until the player picks Japanese
+      assert.is_false(IW.names)
+      assert.is_true(english.picked)
+      assert.is_false(japanese.picked)
+    end)
+
+    it("a click only selects; Confirm writes it with the mode's settings and names show at once", function()
+      local f = IW.open()
+      f.nameCards[true].scripts.OnClick(f.nameCards[true])
+      assert.is_true(IW.names)
+      assert.is_true(f.nameCards[true].picked)
+      assert.is_false(f.nameCards[false].picked)
+      assert.is_false(WFJ.Settings.get("names.japanese"))
+      assert.is_false(WFJ.State.names)
+      f.cards.en.scripts.OnClick(f.cards.en) -- picking a mode keeps the names pick
+      assert.is_true(IW.names)
+      f.confirm.scripts.OnClick(f.confirm)
+      assert.are.same({ "en", true, true }, settings())
+      assert.is_true(WFJ.Settings.get("names.japanese"))
+      assert.is_true(WFJ.State.names) -- this login kept the name tables for the answer: no reload
+      assert.is_true(f.infoPage:IsShown())
+      -- back to English names, by the same two clicks
+      f.back.scripts.OnClick(f.back)
+      f.nameCards[false].scripts.OnClick(f.nameCards[false])
+      f.confirm.scripts.OnClick(f.confirm)
+      assert.is_false(WFJ.Settings.get("names.japanese"))
+      assert.is_false(WFJ.State.names)
+    end)
+
+    it("closing without Confirm leaves names English; opened again it starts on what the setting is", function()
+      local f = IW.open()
+      f.nameCards[true].scripts.OnClick(f.nameCards[true])
+      IW.close()
+      assert.is_false(WFJ.Settings.get("names.japanese"))
+      IW.open()
+      assert.is_false(IW.names)
+      assert.is_true(f.nameCards[false].picked)
+      WFJ.Settings.set("names.japanese", true)
+      IW.open()
+      assert.is_true(IW.names)
+      assert.is_true(f.nameCards[true].picked)
+    end)
+
+    it("the example is drawn even when the name tables were let go", function()
+      WFJ.Names.drop()
+      local f = IW.open()
+      assert.are.equal("マーシャル・マクブライド", f.nameCards[true].example:GetText())
+    end)
+  end)
+
   it("Confirm writes exactly the choice's settings and moves to the second page, worded for it", function()
     local f = IW.open()
     WFJ.Settings.set("modifier", "ctrl")
@@ -543,7 +606,8 @@ describe("UI/OptionsText, the intro window's copy", function()
 
   it("every line is the addon's own copy in both languages, with no em dash", function()
     for _, k in ipairs({ "intro.lead", "intro.hold", "intro.readings", "intro.words", "intro.minimap",
-        "intro.voiceTitle", "intro.voice", "intro.close" }) do
+        "intro.voiceTitle", "intro.voice", "intro.close", "intro.names.ask", "intro.names.english",
+        "intro.names.japanese" }) do
       assert.is_string(T[k].en)
       assert.is_string(T[k].ja)
       assert.is_truthy(T[k].ja:find("[\227-\233]"))

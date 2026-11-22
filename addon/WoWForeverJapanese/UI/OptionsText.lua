@@ -67,6 +67,10 @@ Text.T = {
   ["button.defaults"] = { en = "Defaults", ja = "初期設定に戻す" },
   ["defaults.confirm"] = { en = "Click again to reset this page", ja = "もう一度クリックでこのページを初期化" },
   ["about.intro"] = { en = "Show the welcome window again", ja = "ようこそ画面をもう一度表示" },
+  -- the welcome window's names choice, under its three cards
+  ["intro.names.ask"] = { en = "How should names show?", ja = "名前の表示は？" },
+  ["intro.names.english"] = { en = "English names", ja = "英語の名前" },
+  ["intro.names.japanese"] = { en = "Japanese names", ja = "日本語の名前" },
   -- names in Japanese, turned on in a session that let the name tables go at login
   ["names.reload"] = { en = "Japanese names start after the interface reloads.",
     ja = "名前の日本語表示は、インターフェースの再読み込み後に始まります。" },
