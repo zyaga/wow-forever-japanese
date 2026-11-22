@@ -27,6 +27,20 @@ C.suite(getfenv(1), {
       frame:Hide()
       assert.are.equal("抹消", frame.ObliterateButton:GetText())
     end },
+    { "with names on the forge's name on the title shows its Japanese after each SetTitle", function(frame, WFJ)
+      finally(function() WFJ.State.setNames(false) end)
+      WFJ.Data.add("name", { [WFJ.Names.key("Obliterum Forge")] = "オブリテラム・フォージ\tおぶりてらむ・ふぉーじ" })
+      WFJ.State.setNames(true)
+      local title = frame.TitleContainer.TitleText
+      frame:Show()
+      frame:SetTitle("Obliterum Forge")
+      assert.are.equal("オブリテラム・フォージ", title:GetText())
+      C.alt(WFJ, true)
+      assert.are.equal("Obliterum Forge", title:GetText())
+      C.alt(WFJ, false)
+      frame:SetTitle("Obliterate") -- a title spelled like a dictionary word, with no Japanese in the name list
+      assert.are.equal("Obliterate", title:GetText())
+    end },
   },
   name = function(frame, WFJ)
     frame:Show()
