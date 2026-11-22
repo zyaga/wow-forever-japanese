@@ -35,11 +35,12 @@ TYPES: dict[str, list[str]] = {
     "item": model.FIELDS["item"],
     "spell": model.FIELDS["spell"],
 }
-# Tooltip text. Many ids carry the same line (an item and the spell it casts, the ranks of a spell), so a
-# line is written once and every id with that Japanese takes the same words (`wfj readings spread`). Its
-# words are checked against the stored text: generate ships a hand-written line with its manual breaks
-# joined, which moves no word and changes no order. It ships no English word card rows: English first shows
-# the client's own tooltip.
+# Tooltip text. Tooltip lines repeat each other a sentence at a time, apart from an English name or which
+# number a placeholder stands for, so a line's words are written one sentence (a "piece") at a time and a line
+# is put together from its pieces (`pieces`, `assemble`; `wfj readings export-tooltips` / `import-tooltips` /
+# `spread`). Its words are checked against the stored text: generate ships a hand-written line with its manual
+# breaks joined, which moves no word and changes no order. It ships no English word card rows: English first
+# shows the client's own tooltip.
 TOOLTIP_TYPES = ("item", "spell")
 KEYS = ("id", "field", "ja_hash", "words", "provenance")
 PROVENANCE_CLASSES = ("machine", "correction")
@@ -50,6 +51,97 @@ _KANJI = re.compile(r"[㐀-䶿一-鿿々]")
 _KANA = re.compile(r"^[ぁ-ゖァ-ヺー]+$")
 _ASCII = re.compile(r"[\x00-\x7f]")
 _HEX16 = re.compile(r"^[0-9a-f]{16}$")
+
+
+# ── tooltip pieces ──────────────────────────────────────────────────────────
+# A piece is one sentence of a tooltip line: the text between line breaks and square brackets (a
+# `$?…[a][b]` branch holds one alternative text in each bracket), cut after each 。！？. Its key is the
+# piece with what can never be a word taken out of the comparison: a branch condition, which number a
+# placeholder is (`$N1`, `$N4`), and an English name. The placeholder's letter stays (a duration is not a
+# number: the word after it can read differently), and so does a number written out (a counter reads by
+# the number before it: 3匹 びき, 6匹 ぴき). A word never holds an ASCII character, so two pieces with
+# one key hold the same words in the same order.
+_PIECE_SEP = re.compile(r"[\n\[\]]")
+_PIECE_END = re.compile(r"[。！？]+")
+_BRANCH = re.compile(r"\$\?\w*")
+_PLACEHOLDER = re.compile(r"\$([A-Za-z])\d*")
+_NAME = re.compile(r"[A-Za-z](?:[A-Za-z' :\-]*[A-Za-z])?")
+
+
+def piece_key(text: str) -> str:
+    """What makes two pieces the same sentence (see above). "" for a piece that is only a branch condition."""
+    t = _BRANCH.sub("", text)
+    # the placeholder's letter is set aside as a character no name holds, so the name rule below leaves it
+    t = _PLACEHOLDER.sub(lambda m: chr(0xE000 + ord(m.group(1))), t)
+    t = _NAME.sub("A", t)
+    t = re.sub("[\ue000-\ue0ff]", lambda m: "$" + chr(ord(m.group(0)) - 0xE000), t)
+    return " ".join(t.split())
+
+
+def piece_id(text: str) -> str:
+    """The 16-hex id of a piece: the hash of its key."""
+    return hash_key(piece_key(text))
+
+
+def pieces(ja: str) -> list[tuple[int, int, str]]:
+    """(start, end, key) of every piece of a tooltip line, in text order; `ja[start:end]` is the piece."""
+    out: list[tuple[int, int, str]] = []
+    chunk_start = 0
+    for sep in [*_PIECE_SEP.finditer(ja), None]:
+        chunk_end = sep.start() if sep else len(ja)
+        at = chunk_start
+        cuts = [m.end() for m in _PIECE_END.finditer(ja, chunk_start, chunk_end)]
+        for cut in [*cuts, chunk_end]:
+            text = ja[at:cut]
+            lead = len(text) - len(text.lstrip())
+            start, end = at + lead, at + len(text.rstrip())
+            if end > start:
+                key = piece_key(ja[start:end])
+                if key:
+                    out.append((start, end, key))
+            at = cut
+        chunk_start = sep.end() if sep else len(ja)
+    return out
+
+
+def piece_words(ja: str, words: list[list[str]]) -> dict[str, list[list[str]]] | None:
+    """The words of a line, by the piece each stands in: {piece key: its words, in order}. Every piece of
+    the line is in it, with an empty list when nothing in it is listed. None when a word does not stand in
+    the line after the one before it, or stands across two pieces."""
+    spans = pieces(ja)
+    out: dict[str, list[list[str]]] = {}
+    placed: list[tuple[int, list[str]]] = []
+    cursor = 0
+    for entry in words:
+        at = ja.find(entry[0], cursor)
+        if at < 0:
+            return None
+        end = at + len(entry[0])
+        home = next((n for n, (s, e, _k) in enumerate(spans) if s <= at and end <= e), None)
+        if home is None:
+            return None
+        placed.append((home, list(entry)))
+        cursor = end
+    for n, (_s, _e, key) in enumerate(spans):
+        mine = [entry for home, entry in placed if home == n]
+        if key not in out or (not out[key] and mine):
+            out[key] = mine
+    return out
+
+
+def assemble(ja: str, index: dict[str, list[list[str]]]) -> list[list[str]] | None:
+    """The words of a tooltip line put together from pieces already written (`index`: piece key → words).
+    None when a piece with something to annotate is not in the index, or the words put together do not stand
+    in the line in order."""
+    out: list[list[str]] = []
+    for start, end, key in pieces(ja):
+        if key in index:
+            out += [list(w) for w in index[key]]
+        elif annotatable(ja[start:end]):
+            return None
+    if word_problems(ja, out):
+        return None
+    return fill_repeats(ja, out)
 
 
 def needs_reading(ja: str) -> bool:

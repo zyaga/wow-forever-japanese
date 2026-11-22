@@ -1026,46 +1026,188 @@ def test_words_written_from_the_stored_text_hold_for_the_text_the_addon_ships():
     assert readings.word_problems(shipped, TIP_WORDS) == []
 
 
-def test_tooltip_export_writes_one_row_for_each_distinct_japanese(tips, tmp_path, capsys):
+# A tooltip line is drafted a sentence at a time. Two sentences that differ only by an English name or by which
+# number a placeholder stands for are one piece: neither a name nor a placeholder is ever a word.
+
+LEARN = "Elixir of Minor Fortitudeの作り方を習得します。"
+LEARN_WORDS = [["作り方", "つくりかた"], ["習得します", "しゅうとくします"]]
+LAST = "効果時間は$D1です。"
+LAST_WORDS = [["効果時間", "こうかじかん"]]
+
+
+def _keys(ja):
+    return [key for _s, _e, key in readings.pieces(ja)]
+
+
+def test_a_line_splits_into_sentences_at_full_stops_line_breaks_and_branch_brackets():
+    ja = "体力を$N1回復します。食事中は座っている必要があります。\n効果時間は$D1です。"
+    assert [ja[s:e] for s, e, _k in readings.pieces(ja)] == [
+        "体力を$N1回復します。", "食事中は座っている必要があります。", "効果時間は$D1です。"]
+    branch = "筋力が$N4上昇します。$?pc142418[さらに、経験値が$N6%増加します。][]"
+    assert [branch[s:e] for s, e, _k in readings.pieces(branch)] == [
+        "筋力が$N4上昇します。", "さらに、経験値が$N6%増加します。"]
+
+
+def test_a_piece_is_the_same_whatever_its_english_names_and_placeholder_numbers():
+    assert _keys(LEARN) == _keys("Light Winter Cloakの作り方を習得します。")
+    assert _keys("筋力が$N1増加します。") == _keys("筋力が$N4増加します。")
+    assert _keys("$D1の間、Frostダメージを与えます。") == _keys("$D2の間、Fireダメージを与えます。")
+    # a duration is not a number: the word after it can read differently
+    assert _keys("$D1の間") != _keys("$N1の間")
+    # a number written out stays: a counter reads by the number before it (3匹 びき, 6匹 ぴき)
+    assert _keys("3匹の狼を倒す。") != _keys("6匹の狼を倒す。")
+    assert _keys("森の木。") != _keys("森の石。")
+
+
+def test_the_words_of_a_line_fall_into_its_pieces_by_where_they_stand():
+    ja = LEARN + LAST
+    words = LEARN_WORDS + LAST_WORDS
+    by_piece = readings.piece_words(ja, words)
+    assert by_piece == {_keys(LEARN)[0]: LEARN_WORDS, _keys(LAST)[0]: LAST_WORDS}
+    # a piece with nothing listed is known too: it is in the line, and its list is empty
+    assert readings.piece_words("Frost Nova。" + LAST, LAST_WORDS) == {
+        _keys("Frost Nova。")[0]: [], _keys(LAST)[0]: LAST_WORDS}
+    # words that do not stand in the line in order give nothing
+    assert readings.piece_words(ja, [["海", "うみ"]]) is None
+
+
+def test_a_line_is_put_together_from_pieces_already_written():
+    index = readings.piece_words(LEARN + LAST, LEARN_WORDS + LAST_WORDS)
+    other = "Light Winter Cloakの作り方を習得します。\n効果時間は$D2です。"
+    assert readings.assemble(other, index) == LEARN_WORDS + LAST_WORDS
+    assert readings.word_problems(other, readings.assemble(other, index)) == []
+    # one sentence nobody has written: the line waits
+    assert readings.assemble(LEARN + "森を守ります。", index) is None
+    # a piece with nothing to annotate needs no entry
+    assert readings.assemble("Frost Nova\n" + LAST, index) == LAST_WORDS
+
+
+@pytest.fixture
+def sentences(data):
+    Store(data).save("item", [
+        _machine_line(1, "description", LEARN),
+        _machine_line(2, "description", "Light Winter Cloakの作り方を習得します。"),
+        _machine_line(3, "description", "Light Winter Cloakの作り方を習得します。\n" + LAST),
+        _machine_line(4, "description", "|cffffd100森|rの石。"),
+    ])
+    Store(data).save("spell", [
+        _machine_line(10, "description", "効果時間は$D2です。"),
+        _machine_line(10, "aura", "森を守ります。" + LAST),
+    ])
+    return data
+
+
+def _export_tips(tmp_path, *extra):
     out = tmp_path / "tips.jsonl"
-    assert cmd.run(["export-tooltips", "--out", str(out)]) == 0
-    rows = [json.loads(x) for x in out.read_text(encoding="utf-8").splitlines()]
-    # item 6948 and spell 8690 say the same thing: one row, under the first of them
-    assert [(r["type"], r["id"], r["field"]) for r in rows] == [
-        ("item", 7, "description"), ("item", 6948, "description"), ("spell", 8690, "aura")]
-    assert rows[1]["ja"] == TIP_JA and rows[1]["ja_hash"] == readings.ja_hash(TIP_JA)
+    assert cmd.run(["export-tooltips", "--out", str(out), *extra]) == 0
+    return [json.loads(x) for x in out.read_text(encoding="utf-8").splitlines()]
+
+
+def _piece_row(ja, words):
+    return {"type": "piece", "id": readings.piece_id(ja), "field": "text", "ja": ja,
+            "ja_hash": readings.ja_hash(ja), "words": words}
+
+
+def _import_tips(batch, *extra):
+    return cmd.run(["import-tooltips", str(batch), "--model", "reading-model-1", "--batch", "test-batch",
+                    "--date", "2026-09-25", *extra])
+
+
+def test_tooltip_export_writes_each_sentence_nobody_has_written_once(sentences, tmp_path, capsys):
+    rows = _export_tips(tmp_path)
+    # five lines, three sentences: the recipe line (two names), the duration line, the forest line
+    assert [r["ja"] for r in rows] == [LEARN, LAST, "森を守ります。"]
+    assert all(r["type"] == "piece" and r["field"] == "text" for r in rows)
+    assert rows[0]["id"] == readings.piece_id(LEARN) and rows[0]["ja_hash"] == readings.ja_hash(LEARN)
+    assert rows[0]["line"] == "item 1/description" and rows[1]["line"] == "item 3/description"
     printed = capsys.readouterr().out
-    assert "3 distinct lines" in printed and "5 shipped" in printed
-    assert "item 8/description: holds an escape sequence" in printed
+    assert "3 sentences for 5 lines" in printed and "6 shipped" in printed
+    assert "item 4/description: holds an escape sequence" in printed
 
 
-def test_tooltip_import_gives_every_line_with_the_same_japanese_the_same_words(tips, tmp_path):
-    row = _row(words=TIP_WORDS, ja=TIP_JA, id_=6948, type_="item")
-    assert _import(_batch(tmp_path, [row])) == 0
-    item = {(r["id"], r["field"]): r for r in Store(tips / "reading").load("item")}
-    spell = {(r["id"], r["field"]): r for r in Store(tips / "reading").load("spell")}
-    assert item[(6948, "description")]["words"] == TIP_WORDS
-    assert spell[(8690, "description")]["words"] == TIP_WORDS
-    assert spell[(8690, "description")]["provenance"] == item[(6948, "description")]["provenance"]
-    assert (8690, "aura") not in spell and (7, "description") not in item
-    # a second export has only the lines nobody has written yet
-    out = tmp_path / "again.jsonl"
-    assert cmd.run(["export-tooltips", "--out", str(out)]) == 0
-    assert [json.loads(x)["id"] for x in out.read_text(encoding="utf-8").splitlines()] == [7, 8690]
+def test_tooltip_import_builds_every_line_from_its_sentences(sentences, tmp_path, capsys):
+    rows = [_piece_row(LEARN, LEARN_WORDS), _piece_row(LAST, LAST_WORDS)]
+    assert _import_tips(_batch(tmp_path, rows)) == 0
+    item = {(r["id"], r["field"]): r for r in Store(sentences / "reading").load("item")}
+    spell = {(r["id"], r["field"]): r for r in Store(sentences / "reading").load("spell")}
+    assert item[(1, "description")]["words"] == LEARN_WORDS
+    assert item[(2, "description")]["words"] == LEARN_WORDS  # another name, the same sentence
+    assert item[(3, "description")]["words"] == LEARN_WORDS + LAST_WORDS
+    assert spell[(10, "description")]["words"] == LAST_WORDS  # another placeholder number
+    assert (10, "aura") not in spell  # its first sentence is not written yet
+    assert item[(3, "description")]["provenance"]["source"] == "readings@test-batch"
+    assert item[(3, "description")]["ja_hash"] == readings.ja_hash("Light Winter Cloakの作り方を習得します。\n" + LAST)
+    assert "4 lines" in capsys.readouterr().out
+    # what is left to draft is the one sentence, once
+    assert [r["ja"] for r in _export_tips(tmp_path)] == ["森を守ります。"]
 
 
-def test_spread_fills_a_new_line_that_says_what_a_read_line_says_and_keeps_a_correction(tips, tmp_path, capsys):
-    Store(tips / "reading").save("item", [readings.record(6948, "description", TIP_JA, TIP_WORDS, dict(MACHINE))])
-    fixed = [["設定した", "せっていした"], ["場所", "ところ"], ["戻ります", "もどります"]]
-    Store(tips / "reading").save("spell", [readings.record(8690, "description", TIP_JA, fixed, dict(CORRECTION))])
-    Store(tips).save("item", [*Store(tips).load("item"), _machine_line(9, "description", TIP_JA)])
+def test_tooltip_import_rejects_a_bad_sentence_and_its_lines_wait(sentences, tmp_path, capsys):
+    rows = [_piece_row(LEARN, [["海", "うみ"]]), _piece_row(LAST, LAST_WORDS),
+            {**_piece_row(LAST, LAST_WORDS), "ja_hash": "0" * 16}, {"type": "item", "id": 1}]
+    assert _import_tips(_batch(tmp_path, rows)) == 1
+    printed = capsys.readouterr().out
+    assert "rejected row 1" in printed and "rejected row 3" in printed and "rejected row 4" in printed
+    item = {(r["id"], r["field"]): r for r in Store(sentences / "reading").load("item")}
+    assert set(item) == set()  # every item line holds the recipe sentence
+    assert Store(sentences / "reading").load("spell")[0]["words"] == LAST_WORDS
+
+
+def test_tooltip_import_dry_run_writes_nothing(sentences, tmp_path, capsys):
+    assert _import_tips(_batch(tmp_path, [_piece_row(LEARN, LEARN_WORDS)]), "--dry-run") == 0
+    assert Store(sentences / "reading").load("item") == []
+    assert "rejected 0" in capsys.readouterr().out
+
+
+def test_a_new_tooltip_made_of_written_sentences_needs_no_drafting(sentences, tmp_path, capsys):
+    rows = [_piece_row(LEARN, LEARN_WORDS), _piece_row(LAST, LAST_WORDS)]
+    assert _import_tips(_batch(tmp_path, rows)) == 0
+    Store(sentences).save("item", [*Store(sentences).load("item"),
+                                   _machine_line(5, "description", "Runed Copper Rodの作り方を習得します。効果時間は$D3です。"),
+                                   _machine_line(6, "description", "海を渡ります。" + LAST)])
+    capsys.readouterr()
     assert cmd.run(["spread", "--dry-run"]) == 0
-    assert len(Store(tips / "reading").load("item")) == 1
+    assert 5 not in {r["id"] for r in Store(sentences / "reading").load("item")}
     assert cmd.run(["spread"]) == 0
-    item = {r["id"]: r for r in Store(tips / "reading").load("item")}
-    assert item[9]["words"] == TIP_WORDS and item[9]["ja_hash"] == readings.ja_hash(TIP_JA)
-    assert Store(tips / "reading").load("spell")[0]["words"] == fixed  # a line with its own reading is left alone
+    item = {r["id"]: r for r in Store(sentences / "reading").load("item")}
+    assert item[5]["words"] == LEARN_WORDS + LAST_WORDS
+    assert 6 not in item  # one sentence is new: it is exported, the rest of the line is not
     assert "1 line" in capsys.readouterr().out
+    assert [r["ja"] for r in _export_tips(tmp_path)] == ["海を渡ります。", "森を守ります。"]
+
+
+def test_a_whole_line_import_feeds_the_sentences_too(sentences, tmp_path):
+    whole = "Light Winter Cloakの作り方を習得します。\n" + LAST
+    row = _row(words=LEARN_WORDS + LAST_WORDS, ja=whole, id_=3, type_="item")
+    assert _import(_batch(tmp_path, [row])) == 0
+    item = {(r["id"], r["field"]): r for r in Store(sentences / "reading").load("item")}
+    assert item[(1, "description")]["words"] == LEARN_WORDS and item[(2, "description")]["words"] == LEARN_WORDS
+    assert Store(sentences / "reading").load("spell")[0]["words"] == LAST_WORDS
+
+
+def test_a_line_with_its_own_reading_is_left_alone_and_a_correction_is_kept(sentences, tmp_path):
+    fixed = [["作り方", "つくりかた"], ["習得します", "しゅうとく"]]
+    Store(sentences / "reading").save("item", [readings.record(2, "description",
+                                                               "Light Winter Cloakの作り方を習得します。", fixed,
+                                                               dict(CORRECTION))])
+    assert _import_tips(_batch(tmp_path, [_piece_row(LEARN, LEARN_WORDS), _piece_row(LAST, LAST_WORDS)])) == 0
+    item = {(r["id"], r["field"]): r for r in Store(sentences / "reading").load("item")}
+    assert item[(2, "description")]["words"] == fixed and item[(2, "description")]["provenance"]["class"] == "correction"
+
+
+def test_a_branch_line_takes_the_words_of_every_bracket(sentences, tmp_path):
+    branch = "筋力が$N4上昇します。$?pc142418[さらに、経験値が$N6%増加します。][]"
+    Store(sentences).save("item", [_machine_line(7, "description", branch)])
+    rows = _export_tips(tmp_path)
+    assert [r["ja"] for r in rows][:2] == ["筋力が$N4上昇します。", "さらに、経験値が$N6%増加します。"]
+    words = [[["筋力", "きんりょく"], ["上昇します", "じょうしょうします"]],
+             [["さらに", "さらに", "さらに", "さらに", "furthermore"], ["経験値", "けいけんち"],
+              ["増加します", "ぞうかします"]]]
+    batch = _batch(tmp_path, [_piece_row(rows[0]["ja"], words[0]), _piece_row(rows[1]["ja"], words[1])])
+    assert _import_tips(batch) == 0
+    rec = Store(sentences / "reading").load("item")[0]
+    assert rec["words"] == words[0] + words[1]
+    assert readings.word_problems(branch, rec["words"]) == []
 
 
 def test_tooltip_text_ships_no_english_word_card_rows(tips):
