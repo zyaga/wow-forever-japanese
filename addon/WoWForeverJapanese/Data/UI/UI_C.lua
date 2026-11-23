@@ -629,6 +629,7 @@ WFJ.Data.add("ui", {
   ["COD"] = { "代引き", 0x05b8aee5, "." },
   ["COD_AMOUNT"] = { "代引き金額:", 0x586a8171, "." },
   ["COD_CONFIRMATION"] = { "このアイテムを受け取るための費用:", 0x74290b7e, "." },
+  ["COD_DISABLED"] = { "代引きは現在利用できません。", 0x2a991ac7, "." },
   ["COD_INSUFFICIENT_MONEY"] = { "代引きの料金を支払うお金が足りません。", 0xf6f44186, "." },
   ["COINPICKUP_CANCEL"] = { "キャンセル", 0x892958da, "." },
   ["COLDSWAP_TEXT_CONFIRM_GAMEPAD"] = { "ゲームパッド入力モードに切り替えますか？", 0xd3849483, "." },

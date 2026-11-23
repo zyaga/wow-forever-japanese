@@ -715,7 +715,7 @@ WINDOW_SURFACES = frozenset({
     "clickbinding", "coinpickup", "collections", "colorpicker", "communities", "communities.benefits.log",
     "communities.static", "crafting", "currency", "dialogueui.book", "currencytransfer", "customerorders", "deathrecap",
     "dressup", "dressup.side", "dressup.slots", "equipmentflyout", "eventtrace", "eventtrace.rows",
-    "eventtrace.static", "flightmap", "flightmap.static", "friends", "friends.static", "gamemenu",
+    "eventtrace.static", "flightmap", "flightmap.static", "friends", "friends.social", "friends.static", "gamemenu",
     "gamepadedit", "gossip.chrome", "gossip.chrome.static", "groupfinder", "grouploot", "guildbank",
     "guildcontrol", "guildinvite", "guildregistrar", "guildrename", "helpframe", "inspect", "instanceabandon",
     "iteminteraction", "itemsocketing", "itemsocketing.static", "itemupgrade", "legacy", "statistics", "loot",
@@ -812,10 +812,15 @@ def test_every_registered_surface_is_classified(root):
 # "tooltip.<frame>", Labels / LabelTree / Render / TooltipLines internals). A NEW one fails here: resolve it to a literal or constant, or review it and add it to this list.
 REVIEWED_VARIABLE_SURFACES = frozenset({
     "Calendar.lua:help.SURFACE",
+    # a time in a help tooltip's right column: UI/HelpTooltip passes its own surface to the owner's `show`
+    "Calendar.lua:surface",
+    "TimeManager.lua:surface",
+    "Character.lua:surface",  # a stat tooltip's composite line: the same `show` of UI/HelpTooltip's own surface
     "MapPins.lua:help.SURFACE",
     "Collections.lua:surface",
     "CommunitiesKit.lua:surface",
     "DamageMeter.lua:surface",
+    "GroupFinder.lua:surface",  # a finder menu's entries: UI/Menus passes its own surface, classified there
     "NameLabels.lua:surface",  # the helper for a name on a widget: each caller passes its own, classified here
     "DialogueUI.lua:S.title",  # Dialogue UI's quest title: its quest window's surfaces, read from its S table
     "DialogueUI.lua:el.surface",

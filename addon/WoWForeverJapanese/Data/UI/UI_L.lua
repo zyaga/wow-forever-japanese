@@ -126,6 +126,7 @@ WFJ.Data.add("ui", {
   ["LOAD_ADDON"] = { "アドオンを読み込む", 0x356cacdf, "." },
   ["LOCALE_AUDIO_LABEL"] = { "オーディオ", 0x84c3282a, "." },
   ["LOCALE_TEXT_LABEL"] = { "テキスト", 0x0b5c2745, "." },
+  ["LOCKED"] = { "ロック中", 0x5518bc84, "." },
   ["LOCK_ACTIONBAR_TEXT"] = { "アクションバーをロック", 0x89327a10, "." },
   ["LOCK_BATTLEFIELDMINIMAP"] = { "ゾーンマップを固定", 0xb83cf7c9, "." },
   ["LOCK_CURSOR"] = { "カーソルをウィンドウ内に固定", 0x1f39fbce, "." },

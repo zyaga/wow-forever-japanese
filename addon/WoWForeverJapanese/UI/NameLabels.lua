@@ -12,6 +12,15 @@
 --     ("|cffa335ee<name>|r", an item in its quality colour), maybe with an item level inside the colour and what the
 --     client put after it: a count, a quality icon, a key binding. The colour code and everything but the name are
 --     kept byte for byte; a line where words follow the name stays English whole.
+--   NameLabels.after(surface, recKey, widget, lead[, area[, refit]]) → the same for a name the client wrote after a
+--     fixed lead ("- <name>", a reward in a list): the lead kept byte for byte. A text that does not start with the
+--     lead, or whose rest is no name, stays as written.
+--   NameLabels.before(surface, recKey, widget, tail[, area[, refit]]) → the same for a name the client wrote before
+--     a fixed tail ("<skill>:"): the tail kept byte for byte.
+--   NameLabels.joined(surface, recKey, widget[, area[, refit]]) → the same for a widget that holds one name or two
+--     names the client joined with ": " (a holiday's title on the calendar, "Call to Arms: Warsong Gulch"): both
+--     names in Japanese, the separator kept. A text with a half that is no name stays as written. Only a widget
+--     whose text the game names takes this: a colon in any other text joins nothing.
 --   NameLabels.unit(surface, recKey, widget, unit[, area]) → the same for a unit's name; a player's is never touched
 --   NameLabels.title(surface, frame[, recKey[, unit]]) → the same for a window whose title bar is its NPC's name
 --     (frame:SetTitle(UnitName("npc")) → TitleContainer.TitleText): shown now and after every later SetTitle. `unit`
@@ -139,6 +148,43 @@ end
 
 function NameLabels.wrapped(surface, recKey, widget, area, refit)
   return WFJ.Perf.call(surface, parts, surface, recKey, widget, area, refit, wrappedParts)
+end
+
+function NameLabels.after(surface, recKey, widget, lead, area, refit)
+  local function split(en)
+    if type(lead) ~= "string" or lead == "" or en:sub(1, #lead) ~= lead then return nil end
+    local name = en:sub(#lead + 1)
+    if name == "" or name:find("|", 1, true) or not WFJ.Names.item(name) then return nil end
+    return name, lead, nil
+  end
+  return WFJ.Perf.call(surface, parts, surface, recKey, widget, area, refit, split)
+end
+
+-- The mirror of `after`: a name the client wrote before a fixed tail ("<skill>:", a weapon skill's line in the
+-- character window's damage tooltip), the tail kept byte for byte.
+function NameLabels.before(surface, recKey, widget, tail, area, refit)
+  local function split(en)
+    if type(tail) ~= "string" or tail == "" or #en <= #tail or en:sub(-#tail) ~= tail then return nil end
+    local name = en:sub(1, -#tail - 1)
+    if name:find("|", 1, true) or not WFJ.Names.item(name) then return nil end
+    return name, nil, tail
+  end
+  return WFJ.Perf.call(surface, parts, surface, recKey, widget, area, refit, split)
+end
+
+-- joined: the whole text when it is a name, else two names with ": " between them. The record is the first
+-- name's, and the separator with the second name's Japanese follows it, so the reveal key and the names choice
+-- give the whole English back as for any name.
+local function joinedParts(en)
+  if en:find("|", 1, true) then return nil end
+  if WFJ.Names.item(en) then return en, nil, nil end
+  local ja, _, first, second = WFJ.Names.joined(en)
+  if not ja then return nil end
+  return first, nil, en:sub(#first + 1, #en - #second) .. WFJ.Names.of(second)
+end
+
+function NameLabels.joined(surface, recKey, widget, area, refit)
+  return WFJ.Perf.call(surface, parts, surface, recKey, widget, area, refit, joinedParts)
 end
 
 function NameLabels.unit(surface, recKey, widget, unit, area)

@@ -53,7 +53,9 @@ def test_real_toc_fields_and_load_order(root):
         "UI/SettingsKeys.lua", "UI/LabelTree.lua", "UI/TooltipLines.lua",
         "UI/Character.lua", "UI/Reputation.lua", "UI/Skills.lua",
         "UI/PvPRank.lua",  # camelot's PvP rank panel
-        "UI/SpellBook.lua", "UI/Talents.lua", "UI/Trainer.lua", "UI/GossipChrome.lua", "UI/Merchant.lua", "UI/Bank.lua",
+        "UI/SpellBook.lua",
+        "UI/SpellBookNames.lua",  # the spellbook page's Japanese drawn over the game's own, an experiment (ADR-058)
+        "UI/Talents.lua", "UI/Trainer.lua", "UI/GossipChrome.lua", "UI/Merchant.lua", "UI/Bank.lua",
         "UI/Bags.lua", "UI/Mail.lua", "UI/Friends.lua",
         "UI/FriendsTooltip.lua",  # the friends list's own tooltip
         "UI/Communities.lua",
@@ -84,12 +86,12 @@ def test_real_toc_fields_and_load_order(root):
         "UI/TimeManager.lua", "UI/CombatText.lua", "UI/CooldownViewer.lua", "UI/DamageMeter.lua",
         "UI/DeathRecap.lua", "UI/GamepadEdit.lua", "UI/HudLabels.lua", "UI/HudTips.lua", "UI/Minimap.lua",
         "UI/PvPMatch.lua", "UI/QueueStatus.lua", "UI/RaidManager.lua", "UI/UnitFrames.lua", "UI/GroupFinder.lua",
-        "UI/Channels.lua", "UI/QuickJoin.lua", "UI/RecentAllies.lua", "UI/RecruitAFriend.lua",
+        "UI/Channels.lua", "UI/QuickJoin.lua", "UI/RecentAllies.lua", "UI/SocialUI.lua", "UI/RecruitAFriend.lua",
         "UI/ReportFrame.lua", "UI/HelpFrame.lua", "UI/StatusNotices.lua", "UI/BNetToast.lua",
         "UI/SettingsPanel.lua", "UI/SettingsTutorials.lua", "UI/QuickKeybind.lua",
         "UI/ColorPicker.lua", "UI/ChatConfig.lua", "UI/TextToSpeech.lua", "UI/ChatTabs.lua", "UI/CombatLog.lua",
         "UI/AddonList.lua", "UI/ScriptErrors.lua", "UI/Splash.lua", "UI/EventTrace.lua", "UI/ChromieTime.lua",
-        "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/ChatInput.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",
+        "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/ChatUnlisted.lua", "UI/ChatInput.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",
         "UI/Subtitles.lua", "UI/CoinPickup.lua", "UI/CombatFeedback.lua",
         "UI/EquipmentFlyout.lua", "UI/GhostFrame.lua", "UI/GuildInvite.lua", "UI/InstanceAbandon.lua",
         "UI/LootHistory.lua", "UI/LossOfControl.lua", "UI/MajorFactionToast.lua",
@@ -114,7 +116,7 @@ def test_real_toc_fields_and_load_order(root):
     assert generated == sorted(
         generated,
         key=lambda f: (
-            ["Meta", "Vectors", "ErrorSounds", "Displays", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
+            ["Meta", "Vectors", "ErrorSounds", "Displays", "SpellShapes", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
              "English", "Reading", "Gloss", "Names"].index(
                 f.split("/")[1].split("_")[0].replace(".lua", "")
             ),

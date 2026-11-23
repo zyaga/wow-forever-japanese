@@ -283,6 +283,7 @@ WFJ.Data.add("reading", {
   ["ui:PROFESSIONS_TRACK_RECIPE"] = { text = "レシピ=レシピ=35486 追跡=ついせき=128496" },
   ["ui:PROFESSIONS_TUTORIAL_FINISHING_REAGENT"] = { text = "仕上げ素材=しあげそざい=40592 スロット=スロット=33368 解放されました=かいほうされました=120367 仕上げ素材=しあげそざい=40593 製作時=せいさくじ=117053 効果=こうか=52372 もたらします=もたらします=27792" },
   ["ui:PROFESSIONS_UNTRACK_RECIPE"] = { text = "追跡解除=ついせきかいじょ=128529" },
+  ["ui:PROFESSIONS_USED_IN_COOKING"] = { text = "製作=せいさく=117037 素材=そざい=155485" },
   ["ui:PROFESSION_EQUIPMENT_LOCATION_HELPTIP"] = { text = "専門技能=せんもんぎのう=67128 ツール=ツール=33682 アクセサリー=アクセサリー=31772 ここ=ここ=7688 装備します=そうびします=116775" },
   ["ui:PROF_ORDER_CANT_ADD_FRIEND_OFFLINE"] = { text = "この=この=8884 プレイヤー=プレイヤー=34799 オフライン=オフライン=32246" },
   ["ui:PROF_ORDER_CANT_ADD_FRIEND_WRONG_FACTION"] = { text = "この=この=8884 プレイヤー=プレイヤー=34799 敵対勢力=てきたいせいりょく=86373" },

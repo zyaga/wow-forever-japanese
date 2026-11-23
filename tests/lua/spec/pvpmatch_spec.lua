@@ -319,6 +319,27 @@ describe("the PvP scoreboard and match results on Forever", function()
     assert.is_true(unrecorded(name.text))
   end)
 
+  it("with Japanese names on, the honor-level cell's rank title shows its Japanese; the reveal key shows the"
+    .. " English and names off keeps the title as written", function()
+    WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+    finally(function() WFJ.UIStrings.name = nil end)
+    WFJ.Data.add("name", { [WFJ.Names.key("Knight-Lieutenant")] = "ナイト・ルーテナント\tないと" })
+    local r = _G.PVPMatchResults
+    r:Init()
+    local row = { rowData = { name = "Guild", className = "Paladin", honorLevel = 7,
+      rankTitle = "Knight-Lieutenant" } }
+    r.tableBuilder:AddRow(row, 1)
+    local honor = row.cells[1]
+    honor.scripts.OnEnter(honor)
+    assert.are.equal("ランク 7 - ナイト・ルーテナント", _G.GameTooltipTextLeft1:GetText())
+    alt(true)
+    assert.are.equal("Rank 7 - Knight-Lieutenant", _G.GameTooltipTextLeft1:GetText())
+    alt(false)
+    WFJ.State.names = false
+    honor.scripts.OnEnter(honor)
+    assert.are.equal("ランク 7 - Knight-Lieutenant", _G.GameTooltipTextLeft1:GetText())
+  end)
+
   it("the honor-level cell's Forever tooltip (the PvP rank and its title) is Japanese, the title kept English",
     function()
       local r = _G.PVPMatchResults

@@ -22,7 +22,8 @@ def test_align_vectors_cover_every_op(root):
         if line
     ]
     assert len(rows) >= 25
-    assert {r["op"] for r in rows} == {"names", "checkNames", "numbers", "numberWords", "variantKey"}
+    assert {r["op"] for r in rows} == {"names", "checkNames", "numbers", "numberWords", "variantKey", "values",
+                                       "valuesLoose", "wordedSlots", "grantedHead", "grantedCount"}
     assert any(r["expected"] for r in rows if r["op"] == "checkNames")  # at least one miss
     assert any(not r["expected"] for r in rows if r["op"] == "checkNames")  # at least one pass
     keys = [r for r in rows if r["op"] == "variantKey"]

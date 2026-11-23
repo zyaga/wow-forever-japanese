@@ -427,6 +427,15 @@ def displays_text(rows: Iterable[dict]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def spell_shapes_text(shapes: dict[str, int]) -> str:
+    """`WFJ.Data.spellShapes`: [shape key] = spell id, the spell an item's tooltip line prints, found by the
+    line's wording with its values masked (core/spell_shapes.py). Keys only, never English."""
+    lines = [HEADER.format(src="data/"), "local _, WFJ = ...", "WFJ.Data.spellShapes = {"]
+    lines += [f'  ["{key}"] = {shapes[key]},' for key in sorted(shapes)]
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
 def toc_block(relpaths: Iterable[str]) -> list[str]:
     """The TOC lines between the markers (backslash paths, as the client wants them)."""
     return [schema.TOC_BEGIN, *(p.replace("/", "\\") for p in relpaths), schema.TOC_END]

@@ -9,10 +9,11 @@
 --   TALENTS_LINK_FORMAT carries a spec and a class name; both are kept as written.
 -- - The title is followed by UI/TextWatch, not by a hook on UpdateFrameTitle: that runs inside the spellbook's own
 --   passes, and nothing of this addon runs there.
--- - The page number stays English: PagingControlsMixin:UpdateControls writes it and then runs the controls' Layout
+-- - The page number is never written: PagingControlsMixin:UpdateControls writes it and then runs the controls' Layout
 --   (blizzard_pagedcontent/blizzard_pagingcontrols.lua:110–127; a HorizontalLayoutFrame, PageText layoutIndex 1,
 --   xml:54–66), which measures it, in the same pass that refills the spell items on a page turn or a new spell
---   (blizzard_pagedcontentframe.lua:88–96, 156–160). That is the measurement below.
+--   (blizzard_pagedcontentframe.lua:88–96, 156–160). That is the measurement below. Its Japanese, like the
+--   items' and the headers', is drawn over it by UI/SpellBookNames on the addon's own label.
 -- - The page's spell items and category / search-result headers are left exactly as the client writes them. When it
 --   refills an item, Blizzard measures the item's three lines (TrimTextSpace: GetText, GetStringHeight, GetLineHeight,
 --   spellbook/blizzard_spellbookitem.lua:163–180) and the page measures its headers (ApplyLayout). A FontString this

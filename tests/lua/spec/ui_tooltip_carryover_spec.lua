@@ -114,16 +114,17 @@ describe("item tooltip carry-overs", function()
     assert.are.equal("Use: Restores 500 health.", left(4):GetText())
   end)
 
-  it("a translated item hovered with the modifier held keeps its description run on release", function()
+  -- a Japanese of one paragraph is one line's: one that fits both stat lines owns neither, and each shows its own
+  it("a translated item whose Japanese fits two stat lines leaves them their own Japanese, held or released",
+    function()
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     Stub.setItemTooltip(tt, "|Hitem:7000:0:0:0|h[Fine Ring]|h", { "Fine Ring", "Finger",
       "Equip: Increases spell power by 12.", "Equip: Improves your chance to hit by 1%." })
     assert.are.equal("Equip: Increases spell power by 12.", left(3):GetText())
-    assert.is_nil(WFJ.SurfaceState.get("tooltip.GameTooltip", "ui.L3"))
-    assert.is_nil(WFJ.SurfaceState.get("tooltip.GameTooltip", "ui.L4"))
+    assert.is_nil(WFJ.SurfaceState.get("tooltip.GameTooltip", "desc"))
     Stub.keys.alt = false; WFJ.Modifier.refresh()
-    assert.are.equal(RUN_JA, left(3):GetText())
-    assert.are.equal(" ", left(4):GetText()) -- the run's companion line, blank while the primary applies
+    assert.are.equal("装備時: 呪文パワーが12上昇。", left(3):GetText())
+    assert.are.equal("装備時: 命中率が1%上昇。", left(4):GetText())
   end)
 
   it("a description run that applies gets no ui record on any run line", function()

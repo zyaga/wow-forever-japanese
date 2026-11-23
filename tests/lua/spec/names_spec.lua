@@ -141,4 +141,30 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
     assert.is_nil(WFJ.Names.item("Unknown Cloak of the Owl"))
     assert.is_nil(WFJ.Names.item("of the Owl of the Owl of"))
   end)
+
+  it("reads two names joined with a colon as its halves, only when asked and only when both are names", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Call to Arms")] = "コール・トゥ・アームズ\tこーる・とぅ・あーむず",
+      [WFJ.Names.key("Warsong Gulch")] = "ウォーソング・ガルチ\tうぉーそんぐ・がるち",
+      [WFJ.Names.key("Deputize: Ashenvale")] = "デピュタイズ・アッシェンベール\tでぴゅたいず・あっしぇんべーる",
+    })
+    local ja, reading, first, second = WFJ.Names.joined("Call to Arms: Warsong Gulch")
+    assert.are.equal("コール・トゥ・アームズ: ウォーソング・ガルチ", ja)
+    assert.are.equal("こーる・とぅ・あーむず: うぉーそんぐ・がるち", reading)
+    assert.are.same({ "Call to Arms", "Warsong Gulch" }, { first, second })
+    -- a half with no line, a text with no separator, a separator with no space, and no text
+    assert.is_nil(WFJ.Names.joined("Call to Arms: Nowhere Known"))
+    assert.is_nil(WFJ.Names.joined("Nobody Known: Warsong Gulch"))
+    assert.is_nil(WFJ.Names.joined("Call to Arms"))
+    assert.is_nil(WFJ.Names.joined("Call to Arms:Warsong Gulch"))
+    assert.is_nil(WFJ.Names.joined("Call to Arms: "))
+    assert.is_nil(WFJ.Names.joined(nil))
+    -- a later colon is tried when the first split has an unknown half
+    assert.are.equal("デピュタイズ・アッシェンベール: ウォーソング・ガルチ",
+      (WFJ.Names.joined("Deputize: Ashenvale: Warsong Gulch")))
+    -- no other lookup reads a pair: only a caller that asks for one
+    assert.is_nil(WFJ.Names.item("Call to Arms: Warsong Gulch"))
+    assert.is_nil(WFJ.Names.shown("Call to Arms: Warsong Gulch"))
+    assert.is_nil(WFJ.Names.value("Call to Arms: Warsong Gulch"))
+  end)
 end)

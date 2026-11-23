@@ -18,6 +18,10 @@ local UI = {
   ["SpellItemEnchantment:387"] = { "+17 Armor", "アーマー +17" }, -- an enchantment's whole text
   ITEM_BIND_ON_PICKUP = { "Binds when picked up", "拾うとソウルバウンド" },
   CURRENTLY_EQUIPPED = { "Currently Equipped", "装備中" },
+  -- a locked container's line, written by the client's compiled tooltip code; the queue's status word has the
+  -- same English and the same Japanese
+  LOCKED = { "Locked", "ロック中" }, QUEUED_STATUS_LOCKED = { "|cffff2020Locked|r", "|cffff2020ロック中|r" },
+  LOCKED_WITH_SPELL = { "Requires %s", "必要: %s" },
   ITEM_DELTA_DUAL_WIELD_COMPARISON_MAINHAND_DESCRIPTION = { "(With |c%s%s|r equipped in your main-hand)",
     "(メインハンドに|c%s%s|rを装備した場合)" },
 }
@@ -61,6 +65,14 @@ describe("UI/Tooltip: colour-wrapped names, coloured lines, the sell price range
     assert.are.equal("売値:", left(2):GetText())
     assert.are.equal("    最低: 5c", left(3):GetText())
     assert.are.equal("    最高: 1g 20s", left(4):GetText())
+  end)
+
+  it("a locked container's Locked line is Japanese, as the client colours it", function()
+    Stub.setItemTooltip(tt, "|Hitem:5759:0:0:0|h[Thorium Lockbox]|h",
+      { "Thorium Lockbox", "|cffff2020Locked|r", "Sell Price: 3s 75c" })
+    assert.are.equal("|cffff2020ロック中|r", left(2):GetText())
+    Stub.setItemTooltip(tt, "|Hitem:5759:0:0:0|h[Thorium Lockbox]|h", { "Thorium Lockbox", "Locked" })
+    assert.are.equal("ロック中", left(2):GetText())
   end)
 
   it("a line the client coloured end to end keeps that colour around its Japanese", function()

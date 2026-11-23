@@ -194,6 +194,19 @@ describe("the unit frames' fixed words on Forever", function()
       assert.are.equal(0, raid.name.calls.addonSetText)
     end)
 
+    -- A critter is a creature like any other, and a short name that is also a common word is still a name. A pet
+    -- with the same name is its player's and stays.
+    it("a critter's nameplate shows its Japanese; a pet named the same stays as written", function()
+      WFJ.Data.add("name", { [WFJ.Names.key("Cat")] = "キャット\tきゃっと" })
+      local plate = { name = Stub.fontString(""), unit = "nameplate40", nextName = "Cat" }
+      _G.CompactUnitFrame_UpdateName(plate)
+      assert.are.equal("キャット", plate.name:GetText())
+      local pet = { name = Stub.fontString(""), unit = "pet", nextName = "Cat" }
+      _G.CompactUnitFrame_UpdateName(pet)
+      assert.are.equal("Cat", pet.name:GetText())
+      assert.are.equal(0, pet.name.calls.addonSetText)
+    end)
+
     it("a nameplate the client keeps from addons is never looked into, and a hidden name is never read", function()
       -- a forbidden frame: any field but IsForbidden raises, as on the client
       local forbidden = setmetatable({}, { __index = function(_, k)

@@ -31,8 +31,9 @@
 --   own cache of those conditions (talentFrame.condInfoCache, blizzard_sharedtalentframe.lua:173, 1225-1232) for the
 --   button's conditionIDs (nodeInfo on a talent button, entryInfo on a display; blizzard_talentbuttonbase.lua:254,
 --   blizzard_talentdisplay.lua:379), and a line that is not a dictionary line is matched against each tooltipFormat
---   restricted to the SharedString family (UIStrings index:matchTemplate). The number and the tree's name are kept
---   as the client wrote them (names stay English).
+--   restricted to the SharedString family (UIStrings index:matchTemplate). The number is kept as the client wrote
+--   it; the tree is a value of the row's key (Core/UIStringKeys): a class tree's name shows its Japanese while
+--   names are Japanese, as its tree header does, and a Legacy tree shows the window's own word.
 -- - Button tooltips, both GameTooltip with the button as owner then Show(), so the buttons are
 --   help-tooltip owners restricted to their one key:
 --   - a force-disabled dual-spec tab adds its errorReason TALENT_SPEC_LOCKED (camelot/…/blizzard_classtalentsframe

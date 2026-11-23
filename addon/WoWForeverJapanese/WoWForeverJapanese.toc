@@ -24,6 +24,7 @@ Data\Meta.lua
 Data\Vectors.lua
 Data\ErrorSounds.lua
 Data\Displays.lua
+Data\SpellShapes.lua
 Data\Quest\Quest_0000.lua
 Data\Quest\Quest_0001.lua
 Data\Quest\Quest_0002.lua
@@ -2673,6 +2674,7 @@ UI\Reputation.lua
 UI\Skills.lua
 UI\PvPRank.lua
 UI\SpellBook.lua
+UI\SpellBookNames.lua
 UI\Talents.lua
 UI\Trainer.lua
 UI\GossipChrome.lua
@@ -2773,6 +2775,7 @@ UI\GroupFinder.lua
 UI\Channels.lua
 UI\QuickJoin.lua
 UI\RecentAllies.lua
+UI\SocialUI.lua
 UI\RecruitAFriend.lua
 UI\ReportFrame.lua
 UI\HelpFrame.lua
@@ -2794,6 +2797,7 @@ UI\ChromieTime.lua
 UI\Alerts.lua
 UI\Errors.lua
 UI\ChatSystem.lua
+UI\ChatUnlisted.lua
 UI\ChatInput.lua
 UI\Speech.lua
 UI\BossBanner.lua

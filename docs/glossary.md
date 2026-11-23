@@ -317,7 +317,7 @@ _Avoid_: localized names, transliteration
 → [Principles §2](architecture/principles.md#2-names-stay-in-english) · [ADR-106](adr/106-names-shown-in-japanese-on-screen.md)
 
 **Names setting**:
-`names.japanese` (*Show names in Japanese*, default off): shows game names in katakana instead of the client's English on every surface the addon translates, inside text, on window labels, tooltips, nameplates and unit frames, and in quest titles. Chosen in the [[Welcome window]]'s names question or on the main settings page; the name tables are always in memory, so it switches at once. Choosing Japanese names also turns on the client's friendly NPC nameplates, since a name over a head can only be written on a nameplate; choosing English names puts that back. Holding the reveal key shows the [[Live English]].
+`names.japanese` (*Show names in Japanese*, default off): shows game names in katakana instead of the client's English on every surface the addon translates, inside text, on window labels, tooltips, nameplates and unit frames, and in quest titles. Chosen in the [[Welcome window]]'s names question or on the main settings page; the name tables are always in memory, so it switches at once. Choosing Japanese names also turns on the client's nameplates for NPCs and creatures (friendly NPCs, enemies and neutral creatures, out of combat too), since a name over a head can only be written on a nameplate; choosing English names puts those settings back. Holding the reveal key shows the [[Live English]].
 _Avoid_: Japanese names toggle, name translation, names mode, names option
 → [Settings → Names in Japanese](systems/settings.md#names-in-japanese) · [ADR-106](adr/106-names-shown-in-japanese-on-screen.md)
 

@@ -151,6 +151,22 @@
 {"id": "DRESSUP_FRAME", "field": "text", "en": "Dressing Room", "hash": "0c3bc3d2efb75e83", "src": "db2@1.60.1.71037"}
 {"id": "DRUID_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFAttack Power|r in Cat Form by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "4215a27ae85d0b68", "src": "db2@1.60.1.71037"}
 {"id": "DRUID_MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r\nIncreased by |cFFFFFFFFStrength|r and |cFFFFFFFFAgility|r in Cat Form\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "521672393feb4fe6", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_ITEM_OTHER1", "field": "text", "en": "%s is looking sober from the %s.", "hash": "9fb55fdb6a24af0b", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_ITEM_OTHER2", "field": "text", "en": "%s seems a little tipsy from the %s.", "hash": "1760727e7167652b", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_ITEM_OTHER3", "field": "text", "en": "%s is getting drunk off of %s.", "hash": "f747f33d49c42827", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_ITEM_OTHER4", "field": "text", "en": "%s is completely smashed from the %s.", "hash": "4cde1f2f87ccff70", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_ITEM_SELF1", "field": "text", "en": "You feel sober after the %s.", "hash": "165e275b7b7a8000", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_ITEM_SELF2", "field": "text", "en": "You feel a little tipsy from the %s.", "hash": "b02d7498fe1c1dbc", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_ITEM_SELF3", "field": "text", "en": "You're feeling drunk off of %s.", "hash": "f92bc24817f3e498", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_ITEM_SELF4", "field": "text", "en": "You feel completely smashed after that %s.", "hash": "7c0eeec0b474fc4f", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_OTHER1", "field": "text", "en": "%s seems to be sobering up.", "hash": "9d78b9b1916c90cc", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_OTHER2", "field": "text", "en": "%s looks tipsy.", "hash": "8dcbdf6c64b9991e", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_OTHER3", "field": "text", "en": "%s looks drunk.", "hash": "742cbbfad18a2655", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_OTHER4", "field": "text", "en": "%s looks completely smashed.", "hash": "4c98cc7c2c36d439", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_SELF1", "field": "text", "en": "You feel sober again.", "hash": "f73561e7b07c6e0f", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_SELF2", "field": "text", "en": "You feel tipsy. Whee!", "hash": "f15a4c612b7b52f5", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_SELF3", "field": "text", "en": "You feel drunk.  Woah!", "hash": "39074799a7d5e992", "src": "db2@1.60.1.71037"}
+{"id": "DRUNK_MESSAGE_SELF4", "field": "text", "en": "You feel completely smashed.", "hash": "3d31b48d75320094", "src": "db2@1.60.1.71037"}
 {"id": "DUAL_SPEC_PRIMARY", "field": "text", "en": "Primary", "hash": "ba96033132ed6779", "src": "db2@1.60.1.71037"}
 {"id": "DUAL_SPEC_SECONDARY", "field": "text", "en": "Secondary", "hash": "bbbf56ded9fff809", "src": "db2@1.60.1.71037"}
 {"id": "DUEL", "field": "text", "en": "Duel", "hash": "093b746460205db9", "src": "db2@1.60.1.71037"}

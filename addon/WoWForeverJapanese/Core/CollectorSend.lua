@@ -11,6 +11,8 @@
 --   CollectorSend.markSent(pack) → the number of entries marked sent
 -- The string is PREFIX .. URL-safe Base64 of zlib-compressed JSON { v, a, b, e }: the format version, the addon
 -- version, the builds the entries were recorded on, and the entries in the dump's own fields (b indexes this b).
+-- An interface string's name seen in chat rides in the same list as { t = "uikey", i = <name>, b }: no text field
+-- exists on it, so a reader that does not know the kind finds no key it can build and leaves the entry out.
 local _, WFJ = ...
 local CollectorSend = {}
 WFJ.CollectorSend = CollectorSend
@@ -115,7 +117,7 @@ function CollectorSend.pack(all)
     local shorter = CollectorSend.withinLink(list, version)
     if shorter then list, text = shorter, encode(CollectorSend.payload(shorter, version)) end
   end
-  for i, item in ipairs(list) do result.sent[i] = { key = item.key, h = item.entry.h } end
+  for i, item in ipairs(list) do result.sent[i] = { key = item.key, h = WFJ.Collector.mark(item.entry) } end
   -- a line that ships in Japanese now needs no sending: marking it keeps the unsent count honest
   for _, item in ipairs(shippedList) do result.sent[#result.sent + 1] = item end
   if #list == 0 then

@@ -20,7 +20,7 @@ from typing import Any
 from wfj.core.hashing import key as hash_key
 from wfj.core.model import english_line, validate_line
 from wfj.core.normalize import female_variant, normalize_for, normalize_v1
-from wfj.io import forever_vo, tables_stamp, vmangos, wago, wdb
+from wfj.io import forever_vo, tables_stamp, ui_keys_seen, vmangos, wago, wdb
 from wfj.io.collector_dump import Dump, QuestNpc, read_dump
 from wfj.io.jsonl_store import Store, dumps, read_jsonl
 from wfj.io.lua_reader import as_int_id, parse_assignment
@@ -564,7 +564,8 @@ def import_quest_npcs(dump: Dump) -> Counter:
 
 def import_dump(dump: Dump, label: str) -> int:
     """Merge a read dump into `data/english/` (run_collector's rules) and print its table. `label` names
-    where it came from (a file name, or an issue) on the summary line. → 0"""
+    where it came from (a file name, or an issue) on the summary line. The names of interface strings seen
+    in chat go to `pipeline/ui_keys_seen_in_chat.txt`. → 0"""
     store = Store(data_root(), english=True)
     by_type: dict[str, list[Any]] = {}
     for en in dump.entries:
@@ -591,6 +592,11 @@ def import_dump(dump: Dump, label: str) -> int:
     if dump.quest_npcs:
         npcs = import_quest_npcs(dump)
         print(f"quest NPCs: {npcs['added']} added, {npcs['changed']} changed (data/voice/quest-npcs.jsonl)")
+    if dump.ui_keys:
+        added = ui_keys_seen.merge(data_root().parent / ui_keys_seen.PATH, (u.name for u in dump.ui_keys))
+        print(f"interface strings seen in chat: {len(added)} added ({ui_keys_seen.PATH.as_posix()})")
+        for name in added:  # each needs a line in ui_keys.txt or ui_exclusions.txt
+            print(f"  {name}")
     rejected = ", ".join(f"{r} {n}" for r, n in sorted(dump.rejected.items())) or "none"
     print(f"rejected: {rejected}")
     if notes["replaced"]:  # what a review of the data diff should look at first

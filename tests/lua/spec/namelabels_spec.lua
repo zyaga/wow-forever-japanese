@@ -368,6 +368,88 @@ describe("name widgets", function()
     end)
   end)
 
+  -- format(WEAPON_SKILL_PAPERDOLLFRAME_FORMAT "%s:", skillInfo.name) (camelot/paperdollframestats.lua:719)
+  it("a name before a fixed tail: the tail kept, the English back on the reveal key; any other text stays",
+    function()
+    fs.text = "Blacksmithing:"
+    assert.are.equal(1, WFJ.NameLabels.before("spec", "skill", fs, ":"))
+    assert.are.equal("ブラックスミシング:", fs:GetText())
+    hold(true)
+    assert.are.equal("Blacksmithing:", fs:GetText())
+    hold(false)
+    for _, text in ipairs({ "Blacksmithing", ":", "Nobody Spelled:", "|cffffffffThrall|r:" }) do
+      fs.text = text
+      assert.are.equal(0, WFJ.NameLabels.before("spec", "skill", fs, ":"))
+      assert.are.equal(text, fs:GetText())
+    end
+    fs.text = "Thrall:"
+    assert.are.equal(0, WFJ.NameLabels.before("spec", "skill", fs, nil))
+    WFJ.State.setNames(false)
+    assert.are.equal(0, WFJ.NameLabels.before("spec", "skill", fs, ":"))
+    assert.are.equal("Thrall:", fs:GetText())
+  end)
+
+  describe("two names the client joined with a colon", function()
+    before_each(function()
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Call to Arms")] = "コール・トゥ・アームズ\tこーる・とぅ・あーむず",
+        [WFJ.Names.key("Warsong Gulch")] = "ウォーソング・ガルチ\tうぉーそんぐ・がるち",
+      })
+      fs.text = "Call to Arms: Warsong Gulch"
+    end)
+
+    it("shows both names in Japanese with the separator kept, and gives the whole English back", function()
+      assert.are.equal(1, WFJ.NameLabels.joined("spec", "title", fs))
+      assert.are.equal("コール・トゥ・アームズ: ウォーソング・ガルチ", fs:GetText())
+      hold(true)
+      assert.are.equal("Call to Arms: Warsong Gulch", fs:GetText())
+      hold(false)
+      assert.are.equal("コール・トゥ・アームズ: ウォーソング・ガルチ", fs:GetText())
+      assert.are.equal(1, WFJ.NameLabels.joined("spec", "title", fs)) -- asked again while it still shows
+      WFJ.State.setNames(false)
+      assert.are.equal("Call to Arms: Warsong Gulch", fs:GetText())
+      WFJ.State.setNames(true)
+      assert.are.equal("コール・トゥ・アームズ: ウォーソング・ガルチ", fs:GetText())
+      WFJ.State.setEnabled(false)
+      assert.are.equal("Call to Arms: Warsong Gulch", fs:GetText())
+      WFJ.State.setEnabled(true)
+      WFJ.Render.release("spec")
+      assert.are.equal("Call to Arms: Warsong Gulch", fs:GetText())
+    end)
+
+    it("shows a single name as the plain writer does", function()
+      fs.text = "Thrall"
+      assert.are.equal(1, WFJ.NameLabels.joined("spec", "title", fs))
+      assert.are.equal("スロール", fs:GetText())
+    end)
+
+    it("leaves the text whole when a half is no name, and the plain writer never reads a pair", function()
+      for _, text in ipairs({ "Call to Arms: Nowhere Known", "Raid Night: Warsong Gulch", "Nobody Known" }) do
+        fs.text = text
+        assert.are.equal(0, WFJ.NameLabels.joined("spec", "title", fs))
+        assert.are.equal(text, fs:GetText())
+        assert.is_nil(WFJ.SurfaceState.get("spec", "title"))
+      end
+      fs.text = "Call to Arms: Warsong Gulch"
+      assert.are.equal(0, WFJ.NameLabels.show("spec", "title", fs))
+      assert.are.equal("Call to Arms: Warsong Gulch", fs:GetText())
+    end)
+
+    it("does nothing while names are off, never reads a hidden value, and carries a refit", function()
+      WFJ.State.setNames(false)
+      assert.are.equal(0, WFJ.NameLabels.joined("spec", "title", fs))
+      assert.are.equal("Call to Arms: Warsong Gulch", fs:GetText())
+      WFJ.State.setNames(true)
+      fs.text = SECRET
+      assert.are.equal(0, WFJ.NameLabels.joined("spec", "title", fs))
+      assert.are.equal(0, WFJ.NameLabels.joined("spec", "title", nil))
+      local refits = 0
+      fs.text = "Call to Arms: Warsong Gulch"
+      assert.are.equal(1, WFJ.NameLabels.joined("spec", "title", fs, nil, function() refits = refits + 1 end))
+      assert.are.equal(1, refits)
+    end)
+  end)
+
   it("takes no widget, an empty widget and a hidden unit without an error", function()
     assert.are.equal(0, WFJ.NameLabels.show("spec", "name", nil))
     fs.text = ""

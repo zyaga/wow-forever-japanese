@@ -30,7 +30,7 @@ prefers it as text only.
 - **Item and spell tooltips**, and buff and debuff text, with the game's live numbers filled in.
 - **The interface:** windows, labels, menus, popups and messages.
 
-In numbers: **5,850** quests, **11,871** NPC dialogue lines, **923** book pages, **209** letter pages, **11,259** item tooltips, **20,361** spell tooltips, **16,124** UI.
+In numbers: **5,850** quests, **11,871** NPC dialogue lines, **923** book pages, **209** letter pages, **11,259** item tooltips, **20,361** spell tooltips, **16,206** UI.
 
 Names of people, places, creatures, items and spells, and quest titles, stay in <span style="color:#8CB8E8;">English</span> by default, so you can still talk with other players, read guides and search by name. Pick **Japanese names** in the welcome window and they show in katakana: on tooltips, quest and NPC windows, the target frame, nameplates, the map, loot, chat and inside quest text.
 
@@ -89,7 +89,7 @@ Your own buffs under the minimap and those on party frames are Japanese out of c
 
 **Why are names in English?** That is the default, so what you read matches what other players say and what guides call things. To see them in Japanese, pick **Japanese names** in the welcome window (`/wfj intro`) or turn on **Show names in Japanese** in the settings. Holding <span style="color:#E0605A;">**Alt**</span> shows the English name, and pointing at a Japanese name shows its reading and its English name.
 
-**Which names stay English with Japanese names on?** A player's, guild's or pet's name. Spell names in the spellbook and on the professions page's buttons, because changing them makes the game block the action bars in combat. Abbreviations such as PvP and NPC. The name over a creature's head shows on its nameplate, so picking Japanese names turns on nameplates for friendly NPCs, and picking English names puts your setting back.
+**Which names stay English with Japanese names on?** A player's, guild's or pet's name. Spell names in the spellbook and on the professions page's buttons, because changing them makes the game block the action bars in combat. Abbreviations such as PvP and NPC. The name over a creature's head shows on its nameplate, so picking Japanese names turns on nameplates for NPCs and creatures (friendly NPCs, enemies and neutral creatures, out of combat too), and picking English names puts your settings back.
 
 **What do the markers mean?** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> means the line has no translation yet and is shown in the game's English. <span style="color:#E8C77E;">[要更新 / English Changed]</span> means the English changed after the line was translated.
 
@@ -131,7 +131,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 - **アイテムと呪文のツールチップ**、バフ・デバフの説明（数値はゲームの実際の値が入ります）
 - **インターフェース:** ウィンドウ、ラベル、メニュー、ポップアップ、メッセージ
 
-数で見ると: クエスト **5,850**、NPC の会話 **11,871** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **11,259**、呪文のツールチップ **20,361**、UI **16,124**。
+数で見ると: クエスト **5,850**、NPC の会話 **11,871** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **11,259**、呪文のツールチップ **20,361**、UI **16,206**。
 
 人物・地名・モンスター・アイテム・呪文の名前とクエストのタイトルは、初期設定では<span style="color:#8CB8E8;">英語</span>のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。ようこそウィンドウで **日本語の名前** を選ぶと、ツールチップ、クエストや NPC のウィンドウ、ターゲットフレーム、ネームプレート、マップ、戦利品、チャット、クエスト本文の中の名前がカタカナで表示されます。
 
@@ -190,7 +190,7 @@ GitHub アカウントがなければ、Discord の **#translation-fixes** に�
 
 **名前が英語なのはなぜ？** 初期設定です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。日本語で見たい場合は、ようこそウィンドウ（`/wfj intro`）で **日本語の名前** を選ぶか、設定の **名前を日本語で表示** をオンにします。<span style="color:#E0605A;">**Alt**</span> を押している間は英語の名前が見え、日本語の名前にマウスを合わせると読みと英語の名前が出ます。
 
-**日本語の名前を選んでも英語のままの名前は？** プレイヤー、ギルド、ペットの名前です。呪文書と専門技能ページのボタンにある呪文の名前も英語のままです。変えると、戦闘中にアクションバーが使えなくなるためです。PvP や NPC などの略語もそのままです。クリーチャーの頭上の名前はネームプレートに表示されるため、日本語の名前を選ぶと味方 NPC のネームプレートをオンにし、英語の名前を選ぶと元の設定に戻します。
+**日本語の名前を選んでも英語のままの名前は？** プレイヤー、ギルド、ペットの名前です。呪文書と専門技能ページのボタンにある呪文の名前も英語のままです。変えると、戦闘中にアクションバーが使えなくなるためです。PvP や NPC などの略語もそのままです。クリーチャーの頭上の名前はネームプレートに表示されるため、日本語の名前を選ぶと NPC とクリーチャーのネームプレート（味方 NPC、敵、中立のクリーチャー。戦闘中以外も表示）をオンにし、英語の名前を選ぶと元の設定に戻します。
 
 **マーカーは何を表している？** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> はまだ翻訳がなく、ゲームの英語のまま表示されている行です。<span style="color:#E8C77E;">[要更新 / English Changed]</span> は翻訳のあとで英語の原文が変わった行です。
 

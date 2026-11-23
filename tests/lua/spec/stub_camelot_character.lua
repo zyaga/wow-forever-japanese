@@ -34,6 +34,9 @@ RC.EN = {
   EQUIPSET_EQUIP = "Equip", SAVE = "Save", PAPERDOLL_NEWEQUIPMENTSET = "New Set", DELETE = "Delete",
   EQUIPMENT_SET_SETTINGS = "Settings", GEARSETS_POPUP_TEXT = "Enter Set Name (Max 16 Characters):",
   ICON_SELECTION_CLICK = "Click to view in the list", ICON_SELECTION_NOTINLIST = "This icon is not in the list",
+  ZOOM_IN = "Zoom In", ZOOM_OUT = "Zoom Out", KEY_MOUSEWHEELUP = "Mouse Wheel Up",
+  KEY_MOUSEWHEELDOWN = "Mouse Wheel Down", ROTATE_LEFT = "Rotate Left", ROTATE_RIGHT = "Rotate Right",
+  ROTATE_TOOLTIP = "Left-click on character and drag to rotate.", RESET_POSITION = "Reset Position",
 }
 local function G(key) return _G[key] or RC.EN[key] end
 RC.G = G
@@ -91,6 +94,51 @@ local function installPaperDoll()
       hoverTooltip(self, G("HEADSLOT"))
     end
   end)
+  -- the model's control buttons: CharacterModelScene.ControlFrame (paperdollframe.xml:653–657), each Init'ed with
+  -- its title and body (blizzard_sharedxml/modelscenecontrolframe.lua:180–186, 209–217, 268–271); OnEnter gives the
+  -- tooltip to UIParent (GameTooltip_SetDefaultAnchor), then GameTooltip_SetTitle (ClearLines + AddLine),
+  -- GameTooltip_AddBodyLine and Show, only while UberTooltips is "1" (:152–164)
+  RC.uberTooltips = true
+  if not _G.UIParent then CreateFrame("Frame", "UIParent") end -- cleared again by the next Stub.install
+  -- the shared mixin every window's model buttons copy their OnEnter from when they are made
+  _G.ModelSceneControlButtonMixin = {
+    OnEnter = function(self)
+      if not RC.uberTooltips then return end
+      local tt = _G.GameTooltip
+      tt:SetOwner(_G.UIParent, "ANCHOR_NONE")
+      tt:ClearLines()
+      tt:AddLine(self.tooltip)
+      if self.tooltipText then tt:AddLine(self.tooltipText) end
+      tt:Show()
+    end,
+  }
+  -- a button another window makes after the addon loaded (the dressing room's, the mount journal's): the mixin
+  -- copied in, its OnEnter script calling the copied method
+  function RC.laterModelButton(titleKey, bodyKey)
+    local button = CreateFrame("Button")
+    for k, v in pairs(_G.ModelSceneControlButtonMixin) do button[k] = v end
+    button.tooltip, button.tooltipText = G(titleKey), bodyKey and G(bodyKey) or nil
+    button:SetScript("OnEnter", function(self) self:OnEnter() end)
+    return button
+  end
+  local scene = CreateFrame("Frame", "CharacterModelScene")
+  scene.ControlFrame = CreateFrame("Frame")
+  for key, init in pairs({ zoomInButton = { "ZOOM_IN", "KEY_MOUSEWHEELUP" },
+    zoomOutButton = { "ZOOM_OUT", "KEY_MOUSEWHEELDOWN" }, rotateLeftButton = { "ROTATE_LEFT", "ROTATE_TOOLTIP" },
+    rotateRightButton = { "ROTATE_RIGHT", "ROTATE_TOOLTIP" }, resetButton = { "RESET_POSITION" } }) do
+    local button = CreateFrame("Button")
+    button.tooltip, button.tooltipText = G(init[1]), init[2] and G(init[2]) or nil
+    button:SetScript("OnEnter", function(self)
+      if not RC.uberTooltips then return end
+      local tt = _G.GameTooltip
+      tt:SetOwner(_G.UIParent, "ANCHOR_NONE")
+      tt:ClearLines()
+      tt:AddLine(self.tooltip)
+      if self.tooltipText then tt:AddLine(self.tooltipText) end
+      tt:Show()
+    end)
+    scene.ControlFrame[key] = button
+  end
   -- the stat panes: CharacterStatsPaneScrollBox / CharacterStatsPanePetScrollBox, each with its ScrollBox
   for _, name in ipairs({ "CharacterStatsPaneScrollBox", "CharacterStatsPanePetScrollBox" }) do
     local pane = CreateFrame("Frame", name)

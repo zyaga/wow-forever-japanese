@@ -36,7 +36,8 @@ VALUE_CODE = re.compile(r"\$<[^>]+>|\$(?:/\d+;)?\d*[a-zA-Z]\d*")
 # cross-spell `$7922d`). These are the slots a draft must write `$D<k>` for, never a number plus a unit
 # it named itself: `Align.check` cannot catch a wrong unit, because the number matches and the unit is
 # Japanese text it never reads.
-DURATION_CODE = re.compile(r"\$\d*d\d*(?![a-zA-Z])")
+# `$d` and `$D` both print a duration with its unit ("15 sec"): the capital form is the same code
+DURATION_CODE = re.compile(r"\$\d*[dD]\d*(?![a-zA-Z])")
 # Arithmetic: the client computes it and prints the one number it comes to, however many codes are inside.
 # A trailing `.N` is Blizzard's precision, not a second value: `${$s1}.1%` prints `2.5%`, one number, and
 # `Align.values` reads `2.5` as one token. Counting the `.1` as its own slot would tell drafters to
@@ -258,6 +259,145 @@ def check_numbers(ja: str, scope_text: str) -> tuple[list[str], list[str]]:
     checked = sorted(want.elements(), key=lambda s: (len(s), s))
     missing = sorted((want - have).elements(), key=lambda s: (len(s), s))
     return checked, missing
+
+
+# ---------------------------------------------------------------------------------------------------------
+# The live line, read as the addon reads it (Core/Align.lua). The pipeline has templates, not live lines, so
+# these twins exist for the shared vectors and for tools that render a template the way the client would.
+
+_LIVE_TOKEN = re.compile(r"[\d.,]+")
+_WORD_BEFORE = re.compile(r"[A-Za-z]+\Z")
+_WORD_AFTER = re.compile(r"[A-Za-z]+")
+_RANGE_END = re.compile(r" -?\d")
+
+
+def _letter(text: str, i: int) -> bool:
+    return 0 <= i < len(text) and text[i].isascii() and text[i].isalpha()
+
+
+def _glued(text: str, s: int, e: int) -> bool:
+    """Whether the number at text[s:e], glued to a letter, is one of the shapes the loose reading takes
+    (`glued` in Core/Align.lua): before it an ordinary word of three letters or more, lower-case after its
+    first letter ("for1.5", "Inflicts140"); after it "x" or "s" alone ("2x", "2s"), or "to" before the second
+    number of a range ("79to 118"). "Mk2", "Mace2H" and "247x128" are names and match none."""
+    if _letter(text, s - 1):
+        word = _WORD_BEFORE.search(text[:s]).group()  # type: ignore[union-attr]
+        if len(word) < 3 or any(c.isupper() for c in word[1:]):
+            return False
+    if _letter(text, e):
+        word = _WORD_AFTER.match(text, e).group()  # type: ignore[union-attr]
+        after = e + len(word)
+        if word in ("x", "s"):
+            if after < len(text) and text[after].isdigit():
+                return False
+        elif not (word == "to" and _RANGE_END.match(text, after)):
+            return False
+    return True
+
+
+def live_values(text: str, *, loose: bool = False) -> list[str]:
+    """The values `Align.values` reads off a live line, in reading order: each run of digits, dots and commas
+    not glued to a Latin letter, commas dropped, and "A to B" joined as "A～B". `loose` also reads the glued
+    shapes (`_glued`) and joins a range whose two ends carry a minus sign ("-24 to -21") as "-24～-21". The
+    addon tries the loose reading only on a line whose strict reading does not have the count its Japanese is
+    numbered to, and keeps it only when it has exactly that count."""
+    out: list[str] = []
+    last: int | None = None
+    last_signed = False
+    for m in _LIVE_TOKEN.finditer(text):
+        s, e = m.start(), m.end()
+        free = not _letter(text, s - 1) and not _letter(text, e)
+        if not (free or (loose and _glued(text, s, e))):
+            continue
+        v = m.group().replace(",", "").strip(".")
+        if not v:
+            continue
+        before = text[s - 2] if s >= 2 else " "
+        signed = (loose and s >= 1 and text[s - 1] == "-"
+                  and not (before == "-" or (before.isascii() and before.isalnum())))
+        gap = text[last:s] if last is not None else None
+        if gap == " to ":
+            out[-1] = f"{out[-1]}～{v}"
+        elif gap == " to -" and last_signed and signed:
+            out[-1] = f"-{out[-1]}～-{v}"
+        else:
+            out.append(v)
+        last, last_signed = e, signed
+    return out
+
+
+# What may follow a `$D<k>` slot that takes a worded duration ("until canceled") and still read as Japanese:
+# the words in WORDED_KEEP stay as written; a particle in WORDED_DROP goes ("over 10 sec" → "until canceled").
+# Any other slot cannot take words and the addon leaves the line English (`wordedSlots`, Core/Align.lua).
+WORDED_KEEP = ("の間", "持続", "続", "です", "、", "スタン")
+WORDED_DROP = ("かけて", "にわたって", "にわたり")
+_D_SLOT = re.compile(r"\$D(\d+)")
+
+
+def worded_context(ja: str, at: int) -> str:
+    """How the Japanese after a `$D<k>` slot (ending at `at`) takes a worded duration: `keep`, `drop` or
+    `closed`."""
+    if ja.startswith(WORDED_DROP, at):
+        return "drop"
+    return "keep" if ja.startswith(WORDED_KEEP, at) else "closed"
+
+
+def worded_slots(ja: str, worded: set[int]) -> str | None:
+    """`ja` ready to take a worded duration in each `$D<k>` of `worded`: the particle after such a slot taken
+    out where one goes, or None when a slot cannot take words. The twin of `wordedSlots`."""
+    out: list[str] = []
+    at = 0
+    for m in _D_SLOT.finditer(ja):
+        if int(m.group(1)) not in worded:
+            continue
+        how = worded_context(ja, m.end())
+        if how == "closed":
+            return None
+        if how == "drop":
+            out.append(ja[at:m.end()])
+            at = m.end() + next(len(p) for p in WORDED_DROP if ja.startswith(p, m.end()))
+    out.append(ja[at:])
+    return "".join(out)
+
+
+_TEXTURE = re.compile(r"\|T[^|]*\|t")
+_GRANT_ICON = "$I1"
+_GRANT_REST = re.compile(r"\r?\n\s*\S")
+_ICON_SLOT = re.compile(r"\$I\d")
+_VALUE_SLOT = re.compile(r"\$[ND]\d+")
+
+
+def granted_head(ja: str, live: str) -> str | None:
+    """The Japanese up to and including `$I1` when the live line ends after its one icon: a granted ability
+    whose own text the client left out ("Gain the Wyvern Strike ability:", a blank line, the icon, nothing).
+    None when the Japanese is not a heading, `$I1`, a line break and more text, another icon comes before
+    `$I1`, or the live line goes on after the icon. The heading may hold value slots of its own
+    (`granted_count`). The twin of `Align.grantedHead`."""
+    at = ja.find(_GRANT_ICON)
+    if at < 0:
+        return None
+    head, rest = ja[: at + len(_GRANT_ICON)], ja[at + len(_GRANT_ICON):]
+    first = _ICON_SLOT.search(head)
+    if not _GRANT_REST.match(rest) or first is None or first.start() != at:
+        return None
+    scope = live.replace("||", "\x01\x01")
+    m = _TEXTURE.search(scope)
+    if m is None or scope[m.end():].strip() or not scope[: m.start()].strip():
+        return None
+    return head
+
+
+def granted_count(head: str) -> int | None:
+    """How many values a granted ability's heading (`granted_head`) prints: its distinct `$N<k>` and `$D<k>`
+    slots, or its highest `$N<k>` when that is more, or None when it has none. The heading comes first in
+    the English, so its slots are numbered from 1, and the addon holds the live heading to exactly this many
+    values (the second result of `Align.grantedHead`)."""
+    distinct = len(set(_VALUE_SLOT.findall(head)))
+    # a number the Japanese writes as a literal ("さらに1%") still takes its place among the values;
+    # durations are numbered on their own, so only `$N` raises the count
+    top = max((int(k) for k in re.findall(r"\$N(\d+)", head)), default=0)
+    n = max(distinct, top)
+    return n or None
 
 
 def fill_indices(ja: str) -> list[int]:

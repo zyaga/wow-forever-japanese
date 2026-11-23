@@ -135,7 +135,14 @@ DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui", "draft-r70707-ui", "draft-r70755
                  "draft-r70862-ui-sg12",  # a re-pull's reworded key (the group invitation's new icon line)
                  "draft-r70959-ui-sg12",  # the interface lines of build 70959
                  "draft-r71037-q-sg12",  # a boss still alive in an instance lock, its own word from build 71037
+                 "draft-ui-drunk-sg12",  # how drunk the character or a player nearby is, in chat
+                 "draft-ui-mail-cod-sg12",  # the mail window's line for cash on delivery switched off
+                 "draft-ui-friends-window-sg12",  # the friends window the client shows with its social system on
+                 "draft-ui-tooltip-words-sg12",  # "Enemy" before a range, "Crafting Reagent"
+                 "draft-ui-locked-sg12",  # "Locked" on a locked container's tooltip
+                 "draft-ui-duration-words-sg12",  # "until canceled" where a spell's duration goes
                  "draft-ui-invite-sg12",  # the cross-shard group invitation, a string of its own from 70888
+                 "draft-ui-clock-times-sg12",  # a twelve-hour time, 午前 / 午後 like the dates around it
                  "draft-r70450-ui-sg12", "draft-r70450-intro-sg12",  # a re-pull's new keys and the race intro subtitles
                  "draft-ui-left", "draft-ui-left-tooltip",  # lines a Forever client file shows, links and set bonuses
                  # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the

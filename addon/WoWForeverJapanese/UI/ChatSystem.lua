@@ -23,6 +23,8 @@
 -- leaves the English. A typed line no interface string answers may be an NPC line's text the server sent as system
 -- chat: UI/Speech's translateLine looks it up, and on a battleground announcement (BG_SYSTEM_*) also takes the player
 -- the line names. A line holding the death recap link has its label translated under any chat type, or none.
+-- A typed line that stays English after all of that goes to UI/ChatUnlisted, which looks for the interface string
+-- it was written from and hands the collector that string's name, never the line.
 -- Alt / the switch: the history is rewritten once, when the line arrives, and never again; a
 -- rewrite repackages the entry with a new timestamp (PackageEntry, scrollingmessageframe.lua:737–745), which would
 -- bring every faded line back. Holding the modifier, or switching the addon / its UI area off, instead puts the
@@ -479,7 +481,11 @@ function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, event
   if not ja and ChatSystem.NPC_TEXT_TYPES[typeName] and WFJ.Speech then -- Speech loads after this file
     ja = WFJ.Speech.translateLine(message, ChatSystem.NAMING_TYPES[typeName])
   end
-  if not ja then return 0 end
+  if not ja then
+    -- a typed line nothing answered: the interface string it was written from may be one nobody listed
+    if typeName and WFJ.ChatUnlisted then WFJ.ChatUnlisted.seen(message) end -- loads after this file
+    return 0
+  end
   return rewrite(frame, message, typeId, ja)
 end
 
@@ -579,10 +585,12 @@ local function speechNames(ja, info)
   return ja:sub(1, s - 1) .. (WFJ.Names.of(speaker) or speaker) .. rest
 end
 
--- A link's label in Japanese: an item's or a spell's name, a quest's shipped title. → ja | nil
-local LINK_AREAS = { item = "items", spell = "spells", quest = "quests" }
+-- A link's label in Japanese: an item's or a spell's name, a quest's shipped title. A profession's recipe is an
+-- enchant link labelled with the skill and the recipe ("Enchanting: Enchant Weapon - Fiery Weapon"), two names
+-- each spelled by its own line. → ja | nil
+local LINK_AREAS = { item = "items", spell = "spells", enchant = "spells", quest = "quests" }
 local function linkLabel(kind, data, label)
-  if kind ~= "quest" then return (WFJ.Names.item(label)) end
+  if kind ~= "quest" then return WFJ.Names.item(label) or (WFJ.Names.joined(label)) end
   local id = tonumber(data:match("^(%d+)"))
   local lookup = WFJ.Lookup and WFJ.Lookup.get
   local entry = id and type(lookup) == "function" and lookup("quest.title", id) or nil

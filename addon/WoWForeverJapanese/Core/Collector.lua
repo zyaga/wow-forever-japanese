@@ -16,6 +16,11 @@
 --   Collector.fingerprints(raw, player, masked) → each candidate's h1, inconclusive: the quest live check
 --     (ADR-019); `masked`: digit runs `#` first, for a quest line filled from live values
 --   Collector.recordNpc(guid, name) · Collector.disclose() · Collector.status() · Collector.clear()
+--   Collector.recordUiKey(name) → result[, reason]   never raises: the NAME of a client interface string a chat
+--     line was written from and the addon has no Japanese for (UI/ChatUnlisted finds it). The entry is
+--     { t = "uikey", i = name, b }: no text and no hash of text, so the line and whoever it names are never kept.
+--     deps.uiKey(name) → true when the addon ships Japanese for that string (optional; without it none is known)
+--   Collector.mark(entry) → what a sent row holds for the entry: its text's hash, or an interface string's name
 --   Collector.unsentCount() → the lines Collector.pending() carries, NPC names left out, without building the list
 --   Collector.pending(all) → the entries a send carries, sorted by key: { { key, entry }, … } (unsent ones, or every
 --     one with `all`), leaving out lines the addon shows in Japanese now; how many were left out for that; their
@@ -59,6 +64,14 @@ Collector.NPC_CAP = 32 -- creature ids kept per gossip entry (a generic "Goodbye
 -- Never recorded: text that names the player's bind location: the Hearthstone item's Use: line and the
 -- Hearthstone / Astral Recall spell descriptions [likely, not yet confirmed in game].
 Collector.SKIP = { item = { [6948] = true }, spell = { [8690] = true, [556] = true } }
+
+-- An interface string's name seen in chat: an entry of its own shape, keyed "uikey:<NAME>". It is a line to
+-- translate, so it counts as unsent and is a reason to send, unlike the riders.
+Collector.UI_KEY = "uikey"
+Collector.UI_KEY_MAX = 128 -- longer than any name the client has; a bound on what a hand-edited file can hold
+local function isUiKeyName(name)
+  return type(name) == "string" and #name <= Collector.UI_KEY_MAX and name:match("^[A-Z][A-Z0-9_]*$") ~= nil
+end
 
 local ENTRY_KEYS = { t = true, i = true, f = true, h = true, e = true, b = true, n = true, p = true }
 
@@ -212,6 +225,7 @@ end
 -- escapes, and the field names, indentation and punctuation around them (measured on the fixture file); a gossip
 -- entry's NPC id list adds its brackets and ~10 bytes per id.
 function Collector.size(key, e, n, who)
+  e = e or "" -- an interface string's name has no text
   local _, escapes = e:gsub('["\\]', "")
   local ids = type(n) == "table" and (16 + 20 * #n) or 0 -- "\t\t\t\t6740, -- [1]\n" per id
   local p = type(who) == "string" and (#who + 12) or 0 -- "\t\t\t["p"] = "Class|Race",\n"
@@ -246,6 +260,12 @@ local function isHash(h)
   return type(h) == "string" and #h == 16 and h:match("^[0-9a-f]+$") ~= nil
 end
 
+-- What a sent row holds for an entry, and what tells one recording of it from the next: the hash of its text, or,
+-- for an interface string's name (no text, so no hash), the name.
+function Collector.mark(e)
+  return e.h or (e.t == Collector.UI_KEY and e.i) or nil
+end
+
 local function positiveInt(v)
   return type(v) == "number" and v >= 1 and v == math.floor(v)
 end
@@ -269,6 +289,10 @@ local function validEntry(key, e, builds)
   if type(key) ~= "string" or type(e) ~= "table" then return false end
   for k in pairs(e) do
     if not ENTRY_KEYS[k] then return false end
+  end
+  if e.t == Collector.UI_KEY then -- a name and a build, and nothing that could hold text
+    return isUiKeyName(e.i) and key == e.t .. ":" .. e.i and e.f == nil and e.h == nil and e.e == nil
+      and e.n == nil and e.p == nil and (e.b == nil or (type(e.b) == "number" and type(builds[e.b]) == "string"))
   end
   local fields = Collector.KINDS[e.t]
   if not fields or not fields[e.f] then return false end
@@ -305,7 +329,7 @@ function Collector.load(saved, d)
   for key, e in pairs(saved.entries) do
     if validEntry(key, e, saved.builds) then
       bytes = bytes + Collector.size(key, e.e, e.n, e.p)
-      onDisk[key] = e.h
+      onDisk[key] = Collector.mark(e)
     else
       saved.entries[key] = nil
     end
@@ -314,7 +338,8 @@ function Collector.load(saved, d)
   -- is new in the same file version: an older addon leaves a top-level field it does not know as it is.
   if type(saved.sent) ~= "table" then saved.sent = {} end
   for key, h in pairs(saved.sent) do
-    if type(key) ~= "string" or not isHash(h) or saved.entries[key] == nil then
+    local e = saved.entries[key]
+    if type(key) ~= "string" or e == nil or not (isHash(h) or h == Collector.mark(e)) then
       saved.sent[key] = nil
     else
       bytes = bytes + Collector.sentSize(key)
@@ -393,6 +418,7 @@ end
 -- rewording is new English). An item or spell line is recorded with the client's numbers filled in, so no hash
 -- can match its template: it is covered when the tooltip gate itself accepts the Japanese for it.
 local function covered(kind, id, field, e, h1, p, keys)
+  if kind == Collector.UI_KEY then return type(deps.uiKey) == "function" and deps.uiKey(id) == true end
   if kind == "gossip" then
     for _, k in ipairs(keys) do
       if deps.lookup("gossip", k) then return true end
@@ -438,6 +464,7 @@ end
 
 -- A stored entry through `covered`.
 local function storedCovered(e)
+  if e.t == Collector.UI_KEY then return covered(e.t, e.i) end
   return covered(e.t, e.i, e.f, e.e, tonumber(e.h:sub(1, 8), 16), e.p, { e.h })
 end
 
@@ -452,6 +479,17 @@ local function drop(key)
   end
   db.entries[key], onDisk[key] = nil, nil
   return true
+end
+
+-- The file is full: one print per session. → "capped"
+local function full()
+  db.capped = true
+  if not cappedPrinted then
+    cappedPrinted = true
+    deps.print(("WFJ: collector full (%s). /wfj collector send to send it, /wfj collector clear to start over.")
+      :format(Collector.formatBytes(Collector.CAP_BYTES)))
+  end
+  return "capped"
 end
 
 -- kind "gossip": `id` and `key` are derived from the text; `npc` is the speaker's creature id or nil.
@@ -511,15 +549,7 @@ local function evaluate(kind, id, field, raw, key, npc)
   end
   local size = Collector.size(key, e, n, who)
   local oldSize = old and Collector.size(key, old.e, old.n, old.p) or 0
-  if db.bytes - oldSize + size > Collector.CAP_BYTES then
-    db.capped = true
-    if not cappedPrinted then
-      cappedPrinted = true
-      deps.print(("WFJ: collector full (%s). /wfj collector send to send it, /wfj collector clear to start over.")
-        :format(Collector.formatBytes(Collector.CAP_BYTES)))
-    end
-    return "capped"
-  end
+  if db.bytes - oldSize + size > Collector.CAP_BYTES then return full() end
   db.bytes = db.bytes - oldSize + size
   db.capped = false -- recording again: the file is not full
   if old and old.h == h then -- a gossip line already stored, from another NPC: only `n` grows
@@ -582,6 +612,43 @@ end
 
 function Collector.recordGossip(raw, guid)
   local ok, result, reason = pcall(recordGossipImpl, raw, guid)
+  if ok then return result, reason end
+  errors, lastError = errors + 1, tostring(result)
+  return "error", lastError
+end
+
+-- The name of a client interface string a chat line was written from, when the addon has no Japanese for it.
+-- Only the name is stored: the line itself, and so any player it names, never reaches the file. A name the addon
+-- ships Japanese for is known and not stored; one stored earlier goes once a newer addon covers it.
+local function recordUiKeyImpl(name)
+  if not db or not deps then return "off" end
+  if readOnly then return "refused", "read_only" end
+  if not deps.enabled() then return "off" end
+  if not isUiKeyName(name) then return "refused", "bad_id" end
+  local key = Collector.UI_KEY .. ":" .. name
+  local m = memo[key]
+  if m then return m.result, m.reason end
+  local result
+  if covered(Collector.UI_KEY, name) then
+    if drop(key) then db.capped = false end
+    result = "known"
+  elseif db.entries[key] then
+    result = "seen"
+  else
+    local build = currentBuild()
+    if not build then return "refused", "no_build" end -- not replayed: the client may name its build later
+    local size = Collector.size(key)
+    if db.bytes + size > Collector.CAP_BYTES then return full() end
+    db.bytes, db.capped = db.bytes + size, false
+    db.entries[key] = { t = Collector.UI_KEY, i = name, b = buildIndex(build) }
+    result = "recorded"
+  end
+  remember(key, { result = result == "recorded" and "seen" or result })
+  return result
+end
+
+function Collector.recordUiKey(name)
+  local ok, result, reason = pcall(recordUiKeyImpl, name)
   if ok then return result, reason end
   errors, lastError = errors + 1, tostring(result)
   return "error", lastError
@@ -727,7 +794,8 @@ function Collector.disclose()
   deps.print("WFJ: this addon records English game text it has no data for (quest text, NPC dialogue with the ids "
     .. "of the NPCs who said it, item and spell descriptions, NPC names) in SavedVariables\\WoWForeverJapanese.lua, "
     .. "so it can be translated later, and for each quest window the id, sex and model id of the NPC that showed it, "
-    .. "so the line gets the right voice. "
+    .. "so the line gets the right voice. For a game message in chat that is not translated yet it keeps the name "
+    .. "of the interface string the game wrote it from, never the message. "
     .. "Your character's name is replaced; next to a line that names your class or race, the class and race are "
     .. "noted; no account, realm or location is stored (wording that depends on your "
     .. "character's gender is kept as the game shows it). Nothing leaves your disk unless you send it.")
@@ -792,14 +860,14 @@ function Collector.pending(all)
   if not db or not deps or readOnly or type(db.entries) ~= "table" then return out, left, leftList, 0 end
   local sent = type(db.sent) == "table" and db.sent or {}
   for key, e in pairs(db.entries) do
-    if all or sent[key] ~= e.h then
+    if all or sent[key] ~= Collector.mark(e) then
       if Collector.RIDERS[e.t] then
         names[#names + 1] = { key = key, entry = e }
       else
         local ok, yes = pcall(storedCovered, e)
         if ok and yes then
           left = left + 1
-          leftList[left] = { key = key, h = e.h }
+          leftList[left] = { key = key, h = Collector.mark(e) }
         else
           out[#out + 1] = { key = key, entry = e }
         end
@@ -822,7 +890,7 @@ function Collector.unsentCount()
   local sent = type(db.sent) == "table" and db.sent or {}
   local n = 0
   for key, e in pairs(db.entries) do
-    if sent[key] ~= e.h and not Collector.RIDERS[e.t] then
+    if sent[key] ~= Collector.mark(e) and not Collector.RIDERS[e.t] then
       local ok, yes = pcall(storedCovered, e)
       if not (ok and yes) then n = n + 1 end
     end
@@ -879,7 +947,7 @@ function Collector.markSent(list)
   local n = 0
   for _, item in ipairs(list) do
     local e = db.entries[item.key]
-    if e and e.h == item.h then
+    if e and item.h ~= nil and Collector.mark(e) == item.h then
       if db.sent[item.key] == nil then db.bytes = db.bytes + Collector.sentSize(item.key) end
       db.sent[item.key] = item.h
       n = n + 1

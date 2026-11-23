@@ -513,7 +513,9 @@ def test_words_kept_as_written_on_screen():
 def test_the_shipped_name_tables_leave_out_the_words_kept_as_written():
     repo = Path(__file__).resolve().parents[2]
     keep = generate.load_kept_as_written(repo / "data")
-    assert {"PvP", "NPC", "GM", "WoW", "Blizzard", "World of Warcraft"} <= keep
+    assert {"PvP", "NPC", "GM", "WoW", "World of Warcraft"} <= keep
+    # a word that is also a spell's name is not kept: the spell would stay English
+    assert "Blizzard" not in keep
     shipped = "".join(p.read_text(encoding="utf-8") for p in (repo / "addon/WoWForeverJapanese/Data/Names").glob("*.lua"))
     for ln in load_lines(repo / "data"):
         if ln["status"] == "trusted" and names.kept_as_written(ln["en"], keep):
@@ -534,3 +536,39 @@ def test_replace_runs_joins_a_suffixed_items_two_names():
         "売却: バンディット・クローク・オブ・ジ・アウル"
     )
     assert names.replace_runs("Cloak of Nothing Knownを", known.get) == "Cloak of Nothing Knownを"
+
+
+def test_names_inside_interface_lines_and_the_pvp_rank_titles_reach_the_name_list(root, tmp_path):
+    # a name inside an interface line's Japanese has a line, so the screen can show its Japanese; a run with no
+    # lower-case letter is an abbreviation or a key's name and is left out
+    found = cmd.interface_names(root / "data")
+    assert "Champion's Hall" in found and "CPU" not in found and "ALT" not in found
+    assert found <= cmd.prose_names(root / "data")
+    (tmp_path / "GlobalStrings.csv").write_text(
+        "BaseTag,TagText_lang\nPVP_RANK_0_NAME,Civilian\nPVP_RANK_5_NAME,Elite\nPVP_RANK_LEADER,Leader\n",
+        encoding="utf-8")
+    assert cmd.rank_names(tmp_path) == {"Civilian", "Elite"}
+    assert cmd.rank_names(tmp_path / "none") == set()
+    (tmp_path / "SkillLine.csv").write_text(
+        "ID,DisplayName_lang,Description_lang\n26,Arms,\n356,Fishing,Higher skill.\n9,GENERIC (DND),\n"
+        "8,Test Profession [DNT],\n7,,\n", encoding="utf-8")
+    assert cmd.skill_names(tmp_path) == {"Arms", "Fishing"}
+    assert cmd.skill_names(tmp_path / "none") == set()
+    (tmp_path / "ChrRaces.csv").write_text(
+        "ID,ClientFileString,Name_lang\n4,NightElf,Night Elf\n95,Skyborne,High Order Skyborne\n7,X,\n",
+        encoding="utf-8")
+    assert cmd.race_names(tmp_path) == {"Night Elf", "High Order Skyborne"}
+    assert cmd.race_names(tmp_path / "none") == set()
+    (tmp_path / "GroupFinderActivity.csv").write_text(
+        "ID,FullName_lang,ShortName_lang\n1,Dire Maul (North),DM North\n2,Scholomance,Scholomance\n"
+        "3,Test [DNT],\n", encoding="utf-8")
+    assert cmd.activity_names(tmp_path) == {"Dire Maul (North)", "DM North", "Scholomance"}
+    assert cmd.activity_names(tmp_path / "none") == set()
+    (tmp_path / "SpellShapeshiftForm.csv").write_text(
+        "ID,Name_lang\n5,Bear Form\n14,Creature - Bear\n24,S03 - Gladiator Stance\n9,\n", encoding="utf-8")
+    assert cmd.form_names(tmp_path) == {"Bear Form", "Creature - Bear"}
+    assert cmd.form_names(tmp_path / "none") == set()
+    (tmp_path / "TotemCategory.csv").write_text(
+        "ID,Name_lang\n2,Earth Totem\n41,Great Mage Writings\n9,\n", encoding="utf-8")
+    assert cmd.tool_names(tmp_path) == {"Earth Totem", "Great Mage Writings"}
+    assert cmd.tool_names(tmp_path / "none") == set()

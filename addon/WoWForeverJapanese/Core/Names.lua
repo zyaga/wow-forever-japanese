@@ -4,6 +4,9 @@
 --   Names.of(english)         → ja, reading | nil
 --   Names.item(english)       → ja, reading | nil: the whole name, else an item name and its suffix
 --                                ("Bandit Cloak of the Owl": the two names joined as the words of one name are)
+--   Names.joined(english)     → ja, reading, first, second | nil: two names the client joined with ": " ("Call to
+--                                Arms: Warsong Gulch"), each in its Japanese with the separator kept; only for a
+--                                caller whose widget holds such a title
 --   Names.inText(ja[, html])  → text, spans: a shown Japanese line with each English name inside it written in
 --                                its Japanese; spans = { { first, last, ja, english, reading }, … } are byte positions
 --                                in `text`. Markup, a count after a name and a run with no name stay as written;
@@ -111,6 +114,31 @@ function Names.shown(english)
   local ja, reading = Names.item(english)
   if ja then return ja, reading end
   return Names.list(english)
+end
+
+-- A title the client makes of two names and ": " between them ("Call to Arms: Warsong Gulch", a holiday on the
+-- calendar). The name list holds each half and not the pair, so the pair is read as its halves. Both must be whole
+-- names of the list: a text with one unknown half is some other text with a colon in it and stays as written. The
+-- split nearest the start is tried first.
+-- → ja, reading, the first name, the second name | nil
+local SEPARATOR = ": "
+
+function Names.joined(english)
+  if type(english) ~= "string" then return nil end
+  local from = 1
+  while true do
+    local at = english:find(SEPARATOR, from, true)
+    if not at then return nil end
+    local first, second = english:sub(1, at - 1), english:sub(at + #SEPARATOR)
+    local firstJa, firstReading = Names.of(first)
+    local secondJa, secondReading
+    if firstJa then secondJa, secondReading = Names.of(second) end
+    if secondJa then
+      return firstJa .. SEPARATOR .. secondJa, (firstReading or firstJa) .. SEPARATOR .. (secondReading or secondJa),
+        first, second
+    end
+    from = at + 1
+  end
 end
 
 function Names.value(text)

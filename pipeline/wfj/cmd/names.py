@@ -106,7 +106,18 @@ def prose_lines(root: Path) -> dict[str, str]:
 
 
 def prose_names(root: Path) -> set[str]:
-    return {run for ja in prose_lines(root).values() for run in names.latin_runs(ja)}
+    return {run for ja in prose_lines(root).values() for run in names.latin_runs(ja)} | interface_names(root)
+
+
+def interface_names(root: Path) -> set[str]:
+    """The English names inside the shipped Japanese of interface lines ("Champion's Hall" in a vendor's
+    line): with Japanese names on, the screen shows such a name's Japanese only when it has a line. A run
+    with no lower-case letter is an abbreviation or a key's name (CPU, ALT) and stays as the client writes
+    it."""
+    return {
+        run for ln in Store(root).load("ui") if shipped(ln)
+        for run in names.latin_runs(ln["ja"]) if any(c.islower() for c in run)
+    }
 
 
 def table_names(folder: Path) -> dict[str, dict[int, str]]:
@@ -128,6 +139,89 @@ def table_names(folder: Path) -> dict[str, dict[int, str]]:
     return out
 
 
+_RANK_NAME = re.compile(r"PVP_RANK_\d+_NAME")
+
+
+def rank_names(folder: Path) -> set[str]:
+    """The PvP rank titles from a client's table folder (GlobalStrings' PVP_RANK_<n>_NAME rows). No interface
+    line is listed for them (a title is a name), so nothing else brings them to the name list."""
+    path = folder / "GlobalStrings.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        return {row["TagText_lang"].strip() for row in csv.DictReader(f)
+                if _RANK_NAME.fullmatch(row["BaseTag"]) and row["TagText_lang"].strip()}
+
+
+_NOT_SHOWN = re.compile(r"[\[(]|\bDN[DT]\b")
+
+
+def skill_names(folder: Path) -> set[str]:
+    """The skill and talent tree names from a client's table folder (SkillLine's DisplayName: "Arms",
+    "Fishing", "Two-Handed Swords"). The spellbook's headers, the skills page and the talent trees show them,
+    and no imported text names them. A row the client marks as not for display is left out."""
+    path = folder / "SkillLine.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("DisplayName_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and not _NOT_SHOWN.search(en)}
+
+
+def race_names(folder: Path) -> set[str]:
+    """The race names from a client's table folder (ChrRaces' Name_lang: "Night Elf", "High Order Skyborne"),
+    as a player's tooltip writes them. A race the addon has a word of its own for shows that word; one it has
+    none for (a race only this client has) is spelled from this line."""
+    path = folder / "ChrRaces.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("Name_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and not _NOT_SHOWN.search(en)}
+
+
+def tool_names(folder: Path) -> set[str]:
+    """The tool category names from a client's table folder (TotemCategory's Name_lang: "Runed Copper Rod",
+    "Great Mage Writings"), which a spell's tooltip lists after "Tools:". Most are an item's name too; a
+    category with no item of that name has no other source."""
+    path = folder / "TotemCategory.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("Name_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and "DO NOT USE" not in en and not _NOT_SHOWN.search(en)}
+
+
+def form_names(folder: Path) -> set[str]:
+    """The shapeshift form names from a client's table folder (SpellShapeshiftForm's Name_lang: "Bear Form",
+    "Creature - Bear"), which a spell's tooltip writes after "Requires". A row named for a season's test
+    ("S03 - Gladiator Stance") is the developers' label, never shown."""
+    path = folder / "SpellShapeshiftForm.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("Name_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and not re.match(r"S\d+ - ", en) and not _NOT_SHOWN.search(en)}
+
+
+def activity_names(folder: Path) -> set[str]:
+    """The group finder's activity names from a client's table folder (GroupFinderActivity's full and short
+    names: "Dire Maul (North)", "Stratholme (Main Gate)"): the dungeons, raids and zones a group is listed
+    for. Their category words ("Dungeons") are interface lines; these are names, and no imported text holds
+    the ones with a wing in brackets."""
+    path = folder / "GroupFinderActivity.csv"
+    if not path.is_file():
+        return set()
+    out: set[str] = set()
+    with path.open(encoding="utf-8", newline="") as f:
+        for row in csv.DictReader(f):
+            for column in ("FullName_lang", "ShortName_lang"):
+                en = (row.get(column) or "").strip()
+                if en and not re.search(r"\bDN[DT]\b|\[", en):
+                    out.add(en)
+    return out
+
+
 def collect(root: Path, db: Path | None, today: str, tables: Path | None = None) -> dict[str, int]:
     seen = english_names(root)
     counts = {f"english {k}": sum(1 for v in seen.values() if k in v) for k in ENGLISH_NAMES}
@@ -142,6 +236,20 @@ def collect(root: Path, db: Path | None, today: str, tables: Path | None = None)
                 seen.setdefault(en, defaultdict(set))[kind].add(i)
             counts[f"{source} {kind}"] = len(set(rows.values()))
     prose = prose_names(root)
+    if tables is not None:
+        ranks = rank_names(tables)
+        counts["tables rank"] = len(ranks)
+        skills = skill_names(tables)
+        counts["tables skill"] = len(skills)
+        races = race_names(tables)
+        counts["tables race"] = len(races)
+        activities = activity_names(tables)
+        counts["tables activity"] = len(activities)
+        forms = form_names(tables)
+        counts["tables form"] = len(forms)
+        tools = tool_names(tables)
+        counts["tables tool"] = len(tools)
+        prose |= ranks | skills | races | activities | forms | tools
     counts["prose"] = len(prose)
     lines, added = names.merge(load_lines(root), seen, prose, today)
     save_lines(root, lines)

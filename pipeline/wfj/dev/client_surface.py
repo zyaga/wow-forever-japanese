@@ -283,16 +283,18 @@ def build(addon: Path) -> dict[str, Any]:
     entries: list[dict[str, Any]] = []
     seen: set[tuple[str, str | None, str, str]] = set()
     defined = addon_defined(addon)
+    code = hashlib.sha256()  # the addon's own code, without its data: what a window's module is built from
     for path in sorted(addon.rglob("*.lua")):
         if any(part in SKIP_DIRS for part in path.parts):
             continue
+        code.update(path.relative_to(addon).as_posix().encode("utf-8") + b"\0" + path.read_bytes())
         for entry in scan_file(path, addon, defined):
             key = (entry["kind"], entry["name"], entry["surface"], entry.get("dynamic", ""))
             if key in seen:
                 continue
             seen.add(key)
             entries.append(entry)
-    return {"addon": addon.name, "entries": entries}
+    return {"addon": addon.name, "entries": entries, "code": code.hexdigest()[:12]}
 
 
 def summary(manifest: dict[str, Any]) -> list[str]:
@@ -514,6 +516,21 @@ local function walk()
       local ok, loaded, reason = pcall(C_AddOns.LoadAddOn, addon)
       db.walk[addon] = (ok and loaded) and "loaded" or ("refused: " .. (ok and tostring(reason) or "error"))
     end
+    -- The raid window's own code raises an error outside a raid on every pet and name update once it is loaded
+    -- (RaidClassButton_Update; listed in pipeline/ui_test_game_errors.txt). The walk is what loaded it, so the
+    -- walk takes those two events off the raid window until the next reload.
+    if addon == "Blizzard_RaidUI" and type(RaidFrame) == "table" and not IsInRaid() then
+      RaidFrame:UnregisterEvent("UNIT_PET")
+      RaidFrame:UnregisterEvent("UNIT_NAME_UPDATE")
+      local back = CreateFrame("Frame")
+      back:RegisterEvent("GROUP_ROSTER_UPDATE")
+      back:SetScript("OnEvent", function(self)
+        if not IsInRaid() then return end
+        self:UnregisterAllEvents()
+        RaidFrame:RegisterEvent("UNIT_PET")
+        RaidFrame:RegisterEvent("UNIT_NAME_UPDATE")
+      end)
+    end
   end
 end
 
@@ -647,10 +664,25 @@ local function spells(name) return function() PlayerSpellsUtil[name]() end end
 -- loads the addon at login (blizzard_game/camelot/eventimplementation.lua:12, blizzard_lfgutil/camelot/
 -- lfgutil.lua:1-5); should it not be loaded yet, its own loader is called. [unverified: that an addon may call that
 -- loader without the load being refused; the run records the error if it is]
+-- An opener's error that starts with this says the window is not there for this player to open: the run names it
+-- with the windows this client does not have and does not fail on it. The window is tested whenever it is there.
+local NOT_AVAILABLE = "not available: "
 local function groupFinder(page)
   return function()
+    -- the client's own toggle shows nothing when the client is on another finder or this account or character
+    -- may not use this one (blizzard_lfgvanilla_parentframe.lua:135-141): then there is no window to test
+    local style = C_LFGList and C_LFGList.GetPremadeGroupFinderStyle and C_LFGList.GetPremadeGroupFinderStyle()
+    local may = C_LFGInfo and C_LFGInfo.CanPlayerUsePremadeGroup and C_LFGInfo.CanPlayerUsePremadeGroup()
+    local vanilla = Enum and Enum.PremadeGroupFinderStyle and Enum.PremadeGroupFinderStyle.Vanilla
+    if may == false or (vanilla ~= nil and style ~= nil and style ~= vanilla) then
+      error(NOT_AVAILABLE .. "the group finder (finder style " .. tostring(style) .. ", this character may use it: "
+        .. tostring(may) .. ")", 0)
+    end
     if not LFGParentFrame then GroupFinderVanillaStyle_LoadUI() end
     LFGVanilla_ToggleFrame(page)
+    if LFGParentFrame and LFGParentFrame:IsShown() then return end
+    error("the client kept it shut: finder style " .. tostring(style) .. ", this character may use it: "
+      .. tostring(may), 0)
   end
 end
 local LIVE = {
@@ -666,7 +698,6 @@ local LIVE = {
   -- so there the opener is missing and the window is named as absent
   { "dungeon journal", function() ToggleEncounterJournal() end, "ToggleEncounterJournal" },
   { "friends", function() ToggleFriendsFrame(1) end },
-  { "guild", function() ToggleGuildFrame() end },
   { "professions", function() ToggleProfessionsBook() end },
   { "bags", function() ToggleAllBags() end },
   { "calendar", function() ToggleCalendar() end },
@@ -711,8 +742,42 @@ local function boxed(font)
   return type(font) == "string" and not font:lower():find(JAPANESE_FACE, 1, true)
 end
 
+-- Whether this player has Japanese names on. The setting is read, never written: a run shows what the player sees.
+local function namesOn()
+  local settings = type(WFJ_DB) == "table" and WFJ_DB.settings
+  return type(settings) == "table" and settings["names.japanese"] == true
+end
+
+-- With Japanese names on, a game name left in English is a fault, and a name is in no dictionary the sweep
+-- holds: the name list is far too long to carry here. So every text on screen that still holds Latin letters is
+-- kept under `latin`, by widget, and the result holds each one to the name list when it is read.
+local LATIN_MAX, LATIN_CHARS = 400, 200 -- texts kept per read; characters kept of each
+
+-- A unit frame or nameplate of a unit a player controls (a hunter's pet, a guardian): its name is the player's
+-- to give, so the addon leaves it as written and the run does not hold it to the name list. A pet that kept the
+-- name of the creature it was tamed from reads like a game name and is not one.
+local function playersUnit(frame)
+  local unit = type(frame) == "table" and (frame.displayedUnit or frame.unit) or nil
+  if type(unit) ~= "string" then return false end
+  local ok, controlled = pcall(UnitPlayerControlled, unit)
+  return ok and controlled == true
+end
+
 local function readScreen()
+  -- whether the tooltip on screen is a unit's (the creature or player under the mouse)
+  local shows, unit = pcall(function() return GameTooltip:IsShown() and GameTooltip:GetUnit() end)
+  local unitTip = shows and unit ~= nil and unit ~= false
+  -- a unit's tooltip that is fading out no longer names its unit, and its rows are still on screen: a player's
+  -- guild on its second row is no interface line. The tooltip's own data still says what kind it is.
+  if not unitTip and type(GameTooltip) == "table" and type(GameTooltip.GetPrimaryTooltipInfo) == "function" then
+    local fine, info = pcall(function() return GameTooltip:IsShown() and GameTooltip:GetPrimaryTooltipInfo() end)
+    local data = fine and type(info) == "table" and info.tooltipData or nil
+    local kinds = type(Enum) == "table" and Enum.TooltipDataType or nil
+    unitTip = type(data) == "table" and kinds ~= nil and data.type == kinds.Unit
+  end
   local record = { english = {}, japanese = 0, boxes = {} }
+  local latin, kept = namesOn() and {} or nil, 0
+  record.latin = latin
   local function box(widget, text, ...)
     if not hasJapanese(text) then return end
     local font = widget:GetFont(...)
@@ -726,10 +791,24 @@ local function readScreen()
         if region:GetObjectType() == "FontString" and region:IsVisible() then
           local plain = plainOf(region)
           if plain and ENGLISH[plain] then
-            record.english[tostring(region:GetDebugName())] = plain
+            -- a name plate shows a creature's name and a unit's tooltip under the mouse shows an NPC's title:
+            -- names, which stay English, and never part of the window being read (a mob called "Gold" walking
+            -- by is not the word Gold left untranslated). Any other tooltip is the window's own and is read.
+            local name = tostring(region:GetDebugName())
+            if not name:find("^NamePlate%%d") and not (unitTip and name:find("^GameTooltipText")) then
+              record.english[name] = plain
+            end
           elseif plain and hasJapanese(plain) then
             record.japanese = record.japanese + 1
             pcall(box, region, plain)
+          end
+          -- text drawn fully transparent is not on screen: the spellbook's own spell names stay as the client
+          -- wrote them under the addon's Japanese labels
+          if latin and plain and kept < LATIN_MAX and not ENGLISH[plain] and plain:find("%%a%%a")
+            and not (region.GetEffectiveAlpha and region:GetEffectiveAlpha() == 0)
+            and not playersUnit(frame) then
+            kept = kept + 1
+            latin[tostring(region:GetDebugName())] = plain:sub(1, LATIN_CHARS)
           end
         end
       end
@@ -1025,6 +1104,382 @@ local function putAway()
   return raised
 end
 
+-- How a tooltip's rows are judged, by the tooltip read below and by the hover read: the same rules for both.
+local function readable(text)
+  return type(text) == "string" and text ~= "" and not (issecretvalue and issecretvalue(text))
+end
+-- Latin abbreviations Japanese text keeps as they are, as Japanese players write them
+local ABBREVIATIONS = { NPC = true, GM = true, PvP = true, PvE = true, DND = true, CC = true, ID = true,
+  WoW = true, HP = true, MP = true, UI = true }
+-- markup is no text: colour codes in either case, named colours, textures, atlases, plural groups, and the
+-- addon's own markers, whose English half is there on purpose
+local function rowPlain(text)
+  return (text:gsub("|[cC]%%x%%x%%x%%x%%x%%x%%x%%x", ""):gsub("|[cC][nN][^:]*:", ""):gsub("|[rR]", "")
+    :gsub("|T[^|]*|t", ""):gsub("|A[^|]*|a", ""):gsub("|4[^;]*;", ""):gsub("|n", " ")
+    :gsub("%%[[^%%]]-/ English Changed%%]", ""):gsub("%%[[^%%]]-/ No Voice Yet%%]", ""))
+end
+-- A row is judged when it holds a word: not a line the addon marks as not translated (listed elsewhere), and not
+-- a developer's own row ("Test Profession [DNT]: …"), which no player is meant to read.
+local function judged(plain)
+  return plain:find("%%a%%a") ~= nil and not plain:find("Not Translated]", 1, true) and not plain:find("[DNT]", 1, true)
+end
+-- What a judged row leaves in English, to `found(into, key)`: the whole row under "english" when it holds no
+-- Japanese, its digits folded so "Rank 3" and "Rank 4" are one row; else each Latin word in it that is no
+-- abbreviation under "runs" (a name the name list has no line for).
+local function englishIn(plain, found)
+  if not hasJapanese(plain) then
+    found("english", (plain:gsub("%%d[%%d%%.,]*", "#"):sub(1, 160)))
+    return
+  end
+  for run in plain:gmatch("%%a[%%a' %%-]*%%a") do
+    if not ABBREVIATIONS[run] then found("runs", run) end
+  end
+end
+-- The tooltip's own data, or nil when it has none (a tooltip built line by line from code)
+local function tooltipData()
+  if type(GameTooltip.GetPrimaryTooltipInfo) ~= "function" then return nil end
+  local fine, info = pcall(GameTooltip.GetPrimaryTooltipInfo, GameTooltip)
+  local data = fine and type(info) == "table" and info.tooltipData or nil
+  return type(data) == "table" and data or nil
+end
+-- Only the rows the game itself drew: each line of the tooltip's own data carries the row it was drawn on, and a
+-- row with no such line was added by another addon (an inventory count, a character's name). → the set of those
+-- rows, or nil when the data names none: then every row is the tooltip's own.
+local function ownRows(data)
+  if type(data) ~= "table" or type(data.lines) ~= "table" then return nil end
+  local own = {}
+  for _, line in ipairs(data.lines) do
+    if type(line.lineIndex) == "number" then own[line.lineIndex] = true end
+  end
+  return next(own) ~= nil and own or nil
+end
+-- A tooltip still waiting for the item it names is half drawn (the client's own "Retrieving item information" row
+-- stands in for the item's rows): what it shows a moment later is what counts, so its rows are not judged.
+local function stillLoading()
+  if type(RETRIEVING_ITEM_INFO) ~= "string" then return false end
+  for i = 1, GameTooltip:NumLines() do
+    local fs = _G["GameTooltipTextLeft" .. i]
+    if fs and fs:GetText() == RETRIEVING_ITEM_INFO then return true end
+  end
+  return false
+end
+
+-- The hover read. A window's list rows and labels raise tooltips of their own when the mouse is on them (a guild
+-- member's zone, a calendar day's events, a friend's details, a listing's collapsed line), and no click and no
+-- screen read shows one. While a window is open, every frame of it on screen that takes the mouse and has an
+-- enter script is pointed at the way the client does it: its enter script runs, the tooltip is read on the next
+-- frame (an addon may finish it on the frame it shows) by the tooltip read's rules, then its leave script runs and
+-- the tooltip is hidden. Never in a fight: one that starts stops the window's hovering, and the run says so.
+-- Never a protected frame, a secure template, an action button, or a widget whose text the client protects (the
+-- same widgets the result counts and never fails: the spellbook, the map's top bar). Each window's English rows
+-- and English words inside Japanese rows are kept under `probe.hover[<window>]`, each with the frame it came from
+-- and the row as written, with how many frames were pointed at (`made`), found and not pointed at (`skipped`:
+-- past the cap, or gone before their turn) and left alone (`denied`).
+local hoverBegin, hoverStep
+do
+  local HOVER_MAX = 60 -- frames pointed at per window, over all its pages
+  local HOVER_MS = 6 -- milliseconds of hovering per frame: one frame's enter script and read stay well inside it
+  local HOVER_ROWS_MAX = 3000 -- rows and words kept over the whole run
+  local HOVER_TEXTS = 24 -- texts of a frame and its children held against its tooltip's rows
+  local HOVER_DENY = { "^PlayerSpellsFrame%%.SpellBookFrame", "^SpellBookFrame", "NavBar", "^WorldMapFrameText$",
+    "ActionButton", "MultiBar", "^ChatFrame", "Tooltip" }
+  -- the window being hovered: its name, its record, what is queued, the frame whose tooltip is up, and the
+  -- entries already found in it (a list draws one entry in one row now and another later)
+  local at = { queue = {}, kept = 0 }
+
+  local function mouseOn(frame)
+    if type(frame.IsMouseMotionEnabled) == "function" then return frame:IsMouseMotionEnabled() end
+    return type(frame.IsMouseEnabled) == "function" and frame:IsMouseEnabled()
+  end
+
+  -- The loaded addons that are not the client's own (a bag addon that replaces the bags, an action bar addon):
+  -- their windows are theirs, not the client's, and their words are no text this addon translates. A frame is
+  -- theirs when its name starts with the addon's name ("Baganator_SingleViewBackpackViewFrame…").
+  local others
+  local function otherAddons()
+    if others then return others end
+    others = {}
+    local C = type(C_AddOns) == "table" and C_AddOns or nil
+    local count = C and C.GetNumAddOns and C.GetNumAddOns() or 0
+    for i = 1, count do
+      local name = C.GetAddOnInfo(i)
+      local loaded = C.IsAddOnLoaded and C.IsAddOnLoaded(i)
+      if type(name) == "string" and loaded and not name:find("^Blizzard_") and name ~= "WoWForeverJapanese"
+          and not name:find("^WoWForeverJapanese_") and name ~= "WFJScan" and #name >= 4 then
+        others[#others + 1] = name
+      end
+    end
+    return others
+  end
+
+  -- → why a frame is never pointed at, or nil
+  local function denied(frame, name)
+    if frame:IsProtected() then return "protected" end
+    for _, addon in ipairs(otherAddons()) do
+      if name:sub(1, #addon) == addon then return "another addon's window" end
+    end
+    for _, pattern in ipairs(HOVER_DENY) do
+      if name:find(pattern) then return pattern end
+    end
+    if frame.action ~= nil then return "an action button" end
+    -- a secure template is set up by its attributes: what it does on a click or for a unit
+    for _, key in ipairs({ "type", "type1", "unit", "_onenter", "_onleave" }) do
+      local ok, value = pcall(frame.GetAttribute, frame, key)
+      if ok and value ~= nil then return "a secure template" end
+    end
+    return nil
+  end
+
+  -- What a frame shows itself, and its children: a row's player name, note or guild rank. A tooltip row that
+  -- repeats it is the row's own data, which a player typed or a name the screen read holds to its rules already;
+  -- what stands around it in the row (a label like "Note:") is still read. Longest first.
+  local function ownTexts(frame)
+    local texts = {}
+    local function from(f)
+      for _, region in ipairs({ f:GetRegions() }) do
+        if #texts < HOVER_TEXTS and region:GetObjectType() == "FontString" and readable(region:GetText()) then
+          texts[#texts + 1] = rowPlain(region:GetText())
+        end
+      end
+      local ok, text = pcall(function() return f:GetText() end)
+      if ok and readable(text) and #texts < HOVER_TEXTS then texts[#texts + 1] = rowPlain(text) end
+    end
+    pcall(from, frame)
+    for _, child in ipairs({ frame:GetChildren() }) do pcall(from, child) end
+    table.sort(texts, function(a, b) return #a > #b end)
+    return texts
+  end
+  -- The names of the player's friends, as the friends list's tooltips write them: a friend's character name,
+  -- account name and BattleTag are what players chose, never text this addon translates.
+  local function friendNames()
+    local names = {}
+    local F = type(C_FriendList) == "table" and C_FriendList or nil
+    for i = 1, F and F.GetNumFriends and F.GetNumFriends() or 0 do
+      local info = F.GetFriendInfoByIndex(i)
+      if type(info) == "table" and readable(info.name) then names[#names + 1] = (info.name:gsub("%%-.*$", "")) end
+    end
+    local B = type(C_BattleNet) == "table" and C_BattleNet or nil
+    local count = type(BNGetNumFriends) == "function" and BNGetNumFriends() or 0
+    for i = 1, B and B.GetFriendAccountInfo and count or 0 do
+      local info = B.GetFriendAccountInfo(i)
+      if type(info) == "table" then
+        for _, v in ipairs({ info.accountName, info.battleTag and (info.battleTag:gsub("#%%d+$", "")) or nil,
+            info.gameAccountInfo and info.gameAccountInfo.characterName or nil }) do
+          if readable(v) then names[#names + 1] = v end
+        end
+      end
+    end
+    return names
+  end
+
+  -- What the player's guild wrote and is: its members' names, its rank names and the members' notes, as the
+  -- roster's tooltips write them. A guild sets its rank names itself ("Initiate", "Veteran"), so none of it is
+  -- text this addon translates. [verified: blizzard_communities/communitiesmemberlist.lua:1184-1211, the roster
+  -- entry's tooltip: name, rank, level line, zone, note]
+  local function guildTexts()
+    local texts = {}
+    local count = type(GetNumGuildMembers) == "function" and GetNumGuildMembers() or 0
+    for i = 1, math.min(count or 0, 1000) do
+      local name, rank, _, _, _, _, note, officerNote = GetGuildRosterInfo(i)
+      for _, v in ipairs({ type(name) == "string" and (name:gsub("%%-.*$", "")) or nil, rank, note, officerNote }) do
+        if readable(v) then texts[#texts + 1] = v end
+      end
+    end
+    for i = 1, type(GuildControlGetNumRanks) == "function" and GuildControlGetNumRanks() or 0 do
+      local rank = GuildControlGetRankName(i)
+      if readable(rank) then texts[#texts + 1] = rank end
+    end
+    return texts
+  end
+
+  local function without(plain, texts)
+    for _, text in ipairs(texts) do
+      if #text >= 2 then
+        local s, e = plain:find(text, 1, true)
+        while s do
+          plain = plain:sub(1, s - 1) .. plain:sub(e + 1)
+          s, e = plain:find(text, 1, true)
+        end
+      end
+    end
+    return (plain:gsub("^%%s+", ""):gsub("%%s+$", ""))
+  end
+
+  -- the client's own way to run a frame's script (its errors reach the error handler, so the run records them),
+  -- or the script itself where the client has no such function
+  local function run(frame, script)
+    local test = type(probeDb().test) == "table" and probeDb().test or nil
+    local was = test and test.part
+    if test then test.part = "hover" end
+    if type(ExecuteFrameScript) == "function" then
+      pcall(ExecuteFrameScript, frame, script, true)
+    else
+      local handler = frame:GetScript(script)
+      if handler then pcall(handler, frame, true) end
+    end
+    if test then test.part = was end
+  end
+
+  local function read(rec, frame)
+    if not GameTooltip:IsShown() or GameTooltip:NumLines() == 0 then return end
+    local data = tooltipData()
+    local kinds = type(Enum) == "table" and Enum.TooltipDataType or nil
+    local okUnit, _, unit = pcall(GameTooltip.GetUnit, GameTooltip)
+    -- a unit's tooltip names a player and their guild: what players chose, never interface text
+    if (okUnit and unit) or (data and kinds and data.type == kinds.Unit) then
+      rec.units = rec.units + 1
+      return
+    end
+    if stillLoading() then
+      rec.loading = rec.loading + 1
+      return
+    end
+    rec.tips = rec.tips + 1
+    local own, texts = ownRows(data), ownTexts(frame)
+    for _, name in ipairs(friendNames()) do texts[#texts + 1] = name end
+    for _, text in ipairs(guildTexts()) do texts[#texts + 1] = text end
+    table.sort(texts, function(a, b) return #a > #b end)
+    local name = unaddressed(tostring(frame:GetDebugName()))
+    for i = 1, GameTooltip:NumLines() do
+      for _, side in ipairs({ "Left", "Right" }) do
+        local fs = _G["GameTooltipText" .. side .. i]
+        local text = (not own or own[i]) and fs and fs:IsShown() and fs:GetText()
+        if readable(text) then
+          local plain = without(rowPlain(text), texts)
+          if judged(plain) then
+            englishIn(plain, function(into, key)
+              local seen = rec[into][key]
+              if seen then
+                seen.n = seen.n + 1
+              elseif at.kept < HOVER_ROWS_MAX then
+                at.kept = at.kept + 1
+                rec[into][key] = { n = 1, frame = name, row = i .. " " .. side,
+                  raw = text:gsub("|", "||"):gsub("%%c", " "):sub(1, 200) }
+              end
+            end)
+          end
+        end
+      end
+    end
+  end
+
+  local function leave(frame)
+    run(frame, "OnLeave")
+    pcall(GameTooltip.Hide, GameTooltip)
+  end
+
+  -- A fight started: nothing more is pointed at in this window, the tooltip up is put away, and the run says so
+  -- (in chat now, and in the result, which fails on it). → false, nothing more to do.
+  local function stop()
+    if at.pending then leave(at.pending) end
+    at.pending, at.queue = nil, {}
+    if not at.rec.stopped then
+      at.rec.stopped = "a fight started"
+      print("WFJ test: a fight started, so hovering stopped in the " .. tostring(at.window) .. " window")
+    end
+    return false
+  end
+
+  -- The frames of the open window (under `roots`) not found before, queued one kind at a time in turn, so a long
+  -- list of like rows does not take every hover the window has. → true when there is hovering to do.
+  function hoverBegin(window, roots)
+    local db = probeDb()
+    db.hover = db.hover or {}
+    if at.db ~= db.hover then -- a new run: nothing of the last one carries over
+      if at.pending then leave(at.pending) end
+      at.db, at.kept, at.rec, at.pending, at.queue = db.hover, 0, nil, nil, {}
+    end
+    local rec = db.hover[window]
+    if not rec then
+      rec = { made = 0, found = 0, skipped = 0, denied = 0, tips = 0, units = 0, loading = 0, english = {}, runs = {} }
+      db.hover[window] = rec
+    end
+    if at.rec ~= rec then
+      if at.pending then leave(at.pending) end
+      at.rec, at.window, at.queue, at.seen, at.pending = rec, window, {}, {}, nil
+    end
+    if rec.stopped then return false end
+    if InCombatLockdown() then return stop() end
+    -- past the cap the window's further pages are not searched (a search reads every frame of the client): the
+    -- result says the cap was reached, and `skipped` counts only what was found before it
+    if rec.made >= HOVER_MAX then
+      rec.capped = true
+      return false
+    end
+    local kinds, order = {}, {}
+    local frame = EnumerateFrames()
+    while frame do
+      pcall(function()
+        -- the cheap questions first: nearly every frame of the client is not on screen, or takes no mouse
+        if frame:IsForbidden() or not frame:IsVisible() or not frame:GetScript("OnEnter") or not mouseOn(frame) then
+          return
+        end
+        if not under(frame, roots) then return end
+        local name = tostring(frame:GetDebugName())
+        local key = unaddressed(name) .. "|" .. table.concat(ownTexts(frame), "|")
+        if at.seen[key] then return end
+        at.seen[key] = true
+        if denied(frame, name) then
+          rec.denied = rec.denied + 1
+          return
+        end
+        rec.found = rec.found + 1
+        local kind = unaddressed(name):gsub("%%d+", "#")
+        if not kinds[kind] then
+          kinds[kind] = {}
+          order[#order + 1] = kind
+        end
+        table.insert(kinds[kind], frame)
+      end)
+      frame = EnumerateFrames(frame)
+    end
+    for round = 1, math.huge do
+      local any = false
+      for _, kind in ipairs(order) do
+        if kinds[kind][round] then
+          at.queue[#at.queue + 1] = kinds[kind][round]
+          any = true
+        end
+      end
+      if not any then break end
+    end
+    rec.skipped = rec.found - rec.made
+    return at.queue[1] ~= nil and rec.made < HOVER_MAX
+  end
+
+  -- One step, once a frame: the tooltip raised on the last frame is read and put away, then (unless `settleOnly`)
+  -- the next frame is pointed at. → true while the window's hovering goes on.
+  function hoverStep(settleOnly)
+    local rec = at.rec
+    if not rec or (not at.pending and not at.queue[1]) then return false end
+    if InCombatLockdown() then return stop() end
+    local t0 = debugprofilestop()
+    if at.pending then
+      local frame = at.pending
+      at.pending = nil
+      pcall(read, rec, frame)
+      leave(frame)
+    end
+    while not settleOnly and at.queue[1] and rec.made < HOVER_MAX and debugprofilestop() - t0 < HOVER_MS do
+      local frame = table.remove(at.queue, 1)
+      local ok, still = pcall(function() return frame:IsVisible() and not frame:IsProtected() end)
+      if ok and still then
+        pcall(GameTooltip.Hide, GameTooltip) -- what is up then is this frame's tooltip
+        rec.made = rec.made + 1
+        run(frame, "OnEnter")
+        at.pending = frame
+        break
+      end
+    end
+    rec.skipped = rec.found - rec.made
+    if rec.made >= HOVER_MAX and at.queue[1] then
+      rec.capped = true
+      at.queue = {}
+    end
+    return at.pending ~= nil or (not settleOnly and at.queue[1] ~= nil)
+  end
+end
+
 local TAB_TICKS, MAX_PAGES = 15, 150
 
 local tested = {} -- the top-level frames of the windows the live sweep opened
@@ -1067,6 +1522,7 @@ local function WFJScanLiveSweep(done)
   end
   local db = probeDb()
   db.live = { ["(nothing open)"] = readScreen() }
+  db.hover = {}
   local idle, idleRoots = {}, rootsOnScreen()
   for _, tab in ipairs(tabsOnScreen({})) do idle[taken(tab)] = true end
   db.test = db.test or {}
@@ -1127,6 +1583,11 @@ local function WFJScanLiveSweep(done)
     return tab
   end
   opener:SetScript("OnUpdate", function()
+    -- a page read, its frames are pointed at before the next click; hoverStep itself stops for a fight
+    if state == "hover" then
+      if hoverStep() then return end
+      state, ticks = "tabs", TAB_TICKS
+    end
     if InCombatLockdown() then return end
     ticks = ticks + 1
     if state == "open" then
@@ -1148,16 +1609,11 @@ local function WFJScanLiveSweep(done)
         db.test.unopened = db.test.unopened or {}
         db.test.unopened[window] = "the toggle opened nothing"
       end
-      -- a character in no guild shows none of the guild's pages (the roster, the info tab with the message of the
-      -- day): the run did not look at them, and says so instead of passing them
-      if window == "guild" and type(IsInGuild) == "function" and not IsInGuild() then
-        db.test.unopened = db.test.unopened or {}
-        db.test.unopened["guild pages"] = "this character is in no guild"
-      end
       queue, seen, scrolls, queued, clicks = {}, {}, 0, {}, 0
       for tab in pairs(idle) do seen[tab] = true end
       moreTabs()
       state, ticks = "tabs", TAB_TICKS
+      if hoverBegin(window, roots) then state = "hover" end
       return
     end
     if state == "tabs" then
@@ -1172,6 +1628,10 @@ local function WFJScanLiveSweep(done)
         if putAway() then db.test.popups[name] = true end
         moreTabs() -- a page can carry buttons of its own
         queue.shown = nil
+        if hoverBegin(window, roots) then
+          state = "hover"
+          return
+        end
       end
       local map
       while queue[1] do -- the entries passed over cost nothing more: the next one is tried at once
@@ -1215,6 +1675,9 @@ local function WFJScanLiveSweep(done)
     local ok, err = pcall(LIVE[at][2])
     if ok then
       state = "open"
+    elseif tostring(err):sub(1, #NOT_AVAILABLE) == NOT_AVAILABLE then
+      -- not there for this player: named, not failed, and tested again on a player who has it
+      db.test.absent = (db.test.absent and db.test.absent .. ", " or "") .. window
     else
       db.live[window] = { refused = tostring(err) }
       db.test.unopened = db.test.unopened or {}
@@ -1425,8 +1888,11 @@ end)
 --              an icon escape, and whether the addon showed Japanese
 -- A spell whose text the client has not loaded yet is not read, and counted. The Collector is paused meanwhile.
 local TOOLTIP_MS = 8 -- per frame
+local STACK_KEPT = 1800 -- characters of an error's call stack the result keeps
 local TOOLTIP_SAY = 3000 -- spells between two progress lines
-local TOOLTIP_SETTLE = 3 -- seconds between asking for the last spell and reading the first tooltip
+local TOOLTIP_FLIGHT = 40 -- spells waited for at once
+local TOOLTIP_PATIENCE = 4 -- seconds one spell's text is waited for
+local TOOLTIP_PROOF = 400 -- spells given up on, with none read, after which the read stops
 local tooltipReader = CreateFrame("Frame")
 
 -- how many values the addon reads off a line (Core/Align.values): icons out, digit runs with their points and
@@ -1450,15 +1916,13 @@ local function shownRow(i)
   return text
 end
 
-local function readable(text)
-  return type(text) == "string" and text ~= "" and not (issecretvalue and issecretvalue(text))
-end
-
 -- Why the addon left a spell's line English although its Japanese ships, decided by the addon's own gate (the copy
 -- of Core/Align.lua at the top of this file, `ShippedAlign`), step by step in the order Align.check runs, on the
 -- Japanese the addon ships (`SHIPPED`). → reason, what was seen. The reasons:
---   hole    the client printed a gap of its own, for a spell the character does not know: "until cancelled" where
---           a duration goes, or an included text as "<digits>". Not a fault.
+--   hole    the client printed a gap of its own, for a spell the character does not know: an included text as
+--           "<digits>". Not a fault.
+--   words   the client wrote words where a duration goes ("until canceled") and the Japanese around that slot
+--           cannot take them
 --   values  the live line holds another count of numbers than the Japanese is numbered to
 --   icon    the Japanese holds an icon slot ($I<k>) and the live line has no icon escape to fill it
 --   name    the Japanese holds a Latin word the live line lacks
@@ -1479,11 +1943,37 @@ local function anyDuration(phrase)
   return words > 0 and phrase or nil
 end
 
+-- The duration reader the gate copy is given: a number with time units, and the words the client prints where
+-- it has no duration ("until canceled") with the Japanese the addon puts there.
+local function spellDuration()
+  local worded = type(SPELL_DURATION_UNTIL_CANCELLED) == "string" and SPELL_DURATION_UNTIL_CANCELLED or nil
+  return { render = anyDuration, words = worded and { { en = worded, ja = "解除されるまで" } } or {} }
+end
+
+-- Whether the live line holds the count of values the Japanese is numbered to, read the way the addon's gate
+-- reads it: a worded duration takes a value's place, a number glued to a word is read when the plain reading
+-- misses the count, and a granted ability's heading is held to the heading's own count. → true | false
+local function gateCount(id, english)
+  local A = ShippedAlign
+  local shipped = type(SHIPPED) == "table" and SHIPPED[id]
+  if type(A) ~= "table" or type(A.values) ~= "function" or not shipped then
+    return valueCount(english) == VALUES[id]
+  end
+  local ja, duration = shipped[1], spellDuration()
+  local plain = A.textures(english)
+  if type(A.grantedHead) == "function" then
+    local head, count = A.grantedHead(ja, english)
+    if head then return count == nil or #A.values(plain, duration) == count end
+  end
+  local words = ja:find("%%$D%%d") and duration or nil
+  return #A.values(plain, words) == VALUES[id] or #A.values(plain, words, true) == VALUES[id]
+end
+
 local function leftWhy(id, english)
   local shipped = type(SHIPPED) == "table" and SHIPPED[id]
   if not shipped then return "none", "no Japanese ships for it" end
   local ja = shipped[1]
-  if (english:lower():find("until cancel", 1, true) and ja:find("%%$D%%d")) or english:find("<%%d+>") then
+  if english:find("<%%d+>") then
     return "hole", "the client printed a gap for a spell this character does not know"
   end
   local A = ShippedAlign
@@ -1493,7 +1983,10 @@ local function leftWhy(id, english)
   if head == nil then return "other", "the line's list of names is laid out another way" end
   if tail then ja, scope = head, tail.scope end
   local plain, icons = A.textures(scope)
-  local values = A.values(plain)
+  -- the words the client prints where it has no duration count as that duration, as in the addon
+  local duration = spellDuration()
+  local worded = duration.words[1] and duration.words[1].en or nil
+  local values = A.values(plain, duration)
   if VALUES[id] and #values ~= VALUES[id] then
     return "values", VALUES[id] .. " numbers in the Japanese, " .. #values .. " on this client"
   end
@@ -1502,8 +1995,13 @@ local function leftWhy(id, english)
       return "icon", "icon slot " .. k .. ", and the live line has " .. #icons .. " icons"
     end
   end
-  local text = A.fill(ja, values, A.durations(plain, anyDuration), icons)
-  if not text then return "other", "a placeholder has no value in the live line" end
+  local text = A.fill(ja, values, A.durations(plain, duration), icons)
+  if not text then
+    if worded and plain:find(worded, 1, true) then
+      return "words", "the client wrote words where a duration goes, and the Japanese there cannot take them"
+    end
+    return "other", "a placeholder has no value in the live line"
+  end
   if shipped[2] == "." then return "other", "a trusted line, and its values fill" end
   local checked = A.textures(text)
   local names = A.checkNames(checked, plain)
@@ -1520,18 +2018,71 @@ end
 -- A spell's line after its tooltip was shown: the icon facts for a Japanese with an icon slot, and, when the addon
 -- left it English, why. The rune spells' Japanese asks for an icon, and whether the client's line carries one is
 -- not known: `icons` answers it.
-local function noteSpell(record, id, english, shown)
+local TRACES_KEPT, TRACE_CHARS, TRACE_PASSES = 60, 3000, 5
+-- The last few passes of the addon's own tooltip trace, oldest first: the pass that read this tooltip and what
+-- it rendered sit just before the calls it made afterwards.
+local function lastPasses()
+  local trace = type(WFJ_DB) == "table" and WFJ_DB.tooltipTrace
+  if type(trace) ~= "table" or #trace == 0 then return "the addon's trace holds no pass at all" end
+  local out = {}
+  for i = math.max(1, #trace - TRACE_PASSES + 1), #trace do out[#out + 1] = tostring(trace[i]) end
+  return table.concat(out, "\\n"):sub(-TRACE_CHARS)
+end
+-- The tooltip's own data, line by line: each line's type, the row it was drawn on, and for a nested block the
+-- id and kind of what it holds. Where a row's text comes from is in here and nowhere else.
+local function dataLines()
+  if type(GameTooltip.GetPrimaryTooltipInfo) ~= "function" then return "no tooltip data on this client" end
+  local fine, info = pcall(GameTooltip.GetPrimaryTooltipInfo, GameTooltip)
+  local data = fine and type(info) == "table" and info.tooltipData or nil
+  if type(data) ~= "table" or type(data.lines) ~= "table" then return "no tooltip data for this tooltip" end
+  local out = {}
+  for i, line in ipairs(data.lines) do
+    out[#out + 1] = i .. ":type " .. tostring(line.type) .. " row " .. tostring(line.lineIndex)
+      .. (line.tooltipID and (" id " .. tostring(line.tooltipID) .. " kind " .. tostring(line.tooltipType)) or "")
+  end
+  return table.concat(out, ", ")
+end
+local function noteSpell(record, id, english, shown, row)
   record.left = record.left or {}
   record.icons = record.icons or {}
   local shipped = type(SHIPPED) == "table" and SHIPPED[id]
   local japanese = hasJapanese(shown)
+    and not (type(shown) == "string" and shown:find("Not Translated]", 1, true) ~= nil)
   if shipped and shipped[1]:find("%%$I%%d") then
     record.icons[tostring(id)] = { line = iconIn(english), shown = iconIn(shown), japanese = japanese }
   end
-  if japanese then return end
+  if japanese then
+    record.shownTraced = record.shownTraced or 0
+    if shipped and shipped[1]:find("%%$N%%d") and record.shownTraced < 6 then
+      record.shownTraced = record.shownTraced + 1
+      record.shownTraces = record.shownTraces or {}
+      record.shownTraces[tostring(id)] = { text = english:sub(1, 200), trace = lastPasses() }
+    end
+    return
+  end
+  -- a description with no word in it ("..", "???", a placeholder the developers left) has nothing to translate
+  if not english:find("%%a%%a") then
+    record.noWords = (record.noWords or 0) + 1
+    return
+  end
   local ok, reason, why = pcall(leftWhy, id, english)
   if not ok then reason, why = "other", "the reason could not be read: " .. tostring(reason) end
   record.left[tostring(id)] = { reason = reason, why = why, text = english:sub(1, 300) }
+  -- what the addon itself did on this tooltip: the last pass of its own tooltip trace, kept for the first few
+  -- spells left English, so one run says why and nobody has to guess from outside
+  record.traced = record.traced or 0
+  if record.traced < TRACES_KEPT then
+    record.traced = record.traced + 1
+    local entry = record.left[tostring(id)]
+    entry.trace = lastPasses()
+    -- what the run itself saw: the row it read, how many rows the tooltip has, and every row's text now. A row
+    -- that is not the description's, or a text the addon wrote a moment later, shows here.
+    entry.row, entry.rows = row, GameTooltip:NumLines()
+    entry.saw = tostring(shown):sub(1, 120)
+    local now = {}
+    for i = 1, math.min(GameTooltip:NumLines(), 8) do now[i] = tostring(shownRow(i)):sub(1, 60) end
+    entry.now = table.concat(now, " || ")
+  end
 end
 
 -- An item's own line (its use, equip or hit line, or its flavour text in quotes) shown as the client wrote it: the
@@ -1553,11 +2104,77 @@ local function noteItem(record, id, lines)
   end
 end
 
-local function readSpell(record, id, describe)
+-- Every row of the tooltip on screen, left and right: the description is one row of several, and a name, a cost,
+-- a range or a requirement left in English was seen by no check. A row with no Japanese at all is kept whole
+-- under `english`; a Latin word inside a Japanese row (a name the name list has no line for) under `runs`. Each
+-- is kept once, with how often it was met and one tooltip that shows it; digits are folded so "Rank 3" and
+-- "Rank 4" are one row.
+local ROWS_MAX = 6000 -- distinct rows and words kept
+local function noteRows(record, what, id)
+  local rows = record.rows
+  if not rows then
+    rows = { english = {}, runs = {}, kept = 0, tooltips = 0 }
+    record.rows = rows
+  end
+  -- a tooltip still waiting for the item its spell makes is counted apart and its rows are not judged
+  if stillLoading() then
+    rows.loading = (rows.loading or 0) + 1
+    return
+  end
+  rows.tooltips = rows.tooltips + 1
+  local own = ownRows(tooltipData())
+  -- the first row of each kind is kept as the client wrote it, markup and all (a bar doubled so it reads as
+  -- text): what stands around a word says why it was left
+  local function keep(into, key, row, side, raw)
+    local seen = into[key]
+    if seen then
+      seen.n = seen.n + 1
+    elseif rows.kept < ROWS_MAX then
+      rows.kept = rows.kept + 1
+      into[key] = { n = 1, at = what .. " " .. tostring(id) .. " row " .. row .. " " .. side .. ": "
+        .. raw:gsub("|", "||"):gsub("%%c", " "):sub(1, 200) }
+      -- for the first few kinds, how the tooltip was built and what the addon did with it, so a row left
+      -- English is explained by one run
+      rows.traced = rows.traced or 0
+      if rows.traced < TRACES_KEPT then
+        rows.traced = rows.traced + 1
+        into[key].data = dataLines()
+        into[key].trace = lastPasses()
+      end
+    end
+  end
+  for i = 1, GameTooltip:NumLines() do
+    for _, side in ipairs({ "Left", "Right" }) do
+      local fs = _G["GameTooltipText" .. side .. i]
+      local text = (not own or own[i]) and fs and fs:IsShown() and fs:GetText()
+      if readable(text) then
+        local plain = rowPlain(text)
+        if judged(plain) then
+          -- a whole row with no Japanese under rows.english, a Latin word in a Japanese row under rows.runs
+          englishIn(plain, function(into, key) keep(rows[into], key, i, side, text) end)
+        end
+      end
+    end
+  end
+end
+
+-- why a spell was not read, with the first few ids of each kind, so a run that reads few says what stopped it
+local function unread(record, why, id, seen)
+  record.unread = record.unread + 1
+  local kind = record.why[why] or { n = 0, ids = {} }
+  record.why[why] = kind
+  kind.n = kind.n + 1
+  if #kind.ids < 5 then kind.ids[#kind.ids + 1] = id .. (seen and (": " .. tostring(seen):sub(1, 80)) or "") end
+end
+
+local function readSpell(record, id, describe, why)
   local english = describe(id)
   if not readable(english) then
-    record.unread = record.unread + 1
-    return
+    -- what the tooltip itself shows for a spell whose text the client did not give
+    GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+    GameTooltip:SetSpellByID(id)
+    return unread(record, why or "no text from the client", id, GameTooltip:NumLines() .. " lines, last: "
+      .. tostring(shownRow(GameTooltip:NumLines())))
   end
   local data = C_TooltipInfo.GetSpellByID(id)
   local row
@@ -1565,27 +2182,63 @@ local function readSpell(record, id, describe)
     if line.leftText == english then row = i end
   end
   if not row then
-    record.unread = record.unread + 1
-    return
+    local lines = type(data) == "table" and type(data.lines) == "table" and data.lines or {}
+    return unread(record, "its text is no line of the tooltip", id,
+      #lines .. " lines, last: " .. tostring(lines[#lines] and lines[#lines].leftText))
   end
   GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
   GameTooltip:SetSpellByID(id)
+  -- A line's place in the data is not its row on screen: the tooltip does not draw every line, and writes the row
+  -- it drew a line on into that line as `lineIndex` (blizzard_sharedxmlgame/tooltip/tooltipdatahandler.lua:
+  -- 319-335). A run that took the place in the list read row 4 of a three-row tooltip, saw nothing, and called
+  -- 8,000 Japanese tooltips English. So the row is the `lineIndex` of the line in the tooltip's own data, and
+  -- a row past the tooltip's last one is never judged.
+  local shownData
+  if type(GameTooltip.GetPrimaryTooltipInfo) == "function" then
+    local fine, info = pcall(GameTooltip.GetPrimaryTooltipInfo, GameTooltip)
+    shownData = fine and type(info) == "table" and info.tooltipData or nil
+  end
+  local own, typed
+  local kinds = type(Enum) == "table" and Enum.TooltipDataLineType or nil
+  for _, line in ipairs(type(shownData) == "table" and type(shownData.lines) == "table" and shownData.lines or {}) do
+    if type(line.lineIndex) == "number" then
+      if line.leftText == english then own = line.lineIndex end
+      if kinds and line.type == kinds.SpellDescription then typed = line.lineIndex end
+    end
+  end
+  row = own or typed or row
+  if row > GameTooltip:NumLines() then
+    return unread(record, "the row of its text is past the tooltip's last row", id,
+      "row " .. row .. " of " .. GameTooltip:NumLines())
+  end
   record.read = record.read + 1
   local live, shown = valueCount(english), shownRow(row)
   local said = VALUES[id] .. " numbers in the Japanese, " .. live .. " on this client"
-  if hasJapanese(shown) then
+  -- A line the addon leaves English wears its not-translated marker, whose own words are Japanese: such a row
+  -- is English, however its text reads.
+  local marked = type(shown) == "string" and shown:find("Not Translated]", 1, true) ~= nil
+  if hasJapanese(shown) and not marked then
     record.japanese = record.japanese + 1
-    if live ~= VALUES[id] then record.wrong[tostring(id)] = said end
-  elseif live ~= VALUES[id] then
-    record.changed[tostring(id)] = said
+    local fine, agrees = pcall(gateCount, id, english)
+    if not (fine and agrees) then
+      -- with both texts, so the report shows which numbers went where
+      record.wrong[tostring(id)] = said .. " | live: " .. english:gsub("%%s+", " "):sub(1, 220)
+        .. " | shown: " .. shown:gsub("%%s+", " "):sub(1, 220)
+    end
+  else
+    if marked then record.marked = (record.marked or 0) + 1 end
+    local fine, agrees = pcall(gateCount, id, english)
+    if VALUES[id] and not (fine and agrees) then record.changed[tostring(id)] = said end
   end
-  noteSpell(record, id, english, shown)
+  noteSpell(record, id, english, shown, row)
+  noteRows(record, "spell", id)
 end
 
 -- one item's tooltip, already shown, against its data
 local function readItem(record, id, data)
   if type(id) ~= "number" or type(data) ~= "table" or type(data.lines) ~= "table" then return end
   record.items = record.items + 1
+  noteRows(record, "item", id)
   local lines = data.lines
   for i = 2, #lines do
     local shown, english = shownRow(i), lines[i].leftText
@@ -1624,11 +2277,60 @@ local function readItems(record)
   end
 end
 
+-- The items listed for the run (`pipeline/ui_test_items.txt`: an item a player reported) are shown by id, loaded
+-- first, and every line of each is kept beside what the tooltip shows for it, so a run says what such an item's
+-- tooltip reads on this client whether or not the character owns it. A list to read, never a failure.
+local function readReported(record, done)
+  local ids = type(WFJScanReportedItems) == "table" and WFJScanReportedItems or {}
+  record.reported = {}
+  if #ids == 0 or type(C_Item) ~= "table" or type(C_Item.RequestLoadItemDataByID) ~= "function"
+      or type(C_TooltipInfo.GetItemByID) ~= "function" then
+    return done()
+  end
+  for _, id in ipairs(ids) do pcall(C_Item.RequestLoadItemDataByID, id) end
+  local waited = 0
+  tooltipReader:SetScript("OnUpdate", function(_, elapsed)
+    waited = waited + (elapsed or 0)
+    local ready = true
+    for _, id in ipairs(ids) do
+      local ok, cached = pcall(C_Item.IsItemDataCachedByID, id)
+      if not (ok and cached) then ready = false end
+    end
+    if not ready and waited < TOOLTIP_PATIENCE then return end
+    tooltipReader:SetScript("OnUpdate", nil)
+    for _, id in ipairs(ids) do
+      local lines = {}
+      local got, data = pcall(C_TooltipInfo.GetItemByID, id)
+      GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+      local shownOk = pcall(GameTooltip.SetItemByID, GameTooltip, id)
+      for i, line in ipairs(got and type(data) == "table" and type(data.lines) == "table" and data.lines or {}) do
+        local english, shown = line.leftText, shownRow(i)
+        if readable(english) then
+          local said = shown == nil and "(not shown)" or shown == english and "(English)"
+            or shown:gsub("%%s+", " "):sub(1, 160)
+          lines[#lines + 1] = english:gsub("%%s+", " "):sub(1, 160) .. " => " .. said
+        end
+      end
+      if #lines == 0 then
+        lines[1] = shownOk and "no lines: the client has no data for this item" or "the client refused this item"
+      end
+      record.reported[tostring(id)] = lines
+    end
+    GameTooltip:Hide()
+    done()
+  end)
+end
+
 local function WFJScanTooltipRead(done)
   done = collectorPaused(done)
   local db = probeDb()
-  local record = { read = 0, unread = 0, japanese = 0, items = 0, wrong = {}, changed = {}, folded = {} }
+  local record = { read = 0, unread = 0, japanese = 0, items = 0, wrong = {}, changed = {}, folded = {},
+    why = {}, load = { asked = 0, loaded = 0, failed = 0, texts = 0 } }
   db.tooltips = record
+  -- the addon's own tooltip trace is switched on for the read (its slash command is the one way in from another
+  -- addon), and off again when the spells are done: noteSpell keeps what it recorded
+  local slash = type(SlashCmdList) == "table" and SlashCmdList["WFJ"]
+  if type(slash) == "function" then pcall(slash, "debug tooltip on") end
   local describe = type(C_Spell) == "table" and C_Spell.GetSpellDescription or GetSpellDescription
   local ids = {}
   for id in pairs(VALUES) do ids[#ids + 1] = id end
@@ -1639,46 +2341,93 @@ local function WFJScanTooltipRead(done)
   end
   local ok, err = pcall(readItems, record)
   if not ok then record.refused = "items: " .. tostring(err) end
-  -- The client holds a spell's text only once it has loaded that spell: asked cold, all but the character's own
-  -- spells answer with nothing. So every spell is asked for first, the answers are given a moment to arrive, and
-  -- only then are the tooltips read.
+  -- The client holds a spell's text only for a spell it has loaded, and only once that text was asked for: the
+  -- first ask answers with nothing, and the client says SPELL_TEXT_UPDATE for that spell when the text is there.
+  -- It does not keep the text of thousands of spells asked at once. So a few spells are in hand at a time, and
+  -- each is read at the moment the client says it has it.
   local load = type(C_Spell) == "table" and C_Spell.RequestLoadSpellData
-  local cached = type(C_Spell) == "table" and C_Spell.IsSpellDataCached
-  local asking, waited = type(load) == "function" and 0 or #ids, 0
+  local waiting, order, head, flight = {}, {}, 1, 0
   local at, said = 0, 0
-  print("WFJ test: loading " .. #ids .. " spells, then reading their tooltips")
-  tooltipReader:SetScript("OnUpdate", function(_, elapsed)
-    local t0 = debugprofilestop()
-    if asking < #ids then
-      while asking < #ids and debugprofilestop() - t0 < TOOLTIP_MS do
-        asking = asking + 1
-        if not (type(cached) == "function" and cached(ids[asking])) then pcall(load, ids[asking]) end
-      end
-      if asking - said >= TOOLTIP_SAY then
-        said = asking
-        print("WFJ test: spells loading " .. asking .. "/" .. #ids)
-      end
-      if asking >= #ids then said = 0 end
-      return
+  -- read the spell if the client gives its text now; `how` counts when it did
+  local function settle(id, how)
+    local fine, text = pcall(describe, id)
+    if not (fine and readable(text)) then return false end
+    if waiting[id] then
+      waiting[id] = nil
+      flight = flight - 1
     end
-    if waited < TOOLTIP_SETTLE then
-      waited = waited + (elapsed or 0)
-      return
+    record.load[how] = (record.load[how] or 0) + 1
+    local read, why = pcall(readSpell, record, id, describe)
+    if not read then record.refused = "spell " .. id .. ": " .. tostring(why) end
+    return true
+  end
+  local function giveUp(id, why)
+    waiting[id] = nil
+    flight = flight - 1
+    local read, said = pcall(readSpell, record, id, describe, why)
+    if not read then record.refused = "spell " .. id .. ": " .. tostring(said) end
+  end
+  tooltipReader:RegisterEvent("SPELL_DATA_LOAD_RESULT")
+  tooltipReader:RegisterEvent("SPELL_TEXT_UPDATE")
+  tooltipReader:SetScript("OnEvent", function(_, event, id, success)
+    if type(id) ~= "number" then return end
+    local held = waiting[id]
+    if event == "SPELL_TEXT_UPDATE" then
+      record.load.texts = record.load.texts + 1
+      if held then
+        held.text = true
+        settle(id, "onText")
+      end
+    elseif success then
+      record.load.loaded = record.load.loaded + 1
+      if held then
+        held.loaded = true
+        settle(id, "onLoad")
+      end
+    else
+      record.load.failed = record.load.failed + 1
+      if held then giveUp(id, "the client could not load the spell") end
     end
-    while at < #ids and debugprofilestop() - t0 < TOOLTIP_MS do
+  end)
+  print("WFJ test: reading " .. #ids .. " spell tooltips")
+  tooltipReader:SetScript("OnUpdate", function()
+    local t0, now = debugprofilestop(), GetTime()
+    while head <= #order do
+      local id = order[head]
+      local held = waiting[id]
+      if held and now - held.at < TOOLTIP_PATIENCE then break end
+      head = head + 1
+      if held and not settle(id, "late") then
+        giveUp(id, "no text " .. TOOLTIP_PATIENCE .. "s after it was asked for (loaded: "
+          .. tostring(held.loaded or false) .. ", text said ready: " .. tostring(held.text or false) .. ")")
+      end
+    end
+    local stopped = record.read == 0 and record.unread >= TOOLTIP_PROOF
+    while not stopped and at < #ids and flight < TOOLTIP_FLIGHT and debugprofilestop() - t0 < TOOLTIP_MS do
       at = at + 1
-      local fine, why = pcall(readSpell, record, ids[at], describe)
-      if not fine then record.refused = "spell " .. ids[at] .. ": " .. tostring(why) end
+      local id = ids[at]
+      if not settle(id, "atOnce") then
+        waiting[id] = { at = now }
+        order[#order + 1] = id
+        flight = flight + 1
+        record.load.asked = record.load.asked + 1
+        if type(load) == "function" then pcall(load, id) end
+      end
     end
     if at - said >= TOOLTIP_SAY then
       said = at
-      print("WFJ test: spell tooltips " .. at .. "/" .. #ids)
+      print("WFJ test: spell tooltips " .. at .. "/" .. #ids .. " (" .. record.read .. " read)")
     end
-    if at < #ids then return end
+    if not stopped and (at < #ids or flight > 0) then return end
+    if stopped then
+      record.refused = "stopped: none of the first " .. record.unread .. " spells gave its text"
+    end
     tooltipReader:SetScript("OnUpdate", nil)
+    tooltipReader:UnregisterAllEvents()
     GameTooltip:Hide()
-    print("WFJ test: spell tooltips done")
-    done()
+    print("WFJ test: spell tooltips done, " .. record.read .. " read")
+    if type(slash) == "function" then pcall(slash, "debug tooltip off") end
+    readReported(record, done)
   end)
 end
 
@@ -1814,10 +2563,6 @@ end
 -- The names setting is read, never written: the run shows what this player sees. With names off it reads nothing
 -- and the result says so.
 local NAMES_MAX = 600 -- rows kept: every bag full is under 200 items
-local function namesOn()
-  local settings = type(WFJ_DB) == "table" and WFJ_DB.settings
-  return type(settings) == "table" and settings["names.japanese"] == true
-end
 
 local function WFJScanNamesRead(done)
   local db = probeDb()
@@ -1855,7 +2600,10 @@ local function WFJScanNamesRead(done)
         end
       end
     end
+    -- once the rows are full every further tooltip shown is thrown away: with the client's spells loaded that
+    -- was thousands of them in one go, and the client stopped the script for running too long
     for id in pairs(VALUES) do
+      if #record.rows >= NAMES_MAX then break end
       local data = C_TooltipInfo.GetSpellByID(id)
       if type(data) == "table" then
         GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
@@ -1887,15 +2635,21 @@ end
 -- is kept from the first read on, and a reload while the window is open ends the run as closing it does: the
 -- player has done the step either way, and the read must not be lost with it.
 local characterReader = CreateFrame("Frame")
-local function WFJScanCharacterRead(done)
+-- the top frame of each window the player opens: the hover read points only at frames under it
+local HAND_FRAMES = { guild = "CommunitiesFrame", character = "CharacterFrame" }
+-- One window the player opens: `name` as the result files it, `shown` whether it is open, `ASK` what to do.
+local function playerRead(name, shown, ASK, done)
   local db = probeDb()
-  local record = { english = {}, japanese = 0, boxes = {} }
+  local record = { english = {}, japanese = 0, boxes = {}, latin = namesOn() and {} or nil }
   local waited, sinceRead, opened = 0, CHARACTER_READ, false
+  local roots = {} -- found when the window opens: the guild window's addon may load only then
   -- said in chat and in the middle of the screen, and again every few seconds until the window opens: one chat
   -- line is easy to miss, and a reload before this step ends leaves the run unfinished
-  local ASK = "WFJ test: NOT DONE YET. Open the character window (press C), click its tabs, then close it"
   local sinceAsk = CHARACTER_ASK
   characterReader:SetScript("OnUpdate", function(_, elapsed)
+    -- the tooltip the hover read raised on the last frame is read and put away first: the screen read must not
+    -- take it for the window's own text, and a window closed meanwhile leaves none up
+    hoverStep(true)
     if not opened then
       sinceAsk = sinceAsk + elapsed
       if sinceAsk >= CHARACTER_ASK then
@@ -1904,19 +2658,28 @@ local function WFJScanCharacterRead(done)
         pcall(function() UIErrorsFrame:AddMessage(ASK, 1, 0.82, 0) end)
       end
     end
-    if characterShown() then
+    if shown() then
       if not opened then
         opened = true
-        db.live["character"] = record
-        print("WFJ test: reading the character window. Click its tabs, then close it")
+        db.live[name] = record
+        local top = _G[HAND_FRAMES[name]]
+        if type(top) == "table" then roots[top] = true end
+        print("WFJ test: reading the " .. name .. " window. Click its tabs, then close it")
       end
       sinceRead = sinceRead + elapsed
-      if sinceRead < CHARACTER_READ then return end
-      sinceRead = 0
-      local screen = readScreen()
-      for name, text in pairs(screen.english) do record.english[name] = text end
-      for name, font in pairs(screen.boxes) do record.boxes[name] = font end
-      record.japanese = math.max(record.japanese, screen.japanese)
+      if sinceRead >= CHARACTER_READ then
+        sinceRead = 0
+        local screen = readScreen()
+        for name, text in pairs(screen.english) do record.english[name] = text end
+        for name, font in pairs(screen.boxes) do record.boxes[name] = font end
+        if record.latin then
+          for name, text in pairs(screen.latin or {}) do record.latin[name] = text end
+        end
+        record.japanese = math.max(record.japanese, screen.japanese)
+        -- each page the player shows brings frames of its own to point at
+        hoverBegin(name, roots)
+      end
+      hoverStep()
       return
     end
     waited = waited + elapsed
@@ -1925,7 +2688,7 @@ local function WFJScanCharacterRead(done)
     characterReader:UnregisterEvent("PLAYER_LOGOUT")
     if not opened then
       db.test.unopened = db.test.unopened or {}
-      db.test.unopened["character"] = "not opened: press C when the test asks (an addon cannot open it without an error)"
+      db.test.unopened[name] = "not opened when the test asked (an addon cannot open it without an error)"
     end
     done()
   end)
@@ -1948,15 +2711,21 @@ local function sayCounts(db)
   local test = type(db.test) == "table" and db.test or {}
   local tips = type(db.tooltips) == "table" and db.tooltips or {}
   local novoice = type(db.novoice) == "table" and db.novoice or {}
+  local hovered, hoverRows = 0, 0
+  for _, rec in pairs(type(db.hover) == "table" and db.hover or {}) do
+    hovered = hovered + (tonumber(rec.made) or 0)
+    hoverRows = hoverRows + keysIn(rec.english) + keysIn(rec.runs)
+  end
   print("WFJ test: faults: " .. (keysIn(test.errors) + keysIn(test.blocked) + keysIn(test.warnings))
     .. " errors or refused actions, " .. keysIn(tips.wrong) .. " tooltips with numbers in the wrong places, "
-    .. keysIn(tips.folded) .. " items written over, " .. keysIn(novoice.wrong) .. " wrong no-voice messages")
+    .. keysIn(tips.folded) .. " items written over, " .. keysIn(novoice.wrong) .. " wrong no-voice messages, "
+    .. hoverRows .. " English rows or words on " .. hovered .. " hovered frames' tooltips, before names and the baseline")
   local by, holes = {}, 0
   for _, row in pairs(type(tips.left) == "table" and tips.left or {}) do
     if row.reason == "hole" then holes = holes + 1 else by[row.reason] = (by[row.reason] or 0) + 1 end
   end
   local parts = {}
-  for _, reason in ipairs({ "icon", "values", "name", "number", "none", "other" }) do
+  for _, reason in ipairs({ "icon", "values", "words", "name", "number", "none", "other" }) do
     if by[reason] then parts[#parts + 1] = reason .. " " .. by[reason] end
   end
   local windows = 0
@@ -1968,8 +2737,34 @@ local function sayCounts(db)
     .. windows .. "; make window-test lists them")
 end
 
--- The whole window test (`/wfjtest`): the load walk, the live sweep, the closed-window read, the tooltip read, the
--- no-voice read, the names read, the character window (opened by the player), then one done line. `probe.test` holds when it ran and on which build, so a result read
+local function WFJScanCharacterRead(done)
+  playerRead("character", characterShown,
+    "WFJ test: NOT DONE YET. Open the character window (press C), click its tabs, then close it", done)
+end
+
+-- The guild window is the player's to open as well. Opened and paged by the test, every click on one of its
+-- tabs redraws the list of communities from addon code (CommunitiesTabs.lua:3-6 → SetDisplayMode →
+-- CommunitiesList.lua:523), and the client refuses that list's icon call to an addon each time
+-- (C_Club.SetAvatarTexture: an ADDON_ACTION_BLOCKED per row). Read while the player pages it, nothing is
+-- refused. A character in no guild shows none of the guild's pages (the roster, the info tab with the message
+-- of the day): the run did not look at them, and says so instead of passing them.
+local function guildShown()
+  return type(CommunitiesFrame) == "table" and CommunitiesFrame:IsShown()
+end
+local function WFJScanGuildRead(done)
+  if type(IsInGuild) == "function" and not IsInGuild() then
+    local db = probeDb()
+    db.test.unopened = db.test.unopened or {}
+    db.test.unopened["guild pages"] = "this character is in no guild"
+    return done()
+  end
+  playerRead("guild", guildShown,
+    "WFJ test: NOT DONE YET. Open the guild window (press J), click its tabs, then close it", done)
+end
+
+-- The whole window test (`/wfjtest`): the load walk, the live sweep (with the hover read of each window), the
+-- closed-window read, the tooltip read, the no-voice read, the names read, then one done line. `/wfjtest hand` also reads the guild and character
+-- windows, which the player opens when it asks. `probe.test` holds when it ran and on which build, so a result read
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
@@ -1980,6 +2775,10 @@ SlashCmdList.WFJTEST = function(how)
     print("WFJ test: close the character window first, then run it again")
     return
   end
+  if type(CommunitiesFrame) == "table" and CommunitiesFrame:IsShown() then -- nor the guild window
+    print("WFJ test: close the guild window first, then run it again")
+    return
+  end
   if testRunning then
     print("WFJ test: already running")
     return
@@ -1988,13 +2787,34 @@ SlashCmdList.WFJTEST = function(how)
   pagesOnly = how == "tabs"
   local db = probeDb()
   db.test = { started = date("%%Y-%%m-%%d %%H:%%M:%%S"), build = tostring((select(2, GetBuildInfo()))),
-    errors = {}, blocked = {}, warnings = {}, clicks = pagesOnly and "tabs" or "all" }
+    errors = {}, blocked = {}, warnings = {}, clicks = pagesOnly and "tabs" or "all",
+    code = WFJScanAddonCode }
   -- every Lua error, every warning and every action the client refused an addon while the test runs, each with
   -- its count
   local shown = geterrorhandler()
+  -- An error is kept with its whole call stack, the error catcher's own frames left out: the first frame is
+  -- where it was raised, and the cause (a click of the test's, a hook of the addon's) is further down.
+  local function stackOf(stack)
+    local frames = {}
+    for line in tostring(stack or ""):gmatch("[^\\n]+") do
+      if not line:find("BugGrabber", 1, true) and line:find("%%S") then frames[#frames + 1] = line end
+    end
+    return table.concat(frames, " < "):sub(1, STACK_KEPT)
+  end
+  -- One stack is kept per message, and cut short. So whether ANY raise of a message ran through this addon or
+  -- the test addon is noted from the whole stack, before it is cut: such an error is never the game's own.
+  db.test.ours = {}
+  local function oursIn(stack)
+    stack = type(stack) == "string" and stack or ""
+    return stack:find("AddOns/WoWForeverJapanese", 1, true) ~= nil or stack:find("AddOns/WFJScan", 1, true) ~= nil
+  end
   local function grab(message)
     local key = "[" .. tostring(db.test.part) .. "] " .. tostring(message):sub(1, 400)
     db.test.errors[key] = (db.test.errors[key] or 0) + 1
+    db.test.stacks = db.test.stacks or {}
+    local ok, stack = pcall(debugstack, 2)
+    if ok and oursIn(stack) then db.test.ours[key] = true end
+    if not db.test.stacks[key] then db.test.stacks[key] = stackOf(ok and stack or "") end
     return shown(message)
   end
   seterrorhandler(grab)
@@ -2019,8 +2839,10 @@ SlashCmdList.WFJTEST = function(how)
     for _, e in ipairs(list) do
       local added = type(e) == "table" and (tonumber(e.counter) or 1) - (before[tostring(e.message)] or 0) or 0
       if added > 0 then
-        local where = tostring(e.stack or ""):match("[^\\n]+") or ""
-        local key = "[grabbed] " .. tostring(e.message):sub(1, 300) .. " @ " .. where:sub(1, 140)
+        local key = "[grabbed] " .. tostring(e.message):sub(1, 300)
+        db.test.stacks = db.test.stacks or {}
+        if oursIn(e.stack) then db.test.ours[key] = true end
+        db.test.stacks[key] = stackOf(e.stack)
         db.test.errors[key] = (db.test.errors[key] or 0) + added
       end
     end
@@ -2072,8 +2894,7 @@ SlashCmdList.WFJTEST = function(how)
             db.test.part = "names"
             -- in a fight the client hides a tooltip's rows and a unit's name from addons
             outOfCombat(function() WFJScanNamesRead(function()
-            db.test.part = "character"
-            WFJScanCharacterRead(function()
+            local function finish(said)
               db.test.part = "done"
               seterrorhandler(shown)
               watcher:UnregisterAllEvents()
@@ -2081,7 +2902,31 @@ SlashCmdList.WFJTEST = function(how)
               testRunning = false
               db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
               pcall(sayCounts, db)
-              print("WFJ test done: /reload to save, then the result can be read")
+              print("WFJ test done: /reload to save, then the result can be read" .. said)
+            end
+            -- The guild and character windows are the player's to open, so a plain run does not wait for them:
+            -- what the last `/wfjtest hand` read of them stands for this run while the build is the same.
+            if how ~= "hand" then
+              db.test.hand = false
+              return finish(". Guild and character windows not read in this run (/wfjtest hand reads them)")
+            end
+            db.test.hand = true
+            db.test.part = "guild"
+            WFJScanGuildRead(function()
+              db.test.part = "character"
+              WFJScanCharacterRead(function()
+                local unopened = {}
+                for window, why in pairs(db.test.unopened or {}) do
+                  if window == "guild" or window == "character" or window == "guild pages" then
+                    unopened[window] = why
+                  end
+                end
+                local hover = type(db.hover) == "table" and db.hover or {}
+                db.hand = { build = db.test.build, code = db.test.code, at = date("%%Y-%%m-%%d %%H:%%M:%%S"),
+                  guild = db.live.guild, character = db.live.character, unopened = unopened,
+                  hover = { guild = hover.guild, character = hover.character } }
+                finish("")
+              end)
             end)
             end) end)
           end) end)
@@ -2208,9 +3053,11 @@ def gate_lua(align: str, japanese: Mapping[int, tuple[str, str]]) -> str:
     return GATE_LUA_HEAD + align + GATE_LUA_TAIL % "\n".join(parts)
 
 
-def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[str] = (),
+def probe_lua(  # noqa: PLR0913 - the manifest, how it runs, and one parameter per list the window test carries
+              manifest: dict[str, Any], walk: bool = False, english: Iterable[str] = (),
               at_login: bool = True, keys: Iterable[str] = (), values: Mapping[int, int] | None = None,
-              japanese: Mapping[int, tuple[str, str]] | None = None, gate: str | None = None) -> str:
+              japanese: Mapping[int, tuple[str, str]] | None = None, gate: str | None = None,
+              items: Iterable[int] = ()) -> str:
     """The probe as one Lua file for the scan dev addon: every manifest name with its surface, checked at
     login, saved under `WFJScanDB.probe` for `report`. With `walk` it also loads every load-on-demand addon a
     surface waits for and records what the client restricts (`read_walk` reads both back); with `at_login`
@@ -2229,6 +3076,8 @@ def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[st
         # the English lines that have Japanese: a text region still holding one was reached by no surface
         lines = sorted({t for t in english if "%" not in t and re.search(r"[A-Za-z]{2}", t)})
         if lines:
+            lua += f'WFJScanAddonCode = "{manifest.get("code", "")}"\n'
+            lua += "WFJScanReportedItems = { " + ", ".join(str(i) for i in sorted(set(items))) + " }\n"
             if gate is not None:
                 lua += gate_lua(gate, japanese or {})
             lua += TEXT_LUA % ("\n".join(f"  [{_lua_string(t)}] = true," for t in lines),
@@ -2511,11 +3360,53 @@ ALWAYS = "always on screen"
 # a window the test asked for and did not get: a line of the result like any other, so the baseline can allow it
 # with its reason (a window the test character is too low for)
 NOT_OPENED = "(did not open)"
+HAND_WINDOWS = ("guild", "character")
+HAND_OWED = "(not read on this build and addon code: /wfjtest hand, then J and C when it asks)"
 # Japanese on screen in a face with no Japanese letters (drawn as empty boxes): a line of the result too, named by
 # its widget, so the baseline can allow one with its reason
 BOXES = "(Japanese in a font without it)"
 # the face the sweep takes as able to draw Japanese: the addon's bundled one, by file name (its Font.PATH)
 JAPANESE_FACE = "ipagui"
+
+
+def _standing_hand(probe: Any) -> tuple[bool, Any]:
+    """For a plain run, which does not wait for the two windows the player opens: (whether it is one, the last
+    `/wfjtest hand` read when that read stands for it, else None). The read stands while it is of this client
+    build and this addon code: a change of either may have changed the two windows."""
+    test = probe.get("test")
+    if test is None or test.get("hand") is not False:
+        return False, None
+    hand = probe.get("hand")
+    current = (hand is not None and test.get("build") is not None
+               and str(hand.get("build")) == str(test.get("build"))
+               and str(hand.get("code") or "") == str(test.get("code") or ""))
+    return True, hand if current else None
+
+
+def _hand_read(probe: Any, info: dict[str, str], always: set[Any], idle_boxes: set[Any]) -> set[tuple[str, str]]:
+    """The lines of the two windows the player opens, for a plain run, which does not wait for them. What the
+    last `/wfjtest hand` read of them stands for it while the build is the same (`info["hand"]` says which);
+    with no such read on this build, each window is a line of the result."""
+    plain, hand = _standing_hand(probe)
+    if not plain:
+        return set()
+    info["hand"] = f"read by hand on {hand.get('at')}" if hand is not None else "not read on this build and addon code"
+    if hand is None:
+        return {(window, HAND_OWED) for window in HAND_WINDOWS}
+    found: set[tuple[str, str]] = set()
+    for window in HAND_WINDOWS:
+        record = hand.get(window)
+        english = record.get("english") if record is not None else None
+        boxes = record.get("boxes") if record is not None else None
+        if english is not None:
+            found |= {(window, str(en)) for name, en in english.named().items() if name not in always}
+        if boxes is not None:
+            found |= {(window, f"{BOXES} {_POOLED.sub('*', str(name))}") for name in boxes.named()
+                      if name not in idle_boxes}
+    kept = hand.get("unopened")
+    if kept is not None:
+        found |= {(str(window), NOT_OPENED) for window in kept.named()}
+    return found
 
 
 def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
@@ -2530,7 +3421,7 @@ def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
     if probe is None:
         return {}, set()
     test = probe.get("test").named() if probe.get("test") is not None else {}
-    info = {str(k): str(v) for k, v in test.items() if isinstance(v, (str, int, float))}
+    info = {str(k): str(v) for k, v in test.items() if isinstance(v, (str, int, float)) and not isinstance(v, bool)}
     found: set[tuple[str, str]] = set()
     live = probe.get("live").named() if probe.get("live") is not None else {}
     idle = live.get("(nothing open)")
@@ -2551,10 +3442,14 @@ def read_window_test(text: str) -> tuple[dict[str, str], set[tuple[str, str]]]:
     unopened = probe.get("test").get("unopened") if probe.get("test") is not None else None
     if unopened is not None:
         found |= {(str(window), NOT_OPENED) for window in unopened.named()}
+    found |= _hand_read(probe, info, set(always), set(idle_boxes))
     # a run that stopped while waiting for the character window read every other window: its result is read, and
     # the window nobody read is a line of it
-    if not info.get("finished") and info.get("part") == "character" and "character" not in live:
+    # so does a run that stopped while waiting for the guild window, which comes just before it
+    if not info.get("finished") and info.get("part") in ("guild", "character") and "character" not in live:
         found.add(("character", NOT_OPENED))
+    if not info.get("finished") and info.get("part") == "guild":
+        found.add(("guild", NOT_OPENED))
     closed = probe.get("closed").named() if probe.get("closed") is not None else {}
     for window, lines in closed.items():
         found |= {(f"closed {_POOLED.sub('*', str(window))}", str(en)) for en in lines.named().values()}
@@ -2597,11 +3492,21 @@ def read_tooltips(text: str) -> dict[str, Any] | None:
     record = probe.get("tooltips") if probe is not None else None
     if record is None:
         return None
-    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("read", "japanese", "unread", "items")}
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("read", "japanese", "unread", "items", "marked")}
     out["refused"] = str(record.get("refused") or "")
+    load, why = record.get("load"), record.get("why")
+    out["load"] = {str(k): v for k, v in (load.named() if load is not None else {}).items()}
+    out["why"] = {
+        str(k): (int(v.get("n") or 0), [str(x) for _, x in v.get("ids").items] if v.get("ids") is not None else [])
+        for k, v in (why.named() if why is not None else {}).items()
+    }
     for kind in ("wrong", "changed", "folded"):
         table = record.get(kind)
         out[kind] = sorted((str(k), str(v)) for k, v in (table.named() if table is not None else {}).items())
+    reported = record.get("reported")
+    out["reported"] = {
+        str(k): [str(x) for _, x in v.items] for k, v in (reported.named() if reported is not None else {}).items()
+    }
     return out
 
 
@@ -2616,6 +3521,12 @@ def tooltip_problems(tooltips: dict[str, Any] | None) -> list[str]:
         out.append(f"tooltips not read: {tooltips['refused']}")
     elif not tooltips["read"]:
         out.append("tooltips not read: no spell tooltip could be read")
+    elif tooltips["read"] < tooltips["unread"]:
+        # the client gave no text for most of the spells: the run looked at too few to pass
+        why = sorted(tooltips.get("why", {}).items(), key=lambda kv: (-kv[1][0], kv[0]))[:4]
+        reasons = "; ".join(f"{n} {reason}, e.g. {ids[:4]}" for reason, (n, ids) in why)
+        out.append(f"tooltips not read: only {tooltips['read']} of {tooltips['read'] + tooltips['unread']} spells "
+                   "could be read" + (f" ({reasons})" if reasons else ""))
     return out
 
 
@@ -2687,9 +3598,17 @@ def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -
                 "again)"]
     if not record["rows"]:
         return ["names not read: nothing with a name could be read"]
+    def joined(english: str) -> str | None:
+        """A profession's spell heads its tooltip with the skill and a name ("Enchanting: Enchant Cloak - Dodge"):
+        two names around one separator, each spelled by its own line."""
+        head, sep, rest = english.partition(": ")
+        if not sep or head not in japanese or rest not in japanese:
+            return None
+        return f"{japanese[head]}: {japanese[rest]}"
+
     out = []
     for kind, english, shown in record["rows"]:
-        want = japanese.get(english)
+        want = japanese.get(english) or joined(english)
         if kind == "player":
             if shown != english:
                 out.append(f"player's name changed: {english} shows {shown}")
@@ -2701,6 +3620,91 @@ def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -
         elif shown != want:
             out.append(f"name not as the name list spells it: {kind} {english} shows {shown}, the list has {want}")
     return sorted(out)
+
+
+# A game name the name list has Japanese for, still in English in a window, is a line of the result too:
+# (window, `NAME_LEFT <the name>`), so the baseline can allow one with its reason
+NAME_LEFT = "(name left English)"
+TOOLTIP_SHOWN = "tooltip under the mouse"
+OTHER_SHOWN = 200  # texts of the other English on screen the report prints
+_LATIN_RUN = re.compile(r"[A-Za-z][A-Za-z'’\-]*(?: [A-Za-z][A-Za-z'’\-]*)*")
+_JAPANESE = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
+# Widgets whose name the addon must leave as the client writes it (docs/architecture/client-limits.md): text
+# written there taints a protected action. Their names are counted, never failed. Chat holds what players typed.
+PROTECTED_NAME_WIDGETS = (
+    (re.compile(r"^PlayerSpellsFrame\.SpellBookFrame|^SpellBookFrame"), "the spellbook"),
+    (re.compile(r"NavBar|^WorldMapFrameText$"), "the map's top bar"),
+)
+_PLAYER_TEXT_WIDGETS = re.compile(r"^ChatFrame\d|EditBox|MessageFrame|MOTD|GuildDetailsFrameNews")
+
+
+def read_latin(text: str) -> dict[str, dict[str, str]]:
+    """The Latin-letter text each live window read kept while Japanese names were on: window → {widget: text}.
+    Empty when names were off or the run's test addon keeps none. A plain run does not read the two windows the
+    player opens: what the last `/wfjtest hand` kept of them stands for it, as their lines do (`_hand_read`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    live = probe.get("live").named() if probe is not None and probe.get("live") is not None else {}
+    out: dict[str, dict[str, str]] = {}
+    for window, record in live.items():
+        latin = record.get("latin") if hasattr(record, "get") else None
+        if latin is not None:
+            where = ALWAYS if window == "(nothing open)" else _POOLED.sub("*", str(window))
+            out[where] = {str(k): str(v) for k, v in latin.named().items()}
+    hand = _standing_hand(probe)[1] if probe is not None else None
+    # only for a run that kept Latin text itself: with names off, an English name is no fault
+    for window in HAND_WINDOWS if out and hand is not None else ():
+        record = hand.get(window)
+        latin = record.get("latin") if record is not None else None
+        if latin is not None and window not in out:
+            out[window] = {str(k): str(v) for k, v in latin.named().items()}
+    return out
+
+
+def latin_names(latin: Mapping[str, Mapping[str, str]], japanese: Mapping[str, str],
+                keep: frozenset[str] | set[str]) -> tuple[set[tuple[str, str]], dict[str, int], list[tuple[str, str]]]:
+    """The Latin text of a run held to the name list. → (the faults as result lines: a text that is a name the
+    list has Japanese for, or Japanese text with such a name inside it; how many names stand in widgets the
+    client protects, by what the widget is; the other English text on screen as (window, text), for the
+    report). A text on screen with no window open is filed once, under that."""
+    from wfj.core.names import kept_as_written
+
+    def known(run: str) -> bool:
+        return run in japanese and not kept_as_written(run, keep)
+
+    idle = set(latin.get(ALWAYS, {}).values())
+    faults: set[tuple[str, str]] = set()
+    protected: dict[str, int] = {}
+    other: set[tuple[str, str]] = set()
+    for window, texts in latin.items():
+        for widget, text in texts.items():
+            # a text on screen with no window open is filed once; a page of a window repeats what the window
+            # itself showed (a pooled row keeps its text under another address), so that is filed with the window
+            if window != ALWAYS and text in idle:
+                continue
+            # the tooltip under the mouse is whatever the player pointed at while the run went on: filed once
+            where = TOOLTIP_SHOWN if widget.startswith("GameTooltip") else window
+            parent = where.split(" > ")[0]
+            if parent != where and text in latin.get(parent, {}).values():
+                continue
+            if _PLAYER_TEXT_WIDGETS.search(widget):
+                continue
+            whole = text.strip()
+            runs = [whole] if known(whole) else (
+                [m.group(0) for m in _LATIN_RUN.finditer(text) if known(m.group(0))]
+                if _JAPANESE.search(text) else [])
+            if not runs:
+                if not _JAPANESE.search(text):
+                    other.add((where, whole))
+                continue
+            what = next((label for pattern, label in PROTECTED_NAME_WIDGETS if pattern.search(widget)), None)
+            if what:
+                protected[what] = protected.get(what, 0) + len(runs)
+            else:
+                faults |= {(where, f"{NAME_LEFT} {run}") for run in runs}
+    return faults, protected, sorted(other)
 
 
 def _by_id(table: Any) -> list[tuple[Any, Any]]:
@@ -2731,7 +3735,7 @@ def read_left_english(text: str) -> dict[str, Any] | None:
 
 
 # the reasons a line was left English, in the order they are listed
-LEFT_REASONS = ("icon", "values", "name", "number", "none", "other")
+LEFT_REASONS = ("icon", "values", "words", "name", "number", "none", "other")
 
 
 def untranslated(left: dict[str, Any] | None, new: Iterable[str], item_ships: set[int]) -> tuple[list[str], int]:
@@ -2806,10 +3810,17 @@ def read_test_problems(text: str, log: str = "") -> list[str]:
         return []
     out: list[str] = []
     words = {"errors": "error", "blocked": "refused", "warnings": "warning"}
+    kept = test.get("stacks")
+    stacks = {str(k): str(v) for k, v in (kept.named() if kept is not None else {}).items()}
+    marked = test.get("ours")
+    ours = {str(k) for k in (marked.named() if marked is not None else {})}
     for kind, word in words.items():
         table = test.get(kind)
         for message, count in (table.named() if table is not None else {}).items():
-            out.append(f"{word} x{count}: {' '.join(str(message).split())}")
+            stack = stacks.get(str(message))
+            through = " [ran through this addon's code]" if str(message) in ours else ""
+            out.append(f"{word} x{count}: {' '.join(str(message).split())}{through}"
+                       + (f" @ {' '.join(stack.split())}" if stack else ""))
     friends = test.get("friends")
     if friends is not None:
         counts = {k: friends.get(k) for k in ("battlenet", "game", "listed", "drawn")}
@@ -2835,6 +3846,54 @@ def read_test_problems(text: str, log: str = "") -> list[str]:
             if row.get("kind") == "init" and str(row.get("at") or "") >= started:
                 out.append(f"addon load step failed: {row.get('msg')}: {' '.join(str(row.get('err')).split())}")
     return sorted(set(out))
+
+
+TEST_ITEMS = Path(__file__).resolve().parents[2] / "ui_test_items.txt"
+
+
+def listed_items(text: str) -> dict[int, str]:
+    """The items the window test shows by id, with why each is listed: `<item id>\\t<reason>` per line."""
+    out: dict[int, str] = {}
+    for n, raw in enumerate(text.splitlines(), 1):
+        if not raw.strip() or raw.startswith("#"):
+            continue
+        parts = raw.split("\t")
+        if len(parts) != 2 or not parts[0].strip().isdigit() or not parts[1].strip():
+            raise ValueError(f"test items line {n}: expected <item id> <reason>, tab-separated")
+        out[int(parts[0])] = parts[1].strip()
+    return out
+
+
+def read_game_errors(text: str) -> dict[str, str]:
+    """The game's own errors the window test may meet, with why: `<text of the message>\\t<reason>` per line."""
+    out: dict[str, str] = {}
+    for n, raw in enumerate(text.splitlines(), 1):
+        if not raw.strip() or raw.startswith("#"):
+            continue
+        parts = raw.split("\t")
+        if len(parts) != 2 or not parts[0].strip() or not parts[1].strip():
+            raise ValueError(f"game errors line {n}: expected <text of the message> <reason>, tab-separated")
+        out[parts[0].strip()] = parts[1].strip()
+    return out
+
+
+OUR_FRAMES = ("AddOns/WFJScan", "AddOns/WoWForeverJapanese", "tainted by", "ran through this addon's code")
+
+
+def game_own_errors(problems: list[str], listed: dict[str, str]) -> dict[str, str]:
+    """The Lua errors of `problems` that are the game's own: the message holds a listed text, the error carries
+    its call stack, and neither names an addon of ours. → {the problem line: the listed reason}. An error with
+    no stack, one that ran through our code and one the client blames on an addon are never the game's own."""
+    out: dict[str, str] = {}
+    for row in problems:
+        if not row.startswith("error x") or " @ " not in row or any(word in row for word in OUR_FRAMES):
+            continue
+        message = row.split(" @ ", 1)[0]
+        for text, why in listed.items():
+            if text in message:
+                out[row] = why
+                break
+    return out
 
 
 def _line(text: str) -> str:
@@ -2901,9 +3960,17 @@ def _own_reads(saved: str) -> list[str]:
     if tooltips is not None:
         print(f"tooltips: {tooltips['read']} spells read ({tooltips['japanese']} in Japanese, "
               f"{tooltips['unread']} the client had not loaded), {tooltips['items']} items; "
-              f"{len(tooltips['changed'])} spells left English because the game changed them")
+              f"{len(tooltips['changed'])} spells left English because the game changed them, "
+              f"{tooltips['marked']} marked not translated")
         for id_, said in tooltips["changed"]:
             print(f"read  changed spell\t{id_}\t{said}")
+        for id_, lines in sorted(tooltips["reported"].items()):
+            for line in lines:
+                print(f"read  listed item\t{id_}\t{line}")
+        if tooltips.get("load"):
+            print(f"tooltips: loading {tooltips['load']}")
+        for why, (n, ids) in sorted(tooltips.get("why", {}).items()):
+            print(f"tooltips: {n} not read, {why}, e.g. {ids}")
     no_voice = read_no_voice(saved)
     if no_voice is not None:
         print(f"no-voice message: {no_voice['quests']} quests read in the quest log, {no_voice['said']} said they "
@@ -2921,6 +3988,251 @@ def _own_reads(saved: str) -> list[str]:
     return tooltip_problems(tooltips) + no_voice_problems(no_voice) + names_problems(names, japanese)
 
 
+# A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A
+# Communities tab redraws the list of communities, and a row with a picture sets it through a call the client
+# refuses to addon code (CommunitiesList.lua:523, reached from CommunitiesTabs.lua:6). The test leaves that window
+# to the player, so this is met only when a click of the test's reaches such a tab from another window.
+OWN_REFUSALS = ("WFJScan SetAvatarTexture()", "AddOn 'WFJScan' tried to call the protected function 'SetAvatarTexture()'")
+
+
+def _names_in_windows(latin: Mapping[str, Mapping[str, str]]) -> tuple[
+        set[tuple[str, str]], dict[str, int], list[tuple[str, str]]]:
+    """`latin_names` over a run's Latin text, with the name list and the kept-as-written words of this checkout."""
+    if not latin:
+        return set(), {}, []
+    from wfj.cmd.generate import load_kept_as_written
+    from wfj.io.names_store import load_lines
+    from wfj.paths import data_root
+
+    japanese = {ln["en"]: ln["ja"] for ln in load_lines(data_root()) if ln.get("status") == "trusted"}
+    return latin_names(latin, japanese, load_kept_as_written(data_root()))
+
+
+TRACES_SHOWN = 6  # passes of the addon's own tooltip trace the report prints
+
+
+ROWS_SHOWN = 400  # kinds of English row, and of English word inside a Japanese row, the report prints
+
+
+def read_tooltip_rows(saved: str) -> tuple[int, list[tuple[int, str, str]], list[tuple[int, str, str]]]:
+    """Every row of every tooltip the run showed, as the test addon kept them: (how many tooltips, the rows with
+    no Japanese at all, the Latin words inside Japanese rows), each as (how often, the text, one tooltip that
+    shows it), most frequent first. Digits in a whole row are folded to `#`."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(saved).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("tooltips") if probe is not None else None
+    rows = record.get("rows") if record is not None else None
+    if rows is None:
+        return 0, [], []
+
+    def listed(name: str) -> list[tuple[int, str, str]]:
+        table = rows.get(name)
+        out = [(int(v.get("n") or 0), str(k), str(v.get("at"))) for k, v in (table.named().items() if table else [])]
+        return sorted(out, key=lambda r: (-r[0], r[1]))
+
+    return int(rows.get("tooltips") or 0), listed("english"), listed("runs")
+
+
+def tooltip_row_problems(saved: str) -> list[str]:
+    """One failure line when any tooltip row still shows English: a row with no Japanese, or a Latin word inside
+    a Japanese row that the name list has Japanese for or that is no name at all. The rows themselves are
+    printed by `_say_rows`."""
+    tooltips, english, runs = read_tooltip_rows(saved)
+    if not tooltips:
+        return ["tooltip rows not read: this run's test addon reads the description row only (make scan-install, "
+                "then run it again)"]
+    if english or runs:
+        return [f"English on tooltips: {len(english)} kinds of row with no Japanese and {len(runs)} English words "
+                f"inside Japanese rows, over {tooltips} tooltips (listed below as ROW and WORD)"]
+    return []
+
+
+def _say_rows(saved: str) -> None:
+    tooltips, english, runs = read_tooltip_rows(saved)
+    if not tooltips:
+        return
+    print(f"tooltip rows: {tooltips} tooltips read row by row; {len(english)} kinds of row with no Japanese, "
+          f"{len(runs)} English words inside Japanese rows")
+    for n, text, at in english[:ROWS_SHOWN]:
+        print(f"ROW   x{n}\t{text}\t({at})")
+    if len(english) > ROWS_SHOWN:
+        print(f"ROW   (and {len(english) - ROWS_SHOWN} more kinds)")
+    for n, text, at in runs[:ROWS_SHOWN]:
+        print(f"WORD  x{n}\t{text}\t({at})")
+    if len(runs) > ROWS_SHOWN:
+        print(f"WORD  (and {len(runs) - ROWS_SHOWN} more)")
+
+
+# A hovered tooltip's English as a line of the baseline: (window, `HOVER <text>`), so the baseline can allow one
+# with its reason. A word inside a Japanese row is its own text.
+HOVER = "(hover)"
+_HOVER_COUNTS = ("made", "found", "skipped", "denied", "tips", "units", "loading")
+
+
+def _hover_windows(table: Any) -> dict[str, dict[str, Any]]:
+    out: dict[str, dict[str, Any]] = {}
+    for window, rec in (table.named().items() if table is not None else []):
+        if not hasattr(rec, "get"):
+            continue
+        entry: dict[str, Any] = {k: int(rec.get(k) or 0) for k in _HOVER_COUNTS}
+        entry["stopped"] = str(rec.get("stopped") or "")
+        entry["capped"] = bool(rec.get("capped"))
+        for kind in ("english", "runs"):
+            kept = rec.get(kind)
+            rows = [(int(v.get("n") or 0), str(k), str(v.get("frame") or ""), str(v.get("raw") or ""))
+                    for k, v in (kept.named().items() if kept is not None else [])]
+            entry[kind] = sorted(rows, key=lambda r: (-r[0], r[1]))
+        out[_POOLED.sub("*", str(window))] = entry
+    return out
+
+
+def read_hover(saved: str) -> dict[str, dict[str, Any]] | None:
+    """The hover read out of a saved-variables file, or None when the run's test addon has none: window →
+    {how many frames were pointed at (`made`), found (`found`), found and not pointed at (`skipped`), left alone
+    (`denied`), how many showed a tooltip read row by row (`tips`), a unit's tooltip (`units`, never read) or one
+    still loading (`loading`); `stopped` (why the window's hovering stopped early), `capped` (the cap was reached),
+    and the rows left English: `english` (rows with no Japanese) and `runs` (Latin words inside Japanese rows), each
+    as (how often, the text, the frame, the row as written), most frequent first}. A plain run does not read the
+    two windows the player opens: what the last `/wfjtest hand` kept of them stands for it, as their lines do."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(saved).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("hover") if probe is not None else None
+    if record is None:
+        return None
+    windows = _hover_windows(record)
+    hand = _standing_hand(probe)[1]
+    if hand is not None and hand.get("hover") is not None:
+        for window, entry in _hover_windows(hand.get("hover")).items():
+            windows.setdefault(window, entry)
+    return windows
+
+
+def hover_faults(hover: Mapping[str, Mapping[str, Any]], baseline: Mapping[tuple[str, str], str],
+                 japanese: Mapping[str, str], keep: frozenset[str] | set[str],
+                 names_on: bool) -> tuple[list[tuple[str, int, str, str, str]], int]:
+    """The English rows and words of the hover read that fail the run, as (window, how often, the text, the frame,
+    the row as written), and how many were allowed. Allowed: a line the baseline allows for the window
+    (`HOVER <text>`), a word the screen keeps as written, and a game name of the name list while Japanese names are
+    off (names stay English then). With Japanese names on, a name the list has Japanese for is a fault."""
+    from wfj.core.names import kept_as_written
+
+    faults: list[tuple[str, int, str, str, str]] = []
+    allowed = 0
+    for window, entry in sorted(hover.items()):
+        for n, text, frame, raw in [*entry.get("english", []), *entry.get("runs", [])]:
+            line = f"{HOVER} {_line(text)}"
+            named = text in japanese
+            if ((window, line) in baseline or (window.split(" > ")[0], line) in baseline
+                    or kept_as_written(text, keep) or (named and not names_on)):
+                allowed += 1
+            else:
+                faults.append((window, n, text, frame, raw))
+    return faults, allowed
+
+
+def hover_problems(hover: Mapping[str, Mapping[str, Any]] | None,
+                   faults: list[tuple[str, int, str, str, str]]) -> list[str]:
+    """What the hover read found wrong, one line each: a window whose hovering a fight stopped, a run that pointed
+    at nothing, and one line for every English row and word left on hovered tooltips (printed by `_say_hover`).
+    A run whose test addon has no hover read says so: its result proves nothing about those tooltips."""
+    if hover is None:
+        return ["hover not read: this run's test addon does not point at a window's frames (make scan-install, "
+                "then run it again)"]
+    out = [f"hover stopped in {window}: {entry['stopped']} (run it again out of combat)"
+           for window, entry in sorted(hover.items()) if entry["stopped"]]
+    if not sum(entry["made"] for entry in hover.values()):
+        out.append("hover not read: no frame of any window was pointed at")
+    if faults:
+        windows = len({window for window, *_ in faults})
+        out.append(f"English on hovered tooltips: {len(faults)} rows or words in {windows} windows (listed below "
+                   "as HOVER)")
+    return out
+
+
+def _say_hover(hover: Mapping[str, Mapping[str, Any]] | None, faults: list[tuple[str, int, str, str, str]],
+               allowed: int) -> None:
+    if hover is None:
+        return
+    for window, entry in sorted(hover.items()):
+        notes = [f"{entry['tips']} tooltips read", f"{entry['denied']} left alone"]
+        notes += ["cap reached"] if entry["capped"] else []
+        notes += [f"stopped: {entry['stopped']}"] if entry["stopped"] else []
+        print(f"hover: {window}: {entry['made']} hovered, {entry['skipped']} skipped ({', '.join(notes)})")
+    print(f"hovered tooltips: {len(faults)} English rows or words fail the run, {allowed} allowed (a name while "
+          "Japanese names are off, a word kept as written, or the baseline)")
+    for window, n, text, frame, raw in faults[:ROWS_SHOWN]:
+        print(f"HOVER x{n} {text} ({window} {frame}: {raw})")
+    if len(faults) > ROWS_SHOWN:
+        print(f"HOVER (and {len(faults) - ROWS_SHOWN} more)")
+
+
+def _name_list() -> tuple[dict[str, str], frozenset[str]]:
+    """This checkout's name list (English → Japanese, trusted lines) and the words the screen keeps as written."""
+    from wfj.cmd.generate import load_kept_as_written
+    from wfj.io.names_store import load_lines
+    from wfj.paths import data_root
+
+    japanese = {ln["en"]: ln["ja"] for ln in load_lines(data_root()) if ln.get("status") == "trusted"}
+    return japanese, load_kept_as_written(data_root())
+
+
+def _say_traces(saved: str) -> None:
+    """Prints what the addon's own tooltip trace recorded for the first spells it left English: the pass over
+    that tooltip, row by row, with what the addon rendered. It answers why from the addon's side."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(saved).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("tooltips") if probe is not None else None
+    left = record.get("left") if record is not None else None
+    shown = 0
+    for spell, row in (left.named().items() if left is not None else []):
+        trace = row.get("trace") if hasattr(row, "get") else None
+        if trace is None or shown >= TRACES_SHOWN:
+            continue
+        shown += 1
+        print(f"TRACE spell {spell} left English ({row.get('reason')}): {row.get('text')}")
+        print(f"TRACE   the run read row {row.get('row')} of {row.get('rows')} and saw: {row.get('saw')}")
+        print(f"TRACE   every row right after: {row.get('now')}")
+        for line in str(trace).replace("\\n", "\n").splitlines():
+            print(f"TRACE   {line}")
+    rows = record.get("rows") if record is not None else None
+    for name in ("english", "runs"):
+        table = rows.get(name) if rows is not None else None
+        for text, row in (table.named().items() if table is not None else []):
+            if not hasattr(row, "get") or row.get("data") is None:
+                continue
+            print(f"TRACE row left English: {text} ({row.get('at')})")
+            print(f"TRACE   tooltip data: {row.get('data')}")
+            for line in str(row.get("trace")).replace("\\n", "\n").splitlines():
+                print(f"TRACE   {line}")
+    kept = record.get("shownTraces") if record is not None else None
+    for spell, row in list(kept.named().items() if kept is not None else [])[:3]:
+        print(f"TRACE spell {spell} shown in Japanese: {row.get('text')}")
+        for line in str(row.get("trace")).replace("\\n", "\n").splitlines():
+            print(f"TRACE   {line}")
+
+
+def _say_other(read: bool, protected: Mapping[str, int], other: list[tuple[str, str]]) -> None:
+    """Prints the names the client protects and the other English text on screen, so every run says what a
+    player still reads in English."""
+    if not read:
+        print("names in windows: not read (Japanese names are off, or this run's test addon keeps no Latin text: "
+              "make scan-install, then run it again)")
+        return
+    for what, n in sorted(protected.items()):
+        print(f"names in windows: {n} left English in {what}, which the client protects")
+    print(f"other English on screen, not a name and not in the dictionary: {len(other)} texts")
+    for window, text in other[:OTHER_SHOWN]:
+        print(f"OTHER {window}\t{text}")
+    if len(other) > OTHER_SHOWN:
+        print(f"OTHER (and {len(other) - OTHER_SHOWN} more)")
+
+
 def _texts(args: argparse.Namespace) -> int:
     """The `texts` command: the window test's saved result against the baseline. → the exit code."""
     info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
@@ -2929,13 +4241,15 @@ def _texts(args: argparse.Namespace) -> int:
         print(f"window test: the saved run is of build {info['build']} and the client is on {now} now: "
               "run /wfjtest again on this build")
         return 2
-    if not info.get("finished") and info.get("part") == "character":
-        print("window test: the run stopped while waiting for the character window; the rest is read below")
+    if not info.get("finished") and info.get("part") in ("guild", "character"):
+        print(f"window test: the run stopped while waiting for the {info['part']} window; the rest is read below")
     elif not info.get("finished"):
         print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
         return 2
     if info.get("absent"):
         print(f"windows this client does not have: {info['absent']}")
+    if info.get("hand"):
+        print(f"guild and character windows: {info['hand']}, not in this run")
     asked, missing = read_missing_strings(args.saved.read_text(encoding="utf-8", errors="replace"))
     if asked:
         # grouped by the first two words of the name: a whole family missing reads as one line
@@ -2946,8 +4260,24 @@ def _texts(args: argparse.Namespace) -> int:
         print(f"dictionary strings the client does not hand to addons: {len(missing)} of {asked}")
         for head, n in sorted(groups.items(), key=lambda kv: (-kv[1], kv[0]))[:40]:
             print(f"read  not handed to addons\t{head}\t{n}")
+    latin = read_latin(args.saved.read_text(encoding="utf-8", errors="replace"))
+    faults, protected, other = _names_in_windows(latin)
+    found |= faults
     baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
+    # a hovered tooltip's lines are held to the baseline by the hover read, never taken for a line on screen
+    hover_baseline = {key: why for key, why in baseline.items() if key[1].startswith(f"{HOVER} ")}
+    baseline = {key: why for key, why in baseline.items() if key not in hover_baseline}
     new, gone = window_test_report(found, baseline)
+    hover = read_hover(args.saved.read_text(encoding="utf-8", errors="replace"))
+    hover_seen = {(w, f"{HOVER} {_line(text)}") for w, entry in (hover or {}).items()
+                  for _, text, _, _ in [*entry["english"], *entry["runs"]]}
+    gone += sorted(f"{w}\t{en}" for w, en in hover_baseline
+                   if not any((seen_w == w or seen_w.split(" > ")[0] == w) and seen_en == en
+                              for seen_w, seen_en in hover_seen))
+    names = read_names(args.saved.read_text(encoding="utf-8", errors="replace"))
+    listed_names = _name_list() if hover_seen else ({}, frozenset())
+    hovered, hover_allowed = hover_faults(hover or {}, hover_baseline, *listed_names,
+                                          names_on=bool(names and names["on"]))
     # a window the open sweep showed did not run the client's opening code, so a surface that works from that
     # code never ran: its English is a list to read against the code, never a failure, like its errors
     # a closed window read without being shown is the same kind of list
@@ -2968,13 +4298,25 @@ def _texts(args: argparse.Namespace) -> int:
     # the open sweep shows a window without the client's own opening code, so a window that needs data it was
     # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
     problems += _own_reads(args.saved.read_text(encoding="utf-8", errors="replace"))
-    noted = [row for row in problems if ": [open] " in row]
-    failing = [row for row in problems if row not in noted]
-    print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare)")
+    problems += tooltip_row_problems(args.saved.read_text(encoding="utf-8", errors="replace"))
+    problems += hover_problems(hover, hovered)
+    noted = [row for row in problems if ": [open] " in row or any(own in row for own in OWN_REFUSALS)]
+    listed = args.baseline.with_name("ui_test_game_errors.txt")
+    own = game_own_errors([row for row in problems if row not in noted],
+                          read_game_errors(listed.read_text(encoding="utf-8")) if listed.exists() else {})
+    failing = [row for row in problems if row not in noted and row not in own]
+    print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare, {len(own)} the "
+          "game's own)")
     for row in failing:
         print(f"ERROR {row}")
     for row in noted:
         print(f"noted {row}")
+    for row, why in sorted(own.items()):
+        print(f"game  {row}\n      listed: {why}")
+    _say_rows(args.saved.read_text(encoding="utf-8", errors="replace"))
+    _say_hover(hover, hovered, hover_allowed)
+    _say_traces(args.saved.read_text(encoding="utf-8", errors="replace"))
+    _say_other(bool(latin), protected, other)
     _say_left(args.saved.read_text(encoding="utf-8", errors="replace"), new)
     return 1 if new or failing else 0
 
@@ -3029,8 +4371,10 @@ def main(argv: list[str] | None = None) -> int:
         japanese = spell_japanese(args.window_test, values or {}) if args.window_test else None
         gate = ((args.window_test.resolve().parent / ALIGN_LUA).read_text(encoding="utf-8")
                 if args.window_test else None)
+        items = listed_items(TEST_ITEMS.read_text(encoding="utf-8")) if TEST_ITEMS.exists() else {}
         text = probe_lua(manifest, walk=args.walk or bool(args.window_test), english=english,
-                         at_login=args.walk, keys=keys, values=values, japanese=japanese, gate=gate)
+                         at_login=args.walk, keys=keys, values=values, japanese=japanese, gate=gate,
+                         items=items)
         args.out.write_text(text, encoding="utf-8")
         print(f"probe: {len(probe_names(manifest))} names → {args.out}")
         return 0

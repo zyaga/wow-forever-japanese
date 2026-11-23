@@ -35,7 +35,7 @@ text and the name over a creature's head disagreeing.
    the main addon and always in memory, so the setting switches at once with no reload. `Core/Names.lua` looks them
    up. A name with no Japanese stays the client's English.
 4. **Words kept as written.** Abbreviations and the game's and company's own names (`pipeline/names_kept_as_written.txt`:
-   AFK, Battle.net, Blizzard, PvP, XP, World of Warcraft and so on) are left out of the addon's tables, so the screen
+   AFK, Battle.net, PvP, XP, World of Warcraft and so on) are left out of the addon's tables, so the screen
    keeps them. Single letters and Roman numerals are kept without a line. The voice still says their Japanese.
 5. **Names inside text.** The policy layer has a names step before placeholders are expanded: names inside quest,
    NPC talk, book, item and spell text and inside interface lines' Japanese are replaced by `Names.inText`, with
@@ -51,12 +51,19 @@ text and the name over a creature's head disagreeing.
    step reads a line's stored text before the client's values are filled in, so a player called like a game name
    is never changed inside a line, and only a value declared as a game name is looked up. A value the
    client marks secret, such as a unit's name it hides in combat. Places where writing text taints a path the client
-   measures on the way to a protected action: spellbook rows, the professions page's cast buttons, the world map's
-   navigation bar. The name the client draws over a creature's head when it has no nameplate: no widget exists.
-9. **Names over heads use nameplates.** When the player chooses Japanese names, the addon turns on the client's
-   `nameplateShowFriendlyNpcs`, saves the earlier value (`namePlatesWas`) and puts it back when the player chooses
-   English names. A value the player sets by hand afterwards is left alone, and one chat line says names over heads
-   show in English while those nameplates are off. In combat the write waits for the fight to end. Creature
+   measures on the way to a protected action: the professions page's cast buttons, the world map's
+   navigation bar. The spellbook's rows are such a place too: there the addon writes nothing and draws the name on
+   its own label over the game's, an experiment a combat run must confirm
+   ([ADR-058, update](058-text-blizzard-measures-on-a-protected-path-stays-untouched.md)). The name the client draws over a creature's head when it has no nameplate: no widget exists.
+9. **Names over heads use nameplates.** When the player chooses Japanese names, the addon turns on every client
+   setting a creature with a name needs for a nameplate: `nameplateShowFriendlyNpcs` (friendly NPCs),
+   `nameplateShowEnemies` (enemy units, neutral creatures among them), `nameplateShowAll` (nameplates out of combat
+   too) and `nameplateShowEnemyMinions` and `nameplateShowEnemyMinus` (enemy minions and minor units). A player's
+   nameplate is not asked for, because a player's name is never changed. Each setting that was off is turned on,
+   its earlier value saved (`namePlatesWas`), and put back when the player chooses English names. Each setting is
+   turned on once (`namePlatesAsked`): a value the player sets by hand afterwards is left alone, and while one of the
+   first three is off one chat line says names over those heads show in English. In combat the write waits for the
+   fight to end. Creature
    nameplates and the target, focus, target-of-target, boss and party frames show the Japanese name. A nameplate
    measures its name and anchors its clickable area to it with a restricted call, so the nameplate name is kept
    only while a run in combat records no blocked action ([Client limits](../architecture/client-limits.md)).
@@ -77,7 +84,8 @@ text and the name over a creature's head disagreeing.
 - Names on screen can match the voice. A learner can read names in kana and point at them for their reading.
 - Every new surface that shows a name needs a line in `pipeline/name_surfaces.txt`.
 - The names tables are in memory for every player, whether the setting is on or not.
-- The addon writes one client setting (friendly NPC nameplates) on the player's choice, and puts it back.
+- The addon writes five client settings (nameplates for friendly NPCs, enemies and neutral creatures, enemy minions
+  and minor units, and nameplates out of combat) on the player's choice, and puts them back.
 - A name stays English wherever the client draws it or where writing it would taint a protected action. These are
   listed in [Client limits](../architecture/client-limits.md).
 - The window test with Japanese names on, in and out of combat, is still owed; unit frames in combat are not yet

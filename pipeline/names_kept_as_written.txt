@@ -4,7 +4,6 @@
 # A single letter and a Roman numeral are kept as written without a line here.
 AFK
 Battle.net
-Blizzard
 DND
 FPS
 GM

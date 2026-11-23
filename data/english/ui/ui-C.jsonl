@@ -626,6 +626,7 @@
 {"id": "COD", "field": "text", "en": "C.O.D.", "hash": "05b8aee5bee35d7a", "src": "db2@1.60.1.71037"}
 {"id": "COD_AMOUNT", "field": "text", "en": "Cash on Delivery Amount:", "hash": "586a817120f77949", "src": "db2@1.60.1.71037"}
 {"id": "COD_CONFIRMATION", "field": "text", "en": "Accepting this item will cost:", "hash": "74290b7e11bf64f8", "src": "db2@1.60.1.71037"}
+{"id": "COD_DISABLED", "field": "text", "en": "Cash on Delivery is currently disabled.", "hash": "2a991ac711dc16de", "src": "db2@1.60.1.71037"}
 {"id": "COD_INSUFFICIENT_MONEY", "field": "text", "en": "You do not have enough money to pay the C.O.D. charges.", "hash": "f6f44186b442e1ea", "src": "db2@1.60.1.71037"}
 {"id": "COINPICKUP_CANCEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.71037"}
 {"id": "COLDSWAP_TEXT_CONFIRM_GAMEPAD", "field": "text", "en": "Swap to Gamepad input mode?", "hash": "d384948376c80303", "src": "db2@1.60.1.71037"}

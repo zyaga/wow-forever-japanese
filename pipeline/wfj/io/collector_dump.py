@@ -2,7 +2,9 @@
 
 Shape (docs/systems/collector.md): `{version = 1, builds = {"1.15.9.69722", …},
 entries = {["<kind>:<id>:<field>"] = {t, i, f, h, e, b[, n]}}, …}`; a gossip entry is keyed by its
-gossip key (`i == h`, 16 hex) and may carry `n`, the creature ids that said it.
+gossip key (`i == h`, 16 hex) and may carry `n`, the creature ids that said it. An entry of kind `uikey` is
+`["uikey:<NAME>"] = {t, i, b}`: the name of a client interface string a chat line was written from, with no
+text and no hash.
 Nothing from the file is trusted: every entry is re-checked and its hash recomputed from the text with the
 same normalize_v1 the addon uses, so a hand-edited or corrupted entry cannot land in `data/english/`.
 """
@@ -78,12 +80,22 @@ class QuestNpc:
     build: str
 
 
+@dataclass(frozen=True)
+class UiKey:
+    """The name of a client interface string a chat line was written from, which the addon had no Japanese
+    for. A name only: the entry holds no text, so the line and whoever it named were never kept."""
+
+    name: str
+    build: str
+
+
 @dataclass
 class Dump:
     version: int
     entries: list[Entry]
     rejected: Counter = field(default_factory=Counter)
     quest_npcs: list[QuestNpc] = field(default_factory=list)
+    ui_keys: list[UiKey] = field(default_factory=list)
 
 
 def _int(v: Any) -> int | None:
@@ -190,6 +202,31 @@ def check_quest_npc(key: Any, raw: Any, builds: list[Any]) -> tuple[QuestNpc | N
     return QuestNpc(quest, fld, creature, _SEX[sex], display or None, build), None
 
 
+UI_KEY = "uikey"  # the collector kind of a UiKey: its id is the interface string's name
+UI_KEY_NAME = re.compile(r"[A-Z][A-Z0-9_]{0,127}")  # a global string's name, as the addon bounds it
+_UI_KEY_NO_FIELDS = ("f", "h", "e", "n", "p")  # every field that could hold text or a player's value
+
+
+def check_ui_key(key: Any, raw: Any, builds: list[Any]) -> tuple[UiKey | None, str | None]:
+    """→ (an interface string's name, None) or (None, reason), for an entry of kind `uikey`. An entry that
+    carries anything beside its kind, name and build is refused: this kind never holds text."""
+    if not isinstance(key, str) or not isinstance(raw, Table):
+        return None, "bad_key"
+    e = raw.named()
+    name = e.get("i")
+    if not isinstance(name, str) or not UI_KEY_NAME.fullmatch(name):
+        return None, "bad_id"
+    if key != f"{UI_KEY}:{name}":
+        return None, "bad_key"
+    if any(e.get(k) is not None for k in _UI_KEY_NO_FIELDS):
+        return None, "bad_field"
+    b = _int(e.get("b"))
+    build = builds[b - 1] if b is not None and 1 <= b <= len(builds) else None
+    if not isinstance(build, str) or not _BUILD.match(build):
+        return None, "no_build"
+    return UiKey(name, build), None
+
+
 def _address_problem(key: str, kind: Any, fld: Any, id_: int | str | None) -> str | None:
     """Why an entry's kind, field and id do not make a valid address matching its key, or None."""
     if not isinstance(kind, str) or not isinstance(fld, str) or id_ is None or key != f"{kind}:{id_}:{fld}":
@@ -248,13 +285,16 @@ def read_dump(text: str) -> Dump:
 
 def add(out: Dump, key: Any, raw: Any, builds: list[Any]) -> None:
     """Checks one stored entry and puts it where it belongs: an English line in `entries`, who a quest window
-    showed in `quest_npcs`, or its reason in `rejected`."""
-    is_npc = isinstance(raw, Table) and raw.named().get("t") == QUEST_NPC
-    found, reason = (check_quest_npc if is_npc else check_entry)(key, raw, builds)
+    showed in `quest_npcs`, an interface string's name in `ui_keys`, or its reason in `rejected`."""
+    kind = raw.named().get("t") if isinstance(raw, Table) else None
+    check = {QUEST_NPC: check_quest_npc, UI_KEY: check_ui_key}.get(kind, check_entry)
+    found, reason = check(key, raw, builds)
     if found is None:
         out.rejected[reason] += 1
     elif isinstance(found, QuestNpc):
         out.quest_npcs.append(found)
+    elif isinstance(found, UiKey):
+        out.ui_keys.append(found)
     else:
         out.entries.append(found)
 
@@ -262,3 +302,4 @@ def add(out: Dump, key: Any, raw: Any, builds: list[Any]) -> None:
 def sort(out: Dump) -> None:
     out.entries.sort(key=lambda en: (en.type_, en.id_, en.field))
     out.quest_npcs.sort(key=lambda q: (q.quest, q.field))
+    out.ui_keys.sort(key=lambda u: u.name)

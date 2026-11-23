@@ -35,7 +35,7 @@ or Japanese)
 | Letter pages | 209 |
 | Item tooltips | 11,259 |
 | Spell tooltips | 20,361 |
-| UI | 16,124 |
+| UI | 16,206 |
 
 ## Install
 
@@ -242,9 +242,10 @@ voice says them.
 A few names stay English with Japanese names on. A player's, guild's or pet's name is never changed. Spell names
 in the spellbook and on the buttons of the professions page stay English, because changing them makes the game
 block the action bars in combat. The name over the head of a creature with no nameplate is drawn by the game
-itself, so the addon turns on nameplates for friendly NPCs when you pick Japanese names, and puts your setting
-back when you pick English names. If you remove the addon while Japanese names are on, those nameplates stay on:
-turn them off in the game's own Nameplates options. Abbreviations such as PvP and NPC stay as written.
+itself, so the addon turns on nameplates for NPCs and creatures when you pick Japanese names (friendly NPCs,
+enemies and neutral creatures, out of combat too), and puts your settings back when you pick English names. If you
+remove the addon while Japanese names are on, those nameplates stay on: turn them off in the game's own Nameplates
+options. Abbreviations such as PvP and NPC stay as written.
 
 **What do the markers mean?** **[未翻訳 / Not Translated]** means the line has no translation yet and is shown in
 the game's English. **[要更新 / English Changed]** means the English changed after the line was translated.
@@ -318,7 +319,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 | 手紙 | 209 ページ |
 | アイテムのツールチップ | 11,259 |
 | 呪文のツールチップ | 20,361 |
-| UI | 16,124 |
+| UI | 16,206 |
 
 ### インストール
 
@@ -429,7 +430,7 @@ GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/di
 
 **名前が英語なのはなぜ？** 初期設定です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。名前を日本語で見たい場合は、ようこそウィンドウ（`/wfj intro`）で **日本語の名前** を選ぶか、設定ページの **名前を日本語で表示** をオンにします。人物・地名・モンスター・アイテム・呪文・スキル・勢力の名前とクエストのタイトルがカタカナで表示され、Alt を押している間は英語の名前が見えます。日本語の名前にマウスを合わせると、読みと英語の名前が出ます。名前は英語を単語ごとにカタカナにしたもので、音声の読み方と同じです。
 
-日本語の名前を選んでも英語のままの名前があります。プレイヤー、ギルド、ペットの名前は変えません。呪文書と専門技能ページのボタンにある呪文の名前は英語のままです。変えると、戦闘中にアクションバーが使えなくなるためです。ネームプレートのないクリーチャーの頭上の名前はゲームが直接描いているため、日本語の名前を選ぶと味方 NPC のネームプレートをオンにし、英語の名前を選ぶと元の設定に戻します。日本語の名前のままアドオンを削除した場合、そのネームプレートはオンのままです。ゲームのネームプレート設定でオフにできます。PvP や NPC などの略語はそのままです。
+日本語の名前を選んでも英語のままの名前があります。プレイヤー、ギルド、ペットの名前は変えません。呪文書と専門技能ページのボタンにある呪文の名前は英語のままです。変えると、戦闘中にアクションバーが使えなくなるためです。ネームプレートのないクリーチャーの頭上の名前はゲームが直接描いているため、日本語の名前を選ぶと NPC とクリーチャーのネームプレート（味方 NPC、敵、中立のクリーチャー。戦闘中以外も表示）をオンにし、英語の名前を選ぶと元の設定に戻します。日本語の名前のままアドオンを削除した場合、そのネームプレートはオンのままです。ゲームのネームプレート設定でオフにできます。PvP や NPC などの略語はそのままです。
 
 **マーカーは何を表している？** **[未翻訳 / Not Translated]** はまだ翻訳がなく、ゲームの英語のまま表示されている行です。**[要更新 / English Changed]** は翻訳のあとで英語の原文が変わった行です。
 

@@ -1,0 +1,4 @@
+# The game's own Lua errors the window test may meet: <text of the message><TAB><reason>.
+# An error is set aside only when its message holds the text, it carries its call stack, and neither names
+# this addon or the test addon. Anything else fails the run.
+Blizzard_RaidUI.lua:87: attempt to compare number with nil	The raid window's class buttons count a group that does not exist outside a raid (RaidClassButton_Update, called on a unit's pet or name update). The client raises it by itself once the raid window's code is loaded.

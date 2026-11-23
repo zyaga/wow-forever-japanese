@@ -60,8 +60,10 @@ local function creatureOnly()
   return WFJ.Labels.familiesWith(TooltipUnit.KEYS, "CreatureType", "LockTypeName", "LockTypeResource", "LockTypeVerb",
     "PlayerConditionFailure")
 end
+-- "Level %d %s (%s)" (a type and a faction, both kept as written) would take a player's "Level 23 Human (Player)"
+-- before the player's own templates, which show the race's word and the word in brackets.
 local CREATURE_TEMPLATES = { UNIT_TYPE_LEVEL_TEMPLATE = true, UNIT_TYPE_PLUS_LEVEL_TEMPLATE = true,
-  UNIT_TYPE_LETHAL_LEVEL_TEMPLATE = true }
+  UNIT_TYPE_LETHAL_LEVEL_TEMPLATE = true, UNIT_TYPE_LEVEL_FACTION_TEMPLATE = true }
 local PLAYER_KEYS = {}
 for _, k in ipairs(TooltipUnit.KEYS) do
   if not CREATURE_TEMPLATES[k] then PLAYER_KEYS[#PLAYER_KEYS + 1] = k end
@@ -84,10 +86,19 @@ TooltipUnit.isPlayer = isPlayer
 -- a vehicle or a game object. A player and a pet a player named are not game names, and a unit whose guid is
 -- missing or hidden cannot be told from one, so its lines stay as written. → boolean
 local NAMED_BY_THE_GAME = { Creature = true, Vehicle = true, GameObject = true }
+-- Enum.TooltipDataType.Object on this client (set by init). A tooltip of that kind is a game object by the
+-- client's own word, whatever its data carries: a shop sign's tooltip is one line, its name, and the client gives
+-- no guid with it [likely: seen in game as a name left in English; the data's fields are not documented].
+local objectType
 local function gameNamed(data)
   local guid = type(data) == "table" and data.guid or nil
   local isSecret = Compat.resolve("issecretvalue")
   if type(isSecret) == "function" and isSecret(guid) then return false end
+  if guid == nil and objectType ~= nil and type(data) == "table" then
+    local kind = data.type
+    if type(isSecret) == "function" and isSecret(kind) then return false end
+    return kind == objectType
+  end
   if type(guid) ~= "string" then return false end
   return NAMED_BY_THE_GAME[guid:match("^(%a+)%-") or ""] == true and not isPlayer(data)
 end
@@ -324,6 +335,7 @@ function TooltipUnit.init()
   -- the other tooltips whose lines are a unit's or a quest's: the minimap mouseover (a quest's title and objectives,
   -- GameTooltip:SetMinimapMouseover, blizzard_minimap/mainline/minimap.lua:281), a game object, a corpse
   minimapType = types.MinimapMouseover
+  objectType = types.Object
   for _, name in ipairs({ "MinimapMouseover", "Object", "Corpse" }) do
     if types[name] ~= nil then processor.AddTooltipPostCall(types[name], TooltipUnit.onUnit) end
   end

@@ -8,7 +8,9 @@
 -- through Labels.show on this surface
 -- when the tooltip's owner is registered. An owner whose line 1 is a game name when it is no dictionary line (a
 -- bag's name on its portrait) registers with `nameLine` = the name's area: that line then shows the name's Japanese
--- while names are on (UI/NameLabels.wrapped, its key binding kept). The SetText / Show hooks also catch
+-- while names are on (UI/NameLabels.wrapped, its key binding kept). An owner whose line is a composite only its
+-- module can split (a group and its activities in one line) registers with `show`(surface, recKey, fs, refit) → 1 |
+-- 0, asked for each line that is no dictionary line. The SetText / Show hooks also catch
 -- owner:UpdateTooltip() refreshes, which call functions Blizzard captured before this addon loaded
 -- (MainMenuBarBagButtons.lua:240,
 -- Vanilla/PaperDollFrame.lua:717, GameTooltip.lua:447–465). A tooltip showing an item or a spell is never walked:
@@ -147,6 +149,7 @@ local function walkImpl(tt)
             if shown == 0 and i == 1 and side == "Left" and labelOpts and labelOpts.nameLine then
               shown = WFJ.NameLabels.wrapped(SURFACE, recKey, fs, labelOpts.nameLine, refit)
             end
+            if shown == 0 and labelOpts and labelOpts.show then shown = labelOpts.show(SURFACE, recKey, fs, refit) end
             n = n + shown
             if fs:GetText() ~= before then changed = true end
             local kept = WFJ.SurfaceState.get(SURFACE, recKey)

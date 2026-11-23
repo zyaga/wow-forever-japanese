@@ -69,6 +69,26 @@ describe("talent requirement lines", function()
     assert.are.equal("Armsのタレントにあと1ポイント使う", line(2))
   end)
 
+  it("with Japanese names on, the tree shows its Japanese name; a tree with none stays as written; the reveal key"
+    .. " shows the English and names off keeps the tree as written", function()
+    WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+    finally(function() WFJ.UIStrings.name = nil end)
+    WFJ.Data.name[WFJ.Names.key("Arms")] = "アームズ\tあーむず"
+    local display = button({ [3] = { tooltipFormat = REQUIRE, spentAmountRequired = 5 } })
+    local text = "Spend 5 more points in Arms Talents"
+    PS.hoverTalent(display, { "Mortal Strike", text })
+    assert.are.equal("アームズのタレントにあと5ポイント使う", line(2))
+    alt(true)
+    assert.are.equal(text, line(2))
+    alt(false)
+    assert.are.equal("アームズのタレントにあと5ポイント使う", line(2))
+    PS.hoverTalent(display, { "Mortal Strike", "Spend 5 more points in Nobody Known Talents" })
+    assert.are.equal("Nobody Knownのタレントにあと5ポイント使う", line(2))
+    WFJ.State.names = false
+    PS.hoverTalent(display, { "Mortal Strike", text })
+    assert.are.equal("Armsのタレントにあと5ポイント使う", line(2))
+  end)
+
   it("without the condition's template the line stays English; another line never takes the family", function()
     local text = "Spend 5 more points in Arms Talents"
     PS.hoverTalent(CreateFrame("Button"), { "Mortal Strike", text, "Tab 1" })
@@ -100,6 +120,7 @@ describe("a Legacy tree's talent tooltip, the talent window never opened", funct
     GENERIC_TRAIT_FRAME_EDGE_REQUIREMENTS_BUTTON_TOOLTIP = { "Requires all preceding talents",
       "前のタレントがすべて必要です" },
     ["SharedString:1318"] = { LEGACY, "あと%dポイントを%sのレガシーツリーに割り振る必要があります" },
+    LEGACY_TREE_PROFESSIONS = { "Professions", "専門技能" },
   }
   local function line(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
 
@@ -113,7 +134,8 @@ describe("a Legacy tree's talent tooltip, the talent window never opened", funct
   end)
   after_each(function() H.uiTeardown() end)
 
-  it("its rank, instruction, requirement and edge lines are Japanese; the tree's name stays English", function()
+  it("its rank, instruction, requirement and edge lines are Japanese, the tree in the window's own word; the"
+    .. " reveal key shows the English, and a tree that is no word stays as written", function()
     local display = CreateFrame("Button")
     display.talentFrame = { condInfoCache = { [4] = { tooltipFormat = LEGACY, spentAmountRequired = 10 } } }
     display.nodeInfo = { conditionIDs = { 4 } }
@@ -122,8 +144,14 @@ describe("a Legacy tree's talent tooltip, the talent window never opened", funct
       "Click to learn" })
     assert.are.equal("Dedicated Study", line(1))
     assert.are.equal("ランク 0/1", line(2))
-    assert.are.equal("|cffff2020あと10ポイントをProfessionsのレガシーツリーに割り振る必要があります|r", line(4))
+    assert.are.equal("|cffff2020あと10ポイントを専門技能のレガシーツリーに割り振る必要があります|r", line(4))
     assert.are.equal("前のタレントがすべて必要です", line(5))
     assert.are.equal("クリックで習得", line(6))
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal(red, line(4))
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal("|cffff2020あと10ポイントを専門技能のレガシーツリーに割り振る必要があります|r", line(4))
+    PS.hoverTalent(display, { "Dedicated Study", "Spend 1 more point in the Nobody Known Legacy Tree" })
+    assert.are.equal("あと1ポイントをNobody Knownのレガシーツリーに割り振る必要があります", line(2))
   end)
 end)

@@ -1,5 +1,5 @@
--- UI/NamePlateSetting: the client's friendly NPC nameplates follow the names choice, and a chat line says when
--- Japanese names are on with those nameplates off.
+-- UI/NamePlateSetting: the client's nameplate settings follow the names choice, and a chat line says when
+-- Japanese names are on with nameplates off.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local Loader = require("tests.lua.spec.loader")
@@ -45,7 +45,7 @@ describe("UI/NamePlateSetting", function()
     assert.are.same({}, writes) -- nothing at login: names are English
     S.set("names.japanese", true)
     assert.are.same({ CVAR .. "=1" }, writes)
-    assert.are.equal("0", _G.WFJ_DB.namePlatesWas)
+    assert.are.equal("0", _G.WFJ_DB.namePlatesWas[CVAR])
     S.set("names.japanese", false)
     assert.are.same({ CVAR .. "=1", CVAR .. "=0" }, writes)
     assert.is_nil(_G.WFJ_DB.namePlatesWas)
@@ -100,7 +100,7 @@ describe("UI/NamePlateSetting", function()
     Stub.combat = false
     Stub.fireAll("PLAYER_REGEN_ENABLED")
     assert.are.equal("1", cvar[CVAR])
-    assert.are.equal("0", _G.WFJ_DB.namePlatesWas)
+    assert.are.equal("0", _G.WFJ_DB.namePlatesWas[CVAR])
     assert.are.equal(0, lines())
   end)
 
@@ -118,5 +118,60 @@ describe("UI/NamePlateSetting", function()
     S.set("names.japanese", true)
     assert.are.same({}, writes)
     assert.are.same({}, WFJ.initErrors)
+  end)
+
+  -- every creature with a name over its head: enemies and neutral ones, their minions and minor units, friendly
+  -- NPCs, and out of combat too
+  local ALL = { "nameplateShowFriendlyNpcs", "nameplateShowEnemies", "nameplateShowAll",
+    "nameplateShowEnemyMinions", "nameplateShowEnemyMinus" }
+  local function every(value)
+    for _, name in ipairs(ALL) do cvar[name] = value end
+  end
+
+  it("Japanese names turn on the nameplates of every creature, and English names put each one back", function()
+    boot("0", { schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
+    every("0")
+    cvar.nameplateShowEnemies = "1" -- the player had enemy nameplates on already
+    login()
+    S.set("names.japanese", true)
+    for _, name in ipairs(ALL) do assert.are.equal("1", cvar[name], name) end
+    assert.is_nil(_G.WFJ_DB.namePlatesWas.nameplateShowEnemies) -- on before: nothing to put back
+    assert.are.equal("0", _G.WFJ_DB.namePlatesWas.nameplateShowAll)
+    S.set("names.japanese", false)
+    assert.are.equal("1", cvar.nameplateShowEnemies)
+    for _, name in ipairs({ "nameplateShowFriendlyNpcs", "nameplateShowAll", "nameplateShowEnemyMinions",
+      "nameplateShowEnemyMinus" }) do
+      assert.are.equal("0", cvar[name], name)
+    end
+    assert.is_nil(_G.WFJ_DB.namePlatesWas)
+    assert.are.equal(0, lines())
+  end)
+
+  it("a player who chose Japanese names on an older version gets the new settings at login, once", function()
+    boot("1", { schema = 1, settings = { ["names.japanese"] = true }, namePlatesWas = "0", intro = true,
+      asked = true, askedNames = true })
+    every("0")
+    cvar.nameplateShowFriendlyNpcs = "1"
+    login()
+    for _, name in ipairs(ALL) do assert.are.equal("1", cvar[name], name) end
+    assert.are.equal("0", _G.WFJ_DB.namePlatesWas.nameplateShowFriendlyNpcs) -- the old saved value, kept
+    assert.are.equal("0", _G.WFJ_DB.namePlatesWas.nameplateShowEnemies)
+    assert.are.equal(0, lines())
+    -- turned off by hand afterwards: said once, never turned back on, also not at the next login
+    writes = {}
+    cvar.nameplateShowEnemies = "0"
+    Stub.fireAll("CVAR_UPDATE", "nameplateShowEnemies", "0")
+    assert.are.equal(1, lines())
+    assert.are.same({}, writes)
+  end)
+
+  it("a minor setting turned off by hand says nothing: those creatures are the player's call", function()
+    boot("0", { schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
+    every("0")
+    login()
+    S.set("names.japanese", true)
+    cvar.nameplateShowEnemyMinus = "0"
+    Stub.fireAll("CVAR_UPDATE", "nameplateShowEnemyMinus", "0")
+    assert.are.equal(0, lines())
   end)
 end)

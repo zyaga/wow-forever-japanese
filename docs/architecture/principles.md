@@ -40,8 +40,9 @@ Whatever the setting says:
   ([Client limits](client-limits.md)).
 
 Showing names over heads in Japanese takes the client's nameplates. When the player chooses Japanese names, the
-addon turns on the client's own setting that shows friendly NPCs' nameplates, keeps the value it found, and puts
-that value back when the player chooses English names. This write to a client setting was approved by the
+addon turns on the client's own settings that show nameplates for NPCs and creatures (friendly NPCs, enemies and
+neutral creatures, out of combat too), keeps the values it found, and puts those values back when the player chooses
+English names. A player's nameplate is not turned on. These writes to client settings were approved by the
 maintainer on 2026-11-22. A value the player sets by hand afterwards is left as they set it.
 
 Race and class words are written in katakana inside translated prose whatever the setting says

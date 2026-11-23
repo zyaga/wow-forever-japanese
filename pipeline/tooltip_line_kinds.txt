@@ -51,7 +51,7 @@ LearnTransmogSet  # english: not on Forever: transmog sets are a retail-era syst
 LearnTransmogIllusion  # english: not on Forever: transmog illusions are a retail-era system (pipeline/ui_exclusions.txt, transmog / cosmetics)
 ErrorLine  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry: "Skinnable", the requirement lines in red) [unverified in game: every string the client sends]
 DisabledLine  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry) [unverified in game: which strings the client sends]
-UsageRequirement  # translated: UI/Tooltip; keys: ITEM_MIN_LEVEL ITEM_REQ_SKILL ITEM_CLASSES_ALLOWED ITEM_RACES_ALLOWED; the structural pass (a class, race or skill name in it stays English)
+UsageRequirement  # translated: UI/Tooltip; keys: ITEM_MIN_LEVEL ITEM_REQ_SKILL ITEM_CLASSES_ALLOWED ITEM_RACES_ALLOWED; the structural pass (a class, race or skill name in it shows its Japanese while names are Japanese; a required weapon type is a dictionary word)
 ItemSpellTriggerOnUse  # translated: UI/Tooltip; data: the item description run ("Use:")
 ItemSpellTriggerOnEquip  # translated: UI/Tooltip; data: the item description run, or its Equip lines as UI records ("Equip:")
 ItemSpellTriggerOnProc  # translated: UI/Tooltip; data: the item description run ("Chance on hit:")

@@ -2,5 +2,5 @@
 - **NPCs speak in their own voice.** A quest line whose speaker the addon could not name was read by one narrator. Each line is now read in the voice of the NPC who says it, and a translated line with no voice yet says so: `[音声なし / No Voice Yet]`.
 - **Japanese you type in the guild window now shows.** The message of the day, guild information, notes and rank names used to show Japanese as empty boxes.
 - **Forever 1.60.1.71037 in Japanese**, with what players sent in 28 Collector sends: 264 NPC lines, 318 quest progress and turn-in texts, 129 new quests, and 45 item and spell tooltips.
-- **More tooltips in Japanese:** mounts, companion pets, macros, and spells with damage of 1,000 or more.
-- **More windows in Japanese:** the group finder, more of the guild window, the name-and-icon popup, the calendar's holiday descriptions and the mount journal's search hint.
+- **Almost every spell tooltip in Japanese:** reagents, tools, recipes and what they make, requirements, "until canceled" durations, mounts, companion pets and macros.
+- **More windows in Japanese:** the friends window, the group finder, the character window's stat tooltips, more of the guild window, the calendar with its times, and every item's equip and use lines.

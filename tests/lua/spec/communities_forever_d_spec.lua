@@ -126,6 +126,10 @@ local UI = {
     "<Shiftクリックでチャット設定を表示>" },
   COMMUNITIES_CHAT_FRAME_YESTERDAY_NOTIFICATION = { "Yesterday", "昨日" },
   CLUB_FINDER_RECRUITING_ALL_SPECS = { "All Specs", "すべての専門化" }, -- communitiesutil.lua:342
+  -- the voice chat button's title (blizzard_chatframe/mainline/voicechatheadsetbutton.lua:239-268)
+  VOICE_CHAT_JOIN = { "Join Voice Chat", "ボイスチャットに参加" },
+  VOICE_CHAT_LEAVE = { "Leave Voice Chat", "ボイスチャットから退出" },
+  VOICECHAT_DISABLED = { "Voice Chat Disabled", "ボイスチャット無効" },
 }
 
 local function en(key) return _G[key] end
@@ -220,6 +224,17 @@ local function loadWindow()
     self:ShowGuildNameAlertFrame(en("GUILD_NAME_ALERT"))
   end
   CF.CommunitiesCalendarButton = CreateFrame("Button")
+  -- VoiceChatHeadsetButtonMixin:ShowTooltip: the button owns the tooltip, GameTooltip_SetTitle (ClearLines + AddLine),
+  -- then Show (voicechatheadsetbutton.lua:223-268; sharedtooltiptemplates.lua:128-131)
+  CF.VoiceChatHeadset = { Button = CreateFrame("Button") }
+  CF.VoiceChatHeadset.Button:SetScript("OnEnter", function(self)
+    local tt = _G.GameTooltip
+    tt:SetOwner(self, "ANCHOR_RIGHT")
+    tt:ClearLines()
+    tt:AddLine(C.voiceError and en("VOICECHAT_DISABLED") or C.voiceActive and en("VOICE_CHAT_LEAVE")
+      or en("VOICE_CHAT_JOIN"))
+    tt:Show()
+  end)
   -- communities list (communitieslist.lua:402–667)
   CF.CommunitiesList = { ScrollBox = Stub.scrollBox() }
   C.listRows = {}
@@ -534,6 +549,28 @@ describe("the rest of the Communities window on Forever", function()
         assert.are.equal("掲示板", _G.GameTooltipTextLeft1:GetText())
         assert.are.equal("Search", _G.GameTooltipTextLeft2:GetText()) -- an event called like a UI word
         assert.are.equal("月曜日の8:00 PM", _G.GameTooltipTextLeft3:GetText())
+      end)
+
+      it("the voice chat button's tooltip: join, leave and voice-off titles in Japanese; the reveal key shows the"
+        .. " English", function()
+        local button = _G.CommunitiesFrame.VoiceChatHeadset.Button
+        C.voiceActive, C.voiceError = false, false
+        button.scripts.OnEnter(button)
+        assert.are.equal("ボイスチャットに参加", _G.GameTooltipTextLeft1:GetText())
+        alt(true)
+        assert.are.equal("Join Voice Chat", _G.GameTooltipTextLeft1:GetText())
+        alt(false)
+        assert.are.equal("ボイスチャットに参加", _G.GameTooltipTextLeft1:GetText())
+        C.voiceActive = true
+        button.scripts.OnEnter(button)
+        assert.are.equal("ボイスチャットから退出", _G.GameTooltipTextLeft1:GetText())
+        C.voiceError = true
+        button.scripts.OnEnter(button)
+        assert.are.equal("ボイスチャット無効", _G.GameTooltipTextLeft1:GetText())
+        WFJ.State.setEnabled(false)
+        assert.are.equal("Voice Chat Disabled", _G.GameTooltipTextLeft1:GetText())
+        WFJ.State.setEnabled(true)
+        C.voiceActive, C.voiceError = false, false
       end)
 
       it("the communities list: the finder entries Japanese, a club called like one stays English", function()

@@ -160,3 +160,49 @@ describe("the quick join panel on Forever", function()
     assert.are.equal(1, #Stub.hooks["QuickJoinFrame:UpdateJoinButtonState"])
   end)
 end)
+
+-- The Quick Join tab of the newer social window: SocialUIFrame.QuickJoinFrame, QuickJoinMixin over the contacts
+-- frame (quickjoinsocialview.lua:15–58; its rows are QuickJoinButtonMixin rows, quickjoinsocialview.xml:3).
+describe("the quick join view of the social window", function()
+  local WFJ, view
+  before_each(function()
+    WFJ = S.load(FILES, UI)
+    C.lfglist = false
+    view = S.put(S.frame("SocialUIFrame"), "QuickJoinFrame", S.frame(nil, "QuickJoinFrame"))
+    view.ActionButton = S.button(nil, S.en("JOIN_QUEUE"))
+    function view.UpdateJoinButtonState(self) -- quickjoin.lua:182–203, through GetJoinButton
+      S.write(self.ActionButton, S.en(C.lfglist and "SIGN_UP" or "JOIN_QUEUE"))
+    end
+    view.ScrollBox = Stub.scrollBox()
+  end)
+  after_each(function() S.teardown({ "SocialUIFrame", "FriendsFrame", "QuickJoinFrame", "QuickJoinToastButton" }) end)
+
+  it("is set up with no older panel: the join button follows UpdateJoinButtonState, its disabled reason and a"
+    .. " row's queue tooltip translate; the reveal key shows the English", function()
+    assert.is_true(WFJ.QuickJoin.init())
+    assert.is_false(WFJ.QuickJoin.init()) -- once
+    assert.are.equal("参加をリクエスト", view.ActionButton:GetText())
+    C.lfglist = true
+    view:UpdateJoinButtonState()
+    assert.are.equal("申し込む", view.ActionButton:GetText())
+    S.alt(WFJ, true)
+    assert.are.equal("Sign Up", view.ActionButton:GetText())
+    S.alt(WFJ, false)
+    assert.are.same({ "すでにグループに参加しています。このキューに参加するにはグループを抜けてください。" },
+      S.tooltip(view.ActionButton, { "You are already in a group. You must leave your group to join this queue." }))
+    local row = CreateFrame("Button")
+    view.ScrollBox:initFrame(row, {})
+    assert.are.same({ "Close", "キュー待機中:", "自動承諾" }, S.tooltip(row, { "Close", "Queued for", "Auto Accept" }))
+  end)
+
+  it("beside the older panel both join buttons translate", function()
+    install()
+    assert.is_true(WFJ.QuickJoin.init())
+    assert.are.equal("参加をリクエスト", view.ActionButton:GetText())
+    assert.are.equal("参加をリクエスト", _G.QuickJoinFrame.JoinQueueButton:GetText())
+    C.lfglist = true
+    _G.QuickJoinFrame:UpdateJoinButtonState()
+    assert.are.equal("申し込む", _G.QuickJoinFrame.JoinQueueButton:GetText())
+    assert.are.equal("参加をリクエスト", view.ActionButton:GetText())
+  end)
+end)

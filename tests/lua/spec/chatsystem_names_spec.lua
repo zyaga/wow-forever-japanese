@@ -74,6 +74,8 @@ end
 local ITEM = "|cff9d9d9d|Hitem:2589::::::::10:::::::|h[Linen Cloth]|h|r"
 local SPELL = "|cff71d5ff|Hspell:116:0|h[Frostbolt]|h|r"
 local QUEST = "|cffffff00|Hquest:2:10|h[Sharptalon's Claw]|h|r"
+-- a recipe: an enchant link labelled with the skill and the recipe
+local RECIPE = "|cffffd000|Henchant:13898|h[Enchanting: Enchant Weapon - Fiery Weapon]|h|r"
 
 describe("names on the chat window's lines", function()
   local WFJ, f, secrets
@@ -110,6 +112,8 @@ describe("names on the chat window's lines", function()
       [WFJ.Names.key("Thrall")] = "スロール\tすろーる",
       [WFJ.Names.key("Linen Cloth")] = "リネン・クロス\tりねん・くろす",
       [WFJ.Names.key("Frostbolt")] = "フロストボルト\tふろすとぼると",
+      [WFJ.Names.key("Enchanting")] = "エンチャンティング\tえんちゃんてぃんぐ",
+      [WFJ.Names.key("Enchant Weapon - Fiery Weapon")] = "エンチャント・ウェポン・ファイアリー・ウェポン\tえんちゃんと",
     })
     WFJ.State.setArea("gossip", true)
     WFJ.State.setNames(true)
@@ -147,6 +151,17 @@ describe("names on the chat window's lines", function()
   it("a speaker with no Japanese name keeps the name as written", function()
     npc(f, "Never forget the Great War, Thrall.", "Nobody Known")
     assert.are.equal("Nobody Knownの発言: Thrallよ、グレート・ウォーを忘れるな。", f:Refresh())
+  end)
+
+  it("a recipe link shows the skill and the recipe in Japanese; the player's own words stay", function()
+    party(f, "WTS " .. RECIPE .. " 7g MY MATS", "Bob")
+    assert.are.equal("[Bob]: WTS |cffffd000|Henchant:13898|h[エンチャンティング: エンチャント・ウェポン・ファイアリー・ウェポン]"
+      .. "|h|r 7g MY MATS", f:Refresh())
+    alt(true)
+    assert.are.equal("[Bob]: WTS " .. RECIPE .. " 7g MY MATS", f.visibleLines[1]:GetText())
+    alt(false)
+    WFJ.State.setNames(false)
+    assert.are.equal("[Bob]: WTS " .. RECIPE .. " 7g MY MATS", f.visibleLines[1]:GetText())
   end)
 
   it("an item and a spell link in a player's line show their labels in Japanese, the links as written", function()

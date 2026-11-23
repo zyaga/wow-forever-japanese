@@ -103,6 +103,27 @@ describe("the professions window's names", function()
     assert.are.equal("Blacksmithing", name:GetText())
   end)
 
+  it("an unlearned secondary slot's header, the profession's name, shows its Japanese", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Cooking")] = "クッキング\tくっきんぐ" })
+    -- the slot's inline OnLoad writes it once (camelot/blizzard_professionsbooktemplates.xml:251)
+    local header = slot("SecondaryProfession1").missingHeader
+    header.text = "Cooking"
+    slot("SecondaryProfession2").missingHeader.text = "Nobody Known Craft"
+    frame.BookPage:Hide()
+    frame.BookPage:Show()
+    assert.are.equal("クッキング", header:GetText())
+    assert.are.equal("Nobody Known Craft", slot("SecondaryProfession2").missingHeader:GetText())
+    alt(true)
+    assert.are.equal("Cooking", header:GetText())
+    alt(false)
+    assert.are.equal("クッキング", header:GetText())
+    frame.BookPage:Hide()
+    assert.are.equal("Cooking", header:GetText())
+    WFJ.State.setNames(false)
+    frame.BookPage:Show()
+    assert.are.equal("Cooking", header:GetText())
+  end)
+
   it("a later update (a skill learned) shows the new name", function()
     known.PrimaryProfession2 = { "Mining", 1, 75, "Find Minerals", "Apprentice" }
     frame.BookPage:Update()

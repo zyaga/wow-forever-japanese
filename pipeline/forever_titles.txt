@@ -15,10 +15,10 @@ blizzard_eventtrace blizzard_eventtrace/blizzard_eventtrace.lua:111 key EVENTTRA
 blizzard_flightmap blizzard_flightmap/blizzard_flightmap.lua:17 key FLIGHT_MAP flightmap  # titleText is FLIGHT_MAP from ResetTitleAndPortraitIcon (:12–14); the other value, FLIGHT_MAP_BASTION, is written only for the Shadowlands Bastion texture kit (fm_flightpathdataprovider.lua:40–48), excluded. UI/FlightMap: Labels.title on FlightMapFrame.BorderFrame, only FLIGHT_MAP
 blizzard_framexml blizzard_framexml/achievementdisplayframe.lua:14 dynamic  # the body of that method (self.Title:SetText(title)); same consumer
 blizzard_framexml blizzard_framexml/achievementdisplayframe.lua:9 dynamic  # AchievementDisplayMixin:SetTitle(self.title), the template's own method writing self.Title, not the PortraitFrame title; its only consumer is blizzard_alliedracesui (alliedracesframeui.xml:143, unreachable)
-blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:2464 key IGNORE_LIST friends  # the ignore list window, Labels.title, friends_camelot_spec
-blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:452 key CONTACTS_LIST_TITLE friends  # Labels.title, friends_camelot_spec
-blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:455 key CONTACTS_RECENT_ALLIES_TITLE friends  # Labels.title, friends_camelot_spec
-blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:458 key RECRUIT_A_FRIEND friends  # Labels.title, friends_camelot_spec
+blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:2462 key IGNORE_LIST friends  # the ignore list window, Labels.title, friends_camelot_spec
+blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:450 key CONTACTS_LIST_TITLE friends  # Labels.title, friends_camelot_spec
+blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:453 key CONTACTS_RECENT_ALLIES_TITLE friends  # Labels.title, friends_camelot_spec
+blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:456 key RECRUIT_A_FRIEND friends  # Labels.title, friends_camelot_spec
 blizzard_guildrename blizzard_guildrename/blizzard_guildrename.lua:99 name  # UnitName("npc"): the guild registrar's name, kept in UI/GuildRename's NEVER_TOUCH, guildrename_spec
 blizzard_helpframe blizzard_helpframe/helpframe.lua:51 key HELP_FRAME_TITLE helpframe  # HelpFrame:SetTitle at OnLoad → Labels.title in UI/HelpFrame.lua
 blizzard_inspectui blizzard_inspectui/camelot/blizzard_inspectui.lua:112 name  # the inspected player's name (GetUnitName); UI/Inspect.lua never touches the title
@@ -41,10 +41,10 @@ blizzard_professions blizzard_professions/blizzard_professionscrafterorderpage.l
 blizzard_professions blizzard_professions/blizzard_professionscrafterorderpage.lua:512 dynamic  # the definition line of ProfessionsCraftingOrderPageMixin:SetTitle(); never built on camelot
 blizzard_professions blizzard_professions/blizzard_professionscrafterorderpage.lua:519 dynamic  # PROFESSIONS_CRAFTING_ORDERS_PAGE_NAME:format(<profession name>): a composite with a name; never built on camelot
 blizzard_professions blizzard_professions/blizzard_professionscrafterorderview.lua:301 dynamic  # the crafter orders page's decline dialog (PROFESSIONS_DECLINE_DIALOG_TITLE): the crafter orders page is never built on camelot (camelot/blizzard_professionsframe.xml:66–79)
-blizzard_professions blizzard_professions/blizzard_professionscrafting.lua:994 dynamic  # a call of the page's own SetTitle() (defined at :1376), not a text
-blizzard_professions blizzard_professions/blizzard_professionscrafting.lua:1369 dynamic  # the definition line of ProfessionsCraftingPageMixin:SetTitle(); its body is :1376
-blizzard_professions blizzard_professions/blizzard_professionscrafting.lua:1376 name  # the profession's name (names stay in English); UI/Professions renders only TRADE_SKILLS on that frame (`only`)
-blizzard_professions blizzard_professions/blizzard_professionscrafting.lua:348 dynamic  # a call of the page's own SetTitle() (defined at :1376), not a text
+blizzard_professions blizzard_professions/blizzard_professionscrafting.lua:995 dynamic  # a call of the page's own SetTitle() (defined at :1370), not a text
+blizzard_professions blizzard_professions/blizzard_professionscrafting.lua:1370 dynamic  # the definition line of ProfessionsCraftingPageMixin:SetTitle(); its body is :1377
+blizzard_professions blizzard_professions/blizzard_professionscrafting.lua:1377 name  # the profession's name (names stay in English); UI/Professions renders only TRADE_SKILLS on that frame (`only`)
+blizzard_professions blizzard_professions/blizzard_professionscrafting.lua:348 dynamic  # a call of the page's own SetTitle() (defined at :1370), not a text
 blizzard_professions blizzard_professions/blizzard_professionsframe.lua:258 dynamic  # the definition of ProfessionsMixin:SetTitle(skillLineName): SetTitleFormatted(TRADE_SKILL_TITLE "%s" | GUILD_TRADE_SKILL_TITLE "Guild %s", <profession name>): the name, or a composite with it; UI/Professions' `only` keeps it English
 blizzard_professions blizzard_professions/blizzard_professionsframe.lua:290 name  # the profession's name (through :258)
 blizzard_professions blizzard_professions/blizzard_professionsinspectrecipe.lua:34 name  # the profession's name on the recipe inspect window (names stay in English)
@@ -63,6 +63,8 @@ blizzard_settingsdefinitions_frame blizzard_settingsdefinitions_frame/pingsystem
 blizzard_sharedxml blizzard_sharedxml/modelpreviewframe.lua:10 dynamic  # ModelPreviewFrame's PREVIEW title; the frame is shown only by blizzard_storeui (blizzard_shared_storeuiinsecure.lua:25–90): the store family's disposition, not a retail_lib window
 blizzard_sharedxml blizzard_sharedxml/portraitframe.lua:12 dynamic  # the SetTitle helper itself (PortraitFrameMixin:SetTitle writes TitleContainer.TitleText); each caller's site is dispositioned where it calls it; Labels.title hooks this per window
 blizzard_sharedxml blizzard_sharedxml/toolwindowownermixin.lua:11 dynamic  # the tool-window helper passing its caller's title through; dispositioned at each caller
+blizzard_socialui blizzard_socialui/mainline/socialui.lua:629 dynamic  # RefreshTitle: the selected tab's name (socialui.lua:627–630); UI/SocialUI Labels.title restricted to the tab names, socialui_spec
+blizzard_socialui blizzard_socialui/mainline/socialuitemplates.lua:614 key SOCIAL_UI_IGNORE_LIST_TITLE friends  # the ignore list side window's title; UI/SocialUI Labels.title on IgnoreListFrame (record "ui.ignoreTitle"), socialui_spec
 blizzard_stableui blizzard_stableui/camelot/blizzard_stableui.lua:53 key STABLES stable  # StableFrameMixin:OnShow calls self:SetTitle(STABLES); UI/Stable.lua Labels.title, only STABLES
 blizzard_tokenui blizzard_tokenui/blizzard_currencytransfer.lua:141 key CURRENCY_TRANSFER_MENU_TITLE currencytransfer  # the bare template written at OnLoad, replaced by :241 before the menu is shown; UI/CurrencyTransfer Labels.title, currencytransfer_spec
 blizzard_tokenui blizzard_tokenui/blizzard_currencytransfer.lua:241 key CURRENCY_TRANSFER_MENU_TITLE currencytransfer  # RefreshMenuTitle: the template with the currency name kept as written (needs the Core/UIStrings ARGS `text` entry); UI/CurrencyTransfer Labels.title, currencytransfer_spec
@@ -73,7 +75,7 @@ blizzard_uipanels_game blizzard_uipanels_game/camelot/characterframe.lua:245 key
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:1190 dynamic  # the definition of BankPanelPromptMixin:SetTitle(title): it writes the prompt's own Title FontString, not a window title; its one caller passes client data (:1256)
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:1256 dynamic  # tabData.purchasePromptTitle: C_Bank data (the bank-tab purchase prompt), not a GlobalString
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:23 ruled  # BANK stays English by a recorded decision; the other value, ACCOUNT_BANK_PANEL_TITLE, is the account (warband) bank's
-blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:3014 key COMBINED_BAG_TITLE bags  # rendered today by UI/Bags after ContainerFrame_GenerateFrame (its own per-bag-id resolution, not Labels.title), bags_camelot_spec
+blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:3013 key COMBINED_BAG_TITLE bags  # rendered today by UI/Bags after ContainerFrame_GenerateFrame (its own per-bag-id resolution, not Labels.title), bags_camelot_spec
 blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:925 name  # C_Container.GetBagName: the bag's item name (names stay in English); UI/Bags drops it
 blizzard_uipanels_game blizzard_uipanels_game/mainline/itemtextframe.lua:35 name  # ItemTextGetItem(): the book / letter / plaque's name
 blizzard_uipanels_game blizzard_uipanels_game/mainline/merchantframe.lua:275 name  # UnitName("npc"): the merchant's name (names stay in English); Labels.title's `only` MERCHANT_BUYBACK drops it

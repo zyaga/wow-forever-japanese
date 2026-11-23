@@ -41,8 +41,12 @@
 --   its own Update calls (blizzard_professionscrafting.lua:1038–1039), on the window's surface. Forever's frame has
 --   no orders page (camelot/blizzard_professionsframe.xml:68–79). A trial's cap note after the numbers is words:
 --   that line stays English whole.
--- Never touched: a slot's specialization, a secondary slot's missingHeader (PROFESSIONS_COOKING / _FISHING /
---   _FIRST_AID are profession names; `only` keeps them English), and the spell buttons' spellString and
+-- A secondary slot's missingHeader is the profession's name (PROFESSIONS_COOKING / _FISHING / _FIRST_AID, written
+--   once by the slot's inline OnLoad, camelot templates xml:137, 251, 263, 275, then only shown and hidden,
+--   blizzard_professionsbook.lua:52, 118): no dictionary word (`only` keeps it out of the header's keys). While
+--   names are on it shows the name's Japanese, under a record of its own, with the page's other words. It is a
+--   plain label on the slot's frame like the missingText under it; nothing reads or measures it.
+-- Never touched: a slot's specialization, and the spell buttons' spellString and
 --   subSpellString (the spell's name and its rank
 --   word, "Journeyman"): each button is secure and its click casts (ProfessionButtonTemplate inherits
 --   SecureFrameTemplate, blizzard_professionsbooktemplates.xml:4, 26–37; OnClick → C_SpellBook.CastSpellBookItem,
@@ -112,7 +116,12 @@ function Professions.showStatic(hostKey)
     items[#items + 1] = { prefix .. ".header", slot.frame.missingHeader, HEADER }
     items[#items + 1] = { prefix .. ".missing", slot.frame.missingText, MISSING }
   end
-  return WFJ.Labels.showAll(BOOK, items)
+  local n = WFJ.Labels.showAll(BOOK, items)
+  -- an unlearned secondary slot's header is the profession's name
+  for _, slot in ipairs(slotsOf(hostKey)) do
+    n = n + WFJ.NameLabels.show(BOOK, hostKey .. "." .. slot.name .. ".headerName", slot.frame.missingHeader)
+  end
+  return n
 end
 
 -- A window title: after SetTitle (Labels.title's hook), SetTitleFormatted (ours) and the window's OnShow. → 1 | 0

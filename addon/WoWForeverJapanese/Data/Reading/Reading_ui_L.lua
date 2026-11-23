@@ -119,6 +119,7 @@ WFJ.Data.add("reading", {
   ["ui:LOAD_ADDON"] = { text = "アドオン=アドオン=31825 読み込む=よみこむ=123946" },
   ["ui:LOCALE_AUDIO_LABEL"] = { text = "オーディオ=オーディオ=32337" },
   ["ui:LOCALE_TEXT_LABEL"] = { text = "テキスト=テキスト=33692" },
+  ["ui:LOCKED"] = { text = "ロック=ロック=35598 中=ちゅう=155488" },
   ["ui:LOCK_ACTIONBAR_TEXT"] = { text = "アクションバー=アクションバー=31768 ロック=ロック=35598" },
   ["ui:LOCK_BATTLEFIELDMINIMAP"] = { text = "ゾーンマップ=ゾーンマップ=33445 固定=こてい=59956" },
   ["ui:LOCK_CURSOR"] = { text = "カーソル=カーソル=32448 ウィンドウ=ウィンドウ=32006 内=ない=48202 固定=こてい=59956" },

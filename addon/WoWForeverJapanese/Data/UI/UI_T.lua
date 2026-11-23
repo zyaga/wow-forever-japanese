@@ -127,6 +127,8 @@ WFJ.Data.add("ui", {
   ["TIME_PLAYED_LEVEL"] = { "このレベルでのプレイ時間: %s", 0x5585cf40, "." },
   ["TIME_PLAYED_TOTAL"] = { "総プレイ時間: %s", 0x125e655e, "." },
   ["TIME_REMAINING"] = { "残り時間:", 0x16a46826, "." },
+  ["TIME_TWELVEHOURAM"] = { "午前%d:%02d", 0x85da5083, "." },
+  ["TIME_TWELVEHOURPM"] = { "午後%d:%02d", 0x85da5830, "." },
   ["TIME_UNTIL_DELETED"] = { "郵便が削除されるまでの時間", 0xdf69583b, "." },
   ["TIME_UNTIL_RETURNED"] = { "郵便が返送されるまでの時間", 0xcfd8d212, "." },
   ["TITLE_DOESNT_EXIST"] = { "その称号を持っていません。", 0x1d40100f, "." },

@@ -28,6 +28,9 @@ local UI = {
   LEGACY_TREE_PROFESSIONS = { "Professions", "専門技能" }, LEGACY_TREE_ADVENTURE = { "Adventure", "冒険" },
   LEGACY_TREE_PROGRESSION = { "Resourcefulness", "機知" },
   TRACK_ACHIEVEMENT = { "Track", "追跡" }, SEARCH = { "Search", "検索" }, FILTER = { "Filter", "フィルター" },
+  TRACK_ACHIEVEMENT_TOOLTIP = { "Check to track this achievement.", "チェックするとこのアチーブメントを追跡します。" },
+  UNTRACK_ACHIEVEMENT_TOOLTIP = { "Uncheck to stop tracking this achievement.",
+    "チェックを外すとこのアチーブメントの追跡をやめます。" },
   TALENT_FRAME_APPLY_BUTTON_TEXT = { "Apply Changes", "変更を適用" },
   TALENT_FRAME_DISCARD_CHANGES_BUTTON_TOOLTIP = { "Undo Pending Changes", "保留中の変更を元に戻す" },
   CLOSE = { "Close", "閉じる" }, -- a word a challenge's name may happen to be
@@ -149,6 +152,32 @@ describe("the Legacy window on Forever", function()
           assert.are.equal("Track", card.Label:GetText())
           assert.is_true(unrecorded(card.Label))
           assert.is_true(unrecorded(card.Description))
+        end)
+
+      -- the card's Tracked check inherits AchievementButtonCheckMixin:OnEnter, which writes one of the two lines
+      -- with SetText (blizzard_achievementui/mainline/blizzard_achievementui.lua:1792-1798)
+      it("a challenge card's Track check tooltip is Japanese, the reveal key shows English, off writes nothing",
+        function()
+          local card, tt = L.card(1, { name = "Close", description = "Close" }), _G.GameTooltip
+          local function enter()
+            tt:SetOwner(card.Tracked)
+            tt:SetText(card.Tracked:GetChecked() and _G.UNTRACK_ACHIEVEMENT_TOOLTIP or _G.TRACK_ACHIEVEMENT_TOOLTIP)
+            return _G.GameTooltipTextLeft1:GetText()
+          end
+          assert.are.equal("チェックするとこのアチーブメントを追跡します。", enter())
+          card.Tracked:SetChecked(true)
+          assert.are.equal("チェックを外すとこのアチーブメントの追跡をやめます。", enter())
+          alt(true)
+          assert.are.equal("Uncheck to stop tracking this achievement.", _G.GameTooltipTextLeft1:GetText())
+          alt(false)
+          assert.are.equal("チェックを外すとこのアチーブメントの追跡をやめます。", _G.GameTooltipTextLeft1:GetText())
+          tt:SetOwner(card.Tracked)
+          tt:SetText("Close") -- no line of this check's tooltip
+          assert.are.equal("Close", _G.GameTooltipTextLeft1:GetText())
+          card.Tracked:SetChecked(false)
+          WFJ.State.setEnabled(false)
+          assert.are.equal("Check to track this achievement.", enter())
+          WFJ.State.setEnabled(true)
         end)
 
       it("tab, tree button, point summary and undo tooltips are Japanese", function()
@@ -344,6 +373,32 @@ describe("the Legacy window's client-table text", function()
       WFJ.Legacy.onCategory("x")
     end)
   end)
+
+  it("with Japanese names on, a class's category row shows the class's Japanese; a family row keeps its own word,"
+    .. " the reveal key shows the English and names off writes nothing", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Druid")] = "ドルイド\tどるいど",
+      [WFJ.Names.key("Dungeons")] = "ダンジョンズ\tだんじょんず" })
+    local function category(name)
+      local row = CreateFrame("Button")
+      row.title = fs("")
+      function row.GetTitleRegion(self) return self.title end
+      list.ScrollBox:initFrame(row, { name = name }, function(r, d) r.title.text = d.name end)
+      return row
+    end
+    local druid, dungeons, other = category("Druid"), category("Dungeons"), category("Slay Ragnaros")
+    assert.are.equal("ドルイド", druid.title:GetText())
+    assert.are.equal(WFJ.Font.PATH, (druid.title:GetFont()))
+    assert.are.equal("ダンジョン", dungeons.title:GetText()) -- the category's own word, not the name list's
+    assert.are.equal("Slay Ragnaros", other.title:GetText())
+    alt(true)
+    assert.are.equal("Druid", druid.title:GetText())
+    alt(false)
+    assert.are.equal("ドルイド", druid.title:GetText())
+    WFJ.State.names = false
+    local warrior = category("Druid")
+    assert.are.equal("Druid", warrior.title:GetText())
+    assert.are.equal(0, warrior.title.calls.SetText)
+  end)
 end)
 
 -- The challenge cards' criteria and the reward track. LegacyChallengeObjectives (blizzard_legacysystemtemplates.xml:
@@ -363,6 +418,9 @@ describe("the Legacy window's criteria and reward track", function()
   ROWS["RenownRewardDescription:1832"] = { "Faction Tabard", "陣営タバード" }
   ROWS["RenownRewardToast:1832"] = { "Faction Tabard Unlocked", "陣営タバード解放" }
   ROWS["RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE"] = { "Renown %d Rewards", "名声 %d の報酬" }
+  ROWS["RENOWN_REWARD_MOUNT_NAME_FORMAT"] = { "Mount: %s", "マウント: %s" }
+  ROWS["RENOWN_REWARD_TITLE_NAME_FORMAT"] = { "Title: %s", "称号: %s" }
+  ROWS["RENOWN_REWARD_ILLUSION_NAME_FORMAT"] = { "Illusion: %s", "幻影: %s" }
 
   local function alt(down) Stub.keys.alt = down; WFJ.Modifier.refresh() end
   local function fs(text) return Stub.fontString(text or "") end
@@ -403,17 +461,23 @@ describe("the Legacy window's criteria and reward track", function()
         c.Level.text = tostring(c.info.level)
         c:SetRewardName()
       end
-      function card.OnEnter(c)
+      -- RenownLevelMixin:OnEnter → self:RefreshTooltip() (rewardtracktemplates.lua:517-565); `names` is a
+      -- milestone's further rewards
+      function card.RefreshTooltip(c)
         local tt = _G.GameTooltip
-        tt:SetOwner(c)
         if c.info.count == 1 then
           tt:SetText(c.info.name)
           tt:AddLine(c.info.description)
         else
           tt:SetText(("Renown %d Rewards"):format(c.info.level))
           tt:AddLine("- " .. c.info.name)
+          for _, name in ipairs(c.info.names or {}) do tt:AddLine("- " .. name) end
         end
         tt:Show()
+      end
+      function card.OnEnter(c)
+        _G.GameTooltip:SetOwner(c)
+        c:RefreshTooltip()
       end
       return card
     end)
@@ -494,6 +558,35 @@ describe("the Legacy window's criteria and reward track", function()
     assert.are.equal("Gryphon Rider's Lance", track.Elements[1].RewardName:GetText())
   end)
 
+  it("with Japanese names on, a reward card's item name and its tooltip title show the item's Japanese; the"
+    .. " reveal key shows the English, a reused card follows its new name, names off writes nothing", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Spectral Bear Cub")] = "スペクトラル・ベア・カブ\tすぺくとらる" })
+    track:Init({ { level = 1, name = "Rank 1 Rewards", description = "Faction Tabard", count = 1 },
+      { level = 2, name = "Spectral Bear Cub", description = "Faction Tabard", count = 1 },
+      { level = 3, name = "Nobody Known Item", description = "x", count = 1 } })
+    for _, card in ipairs(track.Elements) do card:TryInit() end
+    local cards = track.Elements
+    assert.are.equal("ランク1の報酬", cards[1].RewardName:GetText())
+    assert.are.equal("スペクトラル・ベア・カブ", cards[2].RewardName:GetText())
+    assert.are.equal(WFJ.Font.PATH, (cards[2].RewardName:GetFont()))
+    assert.are.equal("Nobody Known Item", cards[3].RewardName:GetText())
+    alt(true)
+    assert.are.equal("Spectral Bear Cub", cards[2].RewardName:GetText())
+    alt(false)
+    assert.are.equal("スペクトラル・ベア・カブ", cards[2].RewardName:GetText())
+    cards[2]:OnEnter()
+    assert.are.equal("スペクトラル・ベア・カブ", _G.GameTooltipTextLeft1:GetText())
+    assert.are.equal("陣営タバード", _G.GameTooltipTextLeft2:GetText())
+    _G.GameTooltip:Hide()
+    track:Init({ { level = 1, name = "Spectral Bear Cub", description = "x", count = 1 } })
+    track.Elements[1]:TryInit()
+    assert.are.equal("スペクトラル・ベア・カブ", track.Elements[1].RewardName:GetText())
+    WFJ.State.names = false
+    track:Init({ { level = 1, name = "Spectral Bear Cub", description = "x", count = 1 } })
+    track.Elements[1]:TryInit()
+    assert.are.equal("Spectral Bear Cub", track.Elements[1].RewardName:GetText())
+  end)
+
   it("a reward card's tooltip shows its name and description rows in Japanese; a name line stays", function()
     track:Init({ { level = 1, name = "Rank 1 Rewards", description = "Faction Tabard", count = 1 },
       { level = 4, name = "Gryphon Rider's Lance", count = 2 } })
@@ -505,8 +598,62 @@ describe("the Legacy window's criteria and reward track", function()
     assert.are.equal("- Gryphon Rider's Lance", _G.GameTooltipTextLeft2:GetText())
   end)
 
+  it("a reward named behind its kind shows the label in Japanese and, with names on, the name too: on the card,"
+    .. " as a single reward's tooltip title and on a milestone's dash lines; the reveal key shows the English",
+    function()
+      WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+      finally(function() WFJ.UIStrings.name = nil end)
+      WFJ.Data.add("name", { [WFJ.Names.key("Spectral Bear Cub")] = "スペクトラル・ベア・カブ\tすぺくとらる",
+        [WFJ.Names.key("Swift Timber Wolf")] = "スウィフト・ティンバー・ウルフ\tすうぃふと" })
+      track:Init({ { level = 1, name = "Mount: Swift Timber Wolf", description = "x", count = 1 },
+        { level = 2, name = "Title: Nobody Known", description = "x", count = 1 },
+        { level = 3, name = "Mount: Swift Timber Wolf", count = 4,
+          names = { "Spectral Bear Cub", "Rank 1 Rewards", "Nobody Known Item", "Illusion: Nobody Known" } } })
+      for _, card in ipairs(track.Elements) do card:TryInit() end
+      local cards = track.Elements
+      local function left(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
+      assert.are.equal("マウント: スウィフト・ティンバー・ウルフ", cards[1].RewardName:GetText())
+      assert.are.equal("称号: Nobody Known", cards[2].RewardName:GetText()) -- a name with no Japanese stays
+      alt(true)
+      assert.are.equal("Mount: Swift Timber Wolf", cards[1].RewardName:GetText())
+      alt(false)
+      cards[1]:OnEnter()
+      assert.are.equal("マウント: スウィフト・ティンバー・ウルフ", left(1))
+      _G.GameTooltip:Hide()
+      cards[3]:OnEnter()
+      assert.are.equal("名声 3 の報酬", left(1))
+      assert.are.equal("- マウント: スウィフト・ティンバー・ウルフ", left(2))
+      assert.are.equal("- スペクトラル・ベア・カブ", left(3))
+      assert.are.equal("- ランク1の報酬", left(4))
+      assert.are.equal("- Nobody Known Item", left(5))
+      assert.are.equal("- 幻影: Nobody Known", left(6))
+      alt(true)
+      assert.are.equal("- Mount: Swift Timber Wolf", left(2))
+      assert.are.equal("- Spectral Bear Cub", left(3))
+      assert.are.equal("- Rank 1 Rewards", left(4))
+      alt(false)
+      assert.are.equal("- マウント: スウィフト・ティンバー・ウルフ", left(2))
+      assert.are.equal("- スペクトラル・ベア・カブ", left(3))
+      -- the client's own refresh of the same tooltip (an item's data arrived) writes the lines again
+      cards[3]:RefreshTooltip()
+      assert.are.equal("- スペクトラル・ベア・カブ", left(3))
+      _G.GameTooltip:Hide()
+      assert.is_nil(next(SS.surfaces()["help.legacy"] or {}))
+      -- names off: the labels are Japanese, the names as written
+      WFJ.State.names = false
+      cards[3]:OnEnter()
+      assert.are.equal("- マウント: Swift Timber Wolf", left(2))
+      assert.are.equal("- Spectral Bear Cub", left(3))
+      -- another owner's tooltip is never read
+      _G.GameTooltip:SetOwner(CreateFrame("Frame"))
+      _G.GameTooltip:SetText("x")
+      _G.GameTooltip:AddLine("- Spectral Bear Cub")
+      assert.are.equal(0, WFJ.Legacy.onRewardTooltip(cards[3]))
+    end)
+
   it("wrong shapes raise nothing", function()
     assert.has_no.errors(function()
+      assert.are.equal(0, WFJ.Legacy.onRewardTooltip("x"))
       assert.are.equal(0, WFJ.Legacy.onObjectives({ criteriaPool = 1 }))
       assert.are.equal(0, WFJ.Legacy.onTrack({ Elements = "x" }))
       assert.are.equal(0, WFJ.Legacy.onRewardName("x"))
