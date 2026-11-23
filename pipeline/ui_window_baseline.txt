@@ -21,7 +21,6 @@ always on screen	Reset	the reagent picker before it is opened: the client create
 always on screen	You do not own any suitable reagents.	the reagent picker before it is opened: the client creates it with no parent and no anchor (blizzard_professionstemplates/blizzard_professionsrecipeflyoutinstance.lua:1), so it counts as shown and is never drawn
 achievements	Rogue	a class's name: names stay English
 friends	Rogue	a class's name: names stay English
-group finder	(did not open)	Forever does not load the group finder (blizzard_groupfinder is gated in pipeline/forever_addons.txt), so its toggle does not exist
 dungeon journal	(did not open)	Forever does not load the dungeon journal (blizzard_encounterjournal is gated in pipeline/forever_addons.txt), so its toggle does not exist
 character	Cloth	a skill's name: names stay English
 character	Defense	a skill's name: names stay English

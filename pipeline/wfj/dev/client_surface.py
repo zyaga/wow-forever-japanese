@@ -638,15 +638,32 @@ local function plainOf(region)
 end
 
 local function spells(name) return function() PlayerSpellsUtil[name]() end end
+-- Forever's group finder is the vanilla-style one: blizzard_groupfinder_vanillastyle.toc:5 allows camelot, and
+-- blizzard_groupfinder.toc:10 (the PVEFrame one) excludes it. Its key bindings open a page by number with
+-- LFGVanilla_ToggleFrame (blizzard_groupfinder_vanillastyle/bindings.xml:3 the listing, blizzard_framexml/
+-- bindings_camelot.xml:1254 the who list), which shows that page (blizzard_lfgvanilla_parentframe.lua:107-150).
+-- The side tabs that switch pages are frames with a mouse-up handler (LFGParentFrameRightTabMixin, :92-105 of the
+-- same file), not buttons, so the sweep cannot click them: each page is opened by its number instead. The client
+-- loads the addon at login (blizzard_game/camelot/eventimplementation.lua:12, blizzard_lfgutil/camelot/
+-- lfgutil.lua:1-5); should it not be loaded yet, its own loader is called. [unverified: that an addon may call that
+-- loader without the load being refused; the run records the error if it is]
+local function groupFinder(page)
+  return function()
+    if not LFGParentFrame then GroupFinderVanillaStyle_LoadUI() end
+    LFGVanilla_ToggleFrame(page)
+  end
+end
 local LIVE = {
   { "spellbook", spells("ToggleSpellBookFrame") },
   { "achievements", function() ToggleAchievementFrame() end },
   { "map", function() ToggleWorldMap() end },
   { "quest log", function() ToggleQuestLog() end },
   { "collections", function() ToggleCollectionsJournal(1) end },
-  -- Forever loads neither window (blizzard_groupfinder.toc: ExcludeLoadGameType camelot; the dungeon journal's
-  -- bootstrap is for other game types), so there the opener is missing and the window is named as absent
-  { "group finder", function() PVEFrame_ToggleFrame() end, "PVEFrame_ToggleFrame" },
+  { "group finder", groupFinder(1), "GroupFinderVanillaStyle_LoadUI" },
+  { "group finder > browse", groupFinder(2), "GroupFinderVanillaStyle_LoadUI" },
+  { "group finder > who", groupFinder(3), "GroupFinderVanillaStyle_LoadUI" },
+  -- Forever does not load the dungeon journal (blizzard_encounterjournal.toc:7 allows standard and classic only),
+  -- so there the opener is missing and the window is named as absent
   { "dungeon journal", function() ToggleEncounterJournal() end, "ToggleEncounterJournal" },
   { "friends", function() ToggleFriendsFrame(1) end },
   { "guild", function() ToggleGuildFrame() end },
@@ -773,6 +790,16 @@ local AREAS = { "talent", "spellbook", "pagedspells", "loadout", "containerframe
 
 local ACT = {}
 for _, word in ipairs(ACTS) do ACT[word] = true end
+-- the group finder's Delist button takes the player's listing down (blizzard_lfgvanilla_browse.lua:1295-1298)
+ACT.delist, ACT.unlist = true, true
+
+-- While the player has a group listing up, the listing page's Back button takes it down instead of going back
+-- (LFGListingBackButton_OnClick, blizzard_lfgvanilla_listing.lua:703-706), so no button of that page is clicked
+-- then. With no listing, Back only clears the page back to its categories.
+local function listingUp()
+  local ok, up = pcall(function() return C_LFGList.HasActiveEntryInfo() end)
+  return ok and up == true
+end
 
 -- A frame with no name of its own is named by its address (`ScrollTarget.9914c3950`), which changes every
 -- session and from row to row: a run of eight or more hex characters holding a digit. → the name with `*` there.
@@ -821,6 +848,7 @@ local function verdict(button)
   if name:find("^ChatFrame%%d") or name:find("ChatConfig", 1, true) or name:find("Tooltip", 1, true) then
     return nil, "chat or tooltip"
   end
+  if name:find("^LFGListing") and listingUp() then return nil, "a group listing is up: this page changes it" end
   local page = button.tabID ~= nil or name:find("Tab%%d*$") or name:find("GroupButton%%d+$")
     or name:find("CategoryButton%%d+$")
   if not button:IsEnabled() then return nil, page and "page, disabled (the page in front, or locked)" or "disabled" end
@@ -1342,15 +1370,60 @@ local function WFJScanClosedRead(done)
   end)
 end
 
+-- The English Collector records each tooltip line the addon leaves English, as English waiting for a translation.
+-- The tooltip read and the names read show thousands of tooltips no player asked for, so the Collector is paused
+-- while they run and the player's own value is put back after, also when a read ends early. The addon reads the
+-- setting from its saved table each time it records (Settings.get, Core/Settings.lua), and this setting has no
+-- step that runs when it changes, so writing it there pauses it at once. The value it had is kept in this addon's
+-- saved table as well: a logout or reload puts it back before the game saves, and after a crash mid-read the next
+-- login puts it back.
+local COLLECTOR = "collector.enabled"
+local function addonSettings()
+  local settings = type(WFJ_DB) == "table" and WFJ_DB.settings
+  return type(settings) == "table" and settings or nil
+end
+local function probeRecord()
+  local db = type(WFJScanDB) == "table" and WFJScanDB.probe
+  return type(db) == "table" and db or nil
+end
+local function resumeCollector()
+  local db, settings = probeRecord(), addonSettings()
+  if not db or type(db.collectorPaused) ~= "table" then return end
+  if settings then settings[COLLECTOR] = db.collectorPaused.was end
+  db.collectorPaused = nil
+end
+-- → `done`, to be called when the read ends: the Collector stays paused until then
+local function collectorPaused(done)
+  local db, settings = probeRecord(), addonSettings()
+  if db and settings and type(db.collectorPaused) ~= "table" then
+    db.collectorPaused = { was = settings[COLLECTOR] }
+    settings[COLLECTOR] = false
+  end
+  return function(...)
+    resumeCollector()
+    return done(...)
+  end
+end
+local collectorGuard = CreateFrame("Frame")
+collectorGuard:RegisterEvent("PLAYER_LOGIN")
+collectorGuard:RegisterEvent("PLAYER_LOGOUT")
+collectorGuard:SetScript("OnEvent", function(_, event)
+  if event == "PLAYER_LOGIN" or event == "PLAYER_LOGOUT" then resumeCollector() end
+end)
+
 -- The tooltip read. No sweep above opens a tooltip, so a tooltip whose numbers sat in the wrong places, or whose
 -- flavour line was written over its use line, was seen by no run. This shows the tooltip of every spell in
 -- `VALUES` and of every item the character wears or carries, the way the client shows them, and reads each
 -- against the client's own tooltip data (which the addon never changes), into `probe.tooltips`:
---   wrong    a spell shown in Japanese although its line holds another count of numbers than the Japanese is
---            numbered to: every later number is in the wrong place. A failure.
---   changed  a spell left English because of that: the game changed its tooltip and the Japanese is to follow
---   folded   an item whose one Japanese paragraph stands for several of its lines, the others blanked
--- A spell whose text the client has not loaded yet is not read, and counted.
+--   wrong      a spell shown in Japanese although its line holds another count of numbers than the Japanese is
+--              numbered to: every later number is in the wrong place. A failure.
+--   changed    a spell left English because of that: the game changed its tooltip and the Japanese is to follow
+--   folded     an item whose one Japanese paragraph stands for several of its lines, the others blanked
+--   left       every spell left English, with the reason the addon's gate gives (see leftWhy) and its line
+--   leftItems  every item with one of its own lines left as the client wrote it, with that line
+--   icons      every spell whose Japanese holds an icon slot: whether the client's line and the row shown carry
+--              an icon escape, and whether the addon showed Japanese
+-- A spell whose text the client has not loaded yet is not read, and counted. The Collector is paused meanwhile.
 local TOOLTIP_MS = 8 -- per frame
 local TOOLTIP_SAY = 3000 -- spells between two progress lines
 local TOOLTIP_SETTLE = 3 -- seconds between asking for the last spell and reading the first tooltip
@@ -1381,6 +1454,105 @@ local function readable(text)
   return type(text) == "string" and text ~= "" and not (issecretvalue and issecretvalue(text))
 end
 
+-- Why the addon left a spell's line English although its Japanese ships, decided by the addon's own gate (the copy
+-- of Core/Align.lua at the top of this file, `ShippedAlign`), step by step in the order Align.check runs, on the
+-- Japanese the addon ships (`SHIPPED`). → reason, what was seen. The reasons:
+--   hole    the client printed a gap of its own, for a spell the character does not know: "until cancelled" where
+--           a duration goes, or an included text as "<digits>". Not a fault.
+--   values  the live line holds another count of numbers than the Japanese is numbered to
+--   icon    the Japanese holds an icon slot ($I<k>) and the live line has no icon escape to fill it
+--   name    the Japanese holds a Latin word the live line lacks
+--   number  a number in the filled Japanese is not in the live line
+--   none    no Japanese ships for it
+--   other   none of these: a placeholder with no value, or the gate's checks pass on this line
+-- The addon renders a duration through its interface strings, which this addon does not carry. A stand-in takes a
+-- number followed by time units as a duration, so a duration decides no reason here.
+local UNITS = { sec = true, secs = true, second = true, seconds = true, min = true, mins = true, minute = true,
+  minutes = true, hr = true, hrs = true, hour = true, hours = true, day = true, days = true }
+local function anyDuration(phrase)
+  if phrase:find("|4", 1, true) then return phrase end -- the client's plural code: "1 |4hour:hrs;"
+  local words = 0
+  for word in phrase:gmatch("%%a+") do
+    if not UNITS[word:lower()] then return nil end
+    words = words + 1
+  end
+  return words > 0 and phrase or nil
+end
+
+local function leftWhy(id, english)
+  local shipped = type(SHIPPED) == "table" and SHIPPED[id]
+  if not shipped then return "none", "no Japanese ships for it" end
+  local ja = shipped[1]
+  if (english:lower():find("until cancel", 1, true) and ja:find("%%$D%%d")) or english:find("<%%d+>") then
+    return "hole", "the client printed a gap for a spell this character does not know"
+  end
+  local A = ShippedAlign
+  if type(A) ~= "table" then return "other", "this test addon carries no copy of the gate" end
+  local scope = english
+  local head, tail = A.splitTail(ja, scope)
+  if head == nil then return "other", "the line's list of names is laid out another way" end
+  if tail then ja, scope = head, tail.scope end
+  local plain, icons = A.textures(scope)
+  local values = A.values(plain)
+  if VALUES[id] and #values ~= VALUES[id] then
+    return "values", VALUES[id] .. " numbers in the Japanese, " .. #values .. " on this client"
+  end
+  for k in ja:gmatch("%%$I(%%d+)") do
+    if not icons[tonumber(k)] then
+      return "icon", "icon slot " .. k .. ", and the live line has " .. #icons .. " icons"
+    end
+  end
+  local text = A.fill(ja, values, A.durations(plain, anyDuration), icons)
+  if not text then return "other", "a placeholder has no value in the live line" end
+  if shipped[2] == "." then return "other", "a trusted line, and its values fill" end
+  local checked = A.textures(text)
+  local names = A.checkNames(checked, plain)
+  if #names > 0 then return "name", table.concat(names, ", ") end
+  local numbers = A.checkNumbers(checked, plain, values)
+  if #numbers > 0 then return "number", table.concat(numbers, ", ") end
+  return "other", "the gate's checks pass on this line"
+end
+
+local function iconIn(text)
+  return type(text) == "string" and text:gsub("||", ""):find("|T[^|]*|t") ~= nil
+end
+
+-- A spell's line after its tooltip was shown: the icon facts for a Japanese with an icon slot, and, when the addon
+-- left it English, why. The rune spells' Japanese asks for an icon, and whether the client's line carries one is
+-- not known: `icons` answers it.
+local function noteSpell(record, id, english, shown)
+  record.left = record.left or {}
+  record.icons = record.icons or {}
+  local shipped = type(SHIPPED) == "table" and SHIPPED[id]
+  local japanese = hasJapanese(shown)
+  if shipped and shipped[1]:find("%%$I%%d") then
+    record.icons[tostring(id)] = { line = iconIn(english), shown = iconIn(shown), japanese = japanese }
+  end
+  if japanese then return end
+  local ok, reason, why = pcall(leftWhy, id, english)
+  if not ok then reason, why = "other", "the reason could not be read: " .. tostring(reason) end
+  record.left[tostring(id)] = { reason = reason, why = why, text = english:sub(1, 300) }
+end
+
+-- An item's own line (its use, equip or hit line, or its flavour text in quotes) shown as the client wrote it: the
+-- first one of each item, under `leftItems`. Whether Japanese ships for the item is looked up when the result is
+-- read. [unverified: that the client's tooltip data starts these lines with the English trigger word; the run's
+-- list shows it]
+local function ownLine(text)
+  local plain = text:gsub("^|c%%x%%x%%x%%x%%x%%x%%x%%x", "")
+  return plain:find("^Use: ") or plain:find("^Equip: ") or plain:find("^Chance on hit: ") or plain:find('^"')
+end
+local function noteItem(record, id, lines)
+  record.leftItems = record.leftItems or {}
+  for i = 2, #lines do
+    local english = lines[i].leftText
+    if readable(english) and shownRow(i) == english and ownLine(english) then
+      record.leftItems[tostring(id)] = english:sub(1, 300)
+      return
+    end
+  end
+end
+
 local function readSpell(record, id, describe)
   local english = describe(id)
   if not readable(english) then
@@ -1407,6 +1579,7 @@ local function readSpell(record, id, describe)
   elseif live ~= VALUES[id] then
     record.changed[tostring(id)] = said
   end
+  noteSpell(record, id, english, shown)
 end
 
 -- one item's tooltip, already shown, against its data
@@ -1427,6 +1600,7 @@ local function readItem(record, id, data)
       end
     end
   end
+  noteItem(record, id, lines)
 end
 
 local function readItems(record)
@@ -1451,6 +1625,7 @@ local function readItems(record)
 end
 
 local function WFJScanTooltipRead(done)
+  done = collectorPaused(done)
   local db = probeDb()
   local record = { read = 0, unread = 0, japanese = 0, items = 0, wrong = {}, changed = {}, folded = {} }
   db.tooltips = record
@@ -1649,6 +1824,7 @@ local function WFJScanNamesRead(done)
   local record = { on = namesOn(), rows = {} }
   db.names = record
   if not record.on then return done() end
+  done = collectorPaused(done) -- it shows tooltips by id, as the tooltip read does
   local seen = {}
   local function keep(kind, english, shown)
     if not readable(english) or not readable(shown) or #record.rows >= NAMES_MAX then return end
@@ -1759,6 +1935,37 @@ local function WFJScanCharacterRead(done)
     characterReader:SetScript("OnUpdate", nil)
     done()
   end)
+end
+
+-- Two chat lines before the done line: what fails the run, and what was left English without a fault, by kind.
+-- The window lines are counted before the baseline is applied; `make window-test` applies it and lists each line.
+local function keysIn(t)
+  local n = 0
+  for _ in pairs(type(t) == "table" and t or {}) do n = n + 1 end
+  return n
+end
+local function sayCounts(db)
+  local test = type(db.test) == "table" and db.test or {}
+  local tips = type(db.tooltips) == "table" and db.tooltips or {}
+  local novoice = type(db.novoice) == "table" and db.novoice or {}
+  print("WFJ test: faults: " .. (keysIn(test.errors) + keysIn(test.blocked) + keysIn(test.warnings))
+    .. " errors or refused actions, " .. keysIn(tips.wrong) .. " tooltips with numbers in the wrong places, "
+    .. keysIn(tips.folded) .. " items written over, " .. keysIn(novoice.wrong) .. " wrong no-voice messages")
+  local by, holes = {}, 0
+  for _, row in pairs(type(tips.left) == "table" and tips.left or {}) do
+    if row.reason == "hole" then holes = holes + 1 else by[row.reason] = (by[row.reason] or 0) + 1 end
+  end
+  local parts = {}
+  for _, reason in ipairs({ "icon", "values", "name", "number", "none", "other" }) do
+    if by[reason] then parts[#parts + 1] = reason .. " " .. by[reason] end
+  end
+  local windows = 0
+  for window, screen in pairs(type(db.live) == "table" and db.live or {}) do
+    if window ~= "(nothing open)" and type(screen) == "table" then windows = windows + keysIn(screen.english) end
+  end
+  print("WFJ test: left English, not a fault: spells " .. (#parts > 0 and table.concat(parts, ", ") or "0")
+    .. " (and " .. holes .. " gaps the client printed), items " .. keysIn(tips.leftItems) .. ", window lines "
+    .. windows .. "; make window-test lists them")
 end
 
 -- The whole window test (`/wfjtest`): the load walk, the live sweep, the closed-window read, the tooltip read, the
@@ -1873,6 +2080,7 @@ SlashCmdList.WFJTEST = function(how)
               readGrabbed()
               testRunning = false
               db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
+              pcall(sayCounts, db)
               print("WFJ test done: /reload to save, then the result can be read")
             end)
             end) end)
@@ -1940,12 +2148,74 @@ def spell_value_counts(data: Path) -> dict[int, int]:
     return {int(i): n for (i, field), n in counts.items() if field == "description" and n >= 0}
 
 
+# the addon's gate, copied into the test addon whole (`gate_lua`), relative to the repository
+ALIGN_LUA = Path("addon/WoWForeverJapanese/Core/Align.lua")
+
+
+def spell_japanese(data: Path, ids: Iterable[int]) -> dict[int, tuple[str, str]]:
+    """Each listed spell's shipped Japanese description as the addon ships it (`tooltip_text.shipped_ja`), with
+    its status letter (`schema.STATUS_CHAR`): what the tooltip read runs the addon's own gate on, to say why a
+    spell's line stayed English. A spell with no shipped description is left out."""
+    from wfj.core import tooltip_text
+    from wfj.emit import lua_writer, schema
+    from wfj.io.jsonl_store import Store
+
+    wanted = set(ids)
+    english = {ln["id"]: ln["en"] for ln in Store(data, english=True).load("spell")
+               if ln["field"] == "description" and ln["id"] in wanted}
+    out: dict[int, tuple[str, str]] = {}
+    for ln in Store(data).load("spell"):
+        if ln["field"] == "description" and ln["id"] in wanted and lua_writer.shipped(ln):
+            out[int(ln["id"])] = (tooltip_text.shipped_ja(ln, english.get(ln["id"])), schema.STATUS_CHAR[ln["status"]])
+    return out
+
+
+# Lua 5.1 keeps one pool of constants per function: the Japanese is split over functions of this many entries
+_SHIPPED_PART = 2000
+
+GATE_LUA_HEAD = """
+-- The addon's own gate, Core/Align.lua copied in whole when this file is built, run in a table of its own the way
+-- the addon runs it in its namespace. The tooltip read asks it why a spell's line stayed English (leftWhy).
+local ShippedAlign
+do
+  local shipped = {}
+  local function run(...)
+"""
+GATE_LUA_TAIL = """
+  end
+  run("WoWForeverJapanese", shipped)
+  ShippedAlign = shipped.Align
+end
+-- Each spell's Japanese as the addon ships it, with its status letter ("." trusted, "u" unaligned, "s" stale)
+local SHIPPED = {}
+for _, part in ipairs({
+%s
+}) do
+  for id, entry in pairs(part()) do SHIPPED[id] = entry end
+end
+"""
+
+
+def gate_lua(align: str, japanese: Mapping[int, tuple[str, str]]) -> str:
+    """The addon's gate (`align`, the text of Core/Align.lua) as `ShippedAlign`, and each spell's shipped Japanese
+    with its status letter (`spell_japanese`) as `SHIPPED`, for the test addon's tooltip read."""
+    items = sorted(japanese.items())
+    parts = []
+    for at in range(0, len(items), _SHIPPED_PART):
+        rows = "\n".join(f"  [{i}] = {{ {_lua_string(ja)}, {_lua_string(status)} }},"
+                         for i, (ja, status) in items[at:at + _SHIPPED_PART])
+        parts.append(f"function() return {{\n{rows}\n}} end,")
+    return GATE_LUA_HEAD + align + GATE_LUA_TAIL % "\n".join(parts)
+
+
 def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[str] = (),
-              at_login: bool = True, keys: Iterable[str] = (), values: Mapping[int, int] | None = None) -> str:
+              at_login: bool = True, keys: Iterable[str] = (), values: Mapping[int, int] | None = None,
+              japanese: Mapping[int, tuple[str, str]] | None = None, gate: str | None = None) -> str:
     """The probe as one Lua file for the scan dev addon: every manifest name with its surface, checked at
     login, saved under `WFJScanDB.probe` for `report`. With `walk` it also loads every load-on-demand addon a
     surface waits for and records what the client restricts (`read_walk` reads both back); with `at_login`
-    false that loading waits for the window test."""
+    false that loading waits for the window test. With `gate` (the text of Core/Align.lua) the window test also
+    carries the addon's gate and the spells' shipped Japanese (`japanese`), to say why a spell stayed English."""
     surfaces = {(e["kind"], e["name"]): e["surface"] for e in manifest["entries"] if e.get("name")}
     rows = [f'  {{"{kind}","{name}","{surfaces[(kind, name)]}"}},' for kind, name in probe_names(manifest)]
     probed = set(surfaces.values())
@@ -1959,6 +2229,8 @@ def probe_lua(manifest: dict[str, Any], walk: bool = False, english: Iterable[st
         # the English lines that have Japanese: a text region still holding one was reached by no surface
         lines = sorted({t for t in english if "%" not in t and re.search(r"[A-Za-z]{2}", t)})
         if lines:
+            if gate is not None:
+                lua += gate_lua(gate, japanese or {})
             lua += TEXT_LUA % ("\n".join(f"  [{_lua_string(t)}] = true," for t in lines),
                                "\n".join(f'  "{k}",' for k in sorted(set(keys))),
                                "\n".join(f"  [{i}] = {n}," for i, n in sorted((values or {}).items())))
@@ -2431,6 +2703,96 @@ def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -
     return sorted(out)
 
 
+def _by_id(table: Any) -> list[tuple[Any, Any]]:
+    rows = table.named() if table is not None else {}
+    return sorted(rows.items(), key=lambda kv: (int(kv[0]) if str(kv[0]).isdigit() else -1, str(kv[0])))
+
+
+def read_left_english(text: str) -> dict[str, Any] | None:
+    """The tooltip read's lines left English out of a saved-variables file, or None when the run's test addon
+    kept no such list: `spells` (id, reason, what was seen, the client's line) for every spell read whose
+    Japanese the addon did not show, `items` (id, the first of the item's own lines left as the client wrote it),
+    and `icons` (id, the client's line carries an icon escape, the row shown carries one, the addon showed
+    Japanese) for every spell whose Japanese holds an icon slot. Sorted by id."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("tooltips") if probe is not None else None
+    if record is None or record.get("left") is None:
+        return None
+    return {
+        "spells": [(str(k), str(v.get("reason")), str(v.get("why") or ""), str(v.get("text") or ""))
+                   for k, v in _by_id(record.get("left"))],
+        "items": [(str(k), str(v)) for k, v in _by_id(record.get("leftItems"))],
+        "icons": [(str(k), bool(v.get("line")), bool(v.get("shown")), bool(v.get("japanese")))
+                  for k, v in _by_id(record.get("icons"))],
+    }
+
+
+# the reasons a line was left English, in the order they are listed
+LEFT_REASONS = ("icon", "values", "name", "number", "none", "other")
+
+
+def untranslated(left: dict[str, Any] | None, new: Iterable[str], item_ships: set[int]) -> tuple[list[str], int]:
+    """The lines left English that are not a fault of the addon, one per line, `<what>\\t<reason>\\t<what was
+    seen>\\t<the line>`: the spells and items of `left` (`read_left_english`), then the window lines of `new`
+    (`window_test_report`'s lines the baseline does not allow; a window that did not open and Japanese in a font
+    without it are faults, not text). An item is `other` when its Japanese ships (`item_ships`), else `none`.
+    → (the lines, how many spells were the client's own gaps: `hole`, counted and never listed)."""
+    order = {reason: n for n, reason in enumerate(LEFT_REASONS)}
+    spells, items, holes = [], [], 0
+    for id_, reason, why, text in (left or {}).get("spells", []):
+        if reason == "hole":
+            holes += 1
+            continue
+        spells.append((order.get(reason, len(order)), f"spell {id_}\t{reason}\t{_line(why)}\t{_line(text)}"))
+    for id_, text in (left or {}).get("items", []):
+        ships = id_.isdigit() and int(id_) in item_ships
+        reason, why = (("other", "Japanese ships for this item and the line stayed English") if ships
+                       else ("none", "no Japanese ships for this item"))
+        items.append((order[reason], f"item {id_}\t{reason}\t{why}\t{_line(text)}"))
+    windows = []
+    for row in new:
+        window, _, english = row.partition("\t")
+        if not english.startswith((NOT_OPENED, BOXES)):
+            windows.append(f"window {window}\twindow\tnot allowed by the baseline, so it also fails the run\t{english}")
+    ranked = [row for _, row in sorted(spells, key=lambda r: r[0])] + [row for _, row in sorted(items, key=lambda r: r[0])]
+    return ranked + windows, holes
+
+
+def _items_with_japanese() -> set[int]:
+    """The items whose Japanese description ships, from this checkout's data."""
+    from wfj.emit import lua_writer
+    from wfj.io.jsonl_store import Store
+    from wfj.paths import data_root
+
+    return {int(ln["id"]) for ln in Store(data_root()).load("item") if lua_writer.shipped(ln)}
+
+
+def _say_left(saved: str, new: list[str]) -> None:
+    """Prints the lines left English that are not a fault, whether the run passed or failed, so every run says
+    what is still to translate."""
+    left = read_left_english(saved)
+    if left is None:
+        print("left English: this run's test addon does not list the spells and items it left English "
+              "(make scan-install, then run it again)")
+    elif left["icons"]:
+        icons = left["icons"]
+        print(f"icon slots: {len(icons)} spells whose Japanese holds one; the client's line carried an icon on "
+              f"{sum(1 for i in icons if i[1])}, the row shown on {sum(1 for i in icons if i[2])}; shown in Japanese "
+              f"on {sum(1 for i in icons if i[3])}")
+    ships = _items_with_japanese() if left is not None and left["items"] else set()
+    rows, holes = untranslated(left, new, ships)
+    gaps = ("1 gap the client printed for a spell this character does not know" if holes == 1
+            else f"{holes} gaps the client printed for spells this character does not know")
+    print(f"left English, not a fault: {len(rows)} lines (and {gaps}, counted and not listed)")
+    for row in rows:
+        print(f"LEFT  {row}")
+    print("Report this list to the maintainer and ask what to do with it: translate these lines with this change, "
+          "or name where they go.")
+
+
 def read_test_problems(text: str, log: str = "") -> list[str]:
     """What went wrong while the window test ran, one line each: the Lua errors and the actions the client refused
     an addon, as the scan addon counted them, and, from the shipped addon's own saved file (`log`), its recorded
@@ -2613,6 +2975,7 @@ def _texts(args: argparse.Namespace) -> int:
         print(f"ERROR {row}")
     for row in noted:
         print(f"noted {row}")
+    _say_left(args.saved.read_text(encoding="utf-8", errors="replace"), new)
     return 1 if new or failing else 0
 
 
@@ -2663,8 +3026,11 @@ def main(argv: list[str] | None = None) -> int:
         english = translated_english(args.window_test) if args.window_test else ()
         keys = translated_keys(args.window_test) if args.window_test else ()
         values = spell_value_counts(args.window_test) if args.window_test else None
+        japanese = spell_japanese(args.window_test, values or {}) if args.window_test else None
+        gate = ((args.window_test.resolve().parent / ALIGN_LUA).read_text(encoding="utf-8")
+                if args.window_test else None)
         text = probe_lua(manifest, walk=args.walk or bool(args.window_test), english=english,
-                         at_login=args.walk, keys=keys, values=values)
+                         at_login=args.walk, keys=keys, values=values, japanese=japanese, gate=gate)
         args.out.write_text(text, encoding="utf-8")
         print(f"probe: {len(probe_names(manifest))} names → {args.out}")
         return 0

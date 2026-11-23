@@ -357,8 +357,23 @@ WFJScanDB = {
 
 def test_a_window_this_client_does_not_have_is_named_and_not_failed():
     lua = client_surface.TEXT_LUA
-    assert '{ "group finder", function() PVEFrame_ToggleFrame() end, "PVEFrame_ToggleFrame" }' in lua
+    assert '{ "dungeon journal", function() ToggleEncounterJournal() end, "ToggleEncounterJournal" }' in lua
     assert "if LIVE[at][3] and _G[LIVE[at][3]] == nil then" in lua and "db.test.absent" in lua
+
+
+def test_forevers_own_group_finder_is_opened_page_by_page_the_clients_way(root):
+    lua = client_surface.TEXT_LUA
+    # Forever loads the vanilla-style group finder, not the one PVEFrame_ToggleFrame opens
+    assert "PVEFrame_ToggleFrame" not in lua
+    for page, name in ((1, "group finder"), (2, "group finder > browse"), (3, "group finder > who")):
+        assert f'{{ "{name}", groupFinder({page}), "GroupFinderVanillaStyle_LoadUI" }}' in lua
+    assert "LFGVanilla_ToggleFrame(page)" in lua
+    # a listing that is up is never taken down: its Back button unlists it, and the Delist button too
+    assert "C_LFGList.HasActiveEntryInfo()" in lua and 'name:find("^LFGListing")' in lua
+    assert "ACT.delist, ACT.unlist = true, true" in lua
+    baseline = client_surface.read_window_baseline((root / "pipeline/ui_window_baseline.txt").read_text("utf-8"))
+    assert ("group finder", client_surface.NOT_OPENED) not in baseline
+    assert ("dungeon journal", client_surface.NOT_OPENED) in baseline  # blizzard_encounterjournal is not on Forever
 
 
 def test_closed_windows_are_read_without_being_shown_and_listed_to_read():
@@ -612,3 +627,203 @@ def test_the_names_read_runs_after_the_no_voice_read_and_only_shows_tooltips():
     assert "UnitIsPlayer" in body and "readable(" in body
     # the names setting is read, never written: the run shows what this player sees
     assert 'settings["names.japanese"] == true' in lua and "names.japanese\"] =" not in body
+
+
+LEFT = """
+WFJScanDB = {
+["probe"] = {
+["test"] = { ["started"] = "2026-11-22 18:00:00", ["finished"] = "2026-11-22 18:05:00", ["build"] = "70959" },
+["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
+["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
+["tooltips"] = { ["read"] = 50, ["japanese"] = 45, ["unread"] = 0, ["items"] = 3,
+  ["wrong"] = { }, ["changed"] = { ["17"] = "2 numbers in the Japanese, 3 on this client" }, ["folded"] = { },
+  ["left"] = {
+    ["17"] = { ["reason"] = "values", ["why"] = "2 numbers in the Japanese, 3 on this client",
+      ["text"] = "Absorbs 48 damage for 30 sec, 3 times." },
+    ["400"] = { ["reason"] = "hole", ["why"] = "a gap", ["text"] = "Lasts until cancelled." },
+    ["9"] = { ["reason"] = "name", ["why"] = "Thrall", ["text"] = "Summons a friend." },
+    ["8"] = { ["reason"] = "icon", ["why"] = "icon slot 1, and the live line has 0 icons", ["text"] = "Grants a rune." },
+  },
+  ["leftItems"] = { ["6948"] = "Use: Returns you to home.", ["117"] = "Use: Restores 61 health." },
+  ["icons"] = { ["8"] = { ["line"] = false, ["shown"] = false, ["japanese"] = false },
+    ["12"] = { ["line"] = true, ["shown"] = false, ["japanese"] = true } } },
+},
+}
+"""
+
+
+def test_the_tooltip_read_lists_each_spell_and_item_left_english_with_its_reason():
+    left = client_surface.read_left_english(LEFT)
+    assert left["spells"] == [
+        ("8", "icon", "icon slot 1, and the live line has 0 icons", "Grants a rune."),
+        ("9", "name", "Thrall", "Summons a friend."),
+        ("17", "values", "2 numbers in the Japanese, 3 on this client", "Absorbs 48 damage for 30 sec, 3 times."),
+        ("400", "hole", "a gap", "Lasts until cancelled."),
+    ]
+    assert left["items"] == [("117", "Use: Restores 61 health."), ("6948", "Use: Returns you to home.")]
+    # the open question of the rune spells: does the client's line carry the icon the Japanese asks for
+    assert left["icons"] == [("8", False, False, False), ("12", True, False, True)]
+    assert client_surface.read_left_english(TOOLTIPS) is None  # a test addon from before the list
+    assert client_surface.read_left_english(SAVED) is None
+
+
+def test_untranslated_lines_are_listed_apart_from_faults_and_the_clients_own_gaps_are_only_counted():
+    left = client_surface.read_left_english(LEFT)
+    new = ["spellbook\tFrost", "group finder\t(did not open)", f"guild\t{client_surface.BOXES} Motd"]
+    rows, holes = client_surface.untranslated(left, new, {117})
+    assert holes == 1
+    assert rows == [  # by reason, in the order of LEFT_REASONS
+        "spell 8\ticon\ticon slot 1, and the live line has 0 icons\tGrants a rune.",
+        "spell 17\tvalues\t2 numbers in the Japanese, 3 on this client\tAbsorbs 48 damage for 30 sec, 3 times.",
+        "spell 9\tname\tThrall\tSummons a friend.",
+        "item 6948\tnone\tno Japanese ships for this item\tUse: Returns you to home.",
+        "item 117\tother\tJapanese ships for this item and the line stayed English\tUse: Restores 61 health.",
+        # a window's English stays a failure of the run as well: listed here so it is reported with the rest
+        "window spellbook\twindow\tnot allowed by the baseline, so it also fails the run\tFrost",
+    ]
+    assert client_surface.untranslated(None, [], set()) == ([], 0)
+
+
+def test_the_result_says_what_was_left_english_on_every_run_and_that_list_alone_fails_nothing(
+        tmp_path, capsys, monkeypatch):
+    monkeypatch.setattr(client_surface, "_items_with_japanese", lambda: {117})
+    saved = tmp_path / "WFJScan.lua"
+    saved.write_text(LEFT, encoding="utf-8")
+    args = argparse.Namespace(saved=saved, baseline=tmp_path / "none.txt", log=None)
+    assert client_surface._texts(args) == 0
+    out = capsys.readouterr().out.rstrip().splitlines()
+    assert "left English, not a fault: 5 lines (and 1 gap the client printed for a spell this character does not " \
+           "know, counted and not listed)" in out
+    assert "LEFT  spell 9\tname\tThrall\tSummons a friend." in out
+    assert "icon slots: 2 spells whose Japanese holds one; the client's line carried an icon on 1, the row shown " \
+           "on 0; shown in Japanese on 1" in out
+    assert out[-1] == ("Report this list to the maintainer and ask what to do with it: translate these lines with "
+                       "this change, or name where they go.")
+    # a failing run says it too
+    saved.write_text(LEFT.replace('["wrong"] = { }, ["changed"]',
+                                  '["wrong"] = { ["5"] = "1 numbers in the Japanese, 2 on this client" }, ["changed"]'),
+                     encoding="utf-8")
+    assert client_surface._texts(args) == 1
+    out = capsys.readouterr().out.rstrip().splitlines()
+    assert "ERROR tooltip numbers in the wrong places: spell 5 (1 numbers in the Japanese, 2 on this client)" in out
+    assert out[-1].startswith("Report this list to the maintainer")
+
+
+def _lua():
+    lua = shutil.which("luajit") or shutil.which("lua5.1") or shutil.which("lua")
+    if lua is None:
+        pytest.skip("no Lua interpreter")
+    return lua
+
+
+def _sweep() -> str:
+    return client_surface.TEXT_LUA % ('  ["Back"] = true,', '  "BACK",', "  [5] = 2,")
+
+
+def test_the_reason_a_spell_stayed_english_is_read_by_the_addons_own_gate(root, tmp_path):
+    lua = _lua()
+    align = (root / "addon/WoWForeverJapanese/Core/Align.lua").read_text(encoding="utf-8")
+    gate = client_surface.gate_lua(align, {
+        1: ("$N1のダメージを与えます。", "u"),
+        2: ("$I1 ルーンを刻みます。", "u"),
+        3: ("Thrallを呼びます。", "u"),
+        4: ("$N1のダメージを与え、5秒間スタンさせます。", "u"),
+        5: ("$D1の間、攻撃力が上がります。", "u"),
+        6: ("$N1のダメージを与えます。", "u"),
+    })
+    sweep = _sweep()
+    reasons = sweep[sweep.index("local UNITS = {"):sweep.index("local function noteSpell")]
+    driver = """
+local VALUES = { [1] = 1, [4] = 1, [6] = 1 }
+""" + reasons + """
+for _, case in ipairs({
+  { 1, "Deals 10 to 20 Fire damage, then 5 more." },
+  { 2, "Carves a rune." },
+  { 3, "Summons a friend." },
+  { 4, "Deals 30 damage and stuns the target." },
+  { 5, "Increases attack power until cancelled." },
+  { 6, "Deals <1234> damage." },
+  { 6, "Deals 30 damage." },
+  { 9, "Deals 30 damage." },
+}) do
+  local reason, why = leftWhy(case[1], case[2])
+  print(case[1] .. " " .. reason .. " | " .. why)
+end
+"""
+    script = tmp_path / "why.lua"
+    script.write_text(gate + driver, encoding="utf-8")
+    out = subprocess.run([lua, str(script)], check=False, capture_output=True, text=True, timeout=60)
+    assert out.returncode == 0, out.stderr
+    assert out.stdout.splitlines() == [
+        "1 values | 1 numbers in the Japanese, 2 on this client",
+        "2 icon | icon slot 1, and the live line has 0 icons",
+        "3 name | Thrall",
+        "4 number | 5",
+        "5 hole | the client printed a gap for a spell this character does not know",
+        "6 hole | the client printed a gap for a spell this character does not know",
+        "6 other | the gate's checks pass on this line",
+        "9 none | no Japanese ships for it",
+    ]
+
+
+def test_the_collector_is_paused_while_the_test_shows_tooltips_and_the_players_value_put_back(tmp_path):
+    lua = _lua()
+    sweep = _sweep()
+    piece = sweep[sweep.index('local COLLECTOR = "collector.enabled"'):sweep.index("-- The tooltip read.")]
+    script = tmp_path / "pause.lua"
+    script.write_text("""
+local handlers = {}
+function CreateFrame()
+  return { RegisterEvent = function() end, SetScript = function(_, _, fn) handlers[#handlers + 1] = fn end }
+end
+WFJScanDB = { probe = {} }
+WFJ_DB = { settings = {} }
+""" + piece + """
+local done = 0
+local finish = collectorPaused(function() done = done + 1 end)
+print("paused " .. tostring(WFJ_DB.settings["collector.enabled"]))
+finish()
+print("back " .. tostring(WFJ_DB.settings["collector.enabled"]) .. " " .. done)
+WFJ_DB.settings["collector.enabled"] = false
+collectorPaused(function() end)
+handlers[1](nil, "PLAYER_LOGOUT")
+print("reload " .. tostring(WFJ_DB.settings["collector.enabled"]) .. " " .. tostring(WFJScanDB.probe.collectorPaused))
+WFJ_DB.settings["collector.enabled"] = true
+collectorPaused(function() end)
+handlers[1](nil, "PLAYER_LOGIN")
+print("login " .. tostring(WFJ_DB.settings["collector.enabled"]))
+""", encoding="utf-8")
+    out = subprocess.run([lua, str(script)], check=False, capture_output=True, text=True, timeout=60)
+    assert out.returncode == 0, out.stderr
+    # never set (on by default) stays never set; a player's off stays off; a crash mid-read is undone at login
+    assert out.stdout.splitlines() == ["paused false", "back nil 1", "reload false nil", "login true"]
+    tooltips = sweep[sweep.index("local function WFJScanTooltipRead(done)"):sweep.index("-- The no-voice read.")]
+    assert tooltips.index("done = collectorPaused(done)") < tooltips.index("local record =")
+    names = sweep[sweep.index("local function WFJScanNamesRead(done)"):sweep.index("-- The character window,")]
+    assert names.index("if not record.on then return done() end") < names.index("done = collectorPaused(done)")
+
+
+def test_the_done_line_counts_faults_and_lines_left_english_by_kind():
+    lua = client_surface.TEXT_LUA
+    run = lua[lua.index("SlashCmdList.WFJTEST = function(how)"):]
+    assert run.index("pcall(sayCounts, db)") < run.index('print("WFJ test done:')
+    assert '"WFJ test: faults: ' in lua and '"WFJ test: left English, not a fault: ' in lua
+
+
+def test_the_test_addon_carries_the_addons_own_gate_and_each_spells_shipped_japanese(root, tmp_path):
+    japanese = client_surface.spell_japanese(root / "data", [10, 17])
+    assert set(japanese) == {10, 17}
+    assert all(ja and status in ("u", "s", ".") for ja, status in japanese.values())
+    align = (root / "addon/WoWForeverJapanese/Core/Align.lua").read_text(encoding="utf-8")
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"],
+                                   values={10: 2, 17: 3}, japanese=japanese, gate=align)
+    assert "function Align.check(" in lua  # the addon's own file, whole
+    assert lua.index("ShippedAlign = shipped.Align") < lua.index("-- The text sweep.")
+    assert "[10] = {" in lua and "[17] = {" in lua
+    luajit = shutil.which("luajit")
+    if luajit:
+        probe = tmp_path / "WFJScanProbe.lua"
+        probe.write_text(lua, encoding="utf-8")
+        out = subprocess.run([luajit, "-b", str(probe), str(tmp_path / "probe.out")], check=False,
+                             capture_output=True, timeout=60)
+        assert out.returncode == 0, out.stderr.decode("utf-8", "replace")
