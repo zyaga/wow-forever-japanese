@@ -1,8 +1,9 @@
 -- UI/Wardrobe: the sets tab's names. WardrobeSetsCollectionMixin:DisplaySet writes the set's name into
 -- DetailsFrame.Name, measures it (IsTruncated) and moves it to LongName when it does not fit, then writes Label
 -- (shared/blizzard_wardrobe_sets.lua:228–248); each list row's Init writes its Name and Label (:513–537). While names
--- are on, LongName, Label and the rows show the name's Japanese; DetailsFrame.Name is left (an auto-scaling FontString
--- the client measures on every write, blizzard_sharedxml/secureutil.lua:51–104).
+-- are on, Name (while it is the one shown), LongName, Label and the rows show the name's Japanese. Name is an
+-- auto-scaling FontString (blizzard_sharedxml/secureutil.lua:55–104): it is written after DisplaySet, through its own
+-- SetText, so its scale is worked out again for the Japanese.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local C = require("tests.lua.spec.stub_collections")
@@ -38,6 +39,13 @@ describe("UI/Wardrobe's set names", function()
     sets = _G.WardrobeCollectionFrame.SetsCollectionFrame
     details = sets.DetailsFrame
     details.longNames = {} -- the set names the stub treats as too long for Name
+    -- AutoScalingFontStringMixin:SetText: the plain write, then ScaleTextToFit (secureutil.lua:55–58)
+    local plain = details.Name.SetText
+    details.Name.scaled = {}
+    function details.Name.SetText(self, text)
+      plain(self, text)
+      self.scaled[#self.scaled + 1] = text
+    end
     function sets.DisplaySet(self, set)
       local d = self.DetailsFrame
       d.Name:SetText(set.name)
@@ -65,7 +73,8 @@ describe("UI/Wardrobe's set names", function()
     C.unload()
   end)
 
-  it("the details: a long name and the label show their Japanese; Name stays as the client wrote it", function()
+  it("the details: a long name and the label show their Japanese; the hidden Name is left as the client wrote it",
+    function()
     details.longNames["Battlegear of Might"] = true
     sets:DisplaySet({ name = "Battlegear of Might", label = "Molten Core" })
     assert.are.equal("バトルギア・オブ・マイト", details.LongName:GetText())
@@ -78,6 +87,22 @@ describe("UI/Wardrobe's set names", function()
     _G.WardrobeCollectionFrame:Hide()
     assert.are.equal("Battlegear of Might", details.LongName:GetText())
     assert.are.equal("Molten Core", details.Label:GetText())
+  end)
+
+  it("a set whose name fits shows it in Name, scaled again for the Japanese through Name's own SetText", function()
+    sets:DisplaySet({ name = "Battlegear of Might", label = "Molten Core" })
+    assert.are.equal("バトルギア・オブ・マイト", details.Name:GetText())
+    assert.are.same({ "Battlegear of Might", "バトルギア・オブ・マイト" }, details.Name.scaled)
+    alt(true)
+    assert.are.equal("Battlegear of Might", details.Name:GetText())
+    assert.are.equal("Battlegear of Might", details.Name.scaled[#details.Name.scaled])
+    alt(false)
+    assert.are.equal("バトルギア・オブ・マイト", details.Name:GetText())
+    details.longNames["Battlegear of Might"] = true -- the next set does not fit: Name is hidden and left
+    sets:DisplaySet({ name = "Battlegear of Might", label = "" })
+    assert.are.equal("Battlegear of Might", details.Name:GetText())
+    _G.WardrobeCollectionFrame:Hide()
+    assert.are.equal("Battlegear of Might", details.Name:GetText())
   end)
 
   it("a set whose name fits leaves the hidden LongName as the client left it", function()
@@ -109,6 +134,9 @@ describe("UI/Wardrobe's set names", function()
     box:initFrame(row, { name = "Battlegear of Might", label = "" }, function(r, data) r:Init(data) end)
     assert.are.equal(0, details.LongName.calls.addonSetText)
     assert.are.equal(0, details.Label.calls.addonSetText)
+    details.longNames["Battlegear of Might"] = nil
+    sets:DisplaySet({ name = "Battlegear of Might", label = "" })
+    assert.are.equal(0, details.Name.calls.addonSetText)
     assert.are.equal(0, row.Name.calls.addonSetText)
   end)
 end)

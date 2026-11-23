@@ -13,9 +13,16 @@
 -- PopulatePreviewFrames also writes FrameErrorText with ITEM_UPGRADE_NO_MORE_UPGRADES for a maxed item (or the
 --   server's failure message, never matched) and gives UpgradeButton the same as its disabled tooltip (:238–262):
 --   the label restricted to that key, the button a help-tooltip owner restricted to it.
--- Never touched: ItemInfo.ItemName (the item's name, :646, :992), the upgrade progress line (a track name inside
--- ITEM_UPGRADE_PROGRESS_LEVEL_FORMAT_STRING, :997), the upgrade-level dropdown, the stat previews (item tooltip
--- lines in pooled frames), costs and currency names. Release on the frame's OnHide.
+-- The item's name: ItemInfo.ItemName, written in the item's quality colour by ItemInfo:Setup (:992, called as
+--   self.ItemInfo:Setup from UpdateUpgradeItemInfo and PopulatePreviewFrames, :111, 262) and by
+--   PlayUpgradedCelebration (:646, called as self:… from OnConfirm, :101–103). Setup ends with the info panel's
+--   Layout (a ResizeLayoutFrame, xml:268; lua:1009), which measures the English; the name is shown after it, from
+--   post-hooks on both writers, so the client never measures this addon's text. The window's one server call,
+--   C_ItemUpgrade.UpgradeItem(self.numUpgradeLevels) (:103), reads nothing the layout wrote. While names are on it
+--   shows the item's Japanese with its colour code kept (UI/NameLabels.wrapped).
+-- Never touched: the upgrade progress line (a track name inside ITEM_UPGRADE_PROGRESS_LEVEL_FORMAT_STRING, :997),
+-- the upgrade-level dropdown, the stat previews (item tooltip lines in pooled frames), costs and currency names.
+-- Release on the frame's OnHide.
 local _, WFJ = ...
 local ItemUpgrade = {}
 WFJ.ItemUpgrade = ItemUpgrade
@@ -47,14 +54,23 @@ local function get(key) return Compat.get(SURFACE, key) end
 
 local function declare()
   Compat.declare(SURFACE, "frame", { F })
+  Compat.declare(SURFACE, "itemInfo", { F .. ".ItemInfo" })
+  Compat.declare(SURFACE, "itemName", { F .. ".ItemInfo.ItemName" })
   for key, l in pairs(LABELS) do Compat.declare(SURFACE, key, { l[1] }) end
+end
+
+-- After ItemInfo:Setup and PlayUpgradedCelebration. → 1 | 0
+function ItemUpgrade.showName()
+  local n = WFJ.NameLabels.wrapped(SURFACE, "itemName", get("itemName"), "items")
+  WFJ.Render.updateBanner(SURFACE)
+  return n
 end
 
 -- OnShow and hooksecurefunc target (ItemUpgradeFrame:PopulatePreviewFrames). → the number of dictionary words found
 function ItemUpgrade.show()
   local list = {}
   for _, key in ipairs(ORDER) do list[#list + 1] = { key, get(key), OPTS[key] } end
-  return WFJ.Labels.showAll(SURFACE, list) + WFJ.Labels.title(SURFACE, get("frame"), TITLE)
+  return WFJ.Labels.showAll(SURFACE, list) + WFJ.Labels.title(SURFACE, get("frame"), TITLE) + ItemUpgrade.showName()
 end
 
 function ItemUpgrade.release()
@@ -75,6 +91,13 @@ function ItemUpgrade.setup()
   if type(button) == "table" then WFJ.HelpTooltip.register(button, OPTS.frameError) end -- its disabled tooltip
   if type(frame.PopulatePreviewFrames) == "function" then
     hooksecurefunc(frame, "PopulatePreviewFrames", ItemUpgrade.show)
+  end
+  if type(frame.PlayUpgradedCelebration) == "function" then
+    hooksecurefunc(frame, "PlayUpgradedCelebration", ItemUpgrade.showName)
+  end
+  local info = get("itemInfo")
+  if type(info) == "table" and type(info.Setup) == "function" then
+    hooksecurefunc(info, "Setup", ItemUpgrade.showName)
   end
   if type(frame.HookScript) == "function" then
     frame:HookScript("OnShow", ItemUpgrade.show)

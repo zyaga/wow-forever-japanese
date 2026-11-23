@@ -85,7 +85,7 @@ describe("the bags on the Forever client", function()
   end)
 
   it("portrait tooltips: the backpack line keeps its key binding and the settings hint is Japanese; a bag's name"
-    .. " stays English", function()
+    .. " with no Japanese stays English", function()
     local backpack = CI.openBag(0)
     CI.hover(backpack.PortraitButton)
     assert.are.equal("バックパック |cffffd200(B)|r", left(1))

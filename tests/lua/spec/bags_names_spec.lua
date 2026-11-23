@@ -63,6 +63,26 @@ describe("UI/Bags: a bag's item name", function()
     assert.are.equal(0, named.TitleContainer.TitleText.calls.addonSetText)
   end)
 
+  it("a bag's portrait tooltip shows the bag's name in Japanese, its key binding kept", function()
+    local function left(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
+    local pouch = CI.openBag(1)
+    CI.bindings.TOGGLEBAG1 = "F9"
+    CI.hover(pouch.PortraitButton)
+    assert.are.equal("スモール・レッド・ポーチ |cffffd200(F9)|r", left(1))
+    alt(true)
+    assert.are.equal("Small Red Pouch |cffffd200(F9)|r", left(1))
+    alt(false)
+    assert.are.equal("スモール・レッド・ポーチ |cffffd200(F9)|r", left(1))
+    CI.bindings.TOGGLEBAG1 = nil
+    CI.hover(pouch.PortraitButton)
+    assert.are.equal("スモール・レッド・ポーチ", left(1))
+    CI.hover(CI.openBag(0).PortraitButton) -- the backpack's title stays a dictionary word
+    assert.are.equal("バックパック |cffffd200(B)|r", left(1))
+    WFJ.State.setNames(false)
+    CI.hover(pouch.PortraitButton)
+    assert.are.equal("Small Red Pouch", left(1))
+  end)
+
   it("with names off the title stays as the client wrote it", function()
     WFJ.State.setNames(false)
     local pouch = CI.openBag(1)

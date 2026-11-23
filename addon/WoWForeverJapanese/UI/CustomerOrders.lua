@@ -37,12 +37,11 @@
 --   post-hook on Professions.SetupOutputIcon for this form's OutputIcon only: after the measure, so the client always
 --   measures its own English and never this addon's text. While names are on it shows the name's Japanese
 --   (UI/NameLabels); a name with a quality icon after it (:1127–1130) has no name line and stays.
--- Never touched: RecraftRecipeName (PROFESSIONS_ORDER_RECRAFT_TITLE_FMT around a colour-wrapped name, :1114–1116),
---   the crafter value (the crafter's name, or
---   CRAFTING_ORDER_NOT_YET_CLAIMED /
---   _NOT_CLAIMED in the same FontString, :1334–1344) and the recipient box (a player name), the
---   time-remaining value (a formatted duration), the note and recipient EditBoxes, the list rows (item and player
---   names).
+-- Never touched: RecraftRecipeName (PROFESSIONS_ORDER_RECRAFT_TITLE_FMT around a colour-wrapped name, :1114–1116; a
+--   recrafting line Forever never shows, so it has no Japanese: pipeline/ui_exclusions.txt), the crafter value (the
+--   crafter's name, or CRAFTING_ORDER_NOT_YET_CLAIMED / _NOT_CLAIMED in the same FontString, :1334–1344) and the
+--   recipient box (a player name), the time-remaining value (a formatted duration), the note and recipient EditBoxes,
+--   the list rows (item and player names).
 local _, WFJ = ...
 local CustomerOrders = {}
 WFJ.CustomerOrders = CustomerOrders

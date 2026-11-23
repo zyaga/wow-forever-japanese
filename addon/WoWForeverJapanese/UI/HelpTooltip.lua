@@ -5,8 +5,11 @@
 -- A window module registers the frames that own such tooltips (HelpTooltip.register). After the client builds the
 -- tooltip (GameTooltip:SetText / :AppendText / :Show post-hooks, plus any client setter a module names, SetTalent),
 -- every left and right line, line 1 included (a title here, never a name), goes through Labels.show on this surface
--- when the tooltip's owner is registered. The SetText / Show hooks also catch owner:UpdateTooltip() refreshes,
--- which call functions Blizzard captured before this addon loaded (MainMenuBarBagButtons.lua:240,
+-- when the tooltip's owner is registered. An owner whose line 1 is a game name when it is no dictionary line (a
+-- bag's name on its portrait) registers with `nameLine` = the name's area: that line then shows the name's Japanese
+-- while names are on (UI/NameLabels.wrapped, its key binding kept). The SetText / Show hooks also catch
+-- owner:UpdateTooltip() refreshes, which call functions Blizzard captured before this addon loaded
+-- (MainMenuBarBagButtons.lua:240,
 -- Vanilla/PaperDollFrame.lua:717, GameTooltip.lua:447–465). A tooltip showing an item or a spell is never walked:
 -- those lines are UI/Tooltip's. One Show() refit per pass that changed a line (its own hook is ignored while
 -- refitting). Release on OnHide.
@@ -139,7 +142,11 @@ local function walkImpl(tt)
               fs:SetText(owned.en .. current:sub(#owned.applied + 1)) -- the owner's own label, copied by the client
             end
             local before = fs:GetText()
-            n = n + WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
+            local shown = WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
+            if shown == 0 and i == 1 and side == "Left" and labelOpts and labelOpts.nameLine then
+              shown = WFJ.NameLabels.wrapped(SURFACE, recKey, fs, labelOpts.nameLine, refit)
+            end
+            n = n + shown
             if fs:GetText() ~= before then changed = true end
             local kept = WFJ.SurfaceState.get(SURFACE, recKey)
             if not (kept and kept.applied ~= nil) and fs:GetText():find(JAPANESE) then

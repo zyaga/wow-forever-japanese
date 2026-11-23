@@ -8,6 +8,10 @@
 --     ends with what the client wrote after it ("Blacksmithing 135/150", a zone and its coloured level range): the
 --     name in Japanese, the rest byte for byte. The rest may hold only numbers, signs and colour codes; a line where
 --     words follow the name stays English whole.
+--   NameLabels.wrapped(surface, recKey, widget[, area[, refit]]) → the same for a name behind one colour code
+--     ("|cffa335ee<name>|r", an item in its quality colour), maybe with an item level inside the colour and what the
+--     client put after it: a count, a quality icon, a key binding. The colour code and everything but the name are
+--     kept byte for byte; a line where words follow the name stays English whole.
 --   NameLabels.unit(surface, recKey, widget, unit[, area]) → the same for a unit's name; a player's is never touched
 --   NameLabels.title(surface, frame[, recKey[, unit]]) → the same for a window whose title bar is its NPC's name
 --     (frame:SetTitle(UnitName("npc")) → TitleContainer.TitleText): shown now and after every later SetTitle. `unit`
@@ -61,20 +65,48 @@ local function plainTail(tail)
   return not bare:find("%a")
 end
 
--- → the name and what follows it, split before a space or a colour code, the longest name first | nil
-local function splitTail(text)
+-- What the client draws after a name in a list, a slot or a tooltip title, read through like a colour code: an atlas
+-- or texture icon, the "x" of a count ("x20"), and a key binding in brackets in its own colour at the very end
+-- (GameTooltip:AppendText's " |cffffd200(B)|r").
+local function decoratedTail(tail)
+  local rest = tail:gsub(" |c%x%x%x%x%x%x%x%x%([^|()]*%)|r$", "")
+  rest = rest:gsub("|A.-|a", ""):gsub("|T.-|t", ""):gsub("x(%d)", "%1")
+  return plainTail(rest)
+end
+
+-- → the name and what follows it, split before a space or a colour code (and a colour's close when `decorated`),
+-- the longest name first | nil
+local function splitTail(text, decorated)
   for i = #text, 2, -1 do
-    if text:sub(i, i) == " " or text:sub(i, i + 1) == "|c" then
+    local at = text:sub(i, i + 1)
+    if text:sub(i, i) == " " or at == "|c" or (decorated and at == "|r") then
       local name, tail = text:sub(1, i - 1), text:sub(i)
       -- a name holds no markup and ends in no space: the name tables read through both, and the tail would lose them
       local bare = name:sub(-1) ~= " " and not name:find("|", 1, true)
-      if bare and plainTail(tail) and WFJ.Names.item(name) then return name, tail end
+      if bare and (decorated and decoratedTail or plainTail)(tail) and WFJ.Names.item(name) then return name, tail end
     end
   end
   return nil
 end
 
-local function lead(surface, recKey, widget, area, refit)
+-- lead: the whole text, or a name and the numbers after it
+local function leadParts(en)
+  if not en:find("|", 1, true) and WFJ.Names.item(en) then return en, nil, nil end
+  local name, tail = splitTail(en, false)
+  return name, nil, tail
+end
+
+-- wrapped: one leading colour code, then a name and what the client put after it
+local function wrappedParts(en)
+  local head, body = en:match("^(|c%x%x%x%x%x%x%x%x)(.*)$")
+  if not head then head, body = en:match("^(|cn[%w_]+:)(.*)$") end
+  body = body or en
+  if not body:find("|", 1, true) and WFJ.Names.item(body) then return body, head, nil end
+  local name, tail = splitTail(body, true)
+  return name, head, tail
+end
+
+local function parts(surface, recKey, widget, area, refit, split)
   local fs = WFJ.Labels.widget(widget)
   if not WFJ.State.names or not fs then
     WFJ.SurfaceState.drop(surface, recKey)
@@ -90,23 +122,23 @@ local function lead(surface, recKey, widget, area, refit)
     WFJ.Render.keepFont(surface, recKey)
     return 1
   end
-  if type(en) ~= "string" or en == "" then
-    WFJ.SurfaceState.drop(surface, recKey)
-    return 0
-  end
-  local name, tail = en, nil
-  if en:find("|", 1, true) or not WFJ.Names.item(en) then name, tail = splitTail(en) end
+  local name, head, tail
+  if type(en) == "string" and en ~= "" then name, head, tail = split(en) end
   if not name then
     WFJ.SurfaceState.drop(surface, recKey)
     return 0
   end
-  local ctx = (tail or refit) and { tail = tail, refit = refit } or nil
+  local ctx = (head or tail or refit) and { head = head, tail = tail, refit = refit } or nil
   WFJ.Render.show(surface, recKey, fs, en, area or "ui", "name", name, ctx)
   return 1
 end
 
 function NameLabels.lead(surface, recKey, widget, area, refit)
-  return WFJ.Perf.call(surface, lead, surface, recKey, widget, area, refit)
+  return WFJ.Perf.call(surface, parts, surface, recKey, widget, area, refit, leadParts)
+end
+
+function NameLabels.wrapped(surface, recKey, widget, area, refit)
+  return WFJ.Perf.call(surface, parts, surface, recKey, widget, area, refit, wrappedParts)
 end
 
 function NameLabels.unit(surface, recKey, widget, unit, area)

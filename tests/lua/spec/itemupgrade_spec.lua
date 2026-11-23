@@ -1,6 +1,6 @@
 -- UI/ItemUpgrade.lua over an ItemUpgradeFrame replayed from
 -- camelot blizzard_itemupgradeui/mainline/blizzard_itemupgradeui.xml (:144–365) and .lua (:22, :238, :831–860),
--- load-on-demand in both load orders. The item's name stays English.
+-- load-on-demand in both load orders. An item's name with no Japanese stays English (itemupgrade_names_spec.lua).
 local C = require("tests.lua.spec.stub_commerce")
 
 local UI = {

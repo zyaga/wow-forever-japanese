@@ -37,15 +37,18 @@
 --   the details: SetsCollectionFrame:DisplaySet (the frame's own method, shared/blizzard_wardrobe_sets.lua:228–248)
 --     writes Name, measures it (IsTruncated, :240) and, when it does not fit, writes LongName instead, then Label.
 --     Post-hooked, so the client measures its own English: LongName (while shown) and Label, plain FontStrings
---     (mainline/blizzard_wardrobe.xml:640–655), are shown after it;
+--     (mainline/blizzard_wardrobe.xml:640–655), are shown after it. So is Name while it is the one shown: an
+--     AutoScalingFontStringMixin FontString (xml:626) whose SetText measures the text and sets its scale
+--     (blizzard_sharedxml/secureutil.lua:55–104). Render writes it with that same SetText, so the scale is worked out
+--     again for the Japanese (and for the English on the reveal key). Nothing protected follows in DisplaySet: the
+--     rest of the pass fills the item buttons from a pool, dresses the model (TryOn) and sets the variant dropdown's
+--     text (:249–334);
 --   the list rows: WardrobeSetsScrollFrameButtonMixin:Init writes each row's Name and Label (:513–537), plain
 --     FontStrings of a plain Button (shared/blizzard_wardrobe_sets.xml:4, 40–51); rows are followed with
 --     ScrollUtil.AddInitializedFrameCallback and each row's Init is post-hooked once (ReinitializeButtonWithBaseSetID
 --     calls it again, :714–722).
 --   Released on WardrobeCollectionFrame's OnHide and shown again on the sets frame's OnShow.
--- Never touched: DetailsFrame.Name, an AutoScalingFontStringMixin FontString (xml:626): its SetText measures the
--- text and sets its scale (blizzard_sharedxml/secureutil.lua:55–104), so text written there is measured by the
--- client's code; item names, the class dropdown's selection (a class name), the search box text (the EditBox itself;
+-- Never touched: item names, the class dropdown's selection (a class name), the search box text (the EditBox itself;
 -- its placeholder FontString is shown above).
 local _, WFJ = ...
 local Wardrobe = {}
@@ -91,16 +94,18 @@ local rowHooked = setmetatable({}, { __mode = "k" })
 
 local function shown(fs) return type(fs) == "table" and type(fs.IsShown) == "function" and fs:IsShown() end
 
--- After DisplaySet: the long name while it is the one shown, and the label. → the number of names shown
+-- After DisplaySet: the name or the long name, whichever is shown, and the label. → the number of names shown
 function Wardrobe.onDisplaySet()
   local sets = Compat.get(SURFACE, "sets")
   local details = type(sets) == "table" and sets.DetailsFrame or nil
   if type(details) ~= "table" then return 0 end
   local n = 0
-  if shown(details.LongName) then
-    n = n + WFJ.NameLabels.show(NAMES, "set.longName", details.LongName)
-  else
-    WFJ.SurfaceState.drop(NAMES, "set.longName")
+  for _, f in ipairs({ { "Name", "set.name" }, { "LongName", "set.longName" } }) do
+    if shown(details[f[1]]) then
+      n = n + WFJ.NameLabels.show(NAMES, f[2], details[f[1]])
+    else
+      WFJ.SurfaceState.drop(NAMES, f[2])
+    end
   end
   n = n + WFJ.NameLabels.show(NAMES, "set.label", details.Label)
   WFJ.Render.updateBanner(NAMES)

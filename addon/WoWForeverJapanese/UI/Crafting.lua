@@ -68,10 +68,21 @@
 --   spell.description, numbers from the live English); an embedded icon in the English is not carried over.
 -- The recipe list's Filter button (RecipeList.FilterDropdown, WowStyle1FilterDropdownTemplate, recipelist.xml:32)
 --   shows FILTER, re-shown after each UpdateText.
--- Never touched: the EditBoxes (both search boxes, the create-count box), the recipe's name and sub text
---   (OutputText, OutputSubText: item data), the list's recipe names (client data:
---   blizzard_professionsrecipelist.lua:247) and any category name with no TradeSkillCategory row, the rank bar
---   (joins the profession name). The window title is UI/Professions' (the same frame; a profession's name here).
+-- The output item's name (OutputText, on this page's form and the inspect window's): UpdateOutputItem writes the
+--   item's name in its quality colour (or the recipe's name) with SetTextToFit, which writes the text, measures it and
+--   sizes the FontString to it, then sets the output icon (blizzard_professionsrecipeschematicform.lua:349–359,
+--   1358–1388). It is called as self:UpdateOutputItem() (:683, 1368, 1435), so a post-hook on each form runs after
+--   that pass: the client measures only its own English. While names are on the name shows its Japanese with its
+--   colour code kept (UI/NameLabels.wrapped), and the FontString is sized again for the text shown, the way
+--   SetTextToFit sized it, from the form's own width rules (:1349–1356). Nothing protected follows: the create
+--   buttons are plain buttons made with CreateFrame (blizzard_professionscrafting.lua:249–258) and crafting is
+--   C_TradeSkillUI.CraftRecipe, documented with no HasRestrictions flag (tradeskilluidocumentation.lua:76–78).
+-- Never touched: the EditBoxes (both search boxes, the create-count box), the recipe's sub text (OutputSubText),
+--   RecraftingOutputText (PROFESSIONS_CRAFTING_FORM_RECRAFTING_HEADER around the coloured name, or
+--   PROFESSIONS_CRAFTING_RECRAFTING: recrafting lines Forever never shows, pipeline/ui_exclusions.txt), the list's
+--   recipe names (client data: blizzard_professionsrecipelist.lua:247) and any category name with no
+--   TradeSkillCategory row, the rank bar (joins the profession name). The window title is UI/Professions' (the same
+--   frame; a profession's name here).
 local _, WFJ = ...
 local Crafting = {}
 WFJ.Crafting = Crafting
@@ -220,6 +231,36 @@ function Crafting.onDescription()
   return shown
 end
 
+-- The output name's refit, one per form: the width and height SetTextToFit gives the text shown (:349–359).
+local fits = setmetatable({}, { __mode = "k" })
+local function fitOf(form)
+  local fit = fits[form]
+  if fit then return fit end
+  fit = function()
+    local fs = form.OutputText
+    local max = type(form.GetOutputItemMaxWidth) == "function" and form:GetOutputItemMaxWidth() or nil
+    if type(fs) ~= "table" or type(max) ~= "number" or type(fs.GetStringWidth) ~= "function"
+        or type(fs.GetStringHeight) ~= "function" or type(fs.SetHeight) ~= "function" then return end
+    fs:SetHeight(200)
+    fs:SetWidth(max)
+    if not (type(form.ShouldAllowMultiline) == "function" and form:ShouldAllowMultiline()) then
+      fs:SetWidth(fs:GetStringWidth())
+    end
+    fs:SetHeight(fs:GetStringHeight())
+  end
+  fits[form] = fit
+  return fit
+end
+
+-- hooksecurefunc target (a form's UpdateOutputItem): its output name. → 1 | 0
+function Crafting.showOutput(form)
+  if type(form) ~= "table" then return 0 end
+  local key = form == get("inspectForm") and "inspect.output" or "output"
+  local n = WFJ.NameLabels.wrapped(SURFACE, key, form.OutputText, "items", fitOf(form))
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
 -- hooksecurefunc target (SchematicForm:Init): the words the form rewrites per recipe. → the number found.
 function Crafting.onFormInit() return showList(FORM_WRITTEN) + Crafting.showEnchantSlot() end
 
@@ -296,7 +337,7 @@ end
 -- The page's OnShow (and setup): the static words, then everything a writer may already have written.
 function Crafting.onShow()
   local n = showList(STATIC) + Crafting.onFormInit() + Crafting.onControls()
-    + WFJ.Labels.dropdown(SURFACE, "filter", get("filter"))
+    + WFJ.Labels.dropdown(SURFACE, "filter", get("filter")) + Crafting.showOutput(get("form"))
   if Crafting.onDescription() then n = n + 1 end
   return n + WFJ.Labels.title(SURFACE, get("outputLog"), OUTPUT_TITLE, "outputLog.title")
 end
@@ -329,6 +370,11 @@ function Crafting.setup()
   for _, method in ipairs({ "Init", "Update" }) do
     if type(inspect) == "table" and type(inspect[method]) == "function" then
       hooksecurefunc(inspect, method, Crafting.onInspect)
+    end
+  end
+  for _, f in ipairs({ form, inspect }) do
+    if type(f) == "table" and type(f.UpdateOutputItem) == "function" then
+      hooksecurefunc(f, "UpdateOutputItem", Crafting.showOutput)
     end
   end
   for _, key in ipairs({ "createButton", "createAllButton" }) do

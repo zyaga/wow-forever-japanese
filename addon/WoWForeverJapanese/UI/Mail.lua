@@ -24,7 +24,10 @@
 --     (DELETE / MAIL_RETURN), the invoice: OpenMailInvoiceAmountReceived, MoneyDelay (AUCTION_INVOICE_FUNDS_DELAY,
 --     "12:22" verbatim). OpenMailInvoiceItemLabel / Purchaser are ITEM_SOLD_COLON / ITEM_PURCHASED_COLON /
 --     SOLD_BY_COLON / PURCHASED_BY_COLON .. " " .. <item or player name>: the `colonPrefix` form shows the Japanese
---     label and keeps the name as written. When the client had no name it writes
+--     label and keeps the rest as written. The item's name (with AUCTION_MAIL_ITEM_STACK's count after it,
+--     mailframe.lua:797–799) then shows its Japanese while names are on: the translator's names step reads every
+--     interface line it shows. An item with a random suffix ("… of the Owl") has no name row of its own and stays
+--     English there. When the client had no name it writes
 --     AUCTION_HOUSE_MAIL_MULTIPLE_SELLERS / _BUYERS there (mailframe.lua:790–793), shown in Japanese too (the
 --     `colonPrefixEntry` grant on those two keys, Core/UIStrings);
 --   SendMailRadioButton_OnClick → SendMailMoneyText (AMOUNT_TO_SEND / COD_AMOUNT);

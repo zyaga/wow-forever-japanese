@@ -288,6 +288,86 @@ describe("name widgets", function()
     end)
   end)
 
+  describe("a name behind a colour code, with what the client put around it", function()
+    it("keeps the colour code and its close byte for byte, and gives the whole English back", function()
+      fs.text = "|cffa335eeBandit Cloak of the Owl|r"
+      assert.are.equal(1, WFJ.NameLabels.wrapped("spec", "item", fs))
+      assert.are.equal("|cffa335eeバンディット・クローク・オブ・ザ・アウル|r", fs:GetText())
+      hold(true)
+      assert.are.equal("|cffa335eeBandit Cloak of the Owl|r", fs:GetText())
+      hold(false)
+      assert.are.equal("|cffa335eeバンディット・クローク・オブ・ザ・アウル|r", fs:GetText())
+      WFJ.Render.release("spec")
+      assert.are.equal("|cffa335eeBandit Cloak of the Owl|r", fs:GetText())
+    end)
+
+    it("keeps an item level inside the colour, a count, an icon and a key binding after it", function()
+      local cases = {
+        { "|cff1eff00Thrall (25)|r", "|cff1eff00スロール (25)|r" },
+        { "|cff1eff00Thrall|r |A:Professions-ChatIcon-Quality-Tier3:17:15:1:0|a",
+          "|cff1eff00スロール|r |A:Professions-ChatIcon-Quality-Tier3:17:15:1:0|a" },
+        { "|cff1eff00Thrall (25)|r |cff808080x20|r ", "|cff1eff00スロール (25)|r |cff808080x20|r " },
+        { "|cffffffffThrall|r  x5", "|cffffffffスロール|r  x5" },
+        { "|cnITEM_QUALITY_3:Thrall|r", "|cnITEM_QUALITY_3:スロール|r" },
+        { "Thrall |cffffd200(Shift-F9)|r", "スロール |cffffd200(Shift-F9)|r" },
+        { "Thrall |T136240:0|t", "スロール |T136240:0|t" },
+        { "Thrall", "スロール" },
+      }
+      for _, c in ipairs(cases) do
+        fs.text = c[1]
+        assert.are.equal(1, WFJ.NameLabels.wrapped("spec", "item", fs))
+        assert.are.equal(c[2], fs:GetText())
+      end
+    end)
+
+    it("leaves the line English when words follow the name, or the name has no Japanese", function()
+      for _, text in ipairs({ "|cffa335eeNobody Known|r", "|cffa335eeThrall the Warchief|r",
+        "|cffa335eeThrall|r |cffff2020Trial cap reached|r", "|cffa335eeThrall|r of the Owl",
+        "Thrall (B) |cffffd200(F9)|r" }) do
+        fs.text = text
+        assert.are.equal(0, WFJ.NameLabels.wrapped("spec", "item", fs))
+        assert.are.equal(text, fs:GetText())
+      end
+      assert.are.equal(0, fs.calls.addonSetText)
+      assert.is_nil(WFJ.SurfaceState.get("spec", "item"))
+    end)
+
+    it("follows the client's next write, keeps its Japanese when asked again, and follows the names switch",
+      function()
+        fs.text = "|cffa335eeThrall|r"
+        WFJ.NameLabels.wrapped("spec", "item", fs)
+        local writes = fs.calls.addonSetText
+        assert.are.equal(1, WFJ.NameLabels.wrapped("spec", "item", fs))
+        assert.are.equal(writes, fs.calls.addonSetText)
+        WFJ.State.setNames(false)
+        assert.are.equal("|cffa335eeThrall|r", fs:GetText())
+        WFJ.State.setNames(true)
+        assert.are.equal("|cffa335eeスロール|r", fs:GetText())
+        fs.text = "|cff1eff00Bandit Cloak|r" -- the client's own write
+        assert.are.equal(1, WFJ.NameLabels.wrapped("spec", "item", fs))
+        assert.are.equal("|cff1eff00バンディット・クローク|r", fs:GetText())
+      end)
+
+    it("does nothing while names are off, never reads a hidden value, and takes no widget", function()
+      fs.text = "|cffa335eeThrall|r"
+      WFJ.State.setNames(false)
+      assert.are.equal(0, WFJ.NameLabels.wrapped("spec", "item", fs))
+      assert.are.equal("|cffa335eeThrall|r", fs:GetText())
+      WFJ.State.setNames(true)
+      fs.text = SECRET
+      assert.has_no.errors(function() assert.are.equal(0, WFJ.NameLabels.wrapped("spec", "item", fs)) end)
+      assert.are.equal(SECRET, fs.text)
+      assert.are.equal(0, WFJ.NameLabels.wrapped("spec", "item", nil))
+    end)
+
+    it("carries a refit when given", function()
+      local refits = 0
+      fs.text = "|cffa335eeThrall|r"
+      assert.are.equal(1, WFJ.NameLabels.wrapped("spec", "item", fs, nil, function() refits = refits + 1 end))
+      assert.are.equal(1, refits)
+    end)
+  end)
+
   it("takes no widget, an empty widget and a hidden unit without an error", function()
     assert.are.equal(0, WFJ.NameLabels.show("spec", "name", nil))
     fs.text = ""

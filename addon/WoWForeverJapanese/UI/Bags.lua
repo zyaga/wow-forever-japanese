@@ -34,8 +34,11 @@
 --     self:OnEnterInternal(), :99), shown by HelpTooltip.appended, the item's own lines left to UI/Tooltip.
 -- The key binding appended by AppendText ("Backpack |cffffd200(B)|r") is HelpTooltip's (its AppendText walk puts the
 -- English back in front of the suffix and matches the `binding` form). No hook of our own; the client's Show refits.
--- Untouched: BagItemSearchBox's own text (an EditBox), and the bag's name on its portrait tooltip (line 1, which
--- UI/HelpTooltip never takes as a name).
+-- A bag's name on its portrait tooltip (line 1, the bag's item name, then its key binding when it has one): the
+-- portraits register with `nameLine`, so while names are on the line shows the item's Japanese with the binding kept
+-- (UI/HelpTooltip, UI/NameLabels.wrapped). It is the line the backpack's dictionary title is written into, and the
+-- hover writes nothing but the tooltip (lua:2066–2108).
+-- Untouched: BagItemSearchBox's own text (an EditBox).
 local _, WFJ = ...
 local Bags = {}
 WFJ.Bags = Bags
@@ -105,9 +108,10 @@ function Bags.onGenerate(frame, _, id)
   return n
 end
 
-local function register(owner, keys)
+-- `nameLine`: the area of a game name on the tooltip's line 1 (a bag's portrait), else nil
+local function register(owner, keys, nameLine)
   if type(owner) ~= "table" then return 0 end
-  WFJ.HelpTooltip.register(owner, { only = keys })
+  WFJ.HelpTooltip.register(owner, { only = keys, nameLine = nameLine })
   return 1
 end
 
@@ -123,9 +127,9 @@ function Bags.registerOwners()
     end
   end
   for i = 1, MAX_FRAMES do
-    n = n + register(get("portrait" .. i), PORTRAIT_KEYS)
+    n = n + register(get("portrait" .. i), PORTRAIT_KEYS, "items")
   end
-  n = n + register(get("combinedPortrait"), PORTRAIT_KEYS)
+  n = n + register(get("combinedPortrait"), PORTRAIT_KEYS, "items")
     + register(get("autoSort"), { "BAG_CLEANUP_BAGS", "BAG_CLEANUP_BAGS_DESCRIPTION" })
     + register(get("reagentSlot"), { "EQUIP_CONTAINER_REAGENT" })
   return n
