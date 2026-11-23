@@ -47,7 +47,9 @@ text and the name over a creature's head disagreeing.
    a tail the client wrote. Every widget or text slot that holds a name is a line of `pipeline/name_surfaces.txt`,
    marked `japanese` or `english` with a reason, and a test fails while one is `todo` or a module's untouched widget
    has no line.
-8. **What stays English, and why.** A player's, guild's or pet's name, and anything a player typed. A value the
+8. **What stays English, and why.** A player's, guild's or pet's name, and anything a player typed: the names
+   step reads a line's stored text before the client's values are filled in, so a player called like a game name
+   is never changed inside a line, and only a value declared as a game name is looked up. A value the
    client marks secret, such as a unit's name it hides in combat. Places where writing text taints a path the client
    measures on the way to a protected action: spellbook rows, the professions page's cast buttons, the world map's
    navigation bar. The name the client draws over a creature's head when it has no nameplate: no widget exists.
@@ -55,7 +57,9 @@ text and the name over a creature's head disagreeing.
    `nameplateShowFriendlyNpcs`, saves the earlier value (`namePlatesWas`) and puts it back when the player chooses
    English names. A value the player sets by hand afterwards is left alone, and one chat line says names over heads
    show in English while those nameplates are off. In combat the write waits for the fight to end. Creature
-   nameplates and the target, focus, target-of-target, boss and party frames show the Japanese name.
+   nameplates and the target, focus, target-of-target, boss and party frames show the Japanese name. A nameplate
+   measures its name and anchors its clickable area to it with a restricted call, so the nameplate name is kept
+   only while a run in combat records no blocked action ([Client limits](../architecture/client-limits.md)).
 10. **Name cards.** Pointing at a Japanese name on a word-card surface shows its reading and its English name. A name
     card is never saved to the word list.
 11. **Race, class and faction** on a player's tooltip follow the setting, with the words prose already uses.
