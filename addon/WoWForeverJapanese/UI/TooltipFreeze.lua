@@ -230,4 +230,19 @@ function Freeze.offerKey(db)
   if WFJ.KeyCapture.offerDefault(WFJ.KeyCapture.FREEZE, FIRST_KEY) then db.freezeKeyOffered = true end
 end
 
+-- A copy made while Japanese showed keeps its text, but its cards follow what the screen shows now: gone while
+-- English shows or translation is off, back when the Japanese is.
+local function followLanguage()
+  local cards = cardsNow()
+  for _, copy in ipairs(Freeze.copies) do
+    for _, entry in ipairs(copy.lines) do
+      if entry.rec then
+        if cards then WFJ.ReadingView.attach(entry.rec) else WFJ.ReadingView.detach(entry.rec) end
+      end
+    end
+  end
+end
+WFJ.State.on("language", followLanguage)
+WFJ.State.on("enabled", followLanguage)
+
 function WFJ_FreezeTooltip() Freeze.toggle() end

@@ -281,6 +281,25 @@ describe("UI/TooltipFreeze", function()
       assert.is_nil(line(1, 2).twin)
     end)
 
+    it("a copy drops its cards when translation goes off or English shows, and takes them back", function()
+      write(tip, { "Hearthstone", "Use: returns you." })
+      japanese(tip, 2, "desc", "item.description", 6948, "items")
+      F.toggle()
+      local cover = coverOf(line(1, 2).twin)
+      assert.is_table(cover.spans)
+      WFJ.State.setEnabled(false)
+      assert.is_nil(cover.spans)
+      WFJ.State.setEnabled(true)
+      assert.is_table(coverOf(line(1, 2).twin).spans)
+      Stub.keys.alt = true
+      WFJ.Modifier.refresh()
+      assert.is_nil(coverOf(line(1, 2).twin).spans)
+      Stub.keys.alt = false
+      WFJ.Modifier.refresh()
+      assert.is_table(coverOf(line(1, 2).twin).spans)
+      assert.is_table(F.copies[1]) -- the copy itself stays
+    end)
+
     it("the cards go when the copy closes", function()
       write(tip, { "Hearthstone", "Use: returns you." })
       japanese(tip, 2, "desc", "item.description", 6948, "items")
