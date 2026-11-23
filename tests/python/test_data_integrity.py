@@ -356,7 +356,9 @@ def test_no_meaning_copies_a_whole_english_line(root):
 
     hits = []
     for type_ in sorted(readings.TYPES):
-        japanese = readings.shipped_japanese(Store(root / "data").load(type_))
+        japanese = readings.japanese_of(
+            type_, Store(root / "data").load(type_), Store(root / "data", english=True).load(type_)
+        )
         english = {(e["id"], e["field"]): e.get("en", "") for e in Store(root / "data", english=True).load(type_)}
         for rec in readings.check(type_, Store(root / "data" / "reading").load(type_), japanese)["current"]:
             key = (rec["id"], rec["field"])

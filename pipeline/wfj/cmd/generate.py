@@ -664,7 +664,8 @@ def _plan_readings(
     counts["reading"] = 0
     current: dict[str, list[dict[str, Any]]] = {}
     for type_ in readings.TYPES:
-        japanese = readings.shipped_japanese(store.load(type_))
+        english_lines = (english_store or Store(store.root, english=True)).load(type_)
+        japanese = readings.japanese_of(type_, store.load(type_), english_lines)
         result = readings.check(type_, reading_store_of(store).load(type_), japanese)
         if result["problems"]:
             first = "; ".join(result["problems"][:5])

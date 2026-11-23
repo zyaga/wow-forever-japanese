@@ -1210,6 +1210,108 @@ def test_a_branch_line_takes_the_words_of_every_bracket(sentences, tmp_path):
     assert readings.word_problems(branch, rec["words"]) == []
 
 
+def _texts(ja):
+    return [ja[s:e] for s, e, _k in readings.pieces(ja)]
+
+
+def test_a_choice_inside_a_sentence_does_not_cut_it():
+    # each bracket holds a part of the sentence, not a sentence: the sentence stays whole
+    home = "$?pc923[Orgrimmar][Stormwind]へ戻ります。一度だけ使えます。"
+    assert _texts(home) == ["$?pc923[Orgrimmar][Stormwind]へ戻ります。", "一度だけ使えます。"]
+    level = "筋力を$?$PL<24[少し][大きく]上昇させます。"
+    assert _texts(level) == [level]
+    assert _keys("$?pc923[Orgrimmar][Stormwind]へ戻ります。") == _keys("$?pc7[Thunder Bluff][Ironforge]へ戻ります。")
+    # brackets that hold whole sentences are still cut apart, and the empty one gives nothing
+    whole = "筋力が上昇します。$?pc142418[さらに、経験値が増加します。][]"
+    assert _texts(whole) == ["筋力が上昇します。", "さらに、経験値が増加します。"]
+    # a name in plain brackets is part of its sentence
+    assert _texts("[マクブライド元帥の書類]を読みます。") == ["[マクブライド元帥の書類]を読みます。"]
+
+
+def test_a_mark_inside_brackets_or_quotes_does_not_end_the_sentence():
+    assert _texts("強力な一撃（注意！反動あり）を放ちます。次の文。") == ["強力な一撃（注意！反動あり）を放ちます。", "次の文。"]
+    assert _texts("「待て！」と叫びます。") == ["「待て！」と叫びます。"]
+    assert _texts("本当ですか？はい。") == ["本当ですか？", "はい。"]
+
+
+def test_a_number_no_counter_follows_is_not_part_of_the_sentence():
+    assert _keys("(QuestID:5805)を始めます。") == _keys("(QuestID:5841)を始めます。")
+    assert _keys("クエスト：Welcome!(QuestID:5805)を始めます。") == _keys("クエスト：The Collector(QuestID:123)を始めます。")
+    assert _keys("確率が10%上昇します。") == _keys("確率が25%上昇します。")
+    # a counter or a unit right after the number still counts
+    assert _keys("3匹の狼を倒す。") != _keys("6匹の狼を倒す。")
+    assert _keys("10分間持続します。") != _keys("3分間持続します。")
+
+
+QUEST_STORED = "クエスト：The Collector(QuestID:\n123)を始めます。"
+QUEST_SHIPPED = "クエスト：The Collector(QuestID:123)を始めます。"
+QUEST_WORDS = [["クエスト", "クエスト", "クエスト", "クエスト", "quest"], ["始めます", "はじめます"]]
+
+
+@pytest.fixture
+def wrapped(data):
+    """Hand-written lines whose manual breaks fall inside a sentence; their English has no break."""
+    Store(data).save("item", [
+        _line(1307, "description", QUEST_STORED),
+        _line(2794, "description", "クエスト：An Old History Book\n(QuestID:337)を始めます。"),
+        _line(10360, "description", "このペットの呼び出し方を\n習得する。"),
+    ])
+    Store(data, english=True).save("item", [
+        {"id": id_, "field": "description", "en": en, "hash": "0123456789abcdef", "src": "db2@1.60.1.70938"}
+        for id_, en in ((1307, "Begins the quest The Collector."), (2794, "Begins the quest An Old History Book."),
+                        (10360, "Teaches you how to summon this companion."))
+    ])
+    return data
+
+
+def test_tooltip_sentences_are_cut_from_the_text_as_it_ships(wrapped, tmp_path):
+    rows = _export_tips(tmp_path)
+    # the breaks are joined in what ships, so no sentence is cut at one, and the two quest lines are one sentence
+    assert [r["ja"] for r in rows] == [QUEST_SHIPPED, "このペットの呼び出し方を習得する。"]
+    assert rows[0]["ja_hash"] == readings.ja_hash(QUEST_SHIPPED)
+    learn = [["呼び出し方", "よびだしかた"], ["習得する", "しゅうとくする"]]
+    batch = _batch(tmp_path, [_piece_row(QUEST_SHIPPED, QUEST_WORDS), _piece_row(rows[1]["ja"], learn)])
+    assert _import_tips(batch) == 0
+    item = {r["id"]: r for r in Store(wrapped / "reading").load("item")}
+    assert item[1307]["words"] == QUEST_WORDS and item[2794]["words"] == QUEST_WORDS
+    # a word that stands across the manual break is found: the record is for the shipped text
+    assert item[10360]["words"] == learn
+    assert item[1307]["ja_hash"] == readings.ja_hash(QUEST_SHIPPED)
+    assert item[1307]["ja_hash"] != readings.ja_hash(QUEST_STORED)
+
+
+def test_a_reading_for_a_hand_wrapped_line_is_current_validates_and_ships(wrapped, tmp_path, capsys):
+    learn = [["呼び出し方", "よびだしかた"], ["習得する", "しゅうとくする"]]
+    batch = _batch(tmp_path, [_piece_row(QUEST_SHIPPED, QUEST_WORDS),
+                              _piece_row("このペットの呼び出し方を習得する。", learn)])
+    assert _import_tips(batch) == 0
+    capsys.readouterr()
+    from wfj.cmd import validate
+
+    assert validate.rule_readings(Store(wrapped)) == []
+    printed = capsys.readouterr().out
+    assert "3 of 3 shipped item lines have one" in printed and "stale item" not in printed
+    planned = generate.plan(Store(wrapped), [])
+    shard = planned["Data/Reading/Reading_item_0010.lua"]
+    assert '["item:10360"] = { description = "呼び出し方=よびだしかた' in shard
+    assert _export_tips(tmp_path) == []
+
+
+def test_a_sentence_with_nothing_to_list_is_written_as_an_empty_list(sentences, tmp_path, capsys):
+    Store(sentences).save("item", [_machine_line(8, "description", "AncientsからのGift。\n" + LAST),
+                                   _machine_line(9, "description", "AncientsからのGift。")])
+    rows = _export_tips(tmp_path)
+    assert rows[0]["ja"] == "AncientsからのGift。"
+    batch = _batch(tmp_path, [_piece_row("AncientsからのGift。", []), _piece_row(LAST, LAST_WORDS)])
+    assert _import_tips(batch) == 0
+    assert "rejected 0" in capsys.readouterr().out
+    item = {r["id"]: r for r in Store(sentences / "reading").load("item")}
+    assert item[8]["words"] == LAST_WORDS
+    assert 9 not in item  # a line with no word at all has no record
+    # the empty sentence is written: it is not exported again
+    assert "AncientsからのGift。" not in [r["ja"] for r in _export_tips(tmp_path)]
+
+
 def test_tooltip_text_ships_no_english_word_card_rows(tips):
     from wfj.cmd import english_cards
 

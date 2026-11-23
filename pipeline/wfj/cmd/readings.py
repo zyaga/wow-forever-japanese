@@ -47,6 +47,11 @@ def reading_store(root: Path) -> Store:
     return Store(root / "reading")
 
 
+def shipped_of(root: Path, type_: str) -> dict[tuple[int | str, str], str]:
+    """(id, field) → the Japanese a reading of this type is written for (core/readings `japanese_of`)."""
+    return readings.japanese_of(type_, Store(root).load(type_), Store(root, english=True).load(type_))
+
+
 def read_ids(path: Path, type_: str) -> list[int | str]:
     """One id per line (# comments and blank lines skipped): ints for quest, 16-hex keys for gossip, UI
     string keys as written for ui."""
@@ -65,7 +70,7 @@ def export_rows(
     root: Path, type_: str, ids: list[int | str], *, every: bool = False, klass: str | None = None
 ) -> list[dict[str, Any]]:
     lines = Store(root).load(type_)
-    japanese = readings.shipped_japanese(lines)
+    japanese = shipped_of(root, type_)
     if klass is not None:
         japanese = {
             (ln["id"], ln["field"]): ln["ja"]
@@ -108,7 +113,7 @@ def _piece_index(root: Path) -> PieceIndex:
     words: dict[str, list[list[str]]] = {}
     provs: dict[str, dict[str, Any]] = {}
     for type_ in readings.TOOLTIP_TYPES:
-        japanese = readings.shipped_japanese(Store(root).load(type_))
+        japanese = shipped_of(root, type_)
         current = readings.check(type_, store.load(type_), japanese)["current"]
         for rec in sorted(current, key=lambda r: (r["id"], r["field"])):
             by_piece = readings.piece_words(japanese[(rec["id"], rec["field"])], rec["words"])
@@ -124,7 +129,7 @@ def _tooltip_lines(root: Path) -> list[tuple[str, int, str, str, bool]]:
     store = reading_store(root)
     out = []
     for type_ in readings.TOOLTIP_TYPES:
-        japanese = readings.shipped_japanese(Store(root).load(type_))
+        japanese = shipped_of(root, type_)
         have = {(r["id"], r["field"])
                 for r in readings.check(type_, store.load(type_), japanese)["current"]}
         order = {f: n for n, f in enumerate(readings.TYPES[type_])}
@@ -231,18 +236,15 @@ def import_tooltip_rows(
         if not isinstance(ja, str) or not ja or row.get("ja_hash") != readings.ja_hash(ja):
             rejected.append(f"{where}: `ja` is not the sentence the row was exported for")
             continue
-        if row.get("id") != readings.piece_id(ja):
-            rejected.append(f"{where}: `id` is not this sentence's id")
-            continue
-        bad = readings.word_problems(ja, words) if isinstance(words, list) else ["words must be a list"]
+        # an empty list says the sentence holds no word to list (an English name and a particle)
+        bad = (readings.word_problems(ja, words) if words else []) if isinstance(words, list) else [
+            "words must be a list"]
         if bad:
             rejected += [f"{where} {ja[:24]!r}: {x}" for x in bad]
             continue
         key = readings.piece_key(ja)
-        if key in incoming:
-            rejected.append(f"{where}: the batch has this sentence twice")
-            continue
-        incoming[key] = [list(w) for w in words]
+        # the same sentence under another name or number: the first row's words stand
+        incoming.setdefault(key, [list(w) for w in words])
     words_by_key, provs = _piece_index(root)
     index = (words_by_key | incoming, provs)
     res = _build_lines(root, index, set(incoming), prov, dry_run=dry_run)
@@ -290,7 +292,7 @@ def import_rows(
     by_type: dict[str, int] = {}
     for type_, recs in sorted(incoming.items()):
         lines = Store(root).load(type_)
-        japanese = readings.shipped_japanese(lines)
+        japanese = shipped_of(root, type_)
         by_key = {(ln["id"], ln["field"]): ln for ln in lines}
         existing = {(r["id"], r["field"]): r for r in store.load(type_)}
         merged = dict(existing)
@@ -369,7 +371,7 @@ def fill_store(root: Path, *, dry_run: bool = False) -> dict[str, Any]:
     by_type: dict[str, int] = {}
     left: list[str] = []
     for type_ in sorted(readings.TYPES):
-        japanese = readings.shipped_japanese(Store(root).load(type_))
+        japanese = shipped_of(root, type_)
         recs = store.load(type_)
         changed = False
         for rec in recs:

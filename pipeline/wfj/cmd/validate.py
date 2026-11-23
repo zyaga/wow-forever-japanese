@@ -430,7 +430,9 @@ def rule_readings(store: Store) -> list[str]:
     problems: list[str] = []
     words = with_meaning = 0
     for type_ in readings.TYPES:
-        japanese = readings.shipped_japanese(store.load(type_))
+        japanese = readings.japanese_of(
+            type_, store.load(type_), Store(store.root, english=True).load(type_)
+        )
         result = readings.check(type_, generate.reading_store_of(store).load(type_), japanese)
         problems += result["problems"]
         type_words = sum(len(r["words"]) for r in result["current"])

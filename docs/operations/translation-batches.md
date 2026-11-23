@@ -297,9 +297,9 @@ Every batch that adds or changes shipped quest, gossip, UI, plain-text book, ite
 1. **Reuse first**: `make tooltip-words` builds every line that is made of sentences already written (`wfj readings spread`) and lists the sentences still to draft in `build/tooltip-words-owed.jsonl`. `make import-draft` and `make report-apply` run it, so a new or changed tooltip line that says nothing new gets its word list with no drafting.
 2. **Export**: `wfj readings export-tooltips --out batches/<name>.jsonl`, one row for each sentence nobody has written yet (`--all`: every sentence). A row is `{type: "piece", id, field: "text", ja, ja_hash, line, en?}`: `ja` is the sentence, `line` the first line that holds it, `en` that whole line's English for context. A line holding an escape sequence is left out and listed (`left out spell <id>/description: holds an escape sequence`).
 3. **Words**: the model adds 5-item `words` to each row, as above. A row is one sentence; its `en` is the whole line's English, there for context only.
-4. **Import**: `wfj readings import-tooltips BATCH --model MODEL --batch NAME` (try `--dry-run` first). A bad row is rejected with its reason and its lines wait; every line whose sentences are all written is built. Join the parts of a round into one batch file before importing.
+4. **Import**: `wfj readings import-tooltips BATCH --model MODEL --batch NAME` (try `--dry-run` first). A bad row is rejected with its reason and its lines wait; of two rows for the same sentence the first stands; every line whose sentences are all written is built. Join the parts of a round into one batch file before importing.
 5. **Spread** alone: `wfj readings spread --dry-run`, then without `--dry-run`, builds a line added or changed later from sentences already written. A line with a current reading of its own, a correction among them, is left alone.
-6. **Generate and validate** as above. The words are checked against the stored text; `generate` ships a hand-written line with its manual breaks joined, which moves no word.
+6. **Generate and validate** as above. The words are checked against the line as it ships (a hand-written line with its manual breaks joined).
 
 **Fixing a wrong reading: `--correction`.** Write the line's whole fixed `words` list with its current `ja_hash` and import it as a correction:
 ```sh
