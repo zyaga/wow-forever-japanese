@@ -134,6 +134,7 @@ DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui", "draft-r70707-ui", "draft-r70755
                  "draft-r70425-ui-sg12", "draft-r70425-uirv-sg12",  # a re-pull's new and reworded keys
                  "draft-r70862-ui-sg12",  # a re-pull's reworded key (the group invitation's new icon line)
                  "draft-r70959-ui-sg12",  # the interface lines of build 70959
+                 "draft-r71037-q-sg12",  # a boss still alive in an instance lock, its own word from build 71037
                  "draft-ui-invite-sg12",  # the cross-shard group invitation, a string of its own from 70888
                  "draft-r70450-ui-sg12", "draft-r70450-intro-sg12",  # a re-pull's new keys and the race intro subtitles
                  "draft-ui-left", "draft-ui-left-tooltip",  # lines a Forever client file shows, links and set bonuses
