@@ -728,6 +728,9 @@ WINDOW_SURFACES = frozenset({
     "settingstutorials", "skills", "spellbook.static", "spellsearch", "stable", "stacksplit",
     "subscriptioninterstitial", "tabard", "talents.static", "taxi", "texttospeech", "texttospeech.static",
     "timemanager", "trade", "trainer", "trainer.static", "transmog", "tutorial", "wardrobe", "worldmap",
+    # the surfaces a window's names are shown under, beside its dictionary words
+    "currency.names", "grouploot.items", "obliterumforge", "questframe.items", "questframe.npc", "questmap.items",
+    "scrappingmachine", "talents.trees", "wardrobe.names",
     "worldmap.static",
 })
 
@@ -813,6 +816,7 @@ REVIEWED_VARIABLE_SURFACES = frozenset({
     "Collections.lua:surface",
     "CommunitiesKit.lua:surface",
     "DamageMeter.lua:surface",
+    "NameLabels.lua:surface",  # the helper for a name on a widget: each caller passes its own, classified here
     "DialogueUI.lua:S.title",  # Dialogue UI's quest title: its quest window's surfaces, read from its S table
     "DialogueUI.lua:el.surface",
     "Gossip.lua:SURFACE",

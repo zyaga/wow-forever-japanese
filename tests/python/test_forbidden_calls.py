@@ -23,6 +23,8 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/StudyWindow.lua",
                 # saving a word: its screenshot event frame
                 "UI/WordSave.lua",
+                # the nameplate setting: its own event frame, which hears the client's settings change
+                "UI/NamePlateSetting.lua",
                 # the tooltip trace window (/wfj debug tooltip)
                 "UI/Slash.lua",
                 # the text watch and the taint watch script only their own frame (an OnUpdate, an all-events ring)

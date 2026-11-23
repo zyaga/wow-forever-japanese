@@ -82,6 +82,7 @@ View.NON_WINDOW = {
   cooldownviewer = true, damagemeter = true, ["deathrecap.tip"] = true,
   errors = true, gamepad = true,
   ghostframe = true, help = true, hudlabels = true, lossofcontrol = true, majorfactiontoast = true,
+  ["minimap.zone"] = true, -- the zone's name over the minimap
   npe = true, -- the new player tutorial's on-screen prompts
   ["questmap.trackerlabels"] = true, ["questmap.trackerobjectives"] = true, questtimer = true, queuestatus = true,
   ["quickjoin.tip"] = true, statusnotices = true, tracker = true, unitframes = true,

@@ -205,6 +205,8 @@ describe("every Render.show caller records a store line or nothing", function()
       "quest.completion", "gossip" }, -- Dialogue UI's quest and gossip window: the client's quest window's kinds
     ["UI/DialogueUIBook.lua"] = { "book" },
     ["UI/Crafting.lua"] = { "spell.description" }, -- the recipe's description: its spell's description
+    ["UI/Tracker.lua"] = { "quest.title" }, -- the top banner's title
+    ["UI/NameLabels.lua"] = {}, -- kind "name": a name is no line of the translated text, so nothing to report
   }
 
   it("lists exactly the files that call Render.show (directly or passed on, as UI/Gossip does)", function()
