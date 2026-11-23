@@ -295,7 +295,7 @@ _Avoid_: outdated reading, [[Stale]] (that's the English side of a translation)
 → [Readings](systems/readings.md)
 
 **Name store**:
-`data/name/`: one line per distinct English name the game shows (a creature, item, spell, game object, zone, faction or map, or an English name inside shipped Japanese prose), keyed by the hash of the normalized English, with its Japanese, that Japanese's reading in hiragana, the game ids that carry the name per kind, and [[Provenance]]. One line per English name gives one Japanese per name everywhere. Each name's Japanese is its [[Respelling]]: the katakana of its English, put together from the [[Name glossary]], never a translation. On screen names stay English under the [[Name policy]]; the store feeds the [[Engine text]], the [[Kana line]] and a later names setting, off by default.
+`data/name/`: one line per distinct English name the game shows (a creature, item, spell, game object, zone, faction or map, or an English name inside shipped Japanese prose), keyed by the hash of the normalized English, with its Japanese, that Japanese's reading in hiragana, the game ids that carry the name per kind, and [[Provenance]]. One line per English name gives one Japanese per name everywhere. Each name's Japanese is its [[Respelling]]: the katakana of its English, put together from the [[Name glossary]], never a translation. The store feeds the [[Engine text]], the [[Kana line]] and, through the generated `Data/Names/`, the [[Names setting]]; on screen names stay English under the [[Name policy]] until the player turns that setting on.
 _Avoid_: name translations, localized names, name table (that is the generated `Data/Names/` output), [[Translation glossary]]
 → [Data model](architecture/data-model.md) · [ADR-078](adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [ADR-082](adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)
 
@@ -312,8 +312,24 @@ _Avoid_: name translation, transliteration (it is spelled from how the English s
 ## Addon
 
 **Name policy**:
-Names of people, places, mobs, items, spells, and zones stay in English on screen; Japanese is for prose. A quest's title is a name too and stays English, while the quest's text is Japanese ([ADR-083](adr/083-quest-titles-are-names.md)). Every name also has Japanese data in the [[Name store]] (its [[Respelling]]), which the voice says in place of the English and a later names setting, off by default, will show. Race and class words are katakana, following the human corpus, including the reader's own, filled from a [[Player placeholder]]; the reader's character name is shown as the client returns it.
+Names of people, places, mobs, items, spells, skills, factions and zones, and quest titles, stay in English on screen until the player turns on the [[Names setting]]; Japanese is for prose ([ADR-083](adr/083-quest-titles-are-names.md)). With it on, every name the addon can write shows its [[Respelling]] from the [[Name store]], the same Japanese the voice says. Whatever the setting says, a player's, guild's or pet's name and what a player typed stay English, and so does a [[Word kept as written]]. Race and class words in prose are katakana, following the human corpus, including the reader's own, filled from a [[Player placeholder]]; the reader's character name is shown as the client returns it.
 _Avoid_: localized names, transliteration
+→ [Principles §2](architecture/principles.md#2-names-stay-in-english) · [ADR-106](adr/106-names-shown-in-japanese-on-screen.md)
+
+**Names setting**:
+`names.japanese` (*Show names in Japanese*, default off): shows game names in katakana instead of the client's English on every surface the addon translates, inside text, on window labels, tooltips, nameplates and unit frames, and in quest titles. Chosen in the [[Welcome window]]'s names question or on the main settings page; the name tables are always in memory, so it switches at once. Choosing Japanese names also turns on the client's friendly NPC nameplates, since a name over a head can only be written on a nameplate; choosing English names puts that back. Holding the reveal key shows the [[Live English]].
+_Avoid_: Japanese names toggle, name translation, names mode, names option
+→ [Settings → Names in Japanese](systems/settings.md#names-in-japanese) · [ADR-106](adr/106-names-shown-in-japanese-on-screen.md)
+
+**Name widget list**:
+`pipeline/name_surfaces.txt`: one line per widget or text slot that holds a name, with its module, marked `japanese` (the addon writes the name in Japanese), `todo` or `english <reason>` (`player-typed`, `text-box`, `secret`, `protected`, `not-a-game-name`, `client-drawn`) with a note of why. `tests/python/test_name_surfaces.py` fails while any line is `todo` and while a module's untouched widget has no line, so every name on screen is a decision someone wrote down.
+_Avoid_: name surfaces (in prose), names inventory, names checklist
+→ [Addon modules](architecture/addon-modules.md) · [ADR-106](adr/106-names-shown-in-japanese-on-screen.md)
+
+**Word kept as written**:
+A name the screen keeps as the client writes it even with the [[Names setting]] on: an abbreviation or the game's or company's own name (AFK, PvP, XP, Battle.net, World of Warcraft), one per line in `pipeline/names_kept_as_written.txt`, plus any single letter or Roman numeral without a line. `wfj generate` leaves these out of `Data/Names/`; their [[Name store]] lines stay, because the voice still says them.
+_Avoid_: name exceptions, kept names, allowlist, [[Not-names list]] (capitalised words a drafter may translate)
+→ [Pipeline → Generate](systems/pipeline.md#generate--validate) · [ADR-106](adr/106-names-shown-in-japanese-on-screen.md)
 
 **UI string**:
 One of Blizzard's own interface words or templates, such as a button ("Accept"), a header ("Quest Objectives") or a tooltip [[Structural line]] ("Binds when picked up", "Requires Level %d"), stored as an [[Entry]] of type `ui`, field `text`, addressed by its [[UI key]]. Never a name ([[Name policy]]). The addon matches it against the client's [[Live English]] for that key, admitted only when the hash equals the shipped `h1` (an item subclass word, an [[Enchantment stat line]], a [[Spell subtext]] or a [[Text family]] row, which have no client string the addon can read, are matched by the live text's fingerprint instead), and fills a template's values from the live line. Its English may carry colour codes, [[Plural grammar]], file textures (`|T…|t`, an icon inside the text; the Japanese keeps each exactly), the `|n` break and a link (`|H…|h[label]|h`) whose content is literal text plus plain specifiers, kept byte for byte with its label; never `|K` or `$` tokens, nor a numbered specifier inside a link.
@@ -657,6 +673,11 @@ Player-facing text (the README, the listing) calls it the popup dictionary.
 _Avoid_: gloss box, dictionary popup, tooltip (it is not a GameTooltip)
 → [Readings](systems/readings.md) · [ADR-039](adr/039-word-meanings-written-in-context.md)
 
+**Name card**:
+The [[Word card]] a Japanese name gets while the [[Names setting]] is on: the name's reading and its English name, the English as the client wrote it on screen (held in memory, never shipped). Shown on the same surfaces as the word card and under its settings, for a name inside text and a name in a [[Window label]]. Never saved to the [[Word list]], and it carries no save hint.
+_Avoid_: name tooltip, name popup, name reading box
+→ [Readings](systems/readings.md) · [ADR-106](adr/106-names-shown-in-japanese-on-screen.md)
+
 **English word card**:
 The [[Word card]]'s mirror in [[English first]]: pointing at an English word of quest or NPC prose, of a plain-text [[Book page]] or of a [[Window label]], shows the word, how it is said (from the [[Pronunciation table]]), the Japanese [[Word]] the shipped translation uses for it in that line with its [[Reading]], and that word's [[Dictionary form]] when it differs. The pairs are read off the [[Meaning]]s the readings already hold; a word with no pair may come from the [[Common word list]]. Names, codes, articles and a few bare function words get none. An HTML book page and a letter a player wrote show none.
 _Avoid_: English popup, reverse card, translation tooltip
@@ -731,7 +752,7 @@ _Avoid_: draft, queued report, saved report (the report is the copied text of al
 → [Fix reports](systems/fix-reports.md)
 
 **Welcome window**:
-The window every player is shown once (`Core/Intro` decides, `UI/IntroWindow` draws it; the flags are `WFJ_DB.intro` and `WFJ_DB.asked`): a first install at its first login or reload, a player who already had the addon the first time a version that asks the question loads. Page one asks what the player is here for, with three cards: Study Japanese, Study English, Just play. Confirm writes three ordinary settings (the [[Direction]], the word cards, the study tab) and nothing is written before it. Page two says what a new player must know: the reveal key, the word cards, the [[Minimap button]] and, while no voice pack is installed, where to get the free voice. It is the one addon window that shows both languages at once, because the player has not learned the reveal key yet. The settings pages and `/wfj intro` open it again. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
+The window every player is shown once (`Core/Intro` decides, `UI/IntroWindow` draws it; the flags are `WFJ_DB.intro`, `WFJ_DB.asked` and `WFJ_DB.askedNames`): a first install at its first login or reload, a player who already had the addon the first time a version that asks the question loads. Page one asks what the player is here for, with three cards: Study Japanese, Study English, Just play; and how names should show, English names or Japanese names (the [[Names setting]]). Confirm writes four ordinary settings (the [[Direction]], the word cards, the study tab, the names setting) and nothing is written before it. Page two says what a new player must know: the reveal key, the word cards, the [[Minimap button]] and, while no voice pack is installed, where to get the free voice. It is the one addon window that shows both languages at once, because the player has not learned the reveal key yet. The settings pages and `/wfj intro` open it again. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
 _Avoid_: intro window (in prose; the code's file and function names keep it), splash, onboarding popup, what's new (it never shows after a later update)
 → [Settings → Welcome window](systems/settings.md#welcome-window) · [ADR-081](adr/081-english-first-and-english-word-cards.md)
 
