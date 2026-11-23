@@ -92,10 +92,7 @@ function FlightMap.onTooltipShow(tt)
   if type(tt) ~= "table" or type(tt.GetOwner) ~= "function" or frame == nil or tt:GetOwner() ~= frame then
     return 0
   end
-  local help = WFJ.HelpTooltip
-  local name = type(tt.GetName) == "function" and tt:GetName() or nil
-  local line = type(name) == "string" and Compat.resolve(name .. "TextLeft1") or nil
-  return WFJ.NameLabels.show(help.SURFACE, "L1", line, nil, help.refit)
+  return WFJ.HelpTooltip.nameAt(tt, 1)
 end
 
 function FlightMap.onHide()

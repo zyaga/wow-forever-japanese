@@ -103,15 +103,9 @@ end
 function Minimap.onSetTooltip()
   local tt, owner = get("tooltip"), get("zone")
   if type(tt) ~= "table" or type(tt.GetOwner) ~= "function" or owner == nil or tt:GetOwner() ~= owner then return 0 end
-  local help = WFJ.HelpTooltip
-  local name = type(tt.GetName) == "function" and tt:GetName() or nil
-  if type(name) ~= "string" then return 0 end
   local n = 0
   for i = 1, math.min(2, type(tt.NumLines) == "function" and tt:NumLines() or 0) do
-    local rec = WFJ.SurfaceState.get(help.SURFACE, "L" .. i)
-    if not (rec and rec.meta and rec.meta.kind ~= "name") then
-      n = n + WFJ.NameLabels.show(help.SURFACE, "L" .. i, Compat.resolve(name .. "TextLeft" .. i), nil, help.refit)
-    end
+    n = n + WFJ.HelpTooltip.nameAt(tt, i)
   end
   return n
 end

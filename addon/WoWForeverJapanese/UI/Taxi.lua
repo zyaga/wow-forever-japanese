@@ -40,10 +40,7 @@ end
 function Taxi.onNodeEnter()
   local tt = get("tooltip")
   if type(tt) ~= "table" then return 0 end
-  local n = WFJ.HelpTooltip.walkAs(tt, HERE)
-  local name = type(tt.GetName) == "function" and tt:GetName() or nil
-  local line = type(name) == "string" and Compat.resolve(name .. "TextLeft1") or nil
-  return n + WFJ.NameLabels.show(WFJ.HelpTooltip.SURFACE, "L1", line, nil, WFJ.HelpTooltip.refit)
+  return WFJ.HelpTooltip.walkAs(tt, HERE) + WFJ.HelpTooltip.nameAt(tt, 1)
 end
 
 function Taxi.release()

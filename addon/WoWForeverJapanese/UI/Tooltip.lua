@@ -99,11 +99,11 @@ local function isDescription(text, pre)
   return text:sub(1, 1) == '"' and text:sub(-1) == '"' and #text > 2
 end
 
--- The frame's left (or `side` = "Right") lines as { { fs, text }, … } (index = line number). A line without a
--- FontString ends the list.
 -- Enum.TooltipDataType names of the tooltips that show a spell without being a spell's tooltip.
 Tooltip.SPELL_KINDS = { "Mount", "CompanionPet", "Macro" }
 
+-- The frame's left (or `side` = "Right") lines as { { fs, text }, … } (index = line number). A line without a
+-- FontString ends the list.
 function Tooltip.lines(frame, side)
   local out, name = {}, frame:GetName()
   local n = frame:NumLines() or 0
@@ -321,22 +321,22 @@ local function showStructural(surface, frame, lines, first, last, refit, name, s
           if WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", set.key, ctx) then n = n + 1 end
         elseif set == nil and l and l.text ~= "" and not isName then
           local key, args, runs
-          if not index then
-            key = nil -- no dictionary: only a name can show
-          elseif l.text:find("|c%x%x%x%x%x%x%x%x") then
-            -- a line the client coloured ("|cffff2020-11|r Armor"): matched as written, else without the colour
-            -- codes, and the coloured runs no argument holds get their colour back, as in the comparison pass
-            key, args, runs = Tooltip.matchColoured(index, l.text)
-          else
-            key, args = index:match(l.text)
+          if index then -- with no dictionary only a name can show
+            if l.text:find("|c%x%x%x%x%x%x%x%x") then
+              -- a line the client coloured ("|cffff2020-11|r Armor"): matched as written, else without the colour
+              -- codes, and the coloured runs no argument holds get their colour back, as in the comparison pass
+              key, args, runs = Tooltip.matchColoured(index, l.text)
+            else
+              key, args = index:match(l.text)
+            end
+            -- ADR-042: the right side of line 1 is never a name: on an aura it is the dispel type ("Curse"),
+            -- a restricted family found only where it is asked for
+            if not key and side[1] == "R" and i == 1 then
+              key, args = index:matchOnly(l.text, WFJ.Labels.families("DispelType").only)
+            end
+            -- the tooltip's own lines that are only matched where asked for (UIStrings.ONLY, the bare forms)
+            if not key then key, args = index:matchOnly(l.text, TOOLTIP_ONLY) end
           end
-          -- ADR-042: the right side of line 1 is never a name: on an aura it is the dispel type ("Curse"),
-          -- a restricted family found only where it is asked for
-          if index and not key and side[1] == "R" and i == 1 then
-            key, args = index:matchOnly(l.text, WFJ.Labels.families("DispelType").only)
-          end
-          -- the tooltip's own lines that are only matched where asked for (UIStrings.ONLY, the bare forms)
-          if index and not key then key, args = index:matchOnly(l.text, TOOLTIP_ONLY) end
           if key and WFJ.Render.show(surface, "ui." .. side[1] .. i, l.fs, l.text, "ui", "ui", key,
               { args = args, refit = refit, runColours = runs }) then
             n = n + 1
@@ -1270,8 +1270,8 @@ end
 function Tooltip.spellOf(frame, data)
   local nameOf, infoOf = Compat.get(DECLARE, "spellName"), Compat.get(DECLARE, "spellInfo")
   if type(nameOf) ~= "function" then return nil end
-  local first = Tooltip.lines(frame)[1]
-  local shown = first and first.text
+  local first = Compat.resolve(frame:GetName() .. "TextLeft1")
+  local shown = type(first) == "table" and first:GetText() or nil
   if anySecretOf(shown) or type(shown) ~= "string" or shown == "" then return nil end
   -- a first line this addon already wrote: the name the client put there is the record's English
   local rec = WFJ.SurfaceState.records(surfaceOf(frame))["name.L1"]

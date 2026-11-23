@@ -19,7 +19,6 @@ function Intro.prepare(db, fresh)
   if db.askedNames == nil then db.askedNames = false end
 end
 
-
 -- Marks it seen before showing: a window that fails to build must not come back at every login.
 function Intro.run(db, show)
   if type(db) ~= "table" or (db.intro ~= false and db.asked ~= false and db.askedNames ~= false) then

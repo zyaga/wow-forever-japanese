@@ -178,6 +178,18 @@ function HelpTooltip.walk(tt)
   return WFJ.Perf.call("help", walkImpl, tt)
 end
 
+-- Line `i` of a tooltip this surface walks, when it is a game name (a flight point, a zone, a pin's place): its
+-- Japanese while names are Japanese, under the walk's own key for that line, so the tooltip is laid out again when
+-- the reveal key or the names choice changes it. A line the walk holds as a dictionary word is left to the walk.
+-- → 1 | 0
+function HelpTooltip.nameAt(tt, i)
+  local rec = WFJ.SurfaceState.get(SURFACE, "L" .. i)
+  if rec and rec.meta and rec.meta.kind ~= "name" then return 0 end
+  local name = type(tt) == "table" and type(tt.GetName) == "function" and tt:GetName() or nil
+  local line = type(name) == "string" and Compat.resolve(name .. "TextLeft" .. i) or nil
+  return WFJ.NameLabels.show(SURFACE, "L" .. i, line, nil, HelpTooltip.refit)
+end
+
 -- One walk of `tt` as if its current owner were registered with `opts`: for a tooltip whose owner cannot be
 -- registered because it owns unrelated tooltips too: Forever's exhaustion tick anchors its tooltip to UIParent
 -- (blizzard_statustrackingbar/mainline/expbaroverrides.lua:29–31). The caller runs it right after the client wrote

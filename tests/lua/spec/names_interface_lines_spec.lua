@@ -23,6 +23,15 @@ describe("names inside an interface line's Japanese", function()
     return action, payload and payload.ja
   end
 
+  it("what the replacer reports for a name is what the word card view lays a name card from", function()
+    local text, names = WFJ.Names.inText("トレーナーを訪ねてFishingを習得しましょう。")
+    local spans = WFJ.Readings.withNames({}, text, names)
+    assert.are.equal(1, #spans)
+    assert.is_true(spans[1].name)
+    assert.are.equal("フィッシング", text:sub(spans[1].first, spans[1].last))
+    assert.are.equal("Fishing", spans[1].card.meaning)
+  end)
+
   it("stays as written while names are English", function()
     local action, ja = shown()
     assert.are.equal("apply", action)

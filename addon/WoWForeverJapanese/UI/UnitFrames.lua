@@ -84,9 +84,13 @@ end
 -- frame.name:SetText(GetUnitName(frame.unit, …)) [verified: shared/compactunitframe.lua:826–857], called by name.
 -- The same rule as onUnitUpdate, with one more guard: a nameplate the client keeps from addons (a hostile one inside
 -- an instance) is forbidden, and looking into it raises, so it is asked first and left alone. → 1 | 0
+local function isForbidden(frame)
+  return frame.IsForbidden ~= nil and frame:IsForbidden()
+end
+
 function UnitFrames.onCompactName(frame)
   if type(frame) ~= "table" then return 0 end
-  local ok, forbidden = pcall(function() return frame.IsForbidden ~= nil and frame:IsForbidden() end)
+  local ok, forbidden = pcall(isForbidden, frame)
   if not ok or forbidden then return 0 end
   if type(frame.name) ~= "table" or type(frame.unit) ~= "string" then return 0 end
   return WFJ.NameLabels.unit(SURFACE, nameKey(frame.name), frame.name, frame.unit)

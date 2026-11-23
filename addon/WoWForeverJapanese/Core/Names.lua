@@ -5,7 +5,7 @@
 --   Names.item(english)       → ja, reading | nil: the whole name, else an item name and its suffix
 --                                ("Bandit Cloak of the Owl": the two names joined as the words of one name are)
 --   Names.inText(ja[, html])  → text, spans: a shown Japanese line with each English name inside it written in
---                                its Japanese; spans = { { first, last, english, reading }, … } are byte positions
+--                                its Japanese; spans = { { first, last, ja, english, reading }, … } are byte positions
 --                                in `text`. Markup, a count after a name and a run with no name stay as written;
 --                                with `html` the tags of an HTML page stay too.
 --   Names.value(text)         → a value the client filled into a line, in Japanese: the name's Japanese when
@@ -51,10 +51,7 @@ local function suffixed(english)
   -- a suffix is written last, so the split nearest the end is tried first
   local at = #english
   while true do
-    local first
-    for i = at, 1, -1 do
-      if english:sub(i, i + 3) == " of " then first = i; break end
-    end
+    local first = english:sub(1, at + 3):match("^.*() of ")
     if not first then return nil end
     local itemJa, itemReading = Names.of(english:sub(1, first - 1))
     local suffixJa, suffixReading = Names.of(english:sub(first + 1))
@@ -65,6 +62,10 @@ local function suffixed(english)
   end
 end
 
+-- A widget's text is asked for twice in one pass (a guard, then the policy layer) and again on every refresh, and
+-- a text that is no name is the common answer: the suffix search's answers are kept like the whole names'.
+local joined, joinedCount = {}, 0
+
 function Names.item(english)
   local ja, reading = Names.of(english)
   if ja then return ja, reading end
@@ -72,7 +73,16 @@ function Names.item(english)
   -- a class or a race the name list has no line for ("Human", "Night Elf"): the word prose uses for it
   local word = WFJ.Placeholders and WFJ.Placeholders.wordFor(english)
   if word then return word, word end
-  return suffixed(english)
+  local hit = joined[english]
+  if hit == nil then
+    local j, r = suffixed(english)
+    hit = j and { j, r } or false
+    if joinedCount >= CACHE_MAX then joined, joinedCount = {}, 0 end
+    joined[english] = hit
+    joinedCount = joinedCount + 1
+  end
+  if not hit then return nil end
+  return hit[1], hit[2]
 end
 
 -- A line that is a list of names, each one maybe with a count after it ("Linen Cloth (2), Coarse Thread": a
@@ -204,7 +214,7 @@ local function trimRun(raw)
   return run
 end
 
-function Names.inText(ja, html)
+local function replace(ja, html)
   local out, spans, len = {}, {}, 0
   local function put(s)
     if s ~= "" then
@@ -226,7 +236,7 @@ function Names.inText(ja, html)
         if not name then name, reading = suffixed(run) end
       end
       if name then
-        spans[#spans + 1] = { first = len + 1, last = len + #name, english = run, reading = reading }
+        spans[#spans + 1] = { first = len + 1, last = len + #name, ja = name, english = run, reading = reading }
         put(name)
         put(raw:sub(#run + 1))
       else
@@ -253,4 +263,22 @@ function Names.inText(ja, html)
   end
   plain(at, n + 1)
   return table.concat(out), spans
+end
+
+-- A line's answer is the same for the whole session, and the policy layer asks again for the same line on every
+-- refresh of its window: the last answers are kept. The spans are shared, never changed by a reader.
+local TEXT_MAX = 512
+local texts, textCount = { [false] = {}, [true] = {} }, 0
+
+function Names.inText(ja, html)
+  if type(ja) ~= "string" or not ja:find("[A-Za-z]") then return ja, {} end -- no Latin letter: no name to find
+  html = html == true
+  local hit = texts[html][ja]
+  if not hit then
+    if textCount >= TEXT_MAX then texts, textCount = { [false] = {}, [true] = {} }, 0 end
+    hit = { replace(ja, html) }
+    texts[html][ja] = hit
+    textCount = textCount + 1
+  end
+  return hit[1], hit[2]
 end

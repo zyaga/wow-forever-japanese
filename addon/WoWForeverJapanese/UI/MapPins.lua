@@ -98,12 +98,7 @@ local NAMED = { FlightPointPinTemplate = true, DungeonEntrancePinTemplate = true
 
 -- Line 1's name in Japanese, unless the walk holds that line as a dictionary word. → 1 | 0
 local function nameLine(tt)
-  local help = WFJ.HelpTooltip
-  local rec = WFJ.SurfaceState.get(help.SURFACE, "L1")
-  if rec and rec.meta and rec.meta.kind ~= "name" then return 0 end
-  local name = type(tt.GetName) == "function" and tt:GetName() or nil
-  local line = type(name) == "string" and Compat.resolve(name .. "TextLeft1") or nil
-  return WFJ.NameLabels.show(help.SURFACE, "L1", line, nil, help.refit)
+  return WFJ.HelpTooltip.nameAt(tt, 1)
 end
 
 -- The `opts` a listed pin is registered with. A family pin is registered even with no keys of its own, so
