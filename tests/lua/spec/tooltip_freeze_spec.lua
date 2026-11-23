@@ -326,9 +326,18 @@ describe("UI/TooltipFreeze", function()
   end)
 
   describe("the first key", function()
+    it("is not offered before the client says its bindings are in", function()
+      local db = {}
+      F.offerKey(db) -- a key reads as free until the saved bindings arrive
+      assert.are.same({}, Stub.bindingCalls)
+      assert.is_nil(db.freezeKeyOffered)
+      F.bindingsLoaded(db)
+      assert.is_true(db.freezeKeyOffered)
+    end)
+
     it("is offered once: bound when free, and never asked again", function()
       local db = {}
-      F.offerKey(db)
+      F.bindingsLoaded(db)
       assert.are.same({ { "SetBinding", "CTRL-F", "WFJ_FREEZE_TOOLTIP" }, { "SaveBindings", 2 } }, Stub.bindingCalls)
       assert.is_true(db.freezeKeyOffered)
       Stub.bindingCalls, Stub.bindings = {}, {}
@@ -339,7 +348,7 @@ describe("UI/TooltipFreeze", function()
     it("is not bound over another action, and that is the one offer", function()
       local db = {}
       Stub.bindings["CTRL-F"] = "ACTIONBUTTON5"
-      F.offerKey(db)
+      F.bindingsLoaded(db)
       assert.are.same({}, Stub.bindingCalls)
       assert.is_true(db.freezeKeyOffered)
     end)
@@ -347,7 +356,7 @@ describe("UI/TooltipFreeze", function()
     it("waits for the end of combat", function()
       local db = {}
       Stub.combat = true
-      F.offerKey(db)
+      F.bindingsLoaded(db)
       assert.is_nil(db.freezeKeyOffered)
       Stub.combat = false
       F.offerKey(db)

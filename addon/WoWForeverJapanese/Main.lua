@@ -558,6 +558,7 @@ local function onEvent(self, event, name, ...)
       self:RegisterEvent("PLAYER_ENTERING_WORLD")
       self:RegisterEvent("PLAYER_REGEN_DISABLED")
       self:RegisterEvent("PLAYER_REGEN_ENABLED")
+      self:RegisterEvent("UPDATE_BINDINGS")
       self:RegisterEvent("PLAYER_LOGOUT")
       for _, blocked in ipairs(WFJ.Diag.BLOCK_EVENTS) do self:RegisterEvent(blocked) end
     else
@@ -574,6 +575,8 @@ local function onEvent(self, event, name, ...)
   elseif event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then
     local entry = WFJ.Diag.onBlocked(event, name, ..., ADDON)
     if entry then WFJ.TaintWatch.onBlocked(entry) end
+  elseif event == "UPDATE_BINDINGS" then
+    WFJ.TooltipFreeze.bindingsLoaded(WFJ_DB) -- the frozen tooltip's first key, once the saved bindings are in
   elseif event == "PLAYER_REGEN_DISABLED" then
     WFJ.Options.setCombat(true)
     WFJ.StudyWindow.setCombat(true)

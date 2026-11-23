@@ -222,11 +222,24 @@ function Freeze.toggle()
   end
 end
 
+-- A key with no action is free only once the client has loaded the player's saved bindings: before that every
+-- key reads as free, and binding one would take it from the player's own action for good. The client's own
+-- frames read their keys on UPDATE_BINDINGS [verified: forever blizzard_actionbar/wowlabs/keybindreminder.lua:15,
+-- :26; blizzard_actionbar/shared/actionbutton.lua:217, :994], so the offer waits for the first one
+-- [unverified: that the first UPDATE_BINDINGS of a session follows the saved bindings' load; in-game check: a
+-- fresh login on a character whose saved bindings hold Ctrl+F keeps that action].
+local bindingsIn = false
+
+function Freeze.bindingsLoaded(db)
+  bindingsIn = true
+  Freeze.offerKey(db)
+end
+
 -- The binding's first key, offered once per account: bound only when the binding has no key and nothing is on the
 -- key. `db` (the saved settings table) remembers that the offer was made, whichever way it went; an offer that
 -- could not be decided (combat) is made again.
 function Freeze.offerKey(db)
-  if type(db) ~= "table" or db.freezeKeyOffered then return end
+  if not bindingsIn or type(db) ~= "table" or db.freezeKeyOffered then return end
   if WFJ.KeyCapture.offerDefault(WFJ.KeyCapture.FREEZE, FIRST_KEY) then db.freezeKeyOffered = true end
 end
 
