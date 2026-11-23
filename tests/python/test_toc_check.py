@@ -42,7 +42,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/VoicePanel.lua",
         "UI/VoiceQuestLog.lua",  # the quest log's button and the remembered speaker
         "UI/VoiceErrors.lua",
-        "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua",
+        "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua", "UI/NamePlateSetting.lua",
         "UI/TextWatch.lua", "UI/TaintWatch.lua",  # ADR-058: text followed from our own frame, the taint watch
         "UI/HtmlText.lua",
         "UI/PlayerText.lua",  # a player's own text in the bundled face, after the font and the HTML adapter

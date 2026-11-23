@@ -20,7 +20,7 @@ local TAIL = {
   "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua",
   "UI/StudyVoice.lua",
   "UI/VoicePanel.lua", "UI/VoiceQuestLog.lua",
-  "UI/VoiceErrors.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua",
+  "UI/VoiceErrors.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua", "UI/NamePlateSetting.lua",
   "UI/TextWatch.lua",
   "UI/TaintWatch.lua",
   "UI/HtmlText.lua", "UI/PlayerText.lua", "UI/IconPicker.lua",

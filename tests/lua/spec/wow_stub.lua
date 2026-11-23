@@ -243,6 +243,9 @@ function Stub.install(tocPath)
   _G.AddonList, _G.AddonList_InitAddon, _G.AddonList_HasAnyChanged, _G.HideUIPanel = nil, nil, nil, nil
   _G.UIParent, _G.WFJSettingsTooltip = nil, nil
 
+  -- The client's settings store. No setting is defined: a spec that needs one replaces this table.
+  _G.C_CVar = { GetCVar = function() return nil end, SetCVar = function() end }
+
   -- GetAddOnName(index) reads Stub.addonNames (the AddOn List button).
   Stub.addonNames = {}
   _G.C_AddOns = {
@@ -663,6 +666,8 @@ function Stub.installQuestAPI()
   _G.QuestInfo_ShowTimer = function() end
   -- the rewards redraw the client runs on QUEST_ITEM_UPDATE (questframe.lua:75–84); the spec writes its English
   _G.QuestInfo_ShowRewards = function() end
+  -- the progress panel's required items writer (mainline/questframe.lua:230); the spec writes its names
+  _G.QuestFrameProgressItems_Update = function() end
   CreateFrame("Frame", "MapQuestInfoRewardsFrame")
   CreateFrame("Frame", "QuestFrameGreetingPanel")
   Stub.namedFontString("CurrentQuestsText", "Current Quests")

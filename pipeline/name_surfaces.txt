@@ -21,7 +21,7 @@ Core/Translator.lua	quest objectives, description, progress, completion	japanese
 Core/Translator.lua	NPC talk, book and letter pages (plain and HTML)	japanese	the names step; an HTML page keeps its tags
 Core/Translator.lua	item and spell tooltip text, objective lines, area text	japanese	the names step
 Core/Translator.lua	quest titles	japanese	the shipped Japanese title, on every surface that shows one
-Core/Translator.lua	interface lines (kind ui)	english not-a-game-name	their Latin words are the client's own (PvP, FPS); a value inside one is a line below
+Core/Translator.lua	interface lines (kind ui)	japanese	a name inside the line's Japanese, like one in quest text; a word in pipeline/names_kept_as_written.txt (PvP, the game's own name) has no name row and stays; a value inside a line is a line below
 Core/UIStringKeys.lua	FACTION_CONTROLLED_TERRITORY value	japanese	value kind name
 Core/UIStringKeys.lua	ERR_ZONE_EXPLORED value	japanese	value kind name
 Core/UIStringKeys.lua	LOOT_ITEM_SELF value (an item's link)	japanese	only the link's label changes
@@ -41,7 +41,10 @@ UI/ZoneText.lua	ZoneTextString	japanese
 UI/ZoneText.lua	SubZoneTextString	japanese
 UI/Minimap.lua	MinimapZoneText	japanese	after each Minimap_Update
 UI/Minimap.lua	the zone button's tooltip: zone and subzone lines	todo
-UI/WorldMap.lua	area names and the map's title	todo
+UI/WorldMap.lua	the area label's Name (the place under the mouse)	japanese	after each frame of the label's OnUpdate; Forever's map has no title with the map's name (the window title is a dictionary word)
+UI/WorldMap.lua	the area label on a zone shown with its level range	todo	the name carries a coloured "(1-10)" suffix (arealabeldataprovider.lua:105–109): UI/NameLabels takes a whole name only
+UI/WorldMap.lua	the navigation bar's map buttons	english protected	NavBar_AddButton writes and measures each name on every map change (navigationbar.lua:114, 123), the pass that places the map's pins
+UI/WorldMap.lua	the floor dropdown's text	todo	a floor's name, written by the menu system's UpdateText in the same map-change pass as the navigation bar (blizzard_worldmaptemplates.lua:3–46, menutemplates.lua:740–759): whether that pass measures it is not checked yet
 UI/Tracker.lua	UIWidgetObjectiveTracker.Header.Text	japanese	a zone name, after each SetHeader
 UI/Tracker.lua	ObjectiveTrackerTopBannerFrame.Title	todo	check what the client writes there
 UI/Tracker.lua	ScenarioObjectiveTracker.StageBlock.Name	todo	a stage's name
@@ -79,7 +82,8 @@ UI/Loot.lua	loot rows	japanese	an item row's name; a money row is left
 UI/GroupLoot.lua	MasterLooterFrame.Item.ItemName and roll frames	todo
 UI/LootHistory.lua	loot history rows	todo
 UI/Bags.lua	a bag's title	todo	an item's name
-UI/QuestFrame.lua	quest reward and required item buttons	todo
+UI/QuestFrame.lua	quest reward and required item buttons	japanese	reward, choice and required items, after each redraw and each Name write; the tracker's quest popup shares the reward buttons
+UI/QuestMap.lua	the quest log details pane's reward buttons (MapQuestInfoRewardsFrame)	todo	the item names on the map's reward buttons
 UI/Mail.lua	attached item names	todo
 UI/Trade.lua	traded item names	todo
 UI/AuctionHouse.lua	the six ItemDisplay name widgets and the result rows	todo
@@ -88,7 +92,7 @@ UI/ItemUpgrade.lua	ItemUpgradeFrame.ItemInfo.ItemName	todo
 UI/Crafting.lua	the form's OutputText, OutputSubText and RecraftingOutputText	todo
 UI/CustomerOrders.lua	the form's RecipeName and RecraftRecipeName	todo
 UI/Wardrobe.lua	the set details' Name, LongName and Label	todo
-UI/ChatSystem.lua	item, spell and quest links in chat lines	todo	only the link's label
+UI/ChatSystem.lua	item, spell and quest links in chat lines	japanese	only the label, on the visible lines at each display refresh; the history keeps the client's line; a link a player typed is text and stays
 
 # spell and other game names on the game's own windows
 UI/SpellBook.lua	spell rows	english protected	the client measures each row when it refills the page; Japanese there blocked the action bars in combat (traced in game, ADR-058)
@@ -97,10 +101,16 @@ UI/Talents.lua	talent and tree names	todo
 UI/CooldownViewer.lua	the two alert Name widgets	todo
 UI/MountJournal.lua	the mount's Name	todo
 UI/Skills.lua	SkillsFrame.SkillDetailFrame.Title and Subtitle	todo
+UI/Professions.lua	each slot's ProfessionName on the overview page	japanese	after each Update of the page
+UI/Professions.lua	the crafting page's title (the profession's name)	japanese	after each SetTitle; the overview page's title is a dictionary word
+UI/Professions.lua	the rank bar's text ("Blacksmithing 135/150")	todo	TRADESKILL_NAME_RANK has no dictionary row and no name value yet (blizzard_professionsrankbar.lua:6–21, 144–146)
+UI/Professions.lua	the spell buttons' spellString ("Smelting", "Find Minerals")	english protected	a secure button whose click casts (blizzard_professionsbooktemplates.xml:4, 26–31; blizzard_professionsbook.lua:317–352)
 UI/Reputation.lua	ReputationFrame.ReputationDetailFrame.Title and the faction rows	todo
 UI/MajorFactionToast.lua	MajorFactionUnlockToast.FactionName	todo
 UI/Currency.lua	the currency detail's Title and Subtitle	todo
-UI/ChatSystem.lua	an NPC's name before its spoken line	todo
+UI/ChatSystem.lua	an NPC's name before its spoken line	japanese	on the visible lines; never the player's own name
+UI/Speech.lua	names inside an NPC's Japanese in speech bubbles and boss emotes	todo	UI/Speech writes the shipped row there with no names step
+UI/ChatSystem.lua	names inside an NPC's spoken Japanese	japanese	UI/Speech reads the shipped rows directly and skips the names step, so the chat window's lines take it; a line whose words stayed English keeps its names
 
 # never a game name
 UI/Inspect.lua	InspectFrame.TitleContainer.TitleText	english player-typed

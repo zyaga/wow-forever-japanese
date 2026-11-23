@@ -115,6 +115,8 @@ local CANDIDATES = {
   timerText         = { "QuestInfoTimerText" },
   showTimer         = { "QuestInfo_ShowTimer" },
   showRewards       = { "QuestInfo_ShowRewards" },
+  -- the required items' writer
+  requiredUpdate    = { "QuestFrameProgressItems_Update" },
 }
 
 -- A declared client function, called only when it is one. → its returns | nil
@@ -337,11 +339,83 @@ function QuestFrame.showTimer()
   return WFJ.Labels.show(TIMER, "timer", Compat.get(DECLARE, "timerText"), nil, TIMER_ONLY)
 end
 
+-- The item names on the window's item buttons (surface "questframe.items", area "items"). Never dictionary words;
+-- while names are on each shows the item's Japanese (UI/NameLabels).
+--   Reward and choice buttons: QuestInfoRewardsFrame.RewardButtons, made on demand by QuestInfo_GetRewardButton
+--     (mainline/questinfo.lua:446–454). An item's Name is written in the item-load callback of
+--     QuestInfo_ShowRewardAsItemCommon (:538–556), which can run after the redraw returned, so each button's Name is
+--     post-hooked too (once). The tracker's quest popup shares these buttons (QUEST_TEMPLATE_LOG is no map view,
+--     :58–66), so its names follow the same hook. A currency's Name (:584) stays English unless the name list has it.
+--   Required items: QuestProgressItem<i>Name, written by QuestFrameProgressItems_Update (mainline/questframe.lua:
+--     230–300), which the client calls by name from the progress panel's OnShow and on QUEST_ITEM_UPDATE (:80, 223).
+-- Plain labels: the buttons are not secure (QuestItemTemplate, mainline/questframetemplates.xml:50–79;
+-- LargeQuestRewardItemButtonTemplate, questinfo.xml:78), and the client never reads or measures a Name: it lays the
+-- rewards out by button height (questinfo.lua:723–724).
+-- The quest log's details pane uses MapQuestInfoRewardsFrame's buttons: UI/QuestMap's pane, not this window's.
+local ITEMS = "questframe.items"
+QuestFrame.ITEMS = ITEMS
+local REQUIRED_BUTTONS = 6 -- QuestProgressItem1–6 (mainline/questframe.xml:157–185)
+local itemKey = WFJ.Labels.keyer("item.")
+local nameHooked = setmetatable({}, { __mode = "k" })
+
+local function isShown(frame)
+  return type(frame) == "table" and type(frame.IsShown) == "function" and frame:IsShown() == true
+end
+
+-- One item name widget: shown when its button shows, its record dropped when the button is hidden. → 1 | 0
+local function showItemName(button, fs)
+  if type(fs) ~= "table" then return 0 end
+  if not isShown(button) then
+    WFJ.SurfaceState.drop(ITEMS, itemKey(fs))
+    return 0
+  end
+  return WFJ.NameLabels.show(ITEMS, itemKey(fs), fs, "items")
+end
+
+-- Post-hook of a reward button's Name:SetText. This addon's own writes echo here (the item's Japanese going on, the
+-- client's English put back) and are left; any other text is the client's.
+local function onRewardName(fs, text)
+  if not WFJ.SurfaceState.secret(text) then
+    local rec = WFJ.SurfaceState.get(ITEMS, itemKey(fs))
+    if rec and rec.fs == fs and (text == rec.en or text == WFJ.Names.item(rec.en)) then return end
+  end
+  WFJ.NameLabels.show(ITEMS, itemKey(fs), fs, "items")
+end
+
+-- The reward and choice buttons. → the number of names shown
+function QuestFrame.showRewardNames()
+  local rewards = Compat.get(DECLARE, "rewardsFrame")
+  local list = type(rewards) == "table" and rewards.RewardButtons or nil
+  if type(list) ~= "table" then return 0 end
+  local n = 0
+  for _, button in ipairs(list) do
+    local fs = type(button) == "table" and button.Name or nil
+    if type(fs) == "table" and not nameHooked[fs] and type(fs.SetText) == "function" then
+      nameHooked[fs] = true
+      hooksecurefunc(fs, "SetText", onRewardName)
+    end
+    n = n + showItemName(button, fs)
+  end
+  WFJ.Render.updateBanner(ITEMS)
+  return n
+end
+
+-- hooksecurefunc target (QuestFrameProgressItems_Update): the required items. → the number of names shown
+function QuestFrame.showRequiredNames()
+  local n = 0
+  for i = 1, REQUIRED_BUTTONS do
+    n = n + showItemName(Compat.resolve("QuestProgressItem" .. i), Compat.resolve("QuestProgressItem" .. i .. "Name"))
+  end
+  WFJ.Render.updateBanner(ITEMS)
+  return n
+end
+
 -- hooksecurefunc target: runs after QuestInfo_Display wrote the panel. A quest-log template (the camelot quest map
 -- details and the tracker popup) is UI/QuestMap's.
 function QuestFrame.onDisplay(template, parentFrame)
   if type(template) ~= "table" then return 0 end
   QuestFrame.showSpellHeaders()
+  QuestFrame.showRewardNames()
   if template.questLog then
     local QM = WFJ.QuestMap
     if type(QM) == "table" and type(QM.onDisplay) == "function" then return QM.onDisplay(template, parentFrame) end
@@ -363,6 +437,7 @@ end
 -- arrives (QUEST_ITEM_UPDATE, mainline/questframe.lua:75–84) or a spell is learned (:92–96), writing the English
 -- reward headings again (questinfo.lua:765) after the panel was shown. The open panel is shown again.
 function QuestFrame.onShowRewards()
+  QuestFrame.showRewardNames()
   local function visible(key)
     local f = Compat.get(DECLARE, key)
     return type(f) == "table" and type(f.IsVisible) == "function" and f:IsVisible()
@@ -456,7 +531,7 @@ QuestFrame.NPC = NPC
 function QuestFrame.release()
   local n = 0
   for _, surface in ipairs(QuestFrame.SURFACES) do n = n + WFJ.Render.release(surface) end
-  return n + WFJ.Render.release(QuestFrame.GREETING) + WFJ.Render.release(NPC)
+  return n + WFJ.Render.release(QuestFrame.GREETING) + WFJ.Render.release(NPC) + WFJ.Render.release(ITEMS)
 end
 
 local hooked = false
@@ -510,6 +585,9 @@ function QuestFrame.init(d)
   end
   if type(Compat.get(DECLARE, "showTimer")) == "function" then
     hooksecurefunc("QuestInfo_ShowTimer", QuestFrame.showTimer)
+  end
+  if type(Compat.get(DECLARE, "requiredUpdate")) == "function" then
+    hooksecurefunc("QuestFrameProgressItems_Update", QuestFrame.showRequiredNames)
   end
   local frame = Compat.get(DECLARE, "frame")
   if type(frame) == "table" and type(frame.CreateFontString) == "function" and type(frame.GetFrameLevel) == "function"

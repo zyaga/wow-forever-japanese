@@ -29,10 +29,19 @@
 --   OnEnter → SetText; camelot/blizzard_professionsframe.xml:13–17; shareduipaneltemplates.lua:408–422), each
 --   restricted to its one key. The profession side tabs' tooltipText is the profession's name (camelot/
 --   blizzard_professionsframe.lua:50): never registered.
--- Never touched: a slot's ProfessionName (GetProfessionInfo's name) and specialization, a secondary slot's
---   missingHeader (PROFESSIONS_COOKING / _FISHING / _FIRST_AID are profession names; `only` keeps them English),
---   the rank bar's text (TRADESKILL_NAME_RANK "%s %d/%d" joins the profession name, blizzard_professionsrankbar.lua:
---   6–21). The unlearn confirmation is a StaticPopup (ADR-015 §5).
+-- Names, while Japanese names are on (UI/NameLabels): a slot's ProfessionName (GetProfessionInfo's name, written by
+--   FormatProfession from the page's Update, camelot/blizzard_professionsbook.lua:22–28, 75), after each Update
+--   (post-hooked on the page, which OnShow and the skill events call by method, blizzard_professionsbook.lua:23–33),
+--   on surface "professions.book"; and the crafting page's title, SetTitle(professionName), under the title's own
+--   record. Nothing reads or measures ProfessionName.
+-- Never touched: a slot's specialization, a secondary slot's missingHeader (PROFESSIONS_COOKING / _FISHING /
+--   _FIRST_AID are profession names; `only` keeps them English), the rank bar's text (TRADESKILL_NAME_RANK
+--   "%s %d/%d" joins the profession name, blizzard_professionsrankbar.lua:6–21, 144–146: no dictionary row and no
+--   name value for it yet), and the spell buttons' spellString and subSpellString (the spell's name and its rank
+--   word, "Journeyman"): each button is secure and its click casts (ProfessionButtonTemplate inherits
+--   SecureFrameTemplate, blizzard_professionsbooktemplates.xml:4, 26–37; OnClick → C_SpellBook.CastSpellBookItem,
+--   blizzard_professionsbook.lua:317–352), and the client writes both in UpdateButton (:491–497). The unlearn
+--   confirmation is a StaticPopup (ADR-015 §5).
 local _, WFJ = ...
 local Professions = {}
 WFJ.Professions = Professions
@@ -108,16 +117,33 @@ end
 function Professions.showFrameTitle() return showTitle("frame", "title") end
 function Professions.showStandaloneTitle() return showTitle("standalone", "standalone.title") end
 
+-- Each slot's profession name, after the page's Update. → the number of names shown
+local function showNames(hostKey)
+  local n = 0
+  for _, slot in ipairs(slotsOf(hostKey)) do
+    n = n + WFJ.NameLabels.show(BOOK, hostKey .. "." .. slot.name .. ".name", slot.frame.ProfessionName)
+  end
+  return n
+end
+function Professions.onPageUpdate() return showNames("bookPage") end
+function Professions.onStandaloneUpdate() return showNames("standalone") end
+
+local function hookUpdate(host, fn)
+  if type(host) == "table" and type(host.Update) == "function" then hooksecurefunc(host, "Update", fn) end
+end
+
 function Professions.onFrameShow()
   Professions.showFrameTitle()
   local page = get("bookPage")
   if type(page) == "table" and type(page.IsShown) == "function" and page:IsShown() then
     Professions.showStatic("bookPage")
+    showNames("bookPage")
   end
 end
 function Professions.onPageShow() return Professions.showStatic("bookPage") end
 function Professions.onStandaloneShow()
   Professions.showStandaloneTitle()
+  showNames("standalone")
   return Professions.showStatic("standalone")
 end
 
@@ -152,10 +178,14 @@ function Professions.setupFrame()
   local page = get("bookPage")
   hookScript(page, "OnShow", Professions.onPageShow)
   hookScript(page, "OnHide", Professions.releasePage)
+  hookUpdate(page, Professions.onPageUpdate)
   registerTooltips("bookPage")
   local tab = get("overviewTab")
   if type(tab) == "table" then WFJ.HelpTooltip.register(tab, TITLE) end
   Professions.onFrameShow()
+  -- the crafting page's title, the profession's name: after Labels.title's own SetTitle hook (set up just above), so
+  -- a dictionary title keeps its record
+  WFJ.NameLabels.title(SURFACE, frame, "title", false)
   return true
 end
 
@@ -172,6 +202,7 @@ function Professions.setupBook()
   end
   hookScript(book, "OnShow", Professions.onStandaloneShow)
   hookScript(book, "OnHide", Professions.release)
+  hookUpdate(book, Professions.onStandaloneUpdate)
   registerTooltips("standalone")
   Professions.onStandaloneShow()
   return true
