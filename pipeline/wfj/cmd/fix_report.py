@@ -514,12 +514,21 @@ def apply(root: Path, issue: int, model_id: str, date: str, by: str, dry_run: bo
             print(f"  {x}")
         print(f"report apply: {len(problems)} line(s) would not ship, nothing written; fix the decisions")
         return 1
+    # a rewrite is hand-written, so a tooltip line's words are for the text with its manual breaks joined
+    en_of = {
+        (t, ln["id"], ln["field"]): ln.get("en")
+        for t in types
+        if t in readings.TOOLTIP_TYPES
+        for ln in english.load(t)
+    }
     words = [
         {
             "type": r["type"],
             "id": r["id"],
             "field": r["field"],
-            "ja_hash": readings.ja_hash(r["ja"]),
+            "ja_hash": readings.ja_hash(
+                readings.hand_written_text(r["type"], r["ja"], en_of.get((r["type"], r["id"], r["field"])))
+            ),
             "words": r["words"],
         }
         for r in rows

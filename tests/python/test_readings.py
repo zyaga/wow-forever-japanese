@@ -1264,6 +1264,16 @@ def wrapped(data):
     return data
 
 
+def test_a_class_export_reads_a_tooltip_line_as_it_ships(wrapped):
+    # the hand-written lines are exported with the shipped text's hash, the one `import` checks a row against
+    rows = cmd.export_rows(wrapped, "item", [1307, 2794, 10360], klass="human")
+    by_id = {r["id"]: r for r in rows}
+    assert by_id[10360]["ja"] == "このペットの呼び出し方を習得する。"
+    assert by_id[10360]["ja_hash"] == readings.ja_hash("このペットの呼び出し方を習得する。")
+    assert readings.hand_written_text("item", "このペットの呼び出し方を\n習得する。", "Teaches it.") == by_id[10360]["ja"]
+    assert readings.hand_written_text("quest", "一行目\n二行目", "One line.") == "一行目\n二行目"
+
+
 def test_tooltip_sentences_are_cut_from_the_text_as_it_ships(wrapped, tmp_path):
     rows = _export_tips(tmp_path)
     # the breaks are joined in what ships, so no sentence is cut at one, and the two quest lines are one sentence

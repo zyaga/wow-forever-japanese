@@ -204,8 +204,16 @@ def verdict_problems(part: dict[str, Any], v: dict[str, Any]) -> list[str]:
     if verdict == "redraft" and v.get("ja") not in (None, part["ja"]):
         p.append("a redraft carries no `ja` (the redraft batch writes it)")
     shipped = v.get("ja") if verdict == "correct" else part["ja"]
+    if isinstance(shipped, str):
+        shipped = readings.hand_written_text(part["type"], shipped, part.get("en"))
     owed = takes_words and verdict != "redraft" and isinstance(shipped, str) and readings.annotatable(shipped)
     return p + _words_problems(v, shipped, owed)
+
+
+def _words_hash(row: dict[str, Any], ja: str) -> str:
+    """The hash a row's words are imported under: of the text the line ships as. Every audited line is
+    hand-written, and so is its correction."""
+    return readings.ja_hash(readings.hand_written_text(row["type"], ja, row.get("en")))
 
 
 def _words_problems(v: dict[str, Any], shipped: Any, owed: bool) -> list[str]:
@@ -280,13 +288,13 @@ def outputs(pairs: list[tuple[dict[str, Any], dict[str, Any]]]) -> dict[str, lis
         base = {"type": row["type"], "id": row["id"], "field": row["field"]}
         if v["verdict"] == "match":
             if v.get("words"):
-                match_words.append(base | {"ja_hash": row["ja_hash"], "words": v["words"]})
+                match_words.append(base | {"ja_hash": _words_hash(row, row["ja"]), "words": v["words"]})
             continue
         note = f"{v['kind']}: {v['problem']}"
         if v["verdict"] == "correct":
             dec.append(base | {"decision": "correct", "ja": v["ja"], "note": note})
             if v.get("words"):
-                correct_words.append(base | {"ja_hash": readings.ja_hash(v["ja"]), "words": v["words"]})
+                correct_words.append(base | {"ja_hash": _words_hash(row, v["ja"]), "words": v["words"]})
         else:
             dec.append(base | {"decision": "redraft", "note": note})
     return {"audit.decisions.jsonl": dec, "audit.words.jsonl": match_words,

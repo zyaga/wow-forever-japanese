@@ -391,6 +391,12 @@ def japanese_of(
     return shipped_japanese(lines)
 
 
+def hand_written_text(type_: str, ja: str, en: str | None) -> str:
+    """The text a hand-written line ships as, which its reading is written and hashed for: a tooltip line with
+    its manual breaks joined (core/tooltip_text), any other line as it is."""
+    return tooltip_text.join_breaks(ja, en) if type_ in TOOLTIP_TYPES else ja
+
+
 def shipped_japanese(lines: list[dict[str, Any]]) -> dict[tuple[int | str, str], str]:
     """(id, field) → the Japanese the addon ships for it (the translation store's shipped lines)."""
     return {(ln["id"], ln["field"]): ln["ja"] for ln in lines if shipped(ln)}

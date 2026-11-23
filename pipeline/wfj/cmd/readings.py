@@ -72,11 +72,12 @@ def export_rows(
     lines = Store(root).load(type_)
     japanese = shipped_of(root, type_)
     if klass is not None:
-        japanese = {
-            (ln["id"], ln["field"]): ln["ja"]
+        of_class = {
+            (ln["id"], ln["field"])
             for ln in lines
             if readings.shipped(ln) and ln["provenance"]["class"] == klass
         }
+        japanese = {k: ja for k, ja in japanese.items() if k in of_class}
     have = {
         (r["id"], r["field"])
         for r in readings.check(type_, reading_store(root).load(type_), japanese)["current"]
