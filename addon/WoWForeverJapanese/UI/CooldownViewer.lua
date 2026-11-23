@@ -50,8 +50,12 @@
 -- Never touched: the four HUD viewers' Edit Mode selections (their "Essential Cooldowns" labels): Edit Mode stays as
 --   the client writes it (ADR-069). The HUD viewers' items: on this client a cooldown number, a charge count, an aura
 --   stack and an aura instance can be secret values (blizzard_sharedxmlbase/securetypes.lua:6, blizzard_cooldownviewer/
---   cooldownviewersecure.lua:4–6), so no text of a HUD item is ever read or matched here. The alert editors' Name (a
---   spell name), a bar item's Name, the search box, the layout dropdown (a layout's name is the player's).
+--   cooldownviewersecure.lua:4–6), so no text of a HUD item is ever read or matched here. A bar item's Name, the search
+--   box, the layout dropdown (a layout's name is the player's).
+-- The alert editors' Name (the cooldown's spell, cooldownviewersettingsalerts.lua:18, or the group buff,
+--   groupbufffilter.lua:186) is never a dictionary word (NEVER_TOUCH); while names are on it shows the name's
+--   Japanese (UI/NameLabels) on the same Display pass. Nothing reads or measures it (GetNameLabel only writes it,
+--   cooldownviewereditalertbase.lua:7–9).
 -- Not here: menu / dropdown popup entries (UI/Menus), the layout dialogs (shown with StaticPopupSpecial_Show,
 --   blizzard_editmode/shared/editmodedialogs.lua:93–96, ADR-015 §5), the two StaticPopups (lua:8–28), chat lines.
 local _, WFJ = ...
@@ -230,7 +234,7 @@ local function showDropdown(recKey, dropdown, keys)
   return WFJ.Labels.show(SURFACE, recKey, dropdown.Text, nil, opts)
 end
 
--- One alert editor's labels, button and dropdown texts, as records `<which>.<field>`. → the number found
+-- One alert editor's labels, button and dropdown texts and its Name, as records `<which>.<field>`. → the number found
 function CooldownViewer.showAlert(which)
   local frame = get(which)
   if type(frame) ~= "table" then return 0 end
@@ -239,6 +243,7 @@ function CooldownViewer.showAlert(which)
     n = n + WFJ.Labels.show(SURFACE, which .. "." .. l[1], frame[l[1]], nil, { only = l[2] })
   end
   for _, d in ipairs(ALERT_DROPDOWNS) do n = n + showDropdown(which .. "." .. d[1], frame[d[1]], d[2]) end
+  n = n + WFJ.NameLabels.show(SURFACE, which .. ".name", frame.Name)
   WFJ.Render.updateBanner(SURFACE)
   return n
 end

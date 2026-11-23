@@ -33,14 +33,19 @@
 --   191–193), by its Label's own fields. The label writes Name from its OnUpdate (EvaluateLabels, :194–239), so the
 --   frame's OnUpdate is post-hooked (HookScript) like the coordinates. A plain label: the frame has a fixed size
 --   (arealabeldataprovider.xml: 400 x 128), nothing reads or measures Name, and nothing protected follows. A zone
---   shown with its level range carries a coloured suffix (:105–109) and is no name alone: it stays English.
+--   shown with its level range carries a coloured suffix (:103–107): the name shows in Japanese and the range stays
+--   as the client wrote it (NameLabels.lead).
 -- - The navigation bar's map buttons stay English: NavBar_AddButton writes each name and measures it at once
 --   (blizzard_framexml/mainline/navigationbar.lua:114, 123), on every map change (WorldMapNavBarMixin:Refresh,
 --   blizzard_worldmaptemplates.lua:527–557, from WorldMapMixin:OnMapChanged → RefreshOverlayFrames, blizzard_worldmap.
 --   lua:355–357, 436–440), the pass that places the map's pins (SetPassThroughButtons, blizzard_mapcanvas/
 --   mapcanvas_dataproviderbase.lua:290, 300). A bundled font left on a button would come back tainted to that measure
---   (docs/architecture/client-limits.md). The window title is a dictionary word (UI/QuestMap); Forever's map shows no
---   title of its own with the map's name.
+--   (docs/architecture/client-limits.md). The floor dropdown stays English for the same reason: it is an overlay frame
+--   (blizzard_worldmap.lua:307) whose Refresh runs in that pass (RefreshOverlayFrames → secureexecuterange,
+--   :436–440) and writes the floor's name through SetupMenu → GenerateMenu → UpdateToMenuSelections → UpdateText
+--   (blizzard_worldmaptemplates.lua:3–46; blizzard_menu/dropdownbutton.lua:237–261, 327; menutemplates.lua:733–759),
+--   so a hook there would run inside the pass. The window title is a dictionary word (UI/QuestMap); Forever's map
+--   shows no title of its own with the map's name.
 -- Not here: the gamepad footer prompts (FRAME_ACTION_*, blizzard_worldmap.lua:1100–1214), the help plate
 -- (WORLD_MAP_TUTORIAL1 / 4, :1305–1306; never shown: camelot hides its MainHelpPlateButton,
 -- helpplateoverrides.lua:1–3), the completed-quests HelpTip (UI/HelpTips; never shown on camelot:
@@ -140,9 +145,9 @@ local function hookOverlays()
   return n
 end
 
--- HookScript("OnUpdate") target on the area label: the place's Japanese. → 1 | 0
+-- HookScript("OnUpdate") target on the area label: the place's Japanese, a level range after it as written. → 1 | 0
 function WorldMap.onAreaLabel(label)
-  return WFJ.NameLabels.show(NAMES, "area", type(label) == "table" and label.Name or nil)
+  return WFJ.NameLabels.lead(NAMES, "area", type(label) == "table" and label.Name or nil)
 end
 
 -- The area label frame among the map's data providers (see the file header) → frame | nil

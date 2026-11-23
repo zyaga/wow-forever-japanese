@@ -22,6 +22,10 @@
 --   (blizzard_sharedmapdataproviders/clicktozoomdataprovider.lua:36–57, 124–126; only the flight map adds that
 --   provider, blizzard_flightmap.lua:55). The provider has no field on the map: it is the key of
 --   FlightMapFrame.dataProviders (blizzard_mapcanvas.lua:192) that carries both labels. Static labels.
+-- Names, while Japanese names are on (UI/NameLabels, on the help surface under the walk's own record key "L1", with
+-- the help tooltip's refit): a node pin's place name through UI/MapPins (the template is one of its named ones), and
+-- the zone summary's line 1, the zone's name, after each GameTooltip:Show the map owns (post-hooked after
+-- UI/HelpTooltip's own Show hook, which walked the two keys first).
 -- Release on the map's OnHide (the two static hints stay).
 local _, WFJ = ...
 local FlightMap = {}
@@ -34,11 +38,11 @@ local Compat = WFJ.Compat
 local ADDON = "Blizzard_FlightMap"
 local PIN_TEMPLATE = "FlightMap_FlightPointPinTemplate"
 
-FlightMap.NEVER_TOUCH = {} -- node and zone names only ever appear as tooltip lines, which `only` keeps out
+FlightMap.NEVER_TOUCH = {} -- node and zone names only ever appear as tooltip lines: the names step, never `only`
 
 local CANDIDATES = {
   frame = { "FlightMapFrame" },
-  border = { "FlightMapFrame.BorderFrame" },
+  border = { "FlightMapFrame.BorderFrame" }, tooltip = { "GameTooltip" },
   providers = { "FlightMapFrame.dataProviders" },
 }
 
@@ -82,6 +86,18 @@ function FlightMap.onShow()
   return n
 end
 
+-- hooksecurefunc target (GameTooltip:Show): the zone summary's zone name, when the map owns the tooltip. → 1 | 0
+function FlightMap.onTooltipShow(tt)
+  local frame = get("frame")
+  if type(tt) ~= "table" or type(tt.GetOwner) ~= "function" or frame == nil or tt:GetOwner() ~= frame then
+    return 0
+  end
+  local help = WFJ.HelpTooltip
+  local name = type(tt.GetName) == "function" and tt:GetName() or nil
+  local line = type(name) == "string" and Compat.resolve(name .. "TextLeft1") or nil
+  return WFJ.NameLabels.show(help.SURFACE, "L1", line, nil, help.refit)
+end
+
 function FlightMap.onHide()
   return WFJ.Render.release(SURFACE)
 end
@@ -96,6 +112,8 @@ function FlightMap.setup()
   hooked = true
   WFJ.MapPins.add(PIN_TEMPLATE, PIN_KEYS)
   WFJ.HelpTooltip.register(frame, SUMMARY)
+  local tt = get("tooltip")
+  if type(tt) == "table" and type(tt.Show) == "function" then hooksecurefunc(tt, "Show", FlightMap.onTooltipShow) end
   if type(frame.HookScript) == "function" then
     frame:HookScript("OnShow", FlightMap.onShow)
     frame:HookScript("OnHide", FlightMap.onHide)

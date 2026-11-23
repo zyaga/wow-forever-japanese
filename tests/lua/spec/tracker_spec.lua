@@ -163,7 +163,9 @@ local function installTracker()
 
   local banner = CreateFrame("Frame", "ObjectiveTrackerTopBannerFrame")
   banner.Title, banner.Subtitle = Stub.fontString(""), Stub.fontString("")
-  function banner.PlayBanner(self, title, world)
+  -- DisplayForQuest keeps the quest's id; PlayBanner writes its title (blizzard_bonusobjectivetracker.lua:699–725)
+  function banner.PlayBanner(self, title, world, questID)
+    self.questID = questID
     self.Title.text = title
     self.Subtitle.text = world and en("WORLD_QUEST_BANNER") or en("BONUS_OBJECTIVE_BANNER")
   end
@@ -331,6 +333,29 @@ describe("the objective tracker's other modules on Forever (surface tracker)", f
     assert.is_true(unrecorded(banner.Title))
     banner:PlayBanner("Clear the Camp", false)
     assert.are.equal(ja("BONUS_OBJECTIVE_BANNER"), banner.Subtitle:GetText())
+  end)
+
+  it("the top banner's title is the quest's shipped Japanese title; the reveal key gives the English back", function()
+    H.uiSetup(WFJ, UI, { lookup = function(kind, id)
+      if kind == "quest.title" and id == 7 then return { ja = "野営地を一掃せよ", status = "." } end
+    end })
+    local banner = _G.ObjectiveTrackerTopBannerFrame
+    banner:PlayBanner("Clear the Camp", false, 7)
+    assert.are.equal("野営地を一掃せよ", banner.Title:GetText())
+    alt(true)
+    assert.are.equal("Clear the Camp", banner.Title:GetText())
+    alt(false)
+    assert.are.equal("野営地を一掃せよ", banner.Title:GetText())
+    banner:PlayBanner("Unshipped Quest", true, 8)
+    assert.are.equal("Unshipped Quest", banner.Title:GetText())
+  end)
+
+  it("a stage's name stays English: the client measures it as it writes it, in the tracker's update", function()
+    local stage = _G.ScenarioObjectiveTracker.StageBlock
+    WFJ.Data.add("name", { [WFJ.Names.key("The Stockade")] = "ザ・ストッケード\tざ・すとっけーど" })
+    stage:UpdateStageBlock(false, 1, "The Stockade", 3)
+    assert.are.equal("The Stockade", stage.Name:GetText())
+    assert.is_true(unrecorded(stage.Name))
   end)
 
   it("help tooltips: a task block's rewards tooltip and the find-group buttons, each restricted to its keys", function()

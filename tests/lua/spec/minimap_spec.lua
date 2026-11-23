@@ -46,12 +46,19 @@ local function installMinimap()
   _G.Minimap_Update = function() _G.MinimapZoneText.text = M.zone end
   local zone = CreateFrame("Button")
   cluster.ZoneTextButton = zone
-  zone:SetScript("OnEnter", function(self)
-    tt:SetOwner(self)
+  -- called by name from the button's OnEnter and from the zone-change update [verified: mainline/minimap.lua:105,
+  -- 187, 190–226]
+  _G.Minimap_SetTooltip = function()
+    if tt:GetOwner() ~= zone then return end
     tt:ClearLines()
     tt:AddLine(M.zone)
-    tt:AddLine(M.subzone)
-    tt:AddLine(M.territory)
+    if M.subzone then tt:AddLine(M.subzone) end
+    if M.territory then tt:AddLine(M.territory) end
+    tt:Show()
+  end
+  zone:SetScript("OnEnter", function(self)
+    tt:SetOwner(self)
+    _G.Minimap_SetTooltip()
     tt:AddLine("World Map |cffffd200(M)|r")
     tt:Show()
   end)
@@ -134,7 +141,7 @@ describe("the minimap cluster's help tooltips on Forever", function()
     H.uiTeardown()
     Stub.keys.alt = false
     for _, n in ipairs({ "MinimapCluster", "Minimap", "GameTimeFrame", "AddonCompartmentFrame", "MinimapZoneText",
-      "UIParent", "MinimapBackdrop", "Minimap_Update" }) do _G[n] = nil end
+      "UIParent", "MinimapBackdrop", "Minimap_Update", "Minimap_SetTooltip" }) do _G[n] = nil end
   end)
 
   it("the zone button: the territory word and the map hint translate; zone and subzone names stay English", function()
@@ -168,6 +175,43 @@ describe("the minimap cluster's help tooltips on Forever", function()
     M.zone = "Raid" -- a place named like a dictionary word is never shown as that word
     _G.Minimap_Update()
     assert.are.equal("Raid", _G.MinimapZoneText:GetText())
+  end)
+
+  it("with names on the zone button's tooltip shows the zone and subzone names in Japanese", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Durotar")] = "デュロタール\tでゅろたーる",
+      [WFJ.Names.key("Valley of Trials")] = "バレー・オブ・トライアルズ\tばれー・おぶ・とらいあるず",
+    })
+    WFJ.State.setNames(true)
+    finally(function() WFJ.State.setNames(false) end)
+    M.zone = "Durotar"
+    enter(_G.MinimapCluster.ZoneTextButton)
+    assert.are.equal("デュロタール", tip(1))
+    assert.are.equal("バレー・オブ・トライアルズ", tip(2))
+    assert.are.equal(ja("CONTESTED_TERRITORY"), tip(3))
+    assert.are.equal("ワールドマップ |cffffd200(M)|r", tip(4))
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("Durotar", tip(1))
+    assert.are.equal("Valley of Trials", tip(2))
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    assert.are.equal("デュロタール", tip(1))
+    WFJ.State.setNames(false)
+    assert.are.equal("Durotar", tip(1))
+    assert.are.equal(ja("CONTESTED_TERRITORY"), tip(3))
+    WFJ.State.setNames(true)
+    -- a friendly zone with no faction: only the zone's line, and the map hint is line 2
+    M.subzone, M.territory = nil, nil
+    enter(_G.MinimapCluster.ZoneTextButton)
+    assert.are.equal("デュロタール", tip(1))
+    assert.are.equal("ワールドマップ |cffffd200(M)|r", tip(2))
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("World Map |cffffd200(M)|r", tip(2))
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    assert.are.equal("ワールドマップ |cffffd200(M)|r", tip(2))
   end)
 
   it("with names off the zone text over the minimap is never written", function()

@@ -25,7 +25,14 @@
 -- Not here: the favourite-mount spell frame (hidden on camelot: BLIZZARD_COLLECTIONS_MOUNT_JOURNAL_SHOW_FAVORITES =
 -- false, camelot/blizzard_collectionsconstants.lua:1; lua:1042–1044), the Skyriding flyout (shown only when
 -- DragonridingUtil.IsDragonridingUnlocked(), lua:1170–1173), the filter and right-click menus (UI/Menus).
--- Never touched: mount names, source and lore text (client tables), the search box, the count.
+-- The shown mount's InfoButton.Name (MountJournal_UpdateMountDisplay writes the mount's name, mainline/
+--   blizzard_mountcollection.lua:693) is never a dictionary word (NEVER_TOUCH); while names are on it shows the name's
+--   Japanese (UI/NameLabels) after each update. The client measures it only to place the "New" badge of a mount not
+--   unwrapped yet (:699–700); that pass writes the badge's anchor and the button's label, and the mount is summoned
+--   from the button's own click, which reads MountJournal.selectedMountID, a field that pass never writes (:837–841).
+--   [unverified: whether C_MountJournal.SummonByID is protected on Forever; a summon from the journal in combat
+--   after a fanfare mount was shown would show it]
+-- Never touched: a list row's mount name, source and lore text (client tables), the search box, the count.
 -- The search box's placeholder is a label of its own, written once with SEARCH by SearchBoxTemplate_OnLoad
 --   (blizzard_sharedxml/shared/inputbox/inputboxtemplates.lua:175–178): shown; what the player types is not read.
 local _, WFJ = ...
@@ -54,7 +61,7 @@ for key in pairs(STATIC_LABELS) do STATIC_ORDER[#STATIC_ORDER + 1] = key end
 table.sort(STATIC_ORDER)
 
 local CANDIDATES = {
-  frame = { "MountJournal" }, mountButton = { "MountJournal.MountButton" },
+  frame = { "MountJournal" }, mountButton = { "MountJournal.MountButton" }, name = { INFO .. ".Name" },
   slotLabel = { "MountJournal.BottomLeftInset.SlotLabel" },
   suppressed = { "MountJournal.BottomLeftInset.SuppressedMountEquipmentButton" },
   filter = { "MountJournal.FilterDropdown" }, list = { "MountJournal.ScrollBox" }, scrollUtil = { "ScrollUtil" },
@@ -90,9 +97,10 @@ function MountJournal.showStatic()
   return n + WFJ.Labels.dropdown(SURFACE, "filter", get("filter"))
 end
 
--- hooksecurefunc target (MountJournal_UpdateMountDisplay). → 1 | 0
+-- hooksecurefunc target (MountJournal_UpdateMountDisplay): the mount button's word and the mount's name. → 0..2
 function MountJournal.onDisplay()
   return WFJ.Labels.show(SURFACE, "mountButton", get("mountButton"), nil, BUTTON)
+    + WFJ.NameLabels.show(SURFACE, "name", get("name"))
 end
 
 -- hooksecurefunc target (MountJournal_UpdateEquipment). → 1 | 0

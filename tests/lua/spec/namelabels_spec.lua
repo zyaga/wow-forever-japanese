@@ -15,6 +15,8 @@ describe("name widgets", function()
       [WFJ.Names.key("Thrall")] = "スロール\tすろーる",
       [WFJ.Names.key("Bandit Cloak")] = "バンディット・クローク\tばんでぃっと・くろーく",
       [WFJ.Names.key("of the Owl")] = "オブ・ザ・アウル\tおぶ・ざ・あうる",
+      [WFJ.Names.key("Blacksmithing")] = "ブラックスミシング\tぶらっくすみしんぐ",
+      [WFJ.Names.key("Elwynn Forest")] = "エルウィン・フォレスト\tえるうぃん・ふぉれすと",
     })
     players = {}
     _G.UnitIsPlayer = function(unit) return players[unit] == true end
@@ -199,6 +201,90 @@ describe("name widgets", function()
     it("takes a window with no title text, or no window, without an error", function()
       assert.are.equal(0, WFJ.NameLabels.title("spec", {}))
       assert.are.equal(0, WFJ.NameLabels.title("spec", nil))
+    end)
+  end)
+
+  it("carries a refit when given: a tooltip line is laid out again after each write and on the reveal key", function()
+    local refits = 0
+    local function refit() refits = refits + 1 end
+    assert.are.equal(1, WFJ.NameLabels.show("spec", "L1", fs, nil, refit))
+    assert.are.equal(1, refits)
+    hold(true)
+    assert.are.equal(2, refits)
+    hold(false)
+    assert.are.equal(3, refits)
+    local rank = Stub.fontString("Blacksmithing 135/150", "Fonts\\FRIZQT__.TTF", 12, "")
+    assert.are.equal(1, WFJ.NameLabels.lead("spec", "L2", rank, nil, refit))
+    assert.are.equal(4, refits)
+  end)
+
+  it("without a refit the record carries no ctx, as before", function()
+    WFJ.NameLabels.show("spec", "name", fs)
+    assert.is_nil(WFJ.SurfaceState.get("spec", "name").meta.ctx)
+  end)
+
+  describe("a name followed by what the client wrote after it", function()
+    it("keeps a count after the name byte for byte, and gives the whole English back", function()
+      fs.text = "Blacksmithing 135/150"
+      assert.are.equal(1, WFJ.NameLabels.lead("spec", "rank", fs))
+      assert.are.equal("ブラックスミシング 135/150", fs:GetText())
+      hold(true)
+      assert.are.equal("Blacksmithing 135/150", fs:GetText())
+      hold(false)
+      assert.are.equal("ブラックスミシング 135/150", fs:GetText())
+      WFJ.Render.release("spec")
+      assert.are.equal("Blacksmithing 135/150", fs:GetText())
+    end)
+
+    it("keeps a coloured level range, with the space inside or outside the colour", function()
+      fs.text = "Elwynn Forest|cff40c040 (1-10)|r"
+      assert.are.equal(1, WFJ.NameLabels.lead("spec", "area", fs))
+      assert.are.equal("エルウィン・フォレスト|cff40c040 (1-10)|r", fs:GetText())
+      fs.text = "Elwynn Forest |cffffffff(10)|r"
+      assert.are.equal(1, WFJ.NameLabels.lead("spec", "area", fs))
+      assert.are.equal("エルウィン・フォレスト |cffffffff(10)|r", fs:GetText())
+      fs.text = "Blacksmithing 135|cnGREEN_FONT_COLOR:(+5)|r/150"
+      assert.are.equal(1, WFJ.NameLabels.lead("spec", "area", fs))
+      assert.are.equal("ブラックスミシング 135|cnGREEN_FONT_COLOR:(+5)|r/150", fs:GetText())
+    end)
+
+    it("shows a whole name with nothing after it", function()
+      assert.are.equal(1, WFJ.NameLabels.lead("spec", "area", fs))
+      assert.are.equal("スロール", fs:GetText())
+    end)
+
+    it("follows the client when it writes the next count, and keeps its Japanese when asked again", function()
+      fs.text = "Blacksmithing 135/150"
+      WFJ.NameLabels.lead("spec", "rank", fs)
+      local writes = fs.calls.addonSetText
+      assert.are.equal(1, WFJ.NameLabels.lead("spec", "rank", fs))
+      assert.are.equal(writes, fs.calls.addonSetText)
+      fs.text = "Blacksmithing 136/150" -- the client's own write
+      assert.are.equal(1, WFJ.NameLabels.lead("spec", "rank", fs))
+      assert.are.equal("ブラックスミシング 136/150", fs:GetText())
+    end)
+
+    it("leaves the line English when words follow the name, or the name has no Japanese", function()
+      for _, text in ipairs({ "Blacksmithing 135/150 |cffff2020Trial cap reached|r", "Nobody Known 1/2",
+        "Thrall the Warchief" }) do
+        fs.text = text
+        assert.are.equal(0, WFJ.NameLabels.lead("spec", "rank", fs))
+        assert.are.equal(text, fs:GetText())
+      end
+      assert.are.equal(0, fs.calls.addonSetText)
+      assert.is_nil(WFJ.SurfaceState.get("spec", "rank"))
+    end)
+
+    it("does nothing while names are off, never reads a hidden value, and takes no widget", function()
+      fs.text = "Blacksmithing 135/150"
+      WFJ.State.setNames(false)
+      assert.are.equal(0, WFJ.NameLabels.lead("spec", "rank", fs))
+      assert.are.equal("Blacksmithing 135/150", fs:GetText())
+      WFJ.State.setNames(true)
+      fs.text = SECRET
+      assert.has_no.errors(function() assert.are.equal(0, WFJ.NameLabels.lead("spec", "rank", fs)) end)
+      assert.are.equal(SECRET, fs.text)
+      assert.are.equal(0, WFJ.NameLabels.lead("spec", "rank", nil))
     end)
   end)
 

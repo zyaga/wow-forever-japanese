@@ -138,6 +138,39 @@ describe("talents on the Forever client", function()
       assert.are.equal(0, SS.count(WFJ.Talents.TOOLTIP_SURFACE))
     end)
 
+    it("with Japanese names on, a talent's name on line 1 and the tree names show their Japanese", function()
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Deflection")] = "ディフレクション\tでぃふれくしょん",
+        [WFJ.Names.key("Arms")] = "アームズ\tあーむず",
+        [WFJ.Names.key("Fury")] = "フューリー\tふゅーりー",
+      })
+      local display = CreateFrame("Button")
+      PS.hoverTalent(display, { "Deflection", "Rank |cffffffff1|r/5" })
+      assert.are.equal("ディフレクション", line(1))
+      assert.are.equal("ランク |cffffffff1|r/5", line(2))
+      alt(true)
+      assert.are.equal("Deflection", line(1))
+      alt(false)
+      assert.are.equal("ディフレクション", line(1))
+      _G.GameTooltip:Hide()
+      assert.are.equal("Deflection", line(1))
+      local frame = talents()
+      frame:RefreshTreeHeaders() -- UpdateTreeCurrencyInfo on show and after every change
+      assert.are.equal("アームズ", frame.treeHeaders[1].Name:GetText())
+      assert.are.equal("フューリー", frame.treeHeaders[2].Name:GetText())
+      assert.are.equal("Protection", frame.treeHeaders[3].Name:GetText()) -- no Japanese for it: as written
+      alt(true)
+      assert.are.equal("Arms", frame.treeHeaders[1].Name:GetText())
+      alt(false)
+      WFJ.State.setNames(false)
+      assert.are.equal("Arms", frame.treeHeaders[1].Name:GetText())
+      WFJ.State.setNames(true)
+      PS.treeNames = { "Fury", "Arms", "Protection" } -- pooled headers acquired again in another order
+      frame:RefreshTreeHeaders()
+      assert.are.equal("フューリー", frame.treeHeaders[1].Name:GetText())
+      assert.are.equal("アームズ", frame.treeHeaders[2].Name:GetText())
+    end)
+
     it("the action-bar status and edge-requirements lines translate", function()
       local display = CreateFrame("Button")
       PS.hoverTalent(display, { "Mortal Strike", "Rank |cffffffff0|r/1", "Requires all preceding talents",

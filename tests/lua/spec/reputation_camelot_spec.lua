@@ -89,6 +89,32 @@ describe("the reputation frame on the Forever client", function()
     alt(false)
   end)
 
+  it("with Japanese names on, faction names, a group header and the pane title show their Japanese; Inactive is"
+    .. " still the dictionary word", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Stormwind")] = "ストームウィンド\tすとーむうぃんど",
+      [WFJ.Names.key("Alliance")] = "アライアンス\tあらいあんす",
+      [WFJ.Names.key("Honor Hold")] = "オナー・ホールド\tおなー・ほーるど",
+    })
+    local rows = RC.setFactions({ { header = "Alliance" }, { name = "Stormwind", standing = "Friendly" },
+      { header = "Inactive" }, { name = "Nobody Known Faction", standing = "Friendly" } })
+    assert.are.equal("アライアンス", rows[1].Name:GetText())
+    assert.are.equal("ストームウィンド", rows[2].Content.Name:GetText())
+    assert.are.equal("友好", bar(rows[2]):GetText())
+    assert.are.equal("非アクティブ", rows[3].Name:GetText())
+    assert.are.equal("Nobody Known Faction", rows[4].Content.Name:GetText())
+    alt(true)
+    assert.are.equal("Stormwind", rows[2].Content.Name:GetText())
+    assert.are.equal("Alliance", rows[1].Name:GetText())
+    alt(false)
+    RC.select({ name = "Honor Hold", standing = "Honored" })
+    assert.are.equal("オナー・ホールド", detail().Title:GetText())
+    assert.are.equal("尊敬", detail().Subtitle:GetText())
+    rows = RC.setFactions({ { header = "Inactive" }, { name = "Honor Hold", standing = "Honored" } })
+    assert.are.equal("非アクティブ", rows[1].Name:GetText()) -- the pooled header holds the dictionary word here
+    assert.are.equal("オナー・ホールド", rows[2].Content.Name:GetText())
+  end)
+
   it("an entry's hover shows the numbers, its leave the Japanese standing again; the modifier never puts English"
     .. " over the numbers", function()
     local rows = RC.setFactions({ { name = "Stormwind", standing = "Friendly", progress = "1200 / 6000" } })

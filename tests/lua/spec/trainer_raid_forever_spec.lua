@@ -200,6 +200,33 @@ describe("trainer and raid on the Forever client", function()
         assert.are.equal("(Grandmaster)", b.nameSubText:GetText())
       end)
 
+    it("with names on a service's name shows its Japanese, and the name's width is fitted again after each change",
+      function()
+        WFJ.Data.add("name", { [WFJ.Names.key("Heroic Strike")] = "ヒロイック・ストライク\tひろいっく・すとらいく" })
+        WFJ.State.setNames(true)
+        finally(function() WFJ.State.setNames(false) end)
+        loadTrainerUI()
+        WFJ.Trainer.init()
+        local b = row(1, { name = "Heroic Strike", sub = "Rank 2" })
+        assert.are.equal("ヒロイック・ストライク", b.name:GetText())
+        local fitted = #b.fitted
+        Stub.keys.alt = true; WFJ.Modifier.refresh()
+        assert.are.equal("Heroic Strike", b.name:GetText())
+        assert.is_true(#b.fitted > fitted) -- the English name measured again
+        fitted = #b.fitted
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        assert.are.equal("ヒロイック・ストライク", b.name:GetText())
+        assert.is_true(#b.fitted > fitted)
+        row(1, { name = "Nobody Known Spell" }) -- pooled: another service with no Japanese
+        assert.are.equal("Nobody Known Spell", b.name:GetText())
+        frame:Hide()
+        row(1, { name = "Heroic Strike" })
+        frame:Show()
+        assert.are.equal("ヒロイック・ストライク", b.name:GetText())
+        frame:Hide()
+        assert.are.equal("Heroic Strike", b.name:GetText()) -- released with the window
+      end)
+
     it("with names on the trainer's name on the title shows its Japanese; a pet trainer's title is the pet's"
       .. " own name and stays", function()
       local kind = 0

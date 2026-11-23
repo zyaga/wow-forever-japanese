@@ -27,7 +27,13 @@
 --     GameTooltip_AddNormalLine(TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS), Show (lua:300–318), restricted to that key;
 --   the pet trainer's points frame: SetOwner(self), SetText(TRAINING_POINTS_TUTORIAL), Show (xml:255–259): an
 --     ordinary tooltip, not a HelpTip callout, restricted to that key.
--- Not translated: row names (button.name) are never candidates; the client-built service tooltip.
+-- A row's name (button.name, the service's spell name, lua:683) is never a dictionary candidate; while names are on
+--   it shows the name's Japanese (UI/NameLabels) with the same refit: camelot's UpdateNameWidth measures the name
+--   (GetUnboundedStringWidth, blizzard_trainerui_camelot.lua:23–24) to size it beside the cost, so the width follows
+--   the text shown. The window's only action is the train button's BuyTrainerService (lua:870–878), a click of the
+--   player's; nothing measured here leads to a protected call. [unverified: whether BuyTrainerService is protected
+--   on Forever; the window test's trainer read would show a blocked action]
+-- Not translated: the client-built service tooltip.
 -- Release on ClassTrainerFrame's OnHide (the static label stays).
 local _, WFJ = ...
 local Trainer = {}
@@ -46,7 +52,7 @@ local POINTS_KEYS = { TRAINING_POINTS = true }
 local TRAIN_HELP_KEYS = { "TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS" }
 local POINTS_HELP_KEYS = { "TRAINING_POINTS_TUTORIAL" }
 
--- Widgets this module must never record: none by name (row names are pooled `button.name`, never read).
+-- Widgets this module must never record: none by name (row names are pooled `button.name`, names only).
 Trainer.NEVER_TOUCH = {}
 
 -- A stable record key per ScrollBox service button (buttons are pooled and re-initialized).
@@ -66,14 +72,15 @@ local function refitOf(button)
   return fn
 end
 
--- hooksecurefunc target for ClassTrainerFrame_InitServiceButton: one service button's subtext,
--- requirements and pet cost. → the number of words found
+-- hooksecurefunc target for ClassTrainerFrame_InitServiceButton: one service button's name, subtext,
+-- requirements and pet cost. → the number of words and names shown
 function Trainer.onService(button)
   if type(button) ~= "table" then return 0 end
   local k = rowKey(button)
   seen[button] = true
   local refit = refitOf(button)
-  local n = WFJ.Labels.show(SURFACE, k .. ".sub", button.nameSubText, refit, { only = SUBTEXT_KEYS })
+  local n = WFJ.NameLabels.show(SURFACE, k .. ".name", button.name, nil, refit)
+    + WFJ.Labels.show(SURFACE, k .. ".sub", button.nameSubText, refit, { only = SUBTEXT_KEYS })
     + WFJ.Labels.show(SURFACE, k .. ".req", button.subText, nil, { only = ROW_REQUIREMENT_KEYS })
     + WFJ.Labels.show(SURFACE, k .. ".cost", button.alternateCost, refit, { only = COST_KEYS })
   WFJ.Render.updateBanner(SURFACE)

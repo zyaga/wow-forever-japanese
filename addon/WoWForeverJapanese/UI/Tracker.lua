@@ -38,9 +38,17 @@
 --     COLLECTED, blizzard_objectivetrackershared.lua:233–234, blizzard_adventureobjectivetracker.lua:272):
 --     post-hooked on the manager table, walking rewardsToastPool:EnumerateActive(). Reward labels (item names) are
 --     never shown to Labels.
---   the top banner: ObjectiveTrackerTopBannerMixin:PlayBanner writes Title (the quest title) and Subtitle
---     (WORLD_QUEST_BANNER | BONUS_OBJECTIVE_BANNER, blizzard_bonusobjectivetracker.lua:718–725), called by
---     TopBannerManager as frame:PlayBanner(): post-hooked on ObjectiveTrackerTopBannerFrame (xml:227).
+--   the top banner: ObjectiveTrackerTopBannerMixin:PlayBanner writes Title (C_QuestLog.GetTitleForQuestID of the
+--     quest DisplayForQuest kept in self.questID) and Subtitle (WORLD_QUEST_BANNER | BONUS_OBJECTIVE_BANNER,
+--     blizzard_bonusobjectivetracker.lua:699–725), called by TopBannerManager as frame:PlayBanner(): post-hooked on
+--     ObjectiveTrackerTopBannerFrame (xml:227). The title shows the quest's shipped Japanese title like every quest
+--     title (kind quest.title, so it follows the names setting); nothing measures it (the banner only fades it in).
+--   the stage block's Name stays English: UpdateStageBlock measures it right after writing it
+--     (GetStringWidth, blizzard_scenarioobjectivetracker.lua:543–549), inside the container's update of every module
+--     (blizzard_objectivetrackercontainer.lua:80–93), the pass that sets each quest item button's questLogIndex
+--     attribute (blizzard_objectivetrackershared.lua:108) that its click hands to UseQuestLogSpecialItem (:94–102).
+--     [likely, not traced: that taint from the measure reaches an item button; a window test round in a scenario
+--     with a quest item would show it]
 --   help tooltips: a bonus / world-quest block's rewards tooltip (BonusObjectiveBlockMixin:TryShowRewardsTooltip,
 --     blizzard_bonusobjectivetracker.lua:654–676: RETRIEVING_DATA, REWARDS, WORLD_QUEST_TOOLTIP_DESCRIPTION |
 --     BONUS_OBJECTIVE_TOOLTIP_DESCRIPTION, then reward lines, then Show) has the block as owner: each block is
@@ -207,9 +215,23 @@ function Tracker.onRewardsToast(manager)
   return n
 end
 
--- hooksecurefunc target on ObjectiveTrackerTopBannerFrame:PlayBanner. → 1 | 0
+-- The banner's quest title, the quest's shipped Japanese. → 1 | 0
+local function showBannerTitle()
+  local banner = get("banner")
+  local title = type(banner) == "table" and banner.Title or nil
+  local id = type(banner) == "table" and banner.questID or nil
+  if type(title) ~= "table" or type(title.GetText) ~= "function" or type(id) ~= "number" then return 0 end
+  local en = title:GetText()
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(isSecret) == "function" and isSecret(en) then return 0 end
+  if type(en) ~= "string" or en == "" then return 0 end
+  return WFJ.Render.show(SURFACE, "banner.title", title, en, "quests", "quest.title", id, { live = en, compact = true })
+    and 1 or 0
+end
+
+-- hooksecurefunc target on ObjectiveTrackerTopBannerFrame:PlayBanner. → the number of lines shown
 function Tracker.onBanner()
-  local n = WFJ.Labels.show(SURFACE, "banner", get("bannerSubtitle"), nil, BANNER)
+  local n = WFJ.Labels.show(SURFACE, "banner", get("bannerSubtitle"), nil, BANNER) + showBannerTitle()
   WFJ.Render.updateBanner(SURFACE)
   return n
 end

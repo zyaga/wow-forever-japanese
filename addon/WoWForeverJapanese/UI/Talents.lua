@@ -19,7 +19,8 @@
 --   [verified: blizzard_sharedtalentui/blizzard_talentdisplay.lua:100–125, 290–305;
 --   blizzard_talentbuttonspend.lua:84–137]. The talent buttons are pooled, so they are not registered help-tooltip
 --   owners; the callback walks lines 2.. of that tooltip restricted to TOOLTIP_KEYS (surface "talents.tooltip").
---   Line 1 is never read or written. One Show() refit per pass that changed a line; forgotten on the tooltip's OnHide
+--   Line 1, the talent's name, is never a dictionary line; while names are on it shows the name's Japanese
+--   (UI/NameLabels). One Show() refit per pass that changed a line; forgotten on the tooltip's OnHide
 --   and before each pass (the client rebuilt the lines). The same event carries the Legacy trees' talent tooltips, so
 --   the callback is registered at load, not with the talent window (Talents.listenForTooltips).
 -- - Talent requirement lines ("Spend 5 more points in Arms Talents"): the talent frame's AddConditionsToTooltip adds
@@ -38,6 +39,12 @@
 --     .lua:167; TabSystemButtonMixin:OnEnter, tabsystemtemplates.lua:126–136);
 --   - UndoButton's tooltipText TALENT_FRAME_DISCARD_CHANGES_BUTTON_TOOLTIP (camelot/…/blizzard_classtalentsframe.xml
 --     :514–520; UIButtonMixin:OnEnter, blizzard_sharedxml/shared/button/uibuttontemplate.lua:20–45).
+-- - Tree names, while names are on: each tree header's Name (ClassTalentTreeHeaderMixin:Setup writes the tree's display
+--   name, camelot/…/blizzard_classtalentsframe.lua:331–343), after every RefreshTreeHeaders (:82–109, called as
+--   self:… from UpdateTreeCurrencyInfo, classtalents/blizzard_classtalentsframe.lua:765–769), post-hooked on the
+--   frame; the headers are pooled, so each record follows its widget (surface "talents.trees"). Nothing reads or
+--   measures a header's Name, and no talent template is secure (no secure template in blizzard_playerspells/
+--   classtalents, camelot/classtalents or blizzard_sharedtalentui).
 -- Not shown on camelot: PlayerSpellsFrame's own tab labels (TALENT_FRAME_TAB_LABEL_*). IsTabSystemAvailable is false
 -- there (camelot/blizzard_playerspellsframe.lua:57–62) and UpdateTabs hides the TabSystem (blizzard_playerspellsframe
 -- .lua:115–117).
@@ -54,6 +61,8 @@ local PLAYER_SPELLS = "Blizzard_PlayerSpells"
 local TOOLTIP_EVENT = "TalentDisplay.TooltipCreated"
 local TT = "talents.tooltip"
 Talents.TOOLTIP_SURFACE = TT
+local TREES = "talents.trees"
+local treeKey = WFJ.Labels.keyer("tree.") -- a pooled header's record key (it follows the widget)
 local TAB_KEYS = { DUAL_SPEC_PRIMARY = true, DUAL_SPEC_SECONDARY = true }
 local CAMELOT_STATIC_KEYS = { apply = { TALENT_FRAME_APPLY_BUTTON_TEXT = true },
   activate = { TALENT_SPEC_ACTIVATE = true }, activeLabel = { TALENT_SPEC_ACTIVE = true },
@@ -202,7 +211,14 @@ function Talents.onTooltip(_, display, tooltip)
   local formats = conditionFormats(display)
   walking = true
   local ok, err = pcall(function()
-    for i = 2, tooltip:NumLines() or 0 do -- line 1 is the talent's name: never read, never written
+    -- line 1 is the talent's name: never a dictionary line, its Japanese while names are on
+    local first = Compat.resolve(name .. "TextLeft1")
+    local before1 = type(first) == "table" and type(first.GetText) == "function" and first:GetText() or nil
+    n = n + WFJ.NameLabels.show(TT, "L1", first, nil, refitTooltip)
+    if type(first) == "table" and type(first.GetText) == "function" and first:GetText() ~= before1 then
+      changed = true
+    end
+    for i = 2, tooltip:NumLines() or 0 do
       local fs = Compat.resolve(name .. "TextLeft" .. i)
       if type(fs) == "table" and type(fs.GetText) == "function" then
         local before = fs:GetText()
@@ -217,6 +233,19 @@ function Talents.onTooltip(_, display, tooltip)
   if not ok then error(err, 0) end
   WFJ.Render.updateBanner(TT)
   if changed then refitTooltip() end
+  return n
+end
+
+-- hooksecurefunc target on the talent frame's RefreshTreeHeaders: each header's tree name. → the names shown
+function Talents.showTreeNames()
+  local frame = Compat.get(SURFACE, "talentsFrame")
+  local headers = type(frame) == "table" and frame.treeHeaders or nil
+  if type(headers) ~= "table" then return 0 end
+  local n = 0
+  for _, header in ipairs(headers) do
+    local fs = type(header) == "table" and header.Name or nil
+    if type(fs) == "table" then n = n + WFJ.NameLabels.show(TREES, treeKey(fs), fs) end
+  end
   return n
 end
 
@@ -251,6 +280,10 @@ function Talents.setupCamelot()
     end
   end
   WFJ.HelpTooltip.register(Compat.get(SURFACE, "undo"), { only = UNDO_TOOLTIP_KEYS })
+  if type(frame.RefreshTreeHeaders) == "function" then
+    hooksecurefunc(frame, "RefreshTreeHeaders", Talents.showTreeNames)
+  end
+  Talents.showTreeNames()
   Talents.showTabs()
   return true
 end

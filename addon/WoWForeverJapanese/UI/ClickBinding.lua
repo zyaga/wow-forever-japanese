@@ -25,8 +25,10 @@
 --         the `wrapped` form);
 --   tooltips (GameTooltip with the widget as owner): the checkbox's OPTION_TOOLTIP_ENABLE_MOUSEOVER_CAST (:830–833),
 --     the two portraits' MACROS / PLAYERSPELLS_BUTTON (:311–325).
--- Never touched: TutorialFrame.ThrallName (THRALL_NAME, a name), spell and macro names, the modifier dropdown's
--- entries (UI/Menus). The two confirmations are StaticPopups (ADR-015 §5).
+-- TutorialFrame.ThrallName (XML text THRALL_NAME, xml:292; nothing reads or measures it): a name, never a dictionary
+-- word (NEVER_TOUCH); while names are on it shows the name's Japanese (UI/NameLabels) with the static labels.
+-- Never touched: spell and macro names, the modifier dropdown's entries (UI/Menus). The two confirmations are
+-- StaticPopups (ADR-015 §5).
 local _, WFJ = ...
 local ClickBinding = {}
 WFJ.ClickBinding = ClickBinding
@@ -98,6 +100,8 @@ function ClickBinding.showStatic()
   end
   local n = WFJ.Labels.showAll(SURFACE, items)
   n = n + WFJ.Labels.title(SURFACE, get("frame"), TITLE)
+  local tutorial = get("tutorial")
+  WFJ.NameLabels.show(SURFACE, "thrall", type(tutorial) == "table" and tutorial.ThrallName or nil)
   return n + WFJ.Labels.title(SURFACE, get("tutorial"), TUTORIAL_TITLE, "tutorialTitle")
 end
 

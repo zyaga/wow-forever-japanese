@@ -97,11 +97,17 @@ describe("the world map's names", function()
     assert.are.equal(1, label.Name.calls.addonSetText) -- only the Japanese it showed for Goldshire
   end)
 
-  it("a zone shown with its level range keeps the client's text", function()
+  it("a zone shown with its level range: the name in Japanese, the coloured range as the client wrote it", function()
+    -- name .. color .. " (" .. min .. "-" .. max .. ")" .. FONT_COLOR_CODE_CLOSE (arealabeldataprovider.lua:103–107)
     hover = "Elwynn Forest|cffffff00 (1-10)|r"
     tick()
+    assert.are.equal("エルウィン・フォレスト|cffffff00 (1-10)|r", label.Name:GetText())
+    alt(true)
     assert.are.equal("Elwynn Forest|cffffff00 (1-10)|r", label.Name:GetText())
-    assert.are.equal(0, label.Name.calls.addonSetText)
+    alt(false)
+    hover = "Nobody Known Vale|cffffff00 (5)|r"
+    tick()
+    assert.are.equal("Nobody Known Vale|cffffff00 (5)|r", label.Name:GetText())
   end)
 
   it("with names off the label is never written", function()

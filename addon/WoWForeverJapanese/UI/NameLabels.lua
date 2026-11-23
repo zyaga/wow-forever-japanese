@@ -2,7 +2,12 @@
 -- name's Japanese while names are on. It goes through UI/Render as kind "name", keyed by the English the client
 -- wrote, so the reveal key, the direction, the master switch and a surface's release give the English back exactly
 -- as they do for a translated line. A name with no Japanese keeps the client's text and gets no record.
---   NameLabels.show(surface, recKey, widget[, area]) → 1 when the name shows in Japanese (or is still ours), else 0
+--   NameLabels.show(surface, recKey, widget[, area[, refit]]) → 1 when the name shows in Japanese (or is still
+--     ours), else 0. `refit` (a tooltip's line) runs after each write, so the frame is laid out for the new text.
+--   NameLabels.lead(surface, recKey, widget[, area[, refit]]) → the same for a widget that starts with a name and
+--     ends with what the client wrote after it ("Blacksmithing 135/150", a zone and its coloured level range): the
+--     name in Japanese, the rest byte for byte. The rest may hold only numbers, signs and colour codes; a line where
+--     words follow the name stays English whole.
 --   NameLabels.unit(surface, recKey, widget, unit[, area]) → the same for a unit's name; a player's is never touched
 --   NameLabels.title(surface, frame[, recKey[, unit]]) → the same for a window whose title bar is its NPC's name
 --     (frame:SetTitle(UnitName("npc")) → TitleContainer.TitleText): shown now and after every later SetTitle. `unit`
@@ -22,7 +27,7 @@ local function secret(v)
   return type(isSecret) == "function" and isSecret(v) == true
 end
 
-local function show(surface, recKey, widget, area)
+local function show(surface, recKey, widget, area, refit)
   local fs = WFJ.Labels.widget(widget)
   if not WFJ.State.names or not fs then
     WFJ.SurfaceState.drop(surface, recKey)
@@ -42,12 +47,66 @@ local function show(surface, recKey, widget, area)
     WFJ.SurfaceState.drop(surface, recKey)
     return 0
   end
-  WFJ.Render.show(surface, recKey, fs, en, area or "ui", "name", en)
+  WFJ.Render.show(surface, recKey, fs, en, area or "ui", "name", en, refit and { refit = refit } or nil)
   return 1
 end
 
-function NameLabels.show(surface, recKey, widget, area)
-  return WFJ.Perf.call(surface, show, surface, recKey, widget, area)
+function NameLabels.show(surface, recKey, widget, area, refit)
+  return WFJ.Perf.call(surface, show, surface, recKey, widget, area, refit)
+end
+
+-- What follows a name: no letter outside its colour codes.
+local function plainTail(tail)
+  local bare = tail:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|cn[%w_]+:", ""):gsub("|r", "")
+  return not bare:find("%a")
+end
+
+-- → the name and what follows it, split before a space or a colour code, the longest name first | nil
+local function splitTail(text)
+  for i = #text, 2, -1 do
+    if text:sub(i, i) == " " or text:sub(i, i + 1) == "|c" then
+      local name, tail = text:sub(1, i - 1), text:sub(i)
+      -- a name holds no markup and ends in no space: the name tables read through both, and the tail would lose them
+      local bare = name:sub(-1) ~= " " and not name:find("|", 1, true)
+      if bare and plainTail(tail) and WFJ.Names.item(name) then return name, tail end
+    end
+  end
+  return nil
+end
+
+local function lead(surface, recKey, widget, area, refit)
+  local fs = WFJ.Labels.widget(widget)
+  if not WFJ.State.names or not fs then
+    WFJ.SurfaceState.drop(surface, recKey)
+    return 0
+  end
+  local en = fs:GetText()
+  if secret(en) then
+    WFJ.SurfaceState.drop(surface, recKey)
+    return 0
+  end
+  local rec = WFJ.SurfaceState.get(surface, recKey)
+  if rec and rec.fs == fs and rec.applied ~= nil and en == rec.applied then -- still our Japanese
+    WFJ.Render.keepFont(surface, recKey)
+    return 1
+  end
+  if type(en) ~= "string" or en == "" then
+    WFJ.SurfaceState.drop(surface, recKey)
+    return 0
+  end
+  local name, tail = en, nil
+  if en:find("|", 1, true) or not WFJ.Names.item(en) then name, tail = splitTail(en) end
+  if not name then
+    WFJ.SurfaceState.drop(surface, recKey)
+    return 0
+  end
+  local ctx = (tail or refit) and { tail = tail, refit = refit } or nil
+  WFJ.Render.show(surface, recKey, fs, en, area or "ui", "name", name, ctx)
+  return 1
+end
+
+function NameLabels.lead(surface, recKey, widget, area, refit)
+  return WFJ.Perf.call(surface, lead, surface, recKey, widget, area, refit)
 end
 
 function NameLabels.unit(surface, recKey, widget, unit, area)

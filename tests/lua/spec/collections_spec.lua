@@ -151,6 +151,23 @@ describe("the Collections window on Forever", function()
           assert.are.equal("選択したマウントを召喚または解除します。", tip())
         end)
 
+      it("mountjournal with Japanese names on: the shown mount's Name is its Japanese; source and lore stay",
+        function()
+          WFJ.Data.add("name", { [WFJ.Names.key("Swift Brown Steed")] = "スウィフト・ブラウン・スティード\tすうぃふと" })
+          local m, info = _G.MountJournal, _G.MountJournal.MountDisplay.InfoButton
+          C.mount = { name = "Swift Brown Steed", source = "Vendor: Katie Hunter", lore = "Fast." }
+          _G.MountJournal_UpdateMountDisplay()
+          assert.are.equal("スウィフト・ブラウン・スティード", info.Name:GetText())
+          assert.are.equal("Vendor: Katie Hunter", info.Source:GetText())
+          alt(true)
+          assert.are.equal("Swift Brown Steed", info.Name:GetText())
+          alt(false)
+          C.mount = { name = "Nobody Known Steed", source = "", lore = "" }
+          _G.MountJournal_UpdateMountDisplay()
+          assert.are.equal("Nobody Known Steed", info.Name:GetText())
+          assert.are.equal("騎乗", m.MountButton:GetText())
+        end)
+
       it("petjournal: labels, the summon button and the empty card translate; pet names do not", function()
         local p = _G.PetJournal
         assert.are.equal("ペット総数", p.PetCount.Label:GetText())

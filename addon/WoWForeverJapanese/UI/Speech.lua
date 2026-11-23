@@ -17,6 +17,11 @@
 --   boss emotes: RaidWarningFrame's OnEvent adds format(message, playerName, playerName) as the newest line
 --     (blizzard_raidwarning/raidwarning.lua:83–119, 205–227); a HookScript OnEvent finds that FontString by its
 --     messageOrder and sets the Japanese. Its layout is never re-run from here (it re-anchors Edit Mode frames).
+--     A secret speaker name leaves the line English: it would be formatted into the text compared there.
+-- Names, while Japanese names are on: a bubble's and a boss emote's Japanese takes the names step (Names.inText), as
+-- UI/ChatSystem gives the chat window's lines. The player's own name, the line's target and the party members a line
+-- was filled with are players and stay as written, even when an NPC shares one: each is hidden behind a token the
+-- names step skips and put back after. The boss's name filled into a boss emote is an NPC's and takes its Japanese.
 -- A line said to another player (an escort NPC thanking the party member who owns the quest) has that player's
 -- first name where the stored English has `$n` (Forever names carry a surname the server leaves out): when the line
 -- ships nothing under this character's name, the target's name, or with no target each party member's name that
@@ -204,15 +209,47 @@ local function escaped(ja)
   return (ja:gsub("%%", "%%%%"):gsub("%%%%s", "%%s"))
 end
 
--- Bubbles waiting for their frame: { en, ja, frames left }.
+-- Bubbles waiting for their frame: { en, ja, keep, frames left }.
 local pending = {}
-local bubbleText = setmetatable({}, { __mode = "k" }) -- fs → { en, ja }
+local bubbleText = setmetatable({}, { __mode = "k" }) -- fs → { en, ja, keep, shown }
+
+-- `text` with every plain occurrence of `from` replaced by `to`. → text
+local function replacePlain(text, from, to)
+  local out, at = {}, 1
+  while true do
+    local s, e = text:find(from, at, true)
+    if not s then break end
+    out[#out + 1] = text:sub(at, s - 1)
+    out[#out + 1] = to
+    at = e + 1
+  end
+  out[#out + 1] = text:sub(at)
+  return table.concat(out)
+end
+
+-- The Japanese with the names in it in Japanese while names are on; the players' names in `keep` stay as written.
+-- → text
+local function withNames(ja, keep)
+  if not WFJ.State.names then return ja end
+  local held = {}
+  for _, name in ipairs(keep or {}) do
+    if type(name) == "string" and not secret(name) and name ~= "" and ja:find(name, 1, true) then
+      local token = "{wfjkeep" .. string.char(97 + #held) .. "}"
+      ja = replacePlain(ja, name, token)
+      held[#held + 1] = { token, name }
+    end
+  end
+  ja = WFJ.Names.inText(ja)
+  for _, h in ipairs(held) do ja = replacePlain(ja, h[1], h[2]) end
+  return ja
+end
 
 -- The bubble's FontString is the client's, pooled and reused for later lines, so the bundled face goes on with
 -- Font.bundle and comes off with Font.restore (its own font, remembered) whenever it shows English again.
 local function setBubble(fs, rec)
   local english = not WFJ.ChatSystem.wanted(AREA)
-  fs:SetText(english and rec.en or rec.ja)
+  rec.shown = english and rec.en or withNames(rec.ja, rec.keep)
+  fs:SetText(rec.shown)
   if english then WFJ.Font.restore(fs) else WFJ.Font.bundle(fs) end
 end
 
@@ -242,7 +279,7 @@ function Speech.scanBubbles()
         if type(text) == "string" and not secret(text) then
           for i = #pending, 1, -1 do
             if pending[i].en == text then
-              bubbleText[fs] = { en = pending[i].en, ja = pending[i].ja }
+              bubbleText[fs] = { en = pending[i].en, ja = pending[i].ja, keep = pending[i].keep }
               setBubble(fs, bubbleText[fs])
               table.remove(pending, i)
               n = n + 1
@@ -448,7 +485,10 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   if matched == 0 then why("no line matched", frame, event, en, key) end
   lastJa = ja ~= nil and matched > 0
   if ja and BUBBLE_TYPES[name] and count(en, "%%s") == 0 and not queued(lineID) then
-    pending[#pending + 1] = { en = en, ja = ja, id = lineID, left = Speech.BUBBLE_SCANS }
+    -- the players a line may name: this character, its target and the party members it was tried with
+    local keep = { me, not secret(target) and target or nil }
+    for _, other in ipairs(others) do keep[#keep + 1] = other.name end
+    pending[#pending + 1] = { en = en, ja = ja, keep = keep, id = lineID, left = Speech.BUBBLE_SCANS }
     Speech.scheduleScan()
   end
   return 1
@@ -524,7 +564,7 @@ end
 local warnText = setmetatable({}, { __mode = "k" }) -- fs → { en, ja }
 function Speech.onRaidWarning(frame, event, message, playerName)
   if (event ~= "RAID_BOSS_EMOTE" and event ~= "RAID_BOSS_WHISPER") or type(frame) ~= "table"
-      or type(message) ~= "string" or secret(message) or not WFJ.ChatSystem.on(AREA) then
+      or type(message) ~= "string" or secret(message) or secret(playerName) or not WFJ.ChatSystem.on(AREA) then
     return 0
   end
   local ja = Speech.translate(message)
@@ -535,7 +575,8 @@ function Speech.onRaidWarning(frame, event, message, playerName)
   if not ok or not okEn then return 0 end
   for fs in pool:EnumerateActive() do
     if fs.messageOrder == frame.messageCounter and fs:GetText() == enBody then
-      warnText[fs] = { en = enBody, ja = jaBody }
+      local me = Compat.resolve("UnitName")
+      warnText[fs] = { en = enBody, ja = jaBody, keep = { type(me) == "function" and me("player") or nil } }
       setBubble(fs, warnText[fs])
       return 1
     end
@@ -551,7 +592,7 @@ function Speech.refresh()
       if secret(text) then
         map[fs] = nil
         WFJ.Font.restore(fs)
-      elseif text == rec.en or text == rec.ja then
+      elseif text == rec.en or text == rec.ja or text == rec.shown then
         setBubble(fs, rec)
       else
         map[fs] = nil
@@ -607,3 +648,4 @@ end
 WFJ.State.on("enabled", Speech.refresh)
 WFJ.State.on("area", Speech.refresh)
 WFJ.State.on("language", Speech.refresh)
+WFJ.State.on("names", Speech.refresh)

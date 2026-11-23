@@ -25,29 +25,29 @@ Core/Translator.lua	interface lines (kind ui)	japanese	a name inside the line's 
 Core/UIStringKeys.lua	FACTION_CONTROLLED_TERRITORY value	japanese	value kind name
 Core/UIStringKeys.lua	ERR_ZONE_EXPLORED value	japanese	value kind name
 Core/UIStringKeys.lua	LOOT_ITEM_SELF value (an item's link)	japanese	only the link's label changes
-Core/UIStringKeys.lua	other interface lines whose value is a game name	todo	loot, quest, reputation, skill and kill lines: each key's value kind
+Core/UIStringKeys.lua	other interface lines whose value is a game name	japanese	loot, craft, currency, reputation, skill, learned spell, kill, discovery, home and auction lines: each key's value kind `name`; a required skill is `skill` or `name`; a player's level line is `names`. Another player's name in the same line stays text
 
 # tooltips
 UI/Tooltip.lua	item, spell and aura tooltip name line	japanese	record name.L<i>; comparison tooltips by the name's text
 UI/TooltipUnit.lua	a creature's or object's name, title and faction lines	japanese	never a player, a pet or a unit with no readable guid
 UI/TooltipUnit.lua	a player's and a pet's tooltip	english player-typed
-UI/Taxi.lua	flight point name on the route map's tooltip	todo
-UI/FlightMap.lua	flight point and zone names on the flight map's tooltips	todo
-UI/MapPins.lua	a pin's tooltip name line	todo
-UI/ItemSocketing.lua	ItemSocketingDescriptionTextLeft1	todo	the socketed item's name
+UI/Taxi.lua	flight point name on the route map's tooltip	japanese	line 1 after each TaxiNodeOnButtonEnter, on the help surface with its refit
+UI/FlightMap.lua	flight point and zone names on the flight map's tooltips	japanese	a node pin's line 1 through UI/MapPins; the zone summary's line 1 after each Show the map owns
+UI/MapPins.lua	a pin's tooltip name line	japanese	line 1 of the pins whose line 1 is a name (flight point, dungeon, map link, area POI, vignette), after each Show; a dictionary word there keeps its record; a quest pin's title is no name
+UI/ItemSocketing.lua	ItemSocketingDescriptionTextLeft1	todo	the socketed item's name: line 1 of ItemSocketingDescription, a GameTooltip filled by SetSocketedItem (blizzard_itemsocketingui.lua:56–71) that UI/Tooltip does not take; a refit by Show changes the scroll range, whose callback calls SetSocketedItem again (:35–37, 69–71)
 
 # place names
 UI/ZoneText.lua	ZoneTextString	japanese
 UI/ZoneText.lua	SubZoneTextString	japanese
 UI/Minimap.lua	MinimapZoneText	japanese	after each Minimap_Update
-UI/Minimap.lua	the zone button's tooltip: zone and subzone lines	todo
+UI/Minimap.lua	the zone button's tooltip: zone and subzone lines	japanese	after each Minimap_SetTooltip, on the help surface with its refit; a line the walk holds as a dictionary word keeps its record
 UI/WorldMap.lua	the area label's Name (the place under the mouse)	japanese	after each frame of the label's OnUpdate; Forever's map has no title with the map's name (the window title is a dictionary word)
-UI/WorldMap.lua	the area label on a zone shown with its level range	todo	the name carries a coloured "(1-10)" suffix (arealabeldataprovider.lua:105–109): UI/NameLabels takes a whole name only
+UI/WorldMap.lua	the area label on a zone shown with its level range	japanese	the name, the coloured range as the client wrote it (UI/NameLabels lead, arealabeldataprovider.lua:103–107)
 UI/WorldMap.lua	the navigation bar's map buttons	english protected	NavBar_AddButton writes and measures each name on every map change (navigationbar.lua:114, 123), the pass that places the map's pins
-UI/WorldMap.lua	the floor dropdown's text	todo	a floor's name, written by the menu system's UpdateText in the same map-change pass as the navigation bar (blizzard_worldmaptemplates.lua:3–46, menutemplates.lua:740–759): whether that pass measures it is not checked yet
+UI/WorldMap.lua	the floor dropdown's text	english protected	a floor's name, written in the map-change pass that places the pins: Refresh from RefreshOverlayFrames (secureexecuterange, blizzard_worldmap.lua:307, 436–440) → SetupMenu → UpdateText (blizzard_worldmaptemplates.lua:3–46, dropdownbutton.lua:237–261, 327, menutemplates.lua:733–759); a hook there runs inside that pass
 UI/Tracker.lua	UIWidgetObjectiveTracker.Header.Text	japanese	a zone name, after each SetHeader
-UI/Tracker.lua	ObjectiveTrackerTopBannerFrame.Title	todo	check what the client writes there
-UI/Tracker.lua	ScenarioObjectiveTracker.StageBlock.Name	todo	a stage's name
+UI/Tracker.lua	ObjectiveTrackerTopBannerFrame.Title	japanese	a quest's title (C_QuestLog.GetTitleForQuestID, blizzard_bonusobjectivetracker.lua:699–725): the shipped Japanese title after each PlayBanner; nothing measures it
+UI/Tracker.lua	ScenarioObjectiveTracker.StageBlock.Name	english protected	measured as it is written (GetStringWidth, blizzard_scenarioobjectivetracker.lua:543–549) in the container's update of every module (blizzard_objectivetrackercontainer.lua:80–93), which sets the quest item buttons' questLogIndex for UseQuestLogSpecialItem (blizzard_objectivetrackershared.lua:94–108)
 UI/QuestMap.lua	quest log zone headers	japanese	a header that is no sort word
 
 # an NPC's name on its window
@@ -62,8 +62,8 @@ UI/ObliterumForge.lua	ObliterumForgeFrame.TitleContainer.TitleText	japanese	the 
 UI/ScrappingMachine.lua	ScrappingMachineFrame.TitleContainer.TitleText	japanese	the machine's name, after each SetTitle
 UI/ItemInteraction.lua	ItemInteractionFrame title	japanese	interaction data: shown when the name list has a line for it
 UI/Bank.lua	BankFrameTitleText	english not-a-game-name	the title is a dictionary line, matched by key
-UI/VoicePanel.lua	the speaking NPC's name and title	todo
-UI/ClickBinding.lua	the tutorial's ThrallName	todo
+UI/VoicePanel.lua	the speaking NPC's name and title	japanese	the addon's own frame: written in the bundled face while names are on and Japanese shows; only a line a creature says (a player offering a quest keeps the name they carry); a book's name stays
+UI/ClickBinding.lua	the tutorial's ThrallName	japanese	XML text written once (blizzard_clickbindingui.xml:292), nothing measures it: shown with the static labels
 
 # units
 UI/UnitFrames.lua	target, focus, target-of-target, boss and party frame Name	japanese	after each UnitFrame_Update; never a player or a pet; a name the client hides stays. Not proven in game yet: these are the client's secure frames, and the window test's run in and out of combat decides whether this line stays
@@ -71,45 +71,53 @@ UI/UnitFrames.lua	PlayerName	english player-typed
 UI/UnitFrames.lua	the name floating over a creature's head (nameplates off)	english client-drawn	turning nameplates on shows the nameplate, which is a line above
 UI/UnitFrames.lua	PetName	english player-typed
 UI/UnitFrames.lua	nameplates and raid-style frames of creatures	japanese	after each CompactUnitFrame_UpdateName; never a player or a pet; a forbidden nameplate and a name the client hides stay. Not proven in game yet: these are the client's secure frames, and the window test's run in and out of combat decides whether this line stays
-UI/CastingBar.lua	PlayerCastingBarFrame.CastTargetNameText	todo	a unit's name: never a player
-UI/CastingBar.lua	the bar's spell name	todo
+UI/CastingBar.lua	PlayerCastingBarFrame.CastTargetNameText	japanese	only when it is the player's target's name and that target is a creature; nothing reads or measures it (castingbarframe.lua:932–961). Not proven in game yet: the window test's run in and out of combat decides whether this line stays
+UI/CastingBar.lua	the bar's spell name	japanese	after each bar event, under the fixed words' record key; nothing reads or measures Text (castingbarframe.lua:404–406). Not proven in game yet: the window test's run in and out of combat decides whether this line stays
 UI/CastingBar.lua	PlayerCastingBarFrame.CastTimeText	english not-a-game-name	a number
 
 # item names on the game's own windows
 UI/Merchant.lua	merchant item rows	japanese	on both tabs, after each update
 UI/Merchant.lua	MerchantBuyBackItemName	japanese	after each update
 UI/Loot.lua	loot rows	japanese	an item row's name; a money row is left
-UI/GroupLoot.lua	MasterLooterFrame.Item.ItemName and roll frames	todo
-UI/LootHistory.lua	loot history rows	todo
-UI/Bags.lua	a bag's title	todo	an item's name
+UI/GroupLoot.lua	MasterLooterFrame.Item.ItemName and roll frames	japanese	after each GroupLootFrame_SetupItemDisplay and MasterLooterFrame_Show; a roll frame's name goes back when that frame hides
+UI/LootHistory.lua	loot history rows	japanese	a row's ItemName, after the view initializes the row and after each Init
+UI/Bags.lua	a bag's title	japanese	an item's name, after each ContainerFrame_GenerateFrame; the backpack's and the keyring's titles stay dictionary words
+UI/Bags.lua	a bag's name on its portrait tooltip	todo	line 1 of a tooltip UI/HelpTooltip walks (mainline/containerframe.lua:2066–2108); HelpTooltip takes line 1 as a title, never as a name
 UI/QuestFrame.lua	quest reward and required item buttons	japanese	reward, choice and required items, after each redraw and each Name write; the tracker's quest popup shares the reward buttons
-UI/QuestMap.lua	the quest log details pane's reward buttons (MapQuestInfoRewardsFrame)	todo	the item names on the map's reward buttons
-UI/Mail.lua	attached item names	todo
-UI/Trade.lua	traded item names	todo
-UI/AuctionHouse.lua	the six ItemDisplay name widgets and the result rows	todo
-UI/BlackMarket.lua	the hot item's Name and the rows	todo
-UI/ItemUpgrade.lua	ItemUpgradeFrame.ItemInfo.ItemName	todo
-UI/Crafting.lua	the form's OutputText, OutputSubText and RecraftingOutputText	todo
-UI/CustomerOrders.lua	the form's RecipeName and RecraftRecipeName	todo
-UI/Wardrobe.lua	the set details' Name, LongName and Label	todo
+UI/QuestMap.lua	the quest log details pane's reward buttons (MapQuestInfoRewardsFrame)	japanese	after each map rewards redraw and each Name write (the item-load callback), surface questmap.items
+UI/Mail.lua	attached item names	english text-box	the attachment buttons show icons only (blizzard_mailframe/mailframe.lua:706–731, 1291–1313); the first item's name goes into the send subject, an EditBox the client sends (:1326–1330); the item's tooltip is UI/Tooltip's
+UI/Mail.lua	OpenMailInvoiceItemLabel's item name	todo	ITEM_SOLD_COLON / ITEM_PURCHASED_COLON .. " " .. the item's name, or AUCTION_MAIL_ITEM_STACK around it (mailframe.lua:797–848): the colonPrefix form keeps the name as written; needs a name value on those keys
+UI/Trade.lua	traded item names	japanese	slots 1–6 of both sides, after each TradeFrame_UpdatePlayerItem / _UpdateTargetItem
+UI/Trade.lua	the enchant slot's enchantment	english not-a-game-name	GREEN_FONT_COLOR_CODE .. enchantment .. "|r" (tradeframe.lua:108, 156): the name list holds no enchantments
+UI/AuctionHouse.lua	the six ItemDisplay name widgets, the result rows and the summary lines	todo	each is a name behind a colour code, "|cffxxxxxx<name>|r", sometimes with " (<item level>)" or a quality icon inside (shared/blizzard_auctionhousesharedtemplates.lua:232, 306–314; tablebuilder.lua:702–713, 749–757; auctionsframe.lua:75); the buy dialog's is AUCTION_HOUSE_DIALOG_ITEM_FORMAT around it (buydialog.lua:249–255). UI/NameLabels takes no leading colour code. A result row's Text is also measured (IsTruncated, tablebuilder.lua:722–729)
+UI/BlackMarket.lua	the hot item's Name and the rows	japanese	after each BlackMarketFrame_UpdateHotItem and each row's Init
+UI/ItemUpgrade.lua	ItemUpgradeFrame.ItemInfo.ItemName	todo	a name behind a colour code, "|cffxxxxxx<name>|r" (mainline/blizzard_itemupgradeui.lua:646, 992): UI/NameLabels takes no leading colour code
+UI/Crafting.lua	the form's OutputText	todo	a name behind a colour code (WrapTextInColor, blizzard_professionsrecipeschematicform.lua:1364–1373), written and measured by SetTextToFit (GetStringWidth, GetStringHeight, :349–359, 1385)
+UI/Crafting.lua	the form's RecraftingOutputText	todo	PROFESSIONS_CRAFTING_FORM_RECRAFTING_HEADER around a coloured name, or PROFESSIONS_CRAFTING_RECRAFTING alone (schematicform.lua:1380–1383), measured by SetTextToFit: a name inside an interface line
+UI/Crafting.lua	the form's OutputSubText	english not-a-game-name	never written on Forever: SetOutputSubText (schematicform.lua:1534–1537) has no caller in the client's files, and Init hides it (:372)
+UI/CustomerOrders.lua	the form's RecipeName	japanese	after the recipe loader wrote and measured it: a post-hook on Professions.SetupOutputIcon for the form's own icon (blizzard_professionscustomerordersform.lua:1120–1140), so the client measures its own English
+UI/CustomerOrders.lua	the form's RecraftRecipeName	todo	PROFESSIONS_ORDER_RECRAFT_TITLE_FMT around a coloured name (form.lua:1114–1116): a name inside an interface line
+UI/Wardrobe.lua	the set details' LongName and Label, and the set list rows' Name and Label	japanese	after each DisplaySet and each row's Init, where the name list has the set's name (a set shares it with its set-bonus spells)
+UI/Wardrobe.lua	the set details' Name	todo	an AutoScalingFontStringMixin FontString (mainline/blizzard_wardrobe.xml:626): its SetText measures the text and sets its scale (blizzard_sharedxml/secureutil.lua:55–104) and DisplaySet measures it again (IsTruncated, shared/blizzard_wardrobe_sets.lua:240), so text written there is measured by the client; no protected call found after it [unverified]
 UI/ChatSystem.lua	item, spell and quest links in chat lines	japanese	only the label, on the visible lines at each display refresh; the history keeps the client's line; a link a player typed is text and stays
 
 # spell and other game names on the game's own windows
 UI/SpellBook.lua	spell rows	english protected	the client measures each row when it refills the page; Japanese there blocked the action bars in combat (traced in game, ADR-058)
-UI/Trainer.lua	service rows	todo
-UI/Talents.lua	talent and tree names	todo
-UI/CooldownViewer.lua	the two alert Name widgets	todo
-UI/MountJournal.lua	the mount's Name	todo
-UI/Skills.lua	SkillsFrame.SkillDetailFrame.Title and Subtitle	todo
+UI/Trainer.lua	service rows	japanese	each row's name after ClassTrainerFrame_InitServiceButton, with UpdateNameWidth as its refit (the client measures the name to fit it, blizzard_trainerui_camelot.lua:23–24); no protected call follows in the window
+UI/Talents.lua	talent and tree names	japanese	the talent tooltip's line 1 and each tree header's Name (after RefreshTreeHeaders, camelot/classtalents/blizzard_classtalentsframe.lua:82–109, 331–343); nothing measures them and no talent template is secure; talent buttons draw no name
+UI/CooldownViewer.lua	the two alert Name widgets	japanese	on each Display / SetupDropdowns pass; nothing reads or measures it (cooldownviewereditalertbase.lua:7–9)
+UI/MountJournal.lua	the mount's Name	japanese	after each MountJournal_UpdateMountDisplay (mainline/blizzard_mountcollection.lua:693); measured only to place the New badge (:699–700), a pass that reaches no protected call (the summon reads selectedMountID, :837–841)
+UI/Skills.lua	SkillsFrame.SkillDetailFrame.Title and Subtitle	japanese	after each SetPaneTitle (camelot/characterframe.lua:845–849); nothing measures them; a skill's Subtitle is always empty (skillsframe.lua:245)
 UI/Professions.lua	each slot's ProfessionName on the overview page	japanese	after each Update of the page
 UI/Professions.lua	the crafting page's title (the profession's name)	japanese	after each SetTitle; the overview page's title is a dictionary word
-UI/Professions.lua	the rank bar's text ("Blacksmithing 135/150")	todo	TRADESKILL_NAME_RANK has no dictionary row and no name value yet (blizzard_professionsrankbar.lua:6–21, 144–146)
+UI/Professions.lua	the rank bars' text ("Blacksmithing 135/150")	japanese	the name, the numbers as written (UI/NameLabels lead); a slot's bar with its name, the crafting page's after each Update; a trial's cap note stays English whole
 UI/Professions.lua	the spell buttons' spellString ("Smelting", "Find Minerals")	english protected	a secure button whose click casts (blizzard_professionsbooktemplates.xml:4, 26–31; blizzard_professionsbook.lua:317–352)
-UI/Reputation.lua	ReputationFrame.ReputationDetailFrame.Title and the faction rows	todo
-UI/MajorFactionToast.lua	MajorFactionUnlockToast.FactionName	todo
-UI/Currency.lua	the currency detail's Title and Subtitle	todo
+UI/Reputation.lua	ReputationFrame.ReputationDetailFrame.Title and the faction rows	japanese	an entry's Content.Name and a group header (camelot/reputationframe.lua:279, 332) after each row's initializer, the pane's Title after SetPaneTitle; nothing reads or measures them
+UI/MajorFactionToast.lua	MajorFactionUnlockToast.FactionName	japanese	after each PlayBanner (blizzard_majorfactionunlocktoast.lua:41); only its alpha is animated
+UI/Currency.lua	the currency detail's Title and the list entries' names	japanese	after each Refresh and each entry's initialization, where the name list has the currency's name
+UI/Currency.lua	the currency detail's Subtitle	english not-a-game-name	an icon and the count (blizzard_tokenui/camelot/blizzard_tokenui.lua:532)
 UI/ChatSystem.lua	an NPC's name before its spoken line	japanese	on the visible lines; never the player's own name
-UI/Speech.lua	names inside an NPC's Japanese in speech bubbles and boss emotes	todo	UI/Speech writes the shipped row there with no names step
+UI/Speech.lua	names inside an NPC's Japanese in speech bubbles and boss emotes	japanese	the names step on each write and on a names switch; the player, the line's target and the party members it was filled with stay as written; a boss emote's speaker is the boss; a secret speaker leaves the emote English
 UI/ChatSystem.lua	names inside an NPC's spoken Japanese	japanese	UI/Speech reads the shipped rows directly and skips the names step, so the chat window's lines take it; a line whose words stayed English keeps its names
 
 # never a game name

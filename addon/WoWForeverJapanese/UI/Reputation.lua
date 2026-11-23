@@ -21,6 +21,11 @@
 --     Faction table's text: SetDescription(description) writes the Description ScrollingFont (lua:758, 771;
 --     characterframe.lua:860–872), hooked on the instance and matched against FactionDescription:* only.
 --   The filter dropdown is hidden on camelot (ShouldShowFilters returns false, lua:81–91).
+--   Names, while Japanese names are on (UI/NameLabels): an entry's Content.Name (lua:332) and a top-level header
+--   that is no dictionary word (a faction group, lua:279), each under the row's own record key so one record owns
+--   the widget; and the detail pane's Title, after SetPaneTitle. The list never reads or measures a Name (only its
+--   anchors move, lua:302–306, 341–343, 600–602), and the pane's Title is written by SetPaneTitle alone
+--   (characterframe.lua:845–849). Title stays out of the dictionary (NEVER_TOUCH).
 local _, WFJ = ...
 local Reputation = {}
 WFJ.Reputation = Reputation
@@ -123,10 +128,13 @@ function Reputation.onRow(a, b)
   if type(row) ~= "table" then return end
   if type(row.Content) == "table" then -- an entry or a sub-header: a faction name and a standing bar
     WFJ.Labels.forbid(row.Content.Name)
+    WFJ.NameLabels.show(SURFACE, rowKey(row) .. ".name", row.Content.Name)
     hookRow(row)
     Reputation.showBar(row)
   elseif type(row.Name) == "table" then -- a top-level header
-    WFJ.Labels.show(SURFACE, rowKey(row) .. ".header", row.Name, nil, HEADER_ONLY)
+    if WFJ.Labels.show(SURFACE, rowKey(row) .. ".header", row.Name, nil, HEADER_ONLY) == 0 then
+      WFJ.NameLabels.show(SURFACE, rowKey(row) .. ".header", row.Name)
+    end
     WFJ.Render.updateBanner(SURFACE)
   end
 end
@@ -141,10 +149,11 @@ function Reputation.onSetEmpty()
   return n
 end
 
--- The detail pane's standing, after SetPaneTitle. → 1 | 0
+-- The detail pane's standing and the faction's name, after SetPaneTitle. → the number shown
 function Reputation.onPaneTitle()
   local d = detail()
   local n = WFJ.Labels.show(SURFACE, "detail.standing", type(d) == "table" and d.Subtitle or nil, nil, BAR_ONLY)
+    + WFJ.NameLabels.show(SURFACE, "detail.title", type(d) == "table" and d.Title or nil)
   WFJ.Render.updateBanner(SURFACE)
   return n
 end

@@ -19,7 +19,9 @@
 --     name and description), the RenownRewardName and RenownRewardDescription families. "- %s" lines carry reward
 --     names inside a template that is not in the set, so they are never matched; an item's, a mount's or a spell's
 --     own name has no row and stays English.
--- Never touched: MajorFactionUnlockToast.FactionName (a faction).
+-- MajorFactionUnlockToast.FactionName, the faction's name (unlocktoast.lua:41; only its alpha is animated, :54):
+-- never a dictionary word (NEVER_TOUCH); while names are on it shows the name's Japanese (UI/NameLabels) after
+-- PlayBanner.
 -- Without either frame nothing is hooked.
 local _, WFJ = ...
 local MajorFactionToast = {}
@@ -36,6 +38,7 @@ local CANDIDATES = {
   rewardOwner = { "MajorFactionsRenownToast.RewardIconMouseOver" },
   rewardDescription = { "MajorFactionsRenownToast.RewardDescription" },
   unlock = { "MajorFactionUnlockToast" }, unlockHeader = { "MajorFactionUnlockToast.HeaderText" },
+  factionName = { "MajorFactionUnlockToast.FactionName" },
 }
 local RENOWN = { only = { "MAJOR_FACTION_RENOWN_LEVEL_TOAST" } }
 local UNLOCK = { only = { "JOURNEY_UNLOCKED_TOAST", "WAR_WITHIN_LANDING_PAGE_ALERT_MAJOR_FACTION_UNLOCKED" } }
@@ -70,9 +73,10 @@ function MajorFactionToast.onRenown()
   return n
 end
 
--- hooksecurefunc target (MajorFactionUnlockToast:PlayBanner). → 1 | 0
+-- hooksecurefunc target (MajorFactionUnlockToast:PlayBanner): the header and the faction's name. → 0..2
 function MajorFactionToast.onUnlock()
   return WFJ.Labels.show(SURFACE, "unlock", get("unlockHeader"), nil, UNLOCK)
+    + WFJ.NameLabels.show(SURFACE, "factionName", get("factionName"))
 end
 
 local hooked = false

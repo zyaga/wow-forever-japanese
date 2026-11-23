@@ -54,6 +54,13 @@ describe("the professions window's names", function()
       f.StatusBar = { Rank = { Text = Stub.fontString("") } }
       content[name] = f
     end
+    -- the crafting page's rank bar: ProfessionsRankBarMixin:Update writes TRADESKILL_NAME_RANK into Rank.Text
+    -- [verified: blizzard_professionstemplates/blizzard_professionsrankbar.lua:6–21, 141–143]
+    frame.CraftingPage = CreateFrame("Frame", nil, frame)
+    frame.CraftingPage.RankBar = { Rank = { Text = Stub.fontString("") } }
+    function frame.CraftingPage.RankBar.Update(self, info)
+      self.Rank.Text.text = ("%s %d/%d"):format(info.professionName, info.skillLevel, info.maxSkillLevel)
+    end
     known = { PrimaryProfession1 = { "Blacksmithing", 135, 150, "Smelting", "Journeyman" } }
     -- FormatProfession: the name, the rank bar (TRADESKILL_NAME_RANK), the spell button's label and its subtext
     function page.FormatProfession(_, f, info)
@@ -103,15 +110,40 @@ describe("the professions window's names", function()
     assert.are.equal("ブラックスミシング", slot("PrimaryProfession1").ProfessionName:GetText())
   end)
 
-  it("an empty slot, the rank bar, the spell button's label and its rank word stay as written", function()
+  it("an empty slot, the spell button's label and its rank word stay as written", function()
     local f = slot("PrimaryProfession1")
     assert.are.equal("", slot("SecondaryProfession1").ProfessionName:GetText())
-    assert.are.equal("Blacksmithing 135/150", f.StatusBar.Rank.Text:GetText())
     assert.are.equal("Smelting", f.SpellButton1.spellString:GetText())
     assert.are.equal("Journeyman", f.SpellButton1.subSpellString:GetText())
     assert.are.equal(0, f.SpellButton1.spellString.calls.addonSetText)
-    assert.are.equal(0, f.StatusBar.Rank.Text.calls.addonSetText)
+    assert.are.equal(0, slot("SecondaryProfession1").StatusBar.Rank.Text.calls.addonSetText)
   end)
+
+  it("a slot's rank bar shows the name in Japanese and the numbers as written", function()
+    local rank = slot("PrimaryProfession1").StatusBar.Rank.Text
+    assert.are.equal("ブラックスミシング 135/150", rank:GetText())
+    alt(true)
+    assert.are.equal("Blacksmithing 135/150", rank:GetText())
+    alt(false)
+    known.PrimaryProfession1[2] = 136
+    frame.BookPage:Update()
+    assert.are.equal("ブラックスミシング 136/150", rank:GetText())
+    frame.BookPage:Hide()
+    assert.are.equal("Blacksmithing 136/150", rank:GetText())
+  end)
+
+  it("the crafting page's rank bar shows the name in Japanese after each Update, and English when the window closes",
+    function()
+      local bar = frame.CraftingPage.RankBar
+      bar:Update({ professionName = "Mining", skillLevel = 20, maxSkillLevel = 75 })
+      assert.are.equal("マイニング 20/75", bar.Rank.Text:GetText())
+      bar:Update({ professionName = "Nobody Known Craft", skillLevel = 1, maxSkillLevel = 75 })
+      assert.are.equal("Nobody Known Craft 1/75", bar.Rank.Text:GetText())
+      bar:Update({ professionName = "Mining", skillLevel = 21, maxSkillLevel = 75 })
+      assert.are.equal("マイニング 21/75", bar.Rank.Text:GetText())
+      frame:Hide()
+      assert.are.equal("Mining 21/75", bar.Rank.Text:GetText())
+    end)
 
   it("with names off the names are never written", function()
     WFJ.State.setNames(false)

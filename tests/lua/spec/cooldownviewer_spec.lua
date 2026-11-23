@@ -282,6 +282,26 @@ describe("the Cooldown Settings window on Forever", function()
     assert.is_true(unrecorded(g.Name))
   end)
 
+  it("with Japanese names on, both alert editors' Name shows the spell's or the buff's Japanese", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Fireball")] = "ファイアボール\tふぁいあぼーる",
+      [WFJ.Names.key("Arcane Intellect")] = "アーケイン・インテレクト\tあーけいん・いんてれくと",
+    })
+    local a, g = _G.CooldownViewerSettingsEditAlert, _G.GroupBuffFilterEditVisualAlert
+    a:DisplayForAlert("Fireball", true)
+    assert.are.equal("ファイアボール", a.Name:GetText())
+    alt(true)
+    assert.are.equal("Fireball", a.Name:GetText())
+    alt(false)
+    assert.are.equal("ファイアボール", a.Name:GetText())
+    g:DisplayForGroupBuffItem("Arcane Intellect", true)
+    assert.are.equal("アーケイン・インテレクト", g.Name:GetText())
+    a:DisplayForAlert("Nobody Known Spell", true)
+    assert.are.equal("Nobody Known Spell", a.Name:GetText())
+    WFJ.State.setNames(false)
+    assert.are.equal("Arcane Intellect", g.Name:GetText())
+  end)
+
   it("edit mode: a HUD viewer's selection label stays as the client writes it (ADR-069)", function()
     local selection = _G.EssentialCooldownViewer.Selection
     selection.isSelected = true

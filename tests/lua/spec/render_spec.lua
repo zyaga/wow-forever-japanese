@@ -212,6 +212,19 @@ describe("Render: refresh on state, per-FontString font", function()
     assert.are.equal(3, refits) -- no records left
   end)
 
+  it("ctx.tail follows the Japanese byte for byte, and the English comes back whole", function()
+    local t = Stub.fontString("Quest text 135/150")
+    local tail = " 135/150|cffff0000!|r"
+    R.show("quest", "rank", t, "Quest text 135/150", "quests", "quest", 1, { tail = tail })
+    assert.are.equal("クエスト1" .. tail, t:GetText())
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("Quest text 135/150", t:GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal("クエスト1" .. tail, t:GetText())
+    R.release("quest")
+    assert.are.equal("Quest text 135/150", t:GetText())
+  end)
+
   it("translated quest, then an untranslated one on the same FontString → live English, original font",
   function()
     WFJ.Settings.set("marker.missing", false) -- on by default; this test reads the text, not the marker

@@ -15,9 +15,12 @@
 --   MinimapCluster.ZoneTextButton: MinimapZoneTextButtonMixin:OnEnter → Minimap_SetTooltip: AddLine(zone name),
 --     AddLine(subzone name), AddLine(SANCTUARY_TERRITORY | FREE_FOR_ALL_TERRITORY | CONTESTED_TERRITORY |
 --     COMBAT_ZONE | format(FACTION_CONTROLLED_TERRITORY, factionName)), AddLine(self.tooltipText) where tooltipText
---     is MicroButtonTooltipText(WORLDMAP_BUTTON, "TOGGLEWORLDMAP"), then Show (minimap.lua:85–108, 190–226). Zone,
---     subzone and faction names stay English: the two name lines never match the `only` set, and the faction inside
---     "(%s Territory)" is a verbatim `text` argument (Core/UIStrings ARGS);
+--     is MicroButtonTooltipText(WORLDMAP_BUTTON, "TOGGLEWORLDMAP"), then Show (minimap.lua:85–108, 190–226). The
+--     two name lines never match the `only` set, and the faction inside "(%s Territory)" is a verbatim `text`
+--     argument (Core/UIStrings ARGS). While names are on, a post-hook of the global Minimap_SetTooltip (called by
+--     name from OnEnter and on a zone change, :105, 187) shows the zone's and the subzone's Japanese on the lines it
+--     wrote (UI/NameLabels, on the help surface under the walk's record keys, with the help tooltip's refit); a
+--     line the walk holds as a dictionary word keeps its record;
 --   MinimapCluster.Tracking.Button: MiniMapTrackingButtonMixin:OnEnter: SetText(TRACKING), AddLine(
 --     MINIMAP_TRACKING_TOOLTIP_NONE), Show (minimap.lua:923–930). The tracking MENU (UNCHECK_ALL, HUNTER_TRACKING_TEXT,
 --     TOWNSFOLK_TRACKING_TEXT, filter and spell names) is a menu popup (UI/Menus);
@@ -62,7 +65,7 @@ local CANDIDATES = {
   compartment = { "AddonCompartmentFrame" }, externalEvent = { "MinimapBackdrop.ExternalEventURLButton" },
   zoomIn = { "Minimap.ZoomIn" }, zoomOut = { "Minimap.ZoomOut" },
   tooltip = { "GameTooltip" }, uiParent = { "UIParent" },
-  zoneText = { "MinimapZoneText" }, update = { "Minimap_Update" },
+  zoneText = { "MinimapZoneText" }, update = { "Minimap_Update" }, setTooltip = { "Minimap_SetTooltip" },
 }
 
 -- owner key → the keys its writer shows
@@ -95,6 +98,24 @@ function Minimap.onUpdate()
   return WFJ.NameLabels.show(ZONE, "zone", get("zoneText"))
 end
 
+-- hooksecurefunc target (Minimap_SetTooltip): the zone's and the subzone's names on the lines it just wrote, while
+-- the zone button owns the tooltip. → the number of names shown
+function Minimap.onSetTooltip()
+  local tt, owner = get("tooltip"), get("zone")
+  if type(tt) ~= "table" or type(tt.GetOwner) ~= "function" or owner == nil or tt:GetOwner() ~= owner then return 0 end
+  local help = WFJ.HelpTooltip
+  local name = type(tt.GetName) == "function" and tt:GetName() or nil
+  if type(name) ~= "string" then return 0 end
+  local n = 0
+  for i = 1, math.min(2, type(tt.NumLines) == "function" and tt:NumLines() or 0) do
+    local rec = WFJ.SurfaceState.get(help.SURFACE, "L" .. i)
+    if not (rec and rec.meta and rec.meta.kind ~= "name") then
+      n = n + WFJ.NameLabels.show(help.SURFACE, "L" .. i, Compat.resolve(name .. "TextLeft" .. i), nil, help.refit)
+    end
+  end
+  return n
+end
+
 local hooked = false
 local registered = 0
 
@@ -120,6 +141,7 @@ function Minimap.init()
       n = n + 1
     end
   end
+  if type(get("setTooltip")) == "function" then hooksecurefunc("Minimap_SetTooltip", Minimap.onSetTooltip) end
   if type(get("update")) == "function" then
     hooksecurefunc("Minimap_Update", Minimap.onUpdate)
     Minimap.onUpdate() -- the name the client wrote before this addon loaded

@@ -306,6 +306,22 @@ describe("skills on the Forever client: client-table text", function()
       assert.are.equal("クラススキル", class.Name:GetText())
     end)
 
+  it("with Japanese names on, the pane title is the skill's name in Japanese; the reveal key and the empty pane"
+    .. " give it back", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Two-Handed Swords")] = "トゥー・ハンデッド・ソーズ\tとぅー" })
+    _G.SkillsFrame:Show()
+    PS.selectSkill({ name = "Two-Handed Swords", description = "" })
+    assert.are.equal("トゥー・ハンデッド・ソーズ", detail().Title:GetText())
+    assert.are.equal("", detail().Subtitle:GetText()) -- a skill has no subtitle
+    alt(true)
+    assert.are.equal("Two-Handed Swords", detail().Title:GetText())
+    alt(false)
+    PS.selectSkill(nil)
+    assert.are.equal("", detail().Title:GetText())
+    PS.selectSkill({ name = "Nobody Known Skill", description = "" })
+    assert.are.equal("Nobody Known Skill", detail().Title:GetText())
+  end)
+
   it("the pane title stays English even when a SkillCategory row has its English", function()
     _G.SkillsFrame:Show()
     PS.selectSkill({ name = "Class Skills", description = "" })
