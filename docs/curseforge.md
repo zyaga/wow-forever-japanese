@@ -38,6 +38,8 @@ Names of people, places, creatures, items and spells stay in <span style="color:
 
 Point at a Japanese word in quest text, NPC dialogue, a book page or a window label, and a small popup shows its reading, its dictionary form and a short English meaning of the word as that sentence uses it. Nothing is drawn until the pointer is on a word.
 
+**Tooltips too.** While a tooltip shows, press **Ctrl+F** and a copy stays in the same place. Move the mouse onto it and point at any Japanese word: every item and spell description has its words' readings and meanings. The key again or Esc closes it. Ctrl+F is set once, only when nothing else uses that key, and can be changed under Keybindings.
+
 ### <span style="color:#E8C77E;">Word list</span>
 
 While the popup shows a word, **Ctrl+click** it to save it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. Type `/wfj words` to copy the whole list as text for Anki, a spreadsheet or a text file: the word and its sentence come with furigana for your cards, and a screenshot taken when you saved the word can come along. With the voice installed, the study card speaks each saved sentence in its NPC's voice, and the export can bring those recordings to Anki too. Choose the click on the **Words** settings page.
@@ -136,6 +138,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 ### <span style="color:#E8C77E;">ポップアップ辞書</span>
 
 クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで日本語の単語にマウスを合わせると、読み方・辞書形・その文脈での短い英語の意味が小さなポップアップに表示されます。マウスを合わせるまでは何も表示されません。
+
+**ツールチップでも使えます。** ツールチップが出ているときに **Ctrl+F** を押すと、その場に写しが残ります。マウスを乗せて日本語の単語を指すと、アイテムとスペルの説明文すべてで読み方と意味が表示されます。もう一度キーを押すか Esc で閉じます。Ctrl+F は、そのキーがほかに使われていないときに一度だけ設定され、キー割り当てで変更できます。
 
 ### <span style="color:#E8C77E;">単語帳</span>
 
