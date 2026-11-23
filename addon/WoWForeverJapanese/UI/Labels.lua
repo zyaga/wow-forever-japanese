@@ -149,6 +149,8 @@ local function show(surface, recKey, widget, refit, opts)
   local key, args
   if type(en) == "string" and en ~= "" then
     if opts and opts.only then key, args = index:matchOnly(en, opts.only) else key, args = index:match(en) end
+    -- `also`: keys of restricted families this widget may show as well as the whole dictionary
+    if not key and opts and opts.also then key, args = index:matchOnly(en, opts.also) end
     if not key and opts and opts.only and opts.wrapped then
       local open, inner, close = en:match("^(|c%x%x%x%x%x%x%x%x)(.-)(|r)$")
       local innerKey, innerArgs

@@ -35,13 +35,14 @@ TooltipUnit.KEYS = { "TOOLTIP_UNIT_LEVEL", "TOOLTIP_UNIT_LEVEL_TYPE", "TOOLTIP_U
   "UNIT_TYPE_PLUS_LEVEL_TEMPLATE", "UNIT_LEVEL_DEAD_TEMPLATE", "UNIT_SKINNABLE_LEATHER", "UNIT_SKINNABLE_HERB",
   "UNIT_SKINNABLE_ROCK", "UNIT_SKINNABLE_BOLTS", "CORPSE_TOOLTIP", "QUEST_MONSTERS_KILLED", "QUEST_PLAYERS_KILLED",
   -- written by the compiled client, named by no Lua: threat, the corpse and skull-level lines, already gathered, and
-  -- the faction / player objective forms; the reputation, race and creature names in them stay as written
+  -- the faction / player objective forms; the faction and creature names in them are Japanese while names are on
   "THREAT_TOOLTIP", "CORPSE", "DEAD", "PVP_ENABLED", "ELITE", "UNIT_LETHAL_LEVEL_TEMPLATE",
   "UNIT_TYPE_LETHAL_LEVEL_TEMPLATE", "UNIT_LETHAL_LEVEL_DEAD_TEMPLATE", "UNIT_TYPE_LEVEL_FACTION_TEMPLATE",
   "UNIT_ALREADY_SKINNED_LEATHER", "UNIT_ALREADY_SKINNED_HERB", "UNIT_ALREADY_SKINNED_ROCK",
   "UNIT_ALREADY_SKINNED_BOLTS", "UNIT_CAPTURABLE", "QUEST_FACTION_NEEDED", "QUEST_FACTION_NEEDED_NOPROGRESS",
   "QUEST_PLAYERS_KILLED_NOPROGRESS" }
--- the owner line under a pet, minion or guardian ("Bob's Pet", the UnitOwner line kind): the owner's name stays English
+-- the owner line under a pet, minion or guardian ("Bob's Pet", the UnitOwner line kind): an NPC owner's name is
+-- Japanese while names are on; a player's stays as written
 for _, k in ipairs({ "UNITNAME_TITLE_CHARM", "UNITNAME_TITLE_COMPANION", "UNITNAME_TITLE_CREATION",
   "UNITNAME_TITLE_GUARDIAN", "UNITNAME_TITLE_MINION", "UNITNAME_TITLE_OPPONENT", "UNITNAME_TITLE_PET",
   "UNITNAME_TITLE_SQUIRE" }) do

@@ -379,8 +379,21 @@ end
 -- The templates an objective line may be (Forever GlobalStrings): only these, so "3/10 …" is never read as another key.
 QuestMap.OBJECTIVE_KEYS = { "QUEST_MONSTERS_KILLED", "QUEST_PLAYERS_KILLED", "QUEST_PLAYERS_KILLED_NOPROGRESS",
   "QUEST_FACTION_NEEDED", "QUEST_FACTION_NEEDED_NOPROGRESS",
+  -- a failed quest's tracker line (blizzard_questobjectivetracker.lua:355)
+  "FAILED",
   -- a finished quest's tracker line (blizzard_questobjectivetracker.lua:321-343)
   "QUEST_WATCH_QUEST_READY", "QUEST_WATCH_QUEST_COMPLETE", "QUEST_WATCH_CLICK_TO_COMPLETE" }
+
+-- An item, object or creature count ("0/8 Solid Sharpening Stone", "2 x Linen Cloth") has no words of its own, and an
+-- objective's own text has the same shape ("0/1 Tower Marked"). So a line takes the count form's Japanese only while
+-- its name has Japanese to show; any other line of that shape stays exactly as the client wrote it.
+QuestMap.COUNT_KEYS = { "QUEST_ITEMS_NEEDED", "QUEST_OBJECTS_FOUND", "QUEST_ITEMS_NEEDED_NOPROGRESS",
+  "QUEST_OBJECTS_FOUND_NOPROGRESS", "QUEST_MONSTERS_KILLED_NOPROGRESS" }
+local function namedCount(core)
+  local name = core:match("^%d+/%d+ (.+)$") or core:match("^%d+ x (.+)$")
+  local resolve = WFJ.UIStrings and WFJ.UIStrings.name
+  return name ~= nil and type(resolve) == "function" and resolve(name) ~= nil
+end
 
 -- " (Complete)", which the details pane appends to a finished objective (mainline/questinfo.lua:238): its Japanese
 -- through PARENS_TEMPLATE / COMPLETE, and the objective before it. → text before the tag, the tag's Japanese (with its
@@ -420,6 +433,7 @@ function QuestMap.objectiveJapanese(en, surface)
   end
   local key
   if ui then key, args = ui:matchOnly(core, QuestMap.OBJECTIVE_KEYS) end
+  if not key and ui and namedCount(core) then key, args = ui:matchOnly(core, QuestMap.COUNT_KEYS) end
   if key then
     return WFJ.Render.preview(surface, en, nil, "quests", "ui", key,
       { args = { form = "affix", before = "", after = tag, inner = args }, compact = true })
@@ -460,6 +474,7 @@ function QuestMap.showObjective(surface, recKey, fs, refit)
   end
   local key
   if ui then key, args = ui:matchOnly(core, QuestMap.OBJECTIVE_KEYS) end
+  if not key and ui and namedCount(core) then key, args = ui:matchOnly(core, QuestMap.COUNT_KEYS) end
   if key then
     WFJ.Render.show(surface, recKey, fs, en, "quests", "ui", key,
       { refit = refit, args = { form = "affix", before = "", after = tag, inner = args }, compact = true })

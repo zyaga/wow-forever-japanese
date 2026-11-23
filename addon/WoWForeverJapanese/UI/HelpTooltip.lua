@@ -120,7 +120,11 @@ local function walkImpl(tt)
       for _, side in ipairs({ "Left", "Right" }) do
         local fs = Compat.resolve(name .. "Text" .. side .. i)
         local recKey = side:sub(1, 1) .. i
-        if i < (labelOpts and labelOpts.from or 1) then
+        -- `names`: a left line the dictionary does not take shows the name's Japanese when the whole line is a game
+        -- name, the lines `from` leaves out (the thing's name on line 1) included
+        local nameOnly = i < (labelOpts and labelOpts.from or 1)
+        local named = labelOpts and labelOpts.names and side == "Left"
+        if nameOnly and not named then
           WFJ.SurfaceState.drop(SURFACE, recKey) -- a line the opts leave out (a name on line 1)
         elseif fs and fs.GetText and not WFJ.SurfaceState.secret(fs:GetText()) and (fs:GetText() or "") ~= "" then
           -- (a secret line, which may not even be compared, is the client's: dropped below like an empty one)
@@ -145,10 +149,11 @@ local function walkImpl(tt)
               fs:SetText(owned.en .. current:sub(#owned.applied + 1)) -- the owner's own label, copied by the client
             end
             local before = fs:GetText()
-            local shown = WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
+            local shown = nameOnly and 0 or WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
             if shown == 0 and i == 1 and side == "Left" and labelOpts and labelOpts.nameLine then
               shown = WFJ.NameLabels.wrapped(SURFACE, recKey, fs, labelOpts.nameLine, refit)
             end
+            if shown == 0 and named then shown = WFJ.NameLabels.wrapped(SURFACE, recKey, fs, labelOpts.names, refit) end
             if shown == 0 and labelOpts and labelOpts.show then shown = labelOpts.show(SURFACE, recKey, fs, refit) end
             n = n + shown
             if fs:GetText() ~= before then changed = true end

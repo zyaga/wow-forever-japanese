@@ -10,7 +10,7 @@ Spell  # hooked: UI/Tooltip; the description and structural lines, the cooldown 
 Unit  # hooked: UI/TooltipUnit; level, creature type, objective, owner, threat and corpse lines, the quest title
 Corpse  # hooked: UI/TooltipUnit; a corpse's lines, as a unit's
 Object  # hooked: UI/TooltipUnit; a game object's lines that are unit keys or a quest title [unverified in game: the requirement lines an object shows]
-Currency  # hooked: UI/TooltipData; every line after the name through the dictionary (the description, totals)
+Currency  # hooked: UI/TooltipData; the name in Japanese while names are on; every later line through the dictionary and the CurrencyDescription family (the description, totals)
 BattlePet  # not hooked: no GameTooltip setter for it in the Forever UI; pet battles are not on Forever
 UnitAura  # hooked: UI/Tooltip; the aura text, structural lines and the time left
 AzeriteEssence  # not hooked: not on Forever (no Heart of Azeroth in the tables)
@@ -20,10 +20,10 @@ PetAction  # not hooked: the pet bar's tooltip is translated through UI/MicroMen
 Achievement  # not hooked: no achievement tooltip setter in the Forever load set [unverified in game: achievement links]
 EnhancedConduit  # not hooked: not on Forever (Shadowlands conduits)
 EquipmentSet  # hooked: UI/TooltipData; the equipment manager's own lines only (the set's items are names)
-InstanceLock  # hooked: UI/TooltipData; a boss's Available / Defeated and Locked only (boss names stay English)
+InstanceLock  # hooked: UI/TooltipData; a boss's Available / Defeated and Locked only; the instance and boss names in Japanese while names are on
 PvPBrawl  # not hooked: not on Forever (Blizzard_PVPUI is not in the camelot load set)
 RecipeRankInfo  # not hooked: recipe ranks are a retail-era system [unverified in game]
-Totem  # hooked: UI/TooltipData; every line after the totem's name through the dictionary
+Totem  # hooked: UI/TooltipData; the totem's name in Japanese while names are on; every later line through the dictionary
 Toy  # not hooked: not on Forever (the Collections window shows no Toy Box tab in game)
 CorruptionCleanser  # not hooked: not on Forever (BfA corruption)
 MinimapMouseover  # hooked: UI/TooltipUnit; the minimap's quest block (title and objectives), names kept

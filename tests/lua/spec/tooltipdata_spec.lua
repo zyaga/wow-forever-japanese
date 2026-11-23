@@ -1,5 +1,6 @@
 -- UI/TooltipData.lua: the tooltip-data kinds no other module handles (a currency here) are walked from line 2 on,
--- the name on line 1 left English, and keep following the modifier until the tooltip hides.
+-- the name on line 1 left English until Japanese names are on, and keep following the modifier until the tooltip
+-- hides. A currency's description is found in its own restricted family wherever the currency is shown.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
@@ -8,6 +9,10 @@ local UI = {
   TANK = { "Tank", "タンク" },
   ["FlyoutName:248"] = { "Portal", "ポータル" },
   ["FlyoutDescription:248"] = { "Creates a portal to a major city.", "主要都市へのポータルを作り出します。" },
+  ["CurrencyDescription:1792"] = { "Honor is gained by killing members of the opposite faction in PvP combat.",
+    "名誉は、PvP戦闘で敵対勢力のメンバーを倒すと獲得できます。" },
+  CURRENCY_TOTAL_CAP = { "Total Maximum: %s%s/%s", "合計の上限: %s%s/%s" },
+  BOSS_ALIVE = { "Available", "未討伐" },
 }
 
 describe("UI/TooltipData", function()
@@ -66,6 +71,47 @@ describe("UI/TooltipData", function()
     assert.are.equal("ポータル", left(1):GetText())
     assert.are.equal("主要都市へのポータルを作り出します。", left(2):GetText())
     assert.are.equal("Character Info", left(3):GetText())
+  end)
+
+  it("a currency hovered as a quest reward: its description from its family, its total line, and with Japanese"
+    .. " names on its name; a line that is a player's name stays", function()
+    WFJ.TooltipData.init()
+    WFJ.Data.add("name", { [WFJ.Names.key("Honor Points")] = "オナー・ポイント\tおなー・ぽいんと" })
+    local function show()
+      tt:SetOwner(Stub.button("QuestInfoRewardsFrameQuestInfoItem1", ""))
+      tt:SetText("Honor Points")
+      tt:AddLine("Honor is gained by killing members of the opposite faction in PvP combat.")
+      tt:AddLine("Total Maximum: 5,622/25,000")
+      tt:AddLine("Amerika Jin-PvP")
+      tt.primaryInfo = { tooltipData = { type = 5 } }
+      posts[5](tt)
+    end
+    show()
+    assert.are.equal("Honor Points", left(1):GetText()) -- names off: the name stays the client's
+    assert.are.equal("名誉は、PvP戦闘で敵対勢力のメンバーを倒すと獲得できます。", left(2):GetText())
+    assert.are.equal("合計の上限: 5,622/25,000", left(3):GetText())
+    tt:Hide()
+    WFJ.State.setNames(true)
+    show()
+    assert.are.equal("オナー・ポイント", left(1):GetText())
+    assert.are.equal("Amerika Jin-PvP", left(4):GetText())
+    WFJ.State.setNames(false)
+  end)
+
+  it("an instance lock's boss lines are names: Japanese with names on, the status word from the dictionary", function()
+    WFJ.TooltipData.init()
+    _G.Enum.TooltipDataType.InstanceLock = 15
+    WFJ.TooltipData.init()
+    WFJ.Data.add("name", { [WFJ.Names.key("Edwin VanCleef")] = "エドウィン・ヴァンクリーフ\tえどうぃん・ゔぁんくりーふ" })
+    WFJ.State.setNames(true)
+    tt:SetOwner(Stub.button("RaidInfoInstance1", ""))
+    tt:SetText("The Deadmines")
+    tt:AddDoubleLine("Edwin VanCleef", "Available")
+    tt.primaryInfo = { tooltipData = { type = 15 } }
+    posts[15](tt)
+    assert.are.equal("エドウィン・ヴァンクリーフ", left(2):GetText())
+    assert.are.equal("未討伐", _G.GameTooltipTextRight2:GetText())
+    WFJ.State.setNames(false)
   end)
 
   it("ignores a tooltip other than GameTooltip and a client without the processor", function()

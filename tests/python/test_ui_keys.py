@@ -135,6 +135,7 @@ DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui", "draft-r70707-ui", "draft-r70755
                  "draft-r70862-ui-sg12",  # a re-pull's reworded key (the group invitation's new icon line)
                  "draft-r70959-ui-sg12",  # the interface lines of build 70959
                  "draft-r71037-q-sg12",  # a boss still alive in an instance lock, its own word from build 71037
+                 "draft-r71037-q-sg13",  # the quest objective count forms, whose item or creature name is a name
                  "draft-ui-drunk-sg12",  # how drunk the character or a player nearby is, in chat
                  "draft-ui-friends-window-sg12",  # the friends window the client shows with its social system on
                  "draft-ui-tooltip-words-sg12",  # "Enemy" before a range, "Crafting Reagent"

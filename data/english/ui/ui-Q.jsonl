@@ -26,6 +26,8 @@
 {"id": "QUEST_HUB_TOOLTIP_AVAILABLE_QUESTS_HEADER", "field": "text", "en": "Available Quests", "hash": "6d8aa8075efb4db4", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_HUB_TOOLTIP_MORE_QUESTS_REMAINING", "field": "text", "en": "+%d more", "hash": "ae017a71bc74677a", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_HUB_TOOLTIP_TRAVEL_HEADER", "field": "text", "en": "Travel", "hash": "65a282ac6e77d7ef", "src": "db2@1.60.1.71037"}
+{"id": "QUEST_ITEMS_NEEDED", "field": "text", "en": "%2$d/%3$d %1$s", "hash": "715d35414d030ea3", "src": "db2@1.60.1.71037"}
+{"id": "QUEST_ITEMS_NEEDED_NOPROGRESS", "field": "text", "en": "%2$d x %1$s", "hash": "af32e6375fb5015c", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_LEVEL_FILTER_DESCRIPTION", "field": "text", "en": "Show recommended player level next to quests", "hash": "eda7f58f280460d2", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_LOG", "field": "text", "en": "Quest Log", "hash": "ac526ca3a65b23aa", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_LOG_COUNT_TEMPLATE", "field": "text", "en": "Quests: %s%d|r|cffffffff/%d|r", "hash": "bf9fab96a44e1ee2", "src": "db2@1.60.1.71037"}
@@ -35,8 +37,11 @@
 {"id": "QUEST_LOG_TRACK_ALL", "field": "text", "en": "Track All", "hash": "7a31ce1890553b38", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_LOG_UNTRACK_ALL", "field": "text", "en": "Untrack All", "hash": "71859795b5c3f0e3", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_MONSTERS_KILLED", "field": "text", "en": "%2$d/%3$d %1$s slain", "hash": "092db9c734ac7114", "src": "db2@1.60.1.71037"}
+{"id": "QUEST_MONSTERS_KILLED_NOPROGRESS", "field": "text", "en": "%2$d x %1$s", "hash": "af32e6375fb5015c", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_OBJECTIVES", "field": "text", "en": "Quest Objectives", "hash": "d38a12f0640c30d6", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_OBJECTIVES_FILTER_DESCRIPTION", "field": "text", "en": "Current goals to achieve in quests that are in your Quest Log", "hash": "8e014a35f313b3d4", "src": "db2@1.60.1.71037"}
+{"id": "QUEST_OBJECTS_FOUND", "field": "text", "en": "%2$d/%3$d %1$s", "hash": "715d35414d030ea3", "src": "db2@1.60.1.71037"}
+{"id": "QUEST_OBJECTS_FOUND_NOPROGRESS", "field": "text", "en": "%2$d x %1$s", "hash": "af32e6375fb5015c", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_PLAYERS_KILLED", "field": "text", "en": "%1$d/%2$d %3$s Players slain", "hash": "491fe8920c77246d", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_PLAYERS_KILLED_NOPROGRESS", "field": "text", "en": "%2$s Players x %1$d", "hash": "950bb0ead023b2d6", "src": "db2@1.60.1.71037"}
 {"id": "QUEST_PREPEND", "field": "text", "en": "(Quest)", "hash": "e43328ae9fda8947", "src": "db2@1.60.1.71037"}

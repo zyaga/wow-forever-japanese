@@ -1276,6 +1276,10 @@
 {"id": "CURRENCY_GAINED_MULTIPLE", "field": "text", "en": "You receive currency: %sx%d", "hash": "b5a9dfac54505c71", "src": "db2@1.60.1.71037"}
 {"id": "CURRENCY_GAINED_MULTIPLE_BONUS", "field": "text", "en": "You receive currency: %sx%d (Bonus Objective)", "hash": "adb5b7c1b7013716", "src": "db2@1.60.1.71037"}
 {"id": "CURRENCY_GAINED_MULTIPLE_OVERFLOW", "field": "text", "en": "You receive currency: %sx%d (You've earned the maximum amount of %s)", "hash": "d98f6fdde919e0c5", "src": "db2@1.60.1.71037"}
+{"id": "CURRENCY_SEASON_TOTAL", "field": "text", "en": "Season Total Earned: %s%s", "hash": "46b8718ce2e89e8c", "src": "db2@1.60.1.71037"}
+{"id": "CURRENCY_SEASON_TOTAL_MAXIMUM", "field": "text", "en": "Season Maximum: %s%s/%s", "hash": "379c8c48ee8294e7", "src": "db2@1.60.1.71037"}
+{"id": "CURRENCY_TOTAL", "field": "text", "en": "Total: %s%s", "hash": "ef2817f09c0a4296", "src": "db2@1.60.1.71037"}
+{"id": "CURRENCY_TOTAL_CAP", "field": "text", "en": "Total Maximum: %s%s/%s", "hash": "c954cf9c9b670415", "src": "db2@1.60.1.71037"}
 {"id": "CURRENCY_TRANSFER_AMOUNT_LABEL", "field": "text", "en": "Amount to Transfer", "hash": "fda2ef833d20ba79", "src": "db2@1.60.1.71037"}
 {"id": "CURRENCY_TRANSFER_CANCEL_BUTTON_LABEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.71037"}
 {"id": "CURRENCY_TRANSFER_CONFIRM_BUTTON_LABEL", "field": "text", "en": "Confirm", "hash": "f1cc941b8229c54e", "src": "db2@1.60.1.71037"}
@@ -1293,6 +1297,7 @@
 {"id": "CURRENCY_TRANSFER_NEW_BALANCE_PREVIEW", "field": "text", "en": "%s's New Balance", "hash": "509b40e40af19f3c", "src": "db2@1.60.1.71037"}
 {"id": "CURRENCY_TRANSFER_SOURCE", "field": "text", "en": "From", "hash": "097f4b9e6f08b950", "src": "db2@1.60.1.71037"}
 {"id": "CURRENCY_TRANSFER_TOGGLE_BUTTON_LABEL", "field": "text", "en": "Transfer", "hash": "905b4ef56c1ac940", "src": "db2@1.60.1.71037"}
+{"id": "CURRENCY_WEEKLY_CAP", "field": "text", "en": "Weekly Maximum: %s%s/%s", "hash": "7bae0fd51e791a63", "src": "db2@1.60.1.71037"}
 {"id": "CURRENTLY_EQUIPPED", "field": "text", "en": "Currently Equipped", "hash": "e47810fd2e739a9f", "src": "db2@1.60.1.71037"}
 {"id": "CURRENT_BID", "field": "text", "en": "Current Bid", "hash": "e91962b92045c0e6", "src": "db2@1.60.1.71037"}
 {"id": "CURRENT_PET", "field": "text", "en": "Current Pet", "hash": "e91d0b3b57d8f600", "src": "db2@1.60.1.71037"}

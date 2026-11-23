@@ -483,4 +483,5 @@ WFJ.Data.add("gloss", {
   [155486] = "午前\tごぜん\ta.m., in the morning",
   [155487] = "午後\tごご\tp.m., in the afternoon or evening",
   [155488] = "中\tちゅう\tin the state of",
+  [155489] = "必要数\tひつようすう\tnumber required",
 })
