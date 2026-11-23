@@ -32,7 +32,7 @@ prefers it as text only.
 
 In numbers: **5,850** quests, **11,871** NPC dialogue lines, **923** book pages, **209** letter pages, **11,259** item tooltips, **20,361** spell tooltips, **16,124** UI.
 
-Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, and so do quest titles, so you can still talk with other players, read guides and search by name.
+Names of people, places, creatures, items and spells, and quest titles, stay in <span style="color:#8CB8E8;">English</span> by default, so you can still talk with other players, read guides and search by name. Pick **Japanese names** in the welcome window and they show in katakana: on tooltips, quest and NPC windows, the target frame, nameplates, the map, loot, chat and inside quest text.
 
 ### <span style="color:#E8C77E;">Popup dictionary</span>
 
@@ -87,7 +87,9 @@ No GitHub account? Post the line in **#translation-fixes** on the Discord: https
 
 Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action bar stay Japanese in combat, the cooldown countdown too.
 
-**Why are names still in English?** On purpose, so what you read matches what other players say and what guides call things. A quest's title stays English for the same reason; the text under it is Japanese.
+**Why are names in English?** That is the default, so what you read matches what other players say and what guides call things. To see them in Japanese, pick **Japanese names** in the welcome window (`/wfj intro`) or turn on **Show names in Japanese** in the settings. Holding <span style="color:#E0605A;">**Alt**</span> shows the English name, and pointing at a Japanese name shows its reading and its English name.
+
+**Which names stay English with Japanese names on?** A player's, guild's or pet's name. Spell names in the spellbook and on the professions page's buttons, because changing them makes the game block the action bars in combat. Abbreviations such as PvP and NPC. The name over a creature's head shows on its nameplate, so picking Japanese names turns on nameplates for friendly NPCs, and picking English names puts your setting back.
 
 **What do the markers mean?** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> means the line has no translation yet and is shown in the game's English. <span style="color:#E8C77E;">[要更新 / English Changed]</span> means the English changed after the line was translated.
 
@@ -131,7 +133,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 数で見ると: クエスト **5,850**、NPC の会話 **11,871** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **11,259**、呪文のツールチップ **20,361**、UI **16,124**。
 
-人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。クエストのタイトルも英語のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。
+人物・地名・モンスター・アイテム・呪文の名前とクエストのタイトルは、初期設定では<span style="color:#8CB8E8;">英語</span>のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。ようこそウィンドウで **日本語の名前** を選ぶと、ツールチップ、クエストや NPC のウィンドウ、ターゲットフレーム、ネームプレート、マップ、戦利品、チャット、クエスト本文の中の名前がカタカナで表示されます。
 
 ### <span style="color:#E8C77E;">ポップアップ辞書</span>
 
@@ -186,7 +188,9 @@ GitHub アカウントがなければ、Discord の **#translation-fixes** に�
 
 ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
-**名前が英語のままなのはなぜ？** 意図した仕様です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。クエストのタイトルも同じ理由で英語のままです（タイトルの下の本文は日本語です）。
+**名前が英語なのはなぜ？** 初期設定です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。日本語で見たい場合は、ようこそウィンドウ（`/wfj intro`）で **日本語の名前** を選ぶか、設定の **名前を日本語で表示** をオンにします。<span style="color:#E0605A;">**Alt**</span> を押している間は英語の名前が見え、日本語の名前にマウスを合わせると読みと英語の名前が出ます。
+
+**日本語の名前を選んでも英語のままの名前は？** プレイヤー、ギルド、ペットの名前です。呪文書と専門技能ページのボタンにある呪文の名前も英語のままです。変えると、戦闘中にアクションバーが使えなくなるためです。PvP や NPC などの略語もそのままです。クリーチャーの頭上の名前はネームプレートに表示されるため、日本語の名前を選ぶと味方 NPC のネームプレートをオンにし、英語の名前を選ぶと元の設定に戻します。
 
 **マーカーは何を表している？** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> はまだ翻訳がなく、ゲームの英語のまま表示されている行です。<span style="color:#E8C77E;">[要更新 / English Changed]</span> は翻訳のあとで英語の原文が変わった行です。
 
