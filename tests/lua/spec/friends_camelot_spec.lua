@@ -19,6 +19,7 @@ for _, f in ipairs({ "UI/SettingsKeys.lua", "UI/Menus.lua", "UI/MenusTags.lua",
 
 local UI = {
   CONTACTS_TAB_TITLE = { "Contacts", "連絡先" }, CONTACTS_LIST_TITLE = { "Contacts", "連絡先" },
+  FILTER = { "Filter", "フィルター" },
   CONTACTS_RECENT_ALLIES_TITLE = { "Recent Allies", "最近の仲間" }, RECRUIT_A_FRIEND = { "Recruit A Friend", "友達を招待" },
   RAID = { "Raid", "レイド" }, QUICK_JOIN = { "Quick Join", "クイック参加" }, IGNORE_LIST = { "Ignore List", "無視リスト" },
   WHO_LIST_SEARCH_INSTRUCTIONS = { "Search Zones, Guilds, Classes, Races, Levels", "ゾーン、ギルド、クラス、種族、レベルで検索" },
@@ -252,6 +253,10 @@ describe("the social window on Forever's camelot FriendsFrame", function()
       assert.are.equal(UI.WHO_LIST_SEARCH_INSTRUCTIONS[1], _G.WhoFrameEditBox.Instructions:GetText())
       assert.are.equal(1, WFJ.LoadOnDemand.loaded(ADDON))
       assert.are.equal(UI.WHO_LIST_SEARCH_INSTRUCTIONS[2], _G.WhoFrameEditBox.Instructions:GetText())
+      local filter = _G.LFGWhoListFrame.FilterDropdown
+      assert.are.equal("フィルター", filter.Text:GetText())
+      filter:UpdateText() -- the menu writes the button's text again on every choice
+      assert.are.equal("フィルター", filter.Text:GetText())
       Social.who = { total = 2, rows = { { name = "Zone", level = 12, class = "Warrior", zone = "Zone" },
         { name = "Thrall", level = 60, class = "Shaman", zone = "Orgrimmar" } } }
       _G.LFGWhoListFrame:UpdateWhoList()

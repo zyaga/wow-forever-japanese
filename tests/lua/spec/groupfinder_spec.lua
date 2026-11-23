@@ -13,6 +13,8 @@ local UI = {
   LFG_LIST_TAB_1 = { "Create Listing", "募集を作成" }, LFG_LIST_EDIT = { "Edit Listing", "募集を編集" },
   LFG_LIST_TAB_2 = { "Group Browser", "グループ一覧" }, LFG_LIST_TAB_3 = { "Who List", "Whoリスト" },
   LFG_LIST_UNLIST = { "Delist", "募集を取り下げ" },
+  BACK = { "Back", "戻る" }, INVTYPE_CLOAK = { "Back", "背中" },
+  GROUP_FINDER_PLAYSTYLE_REQUIRED = { "Select Playstyle (required)", "プレイスタイルを選択 (必須)" },
   LFG_POST_GROUP_SOLO = { "List Self", "自分を登録" }, LFG_POST_GROUP_PARTY = { "List Group", "グループを登録" },
   LFG_POST_GROUP_UPDATE = { "Update", "更新" }, ROLE_POLL = { "Role Check", "ロールチェック" },
   LFG_LIST_ONLY_LEADER_CREATE = { "Only the group leader can create a listing for your group.",
@@ -68,7 +70,10 @@ local function loadGroupFinder(o)
   end
   parent.ListingTab, parent.BrowsingTab, parent.WhoListingTab = S.frame(), S.frame(), S.frame()
   function parent.UpdateTabs(self) S.write(self.Tab1, en(C.listed and "LFG_LIST_EDIT" or "LFG_LIST_TAB_1")) end
-  if not o.noWhoList then S.frame("LFGWhoListFrame") end
+  if not o.noWhoList then
+    local who = S.frame("LFGWhoListFrame")
+    S.put(who, "TitleContainer.TitleText", S.fs(en("LFG_TITLE"))) -- LFGWhoListMixin:OnLoad, wholist.lua:201–203
+  end
 
   local listing = S.frame("LFGListingFrame")
   S.put(listing, "TitleContainer.TitleText", S.fs(en("LFG_TITLE")))
@@ -215,6 +220,7 @@ describe("the group finder on Forever", function()
         local listing, browse = _G.LFGListingFrame, _G.LFGBrowseFrame
         assert.are.equal("グループ検索", listing.TitleContainer.TitleText:GetText())
         assert.are.equal("グループ検索", browse.TitleContainer.TitleText:GetText())
+        assert.are.equal("グループ検索", _G.LFGWhoListFrame.TitleContainer.TitleText:GetText())
         assert.are.equal("募集を作成", _G.LFGParentFrame.Tab1:GetText())
         assert.are.equal("自分を登録", listing.PostButton:GetText())
         assert.are.equal("ロールチェック", listing.GroupRoleButtons.RolePollButton:GetText())
@@ -222,7 +228,7 @@ describe("the group finder on Forever", function()
         assert.are.equal("検索中...", browse.SearchingSpinner.Label:GetText())
         assert.are.equal("メッセージを送る", browse.SendMessageButton:GetText())
         assert.are.equal("この募集は取り下げられました。", _G.LFGBrowseSearchEntryTooltip.Delisted:GetText())
-        assert.are.equal("Back", listing.BackButton:GetText()) -- "Back" belongs to INVTYPE_CLOAK: left English
+        assert.are.equal("戻る", listing.BackButton:GetText()) -- asked for by key: "Back" is also a cloak's slot
         S.alt(WFJ, true)
         assert.are.equal("Looking For Group", listing.TitleContainer.TitleText:GetText())
         assert.are.equal("List Self", listing.PostButton:GetText())
@@ -327,6 +333,10 @@ describe("the group finder on Forever", function()
         local playstyle = _G.LFGListingFrame.ActivityView.PlayStyleDropdown
         playstyle:SetSelectionText("Relaxed")
         assert.are.equal("気楽に", playstyle.Text:GetText())
+        -- with none chosen the client shows the prompt inside a colour code (listing.lua:921–923)
+        playstyle.text = nil
+        playstyle:SetDefaultText("|cff808080Select Playstyle (required)|r")
+        assert.are.equal("|cff808080プレイスタイルを選択 (必須)|r", playstyle.Text:GetText())
       end)
 
       it("a result's playstyle line translates; the leader's name next to it does not", function()

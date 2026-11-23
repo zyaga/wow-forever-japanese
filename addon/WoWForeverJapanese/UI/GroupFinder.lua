@@ -8,8 +8,8 @@
 -- LFGVANILLA_SETTING_MODERN_STYLE is true (mainline/lfgvanilla_constants.lua:6): the bottom tabs are hidden and the
 -- side tabs carry the tab names as tooltips (blizzard_lfgvanilla_parentframe.lua:63–71).
 -- Static labels (XML text= or an OnLoad write; each restricted to its own keys):
---   the two panels' TitleContainer.TitleText, written directly with SetText(LFG_TITLE), never SetTitle
---     (blizzard_lfgvanilla_listing.lua:46, blizzard_lfgvanilla_browse.lua:131);
+--   the three panels' TitleContainer.TitleText, written directly with SetText(LFG_TITLE), never SetTitle
+--     (blizzard_lfgvanilla_listing.lua:80, blizzard_lfgvanilla_browse.lua:135, mainline/wholist.lua:201–203);
 --   LFGListingFrame: GroupRoleButtons.RolePollButton ROLE_POLL (mainline/blizzard_lfgvanilla_listing.xml:389),
 --     LockedView.ActivityText LFG_LIST_MY_ACTIVITY_LIST_HEADER (xml:601), ActivityView.VoiceChatLabel VOICE_CHAT
 --     (xml:554), ActivityView.LevelRangesCheckbox.Text LFG_LIST_IGNORE_SUGGESTED_LEVEL (xml:564–590);
@@ -19,8 +19,7 @@
 -- Dynamic, each post-hooked (a frame's own method, or a global looked up by name at call time):
 --   LFGParentFrame:UpdateTabs → Tab1 LFG_LIST_TAB_1 / LFG_LIST_EDIT (parentframe.lua:73–78);
 --   LFGListingPostButton_UpdateText → PostButton List Self / List Group / Update (listing.lua:610–618);
---   LFGListingBackButton_UpdateText → BackButton LFG_LIST_UNLIST; its other text is BACK, whose English "Back" the
---     dictionary gives to INVTYPE_CLOAK, so it stays English (listing.lua:643–649);
+--   LFGListingBackButton_UpdateText → BackButton LFG_LIST_UNLIST or BACK (listing.lua:643–649);
 --   LFGListingLockedView_RefreshContent → LockedView.ErrorText (listing.lua:1089–1097);
 --   LFGListingFrame.ActivityView OnShow (HookScript: the XML binds the global by reference) → the comment box's
 --     Instructions FontString, DESCRIPTION_OF_YOUR_GROUP / LFG_AUTHENTICATOR_DESCRIPTION_BOX (listing.lua:822, 838).
@@ -73,7 +72,10 @@ local LABELS = {
   tab2 = { "LFGParentFrame.Tab2", { "LFG_LIST_TAB_2" } }, tab3 = { "LFGParentFrame.Tab3", { "LFG_LIST_TAB_3" } },
   listingTitle = { LISTING .. ".TitleContainer.TitleText", { "LFG_TITLE" } },
   browseTitle = { BROWSE .. ".TitleContainer.TitleText", { "LFG_TITLE" } },
-  back = { LISTING .. ".BackButton", { "LFG_LIST_UNLIST" } },
+  -- the who list panel's own title, written once at its load (mainline/wholist.lua:201–203)
+  whoTitle = { "LFGWhoListFrame.TitleContainer.TitleText", { "LFG_TITLE" } },
+  -- BACK is asked for by key: its English is also a cloak's slot name, which an open match would pick
+  back = { LISTING .. ".BackButton", { "LFG_LIST_UNLIST", "BACK" } },
   post = { LISTING .. ".PostButton", { "LFG_POST_GROUP_UPDATE", "LFG_POST_GROUP_PARTY", "LFG_POST_GROUP_SOLO" } },
   rolePoll = { LISTING .. ".GroupRoleButtons.RolePollButton", { "ROLE_POLL" } },
   lockedError = { LISTING .. ".LockedView.ErrorText",
