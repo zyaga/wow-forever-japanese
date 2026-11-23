@@ -85,7 +85,7 @@ reason per problem:
   (exactly the glossary term; a capitalised heading word like `Warrior` does not count) is not checked
   on that row (the word is used in another sense there: "a rogue spark" is a stray one, not the class)
 
-Readings: a quest or gossip draft row may also carry `"words": [[word, reading], …]`, the whole
+Readings: a quest, gossip, item or spell draft row may also carry `"words": [[word, reading], …]`, the whole
 reading of every kanji word in its Japanese, the same list `wfj readings import` takes (ADR-036). They are
 checked with the import's own rules (`readings.word_problems`):
 

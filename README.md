@@ -107,7 +107,7 @@ small popup shows how to read it, its dictionary form, and a short English meani
 
 **Freeze a tooltip to read it.** A tooltip goes away when the mouse leaves what it belongs to, so you cannot point at
 a word in it. While a tooltip shows, press Ctrl+F: a copy stays in the same place, and the popup dictionary and the
-save click work on its Japanese, including every item and spell description. Press the key again or Esc to close it.
+save click work on its Japanese, including item and spell descriptions. Press the key again or Esc to close it.
 Ctrl+F is set once, only when nothing else uses that key; change it under **Keybindings**, in the WoW Forever
 Japanese section.
 

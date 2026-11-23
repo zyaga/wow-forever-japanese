@@ -221,7 +221,8 @@ def _key(row: dict[str, Any]) -> tuple[Any, Any, Any]:
 
 
 def needs_words(type_: str, ja: str) -> bool:
-    """A changed quest / gossip / ui / plain-book line gets its readings with meanings in the same apply."""
+    """A changed quest / gossip / ui / plain-book / item / spell line gets its readings with meanings in the
+    same apply."""
     # a line holding `|` (a colour code or any escape) is never owed one: the word box refuses it (validate)
     return (
         type_ in readings.TYPES

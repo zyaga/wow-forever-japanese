@@ -1013,9 +1013,9 @@ def test_item_and_spell_text_take_readings():
     assert "objective" not in readings.TYPES and "area" not in readings.TYPES
 
 
-def test_words_written_from_the_stored_text_hold_for_the_text_the_addon_ships():
-    # a hand-written line keeps its manual break in data; generate ships it joined. The words are checked against
-    # the stored text, and the same words stand in the same order in the shipped one.
+def test_words_that_hold_for_the_stored_text_hold_for_the_text_the_addon_ships():
+    # a hand-written line keeps its manual break in data; generate ships it joined, and its words are checked
+    # against that. Words that stand apart from the break stand in the same order in both texts.
     from wfj.core import tooltip_text
 
     stored = "ホームに設定した場所へ\n戻ります。"

@@ -39,9 +39,9 @@ TYPES: dict[str, list[str]] = {
 # Tooltip text. Tooltip lines repeat each other a sentence at a time, apart from an English name or which
 # number a placeholder stands for, so a line's words are written one sentence (a "piece") at a time and a line
 # is put together from its pieces (`pieces`, `assemble`; `wfj readings export-tooltips` / `import-tooltips` /
-# `spread`). Generate ships a hand-written line with its manual
-# breaks joined, and its reading is written and checked for the text as it ships (`japanese_of`). It ships no
-# English word card rows: English first shows the client's own tooltip.
+# `spread`). Generate ships a hand-written line with its manual breaks joined, and its reading is written and
+# checked for the text as it ships (`japanese_of`). It ships no English word card rows: English first shows the
+# client's own tooltip.
 TOOLTIP_TYPES = tooltip_text.TYPES
 KEYS = ("id", "field", "ja_hash", "words", "provenance")
 PROVENANCE_CLASSES = ("machine", "correction")
