@@ -28,6 +28,7 @@ The maintainer tried a trial in game on 2026-11-22: a key that freezes the toolt
 11. **The binding gets a first key, once.** Once per account, at login out of combat, when the binding has no key and nothing is bound to Ctrl+F, the addon binds Ctrl+F to it and saves the bindings. It never takes a key from another action, and it never binds again after that once (a player who unbinds it keeps it unbound). A login in combat makes the offer when combat ends.
 12. **The bindings have their own section and their names follow the language.** Every binding names the category `BINDING_HEADER_WFJ`, so the client lists them under "WoW Forever Japanese" instead of under Other with a header row drawn as a key. The six binding names are Japanese or English by the settings pages' rule.
 13. **The word card and the reading box are solid.** They draw a fill under their border on every surface, so text behind them never shows through. A card over a tooltip's text was hard to read without it.
+14. **The welcome window names the key.** Nothing on screen shows that a tooltip can be frozen, so the welcome window's second page carries one point on it for a player who chose to study Japanese: the key as bound, or where to set one while the binding has no key. It is left out for the other two choices, where a frozen tooltip has no word cards.
 
 ## Consequences
 

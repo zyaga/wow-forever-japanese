@@ -270,6 +270,47 @@ describe("UI/IntroWindow, the window", function()
     assert.are.equal(2, select(2, f.about.en:GetText():gsub("\n", "")))
   end)
 
+  describe("the frozen tooltip point", function()
+    local saved
+    before_each(function() saved = _G.GetBindingKey end)
+    after_each(function() _G.GetBindingKey = saved end)
+
+    local function info(purpose)
+      local f = IW.open()
+      f.cards[purpose].scripts.OnClick(f.cards[purpose])
+      f.confirm.scripts.OnClick(f.confirm)
+      return f
+    end
+
+    it("names the binding's key for a player studying Japanese", function()
+      _G.GetBindingKey = function(action) return action == "WFJ_FREEZE_TOOLTIP" and "CTRL-F" or nil end
+      local f = info("ja")
+      local key = ("|cffffd200%s|r"):format(WFJ.KeyCapture.keyText("CTRL-F"))
+      assert.are.equal(T["intro.freeze"].ja:format(key), f.freeze.ja:GetText())
+      assert.are.equal(T["intro.freeze"].en:format(key), f.freeze.en:GetText())
+      assert.is_true(f.freeze.ja:IsShown())
+      assert.is_table(f.freeze.ja.point)
+    end)
+
+    it("points at Keybindings while the binding has no key", function()
+      _G.GetBindingKey = function() return nil end
+      local f = info("ja")
+      assert.are.equal(T["intro.freeze.unset"].ja, f.freeze.ja:GetText())
+      assert.are.equal(T["intro.freeze.unset"].en, f.freeze.en:GetText())
+      assert.is_true(f.freeze.en:IsShown())
+    end)
+
+    it("is left out where a frozen tooltip has no word cards", function()
+      _G.GetBindingKey = function() return "CTRL-F" end
+      for _, purpose in ipairs({ "en", "play" }) do
+        local f = info(purpose)
+        assert.is_false(f.freeze.ja:IsShown())
+        assert.is_false(f.freeze.en:IsShown())
+        f.back.scripts.OnClick(f.back)
+      end
+    end)
+  end)
+
   it("a click on a card only selects and describes it; nothing is written until Confirm", function()
     local f = IW.open()
     local before = settings()
@@ -619,6 +660,7 @@ describe("UI/OptionsText, the intro window's copy", function()
 
   it("every line is the addon's own copy in both languages, with no em dash", function()
     for _, k in ipairs({ "intro.lead", "intro.hold", "intro.readings", "intro.words", "intro.minimap",
+        "intro.freeze", "intro.freeze.unset",
         "intro.voiceTitle", "intro.voice", "intro.close", "intro.names.ask", "intro.names.english",
         "intro.names.japanese" }) do
       assert.is_string(T[k].en)

@@ -424,6 +424,11 @@ Text.T = {
     ja = "日本語の単語にカーソルを合わせると、読み方が出ます。" },
   ["intro.words"] = { en = "Save a highlighted word to your word list with %s; /wfj study quizzes you on it.",
     ja = "ハイライトした単語は%sで単語帳に保存でき、/wfj study で学習できます。" },
+  -- %s is the key bound to the frozen tooltip; the second wording stands in while the binding has no key
+  ["intro.freeze"] = { en = "Press %s on a tooltip to freeze it, then point at its words.",
+    ja = "ツールチップが出ているときに%sを押すと固定され、中の単語も指せます。" },
+  ["intro.freeze.unset"] = { en = "Set the Freeze the tooltip key under Keybindings to read a tooltip's words.",
+    ja = "「キー割り当て」でツールチップ固定のキーを決めると、ツールチップの単語も読めます。" },
   ["intro.minimap"] = { en = "Minimap button: left-click to report a line, right-click for the menu.",
     ja = "ミニマップのボタン：左クリックで翻訳の報告、右クリックでメニュー。" },
   -- the voice section under both blocks, shown only while no voice pack has loaded

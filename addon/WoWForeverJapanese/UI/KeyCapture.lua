@@ -159,6 +159,13 @@ function KeyCapture.toggleKey()
   return key
 end
 
+-- A binding's current key (the first of up to two), or nil.
+function KeyCapture.keyOf(action)
+  local getKey = api("bindingKey")
+  local key = getKey and getKey(action)
+  return type(key) == "string" and key ~= "" and key or nil
+end
+
 -- A key or chord's display name ("CTRL-J", "Mouse Button 4").
 function KeyCapture.keyText(key)
   local getText = api("bindingText")
