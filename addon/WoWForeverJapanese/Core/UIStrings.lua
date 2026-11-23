@@ -35,7 +35,8 @@ local _, WFJ = ...
 local UIStrings = WFJ.UIStrings or {}
 WFJ.UIStrings = UIStrings
 
-local NAMED_KINDS = { name = true, skill = true, names = true, class = true, unitType = true, classes = true }
+local NAMED_KINDS = { name = true, skill = true, names = true, class = true, unitType = true, classes = true,
+  costs = true }
 -- Labels written "<label> <an item's name>" by the client's Lua, with no template of their own.
 UIStrings.NAME_AFTER_COLON = { ITEM_SOLD_COLON = true, ITEM_PURCHASED_COLON = true }
 
@@ -85,6 +86,17 @@ local function named(kind, value, players)
   if kind == "unitType" then
     local player = UIStrings.playerWord
     return type(player) == "function" and player(value) or value
+  end
+  if kind == "costs" then
+    -- a merchant's cost list (" |T…|t 2 Honor Points, 3 |Hitem…|h[Linen Cloth]|h", merchantframe.lua:661–671):
+    -- each part's icon and count as written, its name or its link's label in Japanese
+    local out = {}
+    for part in (value .. ", "):gmatch("(.-), ") do
+      local lead, name = part:match("^(%s*|T[^|]*|t%s*%d+ )(.+)$")
+      if not lead then lead, name = part:match("^(%s*%d+ )(.+)$") end
+      out[#out + 1] = lead and (lead .. (resolve(name) or name)) or part
+    end
+    return table.concat(out, ", ")
   end
   if kind ~= "skill" and kind ~= "classes" then return resolve(value) or value end
   local out = {}
@@ -342,7 +354,7 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   petFoodList = "([^%.]-)", questTitle = "(.-)",
   -- a game name (a place, a faction, an item's link): its Japanese while names are on (UIStrings.name, set by
   -- Main), else as written
-  name = "(.-)", names = "([^%.]-)",
+  name = "(.-)", names = "([^%.]-)", costs = "(.-)",
   class = "([^%.]-)", -- a class's word in a level line: its Japanese while names are on (UIStrings.word)
   spec = "([^%.]-)", -- the spec in front of that class: a talent tree's name (UIStrings.name)
   range = "(%d[%d%.,%-]*)" } -- a spell's range: one distance ("5.5", "1,000") or its two ends ("8-30")

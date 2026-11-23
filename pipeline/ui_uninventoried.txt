@@ -123,3 +123,8 @@ YELLOW_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by
 SPELL_DURATION_UNTIL_CANCELLED  # the C client writes it into a spell's description in place of the duration, so no scanned file names it
 PROFESSIONS_USED_IN_COOKING  # the C client writes it on a made item's tooltip ("Crafting Reagent"), so no scanned file names it
 LOCKED  # the C client writes it on a locked container's tooltip ("Locked"), so no scanned file names it
+CURRENCY_SEASON_TOTAL  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+CURRENCY_SEASON_TOTAL_MAXIMUM  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+CURRENCY_TOTAL  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+CURRENCY_TOTAL_CAP  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+CURRENCY_WEEKLY_CAP  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua

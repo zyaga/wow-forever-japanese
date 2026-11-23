@@ -76,6 +76,7 @@ describe("UI/TooltipData", function()
   it("a currency hovered as a quest reward: its description from its family, its total line, and with Japanese"
     .. " names on its name; a line that is a player's name stays", function()
     WFJ.TooltipData.init()
+    WFJ.State.setNames(false)
     WFJ.Data.add("name", { [WFJ.Names.key("Honor Points")] = "オナー・ポイント\tおなー・ぽいんと" })
     local function show()
       tt:SetOwner(Stub.button("QuestInfoRewardsFrameQuestInfoItem1", ""))

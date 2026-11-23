@@ -23,8 +23,6 @@ local UI = {
   TRACKER_HEADER_QUESTS = { "Quests", "クエスト" },
   CLICK_QUEST_DETAILS = { "<Click to view Quest Details>", "<クリックでクエストの詳細を表示>" },
   QUEST_WATCH_QUEST_READY = { "Ready for turn-in", "報告可能" },
-  -- a shorter key sharing the kill line's shape: never read on an objective widget
-  SPELL_STACK = { "%2$d/%3$d %1$s", "スタック" },
   -- camelot's elite tag and the content-tracking module's client lines
   ELITE = { "Elite", "エリート" },
   CONTENT_TRACKING_RETRIEVING_INFO = { "|cffff0000Retrieving information...|r", "|cffff0000情報を取得中...|r" },
