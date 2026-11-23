@@ -926,9 +926,13 @@ function Stub.installTooltipAPI()
       end,
     }
     if not Stub.noSpellDescriptionAPI then
-      -- Stub.spellNames[id] = name: what GetSpellName answers, and GetSpellInfo(name) for a spell the character knows
-      Stub.spellNames = {}
+      -- Stub.spellNames[id] = name: what GetSpellName answers, and GetSpellInfo(name) for a spell the character knows.
+      -- Every spell's data is loaded unless Stub.unloadedSpells[id]; RequestLoadSpellData records into
+      -- Stub.spellLoadRequests.
+      Stub.spellNames, Stub.unloadedSpells, Stub.spellLoadRequests = {}, {}, {}
       _G.C_Spell = {
+        IsSpellDataCached = function(id) return not Stub.unloadedSpells[id] end,
+        RequestLoadSpellData = function(id) Stub.spellLoadRequests[#Stub.spellLoadRequests + 1] = id end,
         GetSpellDescription = function(id) return Stub.spellDescriptions[id] or "" end,
         GetSpellName = function(id) return Stub.spellNames[id] end,
         GetSpellInfo = function(which)
