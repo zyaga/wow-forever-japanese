@@ -45,6 +45,8 @@ describe("the mail invoice's item name", function()
     end
     H.uiSetup(WFJ, UI)
     WFJ.Translator.new = new
+    -- a name the client fills into an interface line, as Main.lua resolves it
+    WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
     WFJ.Data.add("name", {
       [WFJ.Names.key("Linen Cloth")] = "リネン・クロス\tりねん・くろす",
     })
@@ -53,6 +55,7 @@ describe("the mail invoice's item name", function()
   end)
 
   after_each(function()
+    WFJ.UIStrings.name = nil
     H.uiTeardown()
     Stub.keys.alt = false
   end)

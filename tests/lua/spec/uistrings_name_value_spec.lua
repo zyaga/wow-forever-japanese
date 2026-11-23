@@ -38,10 +38,9 @@ describe("names inside interface lines", function()
       if text == LINK then return (text:gsub("Linen Cloth", "リネン・クロス")) end
       return names[text]
     end
-    WFJ.UIStrings.names = function() return true end
   end)
   after_each(function()
-    WFJ.UIStrings.name, WFJ.UIStrings.names = nil, nil
+    WFJ.UIStrings.name = nil
     H.uiTeardown()
   end)
 
@@ -83,7 +82,7 @@ describe("names inside interface lines", function()
     assert.are.equal("必要: クッキング", skill("Requires Cooking"))
     assert.are.equal("必要: ボウズ, Crossbows, ガンズ", skill("Requires Bows, Crossbows, Guns")) -- one has no Japanese
     -- the setting switched to English names: a line seen before is filled again, not remembered
-    WFJ.UIStrings.name, WFJ.UIStrings.names = nil, function() return false end
+    WFJ.UIStrings.name = nil
     assert.are.equal("必要: Cooking (100)", skill("Requires Cooking (100)"))
   end)
 

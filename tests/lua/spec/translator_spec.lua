@@ -528,6 +528,16 @@ describe("Translator.resolve: names", function()
     assert.are.same({ "quest.description" }, seen)
   end)
 
+  it("a value filled into a line is never read as a name: a player called like a game name stays", function()
+    entry = { ja = "%sがStormwindでオンラインになった。", status = "." }
+    deps.fill = function(ja, args) return (ja:gsub("%%s", args[1])) end
+    T = WFJ.Translator.new(deps)
+    local a, p = T.resolve("ui", "ui", "ONLINE", { args = { "Stormwind" } })
+    assert.are.equal("apply", a)
+    assert.are.equal("Stormwindがストームウィンドでオンラインになった。", p.ja)
+    assert.are.same({ { ja = "ストームウィンド", english = "Stormwind" } }, p.names)
+  end)
+
   it("hands the kind to the names step for gated, branch and sectioned lines too", function()
     entry = { ja = "Stormwind", status = "u" }
     deps.align = function() return true end

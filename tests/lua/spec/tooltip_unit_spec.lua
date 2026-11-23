@@ -100,10 +100,9 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
       WFJ.State.setNames(true)
       -- as Main does: a name inside an interface line's value, while names are Japanese
       WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
-      WFJ.UIStrings.names = function() return WFJ.State.names == true end
     end)
     after_each(function()
-      WFJ.UIStrings.name, WFJ.UIStrings.names = nil, nil
+      WFJ.UIStrings.name = nil
       WFJ.State.setNames(false)
       _G.C_PlayerInfo, _G.issecretvalue = nil, nil
       Stub.keys.alt = false

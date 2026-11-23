@@ -46,11 +46,18 @@ function Translator.new(deps)
 
   -- The align gate sees the stored text; only what is written gets its names and the player's values.
   -- → the payload for `ja`
-  local function shown(ja, kind)
-    local names
-    if deps.names ~= nil then ja, names = deps.names(ja, kind) end
+  -- `named`: the names step already ran on this text (see `withNames`), with `names` what it wrote.
+  local function shown(ja, kind, named, names)
+    if not named and deps.names ~= nil then ja, names = deps.names(ja, kind) end
     if deps.expand ~= nil then ja = (deps.expand(ja)) end
     return { ja = ja, names = names }
+  end
+
+  -- The names step on a line's stored text, before its values go in: a value the client fills in can be a
+  -- player's name, which is never read as a game name however it is spelled. → text, names
+  local function withNames(ja, kind)
+    if deps.names == nil then return ja, nil end
+    return deps.names(ja, kind)
   end
 
   -- A UI template gets the live line's values. → text | nil
@@ -114,14 +121,16 @@ function Translator.new(deps)
     -- gated by the kind's type: a tooltip asks for `item.description` / `spell.description`
     local type_ = type(kind) == "string" and kind:match("^%a+") or kind
     local gated = status == "unaligned" or (status == "stale" and GATED[type_] == true)
+    local names
     if (status == "trusted" or status == "stale") and not gated then
+      ja, names = withNames(ja, kind)
       ja = filled(ja, ctx, entry.values)
       if ja == nil or ja == "" then return none("fill_failed") end
     end
     if (status == "trusted" or status == "stale") and not gated then
       local stale = liveDiffers(kind, entry, ctx)
       if stale == nil then stale = status == "stale" end
-      local payload = shown(ja, kind)
+      local payload = shown(ja, kind, true, names)
       if stale and deps.marker("stale") then payload.marker = "stale" end
       return "apply", payload
     elseif gated then

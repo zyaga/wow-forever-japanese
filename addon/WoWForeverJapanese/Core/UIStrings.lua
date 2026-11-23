@@ -36,6 +36,8 @@ local UIStrings = WFJ.UIStrings or {}
 WFJ.UIStrings = UIStrings
 
 local NAMED_KINDS = { name = true, skill = true, names = true }
+-- Labels written "<label> <an item's name>" by the client's Lua, with no template of their own.
+UIStrings.NAME_AFTER_COLON = { ITEM_SOLD_COLON = true, ITEM_PURCHASED_COLON = true }
 
 -- A game name the client fills into a line, in its Japanese when the names resolver has one (Main sets
 -- UIStrings.name while Japanese names are on), else as written. A `skill` value may be a list ("Bows, Crossbows,
@@ -436,9 +438,6 @@ local MEMO_LIMIT = 512 -- distinct line texts remembered between resets (a hover
 -- Results (hits and misses) are memoised per text; the table is dropped when it reaches MEMO_LIMIT entries.
 function Index:match(text)
   if type(text) ~= "string" or text == "" then return nil end
-  -- a remembered answer holds the names it was filled with: none is kept across a switch of the names setting
-  local japaneseNames = type(UIStrings.names) == "function" and UIStrings.names() == true
-  if self.memoNames ~= japaneseNames then self.memo, self.memoCount, self.memoNames = {}, 0, japaneseNames end
   local m = self.memo[text]
   if m then return m[1] or nil, m[2] end
   local key, args = self:matchUncached(text)
@@ -496,8 +495,6 @@ function Index:core(text, allow, list)
           elseif kinds[argIndex] == "questTitle" then
             local resolve = UIStrings.questTitle
             args[argIndex] = type(resolve) == "function" and resolve(caps[i]) or caps[i]
-          elseif NAMED_KINDS[kinds[argIndex]] then
-            args[argIndex] = named(kinds[argIndex], caps[i])
           elseif UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]] then
             args[argIndex] = self:familyList(caps[i], UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]])
           elseif kinds[argIndex] == "entryList" then
@@ -651,7 +648,9 @@ function Index:matchUncached(text)
     if restKey and self:has(restKey, "colonPrefixEntry") then
       return key, { form = "colonPrefix", rest = rest, restKey = restKey }
     end
-    return key, { form = "colonPrefix", rest = rest }
+    -- `restName`: the rest is an item's name (the mail invoice's "Item Sold: Linen Cloth (20)",
+    -- mailframe.lua:797–799). The other labels' rest is a player's name or a duration and stays.
+    return key, { form = "colonPrefix", rest = rest, restName = UIStrings.NAME_AFTER_COLON[key] }
   end
   if key and self:has(key, "list") then -- "Requires: Level |cffffffff5|r, First Aid (|cffffffff50|r)"
     local items = {}
@@ -788,8 +787,6 @@ function Index.formatArgs(_, key, en, ...) -- called as index:formatArgs; the in
   for i, kind in pairs(kinds or {}) do
     if kind == "questTitle" and type(args[i]) == "string" and type(UIStrings.questTitle) == "function" then
       args[i] = UIStrings.questTitle(args[i]) or args[i]
-    elseif NAMED_KINDS[kind] and type(args[i]) == "string" then
-      args[i] = named(kind, args[i])
     end
   end
   return args
@@ -1194,7 +1191,14 @@ function Index:fill(ja, args)
   if args.form == "number" then return ja .. " " .. args.rest end
   if args.form == "bareColon" then return ja .. ":" end
   if args.form == "colonPrefix" then
-    return ja .. " " .. (args.restKey and self.rows[args.restKey][1] or args.rest)
+    local rest = args.rest
+    if args.restKey then
+      rest = self.rows[args.restKey][1]
+    elseif args.restName then -- an item's name, with whatever the client wrote in brackets after it kept
+      local name, tail = rest:match("^(.-)(%s+%(.*%))$")
+      rest = named("name", name or rest) .. (tail or "")
+    end
+    return ja .. " " .. rest
   end
   if args.form == "seq" then -- parts in order: text kept as written, { key, args[, open, close] } filled
     local out = {}
@@ -1267,6 +1271,9 @@ function Index:fill(ja, args)
         if v == nil then return nil end
       elseif kind == "time" then
         v = self:duration(v) or v
+      elseif NAMED_KINDS[kind] and type(v) == "string" then
+        -- a game name, looked up when the line is drawn: a line already on screen follows the names choice
+        v = named(kind, v)
       end
       out[#out + 1] = v
     end
