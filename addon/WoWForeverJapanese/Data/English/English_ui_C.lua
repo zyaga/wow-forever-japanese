@@ -500,6 +500,7 @@ WFJ.Data.add("english", {
   ["ui:CLUB_REMOVED_REASON_REMOVED"] = { text = "removed=1" },
   ["ui:COD"] = { text = "d=1" },
   ["ui:COD_CONFIRMATION"] = { text = "accepting=3 cost=5 item=2 this=1" },
+  ["ui:COD_DISABLED"] = { text = "currently=2" },
   ["ui:COD_INSUFFICIENT_MONEY"] = { text = "charges=2 enough=5 money=4 pay=3" },
   ["ui:COINPICKUP_CANCEL"] = { text = "cancel=1" },
   ["ui:COLDSWAP_TEXT_CONFIRM_GAMEPAD"] = { text = "input=2 mode=3 swap=4" },

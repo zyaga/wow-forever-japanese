@@ -57,6 +57,9 @@ local UI = {
   DIALOG_CONFIRMATION_PROMPT_GAMEPAD = { "Press the button sequence to confirm.", "確認のため、ボタンを順に押してください。" },
   COMMUNITIES_DELETE_CONFIRM_STRING = { "DELETE", "削除" },
   -- the community delete (mainline/gamedialogdefs.lua:897–925): text "", OnShow writes the line with the name
+  -- a recipe form's replace question (blizzard_professionsrecipeschematicform.lua:3–21): text "", OnShow's line
+  PROFESSIONS_RECRAFTING_REPLACE_OPTIONAL = { "Do you want to replace %s?\nIt will be destroyed upon Recrafting.",
+    "%sを置き換えますか？\n再製作時に破壊されます。" },
   CONFIRM_DESTROY_COMMUNITY_UNPROMPTED = { "Are you sure you want to delete the group \"%s\"? This can't be undone.",
     "グループ「%s」を削除しますか？元に戻すことはできません。" },
   CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED = {
@@ -177,6 +180,8 @@ describe("the StaticPopup dialogs on Forever", function()
           or _G.CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED
         d.Text:SetText(line:format(club.name))
       end }
+    D.PROFESSIONS_RECRAFT_REPLACE_OPTIONAL_REAGENT = { text = "", button1 = _G.ACCEPT, button2 = _G.CANCEL,
+      OnShow = function(d, data) d.Text:SetText(_G.PROFESSIONS_RECRAFTING_REPLACE_OPTIONAL:format(data.name)) end }
     D.INVITE_COMMUNITY_MEMBER = { text = "", subText = _G.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG,
       button1 = _G.ACCEPT, button2 = _G.CANCEL,
       OnShow = function(d, club)
@@ -301,6 +306,15 @@ describe("the StaticPopup dialogs on Forever", function()
     _G.StaticPopup1.shown = false
     local e = _G.StaticPopup_Show("CONFIRM_DESTROY_COMMUNITY", nil, nil, { name = "Reyn", bnet = false })
     assert.are.equal("コミュニティ「Reyn」を削除しますか？元に戻すことはできません。", e.Text:GetText())
+  end)
+
+  it("a recipe form's replace question: OnShow's line with the reagent's name kept, and its Accept button", function()
+    local d = _G.StaticPopup_Show("PROFESSIONS_RECRAFT_REPLACE_OPTIONAL_REAGENT", nil, nil, { name = "Heavy Stone" })
+    assert.are.equal("Heavy Stoneを置き換えますか？\n再製作時に破壊されます。", d.Text:GetText())
+    assert.are.equal("承諾", d.ButtonContainer.Buttons[1]:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("Do you want to replace Heavy Stone?\nIt will be destroyed upon Recrafting.", d.Text:GetText())
+    X.alt(WFJ, false)
   end)
 
   it("the shard-transfer button's combat tooltip translates; its other tooltips are not read", function()

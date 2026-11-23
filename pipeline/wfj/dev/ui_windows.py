@@ -674,6 +674,7 @@ _OTHER_WINDOWS: dict[str, list[str]] = {
         "Blizzard_SwingTimer/Blizzard_SwingTimer.xml",
         "Blizzard_StatusTrackingBar/Mainline/HonorBar.lua",
         "Blizzard_ActionStatus/Mainline/ActionStatus.lua",
+        "Blizzard_AutoComplete/AutoComplete.lua",  # the name completion box's hint
     ],
     "inspect": [
         "Blizzard_InspectUI/Camelot/Blizzard_InspectUI.lua",
