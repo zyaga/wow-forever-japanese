@@ -116,6 +116,7 @@ WFJ.Data.add("english", {
   ["ui:LOAD_ADDON"] = { text = "load=2" },
   ["ui:LOCALE_AUDIO_LABEL"] = { text = "audio=1" },
   ["ui:LOCALE_TEXT_LABEL"] = { text = "text=1" },
+  ["ui:LOCKED"] = { text = "locked=1" },
   ["ui:LOCK_ACTIONBAR_TEXT"] = { text = "lock=2" },
   ["ui:LOCK_BATTLEFIELDMINIMAP"] = { text = "lock=2" },
   ["ui:LOCK_CURSOR"] = { text = "lock=4" },

@@ -1,6 +1,7 @@
 -- The skills panel on the Forever (camelot) client: SkillsFrame.SkillDetailFrame's empty prompt after
 -- SetEmpty and its weapon-skill headers and templates (percent values verbatim) on pooled rows after LayoutRows. The
--- detail pane's Refresh is registered by reference, so the stub drives it directly; skill names stay English.
+-- detail pane's Refresh is registered by reference, so the stub drives it directly; a skill name is never a
+-- dictionary word, and shows its name's Japanese while names are on.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local PS = require("tests.lua.spec.stub_playerspells")
@@ -305,6 +306,58 @@ describe("skills on the Forever client: client-table text", function()
       alt(false)
       assert.are.equal("クラススキル", class.Name:GetText())
     end)
+
+  it("with Japanese names on, the pane title is the skill's name in Japanese; the reveal key and the empty pane"
+    .. " give it back", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Two-Handed Swords")] = "トゥー・ハンデッド・ソーズ\tとぅー" })
+    _G.SkillsFrame:Show()
+    PS.selectSkill({ name = "Two-Handed Swords", description = "" })
+    assert.are.equal("トゥー・ハンデッド・ソーズ", detail().Title:GetText())
+    assert.are.equal("", detail().Subtitle:GetText()) -- a skill has no subtitle
+    alt(true)
+    assert.are.equal("Two-Handed Swords", detail().Title:GetText())
+    alt(false)
+    PS.selectSkill(nil)
+    assert.are.equal("", detail().Title:GetText())
+    PS.selectSkill({ name = "Nobody Known Skill", description = "" })
+    assert.are.equal("Nobody Known Skill", detail().Title:GetText())
+  end)
+
+  it("with Japanese names on, a skill's row and a sub-header show the name's Japanese, never a dictionary word;"
+    .. " the reveal key and a reused row give the English back", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Swords")] = "ソーズ\tそーず", [WFJ.Names.key("Defense")] = "ディフェンス\tでぃふぇんす",
+      [WFJ.Names.key("Common")] = "コモン\tこもん",
+    })
+    local function write(r, d) r.Content.Name.text = d.name end -- SkillsEntryMixin:Initialize
+    local function entryRow(data)
+      local row = CreateFrame("Frame")
+      row.Content = { Name = Stub.fontString("") }
+      box:initFrame(row, data, write)
+      return row
+    end
+    local swords = entryRow({ isHeader = false, name = "Swords" })
+    local defense = entryRow({ isHeader = false, name = "Defense" })
+    local sub = entryRow({ isHeader = true, isChild = true, name = "Common" })
+    local unknown = entryRow({ isHeader = false, name = "Nobody Known Skill" })
+    assert.are.equal("ソーズ", swords.Content.Name:GetText()) -- the name, not the dictionary word 片手剣
+    assert.are.equal(WFJ.Font.PATH, (swords.Content.Name:GetFont()))
+    assert.are.equal("ディフェンス", defense.Content.Name:GetText())
+    assert.are.equal("コモン", sub.Content.Name:GetText())
+    assert.are.equal("Nobody Known Skill", unknown.Content.Name:GetText())
+    alt(true)
+    assert.are.equal("Swords", swords.Content.Name:GetText())
+    alt(false)
+    assert.are.equal("ソーズ", swords.Content.Name:GetText())
+    box:initFrame(swords, { isHeader = false, name = "Nobody Known Skill" }, write)
+    assert.are.equal("Nobody Known Skill", swords.Content.Name:GetText())
+    WFJ.State.names = false
+    box:initFrame(defense, { isHeader = false, name = "Defense" }, write)
+    assert.are.equal("Defense", defense.Content.Name:GetText())
+    _G.SkillsFrame:Show()
+    _G.SkillsFrame:Hide()
+    assert.are.equal("Common", sub.Content.Name:GetText())
+  end)
 
   it("the pane title stays English even when a SkillCategory row has its English", function()
     _G.SkillsFrame:Show()

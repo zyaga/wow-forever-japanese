@@ -4,7 +4,7 @@ WFJ.Data.add("spell", {
   [369079] = { "術者に$N1回の追加攻撃を与えます。", nil, 0x0f6e178a, nil, "um", 1 },
   [369080] = { "術者の前方の円錐範囲にいる敵に$N1のダメージを与え、吹き飛ばします。", nil, 0xfed85586, nil, "um", 1 },
   [369330] = { "溶岩の雨を呼び落とし、$D2の間、$D1ごとに選択した範囲内のすべての敵を焼いて$N1のFireダメージを与えます。", "$D1ごとに$N1のFireダメージを受けています。", 0xee6af47d, 0x5a5656de, "uu", 3, 2 },
-  [369532] = { nil, "ChromaggusからIce Blockの陰に隠れています。", nil, 0xbaf588ac, "mu" },
-  [369533] = { nil, "ChromaggusからIce Blockの陰に隠れています。", nil, 0xbaf588ac, "mu" },
+  [369532] = { nil, "ChromaggusからIce Blockの陰に隠れています。", nil, 0xbaf588ac, "mu", nil, 0 },
+  [369533] = { nil, "ChromaggusからIce Blockの陰に隠れています。", nil, 0xbaf588ac, "mu", nil, 0 },
   [369982] = { nil, "攻撃速度が$N1%上昇しています。", nil, 0x8859e2db, "mu", nil, 1 },
 })

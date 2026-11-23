@@ -48,7 +48,7 @@ function H.loadChunks(relpaths, ns, addonName)
   -- a spec that loads its own files covers the Japanese quest titles: the switch on, as its own Translator (built
   -- with no `kindOff`) has it. The shipped default is covered by `uiSetup`'s `titlesOff` and by addon_load_spec,
   -- which loads the whole addon through its own loader.
-  ns.QUEST_TITLES_JAPANESE = true
+  if ns.State then ns.State.names = true end
   return ns
 end
 
@@ -101,8 +101,9 @@ H.UI_FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/Stat
   "Core/Modifier.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/SurfaceState.lua", "Core/Normalize.lua",
   "Core/Hash.lua", "Core/Collector.lua", "Core/Diag.lua", "Core/Perf.lua",
-  "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua",
-  "UI/HtmlText.lua", "UI/PlayerText.lua", "UI/IconPicker.lua",
+  "Core/Data.lua", "Core/Names.lua",
+  "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua",
+  "UI/TextWatch.lua", "UI/HtmlText.lua", "UI/PlayerText.lua", "UI/IconPicker.lua",
   "UI/LoadOnDemand.lua", "UI/HelpTooltip.lua" }
 
 -- Builds the ui index and the translator the way Main does, over `ui` = { KEY = { English, Japanese } }.
@@ -114,7 +115,7 @@ function H.uiSetup(WFJ, ui, opts)
   WFJ.Compat.init(function(name) return _G[name] end)
   WFJ.Settings.load(nil, 1, {})
   -- the specs cover the Japanese titles (the switch on) unless one asks for the shipped default, `titlesOff`
-  WFJ.QUEST_TITLES_JAPANESE = not opts.titlesOff
+  WFJ.State.names = not opts.titlesOff
   local function h1(text) return (WFJ.Hash.h32x2(WFJ.Normalize.v1(text))) end
   local rows = {}
   H._uiGlobals = {}
@@ -130,7 +131,11 @@ function H.uiSetup(WFJ, ui, opts)
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
     showsEnglish = WFJ.Modifier.english,
-    kindOff = opts.titlesOff and function(kind) return kind == "quest.title" end or nil,
+    kindOff = function(kind)
+      if kind == "name" then return not WFJ.State.names end
+      return opts.titlesOff == true and kind == "quest.title"
+    end,
+    name = function(english) if WFJ.Names then return WFJ.Names.item(english) end end,
     lookup = function(kind, id)
       if kind == "ui" then local r = rows[id]; return r and { ja = r[1], status = r[3] } end
       return opts.lookup and opts.lookup(kind, id) or nil

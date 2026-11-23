@@ -29,10 +29,29 @@
 --   OnEnter → SetText; camelot/blizzard_professionsframe.xml:13–17; shareduipaneltemplates.lua:408–422), each
 --   restricted to its one key. The profession side tabs' tooltipText is the profession's name (camelot/
 --   blizzard_professionsframe.lua:50): never registered.
--- Never touched: a slot's ProfessionName (GetProfessionInfo's name) and specialization, a secondary slot's
---   missingHeader (PROFESSIONS_COOKING / _FISHING / _FIRST_AID are profession names; `only` keeps them English),
---   the rank bar's text (TRADESKILL_NAME_RANK "%s %d/%d" joins the profession name, blizzard_professionsrankbar.lua:
---   6–21). The unlearn confirmation is a StaticPopup (ADR-015 §5).
+-- Names, while Japanese names are on (UI/NameLabels): a slot's ProfessionName (GetProfessionInfo's name, written by
+--   FormatProfession from the page's Update, camelot/blizzard_professionsbook.lua:22–28, 75), after each Update
+--   (post-hooked on the page, which OnShow and the skill events call by method, blizzard_professionsbook.lua:23–33),
+--   on surface "professions.book"; and the crafting page's title, SetTitle(professionName), under the title's own
+--   record. Nothing reads or measures ProfessionName.
+-- The rank bars' text, TRADESKILL_NAME_RANK "%s %d/%d" (ProfessionsRankBarMixin:Update writes Rank.Text, a plain
+--   label nothing measures, blizzard_professionsrankbar.lua:6–21, 141–143): the name in Japanese and the numbers as
+--   written (NameLabels.lead). A slot's StatusBar is updated by FormatProfession (camelot/
+--   blizzard_professionsbook.lua:38), so it is shown with the slot's name; the crafting page's RankBar after each of
+--   its own Update calls (blizzard_professionscrafting.lua:1038–1039), on the window's surface. Forever's frame has
+--   no orders page (camelot/blizzard_professionsframe.xml:68–79). A trial's cap note after the numbers is words:
+--   that line stays English whole.
+-- A secondary slot's missingHeader is the profession's name (PROFESSIONS_COOKING / _FISHING / _FIRST_AID, written
+--   once by the slot's inline OnLoad, camelot templates xml:137, 251, 263, 275, then only shown and hidden,
+--   blizzard_professionsbook.lua:52, 118): no dictionary word (`only` keeps it out of the header's keys). While
+--   names are on it shows the name's Japanese, under a record of its own, with the page's other words. It is a
+--   plain label on the slot's frame like the missingText under it; nothing reads or measures it.
+-- Never touched: a slot's specialization, and the spell buttons' spellString and
+--   subSpellString (the spell's name and its rank
+--   word, "Journeyman"): each button is secure and its click casts (ProfessionButtonTemplate inherits
+--   SecureFrameTemplate, blizzard_professionsbooktemplates.xml:4, 26–37; OnClick → C_SpellBook.CastSpellBookItem,
+--   blizzard_professionsbook.lua:317–352), and the client writes both in UpdateButton (:491–497). The unlearn
+--   confirmation is a StaticPopup (ADR-015 §5).
 local _, WFJ = ...
 local Professions = {}
 WFJ.Professions = Professions
@@ -47,6 +66,7 @@ local FRAME_ADDON, BOOK_ADDON = "Blizzard_Professions", "Blizzard_ProfessionsBoo
 -- hosts of a ProfessionsBookFrameTemplate: camelot's page, and the standalone book where a client builds one
 local CANDIDATES = {
   frame = { "ProfessionsFrame" }, bookPage = { "ProfessionsFrame.BookPage" },
+  rankBar = { "ProfessionsFrame.CraftingPage.RankBar" },
   overviewTab = { "ProfessionsFrame.ProfessionsOverviewTab" }, standalone = { "ProfessionsBookFrame" },
 }
 local SLOTS = { "PrimaryProfession1", "PrimaryProfession2", "SecondaryProfession1", "SecondaryProfession2",
@@ -96,7 +116,12 @@ function Professions.showStatic(hostKey)
     items[#items + 1] = { prefix .. ".header", slot.frame.missingHeader, HEADER }
     items[#items + 1] = { prefix .. ".missing", slot.frame.missingText, MISSING }
   end
-  return WFJ.Labels.showAll(BOOK, items)
+  local n = WFJ.Labels.showAll(BOOK, items)
+  -- an unlearned secondary slot's header is the profession's name
+  for _, slot in ipairs(slotsOf(hostKey)) do
+    n = n + WFJ.NameLabels.show(BOOK, hostKey .. "." .. slot.name .. ".headerName", slot.frame.missingHeader)
+  end
+  return n
 end
 
 -- A window title: after SetTitle (Labels.title's hook), SetTitleFormatted (ours) and the window's OnShow. → 1 | 0
@@ -108,16 +133,44 @@ end
 function Professions.showFrameTitle() return showTitle("frame", "title") end
 function Professions.showStandaloneTitle() return showTitle("standalone", "standalone.title") end
 
+-- A rank bar's text: the name, then the numbers as the client wrote them. → 1 | 0
+local function showRank(surface, recKey, bar)
+  local rank = type(bar) == "table" and bar.Rank or nil
+  return WFJ.NameLabels.lead(surface, recKey, type(rank) == "table" and rank.Text or nil)
+end
+
+-- Each slot's profession name and its rank bar, after the page's Update. → the number of names shown
+local function showNames(hostKey)
+  local n = 0
+  for _, slot in ipairs(slotsOf(hostKey)) do
+    local prefix = hostKey .. "." .. slot.name
+    n = n + WFJ.NameLabels.show(BOOK, prefix .. ".name", slot.frame.ProfessionName)
+    n = n + showRank(BOOK, prefix .. ".rank", slot.frame.StatusBar)
+  end
+  return n
+end
+
+-- The crafting page's rank bar, after its Update. → 1 | 0
+function Professions.onRankUpdate() return showRank(SURFACE, "crafting.rank", get("rankBar")) end
+function Professions.onPageUpdate() return showNames("bookPage") end
+function Professions.onStandaloneUpdate() return showNames("standalone") end
+
+local function hookUpdate(host, fn)
+  if type(host) == "table" and type(host.Update) == "function" then hooksecurefunc(host, "Update", fn) end
+end
+
 function Professions.onFrameShow()
   Professions.showFrameTitle()
   local page = get("bookPage")
   if type(page) == "table" and type(page.IsShown) == "function" and page:IsShown() then
     Professions.showStatic("bookPage")
+    showNames("bookPage")
   end
 end
 function Professions.onPageShow() return Professions.showStatic("bookPage") end
 function Professions.onStandaloneShow()
   Professions.showStandaloneTitle()
+  showNames("standalone")
   return Professions.showStatic("standalone")
 end
 
@@ -152,10 +205,15 @@ function Professions.setupFrame()
   local page = get("bookPage")
   hookScript(page, "OnShow", Professions.onPageShow)
   hookScript(page, "OnHide", Professions.releasePage)
+  hookUpdate(page, Professions.onPageUpdate)
+  hookUpdate(get("rankBar"), Professions.onRankUpdate)
   registerTooltips("bookPage")
   local tab = get("overviewTab")
   if type(tab) == "table" then WFJ.HelpTooltip.register(tab, TITLE) end
   Professions.onFrameShow()
+  -- the crafting page's title, the profession's name: after Labels.title's own SetTitle hook (set up just above), so
+  -- a dictionary title keeps its record
+  WFJ.NameLabels.title(SURFACE, frame, "title", false)
   return true
 end
 
@@ -172,6 +230,7 @@ function Professions.setupBook()
   end
   hookScript(book, "OnShow", Professions.onStandaloneShow)
   hookScript(book, "OnHide", Professions.release)
+  hookUpdate(book, Professions.onStandaloneUpdate)
   registerTooltips("standalone")
   Professions.onStandaloneShow()
   return true

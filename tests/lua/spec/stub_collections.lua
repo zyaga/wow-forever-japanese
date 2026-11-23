@@ -118,6 +118,9 @@ local function buildMounts(parent)
     m.ScrollBox:initFrame(row, data, function(r, d) r.name.text = d.name end)
     return row
   end
+  -- the row's initializer as a global: a selection calls it on the row itself, past the list (lua:790-815)
+  _G.MountJournal_InitMountButton = function(row, data) row.name.text = data.name end
+  function C.mountSelect(i, data) _G.MountJournal_InitMountButton(C.mountRows[i], data) end
   _G.MountJournal_UpdateMountDisplay = function() -- lua:749–757, 692–710
     local s = C.mount or {}
     info.Name.text, info.Source.text, info.Lore.text = s.name or "", s.source or "", s.lore or ""
@@ -318,6 +321,8 @@ C.UI = {
   BINDING_NAME_DISMOUNT = { "Dismount", "降りる" },
   MOUNT_UNWRAP_TOOLTIP = { "Open to receive your new mount.", "開封して新しいマウントを受け取ります。" },
   MOUNT_SUMMON_TOOLTIP = { "Summons or dismisses your selected mount.", "選択したマウントを召喚または解除します。" },
+  SPELL_FAILED_JOURNEYMAN_RIDING_REQUIREMENT = { "Requires Journeyman Riding skill",
+    "Journeyman Ridingのスキルが必要です" },
   ERR_NO_RIDING_SKILL = { "You can learn riding and obtain a mount from your riding trainer at level 10",
     "レベル10で騎乗トレーナーから騎乗を習得し、マウントを入手できます" },
   MOUNT_JOURNAL_PLAYER = { "Show Character", "キャラクターを表示" },

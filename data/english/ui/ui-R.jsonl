@@ -145,7 +145,7 @@
 {"id": "REAGENT_COST_CONSUME_SINGLE_CHARGE", "field": "text", "en": "%s (%d charge)", "hash": "e8651a57e1de0de5", "src": "db2@1.60.1.71037"}
 {"id": "REALID_BATTLETAG_FRIEND_LABEL", "field": "text", "en": "Enter email address\n(or BattleTag)", "hash": "f936eec71b4d6cf5", "src": "db2@1.60.1.71037"}
 {"id": "REALID_FRIEND_LABEL", "field": "text", "en": "Enter email address", "hash": "33e8aeb23b97e9e9", "src": "db2@1.60.1.71037"}
-{"id": "RECENT_ALLIES_CATEGORIES_FILTER_LABEL", "field": "text", "en": "Categories", "hash": "d57ae8fd3d22476e", "src": "db2@1.60.1.70009"}
+{"id": "RECENT_ALLIES_CATEGORIES_FILTER_LABEL", "field": "text", "en": "Categories", "hash": "d57ae8fd3d22476e", "src": "db2@1.60.1.71037"}
 {"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_PIN", "field": "text", "en": "Pin", "hash": "001528f93da24018", "src": "db2@1.60.1.71037"}
 {"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_SET_NOTE", "field": "text", "en": "Set Note", "hash": "3887f30a7386f36f", "src": "db2@1.60.1.71037"}
 {"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_UNPIN", "field": "text", "en": "Unpin", "hash": "e2e86bb18331e6f3", "src": "db2@1.60.1.71037"}

@@ -7,6 +7,7 @@ local RC = require("tests.lua.spec.stub_camelot_character")
 
 local FILES = {}
 for i, f in ipairs(H.UI_FILES) do FILES[i] = f end
+FILES[#FILES + 1] = "Core/Placeholders.lua" -- the class word the level line shows
 FILES[#FILES + 1] = "UI/Character.lua"
 
 local UI = {
@@ -51,6 +52,22 @@ local UI = {
   ["PetLoyalty:3"] = { "Submissive", "従順" },
   -- the parentheses around the pet's rank (camelot/paperdollframe.lua:537)
   PARENS_TEMPLATE = { "(%s)", "（%s）" },
+  -- the stat tooltips' title words, a Warrior's Spirit description and the sitting warning joined after it
+  -- (camelot/paperdollframestats.lua:264–310), and the damage tooltip's labels (paperdollframe.lua:2365–2389)
+  HEALTH = { "Health", "体力" }, RAGE = { "Rage", "怒り" }, STAT_MOVEMENT_SPEED = { "Movement Speed", "移動速度" },
+  SPELL_STAT5_NAME = { "Spirit", "精神" },
+  WARRIOR_SPIRIT_TOOLTIP = { "Increases |cFFFFFFFFHealth Regeneration|r by %d per 5 sec while not in combat",
+    "非戦闘時、|cFFFFFFFF体力回復|rが5秒ごとに%d上昇" },
+  SPIRIT_STANDING_WARNING = { "|cffBCBCBCHealth Regeneration is increased by 33% while sitting or reclining|r",
+    "|cffBCBCBC座っている間または横になっている間は、体力回復が33%上昇します|r" },
+  INVTYPE_WEAPONMAINHAND = { "Main Hand", "メインハンド" },
+  ATTACK_SPEED_SECONDS = { "Attack Speed (seconds)", "攻撃速度 (秒)" }, STAT_DPS_SHORT = { "DPS", "秒間ダメージ" },
+  -- the model's control buttons (blizzard_sharedxml/modelscenecontrolframe.lua:180–186, 209–217, 268–271)
+  ZOOM_IN = { "Zoom In", "ズームイン" }, ZOOM_OUT = { "Zoom Out", "ズームアウト" },
+  KEY_MOUSEWHEELUP = { "Mouse Wheel Up", "マウスホイール上" }, KEY_MOUSEWHEELDOWN = { "Mouse Wheel Down", "マウスホイール下" },
+  ROTATE_LEFT = { "Rotate Left", "左に回転" }, ROTATE_RIGHT = { "Rotate Right", "右に回転" },
+  ROTATE_TOOLTIP = { "Left-click on character and drag to rotate.", "キャラクターを左クリックしてドラッグすると回転します。" },
+  RESET_POSITION = { "Reset Position", "位置をリセット" },
 }
 
 -- The UIStrings entries this surface needs on camelot are in Core/UIStringKeys.lua (ARGS PLAYER_LEVEL …, the stat
@@ -125,6 +142,59 @@ describe("the character window on the Forever client", function()
     assert.are.equal("レベル58 Wolf", _G.PetCharacterLevelText:GetText())
   end)
 
+  it("with Japanese names on, the level line's class is the class's Japanese word, after a spec too; the reveal"
+    .. " key shows the English and names off keeps the class as written", function()
+    WFJ.UIStrings.word = function(text) return WFJ.State.names and WFJ.Placeholders.wordFor(text) or nil end
+    WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+    finally(function() WFJ.UIStrings.name, WFJ.UIStrings.word = nil, nil end)
+    RC.player.spec = nil
+    _G.PaperDollFrame_SetLevel()
+    assert.are.equal("レベル60 |cffc79c6eウォリアー|r", _G.CharacterLevelText:GetText())
+    alt(true)
+    assert.are.equal("Level 60 |cffc79c6eWarrior|r", _G.CharacterLevelText:GetText())
+    alt(false)
+    assert.are.equal("レベル60 |cffc79c6eウォリアー|r", _G.CharacterLevelText:GetText())
+    -- a spec with no Japanese name stays as written
+    RC.player.spec = "Protection"
+    _G.PaperDollFrame_SetLevel()
+    assert.are.equal("レベル60 |cffc79c6eProtection ウォリアー|r", _G.CharacterLevelText:GetText())
+    -- a two-word spec: the lazy split leaves its second word in the class's slot
+    RC.player.spec, RC.player.class = "Beast Mastery", "Hunter"
+    _G.PaperDollFrame_SetLevel()
+    assert.are.equal("レベル60 |cffc79c6eBeast Mastery ハンター|r", _G.CharacterLevelText:GetText())
+    RC.player.spec, RC.player.class = nil, "Warrior"
+    WFJ.State.names = false
+    _G.PaperDollFrame_SetLevel()
+    assert.are.equal("レベル60 |cffc79c6eWarrior|r", _G.CharacterLevelText:GetText())
+  end)
+
+  it("with Japanese names on, the spec in front of the class is its talent tree's Japanese name, a two-word spec"
+    .. " too; the reveal key shows the English and names off keeps the spec as written", function()
+    WFJ.UIStrings.word = function(text) return WFJ.State.names and WFJ.Placeholders.wordFor(text) or nil end
+    WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+    finally(function() WFJ.UIStrings.name, WFJ.UIStrings.word = nil, nil end)
+    WFJ.Data.name[WFJ.Names.key("Protection")] = "プロテクション\tぷろてくしょん"
+    WFJ.Data.name[WFJ.Names.key("Beast Mastery")] = "ビースト・マスタリー\tびーすと・ますたりー"
+    RC.player.spec = "Protection"
+    _G.PaperDollFrame_SetLevel()
+    assert.are.equal("レベル60 |cffc79c6eプロテクション ウォリアー|r", _G.CharacterLevelText:GetText())
+    alt(true)
+    assert.are.equal("Level 60 |cffc79c6eProtection Warrior|r", _G.CharacterLevelText:GetText())
+    alt(false)
+    assert.are.equal("レベル60 |cffc79c6eプロテクション ウォリアー|r", _G.CharacterLevelText:GetText())
+    RC.player.spec, RC.player.class = "Beast Mastery", "Hunter"
+    _G.PaperDollFrame_SetLevel()
+    assert.are.equal("レベル60 |cffc79c6eビースト・マスタリー ハンター|r", _G.CharacterLevelText:GetText())
+    -- a class the word list does not know: both slots stay as the client wrote them
+    RC.player.spec, RC.player.class = "Protection", "Tinker"
+    _G.PaperDollFrame_SetLevel()
+    assert.are.equal("レベル60 |cffc79c6eProtection Tinker|r", _G.CharacterLevelText:GetText())
+    RC.player.class = "Warrior"
+    WFJ.State.names = false
+    _G.PaperDollFrame_SetLevel()
+    assert.are.equal("レベル60 |cffc79c6eProtection Warrior|r", _G.CharacterLevelText:GetText())
+  end)
+
   it("the pet's level line with a loyalty rank: the level part and the rank in Japanese, the rank's colour kept;"
     .. " Alt shows the live English; a rank that is no PetLoyalty row stays as written", function()
     RC.player.pet = { level = 20, family = "Boar", loyalty = "Submissive" }
@@ -193,6 +263,153 @@ describe("the character window on the Forever client", function()
       tooltip = "|cffffffffStamina 25|r", tooltip2 = string.format(UI.STAT_WARRIOR_CRIT_BONUS[1]) } })
     RC.hover(rows[2])
     assert.are.equal("近接クリティカルはダメージが100%増加", left(2))
+  end)
+
+  -- the title lines as the client writes them: HIGHLIGHT_FONT_COLOR_CODE .. format(PAPERDOLLFRAME_TOOLTIP_FORMAT,
+  -- word) .. " " .. value .. FONT_COLOR_CODE_CLOSE (camelot/paperdollframe.lua:618, 643, 1409), and a buffed primary
+  -- stat's base and buff after the value (vanilla/paperdollframestats.lua:1–22)
+  it("a stat tooltip's title: the word in Japanese, the value, the base, the buff and every colour as written;"
+    .. " a Warrior's Spirit description and its sitting warning in Japanese", function()
+    local spirit = string.format(UI.WARRIOR_SPIRIT_TOOLTIP[1], 7) .. "\n\n" .. UI.SPIRIT_STANDING_WARNING[1]
+    local cases = {
+      { "Health", "|cffffffffHealth 400|r", "|cffffffff体力 400|r" },
+      { "Rage", "|cffffffffRage 100|r", "|cffffffff怒り 100|r" },
+      { "Movement Speed", "|cffffffffMovement Speed 100%|r", "|cffffffff移動速度 100%|r" },
+      { "Stamina", "|cffffffffStamina 26 (22|r|r|cff19ff19+4|r|cffffffff)|r",
+        "|cffffffffスタミナ 26 (22|r|r|cff19ff19+4|r|cffffffff)|r" },
+      { "Spirit", "|cffffffffSpirit 22 (20|r|r|cff19ff19+2|r|cffffffff)|r",
+        "|cffffffff精神 22 (20|r|r|cff19ff19+2|r|cffffffff)|r", spirit,
+        "非戦闘時、|cFFFFFFFF体力回復|rが5秒ごとに7上昇\n\n|cffBCBCBC座っている間または横になっている間は、体力回復が33%上昇します|r" },
+    }
+    for _, c in ipairs(cases) do
+      local rows = RC.setStats({ { header = "General" }, { label = c[1], value = "1", tooltip = c[2],
+        tooltip2 = c[4] } })
+      RC.hover(rows[2])
+      assert.are.equal(c[3], left(1))
+      if c[5] then assert.are.equal(c[5], left(2)) end
+      alt(true)
+      assert.are.equal(c[2], left(1))
+      if c[4] then assert.are.equal(c[4], left(2)) end
+      alt(false)
+      assert.are.equal(c[3], left(1))
+    end
+    -- translation off: the client's English, and nothing written on the next hover
+    WFJ.State.setEnabled(false)
+    assert.are.equal("|cffffffffSpirit 22 (20|r|r|cff19ff19+2|r|cffffffff)|r", left(1))
+    local rows = RC.setStats({ { header = "General" }, { label = "Health", value = "1",
+      tooltip = "|cffffffffHealth 400|r" } })
+    RC.hover(rows[2])
+    assert.are.equal("|cffffffffHealth 400|r", left(1))
+    WFJ.State.setEnabled(true)
+  end)
+
+  -- CharacterDamageFrame_OnEnter (camelot/paperdollframe.lua:2365–2389), then the weapon skill line the stats file
+  -- adds and its second Show (camelot/paperdollframestats.lua:700–733)
+  it("the damage tooltip: its labels in Japanese with their numbers; the weapon skill is a game name, Japanese"
+    .. " while names are on, the colon and the rank kept", function()
+    _G.WEAPON_SKILL_PAPERDOLLFRAME_FORMAT = "%s:"
+    WFJ.UIStrings.LABELS.SWORDS = nil -- "Swords" is no dictionary word on the client
+    WFJ.Data.name[WFJ.Names.key("Swords")] = "ソード\tそーど"
+    finally(function() _G.WEAPON_SKILL_PAPERDOLLFRAME_FORMAT = nil end)
+    local rows = RC.setStats({ { header = "General" }, { label = "Damage", value = "45-67" } })
+    rows[2]:SetScript("OnEnter", function(self)
+      local tt, fmt = _G.GameTooltip, _G.STAT_FORMAT or "%s:"
+      tt:SetOwner(self, "ANCHOR_RIGHT")
+      tt:SetText(_G.INVTYPE_WEAPONMAINHAND)
+      tt:AddDoubleLine(fmt:format(_G.ATTACK_SPEED_SECONDS), "2.60")
+      tt:AddDoubleLine(fmt:format(_G.DAMAGE), "45 - 67")
+      tt:AddDoubleLine(fmt:format(_G.STAT_DPS_SHORT), "21.5")
+      tt:Show()
+      tt:AddDoubleLine(_G.WEAPON_SKILL_PAPERDOLLFRAME_FORMAT:format("Swords"), "300/300")
+      tt:Show()
+    end)
+    local function right(i) return _G["GameTooltipTextRight" .. i]:GetText() end
+    RC.hover(rows[2])
+    assert.are.equal("メインハンド", left(1))
+    assert.are.equal("攻撃速度 (秒):", left(2))
+    assert.are.equal("2.60", right(2))
+    assert.are.equal("ダメージ:", left(3))
+    assert.are.equal("秒間ダメージ:", left(4))
+    assert.are.equal("ソード:", left(5))
+    assert.are.equal("300/300", right(5))
+    alt(true)
+    assert.are.equal("Attack Speed (seconds):", left(2))
+    assert.are.equal("DPS:", left(4))
+    assert.are.equal("Swords:", left(5))
+    alt(false)
+    assert.are.equal("ソード:", left(5))
+    WFJ.State.names = false
+    RC.hover(rows[2])
+    assert.are.equal("Swords:", left(5))
+    assert.are.equal("秒間ダメージ:", left(4))
+    WFJ.State.names = true
+    -- a line ending in a colon beside no rank is never taken for a skill
+    rows[2]:SetScript("OnEnter", function(self)
+      local tt = _G.GameTooltip
+      tt:SetOwner(self, "ANCHOR_RIGHT")
+      tt:SetText(_G.INVTYPE_WEAPONMAINHAND)
+      tt:AddDoubleLine("Swords:", "fast")
+      tt:Show()
+    end)
+    RC.hover(rows[2])
+    assert.are.equal("Swords:", left(2))
+  end)
+
+  it("the model's control buttons: title and body in Japanese though UIParent owns the tooltip; the reveal key"
+    .. " shows the English; a tooltip the button did not write is left alone", function()
+    local controls = _G.CharacterModelScene.ControlFrame
+    local cases = {
+      { controls.zoomInButton, "ズームイン", "マウスホイール上", "Zoom In", "Mouse Wheel Up" },
+      { controls.zoomOutButton, "ズームアウト", "マウスホイール下", "Zoom Out", "Mouse Wheel Down" },
+      { controls.rotateLeftButton, "左に回転", "キャラクターを左クリックしてドラッグすると回転します。", "Rotate Left",
+        "Left-click on character and drag to rotate." },
+      { controls.rotateRightButton, "右に回転", "キャラクターを左クリックしてドラッグすると回転します。", "Rotate Right",
+        "Left-click on character and drag to rotate." },
+      { controls.resetButton, "位置をリセット", nil, "Reset Position" },
+    }
+    for _, c in ipairs(cases) do
+      RC.hover(c[1])
+      assert.are.equal(_G.UIParent, _G.GameTooltip:GetOwner())
+      assert.are.equal(c[2], left(1))
+      if c[3] then assert.are.equal(c[3], left(2)) end
+      alt(true)
+      assert.are.equal(c[4], left(1))
+      if c[5] then assert.are.equal(c[5], left(2)) end
+      alt(false)
+      assert.are.equal(c[2], left(1))
+      _G.GameTooltip:Hide()
+    end
+    -- the UIParent-owned tooltip shown after it, from another writer, keeps its English
+    _G.GameTooltip:SetOwner(_G.UIParent, "ANCHOR_NONE")
+    _G.GameTooltip:SetText("Zoom In")
+    _G.GameTooltip:Show()
+    assert.are.equal("Zoom In", left(1))
+    -- UberTooltips off: the button writes nothing, and the tooltip on screen is not walked
+    RC.uberTooltips = false
+    _G.GameTooltip:SetOwner(_G.UIParent, "ANCHOR_NONE")
+    _G.GameTooltip:SetText("Rotate Left")
+    _G.GameTooltip:Show()
+    RC.hover(controls.zoomInButton)
+    assert.are.equal("Rotate Left", left(1))
+    _G.GameTooltip:Hide()
+    -- translation off writes nothing
+    RC.uberTooltips = true
+    WFJ.State.setEnabled(false)
+    RC.hover(controls.resetButton)
+    assert.are.equal("Reset Position", left(1))
+    WFJ.State.setEnabled(true)
+    assert.are.equal(0, WFJ.Character.onModelControl("moved"))
+  end)
+
+  it("another window's model buttons, made after the addon loaded, show their tooltips in Japanese too", function()
+    local button = RC.laterModelButton("ZOOM_IN", "KEY_MOUSEWHEELUP")
+    RC.hover(button)
+    assert.are.equal("ズームイン", left(1))
+    assert.are.equal("マウスホイール上", left(2))
+    alt(true)
+    assert.are.equal("Zoom In", left(1))
+    alt(false)
+    _G.GameTooltip:Hide()
   end)
 
   it("a weapon-skill row's tooltip is never walked, even when the skill name is a dictionary word, and a pooled"

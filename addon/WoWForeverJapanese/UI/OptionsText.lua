@@ -67,6 +67,16 @@ Text.T = {
   ["button.defaults"] = { en = "Defaults", ja = "初期設定に戻す" },
   ["defaults.confirm"] = { en = "Click again to reset this page", ja = "もう一度クリックでこのページを初期化" },
   ["about.intro"] = { en = "Show the welcome window again", ja = "ようこそ画面をもう一度表示" },
+  -- the welcome window's names choice, under its three cards
+  ["intro.names.ask"] = { en = "How should names show?", ja = "名前の表示は？" },
+  ["intro.names.english"] = { en = "English names", ja = "英語の名前" },
+  ["intro.names.japanese"] = { en = "Japanese names", ja = "日本語の名前" },
+  -- a chat line: Japanese names are on and some of the client's nameplates for NPCs and creatures are off
+  ["names.plates.off"] = { en = "WFJ: Some nameplates are off, so names over those heads show in English.",
+    ja = "WFJ: 一部のネームプレートがオフのため、その頭上の名前は英語で表示されます。" },
+  -- under the two answers while Japanese names is the selected one: what Confirm turns on, and why
+  ["intro.names.note"] = { en = "Names over heads use nameplates. Confirm turns them on.",
+    ja = "頭上の名前はネームプレートに表示されます。決定すると、ネームプレートをオンにします。" },
   ["section.about"] = { en = "This version", ja = "このバージョン" },
   ["section.report"] = { en = "Report something", ja = "報告する" },
   ["section.translation"] = { en = "Translation", ja = "翻訳" },

@@ -1,9 +1,9 @@
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
-local CORE = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
-  "Core/Words.lua" }
-local IDS = { "enabled", "direction",
+local CORE = { "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua",
+  "Core/Names.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua", "Core/Words.lua" }
+local IDS = { "enabled", "direction", "names.japanese",
   "modifier", "area.quests", "area.gossip", "area.itemTooltips", "area.spellTooltips",
   "area.interface", "area.books", "marker.stale", "marker.missing", "readings.enabled", "readings.glosses",
   "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books",
@@ -12,7 +12,9 @@ local IDS = { "enabled", "direction",
   "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head",
   "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.lock",
   "words.saveClick", "words.screenshot", "study.tab", "study.newPerDay", "study.combatHide", "study.sound" }
-local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["area.gossip"] = true,
+local DEFAULTS = { enabled = true, modifier = "alt",
+  ["names.japanese"] = false, -- English until the player picks
+  ["area.quests"] = true, ["area.gossip"] = true,
   ["area.itemTooltips"] = true, ["area.spellTooltips"] = true, ["area.interface"] = true, ["area.books"] = true,
   ["marker.stale"] = true,
   ["marker.missing"] = true, -- on by default
@@ -54,6 +56,18 @@ describe("Settings registry", function()
   it("returns the documented defaults on an empty WFJ_DB", function()
     S.load(nil, 1, {})
     for id, v in pairs(DEFAULTS) do assert.are.equal(v, S.get(id), id) end
+  end)
+
+  it("names.japanese switches names at once both ways, and a saved on is on from the load", function()
+    S.load(nil, 1, {})
+    assert.is_false(WFJ.State.names)
+    assert.is_true(S.set("names.japanese", true))
+    assert.is_true(WFJ.State.names)
+    assert.is_true(S.set("names.japanese", false))
+    assert.is_false(WFJ.State.names)
+    S.load({ schema = 1, settings = { ["names.japanese"] = true } }, 1, {})
+    assert.is_true(WFJ.State.names)
+    WFJ.State.setNames(false)
   end)
 
   it("rejects a wrong type / a choice outside choices and leaves the stored value", function()

@@ -88,12 +88,14 @@
 {"id": "ENDEAVOR_TASK_COMPLETED", "field": "text", "en": "Endeavor Task Completed", "hash": "973800b65cfd464a", "src": "db2@1.60.1.71037"}
 {"id": "END_BOUND_TRADEABLE", "field": "text", "en": "Performing this action will make this item non-tradeable.", "hash": "8d5aa39e90d5f60b", "src": "db2@1.60.1.71037"}
 {"id": "END_REFUND", "field": "text", "en": "Performing this action will make this item non-refundable", "hash": "8a11bc9b425e71a5", "src": "db2@1.60.1.71037"}
+{"id": "ENEMY", "field": "text", "en": "Enemy", "hash": "ca0a275068df85a9", "src": "db2@1.60.1.71037"}
 {"id": "ENERGY", "field": "text", "en": "Energy", "hash": "63336663517be3f4", "src": "db2@1.60.1.71037"}
 {"id": "ENERGY_COST", "field": "text", "en": "%s Energy", "hash": "1fb2284b70717da3", "src": "db2@1.60.1.71037"}
 {"id": "ENERGY_COST_PER_TIME", "field": "text", "en": "%s Energy, plus %s per sec", "hash": "daf19e8c0833bb8d", "src": "db2@1.60.1.71037"}
 {"id": "ENERGY_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Energy per sec", "hash": "6f9e7c567120d095", "src": "db2@1.60.1.71037"}
 {"id": "ENHANCED_TURN_STRAFE_KEYBINDINGS_BUTTON_TEXT", "field": "text", "en": "Enhanced Turn/Strafe Keys", "hash": "fdea9aa948f4f876", "src": "db2@1.60.1.71037"}
 {"id": "ENTERING_COMBAT", "field": "text", "en": "Entering Combat", "hash": "16c5cd2544087cd0", "src": "db2@1.60.1.71037"}
+{"id": "ENTER_CHARACTER_NAME_OR_BATTLETAG", "field": "text", "en": "Enter character name or BattleTag", "hash": "10c5df0d38f07657", "src": "db2@1.60.1.71037"}
 {"id": "ENTER_CODE", "field": "text", "en": "Please enter code:", "hash": "3df93bceaa2a760b", "src": "db2@1.60.1.71037"}
 {"id": "ENTER_FILTER_NAME", "field": "text", "en": "Enter filter name:", "hash": "e7bd06f83cbb92a2", "src": "db2@1.60.1.71037"}
 {"id": "ENTER_LFG", "field": "text", "en": "Enter", "hash": "ca0e10b8a46a7ee9", "src": "db2@1.60.1.71037"}

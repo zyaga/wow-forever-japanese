@@ -226,7 +226,7 @@ def rule_placeholders(store: Store, english: Store | None = None) -> list[str]:
 # Argument kinds whose capture is free text (UIStrings.ARGS in Core/UIStringKeys.lua): a lazy split between
 # two of them
 # depends on the order the Japanese puts them back in. A `%s` without a kind is a number; `word` is one word.
-FREE_TEXT_KINDS = {"text", "words", "skill", "time", "verbatim"}
+FREE_TEXT_KINDS = {"text", "words", "skill", "time", "verbatim", "class", "spec", "classes"}
 _ARGS_BLOCK = re.compile(r"UIStrings\.ARGS = \{(.*?)\n\}", re.S)
 _ARGS_ENTRY = re.compile(r"([A-Z][A-Z0-9_]+) = \{([^}]*)\}")
 

@@ -214,6 +214,9 @@ function Social.loadWhoList()
   -- the filter DropdownButton (wholist.xml:184): OpenMenu regenerates, then RegisterMenu(root)
   local dropdown = CreateFrame("Button")
   function dropdown.RegisterMenu(self, root) self.root = root end
+  -- its own text is FILTER, written again by each UpdateText (WowStyle1FilterDropdownTemplate)
+  dropdown.Text = Stub.fontString("Filter")
+  function dropdown.UpdateText(self) self.Text.text = "Filter" end
   frame.FilterDropdown = dropdown
   Social.who = { total = 0, rows = {} }
   Social.whoRows = {}

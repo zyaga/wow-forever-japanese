@@ -90,11 +90,18 @@ local function installUnitFrames()
     tt:Show()
   end
   _G.issecretvalue = function(v) return v == SECRET end
+  -- the client's one writer of a unit frame's name: self.name:SetText(GetUnitName(self.unit, isParty))
+  -- [verified: mainline/unitframe.lua:144–166], called by name from the target, focus, pet and party frames
+  _G.UnitFrame_Update = function(self) if self.name then self.name.text = self.nextName end end
+  -- the writer of a nameplate's and a raid-style frame's name: frame.name:SetText(GetUnitName(frame.unit, …))
+  -- [verified: shared/compactunitframe.lua:826–857], called by name
+  _G.CompactUnitFrame_UpdateName = function(frame) frame.name.text = frame.nextName end
 end
 
 local GLOBALS = { "TargetFrame", "FocusFrame", "Boss1TargetFrame", "PartyFrame", "CompactPartyFrame",
   "CompactUnitFrame_UpdateStatusText", "CompactUnitFrame_UpdateCenterStatusIcon",
-  "CompactRaidGroup_InitializeForGroup", "CompactPartyFrame_Generate", "UnitFrame_UpdateTooltip", "issecretvalue" }
+  "CompactRaidGroup_InitializeForGroup", "CompactPartyFrame_Generate", "UnitFrame_UpdateTooltip", "issecretvalue",
+  "UnitFrame_Update", "UnitIsPlayer", "UnitPlayerControlled", "CompactUnitFrame_UpdateName" }
 
 describe("the unit frames' fixed words on Forever", function()
   local WFJ
@@ -140,6 +147,97 @@ describe("the unit frames' fixed words on Forever", function()
       assert.are.equal(en("DEAD"), _G.TargetFrame.TargetFrameContent.TargetFrameContentMain.HealthBarsContainer
         .DeadText:GetText())
     end)
+
+  describe("with names on", function()
+    local frame
+    before_each(function()
+      _G.UnitIsPlayer = function(unit) return unit == "party1" end
+      _G.UnitPlayerControlled = function(unit) return unit == "party1" or unit == "pet" end
+      WFJ.Data.add("name", { [WFJ.Names.key("Kobold Vermin")] = "コボルド・バーミン\tこぼるど・ばーみん" })
+      WFJ.State.setNames(true)
+      frame = { name = Stub.fontString(""), unit = "target", nextName = "Kobold Vermin" }
+    end)
+    after_each(function() WFJ.State.setNames(false) end)
+
+    it("a creature's name shows its Japanese after the client's update; the reveal key gives it back", function()
+      _G.UnitFrame_Update(frame)
+      assert.are.equal("コボルド・バーミン", frame.name:GetText())
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("Kobold Vermin", frame.name:GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("コボルド・バーミン", frame.name:GetText())
+      frame.nextName = "Nobody Known" -- another target, with no Japanese
+      _G.UnitFrame_Update(frame)
+      assert.are.equal("Nobody Known", frame.name:GetText())
+    end)
+
+    it("a player's and a pet's name stay as written, even one a creature shares", function()
+      frame.unit = "party1"
+      _G.UnitFrame_Update(frame)
+      assert.are.equal("Kobold Vermin", frame.name:GetText())
+      frame.unit = "pet"
+      _G.UnitFrame_Update(frame)
+      assert.are.equal("Kobold Vermin", frame.name:GetText())
+      assert.are.equal(0, frame.name.calls.addonSetText)
+    end)
+
+    it("a creature's nameplate shows its Japanese after the client's update; a player's stays", function()
+      local plate = { name = Stub.fontString(""), unit = "nameplate3", nextName = "Kobold Vermin" }
+      _G.CompactUnitFrame_UpdateName(plate)
+      assert.are.equal("コボルド・バーミン", plate.name:GetText())
+      plate.nextName = "Nobody Known" -- the plate reused for a creature with no Japanese
+      _G.CompactUnitFrame_UpdateName(plate)
+      assert.are.equal("Nobody Known", plate.name:GetText())
+      local raid = { name = Stub.fontString(""), unit = "party1", nextName = "Kobold Vermin" }
+      _G.CompactUnitFrame_UpdateName(raid)
+      assert.are.equal("Kobold Vermin", raid.name:GetText())
+      assert.are.equal(0, raid.name.calls.addonSetText)
+    end)
+
+    -- A critter is a creature like any other, and a short name that is also a common word is still a name. A pet
+    -- with the same name is its player's and stays.
+    it("a critter's nameplate shows its Japanese; a pet named the same stays as written", function()
+      WFJ.Data.add("name", { [WFJ.Names.key("Cat")] = "キャット\tきゃっと" })
+      local plate = { name = Stub.fontString(""), unit = "nameplate40", nextName = "Cat" }
+      _G.CompactUnitFrame_UpdateName(plate)
+      assert.are.equal("キャット", plate.name:GetText())
+      local pet = { name = Stub.fontString(""), unit = "pet", nextName = "Cat" }
+      _G.CompactUnitFrame_UpdateName(pet)
+      assert.are.equal("Cat", pet.name:GetText())
+      assert.are.equal(0, pet.name.calls.addonSetText)
+    end)
+
+    it("a nameplate the client keeps from addons is never looked into, and a hidden name is never read", function()
+      -- a forbidden frame: any field but IsForbidden raises, as on the client
+      local forbidden = setmetatable({}, { __index = function(_, k)
+        if k == "IsForbidden" then return function() return true end end
+        if k == "name" then return { text = "x" } end -- the client's own writer may read it
+        error("addon code looked into a forbidden nameplate: " .. tostring(k))
+      end })
+      rawset(forbidden, "nextName", "Kobold Vermin")
+      assert.has_no.errors(function() _G.CompactUnitFrame_UpdateName(forbidden) end)
+      local plate = { name = Stub.fontString(""), unit = "nameplate3", nextName = SECRET }
+      assert.has_no.errors(function() _G.CompactUnitFrame_UpdateName(plate) end)
+      assert.are.equal(SECRET, plate.name.text)
+    end)
+
+    it("a name the client hides is never read, and a frame with no name or no unit raises nothing", function()
+      frame.nextName = SECRET
+      assert.has_no.errors(function() _G.UnitFrame_Update(frame) end)
+      assert.are.equal(SECRET, frame.name.text)
+      assert.has_no.errors(function()
+        _G.UnitFrame_Update({ unit = "target" })
+        _G.UnitFrame_Update({ name = Stub.fontString("x"), nextName = "Kobold Vermin" })
+      end)
+    end)
+  end)
+
+  it("with names off a unit frame's name is never written", function()
+    _G.UnitIsPlayer = function() return false end
+    local frame = { name = Stub.fontString(""), unit = "target", nextName = "Kobold Vermin" }
+    _G.UnitFrame_Update(frame)
+    assert.are.equal(0, frame.name.calls.addonSetText)
+  end)
 
   it("a compact frame's status text: the two words translate, numbers and secret values are never read", function()
     local f = compactFrame()

@@ -124,6 +124,8 @@ WFJ.Data.add("reading", {
   ["ui:TIME_PLAYED_LEVEL"] = { text = "この=この=8884 レベル=レベル=35510 プレイ=プレイ=34787 時間=じかん=87781" },
   ["ui:TIME_PLAYED_TOTAL"] = { text = "総=そう=110357 プレイ=プレイ=34787 時間=じかん=87781" },
   ["ui:TIME_REMAINING"] = { text = "残り時間=のこりじかん=93091" },
+  ["ui:TIME_TWELVEHOURAM"] = { text = "午前=ごぜん=155486" },
+  ["ui:TIME_TWELVEHOURPM"] = { text = "午後=ごご=155487" },
   ["ui:TIME_UNTIL_DELETED"] = { text = "郵便=ゆうびん=131762 削除される=さくじょされる=51019 時間=じかん=87781" },
   ["ui:TIME_UNTIL_RETURNED"] = { text = "郵便=ゆうびん=131762 返送される=へんそうされる=127993 時間=じかん=87781" },
   ["ui:TITLE_DOESNT_EXIST"] = { text = "その=その=14047 称号=しょうごう=106806 持っていません=もっていません=81877" },

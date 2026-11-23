@@ -85,6 +85,30 @@ describe("the NPC windows: gossip chrome, merchant, bank, bags", function()
       assert.are.equal(0, _G.GossipFrameTitleText.calls.SetText)
     end)
 
+    it("with names on the NPC's name on the title shows its Japanese; the reveal key and closing give it back",
+    function()
+      _G.UnitIsPlayer = function() return false end
+      finally(function() _G.UnitIsPlayer = nil; WFJ.State.setNames(false) end)
+      WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+      WFJ.State.setNames(true)
+      initModules()
+      NPC.gossip({ { buttonType = 1, text = "Well met." } }, "Thrall")
+      assert.are.equal("スロール", _G.GossipFrameTitleText:GetText())
+      alt(true)
+      assert.are.equal("Thrall", _G.GossipFrameTitleText:GetText())
+      alt(false)
+      assert.are.equal("スロール", _G.GossipFrameTitleText:GetText())
+      _G.GossipFrame:Hide()
+      assert.are.equal("Thrall", _G.GossipFrameTitleText:GetText())
+      -- an NPC with no Japanese name, and a player's window, keep the client's text
+      NPC.gossip({ { buttonType = 1, text = "Well met." } }, "Nobody Known")
+      assert.are.equal("Nobody Known", _G.GossipFrameTitleText:GetText())
+      _G.GossipFrame:Hide()
+      _G.UnitIsPlayer = function() return true end
+      NPC.gossip({ { buttonType = 1, text = "Well met." } }, "Thrall")
+      assert.are.equal("Thrall", _G.GossipFrameTitleText:GetText())
+    end)
+
     it("trivial / ignored quest rows show the Japanese suffix with the title verbatim; other rows are untouched",
       function()
         initModules()

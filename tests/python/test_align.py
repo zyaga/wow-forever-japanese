@@ -323,3 +323,93 @@ def test_the_japanese_carries_the_tail_as_one_trailing_marker():
     # a chain element written out by the drafter (altered, dropped or added) is refused
     assert "tail_chain" in align.tail_problems(_LANGUAGES, "次の言語：$?s668[\r\n$@spellname668][]")
     assert "tail_chain" in align.tail_problems(_LANGUAGES, "次の言語：$@spellname668$T")
+
+
+# A spell the character does not know: the client prints its own words where a duration belongs, leaves out
+# the text of an ability the spell grants, and a few templates glue a value to a word. These are the twins of
+# the addon's readers (Core/Align.lua); the shared vectors hold the two to the same answers.
+
+
+def test_a_worded_duration_goes_only_into_a_slot_that_can_take_words():
+    # "Lasts until canceled.": the slot is followed by words that read on
+    thorns = "攻撃者に$N1のNatureダメージを与えます。$D1持続します。"
+    assert align.worded_slots(thorns, {1}) == thorns
+    # "over until canceled": the particle written for a number and its unit goes
+    burn = "敵を焼いてArcaneダメージを与え、さらに$D1かけて追加のダメージを与えます。"
+    assert align.worded_slots(burn, {1}) == "敵を焼いてArcaneダメージを与え、さらに$D1追加のダメージを与えます。"
+    # "for until canceled … every 5.2 sec": only the worded slot is looked at
+    whirl = "$D1の間、近くの敵すべてを攻撃し、$D2ごとに$N2の追加ダメージを与えます。"
+    assert align.worded_slots(whirl, {1}) == whirl
+    assert align.worded_slots(whirl, {2}) is None
+    for closed in ("$D1ごとにArcaneダメージを受けています。", "$D1後に爆発します。", "$D1以内に唱えます。",
+                   "詠唱時間を$D1短縮します。", "$D1"):
+        assert align.worded_slots(closed, {1}) is None, closed
+    assert [align.worded_context("$D1" + after, 3) for after in ("の間", "かけて", "ごとに")] == [
+        "keep", "drop", "closed"]
+
+
+def test_a_granted_ability_the_client_left_out_keeps_its_heading_and_icon():
+    ja = "Wyvern Strikeのアビリティを得ます：\n\n$I1\n対象に$N1のダメージを与えます。"
+    assert align.granted_head(ja, "Gain the Wyvern Strike ability:\r\n\r\n|T135125:24|t\r\n") == (
+        "Wyvern Strikeのアビリティを得ます：\n\n$I1")
+    rune = "胸部にBurnoutのルーンを刻みます：\n\n$I1\n呪文のクリティカル率が$N1%上昇します。"
+    assert align.granted_head(rune, "Engrave your chest with the Burnout rune:\r\n\r\n|T236207:24|t\r\n") == (
+        "胸部にBurnoutのルーンを刻みます：\n\n$I1")
+    # the live line carries the ability's text, or has no icon, or two: the whole check
+    assert align.granted_head(ja, "Gain the Wyvern Strike ability:\r\n\r\n|T135125:24|t\r\nDeals 40.") is None
+    assert align.granted_head(ja, "Gain the Wyvern Strike ability:") is None
+    assert align.granted_head(ja, "Gain the ability:\r\n\r\n|T1:24|t |T2:24|t") is None
+    # the Japanese is not a heading, the icon and more text on its own line
+    assert align.granted_head("Wyvern Strikeのアビリティを得ます：\n\n$I1", "Gain:\r\n\r\n|T1:24|t") is None
+    assert align.granted_head("$I1 Quick Draw：$N1のダメージ。", "x |T1:24|t") is None
+    # another icon before `$I1`: not one heading and one icon
+    assert align.granted_head("$N1個を得ます：\n\n$I2\n本文。\n\n$I1\n本文。", "Gain 2:\r\n\r\n|T1:24|t") is None
+    # a heading with no value slot has no count, as before
+    assert align.granted_count(align.granted_head(ja, "Gain the Wyvern Strike ability:\r\n\r\n|T1:24|t") or "") is None
+
+
+def test_a_granted_abilitys_heading_with_values_is_held_to_its_own_slots():
+    # spells 401417 and 412510 as the client prints them for a character without Temporal Beacon
+    temporal = ("$D1かけて体力を$N1回復し、$D2の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n$I1\r\n"
+                "対象の時空間の位置を記録します。術者が与えたArcaneダメージの$N4%が変換されます。")
+    live = ("Heals the target for 450 health over 12 sec and applies Temporal Beacon for 60 sec. \r\n\r\n"
+            "Temporal Beacon\r\n|T237538:24|t\r\n")
+    head = align.granted_head(temporal, live)
+    assert head == "$D1かけて体力を$N1回復し、$D2の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n$I1"
+    assert align.granted_count(head) == 3
+    # 450, 12 and 60, the heading's three slots in its order (the addon reads the line with its icon taken out)
+    assert align.live_values(live.split("|T")[0]) == ["450", "12", "60"]
+    party = ("対象のプレイヤーから$N1ヤード以内にいる、そのプレイヤーのパーティーメンバー全員を$D1かけて体力を$N2回復し、"
+             "それぞれに$D2の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n$I1\r\n本文の$N5%。")
+    party_live = ("Heals all of target player's party members within 40 yards of target player for 300 health over"
+                  " 12 sec and applies Temporal Beacon to each target for 30 sec.\r\n\r\nTemporal Beacon\r\n"
+                  "|T237538:24|t")
+    assert align.granted_count(align.granted_head(party, party_live) or "") == 4
+    # a slot used twice is one value
+    assert align.granted_count("$N1と$N1の$D1を得ます：\n\n$I1") == 2
+
+
+def test_the_loose_reading_takes_a_glued_value_and_never_a_names_number():
+    lines = {
+        "Deal 294 Physical damage and stun for1.5 sec. Trolls take 2 times as much damage and stun duration.":
+            (["294", "2"], ["294", "1.5", "2"]),
+        "Unleash stored chronomantic energy to instantly heal a friendly target for 79to 118.":
+            (["118"], ["79", "118"]),
+        "Inflicts140 Nature damage per 2 sec. Deaks 2 times as much damage to Trolls.":
+            (["2", "2"], ["140", "2", "2"]),
+        "Blasts a target for 19 to 37 Nature damage. Mechanical targets take 2x damage.":
+            (["19～37"], ["19～37", "2"]),
+        "A malfunction has occurred. Every 2s arcane energy is released dealing damage to players in a nearby "
+        "area.": ([], ["2"]),
+        "Consuming a brand deals -24 to -21 Shadow damage.": (["24", "21"], ["-24～-21"]),
+    }
+    for text, (strict, loose) in lines.items():
+        assert align.live_values(text) == strict, text
+        assert align.live_values(text, loose=True) == loose, text
+    # a name's number is no shape the loose reading takes
+    for name in ("Mk2", "Mace2H", "247x128", "G00 DV-1B3", "AQ40", "x2", "30sec", "Field Repair Bot 74A"):
+        text = f"Deals 5 damage with the {name}."
+        assert align.live_values(text, loose=True) == align.live_values(text) == ["5"], name
+    # and a line with nothing glued reads the same both ways
+    plain = "Deals 1,200 damage over 18.5 sec. to 3 targets, then 14 to 22 more."
+    assert align.live_values(plain, loose=True) == align.live_values(plain) == ["1200", "18.5", "3", "14～22"]

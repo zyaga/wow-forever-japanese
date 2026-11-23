@@ -1,7 +1,8 @@
 -- UI/IntroWindow.lua: the welcome window (docs/systems/settings.md). Core/Intro decides when it is owed (once to
 -- every player); Main hands it IntroWindow.request, which opens it. It can be opened again from the settings pages
 -- and /wfj intro. Two pages. The first asks what the player is here for: three cards (study Japanese, study English,
--- just play), the selected one described under them, and Confirm, which writes that choice's ordinary settings.
+-- just play), the selected one described under them, then how names should show (English names or Japanese names,
+-- each with one example name as it will look), and Confirm, which writes those choices' ordinary settings.
 -- The second says what to know to start: the reveal key (named as set, with its Change button), the word cards, the
 -- minimap button and, while no voice pack has loaded, the voice download with its address to copy.
 -- It is the one addon window that shows both languages at once: the player has not learned the reveal key yet, so
@@ -29,7 +30,15 @@ local watcher -- the frame that hears the cinematic events, made by the first re
 
 IntroWindow.step = "pick" -- "pick": the question and its three cards; "info": what the choice means
 IntroWindow.selected = nil -- the card clicked on the first page; nothing is written until Confirm
+IntroWindow.names = false -- the names choice clicked on the first page: Japanese names, or the client's English
+-- The example both name options show: one NPC's name as the client writes it and as the name tables spell it. The
+-- Japanese is read from the tables, so it is drawn as it will look; the spelling here stands in should the name
+-- ever lose its line.
+local EXAMPLE, EXAMPLE_JA = "Marshal McBride", "マーシャル・マクブライド"
+local NAME_GAP, NAME_H = 12, 54
+local NAME_W = math.floor((TEXT_WIDTH - NAME_GAP) / 2)
 local ABOUT = 62 -- room under the cards for what the selected one does: three points
+local NAMES_NOTE = 36 -- room under the names answers for the note on Japanese names: a line in each language
 local BULLET = { ja = "・", en = "•  " }
 local PURPOSES = { "ja", "en", "play" }
 -- The client's own icons, one per choice: a scroll, a book, a sword.
@@ -128,6 +137,30 @@ local function card(p, purpose)
   return c
 end
 
+-- A names option: its label in both languages and, under it, the example name as that option shows it. Lit like a
+-- choice card while it is the one selected; a click only selects it.
+local function nameCard(p, japanese)
+  local c = CreateFrame("Button", nil, p, "BackdropTemplate")
+  c:SetSize(NAME_W, NAME_H)
+  if c.SetBackdrop then
+    c:SetBackdrop({ bgFile = "Interface\\Buttons\\WHITE8x8", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+      edgeSize = 14, insets = { left = 3, right = 3, top = 3, bottom = 3 } })
+  end
+  local en, ja = Text.get(japanese and "intro.names.japanese" or "intro.names.english")
+  c.label = c:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+  c.label:SetPoint("TOP", 0, -9)
+  W.put(c.label, ja .. " / " .. en, 11)
+  c.label:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
+  c.example = c:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+  c.example:SetPoint("TOP", c.label, "BOTTOM", 0, -7)
+  c.example:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
+  c:SetScript("OnEnter", function(self) edge(self, true) end)
+  c:SetScript("OnLeave", function(self) edge(self, self.picked) end)
+  c:SetScript("OnClick", function() IntroWindow.selectNames(japanese) end)
+  edge(c, false)
+  return c
+end
+
 local function build()
   local f = W.toolWindow("WFJIntro", WIDTH, 300)
   -- where the client opens its own popups, clear of the character [verified: forever-ui-1.60.1.70425
@@ -159,6 +192,19 @@ local function build()
   f.cards = {}
   for _, purpose in ipairs(PURPOSES) do f.cards[purpose] = card(a, purpose) end
   f.about = line(a, math.floor(TEXT_WIDTH / 2) - 6) -- two lists side by side: Japanese, then English
+  -- how names show: the question and its two answers, side by side
+  f.namesAsk = line(a)
+  en, ja = Text.get("intro.names.ask")
+  W.put(f.namesAsk.ja, ja, 13)
+  W.put(f.namesAsk.en, en, 11)
+  f.namesAsk.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
+  f.nameCards = { [false] = nameCard(a, false), [true] = nameCard(a, true) }
+  -- under them, only while Japanese names is the selected answer: what Confirm will turn on
+  f.namesNote = line(a)
+  en, ja = Text.get("intro.names.note")
+  W.put(f.namesNote.ja, ja, 11)
+  W.put(f.namesNote.en, en, 11)
+  f.namesNote.ja:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
   en, ja = Text.get("intro.confirm")
   f.confirm = W.button(a, ja .. " / " .. en, nil, 150, function() IntroWindow.pick(IntroWindow.selected) end)
   -- beside the Confirm button: the Japanese, with its English under it
@@ -226,6 +272,24 @@ local function layoutPick(f)
   f.about.en:ClearAllPoints()
   f.about.en:SetPoint("TOPLEFT", f.about.ja, "TOPLEFT", math.floor(TEXT_WIDTH / 2) + 6, 0)
   used = used + 16 + ABOUT
+  -- the names question on one line pair, then its two answers side by side
+  f.namesAsk.ja:ClearAllPoints()
+  f.namesAsk.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 10))
+  f.namesAsk.en:ClearAllPoints()
+  f.namesAsk.en:SetPoint("TOPLEFT", f.namesAsk.ja, "BOTTOMLEFT", 0, -PAIR)
+  used = used + 10 + height(f.namesAsk.ja) + PAIR + height(f.namesAsk.en)
+  for i, japanese in ipairs({ false, true }) do
+    local c = f.nameCards[japanese]
+    c:ClearAllPoints()
+    c:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT + (i - 1) * (NAME_W + NAME_GAP), -(used + 8))
+  end
+  used = used + 8 + NAME_H
+  -- the note has a fixed space, so the window keeps its size from one answer to the other
+  f.namesNote.ja:ClearAllPoints()
+  f.namesNote.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 8))
+  f.namesNote.en:ClearAllPoints()
+  f.namesNote.en:SetPoint("TOPLEFT", f.namesNote.ja, "BOTTOMLEFT", 0, -3)
+  used = used + 8 + NAMES_NOTE
   f.confirm:ClearAllPoints()
   f.confirm:SetPoint("TOPRIGHT", a, "TOPLEFT", LEFT + TEXT_WIDTH, -(used + 16))
   f.later.ja:ClearAllPoints()
@@ -319,6 +383,15 @@ function IntroWindow.refill()
     c.picked = IntroWindow.selected == purpose
     edge(c, c.picked)
   end
+  -- the example as each names option shows it: the client's English, and the name tables' Japanese for it
+  W.put(f.nameCards[false].example, EXAMPLE, 13)
+  W.put(f.nameCards[true].example, (WFJ.Names and WFJ.Names.of(EXAMPLE)) or EXAMPLE_JA, 13)
+  for japanese, c in pairs(f.nameCards) do
+    c.picked = (IntroWindow.names == true) == japanese
+    edge(c, c.picked)
+  end
+  W.setShown(f.namesNote.ja, IntroWindow.names == true)
+  W.setShown(f.namesNote.en, IntroWindow.names == true)
   local aboutEn, aboutJa = Text.get("intro.about." .. (IntroWindow.selected or "ja"))
   W.put(f.about.ja, BULLET.ja .. aboutJa:gsub("\n", "\n" .. BULLET.ja), 13)
   W.put(f.about.en, BULLET.en .. aboutEn:gsub("\n", "\n" .. BULLET.en), 12)
@@ -345,7 +418,13 @@ function IntroWindow.select(purpose)
   IntroWindow.refill()
 end
 
--- Confirm: the selected choice's settings, then the second page.
+-- A names option clicked on the first page: it lights up. Nothing is written.
+function IntroWindow.selectNames(japanese)
+  IntroWindow.names = japanese == true
+  IntroWindow.refill()
+end
+
+-- Confirm: the selected choice's settings and the names choice, then the second page.
 function IntroWindow.pick(purpose)
   local w = WRITES[purpose]
   -- confirming the choice the settings already match must not undo a study tab the player hid
@@ -353,6 +432,7 @@ function IntroWindow.pick(purpose)
   WFJ.Settings.set("direction", w.direction)
   WFJ.Settings.set("readings.enabled", w.cards)
   if changed then WFJ.Settings.set("study.tab", w.tab) end
+  WFJ.Settings.set("names.japanese", IntroWindow.names == true)
   IntroWindow.show("info")
 end
 
@@ -366,6 +446,7 @@ function IntroWindow.open(noVoice)
   local asking = IntroWindow.asking
   IntroWindow.asking = false
   IntroWindow.selected = asking and "ja" or shownPurpose() or "ja"
+  IntroWindow.names = WFJ.Settings.get("names.japanese") == true -- English until the player picks Japanese
   IntroWindow.show("pick")
   relayoutWhenFonts(f)
   f:Show()
@@ -390,6 +471,13 @@ local function inCinematic()
   return type(playing) == "function" and playing() == true
 end
 
+-- What waited for this window (IntroWindow.afterClose) has its turn, once.
+local function released()
+  local after = IntroWindow.after
+  IntroWindow.after = nil
+  if after then after() end
+end
+
 local function openNow()
   if IntroWindow.closedByPlayer then return end
   if inCinematic() then
@@ -401,6 +489,9 @@ local function openNow()
   IntroWindow.waiting = false
   -- later than the login step, so the load guard is called again here: a failure is recorded as `intro`
   if WFJ.step then WFJ.step("intro", IntroWindow.open) else IntroWindow.open() end
+  IntroWindow.owed = false
+  -- a window that failed to open will never be closed: nothing waits for it
+  if not (IntroWindow.frame and IntroWindow.frame:IsShown()) then released() end
 end
 
 local function onEvent(_, event)
@@ -415,6 +506,7 @@ end
 -- Core/Intro's show: opens it a moment later, through any cinematic.
 function IntroWindow.request()
   IntroWindow.asking = true
+  IntroWindow.owed = true -- asked for, not opened yet
   if not watcher then
     watcher = CreateFrame("Frame")
     watcher:RegisterEvent("CINEMATIC_START")
@@ -434,5 +526,16 @@ function IntroWindow.hidden()
       watcher:UnregisterEvent("CINEMATIC_START")
       watcher:UnregisterEvent("CINEMATIC_STOP")
     end
+    released()
   end)
+end
+
+-- Something else owed at the same login waits its turn: `fn` runs once, when the player has closed this window.
+-- Two windows opened at once would lie on top of each other.
+function IntroWindow.afterClose(fn)
+  if IntroWindow.owed or (IntroWindow.frame and IntroWindow.frame:IsShown()) then
+    IntroWindow.after = fn
+  else
+    fn() -- nothing to wait for: it never opened, or is closed already
+  end
 end

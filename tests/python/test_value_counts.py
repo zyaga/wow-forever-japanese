@@ -40,24 +40,26 @@ def test_a_filled_line_ships_the_count_of_its_english(tmp_path):
     })
     lines = [
         _line(1, NEW_JA), _line(2, "体力を$N1回復します。"), _line(2, "$N2秒ごとに体力を$N1回復。", field="aura"),
-        _line(3, "道を開きます。"),            # nothing filled in: no count
+        _line(3, "道を開きます。"),            # nothing filled in: held to an English with no number
         _line(4, "体力を$N1回復します。"),       # no English in the store: no count
         _line(5, "$N1のダメージを与え、$D1かけて$N2回復します。"),  # another spell's text is counted in
     ]
     got = generate.value_counts("spell", lines, store)
-    assert got == {(1, "description"): 4, (2, "description"): 1, (2, "aura"): 2, (5, "description"): 3}
+    assert got == {(1, "description"): 4, (2, "description"): 1, (2, "aura"): 2, (3, "description"): 0,
+                   (5, "description"): 3}
     rows = lua_writer.rows("spell", lines, values=got)
     assert rows[1][-2:] == ['"um"', "4"]                 # the aura has none: left off
     assert rows[2][-3:] == ['"uu"', "1", "2"]
-    assert rows[3][-1] == '"um"' and rows[4][-1] == '"um"'  # no count: the row is as it always was
-    assert rows[3] == lua_writer.rows("spell", lines)[3]
+    assert rows[3][-2:] == ['"um"', "0"]  # a client line that gained a number no longer passes
+    assert rows[4][-1] == '"um"'  # no count: the row is as it always was
+    assert rows[4] == lua_writer.rows("spell", lines)[4]
 
 
 def test_a_count_for_the_second_field_only_keeps_its_place(tmp_path):
     store = _english(tmp_path, {(2, "description"): "Opens the way.", (2, "aura"): "Heals $s1."})
     lines = [_line(2, "道を開きます。"), _line(2, "$N1回復。", field="aura")]
     rows = lua_writer.rows("spell", lines, values=generate.value_counts("spell", lines, store))
-    assert rows[2][-3:] == ['"uu"', "nil", "1"]
+    assert rows[2][-3:] == ['"uu"', "0", "1"]
 
 
 def test_a_stale_line_numbered_for_other_english_never_fits(tmp_path):
@@ -106,4 +108,5 @@ def test_no_shipped_line_is_numbered_past_its_english():
         past = [k for k, n in counts.items()
                 if by[k]["status"] != "stale" and max(align.fill_indices(by[k]["ja"]), default=0) > n]
         assert past == [], f"{type_}: {past[:5]}"
-        assert all(n == generate.NEVER_FITS or n >= 1 for n in counts.values())
+        # a gated line with no placeholder may be held to an English that prints no number
+        assert all(n == generate.NEVER_FITS or n >= 0 for n in counts.values())

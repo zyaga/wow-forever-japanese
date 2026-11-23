@@ -123,6 +123,7 @@
 {"id": "LOAD_ADDON", "field": "text", "en": "Load AddOn", "hash": "356cacdff3428c5d", "src": "db2@1.60.1.71037"}
 {"id": "LOCALE_AUDIO_LABEL", "field": "text", "en": "Audio", "hash": "84c3282ac71470ab", "src": "db2@1.60.1.71037"}
 {"id": "LOCALE_TEXT_LABEL", "field": "text", "en": "Text", "hash": "0b5c2745f71dbfdc", "src": "db2@1.60.1.71037"}
+{"id": "LOCKED", "field": "text", "en": "Locked", "hash": "5518bc84349007b8", "src": "db2@1.60.1.71037"}
 {"id": "LOCK_ACTIONBAR_TEXT", "field": "text", "en": "Lock Action Bars", "hash": "89327a10e8a4eb62", "src": "db2@1.60.1.71037"}
 {"id": "LOCK_BATTLEFIELDMINIMAP", "field": "text", "en": "Lock Zone Map", "hash": "b83cf7c97e70a974", "src": "db2@1.60.1.71037"}
 {"id": "LOCK_CURSOR", "field": "text", "en": "Lock Cursor to Window", "hash": "1f39fbce814f9004", "src": "db2@1.60.1.71037"}

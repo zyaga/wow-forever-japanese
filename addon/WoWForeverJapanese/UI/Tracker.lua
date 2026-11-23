@@ -17,9 +17,10 @@
 --     campaign blizzard_campaignquestobjectivetracker.lua:2, adventure blizzard_adventureobjectivetracker.lua:9,
 --     achievement blizzard_achievementobjectivetracker.lua:2, professions blizzard_professionsrecipetracker.lua:10,
 --     bonus blizzard_bonusobjectivetracker.lua:3, world quest blizzard_worldquestobjectivetracker.lua:2.
---     Not here: UIWidgetObjectiveTracker's header is GetRealZoneText() (blizzard_objectivetrackeruiwidgetcontainer.lua:
---     10, 28): a zone name, NEVER_TOUCH; the monthly-activities and endeavors modules can get no content on camelot
---     (their keys are excluded with the evidence).
+--     UIWidgetObjectiveTracker's header is GetRealZoneText() (blizzard_objectivetrackeruiwidgetcontainer.lua:
+--     10, 28, both through self:SetHeader): a zone name, never a dictionary word (NEVER_TOUCH); while names are on
+--     a post-hook of its SetHeader shows the place's Japanese (UI/NameLabels); the monthly-activities and
+--     endeavors modules can get no content on camelot (their keys are excluded with the evidence).
 --   auto-quest popups: AutoQuestPopupBlockMixin:Update writes Contents.TopText / BottomText
 --     (blizzard_autoquestpopuptracker.lua:72–101) on blocks of the template "AutoQuestPopUpBlockTemplate", which the
 --     quest and campaign modules build in AddAutoQuestObjectives (:13–32, called as self:… from
@@ -37,9 +38,17 @@
 --     COLLECTED, blizzard_objectivetrackershared.lua:233–234, blizzard_adventureobjectivetracker.lua:272):
 --     post-hooked on the manager table, walking rewardsToastPool:EnumerateActive(). Reward labels (item names) are
 --     never shown to Labels.
---   the top banner: ObjectiveTrackerTopBannerMixin:PlayBanner writes Title (the quest title) and Subtitle
---     (WORLD_QUEST_BANNER | BONUS_OBJECTIVE_BANNER, blizzard_bonusobjectivetracker.lua:718–725), called by
---     TopBannerManager as frame:PlayBanner(): post-hooked on ObjectiveTrackerTopBannerFrame (xml:227).
+--   the top banner: ObjectiveTrackerTopBannerMixin:PlayBanner writes Title (C_QuestLog.GetTitleForQuestID of the
+--     quest DisplayForQuest kept in self.questID) and Subtitle (WORLD_QUEST_BANNER | BONUS_OBJECTIVE_BANNER,
+--     blizzard_bonusobjectivetracker.lua:699–725), called by TopBannerManager as frame:PlayBanner(): post-hooked on
+--     ObjectiveTrackerTopBannerFrame (xml:227). The title shows the quest's shipped Japanese title like every quest
+--     title (kind quest.title, so it follows the names setting); nothing measures it (the banner only fades it in).
+--   the stage block's Name stays English: UpdateStageBlock measures it right after writing it
+--     (GetStringWidth, blizzard_scenarioobjectivetracker.lua:543–549), inside the container's update of every module
+--     (blizzard_objectivetrackercontainer.lua:80–93), the pass that sets each quest item button's questLogIndex
+--     attribute (blizzard_objectivetrackershared.lua:108) that its click hands to UseQuestLogSpecialItem (:94–102).
+--     [likely, not traced: that taint from the measure reaches an item button; a window test round in a scenario
+--     with a quest item would show it]
 --   help tooltips: a bonus / world-quest block's rewards tooltip (BonusObjectiveBlockMixin:TryShowRewardsTooltip,
 --     blizzard_bonusobjectivetracker.lua:654–676: RETRIEVING_DATA, REWARDS, WORLD_QUEST_TOOLTIP_DESCRIPTION |
 --     BONUS_OBJECTIVE_TOOLTIP_DESCRIPTION, then reward lines, then Show) has the block as owner: each block is
@@ -96,6 +105,7 @@ local CANDIDATES = {
   waveLabel = { "ScenarioObjectiveTracker.ProvingGroundsBlock.WaveLabel" },
   scoreLabel = { "ScenarioObjectiveTracker.ProvingGroundsBlock.ScoreLabel" },
   scenarioRewards = { "ScenarioRewardsFrame" }, scenarioRewardsHeader = { "ScenarioRewardsFrame.Header" },
+  widget = { "UIWidgetObjectiveTracker" }, widgetHeader = { "UIWidgetObjectiveTracker.Header.Text" },
 }
 for key, m in pairs(MODULES) do
   CANDIDATES[key] = { m[1] }
@@ -205,9 +215,23 @@ function Tracker.onRewardsToast(manager)
   return n
 end
 
--- hooksecurefunc target on ObjectiveTrackerTopBannerFrame:PlayBanner. → 1 | 0
+-- The banner's quest title, the quest's shipped Japanese. → 1 | 0
+local function showBannerTitle()
+  local banner = get("banner")
+  local title = type(banner) == "table" and banner.Title or nil
+  local id = type(banner) == "table" and banner.questID or nil
+  if type(title) ~= "table" or type(title.GetText) ~= "function" or type(id) ~= "number" then return 0 end
+  local en = title:GetText()
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(isSecret) == "function" and isSecret(en) then return 0 end
+  if type(en) ~= "string" or en == "" then return 0 end
+  return WFJ.Render.show(SURFACE, "banner.title", title, en, "quests", "quest.title", id, { live = en, compact = true })
+    and 1 or 0
+end
+
+-- hooksecurefunc target on ObjectiveTrackerTopBannerFrame:PlayBanner. → the number of lines shown
 function Tracker.onBanner()
-  local n = WFJ.Labels.show(SURFACE, "banner", get("bannerSubtitle"), nil, BANNER)
+  local n = WFJ.Labels.show(SURFACE, "banner", get("bannerSubtitle"), nil, BANNER) + showBannerTitle()
   WFJ.Render.updateBanner(SURFACE)
   return n
 end
@@ -265,6 +289,11 @@ local function hookScript(key, script, fn)
   if type(f) == "table" and type(f.HookScript) == "function" then f:HookScript(script, fn) end
 end
 
+-- The widget module's header: the zone's name, in Japanese while names are on. → 1 | 0
+function Tracker.showZoneHeader()
+  return WFJ.NameLabels.show(SURFACE, "widget.header", get("widgetHeader"))
+end
+
 -- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init. → false when there is no tracker
 function Tracker.init()
   for key, names in pairs(CANDIDATES) do Compat.declare(SURFACE, key, names) end
@@ -276,6 +305,8 @@ function Tracker.init()
     Tracker.showHeader(key) -- OnLoad wrote it before this addon loaded
   end
   hookMethod("scenario", "LayoutContents", function() Tracker.showHeader("scenario") end)
+  hookMethod("widget", "SetHeader", Tracker.showZoneHeader)
+  Tracker.showZoneHeader() -- the zone the client wrote before this addon loaded
   hookMethod("achievement", "AddAchievement", Tracker.onAchievement)
   for _, key in ipairs({ "quest", "campaign" }) do
     hookMethod(key, "AddAutoQuestObjectives", Tracker.onAutoQuestPopups)

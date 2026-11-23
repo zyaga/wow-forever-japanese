@@ -17,9 +17,21 @@
 --     characterframe.lua:1195); a stat row's Label is format(STAT_FORMAT "%s:", <stat word>) written by its Init or
 --     by PaperDollFrame_SetLabelAndText from the stat's updateFunc (paperdollframe.lua:2504–2513). Followed with
 --     ScrollUtil.AddInitializedFrameCallback (after the element initializer), keyed by the row widget itself; a stat
---     row is also a help-tooltip owner (PaperDollStatTooltip or its onEnterFunc, paperdollframe.lua:2282–2295).
+--     row is also a help-tooltip owner (CharacterStatFrameMixin:OnEnter → its onEnterFunc or PaperDollStatTooltip,
+--     characterframe.lua:1028–1034, 1237; paperdollframe.lua:2282–2295).
 --     A stat Label is restricted (`only`) to the stat words: PaperDollFrame_SetWeaponSkill labels a row with a skill
 --     name (paperdollframe.lua:732–744). CharacterStatsPane (the older category frames) is never shown.
+--   the stat tooltips' composite lines, which no dictionary line matches whole, split by the row's `show`:
+--     the title, HIGHLIGHT_FONT_COLOR_CODE .. <stat word> .. " " .. <value> .. FONT_COLOR_CODE_CLOSE, with the base
+--     value and the buffs in their own colours after it on a buffed primary stat (format(PAPERDOLLFRAME_TOOLTIP_FORMAT
+--     "%s", word): paperdollframe.lua:618, 643, 1064, 1409; vanilla/paperdollframestats.lua:1–22): the word in
+--     Japanese, the colour, the value and everything after it as written. The damage tooltip's labels,
+--     format(STAT_FORMAT "%s:", ATTACK_SPEED_SECONDS / STAT_DPS_SHORT) (paperdollframe.lua:2375–2387): the word in
+--     Japanese, the colon kept. Its weapon skill line, format(WEAPON_SKILL_PAPERDOLLFRAME_FORMAT "%s:",
+--     skillInfo.name) beside the skill's rank (camelot/paperdollframestats.lua:700–733): the skill is a game name,
+--     shown in Japanese while names are on (UI/NameLabels.before), the colon kept.
+--   the model's control buttons (CharacterModelScene.ControlFrame, ModelSceneControlFrameTemplate,
+--     paperdollframe.xml:653–657): see onModelControl.
 --   help tooltips: the six icon mode tabs (tooltipText CHARACTER_FRAME_TAB_*, SidePanelTabButtonMixin:OnEnter →
 --     SetText, shareduipaneltemplates.lua:408–422; characterframe.xml:574–603), the three paperdoll sidebar tabs
 --     (paperdollframe.lua:3649–3657), the right-pane toggle (characterframe.lua:341–358), and the equipment slots:
@@ -100,6 +112,19 @@ local STAT_ONLY = { only = { "HEALTH", "MANA", "RAGE", "ENERGY", "FOCUS", "RUNIC
   "RESISTANCE0_NAME", "RESISTANCE1_NAME", "RESISTANCE2_NAME", "RESISTANCE3_NAME", "RESISTANCE4_NAME",
   "RESISTANCE5_NAME", "RESISTANCE6_NAME",
   "DAMAGE_SCHOOL2", "DAMAGE_SCHOOL3", "DAMAGE_SCHOOL4", "DAMAGE_SCHOOL5", "DAMAGE_SCHOOL6", "DAMAGE_SCHOOL7" } }
+-- camelot stat tooltips: the words a title line starts with (the stat words and the hovers' own words,
+-- paperdollframe.lua:1064; paperdollframestats.lua:131, 139, 442, 495), and the damage tooltip's labels
+local TIP_TITLE_ONLY = { "ATTACK_SPEED", "BLOCK_CHANCE", "DODGE_CHANCE", "PARRY_CHANCE", "ARMOR" }
+for _, k in ipairs(STAT_ONLY.only) do TIP_TITLE_ONLY[#TIP_TITLE_ONLY + 1] = k end
+local TIP_COLON_ONLY = { "ATTACK_SPEED_SECONDS", "STAT_DPS_SHORT" }
+-- a weapon skill's rank beside its name: rank .. "/" .. maxRank, or with the modifier in brackets
+-- (camelot/paperdollframestats.lua:713–717)
+local SKILL_RANK = { "^%d+/%d+$", "^%d+ %(%-?%d+%)/%d+$" }
+-- camelot model controls: the five buttons of ModelSceneControlFrameTemplate and the keys their Init gives them
+-- (blizzard_sharedxml/modelscenecontrolframe.xml; modelscenecontrolframe.lua:180–186, 209–217, 268–271)
+local MODEL_BUTTONS = { "zoomInButton", "zoomOutButton", "rotateLeftButton", "rotateRightButton", "resetButton" }
+local MODEL_ONLY = { only = { "ZOOM_IN", "ZOOM_OUT", "KEY_MOUSEWHEELUP", "KEY_MOUSEWHEELDOWN", "ROTATE_LEFT",
+  "ROTATE_RIGHT", "ROTATE_TOOLTIP", "RESET_POSITION" } }
 -- camelot equipment manager and its popup: each widget to its own key(s)
 local EQUIP_ONLY = { only = { "EQUIPSET_EQUIP" } }
 local SAVE_ONLY = { only = { "SAVE" } }
@@ -129,6 +154,7 @@ local function declareAll()
   Compat.declare(SURFACE, "titleBox", { "PaperDollFrame.TitleManagerPane.ScrollBox" })
   Compat.declare(SURFACE, "gearPopup", { "GearManagerPopupFrame" })
   Compat.declare(SURFACE, "frame", { "CharacterFrame" })
+  Compat.declare(SURFACE, "modelControls", { "CharacterModelScene.ControlFrame" })
 end
 
 local titleRowKey = WFJ.Labels.keyer("title.") -- a pooled title row's record key
@@ -198,6 +224,64 @@ local function isStatLabel(fs)
   return false
 end
 
+-- The right column of tooltip line `recKey` ("L4"), as the client wrote it. → text | nil
+local function rightOf(recKey)
+  local i = recKey:match("^L(%d+)$")
+  local tt = Compat.get(WFJ.HelpTooltip.SURFACE, "tooltip")
+  local name = i and type(tt) == "table" and type(tt.GetName) == "function" and tt:GetName() or nil
+  local fs = type(name) == "string" and Compat.resolve(name .. "TextRight" .. i) or nil
+  local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
+  if WFJ.SurfaceState.secret(text) or type(text) ~= "string" then return nil end
+  return text
+end
+
+local function isRank(text)
+  for _, p in ipairs(SKILL_RANK) do
+    if text:find(p) then return true end
+  end
+  return false
+end
+
+-- A stat tooltip's line that is no dictionary line (HelpTooltip asks the owner's `show`; see the header). → 1 | 0
+function Character.onStatTipLine(surface, recKey, fs, refit)
+  local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
+  if type(text) ~= "string" or WFJ.SurfaceState.secret(text) or recKey:sub(1, 1) ~= "L" then return 0 end
+  if recKey == "L1" then
+    local open, word, rest = text:match("^(|c%x%x%x%x%x%x%x%x)(.-)( [%-%d].*|r)$")
+    local part = word and WFJ.Labels.part(word, TIP_TITLE_ONLY)
+    if not part then return 0 end
+    return WFJ.Labels.showArgs(surface, recKey, fs, part.key, { form = "seq", parts = { open, part, rest } }, refit)
+  end
+  local word = text:match("^(.+):$")
+  local part = word and WFJ.Labels.part(word, TIP_COLON_ONLY)
+  if part then
+    return WFJ.Labels.showArgs(surface, recKey, fs, part.key, { form = "seq", parts = { part, text:sub(#word + 1) } },
+      refit)
+  end
+  local skillFormat = Compat.resolve("WEAPON_SKILL_PAPERDOLLFRAME_FORMAT")
+  local tail = type(skillFormat) == "string" and skillFormat:match("^%%s([^%%]+)$") or nil
+  local rank = rightOf(recKey)
+  if not (tail and rank and isRank(rank)) then return 0 end
+  return WFJ.NameLabels.before(surface, recKey, fs, tail, nil, refit)
+end
+local STAT_TIP = { show = Character.onStatTipLine }
+
+-- camelot: after a model control button's OnEnter (HookScript runs after the bound handler). The button anchors the
+-- tooltip with GameTooltip_SetDefaultAnchor, which gives it to the top-level parent, UIParent, then writes its title
+-- and body line with GameTooltip_SetTitle / GameTooltip_AddBodyLine and shows it, only while the client's UberTooltips
+-- setting is on (modelscenecontrolframe.lua:152–164; sharedtooltiptemplates.lua:87–88, 128–131, 146–148;
+-- frameutil.lua:304–320). UIParent owns unrelated tooltips, so it is never registered: the tooltip is walked once
+-- as if the button owned it, restricted to the buttons' keys, and only when line 1 is the button's own title. → n
+function Character.onModelControl(button)
+  local tt = Compat.get(WFJ.HelpTooltip.SURFACE, "tooltip")
+  if type(button) ~= "table" or type(tt) ~= "table" or type(tt.IsShown) ~= "function" or not tt:IsShown()
+      or type(tt.GetName) ~= "function" then return 0 end
+  local first = Compat.resolve(tt:GetName() .. "TextLeft1")
+  local text = type(first) == "table" and type(first.GetText) == "function" and first:GetText() or nil
+  if WFJ.SurfaceState.secret(text) or type(button.tooltip) ~= "string" or text ~= button.tooltip then return 0 end
+  return WFJ.HelpTooltip.walkAs(tt, MODEL_ONLY)
+end
+
 -- camelot ScrollUtil callback: (owner, frame, elementData) on initialization, (frame, elementData) on the
 -- existing-frames pass. Returns nothing (ForEachFrame stops at the first truthy return).
 function Character.onStatRow(a, b)
@@ -213,7 +297,7 @@ function Character.onStatRow(a, b)
     -- The row's tooltip is walked only while its label is a stat word: a weapon-skill row is labelled with a skill
     -- name (paperdollframe.lua:732–744) and its tooltip carries that name, so it is never walked; a pooled row that
     -- held a stat earlier is re-registered with an empty key set, which matches nothing.
-    WFJ.HelpTooltip.register(frame, stat and true or NO_WALK)
+    WFJ.HelpTooltip.register(frame, stat and STAT_TIP or NO_WALK)
   end
   WFJ.Render.updateBanner(SURFACE)
 end
@@ -305,6 +389,23 @@ function Character.init()
     if type(titleBox) == "table" then
       util.AddInitializedFrameCallback(titleBox, Character.onTitleRow, Character, true)
     end
+  end
+  local controls = get("modelControls")
+  for _, key in ipairs(MODEL_BUTTONS) do
+    local button = type(controls) == "table" and controls[key] or nil
+    if type(button) == "table" and type(button.HookScript) == "function" then
+      button:HookScript("OnEnter", Character.onModelControl)
+    end
+  end
+  -- Every other window's model buttons (the dressing room, the mount journal, the stable, transmog, model
+  -- previews) are made from the same template, whose OnEnter is the shared mixin's method, copied into each button
+  -- when it is made [verified: blizzard_sharedxml/modelscenecontrolframe.lua:152-164, modelscenecontrolframe.xml:21,
+  -- 58]. Hooking the mixin's method once covers every button made after this load; a button made before it (the
+  -- character window's, above) is hooked by its own script. The hook only walks a tooltip whose first line is the
+  -- button's own title, so a button hooked both ways is walked the same.
+  local mixin = Compat.resolve("ModelSceneControlButtonMixin")
+  if type(mixin) == "table" and type(mixin.OnEnter) == "function" then
+    hooksecurefunc(mixin, "OnEnter", Character.onModelControl)
   end
   Character.showEquipmentManager()
   local frame = get("frame") -- the window title (a frame without a TitleContainer: nothing happens)

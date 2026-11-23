@@ -314,6 +314,7 @@
 {"id": "PROFESSIONS_TUTORIAL_REAGENT_QUALITY", "field": "text", "en": "Using higher quality reagents will improve the Skill at which you craft items. |n|nClick to change which quality will be used.", "hash": "65939e2b54be36dd", "src": "db2@1.60.1.71037"}
 {"id": "PROFESSIONS_TUTORIAL_RECRAFT", "field": "text", "en": "You can Recraft previously crafted equipment to change its Optional Reagents or attempt to raise its quality. |n|nClick to select an item to Recraft.", "hash": "ae0b42b777b0f4cb", "src": "db2@1.60.1.71037"}
 {"id": "PROFESSIONS_UNTRACK_RECIPE", "field": "text", "en": "Untrack", "hash": "15c4a4a6efd10910", "src": "db2@1.60.1.71037"}
+{"id": "PROFESSIONS_USED_IN_COOKING", "field": "text", "en": "Crafting Reagent", "hash": "8de90505b32bf08c", "src": "db2@1.60.1.71037"}
 {"id": "PROFESSION_CONFIRMATION1", "field": "text", "en": "You may only know two professions at any one time.  Would you like to learn |cffffd200%s|r as your first one?", "hash": "b3345376608b007d", "src": "db2@1.60.1.71037"}
 {"id": "PROFESSION_CONFIRMATION2", "field": "text", "en": "You may only know two professions at any one time.  Would you like to learn |cffffd200%s|r as your second one?", "hash": "4bc3e4a5397db98c", "src": "db2@1.60.1.71037"}
 {"id": "PROFESSION_EQUIPMENT_LOCATION_HELPTIP", "field": "text", "en": "Your profession tool and accessories equip here.", "hash": "832cbb8356a7cc59", "src": "db2@1.60.1.71037"}

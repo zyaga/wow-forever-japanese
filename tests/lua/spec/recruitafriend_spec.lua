@@ -28,6 +28,7 @@ local UI = {
   RAF_NEXT_REWARD_HELP_TEXT = { "Recruit friends to begin earning rewards when your friends start a subscription.",
     "フレンドを招待すると、フレンドが購読を始めたときに報酬を獲得できます。" },
   BLIZZARD_STORE_PROCESSING = { "Processing...", "処理中..." },
+  RECRUITING_FRIENDS_DISABLED = { "Recruiting friends is disabled.", "フレンドの招待は無効です。" },
   CLOSE = { "Close", "閉じる" },
   -- The no-recruits text (its link kept byte-identical) and an activity chest's tooltip lines
   RAF_NO_RECRUITS_DESC = { "|cffffd200Recruit friends to begin earning rewards.|r|n|nFor more info:|n"
@@ -264,5 +265,136 @@ describe("the recruit-a-friend panel on Forever", function()
     assert.is_true(WFJ.RecruitAFriend.init())
     assert.is_false(WFJ.RecruitAFriend.init())
     assert.are.equal(1, #Stub.hooks["RewardClaiming:UpdateNextReward"])
+  end)
+end)
+
+-- The Recruit A Friend tab of the newer social window: SocialUIFrame.RecruitAFriendFrame replayed from
+-- recruitafriendsocialview.lua:114–254 and .xml:47–360 (RecruitAFriendFrameMixin over the contacts frame's widgets;
+-- its reward strings are frames with a Text child). A recruit's name and character stay as written.
+describe("the recruit-a-friend view of the social window", function()
+  local WFJ, view
+  local en = S.en
+  local GREY = "|cff808080"
+
+  local function installView()
+    view = S.put(S.frame("SocialUIFrame"), "RecruitAFriendFrame", S.frame(nil, "RecruitAFriendFrame"))
+    view.Header, view.Count = S.fs(en("RAF_RECRUITED_FRIENDS")), S.fs("(1/10)")
+    view.ActionButton = S.button(nil, en("RAF_RECRUITMENT"))
+    view.ScrollBox = Stub.scrollBox()
+    local html = CreateFrame("Frame")
+    html.fonts = { P = { "Fonts\\FRIZQT__.TTF", 12, "" } }
+    function html.SetText(self, text) self.shown = text end
+    function html.GetFont(self, tag) local f = self.fonts[tag or "P"]; return f[1], f[2], f[3] end
+    function html.SetFont(self, tag, path, size, flags) self.fonts[tag] = { path, size, flags } end
+    local box = S.put(view, "NoRecruitsScrollBox", S.frame(nil, "NoRecruitsScrollBox"))
+    box.NoRecruitsDesc, box.updates = html, 0
+    function box.FullUpdate(self, when) self.updates, self.when = self.updates + 1, when end
+    _G.ScrollBoxConstants = { UpdateImmediately = true }
+    function view.SetNoRecruitsText(self, text) -- recruitafriendsocialview.lua:250–254
+      self.NoRecruitsScrollBox.NoRecruitsDesc:SetText(text)
+      self.NoRecruitsScrollBox:FullUpdate(_G.ScrollBoxConstants.UpdateImmediately)
+    end
+    view:SetNoRecruitsText(en("RAF_NO_RECRUITS_DESC"))
+    local claiming = S.put(view, "RewardClaiming", S.frame(nil, "RewardClaiming"))
+    claiming.EarnInfo, claiming.NextRewardName, claiming.MonthCount = { Text = S.fs("") }, { Text = S.fs("") },
+      { Text = S.fs("") }
+    claiming.ClaimOrViewRewardButton = S.button(nil, en("RAF_VIEW_ALL_REWARDS"))
+    function claiming.ClaimOrViewRewardButton.Update(self, canClaim)
+      S.write(self, en(canClaim and "CLAIM_REWARD" or "RAF_VIEW_ALL_REWARDS"))
+    end
+    function claiming.UpdateNextReward(self, reward) -- through GetString (recruitafriendframe.lua:1635–1683)
+      self.EarnInfo.Text.text = reward.earned and en("RAF_YOU_HAVE_EARNED") or en("RAF_FIRST_REWARD")
+      self.NextRewardName.Text.text = reward.title and en("RAF_REWARD_TITLE"):format(reward.title)
+        or (reward.item or en("RAF_BENEFIT4"))
+    end
+    function claiming.UpdateRAFInfo(self, months)
+      self.MonthCount.Text.text = months == 0 and en("RAF_FIRST_MONTH") or (months .. " Months Subscribed by Friends")
+    end
+  end
+  -- a card as RecruitListButtonSocialMixin:SetupRecruit leaves it (recruitafriendsocialview.lua:4–27)
+  local function recruit(info)
+    local row = CreateFrame("Button")
+    row.Name, row.CharacterName, row.InfoText = S.fs(""), S.fs(""), S.fs("")
+    function row.SetupRecruit(self, i)
+      self.Name.text = GREY .. (i.name or en("RAF_PENDING_RECRUIT")) .. "|r"
+      self.CharacterName.text = GREY .. (i.character or "") .. "|r"
+      self.InfoText.text = i.active and en("RAF_ACTIVE_RECRUIT") or "Close"
+    end
+    view.ScrollBox:initFrame(row, info, function(r, d) r:SetupRecruit(d) end)
+    return row
+  end
+
+  before_each(function()
+    WFJ = S.load(FILES, UI, NEEDS)
+    installView()
+  end)
+  after_each(function() S.teardown({ "SocialUIFrame", "ScrollBoxConstants" }) end)
+
+  it("is set up with no older panel: its header, buttons and reward lines translate and follow their writers;"
+    .. " the recruit count is never taken; the reveal key shows the English", function()
+    assert.is_true(WFJ.RecruitAFriend.init())
+    assert.is_false(WFJ.RecruitAFriend.init()) -- once
+    local claiming = view.RewardClaiming
+    assert.are.equal("招待したフレンド", view.Header:GetText())
+    assert.are.equal("招待", view.ActionButton:GetText())
+    assert.are.equal("すべての報酬を見る", claiming.ClaimOrViewRewardButton:GetText())
+    assert.are.equal("(1/10)", view.Count:GetText())
+    WFJ.Labels.forbidNames(WFJ.RecruitAFriend.NEVER_TOUCH) -- Main registers every list
+    assert.are.equal(0, WFJ.Labels.show("recruitafriend", "probe", view.Count))
+    claiming:UpdateNextReward({ earned = true })
+    assert.are.equal("獲得済み:", claiming.EarnInfo.Text:GetText())
+    assert.are.equal("30日分の無料ゲーム時間", claiming.NextRewardName.Text:GetText())
+    claiming:UpdateNextReward({ title = "the Patient" })
+    assert.are.equal("最初の報酬:", claiming.EarnInfo.Text:GetText())
+    assert.are.equal("新しい称号: the Patient", claiming.NextRewardName.Text:GetText())
+    claiming:UpdateNextReward({ item = "Close" }) -- a reward's own name
+    assert.are.equal("Close", claiming.NextRewardName.Text:GetText())
+    claiming:UpdateRAFInfo(0)
+    assert.are.equal("フレンドを招待して始めよう!", claiming.MonthCount.Text:GetText())
+    claiming.ClaimOrViewRewardButton:Update(true)
+    assert.are.equal("報酬を受け取る", claiming.ClaimOrViewRewardButton:GetText())
+    S.alt(WFJ, true)
+    assert.are.equal("Recruited Friends", view.Header:GetText())
+    assert.are.equal("Claim Reward", claiming.ClaimOrViewRewardButton:GetText())
+    S.alt(WFJ, false)
+    assert.are.same({ "フレンドの招待は無効です。" },
+      S.tooltip(view.ActionButton, { "Recruiting friends is disabled." }))
+    assert.are.same({ "処理中..." }, S.tooltip(claiming.ClaimOrViewRewardButton, { "Processing..." }))
+  end)
+
+  it("the no-recruits text translates with its link kept, at load and after each write; the scroll box's own"
+    .. " update is never run by the addon", function()
+    local box = view.NoRecruitsScrollBox
+    assert.are.equal(1, box.updates)
+    WFJ.RecruitAFriend.init()
+    assert.are.equal(UI.RAF_NO_RECRUITS_DESC[2], box.NoRecruitsDesc.shown)
+    assert.are.equal(1, box.updates) -- the client's own, at load: the list's update is its code alone
+    view:SetNoRecruitsText(en("RAF_NO_RECRUITS_DESC")) -- every show writes it again
+    assert.are.equal(UI.RAF_NO_RECRUITS_DESC[2], box.NoRecruitsDesc.shown)
+    S.alt(WFJ, true)
+    assert.are.equal(en("RAF_NO_RECRUITS_DESC"), box.NoRecruitsDesc.shown)
+    S.alt(WFJ, false)
+    assert.are.equal(UI.RAF_NO_RECRUITS_DESC[2], box.NoRecruitsDesc.shown)
+  end)
+
+  it("a recruit card: the subscription state and the pending placeholder translate inside its colour; a"
+    .. " recruit's name and character stay", function()
+    WFJ.RecruitAFriend.init()
+    local pending = recruit({ active = true })
+    assert.are.equal(GREY .. "招待保留中|r", pending.Name:GetText())
+    assert.are.equal("購読中", pending.InfoText:GetText())
+    local named = recruit({ name = "Close", character = "Close" })
+    assert.are.equal(GREY .. "Close|r", named.Name:GetText())
+    assert.are.equal(GREY .. "Close|r", named.CharacterName:GetText())
+    assert.is_true(S.unrecorded(WFJ, named.Name))
+    assert.is_true(S.unrecorded(WFJ, named.CharacterName))
+    assert.are.equal("Close", named.InfoText:GetText()) -- a last-online line with no dictionary line here
+    named:SetupRecruit({ active = true }) -- the row refreshes itself
+    assert.are.equal(GREY .. "招待保留中|r", named.Name:GetText())
+  end)
+
+  it("wrong shapes raise nothing", function()
+    view.RewardClaiming, view.ScrollBox, view.NoRecruitsScrollBox = "?", 4, true
+    assert.has_no.errors(function() assert.is_true(WFJ.RecruitAFriend.init()) end)
   end)
 end)

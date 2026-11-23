@@ -1,7 +1,8 @@
 -- UI/FlightMap.lua over a FlightMapFrame replayed from camelot
 -- blizzard_flightmap (blizzard_flightmap.lua:5–19, 51–56; fm_flightpathdataprovider.lua:240–269;
 -- fm_zonesummarydataprovider.lua:42–60) and the click-to-zoom provider (blizzard_sharedmapdataproviders/
--- clicktozoomdataprovider.lua:36–57). Flight point and zone names stay English; either load order.
+-- clicktozoomdataprovider.lua:36–57). Flight point and zone names are no dictionary words: they show their Japanese
+-- only while Japanese names are on. Either load order.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local Maps = require("tests.lua.spec.stub_maps")
@@ -86,6 +87,27 @@ describe("the flight map on Forever", function()
         Maps.tooltip(pin, { "Ironforge, Dun Morogh", en("TAXI_PATH_UNREACHABLE") })
         assert.are.equal("Ironforge, Dun Morogh", Maps.line(1))
         assert.are.equal("未発見", Maps.line(2))
+      end)
+
+      it("with Japanese names on, the zone summary's and a node pin's place names show their Japanese", function()
+        WFJ.Data.add("name", {
+          [WFJ.Names.key("Dun Morogh")] = "ダン・モロー\tだん・もろー",
+          [WFJ.Names.key("Thelsamar, Loch Modan")] = "セルサマー、ロック・モダン\tせるさまー、ろっく・もだん",
+        })
+        WFJ.State.setNames(true)
+        Maps.tooltip(frame, { "Dun Morogh", en("FLIGHT_MAP_CLICK_TO_ZOOM_IN") })
+        assert.are.equal("ダン・モロー", Maps.line(1))
+        assert.are.equal("<クリックで拡大>", Maps.line(2))
+        alt(true)
+        assert.are.equal("Dun Morogh", Maps.line(1))
+        alt(false)
+        assert.are.equal("ダン・モロー", Maps.line(1))
+        Maps.tooltip(frame, { "Nobody Known Vale", en("FLIGHT_MAP_CLICK_TO_ZOOM_IN") })
+        assert.are.equal("Nobody Known Vale", Maps.line(1))
+        local pin = Maps.pin("FlightMap_FlightPointPinTemplate")
+        Maps.tooltip(pin, { "Thelsamar, Loch Modan", en("TAXINODEYOUAREHERE") })
+        assert.are.equal("セルサマー、ロック・モダン", Maps.line(1))
+        assert.are.equal("現在地", Maps.line(2))
       end)
 
       it("the zone summary tooltip (owner: the map itself) and the two zoom hints translate", function()

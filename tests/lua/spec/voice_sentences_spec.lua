@@ -100,7 +100,7 @@ describe("UI/VoicePlayer: a line in sentences", function()
     "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
     "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua", "UI/Font.lua", "UI/Frames.lua",
     "UI/Render.lua", "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/ButtonText.lua", "UI/Labels.lua",
-    "UI/QuestFrame.lua" }
+    "Core/Perf.lua", "UI/NameLabels.lua", "UI/QuestFrame.lua" }
 
   local function fire(delay)
     for i, t in ipairs(timers) do

@@ -5,10 +5,16 @@
 --   Align.numbers(text)                   digit runs after full-width folding, digits glued to Latin letters ignored
 --   Align.numberWords(text)               English number words as digit strings ("twenty-five" → 25, 20)
 --   Align.checkNumbers(ja, scope, extra)  → missing digit runs (multiset)
---   Align.values(scope)                   the live line's number tokens in order (predecessor rule: commas stripped)
---   Align.durations(scope, duration)      the live line's durations in order, each already in Japanese
+--   Align.values(scope, duration, loose)  the live line's number tokens in order (predecessor rule: commas stripped);
+--                                         with `duration`, a worded duration ("until canceled") holds its place
+--                                         as `false`; `loose` also reads the glued and signed shapes (see `glued`)
+--   Align.durations(scope, duration)      the live line's durations in order, each already in Japanese; `worded[k]`
+--                                         is set for one the client wrote as words
 --   Align.fill(ja, values, durations, icons)  $N<k> → values[k], $D<k> → durations[k], $I<k> → icons[k]
---                                         nil when one has no value
+--                                         nil when one has no value, or a worded duration stands where the
+--                                         Japanese around its slot cannot take words
+--   Align.grantedHead(ja, scope)          the Japanese up to its icon, when the live line ends after that icon,
+--                                         and the count of the value slots before the icon
 --   Align.textures(text)                  → text without its `|T…|t` icon escapes, { the escapes }
 --   Align.fillValues(ja, scope, duration, count)  → text: $N/$D filled from `scope`, WITHOUT the names and
 --                                         numbers gate: a trusted line's text was checked offline, and
@@ -31,9 +37,11 @@
 --   Align.check(ja, lines, nameScope, duration, count)  → ok, text: the Translator's `align` dependency;
 --                                         `nameScope` (optional) is extra text names may come from (the tooltip's
 --                                         name line), never numbers; `duration` (optional) is UIStrings' duration
---                                         renderer, without which a $D placeholder fails closed; `count`
---                                         (optional) is how many values the English the Japanese is numbered to
---                                         prints: a live line with more or fewer fails closed
+--                                         renderer, a function or { render = function, words = { { en, ja }, … } }
+--                                         (the phrases the client prints where a duration belongs), without
+--                                         which a $D placeholder fails closed; `count` (optional) is how many
+--                                         values the English the Japanese is numbered to prints: a live line
+--                                         with more or fewer fails closed
 -- Consumers: Main (the Translator's `align` dep; surfaces reach it only through Translator), align_spec.
 local _, WFJ = ...
 local Align = {}
@@ -219,7 +227,14 @@ end
 function Align.checkNumbers(ja, scope, extra)
   local want, have = Align.numbers(ja), Align.numbers(scope)
   for _, w in ipairs(Align.numberWords(scope)) do have[w] = (have[w] or 0) + 1 end
-  for _, v in ipairs(extra or {}) do have[v] = (have[v] or 0) + 1 end
+  for _, v in ipairs(extra or {}) do
+    -- a range ("1350～1650") vouches for each of its ends: the line itself reads "1,350 to 1,650", whose digit
+    -- runs are 1, 350, 1 and 650
+    -- a worded duration holds a place and vouches for no number; a signed range's ends are read without the sign
+    if v then
+      for part in (v .. "～"):gmatch("%-?(.-)～") do have[part] = (have[part] or 0) + 1 end
+    end
+  end
   local missing = {}
   for run, count in pairs(want) do
     for _ = 1, count - (have[run] or 0) do missing[#missing + 1] = run end
@@ -234,30 +249,113 @@ end
 -- A value the client prints as a RANGE ("causes 14 to 22 Fire damage" for Fireball's `$s1`) is
 -- one value, filled as "14～22": counted as two it shifted every later `$N`, and the pipeline's
 -- `core/align.slots` counts "A to B" as one slot to match.
--- Every value token of `scope` in reading order: fn(start, end, token, value, isRange), `isRange` when the
--- token continues the previous value as "A to B". One scanner for `values` and the variant key's mask.
-local function eachValue(scope, fn)
-  local last = nil
-  for s, tok, e in scope:gmatch("()([%d%.,]+)()") do
-    if not isLetter(scope:byte(s - 1)) and not isLetter(scope:byte(e)) then
-      local v = tok:gsub(",", ""):gsub("^%.+", ""):gsub("%.+$", "")
-      if v ~= "" then
-        fn(s, e, tok, v, last ~= nil and scope:sub(last, s - 1) == " to ")
-        last = e
+-- The duration renderer is UIStrings': a function (a number and its unit → Japanese), or a table
+-- { render = that function, words = { { en = the client's phrase, ja = its Japanese }, … } }. The words are what
+-- the client prints where a duration belongs when it has no number to print: a spell the character does not know
+-- shows "Lasts until canceled." for "Lasts $d.".
+local function rendererOf(duration)
+  if type(duration) == "table" then return duration.render, duration.words end
+  return duration, nil
+end
+
+-- Every worded duration of `scope` in reading order: { s, e, ja }. The phrase is the client's own string, matched
+-- whole and never inside a longer word.
+local function wordedSpans(scope, words)
+  local out = {}
+  if type(words) ~= "table" then return out end
+  for _, w in ipairs(words) do
+    if type(w.en) == "string" and w.en ~= "" and type(w.ja) == "string" and w.ja ~= "" then
+      local at = 1
+      while true do
+        local s, e = scope:find(w.en, at, true)
+        if not s then break end
+        if not isLetter(scope:byte(s - 1)) and not isLetter(scope:byte(e + 1)) then
+          out[#out + 1] = { s = s, e = e, ja = w.ja }
+        end
+        at = e + 1
       end
     end
   end
+  table.sort(out, function(a, b) return a.s < b.s end)
+  return out
 end
 
-function Align.values(scope)
+-- A number glued to a letter is not a value: "Mk2", "Mace2H" and "247x128" are names. A few templates glue a
+-- value to a word by mistake ("stun for1.5 sec", "Inflicts140 Nature damage", "79to 118") or write its unit as
+-- one letter ("2x damage", "Every 2s"). The LOOSE reading takes those shapes and no other:
+--   before the number, an ordinary word of three letters or more, lower-case after its first letter;
+--   after it, "x" or "s" alone, or "to" before the second number of a range.
+-- It is only ever tried on a line whose strict reading does not have the count its Japanese is numbered to, and
+-- kept only when it has exactly that count (`valuesFor`), so a line that reads right today never changes.
+local function glued(scope, s, e)
+  local before, after = isLetter(scope:byte(s - 1)), isLetter(scope:byte(e))
+  if before then
+    local word = scope:sub(1, s - 1):match("%a+$")
+    if #word < 3 or word:sub(2):find("%u") then return false end
+  end
+  if after then
+    local word = scope:match("^%a+", e)
+    local nxt = scope:byte(e + #word)
+    if word == "x" or word == "s" then
+      if isDigit(nxt) then return false end
+    elseif not (word == "to" and scope:find("^ %-?%d", e + 2)) then
+      return false
+    end
+  end
+  return true
+end
+
+-- Every value token of `scope` in reading order: fn(start, end, token, value, isRange, signed), `isRange` when
+-- the token continues the previous value as "A to B". One scanner for `values` and the variant key's mask.
+-- `words`: the worded durations to report in their place, as fn(start, end, phrase, false).
+-- `loose`: the glued shapes are read too, and a range whose two ends carry a minus sign ("-24 to -21") is one
+-- value, reported `signed`.
+local function eachValue(scope, fn, words, loose)
+  local last, lastSigned = nil, false
+  local spans = wordedSpans(scope, words)
+  local nextSpan = 1
+  local function worded(upTo)
+    while spans[nextSpan] and spans[nextSpan].s < upTo do
+      local w = spans[nextSpan]
+      fn(w.s, w.e + 1, scope:sub(w.s, w.e), false, false)
+      last, lastSigned = nil, false
+      nextSpan = nextSpan + 1
+    end
+  end
+  for s, tok, e in scope:gmatch("()([%d%.,]+)()") do
+    local free = not isLetter(scope:byte(s - 1)) and not isLetter(scope:byte(e))
+    if free or (loose and glued(scope, s, e)) then
+      local v = tok:gsub(",", ""):gsub("^%.+", ""):gsub("%.+$", "")
+      if v ~= "" then
+        worded(s)
+        local signed = loose and scope:sub(s - 1, s - 1) == "-" and not scope:sub(s - 2, s - 2):find("[%w%-]")
+        local gap = last ~= nil and scope:sub(last, s - 1) or nil
+        if gap == " to " then
+          fn(s, e, tok, v, true, false)
+        elseif gap == " to -" and lastSigned and signed then
+          fn(s, e, tok, v, true, true)
+        else
+          fn(s, e, tok, v, false, false)
+        end
+        last, lastSigned = e, signed or false
+      end
+    end
+  end
+  worded(#scope + 1)
+end
+
+function Align.values(scope, duration, loose)
   local out = {}
-  eachValue(scope, function(_, _, _, v, isRange)
-    if isRange then
+  local _, words = rendererOf(duration)
+  eachValue(scope, function(_, _, _, v, isRange, signed)
+    if isRange and signed then
+      out[#out] = "-" .. out[#out] .. "～-" .. v
+    elseif isRange then
       out[#out] = out[#out] .. "～" .. v
     else
       out[#out + 1] = v
     end
-  end)
+  end, words, loose)
   return out
 end
 
@@ -280,10 +378,15 @@ local PLURAL_SHAPES = {
   "^([%d%.,]+%s*|4[^;]*;)",                       -- "1 |4hour:hrs;"
 }
 
--- Every duration phrase of `scope` in reading order: fn(start, length, ja). Never overlapping: a phrase that
--- matched is skipped past, so "1 hr 30 min" is one duration and not also "30 min".
+-- Every duration phrase of `scope` in reading order: fn(start, length, ja, worded). Never overlapping: a phrase
+-- that matched is skipped past, so "1 hr 30 min" is one duration and not also "30 min". A number glued to an
+-- ordinary word before it ("stun for1.5 sec") is still a duration: only a real duration string matches, so a name
+-- never does.
 local function eachDuration(scope, duration, fn)
-  if type(scope) ~= "string" or type(duration) ~= "function" then return end
+  local render, words = rendererOf(duration)
+  if type(scope) ~= "string" or type(render) ~= "function" then return end
+  local found = wordedSpans(scope, words)
+  for _, w in ipairs(found) do w.len, w.worded = w.e - w.s + 1, true end
   local i, len = 1, #scope
   while i <= len do
     local s = scope:find("%d", i)
@@ -292,11 +395,11 @@ local function eachDuration(scope, duration, fn)
     -- "1.5 sec" whose float form is not shipped must not come back as "5 sec"
     local _, numEnd = scope:find("^[%d%.,]+", s)
     local step = numEnd + 1
-    if not isLetter(scope:byte(s - 1)) then
+    if not isLetter(scope:byte(s - 1)) or glued(scope, s, s) then
       local ja, phrase
       for _, shape in ipairs(PLURAL_SHAPES) do
         phrase = scope:match(shape, s)
-        ja = phrase and duration(phrase) or nil
+        ja = phrase and render(phrase) or nil
         if ja then break end
       end
       if not ja then
@@ -304,24 +407,33 @@ local function eachDuration(scope, duration, fn)
           local cand = scope:match(shape, s)
           if cand then
             phrase = cand:gsub(DURATION_TRAIL, "")
-            ja = phrase ~= "" and duration(phrase) or nil
+            ja = phrase ~= "" and render(phrase) or nil
             if ja then break end
           end
         end
       end
       if ja then
-        fn(s, #phrase, ja)
+        found[#found + 1] = { s = s, len = #phrase, ja = ja }
         step = s + #phrase
       end
     end
     i = step
   end
+  if #found > 1 then table.sort(found, function(a, b) return a.s < b.s end) end
+  for _, d in ipairs(found) do fn(d.s, d.len, d.ja, d.worded) end
 end
 
--- → the live line's durations in reading order, each already in Japanese.
+-- → the live line's durations in reading order, each already in Japanese. `worded[k]` is set when the k-th is
+-- the client's words and not a number with its unit.
 function Align.durations(scope, duration)
   local out = {}
-  eachDuration(scope, duration, function(_, _, ja) out[#out + 1] = ja end)
+  eachDuration(scope, duration, function(_, _, ja, worded)
+    out[#out + 1] = ja
+    if worded then
+      out.worded = out.worded or {}
+      out.worded[#out] = true
+    end
+  end)
   return out
 end
 
@@ -332,16 +444,54 @@ local function durationsFor(ja, scope, duration)
   return Align.durations(scope, duration)
 end
 
+-- A `$D<k>` slot is written for a number and its unit ("10秒"): `$D1かけて`, `$D1ごとに`. A worded duration
+-- ("until canceled") is an adverb, so it reads as Japanese only where the words after the slot allow it:
+--   kept as written   `$D1の間`, `$D1持続`, `$D1続く`, `$D1です`, `$D1、`, `$D1スタン`
+--   the particle goes `$D1かけて`, `$D1にわたって`, `$D1にわたり` ("over 10 sec" → "until canceled")
+-- Any other slot (`$D1ごとに`, `$D1後`, `$D1以内`, `$D1短縮`) has no reading with words in it: nil, and the line
+-- stays English. → `ja` with the particles after its worded slots taken out, or nil
+local WORDED_KEEP = { "の間", "持続", "続", "です", "、", "スタン" }
+local WORDED_DROP = { "かけて", "にわたって", "にわたり" }
+
+local function startsWith(text, at, list)
+  for _, p in ipairs(list) do
+    if text:sub(at, at + #p - 1) == p then return #p end
+  end
+  return nil
+end
+
+local function wordedSlots(ja, worded)
+  local out, at = {}, 1
+  for k, e in ja:gmatch("%$D(%d+)()") do
+    if worded[tonumber(k)] then
+      local drop = startsWith(ja, e, WORDED_DROP)
+      if drop then
+        out[#out + 1] = ja:sub(at, e - 1)
+        at = e + drop
+      elseif not startsWith(ja, e, WORDED_KEEP) then
+        return nil
+      end
+    end
+  end
+  out[#out + 1] = ja:sub(at)
+  return table.concat(out)
+end
+
 -- $N<k> → values[k], $D<k> → durations[k], $I<k> → icons[k] (the k-th inline icon of the live line).
--- → text, used (the values substituted, in order); nil when any placeholder has no value (fail closed). A bare
--- "$N", "$D" or "$I" is left alone.
+-- → text, used (the values substituted, in order); nil when any placeholder has no value (fail closed): none in
+-- the line, a worded duration asked for as a number, or one in a slot that cannot take words. A bare "$N", "$D"
+-- or "$I" is left alone.
 function Align.fill(ja, values, durations, icons)
   local ok, used = true, {}
   durations = durations or {}
   icons = icons or {}
+  if durations.worded then
+    ja = wordedSlots(ja, durations.worded)
+    if ja == nil then return nil end
+  end
   local text = ja:gsub("%$([NDI])(%d+)", function(kind, k)
     local v = (kind == "N" and values or kind == "D" and durations or icons)[tonumber(k)]
-    if v == nil then ok = false; return "$" .. kind .. k end
+    if not v then ok = false; return "$" .. kind .. k end
     used[#used + 1] = v
     return v
   end)
@@ -415,6 +565,57 @@ local function sameCount(values, count)
   return count == nil or #values == count
 end
 
+-- The live line's values for a Japanese numbered to `count` of them, or nil when the line does not hold that
+-- many. The strict reading stands whenever it has the count (or there is none to hold it to). Only a line it
+-- fails on is read loosely, and that reading is kept only when it has exactly the count. A worded duration
+-- takes a value's place only when the Japanese asks for a duration. → values, whether they are the loose reading
+local function valuesFor(ja, plain, duration, count)
+  local words = ja:find("%$D%d") and duration or nil
+  local values = Align.values(plain, words)
+  if sameCount(values, count) then return values, false end
+  values = Align.values(plain, words, true)
+  if #values == count then return values, true end
+  return nil
+end
+
+-- A GRANTED ABILITY the client left out. "Gain the Wyvern Strike ability:", a blank line, the ability's icon,
+-- then the ability's own description: for a character who does not have the ability the client prints the
+-- heading and the icon and stops. The Japanese is the heading, `$I1`, a line break and the ability's text.
+-- When the live line ends after its one icon and the Japanese has that shape, only the Japanese up to and
+-- including `$I1` is shown, checked against the live line like any line. A live line that goes on after the
+-- icon is not this case and gets the whole check.
+-- A heading may print values of its own ("Heals the target for 450 health over 12 sec and applies Temporal
+-- Beacon for 60 sec.", then the beacon's icon). The English prints the heading before the ability's text, so
+-- the heading's values are the first of the line and its `$N<k>` / `$D<k>` are numbered from 1 as in the whole
+-- Japanese. The live heading must then hold exactly as many values as the heading has slots: one more or one
+-- fewer and every slot after it would take another value.
+-- → the Japanese head, the count of its value slots (nil when it has none) | nil (not this shape)
+local GRANT_ICON = "$I1"
+-- How many values a heading prints: its distinct slots, or its highest `$N<k>` when that is more (a number the
+-- Japanese writes as a literal, "さらに1%", still takes its place among the line's values; durations are numbered
+-- on their own, so only `$N` raises the count). → n | nil when the heading has no slot
+local function slotCount(head)
+  local seen, n, top = {}, 0, 0
+  for slot in head:gmatch("%$[ND]%d+") do
+    if not seen[slot] then seen[slot], n = true, n + 1 end
+  end
+  for k in head:gmatch("%$N(%d+)") do top = math.max(top, tonumber(k)) end
+  n = math.max(n, top)
+  return n > 0 and n or nil
+end
+
+function Align.grantedHead(ja, scope)
+  local at = ja:find(GRANT_ICON, 1, true)
+  if at == nil then return nil end
+  local head, rest = ja:sub(1, at + #GRANT_ICON - 1), ja:sub(at + #GRANT_ICON)
+  -- the ability's text starts on its own line, and no other icon comes before this one
+  if not rest:find("^\r?\n%s*%S") or head:find("%$I%d") ~= at then return nil end
+  local live = scope:gsub("||", ESCAPED .. ESCAPED)
+  local s, e = live:find(TEXTURE)
+  if s == nil or live:find("%S", e + 1) or not live:sub(1, s - 1):find("%S") then return nil end
+  return head, slotCount(head)
+end
+
 -- $N<k> / $D<k> filled from the live text, with no gate. A quest line is `trusted`: its names and
 -- numbers were checked offline against the English, so re-checking them here would reject a good translation
 -- over a count the server fills in. Only the placeholders are resolved, and a placeholder that cannot be
@@ -430,8 +631,8 @@ function Align.fillValues(ja, scope, duration, count)
   if not ja:find("%$[NDI]%d") then return ja end -- nothing to fill: never a failure
   if type(scope) ~= "string" or scope == "" then return nil end
   local plain, icons = Align.textures(scope)
-  local values = Align.values(plain)
-  if not sameCount(values, count) then return nil end
+  local values = valuesFor(ja, plain, duration, count)
+  if values == nil then return nil end
   return (Align.fill(ja, values, durationsFor(ja, plain, duration), icons))
 end
 
@@ -448,11 +649,14 @@ function Align.check(ja, lines, nameScope, duration, count)
     if not ok then return false end
     return true, text .. tail.text
   end
+  -- the count is the whole line's: the head of a granted ability is held to its own names, numbers and count
+  local granted, grantedCount = Align.grantedHead(ja, scope)
+  if granted ~= nil then return Align.check(granted, lines, nameScope, duration, grantedCount) end
   -- Icon escapes out of the live line before anything is read from it, and out of the filled Japanese
   -- before its names and numbers are checked (an icon path is neither)
   local plain, icons = Align.textures(scope)
-  local values = Align.values(plain)
-  if not sameCount(values, count) then return false end
+  local values, loose = valuesFor(ja, plain, duration, count)
+  if values == nil then return false end
   local text = Align.fill(ja, values, durationsFor(ja, plain, duration), icons)
   if text == nil then return false end
   local checked = Align.textures(text)
@@ -460,7 +664,15 @@ function Align.check(ja, lines, nameScope, duration, count)
   if #Align.checkNames(checked, names) > 0 then return false end
   -- evidence = the line's digit runs ∪ number words ∪ its value tokens with separators stripped ("1,200" → 1200,
   -- so a corpus "1200" matches a rendered "1,200"); glued tokens are not values, so "Mk2" never vouches for a 2
-  if #Align.checkNumbers(checked, plain, values) > 0 then return false end
+  local evidence = values
+  if loose then -- a glued value's digits are not among the line's digit runs, which skip a glued number
+    evidence = {}
+    for _, v in ipairs(values) do
+      evidence[#evidence + 1] = v
+      for run in (v or ""):gmatch("%d+") do evidence[#evidence + 1] = run end
+    end
+  end
+  if #Align.checkNumbers(checked, plain, evidence) > 0 then return false end
   return true, text
 end
 
@@ -494,7 +706,7 @@ function Align.sections(sec, lines, nameScope, duration)
     if not found then return false end
     -- the paragraph shows exactly the values its Japanese is numbered for, no more
     local plain = Align.textures(p)
-    if #Align.values(plain) .. "/" .. #Align.durations(plain, duration) ~= found.shape then return false end
+    if #Align.values(plain, duration) .. "/" .. #Align.durations(plain, duration) ~= found.shape then return false end
     local ok, text = Align.check(found.ja, { p }, nameScope, duration)
     if not ok then return false end
     out[#out + 1] = text
@@ -567,7 +779,7 @@ function Align.checkVariants(variants, shapes, lines, nameScope, duration)
   local live, liveKey
   if compare or keys then
     local plain = Align.textures(table.concat(lines, "\n"))
-    if compare then live = #Align.values(plain) .. "/" .. #Align.durations(plain, duration) end
+    if compare then live = #Align.values(plain, duration) .. "/" .. #Align.durations(plain, duration) end
     if keys then liveKey = keyOfPlain(plain, duration) end
   end
   local found, count = nil, 0

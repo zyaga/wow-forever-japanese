@@ -1358,5 +1358,9 @@ DYNAMIC: dict[str, list[str]] = {
         r"LEVEL_UP(_NO_LINK|_HEALTH|_HEALTH_MANA|_STAT|_SKILL_POINTS|_CHAR_POINTS)?",
         r"DURABILITYDAMAGE_DEATH",
         r"INSTANCE_RESET_[A-Z0-9_]+", r"RANDOM_ROLL_RESULT", r"ACHIEVEMENT_BROADCAST(_SELF)?",
+        # how drunk the character or a player nearby is, written by the client itself when it changes
+        r"DRUNK_MESSAGE_[A-Z0-9_]+",
+        # a duel's end, written by the client itself with the two players' names
+        r"DUEL_WINNER_(KNOCKOUT|RETREAT)",
     ],
 }

@@ -27,6 +27,17 @@ describe("Core/Align: shared vectors", function()
         table.sort(got, function(x, y) if #x ~= #y then return #x < #y end return x < y end)
       elseif c.op == "numberWords" then
         got = A.numberWords(c.text)
+      elseif c.op == "values" or c.op == "valuesLoose" then
+        got = A.values(c.text, nil, c.op == "valuesLoose")
+      elseif c.op == "wordedSlots" then
+        -- what `fill` writes, with the slots left as written: each fills itself
+        local durations = { "$D1", "$D2", worded = { true } }
+        got = A.fill(c.text, { "$N1", "$N2", "$N3" }, durations, {}) or ""
+      elseif c.op == "grantedHead" then
+        got = A.grantedHead(c.text, c.scope) or ""
+      elseif c.op == "grantedCount" then
+        local _, count = A.grantedHead(c.text, c.scope)
+        got = count and tostring(count) or ""
       else
         got = c.expected -- variantKey needs Normalize and Hash: its vectors run in their own block below
       end
@@ -240,6 +251,17 @@ describe("fillValues", function()
     local ns = {}
     H.loadPure("Core/Align.lua", "WoWForeverJapanese", ns)
     A = ns.Align
+  end)
+
+  it("a range whose ends carry a thousands separator fits like any other range", function()
+    local live = "Smites an enemy, inflicting 1,350 to 1,650 Holy damage."
+    assert.are.same({ "1350～1650" }, A.values(live))
+    assert.are.same({ true, "敵に1350～1650のHolyダメージを与えます。" },
+      { A.check("敵に$N1のHolyダメージを与えます。", { live }, nil, nil, 1) })
+    -- one end only, and a second range after it
+    assert.is_true((A.check("$N1のダメージ、さらに$N2。", { "Deals 335 to 1,005 damage, then 285 to 315 more." })))
+    -- a range vouches for its own two ends only
+    assert.is_false((A.check("$N1のダメージ。1350回。", { "Deals 1,350 to 1,650 damage." })))
   end)
 
   it("a range the client prints is one value, filled as A～B", function()
@@ -460,8 +482,8 @@ end)
 -- template the same way; the vectors hold the pairs.
 describe("Core/Align.variantKey and keyed variants", function()
   local A
-  local SEC = function(t) return ({ ["30 sec"] = "30秒", ["18 sec"] = "18秒", ["3 sec"] = "3秒", ["2 min"] = "2分",
-    ["1 hr 30 min"] = "1時間30分" })[t] end
+  local SEC = function(t) return ({ ["30 sec"] = "30秒", ["18 sec"] = "18秒", ["3 sec"] = "3秒", ["4 sec"] = "4秒",
+    ["5 sec"] = "5秒", ["2 min"] = "2分", ["1 hr 30 min"] = "1時間30分" })[t] end
   setup(function()
     local ns = {}
     H.loadPure("Core/Normalize.lua", "WoWForeverJapanese", ns)
@@ -571,5 +593,156 @@ describe("the count of values a line is numbered to", function()
     assert.is_nil(A.fillValues(OLD, LONG[1], nil, 2))
     assert.are.equal("12%の確率でコストを20%軽減します。最大5回まで重なります。", A.fillValues(NEW, LONG[1], nil, 3))
     assert.are.equal("変わりません。", A.fillValues("変わりません。", LONG[1], nil, 9))
+  end)
+end)
+
+-- A spell the character does not know: the client prints its own words where a duration belongs, leaves out the
+-- text of an ability the spell grants, and a few templates glue a value to a word.
+describe("a spell the character does not know", function()
+  local A
+  -- the stub of UIStrings' renderer: the durations it knows, and the client's phrase with its Japanese
+  local DUR = {
+    render = function(t) return ({ ["1.5 sec"] = "1.5秒", ["2 sec"] = "2秒", ["5.2 sec"] = "5.2秒",
+      ["10 sec"] = "10秒" })[t] end,
+    words = { { en = "until canceled", ja = "解除されるまで" } },
+  }
+  local NUMBERS = function(t) return DUR.render(t) end -- a client whose dictionary has no Japanese for the phrase
+  setup(function()
+    local ns = {}
+    H.loadPure("Core/Align.lua", "WoWForeverJapanese", ns)
+    A = ns.Align
+  end)
+
+  it("fills a $D slot with \"until canceled\" where the Japanese after it can take words", function()
+    local thorns = { "Thorns sprout from the friendly target causing 475 to 525 Nature damage to attackers when hit."
+      .. "  Lasts until canceled." }
+    assert.are.same({ true, "味方の対象からイバラが生え、攻撃者に475～525のNatureダメージを与えます。解除されるまで持続します。" },
+      { A.check("味方の対象からイバラが生え、攻撃者に$N1のNatureダメージを与えます。$D1持続します。", thorns, nil, DUR, 2) })
+    -- "over 10 sec" is written `$D1かけて`: the particle goes with the number
+    local burn = { "Burns the enemy for Arcane damage and inflicts additional damage over until canceled." }
+    local BURN = "敵を焼いてArcaneダメージを与え、さらに$D1かけて追加のダメージを与えます。"
+    assert.are.same({ true, "敵を焼いてArcaneダメージを与え、さらに解除されるまで追加のダメージを与えます。" },
+      { A.check(BURN, burn, nil, DUR, 1) })
+    assert.are.same({ true, "敵を焼いてArcaneダメージを与え、さらに10秒かけて追加のダメージを与えます。" },
+      { A.check(BURN, { "Burns the enemy for Arcane damage and inflicts additional damage over 10 sec." }, nil,
+        DUR, 1) })
+    -- the phrase holds the first value's place, so the later slots keep their numbers
+    local whirl = { "You attack all nearby enemies for until canceled causing weapon damage plus an additional 5 "
+      .. "every 5.2 sec." }
+    assert.are.same({ true, "解除されるまでの間、近くの敵すべてを攻撃し、5.2秒ごとに武器ダメージに加えて5の追加ダメージを与えます。" },
+      { A.check("$D1の間、近くの敵すべてを攻撃し、$D2ごとに武器ダメージに加えて$N2の追加ダメージを与えます。", whirl, nil, DUR, 3) })
+  end)
+
+  it("leaves the line English where the slot cannot take words, or the phrase has no Japanese", function()
+    local tick = { "Suffering Arcane damage every until canceled." }
+    assert.is_false((A.check("$D1ごとにArcaneダメージを受けています。", tick, nil, DUR, 1)))
+    assert.is_false((A.check("$D1後に爆発します。", { "Explodes after until canceled." }, nil, DUR, 1)))
+    local burn = { "Burns the enemy for Arcane damage and inflicts additional damage over until canceled." }
+    assert.is_false((A.check("敵を焼いてArcaneダメージを与え、さらに$D1かけて追加のダメージを与えます。", burn, nil, NUMBERS, 1)))
+    assert.is_false((A.check("敵を焼いてArcaneダメージを与え、さらに$D1かけて追加のダメージを与えます。", burn, nil, nil, 1)))
+    -- the phrase is never a number: a `$N` pointing at its place fails closed
+    assert.is_false((A.check("$N1の間、$D1持続します。", { "Lasts until canceled." }, nil, DUR, 1)))
+    -- and it is counted only for a Japanese that asks for a duration
+    assert.are.same({}, A.values("Appears poisoned until canceled."))
+    assert.are.same({ false }, A.values("Appears poisoned until canceled.", DUR))
+    assert.is_true((A.check("解除されるまで毒に見えます。", { "Appears poisoned until canceled." }, nil, DUR)))
+    assert.are.same({ "解除されるまで", "2秒", worded = { true } }, A.durations("Lasts until canceled, then 2 sec.", DUR))
+    assert.are.same({ "2秒" }, A.durations("uncanceled untilcanceled 2 sec.", DUR))
+  end)
+
+  it("a variant key masks the phrase as the duration it stands for", function()
+    local ns = {}
+    H.loadPure("Core/Normalize.lua", "WoWForeverJapanese", ns)
+    H.loadPure("Core/Hash.lua", "WoWForeverJapanese", ns)
+    H.loadPure("Core/Align.lua", "WoWForeverJapanese", ns)
+    assert.are.equal(ns.Align.variantKey("Lasts 10 sec.", DUR), ns.Align.variantKey("Lasts until canceled.", DUR))
+  end)
+
+  it("shows a granted ability's heading and icon when the client left the ability's text out", function()
+    local JA = "Wyvern Strikeのアビリティを得ます：\n\n$I1\n対象に$N1のダメージを与え、$D1の間$N2のダメージを与えます。"
+    local short = { "Gain the Wyvern Strike ability:\r\n\r\n|T135125:24|t\r\n" }
+    assert.are.same({ true, "Wyvern Strikeのアビリティを得ます：\n\n|T135125:24|t" }, { A.check(JA, short, nil, DUR, 3) })
+    local rune = { "Engrave your chest with the Burnout rune:\r\n\r\n|T236207:24|t\r\n" }
+    assert.are.same({ true, "胸部にBurnoutのルーンを刻みます：\n\n|T236207:24|t" },
+      { A.check("胸部にBurnoutのルーンを刻みます：\n\n$I1\n呪文のクリティカル率が$N1%上昇します。", rune, nil, DUR, 1) })
+    -- the heading is still held to the live line's names
+    assert.is_false((A.check(JA, { "Gain the Mutilate ability:\r\n\r\n|T135125:24|t\r\n" }, nil, DUR, 3)))
+    -- a live line that carries the ability's text gets the whole check
+    local long = { "Gain the Wyvern Strike ability:\r\n\r\n|T135125:24|t\r\nDeals 40 damage, then 12 over 10 sec." }
+    assert.are.same({ true, "Wyvern Strikeのアビリティを得ます：\n\n|T135125:24|t\n対象に40のダメージを与え、10秒の間12のダメージを与えます。" },
+      { A.check(JA, long, nil, DUR, 3) })
+    assert.is_false((A.check(JA, { long[1] .. " And 5 more." }, nil, DUR, 3)))
+    -- a line with no icon, or a Japanese with no text after its icon, is not this case
+    assert.is_false((A.check(JA, { "Gain the Wyvern Strike ability:" }, nil, DUR, 3)))
+    assert.is_nil(A.grantedHead("Wyvern Strikeのアビリティを得ます：\n\n$I1", short[1]))
+    assert.is_true((A.gate({ ja = JA, status = "u", values = 3 }, short, DUR)))
+  end)
+
+  -- spells 401417 and 412510 as the client prints them for a character without Temporal Beacon: a heading with
+  -- values and durations of its own, the ability's name and icon, and nothing after the icon
+  it("shows a granted ability's heading with its own values, held to the heading's count", function()
+    local SECS = { render = function(t) return ({ ["12 sec"] = "12秒", ["60 sec"] = "60秒", ["30 sec"] = "30秒" })[t] end }
+    local TEMPORAL = "$D1かけて体力を$N1回復し、$D2の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n$I1\r\n"
+      .. "対象の時空間の位置を記録します。術者が与えたArcaneダメージの$N4%が変換されます。"
+    local live = { "Heals the target for 450 health over 12 sec and applies Temporal Beacon for 60 sec. \r\n\r\n"
+      .. "Temporal Beacon\r\n|T237538:24|t\r\n" }
+    assert.are.same({ true, "12秒かけて体力を450回復し、60秒の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n"
+      .. "|T237538:24|t" }, { A.check(TEMPORAL, live, nil, SECS) })
+    assert.is_true((A.gate({ ja = TEMPORAL, status = "u" }, live, SECS)))
+    local PARTY = "対象のプレイヤーから$N1ヤード以内にいる、そのプレイヤーのパーティーメンバー全員を$D1かけて体力を$N2回復し、"
+      .. "それぞれに$D2の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n$I1\r\n本文の$N5%。"
+    local party = { "Heals all of target player's party members within 40 yards of target player for 300 health over"
+      .. " 12 sec and applies Temporal Beacon to each target for 30 sec.\r\n\r\nTemporal Beacon\r\n|T237538:24|t" }
+    assert.are.same({ true, "対象のプレイヤーから40ヤード以内にいる、そのプレイヤーのパーティーメンバー全員を12秒かけて体力を"
+      .. "300回復し、それぞれに30秒の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n|T237538:24|t" },
+      { A.check(PARTY, party, nil, SECS) })
+    -- a heading the client prints with one value more or one fewer: every later slot would move, English stays
+    assert.is_false((A.check(TEMPORAL, { live[1]:gsub("for 60 sec", "for 60 sec, 5 times") }, nil, SECS)))
+    assert.is_false((A.check(TEMPORAL, { live[1]:gsub("for 450 health ", "") }, nil, SECS)))
+    -- still held to the heading's names, and to its durations
+    assert.is_false((A.check(TEMPORAL, { live[1]:gsub("Temporal Beacon", "Chrono Beacon") }, nil, SECS)))
+    assert.is_false((A.check(TEMPORAL, live, nil, nil)))
+    -- the ability's text on the live line: the whole check, which the shortened sample cannot pass
+    assert.is_false((A.check(TEMPORAL, { live[1] .. "Records the target's location." }, nil, SECS)))
+  end)
+
+  it("reads a number glued to a word only when the strict reading misses the line's count", function()
+    local stun = { "Deal 294 Physical damage and stun for1.5 sec. Trolls take 2 times as much damage and stun "
+      .. "duration." }
+    local STUN = "$N1のPhysicalダメージを与え、$D1の間スタンさせます。トロールは$N3倍のダメージとスタン時間を受けます。"
+    assert.are.same({ true, "294のPhysicalダメージを与え、1.5秒の間スタンさせます。トロールは2倍のダメージとスタン時間を受けます。" },
+      { A.check(STUN, stun, nil, DUR, 3) })
+    assert.are.same({ true, "蓄えた時間術のエネルギーを解き放ち、味方の対象の体力を即座に79から118回復します。" },
+      { A.check("蓄えた時間術のエネルギーを解き放ち、味方の対象の体力を即座に$N1から$N2回復します。",
+        { "Unleash stored chronomantic energy to instantly heal a friendly target for 79to 118." }, nil, DUR, 2) })
+    assert.are.same({ true, "2秒ごとに140のNatureダメージを与えます。トロールには2倍のダメージを与えます。" },
+      { A.check("$D1ごとに$N1のNatureダメージを与えます。トロールには$N3倍のダメージを与えます。",
+        { "Inflicts140 Nature damage per 2 sec. Deaks 2 times as much damage to Trolls." }, nil, DUR, 3) })
+    assert.are.same({ true, "対象に19～37のNatureダメージを与えます。Mechanicalの対象は2倍のダメージを受けます。" },
+      { A.check("対象に$N1のNatureダメージを与えます。Mechanicalの対象は$N2倍のダメージを受けます。",
+        { "Blasts a target for 19 to 37 Nature damage. Mechanical targets take 2x damage." }, nil, DUR, 2) })
+    assert.are.same({ true, "故障が発生しました。2秒ごとにアーケインエネルギーが放出されます。" },
+      { A.check("故障が発生しました。$N1秒ごとにアーケインエネルギーが放出されます。",
+        { "A malfunction has occurred. Every 2s arcane energy is released dealing damage to players in a nearby "
+          .. "area." }, nil, DUR, 1) })
+    assert.are.same({ true, "焼き印を消費すると、-24～-21のShadowダメージを与えます。" },
+      { A.check("焼き印を消費すると、$N1のShadowダメージを与えます。",
+        { "Consuming a brand deals -24 to -21 Shadow damage." }, nil, DUR, 1) })
+  end)
+
+  it("never reads a name's number, and never changes a line the strict reading fits", function()
+    -- no count, no loose reading
+    assert.is_false((A.check("$N1のダメージ、$N2秒。", { "Deals 5 damage for2 sec." })))
+    -- the strict reading has the count: the glued number stays out even though its shape is one the loose takes
+    assert.are.same({ true, "5のダメージ、3回。" },
+      { A.check("$N1のダメージ、$N2回。", { "Deals 5 damage 3 times for2 sec." }, nil, nil, 2) })
+    -- a name's number is no shape the loose reading takes, so the count cannot be made up from it
+    for _, name in ipairs({ "Mk2", "Mace2H", "247x128", "G00 DV-1B3", "AQ40", "x2", "30sec" }) do
+      assert.is_false((A.check("$N1のダメージ、$N2。", { "Deals 5 damage with the " .. name .. "." }, nil, nil, 2)), name)
+      assert.are.same({ "5" }, A.values("Deals 5 damage with the " .. name .. ".", nil, true), name)
+    end
+    -- the loose reading with more or fewer values than the count is refused too
+    assert.is_false((A.check("$N1のダメージ。", { "Deals for5 damage for2 sec." }, nil, nil, 1)))
+    assert.is_false((A.check("$N1、$N2、$N3、$N4。", { "Deals for5 damage for2 sec." }, nil, nil, 4)))
   end)
 end)

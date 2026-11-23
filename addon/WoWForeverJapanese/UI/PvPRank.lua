@@ -7,8 +7,11 @@
 -- onto the frame at load and every call is `self:…()`), post-hooked on the frame:
 --   PVPRankFrame:Update (pvprankframe.lua:90–122; OnShow :46, OnEvent :74) →
 --     MainInfoFrame.CurrentSeasonField   format(EXPANSION_SEASON_NAME, '', season): " Season 1" (:102)
---     MainInfoFrame.CurrentRankField     PVP_RANK_NUMBER_AND_TITLE ("Rank %d - %s", %s = the rank title, kept
---                                        English), or PVP_RANK_0_NAME ("Civilian", a rank title: left English)
+--     MainInfoFrame.CurrentRankField     PVP_RANK_NUMBER_AND_TITLE ("Rank %d - %s", %s = the rank title, a `name`
+--                                        value), or PVP_RANK_0_NAME alone ("Civilian", a rank title): never a
+--                                        dictionary word; while names are on, the title's Japanese where the name
+--                                        list has it (UI/NameLabels). Nothing reads or measures the field
+--                                        (pvprankframe.lua:108–110; pvprankframe.xml:27–39 only anchor to it)
 --     MainInfoFrame.CurrentRankProgressField  PVP_RANK_CURRENT_PROGRESS (:119)
 --   PVPRankFrame:UpdateSeasonCountdownTimer (:78–88; a C_Timer ticker calls it every second while the frame is
 --     shown, :50–58) → SeasonTimerField SEASON_ENDS_IN_TIME with a SecondsFormatter duration (two unabbreviated
@@ -25,7 +28,10 @@
 --     with no shipped row stays as the client wrote it. Rows are keyed by widget, never by position. A row's height
 --     was measured from the English (characterframe.lua:896-918), so a shown row is re-heighted to its new text
 --     and the pane laid out again (LayoutRows → Content:Layout, :947-949).
--- Never touched: DetailFrame.Title (the rank title, GetPVPRankText), the rank badge's level number.
+--   DetailFrame.Title is the rank title (GetPVPRankText, :7–17, through SetPaneTitle, :154–158;
+--     characterframe.lua:845–849): never a dictionary word; while names are on, the title's Japanese where the
+--     name list has it. Nothing reads or measures it.
+-- Never touched: the rank badge's level number.
 local _, WFJ = ...
 local PvPRank = {}
 WFJ.PvPRank = PvPRank
@@ -49,7 +55,7 @@ local CANDIDATES = {
 local TIMER = { only = { "SEASON_ENDS_IN_TIME" } }
 local MAIN = {
   { "season", { only = { "EXPANSION_SEASON_NAME" } } },
-  { "rank", { only = { "PVP_RANK_NUMBER_AND_TITLE" } } }, -- never PVP_RANK_0_NAME: a rank title stays English
+  { "rank", { only = { "PVP_RANK_NUMBER_AND_TITLE" } } }, -- never PVP_RANK_0_NAME: a rank title is a name
   { "progress", { only = { "PVP_RANK_CURRENT_PROGRESS" } } },
 }
 local SUBTITLE = { only = { "PVP_RANK_NUMBER" } }
@@ -98,7 +104,12 @@ end
 -- hooksecurefunc target (PVPRankFrame:Update). → the number of dictionary words found.
 function PvPRank.onUpdate()
   local n = 0
-  for _, m in ipairs(MAIN) do n = n + WFJ.Labels.show(SURFACE, m[1], get(m[1]), nil, m[2]) end
+  for _, m in ipairs(MAIN) do
+    local shown = WFJ.Labels.show(SURFACE, m[1], get(m[1]), nil, m[2])
+    -- rank 0 writes the rank title alone: a name
+    if shown == 0 and m[1] == "rank" then WFJ.NameLabels.show(SURFACE, "rank", get("rank")) end
+    n = n + shown
+  end
   n = n + PvPRank.onTimer()
   WFJ.Render.updateBanner(SURFACE)
   return n
@@ -111,6 +122,7 @@ function PvPRank.onRefresh()
     + show(SURFACE, "empty", get("empty"), nil, EMPTY)
     + show(SURFACE, "description", descriptionText(), nil, DESCRIPTION)
   local detail = get("detail")
+  WFJ.NameLabels.show(SURFACE, "title", type(detail) == "table" and detail.Title or nil) -- the rank title
   local pools = type(detail) == "table" and detail.rowPools or nil
   if type(pools) == "table" and type(pools.EnumerateActive) == "function" then
     local only = rowOnly()

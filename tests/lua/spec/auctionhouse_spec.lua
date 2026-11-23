@@ -1,7 +1,8 @@
 -- UI/AuctionHouse.lua over an AuctionHouseFrame replayed from camelot
 -- blizzard_auctionhouseui (shared/blizzard_auctionhouseframe.xml:4–197, frame.lua:541–651, itemlist.lua:254–270,
 -- tablebuilder.lua:891–892, sharedtemplates.lua:637–642, categorieslist.lua:91–92), load-on-demand in both load
--- orders. Item, seller and category names from the client tables stay English. Client writes go to `fs.text`.
+-- orders. Seller and category names from the client tables stay English; item names are
+-- auctionhouse_names_spec.lua's. Client writes go to `fs.text`.
 local Stub = require("tests.lua.spec.wow_stub")
 local C = require("tests.lua.spec.stub_commerce")
 
@@ -387,7 +388,7 @@ describe("the auction house on Forever", function()
     end)
   end)
 
-  it("the item display's name is never recorded, whatever it holds", function()
+  it("an item display's name that is a dictionary word, with no name line, is never recorded", function()
     setup(true)
     local frame = _G.AuctionHouseFrame
     frame:Show()

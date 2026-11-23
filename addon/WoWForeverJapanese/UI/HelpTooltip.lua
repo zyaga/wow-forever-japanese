@@ -4,9 +4,15 @@
 -- them).
 -- A window module registers the frames that own such tooltips (HelpTooltip.register). After the client builds the
 -- tooltip (GameTooltip:SetText / :AppendText / :Show post-hooks, plus any client setter a module names, SetTalent),
--- every left and right line, line 1 included (a title here, never a name), goes through Labels.show on this surface
--- when the tooltip's owner is registered. The SetText / Show hooks also catch owner:UpdateTooltip() refreshes,
--- which call functions Blizzard captured before this addon loaded (MainMenuBarBagButtons.lua:240,
+-- every left and right line, line 1 included (a title here; a name only for an owner that says so, below), goes
+-- through Labels.show on this surface
+-- when the tooltip's owner is registered. An owner whose line 1 is a game name when it is no dictionary line (a
+-- bag's name on its portrait) registers with `nameLine` = the name's area: that line then shows the name's Japanese
+-- while names are on (UI/NameLabels.wrapped, its key binding kept). An owner whose line is a composite only its
+-- module can split (a group and its activities in one line) registers with `show`(surface, recKey, fs, refit) → 1 |
+-- 0, asked for each line that is no dictionary line. The SetText / Show hooks also catch
+-- owner:UpdateTooltip() refreshes, which call functions Blizzard captured before this addon loaded
+-- (MainMenuBarBagButtons.lua:240,
 -- Vanilla/PaperDollFrame.lua:717, GameTooltip.lua:447–465). A tooltip showing an item or a spell is never walked:
 -- those lines are UI/Tooltip's. One Show() refit per pass that changed a line (its own hook is ignored while
 -- refitting). Release on OnHide.
@@ -139,7 +145,12 @@ local function walkImpl(tt)
               fs:SetText(owned.en .. current:sub(#owned.applied + 1)) -- the owner's own label, copied by the client
             end
             local before = fs:GetText()
-            n = n + WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
+            local shown = WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
+            if shown == 0 and i == 1 and side == "Left" and labelOpts and labelOpts.nameLine then
+              shown = WFJ.NameLabels.wrapped(SURFACE, recKey, fs, labelOpts.nameLine, refit)
+            end
+            if shown == 0 and labelOpts and labelOpts.show then shown = labelOpts.show(SURFACE, recKey, fs, refit) end
+            n = n + shown
             if fs:GetText() ~= before then changed = true end
             local kept = WFJ.SurfaceState.get(SURFACE, recKey)
             if not (kept and kept.applied ~= nil) and fs:GetText():find(JAPANESE) then
@@ -169,6 +180,18 @@ local function walkImpl(tt)
 end
 function HelpTooltip.walk(tt)
   return WFJ.Perf.call("help", walkImpl, tt)
+end
+
+-- Line `i` of a tooltip this surface walks, when it is a game name (a flight point, a zone, a pin's place): its
+-- Japanese while names are Japanese, under the walk's own key for that line, so the tooltip is laid out again when
+-- the reveal key or the names choice changes it. A line the walk holds as a dictionary word is left to the walk.
+-- → 1 | 0
+function HelpTooltip.nameAt(tt, i)
+  local rec = WFJ.SurfaceState.get(SURFACE, "L" .. i)
+  if rec and rec.meta and rec.meta.kind ~= "name" then return 0 end
+  local name = type(tt) == "table" and type(tt.GetName) == "function" and tt:GetName() or nil
+  local line = type(name) == "string" and Compat.resolve(name .. "TextLeft" .. i) or nil
+  return WFJ.NameLabels.show(SURFACE, "L" .. i, line, nil, HelpTooltip.refit)
 end
 
 -- One walk of `tt` as if its current owner were registered with `opts`: for a tooltip whose owner cannot be

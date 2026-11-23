@@ -7,9 +7,10 @@
 -- "lineShown"(surface, recordKey, kind, id), fired by UI/Render's show when the client wrote a line and it now shows in
 -- Japanese (UI/VoicePlayer); "voice"(), fired by the voice settings' apply. "words"(), fired by Core/Words when
 -- the word list changes (a save, Remove last, Clear all): Core/Study, UI/WordsWindow, UI/StudyWindow and UI/Options
--- follow it.
+-- follow it. "names"(bool), fired by setNames when names switch between the client's English and their Japanese
+-- (the `names.japanese` setting): quest titles follow it too.
 local _, WFJ = ...
-local State = { enabled = true, modifierHeld = false, areas = {}, direction = "ja" }
+local State = { enabled = true, modifierHeld = false, areas = {}, direction = "ja", names = false }
 WFJ.State = State
 
 local handlers = {}
@@ -32,6 +33,15 @@ function State.setEnabled(v)
   if State.enabled == v then return false end
   State.enabled = v
   State.fire("enabled", v)
+  return true
+end
+
+-- Whether names show in Japanese. → whether it changed
+function State.setNames(v)
+  v = v and true or false
+  if State.names == v then return false end
+  State.names = v
+  State.fire("names", v)
   return true
 end
 

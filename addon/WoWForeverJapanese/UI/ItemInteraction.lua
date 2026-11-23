@@ -15,8 +15,9 @@
 --   tooltips, owner = the widget: the conversion input slot's GENERIC_ITEM_CONVERSION_SLOT_TOOLTIP and
 --     ERR_ITEM_CONVERSION_NO_VALID_ITEMS (:728–739; the owner is the item slot), the action button's NOT_ENOUGH_GOLD
 --     (:812–819).
--- Never touched: the title (SetTitle(frameData.titleText), :265, interaction data), the action button's text, item
--- and currency names, costs. Release on the frame's OnHide.
+-- The title is interaction data (SetTitle(frameData.titleText), :265): never a dictionary word; while names are on
+-- it shows its Japanese when the name list has a line for it (UI/NameLabels, no unit behind it), after each
+-- SetTitle. Never touched: the action button's text, item and currency names, costs. Release on the frame's OnHide.
 local _, WFJ = ...
 local ItemInteraction = {}
 WFJ.ItemInteraction = ItemInteraction
@@ -73,6 +74,7 @@ function ItemInteraction.setup()
     frame:HookScript("OnShow", ItemInteraction.show)
     frame:HookScript("OnHide", ItemInteraction.release)
   end
+  WFJ.NameLabels.title(SURFACE, frame, "title", false) -- now, and after every SetTitle
   WFJ.HelpTooltip.register(get("inputSlot"), SLOT_TOOLTIP)
   WFJ.HelpTooltip.register(get("itemSlot"), SLOT_TOOLTIP)
   WFJ.HelpTooltip.register(get("action"), ACTION_TOOLTIP)

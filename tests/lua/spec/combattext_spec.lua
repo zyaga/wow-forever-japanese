@@ -146,6 +146,23 @@ describe("the floating combat text on Forever", function()
     assert.are.equal(SECRET, last():GetText())
   end)
 
+  it("a FontString holding a secret is never compared or written, even when the message is not secret", function()
+    local checked = {}
+    _G.issecretvalue = function(v) checked[#checked + 1] = v; return v == SECRET end
+    local frame = installCombatText()
+    Stub.loadedAddons["Blizzard_CombatText"] = true
+    assert.is_true(WFJ.CombatText.init())
+    _G.CombatText:AddMessage(en("COMBAT_TEXT_DODGE"))
+    assert.are.equal(ja("COMBAT_TEXT_DODGE"), last():GetText())
+    -- the client's last active string holds a secret while the hook's message is plain text
+    frame.pool[1].GetText = function() return SECRET end
+    _G.CombatText:AddMessage(en("COMBAT_TEXT_DODGE"))
+    assert.are.equal(SECRET, last():GetText())
+    local sawSecret = false
+    for _, v in ipairs(checked) do if v == SECRET then sawSecret = true end end
+    assert.is_true(sawSecret) -- the string's text was asked about before anything compared it
+  end)
+
   it("a reused FontString forgets its word: Alt never puts it back over a number or a secret", function()
     installCombatText()
     Stub.loadedAddons["Blizzard_CombatText"] = true

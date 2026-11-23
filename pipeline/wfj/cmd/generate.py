@@ -16,7 +16,17 @@ from pathlib import Path
 from typing import Any
 
 from wfj.cmd.voice_displays import DISPLAYS
-from wfj.core import align, english_cards, glosses, numbered, pronunciation, readings, tooltip_text
+from wfj.core import (
+    align,
+    english_cards,
+    glosses,
+    numbered,
+    pronunciation,
+    readings,
+    spell_shapes,
+    tooltip_text,
+)
+from wfj.core import names as names_core
 from wfj.core.align import load_allowlist
 from wfj.core.english_text import model_english
 from wfj.core.hashing import key as hash_key
@@ -28,8 +38,10 @@ from wfj.io.names_store import load_lines as load_name_lines
 from wfj.paths import allowlist_path, data_root
 
 TOC_NAME = "WoWForeverJapanese.toc"
-# the generated files that are not shards, in load order; the last two ship only when the store has their data
-FIXED = ("Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua", "Data/Displays.lua")
+# the generated files that are not shards, in load order; the last three ship only when there is data for them
+FIXED = (
+    "Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua", "Data/Displays.lua", "Data/SpellShapes.lua",
+)
 ERROR_SOUNDS = Path("voice") / "error-sounds.jsonl"
 VECTORS_HEAD = "WFJ.Data.vectors ="
 
@@ -157,6 +169,8 @@ def branch_variants(
 
 
 _FILLED = re.compile(r"\$[ND]\d")
+# the statuses the addon shows only when the live line passes the gate
+_GATED = frozenset({"unaligned", "stale"})
 # a count no live line has: the line stays English until it is drafted again
 NEVER_FITS = -1
 
@@ -168,7 +182,9 @@ def value_counts(
     en_by: dict[tuple[int, str], str] | None = None,
 ) -> dict[tuple[int, str], int]:
     """(id, field) → how many numbers the client prints for the line's English (`align.value_slots`), for
-    every shipped item / spell line whose Japanese is filled from the live line and keeps no conditional.
+    every shipped item / spell line whose Japanese is filled from the live line, or is shown only when the
+    live line passes the gate, and keeps no conditional. A gated Japanese with no placeholder holds nothing
+    the gate could miss in a line the client has rewritten, so the count is what holds it to its English.
     The line's `$N<k>` are numbered to that English. On a client whose template has gained or lost a number
     every later placeholder would take another value, and the gate cannot tell: each number it fills in is
     in the live line. So the addon shows the line only while the live line holds exactly this many.
@@ -177,7 +193,8 @@ def value_counts(
     counted from the template (or with no English in the store) gets none and is gated as before."""
     todo = [
         ln for ln in lines
-        if lua_writer.shipped(ln) and _FILLED.search(str(ln.get("ja") or ""))
+        if lua_writer.shipped(ln) and str(ln.get("ja") or "")
+        and (_FILLED.search(str(ln["ja"])) or ln.get("status") in _GATED)
         and not align.has_branches(str(ln.get("ja") or ""))
     ]
     if not todo:
@@ -346,8 +363,22 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     if displays:
         _check_displays(displays)
         out["Data/Displays.lua"] = lua_writer.displays_text(displays)
+    shapes = _plan_spell_shapes(store, english_store)
+    if shapes:
+        out["Data/SpellShapes.lua"] = lua_writer.spell_shapes_text(shapes)
     out.update(_plan_names(store.root))
     return out
+
+
+def _plan_spell_shapes(store: Store, english_store: Store) -> dict[str, int]:
+    """The spell an item's tooltip line prints, by the line's shape (core/spell_shapes.py, ADR-107). The
+    spells' Japanese is compared as it ships (manual breaks joined)."""
+    spell_english = english_store.load("spell")
+    en_by = {(ln["id"], ln["field"]): ln["en"] for ln in spell_english}
+    lines = tooltip_text.joined(store.load("spell"), en_by)
+    english, shipped = spell_shapes.spell_inputs(lines, spell_english)
+    items = [ln["en"] for ln in english_store.load("item") if ln["field"] == "description"]
+    return spell_shapes.table(english, shipped, items)
 
 
 def _check_error_sounds(rows: list[dict]) -> None:
@@ -381,12 +412,23 @@ def _check_displays(rows: list[dict]) -> None:
 NAMES_DIR = "Data/Names"
 
 
+def load_kept_as_written(root: Path) -> frozenset[str]:
+    """The words the screen keeps as the client writes them (`pipeline/names_kept_as_written.txt`, beside the
+    data root); none when the file is missing."""
+    path = root.parent / "pipeline" / "names_kept_as_written.txt"
+    if not path.is_file():
+        return frozenset()
+    lines = (ln.strip() for ln in path.read_text(encoding="utf-8").splitlines())
+    return frozenset(ln for ln in lines if ln and not ln.startswith("#"))
+
+
 def _plan_names(root: Path) -> dict[str, str]:
-    """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. They are left out of
-    the TOC: nothing loads them until the names setting does (ADR-078)."""
+    """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. The TOC lists them
+    last. A word the screen keeps as written is left out: the addon then has no Japanese for it."""
+    keep = load_kept_as_written(root)
     by_shard: dict[str, list[dict[str, Any]]] = {}
     for ln in load_name_lines(root):
-        if ln["status"] == "trusted":
+        if ln["status"] == "trusted" and not names_core.kept_as_written(ln["en"], keep):
             by_shard.setdefault(ln["id"][:2], []).append(ln)
     return {
         f"{NAMES_DIR}/Names_{nn}.lua": lua_writer.names_text(nn, ls) for nn, ls in sorted(by_shard.items())
@@ -765,8 +807,9 @@ def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
 
 
 def toc_files(planned: dict[str, str]) -> list[str]:
-    """Load order inside the generated block: Meta, Vectors, the error recordings, the displays, then shards
-    by type then range."""
+    """Load order inside the generated block: Meta, Vectors, the error recordings, the displays, the spell
+    shapes, then shards by type then range, then the name tables."""
+    names = sorted(p for p in planned if p.startswith(f"{NAMES_DIR}/"))
     shards = [p for p in planned if p not in FIXED and not p.startswith(f"{NAMES_DIR}/")]
     order = {t: i for i, t in enumerate(schema.TOC_ORDER)}
 
@@ -774,7 +817,7 @@ def toc_files(planned: dict[str, str]) -> list[str]:
         return next(t for t, pre in schema.FILE_PREFIX.items() if rel.startswith(f"Data/{pre}/"))
 
     shards.sort(key=lambda p: (order[type_of(p)], p))
-    return [*(p for p in FIXED if p in planned), *shards]
+    return [*(p for p in FIXED if p in planned), *shards, *names]
 
 
 def toc_with_block(toc_text: str, files: list[str]) -> str:

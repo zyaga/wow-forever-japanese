@@ -1,7 +1,11 @@
 -- UI/ZoneText.lua: the zone banner's PvP line and the follow status on Forever (surface "zonetext", area "ui",
 -- ADR-016). Blizzard_FrameXML loads mainline/zonetext.lua|xml on camelot. The zone and subzone names
 -- (ZoneTextString, SubZoneTextString: GetZoneText / GetSubZoneText, zonetext.lua:88, 105, 115, 130) are place names
--- and are never touched. The lines under them are dictionary words, written by the global SetZoneText
+-- and are never read as dictionary words; while names are on they show the place's Japanese (UI/NameLabels). The
+-- client writes each of them just before it calls SetZoneText (:89–91, :105–106, :115–116), and compares the zone
+-- against its own copy (self.zoneText), never against the widget, so the post-hook below sees both names written
+-- and changes nothing the client reads back. The lines under them are dictionary words, written by the global
+-- SetZoneText
 -- (zonetext.lua:7–69), which ZoneText_OnEvent calls by name (:90, 106, 116), so a post-hook on the global sees every
 -- write:
 --   PVPInfoTextString / PVPArenaTextString  SANCTUARY_TERRITORY (:17), FREE_FOR_ALL_TERRITORY (:22),
@@ -20,10 +24,11 @@ local SURFACE = "zonetext"
 ZoneText.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
-ZoneText.NEVER_TOUCH = { "ZoneTextString", "SubZoneTextString" } -- place names
+ZoneText.NEVER_TOUCH = { "ZoneTextString", "SubZoneTextString" } -- place names: never a dictionary word
 
 local CANDIDATES = {
   pvpInfo = { "PVPInfoTextString" }, pvpArena = { "PVPArenaTextString" },
+  zone = { "ZoneTextString" }, subzone = { "SubZoneTextString" },
   followFrame = { "AutoFollowStatus" }, followText = { "AutoFollowStatusText" },
   setZoneText = { "SetZoneText" },
 }
@@ -38,6 +43,8 @@ local function get(key) return Compat.get(SURFACE, key) end
 function ZoneText.onZoneText()
   local n = WFJ.Labels.show(SURFACE, "pvpInfo", get("pvpInfo"), nil, PVP)
     + WFJ.Labels.show(SURFACE, "pvpArena", get("pvpArena"), nil, PVP)
+  WFJ.NameLabels.show(SURFACE, "zone", get("zone"))
+  WFJ.NameLabels.show(SURFACE, "subzone", get("subzone"))
   WFJ.Render.updateBanner(SURFACE)
   return n
 end

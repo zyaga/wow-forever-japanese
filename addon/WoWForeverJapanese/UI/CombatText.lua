@@ -91,9 +91,15 @@ function CombatText.onAddMessage(frame, message)
   local fs = type(active) == "table" and active[#active] or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" then return 0 end
   local recKey = fsKey(fs)
-  local prefix, tail
-  if not secret(message) then prefix, tail = trailer(message) end
-  if prefix and fs:GetText() == message and WFJ.UIIndex then
+  -- the FontString may hold a secret value even when the message does not (the pool's last string can be
+  -- another message's): a secret is never compared, so both are checked before any comparison
+  local shown = fs:GetText()
+  if secret(message) or secret(shown) then
+    WFJ.SurfaceState.drop(SURFACE, recKey) -- a reused FontString: forget the word it held
+    return 0
+  end
+  local prefix, tail = trailer(message)
+  if prefix and shown == message and WFJ.UIIndex then
     local key, args = WFJ.UIIndex:matchOnly(tail, CombatText.TRAILERS.only)
     if key then
       WFJ.Render.show(SURFACE, recKey, fs, message, "ui", "ui", key,
@@ -101,11 +107,7 @@ function CombatText.onAddMessage(frame, message)
       return 1
     end
   end
-  if secret(message) then
-    WFJ.SurfaceState.drop(SURFACE, recKey) -- a reused FontString: forget the word it held
-    return 0
-  end
-  if fs:GetText() ~= message then return 0 end -- not the FontString this call wrote
+  if shown ~= message then return 0 end -- not the FontString this call wrote
   local key, args = CombatText.composite(message)
   if key then return WFJ.Labels.showArgs(SURFACE, recKey, fs, key, args) end
   if SKIP[message:sub(1, 1)] then

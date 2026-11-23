@@ -124,6 +124,8 @@
 {"id": "TIME_PLAYED_LEVEL", "field": "text", "en": "Time played this level: %s", "hash": "5585cf40887fbfd8", "src": "db2@1.60.1.71037"}
 {"id": "TIME_PLAYED_TOTAL", "field": "text", "en": "Total time played: %s", "hash": "125e655e44a7ef8b", "src": "db2@1.60.1.71037"}
 {"id": "TIME_REMAINING", "field": "text", "en": "Time Remaining:", "hash": "16a4682689dff12a", "src": "db2@1.60.1.71037"}
+{"id": "TIME_TWELVEHOURAM", "field": "text", "en": "%d:%02d AM", "hash": "85da508326cbeb2b", "src": "db2@1.60.1.71037"}
+{"id": "TIME_TWELVEHOURPM", "field": "text", "en": "%d:%02d PM", "hash": "85da583026cdc95a", "src": "db2@1.60.1.71037"}
 {"id": "TIME_UNTIL_DELETED", "field": "text", "en": "Time until message is deleted", "hash": "df69583b385526d4", "src": "db2@1.60.1.71037"}
 {"id": "TIME_UNTIL_RETURNED", "field": "text", "en": "Time until message is returned", "hash": "cfd8d212c22978e7", "src": "db2@1.60.1.71037"}
 {"id": "TITLE_DOESNT_EXIST", "field": "text", "en": "You don't have that title.", "hash": "1d40100f0cd5f115", "src": "db2@1.60.1.71037"}

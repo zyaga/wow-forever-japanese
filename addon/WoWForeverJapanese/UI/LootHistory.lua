@@ -22,8 +22,13 @@
 -- The row's own tooltip (SetTooltip, owner = the row, :46–108) ends with "Waiting on: " .. the players' names
 -- (LOOT_HISTORY_WAITING_ON, the `prefix` form, names kept): the row is registered with that one key, so the item-name
 -- title is never matched.
--- Never touched: ItemName (an item), WinningRollInfo.WinningRoll (a player), a leader's name, the EncounterDropdown
--- (encounter names; its popup is UI/Menus').
+-- A row's ItemName is the item's name (Init, :120; its colour by SetVertexColor, :125): never a dictionary word; while
+-- names are on it shows the item's Japanese (UI/NameLabels), after the view initializes the row and after each Init.
+-- A plain label: a fixed 150x32 FontString (loothistory.xml:133–138) on a plain Frame (:3), never read or measured
+-- (the row's tooltip names the item from its link, :53–55).
+-- Release on the frame's OnHide; its OnShow walks every existing row again.
+-- Never touched: WinningRollInfo.WinningRoll (a player), a leader's name, the EncounterDropdown (encounter names; its
+-- popup is UI/Menus').
 -- Without GroupLootHistoryFrame nothing is hooked.
 local _, WFJ = ...
 local LootHistory = {}
@@ -61,6 +66,15 @@ local function showWinner(row)
   end
 end
 
+-- The parts of a row its Init writes: the item's name and the winner line.
+local function showInit(row)
+  if type(row) ~= "table" then return end
+  if type(row.ItemName) == "table" then
+    WFJ.NameLabels.show(SURFACE, rowKey(row.ItemName), row.ItemName, "items")
+  end
+  showWinner(row)
+end
+
 local function get(key) return Compat.get(SURFACE, key) end
 
 -- ScrollUtil callback: (owner, frame, elementData) for a newly initialized row, (frame, elementData) on the
@@ -74,11 +88,11 @@ function LootHistory.onRow(a, b, c)
   local info = row.AllPassedInfo
   local text = type(info) == "table" and info.AllPassedText or nil
   if type(text) == "table" then WFJ.Labels.show(SURFACE, rowKey(text), text, nil, ALL_PASSED) end
-  showWinner(row)
+  showInit(row)
   WFJ.HelpTooltip.register(row, ROW_TIP)
   if not initHooked[row] and type(row.Init) == "function" then
     initHooked[row] = true
-    hooksecurefunc(row, "Init", showWinner)
+    hooksecurefunc(row, "Init", showInit)
   end
   if type(data) == "table" and data.isPassedHeader then
     local header = WFJ.Labels.region(row, "LOOT_HISTORY_PASSED")
@@ -96,6 +110,10 @@ function LootHistory.onShow()
   return n
 end
 
+function LootHistory.release()
+  return WFJ.Render.release(SURFACE)
+end
+
 local hooked = false
 
 -- Called by Main after Compat.init.
@@ -104,7 +122,10 @@ function LootHistory.init()
   local frame = get("frame")
   if hooked or type(frame) ~= "table" then return false end -- no GroupLootHistoryFrame
   hooked = true
-  if type(frame.HookScript) == "function" then frame:HookScript("OnShow", LootHistory.onShow) end
+  if type(frame.HookScript) == "function" then
+    frame:HookScript("OnShow", LootHistory.onShow)
+    frame:HookScript("OnHide", LootHistory.release)
+  end
   local util, box = get("scrollUtil"), get("box")
   if type(util) == "table" and type(util.AddInitializedFrameCallback) == "function" and type(box) == "table"
       and type(box.ForEachFrame) == "function" then

@@ -9,8 +9,10 @@ from pathlib import Path
 
 import pytest
 
+from wfj.cmd import generate
 from wfj.cmd import names as cmd
 from wfj.core import names
+from wfj.emit import lua_writer
 from wfj.io.names_store import load_lines, load_words, save_lines
 
 TODAY = "2026-11-10"
@@ -426,3 +428,147 @@ def test_align_gives_each_part_of_a_name_its_reading(ja, reading, parts):
 )
 def test_align_refuses_a_reading_that_does_not_fit(ja, reading):
     assert names.align(ja, reading) is None
+
+
+def test_a_generated_name_row_is_its_japanese_and_reading_without_the_english():
+    line = trusted("Thrall", "スロール", "すろーる")
+    text = lua_writer.names_text("00", [line])
+    assert f'["{line["id"]}"] = "スロール\\tすろーる",' in text
+    assert "Thrall" not in text
+    assert 'WFJ.Data.add("name", {' in text
+
+
+def test_name_tables_load_last_in_the_toc():
+    planned = {
+        "Data/Names/Names_0a.lua": "",
+        "Data/Meta.lua": "",
+        "Data/Names/Names_00.lua": "",
+        "Data/Quest/Quest_0000.lua": "",
+    }
+    assert generate.toc_files(planned) == [
+        "Data/Meta.lua",
+        "Data/Quest/Quest_0000.lua",
+        "Data/Names/Names_00.lua",
+        "Data/Names/Names_0a.lua",
+    ]
+
+
+JA_NAMES = {
+    "Stormwind": "ストームウィンド",
+    "Kobold Vermin": "コボルド・バーミン",
+    "Zul'Gurub": "ズルグルブ",
+    "mageweave cloth": "メイジウィーブ・クロス",
+    "Linen Cloth": "リネン・クロス",
+}
+
+
+@pytest.mark.parametrize(
+    ("ja", "out"),
+    [
+        ("StormwindでKobold Verminを10匹倒せ。", "ストームウィンドでコボルド・バーミンを10匹倒せ。"),
+        ("Zul'Gurub、そしてUnknown Place。", "ズルグルブ、そしてUnknown Place。"),
+        ("mageweave cloth60枚を集めよ。", "メイジウィーブ・クロス60枚を集めよ。"),
+        ("Kobold Vermin 10", "コボルド・バーミン 10"),
+        ("|cffffd100Stormwind|rへ行け、{name}。", "|cffffd100ストームウィンド|rへ行け、{name}。"),
+        ("|Hitem:2589::::|h[Linen Cloth]|hを$N1枚。", "|Hitem:2589::::|h[リネン・クロス]|hを$N1枚。"),
+        ("|TInterface\\Icons\\Stormwind:16|t Stormwind", "|TInterface\\Icons\\Stormwind:16|t ストームウィンド"),
+        ("%sはStormwindにいる。%d", "%sはストームウィンドにいる。%d"),
+        ("名前なし。", "名前なし。"),
+    ],
+)
+def test_replace_runs_puts_each_names_japanese_where_its_english_stood(ja, out):
+    assert names.replace_runs(ja, JA_NAMES.get) == out
+
+
+def test_replace_runs_leaves_html_tags_alone_on_an_html_page():
+    page = "<HTML><BODY><H1 align=\"center\">Stormwind</H1><P>Kobold Verminの話。</P></BODY></HTML>"
+    want = "<HTML><BODY><H1 align=\"center\">ストームウィンド</H1><P>コボルド・バーミンの話。</P></BODY></HTML>"
+    assert names.replace_runs(page, {**JA_NAMES, "BODY": "ボディ", "P": "ピー", "HTML": "x"}.get, html=True) == want
+
+
+def test_the_name_vectors_are_current_and_cover_every_shape(root, tmp_path):
+    from wfj.dev import gen_name_vectors
+
+    gen_name_vectors.write(root / "data", tmp_path)
+    for name in ("name_vectors.jsonl", "name_vectors.lua"):
+        made = (tmp_path / name).read_text(encoding="utf-8")
+        assert made == (root / "vectors" / name).read_text(encoding="utf-8"), f"{name}: run make vectors"
+    rows = [json.loads(r) for r in (root / "vectors" / "name_vectors.jsonl").read_text(encoding="utf-8").splitlines()]
+    hashes = [r["en"] for r in rows if r["t"] == "hash"]
+    lines = [r for r in rows if r["t"] == "line"]
+    assert len(hashes) >= 200 and len(lines) >= 300
+    for shape, test in gen_name_vectors.SHAPES.items():
+        assert any(test(en) for en in hashes), shape
+    assert any(r["html"] for r in lines) and any(r["ja"] != r["out"] for r in lines)
+
+
+def test_words_kept_as_written_on_screen():
+    keep = frozenset({"PvP", "World of Warcraft"})
+    for word in ("PvP", "World of Warcraft", "v", "a", "II", "XIV"):
+        assert names.kept_as_written(word, keep), word
+    for word in ("Cooking", "Stormwind", "Alterac Valley", "Mix"):
+        assert not names.kept_as_written(word, keep), word
+
+
+def test_the_shipped_name_tables_leave_out_the_words_kept_as_written():
+    repo = Path(__file__).resolve().parents[2]
+    keep = generate.load_kept_as_written(repo / "data")
+    assert {"PvP", "NPC", "GM", "WoW", "World of Warcraft"} <= keep
+    # a word that is also a spell's name is not kept: the spell would stay English
+    assert "Blizzard" not in keep
+    shipped = "".join(p.read_text(encoding="utf-8") for p in (repo / "addon/WoWForeverJapanese/Data/Names").glob("*.lua"))
+    for ln in load_lines(repo / "data"):
+        if ln["status"] == "trusted" and names.kept_as_written(ln["en"], keep):
+            assert f'"{ln["id"]}"' not in shipped, ln["en"]
+
+
+def test_replace_runs_leaves_an_interface_lines_own_markup():
+    known = {"Fishing": "フィッシング", "a": "ア", "guide": "ガイド"}
+    line = "|A:newplayerchat-chaticon-guide:0:0:0:0|a|Kq1|kとFishingを %d |4guide:guides;"
+    assert names.replace_runs(line, known.get) == (
+        "|A:newplayerchat-chaticon-guide:0:0:0:0|a|Kq1|kとフィッシングを %d |4guide:guides;"
+    )
+
+
+def test_replace_runs_joins_a_suffixed_items_two_names():
+    known = {"Bandit Cloak": "バンディット・クローク", "of the Owl": "オブ・ジ・アウル"}
+    assert names.replace_runs("売却: Bandit Cloak of the Owl", known.get) == (
+        "売却: バンディット・クローク・オブ・ジ・アウル"
+    )
+    assert names.replace_runs("Cloak of Nothing Knownを", known.get) == "Cloak of Nothing Knownを"
+
+
+def test_names_inside_interface_lines_and_the_pvp_rank_titles_reach_the_name_list(root, tmp_path):
+    # a name inside an interface line's Japanese has a line, so the screen can show its Japanese; a run with no
+    # lower-case letter is an abbreviation or a key's name and is left out
+    found = cmd.interface_names(root / "data")
+    assert "Champion's Hall" in found and "CPU" not in found and "ALT" not in found
+    assert found <= cmd.prose_names(root / "data")
+    (tmp_path / "GlobalStrings.csv").write_text(
+        "BaseTag,TagText_lang\nPVP_RANK_0_NAME,Civilian\nPVP_RANK_5_NAME,Elite\nPVP_RANK_LEADER,Leader\n",
+        encoding="utf-8")
+    assert cmd.rank_names(tmp_path) == {"Civilian", "Elite"}
+    assert cmd.rank_names(tmp_path / "none") == set()
+    (tmp_path / "SkillLine.csv").write_text(
+        "ID,DisplayName_lang,Description_lang\n26,Arms,\n356,Fishing,Higher skill.\n9,GENERIC (DND),\n"
+        "8,Test Profession [DNT],\n7,,\n", encoding="utf-8")
+    assert cmd.skill_names(tmp_path) == {"Arms", "Fishing"}
+    assert cmd.skill_names(tmp_path / "none") == set()
+    (tmp_path / "ChrRaces.csv").write_text(
+        "ID,ClientFileString,Name_lang\n4,NightElf,Night Elf\n95,Skyborne,High Order Skyborne\n7,X,\n",
+        encoding="utf-8")
+    assert cmd.race_names(tmp_path) == {"Night Elf", "High Order Skyborne"}
+    assert cmd.race_names(tmp_path / "none") == set()
+    (tmp_path / "GroupFinderActivity.csv").write_text(
+        "ID,FullName_lang,ShortName_lang\n1,Dire Maul (North),DM North\n2,Scholomance,Scholomance\n"
+        "3,Test [DNT],\n", encoding="utf-8")
+    assert cmd.activity_names(tmp_path) == {"Dire Maul (North)", "DM North", "Scholomance"}
+    assert cmd.activity_names(tmp_path / "none") == set()
+    (tmp_path / "SpellShapeshiftForm.csv").write_text(
+        "ID,Name_lang\n5,Bear Form\n14,Creature - Bear\n24,S03 - Gladiator Stance\n9,\n", encoding="utf-8")
+    assert cmd.form_names(tmp_path) == {"Bear Form", "Creature - Bear"}
+    assert cmd.form_names(tmp_path / "none") == set()
+    (tmp_path / "TotemCategory.csv").write_text(
+        "ID,Name_lang\n2,Earth Totem\n41,Great Mage Writings\n9,\n", encoding="utf-8")
+    assert cmd.tool_names(tmp_path) == {"Earth Totem", "Great Mage Writings"}
+    assert cmd.tool_names(tmp_path / "none") == set()

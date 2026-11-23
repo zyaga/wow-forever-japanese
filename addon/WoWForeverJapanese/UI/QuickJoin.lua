@@ -28,7 +28,18 @@
 --     the player's name and a listing title kept; a queue name that is an entry ("Arena Skirmish") in Japanese.
 -- Never touched: the rows' member names and queue names (pooled QuickJoinButtonTemplate rows, quickjoin.lua:505–582:
 --   names, client-table activity names and the player-written listing title), the friend / queue counters.
--- Set up only where FriendsFrame carries SetTitle (the mainline social window, UI/Labels.title).
+-- The panel is set up only where FriendsFrame carries SetTitle (the mainline social window, UI/Labels.title).
+--
+-- The Quick Join tab of the newer social window is the same panel in another frame: SocialUIFrame.QuickJoinFrame
+-- (QuickJoinSocialViewTemplate, blizzard_socialui/mainline/socialui.lua:205–236), whose mixin is QuickJoinMixin with
+-- the contacts frame's ActionButton as its join button (quickjoinsocialview.lua:15, 44–58). Set up whenever that
+-- frame exists, with or without the older panel:
+--   ActionButton: JOIN_QUEUE at load (:48) and JOIN_QUEUE / SIGN_UP after each UpdateJoinButtonState, the view's own
+--     method (quickjoin.lua:182–203, through GetJoinButton); its disabled reason QUICK_JOIN_ALREADY_IN_PARTY as an
+--     error line (QuickJoinSocialViewJoinButtonMixin:ShowDisabledTooltip, quickjoinsocialview.lua:3–13);
+--   the pooled rows (QuickJoinSocialViewButtonTemplate, QuickJoinButtonMixin: quickjoinsocialview.xml:3) own the
+--     same SocialQueueUtil_SetTooltip tooltip as the panel's rows.
+-- The view hides its filter bar (:51–53); its privacy notice is UI/SocialUI's, and the tab's help tip is a HelpTip.
 local _, WFJ = ...
 local QuickJoin = {}
 WFJ.QuickJoin = QuickJoin
@@ -45,6 +56,8 @@ local CANDIDATES = {
   rows = { "QuickJoinFrame.ScrollBox" }, scrollUtil = { "ScrollUtil" },
   toastText = { "QuickJoinToastButton.Toast.Text" }, toast2Text = { "QuickJoinToastButton.Toast2.Text" },
   setTooltip = { "SocialQueueUtil_SetTooltip" }, tooltip = { "GameTooltip" },
+  view = { "SocialUIFrame.QuickJoinFrame" }, viewJoin = { "SocialUIFrame.QuickJoinFrame.ActionButton" },
+  viewRows = { "SocialUIFrame.QuickJoinFrame.ScrollBox" },
 }
 local TIP = SURFACE .. ".tip"
 local QUEUES = { "SOCIAL_QUEUE_FORMAT_ARENA", "SOCIAL_QUEUE_FORMAT_ARENA_SKIRMISH", "SOCIAL_QUEUE_FORMAT_BATTLEGROUND" }
@@ -60,9 +73,11 @@ local ROW_TIP = { only = QUEUE_LINES }
 
 local function get(key) return Compat.get(SURFACE, key) end
 
--- hooksecurefunc target (QuickJoinFrame:UpdateJoinButtonState). → 1 | 0
+-- hooksecurefunc target (UpdateJoinButtonState of the panel and of the social window's view): each one's join
+-- button. → the number shown
 function QuickJoin.onJoinButton()
   local n = WFJ.Labels.show(SURFACE, "join", get("join"), nil, JOIN)
+  n = n + WFJ.Labels.show(SURFACE, "view.join", get("viewJoin"), nil, JOIN)
   WFJ.Render.updateBanner(SURFACE)
   return n
 end
@@ -103,25 +118,31 @@ end
 
 local hooked = false
 
--- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
-function QuickJoin.init()
-  for key, names in pairs(CANDIDATES) do Compat.declare(SURFACE, key, names) end
-  local friends, frame = get("friends"), get("frame")
-  if hooked or type(frame) ~= "table" or type(friends) ~= "table" or type(friends.SetTitle) ~= "function" then
-    return false -- a social window without SetTitle, or a client without the panel
-  end
-  hooked = true
+-- One quick join list: its join button's writer and disabled reason, and its pooled rows.
+local function hookList(frame, join, rows)
   if type(frame.UpdateJoinButtonState) == "function" then
     hooksecurefunc(frame, "UpdateJoinButtonState", QuickJoin.onJoinButton)
   end
-  local register = WFJ.HelpTooltip.register
-  if type(get("join")) == "table" then register(get("join"), JOIN_TIP) end
-  if type(get("toastButton")) == "table" then register(get("toastButton"), TOAST_TIP) end
-  if type(get("toast")) == "table" then register(get("toast"), TOAST_TIP) end
-  local rows, util = get("rows"), get("scrollUtil")
+  if type(join) == "table" then WFJ.HelpTooltip.register(join, JOIN_TIP) end
+  local util = get("scrollUtil")
   if type(rows) == "table" and type(util) == "table" and type(util.AddInitializedFrameCallback) == "function" then
     util.AddInitializedFrameCallback(rows, QuickJoin.onRow, QuickJoin, true)
   end
+end
+
+-- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
+function QuickJoin.init()
+  for key, names in pairs(CANDIDATES) do Compat.declare(SURFACE, key, names) end
+  local friends, frame, view = get("friends"), get("frame"), get("view")
+  -- the panel needs a social window with SetTitle; the newer window's view stands by itself
+  local panel = type(frame) == "table" and type(friends) == "table" and type(friends.SetTitle) == "function"
+  if hooked or not (panel or type(view) == "table") then return false end
+  hooked = true
+  if panel then hookList(frame, get("join"), get("rows")) end
+  if type(view) == "table" then hookList(view, get("viewJoin"), get("viewRows")) end
+  local register = WFJ.HelpTooltip.register
+  if type(get("toastButton")) == "table" then register(get("toastButton"), TOAST_TIP) end
+  if type(get("toast")) == "table" then register(get("toast"), TOAST_TIP) end
   local toastButton = get("toastButton")
   if type(toastButton) == "table" then
     for _, method in ipairs({ "ShowToast", "ToastToToastFinished" }) do

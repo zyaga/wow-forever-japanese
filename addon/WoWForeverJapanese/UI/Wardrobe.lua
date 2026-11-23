@@ -32,8 +32,24 @@
 -- ADR-042: the variant dropdown's selection: a set's description, its variant word ("Green", "Blue";
 --   ItemNameDescription through TransmogSet.ItemNameDescriptionID), written with VariantSetsDropdown:SetText
 --   (shared/blizzard_wardrobe_sets.lua:307): post-hooked on the dropdown, the ItemNameDescription family only.
--- Never touched: set names and labels (item-set names), item names, the class dropdown's selection (a class name),
--- the search box text (the EditBox itself; its placeholder FontString is shown above).
+-- Set names (surface "wardrobe.names"): while names are on, each shows the name's Japanese (UI/NameLabels) where the
+--   name list has it (a set shares its name with its set-bonus spells):
+--   the details: SetsCollectionFrame:DisplaySet (the frame's own method, shared/blizzard_wardrobe_sets.lua:228–248)
+--     writes Name, measures it (IsTruncated, :240) and, when it does not fit, writes LongName instead, then Label.
+--     Post-hooked, so the client measures its own English: LongName (while shown) and Label, plain FontStrings
+--     (mainline/blizzard_wardrobe.xml:640–655), are shown after it. So is Name while it is the one shown: an
+--     AutoScalingFontStringMixin FontString (xml:626) whose SetText measures the text and sets its scale
+--     (blizzard_sharedxml/secureutil.lua:55–104). Render writes it with that same SetText, so the scale is worked out
+--     again for the Japanese (and for the English on the reveal key). Nothing protected follows in DisplaySet: the
+--     rest of the pass fills the item buttons from a pool, dresses the model (TryOn) and sets the variant dropdown's
+--     text (:249–334);
+--   the list rows: WardrobeSetsScrollFrameButtonMixin:Init writes each row's Name and Label (:513–537), plain
+--     FontStrings of a plain Button (shared/blizzard_wardrobe_sets.xml:4, 40–51); rows are followed with
+--     ScrollUtil.AddInitializedFrameCallback and each row's Init is post-hooked once (ReinitializeButtonWithBaseSetID
+--     calls it again, :714–722).
+--   Released on WardrobeCollectionFrame's OnHide and shown again on the sets frame's OnShow.
+-- Never touched: item names, the class dropdown's selection (a class name), the search box text (the EditBox itself;
+-- its placeholder FontString is shown above).
 local _, WFJ = ...
 local Wardrobe = {}
 WFJ.Wardrobe = Wardrobe
@@ -67,7 +83,69 @@ local CANDIDATES = {
   slots = { FRAME .. ".ItemsCollectionFrame.SlotsFrame" }, limitedSet = { DETAILS .. ".LimitedSet" },
   precedingVariant = { DETAILS .. ".VariantSetsDropdown.PrecedingVariantIcon" },
   variant = { DETAILS .. ".VariantSetsDropdown" },
+  sets = { FRAME .. ".SetsCollectionFrame" }, setList = { FRAME .. ".SetsCollectionFrame.ListContainer.ScrollBox" },
+  scrollUtil = { "ScrollUtil" },
 }
+
+local NAMES = SURFACE .. ".names"
+Wardrobe.NAMES = NAMES
+local rowKey = WFJ.Labels.keyer("row.")
+local rowHooked = setmetatable({}, { __mode = "k" })
+
+local function shown(fs) return type(fs) == "table" and type(fs.IsShown) == "function" and fs:IsShown() end
+
+-- After DisplaySet: the name or the long name, whichever is shown, and the label. → the number of names shown
+function Wardrobe.onDisplaySet()
+  local sets = Compat.get(SURFACE, "sets")
+  local details = type(sets) == "table" and sets.DetailsFrame or nil
+  if type(details) ~= "table" then return 0 end
+  local n = 0
+  for _, f in ipairs({ { "Name", "set.name" }, { "LongName", "set.longName" } }) do
+    if shown(details[f[1]]) then
+      n = n + WFJ.NameLabels.show(NAMES, f[2], details[f[1]])
+    else
+      WFJ.SurfaceState.drop(NAMES, f[2])
+    end
+  end
+  n = n + WFJ.NameLabels.show(NAMES, "set.label", details.Label)
+  WFJ.Render.updateBanner(NAMES)
+  return n
+end
+
+-- A list row after its Init.
+local function showRow(row)
+  if type(row) ~= "table" then return end
+  for _, field in ipairs({ "Name", "Label" }) do
+    local fs = row[field]
+    if type(fs) == "table" then WFJ.NameLabels.show(NAMES, rowKey(fs), fs) end
+  end
+end
+
+-- ScrollUtil callback: (owner, frame, elementData) for a new row, (frame, elementData) for the existing-frames pass.
+-- Returns nothing: ForEachFrame stops at the first truthy return.
+function Wardrobe.onSetRow(a, b)
+  local row = a == Wardrobe and b or a
+  if type(row) ~= "table" then return end
+  if not rowHooked[row] and type(row.Init) == "function" then
+    rowHooked[row] = true
+    hooksecurefunc(row, "Init", showRow)
+  end
+  showRow(row)
+end
+
+-- The sets frame shows again after a release: its details and every existing row.
+function Wardrobe.onSetsShow()
+  Wardrobe.onDisplaySet()
+  local box = Compat.get(SURFACE, "setList")
+  if type(box) == "table" and type(box.ForEachFrame) == "function"
+      and (type(box.HasView) ~= "function" or box:HasView()) then
+    box:ForEachFrame(Wardrobe.onSetRow)
+  end
+end
+
+function Wardrobe.releaseNames()
+  return WFJ.Render.release(NAMES)
+end
 
 -- The variant dropdown's word after its SetText. → 1 | 0
 function Wardrobe.onVariant()
@@ -135,6 +213,18 @@ function Wardrobe.setup()
   if type(variant) == "table" and type(variant.SetText) == "function" then
     hooksecurefunc(variant, "SetText", Wardrobe.onVariant)
   end
+  local sets = get("sets")
+  if type(sets) == "table" then
+    if type(sets.DisplaySet) == "function" then hooksecurefunc(sets, "DisplaySet", Wardrobe.onDisplaySet) end
+    if type(sets.HookScript) == "function" then sets:HookScript("OnShow", Wardrobe.onSetsShow) end
+  end
+  local box, util = get("setList"), get("scrollUtil")
+  if type(box) == "table" and type(util) == "table" and type(util.AddInitializedFrameCallback) == "function" then
+    util.AddInitializedFrameCallback(box, Wardrobe.onSetRow, Wardrobe,
+      type(box.ForEachFrame) == "function" and (type(box.HasView) ~= "function" or box:HasView()))
+  end
+  local frame = get("frame")
+  if type(frame.HookScript) == "function" then frame:HookScript("OnHide", Wardrobe.releaseNames) end
   return true
 end
 

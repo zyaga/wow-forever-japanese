@@ -82,6 +82,7 @@ View.NON_WINDOW = {
   cooldownviewer = true, damagemeter = true, ["deathrecap.tip"] = true,
   errors = true, gamepad = true,
   ghostframe = true, help = true, hudlabels = true, lossofcontrol = true, majorfactiontoast = true,
+  ["minimap.zone"] = true, -- the zone's name over the minimap
   npe = true, -- the new player tutorial's on-screen prompts
   ["questmap.trackerlabels"] = true, ["questmap.trackerobjectives"] = true, questtimer = true, queuestatus = true,
   ["quickjoin.tip"] = true, statusnotices = true, tracker = true, unitframes = true,
@@ -194,7 +195,9 @@ local function showHover(cover, word)
   local r = word.rects[1]
   local gloss = glossFor(word)
   if gloss then
-    WFJ.ReadingPopup.show(cover, r.left + r.width / 2, r.bottom + r.height + 2, word, gloss, size, View.hint())
+    -- a name is not a word to save: its card carries no hint about the save click
+    WFJ.ReadingPopup.show(cover, r.left + r.width / 2, r.bottom + r.height + 2, word, gloss, size,
+      not word.name and View.hint() or nil)
     return
   end
   local b = ensureBox()
@@ -227,7 +230,7 @@ local function measure(cover)
         rects[#rects + 1] = { left = a.left, bottom = a.bottom, width = a.width, height = a.height }
       end
       words[#words + 1] = { word = sp.word, reading = sp.reading, gloss = sp.gloss, card = sp.card, rects = rects,
-        first = sp.first, last = sp.last }
+        first = sp.first, last = sp.last, name = sp.name }
     end
   end
   return words
@@ -344,8 +347,9 @@ end
 local function takesCards(rec, fs)
   local m = rec.meta
   if not m or type(fs) ~= "table" or type(fs.CalculateScreenAreaFromCharacterSpan) ~= "function" then return false end
-  -- a label in a window (a Button's text or a menu entry is an adapter without the span call: refused above)
-  if m.kind == "ui" then return not View.nonWindow(rec.surface) and inWindow(fs) end
+  -- a label in a window (a Button's text or a menu entry is an adapter without the span call: refused above); a
+  -- widget that holds only a name (a title bar) is one too
+  if m.kind == "ui" or m.kind == "name" then return not View.nonWindow(rec.surface) and inWindow(fs) end
   if not View.SURFACES[rec.surface] then return false end
   return rec.surface ~= "gossip" or rec.key == "greeting" -- gossip option rows are buttons
 end
@@ -392,15 +396,31 @@ function View.attach(rec)
     View.detach(rec)
     return false
   end
+  -- a widget that holds only a name: one card over the whole of it, the name's reading and its English name
+  if rec.meta.kind == "name" then
+    local card = rec.nameCard
+    if type(card) ~= "table" then
+      View.detach(rec)
+      return false
+    end
+    -- the card sits on the name itself: a colour code before it or numbers after it are no part of it
+    local spans = WFJ.Readings.withNames({}, rec.applied,
+      { { ja = card.ja or rec.applied, english = card.english, reading = card.reading } })
+    return lay(rec, region(rec), rec.applied, spans)
+  end
   -- rec.spans: words already located by the caller (the voice panel shows one sentence of a line whose word list is
   -- written for the whole line, so it locates them in the whole line and passes the sentence's share)
   local listed = rec.spans or WFJ.Readings.lookup(rec.meta.kind, rec.meta.id, rec.applied)
-  -- a window label takes a cover only for its own word list; the class / race words are for prose
-  if rec.meta.kind == "ui" and not (listed and listed[1]) then
+  -- a window label takes a cover only for its own word list or a name written into it; the class / race words
+  -- are for prose
+  local named = type(rec.names) == "table" and rec.names[1] ~= nil
+  if rec.meta.kind == "ui" and not (listed and listed[1]) and not named then
     View.detach(rec)
     return false
   end
-  local spans = rec.meta.kind == "ui" and listed or WFJ.Readings.withTokenWords(listed or {}, rec.applied, rec.exclude)
+  -- the names written into the line in Japanese take their cards first, so no word anchors inside one
+  local spans = WFJ.Readings.withNames(listed or {}, rec.applied, rec.names)
+  if rec.meta.kind ~= "ui" then spans = WFJ.Readings.withTokenWords(spans, rec.applied, rec.exclude) end
   if not spans or not spans[1] then
     View.detach(rec)
     return false
@@ -459,7 +479,9 @@ function View.poll(cover)
   elseif not down and cover.wasDown then
     local w = cover.pressWord
     cover.pressWord = nil
-    if w and w == cover.hovered and cover:GetLeft() == cover.pressLeft and cover:GetBottom() == cover.pressBottom then
+    -- a name's card is never saved: a name is not a word to study
+    if w and not w.name and w == cover.hovered and cover:GetLeft() == cover.pressLeft
+        and cover:GetBottom() == cover.pressBottom then
       save.release(cover, w)
     end
   end

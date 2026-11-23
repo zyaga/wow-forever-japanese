@@ -10,10 +10,13 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
+- Names in Japanese. A new choice in the welcome window, and on the settings page, shows the names of people, places, creatures, items, spells, skills and factions in katakana in place of the English: on tooltips, the quest and NPC windows, the target frame and nameplates, the map, loot, vendors, chat, and inside quest text. Names stay English until you pick Japanese, and holding the reveal key shows the English name as it does for everything else. Pointing at a Japanese name shows its reading and its English name.
+- With Japanese names, a creature's name over its head shows on its nameplate, so picking Japanese names turns on nameplates for friendly NPCs, enemies and neutral creatures, out of combat too. Picking English names puts your settings back. Turn some nameplates off yourself and the addon leaves them off, and says in chat that names over those heads are English.
 - With a voice pack installed, a translated line that has no voice yet says so on its window: `[音声なし / No Voice Yet]`. A setting on the Voice page, Mark lines with no voice yet, turns the message off.
 - Japanese for what Forever 1.60.1.70959 and 1.60.1.71037 added and for what players sent with the English Collector in 28 sends: 264 NPC lines, 318 quest progress and turn-in texts, 129 new quest titles with their objectives and descriptions (with word cards), and 45 item and spell tooltips.
 
 ### Changed
+- The English Collector now finds game messages in chat that nobody has translated yet, such as "Rex seems to be sobering up." It keeps only the name of the game's own text template for that message (here `DRUNK_MESSAGE_OTHER1`), never the message, so no player's name is kept. Send it in as before and those messages can be put into Japanese.
 - The English Collector also keeps three numbers for each quest window you open: the id, the sex and the model id of the NPC that shows it, also for quests already in Japanese. They let each line be read in that NPC's own voice. No text and nothing about your character is added, and nothing is sent unless you send it.
 - Quest texts and item and spell tooltips the game reworded on 1.60.1.70959 and 1.60.1.71037 follow the new wording.
 
@@ -24,6 +27,7 @@ an old setting stops working). A release moves those lines under its version num
 - In the guild window, the "Show Offline Members" box, an offline member's last-seen line, the names of the guild's own chat channels and the news pane's heading are Japanese.
 - An item or spell tooltip no longer shows its numbers in the wrong places when the game has added or removed a number in that tooltip since the translation was made. Such a tooltip stays English until its translation follows.
 - An item's flavour text no longer appears on its "Use:" line with the flavour line left empty. It happened on an item whose tooltip has more lines than its translation was written for.
+- An item with several "Equip:", "Use:" or "Chance on hit:" lines shows each of them in Japanese, where it used to leave some English and put the Not Translated mark on the wrong one: mana and health per 5 seconds and spell power lines, a line printing another spell, and an item's own line with a cooldown after it.
 - The quest log says `[音声なし / No Voice Yet]` for a quest whose offer has no voice yet, as the quest window does.
 - A holiday's description on the calendar, the mount journal's search hint and the rank titles on the challenges page are Japanese.
 - The role poll a group leader starts, the game's plain message box, the Cancel button of the cooldown settings' layout dialogs, and a recipe opened from a link in chat show their labels in Japanese.
@@ -31,6 +35,27 @@ an old setting stops working). A release moves those lines under its version num
 - The mail window's tooltip on the Cash on Delivery button, shown while Cash on Delivery is disabled, is Japanese. The line is new in this build.
 - In an instance lock's tooltip, a boss not yet defeated reads 未討伐. It showed 在席, the friends list's word for "Available".
 - The objectives of the quest A Humble Task no longer carry the English for "water well" in brackets after the Japanese word (a player's report).
+- A mount's, a companion pet's and a macro's tooltip are Japanese, like a spell's own tooltip.
+- A spell tooltip with a damage range of 1,000 or more ("1,350 to 1,650") no longer stays English.
+- A spell with a shortest and a longest range ("8-30 yd range") shows its range line in Japanese.
+- The group finder's who list title, its Filter button, the playstyle prompt and the Back button are Japanese.
+- The English Collector no longer counts spell tooltips that already have Japanese as untranslated, and its reminder no longer opens underneath the welcome window.
+- Three spell tooltips that stayed English because of one word now show in Japanese.
+- The chat lines that say how drunk you or a player nearby are ("You feel tipsy. Whee!") are Japanese.
+- With Japanese names, the spell Blizzard shows its Japanese name. It stayed English because the word is also the company's name.
+- The friends window is Japanese: its tabs, the friends and ignore lists' labels, the recent allies, quick join and recruit-a-friend pages, and the add-friend dialog.
+- Spell tooltips that stayed English now show in Japanese: the reagents and tools a spell needs, a recipe's name line ("Enchanting: Enchant Boots - Minor Speed"), the item a recipe makes, "Melee Range", "Crafting Reagent", the weapon a spell requires, the class an item is for and a reputation a spell requires.
+- A spell description the game shows with "until canceled" in place of its duration, for a spell your character does not know, now shows in Japanese.
+- A spell that grants an ability ("Gain the Wyvern Strike ability:") shows its heading in Japanese when the game leaves out the ability's own text.
+- A spell or item tooltip whose number the game writes against a word ("for1.5 sec") or as a negative range now shows in Japanese.
+- An item tooltip the game has reworded since its translation was made no longer shows the old Japanese, which could say something else entirely. It stays English until its translation follows.
+- With Japanese names, the group finder's dungeon, raid and zone names, the calendar's holiday titles ("Call to Arms: Warsong Gulch"), a guild member's zone on the roster tooltip, the shapeshift forms, tools and races on tooltips, and the spellbook's spell names show in Japanese.
+- Choosing a mount in the mount journal no longer turns its name back to English.
+- The floating combat text no longer raises a Lua error when the game hides a number from addons.
+- The chat line that says who won a duel, and a lockbox's "Locked" line, are Japanese.
+- On a recipe's tooltip, the item it makes shows its flavour text in Japanese, and its equip line no longer carries a wrong not-translated marker.
+- Calendar times read 午前 / 午後, and the challenges page's track box and a mount's riding requirement show their tooltips in Japanese.
+- The character window's stat tooltips and model buttons, and the guild window's voice chat button, show their tooltips in Japanese.
 
 ## 0.14.0 - 2026-11-16
 

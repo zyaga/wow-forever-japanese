@@ -317,6 +317,7 @@ WFJ.Data.add("ui", {
   ["PROFESSIONS_TUTORIAL_REAGENT_QUALITY"] = { "高品質の素材を使うと、アイテム製作時のスキルが上がります。 |n|nクリックすると、使用する品質を変更できます。", 0x65939e2b, "." },
   ["PROFESSIONS_TUTORIAL_RECRAFT"] = { "以前に製作した装備を再製作して、任意の素材を変更したり、品質の向上を試みたりできます。 |n|nクリックして、再製作するアイテムを選択します。", 0xae0b42b7, "." },
   ["PROFESSIONS_UNTRACK_RECIPE"] = { "追跡解除", 0x15c4a4a6, "." },
+  ["PROFESSIONS_USED_IN_COOKING"] = { "製作素材", 0x8de90505, "." },
   ["PROFESSION_CONFIRMATION1"] = { "同時に習得できる専門技能は2つまでです。1つ目の専門技能として|cffffd200%s|rを習得しますか？", 0xb3345376, "." },
   ["PROFESSION_CONFIRMATION2"] = { "同時に習得できる専門技能は2つまでです。2つ目の専門技能として|cffffd200%s|rを習得しますか？", 0x4bc3e4a5, "." },
   ["PROFESSION_EQUIPMENT_LOCATION_HELPTIP"] = { "専門技能のツールとアクセサリーは、ここに装備します。", 0x832cbb83, "." },

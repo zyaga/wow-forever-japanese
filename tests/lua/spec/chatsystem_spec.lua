@@ -10,6 +10,7 @@ local LINK = "|HurlIndex:64|h|cnVISITABLE_URL_DEFAULT_CHAT_LINK_COLOR:"
   .. "https://support.blizzard.com/article/42673|r|h"
 local UI = {
   ERR_GROUP_FULL = { "Your party is full.", "パーティーがいっぱいです。" },
+  DUEL_WINNER_KNOCKOUT = { "%1$s has defeated %2$s in a duel", "%1$sが決闘で%2$sを倒しました" },
   ERR_QUEST_ADD_KILL_SII = { "%s slain: %d/%d", "%s を倒した: %d/%d" },
   ERR_TAME_FAILED = { "%s.", "%s。" }, -- no text of its own: never a chat line's template
   CLUB_FINDER_GUILD = { "Guild", "ギルド" }, -- an exact dictionary English that is no error key
@@ -147,6 +148,12 @@ describe("SYSTEM chat lines", function()
     H.uiTeardown()
     Stub.keys.alt = false
     for _, n in ipairs(NAMES) do _G[n] = nil end
+  end)
+
+  it("a duel's end is Japanese around the two players' names, kept as written", function()
+    local f = _G.ChatFrame1
+    system(f, "Yezs Qt has defeated Towelmulakek Abbatiello in a duel")
+    assert.are.equal("Yezs Qtが決闘でTowelmulakek Abbatielloを倒しました", f:Last())
   end)
 
   it("a server notice is its ServerMessages row, the time kept as the client wrote it", function()

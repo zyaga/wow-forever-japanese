@@ -36,10 +36,22 @@
 --     a pending-invite header row writes COMMUNITIES_MEMBER_LIST_PENDING_INVITE_HEADER into NameFrame.Name (SetHeader,
 --     lua:1048–1051, 1116–1117); the same FontString holds member names, so it is restricted to that key;
 --     the entry's tooltip (OnEnter, lua:1169–1219) shows COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT ("Level %d %s %s",
---     race and class kept as written); every other line is a name, a rank, a zone or a note, never matched;
+--     raceInfo.raceName and classInfo.className, lua:1197–1201); every other line is a name, a rank, a zone or a
+--     note, never matched as a dictionary line (the zone is a name, below);
 --     CancelInvitationButton's tooltip COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP (communitiesmemberlist.xml:67–71).
 --   The extra guild column CLUB_FINDER_APPLICANTS is a roster header (EXTRA_GUILD_COLUMNS, lua:168–171).
--- Never touched: member names, ranks, zones, notes, the MOTD and guild info text, guild names.
+-- Names: a member's zone is a place the game names. While names are on it shows its Japanese on the roster row's
+--   Zone column (memberInfo.zone, communitiesmemberlist.lua:1301–1302) and on the member detail's ZoneText
+--   (guildroster.lua:147), and the class in the detail's level line (classInfo.className, guildroster.lua:141–144)
+--   shows the word prose uses for it. So do the race and the class in a roster row's tooltip, filled when the line
+--   is drawn (the key's `spec` and `class` values, Core/UIStringKeys); a race with no such word shows the name
+--   list's spelling, and one with neither stays as written. The tooltip's zone line (memberInfo.zone again,
+--   lua:1206–1207) shows the zone's Japanese too: it is found after the row's OnEnter script (xml:237) by the
+--   zone the row holds, never by its place among the lines, and is the last line with that text, so a rank a
+--   guild named like a zone stays as written. A roster row is a plain button whose click opens the member's
+--   detail or menu, and nothing measures these labels.
+-- Never touched: member names, notes, the MOTD and guild info text, guild names, and a rank's name: a guild's
+--   leader names its ranks (memberInfo.guildRank, lua:1313), the first rank included.
 -- Their font only (UI/PlayerText): the MOTD, the guild info text, a member's two notes and rank, and a roster
 --   row's note and rank wear the bundled face while they hold Japanese; the box the MOTD and the info text are
 --   edited in always does.
@@ -89,7 +101,8 @@ local TITLE = { only = { "COMMUNITIES_FRAME_TITLE" } }
 local CANDIDATES = {
   frame = { "CommunitiesFrame" }, memberList = { "CommunitiesFrame.MemberList" },
   count = { "CommunitiesFrame.MemberList.MemberCount" }, columns = { "CommunitiesFrame.MemberList.ColumnDisplay" },
-  detail = { DETAIL }, level = { DETAIL .. ".Level" }, online = { DETAIL .. ".OnlineText" },
+  detail = { DETAIL }, level = { DETAIL .. ".Level" }, zoneText = { DETAIL .. ".ZoneText" },
+  online = { DETAIL .. ".OnlineText" },
   personalNote = { DETAIL .. ".NoteBackground.PersonalNoteText" },
   officerNote = { DETAIL .. ".OfficerNoteBackground.OfficerNoteText" },
   challengesHeader = { INFO .. ".Header1Label" }, updateChallenges = { "CommunitiesGuildInfoFrame_UpdateChallenges" },
@@ -123,6 +136,7 @@ end
 -- A stable record key per pooled header button (records follow the widget, not the index).
 local headerKey = WFJ.Labels.keyer("column.") -- a pooled header's record key
 local zoneKey = WFJ.Labels.keyer("zone.") -- a pooled roster row's Zone column
+local placeKey = WFJ.Labels.keyer("place.") -- the same column while it holds a place
 
 local ENTRY_TOOLTIP = { only = { "COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT",
   -- a cross-faction member's lines (communitiesmemberlist.lua:1216, 1789–1790), the faction word kept
@@ -133,8 +147,47 @@ local INVITE_HEADER = { only = { "COMMUNITIES_MEMBER_LIST_PENDING_INVITE_HEADER"
 
 local zoneHooked = setmetatable({}, { __mode = "k" })
 local function showZone(row)
-  if type(row.Zone) == "table" then WFJ.Labels.show(SURFACE, zoneKey(row.Zone), row.Zone, nil, ROW_PRESENCE) end
+  if type(row.Zone) ~= "table" then return end
+  WFJ.Labels.show(SURFACE, zoneKey(row.Zone), row.Zone, nil, ROW_PRESENCE)
+  -- a place under a record of its own: a text that is no presence line drops the record above
+  WFJ.NameLabels.show(SURFACE, placeKey(row.Zone), row.Zone)
 end
+
+-- After a roster row's OnEnter script built its tooltip (CommunitiesMemberListEntryMixin:OnEnter, lua:1169–1219):
+-- the line that holds the member's zone shows the zone's Japanese while names are on. The lines before it are the
+-- member's name, the rank (a guild's own word, which may be spelled like a place) and the level line; the note
+-- after it starts with an icon and the cross-faction lines are the client's own. So of the lines from the second
+-- on that hold exactly the zone, the last one is the zone's. A member on the mobile app has no zone line
+-- (lua:1204–1205): a rank spelled like the zone would be the only match, so nothing is looked for. The record is
+-- on the help surface under the walk's own key, so the tooltip's refit and release are UI/HelpTooltip's. → 1 | 0
+function Communities.onRowTooltip(row)
+  if not WFJ.State.names or type(row) ~= "table" or type(row.GetMemberInfo) ~= "function" then return 0 end
+  local help, secret = WFJ.HelpTooltip, WFJ.SurfaceState.secret
+  local tt = Compat.get(help.SURFACE, "tooltip")
+  if type(tt) ~= "table" or type(tt.GetOwner) ~= "function" or tt:GetOwner() ~= row
+      or type(tt.NumLines) ~= "function" or type(tt.GetName) ~= "function" then return 0 end
+  local info = row:GetMemberInfo()
+  local zone = type(info) == "table" and info.zone or nil
+  local mobile = Compat.resolve("Enum.ClubMemberPresence.OnlineMobile")
+  if secret(zone) or type(zone) ~= "string" or zone == "" or mobile == nil or secret(info.presence)
+      or info.presence == mobile then
+    return 0
+  end
+  local name, at = tt:GetName(), nil
+  for i = 2, tt:NumLines() or 0 do
+    local fs = Compat.resolve(name .. "TextLeft" .. i)
+    local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
+    if not secret(text) then
+      -- a line a record already holds is ours: it stands for the English it was written from
+      local rec = WFJ.SurfaceState.get(help.SURFACE, "L" .. i)
+      if rec and rec.fs == fs and rec.applied ~= nil and rec.applied == text then text = rec.en end
+      if text == zone then at = i end
+    end
+  end
+  return at and help.nameAt(tt, at) or 0
+end
+
+local tooltipHooked = setmetatable({}, { __mode = "k" })
 
 -- One pooled roster entry after its initializer ran (ScrollUtil's initialized-frame callback: (owner, frame,
 -- elementData) for a new entry, (frame, elementData) for the iterateExisting pass). Returns nothing: ForEachFrame stops
@@ -146,6 +199,10 @@ function Communities.onRosterRow(a, b)
   local name = type(row.NameFrame) == "table" and row.NameFrame.Name or nil
   if type(name) == "table" then WFJ.Labels.show(SURFACE, "invites." .. headerKey(name), name, nil, INVITE_HEADER) end
   WFJ.HelpTooltip.register(row, ENTRY_TOOLTIP)
+  if not tooltipHooked[row] and type(row.HookScript) == "function" then
+    tooltipHooked[row] = true
+    row:HookScript("OnEnter", Communities.onRowTooltip)
+  end
   local cancel = row.CancelInvitationButton
   if type(cancel) == "table" then WFJ.HelpTooltip.register(cancel, CANCEL_TOOLTIP) end
   -- the client rewrites the columns without initializing the row again (RefreshExpandedColumns, lua:1242, from
@@ -224,13 +281,34 @@ local function showNote(recKey, key, placeholder)
   return n
 end
 
+-- The detail's level line, "Level %d %s" with the member's class. The template is compiled once for every key
+-- with that English and reads its second slot as a creature's type; here the slot is a class, so the line is
+-- filled under the key that declares one and the class follows the names choice when the line is drawn. → 1 | 0
+local LEVEL = { "FRIENDS_LEVEL_TEMPLATE" }
+local LEVEL_WITH_CLASS = "SOCIAL_UI_RECENT_ALLIES_TOOLTIP_LEVEL_CLASS_FORMAT"
+local function showLevel()
+  local widget = get("level")
+  local fs, index = WFJ.Labels.widget(widget), WFJ.UIIndex
+  local text = fs and fs:GetText()
+  local key, args
+  if index and type(text) == "string" and text ~= "" then key, args = index:matchOnly(text, LEVEL) end
+  if key and type(args) == "table" and args.form == nil and type(args[2]) == "string" then
+    local withClass = {}
+    for k, v in pairs(args) do withClass[k] = v end
+    withClass.key = LEVEL_WITH_CLASS
+    args = withClass
+  end
+  return WFJ.Labels.showArgs(SURFACE, "detailLevel", widget, key, args)
+end
+
 -- hooksecurefunc target (GuildMemberDetailFrame:DisplayMember). → the number of dictionary words found.
 function Communities.onDetail()
   local show = WFJ.Labels.show
-  local n = show(SURFACE, "detailLevel", get("level"), nil, { only = { "FRIENDS_LEVEL_TEMPLATE" } })
+  local n = showLevel()
     + show(SURFACE, "detailOnline", get("online"), nil, { only = ONLINE_KEYS })
     + showNote("personalNote", "personalNote", "GUILD_NOTE_EDITLABEL")
     + showNote("officerNote", "officerNote", "GUILD_OFFICERNOTE_EDITLABEL")
+    + WFJ.NameLabels.show(SURFACE, "detailZone", get("zoneText"))
   WFJ.Render.updateBanner(SURFACE)
   return n
 end

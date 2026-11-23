@@ -7,6 +7,10 @@
 --   * Its look is one of four (UI/VoicePanelLooks) from the Panel size and Panel style settings; Off hides it.
 --   * Never while translation or voice is off. The reveal key does not hide it: it shows the line's English.
 --   * Built on the first voiced line, so without a voice pack no frame exists.
+--   * The NPC's name and title show their Japanese while names are on and Japanese is showing (Core/Names; the
+--     panel is the addon's own frame, so they are written straight in, in the bundled face). Only a line with a
+--     creature behind it (item.speaker): a player who offers a quest keeps the name they carry, and a book's name
+--     stays as written.
 --   * The panel follows forever-vo's talking-head panel in its design, and its faction parchment choice is adapted
 --     from forever-vo's ForeverVO/UI/TalkingHead.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
@@ -75,6 +79,22 @@ end
 
 local function revealed()
   return WFJ.State.showsEnglish() and true or false
+end
+
+-- The speaker's name and title as the panel shows them: the Japanese while names are on, Japanese is showing and an
+-- NPC says the line; the client's English otherwise. A name with no Japanese stays as the client showed it.
+local function showWho(item)
+  local ja = WFJ.State.names and not revealed() and item.speaker ~= nil and WFJ.Names ~= nil
+  local name, title = item.name, item.title
+  if ja and type(name) == "string" then name = WFJ.Names.of(name) or name end
+  if ja and type(title) == "string" then title = WFJ.Names.of(title) or title end
+  f.name:SetText(name or "")
+  f.title:SetText(title and ("<" .. title:gsub("^<", ""):gsub(">$", "") .. ">") or "")
+  local L = look()
+  for _, pair in ipairs({ { f.name, name ~= item.name, L.nameFont }, { f.title, title ~= item.title, L.titleFont } }) do
+    local object = Compat.resolve(pair[3])
+    if pair[2] then WFJ.Font.bundle(pair[1], object) else WFJ.Font.restore(pair[1], object) end
+  end
 end
 
 local function word(key, ...)
@@ -453,6 +473,7 @@ local function onTick(self, elapsed)
   local st = WFJ.VoicePlayer.state()
   showArrows(st)
   if revealed() ~= english then -- the reveal key went down or up: the panel and the whole text follow
+    if displayed then showWho(displayed) end
     showPage(audioPage(st) or pageShown or 1)
     Text.refreshWhole(displayed, look(), english)
   end
@@ -518,8 +539,7 @@ function Panel.update()
   if item ~= displayed or redraw then
     redraw = false
     displayed = item
-    f.name:SetText(item.name or "")
-    f.title:SetText(item.title and ("<" .. item.title:gsub("^<", ""):gsub(">$", "") .. ">") or "")
+    showWho(item)
     pages, starts, segs = Text.paginate(item.ja, look().pageChars)
     Head.load(f.head, item, Q.opt.head, placeText)
     showPage(1)
@@ -675,6 +695,9 @@ function Panel.init()
   WFJ.State.on("enabled", update)
   WFJ.State.on("language", update)
   WFJ.State.on("voice", update)
+  WFJ.State.on("names", function()
+    if f and displayed then pcall(showWho, displayed) end
+  end)
   -- a choice on the settings page (voice.panel.*): redraw; switching Panel size to Off ends the line and hides the
   -- panel (only that change: other settings changed while it is Off leave a line playing alone)
   WFJ.State.on("voicePanel", function()

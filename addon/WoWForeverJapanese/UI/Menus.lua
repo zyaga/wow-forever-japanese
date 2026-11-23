@@ -189,14 +189,19 @@ Menus.TAGS = {
   MENU_QUEUE_STATUS_FRAME = { source = "queuestatusframe.lua:35", keys = { "CANCEL_SIGN_UP", "ENTER_LFG",
     "LEAVE_ALL_QUEUES", "LEAVE_BATTLEGROUND", "LEAVE_LFD_BATTLEFIELD", "LFG_LIST_VIEW_GROUP",
     "TOGGLE_BATTLEFIELD_MAP", "TOGGLE_SCOREBOARD", "UNLIST_ME", "UNLIST_MY_GROUP" } },
-  -- the Group Finder: the role radios, the options checkbox, the category filter (categories are client-table
-  -- names) (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_listing.lua:579–595, 729–741;
-  -- blizzard_lfgvanilla_browse.lua:1056–1087, 1276–1288)
+  -- the Group Finder: the role radios, the options checkbox, the category filter (a category's name is a word of
+  -- the client's tables) and the activity filter (a group's table word, and an activity's name: a dungeon, a raid,
+  -- a battleground or a zone, shown in Japanese while names are). The last two are UI/GroupFinder's line forms.
+  -- (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_listing.lua:579–595, 729–741;
+  -- blizzard_lfgvanilla_browse.lua:1056–1087, 1118–1185, 1276–1288)
   MENU_LFG_LISTING_ROLE = { source = "blizzard_lfgvanilla_listing.lua:582", keys = { "TANK", "HEALER", "DAMAGER" } },
   MENU_LFG_LISTING_SETTINGS = { source = "blizzard_lfgvanilla_listing.lua:731",
     keys = { "LFG_LIST_IGNORE_SUGGESTED_LEVEL" } },
   MENU_LFG_BROWSE_CATEGORY = { source = "blizzard_lfgvanilla_browse.lua:1058",
-    keys = { "LFG_TYPE_NONE", "LFG_SELF_LISTING" } },
+    keys = { "LFG_TYPE_NONE", "LFG_SELF_LISTING" },
+    show = function(...) return WFJ.GroupFinder and WFJ.GroupFinder.showCategoryEntry(...) or 0 end },
+  MENU_LFG_BROWSE_ACTIVITY = { source = "blizzard_lfgvanilla_browse.lua:1120", keys = {},
+    show = function(...) return WFJ.GroupFinder and WFJ.GroupFinder.showActivityEntry(...) or 0 end },
   MENU_LFG_FRAME_GROUP_PLAYSTYLE = { source = "blizzard_lfgvanilla_listing.lua:943",
     keys = { "GROUP_FINDER_GENERAL_PLAYSTYLE1", "GROUP_FINDER_GENERAL_PLAYSTYLE2", "GROUP_FINDER_GENERAL_PLAYSTYLE3",
       "GROUP_FINDER_GENERAL_PLAYSTYLE4" } },
@@ -246,7 +251,7 @@ function Menus.showElement(tag, frame, name)
   end
   local fs = textOf(frame)
   local en = fs and fs:GetText() or nil
-  if #spec.keys == 0 or secret(en) or type(en) ~= "string" or en == "" then return 0 end
+  if (#spec.keys == 0 and not spec.show) or secret(en) or type(en) ~= "string" or en == "" then return 0 end
   if name ~= nil and en == name then return 0 end
   -- one record per text widget: frames are pooled, and two entries may share one English
   local n = WFJ.Labels.show(SURFACE, menuKey(fs), fs, nil, { only = spec.keys })

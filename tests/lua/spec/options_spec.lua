@@ -2,7 +2,8 @@ local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local Loader = require("tests.lua.spec.loader")
 
-local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Data/Meta.lua", "Core/State.lua",
+local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua",
+  "Core/Names.lua", "Data/Meta.lua", "Core/State.lua",
   "Core/Settings.lua", "Core/ErrorVoices.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua",
   "Core/Fsrs.lua", "Core/Study.lua",
   "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua",
@@ -349,6 +350,15 @@ describe("Settings pages from the registry and PAGES", function()
     items[2].setSelected()
     assert.are.equal("en", S.get("direction"))
     assert.is_true(WFJ.State.showsEnglish())
+  end)
+
+  it("names in Japanese is one checkbox that switches at once; nothing on the page asks for a reload", function()
+    assert.is_nil(O.namesReload)
+    assert.are.same({ "names.japanese" }, O.PAGES[1].sections[4].rows)
+    S.set("names.japanese", true)
+    assert.is_true(WFJ.State.names)
+    S.set("names.japanese", false)
+    assert.is_false(WFJ.State.names)
   end)
 
   it("reflects values, a click sets the setting, and OnShow re-reads a slash-side change", function()

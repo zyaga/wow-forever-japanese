@@ -15,7 +15,11 @@ WFJ.UIStrings = UIStrings
 --         prose sentence is never taken for a template argument);
 --   skill what follows "Requires" when it is a skill or an equipment list ("Herbalism", "Bows, Crossbows, Guns"):
 --         letters, spaces, apostrophes, hyphens and commas only; never "Level 40" or "Engineering (225)"
---         (`ITEM_REQ_SKILL`, which shares its English with SPELL_EQUIPPED_ITEM); shown verbatim;
+--         (`ITEM_REQ_SKILL`, which shares its English with SPELL_EQUIPPED_ITEM); each of its names shown in its
+--         Japanese while names are Japanese, else as written; a part that is a weapon type the dictionary holds
+--         (UIStrings.SKILL_FAMILIES: "Ranged Weapon") shows that word's Japanese whatever the names choice;
+--   classes  a list of classes or of races ("Rogue, Druid"): each shown as the word prose uses for it while names are
+--         Japanese, else as written;
 --   time  a live duration ("30 sec", "1 hr 30 min"): shown in Japanese when it is one or two duration entries
 --         (UIStrings.DURATIONS), verbatim otherwise;
 --   verbatim  any text, periods included, shown exactly as captured (a gossip option's server text after
@@ -23,19 +27,26 @@ WFJ.UIStrings = UIStrings
 --   entry text that must itself be a dictionary entry or template ("(Rank 2)", "(Buyout)"): shown as that entry's
 --         filled Japanese; a line whose text is not an entry is not this template.
 --   percent  a percentage with an optional sign ("+5.00%", "-0.40%", "40%"), shown verbatim.
--- In the windows, every name-carrying template is `text` (race / class in "Level %d %s %s", a quest title, a talent
--- tree, a skill, an item stack, a pet family).
+--   unitType  the word in brackets on a unit's level line: a CreatureType row's Japanese when it is one; the
+--         client's word for a player shows the name list's spelling while names are Japanese; else as written.
+--   class a class's word ("Warrior"), shown as the word prose uses for it while names are Japanese, else as written.
+--   spec  what the client writes in front of a class: a spec ("Protection", a talent tree's name) or a race
+--         ("Night Elf"), shown in its Japanese while names are Japanese, else as written; read together with the
+--         `class` slot after it, so a line whose last words are no class's word stays as written.
+-- In the windows, every other name-carrying template is `text` (a quest title, a talent tree, a skill, an item
+-- stack, a pet family).
 UIStrings.ARGS = {
   ITEM_RESIST_SINGLE = { [3] = "word" }, DAMAGE_TEMPLATE_WITH_SCHOOL = { [3] = "word" },
   PLUS_DAMAGE_TEMPLATE_WITH_SCHOOL = { [3] = "word" }, SINGLE_DAMAGE_TEMPLATE_WITH_SCHOOL = { [2] = "word" },
   PLUS_SINGLE_DAMAGE_TEMPLATE_WITH_SCHOOL = { [2] = "word" }, AMMO_SCHOOL_DAMAGE_TEMPLATE = { [2] = "word" },
   PLUS_AMMO_SCHOOL_DAMAGE_TEMPLATE = { [2] = "word" }, CONTAINER_SLOTS = { [2] = "words" },
-  ITEM_REQ_REPUTATION = { [1] = "text", [2] = "word" },
-  ITEM_REQ_SKILL = { [1] = "skill" }, ITEM_MIN_SKILL = { [1] = "text" },
+  ITEM_REQ_REPUTATION = { [1] = "name", [2] = "word" },
+  ITEM_REQ_SKILL = { [1] = "skill" }, ITEM_MIN_SKILL = { [1] = "name" },
   SPELL_EQUIPPED_ITEM = { [1] = "itemSubClassMask" }, SPELL_EQUIPPED_ITEM_NOSPACE = { [1] = "itemSubClassMask" },
   -- "Requires %s": an ItemSubClassMask row ("Melee Weapon") is shown in Japanese; a form, item or skill name is kept
   SPELL_REQUIRED_FORM = { [1] = "itemSubClassMask" }, SPELL_REQUIRED_FORM_NOSPACE = { [1] = "itemSubClassMask" },
-  ITEM_CLASSES_ALLOWED = { [1] = "text" }, ITEM_RACES_ALLOWED = { [1] = "text" }, ITEM_SPELL_EFFECT = { [1] = "text" },
+  ITEM_CLASSES_ALLOWED = { [1] = "classes" }, ITEM_RACES_ALLOWED = { [1] = "classes" },
+  ITEM_SPELL_EFFECT = { [1] = "text" },
   ITEM_WRITTEN_BY = { [1] = "text" }, ITEM_LIMIT_CATEGORY = { [1] = "text" },
   ITEM_LIMIT_CATEGORY_MULTIPLE = { [1] = "text" }, TOOLTIP_TALENT_TIER_POINTS = { [2] = "text" },
   ITEM_COOLDOWN_TIME = { [1] = "time" }, ITEM_COOLDOWN_TOTAL = { [1] = "time" },
@@ -46,6 +57,39 @@ UIStrings.ARGS = {
   -- a quest's title inside a system line ("The Balance of Nature completed."): its Japanese title when exactly one
   -- quest title answers it (UIStrings.questTitle, set by UI/TooltipUnit), else as written
   ERR_QUEST_ACCEPTED_S = { [1] = "questTitle" }, ERR_QUEST_COMPLETE_S = { [1] = "questTitle" },
+  -- a place or an item the client names inside a system line: its Japanese while names are on (UIStrings.name)
+  ERR_ZONE_EXPLORED = { [1] = "name" }, LOOT_ITEM_SELF = { [1] = "name" },
+  -- the chat and system lines that name an item, a spell, a skill, a faction, a creature or a place. Another
+  -- player's name in the same line is a player's word and stays text.
+  LOOT_ITEM_SELF_MULTIPLE = { [1] = "name" }, LOOT_ITEM_PUSHED_SELF = { [1] = "name" },
+  LOOT_ITEM_PUSHED_SELF_MULTIPLE = { [1] = "name" }, LOOT_ITEM_CREATED_SELF = { [1] = "name" },
+  LOOT_ITEM_CREATED_SELF_MULTIPLE = { [1] = "name" }, LOOT_ITEM_REFUND = { [1] = "name" },
+  LOOT_ITEM_REFUND_MULTIPLE = { [1] = "name" }, LOOT_ITEM = { [1] = "text", [2] = "name" },
+  LOOT_ITEM_MULTIPLE = { [1] = "text", [2] = "name" }, TRADESKILL_LOG_FIRSTPERSON = { [1] = "name" },
+  CURRENCY_GAINED = { [1] = "name" }, CURRENCY_GAINED_MULTIPLE = { [1] = "name" },
+  FACTION_STANDING_INCREASED = { [1] = "name" }, FACTION_STANDING_DECREASED = { [1] = "name" },
+  SKILL_RANK_UP = { [1] = "name" }, ERR_SKILL_UP_SI = { [1] = "name" }, ERR_SKILL_GAINED_S = { [1] = "name" },
+  ERR_LEARN_SPELL_S = { [1] = "name" }, ERR_LEARN_ABILITY_S = { [1] = "name" },
+  ERR_LEARN_RECIPE_S = { [1] = "name" }, ERR_LEARN_PASSIVE_S = { [1] = "name" },
+  ERR_SPELL_UNLEARNED_S = { [1] = "name" }, ERR_PET_SPELL_UNLEARNED_S = { [1] = "name" },
+  ERR_PET_LEARN_SPELL_S = { [1] = "name" }, ERR_PET_LEARN_ABILITY_S = { [1] = "name" },
+  COMBATLOG_XPGAIN_FIRSTPERSON = { [1] = "name" },
+  COMBATLOG_XPGAIN_EXHAUSTION1 = { [1] = "name", [3] = "text", [4] = "text" },
+  ERR_ZONE_EXPLORED_XP = { [1] = "name" }, ERR_DEATHBIND_SUCCESS_S = { [1] = "name" },
+  ERR_QUEST_ADD_KILL_SII = { [1] = "name" }, ERR_QUEST_ADD_ITEM_SII = { [1] = "name" },
+  -- the same English as a key above, and the one the index compiles the template under
+  ERR_QUEST_ADD_FOUND_SII = { [1] = "name" }, LOOT_CURRENCY_REFUND = { [1] = "name" },
+  -- the drink is a game name; the player before it is shown as written
+  DRUNK_MESSAGE_ITEM_SELF1 = { [1] = "name" }, DRUNK_MESSAGE_ITEM_SELF2 = { [1] = "name" },
+  DRUNK_MESSAGE_ITEM_SELF3 = { [1] = "name" }, DRUNK_MESSAGE_ITEM_SELF4 = { [1] = "name" },
+  DRUNK_MESSAGE_ITEM_OTHER1 = { [1] = "text", [2] = "name" },
+  DRUNK_MESSAGE_ITEM_OTHER2 = { [1] = "text", [2] = "name" },
+  DRUNK_MESSAGE_ITEM_OTHER3 = { [1] = "text", [2] = "name" },
+  DRUNK_MESSAGE_ITEM_OTHER4 = { [1] = "text", [2] = "name" },
+  COMBATLOG_XPGAIN_EXHAUSTION2 = { [1] = "name", [3] = "text", [4] = "text" },
+  ERR_AUCTION_WON_S = { [1] = "name" }, ERR_AUCTION_SOLD_S = { [1] = "name" },
+  ERR_AUCTION_OUTBID_S = { [1] = "name" }, ERR_AUCTION_EXPIRED_S = { [1] = "name" },
+  ERR_AUCTION_REMOVED_S = { [1] = "name" },
   ERR_QUEST_FAILED_S = { [1] = "questTitle" }, ERR_QUEST_FAILED_BAG_FULL_S = { [1] = "questTitle" },
   ERR_QUEST_FAILED_MAX_COUNT_S = { [1] = "questTitle" }, ERR_QUEST_FORCE_REMOVED_S = { [1] = "questTitle" },
   ERR_QUEST_PUSH_ALREADY_DONE_TO_RECIPIENT_S = { [1] = "text", [2] = "questTitle" },
@@ -102,11 +146,26 @@ UIStrings.ARGS = {
   BIND_TRADE_TIME_REMAINING = { [1] = "text" }, SOCKET_ITEM_MIN_SKILL = { [1] = "text" },
   SOCKET_ITEM_REQ_SKILL = { [1] = "text" }, UNIT_TYPE_LETHAL_LEVEL_TEMPLATE = { [1] = "creatureType" },
   -- the always-visible windows
-  -- Forever's English is "Level %s |c%s%s %s|r" (level, colour, spec, class); each is a verbatim capture
-  PLAYER_LEVEL = { [1] = "text", [2] = "text", [3] = "text", [4] = "text" },
+  -- Forever's English is "Level %s |c%s%s %s|r" (level, colour, spec, class): the level and colour are verbatim
+  -- captures; the spec shows its talent tree's Japanese name and the class its Japanese word while names are
+  -- Japanese
+  PLAYER_LEVEL = { [1] = "text", [2] = "text", [3] = "spec", [4] = "class" },
   -- shares "Level %d %s" with UNIT_TYPE_LEVEL_TEMPLATE, so the same kind; a guild member's class is never a
   -- CreatureType row and stays as written (UI/Communities)
   FRIENDS_LEVEL_TEMPLATE = { [2] = "creatureType" },
+  -- a recent ally's tooltip, "Level %d %s" with a class: the class shows its Japanese word while names are Japanese
+  SOCIAL_UI_RECENT_ALLIES_TOOLTIP_LEVEL_CLASS_FORMAT = { [2] = "class" },
+  -- a friend's broadcast and how long ago it was set: what the player typed, and a time, both as written
+  SOCIAL_UI_FRIENDS_LIST_BATTLE_NET_FRIEND_BROADCAST_AND_DATE_FORMAT = { [1] = "text", [2] = "text" },
+  -- a friend's own tags and a player's name are kept as written; the rest are a time or a status word
+  SOCIAL_UI_FRIENDS_LIST_BATTLE_NET_FRIEND_TAGS_FORMAT = { [1] = "text" },
+  SOCIAL_UI_FRIENDS_LIST_BATTLE_NET_FRIEND_TAGS_OFFLINE_FORMAT = { [1] = "text" },
+  SOCIAL_UI_FRIENDS_LIST_FRIEND_IN_GROUP_TOOLTIP = { [1] = "text" },
+  SOCIAL_UI_FRIEND_REQUESTS_CARD_TIMESTAMP_FORMAT = { [1] = "time" },
+  SOCIAL_UI_PRESENCE_TYPE_DROPDOWN_TOOLTIP_FORMAT = { [1] = "word" },
+  SOCIAL_UI_RAF_SUMMON_BUTTON_COOLDOWN_FORMAT = { [1] = "time" },
+  -- a duel's end in chat: the two players' names, kept as written
+  DUEL_WINNER_KNOCKOUT = { [1] = "text", [2] = "text" }, DUEL_WINNER_RETREAT = { [1] = "text", [2] = "text" },
   TRIVIAL_QUEST_DISPLAY = { [1] = "text" }, IGNORED_QUEST_DISPLAY = { [1] = "text" },
   MASTERY_POINTS_SPENT = { [1] = "text", [2] = "text" }, TRAINER_REQ_SKILL_RANK = { [1] = "skill" },
   TRAINER_REQ_SKILL_RANK_RED = { [1] = "skill" }, AUCTION_MAIL_ITEM_STACK = { [1] = "text" },
@@ -125,6 +184,12 @@ UIStrings.ARGS = {
   -- FormatPercent output ("+5.00%", "40%": camelot/skillsframe.lua:61–76, 274–290)
   TALENT_BUTTON_TOOLTIP_RANK_FORMAT = { [1] = "text" }, TALENT_BUTTON_TOOLTIP_RANK_NO_MAX_FORMAT = { [1] = "text" },
   TALENT_BUTTON_TOOLTIP_REPLACED_BY_FORMAT = { [1] = "text" }, TALENT_FRAME_INCREASED_RANKS_TEXT = { [2] = "text" },
+  -- a Legacy talent's requirement line, "Spend %d more points in the %s Legacy Tree": the tree is one of the
+  -- window's own words (LEGACY_TREE_PROFESSIONS / _ADVENTURE / _PROGRESSION), shown as the window shows it
+  ["SharedString:1318"] = { [2] = "words" },
+  -- a class talent's requirement line, "Spend %d more points in %s Talents": the tree is a game name, shown as
+  -- the talent window's tree header shows it
+  ["SharedString:911"] = { [2] = "name" },
   TALENTS_INSPECT_FORMAT = { [1] = "text" },
   -- the chat header's whisper target, a corpse's name, the "new layout" atlas, the
   -- interact key's binding, a unit tooltip's level ("??" too) / race / class / creature type: all kept as shown;
@@ -134,9 +199,12 @@ UIStrings.ARGS = {
   INTERACT_KEY_TUTORIAL = { [1] = "text" }, OPT_OUT_LOOT_TITLE = { [1] = "word" },
   -- the creature-type slot shows a CreatureType row's Japanese ("Humanoid" → its row), anything else (a class,
   -- a spec, a pet family) as written. A race slot is `text`: "Undead" is a race name too, and names stay English
-  TOOLTIP_UNIT_LEVEL = { [1] = "text" }, TOOLTIP_UNIT_LEVEL_TYPE = { [1] = "text", [2] = "creatureType" },
-  TOOLTIP_UNIT_LEVEL_RACE = { [1] = "text", [2] = "text" },
-  TOOLTIP_UNIT_LEVEL_RACE_TYPE = { [1] = "text", [2] = "text", [3] = "creatureType" },
+  -- a player's level line reaches TOOLTIP_UNIT_LEVEL with the race inside its value ("23 Night Elf (Player)"):
+  -- the race shows its Japanese while names are Japanese
+  -- the word in brackets is a creature's type, or the client's word for a player ("(Player)"): `unitType`
+  TOOLTIP_UNIT_LEVEL = { [1] = "names" }, TOOLTIP_UNIT_LEVEL_TYPE = { [1] = "text", [2] = "unitType" },
+  TOOLTIP_UNIT_LEVEL_RACE = { [1] = "text", [2] = "names" },
+  TOOLTIP_UNIT_LEVEL_RACE_TYPE = { [1] = "text", [2] = "names", [3] = "unitType" },
   UNIT_TYPE_PLUS_LEVEL_TEMPLATE = { [2] = "creatureType" },
   -- these two share their English ("%s (%s)") with PVP_LEAVE_BUTTON_TIME, and one template is
   -- compiled per distinct English under the first key of the group, so the three MUST declare the same kinds, or
@@ -152,19 +220,22 @@ UIStrings.ARGS = {
   WEAPON_SKILL_DETAIL_SAME_LEVEL_RANGED = { [1] = "percent", [2] = "percent" },
   WEAPON_SKILL_DETAIL_BOSS = { [1] = "percent", [2] = "percent", [3] = "percent", [4] = "percent" },
   WEAPON_SKILL_DETAIL_BOSS_RANGED = { [1] = "percent", [2] = "percent" },
-  -- the PvP rank panel: the rank title is a name; the season name's expansion part is filled with ""
-  -- (" Season 1"); the season countdown is an unabbreviated duration (D_DAYS … below)
-  PVP_RANK_NUMBER_AND_TITLE = { [2] = "text" }, EXPANSION_SEASON_NAME = { [1] = "text" },
+  -- the PvP rank panel: the rank title is a name, shown in its Japanese while names are Japanese; the season
+  -- name's expansion part is filled with "" (" Season 1"); the season countdown is an unabbreviated duration
+  -- (D_DAYS … below)
+  PVP_RANK_NUMBER_AND_TITLE = { [2] = "name" }, EXPANSION_SEASON_NAME = { [1] = "text" },
   SEASON_ENDS_IN_TIME = { [1] = "time" },
   QUEST_LOG_COUNT_TEMPLATE = { [1] = "text" }, -- quest list count: the first argument is a colour code
-  -- the character level line: the colour, spec and class are kept as written
-  PLAYER_LEVEL_NO_SPEC = { [1] = "text", [2] = "text", [3] = "text" },
+  -- the character level line: the level and colour are kept as written, the class shows its Japanese word
+  -- while names are Japanese
+  PLAYER_LEVEL_NO_SPEC = { [1] = "text", [2] = "text", [3] = "class" },
   UNIT_TYPE_LEVEL_TEMPLATE = { [2] = "creatureType" },
   -- friends / Communities: the location after a Recruit-A-Friend label, and a member's race and
   -- class in the roster tooltip, are names, kept as written
   RAF_RECRUIT_FRIEND = { [1] = "text" }, RAF_RECRUITER_FRIEND = { [1] = "text" },
-  -- the friends list's privacy notice: the tab's name, a dictionary word (camelot friendsframe.lua:685)
-  SOCIAL_TAB_UNAVAILABLE = { [1] = "word" },
+  -- a social tab's privacy notice: the tab's name, one word or several ("Friends", "Quick Join": camelot
+  -- friendsframe.lua:685, blizzard_socialuishared/socialuisharedtemplates.lua:158–170), a dictionary entry
+  SOCIAL_TAB_UNAVAILABLE = { [1] = "words" },
   -- the stable's loyalty line: a PetLoyalty rank, else the rank as written (camelot blizzard_stableui.lua:281)
   PET_LOYALTY_TEMPLATE = { [1] = "petLoyalty" },
   -- the new player tutorial: a key name, or NPE_UNBOUND_KEYBIND's "[Unbound]" (shown as its Japanese), and a cyan
@@ -173,7 +244,9 @@ UIStrings.ARGS = {
   NPEV2_SHOW_BAGS = { [1] = "entryOrText" }, NPEV2_OPENCHARACTERSHEET = { [1] = "entryOrText" },
   NPEV2_PRESS_KEY_TO_USE_ABILITY = { [1] = "text", [2] = "text" },
   NPEV2_PLACE_ABILITY_BACK_ON_ACTION_BAR = { [1] = "text" },
-  COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT = { [2] = "text", [3] = "text" },
+  -- a guild member's tooltip, "Level %d %s %s" with a race and a class: the split between the two slots is not
+  -- theirs (a two-word race), so they are read together like a spec and its class
+  COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT = { [2] = "spec", [3] = "class" },
   -- objective lines ("3/10 Kobold Vermin slain", "Neutral / Friendly Darnassus"): the mob, the faction
   -- and the player group are names, kept as written; a standing is a dictionary word, shown in Japanese
   QUEST_MONSTERS_KILLED = { [1] = "text" }, QUEST_PLAYERS_KILLED = { [3] = "text" },
@@ -182,6 +255,8 @@ UIStrings.ARGS = {
   QUEST_FACTION_NEEDED_NOPROGRESS = { [1] = "text", [2] = "standing" },
   -- a spell's dual range ("Melee: 5 yd range") and a season currency requirement (the currency's name)
   SPELL_RANGE_DUAL = { [1] = "words" }, ITEM_REQ_AMOUNT_EARNED = { [2] = "text" },
+  -- a spell's range is one distance, or its two ends ("8-30"), which is no single number
+  SPELL_RANGE = { [1] = "range" },
   -- Communities: club, community, leader, inviter, realm, spec and class names and a name-check
   -- error are kept as written; "Guild" / "Community" / "Guilds" / "Communities", a reputation standing and a weekday
   -- are dictionary words shown in Japanese; a finder focus ("Social & Leveling") is a whole entry
@@ -245,7 +320,7 @@ UIStrings.ARGS = {
   GUILD_RENAME_OPTIONS_RENAME_COOLDOWN = { [1] = "time" }, SL_SET_CONVERSION_RECHARGE_TIME = { [1] = "time" },
   -- "Time Left: %s": the black market's AUCTION_TIME_LEFT<n> word or a bonus objective's "5 min", one shape
   -- for the shared English. Any text after "Time Left:" matches; a value that is no entry is kept as written
-  BLACK_MARKET_HOT_ITEM_TIME_LEFT = { [1] = "entryOrText" }, FACTION_CONTROLLED_TERRITORY = { [1] = "text" },
+  BLACK_MARKET_HOT_ITEM_TIME_LEFT = { [1] = "entryOrText" }, FACTION_CONTROLLED_TERRITORY = { [1] = "name" },
   TIME_IN_QUEUE = { [1] = "time" }, LFG_STATISTIC_AVERAGE_WAIT = { [1] = "time" },
   PVP_LEAVE_BUTTON_TIME = { [1] = "entry", [2] = "text" }, DEATH_RECAP_CAST_BY_TT = { [1] = "text", [2] = "text" },
   PVP_RATING_PREVIOUS = { [1] = "text" }, PVP_RATING_GAINED = { [1] = "text" }, PVP_RATING_NEW = { [1] = "text" },
@@ -373,17 +448,19 @@ UIStrings.ARGS = {
   TOOLTIP_VIGNETTE_OBJECTIVE_DEFEAT_SHOW_HEALTH = { [1] = "text", [2] = "percent" },
   ACHIEVEMENTS_COMPLETED_CATEGORY = { [1] = "text" }, ACHIEVEMENT_META_COMPLETED_DATE = { [1] = "text" },
   AURA_END = { [1] = "text" }, CALENDAR_ANNOUNCEMENT_CREATEDBY_PLAYER = { [1] = "text" },
-  CALENDAR_EVENT_CREATORNAME = { [1] = "text" }, CALENDAR_EVENTNAME_FORMAT_END = { [1] = "text" },
+  -- "%s Begins" / "%s Ends" wrap only a holiday's title, the game's own name for it (UI/Calendar)
+  CALENDAR_EVENT_CREATORNAME = { [1] = "text" }, CALENDAR_EVENTNAME_FORMAT_END = { [1] = "name" },
   CALENDAR_EVENTNAME_FORMAT_RAID_LOCKOUT = { [1] = "text" }, CALENDAR_EVENTNAME_FORMAT_RAID_RESET = { [1] = "text" },
-  CALENDAR_EVENTNAME_FORMAT_START = { [1] = "text" }, CALENDAR_EVENT_INVITEDBY_PLAYER = { [1] = "text" },
+  CALENDAR_EVENTNAME_FORMAT_START = { [1] = "name" }, CALENDAR_EVENT_INVITEDBY_PLAYER = { [1] = "text" },
   -- the barber shop's choice line ("3: Brown") and a locked choice's source ("Source: See colors")
   CHARACTER_CUSTOMIZATION_CHOICE_TOOLTIP = { [2] = "customizationChoice" },
   BARBERSHOP_CUSTOMIZATION_SOURCE_FORMAT = { [1] = "customizationSource" },
-  -- the holiday's description is a HolidayDescription row's Japanese when it is one, else as written
-  CALENDAR_HOLIDAYFRAME_BEGINSENDS = { [1] = "holidayDescription", [2] = "text", [3] = "text", [4] = "text",
-    [5] = "text" },
-  CALENDAR_RAID_LOCKOUT_DESCRIPTION = { [1] = "text", [2] = "text" },
-  CALENDAR_RAID_RESET_DESCRIPTION = { [1] = "text", [2] = "text" },
+  -- the holiday's description is a HolidayDescription row's Japanese when it is one, else as written; a time is
+  -- GameTime_GetFormattedTime's (TIME_TWELVEHOURAM / _PM, or digits): its Japanese when it is an entry
+  CALENDAR_HOLIDAYFRAME_BEGINSENDS = { [1] = "holidayDescription", [2] = "text", [3] = "entryOrText", [4] = "text",
+    [5] = "entryOrText" },
+  CALENDAR_RAID_LOCKOUT_DESCRIPTION = { [1] = "text", [2] = "entryOrText" },
+  CALENDAR_RAID_RESET_DESCRIPTION = { [1] = "text", [2] = "entryOrText" },
   CALENDAR_SIGNEDUP_FOR_GUILDEVENT_WITH_STATUS = { [1] = "entry" },
   CALENDAR_VIEW_EVENTTYPE = { [1] = "entry", [2] = "text" },
   CLICK_BINDING_MACRO_TITLE = { [1] = "text" }, -- CLICK_BINDINGS_BINDING_TEXT_FORMAT's kinds below
@@ -413,7 +490,7 @@ UIStrings.ARGS = {
   GUILD_TRADE_SKILL_TITLE = { [1] = "text" }, NOT_ENOUGH_CURRENCY = { [1] = "text" },
   QUICK_JOIN_TOAST_LFGLIST_MESSAGE = { [1] = "text", [2] = "verbatim" },
   QUICK_JOIN_TOAST_MESSAGE = { [1] = "text", [2] = "entryOrText" }, SOCIAL_QUEUE_FORMAT_BATTLEGROUND = { [1] = "text" },
-  TRANSMOGRIFIED_ENCHANT = { [1] = "text" },
+  TRANSMOGRIFIED_ENCHANT = { [1] = "name" },
   VOICE_CHAT_CHANNEL_ANNOUNCE = { [1] = "verbatim", [2] = "verbatim", [3] = "verbatim" }, -- the voiceParts label form
   VOICE_CHAT_CHANNEL_MANAGEMENT_TIP = { [1] = "text", [2] = "text" },
   BAG_FILTER_ASSIGNED_TO = { [1] = "entryList" }, BANK_TAB_DEPOSIT_ASSIGNMENTS = { [1] = "entryList" },
@@ -583,10 +660,12 @@ UIStrings.ARGS = {
   QUEST_CLASSIFICATION_RECURRING_WITH_TIME = { [1] = "text" },
   RECOVER_CORPSE_TIMER = { [2] = "text" },
   REMOVE_GUILDMEMBER_LABEL = { [1] = "text" },
-  RENOWN_REWARD_FOLLOWER_NAME_FORMAT = { [1] = "text" },
-  RENOWN_REWARD_ILLUSION_NAME_FORMAT = { [1] = "text" },
-  RENOWN_REWARD_MOUNT_NAME_FORMAT = { [1] = "text" },
-  RENOWN_REWARD_TITLE_NAME_FORMAT = { [1] = "text" },
+  -- a renown reward's "Mount: %s": the label in Japanese, and the reward's own name in its Japanese while names
+  -- are Japanese
+  RENOWN_REWARD_FOLLOWER_NAME_FORMAT = { [1] = "name" },
+  RENOWN_REWARD_ILLUSION_NAME_FORMAT = { [1] = "name" },
+  RENOWN_REWARD_MOUNT_NAME_FORMAT = { [1] = "name" },
+  RENOWN_REWARD_TITLE_NAME_FORMAT = { [1] = "name" },
   RESURRECT_REQUEST_NO_SICKNESS_TIMER = { [1] = "text", [3] = "text" },
   RESURRECT_REQUEST_TIMER = { [1] = "text", [3] = "text" },
   SHARD_TRANSFER_COUNTDOWN_MESSAGE = { [1] = "text", [2] = "entry" }, -- [2] SECONDS / MINUTES (socialtoast.lua:78-86)
@@ -641,7 +720,7 @@ UIStrings.CHAT_FAMILIES = { "^LOOT_ITEM$", "^LOOT_ITEM_", "^LOOT_ROLL_", "^CREAT
   "^FACTION_STANDING_DECREASED", "^SKILL_RANK_UP$", "^TRADESKILL_LOG_", "^OPEN_LOCK_", "^MARKED_AFK", "^MARKED_DND",
   "^CLEARED_AFK", "^CLEARED_DND", "^LEVEL_UP_NO_LINK$", "^LEVEL_UP_HEALTH", "^LEVEL_UP_STAT$",
   "^LEVEL_UP_SKILL_POINTS$", "^DURABILITYDAMAGE_DEATH$", "^INSTANCE_RESET_", "^RANDOM_ROLL_RESULT$",
-  "^ACHIEVEMENT_BROADCAST",
+  "^ACHIEVEMENT_BROADCAST", "^DRUNK_MESSAGE_", "^DUEL_WINNER_",
   -- the lines Blizzard's Lua prints into chat (ui_inventory chat_call_keys), each by name
   "^EVENT_SCHEDULER_CHAT_REMINDER_", "^GENERIC_MONEY_GAINED_RECEIPT$", "^QUEST_SESSION_REPLAY_QUEST_REMOVED$",
   "^ROLE_CHANGED_INFORM", "^ROLE_REMOVED_INFORM", "^SLASH_COMMENTATOR", "^BN_UNABLE_TO_RESOLVE_NAME$",
@@ -677,6 +756,11 @@ UIStrings.DURATIONS = { "INT_SPELL_DURATION_DAYS", "INT_SPELL_DURATION_HOURS", "
 UIStrings.SPELL_DURATIONS = { "INT_SPELL_DURATION_DAYS", "INT_SPELL_DURATION_HOURS", "INT_SPELL_DURATION_MIN",
   "INT_SPELL_DURATION_SEC", "SPELL_DURATION_DAYS", "SPELL_DURATION_HOURS", "SPELL_DURATION_MIN", "SPELL_DURATION_SEC",
   "DAYS_ABBR", "HOURS_ABBR", "MINUTES_ABBR", "SECONDS_ABBR", "SECONDS_FLOAT_ABBR" }
+
+-- What a spell's `$d` prints when the client has no number for it: a spell the character does not know reads
+-- "Lasts until canceled." A phrase with no number, so it is not one of SPELL_DURATIONS (`Index:duration` reads a
+-- number and its unit); `$D<k>` takes its Japanese where the slot can hold words (Core/Align `wordedSlots`).
+UIStrings.SPELL_DURATION_WORDS = { "SPELL_DURATION_UNTIL_CANCELLED" }
 
 -- Templates with almost no literal text of their own ("%2$s %1$s", "%s at %s") would take any
 -- line that starts with a dictionary word ("Return to Verner", "Frost Resistance increased by 30"). They are matched
@@ -875,18 +959,29 @@ UIStrings.OWN = {
 }
 
 -- argument kind → the one fingerprint family it may be shown as
-UIStrings.FAMILY_KINDS = { creatureType = "CreatureType", holidayDescription = "HolidayDescription",
-  customizationChoice = "CustomizationChoice", customizationSource = "CustomizationSource",
+UIStrings.FAMILY_KINDS = { creatureType = "CreatureType", unitType = "CreatureType",
+  holidayDescription = "HolidayDescription", customizationChoice = "CustomizationChoice",
+  customizationSource = "CustomizationSource",
   restState = "RestState", itemSubClassMask = "ItemSubClassMask",
   petLoyalty = "PetLoyalty" }
+
+-- The families a part of a `skill` value may be a word of: the weapon type a spell asks for ("Requires Ranged
+-- Weapon", "Requires Two-Handed Exotics") is the client's weapon mask or weapon subclass word, a dictionary word.
+-- Only the weapon class of the subclass names: the recipe subclasses are named after professions, which are names.
+UIStrings.SKILL_FAMILIES = { "ItemSubClassMask", "ItemSubClassName:2" }
+
+-- Prefix entries whose rest is a list of game names, each maybe with a count ("Reagents: |nDeathweed (5), Crystal
+-- Vial", "Tools: Runed Copper Rod"): the list shows its names' Japanese while names are Japanese, and only when every
+-- name of it has one; else the list stays as written after the Japanese label.
+UIStrings.LIST_AFTER = { SPELL_REAGENTS = true, SPELL_TOTEMS = true }
 
 -- argument kind → the family each piece of a comma-separated list may be shown as ("Meat, Fish, Bread"); a piece
 -- that is not that family's row is kept as written, and the separators are kept
 UIStrings.FAMILY_LIST_KINDS = { petFoodList = "PetFood" }
 
 -- Label forms: only these entries take a value after them ("Sell Price: 5c", "Speed 2.60", "Rank 3"); a line such as
--- "Libram: Cleanse" (a spell name) is never read as "<Libram>: <rest>". A `"<English>: "` prefix entry (Reagents: ,
--- Tools: ) is a label by construction.
+-- "Libram: Cleanse" (a spell name) is never read as "<Libram>: <rest>". A `"<English>: "` prefix entry (Tools: ),
+-- or one that ends with the client's line break after it (Reagents: |n), is a label by construction.
 -- A value is one form or a list of forms. Forms:
 --   colon      "<entry>: <rest>"           number   "<entry> <number>"
 --   bareColon  "<entry>:" and nothing more (the paperdoll stat labels are SPELL_STAT1_NAME .. ":")
@@ -932,8 +1027,10 @@ UIStrings.LABELS = { SPEED = "number", RANK = "number",
   GROUP = "number", RAID_INSTANCE_EXPIRES_EXPIRED = "wrapped", MAINMENUBAR_LATENCY_LABEL = "colonPrefix",
   WHO_FRAME_TOTAL_TEMPLATE = "joined", WHO_FRAME_SHOWN_TEMPLATE = "joined",
   NEWBIE_TOOLTIP_XPBAR = "paragraphs", EXHAUST_TOOLTIP1 = "paragraphs", -- ExpBarOverrides.lua:23–27
-  -- the camelot Spirit tooltip and the sitting warning joined after it (paperdollframestats.lua:310)
+  -- the camelot Spirit tooltip and the sitting warning joined after it (paperdollframestats.lua:310); a Warrior's
+  -- and a Rogue's Spirit tooltip is their class's own string (:268–272)
   DEFAULT_SPIRIT_TOOLTIP = "paragraphs", SPIRIT_STANDING_WARNING = "paragraphs",
+  WARRIOR_SPIRIT_TOOLTIP = "paragraphs", ROGUE_SPIRIT_TOOLTIP = "paragraphs",
   SPELLBOOK = "binding", PET_TYPE_PET = "binding", PET_TYPE_DEMON = "binding", -- spellbook tab tooltips (xml:43–45)
   -- Forever's (mainline family) micro-button titles via MicroButtonTooltipText ("Professions |cffffd200(K)|r")
   PROFESSIONS_BUTTON = "binding", PLAYERSPELLS_BUTTON = "binding", SPELLBOOK_BUTTON = "binding",

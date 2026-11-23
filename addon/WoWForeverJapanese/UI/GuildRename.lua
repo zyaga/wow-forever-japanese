@@ -25,7 +25,8 @@
 -- Tooltips (SimpleTooltipRegionMixin:OnEnter → GameTooltip_SetTitle, lua:3–12; owners registered with
 --   UI/HelpTooltip, each restricted): MoneyFrame GUILD_RENAME_GUILD_BANK_MONEY_TOOLTIP (xml:135), GuildIcon
 --   GUILD_RENAME_COSTS_TOOLTIP (xml:147), ContextButton a GUILD_RENAME_ERROR_* word while disabled (lua:578–583).
--- Never touched: the window title (SetTitle(UnitName("npc")), :99, the NPC's name), the name EditBox, the money.
+-- The window title is the NPC's name (SetTitle(UnitName("npc")), :99): never a dictionary word; while names are on
+-- it shows the NPC's Japanese name after each SetTitle (UI/NameLabels). Never touched: the name EditBox, the money.
 -- The two confirmation dialogs are StaticPopups (ADR-015 §5). Release on the frame's OnHide.
 local _, WFJ = ...
 local GuildRename = {}
@@ -108,6 +109,7 @@ function GuildRename.init()
     frame:HookScript("OnShow", GuildRename.onUpdate)
     frame:HookScript("OnHide", GuildRename.release)
   end
+  WFJ.NameLabels.title(SURFACE, frame, "title") -- the NPC's name: now, and after every SetTitle
   local titleFlow, renameFlow = get("titleFlow"), get("renameFlow")
   if type(titleFlow) == "table" and type(titleFlow.UpdateOptions) == "function" then
     hooksecurefunc(titleFlow, "UpdateOptions", GuildRename.onOptions)

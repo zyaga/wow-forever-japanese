@@ -1,6 +1,6 @@
 # ADR-083: Quest titles are names
 
-- **Status:** Accepted
+- **Status:** Accepted. Superseded in part by [ADR-106](106-names-shown-in-japanese-on-screen.md): the constant `WFJ.QUEST_TITLES_JAPANESE` is gone, and quest titles follow the player's names setting (English until the player chooses Japanese names).
 - **Date:** 2026-11-12
 - **Deciders:** the maintainer
 - **Related:** [ADR-009](009-surfaces-post-hook-the-writer.md) (the equality gate) · [ADR-029](029-camelot-targets-the-mainline-family.md) (the quest log) · [ADR-073](073-dialogue-ui-windows-get-our-japanese.md) (Dialogue UI's windows) · [ADR-078](078-japanese-names-keyed-by-english-and-kana-voice-lines.md) (Japanese name data and the later names setting) · [Addon modules](../architecture/addon-modules.md)

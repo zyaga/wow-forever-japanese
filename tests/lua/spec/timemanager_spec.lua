@@ -25,6 +25,7 @@ local UI = {
   TIMEMANAGER_TOOLTIP_LOCALTIME = { "Local time:", "現地時間:" },
   GAMETIME_TOOLTIP_TOGGLE_CLOCK = { "Click to show clock settings.", "クリックで時計の設定を表示します。" },
   TIMEMANAGER_ALARM_TOOLTIP_TURN_OFF = { "Click to turn off alarm.", "クリックでアラームを止めます。" },
+  TIME_TWELVEHOURAM = { "%d:%02d AM", "午前%d:%02d" }, TIME_TWELVEHOURPM = { "%d:%02d PM", "午後%d:%02d" },
   CLOSE = { "Close", "閉じる" }, -- a word an alarm message may happen to be
 }
 
@@ -144,8 +145,9 @@ describe("the clock window on Forever", function()
         tt:Show()
         assert.are.equal("時刻情報", _G.GameTooltipTextLeft1:GetText())
         assert.are.equal("レルム時間:", _G.GameTooltipTextLeft2:GetText())
-        assert.are.equal("10:42 AM", _G.GameTooltipTextRight2:GetText())
+        assert.are.equal("午前10:42", _G.GameTooltipTextRight2:GetText())
         assert.are.equal("現地時間:", _G.GameTooltipTextLeft3:GetText())
+        assert.are.equal("午後7:42", _G.GameTooltipTextRight3:GetText())
         assert.are.equal("クリックで時計の設定を表示します。", _G.GameTooltipTextLeft5:GetText())
         tt:ClearLines()
         tt:AddLine("Close") -- the alarm message
@@ -155,6 +157,37 @@ describe("the clock window on Forever", function()
         assert.are.equal("Close", _G.GameTooltipTextLeft1:GetText())
         assert.are.equal("クリックでアラームを止めます。", _G.GameTooltipTextLeft3:GetText())
       end)
+
+      -- GameTime_UpdateTooltip writes the realm and local times beside their labels with GameTime_GetFormattedTime,
+      -- AM / PM wanted (blizzard_framexmlutil/gametimeutil.lua:9-31, 95-107)
+      it("the clock tooltip's times read 午前 / 午後; the reveal key shows English; a 24-hour time, an alarm message "
+        .. "written like a time and translation off are left as written", function()
+          local tt = _G.GameTooltip
+          local function show(first, realm)
+            tt:SetOwner(_G.TimeManagerClockButton)
+            tt:ClearLines()
+            tt:AddLine(first)
+            tt:AddDoubleLine(en("TIMEMANAGER_TOOLTIP_REALMTIME"), realm)
+            tt:Show()
+          end
+          show(en("TIMEMANAGER_TOOLTIP_TITLE"), "2:05 PM")
+          assert.are.equal("午後2:05", _G.GameTooltipTextRight2:GetText())
+          Stub.keys.alt = true
+          WFJ.Modifier.refresh()
+          assert.are.equal("2:05 PM", _G.GameTooltipTextRight2:GetText())
+          Stub.keys.alt = false
+          WFJ.Modifier.refresh()
+          assert.are.equal("午後2:05", _G.GameTooltipTextRight2:GetText())
+          show(en("TIMEMANAGER_TOOLTIP_TITLE"), "2:06 PM") -- the button's ticker rebuilds it every second
+          assert.are.equal("午後2:06", _G.GameTooltipTextRight2:GetText())
+          show("8:00 AM", "14:06") -- the alarm message the player typed, and 24-hour mode
+          assert.are.equal("8:00 AM", _G.GameTooltipTextLeft1:GetText())
+          assert.are.equal("14:06", _G.GameTooltipTextRight2:GetText())
+          WFJ.State.setEnabled(false)
+          show(en("TIMEMANAGER_TOOLTIP_TITLE"), "2:07 PM")
+          assert.are.equal("2:07 PM", _G.GameTooltipTextRight2:GetText())
+          WFJ.State.setEnabled(true)
+        end)
 
       it("labels are shown again when the window is re-shown", function()
         _G.TimeManagerAlarmTimeLabel.text = en("TIMEMANAGER_ALARM_TIME") -- the client rewrote it

@@ -1,0 +1,8 @@
+# Items whose tooltips the window test shows by id and records line by line: <item id><TAB><why it is here>.
+# An item a player reported is listed here, so a run shows what its tooltip says on this client.
+6461	a player reported a line of its tooltip left out of the Japanese (the mana regeneration line)
+273643	a player reported a line of its tooltip left out of the Japanese (the mana per second line)
+3748	a player reported a line of its tooltip left out of the Japanese (the first effect line)
+1155	a player reported a line of its tooltip left out of the Japanese
+279845	a player reported its flavour text written over its Use line
+5759	a lockbox: its tooltip shows the client's "Locked" line, which no interface file names (a player saw it English)

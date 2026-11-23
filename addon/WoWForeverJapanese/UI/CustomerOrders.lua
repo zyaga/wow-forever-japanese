@@ -31,11 +31,17 @@
 --     picker or the reagent's item tooltip (ProcessInfo)) gets PROFESSIONS_ORDER_CRAFTER / _CUSTOMER_REQUIRED_REAGENT
 --     appended (:826–866), shown after GameTooltip:Show by HelpTooltip.appended (itemAppended; the reagent's own lines
 --     stay with UI/Tooltip). Whether ProcessInfo ends in Show on Forever is an in-game check (crafting orders).
--- Never touched: the recipe / item name (RecipeName, RecraftRecipeName), the crafter value (the crafter's name, or
---   CRAFTING_ORDER_NOT_YET_CLAIMED /
---   _NOT_CLAIMED in the same FontString, :1334–1344) and the recipient box (a player name), the
---   time-remaining value (a formatted duration), the note and recipient EditBoxes, the list rows (item and player
---   names).
+-- The ordered item's name (RecipeName): Form:Init's recipe loader writes it (the item's name, or the recipe's when the
+--   output has no link), measures it (SetHeight(GetStringHeight())) and then calls Professions.SetupOutputIcon
+--   (form.lua:1120–1140). The loader can run after Init returned (an item-load callback), so the name is shown from a
+--   post-hook on Professions.SetupOutputIcon for this form's OutputIcon only: after the measure, so the client always
+--   measures its own English and never this addon's text. While names are on it shows the name's Japanese
+--   (UI/NameLabels); a name with a quality icon after it (:1127–1130) has no name line and stays.
+-- Never touched: RecraftRecipeName (PROFESSIONS_ORDER_RECRAFT_TITLE_FMT around a colour-wrapped name, :1114–1116; a
+--   recrafting line Forever never shows, so it has no Japanese: pipeline/ui_exclusions.txt), the crafter value (the
+--   crafter's name, or CRAFTING_ORDER_NOT_YET_CLAIMED / _NOT_CLAIMED in the same FontString, :1334–1344) and the
+--   recipient box (a player name), the time-remaining value (a formatted duration), the note and recipient EditBoxes,
+--   the list rows (item and player names).
 local _, WFJ = ...
 local CustomerOrders = {}
 WFJ.CustomerOrders = CustomerOrders
@@ -100,7 +106,13 @@ local function declare()
   Compat.declare(SURFACE, "form", { FORM })
   Compat.declare(SURFACE, "listings", { FORM .. ".CurrentListings" })
   Compat.declare(SURFACE, "tooltip", { "GameTooltip" })
+  Compat.declare(SURFACE, "recipeName", { FORM .. ".RecipeName" })
+  Compat.declare(SURFACE, "professions", { "Professions" })
   for _, l in ipairs(LABELS) do Compat.declare(SURFACE, l[1], { l[2] }) end
+end
+
+local function showRecipeName()
+  return WFJ.NameLabels.show(SURFACE, "recipeName", get("recipeName"), "items")
 end
 
 -- Every label, and the two titles: on setup, the window's and the form's OnShow, and after Form:Init. → the number
@@ -109,8 +121,19 @@ function CustomerOrders.show()
   local items = {}
   for i, l in ipairs(LABELS) do items[i] = { l[1], get(l[1]), l[3] } end
   local n = WFJ.Labels.showAll(SURFACE, items)
+  showRecipeName()
   return n + WFJ.Labels.title(SURFACE, get("frame"), WINDOW_TITLE, "title")
     + WFJ.Labels.title(SURFACE, get("listings"), LISTINGS_TITLE, "listings.title")
+end
+
+-- Post-hook of Professions.SetupOutputIcon(outputIcon, …): the crafting page calls it too, so only this form's icon
+-- counts. → 1 | 0
+function CustomerOrders.onOutputIcon(icon)
+  local form = get("form")
+  if type(form) ~= "table" or icon == nil or icon ~= form.OutputIcon then return 0 end
+  local n = showRecipeName()
+  WFJ.Render.updateBanner(SURFACE)
+  return n
 end
 
 function CustomerOrders.release() return WFJ.Render.release(SURFACE) end
@@ -162,6 +185,10 @@ function CustomerOrders.setup()
   local tt = get("tooltip")
   if type(tt) == "table" and type(tt.Show) == "function" then
     hooksecurefunc(tt, "Show", CustomerOrders.onTooltipShow)
+  end
+  local professions = get("professions")
+  if type(professions) == "table" and type(professions.SetupOutputIcon) == "function" then
+    hooksecurefunc(professions, "SetupOutputIcon", CustomerOrders.onOutputIcon)
   end
   CustomerOrders.show()
   CustomerOrders.onReagentSlots()

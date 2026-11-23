@@ -7,7 +7,7 @@ local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/Sta
   "Core/Modifier.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/SurfaceState.lua", "Core/Normalize.lua",
   "Core/Hash.lua", "Core/Collector.lua", "UI/Font.lua", "UI/Frames.lua",
-  "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
+  "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua",
   "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/QuestFrame.lua", "UI/GameMenu.lua" }
 
 -- key → { English the client holds, Japanese }
@@ -74,6 +74,9 @@ describe("the ui area on its surfaces", function()
       lookup = function(kind, id)
         if kind == "ui" then local r = rows[id]; return r and { ja = r[1], status = r[3] } end
         if kind == "item.description" and id == 6948 then return { ja = ITEM_JA, status = "u" } end
+        if kind == "spell.description" and id == 1286024 then
+          return { ja = "騎乗できる乗り物を召喚、または解放します。", status = "u" }
+        end
         return nil
       end,
       marker = function(n) return S.get("marker." .. n) end,
@@ -90,6 +93,31 @@ describe("the ui area on its surfaces", function()
 
   local SWORD = { "Worn Shortsword", "Binds when equipped", { "One-Hand", "Sword" }, { "1 - 3 Damage", "Speed 1.90" },
     "(1.0 damage per second)", "+1 Stamina", "Durability 20 / 20", "Requires Level 5", "Sell Price: 12c" }
+
+  describe("a mount's, a companion's and a macro's tooltip, which are data kinds of their own", function()
+    local MOUNT = "Summons and dismisses a rideable mount."
+    before_each(function()
+      Stub.spellNames[1286024] = "Empyrean Galestrider"
+      Stub.spellDescriptions[1286024] = MOUNT
+    end)
+
+    it("shows the spell's lines and description like a spell's own tooltip, from the id it is handed", function()
+      Stub.setOtherTooltip(tt, "Mount", { id = 1286024 }, { "Empyrean Galestrider", "1.5 sec cast", MOUNT })
+      assert.are.equal("詠唱 1.5秒", left(2):GetText())
+      assert.are.equal("騎乗できる乗り物を召喚、または解放します。", left(3):GetText())
+    end)
+
+    it("finds the spell by the name on its first line when it is handed no id", function()
+      Stub.setOtherTooltip(tt, "Macro", {}, { "Empyrean Galestrider", "1.5 sec cast", MOUNT })
+      assert.are.equal("詠唱 1.5秒", left(2):GetText())
+      assert.are.equal("騎乗できる乗り物を召喚、または解放します。", left(3):GetText())
+    end)
+
+    it("an id that is another spell's, or a name no spell answers to, leaves the description as written", function()
+      Stub.setOtherTooltip(tt, "CompanionPet", { id = 133 }, { "Panda Cub", "1.5 sec cast", MOUNT })
+      assert.are.equal(MOUNT, left(3):GetText())
+    end)
+  end)
 
   it("item structural lines translate in place, left and right, with the live numbers", function()
     Stub.setItemTooltip(tt, "|Hitem:2488:0:0:0|h[Worn Shortsword]|h", SWORD)
@@ -130,6 +158,13 @@ describe("the ui area on its surfaces", function()
     assert.are.equal("詠唱 1.5秒", left(3):GetText())
     assert.are.equal("Hurls a fiery ball that causes 14 to 22 Fire damage.", left(4):GetText())
     assert.are.equal("Fireball", left(1):GetText())
+    -- a spell with a shortest distance prints both ends ("8-30 yd range")
+    Stub.setSpellTooltip(tt, 133, { "Fireball", { "30 Mana", "8-30 yd range" }, "1.5 sec cast",
+      "Hurls a fiery ball that causes 14 to 22 Fire damage." })
+    assert.are.equal("射程 8-30ヤード", right(2):GetText())
+    Stub.setSpellTooltip(tt, 133, { "Fireball", { "30 Mana", "5.5 yd range" }, "1.5 sec cast",
+      "Hurls a fiery ball that causes 14 to 22 Fire damage." })
+    assert.are.equal("射程 5.5ヤード", right(2):GetText())
   end)
 
   it("a spell's 'Rank 1' beside the name translates; the name does not; a percent template fills (in-game pass)",

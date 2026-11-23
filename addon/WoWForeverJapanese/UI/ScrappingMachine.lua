@@ -4,9 +4,10 @@
 -- opens when a game object sends that interaction. Set up through WFJ.LoadOnDemand.when.
 -- The window's only fixed word is ScrappingMachineFrame.ScrapButton SCRAP_BUTTON (XML text=,
 -- blizzard_scrappingmachineui.xml:72), written once at load: a static label, never released.
--- Never touched: the title (SetTitle(SCRAPPING_MACHINE_TITLE) at load ("Shred-Master Mk1", a machine's name) and
--- SetTitle(C_ScrappingMachineUI.GetScrappingMachineName()) on every show (blizzard_scrappingmachineui.lua:51, 65):
--- names stay in English), and the slotted items' tooltips (item tooltips, UI/Tooltip's).
+-- The title is the machine's name (SetTitle(SCRAPPING_MACHINE_TITLE) at load, "Shred-Master Mk1", and
+-- SetTitle(C_ScrappingMachineUI.GetScrappingMachineName()) on every show, blizzard_scrappingmachineui.lua:51, 65):
+-- never a dictionary word; while names are on it shows the name's Japanese after each SetTitle (UI/NameLabels, an
+-- object's name: no unit behind it). The slotted items' tooltips are item tooltips, UI/Tooltip's.
 local _, WFJ = ...
 local ScrappingMachine = {}
 WFJ.ScrappingMachine = ScrappingMachine
@@ -46,6 +47,7 @@ function ScrappingMachine.setup()
   if hooked then return false end
   hooked = true
   if type(frame.HookScript) == "function" then frame:HookScript("OnShow", ScrappingMachine.showStatic) end
+  WFJ.NameLabels.title(SURFACE, frame, "title", false) -- the machine's name: now, and after every SetTitle
   return true
 end
 

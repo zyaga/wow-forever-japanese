@@ -1,9 +1,11 @@
 -- UI/GroupFinder.lua over LFGParentFrame replayed from camelot
 -- blizzard_groupfinder_vanillastyle (blizzard_lfgvanilla_parentframe.lua:73–78, blizzard_lfgvanilla_listing.lua:
 -- 613–652 + 1089–1097 + 822–838, blizzard_lfgvanilla_browse.lua:73–79 + 189 + 305 + 410–419 + 654–659, the Menu
--- dropdown's UpdateText). Leader names, activity and category names stay English; both load orders.
+-- dropdown's UpdateText). A leader's name never changes; a dungeon's, raid's or zone's name shows its Japanese
+-- only while Japanese names are on; both load orders.
 local S = require("tests.lua.spec.stub_camelot_social")
 local Stub = require("tests.lua.spec.wow_stub")
+local M = require("tests.lua.spec.menu_stub")
 
 local FILES = S.files("UI/GroupFinder.lua")
 local ADDON = "Blizzard_GroupFinder_VanillaStyle"
@@ -13,6 +15,8 @@ local UI = {
   LFG_LIST_TAB_1 = { "Create Listing", "募集を作成" }, LFG_LIST_EDIT = { "Edit Listing", "募集を編集" },
   LFG_LIST_TAB_2 = { "Group Browser", "グループ一覧" }, LFG_LIST_TAB_3 = { "Who List", "Whoリスト" },
   LFG_LIST_UNLIST = { "Delist", "募集を取り下げ" },
+  BACK = { "Back", "戻る" }, INVTYPE_CLOAK = { "Back", "背中" },
+  GROUP_FINDER_PLAYSTYLE_REQUIRED = { "Select Playstyle (required)", "プレイスタイルを選択 (必須)" },
   LFG_POST_GROUP_SOLO = { "List Self", "自分を登録" }, LFG_POST_GROUP_PARTY = { "List Group", "グループを登録" },
   LFG_POST_GROUP_UPDATE = { "Update", "更新" }, ROLE_POLL = { "Role Check", "ロールチェック" },
   LFG_LIST_ONLY_LEADER_CREATE = { "Only the group leader can create a listing for your group.",
@@ -47,7 +51,7 @@ local UI = {
   BOSSES_KILLED = { "%d/%d Bosses Defeated", "ボス撃破 %d/%d" }, -- an activity row's lockout warning
   -- the listing's client-table words
   ["LfgCategory:2"] = { "Dungeons", "ダンジョン" }, ["LfgActivityGroup:12"] = { "World PvP", "ワールドPvP" },
-  ["LfgActivity:285"] = { "Custom", "カスタム" },
+  ["LfgActivity:285"] = { "Custom", "カスタム" }, ["LfgActivityGroup:285"] = { "Dungeons", "ダンジョン" },
   -- the listing's voice chat row and a result tooltip's voice line (listing.xml:554, 631; listing.lua:48–69;
   -- browse.lua:674–682)
   VOICE_CHAT = { "Voice Chat", "ボイスチャット" },
@@ -68,7 +72,10 @@ local function loadGroupFinder(o)
   end
   parent.ListingTab, parent.BrowsingTab, parent.WhoListingTab = S.frame(), S.frame(), S.frame()
   function parent.UpdateTabs(self) S.write(self.Tab1, en(C.listed and "LFG_LIST_EDIT" or "LFG_LIST_TAB_1")) end
-  if not o.noWhoList then S.frame("LFGWhoListFrame") end
+  if not o.noWhoList then
+    local who = S.frame("LFGWhoListFrame")
+    S.put(who, "TitleContainer.TitleText", S.fs(en("LFG_TITLE"))) -- LFGWhoListMixin:OnLoad, wholist.lua:201–203
+  end
 
   local listing = S.frame("LFGListingFrame")
   S.put(listing, "TitleContainer.TitleText", S.fs(en("LFG_TITLE")))
@@ -81,6 +88,14 @@ local function loadGroupFinder(o)
   listing.NewPlayerFriendlyButton = S.frame()
   S.put(listing, "LockedView.ErrorText", S.fs(en("LFG_LIST_ONLY_LEADER_CREATE")))
   listing.LockedView.ActivityText = S.fs(en("LFG_LIST_MY_ACTIVITY_LIST_HEADER"))
+  -- LFGListingLockedViewActivityTemplate: a frame sized to its Text (listing.xml:227–250, listing.lua:1322–1326)
+  listing.LockedView.framePool = S.pool(function()
+    local frame = CreateFrame("Frame")
+    frame.Text = S.fs("")
+    function frame.Text.GetWidth(self) return #self.text * 7 end
+    function frame.Text.GetHeight() return 14 end
+    return frame
+  end)
   listing.ActivityView = S.frame(nil, "ActivityView")
   listing.ActivityView.PlayStyleDropdown = S.dropdown("PlayStyleDropdown")
   listing.ActivityView.VoiceChatLabel = S.fs(en("VOICE_CHAT"))
@@ -100,6 +115,14 @@ local function loadGroupFinder(o)
   _G.LFGListingBackButton_UpdateText = function(self) S.write(self, C.listed and en("LFG_LIST_UNLIST") or "Back") end
   _G.LFGListingLockedView_RefreshContent = function(self)
     self.ErrorText.text = en(C.listed and "LFG_LIST_ONLY_LEADER_UPDATE" or "LFG_LIST_ONLY_LEADER_CREATE")
+    self.framePool:ReleaseAll()
+    for _, line in ipairs(C.lockedLines or {}) do -- LFGListingLockedView_SetLineContent
+      local frame = self.framePool:Acquire()
+      -- a collapsed group's line carries its hover: { text, tooltip } (listing.lua:1294–1300, 1325)
+      local grouped = type(line) == "table"
+      frame.Text.text, frame.tooltip = grouped and line[1] or line, grouped and line[2] or nil
+      frame:SetSize(frame.Text:GetWidth(), frame.Text:GetHeight())
+    end
   end
   _G.LFGListingPostButton_UpdateText(listing.PostButton) -- its OnLoad
 
@@ -148,6 +171,14 @@ local function loadGroupFinder(o)
   tip.NewPlayerFriendlyText, tip.CompletedEncounterHeader, tip.MemberCount, tip.Comment = S.fs(), S.fs(), S.fs(), S.fs()
   tip.Leader = { Name = S.fs() }
   tip.VoiceChat = S.fs()
+  -- the tooltip's pooled lines (browse.lua:564–565): one line, held between the tooltip's edges
+  local function tipLine()
+    local fs = S.fs("")
+    fs.GetParent = function() return tip end
+    function fs.GetUnboundedStringWidth(self) return #self.text * 7 end
+    return fs
+  end
+  tip.activityPool, tip.completedEncounterPool = S.pool(tipLine), S.pool(tipLine)
   -- an activity row's init (listing.lua:989–1029): its lockout warning icon owns a BOSSES_KILLED tooltip
   _G.LFGListingActivityView_InitActivityButton = function(button, data)
     if button.InstanceLockWarningIcon then button.InstanceLockWarningIcon.encountersCompleted = data.done end
@@ -170,6 +201,10 @@ local function loadGroupFinder(o)
     if voice then self.VoiceChat.text = ("Voice Chat: |cnHIGHLIGHT_FONT_COLOR:%s|r"):format(voice) end
     self.MemberCount.text = roles and ("Members: |cffffffff%d (%d/%d/%d)|r"):format(n, unpack(roles))
       or ("Members: |cffffffff%d|r"):format(n)
+    self.activityPool:ReleaseAll() -- browse.lua:711–806
+    for _, line in ipairs(C.tipActivities or {}) do self.activityPool:Acquire().text = line end
+    self.completedEncounterPool:ReleaseAll() -- browse.lua:813–833
+    for _, boss in ipairs(C.tipBosses or {}) do self.completedEncounterPool:Acquire().text = boss end
   end
   Stub.loadedAddons[ADDON] = true
 end
@@ -178,7 +213,7 @@ local GLOBALS = { "LFGParentFrame", "LFGWhoListFrame", "LFGListingFrame", "LFGLi
   "LFGBrowseSearchEntryTooltip", "LFGListingPostButton_UpdateText", "LFGListingBackButton_UpdateText",
   "LFGListingLockedView_RefreshContent", "LFGBrowseSearchEntry_Update", "LFGBrowseSearchEntryTooltip_UpdateAndShow",
   "LFGListingActivityView_InitActivityButton", "LFGListingActivityView_InitActivityGroupButton",
-  "LFGListingCategorySelection_AddButton" }
+  "LFGListingCategorySelection_AddButton", "EventRegistry" }
 
 -- a listing row whose NameButton.Name is a FontString with a width that follows its text
 local function nameRow()
@@ -195,6 +230,7 @@ describe("the group finder on Forever", function()
   local function setup(loadedFirst)
     WFJ = S.load(FILES, UI)
     C.listed, C.grouped, C.failed = false, false, false
+    C.lockedLines, C.tipActivities, C.tipBosses = nil, nil, nil
     if loadedFirst then
       loadGroupFinder()
       assert.is_true(WFJ.GroupFinder.init())
@@ -215,6 +251,7 @@ describe("the group finder on Forever", function()
         local listing, browse = _G.LFGListingFrame, _G.LFGBrowseFrame
         assert.are.equal("グループ検索", listing.TitleContainer.TitleText:GetText())
         assert.are.equal("グループ検索", browse.TitleContainer.TitleText:GetText())
+        assert.are.equal("グループ検索", _G.LFGWhoListFrame.TitleContainer.TitleText:GetText())
         assert.are.equal("募集を作成", _G.LFGParentFrame.Tab1:GetText())
         assert.are.equal("自分を登録", listing.PostButton:GetText())
         assert.are.equal("ロールチェック", listing.GroupRoleButtons.RolePollButton:GetText())
@@ -222,7 +259,7 @@ describe("the group finder on Forever", function()
         assert.are.equal("検索中...", browse.SearchingSpinner.Label:GetText())
         assert.are.equal("メッセージを送る", browse.SendMessageButton:GetText())
         assert.are.equal("この募集は取り下げられました。", _G.LFGBrowseSearchEntryTooltip.Delisted:GetText())
-        assert.are.equal("Back", listing.BackButton:GetText()) -- "Back" belongs to INVTYPE_CLOAK: left English
+        assert.are.equal("戻る", listing.BackButton:GetText()) -- asked for by key: "Back" is also a cloak's slot
         S.alt(WFJ, true)
         assert.are.equal("Looking For Group", listing.TitleContainer.TitleText:GetText())
         assert.are.equal("List Self", listing.PostButton:GetText())
@@ -327,6 +364,10 @@ describe("the group finder on Forever", function()
         local playstyle = _G.LFGListingFrame.ActivityView.PlayStyleDropdown
         playstyle:SetSelectionText("Relaxed")
         assert.are.equal("気楽に", playstyle.Text:GetText())
+        -- with none chosen the client shows the prompt inside a colour code (listing.lua:921–923)
+        playstyle.text = nil
+        playstyle:SetDefaultText("|cff808080Select Playstyle (required)|r")
+        assert.are.equal("|cff808080プレイスタイルを選択 (必須)|r", playstyle.Text:GetText())
       end)
 
       it("a result's playstyle line translates; the leader's name next to it does not", function()
@@ -394,6 +435,325 @@ describe("the group finder on Forever", function()
       end)
     end)
   end
+
+  -- Japanese names (the names setting): every activity that is no table word is a dungeon, a raid, a battleground
+  -- or a zone, and a group with no table word is a continent.
+  describe("with the names list loaded", function()
+    local registry
+    local FILES_MENUS = S.files("UI/SettingsKeys.lua", "UI/Menus.lua", "UI/MenusUntagged.lua", "UI/GroupFinder.lua")
+    local NORTH, GATE = "ダイア・モール（ノース）", "ストラトホルム（メイン・ゲート）"
+
+    local function names(on)
+      WFJ.State.setNames(on)
+    end
+
+    before_each(function()
+      WFJ = S.load(FILES_MENUS, UI)
+      WFJ.State.setNames(false) -- the setting's own default: names are English until the player chooses
+      registry = M.registry()
+      C.listed, C.grouped, C.failed = false, false, false
+      C.lockedLines, C.tipActivities, C.tipBosses = nil, nil, nil
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Deadmines")] = "デッドマインズ\tでっどまいんず",
+        [WFJ.Names.key("Dire Maul (North)")] = NORTH .. "\tだいあ・もーるのーす",
+        [WFJ.Names.key("Stratholme (Main Gate)")] = GATE .. "\tすとらとほるむめいん・げーと",
+        [WFJ.Names.key("Kalimdor")] = "カリムドア\tかりむどあ",
+        [WFJ.Names.key("Baron Rivendare")] = "バロン・リーヴェンデア\tばろん・りーゔぇんであ",
+      })
+      WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end -- as Main does
+      loadGroupFinder()
+      assert.is_true(WFJ.GroupFinder.init())
+      assert.is_true(WFJ.Menus.init())
+    end)
+
+    after_each(function()
+      WFJ.UIStrings.name = nil
+      WFJ.State.setNames(false)
+    end)
+
+    local function open(tag, build)
+      local root = M.element("root")
+      root.tag = tag
+      build(root)
+      local frames, menus = M.open(registry, tag, root)
+      local texts = {}
+      for i, e in ipairs(root.children) do texts[i] = frames[e].fontString end
+      return texts, menus
+    end
+
+    it("a listing row: a dungeon in Japanese while names are, the button sized to it; off, Alt, no line", function()
+      local dungeon, unknown, zone, group = nameRow(), nameRow(), nameRow(), nameRow()
+      local function fill()
+        _G.LFGListingActivityView_InitActivityButton(dungeon, { name = "Dire Maul (North)" })
+        _G.LFGListingActivityView_InitActivityButton(unknown, { name = "Blackmaw Hold" })
+        _G.LFGListingActivityView_InitActivityGroupButton(zone, { name = "Kalimdor" })
+        _G.LFGListingActivityView_InitActivityGroupButton(group, { name = "Dungeons" })
+      end
+      fill()
+      assert.are.equal("Dire Maul (North)", dungeon.NameButton.Name:GetText()) -- names are English
+      assert.is_true(S.unrecorded(WFJ, dungeon.NameButton.Name))
+      assert.are.equal("Kalimdor", zone.NameButton.Name:GetText())
+      assert.are.equal("ダンジョン", group.NameButton.Name:GetText()) -- a table word, whatever the names choice
+      names(true)
+      fill()
+      assert.are.equal(NORTH, dungeon.NameButton.Name:GetText())
+      assert.are.equal(#NORTH * 7, dungeon.NameButton.size[1])
+      assert.are.equal("カリムドア", zone.NameButton.Name:GetText()) -- a group that is a continent
+      assert.are.equal("ダンジョン", group.NameButton.Name:GetText())
+      assert.are.equal("Blackmaw Hold", unknown.NameButton.Name:GetText()) -- no line in the name list
+      assert.is_true(S.unrecorded(WFJ, unknown.NameButton.Name))
+      S.alt(WFJ, true)
+      assert.are.equal("Dire Maul (North)", dungeon.NameButton.Name:GetText())
+      assert.are.equal(#"Dire Maul (North)" * 7, dungeon.NameButton.size[1])
+      S.alt(WFJ, false)
+      assert.are.equal(NORTH, dungeon.NameButton.Name:GetText())
+      -- the pooled row reused for the table's own activity, then for a dungeon again
+      _G.LFGListingActivityView_InitActivityButton(dungeon, { name = "Custom" })
+      assert.are.equal("カスタム", dungeon.NameButton.Name:GetText())
+      _G.LFGListingActivityView_InitActivityButton(dungeon, { name = "Deadmines" })
+      assert.are.equal("デッドマインズ", dungeon.NameButton.Name:GetText())
+      names(false)
+      fill()
+      assert.are.equal("Dire Maul (North)", dungeon.NameButton.Name:GetText())
+    end)
+
+    it("the category dropdown shows the chosen category's word; the filter shows the one activity chosen", function()
+      local browse = _G.LFGBrowseFrame
+      browse.CategoryDropdown:SetSelectionText("Dungeons")
+      assert.are.equal("ダンジョン", browse.CategoryDropdown.Text:GetText()) -- names are English: a table word
+      browse.CategoryDropdown:SetSelectionText("Deadmines") -- never a name there
+      assert.are.equal("Deadmines", browse.CategoryDropdown.Text:GetText())
+      browse.ActivityDropdown:OverrideText("Stratholme (Main Gate)")
+      assert.are.equal("Stratholme (Main Gate)", browse.ActivityDropdown.Text:GetText())
+      names(true)
+      browse.CategoryDropdown:SetSelectionText("Deadmines")
+      assert.are.equal("Deadmines", browse.CategoryDropdown.Text:GetText())
+      browse.ActivityDropdown:OverrideText("Stratholme (Main Gate)")
+      assert.are.equal(GATE, browse.ActivityDropdown.Text:GetText())
+      browse.ActivityDropdown:OverrideText("Custom")
+      assert.are.equal("カスタム", browse.ActivityDropdown.Text:GetText())
+      browse.ActivityDropdown:OverrideText("Blackmaw Hold")
+      assert.are.equal("Blackmaw Hold", browse.ActivityDropdown.Text:GetText())
+      browse.ActivityDropdown:OverrideText("Stratholme (Main Gate)")
+      S.alt(WFJ, true)
+      assert.are.equal("Stratholme (Main Gate)", browse.ActivityDropdown.Text:GetText())
+      assert.are.equal("Category", browse.CategoryDropdown.defaultText)
+      S.alt(WFJ, false)
+      assert.are.equal(GATE, browse.ActivityDropdown.Text:GetText())
+    end)
+
+    it("the category menu and the filter menu: the header's word, each activity under its indent; Alt", function()
+      local cats, catMenus = open("MENU_LFG_BROWSE_CATEGORY", function(r)
+        r:CreateButton("None"); r:CreateButton("Dungeons"); r:CreateButton("Deadmines")
+      end)
+      assert.are.equal("なし", cats[1]:GetText())
+      assert.are.equal("ダンジョン", cats[2]:GetText())
+      assert.are.equal("Deadmines", cats[3]:GetText()) -- no category: never read as a name
+      M.close(registry, catMenus)
+      local function filter()
+        return open("MENU_LFG_BROWSE_ACTIVITY", function(r) -- one group: its activities indented under it
+          r:CreateButton("Dungeons"); r:CreateButton("  Deadmines"); r:CreateButton("  Dire Maul (North)")
+          r:CreateButton("  Blackmaw Hold"); r:CreateButton("  Custom")
+        end)
+      end
+      local e, menus = filter()
+      assert.are.equal("ダンジョン", e[1]:GetText())
+      assert.are.equal("  Deadmines", e[2]:GetText()) -- names are English
+      M.close(registry, menus)
+      names(true)
+      e, menus = filter()
+      assert.are.equal("ダンジョン", e[1]:GetText())
+      assert.are.equal("  デッドマインズ", e[2]:GetText())
+      assert.are.equal("  " .. NORTH, e[3]:GetText())
+      assert.are.equal("  Blackmaw Hold", e[4]:GetText()) -- no line in the name list
+      S.alt(WFJ, true)
+      assert.are.equal("Dungeons", e[1]:GetText())
+      assert.are.equal("  Deadmines", e[2]:GetText())
+      S.alt(WFJ, false)
+      assert.are.equal("  デッドマインズ", e[2]:GetText())
+      M.close(registry, menus)
+      -- several groups: each group's activities in its submenu, not indented
+      local root = M.element("root")
+      local group = root:CreateButton("Kalimdor")
+      group:CreateButton("Deadmines")
+      local frames, subMenus = M.open(registry, "MENU_LFG_BROWSE_ACTIVITY", root)
+      assert.are.equal("カリムドア", frames[group].fontString:GetText())
+      assert.are.equal("デッドマインズ", frames[group.children[1]].fontString:GetText())
+      M.close(registry, subMenus)
+    end)
+
+    it("a result row: the activity in Japanese, the leader's name never; names off, Alt, no line", function()
+      local row = C.entry(nil, { leader = "Deadmines", activity = "Dire Maul (North)" })
+      assert.are.equal("Dire Maul (North)", row.ActivityName:GetText()) -- names are English
+      assert.is_true(S.unrecorded(WFJ, row.ActivityName))
+      names(true)
+      C.entry(row, { leader = "Deadmines", activity = "Dire Maul (North)" })
+      assert.are.equal(NORTH, row.ActivityName:GetText())
+      assert.are.equal("Deadmines", row.Name:GetText()) -- a player called like a dungeon
+      assert.is_true(S.unrecorded(WFJ, row.Name))
+      S.alt(WFJ, true)
+      assert.are.equal("Dire Maul (North)", row.ActivityName:GetText())
+      S.alt(WFJ, false)
+      assert.are.equal(NORTH, row.ActivityName:GetText())
+      C.entry(row, { leader = "Thrall", count = 3 }) -- the pooled row reused: the count keeps its own line
+      assert.are.equal("アクティビティ 3件", row.ActivityName:GetText())
+      C.entry(row, { leader = "Thrall", activity = "Blackmaw Hold" })
+      assert.are.equal("Blackmaw Hold", row.ActivityName:GetText())
+      assert.is_true(S.unrecorded(WFJ, row.ActivityName))
+      names(false)
+      C.entry(row, { leader = "Thrall", activity = "Dire Maul (North)" })
+      assert.are.equal("Dire Maul (North)", row.ActivityName:GetText())
+    end)
+
+    it("the result tooltip's activity and boss lines; a wider Japanese line widens the tooltip", function()
+      local tip = _G.LFGBrowseSearchEntryTooltip
+      local width = 100
+      tip.GetWidth = function() return width end
+      tip.SetWidth = function(_, w) width = w end
+      C.tipActivities = { "Dungeons", "  Dire Maul (North)", "  Blackmaw Hold" }
+      C.tipBosses = { "Baron Rivendare" }
+      local function lines(pool)
+        local out = {}
+        for fs in pool:EnumerateActive() do out[#out + 1] = fs:GetText() end
+        return out
+      end
+      _G.LFGBrowseSearchEntryTooltip_UpdateAndShow(tip, 2)
+      assert.are.same({ "ダンジョン", "  Dire Maul (North)", "  Blackmaw Hold" }, lines(tip.activityPool))
+      assert.are.same({ "Baron Rivendare" }, lines(tip.completedEncounterPool))
+      names(true)
+      _G.LFGBrowseSearchEntryTooltip_UpdateAndShow(tip, 2)
+      assert.are.same({ "ダンジョン", "  " .. NORTH, "  Blackmaw Hold" }, lines(tip.activityPool))
+      assert.are.same({ "バロン・リーヴェンデア" }, lines(tip.completedEncounterPool))
+      assert.are.equal(#("  " .. NORTH) * 7 + 22, width)
+      assert.are.equal("Close", tip.Leader.Name:GetText())
+      S.alt(WFJ, true)
+      assert.are.same({ "Dungeons", "  Dire Maul (North)", "  Blackmaw Hold" }, lines(tip.activityPool))
+      S.alt(WFJ, false)
+    end)
+
+    it("the locked view's lines: activities, a group and its count; each frame sized to the text shown", function()
+      local view = _G.LFGListingFrame.LockedView
+      C.listed = true
+      C.lockedLines = { "Deadmines", "Dungeons |cffffffff(3 activities)|r", "  Dire Maul (North)",
+        "Kalimdor |cffffffff(3 activities)|r" }
+      local function frames()
+        local out = {}
+        for frame in view.framePool:EnumerateActive() do out[#out + 1] = frame end
+        return out
+      end
+      _G.LFGListingLockedView_RefreshContent(view)
+      local f = frames()
+      assert.are.equal("Deadmines", f[1].Text:GetText()) -- names are English
+      assert.are.equal("ダンジョン |cffffffff(アクティビティ 3件)|r", f[2].Text:GetText())
+      assert.are.equal("  Dire Maul (North)", f[3].Text:GetText())
+      assert.are.equal("Kalimdor |cffffffff(アクティビティ 3件)|r", f[4].Text:GetText()) -- a continent: a name
+      names(true)
+      _G.LFGListingLockedView_RefreshContent(view)
+      f = frames()
+      assert.are.equal("カリムドア |cffffffff(アクティビティ 3件)|r", f[4].Text:GetText())
+      assert.are.equal("デッドマインズ", f[1].Text:GetText())
+      assert.are.equal(#"デッドマインズ" * 7, f[1].size[1])
+      assert.are.equal("  " .. NORTH, f[3].Text:GetText())
+      S.alt(WFJ, true)
+      assert.are.equal("Deadmines", f[1].Text:GetText())
+      assert.are.equal(#"Deadmines" * 7, f[1].size[1])
+      assert.are.equal("Dungeons |cffffffff(3 activities)|r", f[2].Text:GetText())
+      S.alt(WFJ, false)
+      assert.are.equal("デッドマインズ", f[1].Text:GetText())
+    end)
+  end)
+
+  -- The hover of a collapsed locked line: the pooled frame's OnEnter (listing.xml:240–245).
+  describe("the hover of a collapsed listed-for line", function()
+    local DUNGEONS = "Dungeons |cffffffff(2 activities)|r"
+
+    before_each(function()
+      WFJ = S.load(FILES, UI)
+      WFJ.State.setNames(false)
+      C.listed, C.grouped, C.failed = true, false, false
+      C.tipActivities, C.tipBosses = nil, nil
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Deadmines")] = "デッドマインズ\tでっどまいんず",
+        [WFJ.Names.key("Wailing Caverns")] = "ウェイリング・キャヴァーンズ\tうぇいりんぐ・きゃゔぁーんず",
+        [WFJ.Names.key("Kalimdor")] = "カリムドア\tかりむどあ",
+        [WFJ.Names.key("Ashenvale")] = "アッシェンヴェイル\tあっしぇんゔぇいる",
+      })
+      WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end -- as Main does
+      loadGroupFinder()
+      assert.is_true(WFJ.GroupFinder.init())
+    end)
+
+    after_each(function()
+      _G.GameTooltip:Hide()
+      WFJ.UIStrings.name = nil
+      WFJ.State.setNames(false)
+    end)
+
+    -- → the tooltip's one line after the frame's OnEnter
+    local function hover(lines, i)
+      local view = _G.LFGListingFrame.LockedView
+      C.lockedLines = lines
+      _G.LFGListingLockedView_RefreshContent(view)
+      local n = 0
+      for frame in view.framePool:EnumerateActive() do
+        n = n + 1
+        if n == (i or 1) then
+          _G.GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
+          _G.GameTooltip:SetText(frame.tooltip)
+        end
+      end
+      return _G.GameTooltipTextLeft1:GetText()
+    end
+
+    it("names English: the group's table word in Japanese, the dungeons as the client wrote them", function()
+      assert.are.equal("ダンジョン\n  Deadmines\n  Wailing Caverns",
+        hover({ { DUNGEONS, "Dungeons\n  Deadmines\n  Wailing Caverns" } }))
+    end)
+
+    it("names Japanese: every line, the line breaks and indents kept; the choice and Alt are followed", function()
+      WFJ.State.setNames(true)
+      local en = "Dungeons\n  Deadmines\n  Wailing Caverns\n  Custom"
+      assert.are.equal("ダンジョン\n  デッドマインズ\n  ウェイリング・キャヴァーンズ\n  カスタム", hover({ { DUNGEONS, en } }))
+      S.alt(WFJ, true)
+      assert.are.equal(en, _G.GameTooltipTextLeft1:GetText())
+      S.alt(WFJ, false)
+      assert.are.equal("ダンジョン\n  デッドマインズ\n  ウェイリング・キャヴァーンズ\n  カスタム", _G.GameTooltipTextLeft1:GetText())
+      WFJ.State.setNames(false)
+      assert.are.equal("ダンジョン\n  Deadmines\n  Wailing Caverns\n  カスタム", _G.GameTooltipTextLeft1:GetText())
+    end)
+
+    it("a dungeon with no line: every name of the hover stays English, the table word still Japanese", function()
+      WFJ.State.setNames(true)
+      assert.are.equal("ダンジョン\n  Deadmines\n  Gnomeregan",
+        hover({ { DUNGEONS, "Dungeons\n  Deadmines\n  Gnomeregan" } }))
+    end)
+
+    it("a continent and its zones: Japanese together while names are, English together otherwise", function()
+      local line, en = "Kalimdor |cffffffff(1 activities)|r", "Kalimdor\n  Ashenvale"
+      assert.are.equal(en, hover({ { line, en } }))
+      WFJ.State.setNames(true)
+      assert.are.equal("カリムドア\n  アッシェンヴェイル", hover({ { line, en } }))
+      S.alt(WFJ, true)
+      assert.are.equal(en, _G.GameTooltipTextLeft1:GetText())
+      S.alt(WFJ, false)
+      WFJ.State.setNames(false)
+      assert.are.equal(en, _G.GameTooltipTextLeft1:GetText())
+      WFJ.State.setNames(true)
+      assert.are.equal("Kalimdor\n  Felwood", hover({ { line, "Kalimdor\n  Felwood" } }))
+    end)
+
+    it("translation off writes nothing; another owner's tooltip is not read as a listing", function()
+      local en = "Dungeons\n  Deadmines"
+      WFJ.State.setEnabled(false)
+      assert.are.equal(en, hover({ { DUNGEONS, en } }))
+      assert.are.equal(0, _G.GameTooltipTextLeft1.calls.addonSetText)
+      WFJ.State.setEnabled(true)
+      hover({ { DUNGEONS, en } })
+      _G.GameTooltip:SetOwner(CreateFrame("Frame"))
+      _G.GameTooltip:SetText(en)
+      assert.are.equal(en, _G.GameTooltipTextLeft1:GetText())
+    end)
+  end)
 
   it("hooks install once", function()
     setup(true)

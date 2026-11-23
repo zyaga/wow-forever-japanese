@@ -11,8 +11,9 @@
 --     GuildRegistrarFramePurchaseButton  PURCHASE (:143)
 -- The purchase button's trial-account tooltip is RED .. TRIAL_RESTRICTED .. "|r" (xml:154–166): a help-tooltip owner
 -- restricted to that key (the `wrapped` label form).
--- Never touched: GuildRegistrarFrameNpcNameText (the NPC's name, lua:5), GuildRegistrarText (the NPC's own greeting)
--- and GuildRegistrarFrameEditBox (the guild name the player types; Blizzard reads it back, lua:27).
+-- Never read as dictionary words: GuildRegistrarFrameNpcNameText (the NPC's name, written by GuildRegistrar_OnShow,
+-- lua:5; while names are on the show pass gives it the NPC's Japanese name), GuildRegistrarText (the NPC's own
+-- greeting) and GuildRegistrarFrameEditBox (the guild name the player types; Blizzard reads it back, lua:27).
 -- Release on the frame's OnHide.
 local _, WFJ = ...
 local GuildRegistrar = {}
@@ -44,6 +45,7 @@ local function get(key) return Compat.get(SURFACE, key) end
 function GuildRegistrar.onShow()
   local list = {}
   for i, item in ipairs(LABELS) do list[i] = { item[1], get(item[1]), item[3] } end
+  WFJ.NameLabels.unit(SURFACE, "npcName", get("npcName"), "npc")
   return WFJ.Labels.showAll(SURFACE, list)
 end
 
@@ -56,6 +58,7 @@ local hooked = false
 -- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
 function GuildRegistrar.init()
   Compat.declare(SURFACE, "frame", { "GuildRegistrarFrame" })
+  Compat.declare(SURFACE, "npcName", { "GuildRegistrarFrameNpcNameText" })
   for _, item in ipairs(LABELS) do Compat.declare(SURFACE, item[1], { item[2] }) end
   local frame = get("frame")
   if hooked or type(frame) ~= "table" or type(frame.HookScript) ~= "function" then return false end

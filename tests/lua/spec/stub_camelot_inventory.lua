@@ -248,6 +248,9 @@ local function installBags()
         tt:SetText(G("KEYRING"), 1, 1, 1)
       else
         tt:SetText(CI.bagNames[id]) -- the bag's item name, not an item tooltip
+        -- the bag's key binding, appended after the name (lua:2097–2100); none unless a spec sets one
+        local binding = CI.bindings["TOGGLEBAG" .. id]
+        if binding then tt:AppendText(" |cffffd200(" .. binding .. ")|r") end
       end
       if id ~= _G.KEYRING_CONTAINER then tt:AddLine(G("CLICK_BAG_SETTINGS")) end
       tt:Show()

@@ -5,11 +5,13 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Voice.lua", "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua",
-  "Core/Hash.lua", "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua", "Core/Readings.lua",
+  "Core/Hash.lua", "Core/Names.lua", "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua",
+  "Core/Readings.lua",
   "Core/VoiceQueue.lua", "Core/Diag.lua", "UI/Font.lua", "UI/Frames.lua",
   "UI/Render.lua", "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua",
   "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua", "UI/VoicePanel.lua", "UI/VoiceQuestLog.lua", "UI/ButtonText.lua",
-  "UI/Labels.lua", "UI/QuestFrame.lua" }
+  "UI/Labels.lua", "Core/Perf.lua", "UI/NameLabels.lua",
+  "UI/QuestFrame.lua" }
 
 local DATA = {
   ["quest.title"] = { [2] = { ja = "Sharptalonの鉤爪", status = "." }, [3] = { ja = "別のクエスト", status = "." } },
@@ -456,6 +458,42 @@ describe("the voice player with the voice panel on", function()
     S.set("enabled", false) -- remembered with translation off too
     Stub.showProgress()
     assert.are.equal(1992, db.voiceSpeakers["2-progress"].c)
+  end)
+
+  it("with Japanese names on, the NPC's name and title show their Japanese; the reveal key and names off give "
+    .. "them back",
+    function()
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Senani Thunderheart")] = "セナニ・サンダーハート\tせなに・さんだーはーと",
+        [WFJ.Names.key("Trainer")] = "トレーナー\tとれーなー",
+      })
+      WFJ.State.setNames(true)
+      Stub.units.questnpc = { name = "Senani Thunderheart", guid = "Creature-0-1-0-1-1992-0000ABCD" }
+      Stub.showDetail()
+      local f = panel()
+      assert.are.equal("セナニ・サンダーハート", f.name:GetText())
+      assert.are.equal("<トレーナー>", f.title:GetText())
+      assert.are.equal(WFJ.Font.PATH, (f.name:GetFont()))
+      Stub.keys.alt = true
+      WFJ.Modifier.refresh()
+      tick(f, 0.5)
+      assert.are.equal("Senani Thunderheart", f.name:GetText())
+      assert.are.equal("<Trainer>", f.title:GetText())
+      Stub.keys.alt = false
+      WFJ.Modifier.refresh()
+      tick(f, 0.7)
+      assert.are.equal("セナニ・サンダーハート", f.name:GetText())
+      WFJ.State.setNames(false)
+      assert.are.equal("Senani Thunderheart", f.name:GetText())
+      assert.are.equal("<Trainer>", f.title:GetText())
+    end)
+
+  it("a quest a player offers keeps the player's name, even one an NPC shares", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Reyn")] = "レイン\tれいん" })
+    WFJ.State.setNames(true)
+    Stub.units.questnpc = { name = "Reyn", guid = "Player-4372-0ABCDEF1" }
+    Stub.showDetail()
+    assert.are.equal("Reyn", panel().name:GetText())
   end)
 
   it("a quest NPC whose GUID the client keeps secret: the line plays with no head and is not remembered", function()

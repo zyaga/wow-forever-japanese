@@ -71,6 +71,16 @@ describe("Core/Collector covered lines", function()
       assert.are.same({ "Restores 70 health over 18 sec." }, alignCalls[1].lines)
     end)
 
+    it("a description whose Japanese holds an icon is checked without it: the API's text never has one", function()
+      local db = C.load(nil, deps())
+      local row = { ja = "ルーンを刻みます：\n\n$I1\n$D1かけて$N1回復します。", status = "u", h1 = 1 }
+      shipped["spell.description"] = { [7] = row }
+      aligned = function(e) return e.ja:find("$I", 1, true) == nil and e.status == "u" end
+      assert.are.equal("known", C.record("spell", 7, "description", "Engrave:$B$BHeals for 445 over 15 sec."))
+      assert.is_nil(db.entries["spell:7:description"])
+      assert.are.equal("ルーンを刻みます：\n\n$I1\n$D1かけて$N1回復します。", row.ja) -- the shipped row is not changed
+    end)
+
     it("one whose Japanese does not align is recorded and counted; so is one with no Japanese", function()
       local db = C.load(nil, deps())
       shipped["item.description"] = { [9] = { ja = "x", status = "u", h1 = 1 } }

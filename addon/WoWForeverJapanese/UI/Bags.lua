@@ -5,7 +5,9 @@
 --     292, 305–307, 1295); it calls frame:UpdateName() → SetTitle(C_Container.GetBagName(id)), or COMBINED_BAG_TITLE
 --     on ContainerFrameCombinedBags (:924–926, 3013–3015) → TitleContainer.TitleText. Backpack id 0 →
 --     BACKPACK_TOOLTIP ("Backpack") or COMBINED_BAG_TITLE; the keyring → KEYRING; every other title is an item name
---     and is never matched (its record, if any, is dropped).
+--     and is never matched as a dictionary word: while names are on it shows the item's Japanese (UI/NameLabels).
+--     A plain label: SetTitle only writes it (blizzard_sharedxml/portraitframe.lua:12–14) and nothing in
+--     containerframe.lua reads or measures the title.
 --   ContainerFrame1..7 and ContainerFrameCombinedBags (xml:298–313), each with $parentPortraitButton (xml:248, 319):
 --     ContainerFramePortraitButtonMixin:OnEnter SetText(BACKPACK_TOOLTIP / KEYRING / the bag's item name) [+ binding]
 --     then AddLine(CLICK_BAG_SETTINGS) (lua:2066–2108); a bag's portrait also adds BAG_FILTER_ASSIGNED_TO with
@@ -32,7 +34,11 @@
 --     self:OnEnterInternal(), :99), shown by HelpTooltip.appended, the item's own lines left to UI/Tooltip.
 -- The key binding appended by AppendText ("Backpack |cffffd200(B)|r") is HelpTooltip's (its AppendText walk puts the
 -- English back in front of the suffix and matches the `binding` form). No hook of our own; the client's Show refits.
--- Untouched: BagItemSearchBox's own text (an EditBox), bag and item names.
+-- A bag's name on its portrait tooltip (line 1, the bag's item name, then its key binding when it has one): the
+-- portraits register with `nameLine`, so while names are on the line shows the item's Japanese with the binding kept
+-- (UI/HelpTooltip, UI/NameLabels.wrapped). It is the line the backpack's dictionary title is written into, and the
+-- hover writes nothing but the tooltip (lua:2066–2108).
+-- Untouched: BagItemSearchBox's own text (an EditBox).
 local _, WFJ = ...
 local Bags = {}
 WFJ.Bags = Bags
@@ -92,16 +98,20 @@ function Bags.onGenerate(frame, _, id)
   local n = 0
   if fs and only then
     n = WFJ.Labels.show(SURFACE, recKey, fs, nil, { only = only })
+  elseif fs then
+    -- an item's name: never a dictionary word; while names are on, the item's Japanese (UI/NameLabels)
+    WFJ.NameLabels.show(SURFACE, recKey, fs, "items")
   else
-    WFJ.SurfaceState.drop(SURFACE, recKey) -- an item name now: never ours
+    WFJ.SurfaceState.drop(SURFACE, recKey)
   end
   WFJ.Render.updateBanner(SURFACE)
   return n
 end
 
-local function register(owner, keys)
+-- `nameLine`: the area of a game name on the tooltip's line 1 (a bag's portrait), else nil
+local function register(owner, keys, nameLine)
   if type(owner) ~= "table" then return 0 end
-  WFJ.HelpTooltip.register(owner, { only = keys })
+  WFJ.HelpTooltip.register(owner, { only = keys, nameLine = nameLine })
   return 1
 end
 
@@ -117,9 +127,9 @@ function Bags.registerOwners()
     end
   end
   for i = 1, MAX_FRAMES do
-    n = n + register(get("portrait" .. i), PORTRAIT_KEYS)
+    n = n + register(get("portrait" .. i), PORTRAIT_KEYS, "items")
   end
-  n = n + register(get("combinedPortrait"), PORTRAIT_KEYS)
+  n = n + register(get("combinedPortrait"), PORTRAIT_KEYS, "items")
     + register(get("autoSort"), { "BAG_CLEANUP_BAGS", "BAG_CLEANUP_BAGS_DESCRIPTION" })
     + register(get("reagentSlot"), { "EQUIP_CONTAINER_REAGENT" })
   return n

@@ -169,12 +169,18 @@ local function desiredOf(rec)
   local m = rec.meta or {}
   local action, payload = translator.resolve(m.area, m.kind, m.id, m.ctx)
   local inline = banners[rec.surface] == nil
+  -- the names the policy layer wrote into this line in Japanese, and a name widget's own name: UI/Readings lays a
+  -- name card on each. Kept on the record only while the Japanese shows.
+  rec.names, rec.nameCard = nil, nil
   if action == "apply" then
+    rec.names, rec.nameCard = payload.names, payload.name
     local prefix = (inline and payload.marker) and inlineMarker(rec, payload.marker) or ""
     if inline and noVoice(rec) then prefix = prefix .. inlineMarker(rec, "novoice") end
     local ja = payload.ja
     if m.ctx and m.ctx.partColors then ja = colourParts(ja, m.ctx.partColors) end
     if m.ctx and m.ctx.runColours then ja = colourRuns(ja, m.ctx.runColours) end
+    if m.ctx and m.ctx.tail then ja = ja .. m.ctx.tail end
+    if m.ctx and m.ctx.head then ja = m.ctx.head .. ja end
     return prefix .. ja, WFJ.Font.bundled(rec.font), action, payload.marker
   elseif action == "none" and payload and payload.marker then
     -- A compact row (a quest list title, a tracker header or objective) never carries the missing marker:
@@ -343,7 +349,10 @@ end
 -- Called by a surface with the API-returned English for one logical element.
 -- ctx: { lines = {...} (tooltip align gate), nameScope = <the name line>, refit = function() tooltip:Show() end,
 --        follow = <primary key>, live = <the API English> (quest surfaces: the live check),
---        args, compact = true for a row or fixed-size widget that never carries the missing marker } (all optional)
+--        args, compact = true for a row or fixed-size widget that never carries the missing marker,
+--        tail = text the client wrote after a name (" 135/150", a coloured level range), put after the Japanese
+--        byte for byte, head = the colour code the client wrote before a name, put before it byte for byte }
+--        (all optional)
 local function show(surface, key, fs, en, area, kind, id, ctx)
   -- Main guards each init step, so surfaces install their hooks even when Render.init failed. Asserting here would
   -- turn one load failure into an error on every hover and window open; nothing to render against renders nothing.
@@ -500,6 +509,7 @@ end
 WFJ.State.on("enabled", function() Render.refresh() end)
 WFJ.State.on("area", function() Render.refresh() end)
 WFJ.State.on("language", function() Render.refresh() end)
+WFJ.State.on("names", function() Render.refresh() end) -- names switched between English and Japanese
 WFJ.State.on("markers", function() Render.refresh() end)
 -- a voice setting changed, or a voice pack loaded: the banners' "no voice yet" message may come or go
 WFJ.State.on("voice", function() Render.refresh() end)

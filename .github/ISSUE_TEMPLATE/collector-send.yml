@@ -16,7 +16,7 @@ body:
         **What it contains:** the English game text the addon recorded: quest text, NPC dialogue with the ids of
         the NPCs who said it, item and spell descriptions, and NPC names, keyed by game id, with the game build
         and the addon version. For each quest window you saw it also holds three numbers about the NPC that showed
-        it (its id, its sex and its model id), so the line can be given the right voice. It saves your class and race, because some game lines change depending on
+        it (its id, its sex and its model id), so the line can be given the right voice. For a game message in chat that is not translated yet it holds the name of the interface string the game wrote it from (such as `DRUNK_MESSAGE_OTHER1`), never the message. It saves your class and race, because some game lines change depending on
         them. It holds **no character name, account, realm, location, chat
         or time data.** Wording that depends on your character's gender ("sir" / "madam") is kept as your game
         shows it. A zipped saved file also holds the addon's settings, the names and titles of quest NPCs you met (for the
@@ -33,6 +33,7 @@ body:
         **中身:** アドオンが記録したゲームの英語テキストです。クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、
         NPC の名前が、ゲーム内 ID ごとに、ゲームのビルドとアドオンのバージョンと一緒に入っています。
         表示したクエストウィンドウごとに、その NPC の数値 3 つ（ID、性別、モデル ID）も入っています。その行に正しい声を当てるためです。
+        まだ翻訳されていないチャットのゲームメッセージについては、ゲームがその文に使ったインターフェース文字列の名前（`DRUNK_MESSAGE_OTHER1` など）だけが入り、メッセージそのものは入りません。
         クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。
         **キャラクター名・アカウント・レルム・位置・チャット・時刻の情報は含まれません。**
         キャラクターの性別で変わる言い回し（"sir" / "madam"）はゲームの表示どおりに残ります。

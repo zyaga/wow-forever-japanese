@@ -4,7 +4,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Voice.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
   "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua", "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua",
-  "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
+  "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua",
+  "UI/QuestFrame.lua" }
 
 local DATA = {
   ["quest.title"] = { [2] = { ja = "Sharptalonの鉤爪", status = "." }, [3] = { ja = "別のクエスト", status = "." } },

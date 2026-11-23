@@ -1,9 +1,12 @@
 """Generate vectors/align_vectors.{jsonl,lua}: the shared contract between core/align.py and Core/Align.lua.
 
 Each row: {id, op, text, scope?, allowlist, expected}. `op` ∈ names · checkNames · numbers · numberWords ·
-variantKey. `expected` is the Python result (numbers: sorted multiset as a list; variantKey: the key of the
-English template in `scope`, which the Lua side must compute from the rendered live line in `text`). Both
-suites iterate every row.
+variantKey · values · valuesLoose · wordedSlots · grantedHead · grantedCount. `expected` is the Python result
+(numbers: sorted multiset as a list; variantKey: the key of the English template in `scope`, which the Lua
+side must compute from the rendered live line in `text`; values / valuesLoose: what the addon reads off the
+live line in `text`; wordedSlots: the Japanese in `text` ready for a worded duration in `$D1`; grantedHead:
+the head of the Japanese in `text` against the live line in `scope`; grantedCount: the count of that head's
+value slots, as a string; the last three are "" when there is none). Both suites iterate every row.
 Usage: python -m wfj.dev.gen_align_vectors [out_dir]
 """
 
@@ -17,6 +20,22 @@ from wfj.core import align
 from wfj.emit.lua_writer import lua_string
 
 AL = ["health", "mana", "horde", "stamina"]
+
+# Two granted abilities whose heading prints values (spells 401417 and 412510), as the client prints them
+# for a character without the ability: the heading, the ability's name, its icon and nothing after it
+TEMPORAL_JA = ("$D1かけて体力を$N1回復し、$D2の間Temporal Beaconを付与します。\r\n\n"
+               "Temporal Beacon\r\n$I1\r\n"
+               "対象の時空間の位置を記録します。Arcaneダメージの$N4%が変換されます。")
+TEMPORAL_LIVE = ("Heals the target for 450 health over 12 sec and applies Temporal Beacon for 60 sec. "
+                 "\r\n\r\nTemporal Beacon\r\n|T237538:24|t\r\n")
+PARTY_JA = ("対象のプレイヤーから$N1ヤード以内にいる、そのプレイヤーのパーティーメンバー全員を"
+            "$D1かけて体力を$N2回復し、それぞれに$D2の間Temporal Beaconを付与します。\r\n\n"
+            "Temporal Beacon\r\n$I1\r\n"
+            "対象の時空間の位置を記録します。Arcaneダメージの$N5%が変換されます。")
+PARTY_LIVE = ("Heals all of target player's party members within 40 yards of target player for 300 health "
+              "over 12 sec and applies Temporal Beacon to each target for 30 sec.\r\n\r\n"
+              "Temporal Beacon\r\n|T237538:24|t")
+WYVERN_JA = "Wyvern Strikeのアビリティを得ます：\n\n$I1\n$N1のダメージを与えます。"
 
 CASES: list[tuple[str, str, str, str | None]] = [
     # id, op, text, scope
@@ -87,6 +106,69 @@ CASES: list[tuple[str, str, str, str | None]] = [
      "Stacks up to $m2. Lasts $d, then 3 sec."),
     ("key-14", "variantKey", "Restores 61 health over 18 sec.  Must remain seated.",
      "Restores 61 health over 18 sec.  Must remain seated."),
+    # an item's trigger line without its trigger word, against the spell description it prints: the shape key
+    # Data/SpellShapes.lua is written with (core/spell_shapes.py)
+    ("key-15", "variantKey", "Restores 3 mana per 5 sec.", "Restores $s1 mana per 5 sec."),
+    ("key-16", "variantKey", "Stuns target Worgen for 4 sec.", "Stuns target Worgen for $d."),
+    ("key-17", "variantKey", "Increases healing done by spells and effects by up to 22.",
+     "Increases healing done by spells and effects by up to $s1."),
+    # values: the live line read strictly; valuesLoose: with the glued and signed shapes
+    ("values-01", "values", "Deals 1,200 damage over 18.5 sec. to 3 targets", None),
+    ("values-02", "values", "Causes 14 to 22 Fire damage with the Mk2.", None),
+    ("values-03", "values", "Deal 294 Physical damage and stun for1.5 sec. Trolls take 2 times as much.",
+     None),
+    ("values-04", "values", "Consuming a brand deals -24 to -21 Shadow damage.", None),
+    ("loose-01", "valuesLoose",
+     "Deal 294 Physical damage and stun for1.5 sec. Trolls take 2 times as much damage and stun duration.",
+     None),
+    ("loose-02", "valuesLoose",
+     "Unleash stored chronomantic energy to instantly heal a friendly target for 79to 118.", None),
+    ("loose-03", "valuesLoose",
+     "Inflicts140 Nature damage per 2 sec. Deaks 2 times as much damage to Trolls.", None),
+    ("loose-04", "valuesLoose",
+     "Blasts a target for 19 to 37 Nature damage. Mechanical targets take 2x damage.", None),
+    ("loose-05", "valuesLoose",
+     "A malfunction has occurred. Every 2s arcane energy is released dealing damage to players in a nearby "
+     "area.", None),
+    ("loose-06", "valuesLoose", "Consuming a brand deals -24 to -21 Shadow damage.", None),
+    ("loose-07", "valuesLoose", "Mk2 and Mace2H and 247x128 and G00 DV-1B3 and NG-5 and 30sec and AQ40",
+     None),
+    ("loose-08", "valuesLoose", "Heals for 5 to -3, then 10-20, then -4 to 9 and x2.", None),
+    ("loose-09", "valuesLoose", "Deals 1,200 damage over 18.5 sec. to 3 targets", None),
+    # wordedSlots: the Japanese ready for a worded duration in $D1
+    ("worded-01", "wordedSlots", "攻撃者に$N1のNatureダメージを与えます。$D1持続します。", None),
+    ("worded-02", "wordedSlots", "敵を焼いてArcaneダメージを与え、さらに$D1かけて追加のダメージを与えます。",
+     None),
+    ("worded-03", "wordedSlots", "$D1の間、近くの敵すべてを攻撃し、$D2ごとに$N2を与えます。", None),
+    ("worded-04", "wordedSlots", "$D1ごとにArcaneダメージを受けています。", None),
+    ("worded-05", "wordedSlots", "$D1後に$N1のShadowダメージを与えます。", None),
+    ("worded-06", "wordedSlots", "$D2ごとに$N1、$D1にわたって回復します。", None),
+    # grantedHead: text = the Japanese, scope = the live line
+    ("grant-01", "grantedHead", "Wyvern Strikeのアビリティを得ます：\n\n$I1\n$N1のダメージを与えます。",
+     "Gain the Wyvern Strike ability:\r\n\r\n|T135125:24|t\r\n"),
+    ("grant-02", "grantedHead", "胸部にBurnoutのルーンを刻みます：\n\n$I1\nクリティカル率が$N1%上昇します。",
+     "Engrave your chest with the Burnout rune:\r\n\r\n|T236207:24|t\r\n"),
+    ("grant-03", "grantedHead", "Wyvern Strikeのアビリティを得ます：\n\n$I1\n$N1のダメージを与えます。",
+     "Gain the Wyvern Strike ability:\r\n\r\n|T135125:24|t\r\nDeals 40 damage."),
+    ("grant-04", "grantedHead", "$I1 Quick Draw：$N1のダメージ。", "|T1:24|t"),
+    ("grant-05", "grantedHead", "$N1個のアビリティを得ます：\n\n$I1\n本文。",
+     "Gain 2 abilities:\r\n\r\n|T1:24|t"),
+    ("grant-06", "grantedHead", "アビリティを得ます：\n\n$I1\n本文。",
+     "Gain the ability:\r\n\r\n|T1:24|t |T2:24|t"),
+    # a heading with values of its own (spells 401417 and 412510): its slots come first in the line
+    ("grant-07", "grantedHead", TEMPORAL_JA, TEMPORAL_LIVE),
+    ("grant-08", "grantedHead", PARTY_JA, PARTY_LIVE),
+    ("grant-09", "grantedHead", "$N1個を得ます：\n\n$I2\n本文。\n\n$I1\n本文。", "Gain 2:\r\n\r\n|T1:24|t"),
+    # grantedCount: the count of the heading's value slots ("" for no heading or no slot)
+    ("grant-count-01", "grantedCount", TEMPORAL_JA, TEMPORAL_LIVE),
+    ("grant-count-02", "grantedCount", PARTY_JA, PARTY_LIVE),
+    ("grant-count-03", "grantedCount", WYVERN_JA, "Gain the Wyvern Strike ability:\r\n\r\n|T135125:24|t\r\n"),
+    ("grant-count-04", "grantedCount", "$N1と$N1の$D1を得ます：\n\n$I1\n本文。",
+     "Gain 2 for 2 sec:\r\n\r\n|T1:24|t"),
+    ("grant-count-05", "grantedCount", TEMPORAL_JA, TEMPORAL_LIVE + "Records the target's location."),
+    # a number the Japanese writes as a literal ("さらに1%") still counts: the heading prints three values
+    ("grant-count-06", "grantedCount", "$N1%減り、さらに1%、$N3ごとに減ります。\n\n$I1\n本文。",
+     "Takes 30% less, an additional 1% for every 12.\r\n\r\n|T132362:24|t\r\n"),
 ]
 
 
@@ -104,6 +186,16 @@ def build() -> list[dict]:
             expected = align.english_number_words(text)
         elif op == "variantKey":
             expected = align.variant_key(scope or "")
+        elif op in ("values", "valuesLoose"):
+            expected = align.live_values(text, loose=op == "valuesLoose")
+        elif op == "wordedSlots":
+            expected = align.worded_slots(text, {1}) or ""
+        elif op == "grantedHead":
+            expected = align.granted_head(text, scope or "") or ""
+        elif op == "grantedCount":
+            head = align.granted_head(text, scope or "")
+            count = align.granted_count(head) if head else None
+            expected = str(count) if count else ""
         else:
             raise ValueError(op)
         row = {"id": id_, "op": op, "text": text, "scope": scope, "allowlist": AL, "expected": expected}

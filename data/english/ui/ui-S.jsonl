@@ -338,6 +338,8 @@
 {"id": "SOCIAL_ENABLE_DISCORD_FUNCTIONALITY", "field": "text", "en": "Enable Discord %s Functionality", "hash": "1e00bd424601ef9e", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_FEATURES_UNAVAILABLE", "field": "text", "en": "Social Features Unavailable", "hash": "0222497987c7d2c1", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_FEATURES_UNAVAILABLE_DESCRIPTION", "field": "text", "en": "World of Warcraft includes social features that allow players to communicate and interact with one another.|n|nThis account belongs to a minor. Chat, voice chat, and other player communication features are unavailable until the account holder reaches the required age.", "hash": "720428049194663c", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_FILTER_DROPDOWN_STATUS", "field": "text", "en": "Status", "hash": "8d3925d3d2d4a35d", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_FILTER_DROPDOWN_TAGS", "field": "text", "en": "Tags", "hash": "0b5b126de73a92e6", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_LABEL", "field": "text", "en": "Social", "hash": "35b645ce6762a730", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_LOCATION_VISIBILITY_FRIEND_GUILD", "field": "text", "en": "Friends and Guildmates", "hash": "cb9703d6d5dec042", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_LOCATION_VISIBILITY_FRIEND_GUILD_ALLIES", "field": "text", "en": "Friends, Recent Allies, and Guildmates", "hash": "e7af9f1130ac282e", "src": "db2@1.60.1.71037"}
@@ -354,19 +356,75 @@
 {"id": "SOCIAL_QUICK_JOIN_TAB_HELP_TIP", "field": "text", "en": "Quickly join your friends and guildmates when they enter a queue or premade group.", "hash": "ec0964c54a2f2251", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_SHARE_TEXT", "field": "text", "en": "Share", "hash": "befb447839625661", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_TAB_UNAVAILABLE", "field": "text", "en": "The %s feature is unavailable due to your account's privacy settings. Some social features are restricted.", "hash": "920ffe330a779177", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLENET_BROADCAST_CANCEL_BUTTON_LABEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLENET_BROADCAST_FRAME_HEADER", "field": "text", "en": "Broadcast", "hash": "c38755c4a1db74d1", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLENET_BROADCAST_FRAME_PROMPT", "field": "text", "en": "Tell your friends what you're doing", "hash": "0b0b767e971f4b6f", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLENET_BROADCAST_UPDATE_BUTTON_LABEL", "field": "text", "en": "Update", "hash": "3e6cd2645708ae77", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLENET_UNAVAILABLE_ALERT", "field": "text", "en": "Blizzard services are currently unavailable.|n|nYour Real ID and BattleTag friends will not show up. You will also not be able to send or receive new Real ID or BattleTag friend requests. A game restart may be required to re-enable functionality.", "hash": "49f9a5f0ed6e8322", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLE_NET_BAR_MENU_BUTTON_LABEL", "field": "text", "en": "Menu", "hash": "0a6c02eb1944d4e7", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAGS_LABEL", "field": "text", "en": "Add Tags", "hash": "665f7529dccdb758", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DELVE", "field": "text", "en": "Delves", "hash": "caa4dc3a176c3a1f", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DPS", "field": "text", "en": "DPS", "hash": "0011f7a70dfbf5f8", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DUNGEONS", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_HEALER", "field": "text", "en": "Healer", "hash": "b73a16b62268c07a", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_INTERESTS", "field": "text", "en": "Interests", "hash": "2af2a0bbb0951ae4", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_PROFESSIONS", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_QUESTING", "field": "text", "en": "Questing", "hash": "8e17b88b46b07ab0", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_RAIDING", "field": "text", "en": "Raiding", "hash": "6effbef49b1050c4", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_ROLEPLAYING", "field": "text", "en": "Roleplaying", "hash": "9fa36e66be1e1aa0", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_TANK", "field": "text", "en": "Tank", "hash": "0b5b15fae73b7205", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_ROLES_LABEL", "field": "text", "en": "Roles", "hash": "ae60882e63f8ce0f", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_BATTLE_NET_TITLE_FRIEND_EDIT_NAME_BUTTON_LABEL", "field": "text", "en": "Edit Name", "hash": "5ac0876f2d0f8516", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLE_NET_UNAVAILABLE_NOTICE", "field": "text", "en": "Blizzard services are unavailable.", "hash": "8b1d89700b0c5b10", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_BATTLE_TAG_COPY_BUTTON_LABEL", "field": "text", "en": "Copy BattleTag", "hash": "7e40b156d49a1d6b", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FAVORITE_FRIENDS_LIST_HEADER", "field": "text", "en": "Favorites %d/%d", "hash": "1fada87958745d77", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_ADD_FRIEND_BUTTON_LABEL", "field": "text", "en": "Add New Friend", "hash": "38e313da29e76b80", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_AVAILABLE_FOR_QUEUE_FILTER_LABEL", "field": "text", "en": "Available For Queue", "hash": "71491569616d1c9d", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_BATTLE_NET_FRIEND_BROADCAST_AND_DATE_FORMAT", "field": "text", "en": "|TInterface\\FriendsFrame\\BroadcastIcon:0:0:0:0:16:16:0:16:0:16|t %s|n(%s ago)", "hash": "d003d400f7bb5de9", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_BATTLE_NET_FRIEND_TAGS_FORMAT", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Tags: %s|r", "hash": "4486b130c0cfa915", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_BATTLE_NET_FRIEND_TAGS_OFFLINE_FORMAT", "field": "text", "en": "|cnFRIENDS_GRAY_COLOR:Tags: %s|r", "hash": "253b4db9ea4ae9c2", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_FAVORITE_TOOLTIP", "field": "text", "en": "Favorite", "hash": "bb8eb5d45f14b68a", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_FRIEND_IN_GROUP_TOOLTIP", "field": "text", "en": "%s In a Group", "hash": "3698e4c634db391b", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_HEADER", "field": "text", "en": "Friends List %d/%d", "hash": "a4db9db7b43aa538", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_IN_QUEUE_FILTER_LABEL", "field": "text", "en": "In Queue", "hash": "c24f6ad22c92366a", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_LIST_PARTY_BUTTON_OFFLINE_TOOLTIP", "field": "text", "en": "Player Offline", "hash": "3cc01cd4515f8da8", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIENDS_TAB_NAME", "field": "text", "en": "Friends", "hash": "aa8bfa51a365a614", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIEND_REQUESTS_ADD_FRIEND_BUTTON_LABEL", "field": "text", "en": "Add New Friend", "hash": "38e313da29e76b80", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIEND_REQUESTS_CARD_BATTLE_NET_LABEL", "field": "text", "en": "Wants to be your BattleTag friend", "hash": "14f88a8f07d43ff4", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIEND_REQUESTS_CARD_REAL_ID_LABEL", "field": "text", "en": "Wants to be your Real ID friend", "hash": "c0a45ac892d7c0aa", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIEND_REQUESTS_CARD_TIMESTAMP_FORMAT", "field": "text", "en": "%s ago", "hash": "412b23931a59d904", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIEND_REQUESTS_CARD_TITLE_LABEL", "field": "text", "en": "Wants to be your WoW friend", "hash": "4ad83a120a6d1a68", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIEND_REQUESTS_REAL_ID_WARNING", "field": "text", "en": "|cnNORMAL_FONT_COLOR:You have received a Real ID friend request|r|n|n|cnHIGHLIGHT_FONT_COLOR:This should be a person you know and trust in real life. You will be able to chat with them no matter which Blizzard game you are playing. If you accept their friend request, your real name will be displayed to all of their friends.|r", "hash": "340379c88924c85d", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIEND_REQUESTS_RECEIVED_HEADER", "field": "text", "en": "Received (%d)", "hash": "6dca40f7c65bb23e", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_FRIEND_REQUESTS_TAB_NAME", "field": "text", "en": "Friend Requests", "hash": "b9bf7157e964231c", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_IGNORE_LIST_BATTLE_NET_BLOCK_HEADER", "field": "text", "en": "Blocked", "hash": "5bb44b4c7697be5e", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_IGNORE_LIST_BLOCK_BUTTON_LABEL", "field": "text", "en": "Ignore Player", "hash": "600ff35957729ecf", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_IGNORE_LIST_IGNORE_HEADER", "field": "text", "en": "Ignored", "hash": "5311772e13c44b5f", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_IGNORE_LIST_REMOVE_BUTTON_LABEL", "field": "text", "en": "Remove from list", "hash": "fc0ce1ada6e637e9", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_IGNORE_LIST_TITLE", "field": "text", "en": "Ignore List", "hash": "e2b877686191a833", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_MENU_IGNORE_LIST_BUTTON_LABEL", "field": "text", "en": "Ignore List", "hash": "e2b877686191a833", "src": "db2@1.60.1.71037"}
 {"id": "SOCIAL_UI_PERSONAL_BATTLE_TAG_COPIED_NOTICE", "field": "text", "en": "BattleTag copied to clipboard.", "hash": "6e7c0e7ddd50c7ea", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_PRESENCE_TYPE_DROPDOWN_TOOLTIP_FORMAT", "field": "text", "en": "Status: %s", "hash": "6068de337ba0fab3", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_PRESENCE_TYPE_LABEL_APPEAR_OFFLINE", "field": "text", "en": "Appear Offline", "hash": "19a0c742fa34e63a", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_PRESENCE_TYPE_LABEL_AWAY", "field": "text", "en": "Away", "hash": "08d50fa6bfd889a5", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_PRESENCE_TYPE_LABEL_BUSY", "field": "text", "en": "Busy", "hash": "08f6e06545523405", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_PRESENCE_TYPE_LABEL_OFFLINE", "field": "text", "en": "Offline", "hash": "06e66a7a007d0582", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_PRESENCE_TYPE_LABEL_ONLINE", "field": "text", "en": "Online", "hash": "374c22103afab226", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_PRESENCE_TYPE_LABEL_UNKNOWN", "field": "text", "en": "Unknown", "hash": "7743ba191b88efe6", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_QUICK_JOIN_TAB_NAME", "field": "text", "en": "Quick Join", "hash": "e8dd3479c301714b", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RAF_SUMMON_BUTTON_COOLDOWN_FORMAT", "field": "text", "en": "Cooldown remaining: %s", "hash": "eeb13cd9b0f3b728", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RAID_TAB_NAME", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECENT_ALLIES_ADD_FRIEND_BUTTON_LABEL", "field": "text", "en": "Add New Friend", "hash": "38e313da29e76b80", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECENT_ALLIES_CARD_LEVEL_DISPLAY_FORMAT", "field": "text", "en": "Lvl %d", "hash": "d119aecb1bdd4674", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECENT_ALLIES_FRIEND_REQUEST_SENT_TOOLTIP", "field": "text", "en": "Friend request sent", "hash": "d2e008ee881df6ee", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECENT_ALLIES_TAB_NAME", "field": "text", "en": "Recent Allies", "hash": "4254ca7cfc6f210f", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECENT_ALLIES_TOOLTIP_LEVEL_CLASS_FORMAT", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECENT_ALLIES_VIEW_HEADER_LEGACY_FRIENDS", "field": "text", "en": "Legacy Friends %d/%d", "hash": "79a85f5809912a55", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECENT_ALLIES_VIEW_HEADER_PINNED", "field": "text", "en": "Pinned %d/%d", "hash": "891afe90dd0e5672", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECENT_ALLIES_VIEW_HEADER_UNPINNED", "field": "text", "en": "Recent Allies %d/%d", "hash": "07cca1d38642d341", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_RECRUIT_A_FRIEND_TAB_NAME", "field": "text", "en": "Recruit A Friend", "hash": "0c392ed6e77a9921", "src": "db2@1.60.1.71037"}
+{"id": "SOCIAL_UI_SEARCH_BOX_INSTRUCTIONS", "field": "text", "en": "Search for keywords", "hash": "25a340475e5d1db5", "src": "db2@1.60.1.71037"}
 {"id": "SOCKET_ITEM_MIN_SKILL", "field": "text", "en": "Socket Requires %s (%d)", "hash": "193cc398e4cb8fcd", "src": "db2@1.60.1.71037"}
 {"id": "SOCKET_ITEM_REQ_LEVEL", "field": "text", "en": "Socket Requires Level %d", "hash": "f144c9e49e1a8bc0", "src": "db2@1.60.1.71037"}
 {"id": "SOCKET_ITEM_REQ_SKILL", "field": "text", "en": "Socket Requires %s", "hash": "34b858fd2c01b514", "src": "db2@1.60.1.71037"}
@@ -435,6 +493,7 @@
 {"id": "SPELL_DURATION_HOURS", "field": "text", "en": "%.1f |4hour:hrs;", "hash": "405a225bebd750d4", "src": "db2@1.60.1.71037"}
 {"id": "SPELL_DURATION_MIN", "field": "text", "en": "%.1f min", "hash": "e2b39a8023c56ee9", "src": "db2@1.60.1.71037"}
 {"id": "SPELL_DURATION_SEC", "field": "text", "en": "%.1f sec", "hash": "e2b52a9f3b9685e0", "src": "db2@1.60.1.71037"}
+{"id": "SPELL_DURATION_UNTIL_CANCELLED", "field": "text", "en": "until canceled", "hash": "8da559c5de135e9f", "src": "db2@1.60.1.71037"}
 {"id": "SPELL_EQUIPPED_ITEM", "field": "text", "en": "Requires %s", "hash": "d997d8d721f9dfeb", "src": "db2@1.60.1.71037"}
 {"id": "SPELL_EQUIPPED_ITEM_NOSPACE", "field": "text", "en": "Requires %s", "hash": "d997d8d721f9dfeb", "src": "db2@1.60.1.71037"}
 {"id": "SPELL_EXTRA_ATTACKS_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a spell or ability grants additional attacks.", "hash": "990f9d3687005274", "src": "db2@1.60.1.71037"}

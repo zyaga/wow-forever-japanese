@@ -374,6 +374,35 @@ describe("the StaticPopup dialogs on Forever", function()
       X.alt(WFJ, false)
     end)
 
+  -- The dialog picks its page after it is shown, and that page writes its own labels; the Send Request button is
+  -- written again on every change of the name box (blizzard_addfriend/addfriendtemplates.lua:94–99, 139–211).
+  it("the add-friend dialog: what its page writes after it is shown, and the button it writes again, translate",
+    function()
+      local label = Stub.fontString("")
+      local frame = { GetRegions = function() return label end, GetChildren = function() return end }
+      function frame.ShowEntry() label.text = _G.CHARACTER_FRIEND_LABEL end
+      _G.AddFriendFrame = frame
+      _G.StaticPopupSpecial_Show = function() end
+      WFJ.Popups.onSpecial(frame) -- the client's show: the page is not chosen yet
+      assert.are.equal("", label:GetText())
+      frame:ShowEntry()
+      assert.are.equal(UI.CHARACTER_FRIEND_LABEL[2], label:GetText())
+      X.alt(WFJ, true)
+      assert.are.equal(UI.CHARACTER_FRIEND_LABEL[1], label:GetText())
+      X.alt(WFJ, false)
+      WFJ.Popups.onSpecial(frame) -- shown again: hooked once
+      frame:ShowEntry()
+      assert.are.equal(UI.CHARACTER_FRIEND_LABEL[2], label:GetText())
+      -- the button: Compat resolved the global at init, so a fresh addon is loaded over it
+      local accept = Stub.button("AddFriendEntryFrameAcceptButton", "")
+      _G.AddFriendEntryFrame_Init = function() accept.fontString.text = _G.CANCEL end
+      finally(function() _G.AddFriendEntryFrame_Init, _G.AddFriendEntryFrameAcceptButton = nil, nil end)
+      local W = X.load("UI/Popups.lua", UI, { before = install })
+      assert.is_true(W.Popups.init())
+      _G.AddFriendEntryFrame_Init()
+      assert.are.equal(UI.CANCEL[2], accept:GetText())
+    end)
+
   it("a plain dialog and its buttons translate; Alt shows the live English", function()
     local d = _G.StaticPopup_Show("CONFIRM_RESET_INSTANCES")
     assert.are.equal("すべてのインスタンスをリセットしますか？", d.Text:GetText())

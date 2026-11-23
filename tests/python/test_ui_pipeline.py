@@ -320,7 +320,10 @@ def test_keys_sharing_one_english_declare_the_same_argument_kinds(root):
     # Known and accepted: "Requires %s" is shared by ITEM_REQ_SKILL (a `skill` capture) and the
     # spell / form keys (`text`). ITEM_REQ_SKILL sorts first, so the group compiles as `skill`, which is what the
     # item tooltip needs, and the spell lines fall back to their own exact entries.
-    REVIEWED = {"Requires %s"}
+    # Also accepted: "Level %d %s" compiles under FRIENDS_LEVEL_TEMPLATE (a creature's type), which every line
+    # matched by its English alone keeps. A player's level line is asked for by its own key
+    # (SOCIAL_UI_RECENT_ALLIES_TOOLTIP_LEVEL_CLASS_FORMAT), whose second value is that player's class.
+    REVIEWED = {"Requires %s", "Level %d %s"}
     disagreeing = []
     for en, keys in groups.items():
         if len(keys) < 2 or en in REVIEWED:

@@ -41,6 +41,7 @@ local UI = {
   CALENDAR_TOOLTIP_ONGOING = { "Ongoing", "開催中" },
   CALENDAR_EVENT_INVITEDBY_YOURSELF = { "This is your event", "あなたのイベントです" },
   CALENDAR_TOOLTIP_INVITE_RESPONDED = { "Responded on:", "返答日時:" },
+  TIME_TWELVEHOURAM = { "%d:%02d AM", "午前%d:%02d" }, TIME_TWELVEHOURPM = { "%d:%02d PM", "午後%d:%02d" },
   CALENDAR_HOLIDAYFRAME_BEGINSENDS = { "%1$s|n|nBegins: %2$s %3$s|nEnds: %4$s %5$s",
     "%1$s|n|n開始: %2$s %3$s|n終了: %4$s %5$s" },
   CALENDAR_RAID_LOCKOUT_DESCRIPTION = { "Your %1$s instance unlocks at %2$s.", "%1$sのインスタンスは%2$sにロック解除されます。" },
@@ -372,9 +373,14 @@ describe("the calendar on Forever", function()
         tt:ClearLines()
         tt:AddLine(en("CALENDAR_TOOLTIP_INVITE_RESPONDED"))
         tt:AddLine("Close") -- not a label of this row
+        tt:AddLine("9:30 PM") -- the response time (blizzard_calendar.lua:2709-2713)
         tt:Show()
         assert.are.equal("返答日時:", _G.GameTooltipTextLeft1:GetText())
         assert.are.equal("Close", _G.GameTooltipTextLeft2:GetText())
+        assert.are.equal("午後9:30", _G.GameTooltipTextLeft3:GetText())
+        alt(true)
+        assert.are.equal("9:30 PM", _G.GameTooltipTextLeft3:GetText())
+        alt(false)
       end)
 
       it("labels are shown again when the window is re-shown", function()
