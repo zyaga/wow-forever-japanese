@@ -234,6 +234,7 @@ WFJ.Data.add("gloss", {
   [55234] = "取り除く\tとりのぞく\thave removed",
   [55235] = "取り除く\tとりのぞく\thave yet to excise",
   [55236] = "取り除く\tとりのぞく\tif (we) do not dispose of",
+  [55237] = "取り除く\tとりのぞく\tis removed",
   [55238] = "取り除く\tとりのぞく\tlet me remove (it)",
   [55239] = "取り除く\tとりのぞく\tmust be removed",
   [55240] = "取り除く\tとりのぞく\tmust cleanse",

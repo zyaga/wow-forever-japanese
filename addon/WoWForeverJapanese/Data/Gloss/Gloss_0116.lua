@@ -313,6 +313,7 @@ WFJ.Data.add("gloss", {
   [116310] = "行動を起こす\tこうどうをおこす\ttake action",
   [116311] = "行動不能\tこうどうふのう\tdisabled (incapacitated)",
   [116312] = "行動不能\tこうどうふのう\tincapacitated",
+  [116313] = "行動不能\tこうどうふのう\tincapacitated (unable to act)",
   [116314] = "行動不能\tこうどうふのう\tloss of control (incapacitation)",
   [116315] = "行動予定表\tこうどうよていひょう\titinerary",
   [116316] = "行動妨害\tこうどうぼうがい\tcrowd control",
