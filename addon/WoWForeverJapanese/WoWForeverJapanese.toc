@@ -2570,6 +2570,7 @@ Data\Reading\Reading_spell_1327.lua
 Data\Reading\Reading_spell_1328.lua
 Data\Reading\Reading_spell_1329.lua
 Data\Reading\Reading_spell_1330.lua
+Data\Reading\Reading_spell_1331.lua
 Data\Reading\Reading_ui_A.lua
 Data\Reading\Reading_ui_B.lua
 Data\Reading\Reading_ui_C.lua
