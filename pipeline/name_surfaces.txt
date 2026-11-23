@@ -30,6 +30,7 @@ Core/UIStringKeys.lua	other interface lines whose value is a game name	japanese	
 # tooltips
 UI/Tooltip.lua	item, spell and aura tooltip name line	japanese	record name.L<i>; comparison tooltips by the name's text
 UI/Tooltip.lua	a profession's spell name line ("Enchanting: Enchant Boots - Minor Speed")	japanese	the skill and the spell, each in its Japanese, only when both have a line; the spell's name is the one the frame gives, so the line is split at that name and nowhere else; no interface string holds the form (the client's compiled tooltip code writes it)
+UI/TooltipFreeze.lua	the frozen copy of a tooltip: its name lines and the names inside its lines	japanese	copied as the tooltip showed them; each takes its name card from the record the addon kept for that line
 UI/Tooltip.lua	the item a spell makes: its name line under the spell's rows	japanese	a row that is exactly a name and no dictionary line (the structural walk); its use line and flavour text are the item's own text, a run under the item's id
 Core/UIStringKeys.lua	the item list of a spell's reagents and tools rows (SPELL_REAGENTS, SPELL_TOTEMS)	japanese	UIStrings.LIST_AFTER: every name of the list in its Japanese, a count as written; a list with a name that has no line stays whole as written after the Japanese label
 Core/UIStringKeys.lua	ITEM_CLASSES_ALLOWED and ITEM_RACES_ALLOWED values	japanese	value kind `classes`: each class or race of the list as the word prose uses for it

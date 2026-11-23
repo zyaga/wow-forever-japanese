@@ -7,9 +7,11 @@
 -- of that would run addon code inside the action buttons' own handlers.
 --
 -- Which words a line takes comes from the record the addon kept when it wrote that line's Japanese
--- (Core/SurfaceState: the line's kind, id and the exact text written). The records go when the game's tooltip
--- hides, so they are read at the key press. A line the client has rewritten since, a line written in combat (no
--- record is kept there) and a line the addon never wrote take no cards.
+-- (Core/SurfaceState: the line's kind, id and the exact text written). With Japanese names on, a name line takes
+-- its name card and every name written into a line in Japanese takes one too, from the same record (the reading
+-- and the English name). The records go when the game's tooltip hides, so they are read at the key press. A line
+-- the client has rewritten since, a line written in combat (no record is kept there) and a line the addon never
+-- wrote take no cards.
 --
 -- A line coloured in parts holds colour codes, and how the client counts bytes around an escape sequence is not
 -- verified (UI/Readings refuses such text). So the words are measured on a twin line: the same text without the
@@ -125,26 +127,33 @@ local function cardsNow()
   return not (type(inCombat) == "function" and inCombat())
 end
 
--- → kind, id, the text without its colour codes; nil when the line takes no cards. Which kinds ship words is the
--- lookup's to say (Core/Readings).
+-- → the record the addon kept for the line and the text without its colour codes; nil when the line takes no cards.
+-- Which kinds ship words is the lookup's to say (Core/Readings).
 local function cardLine(src, text)
   local rec = WFJ.SurfaceState.of(src)
   local meta = rec and rec.meta
   if not meta or rec.applied ~= text or meta.id == nil then return nil end
   local plain = WFJ.UIStrings.stripColour(text)
   if plain:find("|", 1, true) then return nil end
-  return meta.kind, meta.id, plain
+  return rec, plain
 end
 
 local function attachCards(s, entry, tip, src, text)
-  local kind, id, plain = cardLine(src, text)
-  if not kind then return end
-  local words = WFJ.Readings.lookup(kind, id, plain)
-  if not words or not words[1] then return end
+  local live, plain = cardLine(src, text)
+  if not live then return end
+  local kind, id = live.meta.kind, live.meta.id
+  -- a name line takes its name card (UI/Readings lays it from `nameCard`); any other line its own word list and a
+  -- name card on each name written into it in Japanese
+  local nameCard = kind == "name" and type(live.nameCard) == "table" and live.nameCard or nil
+  local names = type(live.names) == "table" and live.names[1] ~= nil and live.names or nil
+  local words
+  if kind ~= "name" then words = WFJ.Readings.lookup(kind, id, plain) end
+  if not nameCard and not names and not (words and words[1]) then return end
   local twin = fontString(s)
   layLike(s, twin, tip, src, plain)
   if twin.SetAlpha then twin:SetAlpha(0) end
-  local rec = { fs = twin, applied = plain, surface = SURFACE, spans = words, meta = { kind = kind, id = id } }
+  local rec = { fs = twin, applied = plain, surface = SURFACE, spans = kind ~= "name" and (words or {}) or nil,
+    names = names, nameCard = nameCard, meta = { kind = kind, id = id } }
   if WFJ.ReadingView.attach(rec) then
     entry.twin, entry.rec = twin, rec
   else

@@ -363,7 +363,8 @@ end
 local function takesCards(rec, fs)
   local m = rec.meta
   if not m or type(fs) ~= "table" or type(fs.CalculateScreenAreaFromCharacterSpan) ~= "function" then return false end
-  if View.COPIES[rec.surface] then return rec.spans ~= nil end
+  -- a copy (the frozen tooltip) brings the line's words, or a name line its name card
+  if View.COPIES[rec.surface] then return rec.spans ~= nil or type(rec.nameCard) == "table" end
   -- a label in a window (a Button's text or a menu entry is an adapter without the span call: refused above); a
   -- widget that holds only a name (a title bar) is one too
   if m.kind == "ui" or m.kind == "name" then return not View.nonWindow(rec.surface) and inWindow(fs) end
