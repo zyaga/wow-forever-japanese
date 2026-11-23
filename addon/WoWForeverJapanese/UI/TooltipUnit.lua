@@ -98,7 +98,7 @@ local function showName(row, fs, refit)
   local text = fs:GetText()
   local isSecret = Compat.resolve("issecretvalue")
   if type(isSecret) == "function" and isSecret(text) then return 0 end
-  if type(text) ~= "string" or text == "" or not WFJ.Names.of(text) then return 0 end
+  if type(text) ~= "string" or text == "" or not WFJ.Names.item(text) then return 0 end
   return WFJ.Render.show(SURFACE, "L" .. row, fs, text, "ui", "name", text, { refit = refit }) and 1 or 0
 end
 local MAX_LINES = 30 -- a unit tooltip is a handful of lines; the walk stops at the client's own count anyway
@@ -267,6 +267,10 @@ function TooltipUnit.onUnit(tt, data)
   -- exactly a name and no dictionary line (the title under the name, the faction).
   local first = kinds[1] == "QuestTitle" and 1 or 2
   local named = WFJ.State.names and gameNamed(data)
+  -- A player's own name and guild are a player's words and stay. Under the level line the client prints the class
+  -- and the faction, which are game names [likely: the order the compiled client writes a player's tooltip in;
+  -- seen in game as name, level and race, class, faction]: those lines show their Japanese.
+  local playerWords, levelSeen = WFJ.State.names and isPlayer(data), false
   if named and first == 2 then
     local fs = Compat.resolve(name .. "TextLeft1")
     if type(fs) == "table" then n = n + showName(1, fs, refit) end
@@ -286,7 +290,8 @@ function TooltipUnit.onUnit(tt, data)
         notes[#notes + 1] = ("row %d quest title: %s"):format(i, id and ("quest " .. id) or why)
       else
         local shown = WFJ.Labels.show(SURFACE, "L" .. i, fs, refit, only)
-        if shown == 0 and named then shown = showName(i, fs, refit) end
+        if shown == 0 and (named or (playerWords and levelSeen)) then shown = showName(i, fs, refit) end
+        if shown > 0 then levelSeen = true end -- a player's first dictionary line is the level line
         n = n + shown
       end
     end

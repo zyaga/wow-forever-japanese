@@ -49,6 +49,9 @@ function Names.item(english)
   local ja, reading = Names.of(english)
   if ja then return ja, reading end
   if type(english) ~= "string" then return nil end
+  -- a class or a race the name list has no line for ("Human", "Night Elf"): the word prose uses for it
+  local word = WFJ.Placeholders and WFJ.Placeholders.wordFor(english)
+  if word then return word, word end
   -- a suffix is written last, so the split nearest the end is tried first
   local at = #english
   while true do

@@ -35,12 +35,18 @@ local _, WFJ = ...
 local UIStrings = WFJ.UIStrings or {}
 WFJ.UIStrings = UIStrings
 
+local NAMED_KINDS = { name = true, skill = true, names = true }
+
 -- A game name the client fills into a line, in its Japanese when the names resolver has one (Main sets
 -- UIStrings.name while Japanese names are on), else as written. A `skill` value may be a list ("Bows, Crossbows,
--- Guns"): each of its names is looked up by itself.
+-- Guns"): each of its names is looked up by itself. A `names` value is text with names in it (a player's level
+-- line: the level, the race, a word in brackets).
 local function named(kind, value)
   local resolve = UIStrings.name
   if type(resolve) ~= "function" then return value end
+  if kind == "names" then -- "23 Night Elf (Player)": each run of words is looked up by itself
+    return (value:gsub("%a[%a ]*%a", function(run) return resolve(run) end))
+  end
   if kind ~= "skill" then return resolve(value) or value end
   local out = {}
   for part in (value .. ", "):gmatch("(.-), ") do out[#out + 1] = resolve(part) or part end
@@ -250,7 +256,7 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   petFoodList = "([^%.]-)", questTitle = "(.-)",
   -- a game name (a place, a faction, an item's link): its Japanese while names are on (UIStrings.name, set by
   -- Main), else as written
-  name = "(.-)" }
+  name = "(.-)", names = "([^%.]-)" }
 -- a template with more `|4` groups is not indexed (counted `unsupported`). 4 for TIME_DAYHOURMINUTESECOND
 -- (the /played duration, the only listed key with 4): the chat line holds its raw form, which is always matched
 local MAX_PLURAL_GROUPS = 4
@@ -490,7 +496,7 @@ function Index:core(text, allow, list)
           elseif kinds[argIndex] == "questTitle" then
             local resolve = UIStrings.questTitle
             args[argIndex] = type(resolve) == "function" and resolve(caps[i]) or caps[i]
-          elseif kinds[argIndex] == "name" or kinds[argIndex] == "skill" then
+          elseif NAMED_KINDS[kinds[argIndex]] then
             args[argIndex] = named(kinds[argIndex], caps[i])
           elseif UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]] then
             args[argIndex] = self:familyList(caps[i], UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]])
@@ -782,7 +788,7 @@ function Index.formatArgs(_, key, en, ...) -- called as index:formatArgs; the in
   for i, kind in pairs(kinds or {}) do
     if kind == "questTitle" and type(args[i]) == "string" and type(UIStrings.questTitle) == "function" then
       args[i] = UIStrings.questTitle(args[i]) or args[i]
-    elseif (kind == "name" or kind == "skill") and type(args[i]) == "string" then
+    elseif NAMED_KINDS[kind] and type(args[i]) == "string" then
       args[i] = named(kind, args[i])
     end
   end

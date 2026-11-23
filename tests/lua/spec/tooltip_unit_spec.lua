@@ -5,6 +5,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
+FILES[#FILES + 1] = "Core/Placeholders.lua" -- the class and race words a player's tooltip shows
 FILES[#FILES + 1] = "UI/TimeLine.lua"
 FILES[#FILES + 1] = "UI/Tooltip.lua"
 FILES[#FILES + 1] = "UI/TooltipUnit.lua"
@@ -12,6 +13,7 @@ FILES[#FILES + 1] = "UI/TooltipUnit.lua"
 local UI = {
   UNIT_TYPE_PLUS_LEVEL_TEMPLATE = { "Level %d Elite %s", "レベル%d エリート %s" },
   UNIT_TYPE_LEVEL_TEMPLATE = { "Level %d %s", "レベル%d %s" },
+  TOOLTIP_UNIT_LEVEL = { "Level %s", "レベル %s" }, -- what a player's level line matches: the race is in its value
   UNIT_SKINNABLE_LEATHER = { "Skinnable", "皮はぎ可能" },
   CORPSE_TOOLTIP = { "Corpse of %s", "%sの死体" },
   RAID = { "Raid", "レイド" }, -- a dictionary word that is no unit line
@@ -96,8 +98,12 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
         [WFJ.Names.key("Stormwind")] = "ストームウィンド\tすとーむうぃんど",
       })
       WFJ.State.setNames(true)
+      -- as Main does: a name inside an interface line's value, while names are Japanese
+      WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+      WFJ.UIStrings.names = function() return WFJ.State.names == true end
     end)
     after_each(function()
+      WFJ.UIStrings.name, WFJ.UIStrings.names = nil, nil
       WFJ.State.setNames(false)
       _G.C_PlayerInfo, _G.issecretvalue = nil, nil
       Stub.keys.alt = false
@@ -120,10 +126,31 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
       assert.are.equal(0, WFJ.SurfaceState.count("tooltip.unit"))
     end)
 
-    it("a player's tooltip is never touched, even one named like a creature", function()
+    it("a player's name and guild are never touched, even ones named like a creature or a class", function()
       hoverUnit({ "Kobold Vermin", "Innkeeper", "Level 1 Human" }, { guid = "Player-1-0000001" })
       assert.are.equal("Kobold Vermin", left(1))
       assert.are.equal("Innkeeper", left(2))
+      hoverUnit({ "Someone", "Warrior", "Level 23 Human", "Warrior" }, { guid = "Player-1-0000001" })
+      assert.are.equal("Warrior", left(2)) -- the guild's name, above the level line
+      assert.are.equal("ウォリアー", left(4)) -- the class, below it
+    end)
+
+    it("a player's race, class and faction show their Japanese; the reveal key gives them back", function()
+      WFJ.Data.add("name", { [WFJ.Names.key("Alliance")] = "アライアンス\tあらいあんす" })
+      hoverUnit({ "Aloha Snackbaar", "Level 23 Night Elf (Player)", "Warrior", "Alliance" },
+        { guid = "Player-1-0000001" })
+      assert.are.equal("Aloha Snackbaar", left(1))
+      assert.are.equal("レベル 23 ナイトエルフ (Player)", left(2))
+      assert.are.equal("ウォリアー", left(3))
+      assert.are.equal("アライアンス", left(4))
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("Warrior", left(3))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      WFJ.State.setNames(false)
+      hoverUnit({ "Aloha Snackbaar", "Level 23 Night Elf (Player)", "Warrior", "Alliance" },
+        { guid = "Player-1-0000001" })
+      assert.are.equal("レベル 23 Night Elf (Player)", left(2))
+      assert.are.equal("Warrior", left(3))
     end)
 
     it("a pet, a unit the client gives no guid for and a hidden guid keep their names", function()
@@ -265,10 +292,14 @@ describe("UI/TooltipUnit: the creature type", function()
       assert.are.equal("野獣", left(3))
       assert.are.equal("The Balance of Nature", left(4)) -- a quest title: keyed by quest id, not by its text
       assert.is_truthy(left(5):find("Young Thistle Boarを倒す: 0/4", 1, true))
-      -- a player's tooltip never takes the creature types: "Undead" alone is a race there
+      -- a player's tooltip never takes the creature types: "Undead" alone is a race there, a name like any other
       _G.C_PlayerInfo = { GUIDIsPlayer = function() return true end }
+      WFJ.State.setNames(false)
       hover({ "Someone", "Level 60", "Undead" }, { guid = "Player-1-00000001" })
       assert.are.equal("Undead", left(3))
+      WFJ.State.setNames(true)
+      hover({ "Someone", "Level 60", "Undead" }, { guid = "Player-1-00000001" })
+      assert.are.equal("アンデッド", left(3)) -- the race's word, while names are Japanese
       _G.C_PlayerInfo = nil
     end)
 

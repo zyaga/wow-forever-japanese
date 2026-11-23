@@ -137,9 +137,11 @@ UIStrings.ARGS = {
   INTERACT_KEY_TUTORIAL = { [1] = "text" }, OPT_OUT_LOOT_TITLE = { [1] = "word" },
   -- the creature-type slot shows a CreatureType row's Japanese ("Humanoid" → its row), anything else (a class,
   -- a spec, a pet family) as written. A race slot is `text`: "Undead" is a race name too, and names stay English
-  TOOLTIP_UNIT_LEVEL = { [1] = "text" }, TOOLTIP_UNIT_LEVEL_TYPE = { [1] = "text", [2] = "creatureType" },
-  TOOLTIP_UNIT_LEVEL_RACE = { [1] = "text", [2] = "text" },
-  TOOLTIP_UNIT_LEVEL_RACE_TYPE = { [1] = "text", [2] = "text", [3] = "creatureType" },
+  -- a player's level line reaches TOOLTIP_UNIT_LEVEL with the race inside its value ("23 Night Elf (Player)"):
+  -- the race shows its Japanese while names are Japanese
+  TOOLTIP_UNIT_LEVEL = { [1] = "names" }, TOOLTIP_UNIT_LEVEL_TYPE = { [1] = "text", [2] = "creatureType" },
+  TOOLTIP_UNIT_LEVEL_RACE = { [1] = "text", [2] = "name" },
+  TOOLTIP_UNIT_LEVEL_RACE_TYPE = { [1] = "text", [2] = "name", [3] = "creatureType" },
   UNIT_TYPE_PLUS_LEVEL_TEMPLATE = { [2] = "creatureType" },
   -- these two share their English ("%s (%s)") with PVP_LEAVE_BUTTON_TIME, and one template is
   -- compiled per distinct English under the first key of the group, so the three MUST declare the same kinds, or
