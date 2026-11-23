@@ -1176,6 +1176,30 @@ def test_a_new_tooltip_made_of_written_sentences_needs_no_drafting(sentences, tm
     assert [r["ja"] for r in _export_tips(tmp_path)] == ["海を渡ります。", "森を守ります。"]
 
 
+def test_a_line_built_from_a_corrected_sentence_is_never_a_correction(sentences, tmp_path, capsys):
+    assert _import_tips(_batch(tmp_path, [_piece_row(LEARN, LEARN_WORDS), _piece_row(LAST, LAST_WORDS)])) == 0
+    store = Store(sentences / "reading")
+    fixed = [[w[0], w[1], w[2], w[3], "corrected"] if len(w) == 5 else list(w) for w in LEARN_WORDS]
+    by = {"class": "correction", "translator": "Az", "source": "correction@2026-11-22",
+          "corrects": "readings@tips-batch", "imported": "2026-11-22"}
+    recs = store.load("item")
+    for rec in recs:  # every item reading that holds the sentence is now a correction
+        rec["words"], rec["provenance"] = fixed, dict(by)
+    store.save("item", recs)
+    Store(sentences).save("item", [*Store(sentences).load("item"),
+                                   _machine_line(5, "description", "Runed Copper Rodの作り方を習得します。" + LAST),
+                                   _machine_line(6, "description", "Bronze Tubeの作り方を習得します。")])
+    capsys.readouterr()
+    assert cmd.run(["spread"]) == 0
+    item = {r["id"]: r for r in store.load("item")}
+    # the corrected words are the ones reused, and the built line is machine-made (its other sentence's source)
+    assert item[5]["words"] == fixed + LAST_WORDS
+    assert item[5]["provenance"]["class"] == "machine"
+    # a line made only of corrected sentences is left for a person, and said so
+    assert 6 not in item
+    assert "not built item 6/description" in capsys.readouterr().out
+
+
 def test_a_whole_line_import_feeds_the_sentences_too(sentences, tmp_path):
     whole = "Light Winter Cloakの作り方を習得します。\n" + LAST
     row = _row(words=LEARN_WORDS + LAST_WORDS, ja=whole, id_=3, type_="item")

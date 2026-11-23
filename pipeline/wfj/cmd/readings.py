@@ -116,11 +116,15 @@ class _Tooltips(NamedTuple):
     records: dict[str, list[dict[str, Any]]]  # type → every reading record in the store
 
 
+def _corrections_first(rec: dict[str, Any]) -> tuple[bool, Any, str]:
+    return rec["provenance"]["class"] != "correction", rec["id"], rec["field"]
+
+
 def _tooltips(root: Path) -> _Tooltips:
     """Every shipped item and spell line, and the pieces already written, read out of the current item and
     spell readings: (piece key → its words, piece key → the provenance of the reading it was read from).
-    The first reading by type and id gives a piece its words; a piece listed with words wins over one with
-    none."""
+    A correction gives a piece its words before any other reading, then the first reading by type and id; a
+    piece listed with words wins over one with none."""
     store = reading_store(root)
     lines: list[TooltipLine] = []
     words: dict[str, list[list[str]]] = {}
@@ -135,7 +139,8 @@ def _tooltips(root: Path) -> _Tooltips:
         japanese = readings.japanese_of(type_, Store(root).load(type_), english_lines)
         records[type_] = store.load(type_)
         current = readings.check(type_, records[type_], japanese)["current"]
-        for rec in sorted(current, key=lambda r: (r["id"], r["field"])):
+        # a corrected reading's sentences come first, so its words are the ones reused
+        for rec in sorted(current, key=_corrections_first):
             by_piece = readings.piece_words(japanese[(rec["id"], rec["field"])], rec["words"])
             for key, mine in (by_piece or {}).items():
                 if key not in words or (not words[key] and mine):
@@ -192,10 +197,12 @@ def _build_lines(
 ) -> dict[str, Any]:
     """Every tooltip line with no current reading whose pieces are all written gets its words. A line built
     with a piece of `incoming` (this import's, piece key → words) takes `prov`; a line built from pieces
-    already in the store takes the provenance of the reading its first piece came from. A line with a current
-    reading of its own is left alone, a correction among them. → {"lines": n, "by_type": {type: n}}."""
+    already in the store takes the provenance of the first machine reading a piece of it came from. A line
+    with a current reading of its own is left alone, a correction among them.
+    → {"lines": n, "by_type": {type: n}, "corrected_only": [the lines made only of corrected sentences]}."""
     words, provs = state.index[0] | incoming, state.index[1]
     built: dict[str, dict[tuple[int | str, str], dict[str, Any]]] = {}
+    waiting: list[str] = []  # made only of corrected sentences: a person writes these
     for type_, id_, field, ja, current in state.lines:
         if current or readings.holds_escape(ja):
             continue
@@ -203,7 +210,16 @@ def _build_lines(
         if not mine:
             continue
         keys = [key for _s, _e, key in readings.pieces(ja) if key in words]
-        source = prov if any(key in incoming for key in keys) else provs[keys[0]]
+        if any(key in incoming for key in keys):
+            source = prov
+        else:
+            # a line put together here is machine-made, whoever wrote its sentences: it never takes a
+            # correction's provenance, which would mark it reviewed and keep later drafts from replacing it
+            machine = [provs[k] for k in keys if provs[k]["class"] == "machine"]
+            if not machine:
+                waiting.append(f"{type_} {id_}/{field}")
+                continue
+            source = machine[0]
         built.setdefault(type_, {})[(id_, field)] = readings.record(id_, field, ja, mine, dict(source))
     if not dry_run:
         store = reading_store(root)
@@ -211,7 +227,7 @@ def _build_lines(
             merged = {(r["id"], r["field"]): r for r in state.records[type_]} | recs
             store.save(type_, merged.values())
     by_type = {t: len(recs) for t, recs in built.items()}
-    return {"lines": sum(by_type.values()), "by_type": by_type}
+    return {"lines": sum(by_type.values()), "by_type": by_type, "corrected_only": waiting}
 
 
 def spread_store(root: Path, *, dry_run: bool = False) -> dict[str, Any]:
@@ -396,6 +412,11 @@ def fill_store(root: Path, *, dry_run: bool = False) -> dict[str, Any]:
     return {"lines": lines, "places": places, "by_type": by_type, "left": left}
 
 
+def _print_corrected_only(res: dict[str, Any]) -> None:
+    for line in res["corrected_only"]:
+        print(f"  not built {line}: made only of corrected sentences; write it with `import --correction`")
+
+
 def _run_tooltips(a: argparse.Namespace, root: Path) -> int:
     """`export-tooltips`, `import-tooltips` and `spread`: tooltip text, written a sentence at a time."""
     if a.cmd == "export-tooltips":
@@ -413,11 +434,13 @@ def _run_tooltips(a: argparse.Namespace, root: Path) -> int:
         res = import_tooltip_rows(root, read_batch(a.batch), prov, dry_run=a.dry_run)
         for line in res["rejected"]:
             print(f"  rejected {line}")
+        _print_corrected_only(res)
         verb = "would build" if a.dry_run else "built"
         print(f"readings import-tooltips: {res['pieces']} sentences · rejected {len(res['rejected'])} · "
               f"{verb} {res['lines']} lines · by type {res['by_type']}")
         return 1 if res["rejected"] else 0
     res = spread_store(root, dry_run=a.dry_run)
+    _print_corrected_only(res)
     verb = "would fill" if a.dry_run else "filled"
     n = res["lines"]
     print(f"readings spread: {verb} {n} line{'' if n == 1 else 's'} · by type {res['by_type']}")
