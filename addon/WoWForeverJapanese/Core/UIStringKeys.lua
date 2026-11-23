@@ -1044,6 +1044,8 @@ UIStrings.LABELS = { SPEED = "number", RANK = "number",
   -- the trainer filter menu's colour-wrapped checkboxes (mainline/blizzard_trainerui.lua:252–254); AVAILABLE
   -- owns its Japanese (OWN: it shares "Available" with the friends status)
   AVAILABLE = "wrapped", UNAVAILABLE = "wrapped", USED = "wrapped",
+  -- the name completion box's grey hint (blizzard_autocomplete/autocomplete.lua:133)
+  PRESS_TAB = "wrapped",
   -- the dressing room's custom-set dropdown: its grey empty text and its green menu entry
   -- (blizzard_framexml/wardrobecustomsets.lua:22, 144)
   TRANSMOG_CUSTOM_SET_NONE = "wrapped", TRANSMOG_CUSTOM_SET_NEW = "wrapped",

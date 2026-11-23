@@ -473,6 +473,10 @@ item and 7 spell tooltips, and 7 spell tooltips the build reworded, each quest a
 quests of one family (a writ, its work order and its delivery) follow the wording of the ones that already ship. One
 hand-corrected item line (item 3663) is kept as written: the build points it at another text with the same wording.
 
+One interface line is new in the build: the mail window's tooltip for a disabled Cash on Delivery button
+(`COD_DISABLED`). It was found when the window inventory was regenerated (`make ui-inventory`), which the round had not
+run; it is listed in `pipeline/ui_keys.txt` and drafted with its word list under `draft-r71037-q-sg12`.
+
 Hand-written lines that start shipping: the 197 newly answered quests bring 45 hand-written lines out of `rejected`.
 On three of them (quest 5201's description and turn-in, quest 5981's description) a garbled word-for-word variant won
 over a clean hand-written variant of the same line; the garbled variant is ruled `reject`. Quest 5981's clean

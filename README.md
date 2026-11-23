@@ -4,8 +4,8 @@
 
 An addon that shows World of Warcraft: Forever in Japanese: quests, NPC dialogue, books, item and spell tooltips,
 and the game's interface. Hold **Alt** and the game's own English comes back; let go and the Japanese returns. Alt
-is only the default: any key can be chosen. Names of people, places, creatures, items and spells, and quest
-titles, stay in English until you choose Japanese names; then they show in katakana.
+is only the default: any key can be chosen. Names of people, places, creatures, items and spells stay in English
+everywhere, and so do quest titles.
 
 It works the other way round too, for Japanese players studying English: choose **English first** and the game
 stays in English, with the Japanese one key away and a popup that shows how each English word is said and its
@@ -232,20 +232,9 @@ No GitHub account? Post the bug in **#bug-reports** on the [Discord](https://for
 Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action
 bar stay Japanese in combat, the cooldown countdown too.
 
-**Why are names in English?** That is the default, so what you read matches what other players say and what
-guides call things. To see names in Japanese, pick **Japanese names** in the welcome window (`/wfj intro`) or turn
-on **Show names in Japanese** on the settings page. Names of people, places, creatures, items, spells, skills and
-factions, and quest titles, then show in katakana, and holding Alt shows the English name. Pointing at a Japanese
-name shows its reading and its English name. Names are spelled from the English, word by word, the same way the
-voice says them.
-
-A few names stay English with Japanese names on. A player's, guild's or pet's name is never changed. Spell names
-in the spellbook and on the buttons of the professions page stay English, because changing them makes the game
-block the action bars in combat. The name over the head of a creature with no nameplate is drawn by the game
-itself, so the addon turns on nameplates for NPCs and creatures when you pick Japanese names (friendly NPCs,
-enemies and neutral creatures, out of combat too), and puts your settings back when you pick English names. If you
-remove the addon while Japanese names are on, those nameplates stay on: turn them off in the game's own Nameplates
-options. Abbreviations such as PvP and NPC stay as written.
+**Why are names still in English?** On purpose. Names of people, places, creatures, items and spells are never
+changed, and neither is a quest's title, so what you read matches what other players say and what guides call
+things. The quest's text under the title is Japanese.
 
 **What do the markers mean?** **[未翻訳 / Not Translated]** means the line has no translation yet and is shown in
 the game's English. **[要更新 / English Changed]** means the English changed after the line was translated.
@@ -295,7 +284,7 @@ and why: [docs](docs/overview.md). What changed in each release: [`CHANGELOG.md`
 
 ## 日本語
 
-World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前とクエストのタイトルは、日本語の名前を選ぶまでは英語のままです。選ぶとカタカナで表示されます。
+World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前はすべて英語のままです。クエストのタイトルも英語のままです。
 
 逆向きにも使えます。英語を学びたい方は **英語優先**（English first）を選ぶと、ゲームは英語のまま、キーひとつで日本語を表示でき、英語の単語にマウスを合わせると発音と日本語の単語が表示されます。
 
@@ -428,9 +417,7 @@ GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/di
 
 ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
-**名前が英語なのはなぜ？** 初期設定です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。名前を日本語で見たい場合は、ようこそウィンドウ（`/wfj intro`）で **日本語の名前** を選ぶか、設定ページの **名前を日本語で表示** をオンにします。人物・地名・モンスター・アイテム・呪文・スキル・勢力の名前とクエストのタイトルがカタカナで表示され、Alt を押している間は英語の名前が見えます。日本語の名前にマウスを合わせると、読みと英語の名前が出ます。名前は英語を単語ごとにカタカナにしたもので、音声の読み方と同じです。
-
-日本語の名前を選んでも英語のままの名前があります。プレイヤー、ギルド、ペットの名前は変えません。呪文書と専門技能ページのボタンにある呪文の名前は英語のままです。変えると、戦闘中にアクションバーが使えなくなるためです。ネームプレートのないクリーチャーの頭上の名前はゲームが直接描いているため、日本語の名前を選ぶと NPC とクリーチャーのネームプレート（味方 NPC、敵、中立のクリーチャー。戦闘中以外も表示）をオンにし、英語の名前を選ぶと元の設定に戻します。日本語の名前のままアドオンを削除した場合、そのネームプレートはオンのままです。ゲームのネームプレート設定でオフにできます。PvP や NPC などの略語はそのままです。
+**名前が英語のままなのはなぜ？** 意図した仕様です。人物・地名・モンスター・アイテム・呪文の名前は変えません。クエストのタイトルも英語のままです（タイトルの下の本文は日本語です）。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
 
 **マーカーは何を表している？** **[未翻訳 / Not Translated]** はまだ翻訳がなく、ゲームの英語のまま表示されている行です。**[要更新 / English Changed]** は翻訳のあとで英語の原文が変わった行です。
 

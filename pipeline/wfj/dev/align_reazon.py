@@ -29,7 +29,7 @@ MODEL = "reazon-research/japanese-wav2vec2-large-rs35kh"
 RATE = 16000
 LEAD_IN = 0.5  # seconds of silence before the line: the model's first frames are unreliable without it
 LATE = 0.05  # seconds: the model marks a character's start this much late (measured on comma pauses)
-SKIP = re.compile(r"[\s。、！？!?「」『』（）()・…〜~,.\-—–:;]")
+SKIP = re.compile(r"[\s。、！？!?「」『』（）()・…〜~,.\-\u2014–:;]")
 
 
 def targets(text: str, vocab: dict[str, int], kks: pykakasi.kakasi) -> tuple[list[int], list[int]]:

@@ -111,6 +111,9 @@ local PASS_THROUGH = {
   -- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:897–925]
   CONFIRM_DESTROY_COMMUNITY = { line = { "CONFIRM_DESTROY_COMMUNITY_UNPROMPTED",
     "CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED" }, after = {} },
+  -- a recipe form's replace question: text "", its OnShow writes the line around the reagent's name
+  -- [verified: blizzard_professionstemplates/blizzard_professionsrecipeschematicform.lua:3–21]
+  PROFESSIONS_RECRAFT_REPLACE_OPTIONAL_REAGENT = { line = { "PROFESSIONS_RECRAFTING_REPLACE_OPTIONAL" }, after = {} },
 }
 
 -- The dialogs whose OnShow writes the SubText with another line than the definition's, so the key is one of a few.

@@ -25,6 +25,7 @@ local UI = {
   -- the FPS counter's bound form
   FPS_COUNTER_CPU_BOUND = { "%.1f CPU Bound", "%.1f CPU律速" },
   FPS_COUNTER_GPU_BOUND = { "%.1f GPU Bound", "%.1f GPU律速" },
+  PRESS_TAB = { "Press Tab", "Tabを押す" }, -- the name completion box's hint
 }
 local function en(key) return UI[key][1] end
 local function ja(key) return UI[key][2] end
@@ -72,11 +73,14 @@ local function installHud()
   local fps = CreateFrame("Frame", "FramerateFrame")
   fps.FramerateText = Stub.fontString("")
   function fps.FramerateText.SetFormattedText(self, fmt, ...) self.text = string.format(fmt, ...) end
+  -- the name completion box (blizzard_autocomplete/autocomplete.xml:30–37, autocomplete.lua:133)
+  CreateFrame("Frame", "AutoCompleteBox")
+  _G.AutoCompleteInstructions = Stub.fontString("|cffbbbbbb" .. en("PRESS_TAB") .. "|r")
 end
 
 local GLOBALS = { "MirrorTimerContainer", "SwingTimerMainHandFrame", "SwingTimerOffHandFrame",
   "SwingTimerRangedFrame", "StatusTrackingBarInfo", "MainStatusTrackingBarContainer", "ActionStatus", "BuffFrame",
-  "FramerateFrame",
+  "FramerateFrame", "AutoCompleteBox", "AutoCompleteInstructions",
   "DebuffFrame", "ExternalDefensivesFrame", "AuraButtonMixin" }
 
 describe("the HUD's small bars and messages on Forever", function()
@@ -194,6 +198,18 @@ describe("the HUD's small bars and messages on Forever", function()
     WFJ.HudLabels.init()
     b:UpdateDuration(en("MINUTE_ONELETTER_ABBR"), 3)
     assert.are.equal("3分", b.Duration:GetText())
+  end)
+
+  it("the name completion box's hint is Japanese in its grey, and English while the key is held", function()
+    local fs = _G.AutoCompleteInstructions
+    assert.are.equal("|cffbbbbbb" .. ja("PRESS_TAB") .. "|r", fs:GetText())
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("|cffbbbbbb" .. en("PRESS_TAB") .. "|r", fs:GetText())
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    _G.AutoCompleteBox:GetScript("OnShow")(_G.AutoCompleteBox)
+    assert.are.equal("|cffbbbbbb" .. ja("PRESS_TAB") .. "|r", fs:GetText())
   end)
 
   it("the FPS counter's bound form is Japanese with its number; the bare number stays", function()

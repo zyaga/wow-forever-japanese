@@ -136,7 +136,6 @@ DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui", "draft-r70707-ui", "draft-r70755
                  "draft-r70959-ui-sg12",  # the interface lines of build 70959
                  "draft-r71037-q-sg12",  # a boss still alive in an instance lock, its own word from build 71037
                  "draft-ui-drunk-sg12",  # how drunk the character or a player nearby is, in chat
-                 "draft-ui-mail-cod-sg12",  # the mail window's line for cash on delivery switched off
                  "draft-ui-friends-window-sg12",  # the friends window the client shows with its social system on
                  "draft-ui-tooltip-words-sg12",  # "Enemy" before a range, "Crafting Reagent"
                  "draft-ui-locked-sg12",  # "Locked" on a locked container's tooltip

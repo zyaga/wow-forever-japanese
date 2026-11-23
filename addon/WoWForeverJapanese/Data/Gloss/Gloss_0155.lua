@@ -460,8 +460,6 @@ WFJ.Data.add("gloss", {
   [155461] = "酔っぱらう\tよっぱらう\tfeel drunk (have gotten drunk)",
   [155462] = "酔っぱらう\tよっぱらう\tfeeling drunk (getting drunk)",
   [155463] = "酔っぱらう\tよっぱらう\tis getting drunk",
-  [155464] = "代引き\tだいびき\tCash on Delivery",
-  [155465] = "利用できる\tりようできる\tis disabled (cannot be used)",
   [155466] = "なる\tなる\twants to be (become)",
   [155467] = "オフライン表示\tオフラインひょうじ\tappear offline",
   [155468] = "クイック参加\tクイックさんか\tquick join",
