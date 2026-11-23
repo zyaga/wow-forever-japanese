@@ -409,15 +409,16 @@ function View.attach(rec)
   -- rec.spans: words already located by the caller (the voice panel shows one sentence of a line whose word list is
   -- written for the whole line, so it locates them in the whole line and passes the sentence's share)
   local listed = rec.spans or WFJ.Readings.lookup(rec.meta.kind, rec.meta.id, rec.applied)
-  -- a window label takes a cover only for its own word list; the class / race words are for prose
-  if rec.meta.kind == "ui" and not (listed and listed[1]) then
+  -- a window label takes a cover only for its own word list or a name written into it; the class / race words
+  -- are for prose
+  local named = type(rec.names) == "table" and rec.names[1] ~= nil
+  if rec.meta.kind == "ui" and not (listed and listed[1]) and not named then
     View.detach(rec)
     return false
   end
-  -- prose: the names written into the line in Japanese take their cards first, so no word anchors inside one
-  local spans = rec.meta.kind == "ui" and listed
-    or WFJ.Readings.withTokenWords(WFJ.Readings.withNames(listed or {}, rec.applied, rec.names), rec.applied,
-      rec.exclude)
+  -- the names written into the line in Japanese take their cards first, so no word anchors inside one
+  local spans = WFJ.Readings.withNames(listed or {}, rec.applied, rec.names)
+  if rec.meta.kind ~= "ui" then spans = WFJ.Readings.withTokenWords(spans, rec.applied, rec.exclude) end
   if not spans or not spans[1] then
     View.detach(rec)
     return false

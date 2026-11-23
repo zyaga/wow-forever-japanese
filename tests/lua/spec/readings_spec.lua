@@ -298,6 +298,26 @@ describe("Readings", function()
         assert.are.equal(1, saves)
       end)
 
+      it("a name inside a window label takes its card, with or without a word list for the label", function()
+        R.init(WFJ.Translator.new({
+          enabled = function() return WFJ.State.enabled end,
+          areaEnabled = WFJ.State.areaEnabled,
+          showsEnglish = WFJ.Modifier.english,
+          lookup = function(kind, id)
+            return kind == "ui" and id == "VISIT" and { ja = NAME.english .. "を訪ねよう", status = "." } or nil
+          end,
+          marker = function() return false end,
+          names = function(ja) return (ja:gsub(NAME.english, NAME.ja)), { NAME } end,
+        }))
+        local fs = questFs()
+        R.show("character", "ui.visit", fs, "Visit " .. NAME.english, "ui", "ui", "VISIT")
+        assert.are.equal(NAME.ja .. "を訪ねよう", fs:GetText())
+        local cover = coverOf(fs)
+        assert.is_table(cover)
+        hover(cover, fs, NAME.ja)
+        assert.are.equal(NAME.reading, boxLabel())
+      end)
+
       it("a widget that holds only a name takes its card in a window, and none on a tooltip", function()
         local fs = questFs()
         R.show("merchant", "ui.title", fs, NAME.english, "ui", "name", NAME.english)
