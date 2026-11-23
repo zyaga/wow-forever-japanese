@@ -208,6 +208,40 @@ describe("UI/TooltipFreeze", function()
       assert.are.equal(2, #copy().lines)
     end)
 
+    it("closes on the key over the same tooltip even when its other lines have changed", function()
+      write(tip, { "Frostbolt", "Cooldown remaining: 5 sec" })
+      F.toggle()
+      _G.GameTooltipTextLeft2.text = "Cooldown remaining: 4 sec" -- the client rewrites it under the mouse
+      F.toggle()
+      assert.is_nil(copy())
+    end)
+
+    it("copies a text the client will not let it read, and never reads it", function()
+      write(tip, { "Frostbolt", "PROTECTED" })
+      japanese(tip, 2, "desc", "spell.description", 10, "spells")
+      _G.GameTooltipTextLeft2.text = "PROTECTED"
+      local saved = WFJ.SurfaceState.secret
+      WFJ.SurfaceState.secret = function(v) return v == "PROTECTED" end
+      F.toggle()
+      WFJ.SurfaceState.secret = saved
+      assert.are.equal("PROTECTED", line(1, 2).fs:GetText()) -- passed on as it is
+      assert.is_nil(line(1, 2).twin) -- and no words are looked for in it
+      F.toggle()
+      assert.is_nil(copy())
+    end)
+
+    it("takes its frames down again when drawing it fails", function()
+      write(tip, { "Hearthstone", "Use: returns you." })
+      local real = _G.GameTooltipTextLeft2.GetTextColor
+      _G.GameTooltipTextLeft2.GetTextColor = function() error("boom") end
+      assert.has_error(function() F.toggle() end)
+      _G.GameTooltipTextLeft2.GetTextColor = real
+      assert.is_nil(copy())
+      assert.is_false(_G.WFJFrozenTooltip1:IsShown())
+      F.toggle() -- and the key works again
+      assert.is_true(copy().frame:IsShown())
+    end)
+
     it("copies the comparison tooltips beside it, and they close with it", function()
       write(tip, { "New Sword" })
       write(_G.ShoppingTooltip1, { "Currently Equipped", "Old Sword" })

@@ -30,20 +30,27 @@ local FRAMES = { "GameTooltip", "ShoppingTooltip1", "ShoppingTooltip2" }
 Freeze.copies = {} -- the copies showing, GameTooltip's first: { frame, lines = { { fs, twin, rec } } }
 
 local pool = {} -- [i] = { frame, strings = {}, used = n }: one per tooltip frame, made on first need
-local signature -- the left text of the tooltip the copy was made from
+local signature -- what the tooltip the copy was made from belongs to, and its first line
 local closing = false
 
 local function showing(tip)
   return type(tip) == "table" and tip:IsShown() and tip:GetLeft() ~= nil and (tip:NumLines() or 0) > 0
 end
 
-local function leftText(tip)
-  local parts, name = {}, tip:GetName()
-  for i = 1, tip:NumLines() or 0 do
-    local fs = Compat.resolve(name .. "TextLeft" .. i)
-    parts[#parts + 1] = fs and fs:GetText() or ""
-  end
-  return table.concat(parts, "\n")
+-- In combat the client hands out a tooltip's texts, colours and sizes as values an addon may pass on but never
+-- read, compare or join (docs/architecture/client-limits.md). Such a value goes straight into the copy.
+local function secret(value) return WFJ.SurfaceState.secret(value) end
+
+-- What tells one tooltip from another: what it belongs to and its first line, where that may be read. The other
+-- lines are left out: the client rewrites a cooldown or a time left while the mouse rests on the tooltip.
+local function identity(tip)
+  local first = Compat.resolve(tip:GetName() .. "TextLeft1")
+  local text = first and first:GetText()
+  return { owner = tip.GetOwner and tip:GetOwner() or nil, first = not secret(text) and text or nil }
+end
+
+local function same(a, b)
+  return a ~= nil and a.owner == b.owner and a.first == b.first
 end
 
 -- ── The copy's frames and lines ───────────────────────────────────────────
@@ -85,7 +92,9 @@ end
 -- `fs` laid out as `src` is, in the copy's own coordinates, holding `text`
 local function layLike(s, fs, tip, src, text)
   local path, size, flags = src:GetFont()
-  if path then WFJ.Font.set(fs, path, WFJ.Font.size(size) or WFJ.Font.DEFAULT_SIZE, flags) end
+  if path and not secret(path) and not secret(size) and not secret(flags) then
+    WFJ.Font.set(fs, path, WFJ.Font.size(size) or WFJ.Font.DEFAULT_SIZE, flags)
+  end
   if src.GetJustifyH then fs:SetJustifyH(src:GetJustifyH()) end
   if fs.SetSpacing and src.GetSpacing then fs:SetSpacing(src:GetSpacing()) end
   if fs.SetNonSpaceWrap and src.CanNonSpaceWrap then fs:SetNonSpaceWrap(src:CanNonSpaceWrap()) end
@@ -97,12 +106,13 @@ local function layLike(s, fs, tip, src, text)
   fs:Show()
 end
 
--- → the line's text when `src` is a line the tooltip shows, else nil
+-- → the line's text when `src` is a line the tooltip shows, else nil; and whether the text may not be read
 local function shownText(src)
-  if type(src) ~= "table" or not src:IsShown() then return nil end
+  if type(src) ~= "table" or not src:IsShown() or not src:GetLeft() or not src:GetTop() then return nil end
   local text = src:GetText()
-  if type(text) ~= "string" or text == "" or not src:GetLeft() or not src:GetTop() then return nil end
-  return text
+  if secret(text) then return text, true end
+  if type(text) ~= "string" or text == "" then return nil end
+  return text, false
 end
 
 -- ── Word cards ────────────────────────────────────────────────────────────
@@ -167,13 +177,13 @@ local function copyOf(i, tip, cards)
   for n = 1, tip:NumLines() or 0 do
     for _, side in ipairs({ "Left", "Right" }) do
       local src = Compat.resolve(name .. "Text" .. side .. n)
-      local text = shownText(src)
+      local text, unreadable = shownText(src)
       if text then
         local fs = fontString(s)
         layLike(s, fs, tip, src, text)
         fs:SetTextColor(src:GetTextColor())
         local entry = { fs = fs }
-        if cards then attachCards(s, entry, tip, src, text) end
+        if cards and not unreadable then attachCards(s, entry, tip, src, text) end
         copy.lines[#copy.lines + 1] = entry
       end
     end
@@ -181,9 +191,7 @@ local function copyOf(i, tip, cards)
   return copy
 end
 
-function Freeze.close()
-  if closing then return end
-  closing = true
+local function hideAll()
   for _, copy in ipairs(Freeze.copies) do
     for _, entry in ipairs(copy.lines) do
       if entry.rec then WFJ.ReadingView.detach(entry.rec) end
@@ -194,8 +202,17 @@ function Freeze.close()
     s.used = 0
     s.frame:Hide()
   end
+end
+
+-- Hiding a copy's frame runs this again (OnHide); `closing` stops the loop, and is put back whatever happens, or
+-- one error here would leave every later close doing nothing.
+function Freeze.close()
+  if closing then return end
+  closing = true
+  local ok, err = pcall(hideAll)
   Freeze.copies, signature = {}, nil
   closing = false
+  if not ok then error(err, 0) end
 end
 
 -- Draws the copies of the tooltip showing now and of the comparison tooltips beside it.
@@ -203,19 +220,26 @@ function Freeze.show()
   Freeze.close()
   local cards = cardsNow()
   local copies = {}
-  for _, name in ipairs(FRAMES) do
-    local tip = Compat.resolve(name)
-    if showing(tip) then copies[#copies + 1] = copyOf(#copies + 1, tip, cards) end
-  end
+  -- a copy half drawn is a frame that takes the mouse with nothing in it: an error takes the frames down again
+  local ok, err = pcall(function()
+    for _, name in ipairs(FRAMES) do
+      local tip = Compat.resolve(name)
+      if showing(tip) then copies[#copies + 1] = copyOf(#copies + 1, tip, cards) end
+    end
+  end)
   Freeze.copies = copies
-  signature = leftText(Compat.resolve("GameTooltip"))
+  if not ok then
+    Freeze.close()
+    error(err, 0)
+  end
+  signature = identity(Compat.resolve("GameTooltip"))
 end
 
 -- The key: freezes the tooltip showing now; with none showing (or the same one already frozen), closes the copy.
 function Freeze.toggle()
   local tip = Compat.resolve("GameTooltip")
   local frozen = Freeze.copies[1] ~= nil
-  if showing(tip) and not (frozen and signature == leftText(tip)) then
+  if showing(tip) and not (frozen and same(signature, identity(tip))) then
     Freeze.show()
   elseif frozen then
     Freeze.close()
