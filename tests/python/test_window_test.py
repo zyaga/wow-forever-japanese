@@ -742,7 +742,9 @@ def test_a_spell_left_english_for_its_numbers_says_how_the_client_held_each_spel
     # one shown in Japanese once loaded is no longer left English; a line that is only the client's gap for a spell
     # in angle brackets (it never fills that form in) is a gap, not a tooltip the game changed
     assert "record.left[tostring(id)], record.changed[tostring(id)] = nil, nil" in lua
-    assert 'local gap = english:find("^%s*<%d+>%s*$") ~= nil' in lua
+    assert 'local GAP = "<%d+>"' in lua and "local gap = english:find(GAP) ~= nil" in lua
+    # a line with no words yet that splices in a spell is read again once that spell loaded
+    assert "if type(WFJScanIncludes) == \"table\" and WFJScanIncludes[id] and not english:find(GAP) then" in lua
     # the tooltip waits off the screen, only until the spells it splices in loaded
     assert 'GameTooltip:SetPoint("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)' in lua
     assert "if not allCached(id) and waited < TOOLTIP_PATIENCE then" in lua

@@ -2154,6 +2154,10 @@ local function recheckIncluded(record, done)
   nextSpell()
 end
 
+-- the client's gap for a spell named in angle brackets (`<1243318>`): this client never fills that form in, so a line
+-- holding one is a gap (as `leftWhy` says), never a tooltip the game changed
+local GAP = "<%%d+>"
+
 local function noteSpell(record, id, english, shown, row)
   record.left = record.left or {}
   record.icons = record.icons or {}
@@ -2175,6 +2179,12 @@ local function noteSpell(record, id, english, shown, row)
   -- a description with no word in it ("..", "???", a placeholder the developers left) has nothing to translate
   if not english:find("%%a%%a") then
     record.noWords = (record.noWords or 0) + 1
+    -- an empty line that splices in a spell the client had not loaded yet: read again once that spell loaded
+    if type(WFJScanIncludes) == "table" and WFJScanIncludes[id] and not english:find(GAP) then
+      record.left[tostring(id)] = { reason = "values", why = "no words until the spells it splices in loaded",
+        text = english:sub(1, 300) }
+      noteIncluded(record, id, english)
+    end
     return
   end
   local ok, reason, why = pcall(leftWhy, id, english)
@@ -2341,9 +2351,9 @@ local function readSpell(record, id, describe, why)
   else
     if marked then record.marked = (record.marked or 0) + 1 end
     local fine, agrees = pcall(gateCount, id, english)
-    -- a line that is only the client's gap for a spliced-in spell (`<1243318>`: it never fills the angle-bracket form
-    -- in) is counted as a gap by noteSpell, not as a tooltip the game changed
-    local gap = english:find("^%%s*<%%d+>%%s*$") ~= nil
+    -- a line that is only the client's gap for a spliced-in spell is counted as a gap by noteSpell, not as a tooltip
+    -- the game changed
+    local gap = english:find(GAP) ~= nil
     if VALUES[id] and not (fine and agrees) and not gap then record.changed[tostring(id)] = said end
   end
   noteSpell(record, id, english, shown, row)
