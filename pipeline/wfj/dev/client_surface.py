@@ -2756,6 +2756,100 @@ local function WFJScanNamesRead(done)
   done()
 end
 
+-- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
+-- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
+-- carries and runs what the key runs (`WFJ_FreezeTooltip`), twice, into `probe.freeze`:
+--   bound    the key the binding has ("" for none)
+--   items    tooltips frozen; lines  Japanese lines on the copies; cards  word-card covers laid on them
+--   missing  an item whose copy did not show, or lacks a line the tooltip showed: a failure
+--   stuck    an item whose copy the key did not close again over the same tooltip: a failure
+--   cards    expected when Japanese shows with the reading box on (`expect`): none at all is a failure
+local FREEZE_MAX = 40 -- items frozen: a few bags' worth tells as much as every one
+
+local function shownTexts(frame, out)
+  for _, r in ipairs({ frame:GetRegions() }) do
+    if r.GetText and r:IsShown() then
+      local text = r:GetText()
+      if readable(text) then out[#out + 1] = { text = text, region = r } end
+    end
+  end
+  return out
+end
+
+local function WFJScanFreezeRead(done)
+  local db = probeDb()
+  local settings = addonSettings() or {}
+  local record = { items = 0, lines = 0, cards = 0, missing = {}, stuck = {},
+    bound = GetBindingKey("WFJ_FREEZE_TOOLTIP") or "",
+    expect = settings.enabled ~= false and settings.direction ~= "en" and settings["readings.enabled"] ~= false }
+  db.freeze = record
+  if type(WFJ_FreezeTooltip) ~= "function" then
+    record.refused = "the addon has no freeze binding to run"
+    return done()
+  end
+  done = collectorPaused(done) -- it shows tooltips, as the tooltip read does
+  local function freeze(id, show)
+    if record.items >= FREEZE_MAX then return end
+    GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+    GameTooltip:ClearAllPoints()
+    GameTooltip:SetPoint("CENTER", UIParent, "CENTER")
+    show()
+    if not GameTooltip:IsShown() or (GameTooltip:NumLines() or 0) == 0 then return end
+    record.items = record.items + 1
+    local want = {}
+    for i = 1, GameTooltip:NumLines() do
+      for _, side in ipairs({ "Left", "Right" }) do
+        local region = _G["GameTooltipText" .. side .. i]
+        local text = region and region:IsShown() and region:GetText()
+        if readable(text) then want[#want + 1] = text end
+      end
+    end
+    WFJ_FreezeTooltip()
+    local copy = _G.WFJFrozenTooltip1
+    if not (copy and copy:IsShown()) then
+      record.missing[tostring(id)] = "no copy showed"
+      return
+    end
+    local got = {}
+    for _, t in ipairs(shownTexts(copy, {})) do
+      got[t.text] = true
+      -- the twin a coloured line is measured on is drawn at no opacity: it is not a line of its own
+      if hasJapanese(t.text) and not (t.region.GetAlpha and t.region:GetAlpha() == 0) then
+        record.lines = record.lines + 1
+      end
+    end
+    local lost = 0
+    for _, text in ipairs(want) do if not got[text] then lost = lost + 1 end end
+    if lost > 0 then record.missing[tostring(id)] = lost .. " of " .. #want .. " lines not on the copy" end
+    for _, child in ipairs({ copy:GetChildren() }) do
+      if child ~= copy.NineSlice and child:IsShown() and child.IsMouseMotionEnabled and child:IsMouseMotionEnabled() then
+        record.cards = record.cards + 1
+      end
+    end
+    WFJ_FreezeTooltip() -- the same tooltip still shows: the key closes the copy
+    if copy:IsShown() then
+      record.stuck[tostring(id)] = "the key over the same tooltip left the copy showing"
+      copy:Hide()
+    end
+  end
+  local ok, err = pcall(function()
+    for slot = 1, 19 do
+      local id = GetInventoryItemID("player", slot)
+      if id then freeze(id, function() GameTooltip:SetInventoryItem("player", slot) end) end
+    end
+    for bag = 0, 4 do
+      for slot = 1, C_Container.GetContainerNumSlots(bag) or 0 do
+        local id = C_Container.GetContainerItemID(bag, slot)
+        if id then freeze(id, function() GameTooltip:SetBagItem(bag, slot) end) end
+      end
+    end
+  end)
+  if not ok then record.refused = tostring(err) end
+  if _G.WFJFrozenTooltip1 and _G.WFJFrozenTooltip1:IsShown() then _G.WFJFrozenTooltip1:Hide() end
+  GameTooltip:Hide()
+  done()
+end
+
 -- The character window, opened by the player (see above): read every half second while it is open, so each page
 -- the player shows is read; it ends when the player closes it. Not opened in time, the run says so. What was read
 -- is kept from the first read on, and a reload while the window is open ends the run as closing it does: the
@@ -2889,7 +2983,7 @@ local function WFJScanGuildRead(done)
 end
 
 -- The whole window test (`/wfjtest`): the load walk, the live sweep (with the hover read of each window), the
--- closed-window read, the tooltip read, the no-voice read, the names read, then one done line. `/wfjtest hand` also reads the guild and character
+-- closed-window read, the tooltip read, the no-voice read, the names read, the frozen tooltip read, then one done line. `/wfjtest hand` also reads the guild and character
 -- windows, which the player opens when it asks. `probe.test` holds when it ran and on which build, so a result read
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
@@ -3020,6 +3114,9 @@ SlashCmdList.WFJTEST = function(how)
             db.test.part = "names"
             -- in a fight the client hides a tooltip's rows and a unit's name from addons
             outOfCombat(function() WFJScanNamesRead(function()
+            db.test.part = "freeze"
+            -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
+            outOfCombat(function() WFJScanFreezeRead(function()
             local function finish(said)
               db.test.part = "done"
               seterrorhandler(shown)
@@ -3054,6 +3151,7 @@ SlashCmdList.WFJTEST = function(how)
                 finish("")
               end)
             end)
+            end) end)
             end) end)
           end) end)
         end) end)
@@ -3732,6 +3830,47 @@ def read_names(text: str) -> dict[str, Any] | None:
     }
 
 
+def read_freeze(text: str) -> dict[str, Any] | None:
+    """The window test's frozen tooltip read out of a saved-variables file, or None when the run had none: the
+    key the binding has (`bound`, "" for none), how many item tooltips it froze (`items`), the Japanese lines on
+    the copies (`lines`), the word-card covers laid on them (`cards`), whether cards were to be expected
+    (`expect`: Japanese showing with the reading box on), why it could not read (`refused`), and two lists of
+    (item id, what was seen): `missing` (a copy that did not show or lacks a line) and `stuck` (a copy the key
+    did not close)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("freeze") if probe is not None else None
+    if record is None:
+        return None
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("items", "lines", "cards")}
+    out["bound"] = str(record.get("bound") or "")
+    out["expect"] = bool(record.get("expect"))
+    out["refused"] = str(record.get("refused") or "")
+    for kind in ("missing", "stuck"):
+        table = record.get(kind)
+        out[kind] = sorted((str(k), str(v)) for k, v in (table.named() if table is not None else {}).items())
+    return out
+
+
+def freeze_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the frozen tooltip read found wrong, one line each. A run whose test addon had no such read, or
+    one that froze nothing, proves nothing about the frozen tooltip and says so."""
+    if record is None:
+        return ["frozen tooltip not read: this run's test addon has no such read (make scan-install, then run it "
+                "again)"]
+    if record["refused"]:
+        return [f"frozen tooltip not read: {record['refused']}"]
+    if not record["items"]:
+        return ["frozen tooltip not read: the character carries no item to freeze"]
+    out = [f"frozen tooltip copy wrong: item {i} ({said})" for i, said in record["missing"]]
+    out += [f"frozen tooltip did not close: item {i} ({said})" for i, said in record["stuck"]]
+    if record["expect"] and record["lines"] and not record["cards"]:
+        out.append(f"frozen tooltip has no word cards: {record['lines']} Japanese lines copied, none took a card")
+    return out
+
+
 def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -> list[str]:
     """What the names read found wrong, one line each, held to the name list (`japanese`: English name → its
     Japanese). A name the list has a line for must show that Japanese; a name it has none for stays the client's
@@ -4133,8 +4272,12 @@ def _own_reads(saved: str) -> list[str]:
         japanese = {ln["en"]: ln["ja"] for ln in load_lines(data_root()) if ln.get("status") == "trusted"}
         shown = sum(1 for _, english, text in names["rows"] if text != english)
         print(f"names: {len(names['rows'])} read, {shown} shown in Japanese")
+    freeze = read_freeze(saved)
+    if freeze is not None:
+        print(f"frozen tooltip: {freeze['items']} item tooltips frozen, {freeze['lines']} Japanese lines copied, "
+              f"{freeze['cards']} word cards; key {freeze['bound'] or 'none'}")
     return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
-            + names_problems(names, japanese))
+            + names_problems(names, japanese) + freeze_problems(freeze))
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A

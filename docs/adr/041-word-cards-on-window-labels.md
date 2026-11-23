@@ -6,7 +6,7 @@
   (`TYPES["ui"]`, the UI key check), `pipeline/wfj/cmd/readings.py`, `pipeline/wfj/cmd/generate.py` (`ui:<KEY>` rows),
   `data/reading/ui/`. Until a `ui` line has a word list, its label shows no card. The in-game checks are in the word
   card checklist in [Testing strategy](../testing/strategy.md).
-- **Superseded in part by:** [ADR-069](069-unit-menus-and-edit-mode-stay-english.md): Edit Mode's surfaces, `editmode.selection` included, are gone; Edit Mode stays as the client writes it. [ADR-104](104-the-frozen-tooltip-and-word-cards-on-tooltip-text.md): a frozen tooltip, a copy of the tooltip the mouse can rest on, takes word cards on its item, spell and window lines; the game's own tooltips still take none.
+- **Superseded in part by:** [ADR-069](069-unit-menus-and-edit-mode-stay-english.md): Edit Mode's surfaces, `editmode.selection` included, are gone; Edit Mode stays as the client writes it. [ADR-108](108-the-frozen-tooltip-and-word-cards-on-tooltip-text.md): a frozen tooltip, a copy of the tooltip the mouse can rest on, takes word cards on its item, spell and window lines; the game's own tooltips still take none.
 - **Date:** 2026-09-25
 
 ## Context

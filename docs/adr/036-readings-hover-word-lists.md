@@ -7,7 +7,7 @@
   (`readings.enabled`), `UI/Options.lua`, `UI/Slash.lua`, `data/reading/`. The word-reading box is one of the allowed
   on-screen additions ([principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away)). The
   in-game checks of the shipped build are in the readings checklist in [Testing strategy](../testing/strategy.md).
-- **Superseded in part by:** [ADR-104](104-the-frozen-tooltip-and-word-cards-on-tooltip-text.md): item and spell text takes readings, shown on a frozen tooltip, a copy of the tooltip the mouse can rest on. The game's own tooltips still take none.
+- **Superseded in part by:** [ADR-108](108-the-frozen-tooltip-and-word-cards-on-tooltip-text.md): item and spell text takes readings, shown on a frozen tooltip, a copy of the tooltip the mouse can rest on. The game's own tooltips still take none.
 - **Date:** 2026-09-25
 
 ## Context

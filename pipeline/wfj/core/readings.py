@@ -27,7 +27,7 @@ from wfj.emit.lua_writer import shipped
 # The types whose text the addon can show readings on: quest window / quest map fields, gossip greetings,
 # the UI dictionary (ADR-041), hoverable where a plain-text window label shows one of its strings,
 # book / letter pages (ADR-044), stored by page id, shipped under the page's English hash, and tooltip text
-# (item and spell lines, ADR-104), hoverable on a frozen tooltip.
+# (item and spell lines, ADR-108), hoverable on a frozen tooltip.
 TYPES: dict[str, list[str]] = {
     "quest": model.FIELDS["quest"],
     "gossip": model.FIELDS["gossip"],

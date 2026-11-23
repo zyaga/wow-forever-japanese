@@ -1,7 +1,7 @@
 # ADR-049: Manual line breaks in tooltip text are joined when generated
 
 - **Status:** Accepted. Code: `pipeline/wfj/core/tooltip_text.py`, applied by `generate` to item and spell lines.
-- **Superseded in part by:** [ADR-104](104-the-frozen-tooltip-and-word-cards-on-tooltip-text.md): tooltip lines now carry readings. Their words are written, checked and hashed for the line as it ships, with its manual breaks joined.
+- **Superseded in part by:** [ADR-108](108-the-frozen-tooltip-and-word-cards-on-tooltip-text.md): tooltip lines now carry readings. Their words are written, checked and hashed for the line as it ships, with its manual breaks joined.
 - **Date:** 2026-10-01
 
 ## Context

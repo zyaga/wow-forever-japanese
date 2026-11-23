@@ -76,7 +76,7 @@ The only other things the addon adds to the screen, each of which a player can t
   the translation uses for it in that line, with its reading;
 - the **frozen tooltip**: a key press draws a copy of the tooltip showing, in place, that stays until the key again
   or Esc, so the mouse can rest on its Japanese and take word cards. The game's own tooltip is never held open or
-  changed ([ADR-104](../adr/104-the-frozen-tooltip-and-word-cards-on-tooltip-text.md));
+  changed ([ADR-108](../adr/108-the-frozen-tooltip-and-word-cards-on-tooltip-text.md));
 - the **minimap button** that opens the fix-report window;
 - the **welcome window**, shown once to every player (a first install at its first login, a player who already had
   the addon the first time a version with the question loads): it asks what the player is here for (study Japanese,

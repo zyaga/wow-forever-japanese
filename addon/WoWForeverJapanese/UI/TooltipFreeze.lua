@@ -1,4 +1,4 @@
--- UI/TooltipFreeze.lua: the frozen tooltip (ADR-104). A key press while a tooltip shows draws a copy of it in the
+-- UI/TooltipFreeze.lua: the frozen tooltip (ADR-108). A key press while a tooltip shows draws a copy of it in the
 -- same place (same size, lines, fonts and colours), with the comparison tooltips beside it. The copy stays after
 -- the game hides its own tooltip, so the mouse can go onto it, and its Japanese lines take word cards
 -- (UI/Readings). The key again, or Esc, closes it; the key over another tooltip makes the copy that one's.
