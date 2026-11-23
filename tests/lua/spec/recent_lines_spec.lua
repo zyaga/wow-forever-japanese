@@ -207,6 +207,7 @@ describe("every Render.show caller records a store line or nothing", function()
     ["UI/Crafting.lua"] = { "spell.description" }, -- the recipe's description: its spell's description
     ["UI/Tracker.lua"] = { "quest.title" }, -- the top banner's title
     ["UI/NameLabels.lua"] = {}, -- kind "name": a name is no line of the translated text, so nothing to report
+    ["UI/GroupFinder.lua"] = {}, -- kind "name": a continent and its zones in a hover, names only
   }
 
   it("lists exactly the files that call Render.show (directly or passed on, as UI/Gossip does)", function()

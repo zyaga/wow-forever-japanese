@@ -49,7 +49,9 @@ def test_the_text_columns_are_the_verified_fields():
     assert cols["Faction"] == {"Description_lang": 1}  # Name_lang (0) is a name: declared unwritten
     assert 0 in client_tables.TABLES["Faction"].unwritten_strings
     assert cols["Achievement"] == {"Description_lang": 0, "Title_lang": 1, "Reward_lang": 2}
-    assert cols["SkillLine"] == {"Description_lang": 2}
+    # DisplayName_lang (0) is read for the name list only; the family's line is Description_lang by name
+    assert cols["SkillLine"] == {"DisplayName_lang": 0, "Description_lang": 2}
+    assert wago.TEXT_FAMILIES["SkillLineDescription"] == ("SkillLine", "Description_lang")
     assert cols["CurrencyTypes"] == {"Description_lang": 1}
     assert cols["EmotesTextData"] == {"Text_lang": 0}
 
