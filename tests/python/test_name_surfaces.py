@@ -54,3 +54,24 @@ def test_every_module_that_keeps_a_name_widget_off_limits_has_a_line(root):
 def test_no_game_name_is_left_without_its_japanese(root):
     todo = [f"{module}: {widget}" for module, widget, mark, _ in rows(root) if mark == "todo"]
     assert todo == [], f"{len(todo)} name widgets not shown in Japanese yet: {todo[:8]}"
+
+
+# a spec that exercises names: it loads name rows, or switches the names setting on
+_NAMES_ON = re.compile(r"Names\.key\(|setNames\(true\)|UIStrings\.name\s*=")
+# a module whose name values are specified under another module's name
+_SPEC_OF = {"UIStringKeys": "UIStrings"}
+
+
+def test_every_module_that_shows_a_name_in_japanese_has_a_spec_about_names(root):
+    specs = [
+        (p.name.lower().replace("_", ""), p.read_text(encoding="utf-8"))
+        for p in sorted((root / "tests" / "lua" / "spec").glob("*_spec.lua"))
+    ]
+    bare = []
+    for module in sorted({module for module, _, mark, _ in rows(root) if mark == "japanese"}):
+        stem = Path(module).stem
+        stem = _SPEC_OF.get(stem, stem)
+        found = [text for name, text in specs if stem.lower() in name or stem in text]
+        if not any(_NAMES_ON.search(text) for text in found):
+            bare.append(module)
+    assert bare == [], f"modules marked japanese with no spec that puts a name in Japanese: {bare}"

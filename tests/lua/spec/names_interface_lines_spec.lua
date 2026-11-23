@@ -32,6 +32,21 @@ describe("names inside an interface line's Japanese", function()
     assert.are.equal("Fishing", spans[1].card.meaning)
   end)
 
+  it("with names English no line is searched for names and no name is looked up", function()
+    local searched, looked = 0, 0
+    local inText, of = WFJ.Names.inText, WFJ.Names.of
+    WFJ.Names.inText = function(...) searched = searched + 1; return inText(...) end
+    WFJ.Names.of = function(...) looked = looked + 1; return of(...) end
+    finally(function() WFJ.Names.inText, WFJ.Names.of = inText, of end)
+    shown()
+    local fs = CreateFrame("Frame"):CreateFontString()
+    fs:SetText("Fishing")
+    assert.are.equal(0, WFJ.NameLabels.show("skills", "name", fs))
+    assert.are.equal("Fishing", fs:GetText())
+    assert.are.equal(0, searched)
+    assert.are.equal(0, looked)
+  end)
+
   it("stays as written while names are English", function()
     local action, ja = shown()
     assert.are.equal("apply", action)
