@@ -432,7 +432,6 @@ WFJ.Data.add("gloss", {
   [161429] = "はかない\tはかない\tfleeting",
   [161430] = "はがす\tはがす\tpeels",
   [161431] = "はく\tはく\tbelch (spit out)",
-  [161432] = "はぐ\tはぐ\tcannot be skinned",
   [161433] = "はぐ\tはぐ\tskin (strip)",
   [161434] = "はぐ\tはぐ\tskins (strip)",
   [161435] = "はぐれる\tはぐれる\tgot separated",

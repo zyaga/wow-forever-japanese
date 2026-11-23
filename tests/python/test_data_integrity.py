@@ -326,17 +326,16 @@ def test_every_rejected_hand_written_line_with_english_is_accounted_for(root):
         assert type_ in ("item", "spell")
 
 
-# Every shipped quest, gossip and UI line with something to annotate (no `|`, which the reading box refuses) has
-# a current reading, and every word in it carries all five items with a meaning (docs/systems/readings.md). A
-# batch that adds or changes such a line writes its word list in the same round.
-@pytest.mark.parametrize("type_", ["quest", "gossip", "ui"])
+# Every shipped quest, gossip, UI, item and spell line with something to annotate (no `|`, which the reading box
+# refuses) has a current reading, and every word in it carries all five items with a meaning
+# (docs/systems/readings.md). A batch that adds or changes such a line writes its word list in the same round.
+# An item or spell line is read as it ships (`readings.japanese_of`).
+@pytest.mark.parametrize("type_", ["quest", "gossip", "ui", "item", "spell"])
 def test_meanings_complete(root, type_):
     every = Store(root / "data").load(type_)
-    lines = [ln for ln in every if readings.shipped(ln)]
-    owed = {
-        (ln["id"], ln["field"]) for ln in lines if readings.annotatable(ln["ja"]) and "|" not in ln["ja"]
-    }
-    japanese = readings.shipped_japanese(every)
+    english = Store(root / "data", english=True).load(type_) if type_ in readings.TOOLTIP_TYPES else ()
+    japanese = readings.japanese_of(type_, every, english)
+    owed = {k for k, ja in japanese.items() if readings.annotatable(ja) and "|" not in ja}
     current = {
         (r["id"], r["field"]): r
         for r in readings.check(type_, Store(root / "data" / "reading").load(type_), japanese)["current"]
