@@ -49,6 +49,7 @@ _HALF_VOICED = str.maketrans("はひふへほ", "ぱぴぷぺぽ")
 _MARKUP = re.compile(
     r"\{[a-z]+\}|\$\?[^\[]*|\$[0-9]*[A-Za-z][0-9]*|\|[cC][0-9A-Fa-f]{8}|\|cn[A-Z0-9_]+:|\|[rR]|\|H[^|]*\|h|\|h"
     r"|\|T[^|]*\|t|\|n|%[0-9$]*[sd]|%[A-Z][0-9]+"
+    r"|\|A[^|]*\|a|\|K[^|]*\|k|\|4[^;]*;"  # an interface line's own: atlas icon, Battle.net name, plural
 )
 # A name in prose: Latin letters, digits and the punctuation names carry (Zul'Gurub, Un'Goro, C.O.R.E.),
 # words joined by single spaces.
@@ -193,6 +194,15 @@ def kanji_word_problem(ja: str, reading: str, known: Callable[[str], Iterable[st
     return "reads " + ", ".join(
         f"{w} unlike the quest text ({'/'.join(sorted(known(w) or ()))})" for w in wrong
     )
+
+
+_ROMAN = re.compile(r"[IVXLCDM]+")
+
+
+def kept_as_written(en: str, keep: frozenset[str] | set[str]) -> bool:
+    """Whether the screen keeps this English as the client writes it with Japanese names on: a listed
+    abbreviation or product name, a single letter, or a Roman numeral. The voice still says its Japanese."""
+    return en in keep or len(en) == 1 or _ROMAN.fullmatch(en) is not None
 
 
 def has_latin(text: str) -> bool:

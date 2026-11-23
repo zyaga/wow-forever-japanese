@@ -8,7 +8,6 @@ import re
 from pathlib import Path
 
 import pytest
-
 from wfj.cmd import generate
 from wfj.cmd import names as cmd
 from wfj.core import names
@@ -500,3 +499,29 @@ def test_the_name_vectors_are_current_and_cover_every_shape(root, tmp_path):
     for shape, test in gen_name_vectors.SHAPES.items():
         assert any(test(en) for en in hashes), shape
     assert any(r["html"] for r in lines) and any(r["ja"] != r["out"] for r in lines)
+
+
+def test_words_kept_as_written_on_screen():
+    keep = frozenset({"PvP", "World of Warcraft"})
+    for word in ("PvP", "World of Warcraft", "v", "a", "II", "XIV"):
+        assert names.kept_as_written(word, keep), word
+    for word in ("Cooking", "Stormwind", "Alterac Valley", "Mix"):
+        assert not names.kept_as_written(word, keep), word
+
+
+def test_the_shipped_name_tables_leave_out_the_words_kept_as_written():
+    repo = Path(__file__).resolve().parents[2]
+    keep = generate.load_kept_as_written(repo / "data")
+    assert {"PvP", "NPC", "GM", "WoW", "Blizzard", "World of Warcraft"} <= keep
+    shipped = "".join(p.read_text(encoding="utf-8") for p in (repo / "addon/WoWForeverJapanese/Data/Names").glob("*.lua"))
+    for ln in load_lines(repo / "data"):
+        if ln["status"] == "trusted" and names.kept_as_written(ln["en"], keep):
+            assert f'"{ln["id"]}"' not in shipped, ln["en"]
+
+
+def test_replace_runs_leaves_an_interface_lines_own_markup():
+    known = {"Fishing": "フィッシング", "a": "ア", "guide": "ガイド"}
+    line = "|A:newplayerchat-chaticon-guide:0:0:0:0|a|Kq1|kとFishingを %d |4guide:guides;"
+    assert names.replace_runs(line, known.get) == (
+        "|A:newplayerchat-chaticon-guide:0:0:0:0|a|Kq1|kとフィッシングを %d |4guide:guides;"
+    )

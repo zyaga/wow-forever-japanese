@@ -360,10 +360,11 @@ function WFJ.OnLoad()
     showsEnglish = WFJ.Modifier.english,
     -- names are the client's English until the player picks Japanese names; a quest's title is a name
     kindOff = function(kind) return (kind == "quest.title" or kind == "name") and not WFJ.State.names end,
-    -- the English names inside a shown line, in Japanese. Interface lines are left: their Latin words are the
-    -- client's own (PvP, FPS), not names. An HTML book page keeps its tags.
+    -- the English names inside a shown line, in Japanese, interface lines included ("Fishingを習得"). A word the
+    -- screen keeps as written (PvP, the game's own name) has no row in the name tables, so it stays. An HTML
+    -- book page keeps its tags.
     names = function(ja, kind)
-      if not WFJ.State.names or type(kind) ~= "string" or kind:match("^%a+") == "ui" then return ja end
+      if not WFJ.State.names or type(kind) ~= "string" then return ja end
       return WFJ.Names.inText(ja, kind == "book" and ja:find("^%s*<[Hh][Tt][Mm][Ll]") ~= nil)
     end,
     name = WFJ.Names.item, -- a widget that holds only a name; an item's may carry a suffix

@@ -17,6 +17,7 @@ from typing import Any
 
 from wfj.cmd.voice_displays import DISPLAYS
 from wfj.core import align, english_cards, glosses, numbered, pronunciation, readings, tooltip_text
+from wfj.core import names as names_core
 from wfj.core.align import load_allowlist
 from wfj.core.english_text import model_english
 from wfj.core.hashing import key as hash_key
@@ -381,12 +382,23 @@ def _check_displays(rows: list[dict]) -> None:
 NAMES_DIR = "Data/Names"
 
 
+def load_kept_as_written(root: Path) -> frozenset[str]:
+    """The words the screen keeps as the client writes them (`pipeline/names_kept_as_written.txt`, beside the
+    data root); none when the file is missing."""
+    path = root.parent / "pipeline" / "names_kept_as_written.txt"
+    if not path.is_file():
+        return frozenset()
+    lines = (ln.strip() for ln in path.read_text(encoding="utf-8").splitlines())
+    return frozenset(ln for ln in lines if ln and not ln.startswith("#"))
+
+
 def _plan_names(root: Path) -> dict[str, str]:
     """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. The TOC lists them
-    last; the addon keeps them in memory only while the names setting is on."""
+    last. A word the screen keeps as written is left out: the addon then has no Japanese for it."""
+    keep = load_kept_as_written(root)
     by_shard: dict[str, list[dict[str, Any]]] = {}
     for ln in load_name_lines(root):
-        if ln["status"] == "trusted":
+        if ln["status"] == "trusted" and not names_core.kept_as_written(ln["en"], keep):
             by_shard.setdefault(ln["id"][:2], []).append(ln)
     return {
         f"{NAMES_DIR}/Names_{nn}.lua": lua_writer.names_text(nn, ls) for nn, ls in sorted(by_shard.items())

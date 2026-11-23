@@ -83,6 +83,16 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
     assert.are.equal("Kobold Vermin", spans[2].english)
   end)
 
+  it("leaves an icon, a Battle.net name code and a plural code as written, and still finds the names", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Fishing")] = "フィッシング\tふぃっしんぐ",
+      [WFJ.Names.key("a")] = "ア\tあ", [WFJ.Names.key("guide")] = "ガイド\tがいど",
+    })
+    local line = "|A:newplayerchat-chaticon-guide:0:0:0:0|a|Kq1|kとFishingを %d |4guide:guides;"
+    assert.are.equal("|A:newplayerchat-chaticon-guide:0:0:0:0|a|Kq1|kとフィッシングを %d |4guide:guides;",
+      (WFJ.Names.inText(line)))
+  end)
+
   it("returns a line with no name in it untouched, with no spans", function()
     local text, spans = WFJ.Names.inText("名前のない行。")
     assert.are.equal("名前のない行。", text)

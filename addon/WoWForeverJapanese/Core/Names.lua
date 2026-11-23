@@ -83,6 +83,8 @@ local MARKUP_START = "[{$|%%]"
 local MARKUP = {
   "^{[a-z]+}", "^%$%?[^%[]*", "^%$[0-9]*[A-Za-z][0-9]*", "^|[cC]%x%x%x%x%x%x%x%x", "^|cn[A-Z0-9_]+:", "^|[rR]",
   "^|H[^|]*|h", "^|h", "^|T[^|]*|t", "^|n", "^%%[0-9$]*[sd]", "^%%[A-Z][0-9]+",
+  -- an interface line's own: an atlas icon, a Battle.net name code, a plural code
+  "^|A[^|]*|a", "^|K[^|]*|k", "^|4[^;]*;",
 }
 
 -- → the position after the markup that begins at `i`, or nil
