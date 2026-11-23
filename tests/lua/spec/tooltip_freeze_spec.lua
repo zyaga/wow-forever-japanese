@@ -387,6 +387,18 @@ describe("UI/TooltipFreeze", function()
       assert.is_true(db.freezeKeyOffered)
     end)
 
+    it("is not offered while Ctrl is the reveal key: Ctrl held would show the English", function()
+      local db = {}
+      WFJ.Settings.set("modifier", "lctrl")
+      F.bindingsLoaded(db)
+      assert.are.same({}, Stub.bindingCalls)
+      assert.is_nil(db.freezeKeyOffered) -- asked again once the reveal key is another one
+      WFJ.Settings.set("modifier", "alt")
+      Stub.bindingCalls = {}
+      F.offerKey(db)
+      assert.is_true(db.freezeKeyOffered)
+    end)
+
     it("waits for the end of combat", function()
       local db = {}
       Stub.combat = true

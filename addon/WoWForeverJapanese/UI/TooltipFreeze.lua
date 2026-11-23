@@ -264,6 +264,10 @@ end
 -- could not be decided (combat) is made again.
 function Freeze.offerKey(db)
   if not bindingsIn or type(db) ~= "table" or db.freezeKeyOffered then return end
+  -- With Ctrl as the reveal key, holding Ctrl for this chord would show the English, and a copy made then takes
+  -- no cards: no offer while that is so.
+  local reveal = WFJ.Settings.get("modifier")
+  if type(reveal) == "string" and reveal:lower():find("ctrl", 1, true) then return end
   if WFJ.KeyCapture.offerDefault(WFJ.KeyCapture.FREEZE, FIRST_KEY) then db.freezeKeyOffered = true end
 end
 
