@@ -8,6 +8,7 @@ import re
 from pathlib import Path
 
 import pytest
+
 from wfj.cmd import generate
 from wfj.cmd import names as cmd
 from wfj.core import names
