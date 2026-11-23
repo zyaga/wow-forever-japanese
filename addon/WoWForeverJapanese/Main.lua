@@ -397,6 +397,11 @@ function WFJ.OnLoad()
     if WFJ.State.names then return WFJ.Names.value(text) end
     return nil
   end
+  -- a race or a class the client fills into a player's level line
+  WFJ.UIStrings.word = function(text)
+    if WFJ.State.names then return WFJ.Placeholders.wordFor(text) end
+    return nil
+  end
   step("modifier", WFJ.Modifier.refresh)
   -- Tab fonts across PanelTemplates state changes, Lua-built help tooltips, and the readiness of
   -- load-on-demand Blizzard addons (their ADDON_LOADED is forwarded below; ADR-016). Before the surfaces.

@@ -90,6 +90,28 @@ describe("UI/NamePlateSetting", function()
     assert.are.same({ CVAR .. "=1" }, writes)
   end)
 
+  it("a choice reversed during the same fight leaves the nameplates as the last choice wants them", function()
+    boot("0", { schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
+    login()
+    S.set("names.japanese", true) -- on, the earlier value kept
+    Stub.combat = true
+    S.set("names.japanese", false) -- waits for the fight to end
+    S.set("names.japanese", true) -- changed their mind: nothing is to be written after all
+    Stub.combat = false
+    Stub.fireAll("PLAYER_REGEN_ENABLED")
+    assert.are.equal("1", cvar[CVAR])
+    assert.are.equal("0", _G.WFJ_DB.namePlatesWas)
+    assert.are.equal(0, lines())
+  end)
+
+  it("a write a reload cut off is made at the next login", function()
+    boot("0", { schema = 1, settings = { ["names.japanese"] = true }, namePlatesWas = "0", intro = true,
+      asked = true, askedNames = true })
+    login() -- Japanese names were chosen in a fight and the interface was reloaded before it ended
+    assert.are.same({ CVAR .. "=1" }, writes)
+    assert.are.equal(0, lines())
+  end)
+
   it("a client without the setting is left alone", function()
     boot(nil, { schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
     login()

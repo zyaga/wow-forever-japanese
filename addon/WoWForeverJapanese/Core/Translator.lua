@@ -19,7 +19,7 @@
 --            their Japanese, applied to every `apply` text after the align gate and before `expand`, so the
 --            player's own name is never taken for one; `names` goes on the payload for the name card],
 --          name(english) → ja, reading | nil [optional; kind "name": `id` is the English the client shows] }
--- Kind "name": a widget that holds only a name. Known → "apply" { ja, name = { english, reading } }; unknown →
+-- Kind "name": a widget that holds only a name. Known → "apply" { ja, name = { ja, english, reading } }; unknown →
 -- "none" with no marker (a name with no Japanese is not a missing translation).
 -- Live check (ADR-019): a quest surface passes the API English as ctx.live. For a "quest.<field>" entry with an
 -- h1 and a non-empty fingerprint list, the stale marker follows the live client: no fingerprint equal to h1 → the
@@ -108,7 +108,7 @@ function Translator.new(deps)
       local ja, reading
       if deps.name ~= nil then ja, reading = deps.name(id) end
       if type(ja) ~= "string" or ja == "" then return "none", {} end
-      return "apply", { ja = ja, name = { english = id, reading = reading } }
+      return "apply", { ja = ja, name = { ja = ja, english = id, reading = reading } }
     end
 
     local entry = deps.lookup(kind, id)

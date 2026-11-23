@@ -1275,7 +1275,8 @@ function Tooltip.spellOf(frame, data)
   if anySecretOf(shown) or type(shown) ~= "string" or shown == "" then return nil end
   -- a first line this addon already wrote: the name the client put there is the record's English
   local rec = WFJ.SurfaceState.records(surfaceOf(frame))["name.L1"]
-  local name = type(rec) == "table" and type(rec.en) == "string" and rec.en or shown
+  local ours = type(rec) == "table" and rec.fs == first and rec.applied == shown and type(rec.en) == "string"
+  local name = ours and rec.en or shown
   local id = type(data) == "table" and data.id or nil
   if type(id) == "number" and not anySecretOf(id) and nameOf(id) == name then return id, name end
   local info = type(infoOf) == "function" and infoOf(name) or nil

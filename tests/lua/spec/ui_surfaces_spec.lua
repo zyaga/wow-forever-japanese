@@ -162,6 +162,9 @@ describe("the ui area on its surfaces", function()
     Stub.setSpellTooltip(tt, 133, { "Fireball", { "30 Mana", "8-30 yd range" }, "1.5 sec cast",
       "Hurls a fiery ball that causes 14 to 22 Fire damage." })
     assert.are.equal("射程 8-30ヤード", right(2):GetText())
+    Stub.setSpellTooltip(tt, 133, { "Fireball", { "30 Mana", "5.5 yd range" }, "1.5 sec cast",
+      "Hurls a fiery ball that causes 14 to 22 Fire damage." })
+    assert.are.equal("射程 5.5ヤード", right(2):GetText())
   end)
 
   it("a spell's 'Rank 1' beside the name translates; the name does not; a percent template fills (in-game pass)",

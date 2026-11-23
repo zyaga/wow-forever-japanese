@@ -67,6 +67,9 @@ UIStrings.ARGS = {
   COMBATLOG_XPGAIN_EXHAUSTION1 = { [1] = "name", [3] = "text", [4] = "text" },
   ERR_ZONE_EXPLORED_XP = { [1] = "name" }, ERR_DEATHBIND_SUCCESS_S = { [1] = "name" },
   ERR_QUEST_ADD_KILL_SII = { [1] = "name" }, ERR_QUEST_ADD_ITEM_SII = { [1] = "name" },
+  -- the same English as a key above, and the one the index compiles the template under
+  ERR_QUEST_ADD_FOUND_SII = { [1] = "name" }, LOOT_CURRENCY_REFUND = { [1] = "name" },
+  COMBATLOG_XPGAIN_EXHAUSTION2 = { [1] = "name", [3] = "text", [4] = "text" },
   ERR_AUCTION_WON_S = { [1] = "name" }, ERR_AUCTION_SOLD_S = { [1] = "name" },
   ERR_AUCTION_OUTBID_S = { [1] = "name" }, ERR_AUCTION_EXPIRED_S = { [1] = "name" },
   ERR_AUCTION_REMOVED_S = { [1] = "name" },
@@ -161,8 +164,8 @@ UIStrings.ARGS = {
   -- a player's level line reaches TOOLTIP_UNIT_LEVEL with the race inside its value ("23 Night Elf (Player)"):
   -- the race shows its Japanese while names are Japanese
   TOOLTIP_UNIT_LEVEL = { [1] = "names" }, TOOLTIP_UNIT_LEVEL_TYPE = { [1] = "text", [2] = "creatureType" },
-  TOOLTIP_UNIT_LEVEL_RACE = { [1] = "text", [2] = "name" },
-  TOOLTIP_UNIT_LEVEL_RACE_TYPE = { [1] = "text", [2] = "name", [3] = "creatureType" },
+  TOOLTIP_UNIT_LEVEL_RACE = { [1] = "text", [2] = "names" },
+  TOOLTIP_UNIT_LEVEL_RACE_TYPE = { [1] = "text", [2] = "names", [3] = "creatureType" },
   UNIT_TYPE_PLUS_LEVEL_TEMPLATE = { [2] = "creatureType" },
   -- these two share their English ("%s (%s)") with PVP_LEAVE_BUTTON_TIME, and one template is
   -- compiled per distinct English under the first key of the group, so the three MUST declare the same kinds, or
@@ -209,7 +212,7 @@ UIStrings.ARGS = {
   -- a spell's dual range ("Melee: 5 yd range") and a season currency requirement (the currency's name)
   SPELL_RANGE_DUAL = { [1] = "words" }, ITEM_REQ_AMOUNT_EARNED = { [2] = "text" },
   -- a spell's range is one distance, or its two ends ("8-30"), which is no single number
-  SPELL_RANGE = { [1] = "text" },
+  SPELL_RANGE = { [1] = "range" },
   -- Communities: club, community, leader, inviter, realm, spec and class names and a name-check
   -- error are kept as written; "Guild" / "Community" / "Guilds" / "Communities", a reputation standing and a weekday
   -- are dictionary words shown in Japanese; a finder focus ("Social & Leveling") is a whole entry

@@ -96,19 +96,19 @@ describe("UI/Tooltip on a recipe's tooltip", function()
     })
     local lines = {}
     for i, l in ipairs(LINES) do lines[i] = l end
-    lines[#lines + 1] = "Stringy Wolf Meat (2), Mild Spices, Something Unknown"
+    lines[#lines + 1] = "Stringy Wolf Meat (2), Mild Spices"
     WFJ.State.setNames(true)
     show("|Hitem:9000::|h[Recipe: Tough Jerky]|h", lines, recipeData())
     assert.are.equal("タフ・ジャーキー", text(2))
-    assert.are.equal("ストリンギー・ウルフ・ミート (2), マイルド・スパイス, Something Unknown", text(7))
+    assert.are.equal("ストリンギー・ウルフ・ミート (2), マイルド・スパイス", text(7))
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal("Tough Jerky", text(2))
-    assert.are.equal("Stringy Wolf Meat (2), Mild Spices, Something Unknown", text(7))
+    assert.are.equal("Stringy Wolf Meat (2), Mild Spices", text(7))
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     WFJ.State.setNames(false)
     show("|Hitem:9000::|h[Recipe: Tough Jerky]|h", lines, recipeData())
     assert.are.equal("Tough Jerky", text(2))
-    assert.are.equal("Stringy Wolf Meat (2), Mild Spices, Something Unknown", text(7))
+    assert.are.equal("Stringy Wolf Meat (2), Mild Spices", text(7))
   end)
 
   it("a crafted item whose run would reach the Teaches line stops before it", function()

@@ -31,6 +31,9 @@ end
 
 function Names.of(english)
   if type(english) ~= "string" or english == "" then return nil end
+  -- The key is of the normalized text, which has no markup: a coloured name or one beside an icon would be found
+  -- and written without its colour or icon. Those go through the callers that keep what is around the name.
+  if english:find("[|$]") then return nil end
   local hit = cache[english]
   if hit == nil then
     local row = WFJ.Data.name[Names.key(english)]
@@ -86,20 +89,20 @@ function Names.item(english)
 end
 
 -- A line that is a list of names, each one maybe with a count after it ("Linen Cloth (2), Coarse Thread": a
--- recipe's ingredients): every name the tables hold in its Japanese, the others and every count as written.
--- → the list, its reading | nil when it is no list or holds no known name
+-- recipe's ingredients): each name in its Japanese, every count as written. A list with a part that is no known
+-- name is no list of game names (another addon's line of character names) and stays whole.
+-- → the list, its reading | nil
 function Names.list(english)
   if type(english) ~= "string" or not english:find(", ", 1, true) then return nil end
-  local out, readings, known = {}, {}, false
+  local out, readings = {}, {}
   for part in (english .. ", "):gmatch("(.-), ") do
     local name, count = part:match("^(.-)( %(%d+%))$")
     name, count = name or part, count or ""
     local ja, reading = Names.item(name)
-    if ja then known = true end
-    out[#out + 1] = (ja or name) .. count
-    readings[#readings + 1] = (ja and (reading or ja) or name) .. count
+    if not ja then return nil end
+    out[#out + 1] = ja .. count
+    readings[#readings + 1] = (reading or ja) .. count
   end
-  if not known then return nil end
   return table.concat(out, ", "), table.concat(readings, ", ")
 end
 

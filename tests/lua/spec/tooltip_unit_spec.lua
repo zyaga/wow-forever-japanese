@@ -100,9 +100,10 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
       WFJ.State.setNames(true)
       -- as Main does: a name inside an interface line's value, while names are Japanese
       WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+      WFJ.UIStrings.word = function(text) return WFJ.State.names and WFJ.Placeholders.wordFor(text) or nil end
     end)
     after_each(function()
-      WFJ.UIStrings.name = nil
+      WFJ.UIStrings.name, WFJ.UIStrings.word = nil, nil
       WFJ.State.setNames(false)
       _G.C_PlayerInfo, _G.issecretvalue = nil, nil
       Stub.keys.alt = false
@@ -132,6 +133,12 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
       hoverUnit({ "Someone", "Warrior", "Level 23 Human", "Warrior" }, { guid = "Player-1-0000001" })
       assert.are.equal("Warrior", left(2)) -- the guild's name, above the level line
       assert.are.equal("ウォリアー", left(4)) -- the class, below it
+    end)
+
+    it("a creature's type on a level line with no number is no race: it stays as the client wrote it", function()
+      WFJ.Data.add("name", { [WFJ.Names.key("Humanoid")] = "ヒューマノイド\tひゅーまのいど" })
+      hoverUnit({ "Kobold Vermin", "Level ?? Humanoid" }, CREATURE)
+      assert.are.equal("レベル ?? Humanoid", left(2))
     end)
 
     it("a player's race, class and faction show their Japanese; the reveal key gives them back", function()

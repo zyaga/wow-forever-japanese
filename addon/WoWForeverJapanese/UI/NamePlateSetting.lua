@@ -72,9 +72,11 @@ local function onNames(japanese)
   if type(db) ~= "table" then return end
   local on = isOn()
   if on == nil then return end
+  if pending ~= nil then on = pending == "1" end -- a write waiting for the fight to end is what the setting will be
   if japanese then
     if not on then
-      db.namePlatesWas = "0" -- what choosing English names puts back
+      -- what choosing English names puts back; a value kept from a choice reversed in the same fight stays
+      if db.namePlatesWas == nil then db.namePlatesWas = "0" end
       write("1")
     end
   elseif db.namePlatesWas ~= nil then
@@ -106,6 +108,10 @@ function NamePlateSetting.start(saved)
     watcher:SetScript("OnEvent", onChanged)
     WFJ.State.on("names", onNames)
   end
-  if WFJ.State.names and not wasOn then warn() end
+  if WFJ.State.names and not wasOn then
+    -- a kept value with the nameplates off: the write was asked for in a fight and the interface reloaded before
+    -- it ended, so it is made here; otherwise the player turned them off and is told what that means
+    if db.namePlatesWas ~= nil then write("1") else warn() end
+  end
   return true
 end

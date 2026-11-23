@@ -566,7 +566,7 @@ describe("Translator.resolve: names", function()
   it("kind name: a known name applies its Japanese and says it is a name", function()
     local a, p = T.resolve("ui", "name", "Thrall")
     assert.are.equal("apply", a)
-    assert.are.same({ ja = "スロール", name = { english = "Thrall", reading = "すろーる" } }, p)
+    assert.are.same({ ja = "スロール", name = { ja = "スロール", english = "Thrall", reading = "すろーる" } }, p)
   end)
 
   it("kind name: a name with no Japanese is left as the client wrote it, never marked missing", function()

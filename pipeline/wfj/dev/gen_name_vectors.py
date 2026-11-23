@@ -14,12 +14,14 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from wfj.cmd.names import prose_lines
+from wfj.cmd.generate import load_kept_as_written
+from wfj.cmd.names import prose_lines, shipped
 from wfj.core import markup, names
 from wfj.emit.lua_writer import lua_string
+from wfj.io.jsonl_store import Store
 from wfj.io.names_store import load_lines
 
-HASHES, LINES = 240, 320
+HASHES, LINES, UI_LINES = 240, 320, 60
 # Shapes every hash sample must hold at least one of: the client writes names all of these ways.
 SHAPES = {
     "apostrophe": lambda en: "'" in en,
@@ -43,7 +45,10 @@ def _html(key: str, ja: str) -> bool:
 
 
 def build(root: Path) -> list[dict[str, Any]]:
+    # the names the addon ships: a word the screen keeps as written has no row, so the lines keep it too
+    keep = load_kept_as_written(root)
     trusted = [ln for ln in load_lines(root) if ln["status"] == "trusted"]
+    trusted = [ln for ln in trusted if not names.kept_as_written(ln["en"], keep)]
     trusted.sort(key=lambda ln: ln["id"])
     by_en = {ln["en"]: ln for ln in trusted}
     picked = {ln["en"]: ln for ln in _spread(trusted, HASHES)}
@@ -53,19 +58,29 @@ def build(root: Path) -> list[dict[str, Any]]:
     in_order = sorted(picked, key=lambda en: picked[en]["id"])
     rows: list[dict[str, Any]] = [{"t": "hash", "en": en, "key": names.name_id(en)} for en in in_order]
 
+    used: dict[str, str] = {}
+
     def lookup(run: str) -> str | None:
         ln = by_en.get(run)
-        return ln["ja"] if ln else None
+        if ln is None:
+            return None
+        # every row an answer needs, a suffixed item's two included
+        used[ln["id"]] = f"{ln['ja']}\t{ln['reading']}"
+        return ln["ja"]
 
     with_names = [(key, ja) for key, ja in sorted(prose_lines(root).items()) if names.latin_runs(ja)]
-    used: dict[str, str] = {}
+    # interface lines hold names too, beside markup prose never has (an atlas icon, a plural code)
+    ui = sorted(
+        (f"ui:{ln['id']}:{ln['field']}", ln["ja"])
+        for ln in Store(root).load("ui")
+        if shipped(ln) and any(run in by_en for run in names.latin_runs(ln["ja"]))
+    )
+    marked = [(key, ja) for key, ja in ui if "|A" in ja or "|K" in ja or "|4" in ja]
     lines = []
     pages = [(key, ja) for key, ja in with_names if _html(key, ja)]
-    for key, ja in sorted({*_spread(with_names, LINES), *_spread(pages, 6)}):
+    picked_lines = {*_spread(with_names, LINES), *_spread(pages, 6), *_spread(ui, UI_LINES)}
+    for key, ja in sorted(picked_lines | {*_spread(marked, 6)}):
         html = _html(key, ja)
-        for run in names.latin_runs(ja):
-            if run in by_en:
-                used[by_en[run]["id"]] = f"{by_en[run]['ja']}\t{by_en[run]['reading']}"
         out = names.replace_runs(ja, lookup, html=html)
         lines.append({"t": "line", "id": key, "ja": ja, "out": out, "html": html})
     rows.extend({"t": "name", "key": k, "row": v} for k, v in sorted(used.items()))

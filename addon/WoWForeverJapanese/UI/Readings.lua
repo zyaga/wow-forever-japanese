@@ -402,8 +402,9 @@ function View.attach(rec)
       View.detach(rec)
       return false
     end
+    -- the card sits on the name itself: a colour code before it or numbers after it are no part of it
     local spans = WFJ.Readings.withNames({}, rec.applied,
-      { { ja = rec.applied, english = card.english, reading = card.reading } })
+      { { ja = card.ja or rec.applied, english = card.english, reading = card.reading } })
     return lay(rec, region(rec), rec.applied, spans)
   end
   -- rec.spans: words already located by the caller (the voice panel shows one sentence of a line whose word list is

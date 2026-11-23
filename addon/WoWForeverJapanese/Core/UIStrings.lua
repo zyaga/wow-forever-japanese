@@ -46,8 +46,12 @@ UIStrings.NAME_AFTER_COLON = { ITEM_SOLD_COLON = true, ITEM_PURCHASED_COLON = tr
 local function named(kind, value)
   local resolve = UIStrings.name
   if type(resolve) ~= "function" then return value end
-  if kind == "names" then -- "23 Night Elf (Player)": each run of words is looked up by itself
-    return (value:gsub("%a[%a ]*%a", function(run) return resolve(run) end))
+  if kind == "names" then
+    -- "23 Night Elf (Player)": each run of words, as a race's or a class's word only (UIStrings.word). A creature's
+    -- type on the same line ("?? Humanoid") is a dictionary word and no name, though the name list spells it too.
+    local word = UIStrings.word
+    if type(word) ~= "function" then return value end
+    return (value:gsub("%a[%a ]*%a", function(run) return word(run) end))
   end
   if kind ~= "skill" then return resolve(value) or value end
   local out = {}
@@ -258,7 +262,8 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   petFoodList = "([^%.]-)", questTitle = "(.-)",
   -- a game name (a place, a faction, an item's link): its Japanese while names are on (UIStrings.name, set by
   -- Main), else as written
-  name = "(.-)", names = "([^%.]-)" }
+  name = "(.-)", names = "([^%.]-)",
+  range = "(%d[%d%.,%-]*)" } -- a spell's range: one distance ("5.5", "1,000") or its two ends ("8-30")
 -- a template with more `|4` groups is not indexed (counted `unsupported`). 4 for TIME_DAYHOURMINUTESECOND
 -- (the /played duration, the only listed key with 4): the chat line holds its raw form, which is always matched
 local MAX_PLURAL_GROUPS = 4
@@ -511,7 +516,8 @@ end
 
 -- The argument kinds that hold free text (a name, a title, a sentence): a template with one of them is no `entry`
 -- unless the enclosing key opts in (ENTRY_TEXT).
-local TEXT_KINDS = { text = true, words = true, skill = true, entry = true, entryOrText = true, entryList = true,
+local TEXT_KINDS = { text = true, words = true, skill = true, names = true,
+  entry = true, entryOrText = true, entryList = true,
   verbatim = true, creatureType = true, holidayDescription = true, customizationChoice = true,
   customizationSource = true, restState = true, itemSubClassMask = true, petLoyalty = true,
   petFoodList = true, questTitle = true, name = true }

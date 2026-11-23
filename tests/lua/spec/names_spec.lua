@@ -104,6 +104,23 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
     assert.are.equal("ばんでぃっと・くろーく・おぶ・じ・あうる", spans[1].reading)
   end)
 
+  it("a text with markup in it is never looked up as a whole name: its colour or icon would be lost", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Thunderfury")] = "サンダーフューリー\tさんだーふゅーりー" })
+    assert.are.equal("サンダーフューリー", (WFJ.Names.of("Thunderfury")))
+    assert.is_nil(WFJ.Names.of("|cffa335eeThunderfury|r"))
+    assert.is_nil(WFJ.Names.item("|TInterface\\Icons\\x:0|t Thunderfury"))
+    assert.is_nil(WFJ.Names.shown("$N1 Thunderfury"))
+  end)
+
+  it("a list shows only when every one of its names is known", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Linen Cloth")] = "リネン・クロス\tりねん・くろす",
+      [WFJ.Names.key("Coarse Thread")] = "コース・スレッド\tこーす・すれっど",
+    })
+    assert.are.equal("リネン・クロス (2), コース・スレッド", (WFJ.Names.list("Linen Cloth (2), Coarse Thread")))
+    assert.is_nil(WFJ.Names.list("Linen Cloth (2), Somebody Else"))
+  end)
+
   it("returns a line with no name in it untouched, with no spans", function()
     local text, spans = WFJ.Names.inText("名前のない行。")
     assert.are.equal("名前のない行。", text)

@@ -1,272 +1,266 @@
-{"t": "hash", "en": "A", "key": "0000004100000041"}
 {"t": "hash", "en": "A3", "key": "0000217600081854"}
 {"t": "hash", "en": "You're Infected!", "key": "0000790758ecefa0"}
 {"t": "hash", "en": "E-Z", "key": "001228ce11efddfd"}
 {"t": "hash", "en": "(DND) Summon Crystal Minion, Ghost", "key": "00128d5443c9649c"}
-{"t": "hash", "en": "Maybell", "key": "0017fd8ab31627b1"}
+{"t": "hash", "en": "loa", "key": "001c80faacca686d"}
 {"t": "hash", "en": "of the Owl", "key": "006a302310345cfb"}
-{"t": "hash", "en": "Pattern: Mooncloth Reagent Bag", "key": "0109e49b11c6b9c0"}
+{"t": "hash", "en": "Casting Speed", "key": "012979471131d0a0"}
 {"t": "hash", "en": "The Crossroads", "key": "01ee506efbe38bc2"}
-{"t": "hash", "en": "Zephras Finale Convo Trigger", "key": "0228edc812e7ba81"}
-{"t": "hash", "en": "Monster - Trident, Naga (Brass)", "key": "030cf314d440f9e4"}
-{"t": "hash", "en": "supplies", "key": "041ec1bf578d5623"}
-{"t": "hash", "en": "Shadowsong Shrine", "key": "052c38ee379e2321"}
-{"t": "hash", "en": "Woodcrafting Supplier", "key": "06656c75e73c98d6"}
-{"t": "hash", "en": "Nature Magic", "key": "075644edba1571f0"}
-{"t": "hash", "en": "Falcon's Hook", "key": "0867cd8440646954"}
-{"t": "hash", "en": "Deeb", "key": "093743ca209c219f"}
-{"t": "hash", "en": "the Breaker", "key": "09dfd3292d3fe602"}
-{"t": "hash", "en": "Nightsky Wristbands", "key": "0a8b844f0536b9ba"}
-{"t": "hash", "en": "Sven", "key": "0b3e4384ad2fedf5"}
-{"t": "hash", "en": "Legionnaire's Chain Legplates", "key": "0c1b755601cde488"}
-{"t": "hash", "en": "Pattern: Invoker's Mantle", "key": "0d287d8c6444ae99"}
-{"t": "hash", "en": "hand", "key": "0e09260ff35a82a5"}
-{"t": "hash", "en": "Masat T'andr", "key": "0ef65fcca3275fec"}
-{"t": "hash", "en": "Monster - Item, Pitchfork", "key": "0feb61cba44d3b1c"}
-{"t": "hash", "en": "Arcane Power", "key": "110a50b8b6e0bfb1"}
-{"t": "hash", "en": "Slitherwrap Girdle", "key": "1217d696da7b7bea"}
-{"t": "hash", "en": "Deathmist Chest", "key": "13550e95f70031c4"}
-{"t": "hash", "en": "thick armor kits", "key": "1460cf3366130b8a"}
-{"t": "hash", "en": "Lake Mystral", "key": "1580643aba725609"}
-{"t": "hash", "en": "Deprecated Polished Scale Cap", "key": "16ad4969c5082be0"}
-{"t": "hash", "en": "Symbolic Greaves", "key": "17bab69d7a41ab85"}
-{"t": "hash", "en": "Ancient Belt", "key": "18e00683a5fea480"}
-{"t": "hash", "en": "Scorpashi Leggings", "key": "19dce8297f1c5ebb"}
-{"t": "hash", "en": "Simple Gloves", "key": "1b06e9d5783c3339"}
-{"t": "hash", "en": "Honorable Magistrate Solomon", "key": "1c1606d68a48bcd6"}
-{"t": "hash", "en": "Distracting Pain", "key": "1d21a13729f0e341"}
-{"t": "hash", "en": "Emerald Girdle", "key": "1e236708813130a9"}
-{"t": "hash", "en": "Manna-Enriched Horse Feed", "key": "1f21fe01d8f65f4b"}
-{"t": "hash", "en": "Weapon Dealer", "key": "2031f4516c76c125"}
-{"t": "hash", "en": "Blackwater Cove", "key": "2122ea076706fa6a"}
-{"t": "hash", "en": "tribute", "key": "2243111478086f98"}
-{"t": "hash", "en": "Craftsman's Writ: Green Lens", "key": "23705537dc78fc68"}
-{"t": "hash", "en": "Plague Slime (Red)", "key": "249fe2416b41a3b7"}
-{"t": "hash", "en": "Thundris", "key": "25b6d58c59869f1d"}
-{"t": "hash", "en": "Increased Arcane Resist 03", "key": "26afd2694a30007a"}
-{"t": "hash", "en": "bronze greatsword", "key": "27cc2a83cc5b4e9c"}
-{"t": "hash", "en": "elder croc skins", "key": "28fa31202795e26c"}
-{"t": "hash", "en": "Jar Orc 04", "key": "2a1555da13ff3872"}
-{"t": "hash", "en": "Slaghide Gauntlets", "key": "2b22b7bd4df04ce1"}
-{"t": "hash", "en": "Sonya Darkhallow's Gold Coin", "key": "2bfc5c17c9def4e3"}
-{"t": "hash", "en": "Grimoire of Fear II", "key": "2d0aefb742a2442c"}
-{"t": "hash", "en": "Bloated Rockscale Cod", "key": "2e1246c068a11664"}
-{"t": "hash", "en": "Refined Arcanite Reaper", "key": "2f22c8cdbb557298"}
-{"t": "hash", "en": "Search Corpse", "key": "30228c33ce632c05"}
-{"t": "hash", "en": "Crimson Wrest", "key": "315045919f7e7bd0"}
-{"t": "hash", "en": "Captain Rugelfuss", "key": "325258b18c657c88"}
-{"t": "hash", "en": "Overlord's Girdle", "key": "3360bd679d2b452c"}
-{"t": "hash", "en": "Recently Embraced", "key": "345efef73624176b"}
+{"t": "hash", "en": "Charts", "key": "024f59723f4b6143"}
+{"t": "hash", "en": "totem", "key": "0334d7411edfda23"}
+{"t": "hash", "en": "Waist", "key": "0444175ef6f6e5f7"}
+{"t": "hash", "en": "Hand of Edward the Odd", "key": "0547c96eb2755d83"}
+{"t": "hash", "en": "Wrynn", "key": "068f6ca49a61b735"}
+{"t": "hash", "en": "Pure Soul Shard", "key": "078245bec35a5a5d"}
+{"t": "hash", "en": "Black Dragonspawn Eye", "key": "088b41dba14696c1"}
+{"t": "hash", "en": "Mental Dexterity", "key": "0951e3c4f7cf1c09"}
+{"t": "hash", "en": "Jang", "key": "0a040de8612be9b6"}
+{"t": "hash", "en": "Transformed", "key": "0a9914ddb181b050"}
+{"t": "hash", "en": "Tarn", "key": "0b5b1809e73bf18c"}
+{"t": "hash", "en": "Windcaller Yessendra", "key": "0c44dcfe3c86b122"}
+{"t": "hash", "en": "Stormwind Nougat", "key": "0d468b281514d6db"}
+{"t": "hash", "en": "Jurgens", "key": "0e215665bbb23938"}
+{"t": "hash", "en": "Barbaric Cloth Belt", "key": "0f196d17e46be43d"}
+{"t": "hash", "en": "Weightless", "key": "100d42af0364db8e"}
+{"t": "hash", "en": "Head of Zarmok", "key": "1130bedc048c59ba"}
+{"t": "hash", "en": "Trail Snack", "key": "1245a8d0fcc8cf8b"}
+{"t": "hash", "en": "Eidolon Ward", "key": "13841ae5e4ead88a"}
+{"t": "hash", "en": "Osric Strang", "key": "147f70cf921d35ef"}
+{"t": "hash", "en": "Hyperion Legplates", "key": "15b26fd878ee0c90"}
+{"t": "hash", "en": "Corrupted Dreadmaw Crocolisk", "key": "16d3fc3740f29eea"}
+{"t": "hash", "en": "Lok's Skull", "key": "17de99c3e0ecf842"}
+{"t": "hash", "en": "Xylem", "key": "1909d62123875336"}
+{"t": "hash", "en": "Razorsteel Shoulders", "key": "1a061f1b65f95718"}
+{"t": "hash", "en": "Ironvine Gloves", "key": "1b2ec8579f1a8e58"}
+{"t": "hash", "en": "World Skinning Trainer", "key": "1c421bb11597f3b0"}
+{"t": "hash", "en": "Premier Warlord's Kodohide Hauberk", "key": "1d51889beec02b12"}
+{"t": "hash", "en": "Static Conduit", "key": "1e47f3cebb8e18b2"}
+{"t": "hash", "en": "[UNUSED] [PH] Mulgore Alchemy Trainer", "key": "1f4704be1a1700ac"}
+{"t": "hash", "en": "Cutthroat's Signet", "key": "2051806fb0daf19e"}
+{"t": "hash", "en": "S03 - Item - T1 - Mage - Damage 6P Bonus", "key": "21531280f46a6ecd"}
+{"t": "hash", "en": "Legionnaire's Leather Hauberk", "key": "227029518cec92a4"}
+{"t": "hash", "en": "Activate Bomb 02", "key": "23993142403182e8"}
+{"t": "hash", "en": "Rumi of Gnomeregan: The Collected Works", "key": "24c4502579224e04"}
+{"t": "hash", "en": "Ragged Page", "key": "25d64962f6681e7e"}
+{"t": "hash", "en": "Increased Arcane Resist 38", "key": "26afd3f74a306022"}
+{"t": "hash", "en": "<Needs Scale>", "key": "27e9cea517ceffb7"}
+{"t": "hash", "en": "Glyphs of Warding", "key": "291e336b91e95149"}
+{"t": "hash", "en": "Bentcoin", "key": "2a34a9447ccb0b98"}
+{"t": "hash", "en": "Thistlefur Death", "key": "2b44a8d91f25187c"}
+{"t": "hash", "en": "Create Lesser Healthstone", "key": "2c1da4deacb08858"}
+{"t": "hash", "en": "Doomrigger's Clasp", "key": "2d327b90cc499413"}
+{"t": "hash", "en": "Dirty Trogg Cloth", "key": "2e3c8f943987b659"}
+{"t": "hash", "en": "Beacon Torch", "key": "2f363d8af93b87f5"}
+{"t": "hash", "en": "Tablet of Healing Wave VI", "key": "30473dd9bc1f9743"}
+{"t": "hash", "en": "Recipe: Mrrggl Smrrthle", "key": "31715c363ab20481"}
+{"t": "hash", "en": "S03 - Item - T1 - Mage - Damage 4P Bonus", "key": "32700cfd099862f7"}
+{"t": "hash", "en": "Komuk", "key": "3380d7284f89938c"}
+{"t": "hash", "en": "A Sealed Pact", "key": "34812680de7fd0d0"}
 {"t": "hash", "en": "of the Bear", "key": "3493f5391f8ab9aa"}
-{"t": "hash", "en": "Girdle of Extracted Answers", "key": "3579773f22a6355c"}
+{"t": "hash", "en": "Highborne Footpads", "key": "359ba4f430ccd7b1"}
 {"t": "hash", "en": "The Legacy of the Aspects", "key": "365cf53eac40e7e5"}
-{"t": "hash", "en": "Rat Bomb Trap", "key": "36a83bff9d8bab5b"}
-{"t": "hash", "en": "Morbin Lightbane", "key": "37a71b79ca9e3b30"}
-{"t": "hash", "en": "Swarmtender's Footpads", "key": "38a9d759c7e02ed2"}
-{"t": "hash", "en": "Divine Spirit", "key": "39ce5e850a30fe0f"}
-{"t": "hash", "en": "Ace of Wilds", "key": "3b1b809cbac8f363"}
-{"t": "hash", "en": "Summon Tranquil Mechanical Yeti", "key": "3c435e94e0498c8a"}
+{"t": "hash", "en": "Borgosh Corebender", "key": "36c48186778b4d93"}
+{"t": "hash", "en": "Expose Armor", "key": "37c36121862f4a65"}
+{"t": "hash", "en": "Jordan's Ore Shipment", "key": "38d24eab76a81213"}
+{"t": "hash", "en": "Hallowed Wand - Random", "key": "39f38989f2d00cb6"}
+{"t": "hash", "en": "Rokren", "key": "3b46c465a4d37eaf"}
+{"t": "hash", "en": "Crystal Starfire Medallion", "key": "3c62a7bf545d2842"}
 {"t": "hash", "en": "Lethlor Aura - 2", "key": "3cba2975d112c2c8"}
-{"t": "hash", "en": "Haggard", "key": "3d4e28970dcfbbd5"}
-{"t": "hash", "en": "Windtotem the Elder", "key": "3e51a231a6a41bfa"}
-{"t": "hash", "en": "Poultry Precision (Bows) - Viper Sting", "key": "3f58fe323ae8e9f3"}
+{"t": "hash", "en": "Alanna Raveneye", "key": "3d69ad9a9f221b2e"}
+{"t": "hash", "en": "Deputize: Feralas Mission V", "key": "3e72f3dff6cc90a8"}
 {"t": "hash", "en": "Knight-Captain's Plate Leggings", "key": "3f6b01791c8450d7"}
-{"t": "hash", "en": "Gaea's Circlet", "key": "4066aad10d5f670b"}
+{"t": "hash", "en": "threshers", "key": "3f833e3cb89d433c"}
+{"t": "hash", "en": "Book of Deathstones: Skeletal Hitching Post", "key": "4083beea1d83845e"}
 {"t": "hash", "en": "Resist Fear 02", "key": "40935f64755eda58"}
-{"t": "hash", "en": "Waylaid Supplies: Goblin Mortars", "key": "4166e631906125f9"}
+{"t": "hash", "en": "White Kitten", "key": "418f9fe484df3c38"}
 {"t": "hash", "en": "AQWar - Resource, Cooking, Horde, Tier 4", "key": "419479fd6f9dafa2"}
-{"t": "hash", "en": "Deprecated Dwarven Squire's Pants", "key": "428eeaca2e0bd164"}
-{"t": "hash", "en": "Evermurky", "key": "43c672314fdf0c25"}
-{"t": "hash", "en": "Highlander's Silk Bandage", "key": "44dc0600412fabd9"}
-{"t": "hash", "en": "Lupos", "key": "45dd252c8acbd739"}
-{"t": "hash", "en": "Riding Wolf", "key": "46f21d881526edb9"}
-{"t": "hash", "en": "Elunarian Spaulders", "key": "4800b10dc8ada4b8"}
-{"t": "hash", "en": "Lost One Rift Traveler", "key": "493b5ef2f7f46bea"}
-{"t": "hash", "en": "Expert Campfire Kit", "key": "4a749c1de199f8c4"}
-{"t": "hash", "en": "Blisterbane Wrap", "key": "4b39eded46212314"}
-{"t": "hash", "en": "Windblown Short Cloak", "key": "4c526609b532eb44"}
-{"t": "hash", "en": "Increased Stamina 02", "key": "4d65ecb68a7e1dd6"}
-{"t": "hash", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Duskwood)", "key": "4e5abfbcc84efae7"}
-{"t": "hash", "en": "Collect Orange Crystal Liquid", "key": "4f87fd0ebb969309"}
-{"t": "hash", "en": "Thelsamar Axe", "key": "50441659cc7ed4fa"}
-{"t": "hash", "en": "Spellcrafter Wand", "key": "5156f81d8b40fee5"}
-{"t": "hash", "en": "Sewer Beast", "key": "5277d748b563034a"}
-{"t": "hash", "en": "Verdantine Oracle", "key": "5392b5c3d685de0b"}
-{"t": "hash", "en": "Malem", "key": "54bbba194db4f839"}
-{"t": "hash", "en": "Curse of Vulnerability", "key": "55ca9301e12bec71"}
-{"t": "hash", "en": "Test Stab R50", "key": "56e760adf38693b4"}
-{"t": "hash", "en": "Shapeshifting Sentinel's Strides", "key": "57eb49ceeb2fb26a"}
-{"t": "hash", "en": "Monster - Wand, Horde Demon Skull Red", "key": "5918277ce52920b7"}
-{"t": "hash", "en": "Michelle Belle", "key": "5a361ebc72d9fea1"}
-{"t": "hash", "en": "Tome of Conjure Food VI", "key": "5b451a3b4037304f"}
-{"t": "hash", "en": "Wailing Banshee", "key": "5c5b2712bca13883"}
-{"t": "hash", "en": "Feralheart Legguards", "key": "5d6bd9ff5022dd58"}
-{"t": "hash", "en": "Chakuyak", "key": "5e7713ac11bc8203"}
-{"t": "hash", "en": "Elixir of Pain", "key": "5f95556db3185ef0"}
-{"t": "hash", "en": "Shadowtooth Bag", "key": "60940458b0546ad3"}
-{"t": "hash", "en": "Tiny Crimson Whelpling", "key": "6195cade0e2e98e6"}
-{"t": "hash", "en": "Redeeming the Soul", "key": "62b85b13f07da839"}
-{"t": "hash", "en": "Grund Drokda", "key": "63e1bab1feebc01f"}
-{"t": "hash", "en": "Battlegear of Eternal Justice", "key": "64ecd4ac1203985f"}
+{"t": "hash", "en": "World Guild Tabbard Vendor", "key": "42c1c0ea4a53fa79"}
+{"t": "hash", "en": "Band of the Hierophant", "key": "43f8055120322ba2"}
+{"t": "hash", "en": "Skullsplitter Witch Doctor", "key": "44f61edac26f51d5"}
+{"t": "hash", "en": "Empower Will", "key": "45f5e61a5fa23619"}
+{"t": "hash", "en": "Tombstone Breastplate", "key": "4714a6acf78446ed"}
+{"t": "hash", "en": "Corrupted Blue Whelp", "key": "4827ca41faa4f183"}
+{"t": "hash", "en": "Barely Legible Journal Entry, Page IX", "key": "495e8847422f929b"}
+{"t": "hash", "en": "Increased Fire Resist 12", "key": "4a7e15c3110c37ea"}
+{"t": "hash", "en": "Entrapped", "key": "4b623d8a6a72953e"}
+{"t": "hash", "en": "Razormaw Shorts", "key": "4c811d8688806e88"}
+{"t": "hash", "en": "Increased Stamina 31", "key": "4d65ee3e8a7e7d78"}
+{"t": "hash", "en": "Glorious Headdress", "key": "4e7fd64599b2b6ea"}
+{"t": "hash", "en": "Increase Spell Dam 19", "key": "4f9bcb14d45f1e56"}
+{"t": "hash", "en": "Maur Raincaller", "key": "50648dcc132ad44f"}
+{"t": "hash", "en": "Small Green Pouch", "key": "5176267391eede5c"}
+{"t": "hash", "en": "Summon Type D Periodic", "key": "5293191f4649f1f9"}
+{"t": "hash", "en": "Eight of Wilds", "key": "53b025633519473f"}
+{"t": "hash", "en": "Deprecated Pattern: Feathered Robe", "key": "54c8daacb512f39d"}
+{"t": "hash", "en": "Thistle Bear Death Touch", "key": "55d9304a7c5962d2"}
+{"t": "hash", "en": "Precision Arrow", "key": "5702614d0b90d4d4"}
+{"t": "hash", "en": "Feeble Shortbow", "key": "5811c20a776b1720"}
+{"t": "hash", "en": "runecloth boots", "key": "592efa9f7f926618"}
+{"t": "hash", "en": "Fel Ancient", "key": "5a50df9599d8bf1a"}
+{"t": "hash", "en": "Pattern: Barbaric Belt", "key": "5b622d558fda19f3"}
+{"t": "hash", "en": "Yorgen Farmstead", "key": "5c7aa4c41a979238"}
+{"t": "hash", "en": "Greater Darkmoon card", "key": "5d8bb92412ff8cf1"}
+{"t": "hash", "en": "Blueprint: Expert Campfire", "key": "5e8e819bfb9a70ab"}
+{"t": "hash", "en": "Manual: Powerful Poultice", "key": "5fb0580cfc51483e"}
+{"t": "hash", "en": "Head of Krom'zar", "key": "60b3002994453fdc"}
+{"t": "hash", "en": "Healing Potion", "key": "61b64dc74c0bc45e"}
+{"t": "hash", "en": "Beastmaster's Mantle", "key": "62cead27eba8baf5"}
+{"t": "hash", "en": "Shadowforge Warrior", "key": "63fbc45c013d8768"}
+{"t": "hash", "en": "Kaldon", "key": "650762cd8f125ddc"}
 {"t": "hash", "en": "of Shadow Resistance", "key": "654b69e58c0e08c1"}
-{"t": "hash", "en": "Putridus Wall", "key": "6607b154356352c0"}
-{"t": "hash", "en": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 3P Bonus - Earth and Wind Totems", "key": "66faadb9595dbead"}
-{"t": "hash", "en": "Watcher Cutford", "key": "6823f41ec680fd91"}
-{"t": "hash", "en": "Engrave Chest - Lake of Fire", "key": "694c9c4b9f6f2c9e"}
-{"t": "hash", "en": "Eagle Eye (PT)", "key": "6a5cfb9fec99d6ec"}
-{"t": "hash", "en": "Wanderer's Armor", "key": "6b84fa034209060d"}
-{"t": "hash", "en": "Herbalist <Needs Model>", "key": "6cb23fa0c7ef9332"}
-{"t": "hash", "en": "Sash of Mercy", "key": "6db9c9b4564baf79"}
-{"t": "hash", "en": "S03 - Item - Scarlet Enclave - Hunter - Ranged 4P Bonus", "key": "6ef23fe5574cd6a7"}
-{"t": "hash", "en": "Raincaller Cloak", "key": "70268795dd77f38a"}
-{"t": "hash", "en": "Woodpaw Trapper", "key": "7169c1a915823217"}
+{"t": "hash", "en": "Katoom", "key": "661cb10725fce773"}
+{"t": "hash", "en": "Dueling Zone - Screen Effect", "key": "67183667f819c355"}
+{"t": "hash", "en": "azsharite crystal", "key": "6838752c2fd43ec8"}
+{"t": "hash", "en": "Kaerbrus' Pet", "key": "6969ca67ed601741"}
+{"t": "hash", "en": "Hall of Elders", "key": "6a802854e49efb9f"}
+{"t": "hash", "en": "Bloodflame", "key": "6ba0f61175de0b63"}
+{"t": "hash", "en": "Dark Strand Cultist", "key": "6cbbd58c537bb6f7"}
+{"t": "hash", "en": "Frostwolf Explosives Expert", "key": "6dccadf83529b464"}
+{"t": "hash", "en": "War Machine Rage Effect", "key": "6f0d71d7586afd5c"}
+{"t": "hash", "en": "Putridius", "key": "703e155ade475a1f"}
+{"t": "hash", "en": "Mottled Razormaw raptors", "key": "717af0c2c74c9968"}
 {"t": "hash", "en": "The Fungal Vale", "key": "7280e00fce4ba972"}
-{"t": "hash", "en": "Trooper Ping", "key": "72a1dc570fd5a3f9"}
-{"t": "hash", "en": "Attack Power 12", "key": "73c5f49d6ca95c65"}
-{"t": "hash", "en": "Stave of the Ancient Keepers", "key": "74af5dd6e13bf99b"}
-{"t": "hash", "en": "Guard Lasiter", "key": "7582ec11c8a88ec1"}
-{"t": "hash", "en": "Cut to the Chase", "key": "76949183af06140f"}
+{"t": "hash", "en": "Handor", "key": "72bf1b27b54547ba"}
+{"t": "hash", "en": "Attack Power 54", "key": "73c5f6ab6ca9dbeb"}
+{"t": "hash", "en": "Scarlet Magi", "key": "74c361861e0d3a5a"}
+{"t": "hash", "en": "Shadowskin II", "key": "7591ffc4fc89f805"}
+{"t": "hash", "en": "Charys Yserian", "key": "76ae25736081561e"}
 {"t": "hash", "en": "Beast Slaying 105", "key": "76e2d012a8c4687f"}
-{"t": "hash", "en": "earrings", "key": "77b20dd408956537"}
-{"t": "hash", "en": "Ogres", "key": "78a68a9973cb45e8"}
-{"t": "hash", "en": "Mo'grosh Stronghold", "key": "79a9555d1b06393e"}
-{"t": "hash", "en": "Knight of Lordaeron", "key": "7ac6e8956afa72fc"}
-{"t": "hash", "en": "Five of Wilds", "key": "7bed9adbfba856ad"}
+{"t": "hash", "en": "Hyjal Silphium", "key": "77c166297ed8072e"}
+{"t": "hash", "en": "[DNT] Xirath - Delay - Progress Quest", "key": "78c4a50ef6798d18"}
+{"t": "hash", "en": "Meri Ironweave", "key": "79c82e40b0c1606e"}
+{"t": "hash", "en": "Wailing Death", "key": "7ad7da6c61709e75"}
+{"t": "hash", "en": "Un'Goro Stomper", "key": "7c03bdb7fd137168"}
 {"t": "hash", "en": "Monster - Dagger, Curved Bone Bloody", "key": "7c84729a5e9387cf"}
-{"t": "hash", "en": "Striped Frostsaber", "key": "7cf51fb9cb2b558c"}
-{"t": "hash", "en": "Cloudy Skyforged Wristguards", "key": "7dfb9285b77b7f1c"}
-{"t": "hash", "en": "Waylaid Crate: Earthly Artisan Herbs", "key": "7f281f6ff996ebcb"}
-{"t": "hash", "en": "Schematic: White Rocket Cluster", "key": "80298a580077ddc6"}
-{"t": "hash", "en": "Sanguine Sanctuary", "key": "814c6fb756ef76aa"}
+{"t": "hash", "en": "Monster - Sword 2H, Skyborne (Green)", "key": "7d09c4a89a58318d"}
+{"t": "hash", "en": "Crate of Radioactive Refuse", "key": "7e076aa52db9991e"}
+{"t": "hash", "en": "Nethander Stead", "key": "7f3f356ed69e6934"}
+{"t": "hash", "en": "Apothecary Table", "key": "803dfced62583093"}
+{"t": "hash", "en": "AQWar - Resource, Herbs, Horde, Tier 3", "key": "8162ef433520252b"}
 {"t": "hash", "en": "AQWar - Resource, Herbs, Horde, Tier 5", "key": "8162ef453520252d"}
 {"t": "hash", "en": "Traveler's Shawl", "key": "819ed1caa1163d8f"}
-{"t": "hash", "en": "Enchant Weapon - Icy Chill", "key": "825c815debd5b1c0"}
-{"t": "hash", "en": "Blacksmithing Skill +10", "key": "8379b3867c8a461f"}
-{"t": "hash", "en": "Pierce's Pistols", "key": "846474c3c62e7c4d"}
-{"t": "hash", "en": "Azore", "key": "85719225b5c83d03"}
-{"t": "hash", "en": "Hollow Emblem", "key": "868a40c29ba40494"}
-{"t": "hash", "en": "Prismatic", "key": "8792f53721391621"}
-{"t": "hash", "en": "Mote of Torrential Rage", "key": "88afec4543034195"}
-{"t": "hash", "en": "Deputization Authorization: Ashenvale Mission I", "key": "89ba7ad922be74d5"}
-{"t": "hash", "en": "Pristine Orcish Dagger", "key": "8abb0d74a14a8601"}
-{"t": "hash", "en": "undead", "key": "8bdbdc27da47a2fb"}
-{"t": "hash", "en": "Mighty Iron Hammer", "key": "8d045b4d36d17a59"}
-{"t": "hash", "en": "Olm the Wise", "key": "8e0cf971655d3d0d"}
-{"t": "hash", "en": "Complimentary Beer Token", "key": "8f1649b3932cb7d9"}
-{"t": "hash", "en": "Violet Satchel", "key": "9027708ff4d7ef5e"}
-{"t": "hash", "en": "Loksey's Training Stick", "key": "9135bdfd070ea3b0"}
-{"t": "hash", "en": "Plaguefang", "key": "923a746f24e2fb43"}
-{"t": "hash", "en": "Thorium Rifles", "key": "937426bdb389c5b1"}
-{"t": "hash", "en": "Crown of Tyranny", "key": "947aa5145aa6cda4"}
-{"t": "hash", "en": "Borya", "key": "9586bf798d24ea89"}
-{"t": "hash", "en": "King Mukla", "key": "967c589fca90ea55"}
-{"t": "hash", "en": "Knight-Lieutenant's Dreadweave Handwraps", "key": "9799d14eee2043ba"}
-{"t": "hash", "en": "Hula'mahi", "key": "98d9cc23dfa85793"}
-{"t": "hash", "en": "Chief Expeditionary Requisitioner Enkles", "key": "99df7ea3126d201b"}
-{"t": "hash", "en": "Fungus Shroud Armor", "key": "9afbf7c495d602ce"}
-{"t": "hash", "en": "Signet Ring of the Bronze Dragonflight DPS R2 DND", "key": "9c18d135b14867db"}
-{"t": "hash", "en": "Thick Furry Mane", "key": "9d422f34e00e80e9"}
-{"t": "hash", "en": "Increase Arcane Dam 20", "key": "9e5525f7d3aba131"}
-{"t": "hash", "en": "Windshaper Skyborne", "key": "9f625030c7de15d1"}
-{"t": "hash", "en": "Deadmines", "key": "a08339d91e3c25a4"}
-{"t": "hash", "en": "Encrusted Mineral", "key": "a1ba7baa8e061121"}
-{"t": "hash", "en": "Craftsman's Writ: Heavy Bronze Mace", "key": "a2b3fe2469a8b580"}
-{"t": "hash", "en": "Charm Pouch", "key": "a3e092a39fcedc3d"}
-{"t": "hash", "en": "Mountaineer Angst", "key": "a51d5e34bf3dbbfe"}
-{"t": "hash", "en": "Lightforge Ingot", "key": "a63b3c2abc6e8986"}
-{"t": "hash", "en": "Flimsy Male Human Mask", "key": "a75ac778383511d8"}
-{"t": "hash", "en": "Ruklar the Trapper", "key": "a871a67595992d8b"}
-{"t": "hash", "en": "Eredar", "key": "a966921095916df4"}
-{"t": "hash", "en": "dragonkin", "key": "aa5707f39ef70b8a"}
-{"t": "hash", "en": "Ogremind Ring", "key": "ab8de40ad0474ae6"}
-{"t": "hash", "en": "Arcanist Nozzlespring", "key": "aca66fae9b93fe49"}
-{"t": "hash", "en": "MetalBars01Iron", "key": "adbcd71eb37cd135"}
-{"t": "hash", "en": "Sticky Tar", "key": "aed04091f3ee0dd7"}
-{"t": "hash", "en": "Vital Cape", "key": "aff101e180d2e5bf"}
-{"t": "hash", "en": "Fire and Arcane Reflect", "key": "b1078a2ba7b5253a"}
-{"t": "hash", "en": "sprite darter", "key": "b21732408c338d6a"}
-{"t": "hash", "en": "Monster - Mace 2H, Skyborne (Gray)", "key": "b3648972ef77e13b"}
-{"t": "hash", "en": "Eternal Reward", "key": "b48db06b9854b717"}
-{"t": "hash", "en": "Scarlet Guardian", "key": "b5adb919da58fdee"}
-{"t": "hash", "en": "[NOT USED] Blackwing Warlord", "key": "b6c44b92d8878f47"}
-{"t": "hash", "en": "Codex of Flash Heal IV", "key": "b7d29bc0b7740680"}
+{"t": "hash", "en": "Seven of Wilds", "key": "826cb712bcf6f697"}
+{"t": "hash", "en": "POWDERFUSE PORT", "key": "838aef572e6f1177"}
+{"t": "hash", "en": "Shadow Weaver Leggings", "key": "8475d015edec7428"}
+{"t": "hash", "en": "Tome of Blizzard V", "key": "857db0ae209a0c18"}
+{"t": "hash", "en": "Wolf Rider's Belt", "key": "869c79f2fae5980b"}
+{"t": "hash", "en": "Commander Amaren", "key": "87a44d92639faba5"}
+{"t": "hash", "en": "Death Grips", "key": "88c788ff6f51fb78"}
+{"t": "hash", "en": "Blood Guard's Dreadweave Hat", "key": "89ca667a8f464597"}
+{"t": "hash", "en": "Feline Helm and Chestpiece Set", "key": "8acfe9374fdabb17"}
+{"t": "hash", "en": "Rune of Shadow Specialization", "key": "8bf34d84dfd573a0"}
+{"t": "hash", "en": "Winstone Wolfe", "key": "8d10936c0226f0f6"}
+{"t": "hash", "en": "Mazk Snipeshot", "key": "8e22d6e1e91f24c7"}
+{"t": "hash", "en": "Broken Tooth's Flayed Hide", "key": "8f250cde34de6998"}
+{"t": "hash", "en": "Shadow Panther", "key": "9036e817e741789b"}
+{"t": "hash", "en": "Reforged Atal'ai Spear", "key": "914904534c59e752"}
+{"t": "hash", "en": "[UNUSED] [PH] Durotar Engineering Trainer", "key": "925266ef6ba199ff"}
+{"t": "hash", "en": "Condor Bracers", "key": "938fe3cdc10ea19a"}
+{"t": "hash", "en": "Crushridge Brute", "key": "9498f2a37a849b19"}
+{"t": "hash", "en": "Dreadnaught Gauntlets", "key": "9593f290c33bbdb6"}
+{"t": "hash", "en": "(DNT) Mist Stealth", "key": "9688f9ae2214fce8"}
+{"t": "hash", "en": "Stolen Supplies", "key": "97ab99490fb761d6"}
+{"t": "hash", "en": "Stonesplinter Digger", "key": "98f5ed8fbff03cb7"}
+{"t": "hash", "en": "Boat to Auberdine", "key": "99edb9d4c1d38db0"}
+{"t": "hash", "en": "Ruby Breath", "key": "9b186437fc1f19f4"}
+{"t": "hash", "en": "Scroll of Agility", "key": "9c2d01911b8b8909"}
+{"t": "hash", "en": "Premier Scalemail Wristguards", "key": "9d4f7ded1e689f54"}
+{"t": "hash", "en": "Increase Arcane Dam 43", "key": "9e552700d3abe0f6"}
+{"t": "hash", "en": "Lanie Reed", "key": "9f75ccc127b834c9"}
+{"t": "hash", "en": "Recipe: Spicy Smoothie", "key": "a099a51c35a8150a"}
+{"t": "hash", "en": "Third Fleet", "key": "a1c92d4640cbce12"}
+{"t": "hash", "en": "Perith Stormhoof", "key": "a2c17903f971e32a"}
+{"t": "hash", "en": "Tallonkai Swiftroot", "key": "a3f3a242aed72140"}
+{"t": "hash", "en": "Haunted Loci", "key": "a5283516a81df99b"}
+{"t": "hash", "en": "Tattered Chest", "key": "a649ff08dc998359"}
+{"t": "hash", "en": "Witherbark Sadist", "key": "a767a888dccf5492"}
+{"t": "hash", "en": "Enshrouding Fog", "key": "a87e480df4b87e13"}
+{"t": "hash", "en": "Monster - Staff, Crooked Green", "key": "a96f94b138e76b5e"}
+{"t": "hash", "en": "Grelin's report", "key": "aa75d5d5339653c1"}
+{"t": "hash", "en": "Muscle Tear", "key": "ab9a532d61745dcd"}
+{"t": "hash", "en": "Lieutenant Baxter", "key": "acb68c907edd4c48"}
+{"t": "hash", "en": "Green Voodoo Feather", "key": "adcaf117341c0a6c"}
+{"t": "hash", "en": "Arcane Missiles +1", "key": "aee6e0712538d0e7"}
+{"t": "hash", "en": "Blood Guard's Dreadweave Gloves", "key": "aff52f3d2b2e86b4"}
+{"t": "hash", "en": "Branstock", "key": "b111dd98c2d35293"}
+{"t": "hash", "en": "Zoo Bizarre", "key": "b222e3533f709f55"}
+{"t": "hash", "en": "Gyromatic Experiment 420b", "key": "b37295c2a84563ba"}
+{"t": "hash", "en": "Scroll of Arcane Power I", "key": "b49c32c02d67099f"}
+{"t": "hash", "en": "Weaponsmith & Armorer", "key": "b5b9c4c00bd43a93"}
+{"t": "hash", "en": "Aboriginal Footwraps", "key": "b6d0e873712f32e9"}
+{"t": "hash", "en": "Frostwolf Supplies", "key": "b7d6740f9da5e558"}
 {"t": "hash", "en": "The Scarlet Basilica", "key": "b87d8ac2a116a5ae"}
-{"t": "hash", "en": "Worn Miner's Waistcord", "key": "b8dd2d7b15eb9784"}
-{"t": "hash", "en": "The Judge's Gavel", "key": "b9df1e097f80d9ea"}
-{"t": "hash", "en": "Tome of Mana Shield IV", "key": "bb0c0969b0b8ae4c"}
-{"t": "hash", "en": "Lord Arkkoroc", "key": "bc2787fbadd823a7"}
-{"t": "hash", "en": "Royal Factor Bathrilor", "key": "bd1a1ef4a83aa1c3"}
-{"t": "hash", "en": "War Paint Shoulder Pads", "key": "be31126de1435091"}
+{"t": "hash", "en": "Field Marshal's Lamellar Helmet", "key": "b8e89160d664095a"}
+{"t": "hash", "en": "Misplaced Pantaloons", "key": "b9f05cc75493a2ed"}
+{"t": "hash", "en": "Emblazoned Belt", "key": "bb14f33b01cb2cdf"}
+{"t": "hash", "en": "Raani's Lucky Feather", "key": "bc3040916a1c32cd"}
+{"t": "hash", "en": "Shade of Taerar", "key": "bd26563e68fd8d7a"}
+{"t": "hash", "en": "Pattern: Runecloth Shoulders", "key": "be3d4bb0b303edf2"}
 {"t": "hash", "en": "Doodad_SmallFirePit75", "key": "be3da86adeff7fde"}
 {"t": "hash", "en": "Knight-Lieutenant's Leather Gauntlets", "key": "be985c6766e10e9d"}
-{"t": "hash", "en": "Garden Gas", "key": "bf21e69719cc5dc5"}
+{"t": "hash", "en": "Leggings of Curation", "key": "bf281ad908672c74"}
 {"t": "hash", "en": "Receive Reward AND Quest Object, Darnassus Guard", "key": "bffd7f829d0a9c7a"}
-{"t": "hash", "en": "Aramis Hammerhand", "key": "c021b89e4efcc245"}
-{"t": "hash", "en": "lemon crab", "key": "c143973757fbf98b"}
+{"t": "hash", "en": "Dark Iron Insurgent", "key": "c03042dc6a8883b9"}
+{"t": "hash", "en": "Sneed's Shredder", "key": "c1500293eeecb047"}
 {"t": "hash", "en": "Deathdealer's Boots", "key": "c15096c1a6e89c9f"}
-{"t": "hash", "en": "Poisoned Harpoon", "key": "c27857e1c833c18f"}
+{"t": "hash", "en": "The Strange Hermit", "key": "c281d56b449fcb9a"}
 {"t": "hash", "en": "of Regeneration", "key": "c2a630ea21742ab3"}
-{"t": "hash", "en": "Passive DoT", "key": "c38c2eeb0dae83fe"}
-{"t": "hash", "en": "Increased Intellect 26", "key": "c47c8ecd4755471e"}
-{"t": "hash", "en": "Soulcrusher Legguards", "key": "c57c6dee068dbf89"}
-{"t": "hash", "en": "Monster Hand (DNT)", "key": "c68e06c3a7ba0455"}
-{"t": "hash", "en": "Gunther's Retreat", "key": "c789b04060015f27"}
-{"t": "hash", "en": "Undercity Library Card", "key": "c8843e6a38d01bc6"}
-{"t": "hash", "en": "Scale of Old Murk-Eye", "key": "c9a208eb87e89dbd"}
-{"t": "hash", "en": "Codex of Shadow Word: Pain III", "key": "cab5a8075820d5a5"}
-{"t": "hash", "en": "Gnarled Harpoon", "key": "cbc91ac3d42b0eae"}
-{"t": "hash", "en": "Encrypted Parchment", "key": "ccd2a2af76693e89"}
-{"t": "hash", "en": "Jeremiah", "key": "cdd9b0c1ccb95e19"}
-{"t": "hash", "en": "Craftsman's Writ - Goblin Sapper Charge", "key": "cee3d26437fffe33"}
-{"t": "hash", "en": "Summon Dun Garok Soldiers", "key": "cfe5a0682498f39d"}
-{"t": "hash", "en": "Scholmance", "key": "d0e6ebfb354b1b18"}
-{"t": "hash", "en": "Flame Gloves", "key": "d1d4a547f36696e0"}
-{"t": "hash", "en": "Craftsman's Writ: Red Whelp Gloves", "key": "d2d7a314d466c1da"}
-{"t": "hash", "en": "Riding Frostsaber", "key": "d3e9edd4fdc5e265"}
-{"t": "hash", "en": "Exalted Legplates", "key": "d4ec77abbfd54ecc"}
-{"t": "hash", "en": "Encarmine Boots", "key": "d602ff1e5231993f"}
-{"t": "hash", "en": "Heart of the Obliterator", "key": "d743fc17e13bbfdd"}
-{"t": "hash", "en": "Bloodsoul Shoulders", "key": "d861347cf5a7ce59"}
-{"t": "hash", "en": "Nightmare Incursions: Ashenvale Mission III", "key": "d9399c75de7fe9e1"}
-{"t": "hash", "en": "Thick Leather Collector", "key": "da5ee4979a570797"}
-{"t": "hash", "en": "Astral Victory", "key": "db63ac8832f35cf0"}
-{"t": "hash", "en": "Smite Slam", "key": "dc9258d465fb3846"}
-{"t": "hash", "en": "Cinder of Cynders", "key": "ddd5e08b03ef0cbc"}
-{"t": "hash", "en": "Anchor to Skulls", "key": "df1b25e3193458ff"}
-{"t": "hash", "en": "Dark Strand Assassin", "key": "e04668bbfa4f8d24"}
-{"t": "hash", "en": "Premier Luminous Shoulders", "key": "e167863fe0c966a9"}
-{"t": "hash", "en": "Mercenary Leggings", "key": "e271b2297fee291a"}
-{"t": "hash", "en": "Putrid Breath", "key": "e3a47fc151d76b12"}
-{"t": "hash", "en": "Dispel Barrier", "key": "e4bd2d8e5e753ea2"}
-{"t": "hash", "en": "The Skullcracker", "key": "e614b8a8a6160647"}
-{"t": "hash", "en": "Lofty Gauntlets", "key": "e745e5c3b57fcb9a"}
-{"t": "hash", "en": "Wild Rejuvenation", "key": "e861232b0c0a16bb"}
-{"t": "hash", "en": "Rune of Despair", "key": "e97b427b0a048167"}
-{"t": "hash", "en": "Mizzle da Crafty", "key": "ea7ea24856d641ab"}
-{"t": "hash", "en": "Illidan's Fury", "key": "eb943b8a9793a871"}
-{"t": "hash", "en": "Stonemaul Ruin", "key": "ecb7e71661f6ba0f"}
-{"t": "hash", "en": "Claw of Shalla'kal", "key": "edad3e48e0dce6c1"}
-{"t": "hash", "en": "Open Care Package", "key": "ee7fba29c01ea5d2"}
-{"t": "hash", "en": "Savory Deviate Delight", "key": "efa3066a3bca3952"}
-{"t": "hash", "en": "Ambassador Malcin", "key": "f0abab9ef6c0dee0"}
-{"t": "hash", "en": "Bubbling Cauldron", "key": "f1a57319670a6362"}
-{"t": "hash", "en": "Icy Scale Gauntlets", "key": "f27864b340771b2c"}
-{"t": "hash", "en": "Upgrade the Tents", "key": "f39cff2b30468a58"}
-{"t": "hash", "en": "Eskhandar's Rake", "key": "f4b517bf23effc8b"}
-{"t": "hash", "en": "windserpent", "key": "f5e47e5c359b6101"}
-{"t": "hash", "en": "Hecklebury Smotts", "key": "f716b8fe3e753782"}
-{"t": "hash", "en": "Monster - Bow, Gray", "key": "f8334bfd4168a98b"}
-{"t": "hash", "en": "Test Arcane Res Shoulders Plate", "key": "f9566b314f9beb4a"}
-{"t": "hash", "en": "Earthen Silk Shoulders", "key": "fa65cac8606447f0"}
-{"t": "hash", "en": "Slime-Coated Gloves", "key": "fb95ae8af6eb3a88"}
-{"t": "hash", "en": "Darsok Swiftdagger", "key": "fca6087de306229a"}
-{"t": "hash", "en": "Midsummer", "key": "fddda20915ec25f1"}
-{"t": "hash", "en": "Increased Block 3", "key": "fee0f0e7aeadc122"}
-{"t": "name", "key": "0000005000000050", "row": "ピー\tぴー"}
-{"t": "name", "key": "0000006100000061", "row": "ア\tあ"}
-{"t": "name", "key": "0000221800083854", "row": "ビーアール\tびーあーる"}
-{"t": "name", "key": "000025090008f779", "row": "エイチ1\tえいちいち"}
-{"t": "name", "key": "000025a400091772", "row": "ツー\tつー"}
+{"t": "hash", "en": "Chen's Empty Keg", "key": "c395691bb4a3b0a4"}
+{"t": "hash", "en": "Increased Intellect 35", "key": "c47c8f4f475566fe"}
+{"t": "hash", "en": "Prayer of Protection", "key": "c58828230a87df5f"}
+{"t": "hash", "en": "Girdle of Uther", "key": "c69511e65a127077"}
+{"t": "hash", "en": "Doodad_PortcullisActive04", "key": "c78da0f2b0552c51"}
+{"t": "hash", "en": "Crushridge Warmonger", "key": "c88ba1de33247cb9"}
+{"t": "hash", "en": "Drake-scale Vest", "key": "c9acf998d96fab71"}
+{"t": "hash", "en": "Death Howl's Guise", "key": "cabb11f95a61617f"}
+{"t": "hash", "en": "Armor +40, Stamina +5", "key": "cbd138a9c1a2b3fa"}
+{"t": "hash", "en": "Mire Lord Fungus", "key": "ccd868375c32bd14"}
+{"t": "hash", "en": "Singer", "key": "cddcd18c396b1ec2"}
+{"t": "hash", "en": "Honorguard Chestpiece", "key": "ceeb8451dec2307f"}
+{"t": "hash", "en": "Tablet of Call Spirit II", "key": "cfec5fef9853f8d6"}
+{"t": "hash", "en": "9 Pound Lobster", "key": "d0edb09d399b39a2"}
+{"t": "hash", "en": "Scourge: Undead Menace or Misunderstood?", "key": "d1d7a21a1478ee64"}
+{"t": "hash", "en": "Blackrock Reaver", "key": "d2ea5e93cacfdb31"}
+{"t": "hash", "en": "S03 - Item - T1 - Warrior - Tank 4P Bonus", "key": "d3ef8f4015e0a119"}
+{"t": "hash", "en": "Doctor Serratus", "key": "d4f316bbef86630f"}
+{"t": "hash", "en": "Track Elementals", "key": "d608ece3a493647f"}
+{"t": "hash", "en": "SAF-T Emergency Ripper: Everlook", "key": "d748982e7accdc46"}
+{"t": "hash", "en": "Irradiated Goo", "key": "d86741e455b6b8a0"}
+{"t": "hash", "en": "Nightmare Incursions: Ashenvale Mission VII", "key": "d93d03ea121b5abf"}
+{"t": "hash", "en": "Feint", "key": "da642fd05f039fb8"}
+{"t": "hash", "en": "Hillsbrad miners", "key": "db6804b575e21c4d"}
+{"t": "hash", "en": "Ancient Frostsaber", "key": "dc98b1cefa8464f6"}
+{"t": "hash", "en": "Frog Familiar", "key": "dddcc95f88fe4d44"}
+{"t": "hash", "en": "Captain Vachon", "key": "df2297e9a4555fb3"}
+{"t": "hash", "en": "Nightmare Incursions: Hinterlands Mission XV", "key": "e046755bd7bbecc9"}
+{"t": "hash", "en": "Guillotine Axe", "key": "e16bccd49c2b2862"}
+{"t": "hash", "en": "Upperdeck Promotion", "key": "e2749787e796aad6"}
+{"t": "hash", "en": "Sunscale raptor", "key": "e3a9273a87016612"}
+{"t": "hash", "en": "Ogre Magi text", "key": "e4c093ebdee99327"}
+{"t": "hash", "en": "Wastewalker's Gauntlets", "key": "e6163879552f1c39"}
+{"t": "hash", "en": "Green Drakonid", "key": "e74b53926c845c94"}
+{"t": "hash", "en": "Pattern: Incandescent Mooncloth Vest", "key": "e8633577f585f266"}
+{"t": "hash", "en": "Plans: Warder's Gauntlet", "key": "e97f165bdee8294f"}
+{"t": "hash", "en": "Ancestral Bracers", "key": "ea84db5755c8d1c5"}
+{"t": "hash", "en": "Necropolis critter spawner", "key": "eb972ebdddc9fa18"}
+{"t": "hash", "en": "Monster - Mace2H, Large Metal (1H, Special)", "key": "ecbd6423ee6edad2"}
+{"t": "hash", "en": "Grark", "key": "edadc0bb4c73e510"}
+{"t": "hash", "en": "S03 - Item - TAQ - Warrior - Tank 4P Bonus", "key": "ee8164ff6da7ff29"}
+{"t": "hash", "en": "Champion's Dreadweave Cowl", "key": "efa6b5ab3beb4b4e"}
+{"t": "hash", "en": "Defender Axe", "key": "f0ae712e282a1338"}
+{"t": "hash", "en": "Cuirboulli Pants", "key": "f1a8bfd7fccde837"}
+{"t": "hash", "en": "Convection", "key": "f279f2ddeec8b3c5"}
+{"t": "hash", "en": "Eastsea", "key": "f39d3cbdf5c47f89"}
+{"t": "hash", "en": "Sealed Reliquary of Purity", "key": "f4b5a9beccbbe4eb"}
+{"t": "hash", "en": "Rune of Quick Draw", "key": "f5e5a860f745229e"}
+{"t": "hash", "en": "Dodging", "key": "f718734baffed43a"}
+{"t": "hash", "en": "Wyrmthalak's Shackles", "key": "f83430c08a1cfa2e"}
+{"t": "hash", "en": "Heretic Sandals", "key": "f9584823a4cf8ba3"}
+{"t": "hash", "en": "Premier Scaled Gauntlets", "key": "fa6615c4e38f54de"}
+{"t": "hash", "en": "[DNT] Periodic Screeching Terror", "key": "fb970f16ca3eebee"}
+{"t": "hash", "en": "Throw and Despawn Closest Bleacher and Leper Gnomes", "key": "fca67e89d1b60fcb"}
+{"t": "hash", "en": "Oglethorpe's homing robot", "key": "fddecdeda25d096c"}
+{"t": "hash", "en": "Increased Block 4", "key": "fee0f0e8aeadc123"}
 {"t": "name", "key": "000026220009374e", "row": "ジェイディー\tじぇいでぃー"}
 {"t": "name", "key": "000029380009f698", "row": "ピーエイチ\tぴーえいち"}
 {"t": "name", "key": "00002ac2000a563c", "row": "エスアイ\tえすあい"}
@@ -274,7 +268,6 @@
 {"t": "name", "key": "00118191060f4ad4", "row": "ボル\tぼる"}
 {"t": "name", "key": "00124fbd11f954d4", "row": "アイ\tあい"}
 {"t": "name", "key": "0014418331b21bd0", "row": "エム・ディー\tえむ・でぃー"}
-{"t": "name", "key": "001495f135ae9b72", "row": "エヌピーシー\tえぬぴーしー"}
 {"t": "name", "key": "0015284c3da2200d", "row": "ピーエイチディー\tぴーえいちでぃー"}
 {"t": "name", "key": "0019a43681209e0f", "row": "アックス\tあっくす"}
 {"t": "name", "key": "0019e2a18517c2e4", "row": "ボブ\tぼぶ"}
@@ -302,7 +295,6 @@
 {"t": "name", "key": "08cbd77534e3e962", "row": "エーティーエフティー\tえーてぃーえふてぃー"}
 {"t": "name", "key": "08d01d1a746d4095", "row": "アドン\tあどん"}
 {"t": "name", "key": "08d3c275abffb654", "row": "アレイ\tあれい"}
-{"t": "name", "key": "08ecd4e2ae724adf", "row": "ボディ\tぼでぃ"}
 {"t": "name", "key": "08ee2510c24bdd61", "row": "ビーティーエフティー\tびーてぃーえふてぃー"}
 {"t": "name", "key": "08f1a10ef5ec4967", "row": "ベイン\tべいん"}
 {"t": "name", "key": "08f2ac3405cd18c2", "row": "ベルム\tべるむ"}
@@ -314,7 +306,6 @@
 {"t": "name", "key": "097f48996f07fa17", "row": "フリズ\tふりず"}
 {"t": "name", "key": "09a0ce8cf0878260", "row": "ゴールド\tごーるど"}
 {"t": "name", "key": "09b8b6f27e3496f4", "row": "インキュバス\tいんきゅばす"}
-{"t": "name", "key": "09bbfa3f12bc74be", "row": "エイチティーエムエル\tえいちてぃーえむえる"}
 {"t": "name", "key": "09c31c3c7def7685", "row": "ホーリー\tほーりー"}
 {"t": "name", "key": "09c59ae801bad2ba", "row": "フィズル\tふぃずる"}
 {"t": "name", "key": "0a500e028f581e8e", "row": "アッパー・マップ・フラグメント\tあっぱー・まっぷ・ふらぐめんと"}
@@ -329,22 +320,16 @@
 {"t": "name", "key": "0b3e4384ad2fedf5", "row": "スヴェン\tすゔぇん"}
 {"t": "name", "key": "0b5d345c06ff0ea0", "row": "ティザ\tてぃざ"}
 {"t": "name", "key": "0b81d7b1b82005c7", "row": "ウロク\tうろく"}
-{"t": "name", "key": "0be157f2f12bbd31", "row": "セブンティーン\tせぶんてぃーん"}
 {"t": "name", "key": "0c33b072a1729c50", "row": "フィールド・キャプテン\tふぃーるど・きゃぷてん"}
 {"t": "name", "key": "0d2a617d6abbf260", "row": "ホーリー・ラス\tほーりー・らす"}
-{"t": "name", "key": "0da23fdd4b23460c", "row": "イースト\tいーすと"}
 {"t": "name", "key": "0dc6a52ef84d3823", "row": "ファイア\tふぁいあ"}
 {"t": "name", "key": "0e306ad5cc2edeb2", "row": "イティス\tいてぃす"}
 {"t": "name", "key": "0e73b44bd324d493", "row": "コドー\tこどー"}
-{"t": "name", "key": "0e93649738da62e0", "row": "レフト\tれふと"}
 {"t": "name", "key": "0eb4a476b660e829", "row": "メイス\tめいす"}
-{"t": "name", "key": "0eb6c263d62464e0", "row": "ミニ\tみに"}
 {"t": "name", "key": "0efad98fe90444ed", "row": "オーガ\tおーが"}
 {"t": "name", "key": "0f1f3f81962e5714", "row": "ポート\tぽーと"}
 {"t": "name", "key": "0f1f44b96ff9ed6e", "row": "ピュリファイイング・パワー\tぴゅりふぁいいんぐ・ぱわー"}
-{"t": "name", "key": "100cc0e74c537da8", "row": "ウェスト\tうぇすと"}
 {"t": "name", "key": "100f5d2d7405a3a6", "row": "ウール\tうーる"}
-{"t": "name", "key": "1075596736f52dc7", "row": "アイエムジー・エスアールシー\tあいえむじー・えすあーるしー"}
 {"t": "name", "key": "1087f6da401dceae", "row": "ロックバイター・ウェポン\tろっくばいたー・うぇぽん"}
 {"t": "name", "key": "10edc36291f857b8", "row": "シャリ・スティルウェル\tしゃり・すてぃるうぇる"}
 {"t": "name", "key": "1122fda41c270cc4", "row": "アージェント・ドーン・コミッション\tあーじぇんと・どーん・こみっしょん"}
@@ -365,11 +350,13 @@
 {"t": "name", "key": "1bedd8c373fa90f1", "row": "コメンデーション・シグネット\tこめんでーしょん・しぐねっと"}
 {"t": "name", "key": "1cad288807ac9335", "row": "スコージ\tすこーじ"}
 {"t": "name", "key": "1cde20018faa7228", "row": "ネッサ・シャドウソング\tねっさ・しゃどうそんぐ"}
+{"t": "name", "key": "1d6f8c68397483a4", "row": "パイアウッド・ヴィレッジ\tぱいあうっど・ゔぃれっじ"}
 {"t": "name", "key": "1d88b221b615cf47", "row": "フェルハンター\tふぇるはんたー"}
 {"t": "name", "key": "1e4b11a508b9ac9e", "row": "ハイドラクシス\tはいどらくしす"}
 {"t": "name", "key": "1e66132e2f6967de", "row": "ヘデリン\tへでりん"}
 {"t": "name", "key": "1eda275356555aa4", "row": "デュソリアン・ラル\tでゅそりあん・らる"}
 {"t": "name", "key": "1f1b29c14673ff05", "row": "エングレイビング\tえんぐれいびんぐ"}
+{"t": "name", "key": "1f25eee10bc6a364", "row": "ダン・モロー\tだん・もろー"}
 {"t": "name", "key": "1f3ee55b170b979d", "row": "ストームパイク・コマンダー\tすとーむぱいく・こまんだー"}
 {"t": "name", "key": "21089cc43553437c", "row": "ウシューレイズ・メイン\tうしゅーれいず・めいん"}
 {"t": "name", "key": "21e9508dd7a13ed5", "row": "ザマエル\tざまえる"}
@@ -382,6 +369,7 @@
 {"t": "name", "key": "24fa3ddf57ec162b", "row": "リーン・ウルフ・ステーキ\tりーん・うるふ・すてーき"}
 {"t": "name", "key": "257b3210ca873d2d", "row": "アート・オブ・ウォー\tあーと・おぶ・うぉー"}
 {"t": "name", "key": "26414cf4473ed6f4", "row": "テルドラシル\tてるどらしる"}
+{"t": "name", "key": "26de584400dae149", "row": "アンダーテイカー・モード\tあんだーていかー・もーど"}
 {"t": "name", "key": "278aa19e6a3871e4", "row": "ルーニック・レザー・ヘッドバンド\tるーにっく・れざー・へっどばんど"}
 {"t": "name", "key": "27ab64842562b1eb", "row": "コンボビュレーター\tこんぼびゅれーたー"}
 {"t": "name", "key": "27edfd3295731154", "row": "レッドリッジ・ノール\tれっどりっじ・のーる"}
@@ -390,15 +378,16 @@
 {"t": "name", "key": "29bc68a0de596435", "row": "ナールパイン・ファング\tなーるぱいん・ふぁんぐ"}
 {"t": "name", "key": "29f2aad710573863", "row": "パルシング・ブルー・シャード\tぱるしんぐ・ぶるー・しゃーど"}
 {"t": "name", "key": "2a3772cf1c60c369", "row": "メンド・ペット\tめんど・ぺっと"}
-{"t": "name", "key": "2b102ef3f6862d52", "row": "インターフェース\tいんたーふぇーす"}
 {"t": "name", "key": "2b660702e866f86c", "row": "イミュニティー\tいみゅにてぃー"}
 {"t": "name", "key": "2c20c10542d9cde8", "row": "ヒューマノイド\tひゅーまのいど"}
 {"t": "name", "key": "2d6e617c5e5f6c4c", "row": "アイアンバンド\tあいあんばんど"}
 {"t": "name", "key": "2d7b55cbf4577eff", "row": "スターブリーズ・ヴィレッジ\tすたーぶりーず・ゔぃれっじ"}
+{"t": "name", "key": "2d9fc86bee3e8074", "row": "ビーコン・オブ・ライト\tびーこん・おぶ・らいと"}
 {"t": "name", "key": "2dc2b23fdd412541", "row": "エルダー・クラッグ・ボア\tえるだー・くらっぐ・ぼあ"}
 {"t": "name", "key": "2e47bde63ce9542a", "row": "ダイア・モール\tだいあ・もーる"}
 {"t": "name", "key": "2f29ce5254bcbda5", "row": "エレメント\tえれめんと"}
 {"t": "name", "key": "2fbe49441bedec39", "row": "ハイド\tはいど"}
+{"t": "name", "key": "2fc73504e1527c8a", "row": "ゴブリン・エクスペリメンタル・エンジニアリング・コーポレーション\tごぶりん・えくすぺりめんたる・えんじにありんぐ・こーぽれーしょん"}
 {"t": "name", "key": "2ff3ff429dc2744f", "row": "ラチェット\tらちぇっと"}
 {"t": "name", "key": "304242b37c12c3e2", "row": "ストラトホルム\tすとらとほるむ"}
 {"t": "name", "key": "3173ee7667d3fd08", "row": "インキャパシテイト\tいんきゃぱしていと"}
@@ -421,6 +410,7 @@
 {"t": "name", "key": "35da5c567945c658", "row": "シュレッディング\tしゅれっでぃんぐ"}
 {"t": "name", "key": "360c5728e8f34279", "row": "アニマル\tあにまる"}
 {"t": "name", "key": "3644c6cf78affe53", "row": "ナイト・ウォッチマンズ・トーチ\tないと・うぉっちまんず・とーち"}
+{"t": "name", "key": "36df126c6261ac8f", "row": "ディファイラー\tでぃふぁいらー"}
 {"t": "name", "key": "36f34619c5c1f878", "row": "アーケイン・クリスタル\tあーけいん・くりすたる"}
 {"t": "name", "key": "37403fa69a78325e", "row": "ウォーソング・ガルチ\tうぉーそんぐ・がるち"}
 {"t": "name", "key": "376328d1a011c877", "row": "シェンドララス\tしぇんどららす"}
@@ -441,7 +431,6 @@
 {"t": "name", "key": "3e5852554c1d3355", "row": "ウォーター・エレメンタル\tうぉーたー・えれめんたる"}
 {"t": "name", "key": "3e6a7d38952902e8", "row": "アタック・パワー\tあたっく・ぱわー"}
 {"t": "name", "key": "3e9409987fedc442", "row": "タズィック\tたずぃっく"}
-{"t": "name", "key": "3fee19bd09f732c9", "row": "センター\tせんたー"}
 {"t": "name", "key": "4124cf3913f3a709", "row": "ゴブリン・モーター\tごぶりん・もーたー"}
 {"t": "name", "key": "41a8c9522f30a7e7", "row": "ラグナロス・ザ・ファイアロード\tらぐなろす・ざ・ふぁいあろーど"}
 {"t": "name", "key": "42d3f59623caf01b", "row": "マーク・オブ・ブラッド\tまーく・おぶ・ぶらっど"}
@@ -474,14 +463,15 @@
 {"t": "name", "key": "4e25b7233c850224", "row": "ノリック\tのりっく"}
 {"t": "name", "key": "50320859511ab07c", "row": "スピリット・オブ・アガマガン\tすぴりっと・おぶ・あがまがん"}
 {"t": "name", "key": "5080de9fe0b8e722", "row": "ジェイソン・マザーズ\tじぇいそん・まざーず"}
+{"t": "name", "key": "5156e486bf03d079", "row": "キーパー・オブ・ザ・グローヴ\tきーぱー・おぶ・ざ・ぐろーゔ"}
 {"t": "name", "key": "515a497f78b73701", "row": "ヴァンクリーフ\tゔぁんくりーふ"}
 {"t": "name", "key": "51b254611d03bbe6", "row": "モクヴァー\tもくゔぁー"}
 {"t": "name", "key": "51d1c0997ec0c69a", "row": "モルカー\tもるかー"}
 {"t": "name", "key": "521e2628c7c074f7", "row": "エラナリア\tえらなりあ"}
 {"t": "name", "key": "529b9804f063a1a4", "row": "メネシル・ハーバー\tめねしる・はーばー"}
 {"t": "name", "key": "529e8613bf4f6fbf", "row": "モーガン\tもーがん"}
+{"t": "name", "key": "53713b6aefa58b7a", "row": "ハーバリズム\tはーばりずむ"}
 {"t": "name", "key": "537d7f7839445442", "row": "アルファ\tあるふぁ"}
-{"t": "name", "key": "53f0fb14582759c4", "row": "エイチ1・アライン\tえいちいち・あらいん"}
 {"t": "name", "key": "5487251700f8c7f3", "row": "アンダーシティ\tあんだーしてぃ"}
 {"t": "name", "key": "54b95ece29fa9676", "row": "メイス\tめいす"}
 {"t": "name", "key": "54ba68e539db25f5", "row": "マガー\tまがー"}
@@ -498,6 +488,7 @@
 {"t": "name", "key": "5974b36721620113", "row": "ダルトンズ・ホーン\tだるとんず・ほーん"}
 {"t": "name", "key": "59a260daf3654ea7", "row": "イェティ\tいぇてぃ"}
 {"t": "name", "key": "5a17e5d1c159cc1e", "row": "コーポラル\tこーぽらる"}
+{"t": "name", "key": "5a228ddab4a8787b", "row": "テイラリング\tていらりんぐ"}
 {"t": "name", "key": "5a9cbecf3c70058d", "row": "シャドウ・レジスタンス\tしゃどう・れじすたんす"}
 {"t": "name", "key": "5acb8f7670402996", "row": "ナイトメア\tないとめあ"}
 {"t": "name", "key": "5b462e5ee02f0510", "row": "ブレード・フラリー\tぶれーど・ふらりー"}
@@ -506,6 +497,7 @@
 {"t": "name", "key": "5bcc891af55bf556", "row": "アイアンディープ・マイン\tあいあんでぃーぷ・まいん"}
 {"t": "name", "key": "5cde94d68e7e3581", "row": "マーゴズ\tまーごず"}
 {"t": "name", "key": "5e3c26844f1bfb4e", "row": "バロウ・ディープ\tばろう・でぃーぷ"}
+{"t": "name", "key": "5e66ee4e5d824461", "row": "レザーワーキング\tれざーわーきんぐ"}
 {"t": "name", "key": "5ebfd3b0072fb66f", "row": "フューエル・レギュレーター・ブループリント\tふゅーえる・れぎゅれーたー・ぶるーぷりんと"}
 {"t": "name", "key": "5f6dda048a634571", "row": "シャドウモー・パンサー\tしゃどうもー・ぱんさー"}
 {"t": "name", "key": "5fb1224f481ef704", "row": "レイジング・ブロー\tれいじんぐ・ぶろー"}
@@ -536,6 +528,8 @@
 {"t": "name", "key": "6a5232dea1d07ff8", "row": "ジャリエン\tじゃりえん"}
 {"t": "name", "key": "6aa5717d8861fb4d", "row": "ブレイサー・オブ・ヴァラー\tぶれいさー・おぶ・ゔぁらー"}
 {"t": "name", "key": "6b3fed213b5ef5f4", "row": "イースタン・プレイグランド\tいーすたん・ぷれいぐらんど"}
+{"t": "name", "key": "6bd48da5cbb2b3ee", "row": "エルダー・ミンデレル\tえるだー・みんでれる"}
+{"t": "name", "key": "6c8b153f5ddb942b", "row": "フレイムタン\tふれいむたん"}
 {"t": "name", "key": "6d0b4c2bcfe434e6", "row": "ネルズール\tねるずーる"}
 {"t": "name", "key": "6d34a8d9d38f8fdd", "row": "レアードズ・レスポンス\tれあーどず・れすぽんす"}
 {"t": "name", "key": "6d8e74e0a6dd7b0f", "row": "ゲイルストライダー\tげいるすとらいだー"}
@@ -555,6 +549,7 @@
 {"t": "name", "key": "7279afa88e8ad616", "row": "ハラーン\tはらーん"}
 {"t": "name", "key": "729f9f48216a51ab", "row": "スカル・ロック\tすかる・ろっく"}
 {"t": "name", "key": "731916029145fe6e", "row": "ジャッジメント\tじゃっじめんと"}
+{"t": "name", "key": "732faeabd29a7578", "row": "エンチャンティング\tえんちゃんてぃんぐ"}
 {"t": "name", "key": "739187fad476ad4b", "row": "グランドマスター・ファーマー\tぐらんどますたー・ふぁーまー"}
 {"t": "name", "key": "73bcdbb3bdb4ea5c", "row": "スノー・レパード\tすのー・れぱーど"}
 {"t": "name", "key": "742f34e668d01987", "row": "クラウン・オブ・ウィル\tくらうん・おぶ・うぃる"}
@@ -572,7 +567,6 @@
 {"t": "name", "key": "7b14a58b16290a0f", "row": "レイザーフェン・ダウン\tれいざーふぇん・だうん"}
 {"t": "name", "key": "7b64f24a54f7d12d", "row": "コイフ・アンド・ベスト・オブ・ザ・ファイブ・サンダー\tこいふ・あんど・べすと・おぶ・ざ・ふぁいぶ・さんだー"}
 {"t": "name", "key": "7b9009a0c2e97b7f", "row": "オーネイト・ミスリル・グローブ\tおーねいと・みすりる・ぐろーぶ"}
-{"t": "name", "key": "7c4ea0e2c64e11dc", "row": "クリスタル\tくりすたる"}
 {"t": "name", "key": "7c6a9cef0cdfdf95", "row": "ドライガルチ・ラヴィーン\tどらいがるち・らゔぃーん"}
 {"t": "name", "key": "7cd8c3f207759f4b", "row": "オルグニル\tおるぐにる"}
 {"t": "name", "key": "7d622eaf4ee234b3", "row": "リカバリー\tりかばりー"}
@@ -603,11 +597,13 @@
 {"t": "name", "key": "87412cdc28b79018", "row": "ワイルドハンマー\tわいるどはんまー"}
 {"t": "name", "key": "877fec130a7b4c96", "row": "マーシャル\tまーしゃる"}
 {"t": "name", "key": "879408b7c736efed", "row": "アイアンフォージ\tあいあんふぉーじ"}
+{"t": "name", "key": "88c3219ba62a71b2", "row": "ドラゴンフライト\tどらごんふらいと"}
 {"t": "name", "key": "89073f716f4efc51", "row": "ブラックロック\tぶらっくろっく"}
 {"t": "name", "key": "896675f50247aba9", "row": "パリー\tぱりー"}
 {"t": "name", "key": "896e39162fdf4798", "row": "インプ・ブラッド・パクト\tいんぷ・ぶらっど・ぱくと"}
 {"t": "name", "key": "89760940ab7187c3", "row": "エクソシズム・センサー\tえくそしずむ・せんさー"}
 {"t": "name", "key": "89ec430c1b7bff55", "row": "リジュビネーション\tりじゅびねーしょん"}
+{"t": "name", "key": "8aaa46ee0ba9fa46", "row": "バザラン\tばざらん"}
 {"t": "name", "key": "8b2317b9fa566935", "row": "ヘヴィー・ミスリル・ブレストプレート\tへゔぃー・みすりる・ぶれすとぷれーと"}
 {"t": "name", "key": "8be6e039f00d999f", "row": "ザレナ・クロムウィンド\tざれな・くろむうぃんど"}
 {"t": "name", "key": "8c16061883ecb8d8", "row": "キルジェイデン\tきるじぇいでん"}
@@ -633,6 +629,7 @@
 {"t": "name", "key": "926fea75fe8ca464", "row": "オールド・ゴッド\tおーるど・ごっど"}
 {"t": "name", "key": "92ceb1fde86d5767", "row": "メレディス・カールソン\tめれでぃす・かーるそん"}
 {"t": "name", "key": "93a2c27812451e23", "row": "シールド・スラム\tしーるど・すらむ"}
+{"t": "name", "key": "93cd3d6dae910a74", "row": "キング・マグニ\tきんぐ・まぐに"}
 {"t": "name", "key": "94d04e14b9181af5", "row": "ファイア・レジスタンス・トーテム\tふぁいあ・れじすたんす・とーてむ"}
 {"t": "name", "key": "95eb465d11a0c67d", "row": "ブリル\tぶりる"}
 {"t": "name", "key": "961d3f24278d7a0d", "row": "エドウィン・ヴァンクリーフ\tえどうぃん・ゔぁんくりーふ"}
@@ -645,19 +642,21 @@
 {"t": "name", "key": "9ca4c2247430250e", "row": "ドゥームガード\tどぅーむがーど"}
 {"t": "name", "key": "9d6cdb56670af208", "row": "グリレクス・ブラッド\tぐりれくす・ぶらっど"}
 {"t": "name", "key": "9d9fdefac9965a62", "row": "クイン\tくいん"}
-{"t": "name", "key": "9da7dc6fafd9bd62", "row": "ピー・アライン\tぴー・あらいん"}
 {"t": "name", "key": "9dbeaff96334ea75", "row": "アラシ・ベイスン\tあらし・べいすん"}
 {"t": "name", "key": "9dc5369f03f2531e", "row": "ケイネス・スティルウィンド\tけいねす・すてぃるうぃんど"}
-{"t": "name", "key": "9de5abdaf27c2139", "row": "ブリザード\tぶりざーど"}
 {"t": "name", "key": "9e1ba52572edc9d1", "row": "ジョセフ・レッドパス\tじょせふ・れっどぱす"}
 {"t": "name", "key": "9e23571f4cce2ca7", "row": "ショックウェーブ\tしょっくうぇーぶ"}
 {"t": "name", "key": "9faa6ebe36ce4328", "row": "ノームリガン・エグザイル\tのーむりがん・えぐざいる"}
 {"t": "name", "key": "a03c37640cdd2f1c", "row": "ディビネーション・スクライヤー\tでぃびねーしょん・すくらいやー"}
+{"t": "name", "key": "a08339d91e3c25a4", "row": "デッドマインズ\tでっどまいんず"}
 {"t": "name", "key": "a0d981484a9126c2", "row": "ケルドラン\tけるどらん"}
+{"t": "name", "key": "a0e6b1b9548195cb", "row": "エッセンス\tえっせんす"}
 {"t": "name", "key": "a1c5a0df16911be5", "row": "ストームウィンド・キープ\tすとーむうぃんど・きーぷ"}
 {"t": "name", "key": "a2bc17d02c11b87d", "row": "カテドラル・オブ・ライト\tかてどらる・おぶ・らいと"}
 {"t": "name", "key": "a2c04662dbe526d6", "row": "マスター・サージェント\tますたー・さーじぇんと"}
+{"t": "name", "key": "a2e781e38056160b", "row": "リヴァーグレイズ\tりゔぁーぐれいず"}
 {"t": "name", "key": "a541ca0ade9130d6", "row": "ジャーニーマン・ライディング\tじゃーにーまん・らいでぃんぐ"}
+{"t": "name", "key": "a5548691fddcf6e9", "row": "ダークムーン・フェア\tだーくむーん・ふぇあ"}
 {"t": "name", "key": "a575fc0281cfdb3d", "row": "パリード\tぱりーど"}
 {"t": "name", "key": "a61852d7ad17946b", "row": "レギオン\tれぎおん"}
 {"t": "name", "key": "a62803acda662dcc", "row": "ソーリウム・バー\tそーりうむ・ばー"}
@@ -669,11 +668,13 @@
 {"t": "name", "key": "a7d7b8455af9518a", "row": "デスネル\tですねる"}
 {"t": "name", "key": "a7e2445ebc7e62ef", "row": "カース\tかーす"}
 {"t": "name", "key": "a88d7c49bfa081cd", "row": "クルセイダーズ・ブーツ\tくるせいだーず・ぶーつ"}
+{"t": "name", "key": "a99c6a0c4ea282b9", "row": "アルタラック・バレー\tあるたらっく・ばれー"}
 {"t": "name", "key": "a9e7d0e9d48cdd73", "row": "コマンダー\tこまんだー"}
 {"t": "name", "key": "ac19a62765cc0ce5", "row": "デソレース\tでそれーす"}
 {"t": "name", "key": "ac6548bbc0001fbd", "row": "ストーンウォッチ・キープ\tすとーんうぉっち・きーぷ"}
 {"t": "name", "key": "ad01f4c7310afb51", "row": "フォーセイクン\tふぉーせいくん"}
 {"t": "name", "key": "add3bf124235bcb0", "row": "パンメル\tぱんめる"}
+{"t": "name", "key": "ae1cd67702bfbc3a", "row": "スカラマンス\tすからまんす"}
 {"t": "name", "key": "ae45d3f45402e660", "row": "ダーク・アイアン\tだーく・あいあん"}
 {"t": "name", "key": "ae58fe7e1b2d9482", "row": "アライアンス\tあらいあんす"}
 {"t": "name", "key": "ae5a2999fe98e738", "row": "ジミックス\tじみっくす"}
@@ -683,11 +684,14 @@
 {"t": "name", "key": "af1d80cbad893110", "row": "アズシャラ\tあずしゃら"}
 {"t": "name", "key": "af6df99631a3cd84", "row": "ホレイショ・エム・モンゴメリー\tほれいしょ・えむ・もんごめりー"}
 {"t": "name", "key": "afb0193560f84846", "row": "シリサス・ヴェノム・サンプル\tしりさす・ゔぇのむ・さんぷる"}
+{"t": "name", "key": "afd782c7d407330a", "row": "ヴォイドウォーカー\tゔぉいどうぉーかー"}
 {"t": "name", "key": "b03f8db5ee2e2b66", "row": "レナタキズ・トゥース\tれなたきず・とぅーす"}
 {"t": "name", "key": "b073760d6ce5c071", "row": "アージェント・ドーン・ヴァラー・トークン\tあーじぇんと・どーん・ゔぁらー・とーくん"}
 {"t": "name", "key": "b09db48072fff557", "row": "デリアナ\tでりあな"}
 {"t": "name", "key": "b0e134b7aec9a64e", "row": "リバイブ・ペット\tりばいぶ・ぺっと"}
+{"t": "name", "key": "b160845b4043ea1c", "row": "ホーン・オブ・ゼルソス\tほーん・おぶ・ぜるそす"}
 {"t": "name", "key": "b176dfa470fed69b", "row": "マインド・スパイク\tまいんど・すぱいく"}
+{"t": "name", "key": "b1c39a92e4846097", "row": "ダークスピア・アイランド\tだーくすぴあ・あいらんど"}
 {"t": "name", "key": "b1f8387390969c1f", "row": "マウアリ\tまうあり"}
 {"t": "name", "key": "b24a3a66ab2b21c1", "row": "ブラッドフーフ・ヴィレッジ\tぶらっどふーふ・ゔぃれっじ"}
 {"t": "name", "key": "b28b00748e981103", "row": "ダスクウッド\tだすくうっど"}
@@ -699,14 +703,17 @@
 {"t": "name", "key": "b3f774926f02484a", "row": "バーニング・ステップ\tばーにんぐ・すてっぷ"}
 {"t": "name", "key": "b3fa1e032648bc3c", "row": "メレー・ウェポン\tめれー・うぇぽん"}
 {"t": "name", "key": "b4b8e7bd00e5deb1", "row": "ドレナー\tどれなー"}
-{"t": "name", "key": "b5468607bf95de7d", "row": "アライン\tあらいん"}
 {"t": "name", "key": "b54cbc9265dd2cb7", "row": "ミニオン・オブ・モーガンス\tみにおん・おぶ・もーがんす"}
 {"t": "name", "key": "b69dc5f85eb8d9fe", "row": "ヴォイドウォーカー\tゔぉいどうぉーかー"}
+{"t": "name", "key": "b78d04f325bde264", "row": "シルバーパイン・フォレスト\tしるばーぱいん・ふぉれすと"}
 {"t": "name", "key": "b7ec98f1ef2b209d", "row": "スペル・ダメージ\tすぺる・だめーじ"}
+{"t": "name", "key": "b7f89a75651e4598", "row": "ソーン\tそーん"}
+{"t": "name", "key": "b83362564eb9ba91", "row": "ブロンズ\tぶろんず"}
+{"t": "name", "key": "b85b0ea0c9d9620c", "row": "スロール\tすろーる"}
 {"t": "name", "key": "b88f2c9961fec2a6", "row": "クリムゾン・クリーヴァー\tくりむぞん・くりーゔぁー"}
 {"t": "name", "key": "b8ee5e0ffc216dc7", "row": "ザンダラリアン・シャドウ・タリスマン\tざんだらりあん・しゃどう・たりすまん"}
-{"t": "name", "key": "b8ef9741bb30d91a", "row": "ピクチャー\tぴくちゃー"}
 {"t": "name", "key": "b905a13bbf9357b4", "row": "ドリーム\tどりーむ"}
+{"t": "name", "key": "b91afb6b5b74cb75", "row": "レイジファイア・キャズム\tれいじふぁいあ・きゃずむ"}
 {"t": "name", "key": "b941d7a728dddcb6", "row": "バーサーカー・レイジ\tばーさーかー・れいじ"}
 {"t": "name", "key": "ba1ceddda0026bf7", "row": "ブラッドレイジ\tぶらっどれいじ"}
 {"t": "name", "key": "ba396c4f8028545a", "row": "ウール・クロス\tうーる・くろす"}
@@ -725,6 +732,7 @@
 {"t": "name", "key": "beacd2dfaa0cb0a5", "row": "オールド・ゴッド\tおーるど・ごっど"}
 {"t": "name", "key": "bef64bb544e639e3", "row": "オーグリマー\tおーぐりまー"}
 {"t": "name", "key": "befee74f70f42cc6", "row": "ショック\tしょっく"}
+{"t": "name", "key": "bf1b822c809776fe", "row": "マグラム・クラン・セントール\tまぐらむ・くらん・せんとーる"}
 {"t": "name", "key": "bfebf62094e2ecb1", "row": "プリトーリアン\tぷりとーりあん"}
 {"t": "name", "key": "c014e4a85ac051b9", "row": "ウルフ・ライディング\tうるふ・らいでぃんぐ"}
 {"t": "name", "key": "c09b59d41dbde702", "row": "ストローム\tすとろーむ"}
@@ -739,6 +747,7 @@
 {"t": "name", "key": "c3b7bcacd64ce7ba", "row": "ストーンメイソン\tすとーんめいそん"}
 {"t": "name", "key": "c3f17754463ad06a", "row": "ルーン・オブ・エスケープ\tるーん・おぶ・えすけーぷ"}
 {"t": "name", "key": "c492ef02af120d87", "row": "ヴァイアル・オブ・ダークハウンド・ブラッド\tゔぁいある・おぶ・だーくはうんど・ぶらっど"}
+{"t": "name", "key": "c4abb70b748e01db", "row": "ダークマスター・ガンドリング\tだーくますたー・がんどりんぐ"}
 {"t": "name", "key": "c4e2d2edd70292ff", "row": "レイヴンホルト\tれいゔんほると"}
 {"t": "name", "key": "c5003e5f4f80db28", "row": "ディモラライジング・ロア\tでぃもららいじんぐ・ろあ"}
 {"t": "name", "key": "c51a3c6d4f5d1879", "row": "アーケイナイト\tあーけいないと"}
@@ -764,6 +773,7 @@
 {"t": "name", "key": "cda1b28511930ac8", "row": "フットマン・ロルフ・ハートフォード\tふっとまん・ろるふ・はーとふぉーど"}
 {"t": "name", "key": "cf53c3ba3a84dd01", "row": "コマー・ヴィラード\tこまー・ゔぃらーど"}
 {"t": "name", "key": "cf86552329ea4e88", "row": "オーブ・オブ・ソランルク\tおーぶ・おぶ・そらんるく"}
+{"t": "name", "key": "cfe79a6619b2f192", "row": "サイラス・ダークムーン\tさいらす・だーくむーん"}
 {"t": "name", "key": "d02212067014f9cb", "row": "ティア\tてぃあ"}
 {"t": "name", "key": "d02e75969ae52d33", "row": "フェロシャス・バイト\tふぇろしゃす・ばいと"}
 {"t": "name", "key": "d0309d54ca0b9b7d", "row": "キッタ・ファイアウィンド\tきった・ふぁいあうぃんど"}
@@ -775,6 +785,7 @@
 {"t": "name", "key": "d278ca955d648b83", "row": "サンダー・ブラフ\tさんだー・ぶらふ"}
 {"t": "name", "key": "d2cd374d876d309b", "row": "ティールズ・ハンド\tてぃーるず・はんど"}
 {"t": "name", "key": "d307791d60f4b472", "row": "デュロター\tでゅろたー"}
+{"t": "name", "key": "d39c33bd6a607c7c", "row": "カリムドア\tかりむどあ"}
 {"t": "name", "key": "d4f81b3f39fd3d31", "row": "トキシック・フォガー\tときしっく・ふぉがー"}
 {"t": "name", "key": "d50702a3593a5c4d", "row": "アルケミー\tあるけみー"}
 {"t": "name", "key": "d5106f0cb5220184", "row": "ゴールドシャイア\tごーるどしゃいあ"}
@@ -792,7 +803,6 @@
 {"t": "name", "key": "dc159371f5eabbb0", "row": "ウォーデン・セルウォーター\tうぉーでん・せるうぉーたー"}
 {"t": "name", "key": "dc23b574a51d3a0d", "row": "フロスト\tふろすと"}
 {"t": "name", "key": "df132c707f0bf6ce", "row": "ウォッチャー\tうぉっちゃー"}
-{"t": "name", "key": "df483313dd0011cc", "row": "ライト\tらいと"}
 {"t": "name", "key": "df49918064184d89", "row": "ウォー・ライダー\tうぉー・らいだー"}
 {"t": "name", "key": "df5775be51f116a7", "row": "マジストレート・セヴレン\tまじすとれーと・せゔれん"}
 {"t": "name", "key": "e15fce7a5a9d843d", "row": "ナールパイン\tなーるぱいん"}
@@ -801,34 +811,40 @@
 {"t": "name", "key": "e1b00ee18c9a08bb", "row": "レイジ・スカー・ホールド\tれいじ・すかー・ほーるど"}
 {"t": "name", "key": "e2363e03da1279da", "row": "ソウル・オブ・ザ・アルファ・テイマー\tそうる・おぶ・ざ・あるふぁ・ていまー"}
 {"t": "name", "key": "e2bbc522b65f4d46", "row": "ルテナント・コマンダー\tるてなんと・こまんだー"}
+{"t": "name", "key": "e2ded3a3af9061f7", "row": "リバース\tりばーす"}
 {"t": "name", "key": "e35ddcea108d08de", "row": "ノースレンド\tのーすれんど"}
+{"t": "name", "key": "e3726e48c4bb4198", "row": "ウルソル\tうるそる"}
 {"t": "name", "key": "e41c9edead049531", "row": "アンドーハル\tあんどーはる"}
 {"t": "name", "key": "e4fb32de6ce6e9c2", "row": "ドラナール\tどらなーる"}
 {"t": "name", "key": "e51dfcb3d2eeb81e", "row": "ウォーター・エレメンタル\tうぉーたー・えれめんたる"}
 {"t": "name", "key": "e5b2b4e2476fde53", "row": "メナラ・ヴォイドレンダー\tめなら・ゔぉいどれんだー"}
 {"t": "name", "key": "e63519118926db5e", "row": "スパイラル・オブ・ソーン\tすぱいらる・おぶ・そーん"}
 {"t": "name", "key": "e6c49687cc2cef6d", "row": "ドレネシスト\tどれねしすと"}
-{"t": "name", "key": "e71019da22b8fe60", "row": "ピーブイピーランクバッジ\tぴーぶいぴーらんくばっじ"}
 {"t": "name", "key": "e768543eef5f002d", "row": "クリッター\tくりったー"}
 {"t": "name", "key": "e76b3e2bbe39add3", "row": "ミドル\tみどる"}
 {"t": "name", "key": "e7c8a280eba140aa", "row": "エガリン\tえがりん"}
 {"t": "name", "key": "e8f344b5df028ad0", "row": "フェルカース\tふぇるかーす"}
 {"t": "name", "key": "ea253860a674ae57", "row": "ファースト・ウォー\tふぁーすと・うぉー"}
 {"t": "name", "key": "ea2d918fe2742fc5", "row": "モータル・ストライク\tもーたる・すとらいく"}
+{"t": "name", "key": "ea739550a806fd68", "row": "アムネナー・ザ・コールドブリンガー\tあむねなー・ざ・こーるどぶりんがー"}
 {"t": "name", "key": "eae8d3c260584701", "row": "サンダー・リッジ\tさんだー・りっじ"}
 {"t": "name", "key": "eb41bc3608906055", "row": "アライアンス\tあらいあんす"}
+{"t": "name", "key": "ec79044553cbd149", "row": "ジャイアント\tじゃいあんと"}
 {"t": "name", "key": "ecf5b5cda42d2775", "row": "シャドウ・ワード\tしゃどう・わーど"}
 {"t": "name", "key": "ed42f4e07681e947", "row": "ディム・ネクロティック・ストーン\tでぃむ・ねくろてぃっく・すとーん"}
 {"t": "name", "key": "ed5707bdc5b47d85", "row": "フィズル・ダークストーム\tふぃずる・だーくすとーむ"}
 {"t": "name", "key": "ed63424a9d342b52", "row": "グロムゴル・ベース・キャンプ\tぐろむごる・べーす・きゃんぷ"}
 {"t": "name", "key": "ed8477381aae12d4", "row": "フォレスト・ソング\tふぉれすと・そんぐ"}
+{"t": "name", "key": "ed928dc95b5c5fa4", "row": "キャット・フォーム\tきゃっと・ふぉーむ"}
+{"t": "name", "key": "edb2fb6c9bd8b0a9", "row": "グラント\tぐらんと"}
 {"t": "name", "key": "ededf7ff9d225d3d", "row": "ソーリサン\tそーりさん"}
-{"t": "name", "key": "ee32324bca366074", "row": "ピーブイピーランク\tぴーぶいぴーらんく"}
 {"t": "name", "key": "eea3f288f1133004", "row": "ダンサー・エクストラオーディネール\tだんさー・えくすとらおーでぃねーる"}
 {"t": "name", "key": "ef83aa39767c47c2", "row": "バイザーリ\tばいざーり"}
 {"t": "name", "key": "f06c0d905479190d", "row": "テンドリス・ワープウッド\tてんどりす・わーぷうっど"}
 {"t": "name", "key": "f137139d29b02e29", "row": "ツー・ハンデッド・アックス\tつー・はんでっど・あっくす"}
+{"t": "name", "key": "f14c70303f73c518", "row": "ジェネラル\tじぇねらる"}
 {"t": "name", "key": "f15aa4eb6db2aced", "row": "マクスウェル\tまくすうぇる"}
+{"t": "name", "key": "f18fe01890f4f3f9", "row": "アゼロス・コマース・オーソリティ\tあぜろす・こまーす・おーそりてぃ"}
 {"t": "name", "key": "f1b78acb2d219546", "row": "ロトガス\tろとがす"}
 {"t": "name", "key": "f2125061436a5eb7", "row": "グランディグ・ダーククラウド\tぐらんでぃぐ・だーくくらうど"}
 {"t": "name", "key": "f2b84534975d4683", "row": "ソード\tそーど"}
@@ -838,12 +854,14 @@
 {"t": "name", "key": "f49115a562afe4be", "row": "ナイト・チャンピオン\tないと・ちゃんぴおん"}
 {"t": "name", "key": "f57112af36ea575b", "row": "ウィンドフューリー・ウェポン\tうぃんどふゅーりー・うぇぽん"}
 {"t": "name", "key": "f6197a424c53cf53", "row": "エイチ・エム・エム\tえいち・えむ・えむ"}
+{"t": "name", "key": "f637121589807471", "row": "イースタン・キングダム\tいーすたん・きんぐだむ"}
 {"t": "name", "key": "f708188cb4b3fcbf", "row": "アポセカリー・ライドン\tあぽせかりー・らいどん"}
 {"t": "name", "key": "f847f6d165864009", "row": "バーニング・ブレード\tばーにんぐ・ぶれーど"}
 {"t": "name", "key": "f8e97c57132a27bd", "row": "ドゥグル・ゴアラスト\tどぅぐる・ごあらすと"}
 {"t": "name", "key": "f9018f2bfa0fb356", "row": "タイラント・オブ・ザ・ドリーム\tたいらんと・おぶ・ざ・どりーむ"}
 {"t": "name", "key": "fca430295c75ff5b", "row": "アンキラージ\tあんきらーじ"}
 {"t": "name", "key": "fdd551c1181ae851", "row": "サンダー・エール\tさんだー・えーる"}
+{"t": "name", "key": "fe2d933b6bee473d", "row": "ケーアン・ブラッドフーフ\tけーあん・ぶらっどふーふ"}
 {"t": "name", "key": "fed8faa4c6a149e9", "row": "ホード\tほーど"}
 {"t": "name", "key": "ff7be748a165efe5", "row": "フォラーズ・コンペンディウム・オブ・ドラゴン・スレイイング\tふぉらーず・こんぺんでぃうむ・おぶ・どらごん・すれいいんぐ"}
 {"t": "name", "key": "ff9bca35ba4b49f2", "row": "ハーピー\tはーぴー"}
@@ -1029,8 +1047,8 @@
 {"t": "line", "id": "quest:7:title", "ja": "Koboldキャンプの掃討", "out": "コボルドキャンプの掃討", "html": false}
 {"t": "line", "id": "quest:806:description", "ja": "DurotarにBurning Bladeの橋頭堡を築かせてはならん！ひどくなる前に手を打たねばならん！\n\n調べたところBurning Bladeのウォーロック、ゴブリンのFizzle Darkstormが北西のThunder Ridgeの中で宿営していることがわかった。奴とその手下はそこから混迷を広めている。\n\nFizzleを見つけ出して、殺せ。そして彼のつめを取ってくるのだ。", "out": "デュロターにバーニング・ブレードの橋頭堡を築かせてはならん！ひどくなる前に手を打たねばならん！\n\n調べたところバーニング・ブレードのウォーロック、ゴブリンのフィズル・ダークストームが北西のサンダー・リッジの中で宿営していることがわかった。奴とその手下はそこから混迷を広めている。\n\nフィズルを見つけ出して、殺せ。そして彼のつめを取ってくるのだ。", "html": false}
 {"t": "line", "id": "quest:8142:title", "ja": "Zandalarian Shadow Talisman", "out": "ザンダラリアン・シャドウ・タリスマン", "html": false}
-{"t": "line", "id": "quest:81746:title", "ja": "Duskwood任務XVII：Alara Grovemender救出", "out": "ダスクウッド任務セブンティーン：アララ・グローヴメンダー救出", "html": false}
-{"t": "line", "id": "quest:81856:title", "ja": "Feralas任務II：Harpies討伐", "out": "フェララス任務ツー：ハーピー討伐", "html": false}
+{"t": "line", "id": "quest:81746:title", "ja": "Duskwood任務XVII：Alara Grovemender救出", "out": "ダスクウッド任務XVII：アララ・グローヴメンダー救出", "html": false}
+{"t": "line", "id": "quest:81856:title", "ja": "Feralas任務II：Harpies討伐", "out": "フェララス任務II：ハーピー討伐", "html": false}
 {"t": "line", "id": "quest:823:title", "ja": "Orgnilへの報告", "out": "オルグニルへの報告", "html": false}
 {"t": "line", "id": "quest:828:description", "ja": "我らシャーマンの一人、MargozはBurning Bladeの腐敗についてより多くのことを知っているだろう。彼はBurning Bladeのカルト信者の大集団が隠れているSkull Rockと呼ばれるOrgrimmarのすぐそばにある洞窟について話をしてくれるだろう。\n\nSkull Rockへ行く前にMargozと話をするといい。彼は賢明であり、彼の助言は高く評価されている。\n\n彼はここから北東の海岸とDrygulch Ravineの間で野営している。\n\n彼の助言に従え。しかしMargozがなんと言おうとも{name}、あのカルト信者どもを打ちのめしてほしい！", "out": "我らシャーマンの一人、マーゴズはバーニング・ブレードの腐敗についてより多くのことを知っているだろう。彼はバーニング・ブレードのカルト信者の大集団が隠れているスカル・ロックと呼ばれるオーグリマーのすぐそばにある洞窟について話をしてくれるだろう。\n\nスカル・ロックへ行く前にマーゴズと話をするといい。彼は賢明であり、彼の助言は高く評価されている。\n\n彼はここから北東の海岸とドライガルチ・ラヴィーンの間で野営している。\n\n彼の助言に従え。しかしマーゴズがなんと言おうとも{name}、あのカルト信者どもを打ちのめしてほしい！", "html": false}
 {"t": "line", "id": "quest:8351:title", "ja": "Borが話したがっています", "out": "ボルが話したがっています", "html": false}
@@ -1092,7 +1110,7 @@
 {"t": "line", "id": "spell:1226591:description", "ja": "Mind Blastの発生させる脅威が$N1%減少し、対象にかかっているMind Spikeのスタック一つにつきダメージが$N2%増加します。", "out": "マインド・ブラストの発生させる脅威が$N1%減少し、対象にかかっているマインド・スパイクのスタック一つにつきダメージが$N2%増加します。", "html": false}
 {"t": "line", "id": "spell:1230948:description", "ja": "攻撃呪文のGlobal Cooldownが$N1秒短縮されます。", "out": "攻撃呪文のグローバル・クールダウンが$N1秒短縮されます。", "html": false}
 {"t": "line", "id": "spell:1231906:description", "ja": "BalnazzarがinfernalをScarlet Lightbearerの妨害に呼び出し、$N2ヤード以内に$N1のFireダメージを与え、命中したプレイヤーを$N3の間スタンさせます。", "out": "バルナザールがインファーナルをスカーレット・ライトベアラーの妨害に呼び出し、$N2ヤード以内に$N1のファイアダメージを与え、命中したプレイヤーを$N3の間スタンさせます。", "html": false}
-{"t": "line", "id": "spell:1235320:description", "ja": "$?a435884[命中時に一定の確率で、次の$N1回のNatureダメージが$N2%増加します。$D1持続します。]?a446658[命中時に一定の確率で、次の$N4回のCleaveダメージが$N5%増加します。$D2持続します。]?a446374[命中時に一定の確率で、次の$N7回のRaptor Strikeのダメージが$N8%増加します。$D3持続します。]?a462814[命中時に一定の確率で、次の$N10回のHolyダメージが$N11%増加します。$D4持続します。][Crimson Cleaverはあなたの存在に反応しません。別のクラスなら恩恵を受けられるのではないでしょうか？]", "out": "$?a435884[命中時に一定の確率で、次の$N1回のネイチャーダメージが$N2%増加します。$D1持続します。]?ア446658[命中時に一定の確率で、次の$N4回のクリーヴダメージが$N5%増加します。$D2持続します。]?ア446374[命中時に一定の確率で、次の$N7回のラプター・ストライクのダメージが$N8%増加します。$D3持続します。]?ア462814[命中時に一定の確率で、次の$N10回のホーリーダメージが$N11%増加します。$D4持続します。][クリムゾン・クリーヴァーはあなたの存在に反応しません。別のクラスなら恩恵を受けられるのではないでしょうか？]", "html": false}
+{"t": "line", "id": "spell:1235320:description", "ja": "$?a435884[命中時に一定の確率で、次の$N1回のNatureダメージが$N2%増加します。$D1持続します。]?a446658[命中時に一定の確率で、次の$N4回のCleaveダメージが$N5%増加します。$D2持続します。]?a446374[命中時に一定の確率で、次の$N7回のRaptor Strikeのダメージが$N8%増加します。$D3持続します。]?a462814[命中時に一定の確率で、次の$N10回のHolyダメージが$N11%増加します。$D4持続します。][Crimson Cleaverはあなたの存在に反応しません。別のクラスなら恩恵を受けられるのではないでしょうか？]", "out": "$?a435884[命中時に一定の確率で、次の$N1回のネイチャーダメージが$N2%増加します。$D1持続します。]?a446658[命中時に一定の確率で、次の$N4回のクリーヴダメージが$N5%増加します。$D2持続します。]?a446374[命中時に一定の確率で、次の$N7回のラプター・ストライクのダメージが$N8%増加します。$D3持続します。]?a462814[命中時に一定の確率で、次の$N10回のホーリーダメージが$N11%増加します。$D4持続します。][クリムゾン・クリーヴァーはあなたの存在に反応しません。別のクラスなら恩恵を受けられるのではないでしょうか？]", "html": false}
 {"t": "line", "id": "spell:1241797:description", "ja": "ダメージを与えるフィニッシュ技を使うと、Adrenaline Rush、Blade Flurry、Evasion、Sprint、Vanishの残りクールダウンがコンボポイントごとに$D1短縮されます。", "out": "ダメージを与えるフィニッシュ技を使うと、アドレナリン・ラッシュ、ブレード・フラリー、イベイジョン、スプリント、バニッシュの残りクールダウンがコンボポイントごとに$D1短縮されます。", "html": false}
 {"t": "line", "id": "spell:1248760:description", "ja": "Melee Weaponに永続的なエンチャントを施し、攻撃をParriedまたはDodgedされたときにRecoveryが発動するようにします。Recoveryは最大体力の$N1%を回復します。この効果は$N2秒に一度までしか発生しません。", "out": "メレー・ウェポンに永続的なエンチャントを施し、攻撃をパリードまたはドッジドされたときにリカバリーが発動するようにします。リカバリーは最大体力の$N1%を回復します。この効果は$N2秒に一度までしか発生しません。", "html": false}
 {"t": "line", "id": "spell:1253387:aura", "ja": "Fire耐性が$N1上昇します。", "out": "ファイア耐性が$N1上昇します。", "html": false}
@@ -1109,7 +1127,7 @@
 {"t": "line", "id": "spell:1309551:aura", "ja": "受けるFireダメージが$N1%増加しています。\n移動速度が$N2%上昇しています。", "out": "受けるファイアダメージが$N1%増加しています。\n移動速度が$N2%上昇しています。", "html": false}
 {"t": "line", "id": "spell:1314104:description", "ja": "Seal of Furyのシールドが完全に吸収されると、マナを$N1回復します。この量は攻撃者のレベルがあなたを上回るレベルごとに$N2%増え、最大$N3%まで増えます。", "out": "シール・オブ・フューリーのシールドが完全に吸収されると、マナを$N1回復します。この量は攻撃者のレベルがあなたを上回るレベルごとに$N2%増え、最大$N3%まで増えます。", "html": false}
 {"t": "line", "id": "spell:13183:aura", "ja": "$N2秒ごとに$N1のFireダメージを与えています。", "out": "$N2秒ごとに$N1のファイアダメージを与えています。", "html": false}
-{"t": "line", "id": "spell:1324895:description", "ja": "NPCとのインタラクト範囲を上書きします。インタラクト用の呪文を使う必要があるクリーチャーだけでなく、クエストを与えるNPCにも有効です。", "out": "エヌピーシーとのインタラクト範囲を上書きします。インタラクト用の呪文を使う必要があるクリーチャーだけでなく、クエストを与えるエヌピーシーにも有効です。", "html": false}
+{"t": "line", "id": "spell:1324895:description", "ja": "NPCとのインタラクト範囲を上書きします。インタラクト用の呪文を使う必要があるクリーチャーだけでなく、クエストを与えるNPCにも有効です。", "out": "NPCとのインタラクト範囲を上書きします。インタラクト用の呪文を使う必要があるクリーチャーだけでなく、クエストを与えるNPCにも有効です。", "html": false}
 {"t": "line", "id": "spell:13398:description", "ja": "敵にレンチを投げつけ、Physicalダメージを与えます。", "out": "敵にレンチを投げつけ、フィジカルダメージを与えます。", "html": false}
 {"t": "line", "id": "spell:13896:description", "ja": "プリーストが反魔法のエネルギーに包まれます。プリーストに対して呪文が成功するたびに、攻撃者のマナを$N1焼却し、焼却したマナのポイントごとに$N2のShadowダメージを与えます。効果時間は$D1です。", "out": "プリーストが反魔法のエネルギーに包まれます。プリーストに対して呪文が成功するたびに、攻撃者のマナを$N1焼却し、焼却したマナのポイントごとに$N2のシャドウダメージを与えます。効果時間は$D1です。", "html": false}
 {"t": "line", "id": "spell:14331:description", "ja": "$D2の間、$D1ごとに敵にPhysicalダメージを与えます。", "out": "$D2の間、$D1ごとに敵にフィジカルダメージを与えます。", "html": false}
@@ -1141,7 +1159,7 @@
 {"t": "line", "id": "spell:27602:description", "ja": "Arcanite Dragonlingが動き出し、$D1の間あなたを守ります。", "out": "アーケイナイト・ミニドラゴンが動き出し、$D1の間あなたを守ります。", "html": false}
 {"t": "line", "id": "spell:28272:description", "ja": "敵を豚に変え、最大$D1の間さまよわせます。さまよっている間、豚は攻撃も呪文の詠唱もできませんが、非常に速く回復します。ダメージを受けると元の姿に戻ります。一度にポリモーフできる対象は一体だけです。Beasts、Humanoids、Crittersにのみ有効です。", "out": "敵を豚に変え、最大$D1の間さまよわせます。さまよっている間、豚は攻撃も呪文の詠唱もできませんが、非常に速く回復します。ダメージを受けると元の姿に戻ります。一度にポリモーフできる対象は一体だけです。ビースト、ヒューマノイド、クリッターにのみ有効です。", "html": false}
 {"t": "line", "id": "spell:28853:description", "ja": "Judgementで周囲のパーティメンバー全員を$N1回復させるようになります。", "out": "ジャッジメントで周囲のパーティメンバー全員を$N1回復させるようになります。", "html": false}
-{"t": "line", "id": "spell:3068:description", "ja": "Blizzard（Rank 2）を習得します。", "out": "ブリザード（ランク 2）を習得します。", "html": false}
+{"t": "line", "id": "spell:3068:description", "ja": "Blizzard（Rank 2）を習得します。", "out": "Blizzard（ランク 2）を習得します。", "html": false}
 {"t": "line", "id": "spell:3611:description", "ja": "$D1の間、術者を戦闘で援護するMinion of Morganthを$N1体召喚します。", "out": "$D1の間、術者を戦闘で援護するミニオン・オブ・モーガンスを$N1体召喚します。", "html": false}
 {"t": "line", "id": "spell:400038:description", "ja": "Blade Danceのアビリティを得ます：\n\n$I1\nフィニッシュ技です。Parryの確率を$N1%上昇させ、防御スキルが$N3を超えるポイントごとにAttack Powerを$N2得ます。コンボポイントが多いほど長く持続します：\n\n1ポイント：14秒\n 2ポイント：18秒\n 3ポイント：22秒\n 4ポイント：26秒\n 5ポイント：30秒", "out": "ブレード・ダンスのアビリティを得ます：\n\n$I1\nフィニッシュ技です。パリーの確率を$N1%上昇させ、防御スキルが$N3を超えるポイントごとにアタック・パワーを$N2得ます。コンボポイントが多いほど長く持続します：\n\n1ポイント：14秒\n 2ポイント：18秒\n 3ポイント：22秒\n 4ポイント：26秒\n 5ポイント：30秒", "html": false}
 {"t": "line", "id": "spell:402911:description", "ja": "武器ダメージの$N1%を与える猛烈な一撃です。Enrage、Berserker Rage、Bloodrageのいずれかが有効な間のみ使用できます。Enrage、Berserker Rage、Bloodrageが有効な間に他の近接アビリティを使うたびに、Raging Blowの残りクールダウンが$N2秒短縮されます。", "out": "武器ダメージの$N1%を与える猛烈な一撃です。エンレイジ、バーサーカー・レイジ、ブラッドレイジのいずれかが有効な間のみ使用できます。エンレイジ、バーサーカー・レイジ、ブラッドレイジが有効な間に他の近接アビリティを使うたびに、レイジング・ブローの残りクールダウンが$N2秒短縮されます。", "html": false}
@@ -1173,3 +1191,63 @@
 {"t": "line", "id": "spell:8087:description", "ja": "釣り竿に使用すると、10分間Fishingを25上げます。", "out": "釣り竿に使用すると、10分間フィッシングを25上げます。", "html": false}
 {"t": "line", "id": "spell:850:description", "ja": "Pummel（Learn）の習得。", "out": "パンメル（ラーン）の習得。", "html": false}
 {"t": "line", "id": "spell:9305:description", "ja": "Frost呪文と効果によるダメージが最大$N1増加します。", "out": "フロスト呪文と効果によるダメージが最大$N1増加します。", "html": false}
+{"t": "line", "id": "ui:ACCOUNT_COMPLETED_QUESTS_FILTER_DESCRIPTION:text", "ja": "他のキャラクターで完了済みのクエストについて、マップとワールド内のクエスト表示を切り替えます。|n|n現在はDragonflightとThe War Withinに対応しています。", "out": "他のキャラクターで完了済みのクエストについて、マップとワールド内のクエスト表示を切り替えます。|n|n現在はドラゴンフライトとThe War Withinに対応しています。", "html": false}
+{"t": "line", "id": "ui:AchievementDescription:15030:text", "ja": "Darkmaster Gandling撃破数（Scholomance）", "out": "ダークマスター・ガンドリング撃破数（スカラマンス）", "html": false}
+{"t": "line", "id": "ui:AchievementDescription:178:text", "ja": "習得したEnchantingのフォーミュラ", "out": "習得したエンチャンティングのフォーミュラ", "html": false}
+{"t": "line", "id": "ui:AchievementDescription:6141:text", "ja": "Amnennar the Coldbringer撃破数（Razorfen Downs）", "out": "アムネナー・ザ・コールドブリンガー撃破数（レイザーフェン・ダウン）", "html": false}
+{"t": "line", "id": "ui:AchievementDescription:62028:text", "ja": "初めてTailoringのスキルを150にしてください。", "out": "初めてテイラリングのスキルを150にしてください。", "html": false}
+{"t": "line", "id": "ui:AchievementDescription:63570:text", "ja": "Edwin VanCleef撃破数（Deadmines）", "out": "エドウィン・ヴァンクリーフ撃破数（デッドマインズ）", "html": false}
+{"t": "line", "id": "ui:AchievementDescription:64061:text", "ja": "プレイヤー対プレイヤーの名誉システムでMarshalまたはGeneralの階級に到達してください。", "out": "プレイヤー対プレイヤーの名誉システムでマーシャルまたはジェネラルの階級に到達してください。", "html": false}
+{"t": "line", "id": "ui:AchievementDescription:769:text", "ja": "Silverpine Forestを探検し、ワールドマップの隠れた地域を明らかにしてください。", "out": "シルバーパイン・フォレストを探検し、ワールドマップの隠れた地域を明らかにしてください。", "html": false}
+{"t": "line", "id": "ui:AchievementDescription:848:text", "ja": "Desolaceを探検し、ワールドマップの隠れた地域を明らかにしてください。", "out": "デソレースを探検し、ワールドマップの隠れた地域を明らかにしてください。", "html": false}
+{"t": "line", "id": "ui:AchievementTitle:1115:text", "ja": "Warsong Gulchでの名誉キル", "out": "ウォーソング・ガルチでの名誉キル", "html": false}
+{"t": "line", "id": "ui:AchievementTitle:1544:text", "ja": "Engineeringスキルの最高値", "out": "エンジニアリングスキルの最高値", "html": false}
+{"t": "line", "id": "ui:AchievementTitle:586:text", "ja": "取り返したWarsong Gulchの旗", "out": "取り返したウォーソング・ガルチの旗", "html": false}
+{"t": "line", "id": "ui:AchievementTitle:62354:text", "ja": "Rivergladesを探検", "out": "リヴァーグレイズを探検", "html": false}
+{"t": "line", "id": "ui:AchievementTitle:64182:text", "ja": "Darkspear Islandsでの死亡", "out": "ダークスピア・アイランドでの死亡", "html": false}
+{"t": "line", "id": "ui:AchievementTitle:775:text", "ja": "Burning Steppesを探検", "out": "バーニング・ステップを探検", "html": false}
+{"t": "line", "id": "ui:AchievementTitle:854:text", "ja": "Un'Goro Craterを探検", "out": "ウンゴロ・クレーターを探検", "html": false}
+{"t": "line", "id": "ui:AreaPoiDescription:7641:text", "ja": "Keeper of the Grove - Larodar - 生存", "out": "キーパー・オブ・ザ・グローヴ - Larodar - 生存", "html": false}
+{"t": "line", "id": "ui:BroadcastText:329285:text", "ja": "しかし、Gnomereganは取り返しのつかないかたちで失われた。", "out": "しかし、ノームリガンは取り返しのつかないかたちで失われた。", "html": false}
+{"t": "line", "id": "ui:BroadcastText:329330:text", "ja": "Hordeは最終的に敗れたものの、Thrallという名の先見の明ある若き大族長が、最も暗い時代に一族を導くべく立ち上がった。", "out": "ホードは最終的に敗れたものの、スロールという名の先見の明ある若き大族長が、最も暗い時代に一族を導くべく立ち上がった。", "html": false}
+{"t": "line", "id": "ui:BroadcastText:329357:text", "ja": "Hordeの原始的な種族が敵に対する勝利をもたらす助けになったと確信し、Forsakenは便宜上の同盟を結んだ。", "out": "ホードの原始的な種族が敵に対する勝利をもたらす助けになったと確信し、フォーセイクンは便宜上の同盟を結んだ。", "html": false}
+{"t": "line", "id": "ui:CriteriaText:121289:text", "ja": "Alterac Valleyでの名誉キル", "out": "アルタラック・バレーでの名誉キル", "html": false}
+{"t": "line", "id": "ui:CriteriaText:122899:text", "ja": "Orgrimmarとの評判が崇拝", "out": "オーグリマーとの評判が崇拝", "html": false}
+{"t": "line", "id": "ui:CriteriaText:123934:text", "ja": "Rebirth (ランク 4)", "out": "リバース (ランク 4)", "html": false}
+{"t": "line", "id": "ui:CriteriaText:126360:text", "ja": "覚えているAlchemyのレシピ", "out": "覚えているアルケミーのレシピ", "html": false}
+{"t": "line", "id": "ui:CriteriaText:128256:text", "ja": "Enchantingスキル", "out": "エンチャンティングスキル", "html": false}
+{"t": "line", "id": "ui:CriteriaText:221508:text", "ja": "Alchemyスキル300", "out": "アルケミースキル300", "html": false}
+{"t": "line", "id": "ui:CriteriaText:221529:text", "ja": "Leatherworkingのスキル225", "out": "レザーワーキングのスキル225", "html": false}
+{"t": "line", "id": "ui:CriteriaText:223475:text", "ja": "Eastern KingdomsとKalimdorを探検", "out": "イースタン・キングダムとカリムドアを探検", "html": false}
+{"t": "line", "id": "ui:CriteriaText:230820:text", "ja": "Elder Minderel", "out": "エルダー・ミンデレル", "html": false}
+{"t": "line", "id": "ui:CriteriaText:91546:text", "ja": "Bazzalan撃破数（Ragefire Chasm）", "out": "バザラン撃破数（レイジファイア・キャズム）", "html": false}
+{"t": "line", "id": "ui:CustomizationChoice:10056:text", "ja": "Ursolの化身（緑）", "out": "ウルソルの化身（緑）", "html": false}
+{"t": "line", "id": "ui:CustomizationChoice:54653:text", "ja": "Voidwalker", "out": "ヴォイドウォーカー", "html": false}
+{"t": "line", "id": "ui:DAMAGE_SHIELD_COMBATLOG_TOOLTIP:text", "ja": "Thornsのように、近接攻撃に反応して呪文やアビリティがダメージを与えたときにメッセージを表示します。", "out": "ソーンのように、近接攻撃に反応して呪文やアビリティがダメージを与えたときにメッセージを表示します。", "html": false}
+{"t": "line", "id": "ui:FactionDescription:2587:text", "ja": "Hordeの堅牢な補給網が、Kalimdorとその先への急速な拡大を支えている。", "out": "ホードの堅牢な補給網が、カリムドアとその先への急速な拡大を支えている。", "html": false}
+{"t": "line", "id": "ui:FactionDescription:47:text", "ja": "このAllianceの首都は、Dun Moroghのドワーフたちの誇りである。King Magniの居城。", "out": "このアライアンスの首都は、ダン・モローのドワーフたちの誇りである。キング・マグニの居城。", "html": false}
+{"t": "line", "id": "ui:FactionDescription:81:text", "ja": "Cairne Bloodhoofは、この壮大なHordeの首都から自らの民、誇り高きトーレンを率いている。", "out": "ケーアン・ブラッドフーフは、この壮大なホードの首都から自らの民、誇り高きトーレンを率いている。", "html": false}
+{"t": "line", "id": "ui:HolidayDescription:26:text", "ja": "Darkmoon Faireがやって来ました。今回の開催地はThunder Bluffのふもとです。\r\n\r\nSilas Darkmoonと一座に会い、知恵と度胸を試すゲームで遊び、Azerothの四方から……さらにその彼方から集められた珍しい見世物をご覧ください！", "out": "ダークムーン・フェアがやって来ました。今回の開催地はサンダー・ブラフのふもとです。\r\n\r\nサイラス・ダークムーンと一座に会い、知恵と度胸を試すゲームで遊び、アゼロスの四方から……さらにその彼方から集められた珍しい見世物をご覧ください！", "html": false}
+{"t": "line", "id": "ui:ITEM_MOD_HERBALISM:text", "ja": "Herbalismスキルが%s上昇。", "out": "ハーバリズムスキルが%s上昇。", "html": false}
+{"t": "line", "id": "ui:MailBody:103:text", "ja": "Goblin Experimental Engineering Korporationの会員資格を更新していただき、ありがとうございます！あなたを現役会員としてお迎えでき、大変うれしく思います。ゴブリン工学の世界に貢献し続けてくださるあなたへの感謝のしるしとして、この贈り物をお受け取りください。", "out": "ゴブリン・エクスペリメンタル・エンジニアリング・コーポレーションの会員資格を更新していただき、ありがとうございます！あなたを現役会員としてお迎えでき、大変うれしく思います。ゴブリン工学の世界に貢献し続けてくださるあなたへの感謝のしるしとして、この贈り物をお受け取りください。", "html": false}
+{"t": "line", "id": "ui:MailBody:613:text", "ja": "$n、\r\n\r\nあなたの仕事には大いに満足している。Horn of Xelthosは、私が期待していたとおりの見事な品だった。\r\n\r\n報酬は前と同じ隠し場所、Pyrewood Villageのそばの小屋に置いてある。\r\n\r\n今後も取引できることを楽しみにしている。\r\n\r\nよろしく。\r\nC", "out": "$n、\r\n\r\nあなたの仕事には大いに満足している。ホーン・オブ・ゼルソスは、私が期待していたとおりの見事な品だった。\r\n\r\n報酬は前と同じ隠し場所、パイアウッド・ヴィレッジのそばの小屋に置いてある。\r\n\r\n今後も取引できることを楽しみにしている。\r\n\r\nよろしく。\r\nC", "html": false}
+{"t": "line", "id": "ui:NPEV2_INTRO_QUESTGIVER_INTERACT_SCOURGE:text", "ja": "Undertaker Mordoに|cFFFFD200話しかけましょう|r", "out": "アンダーテイカー・モードに|cFFFFD200話しかけましょう|r", "html": false}
+{"t": "line", "id": "ui:PARTY_PLAYER_DIFFERENT_WORLD_TIER:text", "ja": "このプレイヤーは別のワールドティアにいるため、見ることができません。ワールドティアは、Dalaran近くのInfinite BazaarにあるConsole of Infinite Chaosで変更できます。", "out": "このプレイヤーは別のワールドティアにいるため、見ることができません。ワールドティアは、ダララン近くのInfinite BazaarにあるConsole of Infinite Chaosで変更できます。", "html": false}
+{"t": "line", "id": "ui:PlayerConditionFailure:146127:text", "ja": "Magram Clan Centaurとの関係が崇拝以上である必要があります。", "out": "マグラム・クラン・セントールとの関係が崇拝以上である必要があります。", "html": false}
+{"t": "line", "id": "ui:PlayerConditionFailure:156239:text", "ja": "Corporal/Grunt（階級2）が必要", "out": "コーポラル/グラント（階級2）が必要", "html": false}
+{"t": "line", "id": "ui:PlayerConditionFailure:163215:text", "ja": "Azeroth Commerce Authorityとの関係が崇敬以上必要", "out": "アゼロス・コマース・オーソリティとの関係が崇敬以上必要", "html": false}
+{"t": "line", "id": "ui:PlayerConditionFailure:5198:text", "ja": "The Defilersとの関係が崇拝以上必要", "out": "ディファイラーとの関係が崇拝以上必要", "html": false}
+{"t": "line", "id": "ui:SPELL_FAILED_CUSTOM_ERROR_1028:text", "ja": "この取引に必要なBronzeが足りません。", "out": "この取引に必要なブロンズが足りません。", "html": false}
+{"t": "line", "id": "ui:SPELL_FAILED_CUSTOM_ERROR_209:text", "ja": "同じターゲットにBeacon of LightとBeacon of Faithの両方をかけることはできません。", "out": "同じターゲットにビーコン・オブ・ライトとBeacon of Faithの両方をかけることはできません。", "html": false}
+{"t": "line", "id": "ui:SPELL_FAILED_CUSTOM_ERROR_310:text", "ja": "Cat Formが必要です。", "out": "キャット・フォームが必要です。", "html": false}
+{"t": "line", "id": "ui:SPELL_FAILED_CUSTOM_ERROR_435:text", "ja": "この入手元から得られる最高ランクのEssenceをすでに持っています。", "out": "この入手元から得られる最高ランクのエッセンスをすでに持っています。", "html": false}
+{"t": "line", "id": "ui:SPELL_FAILED_CUSTOM_ERROR_83:text", "ja": "Magma、Flametongue、Fire Elemental Totemのいずれかが有効である必要があります。", "out": "Magma、フレイムタン、Fire Elemental Totemのいずれかが有効である必要があります。", "html": false}
+{"t": "line", "id": "ui:SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET2:text", "ja": "Azerothで大胆な冒険に乗り出そう", "out": "アゼロスで大胆な冒険に乗り出そう", "html": false}
+{"t": "line", "id": "ui:TOOLTIP_ITEM_STAT_AP_VS_GIANT_DECREASE:text", "ja": "装備時: Giantへの攻撃力 -%1$d。", "out": "装備時: ジャイアントへの攻撃力 -%1$d。", "html": false}
+{"t": "line", "id": "ui:TOOLTIP_ITEM_STAT_HOLY_DAMAGE_INCREASE:text", "ja": "装備時: Holyの呪文と効果によるダメージが最大%1$d増加。", "out": "装備時: ホーリーの呪文と効果によるダメージが最大%1$d増加。", "html": false}
+{"t": "line", "id": "ui:TOOLTIP_ITEM_STAT_SKILL_ALCHEMY_DECREASE:text", "ja": "装備時: Alchemy -%1$d。", "out": "装備時: アルケミー -%1$d。", "html": false}
+{"t": "line", "id": "ui:TOOLTIP_ITEM_STAT_SKILL_FISHING_INCREASE:text", "ja": "装備時: Fishing +%1$d。", "out": "装備時: フィッシング +%1$d。", "html": false}
+{"t": "line", "id": "ui:TOOLTIP_ITEM_STAT_SKILL_TAILORING_DECREASE:text", "ja": "装備時: Tailoring -%1$d。", "out": "装備時: テイラリング -%1$d。", "html": false}
+{"t": "line", "id": "ui:UNIT_SKINNABLE_BOLTS:text", "ja": "Engineeringが必要", "out": "エンジニアリングが必要", "html": false}
+{"t": "line", "id": "ui:WidgetText:17102:text", "ja": "Ragnarosの手下はまもなく戻ってきます。", "out": "ラグナロスの手下はまもなく戻ってきます。", "html": false}
+{"t": "line", "id": "ui:WidgetText:3681:text", "ja": "Allianceの旗が拾われた", "out": "アライアンスの旗が拾われた", "html": false}
