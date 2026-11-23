@@ -69,6 +69,31 @@ function Names.item(english)
   end
 end
 
+-- A line that is a list of names, each one maybe with a count after it ("Linen Cloth (2), Coarse Thread": a
+-- recipe's ingredients): every name the tables hold in its Japanese, the others and every count as written.
+-- → the list, its reading | nil when it is no list or holds no known name
+function Names.list(english)
+  if type(english) ~= "string" or not english:find(", ", 1, true) then return nil end
+  local out, readings, known = {}, {}, false
+  for part in (english .. ", "):gmatch("(.-), ") do
+    local name, count = part:match("^(.-)( %(%d+%))$")
+    name, count = name or part, count or ""
+    local ja, reading = Names.item(name)
+    if ja then known = true end
+    out[#out + 1] = (ja or name) .. count
+    readings[#readings + 1] = (ja and (reading or ja) or name) .. count
+  end
+  if not known then return nil end
+  return table.concat(out, ", "), table.concat(readings, ", ")
+end
+
+-- What a widget holding only names shows: one name (an item's may carry a suffix), or a list of them.
+function Names.shown(english)
+  local ja, reading = Names.item(english)
+  if ja then return ja, reading end
+  return Names.list(english)
+end
+
 function Names.value(text)
   if type(text) ~= "string" then return nil end
   -- a link: its payload and colour stay byte for byte, the label is the name

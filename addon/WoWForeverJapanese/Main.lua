@@ -367,7 +367,7 @@ function WFJ.OnLoad()
       if not WFJ.State.names or type(kind) ~= "string" then return ja end
       return WFJ.Names.inText(ja, kind == "book" and ja:find("^%s*<[Hh][Tt][Mm][Ll]") ~= nil)
     end,
-    name = WFJ.Names.item, -- a widget that holds only a name; an item's may carry a suffix
+    name = WFJ.Names.shown, -- a widget that holds only a name (an item's may carry a suffix) or a list of them
     lookup = WFJ.Lookup.get,
     marker = function(name) return WFJ.Settings.get("marker." .. name) end,
     -- the runtime gate for unaligned entries (ADR-007). The duration renderer is UIStrings',

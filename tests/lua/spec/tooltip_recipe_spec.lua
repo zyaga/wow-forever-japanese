@@ -5,7 +5,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
-  "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua",
+  "Core/Collector.lua", "Core/Data.lua", "Core/Names.lua", "UI/Font.lua", "UI/Render.lua",
   "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/TooltipUnit.lua" }
 
 local JERKY_JA = "18秒間でhealthを61回復。回復中は\n座っている必要があります。"
@@ -57,6 +57,8 @@ describe("UI/Tooltip on a recipe's tooltip", function()
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function(n) return WFJ.Settings.get("marker." .. n) end,
       align = WFJ.Align.check,
+      kindOff = function(kind) return kind == "name" and not WFJ.State.names end,
+      name = WFJ.Names.shown,
     }))
     records = {}
     WFJ.Collector.record = function(kind, id, field, raw)
@@ -85,6 +87,29 @@ describe("UI/Tooltip on a recipe's tooltip", function()
       assert.are.same({ "item", 9000, "description", LINES[5] }, records[2])
     end)
   end
+
+  it("with Japanese names the crafted item's name and the ingredient list show their Japanese", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Tough Jerky")] = "タフ・ジャーキー\tたふ・じゃーきー",
+      [WFJ.Names.key("Stringy Wolf Meat")] = "ストリンギー・ウルフ・ミート\tすとりんぎー・うるふ・みーと",
+      [WFJ.Names.key("Mild Spices")] = "マイルド・スパイス\tまいるど・すぱいす",
+    })
+    local lines = {}
+    for i, l in ipairs(LINES) do lines[i] = l end
+    lines[#lines + 1] = "Stringy Wolf Meat (2), Mild Spices, Something Unknown"
+    WFJ.State.setNames(true)
+    show("|Hitem:9000::|h[Recipe: Tough Jerky]|h", lines, recipeData())
+    assert.are.equal("タフ・ジャーキー", text(2))
+    assert.are.equal("ストリンギー・ウルフ・ミート (2), マイルド・スパイス, Something Unknown", text(7))
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("Tough Jerky", text(2))
+    assert.are.equal("Stringy Wolf Meat (2), Mild Spices, Something Unknown", text(7))
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    WFJ.State.setNames(false)
+    show("|Hitem:9000::|h[Recipe: Tough Jerky]|h", lines, recipeData())
+    assert.are.equal("Tough Jerky", text(2))
+    assert.are.equal("Stringy Wolf Meat (2), Mild Spices, Something Unknown", text(7))
+  end)
 
   it("a crafted item whose run would reach the Teaches line stops before it", function()
     local lines = { "Recipe: Tough Jerky", "Tough Jerky",
