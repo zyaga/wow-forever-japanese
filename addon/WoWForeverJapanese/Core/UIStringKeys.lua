@@ -185,6 +185,8 @@ UIStrings.ARGS = {
   QUEST_FACTION_NEEDED_NOPROGRESS = { [1] = "text", [2] = "standing" },
   -- a spell's dual range ("Melee: 5 yd range") and a season currency requirement (the currency's name)
   SPELL_RANGE_DUAL = { [1] = "words" }, ITEM_REQ_AMOUNT_EARNED = { [2] = "text" },
+  -- a spell's range is one distance, or its two ends ("8-30"), which is no single number
+  SPELL_RANGE = { [1] = "text" },
   -- Communities: club, community, leader, inviter, realm, spec and class names and a name-check
   -- error are kept as written; "Guild" / "Community" / "Guilds" / "Communities", a reputation standing and a weekday
   -- are dictionary words shown in Japanese; a finder focus ("Social & Leveling") is a whole entry

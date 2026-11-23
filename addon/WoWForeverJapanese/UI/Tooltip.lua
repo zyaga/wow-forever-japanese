@@ -101,6 +101,9 @@ end
 
 -- The frame's left (or `side` = "Right") lines as { { fs, text }, … } (index = line number). A line without a
 -- FontString ends the list.
+-- Enum.TooltipDataType names of the tooltips that show a spell without being a spell's tooltip.
+Tooltip.SPELL_KINDS = { "Mount", "CompanionPet", "Macro" }
+
 function Tooltip.lines(frame, side)
   local out, name = {}, frame:GetName()
   local n = frame:NumLines() or 0
@@ -1250,9 +1253,35 @@ function Tooltip.appendedDescription(frame, data, texts)
   return nil
 end
 
-function Tooltip.onSpell(frame, data)
+-- The spell a mount's, a companion's or a macro's tooltip shows. These are data kinds of their own, so the
+-- frame's GetSpell answers nothing for them [verified: forever-ui-1.60.1.71037
+-- blizzard_sharedxmlgame/tooltip/tooltiputil.lua:25–32, blizzard_gametooltip/mainline/gametooltip.lua:1031]. The id
+-- the post-call hands over is taken only when that spell's name is the tooltip's first line [unverified what the
+-- id of each kind is; the window test's tooltip read shows whether these tooltips come out Japanese]; else the
+-- spell is asked for by that name, which the client answers for a spell the character knows
+-- [verified: blizzard_apidocumentationgenerated/spelldocumentation.lua:416–424]. → id, name | nil
+function Tooltip.spellOf(frame, data)
+  local nameOf, infoOf = Compat.get(DECLARE, "spellName"), Compat.get(DECLARE, "spellInfo")
+  if type(nameOf) ~= "function" then return nil end
+  local first = Tooltip.lines(frame)[1]
+  local shown = first and first.text
+  if anySecretOf(shown) or type(shown) ~= "string" or shown == "" then return nil end
+  -- a first line this addon already wrote: the name the client put there is the record's English
+  local rec = WFJ.SurfaceState.records(surfaceOf(frame))["name.L1"]
+  local name = type(rec) == "table" and type(rec.en) == "string" and rec.en or shown
+  local id = type(data) == "table" and data.id or nil
+  if type(id) == "number" and not anySecretOf(id) and nameOf(id) == name then return id, name end
+  local info = type(infoOf) == "function" and infoOf(name) or nil
+  id = type(info) == "table" and info.spellID or nil
+  if type(id) == "number" and not anySecretOf(id) and nameOf(id) == name then return id, name end
+  return nil
+end
+
+-- `known` (optional): the spell's name and id, for a tooltip whose frame cannot say them (Tooltip.spellOf).
+function Tooltip.onSpell(frame, data, knownName, knownId)
   if inRefit[frame] then return 0 end
-  local spellName, id = frame:GetSpell()
+  local spellName, id = knownName, knownId
+  if id == nil then spellName, id = frame:GetSpell() end
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
@@ -1665,6 +1694,8 @@ function Tooltip.init()
   -- The live Forever client has no global GetSpellDescription; modern clients carry it as
   -- C_Spell.GetSpellDescription, which Compat resolves as a dotted candidate.
   Compat.declare(DECLARE, "spellDescription", { "GetSpellDescription", "C_Spell.GetSpellDescription" })
+  Compat.declare(DECLARE, "spellName", { "C_Spell.GetSpellName" })
+  Compat.declare(DECLARE, "spellInfo", { "C_Spell.GetSpellInfo" })
   for _, getter in pairs(Tooltip.AURA_METHODS) do Compat.declare(DECLARE, getter, { "C_UnitAuras." .. getter }) end
   if hooked then return resolvedFrames end
   resolvedFrames = 0
@@ -1684,6 +1715,17 @@ function Tooltip.init()
       local frame = dataFrame(tt, types.Spell, "GetSpell")
       if frame then WFJ.Perf.call("tooltip.spell", Tooltip.onSpell, frame, data) end
     end)
+    -- a mount's, a companion's and a macro's tooltip show a spell under a data kind of their own
+    for _, kind in ipairs(Tooltip.SPELL_KINDS) do
+      if types[kind] ~= nil then
+        processor.AddTooltipPostCall(types[kind], function(tt, data)
+          local frame = dataFrame(tt, types[kind], "NumLines")
+          if not frame then return end
+          local id, name = Tooltip.spellOf(frame, data)
+          if id then WFJ.Perf.call("tooltip.spell", Tooltip.onSpell, frame, data, name, id) end
+        end)
+      end
+    end
   end
   -- the comparison pass, timed only when it runs (a SetShown(false) is no pass)
   local function compare(f) return WFJ.Perf.call("tooltip.compare", Tooltip.onCompareShow, f) end

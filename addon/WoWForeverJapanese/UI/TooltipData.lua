@@ -41,6 +41,17 @@ local function walkFlyout(tt)
 end
 TooltipData.walkFlyout = walkFlyout
 
+-- A mount's or a companion's tooltip whose spell UI/Tooltip found is that module's, lines and description both:
+-- the interface lines are walked here only when it found none.
+local function walkUnlessSpell(tt, data)
+  local T = WFJ.Tooltip
+  if type(T) == "table" and type(T.spellOf) == "function" and tt == Compat.resolve("GameTooltip")
+      and T.spellOf(tt, data) ~= nil then
+    return 0
+  end
+  return walk(tt)
+end
+
 local function timed(label, fn) return WFJ.Perf.wrap(label, fn) end -- a post-call timed under `label` (Core/Perf)
 
 -- → true when the post-calls were registered
@@ -52,8 +63,12 @@ function TooltipData.init()
     return false
   end
   if types.Currency ~= nil then processor.AddTooltipPostCall(types.Currency, timed("tooltip.currency", walk)) end
-  if types.Mount ~= nil then processor.AddTooltipPostCall(types.Mount, timed("tooltip.mount", walk)) end
-  if types.CompanionPet ~= nil then processor.AddTooltipPostCall(types.CompanionPet, timed("tooltip.pet", walk)) end
+  if types.Mount ~= nil then
+    processor.AddTooltipPostCall(types.Mount, timed("tooltip.mount", walkUnlessSpell))
+  end
+  if types.CompanionPet ~= nil then
+    processor.AddTooltipPostCall(types.CompanionPet, timed("tooltip.pet", walkUnlessSpell))
+  end
   if types.EquipmentSet ~= nil then
     processor.AddTooltipPostCall(types.EquipmentSet, timed("tooltip.set", walkWith(SET_OPTS)))
   end

@@ -768,6 +768,7 @@ function Stub.tooltipFrame(name)
     if t == 0 then return self.item ~= nil end
     if t == 1 then return self.spell ~= nil end
     if t == 7 then return self.item == nil and self.spell == nil and self.primaryInfo ~= nil end
+    if self.otherType ~= nil then return t == self.otherType end -- a mount's, a companion's or a macro's tooltip
     return false
   end
   function frame:Show()
@@ -915,7 +916,8 @@ function Stub.installTooltipAPI()
   -- Set Stub.noTooltipDataProcessor before installing to model a client that has no TooltipDataProcessor: the
   -- surfaces' defensive path (Tooltip.path "none", TooltipUnit.init false). Forever always has one.
   if not Stub.noTooltipDataProcessor then
-    _G.Enum = { TooltipDataType = { Item = 0, Spell = 1, Unit = 2, UnitAura = 7 } }
+    _G.Enum = { TooltipDataType = { Item = 0, Spell = 1, Unit = 2, UnitAura = 7, CompanionPet = 9, Mount = 10,
+      Macro = 25 } }
     _G.TooltipDataProcessor = {
       AddTooltipPostCall = function(dataType, fn)
         local list = Stub.tooltipPostCalls[dataType] or {}
@@ -924,7 +926,18 @@ function Stub.installTooltipAPI()
       end,
     }
     if not Stub.noSpellDescriptionAPI then
-      _G.C_Spell = { GetSpellDescription = function(id) return Stub.spellDescriptions[id] or "" end }
+      -- Stub.spellNames[id] = name: what GetSpellName answers, and GetSpellInfo(name) for a spell the character knows
+      Stub.spellNames = {}
+      _G.C_Spell = {
+        GetSpellDescription = function(id) return Stub.spellDescriptions[id] or "" end,
+        GetSpellName = function(id) return Stub.spellNames[id] end,
+        GetSpellInfo = function(which)
+          for id, name in pairs(Stub.spellNames) do
+            if which == id or which == name then return { spellID = id, name = name } end
+          end
+          return nil
+        end,
+      }
     end
   end
 end
@@ -933,6 +946,16 @@ end
 function Stub.fireTooltipSet(frame, kind)
   local dataType = kind == "Item" and 0 or 1
   for _, fn in ipairs(Stub.tooltipPostCalls[dataType] or {}) do fn(frame) end
+end
+
+-- A tooltip of another data kind that shows a spell (a mount, a companion, a macro): `kind` is the
+-- Enum.TooltipDataType name, `data` what the post-call is handed ({ id = … }, or {}).
+function Stub.setOtherTooltip(frame, kind, data, lines)
+  frame.spell, frame.item, frame.primaryInfo = nil, nil, nil
+  frame.otherType = _G.Enum.TooltipDataType[kind]
+  frame:writeLines(lines)
+  frame.shown = true
+  for _, fn in ipairs(Stub.tooltipPostCalls[frame.otherType] or {}) do fn(frame, data) end
 end
 
 function Stub.setItemTooltip(frame, link, lines)
@@ -949,6 +972,7 @@ end
 function Stub.setSpellTooltip(frame, id, lines)
   frame.spell = id and { name = lines[1], id = id } or nil
   frame.primaryInfo = nil
+  frame.otherType = nil
   frame.item = nil
   frame:writeLines(lines)
   frame.shown = true
