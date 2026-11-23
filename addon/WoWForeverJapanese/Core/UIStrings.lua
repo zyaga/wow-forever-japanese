@@ -35,6 +35,18 @@ local _, WFJ = ...
 local UIStrings = WFJ.UIStrings or {}
 WFJ.UIStrings = UIStrings
 
+-- A game name the client fills into a line, in its Japanese when the names resolver has one (Main sets
+-- UIStrings.name while Japanese names are on), else as written. A `skill` value may be a list ("Bows, Crossbows,
+-- Guns"): each of its names is looked up by itself.
+local function named(kind, value)
+  local resolve = UIStrings.name
+  if type(resolve) ~= "function" then return value end
+  if kind ~= "skill" then return resolve(value) or value end
+  local out = {}
+  for part in (value .. ", "):gmatch("(.-), ") do out[#out + 1] = resolve(part) or part end
+  return table.concat(out, ", ")
+end
+
 -- Key families with no client string: the live line is matched by its fingerprint (h1). → bool
 local FINGERPRINT_PREFIXES = { "^ItemSubClass:", "^SpellItemEnchantment:", "^SpellSubtext:",
   -- ADR-042: the client-table text families (pipeline io/wago.TEXT_FAMILIES)
@@ -418,6 +430,9 @@ local MEMO_LIMIT = 512 -- distinct line texts remembered between resets (a hover
 -- Results (hits and misses) are memoised per text; the table is dropped when it reaches MEMO_LIMIT entries.
 function Index:match(text)
   if type(text) ~= "string" or text == "" then return nil end
+  -- a remembered answer holds the names it was filled with: none is kept across a switch of the names setting
+  local japaneseNames = type(UIStrings.names) == "function" and UIStrings.names() == true
+  if self.memoNames ~= japaneseNames then self.memo, self.memoCount, self.memoNames = {}, 0, japaneseNames end
   local m = self.memo[text]
   if m then return m[1] or nil, m[2] end
   local key, args = self:matchUncached(text)
@@ -475,9 +490,8 @@ function Index:core(text, allow, list)
           elseif kinds[argIndex] == "questTitle" then
             local resolve = UIStrings.questTitle
             args[argIndex] = type(resolve) == "function" and resolve(caps[i]) or caps[i]
-          elseif kinds[argIndex] == "name" then
-            local resolve = UIStrings.name
-            args[argIndex] = type(resolve) == "function" and resolve(caps[i]) or caps[i]
+          elseif kinds[argIndex] == "name" or kinds[argIndex] == "skill" then
+            args[argIndex] = named(kinds[argIndex], caps[i])
           elseif UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]] then
             args[argIndex] = self:familyList(caps[i], UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]])
           elseif kinds[argIndex] == "entryList" then
@@ -768,8 +782,8 @@ function Index.formatArgs(_, key, en, ...) -- called as index:formatArgs; the in
   for i, kind in pairs(kinds or {}) do
     if kind == "questTitle" and type(args[i]) == "string" and type(UIStrings.questTitle) == "function" then
       args[i] = UIStrings.questTitle(args[i]) or args[i]
-    elseif kind == "name" and type(args[i]) == "string" and type(UIStrings.name) == "function" then
-      args[i] = UIStrings.name(args[i]) or args[i]
+    elseif (kind == "name" or kind == "skill") and type(args[i]) == "string" then
+      args[i] = named(kind, args[i])
     end
   end
   return args

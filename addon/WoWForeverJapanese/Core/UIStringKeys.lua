@@ -15,7 +15,8 @@ WFJ.UIStrings = UIStrings
 --         prose sentence is never taken for a template argument);
 --   skill what follows "Requires" when it is a skill or an equipment list ("Herbalism", "Bows, Crossbows, Guns"):
 --         letters, spaces, apostrophes, hyphens and commas only; never "Level 40" or "Engineering (225)"
---         (`ITEM_REQ_SKILL`, which shares its English with SPELL_EQUIPPED_ITEM); shown verbatim;
+--         (`ITEM_REQ_SKILL`, which shares its English with SPELL_EQUIPPED_ITEM); each of its names shown in its
+--         Japanese while names are Japanese, else as written;
 --   time  a live duration ("30 sec", "1 hr 30 min"): shown in Japanese when it is one or two duration entries
 --         (UIStrings.DURATIONS), verbatim otherwise;
 --   verbatim  any text, periods included, shown exactly as captured (a gossip option's server text after
@@ -31,7 +32,7 @@ UIStrings.ARGS = {
   PLUS_SINGLE_DAMAGE_TEMPLATE_WITH_SCHOOL = { [2] = "word" }, AMMO_SCHOOL_DAMAGE_TEMPLATE = { [2] = "word" },
   PLUS_AMMO_SCHOOL_DAMAGE_TEMPLATE = { [2] = "word" }, CONTAINER_SLOTS = { [2] = "words" },
   ITEM_REQ_REPUTATION = { [1] = "text", [2] = "word" },
-  ITEM_REQ_SKILL = { [1] = "skill" }, ITEM_MIN_SKILL = { [1] = "text" },
+  ITEM_REQ_SKILL = { [1] = "skill" }, ITEM_MIN_SKILL = { [1] = "name" },
   SPELL_EQUIPPED_ITEM = { [1] = "itemSubClassMask" }, SPELL_EQUIPPED_ITEM_NOSPACE = { [1] = "itemSubClassMask" },
   -- "Requires %s": an ItemSubClassMask row ("Melee Weapon") is shown in Japanese; a form, item or skill name is kept
   SPELL_REQUIRED_FORM = { [1] = "itemSubClassMask" }, SPELL_REQUIRED_FORM_NOSPACE = { [1] = "itemSubClassMask" },

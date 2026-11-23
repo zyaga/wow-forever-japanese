@@ -396,6 +396,7 @@ function WFJ.OnLoad()
     if WFJ.State.names then return WFJ.Names.value(text) end
     return nil
   end
+  WFJ.UIStrings.names = function() return WFJ.State.names == true end
   step("modifier", WFJ.Modifier.refresh)
   -- Tab fonts across PanelTemplates state changes, Lua-built help tooltips, and the readiness of
   -- load-on-demand Blizzard addons (their ADDON_LOADED is forwarded below; ADR-016). Before the surfaces.

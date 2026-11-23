@@ -8,7 +8,10 @@ local UI = {
   FACTION_CONTROLLED_TERRITORY = { "(%s Territory)", "（%s領）" },
   ERR_ZONE_EXPLORED = { "Discovered: %s", "発見: %s" },
   LOOT_ITEM_SELF = { "You receive loot: %s.", "戦利品を受け取りました: %s" },
+  ITEM_MIN_SKILL = { "Requires %s (%d)", "必要: %s (%d)" },
+  ITEM_REQ_SKILL = { "Requires %s", "必要: %s" },
 }
+local SKILL_KEYS = { "ITEM_MIN_SKILL", "ITEM_REQ_SKILL" }
 local KEYS = { "FACTION_CONTROLLED_TERRITORY", "ERR_ZONE_EXPLORED", "LOOT_ITEM_SELF" }
 local LINK = "|cffffffff|Hitem:2589::::::::1:::::|h[Linen Cloth]|h|r"
 
@@ -20,13 +23,15 @@ describe("names inside interface lines", function()
     H.uiSetup(WFJ, UI)
     index = WFJ.UIIndex
     WFJ.UIStrings.name = function(text)
-      local names = { Horde = "ホード", Goldshire = "ゴールドシャイア" }
+      local names = { Horde = "ホード", Goldshire = "ゴールドシャイア", Cooking = "クッキング", Bows = "ボウズ",
+        Guns = "ガンズ" }
       if text == LINK then return (text:gsub("Linen Cloth", "リネン・クロス")) end
       return names[text]
     end
+    WFJ.UIStrings.names = function() return true end
   end)
   after_each(function()
-    WFJ.UIStrings.name = nil
+    WFJ.UIStrings.name, WFJ.UIStrings.names = nil, nil
     H.uiTeardown()
   end)
 
@@ -56,6 +61,20 @@ describe("names inside interface lines", function()
   it("a line filled from its own arguments shows the name in Japanese too", function()
     local args = index:formatArgs("ERR_ZONE_EXPLORED", _G.ERR_ZONE_EXPLORED, "Goldshire")
     assert.are.equal("発見: ゴールドシャイア", index:fill(index.rows.ERR_ZONE_EXPLORED[1], args))
+  end)
+
+  it("a skill a line requires shows in Japanese, each one of a list by itself", function()
+    local function skill(line)
+      local key, args = index:matchOnly(line, SKILL_KEYS)
+      assert.is_not_nil(key, line)
+      return index:fill(index.rows[key][1], args)
+    end
+    assert.are.equal("必要: クッキング (100)", skill("Requires Cooking (100)"))
+    assert.are.equal("必要: クッキング", skill("Requires Cooking"))
+    assert.are.equal("必要: ボウズ, Crossbows, ガンズ", skill("Requires Bows, Crossbows, Guns")) -- one has no Japanese
+    -- the setting switched to English names: a line seen before is filled again, not remembered
+    WFJ.UIStrings.name, WFJ.UIStrings.names = nil, function() return false end
+    assert.are.equal("必要: Cooking (100)", skill("Requires Cooking (100)"))
   end)
 
   it("with no resolver the value is kept as written", function()
