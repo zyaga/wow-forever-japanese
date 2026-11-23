@@ -317,7 +317,10 @@ def _change_problems(
     if line is None or line.get("ja") != t["ja"]:
         p.append(f"{where}: the line's Japanese changed since intake; run intake again")
     if needs_words(type_, ja):
-        bad = readings.word_problems(ja, row.get("words"))
+        # the words are for the line as it will ship: a rewrite is hand-written, so a tooltip line's manual
+        # breaks are joined, and a word may stand across one
+        shipped = readings.hand_written_text(type_, ja, t.get("en") or None)
+        bad = readings.word_problems(shipped, row.get("words"))
         p += [f"{where}: words: {x}" for x in bad]
     elif "words" in row:
         p.append(f"{where}: this line takes no readings, so no words")

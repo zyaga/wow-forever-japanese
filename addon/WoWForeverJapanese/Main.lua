@@ -583,11 +583,12 @@ local function onEvent(self, event, name, ...)
   elseif event == "PLAYER_REGEN_ENABLED" then
     WFJ.RevealBinding.flush() -- a modifier change made in combat
     WFJ.NamePlateSetting.flush() -- a nameplate setting asked for in combat
-    WFJ.TooltipFreeze.offerKey(WFJ_DB) -- an offer a login in combat could not make
     WFJ.QuestMap.onCombatEnded() -- the map's quest list keeps the client's English in combat
     WFJ.ChatUnlisted.flush() -- chat lines that waited for combat to end
     WFJ.Options.setCombat(false)
     WFJ.StudyWindow.setCombat(false)
+    -- an offer a login in combat could not make; last and guarded, so a fault in it costs nothing above
+    step("freezekey", function() WFJ.TooltipFreeze.offerKey(WFJ_DB) end)
   elseif event == "PLAYER_LOGOUT" then
     WFJ.VoicePlayer.stop() -- the dialog channel is saved with the logout: put it back first
     WFJ.VoiceErrors.restore() -- and the error speech

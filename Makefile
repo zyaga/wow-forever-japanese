@@ -616,7 +616,7 @@ TOOLTIP_OWED ?= $(abspath build)/tooltip-words-owed.jsonl
 tooltip-words: ## every item and spell line made of sentences already written gets its word list; the sentences still to draft are listed in build/
 	cd pipeline && $(PY) -m wfj readings spread
 	@mkdir -p $(dir $(TOOLTIP_OWED))
-	cd pipeline && $(PY) -m wfj readings export-tooltips --out $(TOOLTIP_OWED) | tail -1
+	cd pipeline && set -o pipefail && $(PY) -m wfj readings export-tooltips --out $(TOOLTIP_OWED) | tail -1
 
 names: ## every English name gets a data/name line spelled from its words, then every voiced line its kana line
 	cd pipeline && $(PY) -m wfj names collect $(if $(wildcard $(VMANGOS_DB)),--vmangos $(VMANGOS_DB)) \
