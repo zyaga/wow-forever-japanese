@@ -56,9 +56,9 @@ _HEX16 = re.compile(r"^[0-9a-f]{16}$")
 # ── tooltip pieces ──────────────────────────────────────────────────────────
 # A piece is one sentence of a tooltip line as it ships (`japanese_of`: a hand-written line's manual breaks
 # are joined, so none falls inside a sentence). A line is cut at its line breaks and after each 。！？ that is
-# not inside brackets or quotes. A `$?…[a][b]` branch whose brackets each hold whole sentences is cut apart at the
-# brackets; a branch whose brackets hold parts of one sentence (`$?pc923[Orgrimmar][Stormwind]へ戻ります。`)
-# stays inside that sentence.
+# not inside brackets or quotes. A `$?…[a][b]` branch whose brackets each hold whole sentences is cut apart at
+# the brackets; a branch whose brackets hold parts of one sentence
+# (`$?pc923[Orgrimmar][Stormwind]へ戻ります。`) stays inside that sentence.
 #
 # A piece's key is the piece with what can never be a word taken out of the comparison: a branch condition,
 # which number a placeholder is (`$N1`, `$N4`), an English name, and a number no counter follows (a quest id,
