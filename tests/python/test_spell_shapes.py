@@ -68,6 +68,23 @@ def test_the_table_is_written_as_keys_only_sorted():
     ]) + "\n"
 
 
+def test_the_spliced_in_spells_table_is_ids_only_and_names_what_each_spell_splices_in(root):
+    text = lua_writer.spell_includes_text({1319309: [24907, 24932], 17: [3]})
+    assert text == "\n".join([
+        lua_writer.HEADER.format(src="data/"),
+        "local _, WFJ = ...",
+        "WFJ.Data.spellIncludes = {",
+        "  [17] = { 3 },",
+        "  [1319309] = { 24907, 24932 },",
+        "}",
+    ]) + "\n"
+    # the shipped file: Druidic Auras prints two auras' text, Metamorphosis three spells' descriptions
+    shipped = (root / "addon/WoWForeverJapanese/Data/SpellIncludes.lua").read_text(encoding="utf-8")
+    assert "  [1319309] = { 24907, 24932 },\n" in shipped
+    assert "  [403789] = { 403828, 412788, 412789 },\n" in shipped
+    assert all(re.fullmatch(r"  \[\d+\] = \{ \d+(, \d+)* \},|}", line) for line in shipped.splitlines()[3:])
+
+
 def test_the_shipped_table_names_the_healing_spell_and_holds_no_english(planned):
     text = planned["Data/SpellShapes.lua"]
     assert f'  ["{spell_shapes.shape_key(HEAL)}"] = 7675,' in text

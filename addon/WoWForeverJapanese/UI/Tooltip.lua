@@ -367,6 +367,26 @@ function Tooltip.spellDescription(id)
   return type(d) == "string" and d or ""
 end
 
+-- A spell whose description splices in other spells' text (`$@spelldesc<id>`, `$@spellaura<id>`; their ids in
+-- Data/SpellIncludes.lua): the client prints a spliced-in spell's text only once that spell's data is loaded and
+-- leaves it empty before, so the line holds fewer numbers than its Japanese and stays English. The client does not
+-- ask for those spells itself, so the addon does, and the line fits from then on [verified: in game, Druidic Auras
+-- printed its two auras' crit chance once those spells were loaded, and Metamorphosis left Demon Charge and Demonic
+-- Howl empty while theirs were not]. → how many were asked for
+function Tooltip.loadIncluded(id)
+  local spliced = WFJ.Data and WFJ.Data.spellIncludes and WFJ.Data.spellIncludes[id]
+  local cached, load = Compat.get(DECLARE, "spellCached"), Compat.get(DECLARE, "spellLoad")
+  if type(spliced) ~= "table" or type(cached) ~= "function" or type(load) ~= "function" then return 0 end
+  local asked = 0
+  for _, sid in ipairs(spliced) do
+    if not cached(sid) then
+      load(sid)
+      asked = asked + 1
+    end
+  end
+  return asked
+end
+
 -- Shown twice: on Forever every layout of a wrapped Japanese line alternates between two line breaks when a word
 -- sits on the wrap edge (the tooltip trace shows the wrapped width going 242, 249, 242 … with nothing else
 -- changing). A refresh lays the tooltip out three times (the client's English, this refit, one more Show), so the
@@ -1618,6 +1638,8 @@ function Tooltip.onSpell(frame, data, knownName, knownId)
   local made = madeRun(frame, texts, i)
   -- "spell.description": a bare "spell" would not name one field (spells also have `aura`)
   local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName, nil, nextRank, nil, nil, made)
+  local asked = Tooltip.loadIncluded(id)
+  if asked > 0 then how = how .. (" (asked for %d spliced-in spells)"):format(asked) end
   traceFrame(frame, "readable spell", id, lines, ("-> rendered %d%s"):format(n, how))
   return n
 end
@@ -1990,6 +2012,8 @@ function Tooltip.init()
   Compat.declare(DECLARE, "spellDescription", { "GetSpellDescription", "C_Spell.GetSpellDescription" })
   Compat.declare(DECLARE, "spellName", { "C_Spell.GetSpellName" })
   Compat.declare(DECLARE, "spellInfo", { "C_Spell.GetSpellInfo" })
+  Compat.declare(DECLARE, "spellCached", { "C_Spell.IsSpellDataCached" })
+  Compat.declare(DECLARE, "spellLoad", { "C_Spell.RequestLoadSpellData" })
   for _, getter in pairs(Tooltip.AURA_METHODS) do Compat.declare(DECLARE, getter, { "C_UnitAuras." .. getter }) end
   if hooked then return resolvedFrames end
   resolvedFrames = 0

@@ -25,6 +25,7 @@ Data\Vectors.lua
 Data\ErrorSounds.lua
 Data\Displays.lua
 Data\SpellShapes.lua
+Data\SpellIncludes.lua
 Data\Quest\Quest_0000.lua
 Data\Quest\Quest_0001.lua
 Data\Quest\Quest_0002.lua

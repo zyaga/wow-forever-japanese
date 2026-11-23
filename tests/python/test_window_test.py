@@ -707,6 +707,84 @@ def test_the_tooltip_read_lists_each_spell_and_item_left_english_with_its_reason
     assert client_surface.read_left_english(SAVED) is None
 
 
+INCLUDED = """
+WFJScanDB = {
+["probe"] = {
+["tooltips"] = { ["read"] = 2, ["japanese"] = 0, ["unread"] = 0, ["items"] = 0,
+  ["spliced"] = {
+    ["1319309"] = { ["reason"] = "values", ["why"] = "2 numbers in the Japanese, 0 on this client",
+      ["text"] = "Moonkin Aura\\r\\n\\r\\n\\r\\nLeader of the Pack\\r\\n",
+      ["included"] = { ["24907"] = "loaded true, known false, text: (no text)",
+        ["24932"] = "loaded false, known false, text: (no text)" },
+      ["includedAfter"] = { ["24907"] = "loaded true, known false, text: (no text)",
+        ["24932"] = "loaded true, known false, text: (no text)" },
+      ["cold"] = "English, the client's line holds 0 numbers",
+      ["waited"] = "English, the client's line holds 2 numbers",
+      ["after"] = "Japanese, the client's line holds 2 numbers" },
+    ["17"] = { ["reason"] = "values", ["why"] = "2 numbers in the Japanese, 3 on this client", ["text"] = "Absorbs." },
+  } },
+},
+}
+"""
+
+
+def test_a_spell_left_english_for_its_numbers_says_how_the_client_held_each_spell_it_splices_in(root):
+    # the probe carries, per spell, the spells its English splices in: Druidic Auras prints two auras' text
+    includes = client_surface.spell_includes(root / "data", [1319309, 403789, 17])
+    assert includes[1319309] == [24907, 24932]
+    assert {412788, 412789} <= set(includes[403789])
+    assert 17 not in includes
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], values={1319309: 2},
+                                   includes={1319309: [24907, 24932]})
+    assert "WFJScanIncludes = {\n  [1319309] = { 24907, 24932 },\n}" in lua
+    # the whole line is kept, each spliced-in spell is asked for, and the line is read again at the end
+    assert 'if reason == "values" then noteIncluded(record, id, english) end' in lua
+    # one shown in Japanese once loaded is no longer left English; a line that is only the client's gap for a spell
+    # in angle brackets (it never fills that form in) is a gap, not a tooltip the game changed
+    assert "record.left[tostring(id)], record.changed[tostring(id)] = nil, nil" in lua
+    assert 'local gap = english:find("^%s*<%d+>%s*$") ~= nil' in lua
+    # the tooltip waits off the screen, only until the spells it splices in loaded
+    assert 'GameTooltip:SetPoint("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)' in lua
+    assert "if not allCached(id) and waited < TOOLTIP_PATIENCE then" in lua
+    assert "pcall(C_Spell.RequestLoadSpellData, sid)" in lua
+    assert "recheckIncluded(record, function() readReported(record, done) end)" in lua
+    # at the end each is shown cold, looked at again after a wait without showing it, and shown again
+    assert "entry.cold = shownState(id)" in lua and "entry.waited = shownState(id)" in lua
+    assert "entry.after = shownState(id)" in lua
+    # shown in Japanese once what it splices in loaded: counted, and no detail
+    assert client_surface.included_lines(INCLUDED) == [
+        "spliced-in spells: 2 spells read before the spells they splice in had loaded, 1 shown in Japanese once "
+        "they had",
+        "INCL  spell 17 (2 numbers in the Japanese, 3 on this client), its whole line: Absorbs.",
+        "INCL    shown cold: not read",
+        "INCL    the same tooltip after a wait: not read",
+        "INCL    shown again: not read",
+    ]
+    still = INCLUDED.replace('"Japanese, the client\'s line holds 2 numbers"',
+                             '"English, the client\'s line holds 2 numbers"')
+    lines = client_surface.included_lines(still)
+    at = next(i for i, line in enumerate(lines) if line.startswith("INCL  spell 1319309"))
+    assert lines[at:at + 6] == [
+        "INCL  spell 1319309 (2 numbers in the Japanese, 0 on this client), its whole line: "
+        "Moonkin Aura\\r\\n\\r\\n\\r\\nLeader of the Pack\\r\\n",
+        "INCL    splices in 24907: when read, loaded true, known false, text: (no text)",
+        "INCL    splices in 24907: at the end, loaded true, known false, text: (no text)",
+        "INCL    splices in 24932: when read, loaded false, known false, text: (no text)",
+        "INCL    splices in 24932: at the end, loaded true, known false, text: (no text)",
+        "INCL    shown cold: English, the client's line holds 0 numbers",
+    ]
+    assert client_surface.included_lines(LEFT) == []
+    # shown in Japanese once what it splices in loaded: no fault
+    assert client_surface.included_problems(INCLUDED) == []
+    # still English with every spliced-in spell loaded: its Japanese does not fit the whole line, a failure
+    assert client_surface.included_problems(still) == [
+        "tooltip still English with every spell it splices in loaded: spell 1319309 "
+        "(English, the client's line holds 2 numbers)"]
+    # a spliced-in spell the client never loaded leaves the line short: not this addon's fault
+    unloaded = still.replace('["24932"] = "loaded true', '["24932"] = "loaded false')
+    assert client_surface.included_problems(unloaded) == []
+
+
 def test_untranslated_lines_are_listed_apart_from_faults_and_the_clients_own_gaps_are_only_counted():
     left = client_surface.read_left_english(LEFT)
     new = ["spellbook\tFrost", "group finder\t(did not open)", f"guild\t{client_surface.BOXES} Motd"]

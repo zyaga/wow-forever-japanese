@@ -46,7 +46,7 @@ import hashlib
 import json
 import re
 import sys
-from collections.abc import Iterable, Mapping
+from collections.abc import Iterable, Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
@@ -2042,6 +2042,118 @@ local function dataLines()
   end
   return table.concat(out, ", ")
 end
+-- A spell left English because its line holds another count of numbers than the Japanese, whose English splices in
+-- other spells' text (`WFJScanIncludes`): its whole line, and how the client held each spell it splices in when
+-- the line was read (that spell's data loaded, the character knows it, the text the client gives for it). Those
+-- spells are then asked for, and the line is read again at the end of the tooltip read (`recheckIncluded`), so
+-- one run says whether a spliced-in spell the client had not loaded is what took the numbers out.
+local function includedState(sid)
+  local cached = type(C_Spell) == "table" and type(C_Spell.IsSpellDataCached) == "function"
+    and C_Spell.IsSpellDataCached(sid)
+  local known = type(IsPlayerSpell) == "function" and IsPlayerSpell(sid)
+  local describe = type(C_Spell) == "table" and C_Spell.GetSpellDescription or GetSpellDescription
+  local fine, text = pcall(describe, sid)
+  local said = fine and readable(text) and text:gsub("%%s+", " "):sub(1, 200) or "(no text)"
+  return "loaded " .. tostring(cached) .. ", known " .. tostring(known) .. ", text: " .. said
+end
+
+local function noteIncluded(record, id, english)
+  local entry = record.left[tostring(id)]
+  entry.text = english:sub(1, TRACE_CHARS)
+  local ids = type(WFJScanIncludes) == "table" and WFJScanIncludes[id]
+  if type(ids) ~= "table" then return end
+  record.spliced = record.spliced or {}
+  record.spliced[tostring(id)] = entry
+  entry.included = {}
+  for _, sid in ipairs(ids) do
+    entry.included[tostring(sid)] = includedState(sid)
+    if type(C_Spell) == "table" and type(C_Spell.RequestLoadSpellData) == "function" then
+      pcall(C_Spell.RequestLoadSpellData, sid)
+    end
+  end
+  record.recheck = record.recheck or {}
+  record.recheck[#record.recheck + 1] = id
+end
+
+-- The description row of the spell the tooltip shows, from the tooltip's own data, and what it says now: whether
+-- the addon showed Japanese there, and how many numbers the client's line for the spell holds.
+local function shownState(id)
+  local row
+  local kinds = type(Enum) == "table" and Enum.TooltipDataLineType or nil
+  if kinds and type(GameTooltip.GetPrimaryTooltipInfo) == "function" then
+    local fine, info = pcall(GameTooltip.GetPrimaryTooltipInfo, GameTooltip)
+    local data = fine and type(info) == "table" and info.tooltipData or nil
+    for _, line in ipairs(type(data) == "table" and type(data.lines) == "table" and data.lines or {}) do
+      if line.type == kinds.SpellDescription and type(line.lineIndex) == "number" then row = line.lineIndex end
+    end
+  end
+  local shown = row and shownRow(row)
+  local japanese = hasJapanese(shown) and not tostring(shown):find("Not Translated]", 1, true)
+  local describe = type(C_Spell) == "table" and C_Spell.GetSpellDescription or GetSpellDescription
+  local fine, text = pcall(describe, id)
+  local live = fine and readable(text) and valueCount(text) or "no"
+  return (japanese and "Japanese" or "English") .. ", the client's line holds " .. tostring(live) .. " numbers"
+end
+
+-- The spells `noteIncluded` kept, at the end of the tooltip read, one at a time: shown cold (the addon asks for the
+-- spliced-in spells the client has not loaded), the same tooltip again once they loaded without showing it again
+-- (whether the client redrew it by itself), then shown again; with how the client holds each spliced-in spell by
+-- then. The tooltip is put off the screen meanwhile: it stays open while the spells load, and `ANCHOR_NONE` keeps
+-- the place the game last gave it.
+local RECHECK_POLL, RECHECK_REDRAW = 0.1, 0.5 -- seconds between looks while the spells load; then for the redraw
+local function allCached(id)
+  local cached = type(C_Spell) == "table" and C_Spell.IsSpellDataCached
+  if type(cached) ~= "function" then return true end
+  for _, sid in ipairs(WFJScanIncludes[id]) do
+    if not cached(sid) then return false end
+  end
+  return true
+end
+
+local function recheckIncluded(record, done)
+  local ids = record.recheck
+  if type(ids) ~= "table" or #ids == 0 or type(C_Timer) ~= "table" then return done() end
+  local function show(id)
+    GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+    GameTooltip:ClearAllPoints()
+    GameTooltip:SetPoint("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
+    GameTooltip:SetSpellByID(id)
+  end
+  local at = 0
+  local function nextSpell()
+    at = at + 1
+    local id = ids[at]
+    if not id then
+      GameTooltip:Hide()
+      return done()
+    end
+    local entry = record.left[tostring(id)]
+    show(id)
+    entry.cold = shownState(id)
+    local waited = 0
+    local function look()
+      if not allCached(id) and waited < TOOLTIP_PATIENCE then
+        waited = waited + RECHECK_POLL
+        return C_Timer.After(RECHECK_POLL, look)
+      end
+      C_Timer.After(RECHECK_REDRAW, function()
+        entry.waited = shownState(id)
+        entry.includedAfter = {}
+        for _, sid in ipairs(WFJScanIncludes[id]) do entry.includedAfter[tostring(sid)] = includedState(sid) end
+        show(id)
+        entry.after = shownState(id)
+        -- shown in Japanese once what it splices in loaded: what a player sees, so not left English
+        if entry.after:find("^Japanese") then
+          record.left[tostring(id)], record.changed[tostring(id)] = nil, nil
+        end
+        nextSpell()
+      end)
+    end
+    look()
+  end
+  nextSpell()
+end
+
 local function noteSpell(record, id, english, shown, row)
   record.left = record.left or {}
   record.icons = record.icons or {}
@@ -2068,6 +2180,7 @@ local function noteSpell(record, id, english, shown, row)
   local ok, reason, why = pcall(leftWhy, id, english)
   if not ok then reason, why = "other", "the reason could not be read: " .. tostring(reason) end
   record.left[tostring(id)] = { reason = reason, why = why, text = english:sub(1, 300) }
+  if reason == "values" then noteIncluded(record, id, english) end
   -- what the addon itself did on this tooltip: the last pass of its own tooltip trace, kept for the first few
   -- spells left English, so one run says why and nobody has to guess from outside
   record.traced = record.traced or 0
@@ -2228,7 +2341,10 @@ local function readSpell(record, id, describe, why)
   else
     if marked then record.marked = (record.marked or 0) + 1 end
     local fine, agrees = pcall(gateCount, id, english)
-    if VALUES[id] and not (fine and agrees) then record.changed[tostring(id)] = said end
+    -- a line that is only the client's gap for a spliced-in spell (`<1243318>`: it never fills the angle-bracket form
+    -- in) is counted as a gap by noteSpell, not as a tooltip the game changed
+    local gap = english:find("^%%s*<%%d+>%%s*$") ~= nil
+    if VALUES[id] and not (fine and agrees) and not gap then record.changed[tostring(id)] = said end
   end
   noteSpell(record, id, english, shown, row)
   noteRows(record, "spell", id)
@@ -2427,7 +2543,7 @@ local function WFJScanTooltipRead(done)
     GameTooltip:Hide()
     print("WFJ test: spell tooltips done, " .. record.read .. " read")
     if type(slash) == "function" then pcall(slash, "debug tooltip off") end
-    readReported(record, done)
+    recheckIncluded(record, function() readReported(record, done) end)
   end)
 end
 
@@ -2993,6 +3109,25 @@ def spell_value_counts(data: Path) -> dict[int, int]:
     return {int(i): n for (i, field), n in counts.items() if field == "description" and n >= 0}
 
 
+def spell_includes(data: Path, ids: Iterable[int]) -> dict[int, list[int]]:
+    """Each listed spell whose English description splices in another spell's description or aura text
+    (`align.included_spells`), with those spells' ids: when the client's line of such a spell holds another count
+    of numbers than the Japanese, the tooltip read records how the client held each of them."""
+    from wfj.core import align
+    from wfj.io.jsonl_store import Store
+
+    english = {(ln["id"], ln["field"]): ln["en"] for ln in Store(data, english=True).load("spell")}
+    out: dict[int, list[int]] = {}
+    for i in sorted(set(ids)):
+        en = english.get((i, "description"), "")
+        if "$@" not in en:
+            continue
+        spliced = sorted({sid for sid, field in align.included_spells(en, english) if field in ("description", "aura")})
+        if spliced:
+            out[i] = spliced
+    return out
+
+
 # the addon's gate, copied into the test addon whole (`gate_lua`), relative to the repository
 ALIGN_LUA = Path("addon/WoWForeverJapanese/Core/Align.lua")
 
@@ -3057,7 +3192,7 @@ def probe_lua(  # noqa: PLR0913 - the manifest, how it runs, and one parameter p
               manifest: dict[str, Any], walk: bool = False, english: Iterable[str] = (),
               at_login: bool = True, keys: Iterable[str] = (), values: Mapping[int, int] | None = None,
               japanese: Mapping[int, tuple[str, str]] | None = None, gate: str | None = None,
-              items: Iterable[int] = ()) -> str:
+              items: Iterable[int] = (), includes: Mapping[int, Sequence[int]] | None = None) -> str:
     """The probe as one Lua file for the scan dev addon: every manifest name with its surface, checked at
     login, saved under `WFJScanDB.probe` for `report`. With `walk` it also loads every load-on-demand addon a
     surface waits for and records what the client restricts (`read_walk` reads both back); with `at_login`
@@ -3078,6 +3213,9 @@ def probe_lua(  # noqa: PLR0913 - the manifest, how it runs, and one parameter p
         if lines:
             lua += f'WFJScanAddonCode = "{manifest.get("code", "")}"\n'
             lua += "WFJScanReportedItems = { " + ", ".join(str(i) for i in sorted(set(items))) + " }\n"
+            lua += "WFJScanIncludes = {\n" + "".join(
+                f"  [{i}] = {{ {', '.join(str(s) for s in ids)} }},\n" for i, ids in sorted((includes or {}).items())
+            ) + "}\n"
             if gate is not None:
                 lua += gate_lua(gate, japanese or {})
             lua += TEXT_LUA % ("\n".join(f"  [{_lua_string(t)}] = true," for t in lines),
@@ -3985,7 +4123,8 @@ def _own_reads(saved: str) -> list[str]:
         japanese = {ln["en"]: ln["ja"] for ln in load_lines(data_root()) if ln.get("status") == "trusted"}
         shown = sum(1 for _, english, text in names["rows"] if text != english)
         print(f"names: {len(names['rows'])} read, {shown} shown in Japanese")
-    return tooltip_problems(tooltips) + no_voice_problems(no_voice) + names_problems(names, japanese)
+    return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
+            + names_problems(names, japanese))
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A
@@ -4180,6 +4319,60 @@ def _name_list() -> tuple[dict[str, str], frozenset[str]]:
     return japanese, load_kept_as_written(data_root())
 
 
+def _included_rows(saved: str) -> list[tuple[str, Any]]:
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(saved).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("tooltips") if probe is not None else None
+    spliced = record.get("spliced") if record is not None else None
+    return [(spell, row) for spell, row in _by_id(spliced) if hasattr(row, "get")]
+
+
+def included_lines(saved: str) -> list[str]:
+    """The spells read cold before the spells their English splices in had loaded (`noteIncluded`): how many
+    showed Japanese once those had loaded (`recheckIncluded`), then, for each one that did not, its whole line, how
+    the client held each spliced-in spell when the line was read and at the end of the read, and the tooltip shown
+    cold, after a wait and shown again. The report's lines; none for a run from a test addon without this read."""
+    rows = _included_rows(saved)
+    if not rows:
+        return []
+    fixed = sum(1 for _, row in rows if str(row.get("after") or "").startswith("Japanese"))
+    out = [f"spliced-in spells: {len(rows)} spells read before the spells they splice in had loaded, {fixed} "
+           "shown in Japanese once they had"]
+    for spell, row in rows:
+        if str(row.get("after") or "").startswith("Japanese"):
+            continue
+        out.append(f"INCL  spell {spell} ({row.get('why')}), its whole line: {_line(str(row.get('text') or ''))}")
+        after = row.get("includedAfter")
+        for sid, state in _by_id(row.get("included")):
+            out.append(f"INCL    splices in {sid}: when read, {_line(str(state))}")
+            if after is not None and after.get(sid) is not None:
+                out.append(f"INCL    splices in {sid}: at the end, {_line(str(after.get(sid)))}")
+        for key, label in (("cold", "shown cold"), ("waited", "the same tooltip after a wait"),
+                           ("after", "shown again")):
+            out.append(f"INCL    {label}: {row.get(key) or 'not read'}")
+    return out
+
+
+def included_problems(saved: str) -> list[str]:
+    """A spell still English when shown again although every spell it splices in was loaded: its Japanese does not
+    fit the client's whole line, so loading them is not what keeps it English. One line each."""
+    out = []
+    for spell, row in _included_rows(saved):
+        after, loaded = row.get("after"), row.get("includedAfter")
+        states = [str(v) for _, v in _by_id(loaded)] if loaded is not None else []
+        if after and str(after).startswith("English") and states and all(v.startswith("loaded true") for v in states):
+            out.append(f"tooltip still English with every spell it splices in loaded: spell {spell} ({after})")
+    return out
+
+
+def _say_included(saved: str) -> None:
+    """Prints `included_lines`."""
+    for line in included_lines(saved):
+        print(line)
+
+
 def _say_traces(saved: str) -> None:
     """Prints what the addon's own tooltip trace recorded for the first spells it left English: the pass over
     that tooltip, row by row, with what the addon rendered. It answers why from the addon's side."""
@@ -4316,6 +4509,7 @@ def _texts(args: argparse.Namespace) -> int:
     _say_rows(args.saved.read_text(encoding="utf-8", errors="replace"))
     _say_hover(hover, hovered, hover_allowed)
     _say_traces(args.saved.read_text(encoding="utf-8", errors="replace"))
+    _say_included(args.saved.read_text(encoding="utf-8", errors="replace"))
     _say_other(bool(latin), protected, other)
     _say_left(args.saved.read_text(encoding="utf-8", errors="replace"), new)
     return 1 if new or failing else 0
@@ -4372,9 +4566,10 @@ def main(argv: list[str] | None = None) -> int:
         gate = ((args.window_test.resolve().parent / ALIGN_LUA).read_text(encoding="utf-8")
                 if args.window_test else None)
         items = listed_items(TEST_ITEMS.read_text(encoding="utf-8")) if TEST_ITEMS.exists() else {}
+        includes = spell_includes(args.window_test, values or {}) if args.window_test else None
         text = probe_lua(manifest, walk=args.walk or bool(args.window_test), english=english,
                          at_login=args.walk, keys=keys, values=values, japanese=japanese, gate=gate,
-                         items=items)
+                         items=items, includes=includes)
         args.out.write_text(text, encoding="utf-8")
         print(f"probe: {len(probe_names(manifest))} names → {args.out}")
         return 0

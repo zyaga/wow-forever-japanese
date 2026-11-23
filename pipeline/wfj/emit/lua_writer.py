@@ -436,6 +436,15 @@ def spell_shapes_text(shapes: dict[str, int]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def spell_includes_text(includes: dict[int, list[int]]) -> str:
+    """`WFJ.Data.spellIncludes`: [spell id] = { the ids of the spells its description splices in }.
+    Ids only."""
+    lines = [HEADER.format(src="data/"), "local _, WFJ = ...", "WFJ.Data.spellIncludes = {"]
+    lines += [f"  [{i}] = {{ {', '.join(str(s) for s in includes[i])} }}," for i in sorted(includes)]
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
 def toc_block(relpaths: Iterable[str]) -> list[str]:
     """The TOC lines between the markers (backslash paths, as the client wants them)."""
     return [schema.TOC_BEGIN, *(p.replace("/", "\\") for p in relpaths), schema.TOC_END]

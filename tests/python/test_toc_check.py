@@ -116,7 +116,7 @@ def test_real_toc_fields_and_load_order(root):
     assert generated == sorted(
         generated,
         key=lambda f: (
-            ["Meta", "Vectors", "ErrorSounds", "Displays", "SpellShapes", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
+            ["Meta", "Vectors", "ErrorSounds", "Displays", "SpellShapes", "SpellIncludes", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
              "English", "Reading", "Gloss", "Names"].index(
                 f.split("/")[1].split("_")[0].replace(".lua", "")
             ),

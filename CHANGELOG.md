@@ -37,6 +37,7 @@ an old setting stops working). A release moves those lines under its version num
 - The objectives of the quest A Humble Task no longer carry the English for "water well" in brackets after the Japanese word (a player's report).
 - A mount's, a companion pet's and a macro's tooltip are Japanese, like a spell's own tooltip.
 - A spell tooltip with a damage range of 1,000 or more ("1,350 to 1,650") no longer stays English.
+- A spell tooltip that includes another spell's text, such as Metamorphosis with Demon Charge and Demonic Howl, or Druidic Auras with its two auras, no longer stays English when your character has not loaded those spells. The game leaves their text empty until it has them, so the addon asks for them, and the tooltip shows Japanese from then on.
 - A spell with a shortest and a longest range ("8-30 yd range") shows its range line in Japanese.
 - The group finder's who list title, its Filter button, the playstyle prompt and the Back button are Japanese.
 - The English Collector no longer counts spell tooltips that already have Japanese as untranslated, and its reminder no longer opens underneath the welcome window.

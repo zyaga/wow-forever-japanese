@@ -41,6 +41,7 @@ TOC_NAME = "WoWForeverJapanese.toc"
 # the generated files that are not shards, in load order; the last three ship only when there is data for them
 FIXED = (
     "Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua", "Data/Displays.lua", "Data/SpellShapes.lua",
+    "Data/SpellIncludes.lua",
 )
 ERROR_SOUNDS = Path("voice") / "error-sounds.jsonl"
 VECTORS_HEAD = "WFJ.Data.vectors ="
@@ -366,6 +367,9 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     shapes = _plan_spell_shapes(store, english_store)
     if shapes:
         out["Data/SpellShapes.lua"] = lua_writer.spell_shapes_text(shapes)
+    includes = _plan_spell_includes(store, english_store)
+    if includes:
+        out["Data/SpellIncludes.lua"] = lua_writer.spell_includes_text(includes)
     out.update(_plan_names(store.root))
     return out
 
@@ -379,6 +383,26 @@ def _plan_spell_shapes(store: Store, english_store: Store) -> dict[str, int]:
     english, shipped = spell_shapes.spell_inputs(lines, spell_english)
     items = [ln["en"] for ln in english_store.load("item") if ln["field"] == "description"]
     return spell_shapes.table(english, shipped, items)
+
+
+def _plan_spell_includes(store: Store, english_store: Store) -> dict[int, list[int]]:
+    """Each spell whose shipped Japanese description is numbered to English that splices in other
+    spells' description or aura text (`$@spelldesc<id>`, `$@spellaura<id>`, ADR-043), with those spells'
+    ids. The client prints a spliced-in spell's text only once that spell's data is loaded, so the addon
+    asks for them."""
+    en_by = {(ln["id"], ln["field"]): ln["en"] for ln in english_store.load("spell")}
+    out: dict[int, list[int]] = {}
+    for ln in store.load("spell"):
+        if ln["field"] != "description" or not lua_writer.shipped(ln):
+            continue
+        en = en_by.get((ln["id"], "description"), "")
+        if "$@" not in en:
+            continue
+        spliced = sorted({sid for sid, field in align.included_spells(en, en_by)
+                          if field in ("description", "aura")})
+        if spliced:
+            out[int(ln["id"])] = spliced
+    return out
 
 
 def _check_error_sounds(rows: list[dict]) -> None:
