@@ -56,7 +56,10 @@ Popups.NEVER_TOUCH = { "BattleNetInviteFrame.InviteeName" }
 -- The StaticPopupSpecial frames this surface walks, and the words they may show (their XML / Lua).
 local SPECIAL = { "AddFriendFrame", "BattleNetInviteFrame", "PVPReadyPopup", "PVPFramePopup", "PVPRoleCheckPopup",
   "PVPReadyDialog", "PlunderstormFramePopup", "LFGInvitePopup", "QuickJoinRoleSelectionFrame",
-  "RecruitAFriendRecruitmentFrame", "ReportCheatingDialog", "WardrobeCustomSetEditFrame" }
+  "RecruitAFriendRecruitmentFrame", "ReportCheatingDialog", "WardrobeCustomSetEditFrame",
+  -- the role poll a group leader starts (blizzard_framexml/mainline/rolepoll.lua:15-40: its title is
+  -- SELECT_YOUR_ROLE and its button ACCEPT, both in the set below)
+  "RolePollPopup" }
 -- A special frame that re-writes its text after it is shown: its writer method is post-hooked on first show.
 local WRITERS = { RecruitAFriendRecruitmentFrame = "UpdateRecruitmentInfo" } -- recruitafriendframe.lua:1522–1573
 local SPECIAL_ONLY = { only = {
@@ -134,7 +137,10 @@ local CONFIRM_ONLY = { only = { "DIALOG_CONFIRMATION_PROMPT_MKB", "DIALOG_CONFIR
 local BUTTON1_TIP = { only = { "SHARD_TRANSFER_COMBAT" } }
 
 local CANDIDATES = { show = { "StaticPopup_Show" }, update = { "StaticPopup_OnUpdate" },
-  dialogs = { "StaticPopupDialogs" }, special = { "StaticPopupSpecial_Show" } }
+  dialogs = { "StaticPopupDialogs" }, special = { "StaticPopupSpecial_Show" },
+  -- the client's plain message box: SetBasicMessageDialogText writes its text and shows it
+  -- (blizzard_sharedxml/sharedbasiccontrols.lua:141-146); its one button reads OKAY
+  basic = { "BasicMessageDialog" } }
 
 local widgetKey = WFJ.Labels.keyer("popup.") -- one record per dialog widget (the dialogs are pooled)
 
@@ -432,6 +438,15 @@ function Popups.onSpecial(frame)
   return 0
 end
 
+-- HookScript target (BasicMessageDialog's OnShow, after the client wrote its text): its button and any line of
+-- it that is one of this surface's words. → words found
+function Popups.onBasic(frame)
+  if type(frame) ~= "table" then return 0 end
+  local n = walk(frame, 0)
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
 local hooked = false
 
 -- Called by Main after Compat.init.
@@ -451,6 +466,10 @@ function Popups.init()
   end
   if type(Compat.get(SURFACE, "special")) == "function" then
     hooksecurefunc("StaticPopupSpecial_Show", Popups.onSpecial)
+  end
+  local basic = Compat.get(SURFACE, "basic")
+  if type(basic) == "table" and type(basic.HookScript) == "function" then
+    basic:HookScript("OnShow", Popups.onBasic)
   end
   return true
 end

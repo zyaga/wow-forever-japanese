@@ -26,6 +26,9 @@ an old setting stops working). A release moves those lines under its version num
 - An item's flavour text no longer appears on its "Use:" line with the flavour line left empty. It happened on an item whose tooltip has more lines than its translation was written for.
 - The quest log says `[音声なし / No Voice Yet]` for a quest whose offer has no voice yet, as the quest window does.
 - A holiday's description on the calendar, the mount journal's search hint and the rank titles on the challenges page are Japanese.
+- The role poll a group leader starts, the game's plain message box, the Cancel button of the cooldown settings' layout dialogs, and a recipe opened from a link in chat show their labels in Japanese.
+- In an instance lock's tooltip, a boss not yet defeated reads 未討伐. It showed 在席, the friends list's word for "Available".
+- The objectives of the quest A Humble Task no longer carry the English for "water well" in brackets after the Japanese word (a player's report).
 
 ## 0.14.0 - 2026-11-16
 

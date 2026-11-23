@@ -1,4 +1,4 @@
-# ADR-098: Text a player wrote wears the bundled font
+# ADR-105: Text a player wrote wears the bundled font
 
 - **Status:** Accepted
 - **Date:** 2026-11-18

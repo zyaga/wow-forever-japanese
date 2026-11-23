@@ -855,8 +855,10 @@ UIStrings.OWN = {
   ASSISTED_COMBAT_ROTATION_SPELLBOOK_LABEL = true,
   -- "Back" (the equipment slot is 背中): the auction house, the quest map, the crafting order form
   AUCTION_HOUSE_BACK_BUTTON = true, BACK = true, PROFESSIONS_CRAFTING_FORM_BACK = true,
-  -- "Available" (the friends status is 在席): the auction house column, the trainer filter, a cooldown alert event
+  -- "Available" (the friends status is 在席): the auction house column, the trainer filter, a cooldown alert event,
+  -- and a boss not yet defeated in an instance lock's tooltip (UI/TooltipData.lua's `only` names it)
   AUCTION_HOUSE_BROWSE_HEADER_QUANTITY = true, AVAILABLE = true, COOLDOWN_VIEWER_SETTINGS_ALERT_WHEN_AVAILABLE = true,
+  BOSS_ALIVE = true,
   -- "Deposit" (the bank button), "Disabled" (無効 is a turned-off setting), "Exit" (EXIT closes a window)
   AUCTION_HOUSE_DEPOSIT_LABEL = true, LOSS_OF_CONTROL_DISPLAY_PACIFYSILENCE = true, LEAVE_VEHICLE = true,
   -- "Slots" (the bag slot count is スロット数) on the professions filter, "Ground" (the world marker is 地面) on
