@@ -17,6 +17,7 @@ Pure: no disk.
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable
 from typing import Any
 
 from wfj.core import model, tooltip_text
@@ -41,7 +42,7 @@ TYPES: dict[str, list[str]] = {
 # `spread`). Generate ships a hand-written line with its manual
 # breaks joined, and its reading is written and checked for the text as it ships (`japanese_of`). It ships no
 # English word card rows: English first shows the client's own tooltip.
-TOOLTIP_TYPES = ("item", "spell")
+TOOLTIP_TYPES = tooltip_text.TYPES
 KEYS = ("id", "field", "ja_hash", "words", "provenance")
 PROVENANCE_CLASSES = ("machine", "correction")
 
@@ -73,7 +74,7 @@ _BRACKET = re.compile(r"\[([^\[\]]*)\]")
 _CONDITION = re.compile(r"\$\?[^\[\]\s]*")
 _PLACEHOLDER = re.compile(r"\$([A-Za-z])\d*")
 # an English name: letters, with the spaces and marks a name holds between them ("Welcome!", "Dr. Weavil's")
-_NAME = re.compile(r"[A-Za-z](?:[A-Za-z' :\-.,!?&/]*[A-Za-z!?.])?")
+_NAME = re.compile(r"(?<!\$)[A-Za-z](?:[A-Za-z' :\-.,!?&/]*[A-Za-z!?.])?")
 _LOOSE_NUMBER = re.compile(r"\d+(?:\.\d+)?(?![\d.]|[^\x00-\x7f])")
 
 
@@ -81,10 +82,8 @@ def piece_key(text: str) -> str:
     """What makes two pieces the same sentence (see above). "" for a piece that is only a branch condition."""
     t = _CONDITION.sub("", text)
     t = _LOOSE_NUMBER.sub("0", t)
-    # the placeholder's letter is set aside as a character no name holds, so the name rule below leaves it
-    t = _PLACEHOLDER.sub(lambda m: chr(0xE000 + ord(m.group(1))), t)
-    t = _NAME.sub("A", t)
-    t = re.sub("[\ue000-\ue0ff]", lambda m: "$" + chr(ord(m.group(0)) - 0xE000), t)
+    t = _PLACEHOLDER.sub(r"$\1", t)
+    t = _NAME.sub("A", t)  # never a placeholder's letter: the rule refuses a letter after `$`
     return " ".join(t.split())
 
 
@@ -123,20 +122,19 @@ def pieces(ja: str) -> list[tuple[int, int, str]]:
             depth += 1
         elif ch in _CLOSE:
             depth = max(0, depth - 1)
-        elif ch in _PIECE_END and depth == 0 and i not in held and ja[i + 1 : i + 2] not in tuple(_PIECE_END):
+        elif ch in _PIECE_END and depth == 0 and i not in held and ja[i + 1 : i + 2] not in _PIECE_END:
             cut.add(i + 1)
     out: list[tuple[int, int, str]] = []
     at = 0
-    for i in range(len(ja) + 1):
-        if i == len(ja) or i in skip or i in cut:
-            text = ja[at:i]
-            lead = len(text) - len(text.lstrip())
-            start, end = at + lead, at + len(text.rstrip())
-            if end > start:
-                key = piece_key(ja[start:end])
-                if key:
-                    out.append((start, end, key))
-            at = i + 1 if i in skip else i
+    for i in sorted(skip | cut | {len(ja)}):
+        text = ja[at:i]
+        lead = len(text) - len(text.lstrip())
+        start, end = at + lead, at + len(text.rstrip())
+        if end > start:
+            key = piece_key(ja[start:end])
+            if key:
+                out.append((start, end, key))
+        at = i + 1 if i in skip else i
     return out
 
 
@@ -381,7 +379,7 @@ def record_problems(type_: str, rec: Any) -> list[str]:
 
 
 def japanese_of(
-    type_: str, lines: list[dict[str, Any]], english_lines: list[dict[str, Any]] | tuple[()] = ()
+    type_: str, lines: list[dict[str, Any]], english_lines: Iterable[dict[str, Any]]
 ) -> dict[tuple[int | str, str], str]:
     """(id, field) → the Japanese the addon ships for a type, as a reading is written and checked for it.
     A tooltip line (item, spell) ships with a hand-written line's manual breaks joined (core/tooltip_text), so

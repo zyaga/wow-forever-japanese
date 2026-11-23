@@ -302,7 +302,9 @@ def measure(root: Path) -> dict[str, Any]:
     words: dict[str, Any] = {}
     rstore = Store(root / "reading")
     for type_ in readings.TYPES:
-        japanese = readings.japanese_of(type_, store.load(type_), Store(root, english=True).load(type_))
+        if type_ not in loaded:
+            loaded[type_] = english.load(type_)
+        japanese = readings.japanese_of(type_, store.load(type_), loaded[type_])
         result = readings.check(type_, rstore.load(type_), japanese)
         covered = {(r["id"], r["field"]) for r in result["current"]}
         can = {k for k, ja in japanese.items()
