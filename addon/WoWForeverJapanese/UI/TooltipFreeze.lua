@@ -21,15 +21,11 @@ WFJ.TooltipFreeze = Freeze
 
 local Compat = WFJ.Compat
 local SURFACE = "tooltip.frozen"
-local BINDING, FIRST_KEY = "WFJ_FREEZE_TOOLTIP", "CTRL-F"
+local FIRST_KEY = "CTRL-F"
 
 -- GameTooltip and the comparison tooltips it shows beside itself
 -- [verified: forever blizzard_gametooltip/mainline/gametooltip.lua:955, self.shoppingTooltips]
 local FRAMES = { "GameTooltip", "ShoppingTooltip1", "ShoppingTooltip2" }
-
--- the kinds of line whose words the addon ships
-local CARD_KINDS = { ["item.description"] = true, ["spell.description"] = true, ["spell.aura"] = true, ui = true,
-  ["quest.title"] = true }
 
 Freeze.copies = {} -- the copies showing, GameTooltip's first: { frame, lines = { { fs, twin, rec } } }
 
@@ -89,7 +85,7 @@ end
 -- `fs` laid out as `src` is, in the copy's own coordinates, holding `text`
 local function layLike(s, fs, tip, src, text)
   local path, size, flags = src:GetFont()
-  if path then WFJ.Font.set(fs, path, size, flags) end
+  if path then WFJ.Font.set(fs, path, WFJ.Font.size(size) or WFJ.Font.DEFAULT_SIZE, flags) end
   if src.GetJustifyH then fs:SetJustifyH(src:GetJustifyH()) end
   if fs.SetSpacing and src.GetSpacing then fs:SetSpacing(src:GetSpacing()) end
   if fs.SetNonSpaceWrap and src.CanNonSpaceWrap then fs:SetNonSpaceWrap(src:CanNonSpaceWrap()) end
@@ -119,12 +115,13 @@ local function cardsNow()
   return not (type(inCombat) == "function" and inCombat())
 end
 
--- → kind, id, the text without its colour codes; nil when the line takes no cards
+-- → kind, id, the text without its colour codes; nil when the line takes no cards. Which kinds ship words is the
+-- lookup's to say (Core/Readings).
 local function cardLine(src, text)
   local rec = WFJ.SurfaceState.of(src)
   local meta = rec and rec.meta
-  if not meta or rec.applied ~= text or not CARD_KINDS[meta.kind] or meta.id == nil then return nil end
-  local plain = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+  if not meta or rec.applied ~= text or meta.id == nil then return nil end
+  local plain = WFJ.UIStrings.stripColour(text)
   if plain:find("|", 1, true) then return nil end
   return meta.kind, meta.id, plain
 end
@@ -230,7 +227,7 @@ end
 -- could not be decided (combat) is made again.
 function Freeze.offerKey(db)
   if type(db) ~= "table" or db.freezeKeyOffered then return end
-  if WFJ.KeyCapture.offerDefault(BINDING, FIRST_KEY) then db.freezeKeyOffered = true end
+  if WFJ.KeyCapture.offerDefault(WFJ.KeyCapture.FREEZE, FIRST_KEY) then db.freezeKeyOffered = true end
 end
 
 function WFJ_FreezeTooltip() Freeze.toggle() end

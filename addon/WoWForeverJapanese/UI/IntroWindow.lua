@@ -382,7 +382,7 @@ function IntroWindow.refill()
   fill(f.hold, Text.get(english and "intro.hold.en" or "intro.hold", key))
   fill(f.readings, Text.get(english and "intro.readings.en" or "intro.readings"))
   fill(f.minimap, Text.get("intro.minimap"))
-  local freezeKey = WFJ.KeyCapture.keyOf("WFJ_FREEZE_TOOLTIP")
+  local freezeKey = WFJ.KeyCapture.keyOf(WFJ.KeyCapture.FREEZE)
   if freezeKey then
     fill(f.freeze, Text.get("intro.freeze", KEY:format(WFJ.KeyCapture.keyText(freezeKey))))
   else

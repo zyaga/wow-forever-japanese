@@ -62,6 +62,7 @@ end
 
 KeyCapture.TOGGLE = "WFJ_TOGGLE"
 KeyCapture.REVEAL = "WFJ_REVEAL"
+KeyCapture.FREEZE = "WFJ_FREEZE_TOOLTIP" -- the frozen tooltip (UI/TooltipFreeze)
 KeyCapture.active = nil -- the capture currently listening, if any
 
 -- opts = { mode, width, onKey(value), onRefused(reason) }. → capture with :start(), :stop(), :input(raw), .active
@@ -152,12 +153,7 @@ function KeyCapture.conflict(key, ours)
 end
 
 -- The toggle binding's current key (the first of up to two), or nil.
-function KeyCapture.toggleKey()
-  local getKey = api("bindingKey")
-  if not getKey then return nil end
-  local key = getKey(KeyCapture.TOGGLE)
-  return key
-end
+function KeyCapture.toggleKey() return KeyCapture.keyOf(KeyCapture.TOGGLE) end
 
 -- A binding's current key (the first of up to two), or nil.
 function KeyCapture.keyOf(action)
@@ -260,7 +256,7 @@ function KeyCapture.offerDefault(action, key)
   local getKey, set, save, current = writers()
   local actionOf = api("bindingAction")
   if not getKey or not actionOf or inCombat() ~= false then return nil end
-  if getKey(action) ~= nil or (actionOf(key) or "") ~= "" then return "taken" end
+  if KeyCapture.keyOf(action) or (actionOf(key) or "") ~= "" then return "taken" end
   if not set(key, action) then return "taken" end
   save(current())
   return "bound"
