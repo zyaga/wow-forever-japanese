@@ -30,7 +30,12 @@
 --     same text as a line of an entry's tooltip (GameTooltip:SetCurrencyToken, lua:170); and the list's header rows:
 --     TokenHeaderMixin:Initialize writes `.Name` (lua:5–8), TokenSubHeaderMixin:Initialize `.Text` wrapped in the
 --     highlight colour (lua:215–219), the CurrencyCategory:* family only (the colour kept).
--- Never touched: a currency's name and count (pane Title / Subtitle) and entry names.
+-- Currency names (surface "currency.names"): the pane's Title (Refresh → SetPaneTitle(currencyInfo.name, …),
+--   lua:532–533; characterframe.lua:845–849) and each list entry's Content.Name (TokenEntryMixin:Initialize,
+--   lua:51–56). While names are on each shows the name's Japanese where the name list has it (UI/NameLabels). Plain
+--   labels: the Title is a FontString of fixed width (characterframe.xml:324–329), an entry's Name a plain one, and
+--   the client never reads or measures either. Released on TokenFrame's OnHide and shown again on its OnShow.
+-- Never touched: the pane's Subtitle (an icon and the count, lua:532) and a currency's count.
 local _, WFJ = ...
 local Currency = {}
 WFJ.Currency = Currency
@@ -71,6 +76,25 @@ local function get(key) return Compat.get(SURFACE, key) end
 
 local rowKey = WFJ.Labels.keyer("row.") -- a pooled row's record key: follows the widget, never its index
 
+local NAMES = SURFACE .. ".names"
+Currency.NAMES = NAMES
+local entryKey = WFJ.Labels.keyer("entry.")
+
+-- The pane's title: the selected currency's name. → 1 | 0
+local function showTitle()
+  local detail = get("detail")
+  local n = WFJ.NameLabels.show(NAMES, "title", type(detail) == "table" and detail.Title or nil)
+  WFJ.Render.updateBanner(NAMES)
+  return n
+end
+
+-- A list entry's currency name. → 1 | 0
+local function showEntryName(entry)
+  local name = type(entry.Content) == "table" and entry.Content.Name or nil
+  if type(name) ~= "table" then return 0 end
+  return WFJ.NameLabels.show(NAMES, entryKey(name), name)
+end
+
 -- The XML labels. → the number of dictionary words found.
 function Currency.showStatic()
   local n = 0
@@ -80,6 +104,7 @@ end
 
 -- hooksecurefunc target (TokenDetailFrame:Refresh). → the number of dictionary words found.
 function Currency.onRefresh()
+  showTitle()
   local n = Currency.showStatic() + WFJ.Labels.show(SURFACE, "empty", get("empty"), nil, EMPTY)
   local detail = get("detail")
   local pools = type(detail) == "table" and detail.rowPools or nil
@@ -140,7 +165,24 @@ function Currency.onEntry(a, b)
   WFJ.HelpTooltip.register(entry, WFJ.Labels.familiesWith(ENTRY_KEYS, "CurrencyDescription"))
   local icon = entry.Content.AccountWideIcon
   if type(icon) == "table" then WFJ.HelpTooltip.register(icon, ACCOUNT_TOOLTIP) end
+  showEntryName(entry)
   return true
+end
+
+-- TokenFrame shows again after a release: the pane's title and every existing entry.
+function Currency.onShow()
+  showTitle()
+  local box = get("scrollBox")
+  if type(box) == "table" and type(box.ForEachFrame) == "function"
+      and (type(box.HasView) ~= "function" or box:HasView()) then
+    box:ForEachFrame(function(entry)
+      if type(entry) == "table" then showEntryName(entry) end
+    end)
+  end
+end
+
+function Currency.releaseNames()
+  return WFJ.Render.release(NAMES)
 end
 
 -- hooksecurefunc target (BackpackTokenFrame:Update): the watched-currency buttons own a tooltip. → the number seen
@@ -180,6 +222,10 @@ function Currency.init()
   local tokens = get("backpackTokens")
   if type(tokens) == "table" and type(tokens.Update) == "function" then
     hooksecurefunc(tokens, "Update", Currency.onBackpackTokens)
+  end
+  if type(frame.HookScript) == "function" then
+    frame:HookScript("OnShow", Currency.onShow)
+    frame:HookScript("OnHide", Currency.releaseNames)
   end
   Currency.onBackpackTokens()
   Currency.onRefresh()

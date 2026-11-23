@@ -10,6 +10,8 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
+- Names in Japanese. A new choice in the welcome window, and on the settings page, shows the names of people, places, creatures, items, spells, skills and factions in katakana in place of the English: on tooltips, the quest and NPC windows, the target frame and nameplates, the map, loot, vendors, chat, and inside quest text. Names stay English until you pick Japanese, and holding the reveal key shows the English name as it does for everything else. Pointing at a Japanese name shows its reading and its English name.
+- With Japanese names, a friendly NPC's name over its head shows on its nameplate, so picking Japanese names turns those nameplates on. Picking English names puts your setting back. Turn the nameplates off yourself and the addon leaves them off, and says once that names over heads are English again.
 - With a voice pack installed, a translated line that has no voice yet says so on its window: `[音声なし / No Voice Yet]`. A setting on the Voice page, Mark lines with no voice yet, turns the message off.
 - Japanese for what Forever 1.60.1.70959 and 1.60.1.71037 added and for what players sent with the English Collector in 28 sends: 264 NPC lines, 318 quest progress and turn-in texts, 129 new quest titles with their objectives and descriptions (with word cards), and 45 item and spell tooltips.
 
@@ -29,6 +31,12 @@ an old setting stops working). A release moves those lines under its version num
 - The role poll a group leader starts, the game's plain message box, the Cancel button of the cooldown settings' layout dialogs, and a recipe opened from a link in chat show their labels in Japanese.
 - In an instance lock's tooltip, a boss not yet defeated reads 未討伐. It showed 在席, the friends list's word for "Available".
 - The objectives of the quest A Humble Task no longer carry the English for "water well" in brackets after the Japanese word (a player's report).
+- A mount's, a companion pet's and a macro's tooltip are Japanese, like a spell's own tooltip.
+- A spell tooltip with a damage range of 1,000 or more ("1,350 to 1,650") no longer stays English.
+- A spell with a shortest and a longest range ("8-30 yd range") shows its range line in Japanese.
+- The group finder's who list title, its Filter button, the playstyle prompt and the Back button are Japanese.
+- The English Collector no longer counts spell tooltips that already have Japanese as untranslated, and its reminder no longer opens underneath the welcome window.
+- Three spell tooltips that stayed English because of one word now show in Japanese.
 
 ## 0.14.0 - 2026-11-16
 

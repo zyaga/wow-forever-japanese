@@ -10,11 +10,15 @@
 --   the enchant slot's name text (id 7): the enchantment's name (left English), or
 --   HIGHLIGHT_FONT_COLOR_CODE .. TRADEFRAME_NOT_MODIFIED_TEXT .. "|r" (:111, :159): the `wrapped` label form. Both are
 --   globals called by name from TradeFrame_OnEvent / TradeFrame_Update (:38–57, :78–81): post-hooked by name. Slots
---   1–6 carry item names and are never read.
+--   1–6 carry item names (buttonText:SetText(name), :117, :165): never dictionary words; while names are on each
+--   shows the item's Japanese (UI/NameLabels). A plain label: TradeItemTemplate's $parentName is a fixed 90x30
+--   FontString on a plain Frame (tradeframe.xml:31–55), and the client never reads it (it compares the API's name,
+--   TradeFrame_AlertItemIfChanged, :146).
 -- - Tooltip: TradeFrameTradeButtonMixin:OnEnter adds TRADE_WARNING_CHANGED_OFFER (with the other player's name) as an
 --   error line (tradeframe.lua:90–98, 320–326): the button is a help-tooltip owner restricted to that key.
--- Never touched: TradeFramePlayerNameText / TradeFrameRecipientNameText (player names, :76–77), the item name
--- FontStrings of slots 1–6, the money EditBoxes.
+-- Never touched: TradeFramePlayerNameText / TradeFrameRecipientNameText (player names, :76–77), the enchant slot's
+-- enchantment (GREEN_FONT_COLOR_CODE .. enchantment .. "|r", :108, :156; the name list holds no enchantments), the
+-- money EditBoxes. The item name FontStrings are never read as dictionary words.
 -- Release on TradeFrame's OnHide.
 local _, WFJ = ...
 local Trade = {}
@@ -57,14 +61,20 @@ function Trade.onShow()
   })
 end
 
--- hooksecurefunc targets (TradeFrame_UpdatePlayerItem / _UpdateTargetItem): only the enchant slot holds a fixed word.
+-- hooksecurefunc targets (TradeFrame_UpdatePlayerItem / _UpdateTargetItem): the enchant slot holds a fixed word, the
+-- other slots an item's name.
+local function itemName(side, id)
+  if type(id) ~= "number" or id < 1 or id >= ENCHANT_SLOT then return 0 end
+  return WFJ.NameLabels.show(SURFACE, side .. ".item" .. id, Compat.resolve(side .. "Item" .. id .. "Name"), "items")
+end
+
 function Trade.onPlayerItem(id)
-  if id ~= ENCHANT_SLOT then return 0 end
+  if id ~= ENCHANT_SLOT then return itemName("TradePlayer", id) end
   return WFJ.Labels.show(SURFACE, "playerEnchant", get("playerEnchant"), nil, NOT_MODIFIED)
 end
 
 function Trade.onTargetItem(id)
-  if id ~= ENCHANT_SLOT then return 0 end
+  if id ~= ENCHANT_SLOT then return itemName("TradeRecipient", id) end
   return WFJ.Labels.show(SURFACE, "recipientEnchant", get("recipientEnchant"), nil, NOT_MODIFIED)
 end
 

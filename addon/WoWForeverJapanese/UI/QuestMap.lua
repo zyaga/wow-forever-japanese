@@ -297,6 +297,54 @@ function QuestMap.showPane(paneName)
   return n
 end
 
+-- The item names on the details pane's reward buttons (surface "questmap.items", area "items"):
+-- MapQuestInfoRewardsFrame.RewardButtons, made on demand by QuestInfo_GetRewardButton (mainline/questinfo.lua:
+-- 446–454). An item's Name is written in the item-load callback of QuestInfo_ShowRewardAsItemCommon (:538–556), which
+-- can run after the redraw returned, so each button's Name is post-hooked too (once). While names are on each shows
+-- the item's Japanese (UI/NameLabels); a currency's Name (:584) stays English unless the name list has it.
+-- Plain labels: SmallQuestRewardItemButtonTemplate is a plain Button (questinfo.xml:38;
+-- blizzard_itembutton/mainline/itembuttontemplate.xml:227–258, Name a fixed 92x36 FontString), and the client never
+-- reads or measures a Name: it lays the rewards out by button height (questinfo.lua:700, 723–724). The popup's
+-- buttons are QuestInfoRewardsFrame's, the quest window's own (UI/QuestFrame).
+local ITEMS = "questmap.items"
+QuestMap.ITEMS = ITEMS
+local itemKey = WFJ.Labels.keyer("item.")
+local nameHooked = setmetatable({}, { __mode = "k" })
+
+-- Post-hook of a reward button's Name:SetText. This addon's own writes echo here (the item's Japanese going on, the
+-- client's English put back) and are left; any other text is the client's.
+local function onRewardName(fs, text)
+  if not WFJ.SurfaceState.secret(text) then
+    local rec = WFJ.SurfaceState.get(ITEMS, itemKey(fs))
+    if rec and rec.fs == fs and (text == rec.en or text == WFJ.Names.item(rec.en)) then return end
+  end
+  WFJ.NameLabels.show(ITEMS, itemKey(fs), fs, "items")
+end
+
+-- The pane's reward buttons: a shown button's name, a hidden button's record dropped. → the number of names shown
+function QuestMap.showRewardNames()
+  local rewards = get("mapRewardsFrame")
+  local list = type(rewards) == "table" and rewards.RewardButtons or nil
+  if type(list) ~= "table" then return 0 end
+  local n = 0
+  for _, button in ipairs(list) do
+    local fs = type(button) == "table" and button.Name or nil
+    if type(fs) == "table" then
+      if not nameHooked[fs] and type(fs.SetText) == "function" then
+        nameHooked[fs] = true
+        hooksecurefunc(fs, "SetText", onRewardName)
+      end
+      if type(button.IsShown) == "function" and button:IsShown() then
+        n = n + WFJ.NameLabels.show(ITEMS, itemKey(fs), fs, "items")
+      else
+        WFJ.SurfaceState.drop(ITEMS, itemKey(fs))
+      end
+    end
+  end
+  WFJ.Render.updateBanner(ITEMS)
+  return n
+end
+
 -- Called by UI/QuestFrame's QuestInfo_Display hook for every quest-log template. The map's rewards call
 -- (QUEST_TEMPLATE_MAP_REWARDS into the rewards strip, :1051) writes only the rewards frame: its words are shown on the
 -- details surface, nothing forgotten. Any other parent is not ours. → the number of fields (or labels) shown
@@ -305,6 +353,7 @@ function QuestMap.onDisplay(_, parentFrame)
   if parentFrame == get("detailsContents") then return QuestMap.showPane("map") end
   if parentFrame == get("popupChild") then return QuestMap.showPane("popup") end
   if parentFrame == get("mapRewardsParent") then
+    QuestMap.showRewardNames()
     if WFJ.SurfaceState.count(SURFACE) == 0 then return 0 end -- the details write came first and found nothing
     return showLabels(SURFACE, { MAP_LABELS })
   end
@@ -1069,7 +1118,9 @@ end
 
 -- ── release / init ───────────────────────────────────────────────────────────────────────────────────────────────
 
-function QuestMap.releaseDetails() return WFJ.Render.release(INFO) + WFJ.Render.release(SURFACE) end
+function QuestMap.releaseDetails()
+  return WFJ.Render.release(INFO) + WFJ.Render.release(SURFACE) + WFJ.Render.release(ITEMS)
+end
 function QuestMap.releasePopup() return WFJ.Render.release(POPUP_INFO) + WFJ.Render.release(POPUP) end
 function QuestMap.releaseList() return WFJ.Render.release(LIST) + WFJ.Render.release(LIST_LABELS) end
 function QuestMap.releaseMapTitle() return WFJ.Render.release(MAP_TITLE) end
