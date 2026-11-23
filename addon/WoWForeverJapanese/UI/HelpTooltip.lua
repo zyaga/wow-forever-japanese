@@ -4,7 +4,8 @@
 -- them).
 -- A window module registers the frames that own such tooltips (HelpTooltip.register). After the client builds the
 -- tooltip (GameTooltip:SetText / :AppendText / :Show post-hooks, plus any client setter a module names, SetTalent),
--- every left and right line, line 1 included (a title here, never a name), goes through Labels.show on this surface
+-- every left and right line, line 1 included (a title here; a name only for an owner that says so, below), goes
+-- through Labels.show on this surface
 -- when the tooltip's owner is registered. An owner whose line 1 is a game name when it is no dictionary line (a
 -- bag's name on its portrait) registers with `nameLine` = the name's area: that line then shows the name's Japanese
 -- while names are on (UI/NameLabels.wrapped, its key binding kept). The SetText / Show hooks also catch

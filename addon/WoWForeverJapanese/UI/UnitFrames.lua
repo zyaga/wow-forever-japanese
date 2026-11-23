@@ -82,6 +82,10 @@ end
 
 -- hooksecurefunc target (CompactUnitFrame_UpdateName): the writer of a nameplate's and a raid-style frame's name,
 -- frame.name:SetText(GetUnitName(frame.unit, …)) [verified: shared/compactunitframe.lua:826–857], called by name.
+-- A nameplate measures its name (GetLineHeight, blizzard_nameplates/blizzard_nameplateunitframe.lua:794) and
+-- anchors its clickable area to it with a restricted call (SetHitTestPoints, :600–610), so this write sits on a path
+-- docs/architecture/client-limits.md warns about [unverified in combat: nameplates appearing and being clicked in a
+-- fight with no blocked action in the problem log keeps this hook; a blocked action removes it].
 -- The same rule as onUnitUpdate, with one more guard: a nameplate the client keeps from addons (a hostile one inside
 -- an instance) is forbidden, and looking into it raises, so it is asked first and left alone. → 1 | 0
 local function isForbidden(frame)
