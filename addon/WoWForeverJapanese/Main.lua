@@ -578,10 +578,15 @@ local function onEvent(self, event, name, ...)
     -- never on a zone change; time() is the client's clock [verified: forever-ui-1.60.1.70170
     -- blizzard_friendsframe/camelot/friendsframe.lua:1456]
     if isLogin or isReload then
-      step("collectorremind", function()
-        WFJ.CollectorRemind.run(WFJ_DB, time(), WFJ.CollectorReminder.open, disclosed)
-      end)
-      step("intro", function() WFJ.Intro.run(WFJ_DB, WFJ.IntroWindow.request) end) -- once, on a first install
+      local function remind()
+        step("collectorremind", function()
+          WFJ.CollectorRemind.run(WFJ_DB, time(), WFJ.CollectorReminder.open, disclosed)
+        end)
+      end
+      local intro -- once, on a first install and once for each question a player has not been asked
+      step("intro", function() intro = WFJ.Intro.run(WFJ_DB, WFJ.IntroWindow.request) end)
+      -- the reminder would open under the welcome window: it waits until the player has closed that one
+      if intro then WFJ.IntroWindow.afterClose(remind) else remind() end
       step("voicepacks", function() WFJ.VoicePlayer.announcePacks() end) -- every pack has registered by now
     end
     -- every addon has loaded by now: another one (BugGrabber) may have replaced our error handler; and the player's

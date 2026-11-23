@@ -456,6 +456,13 @@ local function inCinematic()
   return type(playing) == "function" and playing() == true
 end
 
+-- What waited for this window (IntroWindow.afterClose) has its turn, once.
+local function released()
+  local after = IntroWindow.after
+  IntroWindow.after = nil
+  if after then after() end
+end
+
 local function openNow()
   if IntroWindow.closedByPlayer then return end
   if inCinematic() then
@@ -467,6 +474,9 @@ local function openNow()
   IntroWindow.waiting = false
   -- later than the login step, so the load guard is called again here: a failure is recorded as `intro`
   if WFJ.step then WFJ.step("intro", IntroWindow.open) else IntroWindow.open() end
+  IntroWindow.owed = false
+  -- a window that failed to open will never be closed: nothing waits for it
+  if not (IntroWindow.frame and IntroWindow.frame:IsShown()) then released() end
 end
 
 local function onEvent(_, event)
@@ -481,6 +491,7 @@ end
 -- Core/Intro's show: opens it a moment later, through any cinematic.
 function IntroWindow.request()
   IntroWindow.asking = true
+  IntroWindow.owed = true -- asked for, not opened yet
   if not watcher then
     watcher = CreateFrame("Frame")
     watcher:RegisterEvent("CINEMATIC_START")
@@ -500,5 +511,16 @@ function IntroWindow.hidden()
       watcher:UnregisterEvent("CINEMATIC_START")
       watcher:UnregisterEvent("CINEMATIC_STOP")
     end
+    released()
   end)
+end
+
+-- Something else owed at the same login waits its turn: `fn` runs once, when the player has closed this window.
+-- Two windows opened at once would lie on top of each other.
+function IntroWindow.afterClose(fn)
+  if IntroWindow.owed or (IntroWindow.frame and IntroWindow.frame:IsShown()) then
+    IntroWindow.after = fn
+  else
+    fn() -- nothing to wait for: it never opened, or is closed already
+  end
 end

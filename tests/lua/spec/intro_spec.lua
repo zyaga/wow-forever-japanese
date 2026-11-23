@@ -175,6 +175,29 @@ describe("the intro at ADDON_LOADED and PLAYER_ENTERING_WORLD", function()
     assert.are.equal(1, opened)
   end)
 
+  it("the reminder owed at the same login waits until the player closes the window", function()
+    local WFJ = start(nil)
+    local reminded = 0
+    WFJ.CollectorRemind.run = function() reminded = reminded + 1 end
+    Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
+    assert.is_true(WFJ.IntroWindow.frame:IsShown())
+    assert.are.equal(0, reminded) -- it would open under the window
+    WFJ.IntroWindow.close()
+    assert.are.equal(1, reminded)
+    WFJ.IntroWindow.open() -- opened again by hand and closed: nothing waits any more
+    WFJ.IntroWindow.close()
+    assert.are.equal(1, reminded)
+  end)
+
+  it("with no window owed the reminder runs at login", function()
+    local WFJ = start({ schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
+    local reminded = 0
+    WFJ.CollectorRemind.run = function() reminded = reminded + 1 end
+    Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
+    assert.are.equal(0, opened)
+    assert.are.equal(1, reminded)
+  end)
+
   it("a window that fails to open is caught, marked seen, and the reminder still runs", function()
     local WFJ = start(nil)
     WFJ.IntroWindow.open = function() error("broken window") end
