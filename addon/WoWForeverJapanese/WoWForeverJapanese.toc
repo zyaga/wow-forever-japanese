@@ -2256,6 +2256,7 @@ Data\Reading\Reading_item_0286.lua
 Data\Reading\Reading_item_0287.lua
 Data\Reading\Reading_item_0288.lua
 Data\Reading\Reading_item_0289.lua
+Data\Reading\Reading_item_0291.lua
 Data\Reading\Reading_quest_0000.lua
 Data\Reading\Reading_quest_0001.lua
 Data\Reading\Reading_quest_0002.lua
