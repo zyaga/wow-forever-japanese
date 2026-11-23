@@ -525,3 +525,11 @@ def test_replace_runs_leaves_an_interface_lines_own_markup():
     assert names.replace_runs(line, known.get) == (
         "|A:newplayerchat-chaticon-guide:0:0:0:0|a|Kq1|kとフィッシングを %d |4guide:guides;"
     )
+
+
+def test_replace_runs_joins_a_suffixed_items_two_names():
+    known = {"Bandit Cloak": "バンディット・クローク", "of the Owl": "オブ・ジ・アウル"}
+    assert names.replace_runs("売却: Bandit Cloak of the Owl", known.get) == (
+        "売却: バンディット・クローク・オブ・ジ・アウル"
+    )
+    assert names.replace_runs("Cloak of Nothing Knownを", known.get) == "Cloak of Nothing Knownを"

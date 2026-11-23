@@ -229,6 +229,20 @@ def latin_runs(ja: str) -> list[str]:
 _HTML_TAG = re.compile(r"<[^>]*>")
 
 
+def _suffixed(english: str, lookup: Callable[[str], str | None]) -> str | None:
+    """An item with a suffix ("Bandit Cloak of the Owl") whose whole name has no line: the item's name and
+    the suffix's, joined. The split nearest the end is tried first, as the addon does."""
+    at = len(english)
+    while True:
+        first = english.rfind(" of ", 0, at + 3)
+        if first < 0:
+            return None
+        item, suffix = lookup(english[:first]), lookup(english[first + 1 :])
+        if item and suffix:
+            return item + "・" + suffix
+        at = first
+
+
 def replace_runs(ja: str, lookup: Callable[[str], str | None], *, html: bool = False) -> str:
     """A shown line with each English name written in its Japanese: the text between markup is read by
     `LATIN_RUN` and `trim_run`, as `latin_runs` reads it, and a run `lookup` knows is replaced. Markup, a
@@ -238,7 +252,7 @@ def replace_runs(ja: str, lookup: Callable[[str], str | None], *, html: bool = F
     def one(m: re.Match[str]) -> str:
         raw = m.group(0)
         run = trim_run(raw)
-        name = lookup(run) if run and has_latin(run) else None
+        name = (lookup(run) or _suffixed(run, lookup)) if run and has_latin(run) else None
         return raw if name is None else name + raw[len(run) :]
 
     out, at = [], 0

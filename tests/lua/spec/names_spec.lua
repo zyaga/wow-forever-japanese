@@ -93,6 +93,17 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
       (WFJ.Names.inText(line)))
   end)
 
+  it("joins a suffixed item's two names inside a line too, when the whole name has no row", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Bandit Cloak")] = "バンディット・クローク\tばんでぃっと・くろーく",
+      [WFJ.Names.key("of the Owl")] = "オブ・ジ・アウル\tおぶ・じ・あうる",
+    })
+    local text, spans = WFJ.Names.inText("売却: Bandit Cloak of the Owl")
+    assert.are.equal("売却: バンディット・クローク・オブ・ジ・アウル", text)
+    assert.are.equal("Bandit Cloak of the Owl", spans[1].english)
+    assert.are.equal("ばんでぃっと・くろーく・おぶ・じ・あうる", spans[1].reading)
+  end)
+
   it("returns a line with no name in it untouched, with no spans", function()
     local text, spans = WFJ.Names.inText("名前のない行。")
     assert.are.equal("名前のない行。", text)

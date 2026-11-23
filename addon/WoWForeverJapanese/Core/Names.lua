@@ -45,13 +45,9 @@ function Names.of(english)
   return hit[1], hit[2]
 end
 
-function Names.item(english)
-  local ja, reading = Names.of(english)
-  if ja then return ja, reading end
-  if type(english) ~= "string" then return nil end
-  -- a class or a race the name list has no line for ("Human", "Night Elf"): the word prose uses for it
-  local word = WFJ.Placeholders and WFJ.Placeholders.wordFor(english)
-  if word then return word, word end
+-- An item with a suffix ("Bandit Cloak of the Owl") whose whole name has no row: the item's name and the
+-- suffix's, joined. → ja, reading | nil
+local function suffixed(english)
   -- a suffix is written last, so the split nearest the end is tried first
   local at = #english
   while true do
@@ -67,6 +63,16 @@ function Names.item(english)
     end
     at = first - 1
   end
+end
+
+function Names.item(english)
+  local ja, reading = Names.of(english)
+  if ja then return ja, reading end
+  if type(english) ~= "string" then return nil end
+  -- a class or a race the name list has no line for ("Human", "Night Elf"): the word prose uses for it
+  local word = WFJ.Placeholders and WFJ.Placeholders.wordFor(english)
+  if word then return word, word end
+  return suffixed(english)
 end
 
 -- A line that is a list of names, each one maybe with a count after it ("Linen Cloth (2), Coarse Thread": a
@@ -215,7 +221,10 @@ function Names.inText(ja, html)
       local raw = ja:sub(first, e - 1)
       local run = trimRun(raw)
       local name, reading
-      if run ~= "" and run:find("[A-Za-z]") then name, reading = Names.of(run) end
+      if run ~= "" and run:find("[A-Za-z]") then
+        name, reading = Names.of(run)
+        if not name then name, reading = suffixed(run) end
+      end
       if name then
         spans[#spans + 1] = { first = len + 1, last = len + #name, english = run, reading = reading }
         put(name)
