@@ -52,6 +52,7 @@ an old setting stops working). A release moves those lines under its version num
 - With Japanese names, the group finder's dungeon, raid and zone names, the calendar's holiday titles ("Call to Arms: Warsong Gulch"), a guild member's zone on the roster tooltip, the shapeshift forms, tools and races on tooltips, and the spellbook's spell names show in Japanese.
 - Choosing a mount in the mount journal no longer turns its name back to English.
 - The floating combat text no longer raises a Lua error when the game hides a number from addons.
+- The chat line that says who won a duel, and a lockbox's "Locked" line, are Japanese.
 - On a recipe's tooltip, the item it makes shows its flavour text in Japanese, and its equip line no longer carries a wrong not-translated marker.
 - Calendar times read 午前 / 午後, and the challenges page's track box and a mount's riding requirement show their tooltips in Japanese.
 - The character window's stat tooltips and model buttons, and the guild window's voice chat button, show their tooltips in Japanese.

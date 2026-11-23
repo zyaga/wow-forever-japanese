@@ -142,6 +142,8 @@ WFJ.Data.add("english", {
   ["ui:DUEL_TO_DEATH"] = { text = "duel=2" },
   ["ui:DUEL_TO_THE_DEATH_CHALLENGE_CONFIRM"] = { text = "able=8 challenge=3 death=1 duel=2 kill=7 opponent=5 permanent=11 sure=4 you=6" },
   ["ui:DUEL_TO_THE_DEATH_REQUEST_CONFIRM"] = { text = "able=9 accept=4 death=2 duel=3 kill=8 opponent=6 permanent=12 sure=5 this=1 you=7" },
+  ["ui:DUEL_WINNER_KNOCKOUT"] = { text = "defeated=2 duel=1" },
+  ["ui:DUEL_WINNER_RETREAT"] = { text = "duel=1 fled=2" },
   ["ui:DUNGEONS"] = { text = "dungeons=1" },
   ["ui:DUNGEONS_BUTTON"] = { text = "group=1" },
   ["ui:DUNGEON_COMPLETED"] = { text = "dungeon=1" },

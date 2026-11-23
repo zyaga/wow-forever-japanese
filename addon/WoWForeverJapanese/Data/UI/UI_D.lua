@@ -179,6 +179,8 @@ WFJ.Data.add("ui", {
   ["DUEL_TO_THE_DEATH_CHALLENGE_CONFIRM"] = { "%sに死の決闘を申し込んでもよろしいですか？\n\n相手はあなたを倒すことができ、Hardcoreレルムでは死は永久です。\n\n申し込むには「I Agree」と入力してください。", 0x64210765, "." },
   ["DUEL_TO_THE_DEATH_REQUESTED"] = { "|Hplayer:%s|h[%s]|hがあなたに死の決闘を申し込みました。", 0x06afc13f, "." },
   ["DUEL_TO_THE_DEATH_REQUEST_CONFIRM"] = { "この死の決闘を受けてもよろしいですか？\n\n相手はあなたを倒すことができ、Hardcoreレルムでは死は永久です。\n\n受けるには「I Agree」と入力してください。", 0xd2967112, "." },
+  ["DUEL_WINNER_KNOCKOUT"] = { "%1$sが決闘で%2$sを倒しました", 0x7c58a564, "." },
+  ["DUEL_WINNER_RETREAT"] = { "%2$sが決闘で%1$sから逃げ出しました", 0x765b2a08, "." },
   ["DUNGEONS"] = { "ダンジョン", 0x805537b6, "." },
   ["DUNGEONS_BUTTON"] = { "グループ検索", 0xbe7119ca, "." },
   ["DUNGEON_COMPLETED"] = { "ダンジョン完了！", 0x3515daa1, "." },

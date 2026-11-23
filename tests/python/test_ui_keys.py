@@ -139,6 +139,7 @@ DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui", "draft-r70707-ui", "draft-r70755
                  "draft-ui-friends-window-sg12",  # the friends window the client shows with its social system on
                  "draft-ui-tooltip-words-sg12",  # "Enemy" before a range, "Crafting Reagent"
                  "draft-ui-locked-sg12",  # "Locked" on a locked container's tooltip
+                 "draft-ui-duel-sg12",  # a duel's end in chat
                  "draft-ui-duration-words-sg12",  # "until canceled" where a spell's duration goes
                  "draft-ui-invite-sg12",  # the cross-shard group invitation, a string of its own from 70888
                  "draft-ui-clock-times-sg12",  # a twelve-hour time, 午前 / 午後 like the dates around it

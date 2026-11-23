@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-23 at commit `98b001c3d`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-23 at commit `4064e5909`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -16,8 +16,8 @@
 | Exploration / event objectives | 249 | 247 | 2 | 100.0% | 0 |
 | Item descriptions | 10,658 | 10,657 | 0 | 100.0% | 1 |
 | Spell tooltips + auras | 25,952 | 25,903 | 1 | 99.8% | 48 |
-| Interface strings | 16,206 | 16,206 | 0 | 100.0% | 0 |
-| **All** | **91,102** | | | **99.9%** | **53** |
+| Interface strings | 16,208 | 16,208 | 0 | 100.0% | 0 |
+| **All** | **91,104** | | | **99.9%** | **53** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 339, gossip 94, item 907, spell 301, ui 313.
@@ -365,7 +365,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 |---|---|---|---|---|---|---|
 | quest | 22,675 | 22,675 | 100.0% | 195 | 357,546 | 100.0% |
 | gossip | 11,729 | 11,729 | 100.0% | 0 | 114,845 | 100.0% |
-| ui | 15,383 | 15,383 | 100.0% | 0 | 47,804 | 100.0% |
+| ui | 15,385 | 15,385 | 100.0% | 0 | 47,808 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,629 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages
@@ -380,9 +380,9 @@ translation uses for it. The pairs are read off the meanings the readings alread
 |---|---|---|---|---|
 | quest | 22,667 | 462,950 | 421,290 | 91.0% |
 | gossip | 11,723 | 152,152 | 139,565 | 91.7% |
-| ui | 14,395 | 48,744 | 43,839 | 89.9% |
+| ui | 14,397 | 48,749 | 43,844 | 89.9% |
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
-| **All** | | **708,581** | **645,614** | **91.1%** |
+| **All** | | **708,586** | **645,619** | **91.1%** |
 
 A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
 the client fills in are not counted, and neither are the words that take no card by design: the

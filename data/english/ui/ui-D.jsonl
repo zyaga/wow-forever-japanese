@@ -176,6 +176,8 @@
 {"id": "DUEL_TO_THE_DEATH_CHALLENGE_CONFIRM", "field": "text", "en": "Are you sure you want to challenge %s to a duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to issue the challenge.", "hash": "6421076536fcfdd5", "src": "db2@1.60.1.71037"}
 {"id": "DUEL_TO_THE_DEATH_REQUESTED", "field": "text", "en": "|Hplayer:%s|h[%s]|h has challenged you to a duel to the death.", "hash": "06afc13f0322d302", "src": "db2@1.60.1.71037"}
 {"id": "DUEL_TO_THE_DEATH_REQUEST_CONFIRM", "field": "text", "en": "Are you sure you want to accept this duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to accept the challenge.", "hash": "d29671129f81659f", "src": "db2@1.60.1.71037"}
+{"id": "DUEL_WINNER_KNOCKOUT", "field": "text", "en": "%1$s has defeated %2$s in a duel", "hash": "7c58a564c73f3358", "src": "db2@1.60.1.71037"}
+{"id": "DUEL_WINNER_RETREAT", "field": "text", "en": "%2$s has fled from %1$s in a duel", "hash": "765b2a08db87d6c1", "src": "db2@1.60.1.71037"}
 {"id": "DUNGEONS", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.71037"}
 {"id": "DUNGEONS_BUTTON", "field": "text", "en": "Group Finder", "hash": "be7119ca58a84a6f", "src": "db2@1.60.1.71037"}
 {"id": "DUNGEON_COMPLETED", "field": "text", "en": "Dungeon Complete!", "hash": "3515daa19b6740c8", "src": "db2@1.60.1.71037"}
