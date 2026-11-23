@@ -556,6 +556,7 @@ local function onEvent(self, event, name, ...)
     WFJ.StudyWindow.setCombat(true)
   elseif event == "PLAYER_REGEN_ENABLED" then
     WFJ.RevealBinding.flush() -- a modifier change made in combat
+    WFJ.NamePlateSetting.flush() -- a nameplate setting asked for in combat
     WFJ.QuestMap.onCombatEnded() -- the map's quest list keeps the client's English in combat
     WFJ.Options.setCombat(false)
     WFJ.StudyWindow.setCombat(false)
@@ -588,6 +589,8 @@ local function onEvent(self, event, name, ...)
       -- the reminder would open under the welcome window: it waits until the player has closed that one
       if intro then WFJ.IntroWindow.afterClose(remind) else remind() end
       step("voicepacks", function() WFJ.VoicePlayer.announcePacks() end) -- every pack has registered by now
+      -- from here on the names choice turns the client's friendly NPC nameplates on and back
+      step("nameplates", function() WFJ.NamePlateSetting.start(WFJ_DB) end)
     end
     -- every addon has loaded by now: another one (BugGrabber) may have replaced our error handler; and the player's
     -- name is known, so an error caught earlier loses it

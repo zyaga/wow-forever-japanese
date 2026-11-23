@@ -38,6 +38,7 @@ local EXAMPLE, EXAMPLE_JA = "Marshal McBride", "マーシャル・マクブラ�
 local NAME_GAP, NAME_H = 12, 54
 local NAME_W = math.floor((TEXT_WIDTH - NAME_GAP) / 2)
 local ABOUT = 62 -- room under the cards for what the selected one does: three points
+local NAMES_NOTE = 36 -- room under the names answers for the note on Japanese names: a line in each language
 local BULLET = { ja = "・", en = "•  " }
 local PURPOSES = { "ja", "en", "play" }
 -- The client's own icons, one per choice: a scroll, a book, a sword.
@@ -198,6 +199,12 @@ local function build()
   W.put(f.namesAsk.en, en, 11)
   f.namesAsk.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   f.nameCards = { [false] = nameCard(a, false), [true] = nameCard(a, true) }
+  -- under them, only while Japanese names is the selected answer: what Confirm will turn on
+  f.namesNote = line(a)
+  en, ja = Text.get("intro.names.note")
+  W.put(f.namesNote.ja, ja, 11)
+  W.put(f.namesNote.en, en, 11)
+  f.namesNote.ja:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
   en, ja = Text.get("intro.confirm")
   f.confirm = W.button(a, ja .. " / " .. en, nil, 150, function() IntroWindow.pick(IntroWindow.selected) end)
   -- beside the Confirm button: the Japanese, with its English under it
@@ -277,6 +284,12 @@ local function layoutPick(f)
     c:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT + (i - 1) * (NAME_W + NAME_GAP), -(used + 8))
   end
   used = used + 8 + NAME_H
+  -- the note has a fixed space, so the window keeps its size from one answer to the other
+  f.namesNote.ja:ClearAllPoints()
+  f.namesNote.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 8))
+  f.namesNote.en:ClearAllPoints()
+  f.namesNote.en:SetPoint("TOPLEFT", f.namesNote.ja, "BOTTOMLEFT", 0, -3)
+  used = used + 8 + NAMES_NOTE
   f.confirm:ClearAllPoints()
   f.confirm:SetPoint("TOPRIGHT", a, "TOPLEFT", LEFT + TEXT_WIDTH, -(used + 16))
   f.later.ja:ClearAllPoints()
@@ -377,6 +390,8 @@ function IntroWindow.refill()
     c.picked = (IntroWindow.names == true) == japanese
     edge(c, c.picked)
   end
+  W.setShown(f.namesNote.ja, IntroWindow.names == true)
+  W.setShown(f.namesNote.en, IntroWindow.names == true)
   local aboutEn, aboutJa = Text.get("intro.about." .. (IntroWindow.selected or "ja"))
   W.put(f.about.ja, BULLET.ja .. aboutJa:gsub("\n", "\n" .. BULLET.ja), 13)
   W.put(f.about.en, BULLET.en .. aboutEn:gsub("\n", "\n" .. BULLET.en), 12)

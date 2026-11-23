@@ -242,6 +242,17 @@ describe("fillValues", function()
     A = ns.Align
   end)
 
+  it("a range whose ends carry a thousands separator fits like any other range", function()
+    local live = "Smites an enemy, inflicting 1,350 to 1,650 Holy damage."
+    assert.are.same({ "1350～1650" }, A.values(live))
+    assert.are.same({ true, "敵に1350～1650のHolyダメージを与えます。" },
+      { A.check("敵に$N1のHolyダメージを与えます。", { live }, nil, nil, 1) })
+    -- one end only, and a second range after it
+    assert.is_true((A.check("$N1のダメージ、さらに$N2。", { "Deals 335 to 1,005 damage, then 285 to 315 more." })))
+    -- a range vouches for its own two ends only
+    assert.is_false((A.check("$N1のダメージ。1350回。", { "Deals 1,350 to 1,650 damage." })))
+  end)
+
   it("a range the client prints is one value, filled as A～B", function()
     local live = "Hurls a fiery ball that causes 14 to 22 Fire damage and an additional 2 Fire damage over 4 sec."
     assert.are.same({ "14～22", "2", "4" }, A.values(live))

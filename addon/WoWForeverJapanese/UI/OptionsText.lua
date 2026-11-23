@@ -71,6 +71,12 @@ Text.T = {
   ["intro.names.ask"] = { en = "How should names show?", ja = "名前の表示は？" },
   ["intro.names.english"] = { en = "English names", ja = "英語の名前" },
   ["intro.names.japanese"] = { en = "Japanese names", ja = "日本語の名前" },
+  -- a chat line: Japanese names are on and the client's friendly NPC nameplates are off
+  ["names.plates.off"] = { en = "WFJ: Friendly NPC nameplates are off, so names over heads show in English.",
+    ja = "WFJ: 味方NPCのネームプレートがオフのため、頭上の名前は英語で表示されます。" },
+  -- under the two answers while Japanese names is the selected one: what Confirm turns on, and why
+  ["intro.names.note"] = { en = "Names over heads use nameplates. Confirm turns them on for friendly NPCs.",
+    ja = "頭上の名前はネームプレートに表示されます。決定すると、味方NPCのネームプレートをオンにします。" },
   ["section.about"] = { en = "This version", ja = "このバージョン" },
   ["section.report"] = { en = "Report something", ja = "報告する" },
   ["section.translation"] = { en = "Translation", ja = "翻訳" },

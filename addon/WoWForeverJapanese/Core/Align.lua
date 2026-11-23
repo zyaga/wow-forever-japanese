@@ -219,7 +219,11 @@ end
 function Align.checkNumbers(ja, scope, extra)
   local want, have = Align.numbers(ja), Align.numbers(scope)
   for _, w in ipairs(Align.numberWords(scope)) do have[w] = (have[w] or 0) + 1 end
-  for _, v in ipairs(extra or {}) do have[v] = (have[v] or 0) + 1 end
+  for _, v in ipairs(extra or {}) do
+    -- a range ("1350～1650") vouches for each of its ends: the line itself reads "1,350 to 1,650", whose digit
+    -- runs are 1, 350, 1 and 650
+    for part in (v .. "～"):gmatch("(.-)～") do have[part] = (have[part] or 0) + 1 end
+  end
   local missing = {}
   for run, count in pairs(want) do
     for _ = 1, count - (have[run] or 0) do missing[#missing + 1] = run end

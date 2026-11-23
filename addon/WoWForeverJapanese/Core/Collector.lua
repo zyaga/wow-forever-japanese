@@ -425,6 +425,14 @@ local function covered(kind, id, field, e, h1, p, keys)
   if entry.ja == nil and entry.variants == nil and entry.sections == nil then return false end
   local lines = {}
   for seg in (e .. "$B$B"):gmatch("(.-)%$B%$B") do lines[#lines + 1] = seg end
+  -- What is recorded is the spell API's text, which never holds the icon the tooltip's own line may show: the
+  -- Japanese is offered without its icon slots, or no line with one could ever count as covered.
+  if type(entry.ja) == "string" and entry.ja:find("%$I%d") then
+    local bare = {}
+    for k, v in pairs(entry) do bare[k] = v end
+    bare.ja = entry.ja:gsub("%$I%d+", "")
+    entry = bare
+  end
   return deps.aligns(entry, lines) == true
 end
 

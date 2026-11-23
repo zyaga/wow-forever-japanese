@@ -7,10 +7,10 @@ import re
 from pathlib import Path
 
 MARKS = {"japanese", "todo", "english"}
-REASONS = {"player-typed", "text-box", "secret", "protected", "not-a-game-name"}
+REASONS = {"player-typed", "text-box", "secret", "protected", "not-a-game-name", "client-drawn"}
 # a box the player types in: covered by the list's one line for every such box
 _BOX = re.compile(r"(EditBox|SearchBox|searchBox|InputBox|NameEdit|NameBox|HexBox|GoldBox|Edit|Password)\"?$")
-_NEVER = re.compile(r"NEVER_TOUCH\s*=\s*\{(.*?)\}", re.S)
+_NEVER = re.compile(r"NEVER_TOUCH\s*=\s*\{(.*?)\}", re.DOTALL)
 _ENTRY = re.compile(r'"([^"]+)"')
 
 
