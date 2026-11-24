@@ -6,10 +6,15 @@
 -- of combat too [verified: forever-ui-1.60.1.71037 blizzard_settingsdefinitions_frame/nameplates.lua:461-520, the
 -- settings and their CVars; without the last one the client shows nameplates only in combat, :461 and its tooltip].
 -- A player's nameplate is not asked for: a player's name is never changed.
--- When the player chooses Japanese names each setting that is off is turned on and its value before that is kept in
--- the saved settings; choosing English names puts those values back. A value the player sets by hand afterwards is
--- left alone: with Japanese names on and one of the main settings off, one chat line says names over heads are
--- English, when it happens and once at each login.
+-- A nameplate shows only within the client's nameplate range while the name over a head shows from farther, so
+-- Japanese names also widen that range as far as the client takes it (it holds a larger value to its own limit)
+-- and turn off the client's English names over NPC heads, the four settings its NPC names option writes
+-- [verified: forever-ui-1.60.1.71037 blizzard_settingsdefinitions_frame/nameplates.lua:362-412]. A player's and a
+-- pet's name over a head stay.
+-- When the player chooses Japanese names each setting not at the value it wants is set to it and its value before
+-- that is kept in the saved settings; choosing English names puts those values back. A value the player sets by
+-- hand afterwards is left alone: with Japanese names on and one of the main settings off, one chat line says names
+-- over heads are English, when it happens and once at each login.
 -- Nameplate settings are refused in combat [likely; the in-game check is in docs/testing/strategy.md], so a write
 -- asked for in combat waits for PLAYER_REGEN_ENABLED (Main routes it to flush).
 --   NamePlateSetting.start(db)   after the saved settings applied: follows the names choice from here on, and says
@@ -22,12 +27,18 @@ WFJ.NamePlateSetting = NamePlateSetting
 local Compat = WFJ.Compat
 local NAMESPACE = "nameplatesetting"
 NamePlateSetting.SURFACE = NAMESPACE -- a Compat namespace, not a translated surface
--- Every setting turned on with Japanese names. The first three decide whether a creature has a nameplate at all;
--- the line about names in English is said for those. The other two only widen the enemy setting.
+-- Every setting Japanese names change. The first three decide whether a creature has a nameplate at all; the line
+-- about names in English is said for those. The next two only widen the enemy setting; then the range, and the
+-- English names over NPC heads.
 NamePlateSetting.CVARS = { "nameplateShowFriendlyNpcs", "nameplateShowEnemies", "nameplateShowAll",
-  "nameplateShowEnemyMinions", "nameplateShowEnemyMinus" }
+  "nameplateShowEnemyMinions", "nameplateShowEnemyMinus", "nameplateMaxDistance", "UnitNameNPC",
+  "UnitNameHostleNPC", "UnitNameInteractiveNPC", "UnitNameFriendlySpecialNPCName" }
 NamePlateSetting.MAIN = 3
 NamePlateSetting.CVAR = NamePlateSetting.CVARS[1]
+-- the value each setting is set to; any other is turned on
+NamePlateSetting.WANT = { nameplateMaxDistance = "60", UnitNameNPC = "0", UnitNameHostleNPC = "0",
+  UnitNameInteractiveNPC = "0", UnitNameFriendlySpecialNPCName = "0" }
+local function want(cvar) return NamePlateSetting.WANT[cvar] or "1" end
 local API = { inCombat = { "InCombatLockdown" }, cvars = { "C_CVar" } }
 for key, cands in pairs(API) do Compat.declare(NAMESPACE, key, cands) end
 NamePlateSetting.API = API
@@ -79,7 +90,13 @@ local function write(cvar, value)
     return
   end
   pending[cvar] = nil
-  C.SetCVar(cvar, value)
+  pcall(C.SetCVar, cvar, value) -- a value past the client's limit is never worth an error
+end
+
+local function current(cvar)
+  if pending[cvar] ~= nil then return pending[cvar] end -- a waiting write is what the setting will be
+  local C = cvars()
+  return C and C.GetCVar(cvar)
 end
 
 local function warn()
@@ -95,20 +112,19 @@ local function kept()
   return db.namePlatesWas
 end
 
--- Turns on every setting that is off and that Japanese names has not turned on before, keeping its value.
+-- Sets every setting not at its value and that Japanese names has not set before, keeping its value.
 -- A setting already asked for is the player's from then on.
 local function turnOn()
   local was = kept() or {}
   local asked = type(db.namePlatesAsked) == "table" and db.namePlatesAsked or {}
   for _, cvar in ipairs(NamePlateSetting.CVARS) do
-    local on = isOn(cvar)
-    if pending[cvar] ~= nil then on = pending[cvar] == "1" end -- a waiting write is what the setting will be
-    if on ~= nil and not asked[cvar] then
+    local value = current(cvar)
+    if value ~= nil and not asked[cvar] then
       asked[cvar] = true
-      if not on then
+      if value ~= want(cvar) then
         -- what choosing English names puts back; a value kept from a choice reversed in the same fight stays
-        if was[cvar] == nil then was[cvar] = "0" end
-        write(cvar, "1")
+        if was[cvar] == nil then was[cvar] = value end
+        write(cvar, want(cvar))
       end
     end
   end
@@ -165,8 +181,8 @@ function NamePlateSetting.start(saved)
       -- then, so off now is the player's own choice
       db.namePlatesAsked = { [NamePlateSetting.CVAR] = true }
     end
-    for cvar in pairs(was or {}) do
-      if isOn(cvar) == false then write(cvar, "1") end
+    for cvar, value in pairs(was or {}) do
+      if current(cvar) == value then write(cvar, want(cvar)) end
     end
     turnOn()
     if next(pending) == nil then

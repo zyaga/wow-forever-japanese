@@ -2756,6 +2756,35 @@ local function WFJScanNamesRead(done)
   done()
 end
 
+-- The nameplate read. With Japanese names a creature's name shows on its nameplate, and a nameplate shows only within
+-- the client's nameplate range, so Japanese names widen it and turn off the client's English names over NPC heads
+-- (UI/NamePlateSetting). Into `probe.plates`: each of those settings' value and default, and `limit`, the largest
+-- range the client holds (a larger value set and read back, then the value before it put back).
+local PLATE_CVARS = { "nameplateMaxDistance", "UnitNameNPC", "UnitNameHostleNPC", "UnitNameInteractiveNPC",
+  "UnitNameFriendlySpecialNPCName" }
+local NAMES_SETTING = "names.japanese"
+
+local function WFJScanPlatesRead()
+  local db = probeDb()
+  local settings = addonSettings() or {}
+  local record = { names = settings[NAMES_SETTING] == true, values = {}, defaults = {} }
+  db.plates = record
+  if not (C_CVar and C_CVar.GetCVar and C_CVar.SetCVar) then
+    record.refused = "the client has no C_CVar"
+    return
+  end
+  for _, name in ipairs(PLATE_CVARS) do
+    record.values[name] = C_CVar.GetCVar(name) or "none"
+    record.defaults[name] = C_CVar.GetCVarDefault and C_CVar.GetCVarDefault(name) or "unknown"
+  end
+  local before = C_CVar.GetCVar("nameplateMaxDistance")
+  if before then
+    pcall(C_CVar.SetCVar, "nameplateMaxDistance", "200")
+    record.limit = C_CVar.GetCVar("nameplateMaxDistance")
+    pcall(C_CVar.SetCVar, "nameplateMaxDistance", before)
+  end
+end
+
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
 -- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
 -- carries and runs what the key runs (`WFJ_FreezeTooltip`), twice, into `probe.freeze`:
@@ -3114,6 +3143,7 @@ SlashCmdList.WFJTEST = function(how)
             db.test.part = "names"
             -- in a fight the client hides a tooltip's rows and a unit's name from addons
             outOfCombat(function() WFJScanNamesRead(function()
+            WFJScanPlatesRead() -- out of combat here: the client refuses a setting written in a fight
             db.test.part = "freeze"
             -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
             outOfCombat(function() WFJScanFreezeRead(function()
@@ -3854,6 +3884,44 @@ def read_freeze(text: str) -> dict[str, Any] | None:
     return out
 
 
+PLATE_WANT = {"UnitNameNPC": "0", "UnitNameHostleNPC": "0", "UnitNameInteractiveNPC": "0",
+              "UnitNameFriendlySpecialNPCName": "0"}
+
+
+def read_plates(text: str) -> dict[str, Any] | None:
+    """The window test's nameplate read out of a saved-variables file, or None when the run had none: whether
+    Japanese names were on (`names`), each setting's value and default (`values`, `defaults`), the largest
+    nameplate range the client holds (`limit`, "" when unread) and why it could not read (`refused`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("plates") if probe is not None else None
+    if record is None:
+        return None
+    out: dict[str, Any] = {"names": bool(record.get("names")), "refused": str(record.get("refused") or ""),
+                           "limit": str(record.get("limit") or "")}
+    for kind in ("values", "defaults"):
+        table = record.get(kind)
+        out[kind] = {str(k): str(v) for k, v in (table.named() if table is not None else {}).items()}
+    return out
+
+
+def plates_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
+    nameplate range short of the client's limit. A player who turned one back on by hand sees it here too, as the
+    read cannot tell; a run with names off proves nothing and says nothing."""
+    if record is None or record["refused"] or not record["names"]:
+        return []
+    values = record["values"]
+    out = [f"nameplates: {name} is {values.get(name)} with Japanese names on (English names over NPC heads)"
+           for name, want in PLATE_WANT.items() if values.get(name) not in (want, "none")]
+    distance, limit = values.get("nameplateMaxDistance", ""), record["limit"]
+    if distance and limit and distance != limit:
+        out.append(f"nameplates: range {distance} with Japanese names on, the client holds up to {limit}")
+    return out
+
+
 def freeze_problems(record: dict[str, Any] | None) -> list[str]:
     """What the frozen tooltip read found wrong, one line each. A run whose test addon had no such read, or
     one that froze nothing, proves nothing about the frozen tooltip and says so."""
@@ -4276,8 +4344,14 @@ def _own_reads(saved: str) -> list[str]:
     if freeze is not None:
         print(f"frozen tooltip: {freeze['items']} item tooltips frozen, {freeze['lines']} Japanese lines copied, "
               f"{freeze['cards']} word cards; key {freeze['bound'] or 'none'}")
+    plates = read_plates(saved)
+    if plates is not None and not plates["refused"]:
+        v, d = plates["values"], plates["defaults"]
+        print(f"nameplates: range {v.get('nameplateMaxDistance')} (default {d.get('nameplateMaxDistance')}, the "
+              f"client holds up to {plates['limit'] or 'unknown'}); English names over NPC heads "
+              + ", ".join(f"{k} {v.get(k)}" for k in PLATE_WANT))
     return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
-            + names_problems(names, japanese) + freeze_problems(freeze))
+            + names_problems(names, japanese) + freeze_problems(freeze) + plates_problems(plates))
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A
