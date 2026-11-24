@@ -346,7 +346,7 @@ A name's Japanese is never drafted or translated. It is the katakana spelling of
 
 | Step | What it does |
 |---|---|
-| `wfj names collect` | Every English name from `data/english`, the VMaNGOS database when `VMANGOS_DB` is there, item name suffixes and flight points from Forever's pinned client tables, and the Latin runs in shipped quest, gossip, book, objective, area, item and spell Japanese and the voiced error lines. A new name comes in `missing`. |
+| `wfj names collect` | Every English name from `data/english`, the VMaNGOS database when `VMANGOS_DB` is there, item name suffixes and flight points from Forever's pinned client tables, the creature names of the scan's creature pass when `SCAN_CREATURES` is there (`make scan-names-copy WOW_DIR=…` copies the scan's saved file), and the Latin runs in shipped quest, gossip, book, objective, area, item and spell Japanese and the voiced error lines. A new name comes in `missing`. |
 | `wfj names learn-spellings` | A word with no spelling takes it from a katakana name that has as many parts as words. |
 | `wfj names respell` | Every name a person did not write is written again from the spellings of its words, its reading with it. A new name whose words all have a spelling is finished here, with no drafting. A player's own fix (`correction`) is kept. A name with a word nobody has spelled is left and counted. |
 | `wfj voice kana` | Every voiced line's kana line, from the readings and the names. |

@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: tooltip-words creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-owed voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: tooltip-words scan-names-copy creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-owed voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -332,6 +332,15 @@ wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (re
 	@if [ "$(CLIENT)" = forever ]; then $(MAKE) --no-print-directory creature-copy WOW_DIR="$(WOW_DIR)" || \
 		echo "wdb-copy: the quest cache is copied; the creature cache was not (see above)"; fi
 
+# The scan dev addon's saved file, for the creature names the Forever server gave its creature pass (`make names`
+# reads it). Read-only on the game folder: the client writes it, this copies it.
+SCAN_CREATURES ?= $(CREATURES)/WFJScan.lua
+scan-names-copy: ## copy the scan dev addon's saved WFJScan.lua (its creature names) to SCAN_CREATURES: WOW_DIR=<client folder>
+	@test -n "$(WOW_DIR)" || { echo "usage: make scan-names-copy WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_>"; exit 2; }
+	@F="$$(ls "$(WOW_DIR)"/WTF/Account/*/SavedVariables/WFJScan.lua 2>/dev/null | head -1)"; \
+		test -n "$$F" || { echo "scan-names-copy: no WTF/Account/*/SavedVariables/WFJScan.lua under $(WOW_DIR)"; exit 1; }; \
+		mkdir -p "$(CREATURES)" && cp "$$F" "$(SCAN_CREATURES)" && echo "scan-names-copy: $$F -> $(SCAN_CREATURES)"
+
 creature-copy: ## copy the Forever client's creature cache to CREATURES/<build>.wdb, named by the build in its header (read-only on the game folder): WOW_DIR=<client folder>
 	@test -n "$(WOW_DIR)" || { echo "usage: make creature-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_forever_>"; exit 2; }
 	@test -f "$(WOW_DIR)/Cache/WDB/enUS/creaturecache.wdb" || { echo "creature-copy: no Cache/WDB/enUS/creaturecache.wdb under $(WOW_DIR) (did the client Exit Game?)"; exit 1; }
@@ -620,7 +629,8 @@ tooltip-words: ## every item and spell line made of sentences already written ge
 
 names: ## every English name gets a data/name line spelled from its words, then every voiced line its kana line
 	cd pipeline && $(PY) -m wfj names collect $(if $(wildcard $(VMANGOS_DB)),--vmangos $(VMANGOS_DB)) \
-		$(if $(wildcard $(call client_dir,forever)),--tables "$(call client_dir,forever)")
+		$(if $(wildcard $(call client_dir,forever)),--tables "$(call client_dir,forever)") \
+		$(if $(wildcard $(SCAN_CREATURES)),--scan "$(SCAN_CREATURES)")
 	cd pipeline && $(PY) -m wfj names learn-spellings
 	cd pipeline && $(PY) -m wfj names respell
 	cd pipeline && $(PY) -m wfj voice kana

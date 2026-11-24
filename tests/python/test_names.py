@@ -398,6 +398,34 @@ def test_table_names_read_item_suffixes_and_flight_points(tmp_path):
     assert cmd.table_names(tmp_path / "absent") == {"suffix": {}, "taxi": {}}
 
 
+def test_scan_names_read_every_builds_creature_names_and_leave_out_internal_ones(tmp_path):
+    saved = tmp_path / "WFJScan.lua"
+    saved.write_text(
+        'WFJScanDB = {\n["creatures"] = {\n'
+        '["1.60.1.71037"] = {\n["plan"] = "p",\n["names"] = {\n'
+        '"Kobold Vermin", -- [1]\n"Old Name", -- [2]\n'
+        '[257087] = "Gretchen Mayberry",\n[260062] = " Lieutenant  Shelby ",\n'
+        '[30001] = "[DNT] Kill Credit: Tarantula Egg",\n[30002] = "Invisible Bunny",\n'
+        '[30003] = "Level ??",\n[30004] = "S03 - Scarlet Enclave - Climbing Rope",\n'
+        '[30005] = "Grythden Thurdril <PH>",\n[30006] = ".",\n},\n},\n'
+        '["1.60.1.71091"] = {\n["names"] = {\n[2] = "New Name",\n[262502] = "Brix Xizzix",\n},\n},\n'
+        "},\n}\n",
+        encoding="utf-8",
+    )
+    assert cmd.scan_names(saved) == {
+        "unit": {
+            1: "Kobold Vermin",
+            2: "New Name",
+            257087: "Gretchen Mayberry",
+            260062: "Lieutenant Shelby",
+            262502: "Brix Xizzix",
+        }
+    }
+    empty = tmp_path / "empty.lua"
+    empty.write_text("WFJScanDB = {}\n", encoding="utf-8")
+    assert cmd.scan_names(empty) == {"unit": {}}
+
+
 def test_a_flight_point_is_exported_with_its_parts(tmp_path):
     hill = trusted("Sentinel Hill", "センチネル・ヒル", "せんちねる・ひる")
     point = names.ordered(dict(names.new_line("Sentinel Hill, Westfall", TODAY), ids={"taxi": [4]}))
