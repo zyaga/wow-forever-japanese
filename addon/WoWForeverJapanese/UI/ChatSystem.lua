@@ -23,6 +23,8 @@
 -- leaves the English. A typed line no interface string answers may be an NPC line's text the server sent as system
 -- chat: UI/Speech's translateLine looks it up, and on a battleground announcement (BG_SYSTEM_*) also takes the player
 -- the line names. A line holding the death recap link has its label translated under any chat type, or none.
+-- A typed line that stays English after all of that goes to UI/ChatUnlisted, which looks for the interface string
+-- it was written from and hands the collector that string's name, never the line.
 -- Alt / the switch: the history is rewritten once, when the line arrives, and never again; a
 -- rewrite repackages the entry with a new timestamp (PackageEntry, scrollingmessageframe.lua:737–745), which would
 -- bring every faded line back. Holding the modifier, or switching the addon / its UI area off, instead puts the
@@ -479,7 +481,11 @@ function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, event
   if not ja and ChatSystem.NPC_TEXT_TYPES[typeName] and WFJ.Speech then -- Speech loads after this file
     ja = WFJ.Speech.translateLine(message, ChatSystem.NAMING_TYPES[typeName])
   end
-  if not ja then return 0 end
+  if not ja then
+    -- a typed line nothing answered: the interface string it was written from may be one nobody listed
+    if typeName and WFJ.ChatUnlisted then WFJ.ChatUnlisted.seen(message) end -- loads after this file
+    return 0
+  end
   return rewrite(frame, message, typeId, ja)
 end
 
@@ -509,8 +515,121 @@ function ChatSystem.fit(line, fontObject)
   return size
 end
 
+-- Names while Japanese names are on. They go on the visible lines only, never into the history, so the names
+-- setting and the reveal key follow on the next display refresh, as the rest of a line does. NPC speech is looked up
+-- by UI/Speech straight from the shipped gossip rows and never passes the policy layer's names step: its names are
+-- put on here. The history entry carries the chat event's arguments (PackageEntry's extraData: the chat type id,
+-- then eventArgs fifth, scrollingmessageframe.lua:731–738; chatframeoverrides.lua:678–683), so the speaker
+-- (eventArgs[2], written plain for a monster line, :571–574, 637–642) and the English line are known.
+local labelled = setmetatable({}, { __mode = "k" }) -- visible lines showing link labels of ours
+
+local function replacePlain(text, from, to)
+  local out, at = {}, 1
+  while true do
+    local s, e = text:find(from, at, true)
+    if not s then break end
+    out[#out + 1] = text:sub(at, s - 1)
+    out[#out + 1] = to
+    at = e + 1
+  end
+  out[#out + 1] = text:sub(at)
+  return table.concat(out)
+end
+
+-- Names.inText over Japanese, the players' names in `keep` left as written even when a game name shares one: each is
+-- hidden behind a token the names step skips (a `{word}` token) and put back after.
+local function namesIn(ja, keep)
+  local held = {}
+  for _, name in ipairs(keep) do
+    if type(name) == "string" and not secret(name) and name ~= "" and WFJ.Names.of(name) and ja:find(name, 1, true) then
+      local token = "{wfjkeep" .. string.char(97 + #held) .. "}"
+      ja = replacePlain(ja, name, token)
+      held[#held + 1] = { token, name }
+    end
+  end
+  ja = WFJ.Names.inText(ja)
+  for _, h in ipairs(held) do ja = replacePlain(ja, h[1], h[2]) end
+  return ja
+end
+
+local speechIds
+local function speechTypeName(typeId)
+  if not speechIds then
+    local info, types = Compat.get(SURFACE, "typeInfo"), WFJ.Speech and WFJ.Speech.TYPES
+    if type(info) ~= "table" or type(types) ~= "table" then return nil end
+    speechIds = {}
+    for _, name in ipairs(types) do
+      if type(info[name]) == "table" and info[name].id ~= nil then speechIds[info[name].id] = name end
+    end
+  end
+  return speechIds[typeId]
+end
+
+-- An NPC line as UI/Speech wrote it: the speaker's name at its first place in the line (the prefix's, or the start
+-- of an emote), and the names in the rest when the line's own words are Japanese. A line whose only Japanese is the
+-- prefix keeps its English words, names and all. The player's name and the line's target stay as written. → text
+local function speechNames(ja, info)
+  local extra = type(info) == "table" and info.extraData or nil
+  local args = type(extra) == "table" and extra[5] or nil
+  local speaker = type(args) == "table" and args[2] or nil
+  if type(speaker) ~= "string" or secret(speaker) or speaker == "" then return ja end
+  local unitName = Compat.get(SURFACE, "unitName")
+  local me = type(unitName) == "function" and unitName("player") or nil
+  if secret(me) or speaker == me then return ja end
+  local s, e = ja:find(speaker, 1, true)
+  if not s then return ja end
+  local typeName = speechTypeName(extra[1])
+  local prefixOnly = typeName == nil or ChatSystem.prefixed(jaToEn[ja], typeName) == ja
+  local rest = ja:sub(e + 1)
+  if not prefixOnly then rest = namesIn(rest, { me, args[5] }) end
+  return ja:sub(1, s - 1) .. (WFJ.Names.of(speaker) or speaker) .. rest
+end
+
+-- A link's label in Japanese: an item's or a spell's name, a quest's shipped title. A profession's recipe is an
+-- enchant link labelled with the skill and the recipe ("Enchanting: Enchant Weapon - Fiery Weapon"), two names
+-- each spelled by its own line. → ja | nil
+local LINK_AREAS = { item = "items", spell = "spells", enchant = "spells", quest = "quests" }
+local function linkLabel(kind, data, label)
+  if kind ~= "quest" then return WFJ.Names.item(label) or (WFJ.Names.joined(label)) end
+  local id = tonumber(data:match("^(%d+)"))
+  local lookup = WFJ.Lookup and WFJ.Lookup.get
+  local entry = id and type(lookup) == "function" and lookup("quest.title", id) or nil
+  if type(entry) ~= "table" or entry.status ~= "." or type(entry.ja) ~= "string" or entry.ja == "" then return nil end
+  return (WFJ.Names.inText(entry.ja))
+end
+
+-- The labels of the item, spell and quest links in a readable line, in Japanese while names are on and the link's
+-- area shows Japanese. Only the label between the brackets changes; a link a player typed (its bars doubled) is
+-- text, not a link, and is left. → text (the same string when nothing changed)
+function ChatSystem.linkLabels(text)
+  if not WFJ.State.names or type(text) ~= "string" or not text:find("|H", 1, true) then return text end
+  local out, at, from = {}, 1, 1
+  while true do
+    local s, e, kind, data, label = text:find("|H(%a+):([^|]*)|h%[(.-)%]|h", from)
+    if not s then break end
+    local area = LINK_AREAS[kind]
+    local ja = area and text:byte(s - 1) ~= 124 and label ~= "" and wanted(area) and linkLabel(kind, data, label)
+    if ja and ja ~= label then
+      out[#out + 1] = text:sub(at, s - 1) .. "|H" .. kind .. ":" .. data .. "|h[" .. ja .. "]|h"
+      at = e + 1
+    end
+    from = e + 1
+  end
+  if at == 1 then return text end
+  out[#out + 1] = text:sub(at)
+  return table.concat(out)
+end
+
+-- One of our lines as it shows while its Japanese is wanted: with names on, its names in Japanese. → text
+function ChatSystem.shownText(ja, info)
+  if not WFJ.State.names then return ja end
+  local text = jaArea[ja] == "gossip" and speechNames(ja, info) or ja
+  return ChatSystem.linkLabels(text)
+end
+
 -- Each visible line in the bundled face. A line showing one of our Japanese strings: the Japanese (shrunk to fit,
--- ChatSystem.fit), or, while the modifier is held or the addon / UI area is off, the remembered English. Also the
+-- ChatSystem.fit), or, while the modifier is held or the addon / UI area is off, the remembered English. Any other
+-- readable line: its link labels in Japanese while names are on, its own text again once they are not. Also the
 -- display-refreshed callback. → lines set to our Japanese or its English
 function ChatSystem.show(frame)
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
@@ -519,12 +638,21 @@ function ChatSystem.show(frame)
   for _, line in ipairs(lines) do
     local info = type(line) == "table" and line.messageInfo or nil
     local ja = type(info) == "table" and info.message or nil
-    local ours = type(ja) == "string" and not secret(ja) and jaToEn[ja] ~= nil
+    local readable = type(ja) == "string" and not secret(ja)
+    local ours = readable and jaToEn[ja] ~= nil
+    local labels = not ours and readable and ChatSystem.linkLabels(ja) or nil
     if ours and wanted(jaArea[ja]) then
-      line:SetText(ja)
+      line:SetText(ChatSystem.shownText(ja, info))
+      labelled[line] = nil
+      ChatSystem.fit(line, fontObject)
+    elseif labels and labels ~= ja then
+      line:SetText(labels)
+      labelled[line] = true
       ChatSystem.fit(line, fontObject)
     else
       if ours then line:SetText(jaToEn[ja]) end
+      if labels and labelled[line] then line:SetText(ja) end -- the labels were ours: the client's line again
+      labelled[line] = nil
       -- every chat line wears the bundled face, English too, so a player's Japanese shows (the client's chat
       -- font has no kana or kanji); at the frame's size, which follows a change of the chat font size. Setting
       -- a font reads nothing from the line, so a secret line is dressed like any other
@@ -594,7 +722,8 @@ end
 
 -- The modifier / the switch changed: every chat frame's visible lines follow (their history is left alone).
 function ChatSystem.refresh()
-  if remembered == 0 then return end
+  -- with names on, any line may hold a link label of ours
+  if remembered == 0 and not WFJ.State.names and next(labelled) == nil then return end
   if ready then eachFrame(ChatSystem.show) end
   for frame in pairs(keyedFrames) do ChatSystem.show(frame) end
 end
@@ -632,3 +761,4 @@ end
 WFJ.State.on("enabled", ChatSystem.refresh)
 WFJ.State.on("area", ChatSystem.refresh)
 WFJ.State.on("language", ChatSystem.refresh)
+WFJ.State.on("names", ChatSystem.refresh)

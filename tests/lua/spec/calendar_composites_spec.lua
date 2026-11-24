@@ -2,7 +2,8 @@
 -- blizzard_calendar/mainline/blizzard_calendar.lua: FULLDATE on the date labels (lua:2824, 3438) and the day / invite
 -- tooltips (lua:2123, 2706), the creator lines (lua:2822, 3579), the event type line (lua:2809), the day tooltip's
 -- title / signed-up lines (lua:2155–2180), the day buttons' raid lockout titles (lua:1571–1582) and the event picker
--- (lua:4349), the holiday and raid descriptions (lua:2479–2482, 2524–2529). Names, titles and times stay as written.
+-- (lua:4349), the holiday and raid descriptions (lua:2479–2482, 2524–2529). Names and titles stay as written; a
+-- twelve-hour time GameTime_GetFormattedTime writes (blizzard_framexmlutil/gametimeutil.lua:9-31) reads 午前 / 午後.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
@@ -26,9 +27,12 @@ local UI = {
     "%1$s|n|n開始: %2$s %3$s|n終了: %4$s %5$s" },
   CALENDAR_RAID_LOCKOUT_DESCRIPTION = { "Your %1$s instance unlocks at %2$s.", "%1$sのインスタンスは%2$sに解除されます。" },
   CALENDAR_TOOLTIP_INVITE_RESPONDED = { "Responded on:", "返答日時:" },
+  TIME_TWELVEHOURAM = { "%d:%02d AM", "午前%d:%02d" }, TIME_TWELVEHOURPM = { "%d:%02d PM", "午後%d:%02d" },
 }
 
 local function fs(text) return Stub.fontString(text or "") end
+-- the time the replayed writers write; a spec sets it to a 24-hour time to see it kept
+local EVENT_TIME = "8:00 PM"
 
 -- The day's events as C_Calendar.GetDayEvent returns them (blizzard_calendar.lua:1553, 2092, 4316); day 12 of the
 -- current month. A guild event and a player's event whose typed titles look like the event-name formats.
@@ -52,7 +56,9 @@ local function loadCalendar()
   frame.FilterButton.Text = fs("")
   function frame.FilterButton.UpdateText() end
   for _, n in ipairs({ "CalendarViewEventTypeName", "CalendarViewEventCreatorName", "CalendarViewEventDateLabel",
-    "CalendarCreateEventCreatorName", "CalendarCreateEventDateLabel" }) do Stub.namedFontString(n, "") end
+    "CalendarViewEventTimeLabel", "CalendarCreateEventCreatorName", "CalendarCreateEventDateLabel" }) do
+    Stub.namedFontString(n, "")
+  end
   -- the holiday and raid descriptions are ScrollingFontTemplate frames (blizzard_calendar.xml:372, 412): SetText and
   -- GetFontString, no GetText (scrolltemplates.lua:337–358); their text is the inner FontString's
   local holiday = CreateFrame("Frame", "CalendarViewHolidayFrame")
@@ -68,6 +74,7 @@ local function loadCalendar()
   for i = 1, 4 do
     CreateFrame("Button", "CalendarDayButton3EventButton" .. i)
     Stub.namedFontString("CalendarDayButton3EventButton" .. i .. "Text1", "")
+    Stub.namedFontString("CalendarDayButton3EventButton" .. i .. "Text2", "")
   end
   _G.C_Calendar = {
     GetNumDayEvents = function(_, day) return day == 12 and #EVENTS or 0 end,
@@ -92,6 +99,7 @@ local function loadCalendar()
     _G.CalendarViewEventTypeName:SetText("Raid - Molten Core")
     _G.CalendarViewEventCreatorName:SetText(string.format(UI.CALENDAR_EVENT_CREATORNAME[1], ev or "Thrall"))
     _G.CalendarViewEventDateLabel:SetText("Thursday, September 25 2026")
+    _G.CalendarViewEventTimeLabel:SetText(EVENT_TIME) -- lua:2826
   end
   _G.CalendarCreateEventFrame_Update = function()
     _G.CalendarCreateEventCreatorName:SetText("Created by Jaina")
@@ -104,12 +112,15 @@ local function loadCalendar()
       _G["CalendarDayButton" .. index .. "EventButton" .. i].eventIndex = i + 1
       _G["CalendarDayButton" .. index .. "EventButton" .. i .. "Text1"]:SetText(
         string.format(nameFormat(event, false), event.title))
+      -- the time, with AM / PM while the day shows few events (lua:1520, 1584)
+      _G["CalendarDayButton" .. index .. "EventButton" .. i .. "Text2"]:SetText(EVENT_TIME)
     end
   end
   _G.CalendarEventPickerFrame = { dayButton = _G.CalendarDayButton12 }
   _G.CalendarEventPickerFrame_InitButton = function(button, elementData) -- lua:4310–4349
     local event = EVENTS[elementData.index]
     button.Title:SetText(string.format(nameFormat(event, false), event.title))
+    if button.Time then button.Time:SetText(EVENT_TIME) end -- lua:4344-4345
   end
   _G.CalendarViewHolidayFrame_Update = function()
     holiday.ScrollingFont:SetText("The Faire is in town. Come!|n|nBegins: 9/25 8:00 AM|nEnds: 10/2 11:59 PM")
@@ -122,7 +133,8 @@ local function loadCalendar()
 end
 
 local GLOBALS = { "CalendarFrame", "CalendarViewEventTypeName", "CalendarViewEventCreatorName",
-  "CalendarViewEventDateLabel", "CalendarCreateEventCreatorName", "CalendarCreateEventDateLabel",
+  "CalendarViewEventDateLabel", "CalendarViewEventTimeLabel", "CalendarCreateEventCreatorName",
+  "CalendarCreateEventDateLabel",
   "CalendarViewHolidayFrame", "CalendarViewRaidFrame", "CalendarViewEventFrame_Update",
   "CalendarCreateEventFrame_Update", "CalendarFrame_UpdateDayEvents", "CalendarEventPickerFrame_InitButton",
   "CalendarViewHolidayFrame_Update", "CalendarViewRaidFrame_Update", "C_Calendar", "GetDungeonNameWithDifficulty",
@@ -131,6 +143,7 @@ for i = 1, 42 do GLOBALS[#GLOBALS + 1] = "CalendarDayButton" .. i end
 for i = 1, 4 do
   GLOBALS[#GLOBALS + 1] = "CalendarDayButton3EventButton" .. i
   GLOBALS[#GLOBALS + 1] = "CalendarDayButton3EventButton" .. i .. "Text1"
+  GLOBALS[#GLOBALS + 1] = "CalendarDayButton3EventButton" .. i .. "Text2"
 end
 
 describe("the calendar's composites on Forever", function()
@@ -178,7 +191,7 @@ describe("the calendar's composites on Forever", function()
     local function line(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
     assert.are.equal("2026年9月25日(木曜日)", line(1))
     assert.are.equal("Darkmoon Faire開始", line(3)) -- a HOLIDAY's START
-    assert.are.equal("8:00 PM", _G.GameTooltipTextRight3:GetText())
+    assert.are.equal("午後8:00", _G.GameTooltipTextRight3:GetText())
     assert.are.equal("Raid Night Begins", line(5)) -- a GUILD_EVENT typed "Raid Night Begins"
     assert.are.equal("招待者: Thrall", line(6))
     assert.are.equal("Molten Coreのロック解除", line(8)) -- a RAID_LOCKOUT
@@ -217,12 +230,62 @@ describe("the calendar's composites on Forever", function()
     assert.are.equal("Onyxia Resets", button.Title:GetText())
   end)
 
-  it("the holiday and raid descriptions: the description, dates and times kept", function()
+  it("the holiday and raid descriptions: the description and dates kept, the times in Japanese", function()
     _G.CalendarViewHolidayFrame_Update()
-    assert.are.equal("The Faire is in town. Come!|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM",
+    assert.are.equal("The Faire is in town. Come!|n|n開始: 9/25 午前8:00|n終了: 10/2 午後11:59",
       _G.CalendarViewHolidayFrame.ScrollingFont.fs:GetText())
     _G.CalendarViewRaidFrame_Update()
-    assert.are.equal("Molten Coreのインスタンスは8:00 AMに解除されます。", _G.CalendarViewRaidFrame.ScrollingFont.fs:GetText())
+    assert.are.equal("Molten Coreのインスタンスは午前8:00に解除されます。", _G.CalendarViewRaidFrame.ScrollingFont.fs:GetText())
+    alt(true)
+    local raid = _G.CalendarViewRaidFrame.ScrollingFont.fs
+    assert.are.equal("Your Molten Core instance unlocks at 8:00 AM.", raid:GetText())
+    alt(false)
+    _G.CalendarViewRaidFrame.ScrollingFont:SetText("Your Molten Core instance unlocks at 08:00.") -- 24-hour: digits
+    WFJ.Calendar.onRaid()
+    assert.are.equal("Molten Coreのインスタンスは08:00に解除されます。", _G.CalendarViewRaidFrame.ScrollingFont.fs:GetText())
+  end)
+
+  -- GameTime_GetFormattedTime writes TIME_TWELVEHOURAM / _PM ("%d:%02d AM") with AM / PM wanted, else digits
+  -- (gametimeutil.lua:9-31): the day tooltip's right column (lua:2138-2151), a day button's time (lua:1584), the
+  -- view-event label (lua:2826) and the event picker's time (lua:4345)
+  it("every event time reads 午前 / 午後; the reveal key shows English; a 24-hour time and translation off are "
+    .. "left as written", function()
+    _G.CalendarDayButton_OnEnter(_G.CalendarDayButton12)
+    local function right(i) return _G["GameTooltipTextRight" .. i]:GetText() end
+    assert.are.equal("午後8:00", right(3))
+    assert.are.equal("午後8:00", right(12))
+    _G.CalendarFrame_UpdateDayEvents(3)
+    assert.are.equal("午後8:00", _G.CalendarDayButton3EventButton1Text2:GetText())
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal("午後8:00", _G.CalendarViewEventTimeLabel:GetText())
+    local button = { Title = fs(""), Time = fs("") }
+    _G.CalendarEventPickerFrame_InitButton(button, { index = 2 })
+    assert.are.equal("午後8:00", button.Time:GetText())
+    alt(true)
+    assert.are.equal("8:00 PM", right(3))
+    assert.are.equal("8:00 PM", _G.CalendarDayButton3EventButton1Text2:GetText())
+    assert.are.equal("8:00 PM", _G.CalendarViewEventTimeLabel:GetText())
+    assert.are.equal("8:00 PM", button.Time:GetText())
+    alt(false)
+    assert.are.equal("午後8:00", right(3))
+    -- an event a player titled like a time keeps its title: only the right column is a time
+    EVENTS[6] = { calendarType = "COMMUNITY_EVENT", sequenceType = "", title = "9:00 AM" }
+    _G.CalendarDayButton_OnEnter(_G.CalendarDayButton12)
+    EVENTS[6] = nil
+    assert.are.equal("9:00 AM", _G.GameTooltipTextLeft14:GetText())
+    assert.are.equal("午後8:00", right(14))
+    EVENT_TIME = "20:00"
+    _G.CalendarFrame_UpdateDayEvents(3)
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal("20:00", _G.CalendarDayButton3EventButton1Text2:GetText())
+    assert.are.equal("20:00", _G.CalendarViewEventTimeLabel:GetText())
+    EVENT_TIME = "8:00 PM"
+    WFJ.State.setEnabled(false)
+    _G.CalendarDayButton_OnEnter(_G.CalendarDayButton12)
+    _G.CalendarFrame_UpdateDayEvents(3)
+    assert.are.equal("8:00 PM", right(3))
+    assert.are.equal("8:00 PM", _G.CalendarDayButton3EventButton1Text2:GetText())
+    WFJ.State.setEnabled(true)
   end)
 end)
 
@@ -251,21 +314,31 @@ describe("the calendar's holiday description", function()
     for _, name in ipairs(GLOBALS) do _G[name] = nil end
   end)
 
+  it("a holiday with no start or end time shows its description alone: the row's Japanese", function()
+    local sf = _G.CalendarViewHolidayFrame.ScrollingFont
+    sf:SetText("The Faire is in town. Come!") -- lua:2477, 2482: no begins / ends template
+    assert.are.equal(1, WFJ.Calendar.onHoliday())
+    assert.are.equal("移動遊園地がやって来た。おいで！", sf.fs:GetText())
+    sf:SetText("A holiday nobody translated.")
+    assert.are.equal(0, WFJ.Calendar.onHoliday())
+    assert.are.equal("A holiday nobody translated.", sf.fs:GetText())
+  end)
+
   it("a HolidayDescription row's Japanese fills the template, the dates kept; Alt shows the English", function()
     local sf = _G.CalendarViewHolidayFrame.ScrollingFont
     _G.CalendarViewHolidayFrame_Update()
-    assert.are.equal("移動遊園地がやって来た。おいで！|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf.fs:GetText())
+    assert.are.equal("移動遊園地がやって来た。おいで！|n|n開始: 9/25 午前8:00|n終了: 10/2 午後11:59", sf.fs:GetText())
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal(TEXT, sf.fs:GetText())
     Stub.keys.alt = false; WFJ.Modifier.refresh()
-    assert.are.equal("移動遊園地がやって来た。おいで！|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf.fs:GetText())
+    assert.are.equal("移動遊園地がやって来た。おいで！|n|n開始: 9/25 午前8:00|n終了: 10/2 午後11:59", sf.fs:GetText())
   end)
 
   it("a description no row has is kept as written inside the Japanese template", function()
     local sf = _G.CalendarViewHolidayFrame.ScrollingFont
     sf:SetText("Children's Week is here.|n|nBegins: 9/25 8:00 AM|nEnds: 10/2 11:59 PM")
     WFJ.Calendar.onHoliday()
-    assert.are.equal("Children's Week is here.|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf.fs:GetText())
+    assert.are.equal("Children's Week is here.|n|n開始: 9/25 午前8:00|n終了: 10/2 午後11:59", sf.fs:GetText())
   end)
 end)
 
@@ -381,7 +454,7 @@ describe("the calendar's difficulty names", function()
     _G.CalendarViewEventFrame_Update()
     assert.are.equal("レイド - |cffffd200Onyxia's Lair (ヒロイック)|r", _G.CalendarViewEventTypeName:GetText())
     _G.CalendarViewRaidFrame_Update()
-    assert.are.equal("|cffffd200Molten Core (40人)|rのインスタンスは8:00 AMに解除されます。",
+    assert.are.equal("|cffffd200Molten Core (40人)|rのインスタンスは午前8:00に解除されます。",
       _G.CalendarViewRaidFrame.ScrollingFont.fs:GetText())
     alt(true)
     assert.are.equal("Raid - |cffffd200Onyxia's Lair (Heroic)|r", _G.CalendarViewEventTypeName:GetText())

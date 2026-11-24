@@ -72,6 +72,8 @@ def test_the_stale_reasons_are_replaced(root):
     header = [ln for ln in (root / "pipeline/ui_keys.txt").read_text(encoding="utf-8").splitlines()[:12]
               if ln.startswith("#")]
     assert not any("no colour" in ln for ln in header), header
+    # the friends window (SocialUIFrame) is on Forever: its recent allies headers are listed, not excluded
+    listed = set(wago.read_keys(root / "pipeline/ui_keys.txt"))
     for key in ("SOCIAL_UI_RECENT_ALLIES_VIEW_HEADER_LEGACY_FRIENDS", "SOCIAL_UI_RECENT_ALLIES_VIEW_HEADER_PINNED",
                 "SOCIAL_UI_RECENT_ALLIES_VIEW_HEADER_UNPINNED"):
-        assert excluded[key].startswith("permanent: ") and SOURCE.search(excluded[key]), key
+        assert key in listed and key not in excluded, key

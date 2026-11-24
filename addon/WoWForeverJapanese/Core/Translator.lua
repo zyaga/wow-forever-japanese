@@ -4,7 +4,8 @@
 --   "none"   no usable translation: payload { reason?, marker="missing"? }
 --   "apply"  payload { ja, marker="stale"? }
 -- deps = { enabled(), areaEnabled(area), showsEnglish(), lookup(kind, id) → {ja, status}|nil,
---          marker(name) → bool, align(ja, lines) → ok[, text] [optional; absent = unaligned entries fail closed],
+--          marker(name) → bool, align(ja, lines, nameScope, count) → ok[, text] [optional; absent = unaligned
+--            entries fail closed; `count` is the entry's `values`, how many numbers its English prints],
 --          alignVariants(variants, shapes, lines, nameScope) → ok[, text] [optional; an entry with
 --            `variants` (a branch line, ADR-043) goes through it on the gated path; absent → fails closed],
 --          alignSections(sections, lines, nameScope) → ok[, text] [optional; an entry with `sections` (a
@@ -13,7 +14,16 @@
 --          fill(ja, args) → text|nil [optional; UI templates, run when ctx.args is present, before expand;
 --          nil = the Japanese needs a value the live line did not have → fails closed],
 --          fingerprints(live, masked) → { h1, … }, inconclusive [optional; quest live check, see below;
---            `masked`: digit runs as `#`, for a line filled from live values] }
+--            `masked`: digit runs as `#`, for a line filled from live values],
+--          names(ja, kind) → ja, names [optional; the names setting: the English names inside a shown line in
+--            their Japanese, applied to every `apply` text after the align gate and before `expand`, so the
+--            player's own name is never taken for one; `names` goes on the payload for the name card],
+--          name(english) → ja, reading | nil [optional; kind "name": `id` is the English the client shows],
+--          filled(start) [optional; true starts collecting the cards of what the client's values bring into a line
+--            as it is filled (a game name, a duration's unit), nothing hands them over, as { ja, reading,
+--            english }, and stops; they go on the payload's `names` after the line's own] }
+-- Kind "name": a widget that holds only a name. Known → "apply" { ja, name = { ja, english, reading } }; unknown →
+-- "none" with no marker (a name with no Japanese is not a missing translation).
 -- Live check (ADR-019): a quest surface passes the API English as ctx.live. For a "quest.<field>" entry with an
 -- h1 and a non-empty fingerprint list, the stale marker follows the live client: no fingerprint equal to h1 → the
 -- Japanese shows marked stale; one equal → unmarked, whatever the build-time status. No ctx.live, no dep or no
@@ -37,24 +47,56 @@ local GATED = { item = true, spell = true }
 function Translator.new(deps)
   local T = {}
 
-  -- The align gate sees the stored text; only what is written gets the player's values.
-  local function shown(ja)
-    if deps.expand == nil then return ja end
-    return (deps.expand(ja))
+  -- The align gate sees the stored text; only what is written gets its names and the player's values.
+  -- → the payload for `ja`
+  -- `named`: the names step already ran on this text (see `withNames`), with `names` what it wrote.
+  local function shown(ja, kind, named, names)
+    if not named and deps.names ~= nil then ja, names = deps.names(ja, kind) end
+    if deps.expand ~= nil then ja = (deps.expand(ja)) end
+    return { ja = ja, names = names }
+  end
+
+  -- What the client's values brought into the line in Japanese while it is filled (a game name the names choice
+  -- wrote, a duration's unit), as cards like a name's ({ ja, reading, english }): `deps.filled(true)` starts
+  -- collecting them, `deps.filled()` hands them over and stops.
+  local function collecting()
+    if deps.filled ~= nil then deps.filled(true) end
+  end
+  -- → the cards collected since `collecting`, or nil when there are none
+  local function taken()
+    if deps.filled == nil then return nil end
+    local extra = deps.filled()
+    if type(extra) ~= "table" or extra[1] == nil then return nil end
+    return extra
+  end
+  -- → `names` with `extra` after it, a new list (a names list may be a cached one)
+  local function joined(names, extra)
+    if extra == nil then return names end
+    local out = {}
+    for _, n in ipairs(names or {}) do out[#out + 1] = n end
+    for _, n in ipairs(extra) do out[#out + 1] = n end
+    return out
+  end
+
+  -- The names step on a line's stored text, before its values go in: a value the client fills in can be a
+  -- player's name, which is never read as a game name however it is spelled. → text, names
+  local function withNames(ja, kind)
+    if deps.names == nil then return ja, nil end
+    return deps.names(ja, kind)
   end
 
   -- A UI template gets the live line's values. → text | nil
   -- A UI template's captured arguments, then the values the server fills into a quest line: a
   -- `$N<k>` count in `Collect $1oa Lady's Tear Moss.` is not in the text the server sent, only in the line
   -- the player is shown. nil from either is fail-closed and the caller leaves the line English.
-  local function filled(ja, ctx)
+  local function filled(ja, ctx, count)
     if ctx ~= nil and ctx.args ~= nil and deps.fill ~= nil then
       ja = deps.fill(ja, ctx.args)
       if type(ja) ~= "string" then return nil end
     end
     if deps.fillValues == nil then return ja end
     local live = ctx and (ctx.live or (ctx.lines and table.concat(ctx.lines, "\n")))
-    return deps.fillValues(ja, live)
+    return deps.fillValues(ja, live, count)
   end
 
   -- → true (live English differs from the checked English) · false (matches) · nil (no live check possible)
@@ -87,9 +129,16 @@ function Translator.new(deps)
     if deps.kindOff ~= nil and deps.kindOff(kind) then return "leave" end
     if deps.showsEnglish() then return "leave", { english = true } end
 
+    if kind == "name" then
+      local ja, reading
+      if deps.name ~= nil then ja, reading = deps.name(id) end
+      if type(ja) ~= "string" or ja == "" then return "none", {} end
+      return "apply", { ja = ja, name = { ja = ja, english = id, reading = reading } }
+    end
+
     local entry = deps.lookup(kind, id)
-    if entry ~= nil and entry.sections ~= nil then return T.sections(entry, ctx) end
-    if entry ~= nil and entry.variants ~= nil then return T.variants(entry, ctx) end
+    if entry ~= nil and entry.sections ~= nil then return T.sections(entry, ctx, kind) end
+    if entry ~= nil and entry.variants ~= nil then return T.variants(entry, ctx, kind) end
     if entry == nil or entry.ja == nil or entry.ja == "" then return none() end
 
     local status = STATUS[entry.status]
@@ -97,22 +146,29 @@ function Translator.new(deps)
     -- gated by the kind's type: a tooltip asks for `item.description` / `spell.description`
     local type_ = type(kind) == "string" and kind:match("^%a+") or kind
     local gated = status == "unaligned" or (status == "stale" and GATED[type_] == true)
+    local names
     if (status == "trusted" or status == "stale") and not gated then
-      ja = filled(ja, ctx)
+      ja, names = withNames(ja, kind)
+      collecting()
+      ja = filled(ja, ctx, entry.values)
+      names = joined(names, taken())
       if ja == nil or ja == "" then return none("fill_failed") end
     end
     if (status == "trusted" or status == "stale") and not gated then
       local stale = liveDiffers(kind, entry, ctx)
       if stale == nil then stale = status == "stale" end
-      local payload = { ja = shown(ja) }
+      local payload = shown(ja, kind, true, names)
       if stale and deps.marker("stale") then payload.marker = "stale" end
       return "apply", payload
     elseif gated then
       if deps.align == nil then return none("unaligned_ungated") end
       -- align → ok[, text]: `text` is the Japanese with live values filled in; a bare `true` keeps entry.ja.
-      local ok, text = deps.align(entry.ja, ctx and ctx.lines, ctx and ctx.nameScope)
+      collecting()
+      local ok, text = deps.align(entry.ja, ctx and ctx.lines, ctx and ctx.nameScope, entry.values)
+      local extra = taken()
       if not ok then return none("align_failed") end
-      local payload = { ja = shown((type(text) == "string" and text ~= "") and text or entry.ja) }
+      local payload = shown((type(text) == "string" and text ~= "") and text or entry.ja, kind)
+      payload.names = joined(payload.names, extra)
       if status == "stale" and deps.marker("stale") then payload.marker = "stale" end
       return "apply", payload
     end
@@ -121,28 +177,45 @@ function Translator.new(deps)
 
   -- A branch line (ADR-043). Only an item / spell line is one, and those are always gated: the one
   -- variant that fits the live line applies (stale marker as for any gated entry), otherwise English.
-  function T.variants(entry, ctx)
+  function T.variants(entry, ctx, kind)
     local status = STATUS[entry.status]
     if status ~= "unaligned" and status ~= "stale" then return none("not_shipped") end
     if deps.alignVariants == nil then return none("unaligned_ungated") end
+    collecting()
     local ok, text = deps.alignVariants(entry.variants, entry.shapes, ctx and ctx.lines, ctx and ctx.nameScope)
+    local extra = taken()
     if not ok or type(text) ~= "string" or text == "" then return none("align_failed") end
-    local payload = { ja = shown(text) }
+    local payload = shown(text, kind)
+    payload.names = joined(payload.names, extra)
     if status == "stale" and deps.marker("stale") then payload.marker = "stale" end
     return "apply", payload
   end
 
   -- A sectioned line: a heading and optional paragraphs, each found by the words it begins with. Gated like a
   -- branch line: every live paragraph must be found and fit, otherwise English.
-  function T.sections(entry, ctx)
+  function T.sections(entry, ctx, kind)
     local status = STATUS[entry.status]
     if status ~= "unaligned" and status ~= "stale" then return none("not_shipped") end
     if deps.alignSections == nil then return none("unaligned_ungated") end
+    collecting()
     local ok, text = deps.alignSections(entry.sections, ctx and ctx.lines, ctx and ctx.nameScope)
+    local extra = taken()
     if not ok or type(text) ~= "string" or text == "" then return none("align_failed") end
-    local payload = { ja = shown(text) }
+    local payload = shown(text, kind)
+    payload.names = joined(payload.names, extra)
     if status == "stale" and deps.marker("stale") then payload.marker = "stale" end
     return "apply", payload
+  end
+
+  -- `ctx.cards`: cards the caller knows the written line holds beyond its own list (a set bonus line's spell words,
+  -- a recipe heading's skill name), in the shape of `filled`'s; they go on the payload's `names` after the rest
+  local resolveLine = T.resolve
+  function T.resolve(area, kind, id, ctx)
+    local action, payload = resolveLine(area, kind, id, ctx)
+    if action == "apply" and type(payload) == "table" and type(ctx) == "table" and type(ctx.cards) == "table" then
+      payload.names = joined(payload.names, ctx.cards[1] ~= nil and ctx.cards or nil)
+    end
+    return action, payload
   end
 
   return T

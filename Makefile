@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-owed voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: tooltip-words scan-names-copy creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-owed voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -87,10 +87,11 @@ lint-core-gate: ## Core/ never touches a frame (docs/architecture/principles.md)
 lint-no-english-in-addon: ## ADR-002: nothing under addon/ may reference data/english
 	@if grep -rEn 'data/english' $(ADDON)/ ; then echo "lint-no-english-in-addon: addon references data/english"; exit 1; else echo "lint-no-english-in-addon: ok"; fi
 
-vectors: ## regenerate vectors/{hash,align,report}_vectors.{jsonl,lua} (the Python ↔ Lua contracts)
+vectors: ## regenerate vectors/{hash,align,report,name}_vectors.{jsonl,lua} (the Python ↔ Lua contracts)
 	cd pipeline && $(PY) -m wfj.dev.gen_vectors ../vectors
 	cd pipeline && $(PY) -m wfj.dev.gen_align_vectors ../vectors
 	cd pipeline && $(PY) -m wfj.dev.gen_report_vectors ../vectors
+	cd pipeline && $(PY) -m wfj.dev.gen_name_vectors ../vectors
 
 lint-no-private-paths: ## no tracked file is a symlink or sits under a path the checkout keeps private
 	cd pipeline && $(PY) -m wfj public-check paths
@@ -123,7 +124,7 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70938
+forever_BUILD       := 1.60.1.71037
 forever_SRC         := db2
 forever_PRODUCT     := wowf
 # Set only while the quest cache data/ holds is older than the tables: a quest cache needs the scan in game, the
@@ -331,6 +332,15 @@ wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (re
 	@if [ "$(CLIENT)" = forever ]; then $(MAKE) --no-print-directory creature-copy WOW_DIR="$(WOW_DIR)" || \
 		echo "wdb-copy: the quest cache is copied; the creature cache was not (see above)"; fi
 
+# The scan dev addon's saved file, for the creature names the Forever server gave its creature pass (`make names`
+# reads it). Read-only on the game folder: the client writes it, this copies it.
+SCAN_CREATURES ?= $(CREATURES)/WFJScan.lua
+scan-names-copy: ## copy the scan dev addon's saved WFJScan.lua (its creature names) to SCAN_CREATURES: WOW_DIR=<client folder>
+	@test -n "$(WOW_DIR)" || { echo "usage: make scan-names-copy WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_>"; exit 2; }
+	@F="$$(ls "$(WOW_DIR)"/WTF/Account/*/SavedVariables/WFJScan.lua 2>/dev/null | head -1)"; \
+		test -n "$$F" || { echo "scan-names-copy: no WTF/Account/*/SavedVariables/WFJScan.lua under $(WOW_DIR)"; exit 1; }; \
+		mkdir -p "$(CREATURES)" && cp "$$F" "$(SCAN_CREATURES)" && echo "scan-names-copy: $$F -> $(SCAN_CREATURES)"
+
 creature-copy: ## copy the Forever client's creature cache to CREATURES/<build>.wdb, named by the build in its header (read-only on the game folder): WOW_DIR=<client folder>
 	@test -n "$(WOW_DIR)" || { echo "usage: make creature-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_forever_>"; exit 2; }
 	@test -f "$(WOW_DIR)/Cache/WDB/enUS/creaturecache.wdb" || { echo "creature-copy: no Cache/WDB/enUS/creaturecache.wdb under $(WOW_DIR) (did the client Exit Game?)"; exit 1; }
@@ -399,6 +409,11 @@ family-rows: ## regenerate pipeline/family_rows.txt (client-table rows no ui_key
 	cd pipeline && $(PY) -m wfj.dev.family_rows "$(call client_dir,forever)" ui_keys.txt family_rows.txt > family_rows.txt.tmp && mv family_rows.txt.tmp family_rows.txt
 	@! grep -n "^[^#].*  ?  " pipeline/family_rows.txt || { echo "family-rows: the rows above are new: list each in ui_keys.txt (then rerun) or give it a reason"; exit 1; }
 
+window-test: ## the in-game window test's result (/wfjtest, then /reload) against the baseline of English a Forever window may keep; exit 1 on a new line or an error: SAVED=<the client's WFJScan.lua SavedVariables file>
+	@test -n "$(SAVED)" || { echo "usage: make window-test SAVED=<.../SavedVariables/WFJScan.lua>"; exit 2; }
+	@s="$(SAVED)"; case "$$s" in /*) ;; *) s="$(CURDIR)/$$s" ;; esac; \
+		cd pipeline && $(PY) -m wfj.dev.client_surface texts --saved "$$s" --baseline ui_window_baseline.txt
+
 forever-titles: ## list every SetTitle( call site in the camelot load sets (the input of pipeline/forever_titles.txt): [FOREVER_UI=<Interface/AddOns>]
 	@test -d "$(FOREVER_UI)" || { echo "forever-titles: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	@cd pipeline && $(PY) -m wfj.dev.client_addons --titles "$(FOREVER_UI)"
@@ -418,7 +433,7 @@ import-collector: ## add one collector dump to data/english/ (replaces stand-in 
 import-draft: ## merge machine-drafted text into data/ as `machine` variants (never edits hand-written text), then check and remake the voice of changed lines
 	@test -n "$(DRAFT)" -a -n "$(TYPE)" -a -n "$(NAME)" -a -n "$(MODEL)" -a -n "$(DATE)" || { echo "usage: make import-draft DRAFT=<file> TYPE=<type> NAME=<name> MODEL=<id> [CRITIC=<id>] DATE=<YYYY-MM-DD> [REVERIFY=1]"; exit 2; }
 	cd pipeline && $(PY) -m wfj import draft $(TYPE) $(abspath $(DRAFT)) --model $(MODEL) $(if $(CRITIC),--critic $(CRITIC)) --date $(DATE) --name $(NAME) $(if $(REVERIFY),--reverify)
-	$(MAKE) -s check names voice-generate
+	$(MAKE) -s check tooltip-words names voice-generate
 
 check: ## assign statuses to every data/ line (pure rules); --report prints the yield
 	cd pipeline && $(PY) -m wfj check --report
@@ -441,7 +456,7 @@ report-intake: ## a player's fix report (GitHub issue ISSUE=N, or a saved body R
 report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + ATTRIBUTION.md + reply.md, then check / generate / voice / validate / coverage
 	@test -n "$(ISSUE)" -a -n "$(MODEL)" || { echo "usage: make report-apply ISSUE=<n> MODEL=<id> [DATE=YYYY-MM-DD]"; exit 2; }
 	cd pipeline && $(PY) -m wfj report apply --issue $(ISSUE) --model $(MODEL) $(if $(DATE),--date $(DATE))
-	$(MAKE) -s check names generate voice-generate validate coverage
+	$(MAKE) -s check tooltip-words names generate voice-generate validate coverage
 
 # Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine unpacked in
 # build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
@@ -606,9 +621,16 @@ voice-stop: ## stop the background voice run (make voice-run resumes it)
 # English name gets a data/name line and is spelled in katakana from the spellings of its words; a word nobody
 # has spelled yet is listed by `wfj names export-respell` and taken by `import-respell` (a test fails until it
 # is); and every voiced line gets its kana line from the readings and names.
+TOOLTIP_OWED ?= $(abspath build)/tooltip-words-owed.jsonl
+tooltip-words: ## every item and spell line made of sentences already written gets its word list; the sentences still to draft are listed in build/
+	cd pipeline && $(PY) -m wfj readings spread
+	@mkdir -p $(dir $(TOOLTIP_OWED))
+	cd pipeline && set -o pipefail && $(PY) -m wfj readings export-tooltips --out $(TOOLTIP_OWED) | tail -1
+
 names: ## every English name gets a data/name line spelled from its words, then every voiced line its kana line
 	cd pipeline && $(PY) -m wfj names collect $(if $(wildcard $(VMANGOS_DB)),--vmangos $(VMANGOS_DB)) \
-		$(if $(wildcard $(call client_dir,forever)),--tables "$(call client_dir,forever)")
+		$(if $(wildcard $(call client_dir,forever)),--tables "$(call client_dir,forever)") \
+		$(if $(wildcard $(SCAN_CREATURES)),--scan "$(SCAN_CREATURES)")
 	cd pipeline && $(PY) -m wfj names learn-spellings
 	cd pipeline && $(PY) -m wfj names respell
 	cd pipeline && $(PY) -m wfj voice kana

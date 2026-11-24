@@ -29,12 +29,17 @@
 --   the challenge cards (ChallengesPage.DetailPane.ScrollBox, pooled LegacyChallengeTemplate): Tracked.Text
 --     TRACK_ACHIEVEMENT (blizzard_legacysystemtemplates.xml:76, 281), walked from the ScrollBox's initialized-frame
 --     callback and from each card's own Init (post-hooked once: a click and a progress update re-init a card
---     directly), keyed by widget. ADR-042: a card is an achievement row (LegacyChallengeTemplate inherits
---     AchievementTemplateMixin:Init, blizzard_legacychallengebutton.lua:202; blizzard_achievementui.lua:1352, 1373):
---     its Label, Description and HiddenDescription (shown instead of Description while the card is expanded) are the
---     Achievement table's text, restricted to the achievement families (UI/Achievement.TEXT_FIELDS, textOnly); its
---     Shield owns the reward tooltip, one line added by AchievementShield_OnEnter
---     (blizzard_legacyachievementoverrides.lua:39–48): the AchievementReward family only.
+--     directly), keyed by widget. The Tracked check owns its tooltip: LegacyChallengeTrackedTemplate inherits
+--     AchievementCheckButtonBaseTemplate (blizzard_legacysystemtemplates.xml:69), whose AchievementButtonCheckMixin:
+--     OnEnter writes TRACK_ / UNTRACK_ACHIEVEMENT_TOOLTIP with SetText [verified: forever-ui-1.60.1.71037
+--     blizzard_achievementui/mainline/blizzard_achievementui.xml:220-225, blizzard_achievementui.lua:1792-1798]: a
+--     help-tooltip owner restricted to those two keys, registered as each card is shown. ADR-042: a card is an
+--     achievement row (LegacyChallengeTemplate inherits AchievementTemplateMixin:Init,
+--     blizzard_legacychallengebutton.lua:202; blizzard_achievementui.lua:1352, 1373): its Label, Description and
+--     HiddenDescription (shown instead of Description while the card is expanded) are the Achievement table's text,
+--     restricted to the achievement families (UI/Achievement.TEXT_FIELDS, textOnly); its Shield owns the reward
+--     tooltip, one line added by AchievementShield_OnEnter (blizzard_legacyachievementoverrides.lua:39–48): the
+--     AchievementReward family only.
 --     Its text criteria are the CriteriaText family (CriteriaTree.Description_lang, GetAchievementCriteriaInfo):
 --     AchievementTemplateMixin:DisplayObjectives hands the one shared LegacyChallengeObjectives frame to the card
 --     (blizzard_legacychallengebutton.lua:256-279), whose Display acquires a pooled criterion per row and calls
@@ -48,16 +53,26 @@
 --     C_MajorFactions.GetRenownRewardsForLevel and calls progressFrame:Init (blizzard_legacyrewardtrack.lua:35-49);
 --     RewardTrackFrameMixin:Init acquires the cards into self.Elements (blizzard_framexml/rewardtracktemplates.lua:
 --     38-63), post-hooked on the instance. Each card's SetRewardName (:493-495, called from TryInit :367-386 after
---     SetInfo resets it) is post-hooked on the card: RewardName restricted to the RenownRewardName family. A name
---     that is no reward row's text (an item's, a mount's or a spell's own name, blizzard_framexmlutil/
---     renownrewardutil.lua:3-70) has no key and stays English. Each card owns its tooltip
---     (RenownLevelMixin:RefreshTooltip, :517-549): a single reward's name as title and its description, else the
---     milestone title and "- %s" name lines, or the capstone lines: the RenownRewardName and
---     RenownRewardDescription families and the four fixed renown keys only, so a "- %s" line (a name inside) is
---     never matched.
+--     SetInfo resets it) is post-hooked on the card: RewardName restricted to the RenownRewardName family and the
+--     four labelled forms the client builds around a mount's, a title's, a companion's or an illusion's name
+--     ("Mount: %s", RENOWN_REWARD_*_NAME_FORMAT, blizzard_framexmlutil/renownrewardutil.lua:18-26, 44-52, 65-72): the
+--     label in Japanese and, while names are on, the name in its Japanese. A name that is neither is an item's or a
+--     spell's own name (renownrewardutil.lua:3-70): never a dictionary word; while names are on it shows the name's
+--     Japanese (UI/NameLabels). Nothing reads or measures RewardName: the client writes it, colours it and fades it
+--     [verified: forever-ui-1.60.1.71037 blizzard_framexml/rewardtracktemplates.lua:472-506]. Each card owns its
+--     tooltip (RenownLevelMixin:RefreshTooltip, :533-565): a single reward's name as title and its description,
+--     else the milestone title and "- %s" name lines (RENOWN_REWARD_TOOLTIP_REWARD_LINE, :556-561), or the capstone
+--     lines: the RenownRewardName and RenownRewardDescription families, the four labelled forms and the four fixed
+--     renown keys. A title that is none of them is the reward's own name, shown as a name too. A "- %s" line is no
+--     dictionary line: after each card's RefreshTooltip (post-hooked on the card) the lines under the title that
+--     start with the dash show the dash and what follows it, a reward row, a labelled form or a name (surface
+--     "help.legacy", released on GameTooltip's OnHide).
 --   the category list (LIST.ScrollBox, pooled LegacyChallengeCategory rows): LegacyChallengeCategoryMixin:Init
 --     writes the category name with SetHeaderText → GetTitleRegion():SetText (blizzard_legacychallengecategorylist
---     .lua:184–188; blizzard_sharedxml/listtemplates.lua:58–61), the AchievementCategory family only.
+--     .lua:184–188; blizzard_sharedxml/listtemplates.lua:58–61), the AchievementCategory family only. A
+--     category that is no row of that family and is a game name (a class's challenges are filed under the
+--     class's name) shows the name's Japanese while names are on (UI/NameLabels). The title is measured only for
+--     the row's own truncation tooltip (listtemplates.lua:63–65); the window holds no protected action.
 -- Tooltips (GameTooltip with the widget as owner, then Show: help-tooltip owners restricted to their keys):
 --   the three side tabs' tooltipText LEGACY_REWARD_TRACK_TAB_TOOLTIP / LEGACY_CHALLENGE_TAB_TOOLTIP /
 --     LEGACY_TREE_TAB_TOOLTIP (blizzard_legacysystem.xml:9, 18, 27; SidePanelTabButtonMixin:OnEnter,
@@ -95,9 +110,18 @@ local TREE = { only = TREE_KEYS }
 local AVAILABLE = { only = { "LEGACY_POINTS_AVAILABLE" } }
 local POINTS_BAR = { only = { "LEGACY_POINTS_CURR_MAX" } }
 local TRACKED = { only = { "TRACK_ACHIEVEMENT" } }
--- the fixed lines of a reward card's tooltip besides a reward's own name and description
+local TRACKED_TOOLTIP = { only = { "TRACK_ACHIEVEMENT_TOOLTIP", "UNTRACK_ACHIEVEMENT_TOOLTIP" } }
+-- a reward's name behind its kind ("Mount: %s", blizzard_framexmlutil/renownrewardutil.lua:18-26, 44-52)
+local REWARD_NAME_FORMATS = { "RENOWN_REWARD_MOUNT_NAME_FORMAT", "RENOWN_REWARD_TITLE_NAME_FORMAT",
+  "RENOWN_REWARD_FOLLOWER_NAME_FORMAT", "RENOWN_REWARD_ILLUSION_NAME_FORMAT" }
+-- the fixed lines of a reward card's tooltip besides a reward's own name and description, and the title of a
+-- single reward in a labelled form
 local RENOWN_TOOLTIP_KEYS = { "RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE", "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC",
-  "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC2", "RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE" }
+  "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC2", "RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE", unpack(REWARD_NAME_FORMATS) }
+-- RENOWN_REWARD_TOOLTIP_REWARD_LINE is "- %s": the dash the client writes before each reward of a milestone
+local DASH = "- "
+-- under the help surface: tooltip lines, never a window's labels
+local TIP = "help.legacy"
 
 -- Static labels: record key → { candidate, the one key it shows }.
 local STATIC_LABELS = {
@@ -134,7 +158,7 @@ local CANDIDATES = {
   -- the label's writer: OnLoad registers RefreshText itself as a currency callback, so a hook on the frame's field
   -- never runs; UpdateCurrencyInfo fires it on every show and points change [verified: forever-ui-1.60.1.70425
   -- blizzard_legacysystem/blizzard_legacysystemutil.lua:62-80, blizzard_legacytree.lua:107, 291-293]
-  system = { "LegacySystem" },
+  system = { "LegacySystem" }, tooltip = { "GameTooltip" },
 }
 
 local function get(key) return Compat.get(SURFACE, key) end
@@ -179,10 +203,11 @@ function Legacy.onPointsBar()
   return WFJ.Labels.show(SURFACE, "pointsBar", type(bar) == "table" and bar.Text or nil, nil, POINTS_BAR)
 end
 
--- A challenge card's Track label, title, description and reward tooltip. Returns nothing.
+-- A challenge card's Track label and tooltip, title, description and reward tooltip. Returns nothing.
 local function showCard(card)
   local text = type(card.Tracked) == "table" and card.Tracked.Text or nil
   if type(text) == "table" then WFJ.Labels.show(SURFACE, cardKey(text), text, nil, TRACKED) end
+  if type(card.Tracked) == "table" then WFJ.HelpTooltip.register(card.Tracked, TRACKED_TOOLTIP) end
   local only = WFJ.Achievement.textOnly() -- the challenge's title and description
   for _, field in ipairs(WFJ.Achievement.TEXT_FIELDS) do
     if card[field] ~= nil then WFJ.Labels.show(SURFACE, cardKey(card) .. "." .. field, card[field], nil, only) end
@@ -228,7 +253,10 @@ function Legacy.onCategory(a, b)
   if type(row) ~= "table" or type(row.GetTitleRegion) ~= "function" then return end
   local ok, title = pcall(row.GetTitleRegion, row)
   if ok and type(title) == "table" then
-    WFJ.Labels.show(SURFACE, categoryKey(row), title, nil, WFJ.Achievement.categoryOnly())
+    local key = categoryKey(row)
+    if WFJ.Labels.show(SURFACE, key, title, nil, WFJ.Achievement.categoryOnly()) == 0 then
+      WFJ.NameLabels.show(SURFACE, key, title) -- a class's category: a game name
+    end
   end
   WFJ.Render.updateBanner(SURFACE)
 end
@@ -253,11 +281,48 @@ function Legacy.onObjectives(objectives)
   return n
 end
 
+-- A reward's name as the client writes it: a reward row's text or one of the labelled forms. → { only = set }
+local function rewardNames()
+  return WFJ.Labels.familiesWith(REWARD_NAME_FORMATS, "RenownRewardName")
+end
+
 -- hooksecurefunc target (a reward card's SetRewardName). → 1 | 0
 function Legacy.onRewardName(card)
   if type(card) ~= "table" then return 0 end
-  local n = WFJ.Labels.show(SURFACE, rewardKey(card), card.RewardName, nil, WFJ.Labels.families("RenownRewardName"))
+  local key = rewardKey(card)
+  local n = WFJ.Labels.show(SURFACE, key, card.RewardName, nil, rewardNames())
+  if n == 0 then n = WFJ.NameLabels.show(SURFACE, key, card.RewardName) end -- an item's or a spell's own name
   WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
+-- hooksecurefunc target (a reward card's RefreshTooltip): the "- <reward>" lines of a card with several rewards,
+-- which the tooltip's own pass leaves as written. Line 1 is the milestone title. → the number of lines shown
+function Legacy.onRewardTooltip(card)
+  local tt = get("tooltip")
+  if type(card) ~= "table" or type(tt) ~= "table" or type(tt.GetOwner) ~= "function" or tt:GetOwner() ~= card
+      or type(tt.NumLines) ~= "function" or type(tt.GetName) ~= "function" then return 0 end
+  local name, n, refit = tt:GetName(), 0, WFJ.HelpTooltip.refit
+  if type(name) ~= "string" then return 0 end
+  for i = 2, tt:NumLines() or 0 do
+    local fs = Compat.resolve(name .. "TextLeft" .. i)
+    local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
+    local rec = WFJ.SurfaceState.get(TIP, "L" .. i)
+    local reward = type(text) == "string" and text:match("^" .. DASH:gsub("%-", "%%-") .. "(.+)$")
+    if rec and rec.fs == fs and rec.applied ~= nil and text == rec.applied then
+      n = n + 1 -- still ours
+    elseif reward then
+      local part = WFJ.Labels.part(reward, rewardNames().only)
+      if part then
+        n = n + WFJ.Labels.showArgs(TIP, "L" .. i, fs, part.key, { form = "seq", parts = { DASH, part } }, refit)
+      else
+        n = n + WFJ.NameLabels.after(TIP, "L" .. i, fs, DASH, nil, refit)
+      end
+    else
+      WFJ.SurfaceState.drop(TIP, "L" .. i)
+    end
+  end
+  if n > 0 then refit() end -- one layout for the new widths
   return n
 end
 
@@ -268,7 +333,9 @@ function Legacy.onTrack(track)
   if type(track) ~= "table" then track = get("track") end
   local cards = type(track) == "table" and track.Elements or nil
   if type(cards) ~= "table" then return 0 end
-  local tooltip = WFJ.Labels.familiesWith(RENOWN_TOOLTIP_KEYS, "RenownRewardName", "RenownRewardDescription")
+  -- line 1 of a single reward's tooltip is the reward's name: a row of the family, else a game name
+  local tooltip = { nameLine = "ui",
+    only = WFJ.Labels.familiesWith(RENOWN_TOOLTIP_KEYS, "RenownRewardName", "RenownRewardDescription").only }
   local n = 0
   for _, card in ipairs(cards) do
     if type(card) == "table" then
@@ -276,6 +343,9 @@ function Legacy.onTrack(track)
       if not rewardCards[card] and type(card.SetRewardName) == "function" then
         rewardCards[card] = true
         hooksecurefunc(card, "SetRewardName", Legacy.onRewardName)
+        if type(card.RefreshTooltip) == "function" then
+          hooksecurefunc(card, "RefreshTooltip", Legacy.onRewardTooltip)
+        end
       end
       Legacy.onRewardName(card)
       n = n + 1
@@ -332,6 +402,10 @@ function Legacy.setup()
     util.AddInitializedFrameCallback(categories, Legacy.onCategory, Legacy, true)
   end
   for key, t in pairs(TOOLTIPS) do WFJ.HelpTooltip.register(get("tip." .. key), { only = t[2] }) end
+  local tt = get("tooltip")
+  if type(tt) == "table" and type(tt.HookScript) == "function" then
+    tt:HookScript("OnHide", function() WFJ.Render.release(TIP) end)
+  end
   Legacy.onTreeButtons()
   Legacy.onObjectives()
   Legacy.onTrack()

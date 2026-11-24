@@ -4,24 +4,30 @@
 -- (blizzard_mountcollection.lua:653, classic blizzard_petcollection.lua:423), an equipment set (camelot
 -- paperdollframe.lua:2728), a raid lock (raidframe.lua:237), a totem (totemframe.lua:73), and party members' quest
 -- progress (questobjectivetracker.lua:149), and a spell flyout (matched in its own families). Line 1 is the thing's
--- name and stays English; every later line goes
--- through the dictionary on UI/HelpTooltip's surface (HelpTooltip.adopt: released on OnHide, re-rendered on Alt).
+-- name: its Japanese while names are on (the `names` option), as is a later line that is a game name (a lock's
+-- bosses); every later line goes through the dictionary on UI/HelpTooltip's surface (HelpTooltip.adopt: released
+-- on OnHide, re-rendered on Alt). A currency's description is a restricted family (ADR-042), named here so a
+-- currency shown anywhere (a quest reward, a vendor's price) gets it, not only the currency window's own rows.
 -- [unverified in game: which lines each kind carries; a line matching no key stays as the client wrote it]
 local _, WFJ = ...
 local TooltipData = {}
 WFJ.TooltipData = TooltipData
 
 local Compat = WFJ.Compat
-local OPTS = { from = 2 }
+local OPTS = { from = 2, names = "ui" }
 -- The kinds whose later lines are names too (a set's items, a lock's bosses, party members' names): only the
 -- strings those tooltips show around them, never the whole dictionary, so no name meets a dictionary word.
 -- [unverified in game: the lines each carries]
-local function restricted(keys) return { from = 2, only = keys } end
+local function restricted(keys) return { from = 2, only = keys, names = "ui" } end
 local LOCK_OPTS = restricted({ "BOSS_ALIVE", "BOSS_DEAD", "LOCKED" })
 local SET_OPTS = restricted({ "EQUIPMENT_MANAGER_IGNORE_SLOT", "EQUIPMENT_MANAGER_PLACE_IN_BAGS" })
+-- party members' progress: an objective line is read the way the tracker reads it (UI/QuestMap.showObjective: the
+-- objective's own text, the client's templates, a count line whose name has Japanese), after the dictionary
 local function partyOpts()
   local QM = WFJ.QuestMap
-  return restricted(type(QM) == "table" and QM.OBJECTIVE_KEYS or {})
+  local opts = restricted(type(QM) == "table" and QM.OBJECTIVE_KEYS or {})
+  if type(QM) == "table" and type(QM.showObjective) == "function" then opts.show = QM.showObjective end
+  return opts
 end
 
 local function walkWith(opts)
@@ -32,6 +38,9 @@ local function walkWith(opts)
 end
 local walk = walkWith(OPTS)
 TooltipData.walk = walk
+local function currencyOpts()
+  return { from = 2, names = "ui", also = WFJ.Labels.families("CurrencyDescription").only }
+end
 
 -- A spellbook or action-bar flyout's tooltip: its name and description, both SpellFlyout rows (a category, not a
 -- spell), matched in those two families only, line 1 included.
@@ -40,6 +49,17 @@ local function walkFlyout(tt)
   return WFJ.HelpTooltip.adopt(tt, WFJ.Labels.families("FlyoutName", "FlyoutDescription"))
 end
 TooltipData.walkFlyout = walkFlyout
+
+-- A mount's or a companion's tooltip whose spell UI/Tooltip found is that module's, lines and description both:
+-- the interface lines are walked here only when it found none.
+local function walkUnlessSpell(tt, data)
+  local T = WFJ.Tooltip
+  if type(T) == "table" and type(T.spellOf) == "function" and tt == Compat.resolve("GameTooltip")
+      and T.spellOf(tt, data) ~= nil then
+    return 0
+  end
+  return walk(tt)
+end
 
 local function timed(label, fn) return WFJ.Perf.wrap(label, fn) end -- a post-call timed under `label` (Core/Perf)
 
@@ -51,9 +71,15 @@ function TooltipData.init()
   if type(processor) ~= "table" or type(processor.AddTooltipPostCall) ~= "function" or type(types) ~= "table" then
     return false
   end
-  if types.Currency ~= nil then processor.AddTooltipPostCall(types.Currency, timed("tooltip.currency", walk)) end
-  if types.Mount ~= nil then processor.AddTooltipPostCall(types.Mount, timed("tooltip.mount", walk)) end
-  if types.CompanionPet ~= nil then processor.AddTooltipPostCall(types.CompanionPet, timed("tooltip.pet", walk)) end
+  if types.Currency ~= nil then
+    processor.AddTooltipPostCall(types.Currency, timed("tooltip.currency", walkWith(currencyOpts)))
+  end
+  if types.Mount ~= nil then
+    processor.AddTooltipPostCall(types.Mount, timed("tooltip.mount", walkUnlessSpell))
+  end
+  if types.CompanionPet ~= nil then
+    processor.AddTooltipPostCall(types.CompanionPet, timed("tooltip.pet", walkUnlessSpell))
+  end
   if types.EquipmentSet ~= nil then
     processor.AddTooltipPostCall(types.EquipmentSet, timed("tooltip.set", walkWith(SET_OPTS)))
   end

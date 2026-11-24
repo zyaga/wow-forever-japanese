@@ -3,7 +3,7 @@ file a player attached to the same issue when the string was too long to paste.
 
 String: `WFJC1:` + URL-safe Base64 of zlib-compressed JSON `{v, a, b, e}`: the format version, the addon
 version, the builds, and the entries in the dump's own fields (`t, i, f, h, e, b, n, p`; `b` indexes
-this `b`).
+this `b`). An interface string's name seen in chat is an entry `{t: "uikey", i: <name>, b}` in the same list.
 Every entry goes through the same checks as a dump file's (`collector_dump.add`), so a string cannot carry
 anything a file could not. Nothing in it is trusted: sizes are capped before decompressing and parsing.
 """
@@ -23,7 +23,7 @@ from collections import Counter
 from dataclasses import dataclass
 from typing import Any
 
-from wfj.io.collector_dump import Dump, add, read_dump
+from wfj.io.collector_dump import UI_KEY, Dump, add, read_dump, sort
 from wfj.io.lua_reader import Table
 
 PREFIX = "WFJC1:"
@@ -105,8 +105,8 @@ def decode(text: str) -> Send:
             out.rejected["bad_key"] += 1
             continue
         add(out, key, table, builds)
+    sort(out)
     out.entries.sort(key=lambda en: (en.type_, str(en.id_), en.field))
-    out.quest_npcs.sort(key=lambda q: (q.quest, q.field))
     addon = data.get("a") if isinstance(data.get("a"), str) else ""
     return Send(out, addon, "string")
 
@@ -118,6 +118,8 @@ def _key(e: Any) -> str:
     i = e.get("i")
     if isinstance(i, float) and i.is_integer():
         i = int(i)
+    if e.get("t") == UI_KEY:  # keyed by its name alone: it has no field
+        return f"{UI_KEY}:{i}"
     return f"{e.get('t')}:{i}:{e.get('f')}"
 
 

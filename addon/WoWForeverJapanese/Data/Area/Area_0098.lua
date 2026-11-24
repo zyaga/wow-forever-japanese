@@ -4,4 +4,5 @@ WFJ.Data.add("area", {
   [98325] = { "Warlord Goretoothと話し、Kargath Expeditionary Forceに仕える", 0xb5ebf1a2, "." },
   [98430] = { "Perith StormhoofをPalemane Rockから護衛して連れ出す", 0xbf836749, "." },
   [98435] = { "Wildmane Wellを浄化する", 0xc38bb5cf, "." },
+  [98918] = { "3つの拠点を保持したままDarkspear Islandsで勝利する。", 0xf68233d2, "." },
 })

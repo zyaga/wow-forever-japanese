@@ -82,6 +82,9 @@ function Words.source(surface, kind)
   if Words.isQuestKind(kind) then return "quest" end
   if kind == "book" then return "book" end
   if kind == "ui" then return "window" end
+  -- a tooltip line (a word saved from a frozen tooltip)
+  if type(kind) == "string" and kind:find("^item%.") then return "item" end
+  if type(kind) == "string" and kind:find("^spell%.") then return "spell" end
   return "gossip"
 end
 

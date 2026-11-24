@@ -44,6 +44,7 @@ WFJ.Data.add("english", {
   ["gossip:5ebcb0dc24342c63"] = { text = "task=2 this=1 what=4" },
   ["gossip:5ec0e84ea28a4879"] = { text = "come=5 help=8 more=1 training=2" },
   ["gossip:5ec31bc944a07299"] = { text = "cauldron=1 needed=3" },
+  ["gossip:5ec64a255bb7fb2e"] = { text = "exasperatedly=1 sighs=2" },
   ["gossip:5ec872c6290c9796"] = { text = "already=5 hills=1 run=2 wait=3 we=4" },
   ["gossip:5ec9dfa903eb795b"] = { text = "commander=2 yes=1" },
   ["gossip:5ecc75125ec512da"] = { text = "all=6 bars=5 cards=22 check=16 collecting=11 early=20 else=10 get=21 iron=4 little=19 me=17 need=3 one=15 others=14 play=23 see=24 something=12 thanks=2 there's=13 war=8" },

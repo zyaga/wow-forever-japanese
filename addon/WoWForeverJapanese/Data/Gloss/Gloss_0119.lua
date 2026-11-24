@@ -496,7 +496,6 @@ WFJ.Data.add("gloss", {
   [119497] = "見当違い\tけんとうちがい\tmistaken",
   [119498] = "見慣れる\tみなれる\tforeign (unfamiliar)",
   [119499] = "見慣れる\tみなれる\tunusual (unfamiliar)",
-  [119500] = "見抜く\tみぬく\tcan't see (see through)",
   [119501] = "見抜く\tみぬく\tcannot divine (see through)",
   [119502] = "見抜く\tみぬく\tdivining (see through)",
   [119503] = "見抜く\tみぬく\tknew (saw through)",

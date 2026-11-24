@@ -62,6 +62,27 @@ describe("Core/Intro", function()
     assert.are.equal(0, shown)
   end)
 
+  it("owes the names question once to a player who answered the first one before it existed", function()
+    local db, shown = { settings = {}, intro = true, asked = true }, 0
+    local function show() shown = shown + 1 end
+    I.prepare(db, false)
+    assert.is_false(db.askedNames)
+    assert.is_true(I.run(db, show))
+    assert.is_true(db.askedNames)
+    I.prepare(db, false) -- the next login
+    assert.is_false(I.run(db, show))
+    assert.are.equal(1, shown)
+  end)
+
+  it("a first install is asked both questions in its one window", function()
+    local db, shown = {}, 0
+    I.prepare(db, true)
+    assert.is_false(db.askedNames)
+    assert.is_true(I.run(db, function() shown = shown + 1 end))
+    assert.is_true(db.intro and db.asked and db.askedNames)
+    assert.are.equal(1, shown)
+  end)
+
   it("owes the question once to a player who already had the addon, and never again", function()
     local db, shown = { settings = {} }, 0
     local function show() shown = shown + 1 end
@@ -154,6 +175,29 @@ describe("the intro at ADDON_LOADED and PLAYER_ENTERING_WORLD", function()
     assert.are.equal(1, opened)
   end)
 
+  it("the reminder owed at the same login waits until the player closes the window", function()
+    local WFJ = start(nil)
+    local reminded = 0
+    WFJ.CollectorRemind.run = function() reminded = reminded + 1 end
+    Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
+    assert.is_true(WFJ.IntroWindow.frame:IsShown())
+    assert.are.equal(0, reminded) -- it would open under the window
+    WFJ.IntroWindow.close()
+    assert.are.equal(1, reminded)
+    WFJ.IntroWindow.open() -- opened again by hand and closed: nothing waits any more
+    WFJ.IntroWindow.close()
+    assert.are.equal(1, reminded)
+  end)
+
+  it("with no window owed the reminder runs at login", function()
+    local WFJ = start({ schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
+    local reminded = 0
+    WFJ.CollectorRemind.run = function() reminded = reminded + 1 end
+    Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
+    assert.are.equal(0, opened)
+    assert.are.equal(1, reminded)
+  end)
+
   it("a window that fails to open is caught, marked seen, and the reminder still runs", function()
     local WFJ = start(nil)
     WFJ.IntroWindow.open = function() error("broken window") end
@@ -226,6 +270,57 @@ describe("UI/IntroWindow, the window", function()
     assert.are.equal(2, select(2, f.about.en:GetText():gsub("\n", "")))
   end)
 
+  describe("the frozen tooltip point", function()
+    local saved
+    before_each(function() saved = _G.GetBindingKey end)
+    after_each(function() _G.GetBindingKey = saved end)
+
+    local function info(purpose)
+      local f = IW.open()
+      f.cards[purpose].scripts.OnClick(f.cards[purpose])
+      f.confirm.scripts.OnClick(f.confirm)
+      return f
+    end
+
+    it("names the binding's key for a player studying Japanese", function()
+      _G.GetBindingKey = function(action) return action == "WFJ_FREEZE_TOOLTIP" and "CTRL-F" or nil end
+      local f = info("ja")
+      local key = ("|cffffd200%s|r"):format(WFJ.KeyCapture.keyText("CTRL-F"))
+      assert.are.equal(T["intro.freeze"].ja:format(key), f.freeze.ja:GetText())
+      assert.are.equal(T["intro.freeze"].en:format(key), f.freeze.en:GetText())
+      assert.is_true(f.freeze.ja:IsShown())
+      assert.is_table(f.freeze.ja.point)
+    end)
+
+    it("points at Keybindings while the binding has no key", function()
+      _G.GetBindingKey = function() return nil end
+      local f = info("ja")
+      assert.are.equal(T["intro.freeze.unset"].ja, f.freeze.ja:GetText())
+      assert.are.equal(T["intro.freeze.unset"].en, f.freeze.en:GetText())
+      assert.is_true(f.freeze.en:IsShown())
+    end)
+
+    it("names the new key when the binding changes while the window shows", function()
+      _G.GetBindingKey = function() return nil end
+      local f = info("ja")
+      assert.are.equal(T["intro.freeze.unset"].ja, f.freeze.ja:GetText())
+      _G.GetBindingKey = function(action) return action == "WFJ_FREEZE_TOOLTIP" and "CTRL-G" or nil end
+      Stub.fireAll("UPDATE_BINDINGS")
+      local key = ("|cffffd200%s|r"):format(WFJ.KeyCapture.keyText("CTRL-G"))
+      assert.are.equal(T["intro.freeze"].ja:format(key), f.freeze.ja:GetText())
+    end)
+
+    it("is left out where a frozen tooltip has no word cards", function()
+      _G.GetBindingKey = function() return "CTRL-F" end
+      for _, purpose in ipairs({ "en", "play" }) do
+        local f = info(purpose)
+        assert.is_false(f.freeze.ja:IsShown())
+        assert.is_false(f.freeze.en:IsShown())
+        f.back.scripts.OnClick(f.back)
+      end
+    end)
+  end)
+
   it("a click on a card only selects and describes it; nothing is written until Confirm", function()
     local f = IW.open()
     local before = settings()
@@ -236,6 +331,63 @@ describe("UI/IntroWindow, the window", function()
     assert.is_truthy(f.about.en:GetText():find("stays in English", 1, true))
     assert.are.same(before, settings())
     assert.is_true(f.pickPage:IsShown())
+  end)
+
+  describe("the names choice under the cards", function()
+    it("shows English names and Japanese names in both languages, each with the example as it will look",
+    function()
+      local f = IW.open()
+      local english, japanese = f.nameCards[false], f.nameCards[true]
+      assert.are.equal(T["intro.names.ask"].ja, f.namesAsk.ja:GetText())
+      assert.are.equal(T["intro.names.ask"].en, f.namesAsk.en:GetText())
+      assert.are.equal(T["intro.names.english"].ja .. " / " .. T["intro.names.english"].en, english.label:GetText())
+      assert.are.equal(T["intro.names.japanese"].ja .. " / " .. T["intro.names.japanese"].en,
+        japanese.label:GetText())
+      assert.are.equal("Marshal McBride", english.example:GetText())
+      assert.are.equal("マーシャル・マクブライド", japanese.example:GetText())
+      for _, region in ipairs({ f.namesAsk.ja, english, japanese }) do assert.is_table(region.point) end
+      -- names are English until the player picks Japanese
+      assert.is_false(IW.names)
+      assert.is_true(english.picked)
+      assert.is_false(japanese.picked)
+    end)
+
+    it("a click only selects; Confirm writes it with the mode's settings and names show at once", function()
+      local f = IW.open()
+      f.nameCards[true].scripts.OnClick(f.nameCards[true])
+      assert.is_true(IW.names)
+      assert.is_true(f.nameCards[true].picked)
+      assert.is_false(f.nameCards[false].picked)
+      assert.is_false(WFJ.Settings.get("names.japanese"))
+      assert.is_false(WFJ.State.names)
+      f.cards.en.scripts.OnClick(f.cards.en) -- picking a mode keeps the names pick
+      assert.is_true(IW.names)
+      f.confirm.scripts.OnClick(f.confirm)
+      assert.are.same({ "en", true, true }, settings())
+      assert.is_true(WFJ.Settings.get("names.japanese"))
+      assert.is_true(WFJ.State.names) -- at once: the name tables are always in memory
+      assert.is_true(f.infoPage:IsShown())
+      -- back to English names, by the same two clicks
+      f.back.scripts.OnClick(f.back)
+      f.nameCards[false].scripts.OnClick(f.nameCards[false])
+      f.confirm.scripts.OnClick(f.confirm)
+      assert.is_false(WFJ.Settings.get("names.japanese"))
+      assert.is_false(WFJ.State.names)
+    end)
+
+    it("closing without Confirm leaves names English; opened again it starts on what the setting is", function()
+      local f = IW.open()
+      f.nameCards[true].scripts.OnClick(f.nameCards[true])
+      IW.close()
+      assert.is_false(WFJ.Settings.get("names.japanese"))
+      IW.open()
+      assert.is_false(IW.names)
+      assert.is_true(f.nameCards[false].picked)
+      WFJ.Settings.set("names.japanese", true)
+      IW.open()
+      assert.is_true(IW.names)
+      assert.is_true(f.nameCards[true].picked)
+    end)
   end)
 
   it("Confirm writes exactly the choice's settings and moves to the second page, worded for it", function()
@@ -518,7 +670,9 @@ describe("UI/OptionsText, the intro window's copy", function()
 
   it("every line is the addon's own copy in both languages, with no em dash", function()
     for _, k in ipairs({ "intro.lead", "intro.hold", "intro.readings", "intro.words", "intro.minimap",
-        "intro.voiceTitle", "intro.voice", "intro.close" }) do
+        "intro.freeze", "intro.freeze.unset",
+        "intro.voiceTitle", "intro.voice", "intro.close", "intro.names.ask", "intro.names.english",
+        "intro.names.japanese" }) do
       assert.is_string(T[k].en)
       assert.is_string(T[k].ja)
       assert.is_truthy(T[k].ja:find("[\227-\233]"))

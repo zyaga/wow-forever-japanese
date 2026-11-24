@@ -250,6 +250,7 @@ function Transmog.setup()
   hook(get("preview"), "SetupSlots", Transmog.onSlots)
   hook(get("situations"), "Refresh", Transmog.onSituations)
   for i, t in ipairs(TOOLTIPS) do WFJ.HelpTooltip.register(get("tip" .. i), { only = t[2] }) end
+  WFJ.IconPicker.setup(SURFACE, frame.OutfitPopup)
   Transmog.onSlots()
   Transmog.showAll() -- what the client already wrote (the addon may load after the frame was shown)
   return true

@@ -204,6 +204,56 @@ describe("Glosses", function()
     assert.are.same({}, WFJ.Readings.withTokenWords({}, "森"))
   end)
 
+  it("a name the addon wrote in Japanese gets a card with its reading and its English name", function()
+    local text = "ストームウィンドへ行き、森を抜けてストームウィンドへ戻れ。"
+    local forest = text:find("森", 1, true)
+    local listed = { { first = forest, last = forest + #"森" - 1, word = "森", reading = "もり", gloss = false } }
+    local name = { ja = "ストームウィンド", english = "Stormwind", reading = "すとーむうぃんど" }
+    local spans = WFJ.Readings.withNames(listed, text, { name, name })
+    assert.are.equal(3, #spans)
+    for i = 2, #spans do assert.is_true(spans[i - 1].first < spans[i].first) end -- text order
+    assert.are.equal(1, spans[1].first)
+    assert.are.equal("ストームウィンド", text:sub(spans[1].first, spans[1].last))
+    assert.are.equal("すとーむうぃんど", spans[1].reading)
+    assert.is_true(spans[1].name)
+    assert.are.same({ lemma = "ストームウィンド", lemmaReading = "すとーむうぃんど", meaning = "Stormwind" },
+      spans[1].card)
+    assert.are.equal("森", spans[2].word)
+    assert.are.equal("ストームウィンド", text:sub(spans[3].first, spans[3].last))
+    assert.is_true(spans[3].first > spans[2].last) -- the second one is found after the first, not on it again
+  end)
+
+  it("a filled-in unit takes its card after every number, a saveable word, never inside another word", function()
+    local text = "自分を守り、20秒の間、2秒ごとに回復する。"
+    local self_ = text:find("自分", 1, true)
+    local listed = { { first = self_, last = self_ + #"自分" - 1, word = "自分", reading = "じぶん", gloss = false } }
+    local unit = { ja = "秒", reading = "びょう", english = "seconds", lemma = "秒", lemmaReading = "びょう",
+      word = true, afterNumber = true }
+    local spans = WFJ.Readings.withNames(listed, text, { unit })
+    local seconds = {}
+    for _, sp in ipairs(spans) do if sp.word == "秒" then seconds[#seconds + 1] = sp end end
+    assert.are.equal(2, #seconds)
+    assert.is_nil(seconds[1].name) -- a word, saved like any other
+    assert.are.equal("seconds", seconds[2].card.meaning)
+    -- 分 inside 自分 follows no number: the word's own card stays
+    local minutes = WFJ.Readings.withNames(listed, text, { { ja = "分", reading = "ふん", word = true,
+      afterNumber = true } })
+    assert.are.same(listed, minutes)
+  end)
+
+  it("a reading word never anchors inside a name, and a name the line no longer holds is skipped", function()
+    local text = "アイアンフォージの門。"
+    local inside = { { first = 1, last = #"アイアン", word = "アイアン", reading = "あいあん", gloss = false } }
+    local spans = WFJ.Readings.withNames(inside, text,
+      { { ja = "アイアンフォージ", english = "Ironforge", reading = "あいあんふぉーじ" },
+        { ja = "ストームウィンド", english = "Stormwind", reading = "すとーむうぃんど" } })
+    assert.are.equal(1, #spans)
+    assert.are.equal("Ironforge", spans[1].card.meaning)
+    assert.are.same(inside, WFJ.Readings.withNames(inside, text, nil))
+    assert.are.same(inside, WFJ.Readings.withNames(inside, text, {}))
+    assert.are.same({}, WFJ.Readings.withNames(nil, text, nil))
+  end)
+
   it("a class or race word inside a longer katakana word gets no card", function()
     for _, text in ipairs({ "コントロールする", "パトロール隊", "オークションへ", "プロローグ", "ドルイドー" }) do
       assert.are.same({}, WFJ.Readings.withTokenWords({}, text), text)

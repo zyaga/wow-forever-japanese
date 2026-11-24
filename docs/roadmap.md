@@ -8,7 +8,7 @@
 
 ## Phase 2: Addon (done)
 - **Goal:** a clean rewrite with no dependencies: quest windows and log, gossip, books, item and spell tooltips, hold-a-key-for-English, the master switch and per-area toggles, settings pages, the bundled font, the English collector.
-- **Result:** every surface in [App capabilities](app-capabilities.md). The whole game interface is in scope except names ([ADR-015](adr/015-ui-text-surfaces.md), [ADR-016](adr/016-whole-window-interface-coverage.md)): every window the Forever client loads has a recorded disposition, and a test fails when a new client build adds one nobody has read ([ADR-030](adr/030-every-window-the-forever-client-loads.md)). Word readings and the word card ship on quest and NPC-talk prose, window labels and plain-text book pages ([Readings](systems/readings.md)). Players can report a line from the game ([Fix reports](systems/fix-reports.md)).
+- **Result:** every surface in [App capabilities](app-capabilities.md). The whole game interface is in scope ([ADR-015](adr/015-ui-text-surfaces.md), [ADR-016](adr/016-whole-window-interface-coverage.md)): every window the Forever client loads has a recorded disposition, and a test fails when a new client build adds one nobody has read ([ADR-030](adr/030-every-window-the-forever-client-loads.md)). Word readings and the word card ship on quest and NPC-talk prose, window labels and plain-text book pages ([Readings](systems/readings.md)). Players can report a line from the game ([Fix reports](systems/fix-reports.md)). Names stay English by default; one setting, chosen in the welcome window, shows them in Japanese on every surface the addon translates, in the spelling the voice says ([ADR-106](adr/106-names-shown-in-japanese-on-screen.md)). Its in-game check with Japanese names on, in and out of combat, is open.
 
 ## Phase 3: The Forever client (in progress)
 - **Goal:** verify the addon on the Forever client, harvest its English, and measure what changed.
@@ -36,7 +36,6 @@
 - **Open:** the rest of the one-time setup (the `CF_API_KEY` secret on the public repository, the `main` ruleset bypass), then the first alpha.
 
 ## Each its own decision
-- **Japanese names as an on/off option.** Today a Japanese name may only ever be an additional line, never on by default ([Principles §2](architecture/principles.md#2-names-stay-in-english)); an option would change that principle first.
 - **Interface text still in English** by recorded exclusion: the trainer's "- Pet Spell" suffix, the pet XP bar, the "\<rank> of \<guild>" line, raid pullout labels and multi-unit reset times, the friends list's broadcast "(… ago)" tail, the XP bar help body. Each needs a composite form the dictionary does not have (`pipeline/ui_exclusions.txt`).
 - **Two menu words with a different Japanese elsewhere** ("Slots" in the professions filter, "Ground" in the mount filter), not yet given their own Japanese.
 - **The combat log** stays English: Forever hands addons a sealed string with no readable English ([ADR-035](adr/035-ui-errors-frame-surface.md)).

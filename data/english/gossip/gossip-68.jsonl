@@ -19,12 +19,15 @@
 {"id": "6866f9a2454fd0f1", "field": "text", "en": "Oy!  You here for a game of knuckles?", "hash": "6866f9a2454fd0f1", "src": "vmangos@13b49dc"}
 {"id": "686e2bc635af2da4", "field": "text", "en": "Return to Knight Commander Demar Brant in Farholde Keep.", "hash": "686e2bc635af2da4", "src": "wdb@1.60.1.70862"}
 {"id": "68731898241737de", "field": "text", "en": "%s cooks up a batch of spicy hot buzzard wings for $n.", "hash": "68731898241737de", "src": "vmangos@13b49dc"}
+{"id": "687a4d7ef275cd3b", "field": "text", "en": "On the darkest nights, my wish to give to you was all that kept me going.", "hash": "687a4d7ef275cd3b", "src": "collector@1.60.1.70959"}
 {"id": "687b29c1a1f9b682", "field": "text", "en": "|cffffff00Northpass Tower has been taken by the Horde!|r", "hash": "687b29c1a1f9b682", "src": "vmangos@13b49dc"}
 {"id": "687c3574bac76b4d", "field": "text", "en": "It's a rescue attempt!  Slay them all!", "hash": "687c3574bac76b4d", "src": "vmangos@13b49dc"}
 {"id": "6881870c711e283c", "field": "text", "en": "Consider it done, Jeztor. Give me a beacon.", "hash": "6881870c711e283c", "src": "vmangos@13b49dc"}
 {"id": "68827e303e7a6504", "field": "text", "en": "%s begins to craft...", "hash": "68827e303e7a6504", "src": "vmangos@13b49dc"}
 {"id": "6897c3475726ef54", "field": "text", "en": "Teleport me to the lair of the Twin Emperors, please.", "hash": "6897c3475726ef54", "src": "vmangos@13b49dc"}
 {"id": "689ac350516217ba", "field": "text", "en": "I require training, sir!", "hash": "689ac350516217ba", "src": "vmangos@13b49dc"}
+{"id": "689ef04bb0d6b9ce", "field": "text", "en": "Get it done! These monstrosities won't be kept at bay for long.", "hash": "689ef04bb0d6b9ce", "src": "collector@1.60.1.70959"}
+{"id": "68a794fbb5058eee", "field": "text", "en": "I see, and the pylons?", "hash": "68a794fbb5058eee", "src": "collector@1.60.1.70888", "npcs": [253471]}
 {"id": "68aeb9550a8a83a2", "field": "text", "en": "Long live the mighty Blackrock Clan!", "hash": "68aeb9550a8a83a2", "src": "vmangos@13b49dc"}
 {"id": "68b33db5d6ccc704", "field": "text", "en": "Is there something I can help you find?", "hash": "68b33db5d6ccc704", "src": "vmangos@13b49dc"}
 {"id": "68ba633d66b9fbfc", "field": "text", "en": "Wares for sale! Wares for sale! Come browse Antonio's wares before I must take my leave, citizens of Goldshire.", "hash": "68ba633d66b9fbfc", "src": "vmangos@13b49dc"}

@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:466531d166fe1893"] = { text = "'misplaced'=19 attuned=15 better=27 calm=2 care=28 first=8 gave=11 i=13 it=14 left=9 luck=7 not=24 nothing=5 piece=10 problem=23 really=22 so=16 summoning=21 take=29 time=26 when=12 wherever=18 worry=3 yes=1 you=17" },
   ["gossip:4666b2637a812f8b"] = { text = "happy=2 master=1" },
   ["gossip:466da7e334d58034"] = { text = "aeronautical=11 aim=33 air=30 art=1 bird=21 cannon=10 combustible=12 delivering=8 device=3 dragon=4 east=26 end=27 faire=25 family=16 feats=13 fly=31 free=23 hear=40 launched=20 like=22 near=5 over=36 payload=7 person=2 placed=39 pride=17 renown=15 ring=38 seek=29 skies=19 speed=6 target=37 way=35 world=14" },
+  ["gossip:466f792105bf920c"] = { text = "corruption=1 scanning=2" },
   ["gossip:467118502ac742f0"] = { text = "teach=1 what=2" },
   ["gossip:467200e5a22989b0"] = { text = "army=10 course=9 gained=7 ground=8 here=1 little=6 swallowed=11 victory=3 you=2" },
   ["gossip:4673bb823e1fa495"] = { text = "attacked=7 earn=16 effort=17 fear=8 hostile=1 made=18 may=12 not=2 only=6 our=14 outsider=13 pass=10 proven=4 those=5 trust=15 without=9" },

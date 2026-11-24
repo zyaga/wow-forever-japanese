@@ -234,6 +234,7 @@ WFJ.Data.add("english", {
   ["ui:GUILD_NAME_ALERT_MEMBER_HELP"] = { text = "guildmaster=1 must=7 name=5 naming=5 new=4 pick=6 policy=2 within=3" },
   ["ui:GUILD_NAME_ALERT_WARNING"] = { text = "guild=2 rename=4 your=1" },
   ["ui:GUILD_NEWS"] = { text = "guild=1" },
+  ["ui:GUILD_NEWS_FORMAT2"] = { text = "defeated=1" },
   ["ui:GUILD_NEWS_LINK_ITEM"] = { text = "link=3" },
   ["ui:GUILD_NEWS_REMOVE_STICKY"] = { text = "remove=2" },
   ["ui:GUILD_NEWS_TITLE"] = { text = "guild=1" },

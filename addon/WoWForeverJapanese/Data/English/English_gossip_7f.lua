@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:7f040d4a9dcb17e1"] = { text = "cache=3 equipment=2 grows=4 our=1" },
   ["gossip:7f1311cecf433070"] = { text = "me=1 smash=3 you=2" },
   ["gossip:7f1e298d1842ed9a"] = { text = "figured=3 finally=2" },
+  ["gossip:7f219a0cf9f1318c"] = { text = "coming=2" },
   ["gossip:7f26a1ed5bb71cfa"] = { text = "help=4 look=3 lost=2" },
   ["gossip:7f290c980e4d02bb"] = { text = "little=1 look=3 looking=3 lost=2 who=4" },
   ["gossip:7f299a4df911f3db"] = { text = "bunions=8 come=4 friend=13 my=7 phenomenal=9 sights=14 stroll=11 this=2 time=3 weather=6 year=1" },

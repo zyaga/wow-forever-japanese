@@ -41,6 +41,7 @@ local UI = {
   CALENDAR_TOOLTIP_ONGOING = { "Ongoing", "開催中" },
   CALENDAR_EVENT_INVITEDBY_YOURSELF = { "This is your event", "あなたのイベントです" },
   CALENDAR_TOOLTIP_INVITE_RESPONDED = { "Responded on:", "返答日時:" },
+  TIME_TWELVEHOURAM = { "%d:%02d AM", "午前%d:%02d" }, TIME_TWELVEHOURPM = { "%d:%02d PM", "午後%d:%02d" },
   CALENDAR_HOLIDAYFRAME_BEGINSENDS = { "%1$s|n|nBegins: %2$s %3$s|nEnds: %4$s %5$s",
     "%1$s|n|n開始: %2$s %3$s|n終了: %4$s %5$s" },
   CALENDAR_RAID_LOCKOUT_DESCRIPTION = { "Your %1$s instance unlocks at %2$s.", "%1$sのインスタンスは%2$sにロック解除されます。" },
@@ -169,7 +170,8 @@ local GLOBALS = { "CalendarFrame", "CalendarMonthName", "CalendarYearName", "Cal
   "CalendarCreateEventFrame_Update", "CalendarTexturePickerTitleFrame_Update", "CalendarEventPickerFrame",
   "CalendarViewHolidayFrame_Update", "CalendarViewRaidFrame_Update",
   "CalendarViewEventInviteListStatusSortButton", "CalendarViewEventInviteListClassSortButton",
-  "CalendarViewEventInviteList" }
+  "CalendarViewEventInviteList", "CalendarViewEventDescriptionContainer",
+  "CalendarCreateEventDescriptionContainer" }
 for i = 1, 7 do GLOBALS[#GLOBALS + 1] = "CalendarWeekday" .. i .. "Name" end
 for i = 1, 42 do GLOBALS[#GLOBALS + 1] = "CalendarDayButton" .. i end
 
@@ -371,9 +373,14 @@ describe("the calendar on Forever", function()
         tt:ClearLines()
         tt:AddLine(en("CALENDAR_TOOLTIP_INVITE_RESPONDED"))
         tt:AddLine("Close") -- not a label of this row
+        tt:AddLine("9:30 PM") -- the response time (blizzard_calendar.lua:2709-2713)
         tt:Show()
         assert.are.equal("返答日時:", _G.GameTooltipTextLeft1:GetText())
         assert.are.equal("Close", _G.GameTooltipTextLeft2:GetText())
+        assert.are.equal("午後9:30", _G.GameTooltipTextLeft3:GetText())
+        alt(true)
+        assert.are.equal("9:30 PM", _G.GameTooltipTextLeft3:GetText())
+        alt(false)
       end)
 
       it("labels are shown again when the window is re-shown", function()
@@ -383,6 +390,54 @@ describe("the calendar on Forever", function()
       end)
     end)
   end
+
+  it("an event a player wrote wears the bundled face while it holds Japanese; its typing boxes always do", function()
+    local CLIENT = "Fonts\\FRIZQT__.TTF"
+    boot()
+    loadCalendar(true)
+    local titleBox = Stub.namedFontString("CalendarCreateEventTitleEdit", "")
+    function titleBox.HookScript() end
+    local descBox = Stub.fontString("")
+    function descBox.HookScript() end
+    local editor = CreateFrame("Frame")
+    function editor.GetEditBox() return descBox end
+    _G.CalendarCreateEventDescriptionContainer = { ScrollingEditBox = editor }
+    local desc = Stub.scrollingFont("")
+    desc.GetText = nil
+    _G.CalendarViewEventDescriptionContainer = { ScrollingFont = desc }
+    assert.is_true(WFJ.Calendar.init())
+    -- the typing boxes, and again after the client swaps the placeholder's font object for the text's
+    assert.are.equal(WFJ.Font.PATH, titleBox.font.path)
+    assert.are.equal(WFJ.Font.PATH, descBox.font.path)
+    descBox:SetFontObject({ font = { path = CLIENT, size = 10, flags = "" } })
+    assert.are.same({ path = WFJ.Font.PATH, size = 10, flags = "" }, descBox.font)
+    -- a title and a description in Japanese
+    local title = _G.CalendarViewEventTitle
+    title:SetText("レイドの夜")
+    desc:SetText("八時に集合")
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal("レイドの夜", title:GetText())
+    assert.are.equal(WFJ.Font.PATH, title.font.path)
+    assert.are.equal("八時に集合", desc.fs:GetText())
+    assert.are.equal(WFJ.Font.PATH, desc.fs.font.path)
+    assert.are.equal(desc.fs:GetHeight(), desc.container.height) -- fitted again in the new font
+    -- with translation off too: the text is the player's
+    WFJ.State.setEnabled(false)
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal(WFJ.Font.PATH, title.font.path)
+    WFJ.State.setEnabled(true)
+    -- the next event has no Japanese: both have the client's font back
+    title:SetText("Raid night")
+    desc:SetText("Meet at eight")
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal(CLIENT, title.font.path)
+    assert.are.equal(CLIENT, desc.fs.font.path)
+    -- a locked event: the dictionary's form around the title the player typed, in the bundled face
+    title:SetText(string.format(en("CALENDAR_VIEW_EVENTTITLE_LOCKED"), "レイドの夜"))
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal("|cff7f7f7fレイドの夜|r |cffffd200(ロック中)|r", title:GetText())
+    assert.are.equal(WFJ.Font.PATH, title.font.path)
+  end)
 
   it("hooks install once", function()
     setup(true)

@@ -244,6 +244,8 @@ function Friends.setupWho()
   WFJ.Labels.forbidNames(Friends.NEVER_TOUCH) -- WhoFrameEditBox exists only now (Main's registration found none)
   WFJ.Labels.show(STATIC, "ui.whoInstructions", field(get("whoEditBox"), "Instructions"), nil,
     { only = WHO_INSTRUCTION_KEYS })
+  -- the filter button's own text, which the menu writes again on every choice
+  WFJ.Labels.dropdown(STATIC, "ui.whoFilterText", get("whoFilter"), { only = { "FILTER" } })
   if whoHooked then return true end
   whoHooked = true
   if type(frame.UpdateWhoList) == "function" then hooksecurefunc(frame, "UpdateWhoList", Friends.onWho) end

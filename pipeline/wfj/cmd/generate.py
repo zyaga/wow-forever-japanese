@@ -9,13 +9,24 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
 from wfj.cmd.voice_displays import DISPLAYS
-from wfj.core import align, english_cards, glosses, numbered, pronunciation, readings, tooltip_text
+from wfj.core import (
+    align,
+    english_cards,
+    glosses,
+    numbered,
+    pronunciation,
+    readings,
+    spell_shapes,
+    tooltip_text,
+)
+from wfj.core import names as names_core
 from wfj.core.align import load_allowlist
 from wfj.core.english_text import model_english
 from wfj.core.hashing import key as hash_key
@@ -27,8 +38,11 @@ from wfj.io.names_store import load_lines as load_name_lines
 from wfj.paths import allowlist_path, data_root
 
 TOC_NAME = "WoWForeverJapanese.toc"
-# the generated files that are not shards, in load order; the last two ship only when the store has their data
-FIXED = ("Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua", "Data/Displays.lua")
+# the generated files that are not shards, in load order; the last three ship only when there is data for them
+FIXED = (
+    "Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua", "Data/Displays.lua", "Data/SpellShapes.lua",
+    "Data/SpellIncludes.lua",
+)
 ERROR_SOUNDS = Path("voice") / "error-sounds.jsonl"
 VECTORS_HEAD = "WFJ.Data.vectors ="
 
@@ -153,6 +167,70 @@ def branch_variants(
         else:
             shipped[key] = reason
     return shipped, refused
+
+
+_FILLED = re.compile(r"\$[ND]\d")
+# the statuses the addon shows only when the live line passes the gate
+_GATED = frozenset({"unaligned", "stale"})
+# a count no live line has: the line stays English until it is drafted again
+NEVER_FITS = -1
+
+
+def value_counts(
+    type_: str,
+    lines: list[dict[str, Any]],
+    english_store: Store,
+    en_by: dict[tuple[int, str], str] | None = None,
+) -> dict[tuple[int, str], int]:
+    """(id, field) → how many numbers the client prints for the line's English (`align.value_slots`), for
+    every shipped item / spell line whose Japanese is filled from the live line, or is shown only when the
+    live line passes the gate, and keeps no conditional. A gated Japanese with no placeholder holds nothing
+    the gate could miss in a line the client has rewritten, so the count is what holds it to its English.
+    The line's `$N<k>` are numbered to that English. On a client whose template has gained or lost a number
+    every later placeholder would take another value, and the gate cannot tell: each number it fills in is
+    in the live line. So the addon shows the line only while the live line holds exactly this many.
+    A stale line was numbered against English that has changed since: it gets the count only while every
+    placeholder still fits the English as it stands, else `NEVER_FITS`. A line whose numbers cannot be
+    counted from the template (or with no English in the store) gets none and is gated as before."""
+    todo = [
+        ln for ln in lines
+        if lua_writer.shipped(ln) and str(ln.get("ja") or "")
+        and (_FILLED.search(str(ln["ja"])) or ln.get("status") in _GATED)
+        and not align.has_branches(str(ln.get("ja") or ""))
+    ]
+    if not todo:
+        return {}
+    if en_by is None:
+        en_by = {(ln["id"], ln["field"]): ln["en"] for ln in english_store.load(type_)}
+    spells = en_by if type_ == "spell" else {
+        (ln["id"], ln["field"]): ln["en"] for ln in english_store.load("spell")
+    }
+    out: dict[tuple[int, str], int] = {}
+    for ln in todo:
+        key = (ln["id"], ln["field"])
+        raw = en_by.get(key)
+        if raw is None:
+            continue
+        if "$@" in raw:
+            x = align.expand_inclusions(raw, spells)
+            if x.text is None:
+                continue
+            raw = x.text
+        en = model_english(raw, player_tokens=False)
+        n = align.value_slots(en)
+        if n is None:
+            continue
+        out[key] = n if ln["status"] != "stale" or _still_fits(en, ln["ja"]) else NEVER_FITS
+    return out
+
+
+def _still_fits(en: str, ja: str) -> bool:
+    """Whether a Japanese numbered against earlier English still points at the right values of `en`: every
+    code slot is carried by its own placeholder and no placeholder points past the last value."""
+    n, d = align.value_slots(en) or 0, align.duration_slots(en) or 0
+    if max(align.fill_indices(ja), default=0) > n or max(align.duration_indices(ja), default=0) > d:
+        return False
+    return align.slot_problems(en, ja) == []
 
 
 def _branch_english(
@@ -286,7 +364,44 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     if displays:
         _check_displays(displays)
         out["Data/Displays.lua"] = lua_writer.displays_text(displays)
+    shapes = _plan_spell_shapes(store, english_store)
+    if shapes:
+        out["Data/SpellShapes.lua"] = lua_writer.spell_shapes_text(shapes)
+    includes = _plan_spell_includes(store, english_store)
+    if includes:
+        out["Data/SpellIncludes.lua"] = lua_writer.spell_includes_text(includes)
     out.update(_plan_names(store.root))
+    return out
+
+
+def _plan_spell_shapes(store: Store, english_store: Store) -> dict[str, int]:
+    """The spell an item's tooltip line prints, by the line's shape (core/spell_shapes.py, ADR-107). The
+    spells' Japanese is compared as it ships (manual breaks joined)."""
+    spell_english = english_store.load("spell")
+    en_by = {(ln["id"], ln["field"]): ln["en"] for ln in spell_english}
+    lines = tooltip_text.joined(store.load("spell"), en_by)
+    english, shipped = spell_shapes.spell_inputs(lines, spell_english)
+    items = [ln["en"] for ln in english_store.load("item") if ln["field"] == "description"]
+    return spell_shapes.table(english, shipped, items)
+
+
+def _plan_spell_includes(store: Store, english_store: Store) -> dict[int, list[int]]:
+    """Each spell whose shipped Japanese description is numbered to English that splices in other
+    spells' description or aura text (`$@spelldesc<id>`, `$@spellaura<id>`, ADR-043), with those spells'
+    ids. The client prints a spliced-in spell's text only once that spell's data is loaded, so the addon
+    asks for them."""
+    en_by = {(ln["id"], ln["field"]): ln["en"] for ln in english_store.load("spell")}
+    out: dict[int, list[int]] = {}
+    for ln in store.load("spell"):
+        if ln["field"] != "description" or not lua_writer.shipped(ln):
+            continue
+        en = en_by.get((ln["id"], "description"), "")
+        if "$@" not in en:
+            continue
+        spliced = sorted({sid for sid, field in align.included_spells(en, en_by)
+                          if field in ("description", "aura")})
+        if spliced:
+            out[int(ln["id"])] = spliced
     return out
 
 
@@ -321,12 +436,23 @@ def _check_displays(rows: list[dict]) -> None:
 NAMES_DIR = "Data/Names"
 
 
+def load_kept_as_written(root: Path) -> frozenset[str]:
+    """The words the screen keeps as the client writes them (`pipeline/names_kept_as_written.txt`, beside the
+    data root); none when the file is missing."""
+    path = root.parent / "pipeline" / "names_kept_as_written.txt"
+    if not path.is_file():
+        return frozenset()
+    lines = (ln.strip() for ln in path.read_text(encoding="utf-8").splitlines())
+    return frozenset(ln for ln in lines if ln and not ln.startswith("#"))
+
+
 def _plan_names(root: Path) -> dict[str, str]:
-    """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. They are left out of
-    the TOC: nothing loads them until the names setting does (ADR-078)."""
+    """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. The TOC lists them
+    last. A word the screen keeps as written is left out: the addon then has no Japanese for it."""
+    keep = load_kept_as_written(root)
     by_shard: dict[str, list[dict[str, Any]]] = {}
     for ln in load_name_lines(root):
-        if ln["status"] == "trusted":
+        if ln["status"] == "trusted" and not names_core.kept_as_written(ln["en"], keep):
             by_shard.setdefault(ln["id"][:2], []).append(ln)
     return {
         f"{NAMES_DIR}/Names_{nn}.lua": lua_writer.names_text(nn, ls) for nn, ls in sorted(by_shard.items())
@@ -378,8 +504,14 @@ def _plan_id_types(
         if report is not None and refused:
             report.setdefault("branch_refused", {})[type_] = refused
         # a refused branch line ships nothing: the addon shows the English with the missing marker
+        values = value_counts(type_, lines, english_store, en_by) if type_ in ("item", "spell") else None
+        if report is not None and values:
+            outdated = sorted(k for k, n in values.items() if n == NEVER_FITS)
+            if outdated:
+                report.setdefault("values_outdated", {})[type_] = outdated
         rows = lua_writer.rows(
-            type_, [ln for ln in lines if (ln["id"], ln["field"]) not in refused], female, masked, branches
+            type_, [ln for ln in lines if (ln["id"], ln["field"]) not in refused], female, masked, branches,
+            values,
         )
         counts[type_] = len(rows)
         _note_versions(english, lines)
@@ -532,13 +664,14 @@ def _plan_readings(
     counts["reading"] = 0
     current: dict[str, list[dict[str, Any]]] = {}
     for type_ in readings.TYPES:
-        japanese = readings.shipped_japanese(store.load(type_))
+        english_lines = (english_store or Store(store.root, english=True)).load(type_)
+        japanese = readings.japanese_of(type_, store.load(type_), english_lines)
         result = readings.check(type_, reading_store_of(store).load(type_), japanese)
         if result["problems"]:
             first = "; ".join(result["problems"][:5])
             raise ValueError(f"invalid data/reading/ records (first shown): {first}")
         current[type_] = readings.addon_keyed(type_, result["current"], store.load(type_))
-        if english_store is not None:
+        if english_store is not None and type_ not in readings.TOOLTIP_TYPES:
             # before the alias copies below, so a copy carries its line's row: an alias has none of its own
             current[type_] = _with_english(type_, current[type_], english_store.load(type_))
         aliases = (alias_of or {}).get(type_, {})
@@ -699,8 +832,9 @@ def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
 
 
 def toc_files(planned: dict[str, str]) -> list[str]:
-    """Load order inside the generated block: Meta, Vectors, the error recordings, the displays, then shards
-    by type then range."""
+    """Load order inside the generated block: Meta, Vectors, the error recordings, the displays, the spell
+    shapes, then shards by type then range, then the name tables."""
+    names = sorted(p for p in planned if p.startswith(f"{NAMES_DIR}/"))
     shards = [p for p in planned if p not in FIXED and not p.startswith(f"{NAMES_DIR}/")]
     order = {t: i for i, t in enumerate(schema.TOC_ORDER)}
 
@@ -708,7 +842,7 @@ def toc_files(planned: dict[str, str]) -> list[str]:
         return next(t for t, pre in schema.FILE_PREFIX.items() if rel.startswith(f"Data/{pre}/"))
 
     shards.sort(key=lambda p: (order[type_of(p)], p))
-    return [*(p for p in FIXED if p in planned), *shards]
+    return [*(p for p in FIXED if p in planned), *shards, *names]
 
 
 def toc_with_block(toc_text: str, files: list[str]) -> str:
@@ -815,6 +949,10 @@ def run(argv: Sequence[str]) -> int:
     if refused:  # branch lines shipped as English, and why
         print(f"generate: {len(refused)} branch lines ship English: " + "; ".join(refused[:20])
               + (f" … {len(refused) - 20} more" if len(refused) > 20 else ""))
+    outdated = [f"{t} {i}/{f}" for t, keys in report.get("values_outdated", {}).items() for i, f in keys]
+    if outdated:  # stale lines whose placeholders no longer fit their English
+        print(f"generate: {len(outdated)} stale lines numbered for other English ship English: "
+              + "; ".join(outdated[:20]) + (f" … {len(outdated) - 20} more" if len(outdated) > 20 else ""))
     for rel in result["deleted"]:
         print(f"  deleted {rel}", file=sys.stderr)
     return 0

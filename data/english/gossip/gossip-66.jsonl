@@ -35,6 +35,7 @@
 {"id": "66a8d9079b9836ed", "field": "text", "en": "The Primal Gods serve Hakkar. Turn back now, you stand no chance.", "hash": "66a8d9079b9836ed", "src": "vmangos@13b49dc"}
 {"id": "66ac24e4e0701c71", "field": "text", "en": "You may leave me here -- I wish to be alone in my final moments.", "hash": "66ac24e4e0701c71", "src": "vmangos@13b49dc"}
 {"id": "66b1234742fd8acb", "field": "text", "en": "And now, even those nations that you would have called allies have recoiled and joined forces with us... Yes, old one, do not look so surprised.", "hash": "66b1234742fd8acb", "src": "vmangos@13b49dc"}
+{"id": "66b354b68401956e", "field": "text", "en": "<As you walk up this ram, it shakes a thin coat of snow off of its woolly neck. It gazes steadily at you for a long moment with a challenging snort. Its long horns have nicks and chips from the times it has fought other rams and has come out victorious.$B$BIt stomps its hoof twice before giving its great head one more shake. It then levels its gaze to regard you once again.$B$BThis fierce ram seems to sense your determination and approves. It will accept you as its rider.>", "hash": "66b354b68401956e", "src": "collector@1.60.1.70888", "npcs": [267475]}
 {"id": "66b5785f8ba0b825", "field": "text", "en": "Aye, you look the type to be a leader.  Here to organize a guild to fight for the Alliance?", "hash": "66b5785f8ba0b825", "src": "vmangos@13b49dc"}
 {"id": "66bd6d22345c5332", "field": "text", "en": "Let the blood spilled here today be a lesson to all who dare encroach upon the territory of the Blackrock Clan!", "hash": "66bd6d22345c5332", "src": "vmangos@13b49dc"}
 {"id": "66bd704a97a2782e", "field": "text", "en": "There must be one around here somewhere...", "hash": "66bd704a97a2782e", "src": "vmangos@13b49dc"}
@@ -50,4 +51,5 @@
 {"id": "66eddf21c2efbd82", "field": "text", "en": "When is pappa coming back from the fights in Warsong? It has been so long... ", "hash": "66eddf21c2efbd82", "src": "vmangos@13b49dc"}
 {"id": "66ee47154d89a88a", "field": "text", "en": "May I have it, please.", "hash": "66ee47154d89a88a", "src": "vmangos@13b49dc"}
 {"id": "66ef8197471d4e0e", "field": "text", "en": "We made it!  Thanks, $n.  I couldn't have gotten here without you.", "hash": "66ef8197471d4e0e", "src": "vmangos@13b49dc"}
+{"id": "66f14015e7883910", "field": "text", "en": "I miss my dog so much!", "hash": "66f14015e7883910", "src": "collector@1.60.1.70938"}
 {"id": "66fc4134a5a6ad27", "field": "text", "en": "Attacked! Help get this $n off of me!", "hash": "66fc4134a5a6ad27", "src": "vmangos@13b49dc"}

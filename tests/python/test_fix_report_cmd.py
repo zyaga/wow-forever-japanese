@@ -341,6 +341,8 @@ def test_cli_registers_report(root):
 
 def test_which_lines_take_words():
     assert cmd.needs_words("quest", "星を見よ") and cmd.needs_words("ui", "報酬")
-    assert not cmd.needs_words("item", "布の切れ端")  # no readings for tooltips
+    # tooltip text takes readings too: its words show on a frozen tooltip
+    assert cmd.needs_words("item", "布の切れ端") and cmd.needs_words("spell", "敵を攻撃する")
+    assert not cmd.needs_words("objective", "狼を倒す") and not cmd.needs_words("area", "森の奥")
     assert not cmd.needs_words("gossip", "|cffffd100星|rを見よ")  # an escape: the word box refuses it
     assert not cmd.needs_words("book", "<html><body><p>手紙</p></body></html>")

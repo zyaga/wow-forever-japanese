@@ -282,6 +282,7 @@ WFJ.Data.add("gloss", {
   [33279] = "スタン\tスタン\tstunned",
   [33280] = "スタンする\tスタンする\tare stunned",
   [33281] = "スタンする\tスタンする\tis stunned",
+  [33282] = "スタンス\tスタンス\tstance",
   [33283] = "スタンプ\tスタンプ\tsticker",
   [33284] = "スタン中\tスタンちゅう\twhile stunned",
   [33285] = "スター\tスター\tstar",

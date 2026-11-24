@@ -3,9 +3,9 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
   "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
-  "Core/Collector.lua", "Core/UIStringKeys.lua",
+  "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/Data.lua", "Core/Names.lua",
   "Core/UIStrings.lua", "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
-  "UI/QuestFrame.lua" }
+  "UI/NameLabels.lua", "UI/QuestFrame.lua" }
 
 -- The six widgets a quest surface may write. Everything else the stub creates is a decoy.
 local ALLOWED = {
@@ -62,7 +62,10 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
         return DATA[kind] and DATA[kind][id]
       end,
       marker = function(n) return S.get("marker." .. n) end,
+      kindOff = function(kind) return kind == "name" and not WFJ.State.names end,
+      name = WFJ.Names.item,
     }))
+    WFJ.State.names = false -- the shipped default; the names case turns it on
     assert.is_true(QF.init())
     setQuest(2)
   end)
@@ -287,6 +290,26 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     assert.are.equal(before[QuestInfoTitleHeader][1], QuestInfoTitleHeader.calls.SetText)
   end)
 
+  it("with names on the quest giver's name on the title shows its Japanese; closing gives it back", function()
+    _G.UnitIsPlayer = function(unit) return unit ~= "questnpc" end
+    finally(function() _G.UnitIsPlayer = nil; WFJ.State.setNames(false) end)
+    WFJ.Data.add("name", { [WFJ.Names.key("Senani Thunderheart")] = "セナニ・サンダーハート\tせなに・さんだーはーと" })
+    WFJ.State.setNames(true)
+    local title = _G.QuestFrame.TitleContainer.TitleText
+    _G.QuestFrame:SetTitle("Senani Thunderheart")
+    assert.are.equal("セナニ・サンダーハート", title:GetText())
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("Senani Thunderheart", title:GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal("セナニ・サンダーハート", title:GetText())
+    _G.QuestFrame:Hide()
+    assert.are.equal("Senani Thunderheart", title:GetText())
+    -- a quest another player shares: the title is that player's name
+    _G.UnitIsPlayer = function() return true end
+    _G.QuestFrame:SetTitle("Senani Thunderheart")
+    assert.are.equal("Senani Thunderheart", title:GetText())
+  end)
+
   it("the banner sits in the band of the layout the client loaded (Forever: the modern QuestFrame)", function()
     -- the vanilla QuestFrame: the band between the NPC name and the parchment, verified in game
     assert.are.same({ "TOP", QuestFrame, "TOP", 0, -52 }, QF.bannerFrame.point)
@@ -479,7 +502,8 @@ describe("UI/QuestFrame: player tokens in the quest window", function()
   local FILES_P = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
     "Core/Placeholders.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
     "Core/Collector.lua", "UI/Font.lua", "UI/Frames.lua",
-    "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
+    "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "Core/Data.lua", "Core/Names.lua",
+    "UI/NameLabels.lua", "UI/QuestFrame.lua" }
   local TOKENS = {
     ["quest.title"] = { [7] = { ja = "{race}の{class}へ", status = "." } },
     ["quest.description"] = { [7] = { ja = "御機嫌よう、{name}。若き{class}よ、{race}の力を見せてくれ。", status = "." } },
@@ -534,7 +558,8 @@ describe("UI/QuestFrame: the greeting panel's NPC text is gossip", function()
   local WFJ, SS, QF, data, db
   local FILES_G = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
     "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Collector.lua",
-    "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
+    "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "Core/Data.lua",
+    "Core/Names.lua", "UI/NameLabels.lua", "UI/QuestFrame.lua" }
   local PLAYER = { name = "Reyn", class = "Hunter", race = "Night Elf" }
   local GREETING = "Hail, Reyn. I have work for a hunter like you."
 

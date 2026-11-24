@@ -71,6 +71,23 @@ C.suite(getfenv(1), {
       frame:Hide()
       assert.are.equal("Enter New Guild Name", frame.RenameFlow.NameBox.Instructions:GetText())
     end },
+    { "with names on the NPC's name on the title shows its Japanese; closing gives it back", function(frame, WFJ)
+      _G.UnitIsPlayer = function() return false end
+      finally(function() _G.UnitIsPlayer = nil; WFJ.State.setNames(false) end)
+      WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+      WFJ.State.setNames(true)
+      local title = frame.TitleContainer.TitleText
+      frame:Show()
+      frame:SetTitle("Thrall")
+      assert.are.equal("スロール", title:GetText())
+      C.alt(WFJ, true)
+      assert.are.equal("Thrall", title:GetText())
+      C.alt(WFJ, false)
+      frame:Hide()
+      assert.are.equal("Thrall", title:GetText())
+      frame:SetTitle("Goodbye") -- an NPC named like a dictionary word, with no Japanese
+      assert.are.equal("Goodbye", title:GetText())
+    end },
     { "tooltips: the guild icon and the disabled context button", function(frame)
       C.tooltip(frame.GuildIcon, { en("GUILD_RENAME_COSTS_TOOLTIP") })
       assert.are.equal("費用はギルド銀行から差し引かれます", _G.GameTooltipTextLeft1:GetText())

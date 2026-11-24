@@ -228,12 +228,28 @@ def _why(line: dict[str, Any] | None) -> str:
     return f"{line['status']}: {reasons[0]}" if reasons else line["status"]
 
 
+GOSSIP_LEFT_ENGLISH = "left English with its reason in `pipeline/gossip_left_english.txt`"
+
+
+def gossip_left_english(repo: Path) -> dict[str, str]:
+    """{NPC line key: why it ships no Japanese} from `pipeline/gossip_left_english.txt` (`<key>  # reason` per
+    line); empty when the file is absent."""
+    path = repo / "pipeline" / "gossip_left_english.txt"
+    out: dict[str, str] = {}
+    for raw in path.read_text(encoding="utf-8").splitlines() if path.is_file() else ():
+        key, _, reason = raw.partition("#")
+        if key.strip():
+            out[key.strip()] = reason.strip()
+    return out
+
+
 def measure(root: Path) -> dict[str, Any]:
     """→ {"types": {type: {...}}, "readings": {type: {...}}} over the store at `root` (the repo's data/)."""
     repo = root.parent
     store, english = Store(root), Store(root, english=True)
     types: dict[str, Any] = {}
     ui_keys, ui_excluded = _ui_lists(repo)
+    gossip_left = gossip_left_english(repo)
     # tooltip lines a batch can never take (a code drafting cannot place): their reason, stated
     blocked: dict[tuple[str, Any, str], str] = {}
     loaded: dict[str, list[dict[str, Any]]] = {}  # each English type read once, for the checks and the count
@@ -261,6 +277,7 @@ def measure(root: Path) -> dict[str, Any]:
             elif why := (
                 nothing_to_translate(type_, ln["en"], titles.get(ln["id"]), ln["field"])
                 or (type_ == "ui" and ui_left_out(str(ln["id"]), ui_keys, ui_excluded))
+                or (type_ == "gossip" and ln["id"] in gossip_left and GOSSIP_LEFT_ENGLISH)
             ):
                 nothing[why] += 1
             else:
@@ -285,7 +302,9 @@ def measure(root: Path) -> dict[str, Any]:
     words: dict[str, Any] = {}
     rstore = Store(root / "reading")
     for type_ in readings.TYPES:
-        japanese = readings.shipped_japanese(store.load(type_))
+        if type_ not in loaded:
+            loaded[type_] = english.load(type_)
+        japanese = readings.japanese_of(type_, store.load(type_), loaded[type_])
         result = readings.check(type_, rstore.load(type_), japanese)
         covered = {(r["id"], r["field"]) for r in result["current"]}
         can = {k for k, ja in japanese.items()
@@ -493,8 +512,8 @@ def render(m: dict[str, Any], stamp: str) -> str:
         done = _pct(r["with_words"], r["lines"])
         out.append(f"| {type_} | {r['lines']:,} | {r['with_words']:,} | {done} | "
                    f"{r['stale']:,} | {r['words']:,} | {_pct(r['with_meaning'], r['words'])} |")
-    out += ["", "Item, spell, objective and area text take no word cards; HTML book pages",
-            "and lines holding a `|` escape are not counted."]
+    out += ["", "Item and spell text shows its word cards on a frozen tooltip. Objective and area text",
+            "take none; HTML book pages and lines holding a `|` escape are not counted."]
     out += _render_english_cards(m.get("english_cards") or {})
     out += _render_voice(m.get("voice") or {})
     out.append("")

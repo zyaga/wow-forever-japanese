@@ -26,6 +26,7 @@
 {"id": "e08cd4a7b5b7f443", "field": "text", "en": "Thanks for saving me!", "hash": "e08cd4a7b5b7f443", "src": "vmangos@13b49dc"}
 {"id": "e08fa9da416384d7", "field": "text", "en": "I don't think it's strong enough.", "hash": "e08fa9da416384d7", "src": "vmangos@13b49dc"}
 {"id": "e08fd1f1b38c5a29", "field": "text", "en": "Ah, you must go to the great heights of Thunder Bluff to visit one of those.  Follow the path north out of Bloodhoof Village.  At the base of the bluffs is an elevator that will take you to the top.  When you get there ask for further directions from one of the Bluffwatchers.", "hash": "e08fd1f1b38c5a29", "src": "vmangos@13b49dc"}
+{"id": "e092ad4958f26611", "field": "text", "en": "Purchase a Dual Talent Specialization.", "hash": "e092ad4958f26611", "src": "collector@1.60.1.70959", "npcs": [5497, 5515]}
 {"id": "e0969b6edf3f5d9e", "field": "text", "en": "Surrender an' we'll let ye live, heathens! Jus' put down yer arms an' march!", "hash": "e0969b6edf3f5d9e", "src": "vmangos@13b49dc"}
 {"id": "e09f39de91aa7bb1", "field": "text", "en": "I've got plenty of great recipes for you to take a look at, and at discounted prices, too!", "hash": "e09f39de91aa7bb1", "src": "vmangos@13b49dc"}
 {"id": "e0a141a60a08d799", "field": "text", "en": "So you have come to Niby to learn the secrets of calling down an infernal servant from the Nether.$B$BSilence! Niby knows all!$B$BNiby is not so quick to part with such knowledge. First, you must assist Niby with a very important task.", "hash": "e0a141a60a08d799", "src": "vmangos@13b49dc"}

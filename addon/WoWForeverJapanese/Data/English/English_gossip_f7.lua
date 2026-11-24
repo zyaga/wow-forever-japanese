@@ -4,6 +4,7 @@ WFJ.Data.add("english", {
   ["gossip:f704059f1bf06471"] = { text = "challenge=2 dread=4 eternity=3 me=1 prepare=5" },
   ["gossip:f707cff6c892b548"] = { text = "deal=1" },
   ["gossip:f70ac63855f70656"] = { text = "get=5 good=2 however=3 mmmm=1 time=6 work=4" },
+  ["gossip:f711449a430c81dc"] = { text = "feels=4 now=1 soon=3 summoned=2" },
   ["gossip:f712ebe7173a80e5"] = { text = "it=1 know=4 what=3" },
   ["gossip:f716a8d7ba5f49b1"] = { text = "bear=10 breath=7 flutter=1 forest=8 hawk=2 hunter=13 life=14 pace=11 ram=6 snow=4 such=12 wings=3" },
   ["gossip:f717fe3f21756d77"] = { text = "aim=3 bottles=2 then=1" },

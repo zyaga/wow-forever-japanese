@@ -64,15 +64,11 @@ def test_every_menu_and_helptip_key_is_listed(root):
     assert not (menus | tips) & excluded
 
 
-def test_socialui_reasons_cite_the_in_game_check(root):
-    # SocialUIFrame is off on Forever (C_SocialUI.IsSystemEnabled() → false, checked in game). The card view's
-    # reasons take the form "…IsSystemEnabled() (<source>), false on Forever"
-    def cites(r):
-        return "IsSystemEnabled() = false" in r or ("IsSystemEnabled()" in r and "false on Forever (in game" in r)
-
-    missing = [k for k, r in _exclusions(root).items() if "SocialUIFrame" in r and not cites(r)]
-    assert not missing
-    assert any("SocialUIFrame" in r for r in _exclusions(root).values())
+def test_no_reason_calls_the_friends_window_off(root):
+    # SocialUIFrame is the friends window on Forever (the in-game window test opens and reads it), so none of its
+    # lines is excluded as never shown: UI/SocialUI.lua translates them
+    off = [k for k, r in _exclusions(root).items() if "SocialUIFrame" in r]
+    assert not off
 
 
 def test_wordless_texture_keys_say_no_words(root):

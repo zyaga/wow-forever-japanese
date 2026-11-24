@@ -20,7 +20,10 @@
 --   Skills", "Professions", "Secondary Skills": the SkillCategory:* family, ADR-042); only those are shown.
 --   Followed with ScrollUtil.AddInitializedFrameCallback (after the element initializer), keyed by the row widget.
 --   A skill's row and a sub-header (SkillsEntryTemplate: the name is `.Content.Name`, skillsframe.lua:348, 456–458)
---   hold a skill name: that FontString is forbidden when the row is first seen.
+--   hold a skill name: that FontString is forbidden when the row is first seen, so it is never a dictionary word
+--   ("Swords"). While names are on it shows the name's Japanese (UI/NameLabels), keyed by the row widget. Nothing
+--   reads or measures it: the client only writes it and anchors it (skillsframe.lua:348, 456–458), and the row is
+--   a plain button whose click selects the skill (skillsframe.xml:60, skillsframe.lua:355–364).
 -- - The window title "Skills" is NOT this frame's: SkillsFrame is a child of CharacterFrame (skillsframe.xml:121) and
 --   CharacterFrameMixin:UpdateTitle writes CharacterFrame:SetTitle(characterFrameDisplayInfo[activeSubframe].title);
 --   SKILLS, REPUTATION, CURRENCY, PVP, STATISTICS, or the player's name (characterframe.lua:242–246;
@@ -29,8 +32,11 @@
 -- - The detail pane's description: SetDescription(description) writes the Description ScrollingFont
 --   (skillsframe.lua:248; characterframe.lua:860–872) with the SkillLine table's text: the SkillLineDescription:*
 --   family only.
--- Untouched: the pane title (the skill name, skillsframe.lua:245) and subtitle, the list rows (skill names, :301,
--- :348). Release on SkillsFrame's OnHide.
+-- - The pane title: Refresh writes the skill's name through self:SetPaneTitle(skillInfo.name, nil)
+--   (skillsframe.lua:245; CharacterFrameSidePaneMixin:SetPaneTitle, characterframe.lua:845–849), post-hooked on the
+--   instance. Never a dictionary word (NEVER_TOUCH); while names are on it shows the name's Japanese
+--   (UI/NameLabels). Nothing reads or measures Title or Subtitle; a skill's Subtitle is always empty.
+-- Release on SkillsFrame's OnHide.
 local _, WFJ = ...
 local Skills = {}
 WFJ.Skills = Skills
@@ -65,6 +71,13 @@ function Skills.onSetEmpty()
   local n = WFJ.Labels.show(SURFACE, "empty", get("emptyText"), nil, EMPTY_ONLY)
   WFJ.Render.updateBanner(SURFACE)
   return n
+end
+
+-- The detail pane's title and subtitle, after SetPaneTitle: the skill's name. → the names shown
+function Skills.onPaneTitle()
+  local detail = get("detail")
+  if type(detail) ~= "table" then return 0 end
+  return WFJ.NameLabels.show(SURFACE, "title", detail.Title) + WFJ.NameLabels.show(SURFACE, "subtitle", detail.Subtitle)
 end
 
 -- The detail pane's description, after SetDescription. → 1 | 0
@@ -123,6 +136,7 @@ function Skills.onLayoutRows()
 end
 
 local headerKey = WFJ.Labels.keyer("header.") -- a pooled header row's record key
+local entryKey = WFJ.Labels.keyer("entry.") -- a pooled skill row's record key
 
 -- ScrollUtil callback for a list row: (owner, frame, elementData) on initialization, (frame, elementData) on
 -- the existing-frames pass. Returns nothing (ForEachFrame stops at the first truthy return).
@@ -131,8 +145,9 @@ function Skills.onListRow(a, b, c)
   if a == Skills then row, data = b, c end
   if type(row) ~= "table" then return end
   local content = row.Content
-  if type(content) == "table" then -- a skill or a sub-header: its name is never ours
+  if type(content) == "table" then -- a skill or a sub-header: a name, never a dictionary word
     WFJ.Labels.forbid(content.Name)
+    WFJ.NameLabels.show(SURFACE, entryKey(row), content.Name)
     return
   end
   if type(data) == "table" and data.isHeader == false then return end
@@ -156,12 +171,14 @@ function Skills.init()
   if type(detail) == "table" then
     if type(detail.SetEmpty) == "function" then hooksecurefunc(detail, "SetEmpty", Skills.onSetEmpty) end
     if type(detail.LayoutRows) == "function" then hooksecurefunc(detail, "LayoutRows", Skills.onLayoutRows) end
+    if type(detail.SetPaneTitle) == "function" then hooksecurefunc(detail, "SetPaneTitle", Skills.onPaneTitle) end
     if type(detail.SetDescription) == "function" then
       hooksecurefunc(detail, "SetDescription", Skills.onDescription)
     end
     Skills.onSetEmpty()
     Skills.onLayoutRows()
     Skills.onDescription()
+    Skills.onPaneTitle()
   end
   local util, box = get("scrollUtil"), get("listBox")
   if type(util) == "table" and type(util.AddInitializedFrameCallback) == "function" and type(box) == "table" then

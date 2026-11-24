@@ -70,6 +70,28 @@ describe("UI/QuestMap: the quest list's category headers", function()
     _G.EventRegistry = nil
   end)
 
+  it("with names on a zone header shows the place's Japanese from the name list; a sort word stays the dictionary's",
+  function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Elwynn Forest")] = "エルウィン・フォレスト\tえるうぃん・ふぉれすと" })
+    WFJ.State.setNames(true)
+    finally(function() WFJ.State.setNames(false) end)
+    local zone, seasonal, other, plain = header("Elwynn Forest"), header("Seasonal"), header("Duskwood"),
+      header("Elwynn Forest", true)
+    Q.updateList()
+    assert.are.equal("エルウィン・フォレスト", text(zone)) -- the name list's, never another family's row
+    assert.are.equal("エルウィン・フォレスト", text(plain))
+    assert.are.equal("季節", text(seasonal))
+    assert.are.equal("Duskwood", text(other)) -- no line in the name list: the client's text
+    alt(true)
+    assert.are.equal("Elwynn Forest", text(zone))
+    assert.are.equal("Seasonal", text(seasonal))
+    alt(false)
+    assert.are.equal("エルウィン・フォレスト", text(zone))
+    Q.updateList() -- the list redrawn with the Japanese still on it: nothing is lost
+    assert.are.equal("エルウィン・フォレスト", text(zone))
+    assert.are.equal("季節", text(seasonal))
+  end)
+
   it("in combat the list keeps the client's English; combat ending with the map open brings the Japanese", function()
     local seasonal, combat = header("Seasonal"), true
     _G.InCombatLockdown = function() return combat end

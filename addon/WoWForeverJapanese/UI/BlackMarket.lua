@@ -18,10 +18,13 @@
 --     walked from the ScrollBox's initialized-frame callback after the element initializer (lua:36–39): YourBid
 --     (BLACK_MARKET_YOUR_BID, xml:89), TimeLeft.Text AUCTION_TIME_LEFT<n> (lua:113), and the TimeLeft button's tooltip
 --     AUCTION_TIME_LEFT<n>_DETAIL (lua:114, xml:192–199). Rows are keyed by widget, never by position.
+-- Item names: HotDeal.Name (UpdateHotItem, lua:173) and a row's Name (Init, lua:74) hold the bare name, its quality
+--   colour set with SetTextColor (:85–91, :184–190). Never dictionary words; while names are on each shows the item's
+--   Japanese (UI/NameLabels). Plain labels: fixed-size FontStrings (xml:65–69, 390–394) on a plain Button and Frame,
+--   never read or measured by the client; a bid uses the market id and the money input (lua:5–16).
 -- Never touched: the window's title, an unnamed FontString BLACK_MARKET_TITLE "Black Market / Auction House"
 -- (blizzard_blackmarketui.xml:348): a place's name, and a bare Auction House label ships as the English
--- (translation_glossary.tsv); the item names (HotDeal.Name, a row's Name), sellers
--- (HotDeal.Seller, a row's Seller; the row's widgets are never read), item types and levels (client data), money,
+-- (translation_glossary.tsv); sellers (HotDeal.Seller, a row's Seller), item types and levels (client data), money,
 -- and the bid EditBoxes.
 -- The bid confirmation is a StaticPopup (BID_BLACKMARKET, lua:5–16): ADR-015 §5, not this surface.
 local _, WFJ = ...
@@ -73,6 +76,7 @@ local function declare()
   Compat.declare(SURFACE, "frame", { FRAME })
   Compat.declare(SURFACE, "hotTime", { HOT .. ".TimeLeft.Text" })
   Compat.declare(SURFACE, "hotTimeOwner", { HOT .. ".TimeLeft" })
+  Compat.declare(SURFACE, "hotName", { HOT .. ".Name" })
   Compat.declare(SURFACE, "scrollBox", { FRAME .. ".ScrollBox" })
   Compat.declare(SURFACE, "scrollUtil", { "ScrollUtil" })
   Compat.declare(SURFACE, "updateHotItem", { "BlackMarketFrame_UpdateHotItem" })
@@ -95,6 +99,7 @@ end
 
 -- hooksecurefunc target (BlackMarketFrame_UpdateHotItem). → 1 | 0
 function BlackMarket.onHotItem()
+  WFJ.NameLabels.show(SURFACE, "hotName", get("hotName"), "items")
   local n = WFJ.Labels.show(SURFACE, "hotTime", get("hotTime"), nil, HOT_TIME)
   WFJ.Render.updateBanner(SURFACE)
   return n
@@ -111,6 +116,7 @@ function BlackMarket.onRow(a, b)
   if type(row) ~= "table" then return end
   local key = rowKey(row)
   if type(row.YourBid) == "table" then WFJ.Labels.show(SURFACE, key .. ".yourBid", row.YourBid, nil, YOUR_BID) end
+  if type(row.Name) == "table" then WFJ.NameLabels.show(SURFACE, key .. ".name", row.Name, "items") end
   local timeLeft = row.TimeLeft
   if type(timeLeft) == "table" then
     if type(timeLeft.Text) == "table" then

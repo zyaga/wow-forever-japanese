@@ -4,7 +4,6 @@ WFJ.Data.add("gloss", {
   [36001] = "一員\tいちいん\ta part (member)",
   [36002] = "一員\tいちいん\ta place among (member)",
   [36003] = "一員\tいちいん\tadditions (member)",
-  [36004] = "一員\tいちいん\tamong (a member)",
   [36006] = "一員\tいちいん\tmember",
   [36007] = "一員\tいちいん\tmember (joined the ranks)",
   [36008] = "一員\tいちいん\tmember (part)",

@@ -9,6 +9,7 @@
 {"id": "7e2227aa1d9fe634", "field": "text", "en": "I... cannot begin to imagine, $n.  All I know is that I am not going to allow it to happen.  It will be destroyed - if not for our continued safety from demonic taint, then for the memory of Millicent Serene... Milli...$B$BThis, my friend, this is where I hope you will come in.", "hash": "7e2227aa1d9fe634", "src": "vmangos@13b49dc"}
 {"id": "7e338222cd594944", "field": "text", "en": "The dishes that Alegorn whips up are to die for.  He's always busy preparing new delicacies over in the Craftsman's Terrace.  Be sure to try his Cenarion Green recipe if he has any left.  \n\nNow, if you don't mind, I must investigate this rash of missing deer. ", "hash": "7e338222cd594944", "src": "vmangos@13b49dc"}
 {"id": "7e361bec32b4cf40", "field": "text", "en": "I'm sure I can find a use for this mixture...", "hash": "7e361bec32b4cf40", "src": "vmangos@13b49dc"}
+{"id": "7e373228b669b142", "field": "text", "en": "Salutations, friend! I would be happy to offer you a Mechanostrider, but first you should train with my brother Binjy over there.$B$BThey are far more reliable than any beast, but can be difficult to pilot for a first-time rider, but once you know how to pilot one you will not find a better companion!", "hash": "7e373228b669b142", "src": "collector@1.60.1.70938", "npcs": [7955]}
 {"id": "7e37548455e297c1", "field": "text", "en": "I know much, listen and be educated, $r.", "hash": "7e37548455e297c1", "src": "vmangos@13b49dc"}
 {"id": "7e37a815658642ee", "field": "text", "en": "Who controls the Dun Baldar North Bunker?", "hash": "7e37a815658642ee", "src": "vmangos@13b49dc"}
 {"id": "7e38af6f71a16552", "field": "text", "en": "I am a treasure hunter in search of powerful artifacts. Give them to me and you will not be harmed.", "hash": "7e38af6f71a16552", "src": "vmangos@13b49dc"}
@@ -49,4 +50,5 @@
 {"id": "7ee04716631d742f", "field": "text", "en": "Hrm, nothing up here.", "hash": "7ee04716631d742f", "src": "vmangos@13b49dc"}
 {"id": "7ee055f998c7403b", "field": "text", "en": "Who dares to seek me out?!", "hash": "7ee055f998c7403b", "src": "vmangos@13b49dc"}
 {"id": "7ee380ec3545855f", "field": "text", "en": "When mounted on the back of a wind rider, one sees that its reputation for strength and speed is well earned.", "hash": "7ee380ec3545855f", "src": "vmangos@13b49dc"}
+{"id": "7ee5e3dbbdd4b280", "field": "text", "en": "<Reach out your hand and take the note from Trevan.>", "hash": "7ee5e3dbbdd4b280", "src": "collector@1.60.1.70888", "npcs": [248840]}
 {"id": "7eef66a56f487164", "field": "text", "en": "Tell me more about muisek.", "hash": "7eef66a56f487164", "src": "vmangos@13b49dc"}

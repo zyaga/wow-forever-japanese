@@ -10,6 +10,7 @@
 {"id": "5040d1f7f6cd9e81", "field": "text", "en": "You must choose a more experienced teacher, for you have surpassed my abilities. I advise you to speak with Lilyssia Nightbreeze here: she has much knowledge to offer.", "hash": "5040d1f7f6cd9e81", "src": "vmangos@13b49dc"}
 {"id": "5051dec33f2b5ed5", "field": "text", "en": "$n has defended the stables!", "hash": "5051dec33f2b5ed5", "src": "vmangos@13b49dc"}
 {"id": "5053dd7f9042d925", "field": "text", "en": "The corruption of Felwood has trapped my spirit here... I may never rest...", "hash": "5053dd7f9042d925", "src": "vmangos@13b49dc"}
+{"id": "50553c9b395ecea2", "field": "text", "en": "What you need from ol' Tan'jani, mm?", "hash": "50553c9b395ecea2", "src": "collector@1.60.1.71037", "npcs": [263190]}
 {"id": "5056819bb60667a3", "field": "text", "en": "Silverwing is ours!", "hash": "5056819bb60667a3", "src": "vmangos@13b49dc"}
 {"id": "5058a771a8a23fdf", "field": "text", "en": "What are you doing here? Quickly, leave this place now. You are going to ruin everything!", "hash": "5058a771a8a23fdf", "src": "collector@1.60.1.70790", "npcs": [256247]}
 {"id": "50590969e9be16e0", "field": "text", "en": "Now, let's see... If I am correct, then... Hmmm...", "hash": "50590969e9be16e0", "src": "vmangos@13b49dc"}

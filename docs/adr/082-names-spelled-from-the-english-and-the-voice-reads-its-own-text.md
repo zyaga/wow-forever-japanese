@@ -1,6 +1,6 @@
 # ADR-082: Names spelled from the English, and the voice reads its own text
 
-- **Status:** Accepted. Supersedes in part [ADR-078](078-japanese-names-keyed-by-english-and-kana-voice-lines.md): how a name's Japanese is written, and what the voice is made from.
+- **Status:** Accepted. Supersedes in part [ADR-078](078-japanese-names-keyed-by-english-and-kana-voice-lines.md): how a name's Japanese is written, and what the voice is made from. Names can now show on screen in Japanese when the player chooses: [ADR-106](106-names-shown-in-japanese-on-screen.md).
 - **Date:** 2026-11-11
 - **Deciders:** the maintainer
 - **Related:** [Principle 2: names stay in English](../architecture/principles.md#2-names-stay-in-english) · [ADR-074](074-voices-cloned-from-the-games-npc-voice-sets.md) (cloned voices) · [ADR-062](062-voice-cast-per-speaker-in-step-with-the-text.md) (audio in step with the text) · [Data model](../architecture/data-model.md) · [Translation batches](../operations/translation-batches.md) · [Voice runbook](../operations/voice.md) · [Voice over](../systems/voice.md)

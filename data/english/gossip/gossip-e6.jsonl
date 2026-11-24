@@ -17,6 +17,7 @@
 {"id": "e668361fd41c67f2", "field": "text", "en": "I supply the Hold with various relics required for spellcasting as well as other alchemical reagents.", "hash": "e668361fd41c67f2", "src": "vmangos@13b49dc"}
 {"id": "e670c8391602c750", "field": "text", "en": "I am unable to process your chronological reference in comparison to the recording of this data, my apologies.$B$BThe trogg retains some composition of Azeroth's various stone core compounds, but the loss of cognitive power makes this variant unacceptable to the Creators.$B$BThe trogg procreates as per a standard biomass.  By default it consumes stone and anything else it can acquire, including other troggs.  Cannibalism is considered unacceptable by the Creators.", "hash": "e670c8391602c750", "src": "vmangos@13b49dc"}
 {"id": "e674cd8657d241c3", "field": "text", "en": "Very sad to think what has befallen those poor undead souls.  You can find Archmage Shymm reflecting near the Pools of Vision under the Spirit Rise.", "hash": "e674cd8657d241c3", "src": "vmangos@13b49dc"}
+{"id": "e678be669005c7f8", "field": "text", "en": "Wait, what's that sound...?", "hash": "e678be669005c7f8", "src": "collector@1.60.1.70888"}
 {"id": "e679710863d25484", "field": "text", "en": "Thank the Light you're here! Get your sword out, there's centaur on my tail!", "hash": "e679710863d25484", "src": "vmangos@13b49dc"}
 {"id": "e67d746078ee03f0", "field": "text", "en": "Forgive me, father! Please...", "hash": "e67d746078ee03f0", "src": "vmangos@13b49dc"}
 {"id": "e67ed60b58fc8743", "field": "text", "en": "All right, you guys! Time to get up", "hash": "e67ed60b58fc8743", "src": "vmangos@13b49dc"}
@@ -27,6 +28,7 @@
 {"id": "e691be0f2a2c9024", "field": "text", "en": "Wha... where am I?  So... weak..", "hash": "e691be0f2a2c9024", "src": "vmangos@13b49dc"}
 {"id": "e6986385632d05f0", "field": "text", "en": "I've misplaced my Zandalar Haruspex's Bracers and require another pair.", "hash": "e6986385632d05f0", "src": "vmangos@13b49dc"}
 {"id": "e6a38ef9ddca142d", "field": "text", "en": "Talk to me for a free beer at the Pig and Whistle!", "hash": "e6a38ef9ddca142d", "src": "vmangos@13b49dc"}
+{"id": "e6a441a9934bf99b", "field": "text", "en": "<Sully takes a long drink from his mug, but he never takes his eye off of you as he does so.>", "hash": "e6a441a9934bf99b", "src": "collector@1.60.1.70888", "npcs": [260146]}
 {"id": "e6a78832ee90bba6", "field": "text", "en": "You'll find Elder Grimtotem at the Lariss Pavilion in Feralas.", "hash": "e6a78832ee90bba6", "src": "vmangos@13b49dc"}
 {"id": "e6a824dc15398cf3", "field": "text", "en": "Looking for Shenthul of the Shadowswift Brotherhood, huh?  In The Drag across from Droffers and Son Salvage look for a tunnel leading down into the Cleft of Shadow.", "hash": "e6a824dc15398cf3", "src": "vmangos@13b49dc"}
 {"id": "e6ae75f1160c3112", "field": "text", "en": "I have lost my Cloak of the Gathering Storm. Are you able to replace it for me?", "hash": "e6ae75f1160c3112", "src": "vmangos@13b49dc"}

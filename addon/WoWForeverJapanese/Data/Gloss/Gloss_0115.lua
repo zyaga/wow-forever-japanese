@@ -782,7 +782,6 @@ WFJ.Data.add("gloss", {
   [115784] = "行う\tおこなう\twill be tested (conduct)",
   [115785] = "行う\tおこなう\twill prepare (perform)",
   [115786] = "行う\tおこなう\twill take place",
-  [115787] = "行う\tおこなう\twish to perform",
   [115788] = "行う\tおこなう\tworked (performed)",
   [115789] = "行う\tおこなう\twould you perform",
   [115790] = "行う\tおこなう\tyou will have to do (it)",

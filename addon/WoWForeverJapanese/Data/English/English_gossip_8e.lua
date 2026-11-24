@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:8e0d60743656b109"] = { text = "battle=1 briefly=2 hope=7 succeed=3 win=6" },
   ["gossip:8e16f5a2fd90985e"] = { text = "find=4 may=3 takes=1" },
   ["gossip:8e174af782d2c650"] = { text = "bat=1 handler=2" },
+  ["gossip:8e1b1fc518095fc2"] = { text = "any=2 news=3 storm=1" },
   ["gossip:8e2182bacbec37fe"] = { text = "dollie=12 flowers=6 found=13 my=11 no=2 pick=7 play=1 story=3 tell=14 time=9" },
   ["gossip:8e22418f0f45dc47"] = { text = "allies=17 amongst=14 arcane=12 borders=20 city=11 dire=26 disruptions=8 disturbance=15 forces=13 immediate=24 leylines=7 need=27 our=2 plight=3 rumor=4 solutions=25 true=5 unfortunately=1 unveiled=16 we=23" },
   ["gossip:8e24e14fddf22096"] = { text = "controls=5 currently=4 east=2 side=1" },

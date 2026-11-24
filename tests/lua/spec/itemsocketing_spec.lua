@@ -1,6 +1,7 @@
 -- UI/ItemSocketing.lua over an ItemSocketingFrame replayed from
 -- camelot blizzard_itemsocketingui/blizzard_itemsocketingui.xml (:128, :143–151, :406, :419) and .lua (:56–58,
--- :222–338), load-on-demand in both load orders. The socketed item's tooltip (its name) stays English.
+-- :222–338), load-on-demand in both load orders. A socketed item's name with no Japanese stays English (its Japanese:
+-- itemsocketing_names_spec.lua).
 local Stub = require("tests.lua.spec.wow_stub")
 local C = require("tests.lua.spec.stub_commerce")
 

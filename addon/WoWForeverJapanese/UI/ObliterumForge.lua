@@ -4,8 +4,9 @@
 -- when a game object sends that interaction. Set up through WFJ.LoadOnDemand.when.
 -- The window's only fixed word is ObliterumForgeFrame.ObliterateButton OBLITERATE_BUTTON (XML text=,
 -- blizzard_obliterumui.xml:60), written once at load: a static label, never released.
--- Never touched: the title, self:SetTitle(OBLITERUM_FORGE_TITLE) (blizzard_obliterumui.lua:13), the forge's name
--- (names stay in English), and the slotted item's tooltip (an item tooltip, UI/Tooltip's).
+-- The title is the forge's name, self:SetTitle(OBLITERUM_FORGE_TITLE) (blizzard_obliterumui.lua:13): never a
+-- dictionary word; while names are on it shows the name's Japanese after each SetTitle (UI/NameLabels, an object's
+-- name: no unit behind it). The slotted item's tooltip is an item tooltip, UI/Tooltip's.
 local _, WFJ = ...
 local ObliterumForge = {}
 WFJ.ObliterumForge = ObliterumForge
@@ -44,6 +45,7 @@ function ObliterumForge.setup()
   if hooked then return false end
   hooked = true
   if type(frame.HookScript) == "function" then frame:HookScript("OnShow", ObliterumForge.showStatic) end
+  WFJ.NameLabels.title(SURFACE, frame, "title", false) -- the forge's name: now, and after every SetTitle
   return true
 end
 

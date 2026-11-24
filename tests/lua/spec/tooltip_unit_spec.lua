@@ -5,6 +5,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
+FILES[#FILES + 1] = "Core/Placeholders.lua" -- the class and race words a player's tooltip shows
 FILES[#FILES + 1] = "UI/TimeLine.lua"
 FILES[#FILES + 1] = "UI/Tooltip.lua"
 FILES[#FILES + 1] = "UI/TooltipUnit.lua"
@@ -12,6 +13,7 @@ FILES[#FILES + 1] = "UI/TooltipUnit.lua"
 local UI = {
   UNIT_TYPE_PLUS_LEVEL_TEMPLATE = { "Level %d Elite %s", "レベル%d エリート %s" },
   UNIT_TYPE_LEVEL_TEMPLATE = { "Level %d %s", "レベル%d %s" },
+  TOOLTIP_UNIT_LEVEL = { "Level %s", "レベル %s" }, -- what a player's level line matches: the race is in its value
   UNIT_SKINNABLE_LEATHER = { "Skinnable", "皮はぎ可能" },
   CORPSE_TOOLTIP = { "Corpse of %s", "%sの死体" },
   RAID = { "Raid", "レイド" }, -- a dictionary word that is no unit line
@@ -57,9 +59,9 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
     local questFor = WFJ.TooltipUnit.questFor
     WFJ.TooltipUnit.questFor = function(title) return title == "Wolf Pelts" and 5 or nil end
     finally(function() WFJ.Lookup, WFJ.TooltipUnit.questFor = lookup, questFor end)
-    WFJ.QUEST_TITLES_JAPANESE = false
+    WFJ.State.names = false
     assert.is_nil(WFJ.UIStrings.questTitle("Wolf Pelts"))
-    WFJ.QUEST_TITLES_JAPANESE = true
+    WFJ.State.names = true
     assert.are.equal("狼の毛皮", WFJ.UIStrings.questTitle("Wolf Pelts"))
   end)
 
@@ -73,6 +75,166 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal("Level 11 Elite Humanoid", left(2))
     Stub.keys.alt = false; WFJ.Modifier.refresh()
+  end)
+
+  describe("with names on", function()
+    local SECRET = {}
+    -- as `hover`, with the tooltip data the client hands the post-call (the unit's guid)
+    local function hoverUnit(lines, data)
+      tt:SetOwner(_G.UIParent, "ANCHOR_CURSOR")
+      tt:SetText(lines[1])
+      for i = 2, #lines do tt:AddLine(lines[i]) end
+      for _, fn in ipairs(Stub.tooltipPostCalls[2] or {}) do fn(tt, data) end
+      tt:Show()
+    end
+    local CREATURE = { guid = "Creature-0-1-0-0-6-000000" }
+
+    before_each(function()
+      _G.C_PlayerInfo = { GUIDIsPlayer = function(guid) return guid:find("^Player%-") ~= nil end }
+      _G.issecretvalue = function(v) return v == SECRET end
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Kobold Vermin")] = "コボルド・バーミン\tこぼるど・ばーみん",
+        [WFJ.Names.key("Innkeeper")] = "インキーパー\tいんきーぱー",
+        [WFJ.Names.key("Stormwind")] = "ストームウィンド\tすとーむうぃんど",
+      })
+      WFJ.State.setNames(true)
+      -- as Main does: a name inside an interface line's value, while names are Japanese
+      WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+      WFJ.UIStrings.word = function(text) return WFJ.State.names and WFJ.Placeholders.wordFor(text) or nil end
+    end)
+    after_each(function()
+      WFJ.UIStrings.name, WFJ.UIStrings.word = nil, nil
+      WFJ.State.setNames(false)
+      _G.C_PlayerInfo, _G.issecretvalue = nil, nil
+      Stub.keys.alt = false
+    end)
+
+    it("a creature's name, its title and its faction show their Japanese; the reveal key gives them back",
+    function()
+      hoverUnit({ "Kobold Vermin", "Innkeeper", "Level 1 Humanoid", "Stormwind", "Some Unknown Line" }, CREATURE)
+      assert.are.equal("コボルド・バーミン", left(1))
+      assert.are.equal("インキーパー", left(2))
+      assert.are.equal("レベル1 Humanoid", left(3))
+      assert.are.equal("ストームウィンド", left(4))
+      assert.are.equal("Some Unknown Line", left(5))
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("Kobold Vermin", left(1))
+      assert.are.equal("Innkeeper", left(2))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("コボルド・バーミン", left(1))
+      tt:Hide()
+      assert.are.equal(0, WFJ.SurfaceState.count("tooltip.unit"))
+    end)
+
+    it("a player's name and guild are never touched, even ones named like a creature or a class", function()
+      hoverUnit({ "Kobold Vermin", "Innkeeper", "Level 1 Human" }, { guid = "Player-1-0000001" })
+      assert.are.equal("Kobold Vermin", left(1))
+      assert.are.equal("Innkeeper", left(2))
+      hoverUnit({ "Someone", "Warrior", "Level 23 Human", "Warrior" }, { guid = "Player-1-0000001" })
+      assert.are.equal("Warrior", left(2)) -- the guild's name, above the level line
+      assert.are.equal("ウォリアー", left(4)) -- the class, below it
+    end)
+
+    it("a creature's type on a level line with no number is no race: it stays as the client wrote it", function()
+      WFJ.Data.add("name", { [WFJ.Names.key("Humanoid")] = "ヒューマノイド\tひゅーまのいど" })
+      hoverUnit({ "Kobold Vermin", "Level ?? Humanoid" }, CREATURE)
+      assert.are.equal("レベル ?? Humanoid", left(2))
+    end)
+
+    it("a player's race, class and faction show their Japanese; the reveal key gives them back", function()
+      WFJ.Data.add("name", { [WFJ.Names.key("Alliance")] = "アライアンス\tあらいあんす" })
+      hoverUnit({ "Aloha Snackbaar", "Level 23 Night Elf (Player)", "Warrior", "Alliance" },
+        { guid = "Player-1-0000001" })
+      assert.are.equal("Aloha Snackbaar", left(1))
+      assert.are.equal("レベル 23 ナイトエルフ (Player)", left(2))
+      assert.are.equal("ウォリアー", left(3))
+      assert.are.equal("アライアンス", left(4))
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("Warrior", left(3))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      WFJ.State.setNames(false)
+      hoverUnit({ "Aloha Snackbaar", "Level 23 Night Elf (Player)", "Warrior", "Alliance" },
+        { guid = "Player-1-0000001" })
+      assert.are.equal("レベル 23 Night Elf (Player)", left(2))
+      assert.are.equal("Warrior", left(3))
+    end)
+
+    it("a pet, a unit the client gives no guid for and a hidden guid keep their names", function()
+      hoverUnit({ "Kobold Vermin", "Level 1 Beast" }, { guid = "Pet-0-1-0-0-6-000000" })
+      assert.are.equal("Kobold Vermin", left(1))
+      hoverUnit({ "Kobold Vermin", "Level 1 Beast" }, nil)
+      assert.are.equal("Kobold Vermin", left(1))
+      hoverUnit({ "Kobold Vermin", "Level 1 Beast" }, { guid = SECRET })
+      assert.are.equal("Kobold Vermin", left(1))
+    end)
+
+    -- A shop sign is a game object whose tooltip is its name alone, and the client hands no guid with it: the
+    -- tooltip's data kind says what it is. The same data kind on a unit's post-call proves nothing.
+    it("a game object's one-line tooltip shows its name's Japanese with no guid; a critter's name shows too",
+    function()
+      local OBJECT = 33
+      Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+      Stub.installTooltipAPI()
+      _G.Enum.TooltipDataType.Object = OBJECT
+      _G.UIParent = _G.UIParent or CreateFrame("Frame", "UIParent")
+      local W = H.loadChunks(FILES)
+      H.uiSetup(W, UI)
+      W.HelpTooltip.init()
+      local tip = _G.GameTooltip
+      assert.is_true(W.TooltipUnit.init())
+      W.Data.add("name", {
+        [W.Names.key("Everyday Merchandise")] = "エブリデイ・マーチャンダイズ\tえぶりでい・まーちゃんだいず",
+        [W.Names.key("Cat")] = "キャット\tきゃっと",
+      })
+      W.State.setNames(true)
+      finally(function() W.State.setNames(false) end)
+      local function hoverAs(dataType, lines, data)
+        tip:SetOwner(_G.UIParent, "ANCHOR_CURSOR")
+        tip:SetText(lines[1])
+        for i = 2, #lines do tip:AddLine(lines[i]) end
+        for _, fn in ipairs(Stub.tooltipPostCalls[dataType] or {}) do fn(tip, data) end
+        tip:Show()
+      end
+      hoverAs(OBJECT, { "Everyday Merchandise" }, { type = OBJECT })
+      assert.are.equal("エブリデイ・マーチャンダイズ", left(1))
+      Stub.keys.alt = true; W.Modifier.refresh()
+      assert.are.equal("Everyday Merchandise", left(1))
+      Stub.keys.alt = false; W.Modifier.refresh()
+      tip:Hide()
+      -- a unit with no guid is not a game object, whatever its name
+      hoverAs(2, { "Everyday Merchandise" }, { type = 2 })
+      assert.are.equal("Everyday Merchandise", left(1))
+      tip:Hide()
+      -- with names off the sign keeps the client's text
+      W.State.setNames(false)
+      hoverAs(OBJECT, { "Everyday Merchandise" }, { type = OBJECT })
+      assert.are.equal("Everyday Merchandise", left(1))
+      tip:Hide()
+      W.State.setNames(true)
+      -- a critter is a creature like any other; a pet a player owns keeps the name its player gave it
+      hoverAs(2, { "Cat", "Level 1 Critter" }, { type = 2, guid = "Creature-0-1-0-0-6368-000000" })
+      assert.are.equal("キャット", left(1))
+      tip:Hide()
+      hoverAs(2, { "Cat", "Level 12 Beast" }, { type = 2, guid = "Pet-0-1-0-0-6368-000000" })
+      assert.are.equal("Cat", left(1))
+    end)
+
+    it("a name the client hides is never read or written", function()
+      tt:SetOwner(_G.UIParent, "ANCHOR_CURSOR")
+      tt:SetText("x")
+      _G.GameTooltipTextLeft1.text = SECRET
+      assert.has_no.errors(function()
+        for _, fn in ipairs(Stub.tooltipPostCalls[2] or {}) do fn(tt, CREATURE) end
+      end)
+      assert.are.equal(SECRET, _G.GameTooltipTextLeft1.text)
+    end)
+
+    it("with names off nothing on the name line is written", function()
+      WFJ.State.setNames(false)
+      hoverUnit({ "Kobold Vermin", "Innkeeper", "Level 1 Humanoid" }, CREATURE)
+      assert.are.equal("Kobold Vermin", left(1))
+      assert.are.equal("Innkeeper", left(2))
+    end)
   end)
 
   it("a game object's lock and requirement lines take their client-table rows; its name stays", function()
@@ -187,10 +349,14 @@ describe("UI/TooltipUnit: the creature type", function()
       assert.are.equal("野獣", left(3))
       assert.are.equal("The Balance of Nature", left(4)) -- a quest title: keyed by quest id, not by its text
       assert.is_truthy(left(5):find("Young Thistle Boarを倒す: 0/4", 1, true))
-      -- a player's tooltip never takes the creature types: "Undead" alone is a race there
+      -- a player's tooltip never takes the creature types: "Undead" alone is a race there, a name like any other
       _G.C_PlayerInfo = { GUIDIsPlayer = function() return true end }
+      WFJ.State.setNames(false)
       hover({ "Someone", "Level 60", "Undead" }, { guid = "Player-1-00000001" })
       assert.are.equal("Undead", left(3))
+      WFJ.State.setNames(true)
+      hover({ "Someone", "Level 60", "Undead" }, { guid = "Player-1-00000001" })
+      assert.are.equal("アンデッド", left(3)) -- the race's word, while names are Japanese
       _G.C_PlayerInfo = nil
     end)
 
@@ -201,5 +367,105 @@ describe("UI/TooltipUnit: the creature type", function()
     assert.are.equal("レベル10 Magic", left(2))
     hover({ "Raid Boss", "Level 10 Raid" })
     assert.are.equal("レベル10 Raid", left(2))
+  end)
+end)
+
+-- A player's level line beside the templates that share its shape. "Level %d %s (%s)" is compiled under the
+-- first key of its English and keeps its type and faction as written, so it must not take a player's line.
+describe("UI/TooltipUnit: a player's level line among every level template", function()
+  local WFJ, tt
+
+  local ROWS = {
+    TOOLTIP_UNIT_LEVEL = { "Level %s", "レベル %s" },
+    TOOLTIP_UNIT_LEVEL_TYPE = { "Level %s (%s)", "レベル %s（%s）" },
+    TOOLTIP_UNIT_LEVEL_RACE = { "Level %s %s", "レベル %s %s" },
+    TOOLTIP_UNIT_LEVEL_RACE_TYPE = { "Level %s %s (%s)", "レベル %s %s（%s）" },
+    CHARACTER_LINK_CLASS_LEVEL_SPEC_TOOLTIP = { "Level %d %s (%s)", "レベル %d %s (%s)" },
+    UNIT_TYPE_LEVEL_FACTION_TEMPLATE = { "Level %d %s (%s)", "レベル %d %s (%s)" },
+    UNIT_TYPE_LEVEL_TEMPLATE = { "Level %d %s", "レベル%d %s" },
+    ["CreatureType:7"] = { "Humanoid", "人型" },
+  }
+  local PLAYER = { guid = "Player-1-0000001" }
+  local function left(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
+  local function hover(lines, data)
+    tt:SetOwner(_G.UIParent, "ANCHOR_CURSOR")
+    tt:SetText(lines[1])
+    for i = 2, #lines do tt:AddLine(lines[i]) end
+    for _, fn in ipairs(Stub.tooltipPostCalls[2] or {}) do fn(tt, data) end
+    tt:Show()
+  end
+
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installTooltipAPI()
+    _G.UIParent = _G.UIParent or CreateFrame("Frame", "UIParent")
+    WFJ = H.loadChunks(FILES)
+    H.uiSetup(WFJ, ROWS)
+    WFJ.HelpTooltip.init()
+    tt = _G.GameTooltip
+    assert.is_true(WFJ.TooltipUnit.init())
+    _G.C_PlayerInfo = { GUIDIsPlayer = function(guid) return guid:find("^Player%-") ~= nil end }
+    WFJ.Data.add("name", { [WFJ.Names.key("Player")] = "プレイヤー\tぷれいやー" })
+    WFJ.State.setNames(true)
+    -- as Main does
+    WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+    WFJ.UIStrings.word = function(text) return WFJ.State.names and WFJ.Placeholders.wordFor(text) or nil end
+    WFJ.UIStrings.playerWord = function(text)
+      return WFJ.State.names and text == "Player" and WFJ.Names.value(text) or nil
+    end
+  end)
+
+  after_each(function()
+    WFJ.UIStrings.name, WFJ.UIStrings.word, WFJ.UIStrings.playerWord = nil, nil, nil
+    WFJ.State.setNames(false)
+    _G.C_PlayerInfo = nil
+    Stub.keys.alt = false
+    H.uiTeardown()
+  end)
+
+  it("the race shows its word and the word in brackets its Japanese; the reveal key gives the line back", function()
+    hover({ "Someone", "Level 23 Human (Player)" }, PLAYER)
+    assert.are.equal("レベル 23 人間（プレイヤー）", left(2))
+    hover({ "Someone", "Some Guild", "Level 60 Gnome (Player)" }, PLAYER)
+    assert.are.equal("Some Guild", left(2))
+    assert.are.equal("レベル 60 ノーム（プレイヤー）", left(3))
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("Level 60 Gnome (Player)", left(3))
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal("レベル 60 ノーム（プレイヤー）", left(3))
+  end)
+
+  it("a race with no word of its own and no line in the name list stays as the client wrote it", function()
+    hover({ "Someone", "Level 40 High Order Skyborne (Player)" }, PLAYER)
+    assert.are.equal("レベル 40 High Order Skyborne（プレイヤー）", left(2))
+  end)
+
+  it("a race with no word of its own shows the name list's spelling; the reveal key gives the line back", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("High Order Skyborne")] = "ハイ・オーダー・スカイボーン\tはい・おーだー・すかいぼーん" })
+    hover({ "Someone", "Level 40 High Order Skyborne (Player)" }, PLAYER)
+    assert.are.equal("レベル 40 ハイ・オーダー・スカイボーン（プレイヤー）", left(2))
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("Level 40 High Order Skyborne (Player)", left(2))
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal("レベル 40 ハイ・オーダー・スカイボーン（プレイヤー）", left(2))
+  end)
+
+  it("a creature's type beside its level is no race, though the name list spells it", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Critter")] = "クリッター\tくりったー" })
+    hover({ "Rabbit", "Level 1 Critter" }, { guid = "Creature-0-1-0-0-721-000000" })
+    assert.are.equal("レベル1 Critter", left(2))
+    hover({ "Rabbit", "Level ?? Critter" }, { guid = "Creature-0-1-0-0-721-000000" })
+    assert.are.equal("レベル ?? Critter", left(2))
+  end)
+
+  it("with names off the race and the word in brackets stay English", function()
+    WFJ.State.setNames(false)
+    hover({ "Someone", "Level 23 Human (Player)" }, PLAYER)
+    assert.are.equal("レベル 23 Human（Player）", left(2))
+  end)
+
+  it("a creature's type in brackets is still its CreatureType row, and never the player's word", function()
+    hover({ "Kobold Vermin", "Level ?? (Humanoid)" }, { guid = "Creature-0-1-0-0-6-000000" })
+    assert.are.equal("レベル ??（人型）", left(2))
   end)
 end)

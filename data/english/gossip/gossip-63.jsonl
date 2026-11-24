@@ -29,6 +29,7 @@
 {"id": "639d63717491bf0b", "field": "text", "en": "The Horde has taken the mine!", "hash": "639d63717491bf0b", "src": "vmangos@13b49dc"}
 {"id": "63a2eed0217e73f1", "field": "text", "en": "All has been gathered and is being sent to Silithus, $c. It should get there within $2113w days. I can only hope that after the gong is rung, and the gates opened, that our efforts here will make an impact and save many lives.", "hash": "63a2eed0217e73f1", "src": "vmangos@13b49dc"}
 {"id": "63a40695969f59fa", "field": "text", "en": "I'm ready when you are, $n. Lead the way!", "hash": "63a40695969f59fa", "src": "vmangos@13b49dc"}
+{"id": "63a6917701c38b69", "field": "text", "en": "You are wasting my time.", "hash": "63a6917701c38b69", "src": "collector@1.60.1.70888", "npcs": [253851]}
 {"id": "63aed17fed8b0ec8", "field": "text", "en": "Defiler... you will be punished for this incursion. <A symbol of flame radiates from the relic before it crumbles to the earth.>", "hash": "63aed17fed8b0ec8", "src": "vmangos@13b49dc"}
 {"id": "63b12f55accfc261", "field": "text", "en": "Blast those stupid centaurs! Sigh - well, it seems you kept your bargain. Up the road you shall find Smeed Scrabblescrew, he has your money.", "hash": "63b12f55accfc261", "src": "vmangos@13b49dc"}
 {"id": "63b18d28a667e7fa", "field": "text", "en": "So what do you want to do today?", "hash": "63b18d28a667e7fa", "src": "vmangos@13b49dc"}

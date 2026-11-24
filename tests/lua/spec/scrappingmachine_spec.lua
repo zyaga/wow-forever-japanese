@@ -27,6 +27,20 @@ C.suite(getfenv(1), {
       frame:Hide()
       assert.are.equal("解体", frame.ScrapButton:GetText())
     end },
+    { "with names on the machine's name on the title shows its Japanese after each SetTitle", function(frame, WFJ)
+      finally(function() WFJ.State.setNames(false) end)
+      WFJ.Data.add("name", { [WFJ.Names.key("Shred-Master Mk1")] = "シュレッドマスター・マークワン\tしゅれっどますたー・まーくわん" })
+      WFJ.State.setNames(true)
+      local title = frame.TitleContainer.TitleText
+      frame:Show()
+      frame:SetTitle("Shred-Master Mk1")
+      assert.are.equal("シュレッドマスター・マークワン", title:GetText())
+      C.alt(WFJ, true)
+      assert.are.equal("Shred-Master Mk1", title:GetText())
+      C.alt(WFJ, false)
+      frame:SetTitle("Scrap") -- a machine named like a dictionary word, with no Japanese
+      assert.are.equal("Scrap", title:GetText())
+    end },
   },
   name = function(frame, WFJ)
     frame:Show()

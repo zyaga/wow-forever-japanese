@@ -16,7 +16,9 @@
 {"id": "5433e25c11890db6", "field": "text", "en": "We suspect that in order to preserve their fortune and hold of the land - well past their lifespan - the Barovs made a deal with a powerful human mage named Kel'Thuzad.$B$B<Eva shudders.>$B$BFrom this deal sprang the school of necromancy: A place which bore the Cult of the Damned and would become their capital.$B$BAs each week passed, the house Barov became more and more decrepit...$B$BDark beings began to take residence in the various wings of the house. Upkeep became impossible... and disgusting.", "hash": "5433e25c11890db6", "src": "vmangos@13b49dc"}
 {"id": "54344ef2cca8a1f5", "field": "text", "en": "The Abyssal Council does not tolerate deceit!  Feel our wrath, little $r!", "hash": "54344ef2cca8a1f5", "src": "vmangos@13b49dc"}
 {"id": "54347f35fea83f19", "field": "text", "en": "Tower Point is under attack!  If left unchecked, the Alliance will destroy it!", "hash": "54347f35fea83f19", "src": "vmangos@13b49dc"}
+{"id": "543a5da2d6dee4bf", "field": "text", "en": "Now...I just need to inscribe the contents of this scroll onto my work...", "hash": "543a5da2d6dee4bf", "src": "collector@1.60.1.70888"}
 {"id": "5456b59aef3be5f0", "field": "text", "en": "Is there anything else?", "hash": "5456b59aef3be5f0", "src": "vmangos@13b49dc"}
+{"id": "5456db4b853e98b3", "field": "text", "en": "<The tag on the mechanostrider reads:$B$BMecha-Titanium Eco-strider 9000! Now with elongated wing shields and eco-friendly tailpipe dampers.>", "hash": "5456db4b853e98b3", "src": "collector@1.60.1.70959", "npcs": [276734]}
 {"id": "545b411e79de6056", "field": "text", "en": "You cannot hide from me!", "hash": "545b411e79de6056", "src": "vmangos@13b49dc"}
 {"id": "546dd6cb0dae420d", "field": "text", "en": "The bear looks at you calmy and patiently, but says nothing.", "hash": "546dd6cb0dae420d", "src": "vmangos@13b49dc"}
 {"id": "547414273202a272", "field": "text", "en": "We wish to face the Defiler.", "hash": "547414273202a272", "src": "vmangos@13b49dc"}
@@ -41,3 +43,4 @@
 {"id": "54d897bcfd74b026", "field": "text", "en": "Hm... if you're looking to adle wits, $n, then the secret behind Zanzil's zombies might just do the trick!", "hash": "54d897bcfd74b026", "src": "vmangos@13b49dc"}
 {"id": "54e373b88a8e9fc5", "field": "text", "en": "The Alliance has taken the mine!", "hash": "54e373b88a8e9fc5", "src": "vmangos@13b49dc"}
 {"id": "54e625a461c246da", "field": "text", "en": "Your discs will be returned to you once you access the pedestal.", "hash": "54e625a461c246da", "src": "vmangos@13b49dc"}
+{"id": "54f820a6faf44a62", "field": "text", "en": "Excellent. Bring more.", "hash": "54f820a6faf44a62", "src": "collector@1.60.1.70938"}

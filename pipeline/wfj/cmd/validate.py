@@ -49,7 +49,7 @@ from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from typing import Any
 
-from wfj.cmd import check, generate, voice_make
+from wfj.cmd import check, generate, voice_displays, voice_make
 from wfj.cmd.voice import read_rows, voice_dir
 from wfj.core import (
     casting,
@@ -226,7 +226,7 @@ def rule_placeholders(store: Store, english: Store | None = None) -> list[str]:
 # Argument kinds whose capture is free text (UIStrings.ARGS in Core/UIStringKeys.lua): a lazy split between
 # two of them
 # depends on the order the Japanese puts them back in. A `%s` without a kind is a number; `word` is one word.
-FREE_TEXT_KINDS = {"text", "words", "skill", "time", "verbatim"}
+FREE_TEXT_KINDS = {"text", "words", "skill", "time", "verbatim", "class", "spec", "classes"}
 _ARGS_BLOCK = re.compile(r"UIStrings\.ARGS = \{(.*?)\n\}", re.S)
 _ARGS_ENTRY = re.compile(r"([A-Z][A-Z0-9_]+) = \{([^}]*)\}")
 
@@ -430,7 +430,9 @@ def rule_readings(store: Store) -> list[str]:
     problems: list[str] = []
     words = with_meaning = 0
     for type_ in readings.TYPES:
-        japanese = readings.shipped_japanese(store.load(type_))
+        japanese = readings.japanese_of(
+            type_, store.load(type_), Store(store.root, english=True).load(type_)
+        )
         result = readings.check(type_, generate.reading_store_of(store).load(type_), japanese)
         problems += result["problems"]
         type_words = sum(len(r["words"]) for r in result["current"])
@@ -599,6 +601,7 @@ def rule_voice(root: Path, config: Path | None = None) -> list[str]:
     d = voice_dir(root)
     speakers, voices = read_rows(d / "speakers.jsonl"), read_rows(d / "voices.jsonl")
     problems = voice.speaker_problems(speakers, voices) + casting.problems(read_rows(d / "profiles.jsonl"))
+    problems += voice_displays.quest_npc_problems(read_rows(d / "quest-npcs.jsonl"))
     cfg_path = config or root.parent / "pipeline" / "voice.toml"
     if not cfg_path.is_file() or not voices:
         return problems

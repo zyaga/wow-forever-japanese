@@ -86,6 +86,14 @@ function SurfaceState.capture(surface, key, fs, en, meta)
   return rec
 end
 
+-- The live record that last captured the widget `fs`, on whatever surface, or nil. (UI/TooltipFreeze asks which
+-- line of a tooltip is which.)
+function SurfaceState.of(fs)
+  local rec = owners[fs]
+  if live(rec) then return rec end
+  return nil
+end
+
 function SurfaceState.get(surface, key)
   local b = bucket(surface)
   return b and b[key] or nil

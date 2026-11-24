@@ -27,7 +27,13 @@
 --     GameTooltip_AddNormalLine(TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS), Show (lua:300–318), restricted to that key;
 --   the pet trainer's points frame: SetOwner(self), SetText(TRAINING_POINTS_TUTORIAL), Show (xml:255–259): an
 --     ordinary tooltip, not a HelpTip callout, restricted to that key.
--- Not translated: row names (button.name) are never candidates; the client-built service tooltip.
+-- A row's name (button.name, the service's spell name, lua:683) is never a dictionary candidate; while names are on
+--   it shows the name's Japanese (UI/NameLabels) with the same refit: camelot's UpdateNameWidth measures the name
+--   (GetUnboundedStringWidth, blizzard_trainerui_camelot.lua:23–24) to size it beside the cost, so the width follows
+--   the text shown. The window's only action is the train button's BuyTrainerService (lua:870–878), a click of the
+--   player's; nothing measured here leads to a protected call. [unverified: whether BuyTrainerService is protected
+--   on Forever; the window test's trainer read would show a blocked action]
+-- Not translated: the client-built service tooltip.
 -- Release on ClassTrainerFrame's OnHide (the static label stays).
 local _, WFJ = ...
 local Trainer = {}
@@ -46,7 +52,7 @@ local POINTS_KEYS = { TRAINING_POINTS = true }
 local TRAIN_HELP_KEYS = { "TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS" }
 local POINTS_HELP_KEYS = { "TRAINING_POINTS_TUTORIAL" }
 
--- Widgets this module must never record: none by name (row names are pooled `button.name`, never read).
+-- Widgets this module must never record: none by name (row names are pooled `button.name`, names only).
 Trainer.NEVER_TOUCH = {}
 
 -- A stable record key per ScrollBox service button (buttons are pooled and re-initialized).
@@ -66,14 +72,15 @@ local function refitOf(button)
   return fn
 end
 
--- hooksecurefunc target for ClassTrainerFrame_InitServiceButton: one service button's subtext,
--- requirements and pet cost. → the number of words found
+-- hooksecurefunc target for ClassTrainerFrame_InitServiceButton: one service button's name, subtext,
+-- requirements and pet cost. → the number of words and names shown
 function Trainer.onService(button)
   if type(button) ~= "table" then return 0 end
   local k = rowKey(button)
   seen[button] = true
   local refit = refitOf(button)
-  local n = WFJ.Labels.show(SURFACE, k .. ".sub", button.nameSubText, refit, { only = SUBTEXT_KEYS })
+  local n = WFJ.NameLabels.show(SURFACE, k .. ".name", button.name, nil, refit)
+    + WFJ.Labels.show(SURFACE, k .. ".sub", button.nameSubText, refit, { only = SUBTEXT_KEYS })
     + WFJ.Labels.show(SURFACE, k .. ".req", button.subText, nil, { only = ROW_REQUIREMENT_KEYS })
     + WFJ.Labels.show(SURFACE, k .. ".cost", button.alternateCost, refit, { only = COST_KEYS })
   WFJ.Render.updateBanner(SURFACE)
@@ -118,6 +125,24 @@ function Trainer.release()
   return WFJ.Render.release(SURFACE)
 end
 
+-- The title plate: ClassTrainerFrame_Update writes ClassTrainerFrame:SetTitle(UnitName(unit)), unit "npc" or, at a
+-- pet trainer, "pet" [verified: blizzard_trainerui/mainline/blizzard_trainerui.lua:440–449]. The trainer's name
+-- shows its Japanese while names are on. A pet trainer's title is the player's own pet, a name the player gave:
+-- it stays as written. → 1 | 0
+function Trainer.onTitle()
+  local frame = Compat.get(SURFACE, "frame")
+  local container = type(frame) == "table" and frame.TitleContainer or nil
+  local text = type(container) == "table" and container.TitleText or nil
+  local trainer, kinds = Compat.resolve("C_Trainer"), Compat.resolve("Enum.TrainerType")
+  local pet = type(trainer) == "table" and type(trainer.GetTrainerType) == "function" and type(kinds) == "table"
+    and trainer.GetTrainerType() == kinds.Pet
+  if pet or type(text) ~= "table" then
+    WFJ.SurfaceState.drop(SURFACE, "title")
+    return 0
+  end
+  return WFJ.NameLabels.unit(SURFACE, "title", text, "npc")
+end
+
 -- Client names. Declared again at setup: a declare clears Compat's memo, which may hold `false` for a load-on-demand
 -- name looked up before the addon loaded.
 local function declare()
@@ -143,6 +168,7 @@ function Trainer.setup()
     hooksecurefunc("ClassTrainerFrame_UpdateTrainingPoints", Trainer.onTrainingPoints)
   end
   if type(frame.HookScript) == "function" then frame:HookScript("OnHide", Trainer.release) end
+  if type(frame.SetTitle) == "function" then hooksecurefunc(frame, "SetTitle", Trainer.onTitle) end
   local train = Compat.get(SURFACE, "train")
   if type(train) == "table" then WFJ.HelpTooltip.register(train, { only = TRAIN_HELP_KEYS }) end
   if type(frame.trainingPoints) == "table" then

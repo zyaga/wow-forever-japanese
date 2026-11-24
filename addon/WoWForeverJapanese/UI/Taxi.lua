@@ -10,8 +10,10 @@
 --   node the player stands on TAXINODEYOUAREHERE (taxiframe.lua:135–138, 203–208). The node buttons TaxiButton<i> are
 --   created as the map needs them, so none is registered: the writer is a global called by name from the button
 --   template's OnEnter (taxiframe.xml:9–11), post-hooked, and the tooltip is walked once restricted to that key.
--- Never touched: line 1 of that tooltip is a place name; the `only` restriction leaves it (and every other line)
--- alone. Release on TaxiFrame's OnHide.
+-- Line 1 of that tooltip is the node's place name: the `only` restriction leaves it to the names step, which shows
+-- its Japanese while names are on (UI/NameLabels, on the help surface under the walk's own record key, with the
+-- help tooltip's refit), and a name that is also a dictionary word ("World") stays English unless the name list
+-- has it. Release on TaxiFrame's OnHide; the tooltip's lines go with the tooltip's OnHide.
 local _, WFJ = ...
 local Taxi = {}
 WFJ.Taxi = Taxi
@@ -34,11 +36,11 @@ function Taxi.onShow()
   return n
 end
 
--- hooksecurefunc target (TaxiNodeOnButtonEnter). → the number of dictionary lines
+-- hooksecurefunc target (TaxiNodeOnButtonEnter). → the number of dictionary lines and names shown
 function Taxi.onNodeEnter()
   local tt = get("tooltip")
   if type(tt) ~= "table" then return 0 end
-  return WFJ.HelpTooltip.walkAs(tt, HERE)
+  return WFJ.HelpTooltip.walkAs(tt, HERE) + WFJ.HelpTooltip.nameAt(tt, 1)
 end
 
 function Taxi.release()

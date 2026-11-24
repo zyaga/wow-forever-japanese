@@ -56,6 +56,20 @@ describe("the major faction banners on Forever", function()
     X.alt(WFJ, false)
   end)
 
+  it("with Japanese names on, the unlocked faction's name shows its Japanese; the reveal key gives it back", function()
+    WFJ.Data.add("name", { [WFJ.Names.key("Council of Dornogal")] = "カウンシル・オブ・ドルノガル\tかうんしる" })
+    WFJ.State.setNames(true)
+    local u = _G.MajorFactionUnlockToast
+    u:PlayBanner({ name = "Council of Dornogal" })
+    assert.are.equal("カウンシル・オブ・ドルノガル", u.FactionName:GetText())
+    assert.are.equal("ジャーニー解放", u.HeaderText:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("Council of Dornogal", u.FactionName:GetText())
+    X.alt(WFJ, false)
+    u:PlayBanner({ name = "Nobody Known Council" })
+    assert.are.equal("Nobody Known Council", u.FactionName:GetText())
+  end)
+
   it("the reward tooltip's fixed lines translate; a reward's name as the title does not", function()
     local owner = _G.MajorFactionsRenownToast.RewardIconMouseOver
     assert.is_true(WFJ.HelpTooltip.registered(owner))

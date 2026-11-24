@@ -39,6 +39,10 @@ describe("Core/UIStrings: links, plurals, colour-wrapped names", function()
     BONUS_OBJECTIVE_TIME_LEFT = { "Time Left: %s", "残り時間：%s" }, AUCTION_TIME_LEFT3 = { "Long", "長い" },
     -- a coloured template the client never prints bare: no bare form, so a player's own text never matches it
     PLAYER_IS_PVP_AFK = { "|cffff64ff%s (Inactive)|r", "|cffff64ff%s (離席中)|r" },
+    CONFIRM_PURCHASE_TOKEN_ITEM = { "Are you sure you wish to exchange %s for the following item? %s",
+      "%sを次のアイテムと交換してもよろしいですか？%s" },
+    CONFIRM_HIGH_COST_ITEM = { "Are you sure you wish to purchase %s for the following amount?",
+      "%sを次の金額で購入してもよろしいですか？" },
     CONFIRM_XP_LOSS = { "If I resurrect you, you will be afflicted by %s of |cff71d5ff|Hspell:15007|h"
       .. "[Resurrection Sickness]|h|r.",
       "復活させると、%sの|cff71d5ff|Hspell:15007|h[Resurrection Sickness]|h|rにかかります。" },
@@ -167,5 +171,27 @@ describe("Core/UIStrings: links, plurals, colour-wrapped names", function()
     key, args = index:match("Time Left: 5 min")
     assert.are.equal("BONUS_OBJECTIVE_TIME_LEFT", key)
     assert.is_nil(args.bare)
+  end)
+
+  it("a merchant's cost list: each name in Japanese while names are on, its icon, count and link kept", function()
+    local NAMES = { ["Honor Points"] = "オナー・ポイント", ["Linen Cloth"] = "リネン・クロス" }
+    UIS.name = function(text)
+      local before, label, after = text:match("^(.*|h%[)(.-)(%]|h.*)$")
+      if label then return NAMES[label] and (before .. NAMES[label] .. after) or nil end
+      return NAMES[text]
+    end
+    local link = "|cffffffff|Hitem:2589::::::::60:::::|h[Linen Cloth]|h|r"
+    local function exchange(c) return "Are you sure you wish to exchange " .. c .. " for the following item? " end
+    local costs = " |TInterface\\Icons\\PVPCurrency-Honor-Alliance:0:0:0:-1|t 2 Honor Points, 3 " .. link
+    assert.are.equal(" |TInterface\\Icons\\PVPCurrency-Honor-Alliance:0:0:0:-1|t 2 オナー・ポイント, 3 "
+      .. "|cffffffff|Hitem:2589::::::::60:::::|h[リネン・クロス]|h|rを次のアイテムと交換してもよろしいですか？",
+      filled("CONFIRM_PURCHASE_TOKEN_ITEM", exchange(costs)))
+    -- a single item link in the price question
+    assert.are.equal("|cffffffff|Hitem:2589::::::::60:::::|h[リネン・クロス]|h|rを次の金額で購入してもよろしいですか？",
+      filled("CONFIRM_HIGH_COST_ITEM", "Are you sure you wish to purchase " .. link .. " for the following amount?"))
+    UIS.name = nil
+    -- names off: the cost list as written
+    assert.are.equal(costs .. "を次のアイテムと交換してもよろしいですか？",
+      filled("CONFIRM_PURCHASE_TOKEN_ITEM", exchange(costs)))
   end)
 end)

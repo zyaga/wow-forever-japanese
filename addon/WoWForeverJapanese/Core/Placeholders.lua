@@ -25,6 +25,22 @@ Placeholders.RACE = {
   Tauren = "トーレン", Gnome = "ノーム", Troll = "トロール",
 }
 
+-- The client's English for each class and race, to the word above: what a player's tooltip prints for another
+-- player ("Night Elf", "Warrior"), which no token names.
+local ENGLISH = {
+  Warrior = Placeholders.CLASS.WARRIOR, Paladin = Placeholders.CLASS.PALADIN, Hunter = Placeholders.CLASS.HUNTER,
+  Rogue = Placeholders.CLASS.ROGUE, Priest = Placeholders.CLASS.PRIEST, Shaman = Placeholders.CLASS.SHAMAN,
+  Mage = Placeholders.CLASS.MAGE, Warlock = Placeholders.CLASS.WARLOCK, Druid = Placeholders.CLASS.DRUID,
+  Human = Placeholders.RACE.Human, Orc = Placeholders.RACE.Orc, Dwarf = Placeholders.RACE.Dwarf,
+  ["Night Elf"] = Placeholders.RACE.NightElf, Undead = Placeholders.RACE.Scourge, Tauren = Placeholders.RACE.Tauren,
+  Gnome = Placeholders.RACE.Gnome, Troll = Placeholders.RACE.Troll,
+}
+
+-- → the Japanese word for a class's or a race's English name, or nil
+function Placeholders.wordFor(english)
+  return type(english) == "string" and ENGLISH[english] or nil
+end
+
 Placeholders.unknown = {} -- set of distinct unknown {word} tokens met this session
 
 local FEMALE = 3 -- UnitSex: 1 unknown · 2 male · 3 female

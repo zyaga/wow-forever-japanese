@@ -31,6 +31,7 @@ WFJ.Data.add("english", {
   ["gossip:84b4761f7e2ce54d"] = { text = "also=3 and=25 detailing=21 difficult=11 forget=4 garments=12 items=16 learn=15 make=19 me=32 more=10 ordered=1 patterns=7 well=13 working=34 you=31" },
   ["gossip:84b8f90f3dbadeef"] = { text = "hello=1 races=2 welcome=3" },
   ["gossip:84be44ad157017da"] = { text = "brought=3 done=5 enemy=1 hah=4 supplies=2" },
+  ["gossip:84d179411d1f6051"] = { text = "begone=1 scourge=3 vile=2" },
   ["gossip:84d5a972f573b0c8"] = { text = "beyond=1 compartment=25 cur=5 done=21 erected=16 find=2 forever=30 grasp=32 hammer=9 hands=18 honor=14 importantly=28 key=23 kill=6 lost=42 miserable=4 more=27 my=22 open=26 place=12 recover=7 remain=34 remove=37 rightful=10 shatter=40 statue=17 stored=24 they=35 this=20" },
   ["gossip:84da521178b7ef87"] = { text = "all=21 anyhow=29 blood=20 charged=11 days=26 glow=18 hours=24 i=16 inch=8 lot=19 orcs=5 remember=28 rushed=6 see=17 so=1 stood=15 stopped=31 tall=14 this=23 time=10 well=7 went=27 where=2 yea=4" },
   ["gossip:84ee758f48c77234"] = { text = "draws=6 force=4 happening=2 me=5 what=1" },

@@ -17,6 +17,7 @@ local function install()
   _G.TaxiNodeOnButtonEnter = function(button)
     local tt = _G.GameTooltip
     tt:SetOwner(button, "ANCHOR_RIGHT")
+    tt:ClearLines() -- the client's SetOwner starts an empty tooltip; the stub's keeps the lines
     tt:AddLine(button.node)
     if button.current then tt:AddLine(_G.TAXINODEYOUAREHERE) end
     tt:Show()
@@ -53,6 +54,32 @@ describe("the flight master's map on Forever", function()
       assert.are.equal("World", G.line(1))
       assert.are.equal("現在地", G.line(2))
       assert.is_false(WFJ.HelpTooltip.registered(button)) -- walked once; the owner is not left registered
+      _G.TaxiButton1 = nil
+    end)
+
+  it("the node's name shows its Japanese while names are on; the reveal key, names off and hiding give it back",
+    function()
+      install()
+      assert.is_true(WFJ.Taxi.init())
+      WFJ.Data.add("name", { [WFJ.Names.key("Goldshire")] = "ゴールドシャイア\tごーるどしゃいあ" })
+      WFJ.State.setNames(true)
+      local button = CreateFrame("Button", "TaxiButton1")
+      button.node, button.current = "Goldshire", true
+      _G.TaxiNodeOnButtonEnter(button)
+      assert.are.equal("ゴールドシャイア", G.line(1))
+      assert.are.equal("現在地", G.line(2))
+      G.alt(WFJ, true)
+      assert.are.equal("Goldshire", G.line(1))
+      G.alt(WFJ, false)
+      assert.are.equal("ゴールドシャイア", G.line(1))
+      WFJ.State.setNames(false)
+      assert.are.equal("Goldshire", G.line(1))
+      WFJ.State.setNames(true)
+      _G.GameTooltip:Hide()
+      assert.are.equal("Goldshire", G.line(1))
+      button.node = "Nobody Known Field"
+      _G.TaxiNodeOnButtonEnter(button)
+      assert.are.equal("Nobody Known Field", G.line(1))
       _G.TaxiButton1 = nil
     end)
 

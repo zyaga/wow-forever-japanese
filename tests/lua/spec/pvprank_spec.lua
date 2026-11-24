@@ -1,7 +1,7 @@
 -- Honor → PvP rank on Forever: UI/PvPRank.lua over a PVPRankFrame replayed from camelot
 -- blizzard_uipanels_game/camelot/pvprankframe.lua (Update :90–122, UpdateSeasonCountdownTimer :78–88,
--- DetailFrame:Refresh :132–217 through CharacterFrameSidePaneMixin, characterframe.lua:827–952). Rank titles stay
--- English. Client writes go to `fs.text`.
+-- DetailFrame:Refresh :132–217 through CharacterFrameSidePaneMixin, characterframe.lua:827–952). A rank title is
+-- never a dictionary word; it shows its name's Japanese while names are on. Client writes go to `fs.text`.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
@@ -219,6 +219,36 @@ describe("the PvP rank panel on Forever", function()
       assert.are.same({ "Total Rank Progress: |cnHIGHLIGHT_FONT_COLOR:120|r", "|cFFFFFFFFNext Rewards at Rank 2|r",
         "Rank", "|cFFFFFFFFRewards may be purchased at the Hall of Legends in Orgrimmar.|r" }, labels())
       alt(false)
+    end)
+
+  it("with Japanese names on, the rank title shows its Japanese in the rank line and as the pane's title; a title"
+    .. " with no name row stays; the reveal key shows the English and names off writes nothing", function()
+      WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+      finally(function() WFJ.UIStrings.name = nil end)
+      WFJ.Data.add("name", { [WFJ.Names.key("Combatant I")] = "コンバタント・ワン\tこんばたんと" })
+      _G.PVPRankFrame:Update()
+      local main, detail = _G.PVPRankFrame.MainInfoFrame, _G.PVPRankFrame.DetailFrame
+      assert.are.equal("ランク1 - コンバタント・ワン", main.CurrentRankField:GetText())
+      assert.are.equal("コンバタント・ワン", detail.Title:GetText())
+      assert.are.equal(WFJ.Font.PATH, (detail.Title:GetFont()))
+      alt(true)
+      assert.are.equal("Rank 1 - Combatant I", main.CurrentRankField:GetText())
+      assert.are.equal("Combatant I", detail.Title:GetText())
+      alt(false)
+      assert.are.equal("コンバタント・ワン", detail.Title:GetText())
+      -- rank 0: the title alone, with no row in the name list
+      P.info.rank = 0
+      _G.PVPRankFrame:Update()
+      assert.are.equal("Civilian", main.CurrentRankField:GetText())
+      assert.are.equal("Civilian", detail.Title:GetText())
+      assert.is_true(unrecorded(main.CurrentRankField))
+      assert.is_true(unrecorded(detail.Title))
+      P.info.rank = 1
+      WFJ.State.names = false
+      _G.PVPRankFrame:Update()
+      assert.are.equal("ランク1 - Combatant I", main.CurrentRankField:GetText())
+      assert.are.equal("Combatant I", detail.Title:GetText())
+      assert.is_true(unrecorded(detail.Title))
     end)
 
   it("no rank data: the empty text translates", function()

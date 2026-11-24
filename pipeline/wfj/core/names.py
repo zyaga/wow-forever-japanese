@@ -49,6 +49,7 @@ _HALF_VOICED = str.maketrans("はひふへほ", "ぱぴぷぺぽ")
 _MARKUP = re.compile(
     r"\{[a-z]+\}|\$\?[^\[]*|\$[0-9]*[A-Za-z][0-9]*|\|[cC][0-9A-Fa-f]{8}|\|cn[A-Z0-9_]+:|\|[rR]|\|H[^|]*\|h|\|h"
     r"|\|T[^|]*\|t|\|n|%[0-9$]*[sd]|%[A-Z][0-9]+"
+    r"|\|A[^|]*\|a|\|K[^|]*\|k|\|4[^;]*;"  # an interface line's own: atlas icon, Battle.net name, plural
 )
 # A name in prose: Latin letters, digits and the punctuation names carry (Zul'Gurub, Un'Goro, C.O.R.E.),
 # words joined by single spaces.
@@ -195,6 +196,15 @@ def kanji_word_problem(ja: str, reading: str, known: Callable[[str], Iterable[st
     )
 
 
+_ROMAN = re.compile(r"[IVXLCDM]+")
+
+
+def kept_as_written(en: str, keep: frozenset[str] | set[str]) -> bool:
+    """Whether the screen keeps this English as the client writes it with Japanese names on: a listed
+    abbreviation or product name, a single letter, or a Roman numeral. The voice still says its Japanese."""
+    return en in keep or len(en) == 1 or _ROMAN.fullmatch(en) is not None
+
+
 def has_latin(text: str) -> bool:
     return bool(_ASCII_LETTER.search(text))
 
@@ -214,6 +224,50 @@ def latin_runs(ja: str) -> list[str]:
         if run and has_latin(run):
             out.append(run)
     return out
+
+
+_HTML_TAG = re.compile(r"<[^>]*>")
+
+
+def _suffixed(english: str, lookup: Callable[[str], str | None]) -> str | None:
+    """An item with a suffix ("Bandit Cloak of the Owl") whose whole name has no line: the item's name and
+    the suffix's, joined. The split nearest the end is tried first, as the addon does."""
+    at = len(english)
+    while True:
+        first = english.rfind(" of ", 0, at + 3)
+        if first < 0:
+            return None
+        item, suffix = lookup(english[:first]), lookup(english[first + 1 :])
+        if item and suffix:
+            return item + "・" + suffix
+        at = first
+
+
+def replace_runs(ja: str, lookup: Callable[[str], str | None], *, html: bool = False) -> str:
+    """A shown line with each English name written in its Japanese: the text between markup is read by
+    `LATIN_RUN` and `trim_run`, as `latin_runs` reads it, and a run `lookup` knows is replaced. Markup, a
+    count after a name, and a run with no name stay as written. On an HTML page the tags stay too. The
+    addon's Core/Names.lua does the same; vectors/name_vectors hold the two together."""
+
+    def one(m: re.Match[str]) -> str:
+        raw = m.group(0)
+        run = trim_run(raw)
+        name = (lookup(run) or _suffixed(run, lookup)) if run and has_latin(run) else None
+        return raw if name is None else name + raw[len(run) :]
+
+    out, at = [], 0
+    marks = [m.span() for m in _MARKUP.finditer(ja)]
+    if html:
+        marks += [m.span() for m in _HTML_TAG.finditer(ja)]
+    marks.sort()
+    for first, last in marks:
+        if first < at:
+            continue  # a mark inside an HTML tag already kept
+        out.append(LATIN_RUN.sub(one, ja[at:first]))
+        out.append(ja[first:last])
+        at = last
+    out.append(LATIN_RUN.sub(one, ja[at:]))
+    return "".join(out)
 
 
 def words_of(en: str) -> list[str]:

@@ -10,14 +10,16 @@
 -- (camelot/blizzard_inspectui.xml:15, 28, 41).
 -- Writers:
 --   InspectPaperDollFrame:SetLevel (the frame's own mixin method, mainline/inspectpaperdollframe.lua:29–61) →
---     InspectLevelText, SetFormattedText(PLAYER_LEVEL | PLAYER_LEVEL_NO_SPEC, level, colour, [spec,] class): spec and
---     class are kept as written (the same keys UI/Character.lua shows on the player's own level line);
+--     InspectLevelText, SetFormattedText(PLAYER_LEVEL | PLAYER_LEVEL_NO_SPEC, level, colour, [spec,] class): the
+--     spec is kept as written and the class shows its Japanese word while names are on (the same keys
+--     UI/Character.lua shows on the player's own level line);
 --   InspectPVPFrame:Update (the frame's own mixin method; OnShow and INSPECT_HONOR_UPDATE call it,
 --     camelot/inspectpvpframe.lua:94–103, 105–133), each a MainInfoFrame field, as UI/PvPRank.lua covers the
 --     player's own rank panel:
 --     CurrentSeasonField   format(EXPANSION_SEASON_NAME, '', season) (:117)
---     CurrentRankField     PVP_RANK_NUMBER_AND_TITLE ("Rank %d - %s", %s = the rank title, kept English), or
---                          PVP_RANK_0_NAME ("Civilian", a rank title: left English) (:120–126)
+--     CurrentRankField     PVP_RANK_NUMBER_AND_TITLE ("Rank %d - %s", %s = the rank title, a `name` value), or
+--                          PVP_RANK_0_NAME alone ("Civilian", a rank title) (:120–126): never a dictionary
+--                          word; while names are on, the title's Japanese where the name list has it
 --     CurrentRankProgressField  PVP_RANK_CURRENT_PROGRESS (:128)
 --     HonorableKillsField  HONORABLE_KILLS (:130)
 --     LifetimeHKsField / TodayHKsField  format("%s: %d", HONOR_LIFETIME | HONOR_TODAY, kills) (:131–132): the
@@ -75,7 +77,7 @@ local MEMBERS = { only = { "INSPECT_GUILD_NUM_MEMBERS" } }
 local SLOT_TOOLTIP = { only = SLOT_KEYS }
 local PVP = {
   { "season", { only = { "EXPANSION_SEASON_NAME" } } },
-  { "rank", { only = { "PVP_RANK_NUMBER_AND_TITLE" } } }, -- never PVP_RANK_0_NAME: a rank title stays English
+  { "rank", { only = { "PVP_RANK_NUMBER_AND_TITLE" } } }, -- never PVP_RANK_0_NAME: a rank title is a name
   { "progress", { only = { "PVP_RANK_CURRENT_PROGRESS" } } },
   { "kills", { only = { "HONORABLE_KILLS" } } },
 }
@@ -110,7 +112,12 @@ end
 -- hooksecurefunc target (InspectPVPFrame:Update). → the number of dictionary words found.
 function Inspect.onPvP()
   local n = 0
-  for _, f in ipairs(PVP) do n = n + WFJ.Labels.show(SURFACE, f[1], get(f[1]), nil, f[2]) end
+  for _, f in ipairs(PVP) do
+    local shown = WFJ.Labels.show(SURFACE, f[1], get(f[1]), nil, f[2])
+    -- rank 0 writes the rank title alone: a name
+    if shown == 0 and f[1] == "rank" then WFJ.NameLabels.show(SURFACE, "rank", get("rank")) end
+    n = n + shown
+  end
   for _, c in ipairs(KILL_COUNTS) do n = n + showCount(c[1], c[2]) end
   WFJ.Render.updateBanner(SURFACE)
   return n

@@ -1,13 +1,18 @@
 {"id": 14242, "field": "name", "en": "Sulhasa", "hash": "ff389de50205ff34", "src": "collector@1.60.1.70862"}
+{"id": 14450, "field": "name", "en": "Orphan Matron Nightingale", "hash": "8444e0f90f0c36a8", "src": "collector@1.60.1.70959"}
 {"id": 14722, "field": "name", "en": "Clavicus Knavingham", "hash": "0c53c17feb8cd0c9", "src": "collector@1.60.1.70790"}
 {"id": 14723, "field": "name", "en": "Mistina Steelshield", "hash": "39b6ddb3f3e92f56", "src": "collector@1.60.1.70790"}
 {"id": 14724, "field": "name", "en": "Bubulo Acerbus", "hash": "3c685edb8c5fd96a", "src": "collector@1.60.1.70790"}
 {"id": 14725, "field": "name", "en": "Raedon Duskstriker", "hash": "22d52157e3e7fffb", "src": "collector@1.60.1.70840"}
+{"id": 14726, "field": "name", "en": "Rashona Straglash", "hash": "efcf00c8b51f95c5", "src": "collector@1.60.1.70862"}
+{"id": 14727, "field": "name", "en": "Vehena", "hash": "796487fe59fefe34", "src": "collector@1.60.1.70938"}
 {"id": 14728, "field": "name", "en": "Rumstag Proudstrider", "hash": "3e92445b1884bb4a", "src": "collector@1.60.1.70790"}
 {"id": 14729, "field": "name", "en": "Ralston Farnsley", "hash": "344b4822226a58e1", "src": "collector@1.60.1.70862"}
+{"id": 14743, "field": "name", "en": "Jhordy Lapforge", "hash": "27a4f59ff20f1434", "src": "collector@1.60.1.70888"}
 {"id": 14828, "field": "name", "en": "Gelvas Grimegate", "hash": "fe5b465fb2e44502", "src": "collector@1.60.1.70862"}
 {"id": 14829, "field": "name", "en": "Yebb Neblegear", "hash": "cd6a85118ca9486d", "src": "collector@1.60.1.70862"}
 {"id": 14832, "field": "name", "en": "Kerri Hicks", "hash": "39848abc7903ae22", "src": "collector@1.60.1.70862"}
 {"id": 14833, "field": "name", "en": "Chronos", "hash": "589b6421cf90a427", "src": "collector@1.60.1.70862"}
 {"id": 14841, "field": "name", "en": "Rinling", "hash": "a3f91861ed31bee9", "src": "collector@1.60.1.70888"}
 {"id": 14842, "field": "name", "en": "Melnan Darkstone", "hash": "cfb01f201b238696", "src": "collector@1.60.1.70862"}
+{"id": 14983, "field": "name", "en": "Field Marshal Oslight", "hash": "1ea3142122878771", "src": "collector@1.60.1.70938"}

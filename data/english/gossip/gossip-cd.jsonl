@@ -18,6 +18,7 @@
 {"id": "cd5fa721b0c1173a", "field": "text", "en": "Why you little...", "hash": "cd5fa721b0c1173a", "src": "vmangos@13b49dc"}
 {"id": "cd606b731e10ce53", "field": "text", "en": "And then the Tauren said, '13 INCHES!'", "hash": "cd606b731e10ce53", "src": "vmangos@13b49dc"}
 {"id": "cd6964cf4bcbc2e8", "field": "text", "en": "I'm done for, $N, but you might still be able to stop these monsters!", "hash": "cd6964cf4bcbc2e8", "src": "vmangos@13b49dc"}
+{"id": "cd6b40ba89063bc0", "field": "text", "en": "Ah, nothing beats the smell of fresh air with a hint of sweet sap.", "hash": "cd6b40ba89063bc0", "src": "collector@1.60.1.70959", "npcs": [256438]}
 {"id": "cd6d1a1afc6d4ec5", "field": "text", "en": "A Rut'theran Ferry leaves for Auberdine from Rut'theran Village at the base of Teldrassil.  The portal in Darnassus will allow you to reach Rut'theran safely.", "hash": "cd6d1a1afc6d4ec5", "src": "vmangos@13b49dc"}
 {"id": "cd70e4d1c397f5a9", "field": "text", "en": "Light help us... the Scourge are in the Park!", "hash": "cd70e4d1c397f5a9", "src": "vmangos@13b49dc"}
 {"id": "cd7fc2ac50b86312", "field": "text", "en": "%s inspects the ancient, mossy stone.", "hash": "cd7fc2ac50b86312", "src": "vmangos@13b49dc"}

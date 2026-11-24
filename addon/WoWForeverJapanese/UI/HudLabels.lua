@@ -1,5 +1,5 @@
 -- UI/HudLabels.lua: the fixed words the HUD's small bars and messages write on Forever (surface "hudlabels", area
--- "ui", ADR-016): four tiny always-on widgets, each one FontString with one writer, sharing one reason to
+-- "ui", ADR-016): a few tiny always-on widgets, each one FontString with one writer, sharing one reason to
 -- change (which HUD bar writes a fixed word, and when).
 -- Writers [verified: Forever 1.60.1.69913], each the frame's own method, post-hooked on the instance:
 --   mirror timers (breath, fatigue): MirrorTimerContainer.mirrorTimers (parentArray, blizzard_mirrortimer/mainline/
@@ -35,6 +35,9 @@
 --     AuraFrame_OnLoad (:191–204), so each button of BuffFrame and DebuffFrame is post-hooked on its own. The client
 --     rewrites the same English every frame: while it is the English the record was made for, the Japanese already
 --     worked out is put back (text only, the font stays); a new value goes through Labels.show.
+--   the name completion box's hint under an edit box: AutoComplete_OnLoad writes AutoCompleteInstructions once,
+--     "|cffbbbbbb"..PRESS_TAB.."|r" (blizzard_autocomplete/autocomplete.lua:133, autocomplete.xml:30–37). Shown at
+--     init and on the box's OnShow, restricted to that key. The rows above it are player names and stay as written.
 -- Never touched: the timers' and bars' values (numbers), the swing timer's time label ("0.0", lua:210).
 local _, WFJ = ...
 local HudLabels = {}
@@ -68,6 +71,8 @@ local function declareAll()
   Compat.declare(SURFACE, "auraMixin", { "AuraButtonMixin" })
   Compat.declare(SURFACE, "issecretvalue", { "issecretvalue" })
   Compat.declare(SURFACE, "framerate", { "FramerateFrame.FramerateText" })
+  Compat.declare(SURFACE, "completeBox", { "AutoCompleteBox" })
+  Compat.declare(SURFACE, "completeHint", { "AutoCompleteInstructions" })
 end
 
 local function get(key) return Compat.get(SURFACE, key) end
@@ -233,15 +238,30 @@ local function hookFramerate()
   return 1
 end
 
+local HINT = { only = { "PRESS_TAB" } }
+
+-- HookScript target (AutoCompleteBox OnShow), and once at init. → 1 | 0
+function HudLabels.onCompleteBox()
+  return WFJ.Labels.show(SURFACE, "completeHint", get("completeHint"), nil, HINT)
+end
+
+local function hookCompleteBox()
+  local box, hint = get("completeBox"), get("completeHint")
+  if type(box) ~= "table" or type(hint) ~= "table" or type(box.HookScript) ~= "function" then return 0 end
+  box:HookScript("OnShow", HudLabels.onCompleteBox)
+  HudLabels.onCompleteBox()
+  return 1
+end
+
 local hooked = false
 
--- Called by Main after Compat.init and ButtonText.init. → false when the client has none of the five widgets in the
+-- Called by Main after Compat.init and ButtonText.init. → false when the client has none of the widgets in the
 -- shape named above; a widget it lacks is skipped.
 function HudLabels.init()
   declareAll()
   if hooked then return false end
   local n = hookMirrorTimers() + hookSwingTimers() + hookHonorBars() + hookActionStatus() + hookAuraButtons()
-    + hookFramerate()
+    + hookFramerate() + hookCompleteBox()
   if n == 0 then return false end
   hooked = true
   WFJ.Render.updateBanner(SURFACE)

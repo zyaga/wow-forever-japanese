@@ -173,9 +173,11 @@ _TEXT_TABLES = (
         1240935,
         0x1123150E,
         13,
-        (_c("ID", ID), _c("Description_lang", 2)),
-        # DisplayName, AlternateVerb, HordeDisplayName, NeutralDisplayName: names and verbs, never imported
-        frozenset({0, 1, 3, 4}),
+        # DisplayName is the skill's or talent tree's name ("Arms", "Fishing"): a name, read for the name
+        # list only, never an interface line
+        (_c("ID", ID), _c("DisplayName_lang", 0), _c("Description_lang", 2)),
+        # AlternateVerb, HordeDisplayName, NeutralDisplayName: verbs and faction forms, never imported
+        frozenset({1, 3, 4}),
         layouts=(
             Layout(
                 0x6763217C,
@@ -610,20 +612,34 @@ TABLES: dict[str, Table] = {
             record=("i32", "i8", "i8", "i8", "i32", "i32", "i32"),
         ),
         # Race names for the ids above (ClientFileString: "NightElf", "Tauren"). Fields 0-14 are strings: the
-        # client prefix, then the name forms and lore names, all unwritten.
+        # client prefix, then the name forms and lore names. Name_lang is the race's name as a player's
+        # tooltip writes it ("Night Elf"), read for the name list only; the other forms are unwritten.
         _forever_text(
             "ChrRaces",
             1305311,
             0x4F44C796,
             51,
-            (_c("ID", ID), Column("ClientFileString", 1, text=True)),
-            frozenset({0, *range(2, 15)}),
+            (_c("ID", ID), Column("ClientFileString", 1, text=True), _c("Name_lang", 2)),
+            frozenset({0, *range(3, 15)}),
         ),
         # Flight point names ("Sentinel Hill, Westfall"), for the Japanese names (ADR-078); never a ui
         # family. Name_lang is the only field the bytes alone show as text (db2.text_fields), and on
         # 1.60.1.70888 each of the 84 node ids the VMaNGOS world database also has carries the same name
         # there; the other 17 are Forever's own nodes.
         _forever_text("TaxiNodes", 1068100, 0xE7B597F0, 15, (_c("ID", ID), _c("Name_lang", 0))),
+        # Shapeshift form names ("Bear Form", "Creature - Bear"), for the Japanese names: a spell's tooltip
+        # writes one after "Requires". Name_lang is the only field the bytes alone show as text
+        # (db2.text_fields); on 1.60.1.71037 rows 1 and 5 read "Cat Form" and "Bear Form", the druid forms
+        # those ids are known as.
+        _forever_text("SpellShapeshiftForm", 1280618, 0xEE25A6A2, 10, (_c("ID", ID), _c("Name_lang", 0))),
+        # Tool category names ("Runed Copper Rod", "Great Mage Writings"), for the Japanese names: a spell's
+        # tooltip lists them after "Tools:". Name_lang is the only field the bytes alone show as text; on
+        # 1.60.1.71037 its first four rows are the shaman's four totems.
+        _forever_text("TotemCategory", 1134586, 0x86C8149C, 3, (_c("ID", ID), _c("Name_lang", 0))),
+        # Item set names ("Battlegear of Might", Forever's "Krol'dok Battlegear"), for the Japanese names: an
+        # item's tooltip heads its set's lines with "<set> (3/5)". Name_lang is the only field the bytes alone
+        # show as text (db2.text_fields); on 1.60.1.71091 its rows hold the sets a set item's tooltip names.
+        _forever_text("ItemSet", 1343609, 0xF79068A4, 5, (_c("ID", ID), _c("Name_lang", 0))),
         # the client-table text families (ADR-042). Every written column is the row id or a leading
         # string field, so each table is text-only and a hotfix is read as its leading strings (no `record`).
         # Names stay English: a name column is declared unwritten so the string layout reads, and is

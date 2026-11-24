@@ -11,6 +11,8 @@ end
 
 local UI = {
   QUEST_MONSTERS_KILLED = { "%2$d/%3$d %1$s slain", "%1$sを倒す: %2$d/%3$d" },
+  QUEST_ITEMS_NEEDED = { "%2$d/%3$d %1$s", "%1$s: %2$d/%3$d" },
+  QUEST_ITEMS_NEEDED_NOPROGRESS = { "%2$d x %1$s", "%1$s: 必要数 %2$d" },
   TOOLTIP_UNIT_LEVEL = { "Level %s", "レベル %s" },
 }
 
@@ -133,6 +135,25 @@ describe("UI/TooltipUnit: quest titles and line kinds", function()
       assert.are.equal("狼の毛皮", left(3))
       tt:Hide()
       assert.are.equal(0, WFJ.SurfaceState.count(WFJ.TooltipUnit.SURFACE))
+    end)
+
+    it("an item count objective row: as written with names off, the item's Japanese with names on", function()
+      local lines = { "Murloc Warrior", "Level 40", "Wolf Pelts", "12/12 Saltwater Murloc Eye", "2 x Linen Cloth",
+        "1/4 Unknown Trinket" }
+      local rows = kinds({ "UnitName", "None", "QuestTitle", "QuestObjective", "QuestObjective", "QuestObjective" })
+      hover(lines, rows)
+      assert.are.equal("12/12 Saltwater Murloc Eye", left(4))
+      assert.are.equal("2 x Linen Cloth", left(5))
+      local NAMES = { ["Saltwater Murloc Eye"] = "ソルトウォーター・マーロック・アイ", ["Linen Cloth"] = "リネン・クロス" }
+      WFJ.UIStrings.name = function(text) return NAMES[text] end
+      hover(lines, rows)
+      assert.are.equal("ソルトウォーター・マーロック・アイ: 12/12", left(4))
+      assert.are.equal("リネン・クロス: 必要数 2", left(5))
+      assert.are.equal("1/4 Unknown Trinket", left(6)) -- a name with no Japanese stays as the client wrote it
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("12/12 Saltwater Murloc Eye", left(4))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      WFJ.UIStrings.name = nil
     end)
 
     it("a title on a row the client did not tag QuestTitle is read as a unit line, not a quest", function()

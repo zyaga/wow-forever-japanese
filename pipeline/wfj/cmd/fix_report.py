@@ -221,7 +221,8 @@ def _key(row: dict[str, Any]) -> tuple[Any, Any, Any]:
 
 
 def needs_words(type_: str, ja: str) -> bool:
-    """A changed quest / gossip / ui / plain-book line gets its readings with meanings in the same apply."""
+    """A changed quest / gossip / ui / plain-book / item / spell line gets its readings with meanings in the
+    same apply."""
     # a line holding `|` (a colour code or any escape) is never owed one: the word box refuses it (validate)
     return (
         type_ in readings.TYPES
@@ -317,7 +318,10 @@ def _change_problems(
     if line is None or line.get("ja") != t["ja"]:
         p.append(f"{where}: the line's Japanese changed since intake; run intake again")
     if needs_words(type_, ja):
-        bad = readings.word_problems(ja, row.get("words"))
+        # the words are for the line as it will ship: a rewrite is hand-written, so a tooltip line's manual
+        # breaks are joined, and a word may stand across one
+        shipped = readings.hand_written_text(type_, ja, t.get("en") or None)
+        bad = readings.word_problems(shipped, row.get("words"))
         p += [f"{where}: words: {x}" for x in bad]
     elif "words" in row:
         p.append(f"{where}: this line takes no readings, so no words")
@@ -514,12 +518,21 @@ def apply(root: Path, issue: int, model_id: str, date: str, by: str, dry_run: bo
             print(f"  {x}")
         print(f"report apply: {len(problems)} line(s) would not ship, nothing written; fix the decisions")
         return 1
+    # a rewrite is hand-written, so a tooltip line's words are for the text with its manual breaks joined
+    en_of = {
+        (t, ln["id"], ln["field"]): ln.get("en")
+        for t in types
+        if t in readings.TOOLTIP_TYPES
+        for ln in english.load(t)
+    }
     words = [
         {
             "type": r["type"],
             "id": r["id"],
             "field": r["field"],
-            "ja_hash": readings.ja_hash(r["ja"]),
+            "ja_hash": readings.ja_hash(
+                readings.hand_written_text(r["type"], r["ja"], en_of.get((r["type"], r["id"], r["field"])))
+            ),
             "words": r["words"],
         }
         for r in rows

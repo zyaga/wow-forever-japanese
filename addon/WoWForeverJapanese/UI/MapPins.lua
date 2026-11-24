@@ -10,7 +10,7 @@
 -- From then on HelpTooltip's SetText / Show hooks follow that pin like any other owner. A pool is per template, so
 -- a pin never changes template and its registration stays right for as long as the frame lives.
 -- Every pin tooltip's first line can be a name (a flight point, a graveyard, a dungeon, a rare), so every entry is
--- an `only` list: a name never matches, even one that is also a dictionary word.
+-- an `only` list: a name never matches as a dictionary word, even one that is also a dictionary word.
 -- Writers (all blizzard_sharedmapdataproviders/, all end in GameTooltip:Show()):
 --   FlightPointPinTemplate          BaseMapPoiPinMixin:CheckShowTooltip (sharedmappoitemplates.lua:139–157) with the
 --                                   description flightpointdataprovider.lua:20–27 gives an undiscovered node
@@ -19,8 +19,9 @@
 --                                   a creature's name: not listed
 --   SelectableGraveyardPinTemplate  selectablegraveyarddataprovider.lua:57–73
 --   WaypointLocationPinTemplate     waypointlocationdataprovider.lua:165–175 (template name :3–5)
---   QuestPinTemplate                the gamepad-mode lines (questdataprovider.lua:273–276; template name :3–4) and
---                                   the quest's tag line (below)
+--   QuestPinTemplate                the gamepad-mode lines (questdataprovider.lua:273–276; template name :3–4), the
+--                                   quest's tag line (below) and its title, line 1 (UI/QuestMap's title, by the
+--                                   pin's quest id)
 --   QuestBlobPinTemplate            the quest's tag line only (questblobdataprovider.lua:19, 202–213)
 --   DungeonEntrancePinTemplate      the fallback name and the instruction line (dungeonentrancedataprovider.lua:
 --                                   68–74) through CheckShowTooltip
@@ -33,15 +34,19 @@
 --                                   poiInfo.description (blizzard_framexmlutil/areapoiutil.lua:3–24; template names
 --                                   areapoidataprovider.lua:3–4, 159–191; areapoieventdataprovider.lua:3–4, 57: a sub
 --                                   pin of AreaPOIPinMixin), an AreaPoiDescription or AreaPoiState row's English. The
---                                   name (line 1) stays English. The world map and the battlefield map add both
---                                   providers (blizzard_worldmap.lua:219–220; blizzard_battlefieldmap/mainline/
---                                   blizzard_battlefieldmap.lua:212–213)
+--                                   name (line 1) takes the names step below. The world map and the
+--                                   battlefield map add both providers (blizzard_worldmap.lua:219–220;
+--                                   blizzard_battlefieldmap/mainline/blizzard_battlefieldmap.lua:212–213)
 -- Client-table families (ADR-042) are matched only on the templates that name them (LINE_FAMILIES), after the walk
--- and from line 2 on: line 1 is a quest's title or a POI's name, which may read like a row and stays English. A
+-- and from line 2 on: line 1 is a quest's title or a POI's name, which may read like a row and is no row. A
 -- quest's tag line is QuestUtils_AddQuestTypeToTooltip's: C_QuestLog.GetQuestTagInfo(questID).tagName, a QuestTag
 -- row's English, after an atlas markup and a space unless the tag icons are hidden (blizzard_framexmlutil/mainline/
 -- questutils.lua:37–58, 670–678); the atlas is kept.
 -- Another module adds its own map's templates with MapPins.add (UI/FlightMap: the flight map's node pins).
+-- Names, while Japanese names are on: on the templates whose line 1 is a place's or a creature's name (NAMED), that
+-- line shows the name's Japanese after every Show (UI/NameLabels, on the help surface under the walk's own record
+-- key "L1", with the help tooltip's refit). A line 1 the walk wrote as a dictionary word (a dungeon entrance's
+-- fallback name) keeps the walk's record. A quest's title, a graveyard's and a corpse's line 1 are no names.
 local _, WFJ = ...
 local MapPins = {}
 WFJ.MapPins = MapPins
@@ -85,6 +90,18 @@ local LINE_FAMILIES = {
 }
 local NO_KEYS = {}
 
+-- pin templates whose tooltip's line 1 is a game name: a flight point, a dungeon, a map link's place, an area POI,
+-- a vignette's rare (sharedmappoitemplates.lua:139–157; vignettedataprovider.lua:493–497;
+-- blizzard_flightmap/fm_flightpathdataprovider.lua:240–245)
+local NAMED = { FlightPointPinTemplate = true, DungeonEntrancePinTemplate = true, MapLinkPinTemplate = true,
+  AreaPOIPinTemplate = true, AreaPOIEventPinTemplate = true, VignettePinTemplate = true,
+  VignettePinPOIButtonTemplate = true, FlightMap_FlightPointPinTemplate = true }
+
+-- Line 1's name in Japanese, unless the walk holds that line as a dictionary word. → 1 | 0
+local function nameLine(tt)
+  return WFJ.HelpTooltip.nameAt(tt, 1)
+end
+
 -- The `opts` a listed pin is registered with. A family pin is registered even with no keys of its own, so
 -- UI/HelpTooltip tracks its lines (forgotten when the tooltip passes to another owner). → opts | nil
 local function pinOpts(template)
@@ -118,6 +135,19 @@ function MapPins.familyLines(tt, families)
   return n
 end
 
+-- A quest pin's line 1: the quest's title, with camelot's level prefix and the difficulty colour around it
+-- (QuestPinMixin:OnMouseEnter, questdataprovider.lua:233-244; SetQuestTitleLevelAndDifficultyColor,
+-- difficultyutil.lua:84-99), shown the way the quest log shows a title. → 1 | 0
+local function questTitle(tt, owner)
+  local QuestMap = WFJ.QuestMap
+  if not QuestMap or type(owner.GetQuestID) ~= "function" or type(tt.GetName) ~= "function" then return 0 end
+  local ok, questID = pcall(owner.GetQuestID, owner)
+  local name = tt:GetName()
+  if not ok or type(questID) ~= "number" or type(name) ~= "string" then return 0 end
+  local help = WFJ.HelpTooltip
+  return QuestMap.showTitle(help.SURFACE, questID, Compat.resolve(name .. "TextLeft1"), help.refit)
+end
+
 -- Lists the keys a pin template's tooltip may show (a map module's own pins). A template already listed is kept.
 function MapPins.add(template, keys)
   if type(template) ~= "string" or type(keys) ~= "table" or PIN_KEYS[template] then return false end
@@ -147,6 +177,8 @@ function MapPins.onShow(tt)
   end
   local families = LINE_FAMILIES[template]
   if families then n = n + MapPins.familyLines(tt, families) end
+  if NAMED[template] then n = n + nameLine(tt) end
+  if template == "QuestPinTemplate" then n = n + questTitle(tt, owner) end
   return n
 end
 

@@ -22,6 +22,7 @@
 {"id": "f662e0d07115b46c", "field": "text", "en": "RUN THEM THROUGH, SOLDIERS!", "hash": "f662e0d07115b46c", "src": "vmangos@13b49dc"}
 {"id": "f662e235a69ab910", "field": "text", "en": "Acquire Higher Level Access Card", "hash": "f662e235a69ab910", "src": "vmangos@13b49dc"}
 {"id": "f677deaa0a786e8c", "field": "text", "en": "So why are you here? What are we to do if there is no hope?", "hash": "f677deaa0a786e8c", "src": "vmangos@13b49dc"}
+{"id": "f679880d04edb4e7", "field": "text", "en": "That's what I like to hear!", "hash": "f679880d04edb4e7", "src": "collector@1.60.1.71037"}
 {"id": "f679881a04edb4f4", "field": "text", "en": "That's what I like to hear.", "hash": "f679881a04edb4f4", "src": "vmangos@13b49dc"}
 {"id": "f681118120d19ae8", "field": "text", "en": "Well Done!", "hash": "f681118120d19ae8", "src": "vmangos@13b49dc"}
 {"id": "f68438145a50f09b", "field": "text", "en": "The night elf is motionless, with multiple wounds and discoloration emblematic of suffering from poison.", "hash": "f68438145a50f09b", "src": "collector@1.60.1.70888", "npcs": [268925]}

@@ -14,6 +14,7 @@ local UI = {
 local GOSSIP = {
   ["Stay close, {name}!"] = { "離れるな、{name}！", "." },
   ["%s goes into a frenzy!"] = { "%sは狂乱状態になった！", "." },
+  ["Stay with Thrall, {name}!"] = { "Thrallのそばにいろ、{name}！", "." },
   ["The rest is stale."] = { "古い訳。", "s" },
   ["%s laughs."] = { "笑った。", "." }, -- a draft that lost the speaker's %s: never shown
   ["I can make it from here.  Thanks, {name}!"] = { "ここからは一人で行ける。ありがとう、{name}！", "." },
@@ -266,6 +267,64 @@ describe("NPC speech", function()
     assert.are.equal("Onyxiaは狂乱状態になった！", fs:GetText())
     local other = _G.RaidWarningFrame:Fire("CHAT_MSG_RAID_WARNING", "Pull in 5", "Bob")
     assert.are.equal("Pull in 5", other:GetText())
+  end)
+
+  describe("names in a bubble and a boss emote", function()
+    before_each(function()
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Thrall")] = "スロール\tすろーる",
+        [WFJ.Names.key("Onyxia")] = "オニキシア\tおにきしあ",
+        [WFJ.Names.key("Testplayer")] = "テストプレイヤー\tてすとぷれいやー", -- an NPC that shares the player's name
+      })
+      _G.UnitName = function(unit) if unit == "player" then return "Testplayer" end end
+      WFJ.State.setNames(true)
+    end)
+    after_each(function() _G.UnitName = nil end)
+
+    local function bubble()
+      local string = Stub.fontString("")
+      local child = { String = string }
+      bubbles[1] = { GetChildren = function() return child end, IsForbidden = function() return false end }
+      return string
+    end
+
+    it("a bubble shows the names in Japanese and the player's own name as written; names off gives them back",
+      function()
+        local string = bubble()
+        npc(_G.ChatFrame1, SAY, "%s says: ", "Stay with Thrall, Testplayer!", "Ralph")
+        string:SetText("Stay with Thrall, Testplayer!")
+        assert.are.equal(1, WFJ.Speech.scanBubbles())
+        assert.are.equal("スロールのそばにいろ、Testplayer！", string:GetText())
+        alt(WFJ, true)
+        assert.are.equal("Stay with Thrall, Testplayer!", string:GetText())
+        alt(WFJ, false)
+        assert.are.equal("スロールのそばにいろ、Testplayer！", string:GetText())
+        WFJ.State.setNames(false)
+        assert.are.equal("Thrallのそばにいろ、Testplayer！", string:GetText())
+        WFJ.State.setNames(true)
+        assert.are.equal("スロールのそばにいろ、Testplayer！", string:GetText())
+      end)
+
+    it("a boss emote shows the boss's name in Japanese; names off and the reveal key give it back", function()
+      local fs = _G.RaidWarningFrame:Fire("RAID_BOSS_EMOTE", "%s goes into a frenzy!", "Onyxia")
+      assert.are.equal("オニキシアは狂乱状態になった！", fs:GetText())
+      alt(WFJ, true)
+      assert.are.equal("Onyxia goes into a frenzy!", fs:GetText())
+      alt(WFJ, false)
+      WFJ.State.setNames(false)
+      assert.are.equal("Onyxiaは狂乱状態になった！", fs:GetText())
+    end)
+
+    it("a secret speaker name in a boss emote is never read or compared", function()
+      local hidden = "Onyxia (hidden)"
+      secrets[hidden] = true
+      local fs
+      assert.has_no.errors(function()
+        fs = _G.RaidWarningFrame:Fire("RAID_BOSS_EMOTE", "%s goes into a frenzy!", hidden)
+      end)
+      assert.are.equal("Onyxia (hidden) goes into a frenzy!", fs:GetText())
+      assert.are.equal(0, fs.calls.addonSetText)
+    end)
   end)
 
   -- The problem log: why a line that ships Japanese is left English.

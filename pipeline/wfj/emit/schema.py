@@ -3,7 +3,9 @@
 Row shape (docs/architecture/data-model.md, ADR-008):
   quest:  { title, objectives, description, progress, completion, h1×5, "<status chars>"[, h1f×5] }
           h1f×5: the female-variant h1 per field, only on a row where some field's English has $G
-  item / spell: { description, h1, "<status char>" }
+  item / spell: { description, h1, "<status char>"[, values] }   (spell: two fields, so two of each)
+          values: per field, how many numbers the client prints for the English the Japanese is numbered
+          to; only on a row where some field's Japanese is filled from the live line (`$N<k>` / `$D<k>`)
   objective: { text, h1, "<status char>" }   keyed by QuestObjective id, found in the addon by h1
   area:   { text, h1, "<status char>" }   keyed by quest id, found in the addon by h1 with objectives
   gossip: ["<16 hex key>"] = { text, "<status char>" }
@@ -12,7 +14,7 @@ Row shape (docs/architecture/data-model.md, ADR-008):
            | <family>:id>"]
           = { text, h1, "<status char>" }   (the last form: the client-table text families)
 `hash` is the offset added to a field's slot to reach its h1 slot; `status` is the status-string slot;
-`female` (quest only) is the offset to its h1f slot.
+`female` (quest only) is the offset to its h1f slot; `values` (item / spell only) the offset to its count.
 """
 
 from __future__ import annotations
@@ -22,10 +24,14 @@ from wfj.core.model import FIELDS, SHARD_WIDTH
 STATUS_CHAR: dict[str, str] = {"trusted": ".", "stale": "s", "unaligned": "u"}
 MISSING = "m"
 
-def _flat(type_: str) -> dict:
-    """A type with no female slot: text per field, then h1 per field, then the one status string."""
+def _flat(type_: str, *, values: bool = False) -> dict:
+    """A type with no female slot: text per field, then h1 per field, then the one status string. With
+    `values`, a count per field may follow the status string."""
     fields = list(FIELDS[type_])
-    return {"fields": fields, "hash": len(fields), "status": 2 * len(fields) + 1}
+    slots = {"fields": fields, "hash": len(fields), "status": 2 * len(fields) + 1}
+    if values:
+        slots["values"] = 2 * len(fields) + 1
+    return slots
 
 
 SLOTS: dict[str, dict] = {
@@ -38,8 +44,8 @@ SLOTS: dict[str, dict] = {
     # `hash` is the offset from a field's text slot to its h1; `status` the one string after them all.
     # Derived, not written out, so a type that gains a field (spell's `aura`) cannot be left with a
     # stale layout; `Core/Const.lua` is the hand-written twin and `test_generate` checks the two agree.
-    "item": _flat("item"),
-    "spell": _flat("spell"),
+    "item": _flat("item", values=True),
+    "spell": _flat("spell", values=True),
     "ui": _flat("ui"),
     "objective": _flat("objective"),
     "area": _flat("area"),

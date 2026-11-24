@@ -19,7 +19,11 @@
 --   button's one-second ticker while hovered, lua:355–360, 395–398): TIMEMANAGER_ALARM_TOOLTIP_TURN_OFF, or
 --   GameTime_UpdateTooltip's TIMEMANAGER_TOOLTIP_TITLE / _REALMTIME / _LOCALTIME (blizzard_framexmlutil/
 --   gametimeutil.lua:95–107) then GAMETIME_TOOLTIP_TOGGLE_CLOCK. The alarm message the player typed is the first
---   line while the alarm fires: the owner is restricted to those keys, so it is never matched.
+--   line while the alarm fires: the owner is restricted to those keys, so it is never matched. The realm and local
+--   times beside their labels are GameTime_GetFormattedTime(hour, minute, true): TIME_TWELVEHOURAM / _PM
+--   ("%d:%02d AM"), or digits in 24-hour mode [verified: forever-ui-1.60.1.71037 blizzard_framexmlutil/
+--   gametimeutil.lua:9-31, 95-107]. A right line only is offered those two keys, so a twelve-hour time reads 午前 /
+--   午後 and an alarm message written like a time stays as typed.
 -- Never touched: the alarm message EditBox, the two clock tickers and the stopwatch digits (numbers).
 local _, WFJ = ...
 local TimeManager = {}
@@ -53,8 +57,15 @@ local CANDIDATES = {
 }
 
 local TITLE_KEY = "TIMEMANAGER_TITLE"
+local TIME = { only = { "TIME_TWELVEHOURAM", "TIME_TWELVEHOURPM" } }
+-- HelpTooltip asks this for a line the owner's `only` keys did not match: a right line may be a time. → 1 | 0
+local function rightTime(surface, recKey, fs, refit)
+  if recKey:sub(1, 1) ~= "R" then return 0 end
+  return WFJ.Labels.show(surface, recKey, fs, refit, TIME)
+end
 local CLOCK_TOOLTIP = { only = { "TIMEMANAGER_TOOLTIP_TITLE", "TIMEMANAGER_TOOLTIP_REALMTIME",
-  "TIMEMANAGER_TOOLTIP_LOCALTIME", "GAMETIME_TOOLTIP_TOGGLE_CLOCK", "TIMEMANAGER_ALARM_TOOLTIP_TURN_OFF" } }
+  "TIMEMANAGER_TOOLTIP_LOCALTIME", "GAMETIME_TOOLTIP_TOGGLE_CLOCK", "TIMEMANAGER_ALARM_TOOLTIP_TURN_OFF" },
+  show = rightTime }
 
 local function get(key) return Compat.get(SURFACE, key) end
 

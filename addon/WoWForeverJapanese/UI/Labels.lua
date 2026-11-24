@@ -119,8 +119,11 @@ function Labels.scrolling(sf)
 end
 
 -- Shows one label as record `recKey` on `surface`. `opts` (optional): { only = { KEY = true, … } | { "KEY", … },
--- evenForbidden = true }. A forbidden widget is shown only with `evenForbidden` and an `only` list: the one form of it
--- that is a dictionary line (a locked calendar event's title around the title the player typed).
+-- evenForbidden = true, wrapped = true }. A forbidden widget is shown only with `evenForbidden` and an `only` list:
+-- the one form of it that is a dictionary line (a locked calendar event's title around the title the player typed).
+-- `wrapped` (with `only`): the widget's word may arrive inside one colour code ("|cffffffffFriends|r", a tooltip
+-- title in the highlight colour); the same colour goes around the Japanese. Asked for by the widget, so a key gains
+-- no colour-wrapped form on any other surface.
 -- → 1 when the widget holds a dictionary word (shown or already ours), else 0; and a record from an earlier text on
 -- that key is dropped, never restored over the client's text.
 local function show(surface, recKey, widget, refit, opts)
@@ -146,6 +149,14 @@ local function show(surface, recKey, widget, refit, opts)
   local key, args
   if type(en) == "string" and en ~= "" then
     if opts and opts.only then key, args = index:matchOnly(en, opts.only) else key, args = index:match(en) end
+    -- `also`: keys of restricted families this widget may show as well as the whole dictionary
+    if not key and opts and opts.also then key, args = index:matchOnly(en, opts.also) end
+    if not key and opts and opts.only and opts.wrapped then
+      local open, inner, close = en:match("^(|c%x%x%x%x%x%x%x%x)(.-)(|r)$")
+      local innerKey, innerArgs
+      if open and inner ~= "" then innerKey, innerArgs = index:matchOnly(inner, opts.only) end
+      if innerKey then key, args = innerKey, { form = "wrapped", open = open, close = close, inner = innerArgs } end
+    end
   end
   -- a forbidden widget takes only the form the client writes, colour codes and all: a bare form there would be
   -- the player's own text ("Raid night (Locked)")

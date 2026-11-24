@@ -1,5 +1,6 @@
 {"id": 1070, "field": "name", "en": "Deputy Feldon", "hash": "4ad75fb154602f58", "src": "collector@1.60.1.70862"}
 {"id": 1071, "field": "name", "en": "Longbraid the Grim", "hash": "311767f7ff16a97b", "src": "collector@1.60.1.70888"}
+{"id": 1072, "field": "name", "en": "Roggo Harlbarrow", "hash": "f6063fd52be90247", "src": "collector@1.60.1.70938"}
 {"id": 1073, "field": "name", "en": "Ashlan Stonesmirk", "hash": "c22c731f7785a529", "src": "collector@1.60.1.70862"}
 {"id": 1074, "field": "name", "en": "Motley Garmason", "hash": "d71a047c21f55379", "src": "collector@1.60.1.70888"}
 {"id": 1075, "field": "name", "en": "Rhag Garmason", "hash": "147f2eda7187ad9d", "src": "collector@1.60.1.70888"}
@@ -22,19 +23,27 @@
 {"id": 1212, "field": "name", "en": "Bishop Farthing", "hash": "7b83c7854527d712", "src": "collector@1.60.1.70938"}
 {"id": 1215, "field": "name", "en": "Alchemist Mallory", "hash": "350a1bd68168af3a", "src": "collector@1.60.1.70938"}
 {"id": 1217, "field": "name", "en": "Glorin Steelbrow", "hash": "e70423fe8e28b453", "src": "collector@1.60.1.70938"}
+{"id": 1226, "field": "name", "en": "Maxan Anvol", "hash": "196ad0deda6e3830", "src": "collector@1.60.1.70959"}
 {"id": 1231, "field": "name", "en": "Grif Wildheart", "hash": "d00b8f3c04074cc4", "src": "collector@1.60.1.70790"}
+{"id": 1234, "field": "name", "en": "Hogral Bakkan", "hash": "3c14e95b3862ffc6", "src": "collector@1.60.1.71037"}
 {"id": 1239, "field": "name", "en": "First Mate Fitzsimmons", "hash": "e981629a07115d74", "src": "collector@1.60.1.70862"}
+{"id": 1241, "field": "name", "en": "Tognus Flintfire", "hash": "44dcd05ce99d7c88", "src": "collector@1.60.1.70959"}
 {"id": 1242, "field": "name", "en": "Karl Boran", "hash": "412dc2e23b362c79", "src": "collector@1.60.1.70862"}
 {"id": 1243, "field": "name", "en": "Hegnar Rumbleshot", "hash": "b37cd3b101c7e6bd", "src": "collector@1.60.1.70938"}
 {"id": 1244, "field": "name", "en": "Rethiel the Greenwarden", "hash": "679c4658d4f96ac0", "src": "collector@1.60.1.70862"}
+{"id": 1252, "field": "name", "en": "Senir Whitebeard", "hash": "aeaab99f27768bf6", "src": "collector@1.60.1.70938"}
 {"id": 1253, "field": "name", "en": "Father Gavin", "hash": "5e16fb4ba71779f1", "src": "collector@1.60.1.70862"}
 {"id": 1254, "field": "name", "en": "Foreman Stonebrow", "hash": "fd7d4aec4602d579", "src": "collector@1.60.1.70790"}
 {"id": 1256, "field": "name", "en": "Quarrymaster Thesten", "hash": "0384483bf56c8530", "src": "collector@1.60.1.70862"}
+{"id": 1261, "field": "name", "en": "Veron Amberstill", "hash": "abed70dd1c9435af", "src": "collector@1.60.1.70888"}
 {"id": 1265, "field": "name", "en": "Rudra Amberstill", "hash": "014c41975b344115", "src": "collector@1.60.1.70790"}
 {"id": 1266, "field": "name", "en": "Tundra MacGrann", "hash": "5bc3e40b94db7427", "src": "collector@1.60.1.70862"}
 {"id": 1267, "field": "name", "en": "Ragnar Thunderbrew", "hash": "8b04a24fd679958b", "src": "collector@1.60.1.70862"}
 {"id": 1268, "field": "name", "en": "Ozzie Togglevolt", "hash": "cd352c90d77a424b", "src": "collector@1.60.1.70888"}
+{"id": 1269, "field": "name", "en": "Razzle Sprysprocket", "hash": "a7256f58e0541201", "src": "collector@1.60.1.70938"}
 {"id": 1274, "field": "name", "en": "Senator Barin Redstone", "hash": "56f543e35f83ea69", "src": "collector@1.60.1.70862"}
+{"id": 1284, "field": "name", "en": "Archbishop Benedictus", "hash": "ec7d26c78bb3a763", "src": "collector@1.60.1.70938"}
+{"id": 1309, "field": "name", "en": "Wynne Larson", "hash": "8e62b8e24fc9f391", "src": "collector@1.60.1.70959"}
 {"id": 1323, "field": "name", "en": "Osric Strang", "hash": "147f70cf921d35ef", "src": "collector@1.60.1.70862"}
 {"id": 1325, "field": "name", "en": "Jasper Fel", "hash": "adccf9dddef742d8", "src": "collector@1.60.1.70862"}
 {"id": 1340, "field": "name", "en": "Mountaineer Kadrell", "hash": "9224c2c86e769757", "src": "collector@1.60.1.70790"}
@@ -43,6 +52,7 @@
 {"id": 1344, "field": "name", "en": "Prospector Ironband", "hash": "af0ce9052540fc02", "src": "collector@1.60.1.70862"}
 {"id": 1345, "field": "name", "en": "Magmar Fellhew", "hash": "e5ebe6d4387f3aab", "src": "collector@1.60.1.70862"}
 {"id": 1356, "field": "name", "en": "Prospector Stormpike", "hash": "6a82a302b12f5d28", "src": "collector@1.60.1.70862"}
+{"id": 1373, "field": "name", "en": "Jarven Thunderbrew", "hash": "3762404f034be5e7", "src": "collector@1.60.1.70959"}
 {"id": 1374, "field": "name", "en": "Rejold Barleybrew", "hash": "bc2ee86ea3c63707", "src": "collector@1.60.1.70862"}
 {"id": 1375, "field": "name", "en": "Marleth Barleybrew", "hash": "d0af05bf6ea5a09d", "src": "collector@1.60.1.70862"}
 {"id": 1376, "field": "name", "en": "Beldin Steelgrill", "hash": "47fd939556604b7f", "src": "collector@1.60.1.70862"}
@@ -50,6 +60,7 @@
 {"id": 1378, "field": "name", "en": "Pilot Bellowfiz", "hash": "90792c23844ef198", "src": "collector@1.60.1.70862"}
 {"id": 1379, "field": "name", "en": "Miran", "hash": "55cfb71cd0c5af78", "src": "collector@1.60.1.70862"}
 {"id": 1416, "field": "name", "en": "Grimand Elmore", "hash": "32eacdf38774b740", "src": "collector@1.60.1.70862"}
+{"id": 1422, "field": "name", "en": "Corporal Sethman", "hash": "8bea2002c9b797f7", "src": "collector@1.60.1.70862"}
 {"id": 1427, "field": "name", "en": "Harlan Bagley", "hash": "f3fb99efd03ae7c1", "src": "collector@1.60.1.70790"}
 {"id": 1428, "field": "name", "en": "Rema Schneider", "hash": "a062013bef3b4c38", "src": "collector@1.60.1.70790"}
 {"id": 1429, "field": "name", "en": "Thurman Schneider", "hash": "32cdef06d16868ad", "src": "collector@1.60.1.70790"}
@@ -60,6 +71,7 @@
 {"id": 1439, "field": "name", "en": "Lord Baurles K. Wishock", "hash": "348c773dd2c64ecf", "src": "collector@1.60.1.70888"}
 {"id": 1440, "field": "name", "en": "Milton Sheaf", "hash": "499d0e2805eda8ed", "src": "collector@1.60.1.70888"}
 {"id": 1444, "field": "name", "en": "Brother Kristoff", "hash": "ac67987fdcf6adad", "src": "collector@1.60.1.70888"}
+{"id": 1470, "field": "name", "en": "Ghak Healtouch", "hash": "e23ac9625940e1b8", "src": "collector@1.60.1.70862"}
 {"id": 1480, "field": "name", "en": "Caitlin Grassman", "hash": "77748670eeca5dc3", "src": "collector@1.60.1.70862"}
 {"id": 1481, "field": "name", "en": "Bart Tidewater", "hash": "ac9aba236abf8f78", "src": "collector@1.60.1.70888"}
 {"id": 1495, "field": "name", "en": "Deathguard Linnea", "hash": "fe4e37f75733b042", "src": "collector@1.60.1.70790"}
@@ -85,7 +97,9 @@
 {"id": 1661, "field": "name", "en": "Novice Elreth", "hash": "7874902e97bddc72", "src": "collector@1.60.1.70790"}
 {"id": 1681, "field": "name", "en": "Brock Stoneseeker", "hash": "1cbce8a437af4283", "src": "collector@1.60.1.70790"}
 {"id": 1684, "field": "name", "en": "Khara Deepwater", "hash": "944c75cfb24b37dd", "src": "collector@1.60.1.70862"}
+{"id": 1694, "field": "name", "en": "Loslor Rudge", "hash": "0ac54bf1854f7f64", "src": "collector@1.60.1.70959"}
 {"id": 1698, "field": "name", "en": "Frast Dokner", "hash": "c3f587f9313737c9", "src": "collector@1.60.1.70862"}
+{"id": 1699, "field": "name", "en": "Gremlock Pilsnor", "hash": "c306d16e99bcc117", "src": "collector@1.60.1.70959"}
 {"id": 1700, "field": "name", "en": "Paxton Ganter", "hash": "33ff29369d13cecb", "src": "collector@1.60.1.70862"}
 {"id": 1719, "field": "name", "en": "Warden Thelwater", "hash": "dc159371f5eabbb0", "src": "collector@1.60.1.70862"}
 {"id": 1721, "field": "name", "en": "Nikova Raskol", "hash": "302e2e064f0148d9", "src": "collector@1.60.1.70862"}
@@ -94,6 +108,7 @@
 {"id": 1742, "field": "name", "en": "Deathguard Bartholomew", "hash": "e5741cb4d9f96209", "src": "collector@1.60.1.70790"}
 {"id": 1748, "field": "name", "en": "Highlord Bolvar Fordragon", "hash": "1f48517511c16bdd", "src": "collector@1.60.1.70790"}
 {"id": 1749, "field": "name", "en": "Lady Katrana Prestor", "hash": "4e5ba1ebae675c5e", "src": "collector@1.60.1.70938"}
+{"id": 1872, "field": "name", "en": "Tharek Blackstone", "hash": "4d76b9690b560f6d", "src": "collector@1.60.1.70959"}
 {"id": 1931, "field": "name", "en": "Captured Scarlet Zealot", "hash": "842198be2dfa7356", "src": "collector@1.60.1.70790"}
 {"id": 1937, "field": "name", "en": "Apothecary Renferrel", "hash": "1f337fd7e317d7db", "src": "collector@1.60.1.70790"}
 {"id": 1938, "field": "name", "en": "Dalar Dawnweaver", "hash": "a23899570b0307ef", "src": "collector@1.60.1.70790"}
@@ -105,4 +120,5 @@
 {"id": 1963, "field": "name", "en": "Vidra Hearthstove", "hash": "17bf261a768d33db", "src": "collector@1.60.1.70790"}
 {"id": 1965, "field": "name", "en": "Mountaineer Thalos", "hash": "beb6e438f6860210", "src": "collector@1.60.1.70790"}
 {"id": 1977, "field": "name", "en": "Senator Mehr Stonehallow", "hash": "607d2eb864fc653d", "src": "collector@1.60.1.70790"}
+{"id": 1978, "field": "name", "en": "Deathstalker Erland", "hash": "56276617d0efc17d", "src": "collector@1.60.1.70959"}
 {"id": 1992, "field": "name", "en": "Tarindrella", "hash": "0ea1887499b35bf8", "src": "collector@1.60.1.70170"}

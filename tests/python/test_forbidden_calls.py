@@ -23,10 +23,16 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/StudyWindow.lua",
                 # saving a word: its screenshot event frame
                 "UI/WordSave.lua",
+                # the nameplate setting: its own event frame, which hears the client's settings change
+                "UI/NamePlateSetting.lua",
                 # the tooltip trace window (/wfj debug tooltip)
                 "UI/Slash.lua",
                 # the text watch and the taint watch script only their own frame (an OnUpdate, an all-events ring)
                 "UI/TextWatch.lua", "UI/TaintWatch.lua",
+                # the spellbook's labels: its own frame's OnUpdate and OnHide, never a spellbook frame's
+                "UI/SpellBookNames.lua",
+                # the professions page's labels: its own frame's OnUpdate and OnHide, never a spell button's
+                "UI/Professions.lua",
                 # the voice player scripts only its own play / pause buttons and its loading-screen frame
                 "UI/VoicePlayer.lua",
                 # the voice panel, its head and its whole-text window script only their own frames
@@ -35,7 +41,9 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/VoiceQuestLog.lua",
                 # Dialogue UI's windows: a child frame of ours that hears each window close, and the book's page events
                 "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua",
-                "UI/DialogueUIBook.lua"}
+                "UI/DialogueUIBook.lua",
+                # the frozen tooltip scripts only its own copy frames
+                "UI/TooltipFreeze.lua"}
 
 PATTERNS = {
     "PanelTemplates_SetTab": re.compile(r"\bPanelTemplates_SetTab\s*\("),

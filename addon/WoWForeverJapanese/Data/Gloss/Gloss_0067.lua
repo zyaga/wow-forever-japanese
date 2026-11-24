@@ -812,7 +812,6 @@ WFJ.Data.add("gloss", {
   [67811] = "尽くす\tつくす\thas served",
   [67812] = "尽くす\tつくす\thave done (for me)",
   [67813] = "尽くす\tつくす\thave done (me) a service",
-  [67814] = "尽くす\tつくす\thave done (served)",
   [67815] = "尽くす\tつくす\thave done a service",
   [67816] = "尽くす\tつくす\thave served",
   [67817] = "尽くす\tつくす\thave served (us)",

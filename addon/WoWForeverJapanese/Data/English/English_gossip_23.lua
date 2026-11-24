@@ -52,6 +52,7 @@ WFJ.Data.add("english", {
   ["gossip:23dd4b70ec0e2e0c"] = { text = "all=25 any=22 before=3 believe=39 book=1 cleansed=27 creatures=21 destroy=23 followers=15 fools=42 hope=7 idiots=40 insane=33 kind=8 lands=29 magics=36 must=38 now=17 one=44 powerful=35 religion=19 sided=20 some=4 stealing=2 subject=37 suffer=5 their=18 they=24 those=31 time=13 traveling=30 undead=26 unwarranted=11 views=10" },
   ["gossip:23e64d1f34a71555"] = { text = "bend=4 come=1 just=5 lake=2" },
   ["gossip:23e973225c96986f"] = { text = "going=3 here=1 knew=8 you=4" },
+  ["gossip:23ea7bb32068dc49"] = { text = "dwarves=1 honored=7 much=4 part=6 process=5 strengthen=3 ties=2" },
   ["gossip:23f61b227cbc3b2f"] = { text = "show=2 wares=1" },
   ["gossip:23fca8c6a1cfe773"] = { text = "able=12 claimed=5 clan=6 help=8 humans=1 much=2 our=7 push=11 them=10 themselves=3 with=9" },
   ["gossip:23fd961c559963f6"] = { text = "done=2 justice=1" },

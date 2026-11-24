@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:21024faa8e63a3bb"] = { text = "done=3 will=2" },
   ["gossip:21070250c4d688af"] = { text = "chat=12 here=9 like=3 longer=8 much=1 right=6 sit=10 stranger=14 tells=4 thanks=13 think=7 you=5" },
+  ["gossip:211371f961b9cb39"] = { text = "battle=3 elements=1 great=2 meant=5 what=8" },
   ["gossip:2113e0ac81fb4bb1"] = { text = "powerful=3 that=2 wow=1" },
   ["gossip:211b20db793a7217"] = { text = "east=1 gone=8 lived=5 masses=3 whoever=6 wolves=2" },
   ["gossip:21213745d88169bb"] = { text = "tattle=1" },
@@ -34,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:219a7e8bf92536d4"] = { text = "apart=5 ears=3 forth=8 hear=11 inside=4 last=12 points=2 they=9 thing=13 words=7 you=1" },
   ["gossip:219b661bafb061b3"] = { text = "answer=2 my=1" },
   ["gossip:219c441b6751ad70"] = { text = "cursed=3 forest=4 get=5 please=1 this=2" },
+  ["gossip:21a482dd8469bb33"] = { text = "adventurers=5 fortunate=9 grow=6 learn=2 mages=3 opportunities=7 orphans=1 scholars=4 we=8" },
   ["gossip:21abc9d4e46f975a"] = { text = "noooo=1" },
   ["gossip:21ad31bf1ea522a3"] = { text = "defend=2 here=9 lass=1 our=11 speak=12 strategizing=15 table=14 then=8 think=6 well=7" },
   ["gossip:21af53fd7bedaa81"] = { text = "allow=6 any=3 cost=5 items=4 my=1 programming=2" },

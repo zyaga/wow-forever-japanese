@@ -261,6 +261,7 @@ WFJ.Data.add("english", {
   ["ui:PROFESSIONS_TRACK_RECIPE"] = { text = "track=2" },
   ["ui:PROFESSIONS_TUTORIAL_FINISHING_REAGENT"] = { text = "benefits=6 craft=5 grant=7 slot=2 unlocked=3" },
   ["ui:PROFESSIONS_UNTRACK_RECIPE"] = { text = "untrack=1" },
+  ["ui:PROFESSIONS_USED_IN_COOKING"] = { text = "crafting=1" },
   ["ui:PROFESSION_EQUIPMENT_LOCATION_HELPTIP"] = { text = "accessories=3 equip=5 here=4 profession=1 tool=2" },
   ["ui:PROF_ORDER_CANT_ADD_FRIEND_OFFLINE"] = { text = "offline=3 player=2 this=1" },
   ["ui:PROF_ORDER_CANT_ADD_FRIEND_WRONG_FACTION"] = { text = "faction=3 player=2 this=1" },

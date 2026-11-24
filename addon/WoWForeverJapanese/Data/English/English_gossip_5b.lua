@@ -16,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:5b64acf0fab0ea95"] = { text = "advantage=6 alive=3 know=4 long=5 prepared=1 press=7" },
   ["gossip:5b67c4d08f9afe3c"] = { text = "watching=1" },
   ["gossip:5b69a5725a4c668b"] = { text = "ineptitude=7 inform=9 note=5 task=2 unfinished=4 your=1" },
+  ["gossip:5b6b417a3740b083"] = { text = "alone=4 always=8 any=1 go=5 news=2 sort=10 stubborn=9 told=6" },
   ["gossip:5b6ee80045df2877"] = { text = "where=1" },
   ["gossip:5b74965b5fbcb4f1"] = { text = "before=14 beings=3 control=4 few=12 important=6 learning=8 life=18 magic=1 ready=13 something=15 summon=2 teaching=16 throwing=19 ways=7 your=17" },
   ["gossip:5b7c7c6083927f02"] = { text = "front=2 heart=11 helped=17 her=9 here=5 husband=1 kind=10 know=22 left=3 my=7 sharp=12 since=4 strength=8 sword=13 times=15 tough=14" },

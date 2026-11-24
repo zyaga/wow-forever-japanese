@@ -800,7 +800,6 @@ WFJ.Data.add("gloss", {
   [90806] = "根に持つ\tねにもつ\tno hard feelings (not holding a grudge)",
   [90807] = "根を張る\tねをはる\trun (take root)",
   [90808] = "根を張る\tねをはる\truns (has taken root)",
-  [90809] = "根を張る\tねをはる\ttake root",
   [90810] = "根を張る\tねをはる\ttaken hold (took root)",
   [90811] = "根付く\tねづく\truns; is rooted",
   [90812] = "根付く\tねづく\ttake root",

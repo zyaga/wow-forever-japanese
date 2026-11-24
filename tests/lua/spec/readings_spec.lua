@@ -148,8 +148,28 @@ describe("Readings", function()
       H.loadPure("Core/Readings.lua", nil, ns)
       assert.is_nil(ns.Readings.lookup("quest.title", 456, "x"))
       assert.is_nil(ns.Readings.lookup("quest.description", 457, "x"))
-      assert.is_nil(ns.Readings.lookup("item.description", 456, "x"))
+      assert.is_nil(ns.Readings.lookup("item.description", 456, "x")) -- no item row
+      assert.is_nil(ns.Readings.lookup("area", 456, "x"))
+      assert.is_nil(ns.Readings.lookup("item.name", 456, "x"))
       assert.is_nil(ns.Readings.words("gossip", nil))
+    end)
+
+    it("tooltip text: an item's description and a spell's description and aura have rows of their own", function()
+      local ns = { Data = { reading = {
+        ["item:6948"] = { description = "場所=ばしょ=7 戻ります=もどります=8" },
+        ["spell:10"] = { description = "氷=こおり=1", aura = "受けます=うけます=2" },
+      } } }
+      H.loadPure("Core/Readings.lua", nil, ns)
+      local text = "ホームに設定した場所へ戻ります。"
+      local spans = ns.Readings.lookup("item.description", 6948, text)
+      assert.are.equal(2, #spans)
+      assert.are.equal("場所", text:sub(spans[1].first, spans[1].last))
+      assert.are.equal(8, spans[2].gloss)
+      assert.are.equal("こおり", ns.Readings.lookup("spell.description", 10, "氷の破片")[1].reading)
+      assert.are.equal("うけます", ns.Readings.lookup("spell.aura", 10, "ダメージを受けます。")[1].reading)
+      -- a field the type does not have finds nothing
+      assert.is_nil(ns.Readings.lookup("item.aura", 6948, text))
+      assert.is_nil(ns.Readings.lookup("spell.title", 10, "氷"))
     end)
   end)
 
@@ -225,6 +245,112 @@ describe("Readings", function()
       assert.is_false(box:IsShown())
       cover.scripts.OnLeave(cover)
       assert.is_nil(cover.scripts.OnUpdate)
+    end)
+
+    describe("names the addon wrote in Japanese", function()
+      local NAME = { ja = "コンサベーター・イルサレイン", english = "Conservator Ilthalaine",
+        reading = "こんさべーたー・いるされいん" }
+      local saves
+
+      -- the policy layer as Main builds it while names are on: the name inside the line, and a name on its own
+      before_each(function()
+        local line = JA:gsub("{name}", "Reyn")
+        R.init(WFJ.Translator.new({
+          enabled = function() return WFJ.State.enabled end,
+          areaEnabled = WFJ.State.areaEnabled,
+          showsEnglish = WFJ.Modifier.english,
+          lookup = function(kind, id)
+            return kind == "quest.description" and id == 456 and { ja = line, status = "." } or nil
+          end,
+          marker = function() return false end,
+          names = function(ja) return (ja:gsub(NAME.english, NAME.ja)), { NAME } end,
+          name = function(english) if english == NAME.english then return NAME.ja, NAME.reading end end,
+        }))
+        saves = 0
+        WFJ.WordSave = { choice = function() return "click" end, hint = function() return "hint" end,
+          release = function() saves = saves + 1 end }
+      end)
+      after_each(function() WFJ.WordSave = nil end)
+
+      local function boxLabel()
+        local box
+        for _, f in ipairs(Stub.frames) do if f.strata == "TOOLTIP" then box = f end end
+        if not box or not box:IsShown() then return nil end
+        for _, c in ipairs(box.children) do if c.GetText then return c:GetText() end end
+      end
+
+      local function hover(cover, fs, word)
+        local s = fs:GetText():find(word, 1, true)
+        Stub.cursor = { 100 + s + 1, 205 }
+        cover.scripts.OnEnter(cover)
+        cover.scripts.OnUpdate(cover, 0.01)
+      end
+
+      it("a name inside a quest line shows its reading under the mouse; the line's own words still do",
+      function()
+        local fs = questFs()
+        R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+        assert.is_truthy(fs:GetText():find(NAME.ja, 1, true))
+        local cover = coverOf(fs)
+        hover(cover, fs, NAME.ja)
+        assert.are.equal(NAME.reading, boxLabel())
+        assert.is_true(cover.hovered.name)
+        assert.are.equal(NAME.english, cover.hovered.card.meaning)
+        hover(cover, fs, "少し")
+        assert.are.equal("すこし", boxLabel())
+      end)
+
+      it("the save click on a name saves nothing; on a word of the line it still saves", function()
+        local fs = questFs()
+        R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+        local cover = coverOf(fs)
+        local down = false
+        _G.IsMouseButtonDown = function() return down end
+        finally(function() _G.IsMouseButtonDown = nil end)
+        local function click(word)
+          hover(cover, fs, word)
+          down = true; cover.scripts.OnUpdate(cover, 0.01)
+          down = false; cover.scripts.OnUpdate(cover, 0.01)
+        end
+        click(NAME.ja)
+        assert.are.equal(0, saves)
+        click("少し")
+        assert.are.equal(1, saves)
+      end)
+
+      it("a name inside a window label takes its card, with or without a word list for the label", function()
+        R.init(WFJ.Translator.new({
+          enabled = function() return WFJ.State.enabled end,
+          areaEnabled = WFJ.State.areaEnabled,
+          showsEnglish = WFJ.Modifier.english,
+          lookup = function(kind, id)
+            return kind == "ui" and id == "VISIT" and { ja = NAME.english .. "を訪ねよう", status = "." } or nil
+          end,
+          marker = function() return false end,
+          names = function(ja) return (ja:gsub(NAME.english, NAME.ja)), { NAME } end,
+        }))
+        local fs = questFs()
+        R.show("character", "ui.visit", fs, "Visit " .. NAME.english, "ui", "ui", "VISIT")
+        assert.are.equal(NAME.ja .. "を訪ねよう", fs:GetText())
+        local cover = coverOf(fs)
+        assert.is_table(cover)
+        hover(cover, fs, NAME.ja)
+        assert.are.equal(NAME.reading, boxLabel())
+      end)
+
+      it("a widget that holds only a name takes its card in a window, and none on a tooltip", function()
+        local fs = questFs()
+        R.show("merchant", "ui.title", fs, NAME.english, "ui", "name", NAME.english)
+        assert.are.equal(NAME.ja, fs:GetText())
+        local cover = coverOf(fs)
+        assert.is_table(cover)
+        hover(cover, fs, NAME.ja)
+        assert.are.equal(NAME.reading, boxLabel())
+        local tip = questFs()
+        R.show("tooltip.GameTooltip", "name.L1", tip, NAME.english, "items", "name", NAME.english)
+        assert.are.equal(NAME.ja, tip:GetText())
+        assert.is_nil(coverOf(tip))
+      end)
     end)
 
     it("in combat a line with no cover yet gets none (the propagate call is protected); out of combat it does",
@@ -596,6 +722,25 @@ describe("Readings", function()
       end)
       assert.are.equal("Reyn", fs:GetText():match("Reyn"))
       assert.are.equal(1, R.readingErrors)
+    end)
+
+    it("the reading box draws a solid fill under its border, so text behind it never shows through", function()
+      local fs = questFs()
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      local cover = coverOf(fs)
+      cover.scripts.OnEnter(cover)
+      local word = cover.words[1]
+      Stub.cursor = { 100 + word.rects[1].left + 1, 200 + 5 }
+      cover.scripts.OnUpdate(cover)
+      local solid = false
+      for _, f in ipairs(Stub.frames) do
+        if f.template == "TooltipBackdropTemplate" and f:IsShown() then
+          for _, t in ipairs(f.children) do
+            if t.layer == "BACKGROUND" and t.color and t.color[4] == 1 then solid = true end
+          end
+        end
+      end
+      assert.is_true(solid)
     end)
 
     it("a refused font waits: the words attach once the font is applied", function()

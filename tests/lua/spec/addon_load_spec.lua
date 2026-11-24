@@ -6,7 +6,8 @@ local Loader = require("tests.lua.spec.loader")
 local HEAD = { "Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua",
   "Core/Data.lua" }
 local TAIL = {
-  "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
+  "Core/Lookup.lua", "Core/Names.lua", "Core/Readings.lua", "Core/Glosses.lua", "Core/Align.lua", "Core/State.lua",
+  "Core/Settings.lua",
   "Core/Voice.lua", "Core/ErrorVoices.lua", "Core/VoiceQueue.lua", "Core/Modifier.lua",
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
@@ -19,16 +20,17 @@ local TAIL = {
   "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua",
   "UI/StudyVoice.lua",
   "UI/VoicePanel.lua", "UI/VoiceQuestLog.lua",
-  "UI/VoiceErrors.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua",
+  "UI/VoiceErrors.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua", "UI/NamePlateSetting.lua",
+  "UI/TextWatch.lua",
   "UI/TaintWatch.lua",
-  "UI/HtmlText.lua",
+  "UI/HtmlText.lua", "UI/PlayerText.lua", "UI/IconPicker.lua",
   "UI/LoadOnDemand.lua",
   "UI/HelpTooltip.lua", "UI/TooltipData.lua",
   -- shared helpers (ADR-030)
   "UI/SettingsKeys.lua", "UI/LabelTree.lua", "UI/TooltipLines.lua",
   -- the always-visible windows
   "UI/Character.lua", "UI/Reputation.lua", "UI/Skills.lua", "UI/PvPRank.lua",
-  "UI/SpellBook.lua", "UI/Talents.lua",
+  "UI/SpellBook.lua", "UI/SpellBookNames.lua", "UI/Talents.lua",
   "UI/Trainer.lua", "UI/GossipChrome.lua", "UI/Merchant.lua", "UI/Bank.lua", "UI/Bags.lua", "UI/Mail.lua",
   "UI/Friends.lua", "UI/FriendsTooltip.lua", "UI/Communities.lua",
   -- the rest of the Communities window
@@ -38,7 +40,7 @@ local TAIL = {
   "UI/MenusTags.lua", "UI/MenusUnit.lua", "UI/MenusUntagged.lua", "UI/HelpTips.lua",
   -- Gamepad loads before MenusUntagged, which reads its menu keys at load
   "UI/QuestFrame.lua", "UI/QuestMap.lua", "UI/TimeLine.lua", "UI/Tooltip.lua",
-  "UI/TooltipUnit.lua", "UI/GameMenu.lua",
+  "UI/TooltipUnit.lua", "UI/TooltipFreeze.lua", "UI/GameMenu.lua",
   "UI/Gossip.lua",
   "UI/ItemText.lua", -- every other Forever window (ADR-030)
   "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua", "UI/DialogueUIBook.lua", -- Dialogue UI's windows (ADR-073)
@@ -56,12 +58,13 @@ local TAIL = {
   "UI/SpellSearch.lua", "UI/TimeManager.lua", "UI/CombatText.lua", "UI/CooldownViewer.lua", "UI/DamageMeter.lua",
   "UI/DeathRecap.lua", "UI/GamepadEdit.lua", "UI/HudLabels.lua", "UI/HudTips.lua", "UI/Minimap.lua",
   "UI/PvPMatch.lua", "UI/QueueStatus.lua", "UI/RaidManager.lua", "UI/UnitFrames.lua", "UI/GroupFinder.lua",
-  "UI/Channels.lua", "UI/QuickJoin.lua", "UI/RecentAllies.lua", "UI/RecruitAFriend.lua", "UI/ReportFrame.lua",
+  "UI/Channels.lua", "UI/QuickJoin.lua", "UI/RecentAllies.lua", "UI/SocialUI.lua", "UI/RecruitAFriend.lua",
+  "UI/ReportFrame.lua",
   "UI/HelpFrame.lua", "UI/StatusNotices.lua", "UI/BNetToast.lua", "UI/SettingsPanel.lua",
   "UI/SettingsTutorials.lua", "UI/QuickKeybind.lua", "UI/ColorPicker.lua", "UI/ChatConfig.lua",
   "UI/TextToSpeech.lua", "UI/ChatTabs.lua", "UI/CombatLog.lua", "UI/AddonList.lua", "UI/ScriptErrors.lua",
   "UI/Splash.lua", "UI/EventTrace.lua", "UI/ChromieTime.lua", "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua",
-  "UI/ChatInput.lua",
+  "UI/ChatUnlisted.lua", "UI/ChatInput.lua",
   "UI/Speech.lua",
   "UI/BossBanner.lua",
   "UI/Cinematic.lua", "UI/Subtitles.lua",
@@ -73,7 +76,7 @@ local TAIL = {
   "UI/NewPlayerTutorial.lua",
   "UI/Popups.lua",
   "UI/Scan.lua",
-  "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua",
+  "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/BindingNames.lua", "UI/FixWindow.lua",
   "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua", "UI/CollectorReminder.lua",
   "UI/IntroWindow.lua",
   "UI/ReportWindow.lua",
@@ -413,23 +416,23 @@ describe("addon loads in TOC order and answers /wfj version", function()
   end)
 
   it("ships with quest titles left to the client, wired into the policy layer as one switch", function()
-    assert.is_false(WFJ.QUEST_TITLES_JAPANESE)
+    assert.is_false(WFJ.State.names)
     local en = "Kobold Camp Cleanup"
     local _, _, action = WFJ.Render.preview("spec", en, nil, "quests", "quest.title", 7, { live = en })
     assert.are.equal("leave", action)
-    WFJ.QUEST_TITLES_JAPANESE = true
-    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
+    WFJ.State.names = true
+    finally(function() WFJ.State.names = false end)
     _, _, action = WFJ.Render.preview("spec", en, nil, "quests", "quest.title", 7, { live = en })
     assert.are_not.equal("leave", action)
   end)
 
   it("wires Lookup into the Translator: a trusted quest title renders through Render.show", function()
-    WFJ.QUEST_TITLES_JAPANESE = true -- the sample here is a title
-    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
+    WFJ.State.names = true -- the sample here is a title
+    finally(function() WFJ.State.names = false end)
     -- quest 7 (quest 2's title is the item name "Sharptalon's Claw", English letters by rule)
     local fs = Stub.fontString("Kobold Camp Cleanup", "Fonts\\FRIZQT__.TTF", 12, "")
     WFJ.Render.show("quest", "title", fs, "Kobold Camp Cleanup", "quests", "quest.title", 7)
-    assert.are.equal("Koboldキャンプの掃討", fs:GetText())
+    assert.are.equal("コボルドキャンプの掃討", fs:GetText())
     WFJ.Render.release("quest")
     assert.are.equal("Kobold Camp Cleanup", fs:GetText())
     local itemId = next(WFJ.Data.item)
@@ -455,18 +458,19 @@ describe("addon loads in TOC order and answers /wfj version", function()
   function()
     local sex, class = _G.UnitSex, _G.UnitClass
     _G.UnitSex, _G.UnitClass = nil, nil
-    WFJ.QUEST_TITLES_JAPANESE = true -- the sample here is a title
-    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
+    WFJ.State.names = true -- the sample here is a title
+    finally(function() WFJ.State.names = false end)
     local title = Stub.fontString("Kobold Camp Cleanup", "Fonts\\FRIZQT__.TTF", 12, "")
     assert.has_no.errors(function()
       WFJ.Render.show("quest", "title", title, "Kobold Camp Cleanup", "quests", "quest.title", 7)
     end)
-    assert.are.equal("Koboldキャンプの掃討", title:GetText())
+    assert.are.equal("コボルドキャンプの掃討", title:GetText())
     local fs = Stub.fontString("Good.", "Fonts\\FRIZQT__.TTF", 12, "")
     assert.has_no.errors(function()
       WFJ.Render.show("quest", "completion", fs, "Good.", "quests", "quest.completion", 791)
     end)
-    assert.are.equal("実にいいね、Reyn。あらゆる本物の{class}は戦場でのこのバッグの使い方を知ってるものさ。\n\nHordeの名の下に戦わんとするお前の意志に敬礼！", fs:GetText())
+    -- names are on in this test (the title above), so the name inside the line shows in Japanese too
+    assert.are.equal("実にいいね、Reyn。あらゆる本物の{class}は戦場でのこのバッグの使い方を知ってるものさ。\n\nホードの名の下に戦わんとするお前の意志に敬礼！", fs:GetText())
     WFJ.Render.release("quest")
     -- the collector reads the same guarded reader: a missing UnitClass is a refusal, not an error
     WFJ.Settings.set("collector.enabled", true)

@@ -34,6 +34,7 @@ WFJ.Data.add("english", {
   ["gossip:88e0c485f95125db"] = { text = "tell=1" },
   ["gossip:88e6ea0c1bd6d4df"] = { text = "get=3 looking=2 this=1" },
   ["gossip:88e99a84064c4fe4"] = { text = "beasts=15 forge=2 little=5 men=13 my=1 one=10 secret=6 share=7 this=17 trust=12 welcome=3 women=14 world=9" },
+  ["gossip:88ec891319cdc5a8"] = { text = "visitor=1" },
   ["gossip:88f0299019d303e0"] = { text = "all=7 collected=5 day=10 done=15 gong=17 now=6 rings=18 should=13 sides=3 someone=16 that's=2 transported=8 war=19" },
   ["gossip:88f6671794611742"] = { text = "help=1" },
   ["gossip:88fd3722fdc0a9b5"] = { text = "done=6 friend=2 right=4 thank=1 thing=5 you=3" },

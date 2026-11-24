@@ -25,6 +25,7 @@ WFJ.Data.add("english", {
   ["gossip:57519a901c6fb1ff"] = { text = "awoken=5 power=2" },
   ["gossip:57561b5ecb530a5f"] = { text = "came=6 children=13 consciousness=11 death=4 fated=2 fulfilled=9 if=7 insects=16 prophecy=8 puppet=20 rest=14 rot=12 this=1 you=18 your=10" },
   ["gossip:57705db0a34cb5f5"] = { text = "almost=15 anyone=6 application=14 can't=9 components=4 construct=1 imagine=8 intended=17 nigh=20 no=16 other=10 outside=19 practical=13 purpose=18 steal=5 these=11 useless=21 want=3 why=2 would=22" },
+  ["gossip:577a8e9b32ac9c26"] = { text = "more=2 move=1 need=3" },
   ["gossip:577c0fab8faed76f"] = { text = "animals=3 else=15 knows=13 little=6 look=19 me=1 outside=18 path=10 smithy=17 spends=4 still=8 time=5" },
   ["gossip:577c475f46dc95ae"] = { text = "advisor=6 and=7 great=5 message=1 servant=8 what=3" },
   ["gossip:578114aaa1d35b59"] = { text = "armor=3 he=9 interest=12 seen=5 since=8 teach=17 things=16 trained=6 years=4" },

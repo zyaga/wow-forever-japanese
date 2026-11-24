@@ -1,5 +1,6 @@
 {"id": "9c04592b66d23e5b", "field": "text", "en": "Double time!", "hash": "9c04592b66d23e5b", "src": "vmangos@13b49dc"}
 {"id": "9c07ac360eaa10b6", "field": "text", "en": "Ribbit! No!! This cannot...ribbit...be! You have duped me with...ribbit...your foul trickery! Ribbit!", "hash": "9c07ac360eaa10b6", "src": "vmangos@13b49dc"}
+{"id": "9c0c27cf917b0844", "field": "text", "en": "I have it.$B$B<Hand the spirit Narassin's Tome briefly.>", "hash": "9c0c27cf917b0844", "src": "collector@1.60.1.70938", "npcs": [273642]}
 {"id": "9c0cfb26bd0efa19", "field": "text", "en": "Thank you for this report, $n.  It is now clear that we must tighten our patrols near Theramore.", "hash": "9c0cfb26bd0efa19", "src": "vmangos@13b49dc"}
 {"id": "9c0ed7adfe694333", "field": "text", "en": "Nope, no alchemists out here in Dun Morogh.  Ye best take a look in Ironforge for them... try the gnomes in Tinker Town.", "hash": "9c0ed7adfe694333", "src": "vmangos@13b49dc"}
 {"id": "9c13e12e0986db63", "field": "text", "en": "%s gestures at the piles of books.", "hash": "9c13e12e0986db63", "src": "vmangos@13b49dc"}

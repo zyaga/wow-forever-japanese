@@ -16,17 +16,38 @@ registry is shipped or required either, and nothing is read back from it.
 
 ## 2. Names stay in English
 
-The English names of people, places, creatures, items, spells, zones and factions are never replaced, hidden or
-transliterated: not in quest text, tooltips, nameplates or titles. Japanese is for prose. A Japanese name could
-only ever be an extra line that the player turns on, never a replacement and never on by default.
+Names stay in English until the player chooses Japanese names. Japanese is for prose; a name is what a player
+searches a guide for, links in chat and says to a party member, so by default the English names of people,
+places, creatures, items, spells, zones, factions and skills are never replaced, hidden or transliterated, and
+neither is a quest's title ([ADR-083](../adr/083-quest-titles-are-names.md)).
 
-A quest's title is a name too: it is what a player searches a guide for, links in chat and says to a party
-member, so it stays the client's English on every surface while the quest's text is Japanese
-([ADR-083](../adr/083-quest-titles-are-names.md)).
+One setting, **names in Japanese**, changes that, and only the player turns it on: in the welcome window's names
+question or on the settings pages. With it on, every name the addon can write shows in katakana, spelled from the
+English word by word (never translated), on every surface the addon translates: inside quest, NPC, book, item and
+spell text, inside interface lines, on window labels, tooltips, nameplates and unit frames, and in quest titles.
+The names come from the same list the voice reads, so what the screen shows is what the voice says
+([ADR-106](../adr/106-names-shown-in-japanese-on-screen.md), [ADR-082](../adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)).
+With it off, no name on screen changes.
 
-Race and class words are the one exception, and only inside translated prose: there they are written in katakana
+Whatever the setting says:
+
+- a name with no Japanese stays the client's live English;
+- a player's, guild's or pet's name never changes, and neither does a name the player typed;
+- abbreviations and the game's and company's own names (`AFK`, `PvP`, `XP`, `World of Warcraft`, `Blizzard`) are
+  kept as written (`pipeline/names_kept_as_written.txt`);
+- holding the reveal key shows the client's English, as for prose;
+- a name the client draws itself, or writes where a change would taint a protected path, stays English
+  ([Client limits](client-limits.md)).
+
+Showing names over heads in Japanese takes the client's nameplates. When the player chooses Japanese names, the
+addon turns on the client's own settings that show nameplates for NPCs and creatures (friendly NPCs, enemies and
+neutral creatures, out of combat too), keeps the values it found, and puts those values back when the player chooses
+English names. A player's nameplate is not turned on. These writes to client settings were approved by the
+maintainer on 2026-11-22. A value the player sets by hand afterwards is left as they set it.
+
+Race and class words are written in katakana inside translated prose whatever the setting says
 (`Druid` → ドルイド, `Night Elf` → ナイトエルフ), as the [translation style guide](../content/translation-style-guide.md) describes, because
-they are ordinary words in the sentence. On interface labels they stay English.
+they are ordinary words in the sentence. On interface labels and a player's tooltip they follow the setting.
 
 ## 3. Japanese by default, English one key away
 
@@ -48,15 +69,19 @@ The only other things the addon adds to the screen, each of which a player can t
   tracker);
 - the **no-voice marker**, only with a voice pack installed, on a line that shows its Japanese and has no voice
   yet (its speaker is not known, or its audio is not made);
-- the **word card**: pointing at a Japanese word in quest or NPC prose, a plain-text window label or a plain-text
-  book page shows its reading and, where there is one, its dictionary form and a short English meaning. Nothing is
+- the **word card**: pointing at a Japanese word in quest or NPC prose, a plain-text window label, a plain-text
+  book page or a frozen tooltip shows its reading and, where there is one, its dictionary form and a short English meaning. Nothing is
   drawn until the pointer is on a word, and never while English is showing. In English first its mirror is the
   **English word card**: pointing at an English word in the same places shows how it is said and the Japanese word
   the translation uses for it in that line, with its reading;
+- the **frozen tooltip**: a key press draws a copy of the tooltip showing, in place, that stays until the key again
+  or Esc, so the mouse can rest on its Japanese and take word cards. The game's own tooltip is never held open or
+  changed ([ADR-108](../adr/108-the-frozen-tooltip-and-word-cards-on-tooltip-text.md));
 - the **minimap button** that opens the fix-report window;
 - the **welcome window**, shown once to every player (a first install at its first login, a player who already had
   the addon the first time a version with the question loads): it asks what the player is here for (study Japanese,
-  study English or just play), writes three ordinary settings on Confirm and nothing before, and then names the
+  study English or just play) and how names should show (English or Japanese), writes those ordinary settings on
+  Confirm and nothing before, and then names the
   reveal key, the word cards, the minimap button and, while the voice is not installed, where to get it. It is the
   one window in both languages, each Japanese line with its English, since the player has not learned the reveal
   key yet. It never shows by itself twice; the settings pages and `/wfj intro` open it again.
@@ -75,7 +100,9 @@ The English word card adds one more, with the same limit
 Japanese word, lower-cased and sorted by word, each with the place of its Japanese word; a list of everyday words;
 and how each such word is said. Never a sentence, never the words in their order, so the game's text cannot be read
 back from the addon's files. An English word a player saves in English first is kept with the English sentence the
-client showed them, in their own saved word list on their machine, which is never shipped.
+client showed them, in their own saved word list on their machine, which is never shipped. The names tables ship a
+name's Japanese and reading under the hash of its English, never the English; the name card's English is the
+English the client wrote on screen, held in memory while the card can show.
 `lint-no-english-in-addon` and a data test check this. See [ADR-002](../adr/002-live-english-only.md).
 
 ## 5. Every translation is keyed by the game

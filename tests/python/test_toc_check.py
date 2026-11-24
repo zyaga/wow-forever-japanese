@@ -19,7 +19,7 @@ def test_real_toc_fields_and_load_order(root):
     # Dependency order as shipped: Core, then Data, the generated block, the Lookup slot, then the UI modules.
     head = ["Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua"]
     tail = [
-        "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua",
+        "Core/Lookup.lua", "Core/Names.lua", "Core/Readings.lua", "Core/Glosses.lua",
         "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
         "Core/Voice.lua",  # the voice packs' registry, before the settings that read it
         "Core/ErrorVoices.lua",  # the voices the character's error lines may speak in, and that setting
@@ -42,15 +42,20 @@ def test_real_toc_fields_and_load_order(root):
         "UI/VoicePanel.lua",
         "UI/VoiceQuestLog.lua",  # the quest log's button and the remembered speaker
         "UI/VoiceErrors.lua",
-        "UI/ButtonText.lua", "UI/Labels.lua",
+        "UI/ButtonText.lua", "UI/Labels.lua", "UI/NameLabels.lua", "UI/NamePlateSetting.lua",
         "UI/TextWatch.lua", "UI/TaintWatch.lua",  # ADR-058: text followed from our own frame, the taint watch
-        "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
+        "UI/HtmlText.lua",
+        "UI/PlayerText.lua",  # a player's own text in the bundled face, after the font and the HTML adapter
+        "UI/IconPicker.lua",  # the labels every name-and-icon popup shares, before the windows that have one
+        "UI/LoadOnDemand.lua",
         "UI/HelpTooltip.lua", "UI/TooltipData.lua",
         # ADR-030: shared helpers
         "UI/SettingsKeys.lua", "UI/LabelTree.lua", "UI/TooltipLines.lua",
         "UI/Character.lua", "UI/Reputation.lua", "UI/Skills.lua",
         "UI/PvPRank.lua",  # camelot's PvP rank panel
-        "UI/SpellBook.lua", "UI/Talents.lua", "UI/Trainer.lua", "UI/GossipChrome.lua", "UI/Merchant.lua", "UI/Bank.lua",
+        "UI/SpellBook.lua",
+        "UI/SpellBookNames.lua",  # the spellbook page's Japanese drawn over the game's own, an experiment (ADR-058)
+        "UI/Talents.lua", "UI/Trainer.lua", "UI/GossipChrome.lua", "UI/Merchant.lua", "UI/Bank.lua",
         "UI/Bags.lua", "UI/Mail.lua", "UI/Friends.lua",
         "UI/FriendsTooltip.lua",  # the friends list's own tooltip
         "UI/Communities.lua",
@@ -64,6 +69,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/TimeLine.lua",  # the cooldown countdown, before the tooltips that write it
         "UI/Tooltip.lua",
         "UI/TooltipUnit.lua",  # the unit mouseover lines
+        "UI/TooltipFreeze.lua",  # the frozen copy of a tooltip, after the tooltips it reads
         "UI/GameMenu.lua", "UI/Gossip.lua",
         "UI/ItemText.lua",  # the book window
         "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua", "UI/DialogueUIBook.lua",  # Dialogue UI's windows, when it is installed
@@ -81,12 +87,12 @@ def test_real_toc_fields_and_load_order(root):
         "UI/TimeManager.lua", "UI/CombatText.lua", "UI/CooldownViewer.lua", "UI/DamageMeter.lua",
         "UI/DeathRecap.lua", "UI/GamepadEdit.lua", "UI/HudLabels.lua", "UI/HudTips.lua", "UI/Minimap.lua",
         "UI/PvPMatch.lua", "UI/QueueStatus.lua", "UI/RaidManager.lua", "UI/UnitFrames.lua", "UI/GroupFinder.lua",
-        "UI/Channels.lua", "UI/QuickJoin.lua", "UI/RecentAllies.lua", "UI/RecruitAFriend.lua",
+        "UI/Channels.lua", "UI/QuickJoin.lua", "UI/RecentAllies.lua", "UI/SocialUI.lua", "UI/RecruitAFriend.lua",
         "UI/ReportFrame.lua", "UI/HelpFrame.lua", "UI/StatusNotices.lua", "UI/BNetToast.lua",
         "UI/SettingsPanel.lua", "UI/SettingsTutorials.lua", "UI/QuickKeybind.lua",
         "UI/ColorPicker.lua", "UI/ChatConfig.lua", "UI/TextToSpeech.lua", "UI/ChatTabs.lua", "UI/CombatLog.lua",
         "UI/AddonList.lua", "UI/ScriptErrors.lua", "UI/Splash.lua", "UI/EventTrace.lua", "UI/ChromieTime.lua",
-        "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/ChatInput.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",
+        "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/ChatUnlisted.lua", "UI/ChatInput.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",
         "UI/Subtitles.lua", "UI/CoinPickup.lua", "UI/CombatFeedback.lua",
         "UI/EquipmentFlyout.lua", "UI/GhostFrame.lua", "UI/GuildInvite.lua", "UI/InstanceAbandon.lua",
         "UI/LootHistory.lua", "UI/LossOfControl.lua", "UI/MajorFactionToast.lua",
@@ -97,7 +103,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Popups.lua",
         "UI/Scan.lua",
         # the settings pages' copy, widgets, key capture, the modifier's override binding, the AddOn List button
-        "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua",
+        "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/BindingNames.lua",
             "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua", "UI/CollectorReminder.lua", "UI/IntroWindow.lua",
             "UI/ReportWindow.lua",
             "UI/MinimapButton.lua",  # the minimap button
@@ -111,8 +117,8 @@ def test_real_toc_fields_and_load_order(root):
     assert generated == sorted(
         generated,
         key=lambda f: (
-            ["Meta", "Vectors", "ErrorSounds", "Displays", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
-             "English", "Reading", "Gloss"].index(
+            ["Meta", "Vectors", "ErrorSounds", "Displays", "SpellShapes", "SpellIncludes", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
+             "English", "Reading", "Gloss", "Names"].index(
                 f.split("/")[1].split("_")[0].replace(".lua", "")
             ),
             f,

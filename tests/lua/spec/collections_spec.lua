@@ -8,7 +8,8 @@ local C = require("tests.lua.spec.stub_collections")
 
 local FILES = {}
 for i, f in ipairs(H.UI_FILES) do FILES[i] = f end
-for _, f in ipairs({ "UI/Collections.lua", "UI/MountJournal.lua", "UI/PetJournal.lua", "UI/Wardrobe.lua" }) do
+for _, f in ipairs({ "UI/Collections.lua", "UI/MountJournal.lua", "UI/PetJournal.lua", "UI/Wardrobe.lua",
+  "UI/Errors.lua" }) do -- the mount button's usability line is an error line (UI/Errors' set)
   FILES[#FILES + 1] = f
 end
 local MODULES = { "Collections", "MountJournal", "PetJournal", "Wardrobe" }
@@ -125,6 +126,7 @@ describe("the Collections window on Forever", function()
         function()
           local m = _G.MountJournal
           assert.are.equal("マウント総数", m.MountCount.Label:GetText())
+          assert.are.equal("検索", m.searchBox.Instructions:GetText()) -- the search box's placeholder
           assert.are.equal("キャラクターを表示", m.MountDisplay.ModelScene.TogglePlayer.TogglePlayerText:GetText())
           assert.are.equal("マウント装備はレベル20で解放", m.BottomLeftInset.SlotRequirementLabel:GetText())
           assert.are.equal("マウント装備でマウントを強化しよう", m.BottomLeftInset.SlotLabel:GetText())
@@ -149,6 +151,84 @@ describe("the Collections window on Forever", function()
           _G.GameTooltip:SetText(_G.MOUNT_SUMMON_TOOLTIP)
           assert.are.equal("選択したマウントを召喚または解除します。", tip())
         end)
+
+      -- MountJournalMountButton_OnEnter: the button's text, the summon or unwrap line, then the mount's usability
+      -- error from C_MountJournal.GetMountUsabilityByID as an error line (blizzard_mountcollection.lua:843-863)
+      it("mountjournal: the mount button's usability line is Japanese; the reveal key shows English; off writes "
+        .. "nothing", function()
+          local m, tt = _G.MountJournal, _G.GameTooltip
+          local function enter(errorText)
+            tt:SetOwner(m.MountButton)
+            tt:SetText(_G.MOUNT)
+            tt:AddLine(_G.MOUNT_SUMMON_TOOLTIP)
+            if errorText then tt:AddLine(errorText) end
+            tt:Show()
+          end
+          enter(_G.SPELL_FAILED_JOURNEYMAN_RIDING_REQUIREMENT)
+          assert.are.equal("騎乗", tip(1))
+          assert.are.equal("選択したマウントを召喚または解除します。", tip(2))
+          assert.are.equal("Journeyman Ridingのスキルが必要です", tip(3))
+          alt(true)
+          assert.are.equal("Requires Journeyman Riding skill", tip(3))
+          alt(false)
+          assert.are.equal("Journeyman Ridingのスキルが必要です", tip(3))
+          enter("Close") -- no error line: as written
+          assert.are.equal("Close", tip(3))
+          WFJ.State.setEnabled(false)
+          enter(_G.SPELL_FAILED_JOURNEYMAN_RIDING_REQUIREMENT)
+          assert.are.equal("Requires Journeyman Riding skill", tip(3))
+          WFJ.State.setEnabled(true)
+        end)
+
+      it("mountjournal with Japanese names on: the shown mount's Name is its Japanese; source and lore stay",
+        function()
+          WFJ.Data.add("name", { [WFJ.Names.key("Swift Brown Steed")] = "スウィフト・ブラウン・スティード\tすうぃふと" })
+          local m, info = _G.MountJournal, _G.MountJournal.MountDisplay.InfoButton
+          C.mount = { name = "Swift Brown Steed", source = "Vendor: Katie Hunter", lore = "Fast." }
+          _G.MountJournal_UpdateMountDisplay()
+          assert.are.equal("スウィフト・ブラウン・スティード", info.Name:GetText())
+          assert.are.equal("Vendor: Katie Hunter", info.Source:GetText())
+          alt(true)
+          assert.are.equal("Swift Brown Steed", info.Name:GetText())
+          alt(false)
+          C.mount = { name = "Nobody Known Steed", source = "", lore = "" }
+          _G.MountJournal_UpdateMountDisplay()
+          assert.are.equal("Nobody Known Steed", info.Name:GetText())
+          assert.are.equal("騎乗", m.MountButton:GetText())
+        end)
+
+      it("mountjournal with Japanese names on: a list row's name is its Japanese, on a reused row too", function()
+        WFJ.Data.add("name", {
+          [WFJ.Names.key("Swift Brown Steed")] = "スウィフト・ブラウン・スティード\tすうぃふと",
+          [WFJ.Names.key("Cerulean Prideclaw")] = "セルリアン・プライドクロー\tせるりあん",
+        })
+        local row = C.mountRow(1, { name = "Swift Brown Steed" })
+        assert.are.equal("スウィフト・ブラウン・スティード", row.name:GetText())
+        alt(true)
+        assert.are.equal("Swift Brown Steed", row.name:GetText())
+        alt(false)
+        assert.are.equal("スウィフト・ブラウン・スティード", row.name:GetText())
+        C.mountRow(1, { name = "Cerulean Prideclaw" }) -- the pool hands the row to another mount
+        assert.are.equal("セルリアン・プライドクロー", row.name:GetText())
+        C.mountRow(1, { name = "Nobody Known Steed" })
+        assert.are.equal("Nobody Known Steed", row.name:GetText())
+        WFJ.State.setNames(false)
+        C.mountRow(1, { name = "Swift Brown Steed" })
+        assert.are.equal("Swift Brown Steed", row.name:GetText())
+        WFJ.State.setNames(true)
+      end)
+
+      it("mountjournal with Japanese names on: a selected row keeps its Japanese name", function()
+        WFJ.Data.add("name", { [WFJ.Names.key("Swift Brown Steed")] = "スウィフト・ブラウン・スティード\tすうぃふと" })
+        local row = C.mountRow(1, { name = "Swift Brown Steed" })
+        assert.are.equal("スウィフト・ブラウン・スティード", row.name:GetText())
+        -- selecting it fills the row again through the initializer alone, with no callback from the list
+        C.mountSelect(1, { name = "Swift Brown Steed" })
+        assert.are.equal("スウィフト・ブラウン・スティード", row.name:GetText())
+        alt(true)
+        assert.are.equal("Swift Brown Steed", row.name:GetText())
+        alt(false)
+      end)
 
       it("petjournal: labels, the summon button and the empty card translate; pet names do not", function()
         local p = _G.PetJournal

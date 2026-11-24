@@ -97,6 +97,21 @@ describe("Core/UIStrings additions", function()
     assert.are.equal("5分", index:duration("5 Min"))
   end)
 
+  it("lists the worded spell durations the dictionary has Japanese for, and none without a row", function()
+    assert.are.same({ "SPELL_DURATION_UNTIL_CANCELLED" }, UIS.SPELL_DURATION_WORDS)
+    assert.are.same({}, index.spellDurationWords) -- no row: the phrase has no Japanese and `$D` fails closed
+    local english = { SPELL_DURATION_UNTIL_CANCELLED = "until canceled", INT_SPELL_DURATION_MIN = "%d min" }
+    local with = UIS.build({ hash = h1, english = function(key) return english[key] end, rows = {
+      SPELL_DURATION_UNTIL_CANCELLED = { "解除されるまで", h1("until canceled"), "." },
+      INT_SPELL_DURATION_MIN = { "%d分", h1("%d min"), "." } } })
+    assert.are.same({ { en = "until canceled", ja = "解除されるまで" } }, with.spellDurationWords)
+    assert.is_nil(with:duration("until canceled", true)) -- a phrase, never a number with its unit
+    -- a row whose English is not this client's is not offered
+    local stale = UIS.build({ hash = h1, english = function(key) return english[key] end, rows = {
+      SPELL_DURATION_UNTIL_CANCELLED = { "解除されるまで", h1("until cancelled"), "." } } })
+    assert.are.same({}, stale.spellDurationWords)
+  end)
+
   it("the quest list count takes a colour code as its first argument and puts it back verbatim", function()
     local text = "Quests: |cffff00005|r|cffffffff/25|r"
     local key, args = index:match(text)

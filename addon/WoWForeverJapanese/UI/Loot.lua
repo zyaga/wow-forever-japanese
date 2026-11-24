@@ -8,7 +8,8 @@
 --   LootFrameItemElementMixin:Init, which writes QualityText = _G["ITEM_QUALITY<n>_DESC"] (:621–626) and Text = the
 --   item's name (:490). Rows are ScrollBox frames: followed with ScrollUtil.AddInitializedFrameCallback, keyed by the
 --   QualityText widget, restricted to the quality words. A money row has no QualityText (lootframe.xml:100–113).
--- Never touched: a row's Text (the item or coin text) and Item.Count.
+-- An item row's Text is the item's name: never a dictionary word; while names are on it shows the name's Japanese
+-- (UI/NameLabels). Never touched: a money row's Text (the coin text) and Item.Count.
 -- The gamepad prompts (FRAME_ACTION_LOOT / _LOOT_ALL / _CLOSE, :350–358) are not widgets of this window.
 -- Release on LootFrame's OnHide.
 local _, WFJ = ...
@@ -19,7 +20,7 @@ local SURFACE = "loot"
 Loot.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
-Loot.NEVER_TOUCH = {} -- rows are pooled and unnamed: their name text is simply never read (see onRow)
+Loot.NEVER_TOUCH = {} -- rows are pooled and unnamed: their name text is never read as a dictionary word (see onRow)
 
 local TITLE = { only = { "ITEMS" } }
 local QUALITY = { only = {} }
@@ -29,6 +30,7 @@ for i = 1, 7 do QUALITY.only[#QUALITY.only + 1] = "ITEM_QUALITY" .. i .. "_DESC"
 Loot.QUALITY_KEYS = QUALITY.only
 
 local rowKey = WFJ.Labels.keyer("quality.")
+local nameKey = WFJ.Labels.keyer("name.")
 
 local function get(key) return Compat.get(SURFACE, key) end
 
@@ -39,8 +41,9 @@ function Loot.onRow(a, b)
   local row = a
   if a == Loot then row = b end
   local quality = type(row) == "table" and row.QualityText or nil
-  if type(quality) ~= "table" then return end
+  if type(quality) ~= "table" then return end -- a money row
   WFJ.Labels.show(SURFACE, rowKey(quality), quality, nil, QUALITY)
+  if type(row.Text) == "table" then WFJ.NameLabels.show(SURFACE, nameKey(row.Text), row.Text, "items") end
 end
 
 function Loot.onShow()

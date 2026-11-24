@@ -127,6 +127,7 @@ local function registerRanks()
     local row = get("rank" .. i)
     if type(row) == "table" then
       for field, opts in pairs(RANK_TOOLTIPS) do WFJ.HelpTooltip.register(row[field], opts) end
+      WFJ.PlayerText.box(row.nameBox) -- a rank's name, typed by the guild master: its font only
       n = n + 1
     end
   end

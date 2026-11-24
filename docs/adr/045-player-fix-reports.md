@@ -108,7 +108,8 @@ Constraints:
    `human` or `correction` line.
 10. **Readings in the same apply.** Each changed line's `words` are imported as machine reading records (`source`
     `readings@report-N`) whose `ja_hash` is the new Japanese. A line holding `|` (a colour code or other escape), an
-    HTML book page, and `item` / `spell` / `objective` / `area` lines take none.
+    HTML book page, and `item` / `spell` / `objective` / `area` lines take none. (Superseded in part by [ADR-108](108-the-frozen-tooltip-and-word-cards-on-tooltip-text.md): item and
+    spell lines take readings too.)
 11. **Credit.** The credit name is the issue form's "Credit me as", else the issue author's GitHub login, else "a
     player"; it keeps only letters of any script, digits, spaces and `._-`, at most 40 characters (no markdown, HTML,
     `@` or invisible format character), since it ships in `ATTRIBUTION.md`. The addon never takes a credit from the

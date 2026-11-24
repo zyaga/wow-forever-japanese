@@ -83,6 +83,52 @@ describe("map pin tooltips on Forever", function()
       assert.are.equal("未発見のフライトポイント", Maps.line(1))
     end)
 
+  describe("line 1's name while Japanese names are on", function()
+    before_each(function()
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Thelsamar")] = "セルサマー\tせるさまー",
+        [WFJ.Names.key("Blackrock Depths")] = "ブラックロック・デプス\tぶらっくろっく・でぷす",
+        [WFJ.Names.key("The Defias Brotherhood")] = "ザ・デフィアス・ブラザーフッド\tざ・でふぃあす・ぶらざーふっど",
+      })
+      WFJ.State.setNames(true)
+    end)
+
+    it("a place's name shows its Japanese; the reveal key and names off give it back", function()
+      local pin = Maps.pin("FlightPointPinTemplate")
+      Maps.tooltip(pin, { "Thelsamar", en("UNDISCOVERED_NEUTRAL_FLIGHTPOINT") })
+      assert.are.equal("セルサマー", Maps.line(1))
+      assert.are.equal("未発見のフライトポイント", Maps.line(2))
+      alt(true)
+      assert.are.equal("Thelsamar", Maps.line(1))
+      alt(false)
+      assert.are.equal("セルサマー", Maps.line(1))
+      WFJ.State.setNames(false)
+      assert.are.equal("Thelsamar", Maps.line(1))
+      WFJ.State.setNames(true)
+      Maps.tooltip(Maps.pin("DungeonEntrancePinTemplate"), { "Blackrock Depths" })
+      assert.are.equal("ブラックロック・デプス", Maps.line(1))
+      WFJ.MapPins.add("FlightMap_FlightPointPinTemplate", { "TAXINODEYOUAREHERE" }) -- as UI/FlightMap adds it
+      Maps.tooltip(Maps.pin("FlightMap_FlightPointPinTemplate"), { "Thelsamar" })
+      assert.are.equal("セルサマー", Maps.line(1))
+    end)
+
+    it("a dictionary word on line 1 keeps its record through the reveal key and the names switch", function()
+      Maps.tooltip(Maps.pin("DungeonEntrancePinTemplate"), { en("DUNGEON_MAP_PIN_FALLBACK_NAME") })
+      assert.are.equal("ダンジョン", Maps.line(1))
+      alt(true)
+      assert.are.equal("Dungeon", Maps.line(1))
+      alt(false)
+      assert.are.equal("ダンジョン", Maps.line(1))
+      WFJ.State.setNames(false)
+      assert.are.equal("ダンジョン", Maps.line(1))
+    end)
+
+    it("a quest's title on line 1 is no place name: it stays as written", function()
+      Maps.tooltip(Maps.pin("QuestPinTemplate"), { "The Defias Brotherhood" })
+      assert.are.equal("The Defias Brotherhood", Maps.line(1))
+    end)
+  end)
+
   it("each template takes only its own keys: a name that is also a dictionary word stays English", function()
     local grave = Maps.pin("SelectableGraveyardPinTemplate")
     Maps.tooltip(grave, { en("GRAVEYARD_SELECTED"), en("GRAVEYARD_SELECTED_TOOLTIP") })

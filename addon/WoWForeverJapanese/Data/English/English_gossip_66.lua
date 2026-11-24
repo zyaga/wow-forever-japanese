@@ -41,6 +41,7 @@ WFJ.Data.add("english", {
   ["gossip:66a8d9079b9836ed"] = { text = "chance=5 no=6 now=2 serve=1 turn=3 you=4" },
   ["gossip:66ac24e4e0701c71"] = { text = "alone=5 here=1 leave=2 moments=3 wish=6" },
   ["gossip:66b1234742fd8acb"] = { text = "allies=4 and=1 called=5 forces=10 look=15 nations=7 now=2 one=12 recoiled=8 so=13 surprised=14 us=9 yes=11 you=3" },
+  ["gossip:66b354b68401956e"] = { text = "accept=42 approves=39 challenging=9 chips=20 coat=6 determination=37 fierce=34 fought=16 gaze=28 gazes=28 great=24 head=25 hoof=21 horns=14 levels=29 long=13 moment=11 neck=5 nicks=19 once=26 ram=3 rams=3 regard=33 rider=41 sense=38 shake=8 shakes=8 snort=10 snow=7 steadily=12 stomps=23 twice=22 victorious=17 walk=2 woolly=4 you=1" },
   ["gossip:66b5785f8ba0b825"] = { text = "aye=1 fight=7 guild=8 leader=3 look=5 organize=9 type=4 you=2" },
   ["gossip:66bd6d22345c5332"] = { text = "all=7 blood=4 here=2 lesson=9 spilled=3 territory=5 today=1 upon=6 who=8" },
   ["gossip:66bd704a97a2782e"] = { text = "must=5 one=3 somewhere=2" },
@@ -55,5 +56,6 @@ WFJ.Data.add("english", {
   ["gossip:66eddf21c2efbd82"] = { text = "coming=4 fights=3 long=6 so=5 when=2" },
   ["gossip:66ee47154d89a88a"] = { text = "it=1" },
   ["gossip:66ef8197471d4e0e"] = { text = "gotten=6 here=5 made=1 thanks=2 you=3" },
+  ["gossip:66f14015e7883910"] = { text = "dog=2 miss=3 my=1" },
   ["gossip:66fc4134a5a6ad27"] = { text = "attacked=1 get=3 help=4 this=2" },
 })

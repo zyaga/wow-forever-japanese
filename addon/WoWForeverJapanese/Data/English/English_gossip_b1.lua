@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:b1a5f95c8443d19e"] = { text = "come=10 hides=3 laid=8 strongest=2 themselves=6 this=4 wasteland=5" },
   ["gossip:b1acbc3122366ec7"] = { text = "he=11 how=7 more=12 plan=9 port=1 seek=3 tell=14 this=6 we=5 yourself=2" },
   ["gossip:b1b3d8f61c9d551c"] = { text = "all=16 asked=3 collected=11 everything=10 hello=1 here=4 like=12 needs=8 now=13 prepare=7 same=14 ship=18 us=6" },
+  ["gossip:b1b79c038466bcf2"] = { text = "adventurers=1 beasts=26 behind=23 comforts=6 conditions=10 cowards=21 cultists=15 day=18 enjoy=7 forced=9 forsaken=14 growing=16 halls=2 hiding=24 home=19 lose=20 mongrels=12 order=27 ourselves=29 roam=3 seen=11 since=25 some=31 talents=30 time=4 use=32 walls=22 we=8" },
   ["gossip:b1c210736255695c"] = { text = "accepted=4 always=2 friend=5 graciously=3 tips=1" },
   ["gossip:b1c43c1129af28ac"] = { text = "find=2 ready=3 squirrel=1" },
   ["gossip:b1c5dec80bd6b18d"] = { text = "asking=5 aye=1 head=3 lass=2 ready=8 taste=7 they=4 what=6" },
@@ -39,6 +40,5 @@ WFJ.Data.add("english", {
   ["gossip:b1e239feb6d1bafd"] = { text = "fallen=1 focus=5 priest=4" },
   ["gossip:b1e28e10f0881e99"] = { text = "cruelties=6 immeasurable=5 my=1 reign=2 suffer=7 under=3 will=8 world=4" },
   ["gossip:b1f0521b99619c59"] = { text = "battle=3 entering=4 units=2 veteran=1" },
-  ["gossip:b1f39df1781f704a"] = { text = "accept=37 bedrock=8 craft=36 done=1 forget=33 it=12 its=23 lad=2 learn=25 most=26 never=32 now=34 path=39 patience=11 proper=16 proven=5 ready=3 respect=17 secrets=31 shares=30 shield=14 shift=21 slighted=20 stamina=10 stone=19 strength=9 things=7 true=38 walk=40 ways=24 wiser=28" },
   ["gossip:b1f40739e16079b4"] = { text = "breath=1" },
 })

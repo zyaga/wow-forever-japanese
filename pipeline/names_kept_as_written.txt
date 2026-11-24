@@ -1,0 +1,19 @@
+# Words the screen keeps as the client writes them, even with Japanese names on. The name list holds a
+# Japanese spelling for each because the voice has to say it; on screen they are abbreviations and the game's and
+# the company's own names, which Japanese players read in Latin letters. One per line, exactly as written.
+# A single letter and a Roman numeral are kept as written without a line here.
+AFK
+Battle.net
+DND
+FPS
+GM
+HP
+MP
+NPC
+PvE
+PvP
+UI
+WoW
+WoW Token
+World of Warcraft
+XP

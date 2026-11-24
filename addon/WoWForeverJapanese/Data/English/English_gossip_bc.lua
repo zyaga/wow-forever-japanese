@@ -8,6 +8,7 @@ WFJ.Data.add("english", {
   ["gossip:bc1a6fd81248ccf0"] = { text = "know=5 one=3 seek=7 speak=2 you=1" },
   ["gossip:bc208cc1cecd88a5"] = { text = "stops=1" },
   ["gossip:bc20a2fc8548276c"] = { text = "come=6" },
+  ["gossip:bc27c379000a0fde"] = { text = "above=1 chambers=2 open=4 portal=3" },
   ["gossip:bc2ee1fbb7dbff09"] = { text = "doom=2 inevitably=5 now=4 return=7 true=1 turn=8 wheels=3" },
   ["gossip:bc2fdfeb847f7a36"] = { text = "squawk=1" },
   ["gossip:bc32c0adba0a7581"] = { text = "release=2" },
@@ -37,6 +38,7 @@ WFJ.Data.add("english", {
   ["gossip:bce7e42122a0711e"] = { text = "armies=1 army=1 bear=9 believe=4 destroy=14 living=5 no=6 our=12 power=11 ranks=13 truly=2 win=3 you=8" },
   ["gossip:bce8a6ccd4155a93"] = { text = "all=8 best=19 come=6 head=18 many=4 moved=10 need=2 supplies=3 surprising=13 tailor=1 tailors=1 there=9 they=7 way=5 wish=17 work=11" },
   ["gossip:bcead923d02e7cf2"] = { text = "going=6 patrol=5 probably=2 right=4" },
+  ["gossip:bcebb22fba723035"] = { text = "aid=11 any=14 lands=8 members=13 our=5 people=6 place=4 seek=2 trade=9 travel=1 welcome=15 wish=12" },
   ["gossip:bcf634b387c34029"] = { text = "you=1" },
   ["gossip:bcf9cb134cd64457"] = { text = "awaits=4 dark=1 void=2 you=3" },
 })

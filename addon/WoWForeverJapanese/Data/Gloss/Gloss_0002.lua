@@ -368,7 +368,6 @@ WFJ.Data.add("gloss", {
   [2366] = "いい\tいい\t(go ahead and) (～がいい)",
   [2367] = "いい\tいい\t(good)",
   [2368] = "いい\tいい\t(if only)",
-  [2369] = "いい\tいい\t(in) time (good)",
   [2370] = "いい\tいい\t(is it) good",
   [2371] = "いい\tいい\t(is it) good (all set)",
   [2372] = "いい\tいい\t(is) enough",

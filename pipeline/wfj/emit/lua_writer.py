@@ -51,6 +51,7 @@ def rows(
     female: dict[tuple[int, str], tuple[str, str]] | None = None,
     masked: dict[tuple[int, str], tuple[str, str, str | None]] | None = None,
     branches: dict[tuple[int, str], list[tuple[str, ...]]] | None = None,
+    values: dict[tuple[int, str], int] | None = None,
 ) -> dict[int, list[str]]:
     """{id: [slot literals…]} for a numeric-id type; ids with no shipped field are absent.
     `female` (quest only): (id, field) → (English hash, female-variant key). A row with any field
@@ -63,7 +64,11 @@ def rows(
     masked live line can equal, so it stays marked (ADR-003).
     `branches` (ADR-043; item / spell): (id, field) → [(variant Japanese, shape)…] for a line whose
     Japanese keeps `$?` conditionals. That slot ships as a table, `{ "<variant 1>", …, shape = { … } }`,
-    which the addon's `Align.checkVariants` chooses from."""
+    which the addon's `Align.checkVariants` chooses from.
+    `values` (item / spell): (id, field) → how many numbers the client prints for the English the line's
+    placeholders are numbered to. A row with any such field gets one count per field after the status
+    string (`nil` for a field without one, trailing ones left off); the addon shows the line only while
+    the live line holds that many."""
     slots = schema.SLOTS[type_]
     fields = slots["fields"]
     by_id: dict[int, dict[str, dict[str, Any]]] = {}
@@ -109,6 +114,11 @@ def rows(
             ]
             if any(fem):
                 out[id_] += [h1_literal(k) if k else "nil" for k in fem]
+        if values and "values" in slots:
+            counted = [values.get((id_, f)) if f in got else None for f in fields]
+            while counted and counted[-1] is None:
+                counted.pop()
+            out[id_] += ["nil" if c is None else str(c) for c in counted]
     return out
 
 
@@ -255,14 +265,14 @@ def keyed_text(type_: str, nn: str, shard_rows: dict[str, list[str]]) -> str:
 
 
 def names_text(nn: str, lines: Iterable[dict[str, Any]]) -> str:
-    """One shard of the Japanese names (ADR-078): `[English hash] = { Japanese, reading, English }` for the
-    names it is given (the ones with Japanese). Generated beside the addon but not in the TOC: the names
-    setting loads them."""
-    entries = (
-        (lua_string(ln["id"]), [lua_string(ln["ja"]), lua_string(ln["reading"]), lua_string(ln["en"])])
-        for ln in sorted(lines, key=lambda ln: ln["id"])
-    )
-    return _add_text("name", f"data/name/name-{nn}.jsonl", entries)
+    """One shard of the Japanese names (ADR-078): `[English hash] = "Japanese<TAB>reading"` for the names it
+    is given (the ones with Japanese). The English is not written: the client shows it, and the key is its
+    hash. One string per name keeps a loaded table small."""
+    out = [HEADER.format(src=f"data/name/name-{nn}.jsonl"), "local _, WFJ = ...", 'WFJ.Data.add("name", {']
+    for ln in sorted(lines, key=lambda ln: ln["id"]):
+        out.append(f"  [{lua_string(ln['id'])}] = {lua_string(ln['ja'] + chr(9) + ln['reading'])},")
+    out.append("})")
+    return "\n".join(out) + "\n"
 
 
 def _packed_word(entry: list[str], meanings: dict[tuple[str, str, str], int]) -> str:
@@ -413,6 +423,24 @@ def displays_text(rows: Iterable[dict]) -> str:
     the speaker is not on screen."""
     lines = [HEADER.format(src="data/"), "local _, WFJ = ...", "WFJ.Data.displays = {"]
     lines += [f"  [{r['creature']}] = {r['display']}," for r in sorted(rows, key=lambda r: r["creature"])]
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
+def spell_shapes_text(shapes: dict[str, int]) -> str:
+    """`WFJ.Data.spellShapes`: [shape key] = spell id, the spell an item's tooltip line prints, found by the
+    line's wording with its values masked (core/spell_shapes.py). Keys only, never English."""
+    lines = [HEADER.format(src="data/"), "local _, WFJ = ...", "WFJ.Data.spellShapes = {"]
+    lines += [f'  ["{key}"] = {shapes[key]},' for key in sorted(shapes)]
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
+def spell_includes_text(includes: dict[int, list[int]]) -> str:
+    """`WFJ.Data.spellIncludes`: [spell id] = { the ids of the spells its description splices in }.
+    Ids only."""
+    lines = [HEADER.format(src="data/"), "local _, WFJ = ...", "WFJ.Data.spellIncludes = {"]
+    lines += [f"  [{i}] = {{ {', '.join(str(s) for s in includes[i])} }}," for i in sorted(includes)]
     lines.append("}")
     return "\n".join(lines) + "\n"
 

@@ -160,7 +160,7 @@ describe("the Click Cast Bindings window on Forever", function()
         alt(false)
       end)
 
-      it("static labels are Japanese; the tutorial's Thrall is a name and stays English", function()
+      it("static labels are Japanese; with no Japanese for the name, the tutorial's Thrall stays English", function()
         local f = _G.ClickBindingFrame
         assert.are.equal("保存", f.SaveButton:GetText())
         assert.are.equal("バインドを追加", f.AddBindingButton:GetText())
@@ -239,6 +239,21 @@ describe("the Click Cast Bindings window on Forever", function()
       end)
     end)
   end
+
+  it("with Japanese names on, the tutorial's Thrall shows his name's Japanese, never a dictionary word", function()
+    load()
+    WFJ.Data.add("name", { [WFJ.Names.key("Thrall")] = "スロール\tすろーる" })
+    WFJ.State.setNames(true)
+    loadClickBinding()
+    assert.is_true(WFJ.ClickBinding.init())
+    local f = _G.ClickBindingFrame
+    assert.are.equal("スロール", f.TutorialFrame.ThrallName:GetText())
+    alt(true)
+    assert.are.equal("Thrall", f.TutorialFrame.ThrallName:GetText())
+    alt(false)
+    WFJ.State.setNames(false)
+    assert.are.equal("Thrall", f.TutorialFrame.ThrallName:GetText())
+  end)
 
   it("hooks install once", function()
     setup(true)

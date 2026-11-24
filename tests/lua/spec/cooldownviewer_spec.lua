@@ -13,6 +13,7 @@ FILES[#FILES + 1] = "UI/CooldownViewer.lua"
 -- Forever GlobalStrings (build 1.60.1.69913) → a test Japanese
 local UI = {
   COOLDOWN_VIEWER_SETTINGS_TITLE = { "Cooldown Settings", "クールダウン設定" },
+  CANCEL = { "Cancel", "キャンセル" },
   COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS = { "Enter search text", "検索テキストを入力" },
   COOLDOWN_VIEWER_SETTINGS_TAB_SPELLS = { "Spells", "呪文" },
   COOLDOWN_VIEWER_SETTINGS_TAB_GROUP_AURAS = { "Group Buffs", "グループバフ" },
@@ -118,6 +119,16 @@ describe("the Cooldown Settings window on Forever", function()
     H.uiTeardown()
     Stub.keys.alt = false
     CV.uninstall()
+  end)
+
+  it("a layout dialog's Cancel button shows its word; a dialog the client lacks is left alone", function()
+    local cancel = Stub.button(nil, en("CANCEL"))
+    _G.CooldownViewerImportLayoutDialog = { CancelButton = cancel }
+    WFJ.CooldownViewer.init() -- declares its names again, now that the dialog exists
+    assert.are.equal(1, WFJ.CooldownViewer.showDialog("importDialog"))
+    assert.are.equal(ja("CANCEL"), cancel:GetText())
+    assert.are.equal(0, WFJ.CooldownViewer.showDialog("layoutDialog"))
+    _G.CooldownViewerImportLayoutDialog = nil
   end)
 
   it("the title renders after SetTitle and again after a second SetTitle; the search placeholder and the group-buff "
@@ -269,6 +280,26 @@ describe("the Cooldown Settings window on Forever", function()
     assert.are.equal(ja("COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_BUTTON_ADD_ALERT"), g.AddButton:GetText())
     assert.are.equal("Gold", g.Name:GetText())
     assert.is_true(unrecorded(g.Name))
+  end)
+
+  it("with Japanese names on, both alert editors' Name shows the spell's or the buff's Japanese", function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Fireball")] = "ファイアボール\tふぁいあぼーる",
+      [WFJ.Names.key("Arcane Intellect")] = "アーケイン・インテレクト\tあーけいん・いんてれくと",
+    })
+    local a, g = _G.CooldownViewerSettingsEditAlert, _G.GroupBuffFilterEditVisualAlert
+    a:DisplayForAlert("Fireball", true)
+    assert.are.equal("ファイアボール", a.Name:GetText())
+    alt(true)
+    assert.are.equal("Fireball", a.Name:GetText())
+    alt(false)
+    assert.are.equal("ファイアボール", a.Name:GetText())
+    g:DisplayForGroupBuffItem("Arcane Intellect", true)
+    assert.are.equal("アーケイン・インテレクト", g.Name:GetText())
+    a:DisplayForAlert("Nobody Known Spell", true)
+    assert.are.equal("Nobody Known Spell", a.Name:GetText())
+    WFJ.State.setNames(false)
+    assert.are.equal("Arcane Intellect", g.Name:GetText())
   end)
 
   it("edit mode: a HUD viewer's selection label stays as the client writes it (ADR-069)", function()

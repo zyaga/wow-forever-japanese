@@ -141,7 +141,8 @@ describe("the reminder at PLAYER_ENTERING_WORLD", function()
     F.install() -- the tool window templates
     Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI()
     _G.WFJ_Collector = saved
-    _G.WFJ_DB = { schema = 1, settings = {} }
+    -- a player the welcome window has nothing left to ask: while that window is owed the reminder waits for it
+    _G.WFJ_DB = { schema = 1, settings = {}, intro = true, asked = true, askedNames = true }
     local WFJ = Loader.load("WoWForeverJapanese")
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
     opened = 0

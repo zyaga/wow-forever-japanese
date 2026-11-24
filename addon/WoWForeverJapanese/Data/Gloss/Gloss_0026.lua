@@ -608,7 +608,6 @@ WFJ.Data.add("gloss", {
   [26606] = "また\tまた\tagain (back)",
   [26607] = "また\tまた\tagain (later)",
   [26608] = "また\tまた\tagain (more)",
-  [26609] = "また\tまた\tagain (re-)",
   [26610] = "また\tまた\tagain (またな: see ya)",
   [26611] = "また\tまた\tagain; also",
   [26612] = "また\tまた\talso",

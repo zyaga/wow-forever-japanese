@@ -63,6 +63,9 @@ EXHAUSTION_LABEL  # asked for by UI/HudLabels.lua: the client passes the string 
 FACTION_INACTIVE  # asked for by UI/Reputation.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 FACTION_OTHER  # asked for by UI/Reputation.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 FRIENDS_LIST  # asked for by UI/Friends.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
+ICON_FILTER_ALL  # the name-and-icon popup's filter dropdown (UI/IconPicker.lua): the client builds the name from the filter kind ("ICON_FILTER_" .. strupper(key), blizzard_sharedxml/mainline/shareduipaneltemplates.lua:1907), so no scanned file names it
+ICON_FILTER_ITEM  # the name-and-icon popup's filter dropdown (UI/IconPicker.lua): the client builds the name from the filter kind ("ICON_FILTER_" .. strupper(key), blizzard_sharedxml/mainline/shareduipaneltemplates.lua:1907), so no scanned file names it
+ICON_FILTER_SPELL  # the name-and-icon popup's filter dropdown (UI/IconPicker.lua): the client builds the name from the filter kind ("ICON_FILTER_" .. strupper(key), blizzard_sharedxml/mainline/shareduipaneltemplates.lua:1907), so no scanned file names it
 INSTANCE_CHAT_LEADER  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 INT_SPELL_DURATION_DAYS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 INT_SPELL_DURATION_HOURS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
@@ -117,3 +120,15 @@ TRANSMOGRIFY_TOOLTIP_REVERT  # asked for by UI/Tooltip.lua's structural pass: th
 UNSPENT_TALENT_POINTS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 WHO_LIST  # asked for by UI/Friends.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 YELLOW_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
+SPELL_DURATION_UNTIL_CANCELLED  # the C client writes it into a spell's description in place of the duration, so no scanned file names it
+PROFESSIONS_USED_IN_COOKING  # the C client writes it on a made item's tooltip ("Crafting Reagent"), so no scanned file names it
+LOCKED  # the C client writes it on a locked container's tooltip ("Locked"), so no scanned file names it
+CURRENCY_SEASON_TOTAL  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+CURRENCY_SEASON_TOTAL_MAXIMUM  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+CURRENCY_TOTAL  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+CURRENCY_TOTAL_CAP  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+CURRENCY_WEEKLY_CAP  # a currency tooltip's total line, which the C client writes into the tooltip data (TooltipDataType.Currency); asked for by UI/TooltipData.lua
+FEEDPET_LOG_THIRDPERSON  # a chat line the C client writes itself when a player feeds a pet; found by the English Collector, no scanned file names it
+GUILD_NEWS_FORMAT2  # a guild news chat line the C client writes itself; found by the English Collector, no scanned file names it
+IDLE_MESSAGE  # the idle logout warning the C client shows itself; found by the English Collector, no scanned file names it
+SPELLDISMISSPETOTHER  # a chat line the C client writes itself when a player dismisses a pet; found by the English Collector, no scanned file names it

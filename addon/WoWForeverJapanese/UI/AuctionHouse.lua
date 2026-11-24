@@ -57,7 +57,25 @@
 --   (commoditieslist.lua:140–146), and the WoW Token panes: the buyout button's ERR_NOT_ENOUGH_GOLD
 --   (wowtokenframe.lua:162, 175–180), the two price frames (wowtokenframe.xml:223–235, 327–339) and the shop
 --   button's ERR_FEATURE_RESTRICTED_TRIAL (wowtokenframe.lua:377, 443–448).
--- Never touched: item names, seller / bidder names, prices, quantities, item levels, the search box, the money inputs.
+-- Item names (surface "auctionhouse", area "items"): each is the item's name in its quality colour,
+--   "|cffxxxxxx<name>|r", sometimes with " (<item level>)" inside the colour (AUCTION_HOUSE_EQUIPMENT_RESULT_FORMAT,
+--   util.lua:313–346) and a count or a quality icon after it. While names are on each shows the item's Japanese,
+--   everything else kept byte for byte (UI/NameLabels.wrapped):
+--   the five item displays' Name, written by the display's own SetItemInternal and SetItemKey (sharedtemplates.lua:
+--     209–232, 272–314; every call is self:…, including the item-data events, :53–66), post-hooked on each display;
+--   the buy dialog's ItemDisplay.ItemText, AUCTION_HOUSE_DIALOG_ITEM_FORMAT "%s  x%s" around the coloured name,
+--     written by BuyDialog:SetItemID (buydialog.lua:241–260), post-hooked: the format has no words of its own
+--     (pipeline/ui_exclusions.txt), so it is no dictionary line and the count after the name is kept as written;
+--   a result row's item cell (a cell with ExtraInfo, tablebuilder.xml:124–166): UpdateDisplay writes the name, then
+--     HandleItemNameTruncation measures it (IsTruncated) to show the short ExtraInfo copy (tablebuilder.lua:702–757).
+--     Each cell's UpdateDisplay is post-hooked (Populate and the late item-data event both reach it through
+--     self:UpdateDisplay, :30–64), so the client measures its own English. The cell measures again on OnShow and
+--     OnSizeChanged (xml:162–164); those passes only move the text and show ExtraInfo;
+--   the summary lines' item names (auctionsframe.lua:58–80), after the dictionary pass on the same widget.
+--   Nothing protected follows any of these writes: the window's server calls (PlaceBid, StartCommoditiesPurchase,
+--   PostItem, PostCommodity) carry HasRestrictions (a hardware event) and are passed ids, quantities and prices,
+--   never text (auctionhousedocumentation.lua:83–89, 852–886, 1079–1082).
+-- Never touched: seller / bidder names, prices, quantities, item levels, the search box, the money inputs.
 -- Owned words (UIStrings.OWN): three words whose English another dictionary key already has with a
 -- different sense ("Back" the equipment slot, "Available" the friends status, "Deposit" the bank button) take their
 -- own Japanese here, each asked for by key: the buy frames' BackButton (commoditiesbuyframe.xml:82,
@@ -247,6 +265,13 @@ local TOOLTIPS = {
 }
 local REFRESH_TIP = { only = { "AUCTION_HOUSE_REFRESH_BUTTON_TOOLTIP" } }
 
+-- The item names: record key → path under AuctionHouseFrame. The first five are item displays' Name.
+local ITEM_NAMES = {
+  { "ibuy.name", "ItemBuyFrame.ItemDisplay" }, { "isell.name", "ItemSellFrame.ItemDisplay" },
+  { "csell.name", "CommoditiesSellFrame.ItemDisplay" }, { "cbuy.name", "CommoditiesBuyFrame.BuyDisplay.ItemDisplay" },
+  { "auctions.name", "AuctionsFrame.ItemDisplay" },
+}
+
 local function get(key) return Compat.get(SURFACE, key) end
 
 local function declare()
@@ -265,6 +290,8 @@ local function declare()
   for _, l in ipairs(LISTS) do Compat.declare(SURFACE, l[1], { F .. "." .. l[2] }) end
   for _, d in ipairs(DURATIONS) do Compat.declare(SURFACE, d[1], { F .. "." .. d[2] }) end
   for i, t in ipairs(TOOLTIPS) do Compat.declare(SURFACE, "tip" .. i, { F .. "." .. t[1] }) end
+  for _, d in ipairs(ITEM_NAMES) do Compat.declare(SURFACE, d[1], { F .. "." .. d[2] }) end
+  Compat.declare(SURFACE, "dialog.item", { F .. ".BuyDialog.ItemDisplay.ItemText" })
 end
 
 local LABEL_OPTS = {}
@@ -300,6 +327,25 @@ function AuctionHouse.onCellTooltip()
 end
 
 local cellHooked = setmetatable({}, { __mode = "k" })
+local itemCellHooked = setmetatable({}, { __mode = "k" })
+
+-- An item cell's name, after the cell's UpdateDisplay (and the row pass). → 1 | 0
+local function showItemCell(cell)
+  local n = WFJ.NameLabels.wrapped(SURFACE, cellKey(cell.Text), cell.Text, "items")
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
+-- The item displays' names and the buy dialog's item line. → the number shown
+function AuctionHouse.showNames()
+  local n = WFJ.NameLabels.wrapped(SURFACE, "dialog.item", get("dialog.item"), "items")
+  for _, d in ipairs(ITEM_NAMES) do
+    local display = get(d[1])
+    n = n + WFJ.NameLabels.wrapped(SURFACE, d[1], type(display) == "table" and display.Name or nil, "items")
+  end
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
 
 -- One row's cells (row.cells is the table builder's, tablebuilder.lua:335–339). The row owns the commodities list's
 -- "your auction" tooltip (commoditieslist.lua:140–146) and a favorite cell's button the favorites-full tooltip
@@ -311,7 +357,17 @@ local function showRow(row)
   local n = 0
   for _, cell in ipairs(cells) do
     local text = type(cell) == "table" and cell.Text or nil
-    if type(text) == "table" then n = n + WFJ.Labels.show(SURFACE, cellKey(text), text, nil, ROW) end
+    if type(text) == "table" then
+      local shown = WFJ.Labels.show(SURFACE, cellKey(text), text, nil, ROW)
+      if shown == 0 and type(cell.ExtraInfo) == "table" then -- an item cell: the item's name
+        if not itemCellHooked[cell] and type(cell.UpdateDisplay) == "function" then
+          itemCellHooked[cell] = true
+          hooksecurefunc(cell, "UpdateDisplay", showItemCell)
+        end
+        showItemCell(cell)
+      end
+      n = n + shown
+    end
     local favorite = type(cell) == "table" and cell.FavoriteButton or nil
     if type(favorite) == "table" then WFJ.HelpTooltip.register(favorite, FAVORITE_TIP) end
     if type(cell) == "table" then
@@ -369,7 +425,9 @@ end
 function AuctionHouse.onSummaryLine(a, b)
   local line = a == AuctionHouse and b or a
   local text = type(line) == "table" and line.Text or nil
-  if type(text) == "table" then WFJ.Labels.show(SURFACE, summaryKey(text), text, nil, SUMMARY) end
+  if type(text) == "table" and WFJ.Labels.show(SURFACE, summaryKey(text), text, nil, SUMMARY) == 0 then
+    WFJ.NameLabels.wrapped(SURFACE, summaryKey(text), text, "items")
+  end
 end
 
 -- hooksecurefunc target (AuctionHouseFilterButton_SetUp(button, info)). → 1 | 0
@@ -393,8 +451,7 @@ function AuctionHouse.showAll()
   for _, l in ipairs(LABELS) do n = n + WFJ.Labels.show(SURFACE, l[1], get(l[1]), nil, LABEL_OPTS[l[1]]) end
   for _, d in ipairs(DURATIONS) do n = n + WFJ.Labels.dropdown(SURFACE, d[1], get(d[1])) end
   for _, l in ipairs(LISTS) do n = n + AuctionHouse.showList(l[1], get(l[1])) end
-  WFJ.Render.updateBanner(SURFACE)
-  return n
+  return n + AuctionHouse.showNames()
 end
 
 function AuctionHouse.release()
@@ -448,6 +505,11 @@ function AuctionHouse.setup()
   hook(priceInput, "SetLabel", AuctionHouse.showAll)
   hook(priceInput, "SetSubtext", AuctionHouse.showAll)
   hook(get("dialog"), "SetState", AuctionHouse.showAll)
+  hook(get("dialog"), "SetItemID", AuctionHouse.showNames)
+  for _, d in ipairs(ITEM_NAMES) do
+    hook(get(d[1]), "SetItemInternal", AuctionHouse.showNames)
+    hook(get(d[1]), "SetItemKey", AuctionHouse.showNames)
+  end
   hook(get("tokenSell"), "Refresh", AuctionHouse.showAll)
   if type(get("tokenUpdate")) == "function" then
     hooksecurefunc("BrowseWowTokenResults_Update", AuctionHouse.showAll)

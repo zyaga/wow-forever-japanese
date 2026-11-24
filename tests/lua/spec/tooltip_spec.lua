@@ -4,7 +4,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
-  "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua",
+  "Core/Collector.lua", "Core/Data.lua", "Core/Names.lua", "UI/Font.lua", "UI/Render.lua",
   "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/TooltipUnit.lua" }
 
 local DATA = {
@@ -17,6 +17,10 @@ local DATA = {
     -- issue #87, Gnarled Necromancer's Staff: its description is the second of two Equip lines in a row
     [251534] = { ja = "Silverpine ForestとHillsbrad Foothillsでの移動速度が$N1%上昇します。", status = "u" },
     [900] = { ja = "移動速度が$N1%上昇します。", status = "u" }, -- names nothing: fits any line with a number
+    -- a flavour line: no name or number, so it fits any line; h1 is the hash of its English
+    [279845] = { ja = "計り知れない知識と引き換えの、ささやかな賞品。", status = "u", h1 = 0x55c1ba1b },
+    -- Rock on Stick: a hit line and a flavour line, written as two paragraphs
+    [279852] = { ja = "対象の顔を殴りつけ、$N1のダメージを与えます。\nもっと大きい岩がいる。", status = "u" },
   },
   ["spell.description"] = {
     [17] = { ja = "味方にシールドを張り、$N1ダメージを吸収します。$N2秒間持続します。", status = "u" },
@@ -47,7 +51,10 @@ describe("UI/Tooltip: item and spell tooltips", function()
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function(n) return S.get("marker." .. n) end,
       align = WFJ.Align.check,
+      kindOff = function(kind) return kind == "name" and not WFJ.State.names end,
+      name = WFJ.Names.item,
     }))
+    WFJ.State.names = false -- the shipped default; the names cases turn it on
     assert.are.equal(6, TT.init())
     tt = _G.GameTooltip
     Stub.spellDescriptions[17] =
@@ -116,6 +123,43 @@ describe("UI/Tooltip: item and spell tooltips", function()
       Stub.setItemTooltip(tt, "|Hitem:900:0:0:0:0:0:0:0|h[Two Speeds]|h",
         { "Two Speeds", "Equip: Increases movement speed by 3%.", "Equip: Increases movement speed by 5%." })
       assert.are.equal(WFJ.Render.BLANK, fs("GameTooltip", 3):GetText())
+    end)
+
+    it("a Japanese with no name or number goes on the line whose words are its English", function()
+      Stub.setItemTooltip(tt, "|Hitem:279845:0:0:0:0:0:0:0|h[Solid Gold Band]|h",
+        { "Solid Gold Band", "Use: Opens the way to the vault.",
+          '"A small prize in exchange for tremendous knowledge."' })
+      assert.are.equal("Use: Opens the way to the vault.", fs("GameTooltip", 2):GetText())
+      assert.are.equal(DATA["item.description"][279845].ja, fs("GameTooltip", 3):GetText())
+      assert.are.equal(3, TT.runLineOf(0x55c1ba1b, { "n", "Use: x", '"A small prize in exchange for tremendous '
+        .. 'knowledge."' }, 2, 3))
+      assert.is_nil(TT.runLineOf(nil, { "n", "Use: x", "y" }, 2, 3))
+    end)
+
+    it("a flavour line below the durability line takes the Japanese's last paragraph, in the client's quotes",
+      function()
+      -- as the window test showed item 279852 on Forever: the hit line, the durability line, then the flavour
+      local lines = { "Rock on Stick", "Chance on hit: Bash the target in the face, causing 8 Physical damage.",
+        "Durability 90 / 90", '"Need bigger rock."', "Sell Price: 5c" }
+      Stub.setItemTooltip(tt, "|Hitem:279852:0:0:0:0:0:0:0|h[Rock on Stick]|h", lines)
+      assert.are.equal("対象の顔を殴りつけ、8のダメージを与えます。", fs("GameTooltip", 2):GetText())
+      assert.are.equal("Durability 90 / 90", fs("GameTooltip", 3):GetText())
+      assert.are.equal('"もっと大きい岩がいる。"', fs("GameTooltip", 4):GetText())
+      Stub.keys.alt = true; WFJ.Modifier.refresh() -- Alt gives both lines their English back
+      assert.are.equal(lines[2], fs("GameTooltip", 2):GetText())
+      assert.are.equal(lines[4], fs("GameTooltip", 4):GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      -- another trigger line before the quote: that quote is another run's, never this item's
+      assert.is_nil(TT.flavourRow(279852, { "n", "Chance on hit: x 8.", "Use: y", '"z"' }, 2, 2))
+    end)
+
+    it("with no line that is its English, or two, the run is kept whole, as before", function()
+      Stub.setItemTooltip(tt, "|Hitem:279845:0:0:0:0:0:0:0|h[Solid Gold Band]|h",
+        { "Solid Gold Band", "Use: Opens the way to the vault.", '"A prize."' })
+      assert.are.equal(DATA["item.description"][279845].ja, fs("GameTooltip", 2):GetText())
+      assert.are.equal(WFJ.Render.BLANK, fs("GameTooltip", 3):GetText())
+      local twice = '"A small prize in exchange for tremendous knowledge."'
+      assert.is_nil(TT.runLineOf(0x55c1ba1b, { "n", twice, twice }, 2, 3))
     end)
   end)
 
@@ -323,6 +367,54 @@ describe("UI/Tooltip: item and spell tooltips", function()
     ns.Compat.init(function(name) return _G[name] end)
     assert.are.equal(5, ns.Tooltip.init())
     assert.is_truthy(table.concat(ns.Compat.unresolved(), ","):find("tooltip.ItemRefShoppingTooltip2", 1, true))
+  end)
+
+  describe("with names on", function()
+    before_each(function()
+      WFJ.Data.add("name", {
+        [WFJ.Names.key("Tough Jerky")] = "タフ・ジャーキー\tたふ・じゃーきー",
+        [WFJ.Names.key("Power Word: Shield")] = "パワー・ワード・シールド\tぱわー・わーど・しーるど",
+      })
+      WFJ.State.setNames(true)
+    end)
+    after_each(function() WFJ.State.setNames(false) end)
+
+    it("an item's name line shows its Japanese in the bundled font; the reveal key and a hide give it back",
+    function()
+      Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
+      assert.are.equal("タフ・ジャーキー", fs("GameTooltip", 1):GetText())
+      assert.are.equal(WFJ.Font.PATH, (fs("GameTooltip", 1):GetFont()))
+      assert.are.equal(DATA["item.description"][117].ja, fs("GameTooltip", 2):GetText())
+      assert.are.equal("Sell Price: 5c", fs("GameTooltip", 3):GetText())
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("Tough Jerky", fs("GameTooltip", 1):GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("タフ・ジャーキー", fs("GameTooltip", 1):GetText())
+      tt:Hide()
+      assert.are.equal("Tough Jerky", fs("GameTooltip", 1):GetText())
+      assert.are.equal(0, SS.count("tooltip.GameTooltip"))
+    end)
+
+    it("an item with no Japanese name keeps its name line unwritten", function()
+      Stub.setItemTooltip(tt, "|Hitem:724:0:0:0:0:0:0:0|h[x]|h", { "Goretusk Liver Pie",
+        "Use: Restores 243 health over 21 sec. If you spend at least 10 seconds eating you will become well fed "
+          .. "and gain 4 Stamina and Spirit for 15 min.", '"Tastes like liver."' })
+      assert.are.equal("Goretusk Liver Pie", fs("GameTooltip", 1):GetText())
+      assert.are.equal(0, fs("GameTooltip", 1).calls.SetText)
+    end)
+
+    it("the item tooltips area off leaves the name with the rest of the tooltip", function()
+      S.set("area.itemTooltips", false)
+      Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
+      assert.are.equal("Tough Jerky", fs("GameTooltip", 1):GetText())
+      S.set("area.itemTooltips", true)
+    end)
+
+    it("a spell's name line shows its Japanese", function()
+      Stub.setSpellTooltip(tt, 17, { "Power Word: Shield", "45 Mana", "Instant cast",
+        "Draws on the soul of the friendly target to shield them, absorbing 44 damage. Lasts 30 sec." })
+      assert.are.equal("パワー・ワード・シールド", fs("GameTooltip", 1):GetText())
+    end)
   end)
 
   it("modifier restores every line and refits once; release on OnHide", function()

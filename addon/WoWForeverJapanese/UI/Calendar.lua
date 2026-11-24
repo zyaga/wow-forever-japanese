@@ -33,7 +33,8 @@
 --   CalendarCreateEventCreateButton_SetText → CalendarCreateEventCreateButton CALENDAR_CREATE / CALENDAR_UPDATE
 --     (lua:3434, 3533, 4078–4081);
 --   CalendarTexturePickerTitleFrame_Update → its Header CALENDAR_TEXTURE_PICKER_TITLE_RAID / _DUNGEON (lua:4507–4509).
---   The holiday and raid-lockout frames' Headers are a holiday's / a raid's name (lua:2476, 2522): never hooked.
+--   The holiday and raid-lockout frames' Headers are a holiday's / a raid's name (lua:2476, 2522): no dictionary
+--     word. The holiday's shows its Japanese while names are on (UI/NameLabels), after CalendarViewHolidayFrame_Update.
 -- Help tooltips (GameTooltip:SetOwner(self) then SetText): the four response buttons (lua:2902–2942), the two
 --   check boxes (xml:766, 782), Mass Invite (xml:905), Invite Members (lua:4044–4046), the class totals (lua:4702);
 --   the 42 day buttons CalendarDayButton<N> (created at load, lua:1083–1086): CalendarDayButton_OnEnter writes the
@@ -77,7 +78,23 @@
 --   (CalendarTexturePicker_InitButton, called by name from the view's initializer, lua:4450, 4531). The difficulty
 --   dropdown's own selection text (CalendarCreateEventFrame.DifficultyOptionDropdown, its radios carry
 --   difficultyName, lua:3303–3317) through Labels.dropdown, restricted to the family. Its popup entries are UI/Menus'.
--- Never touched: event titles and descriptions, holiday names, player names, the three EditBoxes whose default text
+-- Names: a holiday's title is a game name. While names are on it shows its Japanese on the day buttons, the event
+--   picker, the day tooltip (alone, or inside the begins / ends line as a `name` value) and the holiday frame's
+--   header; names inside a holiday's description follow the names choice like any shipped text. A title of two
+--   names with ": " between them ("Call to Arms: Warsong Gulch") has no line of its own in the name list: it shows
+--   both names' Japanese with the separator kept (Names.joined), on the same four widgets, and stays as written
+--   when either half is no name.
+-- Times: GameTime_GetFormattedTime(hour, minute, wantAMPM) writes TIME_TWELVEHOURAM / _PM ("%d:%02d AM") when
+--   AM / PM is wanted, else digits (TIMEMANAGER_TICKER_12HOUR / _24HOUR, the 24-hour setting) [verified:
+--   forever-ui-1.60.1.71037 blizzard_framexmlutil/gametimeutil.lua:9-31]. A twelve-hour time reads 午前 / 午後;
+--   digits stay as written. The calendar writes one in the day tooltip's right column (lua:2138-2151,
+--   AddDoubleLine: the left column is the event's title, so only a right line is taken as a time), a day button's
+--   <day>EventButton<1–4>Text2 (lua:1584, AM / PM only while the day shows few events, :1520),
+--   CalendarViewEventTimeLabel (lua:2826), the event picker's pooled Time (lua:4345), an invite row's tooltip
+--   (lua:2709-2713), and inside the raid descriptions (lua:2525, 2529) and the holiday's begins / ends line
+--   (lua:2479): those template arguments take the time's Japanese when it is one, else as written
+--   (Core/UIStringKeys ARGS, `entryOrText`).
+-- Never touched: a player's event titles and descriptions, player names, the three EditBoxes whose default text
 -- the client reads back (CALENDAR_EVENT_NAME / _DESCRIPTION / CALENDAR_PLAYER_NAME, lua:145–146, 3937–3958).
 local _, WFJ = ...
 local Calendar = {}
@@ -135,13 +152,25 @@ local TOOLTIPS = {
   CalendarClassTotalsButton = { "CALENDAR_TOOLTIP_INVITE_TOTALS" },
 }
 
+-- a twelve-hour time (GameTime_GetFormattedTime, above)
+local TIME_KEYS = { "TIME_TWELVEHOURAM", "TIME_TWELVEHOURPM" }
+local TIME = { only = TIME_KEYS }
+-- The day tooltip's right column holds the event's time beside its title (lua:2147-2153). HelpTooltip asks this for a
+-- line its `only` keys did not match: a right line is offered the time keys, a left line (a title a player typed)
+-- never. → 1 | 0
+local function rightTime(surface, recKey, fs, refit)
+  if recKey:sub(1, 1) ~= "R" then return 0 end
+  return WFJ.Labels.show(surface, recKey, fs, refit, TIME)
+end
+
 local WEEKDAYS = 7 -- CalendarWeekday1Name … CalendarWeekday7Name (Blizzard's own names, lua:1284)
 local DAYS = 42 -- CalendarDayButton1 … CalendarDayButton42 (CALENDAR_MAX_DAYS_PER_MONTH, lua:116, 1083–1086)
 local DAY_TOOLTIP = { only = { "CALENDAR_TOOLTIP_ONGOING", "CALENDAR_ANNOUNCEMENT_CREATEDBY_YOURSELF",
   "CALENDAR_GUILDEVENT_INVITEDBY_YOURSELF", "CALENDAR_COMMUNITYEVENT_INVITEDBY_YOURSELF",
   "CALENDAR_EVENT_INVITEDBY_YOURSELF", "FULLDATE", "CALENDAR_ANNOUNCEMENT_CREATEDBY_PLAYER",
-  "CALENDAR_EVENT_INVITEDBY_PLAYER", "CALENDAR_SIGNEDUP_FOR_GUILDEVENT_WITH_STATUS" } }
-local INVITE_ROW_TOOLTIP = { only = { "CALENDAR_TOOLTIP_INVITE_RESPONDED", "FULLDATE" } }
+  "CALENDAR_EVENT_INVITEDBY_PLAYER", "CALENDAR_SIGNEDUP_FOR_GUILDEVENT_WITH_STATUS" }, show = rightTime }
+-- the label, the response date and its time (lua:2702-2713)
+local INVITE_ROW_TOOLTIP = { only = { "CALENDAR_TOOLTIP_INVITE_RESPONDED", "FULLDATE", unpack(TIME_KEYS) } }
 local EVENTS_PER_DAY = 4 -- CALENDAR_DAYBUTTON_MAX_VISIBLE_EVENTS (lua:128)
 local DATE = { only = { "FULLDATE" } }
 local CREATOR = { only = { "CALENDAR_EVENT_CREATORNAME" } }
@@ -153,7 +182,9 @@ local TITLE_KEYS = {
   RAID_LOCKOUT = { any = "CALENDAR_EVENTNAME_FORMAT_RAID_LOCKOUT", button = true },
   RAID_RESET = { any = "CALENDAR_EVENTNAME_FORMAT_RAID_RESET", button = true },
 }
-local HOLIDAY = { only = { "CALENDAR_HOLIDAYFRAME_BEGINSENDS" } }
+-- the holiday view's text: the description inside the begins / ends template, or, for a holiday with no start or
+-- end time, the description alone (lua:2477–2482). The opts are built per index (Labels.familiesWith).
+local HOLIDAY_KEYS = { "CALENDAR_HOLIDAYFRAME_BEGINSENDS" }
 local RAID = { only = { "CALENDAR_RAID_LOCKOUT_DESCRIPTION", "CALENDAR_RAID_RESET_DESCRIPTION" } }
 local CANDIDATES = {
   frame = { "CalendarFrame" }, filter = { "CalendarFrame.FilterButton" }, month = { "CalendarMonthName" },
@@ -168,8 +199,12 @@ local CANDIDATES = {
   createInvites = { "CalendarCreateEventInviteList.ScrollBox" }, scrollUtil = { "ScrollUtil" },
   viewCreator = { "CalendarViewEventCreatorName" }, createCreator = { "CalendarCreateEventCreatorName" },
   viewDate = { "CalendarViewEventDateLabel" }, createDate = { "CalendarCreateEventDateLabel" },
-  holiday = { "CalendarViewHolidayFrame.ScrollingFont" }, raid = { "CalendarViewRaidFrame.ScrollingFont" },
+  viewTime = { "CalendarViewEventTimeLabel" },
+  holiday = { "CalendarViewHolidayFrame.ScrollingFont" }, holidayHeader = { "CalendarViewHolidayFrame.Header" },
+  raid = { "CalendarViewRaidFrame.ScrollingFont" },
   textureName = { "CalendarCreateEventTextureName" },
+  viewDescription = { "CalendarViewEventDescriptionContainer.ScrollingFont" },
+  createDescription = { "CalendarCreateEventDescriptionContainer.ScrollingEditBox" },
   difficultyDropdown = { "CalendarCreateEventFrame.DifficultyOptionDropdown" },
 }
 -- global writer → the hook target it runs
@@ -297,9 +332,26 @@ local function showLockedTitle()
   return WFJ.Labels.show(SURFACE, "viewTitle", get("viewTitle"), nil, LOCKED_TITLE)
 end
 
+-- An event a player made: its title and description are that player's text, never translated, and wear the bundled
+-- face while they hold Japanese (UI/PlayerText). The description is a ScrollingFontTemplate frame (xml:507): its
+-- height was measured in the client's font (scrolltemplates.lua:347–358), so it is fitted again after the font.
+-- The font a title was given comes off first, so a record made for it holds the widget's own font.
+local function showPlayerDescription()
+  local fs, refit = WFJ.Labels.scrolling(get("viewDescription"))
+  if not fs then return false end
+  local dressed = WFJ.PlayerText.shown(fs)
+  refit()
+  return dressed
+end
+
 function Calendar.onViewEvent()
+  WFJ.Font.restore(get("viewTitle"))
+  local locked = showLockedTitle()
+  if locked == 0 then WFJ.PlayerText.shown(get("viewTitle")) end
+  showPlayerDescription()
   return showTitled("typeName", get("typeName"), EVENT_TYPE) + show("viewHeader", "viewHeader", VIEW_HEADER)
-    + show("viewCreator", "viewCreator", CREATOR) + show("viewDate", "viewDate", DATE) + showLockedTitle()
+    + show("viewCreator", "viewCreator", CREATOR) + show("viewDate", "viewDate", DATE)
+    + show("viewTime", "viewTime", TIME) + locked
 end
 
 -- The day's event `eventIndex` as the client reads it (C_Calendar.GetDayEvent, lua:1553, 2092, 4316). → table | nil
@@ -319,8 +371,36 @@ local function buttonTitled(event)
   return t ~= nil and t.button
 end
 
+-- A holiday's title is the game's own name for it, the one title on the calendar no player typed. The day
+-- buttons and the picker write it as a plain "%s" (lua:438–443, 1568–1574, 4350), so the widget holds only the
+-- name: it shows the name's Japanese while names are on, or both names of a title made of two. → 1 | 0
+local function showHolidayTitle(recKey, widget, event)
+  if type(event) ~= "table" or event.calendarType ~= "HOLIDAY" then return nil end
+  return WFJ.NameLabels.joined(SURFACE, recKey, widget)
+end
+
+-- A holiday's begins / ends line whose title is two names with ": " between them. The line's `name` value is
+-- looked up whole, and the pair has no line in the name list, so the line is laid out in parts: the template's
+-- text around its value, and each half as a name of its own, looked up when the line is drawn. Any other title
+-- keeps the args it had. → args
+local HOLIDAY_LINE = { CALENDAR_EVENTNAME_FORMAT_START = true, CALENDAR_EVENTNAME_FORMAT_END = true }
+local function joinedTitleArgs(index, key, args)
+  if not HOLIDAY_LINE[key] or type(args) ~= "table" or args.form ~= nil then return args end
+  local title = args[1]
+  local _, _, first, second = WFJ.Names.joined(title)
+  if not first then return args end
+  local template = index:fillArg({ entry = key })
+  if type(template) ~= "string" then return args end
+  local from, to = template:find("%1$s", 1, true)
+  if not from then from, to = template:find("%s", 1, true) end
+  if not from then return args end
+  return { form = "seq", parts = { template:sub(1, from - 1), { name = first },
+    title:sub(#first + 1, #title - #second), { name = second }, template:sub(to + 1) } }
+end
+
 -- CalendarFrame_UpdateDayEvents(index, …): the day button's event titles: a raid lockout / reset line only, read from
 -- the event each event button records (eventButton.eventIndex, lua:1560); any other event's title is never offered.
+-- Each event button's Text2 is its time (lua:1584), restricted to the time keys.
 function Calendar.onDayEvents(index)
   local day = type(index) == "number" and index or nil
   local n = 0
@@ -330,10 +410,18 @@ function Calendar.onDayEvents(index)
       local name = "CalendarDayButton" .. d .. "EventButton" .. i
       local recKey = "event." .. d .. "." .. i
       local eventButton = Compat.resolve(name)
-      if buttonTitled(dayEvent(dayButton, type(eventButton) == "table" and eventButton.eventIndex or nil)) then
-        n = n + showTitled(recKey, Compat.resolve(name .. "Text1"), EVENT_NAME)
+      local text1 = Compat.resolve(name .. "Text1")
+      n = n + WFJ.Labels.show(SURFACE, "time." .. d .. "." .. i, Compat.resolve(name .. "Text2"), nil, TIME)
+      WFJ.Font.restore(text1)
+      local event = dayEvent(dayButton, type(eventButton) == "table" and eventButton.eventIndex or nil)
+      local holiday = showHolidayTitle(recKey, text1, event)
+      if buttonTitled(event) then
+        n = n + showTitled(recKey, text1, EVENT_NAME)
+      elseif holiday then
+        n = n + holiday
       else
         WFJ.SurfaceState.drop(SURFACE, recKey)
+        WFJ.PlayerText.shown(text1) -- a title a player typed: its font only
       end
     end
   end
@@ -343,14 +431,21 @@ end
 local pickerKey = WFJ.Labels.keyer("picker.") -- a pooled picker button's record key
 
 -- CalendarEventPickerFrame_InitButton(button, elementData): the pooled button's Title, a raid lockout / reset event's
--- only (the event is elementData.index of the picker's day button, lua:4310–4316).
+-- only (the event is elementData.index of the picker's day button, lua:4310–4316). A holiday's title is its name.
+-- Any other title is a player's own: its font only (UI/PlayerText). The button's Time is a time (lua:4344-4345).
 function Calendar.onPickerButton(button, elementData)
   if type(button) ~= "table" or type(button.Title) ~= "table" then return 0 end
+  if type(button.Time) == "table" then WFJ.Labels.show(SURFACE, pickerKey(button.Time), button.Time, nil, TIME) end
   local picker = Compat.resolve("CalendarEventPickerFrame")
   local index = type(elementData) == "table" and elementData.index or nil
   local recKey = pickerKey(button.Title)
-  if not buttonTitled(dayEvent(type(picker) == "table" and picker.dayButton or nil, index)) then
+  WFJ.Font.restore(button.Title)
+  local event = dayEvent(type(picker) == "table" and picker.dayButton or nil, index)
+  local holiday = showHolidayTitle(recKey, button.Title, event)
+  if holiday then return holiday end
+  if not buttonTitled(event) then
     WFJ.SurfaceState.drop(SURFACE, recKey)
+    WFJ.PlayerText.shown(button.Title)
     return 0
   end
   return showTitled(recKey, button.Title, EVENT_NAME)
@@ -372,13 +467,18 @@ function Calendar.onDayTooltip(dayButton)
   if not index or type(tt) ~= "table" or type(tt.GetOwner) ~= "function" or tt:GetOwner() ~= dayButton
       or type(tt.NumLines) ~= "function" or type(tt.GetName) ~= "function" then return 0 end
   local ok, count = pcall(api.GetNumDayEvents, dayButton.monthOffset, dayButton.day)
-  local expected, keys = {}, {}
+  local expected, keys, holidays = {}, {}, nil
   local nameWithDifficulty = Compat.resolve("GetDungeonNameWithDifficulty") -- only a stand-in; Blizzard's is local
   for i = 1, ok and type(count) == "number" and count or 0 do
     local event = dayEvent(dayButton, i)
     local t = event and TITLE_KEYS[event.calendarType]
     local key = t and (t.any or t[event.sequenceType])
     local title = key and event.title
+    -- a holiday with no begins / ends wording is a line holding only its name (lua:411–416)
+    if event and event.calendarType == "HOLIDAY" and not key and type(event.title) == "string" then
+      holidays = holidays or {}
+      holidays[event.title] = (holidays[event.title] or 0) + 1
+    end
     if key and t.any then
       local name = dungeonName(title, event.difficultyName)
       if not name and type(nameWithDifficulty) == "function" then
@@ -393,13 +493,24 @@ function Calendar.onDayTooltip(dayButton)
       expected[id] = (expected[id] or 0) + 1
     end
   end
-  if #keys == 0 then return 0 end
+  if #keys == 0 and not holidays then return 0 end
   local name, found, seen = tt:GetName(), {}, {}
-  for i = 1, tt:NumLines() or 0 do
+  local named, namedSeen = {}, {}
+  -- line 1 is the date
+  for i = 2, tt:NumLines() or 0 do
     local fs = Compat.resolve(name .. "TextLeft" .. i)
     local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
     local key, args
-    if type(text) == "string" and text ~= "" then key, args = index:matchOnly(text, keys) end
+    if type(text) == "string" and text ~= "" and #keys > 0 then key, args = index:matchOnly(text, keys) end
+    if not key and holidays and type(text) == "string" then
+      -- a line a record already holds is ours: it is counted under the English it stands for
+      local rec = WFJ.SurfaceState.get(help.SURFACE, "L" .. i)
+      local title = rec and rec.fs == fs and rec.applied ~= nil and rec.applied == text and rec.en or text
+      if holidays[title] then
+        named[#named + 1] = { i = i, fs = fs, title = title }
+        namedSeen[title] = (namedSeen[title] or 0) + 1
+      end
+    end
     local id = key and type(args) == "table" and type(args[1]) == "string" and key .. "\0" .. args[1]
     if id and expected[id] then
       found[#found + 1] = { i = i, fs = fs, key = key, args = args, id = id }
@@ -407,9 +518,16 @@ function Calendar.onDayTooltip(dayButton)
     end
   end
   local n = 0
+  -- a player's event typed like a holiday's name cannot be told from the holiday's line: every copy stays
+  for _, f in ipairs(named) do
+    if namedSeen[f.title] <= holidays[f.title] then
+      n = n + WFJ.NameLabels.joined(help.SURFACE, "L" .. f.i, f.fs, nil, help.refit)
+    end
+  end
   for _, f in ipairs(found) do
     if seen[f.id] <= expected[f.id] then
-      n = n + WFJ.Labels.showArgs(help.SURFACE, "L" .. f.i, f.fs, f.key, difficultyArgs(f.args), help.refit)
+      local args = joinedTitleArgs(index, f.key, difficultyArgs(f.args))
+      n = n + WFJ.Labels.showArgs(help.SURFACE, "L" .. f.i, f.fs, f.key, args, help.refit)
     end
   end
   if n > 0 then help.refit() end
@@ -419,9 +537,23 @@ end
 -- The holiday and raid descriptions are ScrollingFontTemplate frames (xml:372, 412): the text is their inner
 -- FontString, re-fitted after the write so a longer Japanese scrolls (Labels.scrolling). The frame itself has no
 -- GetText and is not a button.
+-- The frame's header is the holiday's name (holidayInfo.name, lua:2476): no dictionary word, so it stays off the
+-- labels' list, and shows the name's Japanese while names are on (both names of a title made of two). The header
+-- is as wide as its text
+-- (DialogHeaderMixin:UpdateWidth, blizzard_sharedxml/shared/dialog/dialogtemplates.lua:9–21), so it is fitted again
+-- after each write.
+local function showHolidayName()
+  local header = get("holidayHeader")
+  if type(header) ~= "table" then return 0 end
+  return WFJ.NameLabels.joined(SURFACE, "holidayName", header.Text, nil, function()
+    if type(header.UpdateWidth) == "function" then header:UpdateWidth() end
+  end)
+end
+
 function Calendar.onHoliday()
   local fs, refit = WFJ.Labels.scrolling(get("holiday"))
-  return WFJ.Labels.show(SURFACE, "holiday", fs, refit, HOLIDAY)
+  return WFJ.Labels.show(SURFACE, "holiday", fs, refit, WFJ.Labels.familiesWith(HOLIDAY_KEYS, "HolidayDescription"))
+    + showHolidayName()
 end
 
 function Calendar.onRaid()
@@ -475,6 +607,19 @@ function Calendar.onInviteRow(a, b)
   if type(row) == "table" then WFJ.HelpTooltip.register(row, INVITE_ROW_TOOLTIP) end
 end
 
+-- The boxes an event's title and description are typed in, in the bundled face. The description's box is inside a
+-- ScrollingEditBoxTemplate frame (xml:857; GetEditBox, scrolltemplates.lua:123). → the number dressed
+function Calendar.typingBoxes()
+  local P = WFJ.PlayerText
+  local n = P.each(P.box, { "CalendarCreateEventTitleEdit" })
+  local scrolling = get("createDescription")
+  if type(scrolling) == "table" and type(scrolling.GetEditBox) == "function" then
+    local ok, box = pcall(scrolling.GetEditBox, scrolling)
+    if ok and P.box(box) then n = n + 1 end
+  end
+  return n
+end
+
 local hooked = false
 
 -- Blizzard_Calendar's part: runs once the addon is loaded (now, or on its ADDON_LOADED). → true when set up.
@@ -484,6 +629,7 @@ function Calendar.setup()
   if type(frame) ~= "table" or type(get("filter")) ~= "table" then return false end -- not the mainline calendar
   WFJ.Labels.forbidNames(Calendar.NEVER_TOUCH) -- its widgets exist only now (Main's registration found none)
   Calendar.showStatic()
+  Calendar.typingBoxes()
   for _, target in pairs(WRITERS) do Calendar[target]() end
   if hooked then return false end
   hooked = true

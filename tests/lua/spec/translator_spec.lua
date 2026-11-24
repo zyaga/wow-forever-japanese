@@ -496,3 +496,128 @@ describe("Translator: branch lines (ADR-043)", function()
     assert.are.equal("leave", (T3.resolve("items", "spell.description", 1, {})))
   end)
 end)
+
+describe("Translator.resolve: names", function()
+  local WFJ, deps, T, entry, seen
+
+  before_each(function()
+    WFJ = {}
+    H.loadPure("Core/Translator.lua", "WoWForeverJapanese", WFJ)
+    entry, seen = { ja = "Stormwindへ行け、{name}。", status = "." }, {}
+    deps = {
+      enabled = function() return true end,
+      areaEnabled = function() return true end,
+      showsEnglish = function() return false end,
+      lookup = function() return entry end,
+      marker = function() return true end,
+      expand = function(ja) return (ja:gsub("{name}", "Stormwind")) end,
+      names = function(ja, kind)
+        seen[#seen + 1] = kind
+        return (ja:gsub("Stormwind", "ストームウィンド")), { { ja = "ストームウィンド", english = "Stormwind" } }
+      end,
+      name = function(english) return english == "Thrall" and "スロール" or nil, "すろーる" end,
+    }
+    T = WFJ.Translator.new(deps)
+  end)
+
+  it("writes the names of a shown line before the player's own name is filled in", function()
+    local a, p = T.resolve("quests", "quest.description", 2)
+    assert.are.equal("apply", a)
+    assert.are.equal("ストームウィンドへ行け、Stormwind。", p.ja)
+    assert.are.same({ { ja = "ストームウィンド", english = "Stormwind" } }, p.names)
+    assert.are.same({ "quest.description" }, seen)
+  end)
+
+  it("a value filled into a line is never read as a name: a player called like a game name stays", function()
+    entry = { ja = "%sがStormwindでオンラインになった。", status = "." }
+    deps.fill = function(ja, args) return (ja:gsub("%%s", args[1])) end
+    T = WFJ.Translator.new(deps)
+    local a, p = T.resolve("ui", "ui", "ONLINE", { args = { "Stormwind" } })
+    assert.are.equal("apply", a)
+    assert.are.equal("Stormwindがストームウィンドでオンラインになった。", p.ja)
+    assert.are.same({ { ja = "ストームウィンド", english = "Stormwind" } }, p.names)
+  end)
+
+  it("hands the kind to the names step for gated, branch and sectioned lines too", function()
+    entry = { ja = "Stormwind", status = "u" }
+    deps.align = function() return true end
+    T.resolve("items", "item.description", 2)
+    entry = { variants = { "Stormwind" }, status = "u" }
+    deps.alignVariants = function() return true, "Stormwind" end
+    local a, p = T.resolve("spells", "spell.description", 2)
+    assert.are.equal("apply", a)
+    assert.are.equal("ストームウィンド", p.ja)
+    entry = { sections = { "x" }, status = "u" }
+    deps.alignSections = function() return true, "Stormwind" end
+    a, p = T.resolve("spells", "spell.description", 2)
+    assert.are.equal("apply", a)
+    assert.are.equal("ストームウィンド", p.ja)
+    assert.are.same({ "item.description", "spell.description", "spell.description" }, seen)
+  end)
+
+  it("without a names step the line is applied as before, with no names on the payload", function()
+    deps.names = nil
+    local a, p = T.resolve("quests", "quest.description", 2)
+    assert.are.equal("apply", a)
+    assert.are.equal("Stormwindへ行け、Stormwind。", p.ja)
+    assert.is_nil(p.names)
+  end)
+
+  it("kind name: a known name applies its Japanese and says it is a name", function()
+    local a, p = T.resolve("ui", "name", "Thrall")
+    assert.are.equal("apply", a)
+    assert.are.same({ ja = "スロール", name = { ja = "スロール", english = "Thrall", reading = "すろーる" } }, p)
+  end)
+
+  it("kind name: a name with no Japanese is left as the client wrote it, never marked missing", function()
+    local a, p = T.resolve("ui", "name", "Nobody Known")
+    assert.are.equal("none", a)
+    assert.is_nil(p.marker)
+  end)
+
+  it("kind name: master off, area off, the kind off and English showing all leave it", function()
+    deps.kindOff = function(kind) return kind == "name" end
+    assert.are.equal("leave", (T.resolve("ui", "name", "Thrall")))
+    deps.kindOff = nil
+    deps.showsEnglish = function() return true end
+    local a, p = T.resolve("ui", "name", "Thrall")
+    assert.are.equal("leave", a)
+    assert.is_true(p.english)
+    deps.showsEnglish = function() return false end
+    deps.name = nil
+    assert.are.equal("none", (T.resolve("ui", "name", "Thrall")))
+  end)
+end)
+
+describe("Translator.resolve: an entry's value count reaches the gate", function()
+  local WFJ, T, flags
+  before_each(function()
+    WFJ = {}
+    H.loadPure("Core/Translator.lua", "WoWForeverJapanese", WFJ)
+    flags = { entry = nil }
+    T = WFJ.Translator.new({
+      enabled = function() return true end, areaEnabled = function() return true end,
+      showsEnglish = function() return false end,
+      lookup = function() return flags.entry end,
+      marker = function() return false end,
+      align = function(_, _, _, count) flags.align = { count = count }; return true end,
+      fillValues = function(ja, _, count) flags.fill = { count = count }; return ja end,
+    })
+  end)
+
+  it("a gated line: align gets the entry's values, nil when it ships none", function()
+    flags.entry = { ja = "$N1ダメージ", status = "u", values = 1 }
+    T.resolve("spells", "spell.description", 17, { lines = { "Deals 240 damage" } })
+    assert.are.same({ count = 1 }, flags.align)
+    flags.entry = { ja = "$N1ダメージ", status = "s" }
+    T.resolve("spells", "spell.description", 17, { lines = { "Deals 240 damage" } })
+    assert.are.same({}, flags.align)
+  end)
+
+  it("a trusted line: fillValues gets them", function()
+    flags.entry = { ja = "$N1ダメージ", status = ".", values = 1 }
+    local a = T.resolve("spells", "spell.description", 17, { lines = { "Deals 240 damage" } })
+    assert.are.equal("apply", a)
+    assert.are.same({ count = 1 }, flags.fill)
+  end)
+end)

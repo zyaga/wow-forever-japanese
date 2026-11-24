@@ -22,6 +22,7 @@ WFJ.Data.add("english", {
   ["gossip:eb4d8f6bac8f0b05"] = { text = "feeling=2 underpowered=1" },
   ["gossip:eb514c407c4f000f"] = { text = "game=1" },
   ["gossip:eb66c85e529a3f70"] = { text = "any=6 look=4 plains=1 returned=2 though=3 word=7" },
+  ["gossip:eb70cfe9af39fda3"] = { text = "breathing=3 shallow=4 wounds=2" },
   ["gossip:eb717850c107007c"] = { text = "and=9 bandages=23 collected=2 come=14 done=11 gates=15 gong=18 goods=3 handy=24 last=4 like=8 open=16 our=22 outside=13 ring=19 shipped=7 someone=12" },
   ["gossip:eb75d69a0f9064b2"] = { text = "beg=16 darkness=1 eyes=3 fallen=4 forgive=19 me=6 my=2 now=14 reverie=8 saved=12 tore=9 unholy=7 you=5" },
   ["gossip:eb7bac46e653a8f1"] = { text = "begun=1 fight=2 get=4 ready=3" },

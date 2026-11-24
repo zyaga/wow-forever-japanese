@@ -75,11 +75,15 @@ def problems(root: Path, cfg: dict[str, Any]) -> dict[str, list[str]]:
     lines = voice_make.shipped_lines(root)
     jobs = voice_make.file_jobs(root, cfg, "all", lines, voice_make.players_of("all"))
     audio = voice_make.audio_record(root)
+    state, _, _ = voice_make.step_state(root, cfg, jobs, lines, audio)
+    stale = set(state["stale"])
     out: dict[str, list[str]] = {"untimed": [], "other recording": [], "short timing": [], "bad cuts": []}
     for j in jobs:
         rec = audio.get(j.stem)
-        if rec is None:
-            continue  # no audio at all: test_audio_in_step reports it
+        if rec is None or j.stem in stale:
+            # no audio, or audio of other Japanese (its timing covers that text and it is left out of the
+            # packs until it is remade): test_audio_in_step reports both
+            continue
         if "timing" not in rec:
             out["untimed"].append(j.stem)
             continue

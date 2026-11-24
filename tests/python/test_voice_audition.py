@@ -185,6 +185,16 @@ def test_kind_samples_pick_a_real_line_of_the_busiest_speaker(world):
     assert got["book narrator"]["key"].startswith("b-")
 
 
+def test_a_speaker_with_no_profile_row_is_left_out_of_the_samples(world):
+    """A line whose speaker was named after the profiles were built: the page is made from the rest."""
+    rows = voice_make._rows(world.data / "voice" / "speakers.jsonl")
+    vf.write_rows(world.data / "voice" / "speakers.jsonl",
+                  [*rows, {"key": "457-progress", "speaker": 4242, "provenance": vf.SRC}])
+    got = aud.kind_samples(world.data, CFG, world.db)
+    assert sorted(got) == ["book narrator", "dragon", "female", "male", "narrator"]
+    assert all(sample["creature"] != 4242 for sample in got.values())
+
+
 # ---- build, review, apply --------------------------------------------------------------------------------
 
 

@@ -1,0 +1,240 @@
+# Every widget or text slot of the Forever client that holds a name, and what the addon does with it while
+# Japanese names are on. One line each, tab-separated:
+#   <module>  <widget or slot>  <mark>  <note>
+# Marks:
+#   japanese            shows the name's Japanese (UI/NameLabels, the policy layer's names step, or a value kind)
+#   todo                a game name the addon does not show in Japanese yet; tests/python/test_name_surfaces.py
+#                       fails while any line carries it
+#   english <reason>    stays as the client writes it, for one of these reasons:
+#     player-typed        a player's, guild's, pet's, channel's, macro's or set's name: not a game name
+#     text-box            a box the player types in, or a search box: it needs the client's English
+#     secret              the client hides the value from addons (a unit's name in combat in an instance)
+#     protected           the client measures the widget on the way to a protected action: text written there
+#                         taints that action, and it is then blocked in combat (docs/architecture/client-limits.md)
+#     not-a-game-name     a number, a date, a dictionary word, prose, or a kind the name list does not hold
+#     client-drawn        the client draws it in the game world itself: there is no widget an addon can write to
+# A module's NEVER_TOUCH widget must have a line here (the test reads the modules). A name with no line in the name
+# list stays English whatever its mark says.
+
+# names inside text
+Core/Translator.lua	quest objectives, description, progress, completion	japanese	the names step, before the player's own name is filled in
+Core/Translator.lua	NPC talk, book and letter pages (plain and HTML)	japanese	the names step; an HTML page keeps its tags
+Core/Translator.lua	item and spell tooltip text, objective lines, area text	japanese	the names step
+Core/Translator.lua	quest titles	japanese	the shipped Japanese title, on every surface that shows one
+Core/Translator.lua	interface lines (kind ui)	japanese	a name inside the line's Japanese, like one in quest text; a word in pipeline/names_kept_as_written.txt (PvP, the game's own name) has no name row and stays; a value inside a line is a line below
+Core/UIStringKeys.lua	FACTION_CONTROLLED_TERRITORY value	japanese	value kind name
+Core/UIStringKeys.lua	ERR_ZONE_EXPLORED value	japanese	value kind name
+Core/UIStringKeys.lua	LOOT_ITEM_SELF value (an item's link)	japanese	only the link's label changes
+Core/UIStringKeys.lua	other interface lines whose value is a game name	japanese	loot, craft, currency, reputation, skill, learned spell, kill, discovery, home and auction lines: each key's value kind `name`; a required skill is `skill` or `name`; a player's level line is `names`. Another player's name in the same line stays text
+
+# tooltips
+UI/Tooltip.lua	item, spell and aura tooltip name line	japanese	record name.L<i>; comparison tooltips by the name's text
+UI/Tooltip.lua	an item set's heading over its set lines ("Krol'dok Battlegear (3/5)", ITEM_SET_NAME)	japanese	the set's name from the client's ItemSet table (UI/NameLabels lead), its counts as the client wrote them; the names inside a set bonus line take the names step on the bonus spell's Japanese
+UI/Tooltip.lua	a profession's spell name line ("Enchanting: Enchant Boots - Minor Speed")	japanese	the skill and the spell, each in its Japanese, only when both have a line; the spell's name is the one the frame gives, so the line is split at that name and nowhere else; no interface string holds the form (the client's compiled tooltip code writes it)
+UI/TooltipFreeze.lua	the frozen copy of a tooltip: its name lines and the names inside its lines	japanese	copied as the tooltip showed them; each takes its name card from the record the addon kept for that line
+UI/Tooltip.lua	the item a spell makes: its name line under the spell's rows	japanese	a row that is exactly a name and no dictionary line (the structural walk); its use line and flavour text are the item's own text, a run under the item's id
+Core/UIStringKeys.lua	the item list of a spell's reagents and tools rows (SPELL_REAGENTS, SPELL_TOTEMS)	japanese	UIStrings.LIST_AFTER: every name of the list in its Japanese, a count as written; a list with a name that has no line stays whole as written after the Japanese label
+Core/UIStringKeys.lua	ITEM_CLASSES_ALLOWED and ITEM_RACES_ALLOWED values	japanese	value kind `classes`: each class or race of the list as the word prose uses for it
+Core/UIStringKeys.lua	a required weapon type ("Requires Ranged Weapon", "Requires Two-Handed Exotics")	english not-a-game-name	a dictionary word: the client's weapon mask or weapon subclass word (UIStrings.SKILL_FAMILIES) shows its Japanese whatever the names setting says; any other part of the `skill` value is a game name
+UI/TooltipUnit.lua	a creature's or object's name, title and faction lines	japanese	never a player, a pet or a unit with no readable guid
+UI/TooltipUnit.lua	a quest's objective lines under a unit it counts for, and a pet's or minion's owner line	japanese	the objective lines through UI/QuestMap's objective reading, UNITNAME_TITLE_*'s name slot through its `name` value; a player owner's name has no line in the name list and stays as written
+UI/TooltipUnit.lua	a player's and a pet's name, and a player's guild	english player-typed
+UI/TooltipUnit.lua	a player's race (in the level line), class and faction lines	japanese	the lines under the level line; the race through the level line's `names` value, as the word prose uses for it; a race with no such word (one only Forever has, "High Order Skyborne") shows the name list's spelling when the line carries the client's word for a player in brackets, and stays as written while the name list has no line for it; a creature's type in the same place is never read as a name
+UI/TooltipUnit.lua	the word in brackets on a player's level line ("(Player)")	japanese	the client's PLAYER word, through the level line's `unitType` value; a player's line never takes the creature templates, UNIT_TYPE_LEVEL_FACTION_TEMPLATE among them
+UI/Taxi.lua	flight point name on the route map's tooltip	japanese	line 1 after each TaxiNodeOnButtonEnter, on the help surface with its refit
+UI/FlightMap.lua	flight point and zone names on the flight map's tooltips	japanese	a node pin's line 1 through UI/MapPins; the zone summary's line 1 after each Show the map owns
+UI/MapPins.lua	a pin's tooltip name line	japanese	line 1 of the pins whose line 1 is a name (flight point, dungeon, map link, area POI, vignette), after each Show; a dictionary word there keeps its record; a quest pin's title is shown like the quest log's titles (UI/QuestMap.showTitle)
+UI/ItemSocketing.lua	ItemSocketingDescriptionTextLeft1	japanese	the socketed item's name: line 1 of ItemSocketingDescription, filled by SetSocketedItem from ItemSocketingFrame_Update (blizzard_itemsocketingui.lua:56–67); written only after ItemSocketingFrame_Update and never laid out again by the addon, so no write of ours can start the scroll range callback that fills it again (:35–37, 69–71); a fill from that callback stays English. Forever loads the window (its toc limits no game type; pipeline/forever_addons.txt)
+
+# place names
+UI/ZoneText.lua	ZoneTextString	japanese
+UI/ZoneText.lua	SubZoneTextString	japanese
+UI/Minimap.lua	MinimapZoneText	japanese	after each Minimap_Update
+UI/Minimap.lua	the map's own hover tooltip: the names under the mouse	english secret	the client writes it from its compiled code (GameTooltip:SetMinimapMouseover, mainline/minimap.lua:284-287) and the line's text is a secret value to addons, out of combat too
+UI/Minimap.lua	the zone button's tooltip: zone and subzone lines	japanese	after each Minimap_SetTooltip, on the help surface with its refit; a line the walk holds as a dictionary word keeps its record
+UI/WorldMap.lua	the area label's Name (the place under the mouse)	japanese	after each frame of the label's OnUpdate; Forever's map has no title with the map's name (the window title is a dictionary word)
+UI/WorldMap.lua	the area label on a zone shown with its level range	japanese	the name, the coloured range as the client wrote it (UI/NameLabels lead, arealabeldataprovider.lua:103–107)
+UI/WorldMap.lua	the navigation bar's map buttons	english protected	NavBar_AddButton writes and measures each name on every map change (navigationbar.lua:114, 123), the pass that places the map's pins. A button's text is the global WorldMapFrameText: the bar is made with no name (blizzard_worldmap.lua:331), so its buttons have none (navigationbar.lua:83–85) and their $parentText (navigationbar.xml:236) takes the map frame's name. It is seen with the quest log open too, which sits in the same window
+UI/WorldMap.lua	the floor dropdown's text	english protected	a floor's name, written in the map-change pass that places the pins: Refresh from RefreshOverlayFrames (secureexecuterange, blizzard_worldmap.lua:307, 436–440) → SetupMenu → UpdateText (blizzard_worldmaptemplates.lua:3–46, dropdownbutton.lua:237–261, 327, menutemplates.lua:733–759); a hook there runs inside that pass
+UI/Tracker.lua	UIWidgetObjectiveTracker.Header.Text	japanese	a zone name, after each SetHeader
+UI/Tracker.lua	a tracked recipe's title and its reagent lines (ProfessionsRecipeTracker)	japanese	after each AddRecipe: the recipe's name (UI/NameLabels wrapped) and each reagent's name after its count (NameLabels after); a recraft's title is a template around the name and stays as written
+UI/Tracker.lua	ObjectiveTrackerTopBannerFrame.Title	japanese	a quest's title (C_QuestLog.GetTitleForQuestID, blizzard_bonusobjectivetracker.lua:699–725): the shipped Japanese title after each PlayBanner; nothing measures it
+UI/Tracker.lua	ScenarioObjectiveTracker.StageBlock.Name	english protected	measured as it is written (GetStringWidth, blizzard_scenarioobjectivetracker.lua:543–549) in the container's update of every module (blizzard_objectivetrackercontainer.lua:80–93), which sets the quest item buttons' questLogIndex for UseQuestLogSpecialItem (blizzard_objectivetrackershared.lua:94–108)
+UI/QuestMap.lua	quest log zone headers	japanese	a header that is no sort word
+UI/QuestMap.lua	objective lines from the client's templates (tracker, quest log list, details pane)	japanese	the mob, item, object, faction and player group of QUEST_MONSTERS_KILLED, QUEST_ITEMS_NEEDED, QUEST_OBJECTS_FOUND, QUEST_FACTION_NEEDED and QUEST_PLAYERS_KILLED and their no-progress forms, through each slot's `name` value; a count line with no words (QUEST_ITEMS_NEEDED, QUEST_OBJECTS_FOUND) takes its Japanese form only while its name has Japanese, else stays as the client wrote it
+
+# an NPC's name on its window
+UI/GossipChrome.lua	GossipFrameTitleText	japanese	after each SetTitle and each show
+UI/QuestFrame.lua	QuestFrame title	japanese	the quest giver; a quest a player shares is left
+UI/Merchant.lua	merchant tab title	japanese	shown from the merchant tab's own update
+UI/Trainer.lua	trainer window title	japanese	after each SetTitle; a pet trainer's title is the pet's own name and stays
+UI/GuildRegistrar.lua	GuildRegistrarFrameNpcNameText	japanese	on each show
+UI/GuildRename.lua	GuildRenameFrame.TitleContainer.TitleText	japanese	after each SetTitle
+UI/Tabard.lua	TabardFrameNameText	japanese	the designer NPC's name, on each show
+UI/ObliterumForge.lua	ObliterumForgeFrame.TitleContainer.TitleText	japanese	the forge's name, after each SetTitle
+UI/ScrappingMachine.lua	ScrappingMachineFrame.TitleContainer.TitleText	japanese	the machine's name, after each SetTitle
+UI/ItemInteraction.lua	ItemInteractionFrame title	japanese	interaction data: shown when the name list has a line for it
+UI/Bank.lua	BankFrameTitleText	english not-a-game-name	the title is a dictionary line, matched by key
+UI/VoicePanel.lua	the speaking NPC's name and title	japanese	the addon's own frame: written in the bundled face while names are on and Japanese shows; only a line a creature says (a player offering a quest keeps the name they carry); a book's name stays
+UI/ClickBinding.lua	the tutorial's ThrallName	japanese	XML text written once (blizzard_clickbindingui.xml:292), nothing measures it: shown with the static labels
+
+# units
+UI/UnitFrames.lua	target, focus, target-of-target, boss and party frame Name	japanese	after each UnitFrame_Update; never a player or a pet; a name the client hides stays. Not proven in game yet: these are the client's secure frames, and the window test's run in and out of combat decides whether this line stays
+UI/UnitFrames.lua	PlayerName	english player-typed
+UI/UnitFrames.lua	the name floating over a creature's head (nameplates off)	english client-drawn	turning nameplates on shows the nameplate, which is a line above
+UI/UnitFrames.lua	PetName	english player-typed
+UI/UnitFrames.lua	nameplates and raid-style frames of creatures	japanese	after each CompactUnitFrame_UpdateName; never a player or a pet; a forbidden nameplate and a name the client hides stay. Seen in game out of combat. Not proven in combat, and the client's code says it may not hold: a nameplate measures its name (GetLineHeight, blizzard_nameplates/blizzard_nameplateunitframe.lua:794) and anchors its clickable area to it (SetHitTestPoints, :600–610, a restricted call; UpdateWidgetsOnlyMode :540–556 writes the name and then sets that area). A run in combat with nameplates appearing and being clicked, with no blocked action recorded, keeps this line; a blocked action makes it `english protected`
+UI/CastingBar.lua	PlayerCastingBarFrame.CastTargetNameText	japanese	only when it is the player's target's name and that target is a creature; nothing reads or measures it (castingbarframe.lua:932–961). Not proven in game yet: the window test's run in and out of combat decides whether this line stays
+UI/CastingBar.lua	the bar's spell name	japanese	after each bar event, under the fixed words' record key; nothing reads or measures Text (castingbarframe.lua:404–406). Not proven in game yet: the window test's run in and out of combat decides whether this line stays
+UI/CastingBar.lua	PlayerCastingBarFrame.CastTimeText	english not-a-game-name	a number
+
+# item names on the game's own windows
+UI/Merchant.lua	merchant item rows	japanese	on both tabs, after each update
+UI/Merchant.lua	MerchantBuyBackItemName	japanese	after each update
+UI/Loot.lua	loot rows	japanese	an item row's name; a money row is left
+UI/GroupLoot.lua	MasterLooterFrame.Item.ItemName and roll frames	japanese	after each GroupLootFrame_SetupItemDisplay and MasterLooterFrame_Show; a roll frame's name goes back when that frame hides
+UI/LootHistory.lua	loot history rows	japanese	a row's ItemName, after the view initializes the row and after each Init
+UI/Bags.lua	a bag's title	japanese	an item's name, after each ContainerFrame_GenerateFrame; the backpack's and the keyring's titles stay dictionary words
+UI/Bags.lua	a bag's name on its portrait tooltip	japanese	line 1 of the portrait tooltip (mainline/containerframe.lua:2066–2108): the portraits register with HelpTooltip's nameLine, so the item's Japanese shows with the bag's key binding kept; the backpack's and the keyring's titles stay dictionary words
+UI/TooltipData.lua	line 1 of a currency, totem, instance lock, mount and companion tooltip, and a lock's boss lines	japanese	HelpTooltip's `names` option: a left line the dictionary does not take shows the name's Japanese when the whole line is a game name; a player's name has no line in the name list and stays as written
+UI/QuestFrame.lua	quest reward and required item buttons	japanese	reward, choice and required items, after each redraw and each Name write; the tracker's quest popup shares the reward buttons
+UI/QuestMap.lua	the quest log details pane's reward buttons (MapQuestInfoRewardsFrame)	japanese	after each map rewards redraw and each Name write (the item-load callback), surface questmap.items
+UI/Mail.lua	attached item names	english text-box	the attachment buttons show icons only (blizzard_mailframe/mailframe.lua:706–731, 1291–1313); the first item's name goes into the send subject, an EditBox the client sends (:1326–1330); the item's tooltip is UI/Tooltip's
+UI/Mail.lua	OpenMailInvoiceItemLabel's item name	japanese	ITEM_SOLD_COLON / ITEM_PURCHASED_COLON .. " " .. the item's name, with a count or a word in brackets after it (mailframe.lua:797–848): the colonPrefix form shows the label and looks the item's name up when the line is drawn (UIStrings.NAME_AFTER_COLON); what follows the name is kept. The seller's or buyer's name after SOLD_BY_COLON / PURCHASED_BY_COLON is a player's and stays
+UI/Trade.lua	traded item names	japanese	slots 1–6 of both sides, after each TradeFrame_UpdatePlayerItem / _UpdateTargetItem
+UI/Trade.lua	the enchant slot's enchantment	english not-a-game-name	GREEN_FONT_COLOR_CODE .. enchantment .. "|r" (tradeframe.lua:108, 156): the name list holds no enchantments
+UI/AuctionHouse.lua	the six ItemDisplay name widgets, the result rows and the summary lines	japanese	each is a name behind a colour code, sometimes with " (<item level>)" inside it and a count or a quality icon after it (shared/blizzard_auctionhousesharedtemplates.lua:232, 306–314; tablebuilder.lua:702–713, 749–757; auctionsframe.lua:80); UI/NameLabels.wrapped keeps all but the name. The five displays follow SetItemInternal and SetItemKey; the buy dialog's AUCTION_HOUSE_DIALOG_ITEM_FORMAT (no words of its own, no dictionary line) follows SetItemID (buydialog.lua:241–255), its count kept; a result row's item cell is written after its UpdateDisplay, so the client's IsTruncated (tablebuilder.lua:723–733) measures its English, and nothing protected follows
+UI/BlackMarket.lua	the hot item's Name and the rows	japanese	after each BlackMarketFrame_UpdateHotItem and each row's Init
+UI/ItemUpgrade.lua	ItemUpgradeFrame.ItemInfo.ItemName	japanese	a name behind a colour code (mainline/blizzard_itemupgradeui.lua:646, 992), written after ItemInfo:Setup and PlayUpgradedCelebration, so the info panel's Layout (:1009) measures the English; nothing protected follows (UpgradeItem, :103, takes a number)
+UI/Crafting.lua	the form's OutputText	japanese	the crafting page's and the inspect window's: a name behind a colour code (WrapTextInColor, blizzard_professionsrecipeschematicform.lua:1364–1373), written after UpdateOutputItem, so SetTextToFit (:349–359, 1385) measures the English; then sized again for the text shown by the same rule. Nothing protected follows: the create buttons are plain (blizzard_professionscrafting.lua:249–258)
+UI/Crafting.lua	the form's RecraftingOutputText	english not-a-game-name	never shown on Forever: PROFESSIONS_CRAFTING_FORM_RECRAFTING_HEADER and PROFESSIONS_CRAFTING_RECRAFTING (schematicform.lua:1380–1383) are recrafting lines with no Japanese (pipeline/ui_exclusions.txt); a `name` value would not help either: Names.value reads a link's label or a bare name, not a name behind a colour code
+UI/Crafting.lua	the form's OutputSubText	english not-a-game-name	never written on Forever: SetOutputSubText (schematicform.lua:1534–1537) has no caller in the client's files, and Init hides it (:372)
+UI/CustomerOrders.lua	the form's RecipeName	japanese	after the recipe loader wrote and measured it: a post-hook on Professions.SetupOutputIcon for the form's own icon (blizzard_professionscustomerordersform.lua:1120–1140), so the client measures its own English
+UI/CustomerOrders.lua	the form's RecraftRecipeName	english not-a-game-name	never shown on Forever: PROFESSIONS_ORDER_RECRAFT_TITLE_FMT around a coloured name (form.lua:1114–1116) is a recrafting line with no Japanese (pipeline/ui_exclusions.txt); Names.value cannot take the coloured name either
+UI/Wardrobe.lua	the set details' LongName and Label, and the set list rows' Name and Label	japanese	after each DisplaySet and each row's Init, where the name list has the set's name (a set shares it with its set-bonus spells)
+UI/Wardrobe.lua	the set details' Name	japanese	an AutoScalingFontStringMixin FontString (mainline/blizzard_wardrobe.xml:626) shown while it is the one DisplaySet shows: written after DisplaySet's IsTruncated (shared/blizzard_wardrobe_sets.lua:240) through its own SetText, so its scale is worked out again for the Japanese (blizzard_sharedxml/secureutil.lua:55–104); nothing protected follows in DisplaySet (:249–334: item buttons, the model's TryOn, the variant dropdown's text)
+UI/ChatSystem.lua	item, spell and quest links in chat lines	japanese	only the label, on the visible lines at each display refresh; the history keeps the client's line; a link a player typed is text and stays
+
+# spell and other game names on the game's own windows
+UI/SpellBookNames.lua	spell rows' Name	japanese	the addon's own label drawn over the game's name; the game's text and font are never written, only its alpha is set to 0 and put back (blizzard_spellbookitem.lua:227, 254 write it, nothing reads it). An experiment: a combat run with the taint watch decides whether this line stays (ADR-058)
+UI/SpellBookNames.lua	the page's section headers (a header frame's Text)	japanese	a skill line's name on the addon's own label over the game's header, whose alpha alone is changed (blizzard_spellbooktemplates.lua:3-7 writes the text, nothing writes or reads its alpha); "General", "Pet", "Transmogrify" and a search's groups are dictionary words and show Japanese with names off too. Part of the same experiment (ADR-058)
+UI/SpellBookNames.lua	spell rows' SubName and RequiredLevel, the page number	english not-a-game-name	dictionary words (rank, passive, racial, a level line, "Page 1/2"), shown in Japanese on the addon's own labels whatever the names setting says; a pet family or a form's name under a spell has no line and stays as the client writes it
+UI/Trainer.lua	service rows	japanese	each row's name after ClassTrainerFrame_InitServiceButton, with UpdateNameWidth as its refit (the client measures the name to fit it, blizzard_trainerui_camelot.lua:23–24); no protected call follows in the window
+UI/Talents.lua	talent and tree names	japanese	the talent tooltip's line 1 and each tree header's Name (after RefreshTreeHeaders, camelot/classtalents/blizzard_classtalentsframe.lua:82–109, 331–343); nothing measures them and no talent template is secure; talent buttons draw no name
+UI/CooldownViewer.lua	the two alert Name widgets	japanese	on each Display / SetupDropdowns pass; nothing reads or measures it (cooldownviewereditalertbase.lua:7–9)
+UI/MountJournal.lua	a list row's name	japanese	after each row's initializer (MountJournal_InitMountButton, mainline/blizzard_mountcollection.lua:258–262); a plain button whose click selects the mount and whose drag button picks it up by the row's index (:865–905); the initializer counts the name's lines before the write (:268–275)
+UI/MountJournal.lua	the mount's Name	japanese	after each MountJournal_UpdateMountDisplay (mainline/blizzard_mountcollection.lua:693); measured only to place the New badge (:699–700), a pass that reaches no protected call (the summon reads selectedMountID, :837–841)
+UI/Skills.lua	SkillsFrame.SkillDetailFrame.Title and Subtitle	japanese	after each SetPaneTitle (camelot/characterframe.lua:845–849); nothing measures them; a skill's Subtitle is always empty (skillsframe.lua:245)
+UI/Skills.lua	the skill list's rows and sub-headers (Content.Name)	japanese	a skill's or a language's name, after each row's initializer (camelot/skillsframe.lua:348, 456–458), keyed by the row; never a dictionary word; nothing reads or measures it and the row is a plain button (skillsframe.xml:60)
+UI/Character.lua	CharacterLevelText's spec and class words	japanese	the spec and class slots of PLAYER_LEVEL / PLAYER_LEVEL_NO_SPEC (camelot/paperdollframe.lua:509–512), value kinds `spec` and `class`, read together: the spec is a talent tree's name and shows what the tree header shows, the class the word prose uses for it; a spec with no name line stays as written
+UI/Character.lua	the weapon skill line of a stat row's damage tooltip	japanese	format(WEAPON_SKILL_PAPERDOLLFRAME_FORMAT, skillInfo.name) beside the skill's rank (camelot/paperdollframestats.lua:700–733), from the stat row's help-tooltip `show`: the skill's Japanese through UI/NameLabels.before, the colon kept; only beside a rank ("300/300"); a tooltip line, nothing measures it on the way to a protected action
+UI/Inspect.lua	InspectLevelText's spec and class words	japanese	the same two lines and value kinds as the character window's
+UI/PvPRank.lua	PVPRankFrame.MainInfoFrame.CurrentRankField	japanese	the rank title: the `name` value of PVP_RANK_NUMBER_AND_TITLE, or the title alone at rank 0 (camelot/pvprankframe.lua:107–111), where the name list has a line for it; nothing reads or measures the field
+UI/Inspect.lua	InspectPVPFrame's CurrentRankField	japanese	the inspected player's rank title, as on the player's own rank panel (camelot/inspectpvpframe.lua:120–126)
+UI/PvPMatch.lua	the scoreboard's honor-level cell tooltip: the rank title	japanese	the `name` value of PVP_RANK_NUMBER_AND_TITLE (camelot/pvpmatchtableoverrides.lua:25–32), where the name list has a line for it
+UI/Legacy.lua	the challenge category rows' title	japanese	a class's category, after each row's Init (blizzard_legacychallengecategorylist.lua:184–188): a category that is no AchievementCategory row and is a game name; measured only for the row's own truncation (blizzard_sharedxml/listtemplates.lua:63–65)
+UI/Legacy.lua	a reward card's RewardName and its tooltip's title	japanese	an item's or a spell's own name, after each SetRewardName (blizzard_framexml/rewardtracktemplates.lua:497–500) and on line 1 of a single reward's tooltip (:533–551); a reward row's own text keeps its dictionary line; nothing reads or measures RewardName
+UI/Legacy.lua	a reward named behind its kind ("Mount: %s", "Title: %s", "Companion: %s", "Illusion: %s")	japanese	the name slot of RENOWN_REWARD_MOUNT / _TITLE / _FOLLOWER / _ILLUSION_NAME_FORMAT (blizzard_framexmlutil/renownrewardutil.lua:18–26, 44–52), value kind `name`, on the card, on a single reward's tooltip title and on a dash line
+UI/Legacy.lua	the "- <reward>" lines of a milestone's tooltip	japanese	after each card's RefreshTooltip (blizzard_framexml/rewardtracktemplates.lua:556–561): the dash kept, then a reward row, a labelled form or the reward's own name (UI/NameLabels.after); surface help.legacy, laid out again with the tooltip
+UI/Talents.lua	a Legacy talent's requirement line: the tree's word	japanese	SharedString:1318's second value, kind `words`: one of the Legacy window's own tree words (LEGACY_TREE_PROFESSIONS / _ADVENTURE / _PROGRESSION), a dictionary word shown whatever the names setting says
+UI/Talents.lua	a class talent's requirement line: the tree's name	japanese	SharedString:911's second value, kind `name` ("Spend %d more points in %s Talents", blizzard_sharedtalentui/blizzard_sharedtalentutil.lua:679–699): the name the tree header shows; a tree with no name line stays as written
+UI/Professions.lua	each slot's ProfessionName on the overview page	japanese	after each Update of the page
+UI/Professions.lua	an unlearned secondary slot's missingHeader (the global ProfessionsFrameMissing)	japanese	the profession's name, written once by the slot's OnLoad (camelot/blizzard_professionsbooktemplates.xml:137, 251, 263, 275); shown with the page's other words; nothing reads or measures it
+UI/Professions.lua	the crafting page's title (the profession's name)	japanese	after each SetTitle; the overview page's title is a dictionary word
+UI/Professions.lua	the rank bars' text ("Blacksmithing 135/150")	japanese	the name, the numbers as written (UI/NameLabels lead); a slot's bar with its name, the crafting page's after each Update; a trial's cap note stays English whole
+UI/Professions.lua	the spell buttons' spellString ("Smelting", "Find Minerals")	japanese	the addon's own label drawn over the game's text, as UI/SpellBookNames does: the button is secure and its click casts (blizzard_professionsbooktemplates.xml:4, 26–31; blizzard_professionsbook.lua:317–352), so nothing is written into it; only its text's alpha is set to 0 and put back, which nothing of the client reads (blizzard_professionsbook.lua:458–497)
+UI/Professions.lua	a profession side tab's tooltip (its tooltipText, the profession's name)	japanese	the tab registers with the help tooltip with no key and a name line (camelot/blizzard_professionsframe.lua:42–50)
+UI/Reputation.lua	ReputationFrame.ReputationDetailFrame.Title and the faction rows	japanese	an entry's Content.Name and a group header (camelot/reputationframe.lua:279, 332) after each row's initializer, the pane's Title after SetPaneTitle; nothing reads or measures them
+UI/MajorFactionToast.lua	MajorFactionUnlockToast.FactionName	japanese	after each PlayBanner (blizzard_majorfactionunlocktoast.lua:41); only its alpha is animated
+UI/Currency.lua	the currency detail's Title and the list entries' names	japanese	after each Refresh and each entry's initialization, where the name list has the currency's name
+UI/Currency.lua	the currency detail's Subtitle	english not-a-game-name	an icon and the count (blizzard_tokenui/camelot/blizzard_tokenui.lua:532)
+UI/ChatSystem.lua	an NPC's name before its spoken line	japanese	on the visible lines; never the player's own name
+UI/Speech.lua	names inside an NPC's Japanese in speech bubbles and boss emotes	japanese	the names step on each write and on a names switch; the player, the line's target and the party members it was filled with stay as written; a boss emote's speaker is the boss; a secret speaker leaves the emote English
+UI/ChatSystem.lua	names inside an NPC's spoken Japanese	japanese	UI/Speech reads the shipped rows directly and skips the names step, so the chat window's lines take it; a line whose words stayed English keeps its names
+
+# never a game name
+UI/Inspect.lua	InspectFrame.TitleContainer.TitleText	english player-typed
+UI/Inspect.lua	InspectGuildFrame.guildName	english player-typed
+UI/Trade.lua	TradeFramePlayerNameText, TradeFrameRecipientNameText	english player-typed
+UI/Petition.lua	PetitionFrameCharterName, PetitionFrameMasterName, PetitionFrameMasterTitle	english player-typed
+UI/GuildInvite.lua	GuildInviteFrameInviterName, GuildInviteFrameGuildName	english player-typed
+UI/Communities.lua	a roster row's Zone and the member detail's ZoneText	japanese	the member's zone (communitiesmemberlist.lua:1301–1302, guildroster.lua:147), after each row initializer, each RefreshExpandedColumns and each DisplayMember; a member who is not online has the client's own line there
+UI/Communities.lua	the class in the member detail's Level line	japanese	the word prose uses for the class (guildroster.lua:141–144), filled when the line is drawn
+UI/Communities.lua	the race and the class in a roster row's tooltip level line	japanese	COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT's race and class (communitiesmemberlist.lua:1197–1201), value kinds `spec` and `class` read together, filled when the line is drawn: the words prose uses, the name list's spelling for a race with no such word; a line whose last words are no class's word stays as written
+UI/Communities.lua	the zone line of a roster row's tooltip	japanese	memberInfo.zone (communitiesmemberlist.lua:1206–1207), after the row's OnEnter script (communitiesmemberlist.xml:237): the last line from the second on that holds exactly the zone the row holds, through the help surface's own record for that line (HelpTooltip.nameAt); a member on the mobile app has no zone line and nothing is looked for
+UI/Communities.lua	a roster row's tooltip: the member's name, rank and note lines	english player-typed	never matched: the tooltip's pass is restricted to the level line's key and the cross-faction lines (communitiesmemberlist.lua:1184–1212); a rank spelled like the member's zone stands before the zone line and stays
+UI/Communities.lua	a roster row's Rank and the member detail's RankText	english player-typed	a guild's leader names its ranks, the first one ("Guild Master") included (memberInfo.guildRank, communitiesmemberlist.lua:1313, guildroster.lua:148)
+UI/Communities.lua	the member detail's Name and the message of the day	english player-typed
+UI/SocialUI.lua	a friend card's Location while the friend is online (SocialUIFrame.FriendsList rows)	japanese	the zone behind the card's grey colour code, through NameLabels.wrapped; "Offline" and the last-online line are dictionary lines; another game's status text has no name line and stays
+UI/SocialUI.lua	a friend card's Class	japanese	the class behind its class colour, with the word prose uses
+UI/SocialUI.lua	a friend card's tooltip: the class in the level line, the race, the zone and the faction lines	japanese	after each card's ShowTooltip (friendslisttemplates.lua:884–910, 1096–1101): the block is found by the card's own raceName, areaName and factionName on three lines in a row; the class and the race in the word prose uses, the zone and the faction as names (SocialUI.cardLines, surface help.social)
+UI/SocialUI.lua	a friend card's tooltip: a further character's race and class in its name line, and its zone line	japanese	under the tooltip's last separator (friendslisttemplates.lua:1005–1019, 1038–1093): a pair of lines is written only when the first ends with the name, level, race and class C_BattleNet.GetFriendGameAccountInfo gives for the card's friendIndex and the second is that character's zone; the race and the class in the word prose uses, the zone as a name, the character's name and level kept as written
+UI/SocialUI.lua	a friend card's tooltip: the tags in the tags line	english not-a-game-name	dictionary words, not names: each tag that is one of the client's own tag words (socialuiutil.lua:3–20) shows that word's Japanese whatever the names setting says, the comma between them kept (friendslisttemplates.lua:942–963); anything else there stays as written
+UI/SocialUI.lua	a friend card's tooltip: the friend's name, the character's name line, a note, a broadcast and another game's status	english player-typed	never read: a line is written only when the card's own data and its place in the tooltip say what it is
+UI/RecentAllies.lua	a recent ally card's Class and Location (SocialUIFrame.RecentAlliesList rows)	japanese	each behind the colour the client wraps it in (blizzard_recentalliestemplates.lua:797–805, 837–846), through NameLabels.wrapped; nothing reads them back, and the card's layout measures them only to place the card's own strings
+UI/RecentAllies.lua	a recent ally card's tooltip: the class in the level line, the race, the faction and the location lines	japanese	lines 3 to 6 by place after each card's ShowTooltip (:1058–1070, 1103–1122): the level line must be one, the location must be the card's own stateData.currentLocation (SocialUI.cardLines)
+UI/RecentAllies.lua	a recent ally card's Name and its tooltip's name and note lines	english player-typed	a character's name and the player's own note
+UI/RecentAllies.lua	SocialUIFrame.RecentAlliesList.FilterBar.SearchBar	english text-box
+UI/RecruitAFriend.lua	a recruit card's Name and CharacterName	english player-typed	a recruit's BattleTag or account name and character; only the pending placeholder is a dictionary line
+UI/Raid.lua	a saved instance row's name in the social window's raid info (SocialUIFrame.RaidInfoFrame rows)	japanese	an instance's or a world boss's name, behind the grey of an expired lock (raidinfoframesocialview.lua:86–98), through NameLabels.wrapped; one line, never measured
+UI/Raid.lua	a roster button's CharacterName, CharacterLevel and CharacterClass in the social window's raid view	english protected	RaidFrameSocialPlayerTemplate is a secure unit button from a secure pool, released and acquired on every roster event, in combat too (raidframesocialview.lua:233, 244–249): nothing of it is written
+UI/SocialUI.lua	a friend card's FriendName and Name, a request card's Name, an ignore list entry's Name	english player-typed	a friend's account name or BattleTag and a character's name
+UI/SocialUI.lua	SocialUIFrame.BattleNetBar.ControlsContainer.PersonalBattleTagDisplay.DisplayText	english player-typed	the player's own BattleTag
+UI/SocialUI.lua	SocialUIFrame.FriendsList.FilterBar.SearchBar, SocialUIFrame.FriendRequestsList.FilterBar.SearchBar	english text-box
+UI/CommunitiesFrame.lua	invitation and ticket Name and Description	english player-typed
+UI/ClubFinder.lua	a club's Name and Description	english player-typed
+UI/CommunitiesDialogs.lua	the ticket manager's LinkIDText	english not-a-game-name	an invite link's id
+UI/Channels.lua	ChannelFrame.ChannelRoster.ChannelName	english player-typed
+UI/Macro.lua	the macro's text and names	english player-typed
+UI/Mail.lua	OpenMailSender.Name, OpenMailSubject	english player-typed	a sender is a player or an NPC and the text does not say which
+UI/PetJournal.lua	the pet card's subName	english player-typed
+UI/GroupFinder.lua	the listing tooltip's leader Name and Comment	english player-typed
+UI/GroupFinder.lua	a listing row's NameButton.Name: an activity (a dungeon, a raid, a battleground, a zone) or a group that is a continent	japanese	after LFGListingActivityView_InitActivityButton / _InitActivityGroupButton (blizzard_lfgvanilla_listing.lua:1063–1130); a plain Frame's Button, the name button sized again to the text shown; a table word ("Dungeons", "Custom") shows its dictionary Japanese whatever the names choice is
+UI/GroupFinder.lua	a result row's ActivityName, when the listing is for one activity	japanese	after LFGBrowseSearchEntry_Update (blizzard_lfgvanilla_browse.lua:417–426, 474); nothing measures it; the count line and "Your Listing" keep their dictionary lines
+UI/GroupFinder.lua	a result row's Name (the listing player) and its Level	english player-typed	never read, even when the player is called like a dungeon
+UI/GroupFinder.lua	LFGBrowseFrame.ActivityDropdown.Text, when one activity is chosen	japanese	after the dropdown's UpdateText (blizzard_lfgvanilla_browse.lua:1247–1259); the dropdown keeps its fixed width (:1114), so a long name is cut by the client's own ellipsis
+UI/GroupFinder.lua	LFGBrowseFrame.CategoryDropdown.Text and the category menu's entries	english not-a-game-name	a category is a dictionary word (LfgCategory: "Dungeons"), shown in Japanese whatever the names choice is
+UI/GroupFinder.lua	the activity filter menu's entries (MENU_LFG_BROWSE_ACTIVITY): a group and its activities	japanese	written after the client has shown the menu (UI/Menus, the tag's `show`); an activity under its group keeps the client's indent; a group that is a table word shows its dictionary Japanese
+UI/GroupFinder.lua	the result tooltip's activity lines (activityPool) and defeated bosses (completedEncounterPool)	japanese	after LFGBrowseSearchEntryTooltip_UpdateAndShow, which measured its English lines for the tooltip's width (blizzard_lfgvanilla_browse.lua:711–840); a wider Japanese line widens the tooltip
+UI/GroupFinder.lua	the locked view's lines (the group's own listing): an activity's name, and a continent before its count ("Kalimdor (3 activities)")	japanese	after LFGListingLockedView_RefreshContent (blizzard_lfgvanilla_listing.lua:1205–1326); the line's frame sized again to the text shown; the count is LFGBROWSE_ACTIVITY_COUNT's line with the name as its first part
+UI/GroupFinder.lua	the hover of a locked line that stands for a group: GameTooltip's one line, the group and each activity under its indent	japanese	the pooled frame's OnEnter writes it with one GameTooltip:SetText (mainline/blizzard_lfgvanilla_listing.xml:240–245; the text is built at blizzard_lfgvanilla_listing.lua:1295–1300); the frame is a help-tooltip owner and the module splits the line; a plain Button, and the tooltip lays itself out again for the text shown; the names of one hover are Japanese only when each has a line, a table word ("Dungeons", "Custom") whatever the names choice is
+UI/BNetToast.lua	the toast's three lines	english player-typed
+UI/Popups.lua	a merchant's purchase questions (CONFIRM_PURCHASE_TOKEN_ITEM, CONFIRM_PURCHASE_NONREFUNDABLE_ITEM, CONFIRM_HIGH_COST_ITEM)	japanese	the cost list's names and the item link's label through the `costs` and `name` values (Core/UIStrings), the icons, counts and links kept
+UI/Popups.lua	BattleNetInviteFrame.InviteeName	english player-typed
+UI/Calendar.lua	a holiday's title on a day button, in the event picker, on the day tooltip and as the holiday frame's header	japanese	the game's own name for the holiday (blizzard_calendar.lua:1568–1574, 4350, 2148–2154, 2476); on the tooltip's begins / ends line through the `name` value of CALENDAR_EVENTNAME_FORMAT_START / _END; a tooltip line a player's event also carries stays
+UI/Calendar.lua	a holiday's title made of two names with ": " between them ("Call to Arms: Warsong Gulch"), on the same four widgets	japanese	the pair has no line in the name list: each half shows its own Japanese and the separator stays (Names.joined, UI/NameLabels.joined); on the tooltip's begins / ends line the line is laid out in parts, each half a name looked up when the line is drawn; a title with a half that is no name stays as written
+UI/Calendar.lua	names inside a holiday's description	japanese	the description is an entry inside the begins / ends line (blizzard_calendar.lua:2477–2482): an entry filled into a line takes the names step like the line (Core/UIStrings fillArg)
+UI/Calendar.lua	a player's event titles and descriptions, a raid lockout's title and header	english player-typed	a raid's name inside a lockout title is kept with its difficulty
+UI/CustomerOrders.lua	OrderRecipientTarget, OrderRecipientDisplay.CrafterValue	english player-typed
+UI/PvPRank.lua	PVPRankFrame.DetailFrame.Title	japanese	the rank title, after each Refresh (camelot/pvprankframe.lua:154–158), where the name list has a line for it; nothing reads or measures it
+UI/PvPRank.lua	the rank badge's level number	english not-a-game-name	a number
+UI/BlackMarket.lua	the hot item's Seller, Type, Level and the bid price	english not-a-game-name
+UI/MountJournal.lua	the mount's Source and Lore	english not-a-game-name	prose
+UI/GamepadEdit.lua	the binding's ActionName	english not-a-game-name
+UI/Stable.lua	PetStableLevelText	english not-a-game-name	a number
+UI/Splash.lua	SplashFrame.Label	english not-a-game-name
+UI/Cinematic.lua	MovieFrame.CloseDialog.Summary	english not-a-game-name
+UI/Achievement.lua	the points and the compared player's name	english player-typed
+UI/Collections.lua	HeirloomsJournal.ClassDropdown.Text	english not-a-game-name	a class word
+UI/Wardrobe.lua	the class dropdown's Text	english not-a-game-name	a class word
+UI/BarberShop.lua	BarberShopFrame.SDToggleButton.Text	english not-a-game-name
+UI/RaidManager.lua	the member count and role filters	english not-a-game-name	numbers
+UI/PvPMatch.lua	the faction tabs and the header	english not-a-game-name	a faction word with a count
+UI/GuildControl.lua	the two dropdown texts and the gold box	english player-typed	rank and bank tab names
+UI/GuildBank.lua	the tab info box	english player-typed
+UI/TextToSpeech.lua	the two voice dropdowns and the volume label	english not-a-game-name
+UI/TimeManager.lua	the clock and stopwatch tickers	english not-a-game-name	numbers
+UI/CoinPickup.lua	CoinPickupText	english not-a-game-name	a number
+UI/ItemText.lua	ItemTextCurrentPage	english not-a-game-name	a number
+UI/LossOfControl.lua	LossOfControlFrame.TimeLeft.NumberText	english not-a-game-name	a number
+UI/Legacy.lua	the points widgets	english not-a-game-name	numbers
+UI/RecruitAFriend.lua	the recruit list's count, in the panel and in the social window's view	english not-a-game-name	a number
+UI/CurrencyTransfer.lua	the two balance amounts	english not-a-game-name	numbers
+UI/MountJournal.lua	MountJournal.MountCount.Count	english not-a-game-name	a number
+UI/ItemUpgrade.lua	ItemUpgradeFrame.ItemInfo.UpgradeProgress	english not-a-game-name	a number
+UI/ScriptErrors.lua	the error text and the index label	english not-a-game-name
+UI/CooldownViewer.lua	the layout dropdown's Text	english player-typed	a layout's name
+UI/ChatConfig.lua	the four example strings	english not-a-game-name	examples the client composes
+
+# boxes the player types in
+UI/*	every search box and edit box in NEVER_TOUCH	english text-box	a search needs the client's English; an edit box holds the player's own text

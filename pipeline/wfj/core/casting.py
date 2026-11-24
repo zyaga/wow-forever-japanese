@@ -82,7 +82,7 @@ _TYPE = {
 }
 _UNDEAD_RACES = ("scourge", "skeleton", "northrendskeleton")
 _RACE = re.compile(r"[a-z][a-z0-9_-]*")
-_SOURCE = re.compile(r"(client|vmangos)@\S+")
+_SOURCE = re.compile(r"(client|vmangos|collector)@\S+")  # collector@: the sex a player's quest window showed
 _DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
 
 
@@ -289,7 +289,8 @@ def _field_provenance(p: Any, label: str) -> list[str]:
         return [f"{label}: machine provenance lacks {', '.join(missing)}"] if missing else []
     if src == MAINTAINER or (isinstance(src, str) and _SOURCE.fullmatch(src)):
         return []
-    return [f"{label}: provenance source {src!r} is not client@…, vmangos@…, machine or maintainer"]
+    return [f"{label}: provenance source {src!r} "
+            "is not client@…, vmangos@…, collector@…, machine or maintainer"]
 
 
 def missing_age(rows: Iterable[Mapping[str, Any]]) -> list[int]:

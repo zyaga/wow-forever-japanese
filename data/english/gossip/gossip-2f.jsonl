@@ -1,9 +1,11 @@
 {"id": "2f091418286d3b44", "field": "text", "en": "Do you seek the blessings of the Windlord?", "hash": "2f091418286d3b44", "src": "forever-vo@025070f", "npcs": [257065]}
 {"id": "2f10642dd904156f", "field": "text", "en": "I greet you, $r.", "hash": "2f10642dd904156f", "src": "vmangos@13b49dc"}
+{"id": "2f17308ebf8e1990", "field": "text", "en": "The Dual Talent Specialization allows you to keep two active talent sets. You will be able to easily switch between these two specializations. When you switch between sets, you will also gain access to a second set of action bars. Switching cannot be performed while in combat, and will consume your available resources.", "hash": "2f17308ebf8e1990", "src": "collector@1.60.1.70959", "npcs": [5497, 5515]}
 {"id": "2f18362adab2b04b", "field": "text", "en": "<The complicated schematics are too much for your meager engineering talents to discern.>", "hash": "2f18362adab2b04b", "src": "vmangos@13b49dc"}
 {"id": "2f1fe33adea234f2", "field": "text", "en": "Yeee hawww! Mulverick's fleet is ready to rock. All able bodied Horde soldiers need request a beacon and try their damndest to plant it so that my War Riders can home in for the aerial assault.", "hash": "2f1fe33adea234f2", "src": "vmangos@13b49dc"}
 {"id": "2f228cc32a5a6d0f", "field": "text", "en": "Die!  You will not free Myzrael!", "hash": "2f228cc32a5a6d0f", "src": "vmangos@13b49dc"}
 {"id": "2f22a41595777a25", "field": "text", "en": "Thank you for becoming my next victim!", "hash": "2f22a41595777a25", "src": "vmangos@13b49dc"}
+{"id": "2f27e81e2ff0b867", "field": "text", "en": "Fire. FIRE! BUUURN!", "hash": "2f27e81e2ff0b867", "src": "collector@1.60.1.70938"}
 {"id": "2f2e2a9d73df1dec", "field": "text", "en": "Thanks for the supplies, $n!", "hash": "2f2e2a9d73df1dec", "src": "vmangos@13b49dc"}
 {"id": "2f2ec0662a30f4a9", "field": "text", "en": "%s inspects the Searing Collar...", "hash": "2f2ec0662a30f4a9", "src": "vmangos@13b49dc"}
 {"id": "2f30d2f858e96792", "field": "text", "en": "With pleasure...", "hash": "2f30d2f858e96792", "src": "vmangos@13b49dc"}
@@ -12,6 +14,7 @@
 {"id": "2f349dbc5dc94a08", "field": "text", "en": "The vessel of rebirth must be fortified with elementium. I know of only one source of the mineral: the elemental planes, at the core of our world.$B$BThere is one, an Earthshaper, who may know more than I about the acquisition of such things. You must find this Earthshaper!", "hash": "2f349dbc5dc94a08", "src": "vmangos@13b49dc"}
 {"id": "2f3b7a3810dfb218", "field": "text", "en": "This kodo sure looks nothing like the beast I originally lured!  I wonder if the kombobulator can be used on me.", "hash": "2f3b7a3810dfb218", "src": "vmangos@13b49dc"}
 {"id": "2f3f907fbb253fd9", "field": "text", "en": "It seems like love is drifting on the wind. I hope that I won't be left out.", "hash": "2f3f907fbb253fd9", "src": "vmangos@13b49dc"}
+{"id": "2f424216b0e45106", "field": "text", "en": "Thank you, friend. I owe you my life.", "hash": "2f424216b0e45106", "src": "collector@1.60.1.71037"}
 {"id": "2f43aa16ded6c892", "field": "text", "en": "He has to be in the last cell. Unless... they killed him.", "hash": "2f43aa16ded6c892", "src": "vmangos@13b49dc"}
 {"id": "2f469ce17223b464", "field": "text", "en": "Fishing is real easy.  Just take a pole with a line on it, maybe put some bait on it, and cast it out in the water.  Sure enough, them fish will start biting.", "hash": "2f469ce17223b464", "src": "vmangos@13b49dc"}
 {"id": "2f49a04cfed729d6", "field": "text", "en": "Watch, druid. The earth still breathes. It yearns to be cleansed.", "hash": "2f49a04cfed729d6", "src": "vmangos@13b49dc"}

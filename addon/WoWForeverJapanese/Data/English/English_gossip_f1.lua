@@ -11,6 +11,7 @@ WFJ.Data.add("english", {
   ["gossip:f11dc9e597ba4145"] = { text = "just=2 leave=3 why=1" },
   ["gossip:f11e9e9c98a26e05"] = { text = "betrayed=1" },
   ["gossip:f11eef2519ebf3bd"] = { text = "certainly=29 cloth=20 constant=13 dire=21 donate=27 earn=33 endured=12 enough=17 establishing=7 everywhere=30 friend=2 gratitude=32 hail=1 helping=28 materials=24 moment=3 now=19 please=26 spare=23 strife=14 time=4 times=4 trials=10 tribulations=11 we=6" },
+  ["gossip:f12662ce62200369"] = { text = "allies=2 confront=5 fight=3 me=7 prepared=4 ready=6 speak=8" },
   ["gossip:f12d34de3f3e7955"] = { text = "activated=3 ambulatory=4 cluck=7 emergency=1 initializing=6 motor=5 power=2" },
   ["gossip:f130f0078354318b"] = { text = "arcane=2 better=6 enlightenment=3 looking=4 oh=1 place=7 then=5" },
   ["gossip:f1351533c1e30521"] = { text = "agreement=26 all=6 become=8 binding=27 business=30 combine=7 contract=23 done=31 figure=21 find=5 forge=3 get=12 gotta=2 how=10 information=15 our=25 see=1 sign=24 technical=14 that=19 this=22 when=11 where=9 yourself=4" },

@@ -294,8 +294,11 @@ def test_the_cast_command_writes_voices_and_counts_rows(world, capsys):
     assert rows == {1992: ("f", "female"), 2079: ("m", "male")}
     out = capsys.readouterr().out.splitlines()
     assert out[0] == "voice cast: 2 creatures → data/voice/voices.jsonl"
-    assert sorted(out[1:]) == ["voice cast:     1  female", "voice cast:     1  male",
-                               "voice cast: 2 creature(s) with no known race or gender get no voice"]
+    assert sorted(out[1:3]) == ["voice cast:     1  female", "voice cast:     1  male"]
+    # the world's earlier cast gave 3000 a voice: the cast says whose voice moved or went
+    assert out[3:] == ["voice cast: 1 speaker(s) changed voice since the last cast; their lines are made again:",
+                       "voice cast:   3000: old (elder, female) → removed",
+                       "voice cast: 2 creature(s) with no known race or gender get no voice"]
 
 
 def test_a_creature_spoken_gives_a_voice_set_is_not_unknown(world):
@@ -350,6 +353,17 @@ def test_a_line_that_went_silent_keeps_its_record_and_owes_nothing(world):
     rows = voice_make._rows(world.data / "voice" / "speakers.jsonl")
     voice_make._write(world.data / "voice" / "speakers.jsonl", [r for r in rows if r["key"] != "456-completion"])
     assert voice_make.owed(world.data, CFG) == ([], ["456-completion"])
+    assert voice_make.owed_problems(world.data, CFG, []) == []
+
+
+def test_a_spare_recording_of_a_line_still_voiced_is_kept_like_a_silent_lines(world):
+    """A line two NPCs say has a file per voice. When one of them loses its voice the line is still made in
+    the other's, and the lost one's recording stays on the record: never packed, never a left-over."""
+    _made(world)
+    rec = voice_make.audio_record(world.data)
+    rows = [*rec.values(), {**rec["456-completion"], "file": "456-completion_gone"}]
+    voice_make._write(world.data / "voice" / voice_make.AUDIO, rows)
+    assert voice_make.owed(world.data, CFG) == ([], ["456-completion_gone"])
     assert voice_make.owed_problems(world.data, CFG, []) == []
 
 
@@ -636,3 +650,19 @@ def test_a_local_engine_keeps_every_wav_in_the_archive_named_as_a_remote_run_nam
     name = line_key("よく来たな。", Path("set-copy-a.wav"), "copy", 7, 0.5) + ".wav"
     assert (tmp_path / "local-2026-11-14-120000" / "wav" / name).read_bytes() == wav
     assert inner.entered
+
+
+
+def test_a_cast_names_every_speaker_whose_voice_moved():
+    from wfj.cmd import voice_make
+
+    before = {1: {"creature": 1, "voice": "a", "row": "male"}, 2: {"creature": 2, "voice": "b", "row": "set x"},
+              3: {"creature": 3, "voice": "c", "row": "female", "female": "d"}}
+    rows = [{"creature": 1, "voice": "q", "row": "set humanmalestandardnpc"},  # Spoken now names its set
+            {"creature": 2, "voice": "b", "row": "set x"},  # unchanged
+            {"creature": 3, "voice": "c", "row": "female", "female": "e"},  # its female voice moved
+            {"creature": 4, "voice": "z", "row": "male"}]  # a new speaker: nothing to make again
+    before[5] = {"creature": 5, "voice": "g", "row": "male"}  # no longer cast
+    assert voice_make.cast_changes(before, rows) == [
+        "1: a (male) → q (set humanmalestandardnpc)", "3: c + d (female) → c + e (female)",
+        "5: g (male) → removed"]

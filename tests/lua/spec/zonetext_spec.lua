@@ -62,6 +62,46 @@ describe("the zone banner's PvP line on Forever", function()
     assert.are.equal("", _G.PVPInfoTextString:GetText()) -- the client's own "" is what SetZoneText reads back
   end)
 
+  it("with names on the zone and subzone show their Japanese, and the PvP line names the faction in Japanese",
+  function()
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Elwynn Forest")] = "エルウィン・フォレスト\tえるうぃん・ふぉれすと",
+      [WFJ.Names.key("Goldshire")] = "ゴールドシャイア\tごーるどしゃいあ",
+      [WFJ.Names.key("Sanctuary")] = "サンクチュアリ\tさんくちゅあり",
+    })
+    WFJ.State.setNames(true)
+    P.zone, P.pvp = "Elwynn Forest", nil
+    _G.SubZoneTextString.text = "Goldshire"
+    _G.SetZoneText(true)
+    assert.are.equal("エルウィン・フォレスト", _G.ZoneTextString:GetText())
+    assert.are.equal("ゴールドシャイア", _G.SubZoneTextString:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("Elwynn Forest", _G.ZoneTextString:GetText())
+    assert.are.equal("Goldshire", _G.SubZoneTextString:GetText())
+    X.alt(WFJ, false)
+    -- a place whose name is also a dictionary word shows as the place, never as the word
+    P.zone = "Sanctuary"
+    _G.SetZoneText(true)
+    assert.are.equal("サンクチュアリ", _G.ZoneTextString:GetText())
+    -- the client clears the subzone line: nothing of ours is left on it
+    _G.SubZoneTextString.text = ""
+    _G.SetZoneText(true)
+    assert.are.equal("", _G.SubZoneTextString:GetText())
+    -- a place with no Japanese keeps the client's text
+    P.zone = "Somewhere Unknown"
+    _G.SetZoneText(true)
+    assert.are.equal("Somewhere Unknown", _G.ZoneTextString:GetText())
+    WFJ.State.setNames(false)
+  end)
+
+  it("with names off the zone and subzone are never written", function()
+    P.zone = "Elwynn Forest"
+    _G.SubZoneTextString.text = "Goldshire"
+    _G.SetZoneText(true)
+    assert.are.equal(0, _G.ZoneTextString.calls.addonSetText)
+    assert.are.equal(0, _G.SubZoneTextString.calls.addonSetText)
+  end)
+
   it("a faction's territory keeps the faction name as written", function()
     P.pvp, P.faction = "friendly", "Darnassus"
     _G.SetZoneText(true)

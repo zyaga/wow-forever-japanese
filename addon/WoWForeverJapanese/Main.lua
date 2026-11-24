@@ -166,12 +166,53 @@ end
 -- addon ships only the h1 of the English it was drafted against.
 -- The renderer `$D<k>` copies a duration with: only the forms a spell's `$d` prints, with the unit the client
 -- chose (ADR-028).
-local function spellDuration(text)
-  return WFJ.UIIndex and WFJ.UIIndex:duration(text, true) or nil
+-- `words`: the phrases the client prints where it has no number ("until canceled"), each with its Japanese, set
+-- when the UI index is built.
+-- The cards of what the client's values bring into a line while the translator fills it (Translator `filled`): a
+-- game name the names choice writes in Japanese, a duration's unit from its interface line's own words. Only
+-- while a line is being filled; the frozen tooltip lays them on its copy like the line's own names.
+local filledCards -- nil while no line is being filled
+local function fillCards(start)
+  if start then
+    filledCards = {}
+    return nil
+  end
+  local out = filledCards
+  filledCards = nil
+  return out
 end
+local function noteCard(ja, reading, english)
+  if filledCards and type(ja) == "string" and ja ~= "" then
+    filledCards[#filledCards + 1] = { ja = ja, reading = reading, english = english }
+  end
+end
+-- the words of an interface line the client's values were written with (a duration's 秒), as cards
+local function noteKeyWords(key)
+  if not filledCards then return end
+  for _, card in ipairs(WFJ.Readings.cards("ui", key)) do
+    card.afterNumber = true -- a unit: its card goes on it after every number the line holds it after
+    filledCards[#filledCards + 1] = card
+  end
+end
+
+local spellDuration = {
+  render = function(text) return WFJ.UIIndex and WFJ.UIIndex:duration(text, true) or nil end,
+  words = {},
+}
 
 -- The Japanese the tooltip shows for a shipped item / spell entry against these live lines (Align.gate, with the
 -- client's spell durations). → ok, text
+-- The same, with the cards of what the gate filled in (a duration's 秒) for a line written outside the translator
+-- (a set bonus line holding its spell's text). → ok, text, cards | nil
+function WFJ.GateCards(entry, lines)
+  local outer = filledCards
+  fillCards(true)
+  local ok, text = WFJ.Align.gate(entry, lines, spellDuration)
+  local cards = fillCards()
+  filledCards = outer
+  return ok, text, cards
+end
+
 function WFJ.GateText(entry, lines)
   return WFJ.Align.gate(entry, lines, spellDuration)
 end
@@ -190,6 +231,7 @@ end
 -- Builds WFJ.UIIndex from the shipped UI strings; called once at load (Core/UIStrings).
 function WFJ.BuildUIIndex()
   WFJ.UIIndex = WFJ.UIStrings.build({ rows = WFJ.Data.ui, english = uiEnglish, hash = uiHash })
+  spellDuration.words = WFJ.UIIndex.spellDurationWords
   return WFJ.UIIndex
 end
 
@@ -297,6 +339,8 @@ function WFJ.OnLoad()
       return (WFJ.GateText(entry, lines)) == true
     end,
     statLine = function(text) return WFJ.UIIndex ~= nil and WFJ.UIIndex:statLine(text) ~= nil end,
+    -- an interface string the addon ships Japanese for is no news to the collector
+    uiKey = function(name) return WFJ.UIIndex ~= nil and WFJ.UIIndex.rows[name] ~= nil end,
   }) end) or WFJ_Collector
   -- the player's saved words: the same `or` guard, so a failed load never hands the client an empty list to write
   WFJ_Words = step("words", function() return WFJ.Words.load(WFJ_Words) end) or WFJ_Words
@@ -358,14 +402,24 @@ function WFJ.OnLoad()
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
     showsEnglish = WFJ.Modifier.english,
-    kindOff = function(kind) return kind == "quest.title" and not WFJ.QUEST_TITLES_JAPANESE end,
+    -- names are the client's English until the player picks Japanese names; a quest's title is a name
+    kindOff = function(kind) return (kind == "quest.title" or kind == "name") and not WFJ.State.names end,
+    -- the English names inside a shown line, in Japanese, interface lines included ("Fishingを習得"). A word the
+    -- screen keeps as written (PvP, the game's own name) has no row in the name tables, so it stays. An HTML
+    -- book page keeps its tags.
+    names = function(ja, kind)
+      if not WFJ.State.names or type(kind) ~= "string" then return ja end
+      return WFJ.Names.inText(ja, kind == "book" and ja:find("^%s*<[Hh][Tt][Mm][Ll]") ~= nil)
+    end,
+    name = WFJ.Names.shown, -- a widget that holds only a name (an item's may carry a suffix) or a list of them
+    filled = fillCards,
     lookup = WFJ.Lookup.get,
     marker = function(name) return WFJ.Settings.get("marker." .. name) end,
     -- the runtime gate for unaligned entries (ADR-007). The duration renderer is UIStrings',
     -- so a `$D<k>` in a tooltip translation copies the live line's duration with the unit the
     -- client chose instead of the Japanese naming one.
-    align = function(ja, lines, nameScope)
-      return WFJ.Align.check(ja, lines, nameScope, spellDuration)
+    align = function(ja, lines, nameScope, count)
+      return WFJ.Align.check(ja, lines, nameScope, spellDuration, count)
     end,
     -- a branch line's variants (ADR-043), the one that fits the live line
     alignVariants = function(variants, shapes, lines, nameScope)
@@ -378,11 +432,38 @@ function WFJ.OnLoad()
     expand = expand, -- {name}/{class}/{race} per player
     -- a trusted line's `$N<k>` / `$D<k>` filled from the live text, with no gate: a quest's
     -- count is in the line the player is shown, not in the text the server sent.
-    fillValues = function(ja, live) return WFJ.Align.fillValues(ja, live, spellDuration) end,
+    fillValues = function(ja, live, count) return WFJ.Align.fillValues(ja, live, spellDuration, count) end,
     fill = function(ja, args) return WFJ.UIIndex:fill(ja, args) end, -- UI templates get the live values
     -- the quest live check: the stale marker follows the client's English (ADR-019)
     fingerprints = function(text, masked) return WFJ.Collector.fingerprints(text, collectorPlayer(), masked) end,
   })) end)
+  -- a game name the client fills into an interface line, in Japanese while names are on
+  WFJ.UIStrings.name = function(text)
+    if not WFJ.State.names then return nil end
+    local ja = WFJ.Names.value(text)
+    if ja and filledCards then
+      local plain, reading = WFJ.Names.item(text) -- a link's label keeps no card: its text is not the name alone
+      if plain then noteCard(plain, reading, text) end
+    end
+    return ja
+  end
+  -- an interface line whose Japanese the client's values were written with (a duration): its words go on the line
+  WFJ.UIStrings.filledKey = noteKeyWords
+  -- a race or a class the client fills into a player's level line
+  WFJ.UIStrings.word = function(text)
+    if WFJ.State.names then return WFJ.Placeholders.wordFor(text) end
+    return nil
+  end
+  -- the names inside an entry that fills another line's value (a holiday's description in its begins / ends line)
+  WFJ.UIStrings.inText = function(ja)
+    if WFJ.State.names then return (WFJ.Names.inText(ja)) end
+    return ja
+  end
+  -- the word the client puts in brackets on a player's level line ("(Player)"): no row holds it, the name list does
+  WFJ.UIStrings.playerWord = function(text)
+    if WFJ.State.names and text == uiEnglish("PLAYER") then return WFJ.Names.value(text) end
+    return nil
+  end
   step("modifier", WFJ.Modifier.refresh)
   -- Tab fonts across PanelTemplates state changes, Lua-built help tooltips, and the readiness of
   -- load-on-demand Blizzard addons (their ADDON_LOADED is forwarded below; ADR-016). Before the surfaces.
@@ -432,7 +513,7 @@ function WFJ.OnLoad()
     "Statistics", "Widgets",
     "Macro", "SpellSearch", "TimeManager", "CombatText", "CooldownViewer", "DamageMeter", "DeathRecap",
     "GamepadEdit", "Gamepad", "HudLabels", "HudTips", "Minimap", "PvPMatch", "QueueStatus", "RaidManager", "UnitFrames",
-    "GroupFinder", "Channels", "QuickJoin", "RecentAllies", "RecruitAFriend", "ReportFrame", "HelpFrame",
+    "GroupFinder", "Channels", "QuickJoin", "RecentAllies", "SocialUI", "RecruitAFriend", "ReportFrame", "HelpFrame",
     "StatusNotices", "BNetToast", "SettingsPanel", "SettingsTutorials", "QuickKeybind", "ColorPicker",
     "ChatConfig", "TextToSpeech", "ChatTabs", "CombatLog", "AddonList", "ScriptErrors", "Splash", "EventTrace",
     "ChromieTime", "Alerts", "Errors", "ChatSystem", "ChatInput", "BossBanner", "Cinematic", "Subtitles",
@@ -453,6 +534,7 @@ function WFJ.OnLoad()
   step("skills", WFJ.Skills.init)
   step("pvprank", WFJ.PvPRank.init) -- the character window's PvP rank panel
   step("spellbook", WFJ.SpellBook.init)
+  step("spellbooknames", WFJ.SpellBookNames.init) -- Japanese over the game's own text (an experiment, ADR-058)
   step("talents", WFJ.Talents.init)
   step("trainer", WFJ.Trainer.init)
   step("gossipchrome", WFJ.GossipChrome.init)
@@ -517,11 +599,16 @@ local function onEvent(self, event, name, ...)
     if name == ADDON then
       if WFJ.loaded then return end -- ADDON_LOADED stays registered for the load-on-demand addons
       WFJ.loaded = true
+      local filesDone = WFJ.LOAD_START and debugprofilestop()
       WFJ.OnLoad()
+      if filesDone and type(WFJ_Log) == "table" then
+        WFJ_Log.load = { files = filesDone - WFJ.LOAD_START, setup = debugprofilestop() - filesDone }
+      end
       self:RegisterEvent("MODIFIER_STATE_CHANGED")
       self:RegisterEvent("PLAYER_ENTERING_WORLD")
       self:RegisterEvent("PLAYER_REGEN_DISABLED")
       self:RegisterEvent("PLAYER_REGEN_ENABLED")
+      self:RegisterEvent("UPDATE_BINDINGS")
       self:RegisterEvent("PLAYER_LOGOUT")
       for _, blocked in ipairs(WFJ.Diag.BLOCK_EVENTS) do self:RegisterEvent(blocked) end
     else
@@ -538,14 +625,21 @@ local function onEvent(self, event, name, ...)
   elseif event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then
     local entry = WFJ.Diag.onBlocked(event, name, ..., ADDON)
     if entry then WFJ.TaintWatch.onBlocked(entry) end
+  elseif event == "UPDATE_BINDINGS" then
+    WFJ.TooltipFreeze.bindingsLoaded(WFJ_DB) -- the frozen tooltip's first key, once the saved bindings are in
+    WFJ.IntroWindow.bindingsChanged() -- the welcome window names the freeze key as it is bound now
   elseif event == "PLAYER_REGEN_DISABLED" then
     WFJ.Options.setCombat(true)
     WFJ.StudyWindow.setCombat(true)
   elseif event == "PLAYER_REGEN_ENABLED" then
     WFJ.RevealBinding.flush() -- a modifier change made in combat
+    WFJ.NamePlateSetting.flush() -- a nameplate setting asked for in combat
     WFJ.QuestMap.onCombatEnded() -- the map's quest list keeps the client's English in combat
+    WFJ.ChatUnlisted.flush() -- chat lines that waited for combat to end
     WFJ.Options.setCombat(false)
     WFJ.StudyWindow.setCombat(false)
+    -- an offer a login in combat could not make; last and guarded, so a fault in it costs nothing above
+    step("freezekey", function() WFJ.TooltipFreeze.offerKey(WFJ_DB) end)
   elseif event == "PLAYER_LOGOUT" then
     WFJ.VoicePlayer.stop() -- the dialog channel is saved with the logout: put it back first
     WFJ.VoiceErrors.restore() -- and the error speech
@@ -559,17 +653,27 @@ local function onEvent(self, event, name, ...)
     WFJ.Modifier.refresh()
   elseif event == "PLAYER_ENTERING_WORLD" then
     local isLogin, isReload = name, ... -- PLAYER_ENTERING_WORLD(isInitialLogin, isReloadingUi)
-    if isLogin or isReload then WFJ.RevealBinding.apply() end -- again once bindings are loaded
+    if isLogin or isReload then
+      WFJ.RevealBinding.apply() -- again once bindings are loaded
+      step("freezekey", function() WFJ.TooltipFreeze.offerKey(WFJ_DB) end) -- once per account
+    end
     WFJ.Modifier.refresh()
     local disclosed = WFJ.Collector.disclose() -- once per dump, after the chat frame is up
     -- never on a zone change; time() is the client's clock [verified: forever-ui-1.60.1.70170
     -- blizzard_friendsframe/camelot/friendsframe.lua:1456]
     if isLogin or isReload then
-      step("collectorremind", function()
-        WFJ.CollectorRemind.run(WFJ_DB, time(), WFJ.CollectorReminder.open, disclosed)
-      end)
-      step("intro", function() WFJ.Intro.run(WFJ_DB, WFJ.IntroWindow.request) end) -- once, on a first install
+      local function remind()
+        step("collectorremind", function()
+          WFJ.CollectorRemind.run(WFJ_DB, time(), WFJ.CollectorReminder.open, disclosed)
+        end)
+      end
+      local intro -- once, on a first install and once for each question a player has not been asked
+      step("intro", function() intro = WFJ.Intro.run(WFJ_DB, WFJ.IntroWindow.request) end)
+      -- the reminder would open under the welcome window: it waits until the player has closed that one
+      if intro then WFJ.IntroWindow.afterClose(remind) else remind() end
       step("voicepacks", function() WFJ.VoicePlayer.announcePacks() end) -- every pack has registered by now
+      -- from here on the names choice turns the client's nameplates for NPCs and creatures on and back
+      step("nameplates", function() WFJ.NamePlateSetting.start(WFJ_DB) end)
     end
     -- every addon has loaded by now: another one (BugGrabber) may have replaced our error handler; and the player's
     -- name is known, so an error caught earlier loses it

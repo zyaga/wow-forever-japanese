@@ -14,9 +14,11 @@
 {"id": "6a3a78badaec92f7", "field": "text", "en": "Unfortunately we do not have one who teaches Tailoring here in Bloodhoof Village, but you can find a trainer in Thunder Bluff.  Follow the path north out of the village until you come to a set of elevators.  Take one up to the top of the rise and ask one of the Bluffwatchers there for directions.", "hash": "6a3a78badaec92f7", "src": "vmangos@13b49dc"}
 {"id": "6a531fb832036eb0", "field": "text", "en": "%s is VERY HUNGRY!", "hash": "6a531fb832036eb0", "src": "vmangos@13b49dc"}
 {"id": "6a5aac8497250bcc", "field": "text", "en": "The curse ends!", "hash": "6a5aac8497250bcc", "src": "vmangos@13b49dc"}
+{"id": "6a5c3b9a45edb23d", "field": "text", "en": "The Son of Arugal that attacked Lumina is known as Old Fire-Eye. He's not only well-known for his ferocity, but for his stubborn refusal to die. I've been doing a fair amount of research and I think that we can forge a blade that will do the trick and put him down for good.$B$BHere, I've prepared a list of materials and information about how to get them for you. When you've gathered what we need, return to me and we'll get started.", "hash": "6a5c3b9a45edb23d", "src": "collector@1.60.1.70888", "npcs": [248840]}
 {"id": "6a6aa69d4766ddb8", "field": "text", "en": "Look for Faruza.  Last I saw she was standing out front between the stables and the house on the northwest end of town.", "hash": "6a6aa69d4766ddb8", "src": "vmangos@13b49dc"}
 {"id": "6a6fb20d1921b65a", "field": "text", "en": "%s breaks free of its cocoon beneath Hive'Ashi.", "hash": "6a6fb20d1921b65a", "src": "vmangos@13b49dc"}
 {"id": "6a733a6c4e8937ca", "field": "text", "en": "The battlemaster", "hash": "6a733a6c4e8937ca", "src": "vmangos@13b49dc"}
+{"id": "6a757f3860c0af6e", "field": "text", "en": "There, see if you can get out now.", "hash": "6a757f3860c0af6e", "src": "collector@1.60.1.71037"}
 {"id": "6a76b473ee5e52c4", "field": "text", "en": "A $n attacks!", "hash": "6a76b473ee5e52c4", "src": "vmangos@13b49dc"}
 {"id": "6a7bc57783a09c2c", "field": "text", "en": "Greetings, $c - I'm a Commendation Officer acting on behalf of Orgrimmar.  It is my duty to assist adventurers who have received Horde Commendation Signets.$B$BI accept signets in different quantities, but the most beneficial exchange for you is to hand in a set of ten at once.  I will enter your deeds into our records when you hand in your signets.  As a result, you will earn recognition from Orgrimmar for your duty and service.\n", "hash": "6a7bc57783a09c2c", "src": "vmangos@13b49dc"}
 {"id": "6a8019341d73b343", "field": "text", "en": "Al'tabim, I seem to have misplaced my Zandalar Illusionist's Mantle. Can you supply me with a replacement?", "hash": "6a8019341d73b343", "src": "vmangos@13b49dc"}
@@ -35,5 +37,6 @@
 {"id": "6adac1bfdb09581e", "field": "text", "en": "Our eye say you look lost.", "hash": "6adac1bfdb09581e", "src": "vmangos@13b49dc"}
 {"id": "6ae0fe469ee558a0", "field": "text", "en": "Feel the power of the Brotherhood!", "hash": "6ae0fe469ee558a0", "src": "vmangos@13b49dc"}
 {"id": "6ae33a6f62505abf", "field": "text", "en": "I want to create a guild crest.", "hash": "6ae33a6f62505abf", "src": "vmangos@13b49dc"}
+{"id": "6aeee7790083880c", "field": "text", "en": "Dere be intruders! Don' let dem approach!", "hash": "6aeee7790083880c", "src": "collector@1.60.1.70862"}
 {"id": "6af22cd3b4d8ea0f", "field": "text", "en": "The Alliance Flag was returned to its base by $n!", "hash": "6af22cd3b4d8ea0f", "src": "vmangos@13b49dc"}
 {"id": "6af9e0946435e937", "field": "text", "en": "*sigh* ...113 degrees Kraklenheit. Can't you do any better?", "hash": "6af9e0946435e937", "src": "vmangos@13b49dc"}

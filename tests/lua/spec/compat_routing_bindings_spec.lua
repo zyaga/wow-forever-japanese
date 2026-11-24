@@ -114,6 +114,7 @@ describe("UI/RevealBinding: client names through Compat", function()
     WFJ = Loader.load("WoWForeverJapanese")
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
     S, RB = WFJ.Settings, WFJ.RevealBinding
+    _G.WFJ_DB.freezeKeyOffered = true -- the frozen tooltip's first key is another module's write
     Stub.bindingCalls = {}
   end)
 

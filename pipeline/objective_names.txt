@@ -104,3 +104,21 @@
 479981  # Brown Horse
 479982  # Chestnut Mare
 477640  # Hexx's Key
+479628  # Ochre Skeletal Warhorse
+479629  # Purple Skeletal Warhorse
+479630  # Green Skeletal Warhorse
+479644  # Swift Brown Wolf
+479645  # Swift Gray Wolf
+479646  # Swift Timber Wolf
+479647  # Swift Empyrean Galestrider
+479648  # Swift Stormy Galestrider
+479649  # Swift Umber Galestrider
+479650  # Great Gray Kodo
+479651  # Great Brown Kodo
+479652  # Great White Kodo
+480031  # Swift Brown Steed
+480034  # Swift Brown Steed
+480032  # Swift Palomino
+480035  # Swift Palomino
+480033  # Swift White Steed
+480036  # Swift White Steed

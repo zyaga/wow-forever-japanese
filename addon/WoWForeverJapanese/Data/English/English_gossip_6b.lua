@@ -29,6 +29,7 @@ WFJ.Data.add("english", {
   ["gossip:6b95fb08c39a7711"] = { text = "throats=8 war=1" },
   ["gossip:6b96648aa2547a4c"] = { text = "and=2 soldier=4" },
   ["gossip:6b999f5b6cac86a6"] = { text = "against=35 all=37 and=9 courage=17 depending=13 earn=49 forces=34 greetings=1 honor=43 hunter=4 i=27 life=5 mark=18 me=21 mean=25 mind=31 more=50 my=47 nature=33 nothing=26 others=10 passage=19 profession=8 race=22 respect=28 skills=38 some=2 speak=52 spirit=30 test=32 testing=32 that=41 tribe=12 true=42 yourself=45" },
+  ["gossip:6ba17f0beb6cdab9"] = { text = "better=3 dead=1 prepared=2" },
   ["gossip:6ba33e5e05c681fe"] = { text = "kill=4 last=3 remember=1 said=5 you=2" },
   ["gossip:6ba64689ee87c8a6"] = { text = "essence=4 items=2 needed=1" },
   ["gossip:6baa78226fcf5176"] = { text = "desert=2 heat=6 living=3 outside=8 rough=4 so=11 standing=9 thirsty=10 this=1" },

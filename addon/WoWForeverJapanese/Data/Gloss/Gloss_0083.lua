@@ -726,7 +726,6 @@ WFJ.Data.add("gloss", {
   [83725] = "探索する\tたんさくする\tsearch",
   [83726] = "探索する\tたんさくする\tsearch through",
   [83727] = "探索する\tたんさくする\tto explore",
-  [83728] = "探索する\tたんさくする\tto search (can explore)",
   [83729] = "探索する\tたんさくする\ttry exploring",
   [83730] = "探索する\tたんさくする\twhile exploring",
   [83731] = "探索中\tたんさくちゅう\twhilst exploring",

@@ -18,6 +18,8 @@
 -- Help tooltips: the settings Accept button's name-check errors (lua:360-378: the error text is the client's, kept
 --   as written), the cross-faction toggle (owner its Label, lua:428-435).
 -- Never touched: every edit box, a ticket's creator and link, the stream names in the notification list.
+-- Their font only (UI/PlayerText): the boxes a name, a message of the day or a description is typed into always
+--   wear the bundled face.
 local _, WFJ = ...
 local Kit = WFJ.CommunitiesKit
 local Dialogs = {}
@@ -34,6 +36,10 @@ local TM = "CommunitiesTicketManagerDialog"
 Dialogs.NEVER_TOUCH = { SD .. ".NameEdit", SD .. ".ShortNameEdit", SD .. ".Description.EditBox",
   SD .. ".MessageOfTheDay.EditBox", SD .. ".MinIlvlOnly.EditBox", ES .. ".NameEdit", ES .. ".Description.EditBox",
   TM .. ".LinkIDText" }
+
+-- The boxes a player types text into (the item-level box takes digits only).
+local TYPED = { SD .. ".NameEdit", SD .. ".ShortNameEdit", SD .. ".Description.EditBox",
+  SD .. ".MessageOfTheDay.EditBox", ES .. ".NameEdit", ES .. ".Description.EditBox" }
 
 local k = Kit.new(SURFACE, {
   settings = { SD }, stream = { ES }, notifications = { NS }, tickets = { TM },
@@ -157,6 +163,7 @@ function Dialogs.setup()
   Dialogs.showStatic()
   if hooked then return false end
   hooked = true
+  WFJ.PlayerText.each(WFJ.PlayerText.box, TYPED)
   local sd, es, tm = k.get("settings"), k.get("stream"), k.get("tickets")
   k.script(sd, "OnShow", Dialogs.onSettings)
   k.after(sd, "SetClubId", Dialogs.onSettings)

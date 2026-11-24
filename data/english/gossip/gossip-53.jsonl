@@ -2,6 +2,7 @@
 {"id": "530a6e20b8e1287d", "field": "text", "en": "%s breaks apart and loses strength!", "hash": "530a6e20b8e1287d", "src": "vmangos@13b49dc"}
 {"id": "530cb898c91293c9", "field": "text", "en": "In the cleft of shadow Kor'ghan is waiting with shears sharper than a guards sword.", "hash": "530cb898c91293c9", "src": "forever-vo@025070f", "npcs": [3296]}
 {"id": "53113eeb88ce50fe", "field": "text", "en": "Elune, hear my prayers. Grant us serenity! Watch over our fallen...", "hash": "53113eeb88ce50fe", "src": "vmangos@13b49dc"}
+{"id": "531bb70e782115fb", "field": "text", "en": "The whole of this valley was once a garden of Eldre'Thalas, but that blighted land ahead of us was the highlight of it all. Nearly everyone contributed to its arrangement and growth. When tensions were high, often many of us would take a stroll to clear our minds.$B$BHad it withered purely from neglect, I suspect it would look no different than the rest of Shen'dralas.", "hash": "531bb70e782115fb", "src": "collector@1.60.1.70888", "npcs": [254578]}
 {"id": "531c28079d2ed2fb", "field": "text", "en": "Not even my father could have planned such tragedy... such chaos. You will never make it! Time is running out!\n", "hash": "531c28079d2ed2fb", "src": "vmangos@13b49dc"}
 {"id": "531def31674efdfa", "field": "text", "en": "I rise from the grave to take my revenge!", "hash": "531def31674efdfa", "src": "vmangos@13b49dc"}
 {"id": "5328da4adf8bb087", "field": "text", "en": "Greetings, $c. I'm in a bit of a pinch right now, running very low on hides.", "hash": "5328da4adf8bb087", "src": "vmangos@13b49dc"}
@@ -28,9 +29,11 @@
 {"id": "539218c5d69e7ac0", "field": "text", "en": "Yeah, I need to drop off some things myself.  Find it by heading north up the road to Orgrimmar and then ask one of the grunts there.", "hash": "539218c5d69e7ac0", "src": "vmangos@13b49dc"}
 {"id": "539f657aafaa2f8f", "field": "text", "en": "Lookin' to take a gryphon ride, eh? Dungar keeps his birds up on the rampart in the Trade District. Just remember to hold on tight! ", "hash": "539f657aafaa2f8f", "src": "vmangos@13b49dc"}
 {"id": "53a03a5a757b7138", "field": "text", "en": "Are you interested in exploring one of these dungeons?", "hash": "53a03a5a757b7138", "src": "vmangos@13b49dc"}
+{"id": "53a3dd68463aae13", "field": "text", "en": "Exactly. His claims to be the \"King of Stormwind\", the involvement of the Defias... it's all too much to be coincidence.", "hash": "53a3dd68463aae13", "src": "collector@1.60.1.70888"}
 {"id": "53a7c2af03d14388", "field": "text", "en": "Show me your selection of grimoires.", "hash": "53a7c2af03d14388", "src": "vmangos@13b49dc"}
 {"id": "53a95d9692f5d840", "field": "text", "en": "Red team, winner!", "hash": "53a95d9692f5d840", "src": "vmangos@13b49dc"}
 {"id": "53a9b4524a70a5ee", "field": "text", "en": "I execute him as per my liege's instructions, and do it in such a manner that he suffers painfully before he dies as retribution for his crimes against my people.", "hash": "53a9b4524a70a5ee", "src": "vmangos@13b49dc"}
+{"id": "53b0ca1e73335a5b", "field": "text", "en": "Lookin' for some new threads? You came to the right place.", "hash": "53b0ca1e73335a5b", "src": "collector@1.60.1.71037", "npcs": [260570]}
 {"id": "53b54413d73bdd6c", "field": "text", "en": "I am pleased with your progress so far. Surely the Earth Mother has inspired your hands.", "hash": "53b54413d73bdd6c", "src": "vmangos@13b49dc"}
 {"id": "53c20d008f110426", "field": "text", "en": "I can tell just by the way you're standing that you're no warrior.  $B$BWhy don't you go do something safe, like read a book.", "hash": "53c20d008f110426", "src": "vmangos@13b49dc"}
 {"id": "53c806953261cf33", "field": "text", "en": "HOLD THE LINE! LET NOTHING THROUGH!", "hash": "53c806953261cf33", "src": "vmangos@13b49dc"}

@@ -53,4 +53,5 @@ WFJ.Data.add("english", {
   ["gossip:adec48ed53a8abd7"] = { text = "footing=3 slippery=1 tile=2" },
   ["gossip:adf45c92d9ba3ba3"] = { text = "agent=20 aid=23 beautiful=2 corrupting=8 corruption=19 curse=6 forces=9 former=13 here=10 life=11 once=1 perhaps=25 reclaiming=22 selves=14 shadows=15 suffer=7 terrible=5 these=3 this=18 twist=12 woods=4 you=17" },
   ["gossip:adf8b400a3dc7c2a"] = { text = "so=1" },
+  ["gossip:adfb5cd498d495d7"] = { text = "broken=2 gave=1 part=4 tears=3 willing=5" },
 })

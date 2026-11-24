@@ -56,9 +56,16 @@ Popups.NEVER_TOUCH = { "BattleNetInviteFrame.InviteeName" }
 -- The StaticPopupSpecial frames this surface walks, and the words they may show (their XML / Lua).
 local SPECIAL = { "AddFriendFrame", "BattleNetInviteFrame", "PVPReadyPopup", "PVPFramePopup", "PVPRoleCheckPopup",
   "PVPReadyDialog", "PlunderstormFramePopup", "LFGInvitePopup", "QuickJoinRoleSelectionFrame",
-  "RecruitAFriendRecruitmentFrame", "ReportCheatingDialog", "WardrobeCustomSetEditFrame" }
--- A special frame that re-writes its text after it is shown: its writer method is post-hooked on first show.
-local WRITERS = { RecruitAFriendRecruitmentFrame = "UpdateRecruitmentInfo" } -- recruitafriendframe.lua:1522–1573
+  "RecruitAFriendRecruitmentFrame", "ReportCheatingDialog", "WardrobeCustomSetEditFrame",
+  -- the role poll a group leader starts (blizzard_framexml/mainline/rolepoll.lua:15-40: its title is
+  -- SELECT_YOUR_ROLE and its button ACCEPT, both in the set below)
+  "RolePollPopup" }
+-- A special frame that re-writes its text after it is shown: its writer methods are post-hooked on first show.
+-- The recruitment dialog: recruitafriendframe.lua:1522–1573. The add-friend dialog chooses its page after
+-- StaticPopupSpecial_Show returns, and the page it picks writes its own labels and the box's prompt
+-- [verified: blizzard_addfriend/addfriendtemplates.lua:94–99, 139–182].
+local WRITERS = { RecruitAFriendRecruitmentFrame = { "UpdateRecruitmentInfo" },
+  AddFriendFrame = { "ShowEntry", "ShowInfo" } }
 local SPECIAL_ONLY = { only = {
   -- blizzard_addfriend/addfriendtemplates.xml|lua
   -- (the info title is BATTLETAG_OR_REAL_ID_LABEL or BATTLETAG_LABEL, a product name that stays English, lua:123)
@@ -104,6 +111,9 @@ local PASS_THROUGH = {
   -- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:897–925]
   CONFIRM_DESTROY_COMMUNITY = { line = { "CONFIRM_DESTROY_COMMUNITY_UNPROMPTED",
     "CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED" }, after = {} },
+  -- a recipe form's replace question: text "", its OnShow writes the line around the reagent's name
+  -- [verified: blizzard_professionstemplates/blizzard_professionsrecipeschematicform.lua:3–21]
+  PROFESSIONS_RECRAFT_REPLACE_OPTIONAL_REAGENT = { line = { "PROFESSIONS_RECRAFTING_REPLACE_OPTIONAL" }, after = {} },
 }
 
 -- The dialogs whose OnShow writes the SubText with another line than the definition's, so the key is one of a few.
@@ -134,7 +144,11 @@ local CONFIRM_ONLY = { only = { "DIALOG_CONFIRMATION_PROMPT_MKB", "DIALOG_CONFIR
 local BUTTON1_TIP = { only = { "SHARD_TRANSFER_COMBAT" } }
 
 local CANDIDATES = { show = { "StaticPopup_Show" }, update = { "StaticPopup_OnUpdate" },
-  dialogs = { "StaticPopupDialogs" }, special = { "StaticPopupSpecial_Show" } }
+  dialogs = { "StaticPopupDialogs" }, special = { "StaticPopupSpecial_Show" },
+  -- the client's plain message box: SetBasicMessageDialogText writes its text and shows it
+  -- (blizzard_sharedxml/sharedbasiccontrols.lua:141-146); its one button reads OKAY
+  basic = { "BasicMessageDialog" },
+  addFriendInit = { "AddFriendEntryFrame_Init" }, addFriendAccept = { "AddFriendEntryFrameAcceptButton" } }
 
 local widgetKey = WFJ.Labels.keyer("popup.") -- one record per dialog widget (the dialogs are pooled)
 
@@ -311,9 +325,41 @@ local function findDialog(which, data)
   return found
 end
 
+-- The dialogs a member's note is typed into (gamedialogdefs.lua:1788–2011). The dialog frames, and so their edit
+-- boxes, are shared by every dialog type: the box wears the bundled face only while one of these shows it, and has
+-- its own font back for any other dialog and when the dialog hides. Its font only; what is typed is the player's.
+local NOTE_DIALOGS = { SET_GUILDPLAYERNOTE = true, SET_GUILDOFFICERNOTE = true, SET_GUILD_COMMUNITIY_NOTE = true,
+  SET_COMMUNITY_MEMBER_NOTE = true }
+local noteHooked = setmetatable({}, { __mode = "k" })
+
+local function editBoxOf(dialog)
+  local box = type(dialog.GetEditBox) == "function" and dialog:GetEditBox() or dialog.EditBox or dialog.editBox
+  return type(box) == "table" and box or nil
+end
+
+-- → true when the dialog's box wears the bundled face
+function Popups.dressNote(which, dialog)
+  local box = type(dialog) == "table" and editBoxOf(dialog) or nil
+  if not box then return false end
+  if not NOTE_DIALOGS[which] then
+    WFJ.Font.restore(box)
+    return false
+  end
+  if not noteHooked[dialog] and type(dialog.HookScript) == "function" then
+    noteHooked[dialog] = true
+    dialog:HookScript("OnHide", function(self)
+      local shown = editBoxOf(self)
+      if shown then WFJ.Font.restore(shown) end
+    end)
+  end
+  return WFJ.Font.bundle(box) ~= nil
+end
+
 -- hooksecurefunc target (StaticPopup_Show): (which, text_arg1, text_arg2, data, …). → words found
 function Popups.onShowCall(which, _, _, data)
-  return Popups.onShow(findDialog(which, data))
+  local dialog = findDialog(which, data)
+  Popups.dressNote(which, dialog)
+  return Popups.onShow(dialog)
 end
 
 -- What StaticPopup_OnUpdate left on screen last frame, per dialog: a frame where nothing changed costs one GetText
@@ -387,10 +433,13 @@ function Popups.onSpecial(frame)
   if type(frame) ~= "table" then return 0 end
   for _, name in ipairs(SPECIAL) do
     if frame == Compat.resolve(name) then
-      local writer = WRITERS[name]
-      if writer and not writerHooked[name] and type(frame[writer]) == "function" then
+      if not writerHooked[name] then
         writerHooked[name] = true
-        hooksecurefunc(frame, writer, function(self) walk(self, 0) end)
+        for _, writer in ipairs(WRITERS[name] or {}) do
+          if type(frame[writer]) == "function" then
+            hooksecurefunc(frame, writer, function(self) walk(self, 0) end)
+          end
+        end
       end
       local n = walk(frame, 0)
       WFJ.Render.updateBanner(SURFACE)
@@ -398,6 +447,23 @@ function Popups.onSpecial(frame)
     end
   end
   return 0
+end
+
+-- hooksecurefunc target (AddFriendEntryFrame_Init): the client writes the add-friend dialog's Send Request button
+-- again on every change of the name box [verified: blizzard_addfriend/addfriendtemplates.lua:188–211]. → 1 | 0
+function Popups.onAddFriendInit()
+  local button = Compat.get(SURFACE, "addFriendAccept")
+  if type(button) ~= "table" then return 0 end
+  return WFJ.Labels.show(SURFACE, widgetKey(button), button, nil, SPECIAL_ONLY)
+end
+
+-- HookScript target (BasicMessageDialog's OnShow, after the client wrote its text): its button and any line of
+-- it that is one of this surface's words. → words found
+function Popups.onBasic(frame)
+  if type(frame) ~= "table" then return 0 end
+  local n = walk(frame, 0)
+  WFJ.Render.updateBanner(SURFACE)
+  return n
 end
 
 local hooked = false
@@ -419,6 +485,13 @@ function Popups.init()
   end
   if type(Compat.get(SURFACE, "special")) == "function" then
     hooksecurefunc("StaticPopupSpecial_Show", Popups.onSpecial)
+  end
+  if type(Compat.get(SURFACE, "addFriendInit")) == "function" then
+    hooksecurefunc("AddFriendEntryFrame_Init", Popups.onAddFriendInit)
+  end
+  local basic = Compat.get(SURFACE, "basic")
+  if type(basic) == "table" and type(basic.HookScript) == "function" then
+    basic:HookScript("OnShow", Popups.onBasic)
   end
   return true
 end

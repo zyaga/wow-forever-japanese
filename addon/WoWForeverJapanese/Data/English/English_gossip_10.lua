@@ -22,6 +22,7 @@ WFJ.Data.add("english", {
   ["gossip:105f3b2889222d71"] = { text = "arms=1 laddies=3" },
   ["gossip:1066493e7224ec63"] = { text = "armaments=3 arms=2 but=8 crafting=9 empowered=22 exalted=19 exchange=18 gathered=16 knowledge=6 lack=14 make=4 manpower=13 materials=11 obtain=12 offer=25 possesses=7 recipes=20 required=5 sacred=1 your=24" },
   ["gossip:106b63ee1260a596"] = { text = "completely=9 destroy=11 dimensional=14 engineer=30 explosion=7 first=34 goblin=29 here=18 implode=21 machine=19 make=40 massive=6 need=42 never=38 particles=13 real=37 recipe=43 rip=15 send=17 survival=32 theory=1 those=12 through=16 try=41 wherever=4 work=26 you=3" },
+  ["gossip:106d20370cff8ab6"] = { text = "before=6 begin=5 career=4 chance=12 consumed=15 knowledge=14 last=11 new=3 now=10 otherwise=13 step=7 weaponsmith=1" },
   ["gossip:1077afa110cb865c"] = { text = "finest=4 hello=1 interested=7 leathers=5 side=3" },
   ["gossip:10828a333e7604cb"] = { text = "majesty=1 think=8 while=3 you=7" },
   ["gossip:10897850618475fe"] = { text = "after=11 all=3 days=5 else=2 fish=1 gong=14 ring=15 should=9 start=17 that=10 war=16 way=4" },

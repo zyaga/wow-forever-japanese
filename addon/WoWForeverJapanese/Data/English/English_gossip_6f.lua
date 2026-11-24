@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:6f9b53b47cd502a8"] = { text = "attack=2 loose=3 massive=1" },
   ["gossip:6f9d017463c27970"] = { text = "kills=1 show=5 skin=3" },
   ["gossip:6f9e2f8c6fa150db"] = { text = "bastard=7 brother=11 chieftain=4 clan=2 end=10 exist=9 find=16 himself=21 impotent=3 mountainous=13 sanctuary=15 son=1 stronghold=14 stubborn=6 that=5 there=17 weakened=18" },
+  ["gossip:6f9fde79d02cf953"] = { text = "disguises=2 hmm=1 not=5 perhaps=6 strength=4 your=3" },
   ["gossip:6fa4caee5a7f7055"] = { text = "battle=1 begins=2 seconds=3" },
   ["gossip:6fab26eb50a940c8"] = { text = "front=1 holds=2" },
   ["gossip:6fb0204f82abca49"] = { text = "enchanter=3 exceptional=2 fear=10 instructor=15 my=5 now=13 only=18 seek=12 she=17 talents=8 teacher=6 you=1 your=14" },

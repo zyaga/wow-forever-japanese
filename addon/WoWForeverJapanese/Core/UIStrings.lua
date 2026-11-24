@@ -35,6 +35,121 @@ local _, WFJ = ...
 local UIStrings = WFJ.UIStrings or {}
 WFJ.UIStrings = UIStrings
 
+local NAMED_KINDS = { name = true, skill = true, names = true, class = true, unitType = true, classes = true,
+  costs = true }
+-- Labels written "<label> <an item's name>" by the client's Lua, with no template of their own.
+UIStrings.NAME_AFTER_COLON = { ITEM_SOLD_COLON = true, ITEM_PURCHASED_COLON = true }
+
+-- A game name the client fills into a line, in its Japanese when the names resolver has one (Main sets
+-- UIStrings.name while Japanese names are on), else as written. A `skill` value may be a list ("Bows, Crossbows,
+-- Guns"): each of its names is looked up by itself. A `names` value is text with names in it (a player's level
+-- line: the level, the race, a word in brackets). A `class` value is a class's word, maybe with words the client
+-- put before it in the same slot. A `classes` value is a list of classes or of races, each looked up by itself.
+-- `players` marks a `names` value of a line the client wrote for a player.
+local function named(kind, value, players)
+  local resolve = UIStrings.name
+  if type(resolve) ~= "function" then return value end
+  if kind == "class" then
+    -- "Warrior", or what a lazy split left in the class's slot with it: the eight digits of the colour the client
+    -- writes right before it ("|c%s%s|r"), or the second word of a two-word spec ("Mastery Hunter"). The longest
+    -- run of last words that is a class's word, what stands before it kept
+    local word = UIStrings.word
+    if type(word) ~= "function" then return value end
+    local colour, rest = value:match("^(%x%x%x%x%x%x%x%x)(.+)$")
+    if not colour then colour, rest = "", value end
+    local at = 1
+    while at do
+      local ja = word(rest:sub(at))
+      if ja then return colour .. rest:sub(1, at - 1) .. ja end
+      local space = rest:find(" ", at, true)
+      at = space and space + 1 or nil
+    end
+    return value
+  end
+  if kind == "names" then
+    -- "23 Night Elf (Player)": each run of words, as a race's or a class's word only (UIStrings.word). A creature's
+    -- type on the same line ("?? Humanoid") is a dictionary word and no name, though the name list spells it too.
+    -- The word the client puts in brackets after a player's race is no race and no creature type: it shows the
+    -- name list's spelling (UIStrings.playerWord).
+    -- A race with no word of its own (one this client alone has) shows the name list's spelling, and only on a
+    -- line the client marks as a player's with that word in brackets: there the run cannot be a creature's type.
+    local word, player = UIStrings.word, UIStrings.playerWord
+    if type(word) ~= "function" then return value end
+    if not players and type(player) == "function" then
+      local bracket = value:match("%((%a[%a ]*)%)$")
+      players = bracket ~= nil and player(bracket) ~= nil
+    end
+    return (value:gsub("%a[%a ]*%a", function(run)
+      return word(run) or (type(player) == "function" and player(run)) or (players and resolve(run)) or nil
+    end))
+  end
+  if kind == "unitType" then
+    local player = UIStrings.playerWord
+    return type(player) == "function" and player(value) or value
+  end
+  if kind == "costs" then
+    -- a merchant's cost list (" |T…|t 2 Honor Points, 3 |Hitem…|h[Linen Cloth]|h", merchantframe.lua:661–671):
+    -- each part's icon and count as written, its name or its link's label in Japanese
+    local out = {}
+    for part in (value .. ", "):gmatch("(.-), ") do
+      local lead, name = part:match("^(%s*|T[^|]*|t%s*%d+ )(.+)$")
+      if not lead then lead, name = part:match("^(%s*%d+ )(.+)$") end
+      out[#out + 1] = lead and (lead .. (resolve(name) or name)) or part
+    end
+    return table.concat(out, ", ")
+  end
+  if kind ~= "skill" and kind ~= "classes" then return resolve(value) or value end
+  local out = {}
+  for part in (value .. ", "):gmatch("(.-), ") do out[#out + 1] = resolve(part) or part end
+  return table.concat(out, ", ")
+end
+
+-- A list of game names after a label, each maybe with a count after it ("Deathweed (5), Crystal Vial"): every name
+-- in its Japanese, every count as written. A list with a part that has no Japanese stays whole as written, as a
+-- widget's list of names does (Core/Names list): a list is never shown half in each language.
+local function namedList(value)
+  local resolve = UIStrings.name
+  if type(resolve) ~= "function" then return value end
+  local out = {}
+  for part in (value .. ", "):gmatch("(.-), ") do
+    -- the client colours an item the character lacks: the colour code and its end stay where they are
+    local open, rest = part:match("^(|c%x%x%x%x%x%x%x%x)(.*)$")
+    local body, close = (rest or part):match("^(.-)(|r)$")
+    body = body or rest or part
+    local name, count = body:match("^(.-)( %(%d+%))$")
+    local ja = resolve(name or body)
+    if not ja then return value end
+    out[#out + 1] = (open or "") .. ja .. (count or "") .. (close or "")
+  end
+  if #out == 0 then return value end
+  return table.concat(out, ", ")
+end
+
+-- A level line's spec and class slots ("|c%s%s %s|r"). The lazy split ends the spec at its first space, so a
+-- two-word spec's second word arrives in the class's slot, and the colour's eight digits may arrive in front of the
+-- spec. A spec is a talent tree's name: it shows the Japanese the talent window's tree header shows, and a spec with
+-- none stays as written. A race in the same place ("Level %d %s %s" on a guild member's tooltip) is read the same
+-- way: the name resolver gives a race the word prose uses, or the name list's spelling for one with no such word.
+-- → the spec slot with the spec whole and the class slot with the class's word alone | nil
+-- when names are off or the class slot ends in no class's word
+local function specAndClass(spec, class)
+  local word, resolve = UIStrings.word, UIStrings.name
+  if type(word) ~= "function" then return nil end
+  local at = 1
+  while at do
+    local ja = word(class:sub(at))
+    if ja then
+      local colour, name = spec:match("^(%x%x%x%x%x%x%x%x)(.+)$")
+      if not colour then colour, name = "", spec end
+      if at > 1 then name = name .. " " .. class:sub(1, at - 2) end
+      return colour .. (type(resolve) == "function" and resolve(name) or name), ja
+    end
+    local space = class:find(" ", at, true)
+    at = space and space + 1 or nil
+  end
+  return nil
+end
+
 -- Key families with no client string: the live line is matched by its fingerprint (h1). → bool
 local FINGERPRINT_PREFIXES = { "^ItemSubClass:", "^SpellItemEnchantment:", "^SpellSubtext:",
   -- ADR-042: the client-table text families (pipeline io/wago.TEXT_FAMILIES)
@@ -227,15 +342,22 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   -- shown in Japanese, the delimiter kept; `entryOrText`: an entry's Japanese when it is one, else as written
   entryList = "(.-)", entryOrText = "(.-)",
   skill = "(%a[%a' ,%-]-)", entry = "(.-)", verbatim = "(.-)",
+  classes = "([^%.]-)", -- a list of classes or races: each one's word while names are on (UIStrings.name)
   percent = "([%+%-]?%d[%d%.,]*%%)", -- a signed or plain percentage, shown verbatim
   signed = "([%+%-]%d[%d,]*)", -- a signed count ("+25" honor, rating change), shown verbatim
   hex = "(%x%x%x%x%x%x%x%x)", -- a colour's eight hex digits after a bare `|c` (the dual-wield comparison), kept
   modifiers = "([%u%-]+)", -- modifier key names joined by "-" ("SHIFT-ALT"), key names kept as written
   -- ADR-042: a client-table word of ONE family, shown in Japanese when it is that family's row, else as
   -- written (UIStrings.FAMILY_KINDS), never any other entry, so a class, spec or pet-family name stays English
-  creatureType = "([^%.]-)", holidayDescription = "(.-)", customizationChoice = "(.-)",
+  creatureType = "([^%.]-)", unitType = "([^%.]-)", holidayDescription = "(.-)", customizationChoice = "(.-)",
   customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)", petLoyalty = "(.-)",
-  petFoodList = "([^%.]-)", questTitle = "(.-)" }
+  petFoodList = "([^%.]-)", questTitle = "(.-)",
+  -- a game name (a place, a faction, an item's link): its Japanese while names are on (UIStrings.name, set by
+  -- Main), else as written
+  name = "(.-)", names = "([^%.]-)", costs = "(.-)",
+  class = "([^%.]-)", -- a class's word in a level line: its Japanese while names are on (UIStrings.word)
+  spec = "([^%.]-)", -- the spec in front of that class: a talent tree's name (UIStrings.name)
+  range = "(%d[%d%.,%-]*)" } -- a spell's range: one distance ("5.5", "1,000") or its two ends ("8-30")
 -- a template with more `|4` groups is not indexed (counted `unsupported`). 4 for TIME_DAYHOURMINUTESECOND
 -- (the /played duration, the only listed key with 4): the chat line holds its raw form, which is always matched
 local MAX_PLURAL_GROUPS = 4
@@ -289,10 +411,17 @@ do
       "PROFESSIONS_TRACK_RECIPE", "PROFESSIONS_INSUFFICIENT_REAGENTS", "PROFESSIONS_MISSING_REQUIREMENT",
       "PROFESSIONS_RECIPE_COOLDOWN", "PROFESSIONS_ORDERS_NOT_ENOUGH_REAGENTS", "TRANSMOG_SITUATIONS_NO_VALID_OPTIONS",
       "CLICK_BINDING_MACRO_TITLE",
+      -- the group finder's playstyle dropdown with nothing chosen: the prompt in the disabled colour
+      -- (blizzard_lfgvanilla_listing.lua:921–923)
+      "GROUP_FINDER_PLAYSTYLE_REQUIRED",
+      -- the guild window's channel dropdown: a channel's name in its chat colour (communitiesstreams.lua:10–12)
+      "GUILD", "OFFICER",
       -- the auction house quality filter's entries, each in its quality colour
       "ITEM_QUALITY0_DESC", "ITEM_QUALITY1_DESC", "ITEM_QUALITY2_DESC", "ITEM_QUALITY3_DESC", "ITEM_QUALITY4_DESC",
       "ITEM_QUALITY5_DESC" },
-    icon = { "DEATH_RECAP_AVOIDABLE_SPELL", "DEATH_RECAP_DEADLY_SPELL" },
+    -- the social window's status menu writes the icon and the word with no space between them
+    -- (socialuitemplates.lua:205–217)
+    icon = { "DEATH_RECAP_AVOIDABLE_SPELL", "DEATH_RECAP_DEADLY_SPELL", "GUILD_ONLINE_LABEL" },
     colonPrefix = { "QUICK_JOIN_TOOLTIP_AVAILABLE_ROLES", "COOLDOWN_REMAINING", "TIME_REMAINING" },
     colon = { "VIDEO_OPTIONS_RECOMMENDED" },
     paragraphs = { "OPTION_TOOLTIP_DISABLE_CHAT", "OPTION_TOOLTIP_DISABLE_CHAT_ACCOUNT_MUTE",
@@ -337,9 +466,9 @@ UIStrings.pluralForms = pluralForms
 
 -- An anchored Lua pattern for a template, the capture → argument index order, the number of literal bytes, and the
 -- longest literal word (a plain-find prefilter).
-local function compile(template, key)
+local function compile(template, key, kinds)
   local parts = parse(template)
-  local kinds = argKinds(key) or {}
+  kinds = kinds or argKinds(key) or {}
   local pat, order, literal, word = { "^" }, {}, 0, ""
   for _, p in ipairs(parts) do
     if p.lit then
@@ -356,6 +485,12 @@ local function compile(template, key)
   end
   pat[#pat + 1] = "$"
   return table.concat(pat), order, literal, word
+end
+
+-- The pattern of a template no key is listed for, as a chat line would fill it: every `%s` any text, as a chat
+-- key's is. → pattern, order, literal bytes, longest literal word
+function UIStrings.chatPattern(template)
+  return compile(template, nil, ALL_TEXT)
 end
 
 local Index = {}
@@ -483,10 +618,12 @@ end
 
 -- The argument kinds that hold free text (a name, a title, a sentence): a template with one of them is no `entry`
 -- unless the enclosing key opts in (ENTRY_TEXT).
-local TEXT_KINDS = { text = true, words = true, skill = true, entry = true, entryOrText = true, entryList = true,
-  verbatim = true, creatureType = true, holidayDescription = true, customizationChoice = true,
+local TEXT_KINDS = { text = true, words = true, skill = true, names = true, class = true, spec = true,
+  classes = true,
+  entry = true, entryOrText = true, entryList = true,
+  verbatim = true, creatureType = true, unitType = true, holidayDescription = true, customizationChoice = true,
   customizationSource = true, restState = true, itemSubClassMask = true, petLoyalty = true,
-  petFoodList = true, questTitle = true }
+  petFoodList = true, questTitle = true, name = true }
   -- a family argument is free text too
 -- The enclosing keys whose `entry` argument may itself be a template that carries text (none yet): every other
 -- `entry` is an exact entry or a template whose arguments are numbers, times, percentages or dictionary words, so
@@ -569,7 +706,12 @@ function Index:fillArg(v)
     end
     return table.concat(out)
   end
-  local body = self:fill(self.rows[v.entry][1], v.args)
+  -- an entry inside a line is shipped text like the line around it: the names in it follow the names choice
+  -- (UIStrings.inText, set by Main), before its own values go in
+  local ja = self.rows[v.entry][1]
+  local inText = UIStrings.inText
+  if type(inText) == "function" then ja = inText(ja) end
+  local body = self:fill(ja, v.args)
   if body == nil then return nil end
   return (v.open or "") .. body .. (v.close or "")
 end
@@ -591,12 +733,32 @@ function Index:voiceParts(text)
   return { form = "seq", parts = parts }
 end
 
+-- Whether the rest of a prefix line under `key` is a list of game names: the key, or any key sharing its English.
+function Index:listAfter(key)
+  for _, k in ipairs(self.synonyms[key] or { key }) do
+    if UIStrings.LIST_AFTER[k] then return true end
+  end
+  return nil
+end
+
+-- What follows "Requires" in a `skill` slot, part by part: a weapon type the dictionary holds shows that word's
+-- Japanese whatever the names choice; any other part is a game name, shown in its Japanese while names are on.
+function Index:required(value)
+  local out = {}
+  for part in (value .. ", "):gmatch("(.-), ") do
+    local hit
+    for _, family in ipairs(UIStrings.SKILL_FAMILIES) do hit = hit or self:familyArg(part, family) end
+    out[#out + 1] = hit and self.rows[hit.entry][1] or named("name", part)
+  end
+  return table.concat(out, ", ")
+end
+
 function Index:matchUncached(text)
   local key, cargs = self:core(text)
   if key then return key, cargs end
   for _, p in ipairs(self.prefixes) do -- "Reagents: Linen Cloth"
     if #text > #p.en and text:sub(1, #p.en) == p.en then
-      return p.key, { form = "prefix", rest = text:sub(#p.en + 1) }
+      return p.key, { form = "prefix", rest = text:sub(#p.en + 1), names = self:listAfter(p.key) }
     end
   end
   local icon, after = text:match("^(|[TA][^|]*|[ta] ?)(.+)$") -- "|T…|t Available", a role radio
@@ -620,7 +782,9 @@ function Index:matchUncached(text)
     if restKey and self:has(restKey, "colonPrefixEntry") then
       return key, { form = "colonPrefix", rest = rest, restKey = restKey }
     end
-    return key, { form = "colonPrefix", rest = rest }
+    -- `restName`: the rest is an item's name (the mail invoice's "Item Sold: Linen Cloth (20)",
+    -- mailframe.lua:797–799). The other labels' rest is a player's name or a duration and stays.
+    return key, { form = "colonPrefix", rest = rest, restName = UIStrings.NAME_AFTER_COLON[key] }
   end
   if key and self:has(key, "list") then -- "Requires: Level |cffffffff5|r, First Aid (|cffffffff50|r)"
     local items = {}
@@ -1115,7 +1279,11 @@ function Index:duration(value, spellOnly)
     local k, a = self:core(v)
     if not k then return nil end
     for _, syn in ipairs(self.synonyms[k] or { k }) do
-      if set[syn] then return self:fill(self.rows[k][1], a) end
+      if set[syn] then
+        -- the words of the line the duration is written with go on the line it is filled into (Main sets this)
+        if type(UIStrings.filledKey) == "function" then UIStrings.filledKey(k) end
+        return self:fill(self.rows[k][1], a)
+      end
     end
     return nil
   end
@@ -1156,17 +1324,28 @@ function Index:fill(ja, args)
     if tip == nil then return nil end
     return out .. " " .. args.tip.open .. tip .. args.tip.close
   end
-  if args.form == "prefix" then return ja .. args.rest end
+  if args.form == "prefix" then return ja .. (args.names and namedList(args.rest) or args.rest) end
   if args.form == "colon" then return (args.lead or "") .. ja .. ": " .. args.rest end
   if args.form == "number" then return ja .. " " .. args.rest end
   if args.form == "bareColon" then return ja .. ":" end
   if args.form == "colonPrefix" then
-    return ja .. " " .. (args.restKey and self.rows[args.restKey][1] or args.rest)
+    local rest = args.rest
+    if args.restKey then
+      rest = self.rows[args.restKey][1]
+    elseif args.restName then -- an item's name, with whatever the client wrote in brackets after it kept
+      local name, tail = rest:match("^(.-)(%s+%(.*%))$")
+      rest = named("name", name or rest) .. (tail or "")
+    end
+    return ja .. " " .. rest
   end
-  if args.form == "seq" then -- parts in order: text kept as written, { key, args[, open, close] } filled
+  -- parts in order: text kept as written, { key, args[, open, close] } filled, { name = a game name } in its
+  -- Japanese while names are
+  if args.form == "seq" then
     local out = {}
     for i, part in ipairs(args.parts) do
-      if type(part) == "table" then
+      if type(part) == "table" and part.name ~= nil then
+        out[i] = named("name", part.name)
+      elseif type(part) == "table" then
         out[i] = self:fillArg({ entry = part.key, args = part.args, open = part.open, close = part.close })
         if out[i] == nil then return nil end
       else
@@ -1218,15 +1397,33 @@ function Index:fill(ja, args)
   end
   local out = {}
   if args.bare then ja = stripColour(ja) end -- the live line had no colour: neither has its Japanese
+  local kinds = args.key and argKinds(args.key)
+  -- a spec and the class after it are read together: the split between their two slots is not theirs
+  local paired = {}
+  for i, kind in pairs(kinds or {}) do
+    if kind == "spec" and kinds[i + 1] == "class" and type(args[i]) == "string" and type(args[i + 1]) == "string" then
+      local spec, class = specAndClass(args[i], args[i + 1])
+      if spec then paired[i], paired[i + 1] = spec, class end
+    end
+  end
+  -- the word in brackets says whose line it is: a race slot beside the client's word for a player is a player's
+  local players = false
+  for i, kind in pairs(kinds or {}) do
+    local player = UIStrings.playerWord
+    if kind == "unitType" and type(args[i]) == "string" and type(player) == "function" and player(args[i]) then
+      players = true
+    end
+  end
   for _, p in ipairs(parse(ja)) do
     if p.lit then
       out[#out + 1] = p.lit
     else
       local v = args[p.arg]
       if v == nil then return nil end -- the Japanese asks for an argument the line did not have: fail closed
-      local kinds = args.key and argKinds(args.key)
       local kind = kinds and kinds[p.arg]
-      if kind == "word" or kind == "words" or kind == "standing" then
+      if paired[p.arg] then
+        v = paired[p.arg]
+      elseif kind == "word" or kind == "words" or kind == "standing" then
         v = self:nested(v)
       elseif (kind == "entry" or kind == "entryOrText" or kind == "entryList" or UIStrings.FAMILY_KINDS[kind]
           or UIStrings.FAMILY_LIST_KINDS[kind]) and type(v) == "table" then
@@ -1234,6 +1431,11 @@ function Index:fill(ja, args)
         if v == nil then return nil end
       elseif kind == "time" then
         v = self:duration(v) or v
+      elseif kind == "skill" and type(v) == "string" then
+        v = self:required(v)
+      elseif NAMED_KINDS[kind] and type(v) == "string" then
+        -- a game name, looked up when the line is drawn: a line already on screen follows the names choice
+        v = named(kind, v, players)
       end
       out[#out + 1] = v
     end
@@ -1252,6 +1454,7 @@ function UIStrings.build(deps)
   local rows = deps.rows or {}
   local index = setmetatable({ rows = rows, exact = {}, templates = {}, prefixes = {}, byHash = {}, hashCount = 0,
     memo = {}, memoCount = 0, durations = {}, spellDurations = {}, synonyms = {}, own = {}, templateKeys = {},
+    spellDurationWords = {},
     bySlots = {}, byNumbers = {}, byRestricted = {}, byTemplate = {},
     hash = deps.hash,
     counts = { shipped = 0, indexed = 0, hashed = 0, mismatched = 0, ambiguous = 0, unresolved = 0, unsupported = 0,
@@ -1403,7 +1606,10 @@ function UIStrings.build(deps)
   end
   admit(byText, function(en, key)
     index.exact[en] = key
-    if en:sub(-2) == ": " then index.prefixes[#index.prefixes + 1] = { en = en, key = key } end -- "Reagents: "
+    -- "Tools: ", and "Reagents: |n": the client's line break after the label, which the row keeps as written
+    if en:sub(-2) == ": " or en:sub(-4) == ": |n" then
+      index.prefixes[#index.prefixes + 1] = { en = en, key = key }
+    end
   end)
   -- Fingerprint entries: one per h1; an h1 an English entry already answers with other Japanese is ambiguous.
   local englishJa, englishKey = {}, {}
@@ -1492,6 +1698,12 @@ function UIStrings.build(deps)
     if hasForm(t.key, "voiceParts") then index.voiceKey = t.key end
   end
   for _, k in ipairs(UIStrings.SPELL_DURATIONS) do index.spellDurations[k] = true end
+  -- the worded durations this client prints and the dictionary has Japanese for: { en, ja }, for `Align`'s renderer
+  for _, k in ipairs(UIStrings.SPELL_DURATION_WORDS or {}) do
+    local en = deps.english(k)
+    local key = type(en) == "string" and en ~= "" and index:exactKey(en) or nil
+    if key then index.spellDurationWords[#index.spellDurationWords + 1] = { en = en, ja = rows[key][1] } end
+  end
   for _, list in pairs(index.problems) do table.sort(list) end
   return index
 end

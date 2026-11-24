@@ -783,7 +783,6 @@ WFJ.Data.add("gloss", {
   [82783] = "捧げる\tささげる\tto offer",
   [82784] = "捧げる\tささげる\twe give",
   [82785] = "捧げる\tささげる\twill have (you) offer",
-  [82786] = "捧げる\tささげる\twish to give",
   [82787] = "捧げる\tささげる\tyou may leave the sacrifice",
   [82788] = "捧げ物\tささげもの\tofferin'",
   [82789] = "捧げ物\tささげもの\toffering",

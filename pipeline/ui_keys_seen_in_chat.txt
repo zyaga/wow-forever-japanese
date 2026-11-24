@@ -1,0 +1,11 @@
+# Client interface strings the game wrote into chat while the addon had no Japanese for them, by name.
+# Players' English Collectors found them in play (the collector keeps the string's name, never the chat line);
+# `make import-collector` and `make collector-intake` add names here. One name per line, sorted.
+# Each name is either listed in pipeline/ui_keys.txt and translated (a chat line also needs its key in
+# UIStrings.CHAT_FAMILIES), or given a line with its reason in pipeline/ui_exclusions.txt.
+# tests/python/test_ui_keys_seen_in_chat.py fails while a name here is in neither.
+FEEDPET_LOG_THIRDPERSON
+GUILD_NEWS_FORMAT2
+IDLE_MESSAGE
+LOOT_ROLL_STARTED
+SPELLDISMISSPETOTHER

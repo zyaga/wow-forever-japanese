@@ -249,7 +249,7 @@ local function showField(pane, field, en, id)
     -- live: the API English, for the stale marker's live check (ADR-019); a quest gets one missing marker: on its
     -- title, or on its description while titles stay the client's English (the title is then never marked)
     WFJ.Render.show(pane.info, field, shown, en, "quests", "quest." .. field, id,
-      { live = en, compact = field ~= (WFJ.QUEST_TITLES_JAPANESE and "title" or "description") })
+      { live = en, compact = field ~= (WFJ.State.names and "title" or "description") })
     return 1
   end
   WFJ.SurfaceState.drop(pane.info, field)
@@ -297,6 +297,54 @@ function QuestMap.showPane(paneName)
   return n
 end
 
+-- The item names on the details pane's reward buttons (surface "questmap.items", area "items"):
+-- MapQuestInfoRewardsFrame.RewardButtons, made on demand by QuestInfo_GetRewardButton (mainline/questinfo.lua:
+-- 446–454). An item's Name is written in the item-load callback of QuestInfo_ShowRewardAsItemCommon (:538–556), which
+-- can run after the redraw returned, so each button's Name is post-hooked too (once). While names are on each shows
+-- the item's Japanese (UI/NameLabels); a currency's Name (:584) stays English unless the name list has it.
+-- Plain labels: SmallQuestRewardItemButtonTemplate is a plain Button (questinfo.xml:38;
+-- blizzard_itembutton/mainline/itembuttontemplate.xml:227–258, Name a fixed 92x36 FontString), and the client never
+-- reads or measures a Name: it lays the rewards out by button height (questinfo.lua:700, 723–724). The popup's
+-- buttons are QuestInfoRewardsFrame's, the quest window's own (UI/QuestFrame).
+local ITEMS = "questmap.items"
+QuestMap.ITEMS = ITEMS
+local itemKey = WFJ.Labels.keyer("item.")
+local nameHooked = setmetatable({}, { __mode = "k" })
+
+-- Post-hook of a reward button's Name:SetText. This addon's own writes echo here (the item's Japanese going on, the
+-- client's English put back) and are left; any other text is the client's.
+local function onRewardName(fs, text)
+  if not WFJ.SurfaceState.secret(text) then
+    local rec = WFJ.SurfaceState.get(ITEMS, itemKey(fs))
+    if rec and rec.fs == fs and (text == rec.en or text == WFJ.Names.item(rec.en)) then return end
+  end
+  WFJ.NameLabels.show(ITEMS, itemKey(fs), fs, "items")
+end
+
+-- The pane's reward buttons: a shown button's name, a hidden button's record dropped. → the number of names shown
+function QuestMap.showRewardNames()
+  local rewards = get("mapRewardsFrame")
+  local list = type(rewards) == "table" and rewards.RewardButtons or nil
+  if type(list) ~= "table" then return 0 end
+  local n = 0
+  for _, button in ipairs(list) do
+    local fs = type(button) == "table" and button.Name or nil
+    if type(fs) == "table" then
+      if not nameHooked[fs] and type(fs.SetText) == "function" then
+        nameHooked[fs] = true
+        hooksecurefunc(fs, "SetText", onRewardName)
+      end
+      if type(button.IsShown) == "function" and button:IsShown() then
+        n = n + WFJ.NameLabels.show(ITEMS, itemKey(fs), fs, "items")
+      else
+        WFJ.SurfaceState.drop(ITEMS, itemKey(fs))
+      end
+    end
+  end
+  WFJ.Render.updateBanner(ITEMS)
+  return n
+end
+
 -- Called by UI/QuestFrame's QuestInfo_Display hook for every quest-log template. The map's rewards call
 -- (QUEST_TEMPLATE_MAP_REWARDS into the rewards strip, :1051) writes only the rewards frame: its words are shown on the
 -- details surface, nothing forgotten. Any other parent is not ours. → the number of fields (or labels) shown
@@ -305,6 +353,7 @@ function QuestMap.onDisplay(_, parentFrame)
   if parentFrame == get("detailsContents") then return QuestMap.showPane("map") end
   if parentFrame == get("popupChild") then return QuestMap.showPane("popup") end
   if parentFrame == get("mapRewardsParent") then
+    QuestMap.showRewardNames()
     if WFJ.SurfaceState.count(SURFACE) == 0 then return 0 end -- the details write came first and found nothing
     return showLabels(SURFACE, { MAP_LABELS })
   end
@@ -330,8 +379,21 @@ end
 -- The templates an objective line may be (Forever GlobalStrings): only these, so "3/10 …" is never read as another key.
 QuestMap.OBJECTIVE_KEYS = { "QUEST_MONSTERS_KILLED", "QUEST_PLAYERS_KILLED", "QUEST_PLAYERS_KILLED_NOPROGRESS",
   "QUEST_FACTION_NEEDED", "QUEST_FACTION_NEEDED_NOPROGRESS",
+  -- a failed quest's tracker line (blizzard_questobjectivetracker.lua:355)
+  "FAILED",
   -- a finished quest's tracker line (blizzard_questobjectivetracker.lua:321-343)
   "QUEST_WATCH_QUEST_READY", "QUEST_WATCH_QUEST_COMPLETE", "QUEST_WATCH_CLICK_TO_COMPLETE" }
+
+-- An item, object or creature count ("0/8 Solid Sharpening Stone", "2 x Linen Cloth") has no words of its own, and an
+-- objective's own text has the same shape ("0/1 Tower Marked"). So a line takes the count form's Japanese only while
+-- its name has Japanese to show; any other line of that shape stays exactly as the client wrote it.
+QuestMap.COUNT_KEYS = { "QUEST_ITEMS_NEEDED", "QUEST_OBJECTS_FOUND", "QUEST_ITEMS_NEEDED_NOPROGRESS",
+  "QUEST_OBJECTS_FOUND_NOPROGRESS", "QUEST_MONSTERS_KILLED_NOPROGRESS" }
+local function namedCount(core)
+  local name = core:match("^%d+/%d+ (.+)$") or core:match("^%d+ x (.+)$")
+  local resolve = WFJ.UIStrings and WFJ.UIStrings.name
+  return name ~= nil and type(resolve) == "function" and resolve(name) ~= nil
+end
 
 -- " (Complete)", which the details pane appends to a finished objective (mainline/questinfo.lua:238): its Japanese
 -- through PARENS_TEMPLATE / COMPLETE, and the objective before it. → text before the tag, the tag's Japanese (with its
@@ -371,6 +433,7 @@ function QuestMap.objectiveJapanese(en, surface)
   end
   local key
   if ui then key, args = ui:matchOnly(core, QuestMap.OBJECTIVE_KEYS) end
+  if not key and ui and namedCount(core) then key, args = ui:matchOnly(core, QuestMap.COUNT_KEYS) end
   if key then
     return WFJ.Render.preview(surface, en, nil, "quests", "ui", key,
       { args = { form = "affix", before = "", after = tag, inner = args }, compact = true })
@@ -411,6 +474,7 @@ function QuestMap.showObjective(surface, recKey, fs, refit)
   end
   local key
   if ui then key, args = ui:matchOnly(core, QuestMap.OBJECTIVE_KEYS) end
+  if not key and ui and namedCount(core) then key, args = ui:matchOnly(core, QuestMap.COUNT_KEYS) end
   if key then
     WFJ.Render.show(surface, recKey, fs, en, "quests", "ui", key,
       { refit = refit, args = { form = "affix", before = "", after = tag, inner = args }, compact = true })
@@ -682,7 +746,9 @@ function QuestMap.onListUpdate()
     end
     -- the category headers (ADR-042) (QuestLogQuests_AddStandardHeaderButton → button:SetText(info.title),
     -- mainline/questmapframe.lua:2042–2046; ListHeaderVisualTemplate's title region). A header is a zone name or a
-    -- QuestSort word ("Seasonal", "Epic"); only the QuestSort family is matched, so a zone name is never changed.
+    -- QuestSort word ("Seasonal", "Epic"); only the QuestSort family is matched, so a zone name is never read as a
+    -- dictionary word. A header that is no sort word is a place: while names are on it shows the place's Japanese
+    -- from the name list, under the same record.
     local headers = type(scroll) == "table" and scroll.headerFramePool or nil
     if type(headers) == "table" and type(headers.EnumerateActive) == "function" then
       for header in headers:EnumerateActive() do
@@ -692,7 +758,10 @@ function QuestMap.onListUpdate()
             local okT, title = pcall(header.GetTitleRegion, header)
             if okT and type(title) == "table" then fs = title end
           end
-          WFJ.Labels.show(LIST, listHeaderKey(header), fs, nil, WFJ.Labels.families("QuestSort"))
+          local key = listHeaderKey(header)
+          if WFJ.Labels.show(LIST, key, fs, nil, WFJ.Labels.families("QuestSort")) == 0 then
+            WFJ.NameLabels.show(LIST, key, fs)
+          end
         end
       end
     end
@@ -1027,7 +1096,9 @@ end
 -- (questmapframe.lua:2248–2256), each shown only when it is that quest's own English. → the number of lines shown
 function QuestMap.onTitleTooltip(_, button, questID)
   local help = WFJ.HelpTooltip
-  local n = help.walkAs(nil, { only = QuestMap.TITLE_TOOLTIP_KEYS })
+  -- the legend line under the title is the quest's tag ("Elite", "Dungeon"), a QuestTag row's name
+  -- (QuestUtil.SetQuestLegendToTooltip, questutils.lua:604-632)
+  local n = help.walkAs(nil, WFJ.Labels.familiesWith(QuestMap.TITLE_TOOLTIP_KEYS, "QuestTag"))
   local tt = Compat.get(help.SURFACE, "tooltip")
   local dash = Compat.resolve("QUEST_DASH")
   if type(tt) ~= "table" or type(tt.NumLines) ~= "function" or type(tt.GetName) ~= "function"
@@ -1064,7 +1135,9 @@ end
 
 -- ── release / init ───────────────────────────────────────────────────────────────────────────────────────────────
 
-function QuestMap.releaseDetails() return WFJ.Render.release(INFO) + WFJ.Render.release(SURFACE) end
+function QuestMap.releaseDetails()
+  return WFJ.Render.release(INFO) + WFJ.Render.release(SURFACE) + WFJ.Render.release(ITEMS)
+end
 function QuestMap.releasePopup() return WFJ.Render.release(POPUP_INFO) + WFJ.Render.release(POPUP) end
 function QuestMap.releaseList() return WFJ.Render.release(LIST) + WFJ.Render.release(LIST_LABELS) end
 function QuestMap.releaseMapTitle() return WFJ.Render.release(MAP_TITLE) end

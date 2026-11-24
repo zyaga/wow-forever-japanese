@@ -33,6 +33,7 @@ local UI = {
   CONFIRM_TALENT_WIPE_1 = { "Do you want to unlearn all of your talents?", "すべてのタレントを忘れますか？" },
   CANCEL = { "Cancel", "キャンセル" },
   ACCEPT = { "Accept", "承諾" }, DECLINE = { "Decline", "辞退" },
+  SELECT_YOUR_ROLE = { "Select Your Role", "ロールを選択" },
   -- the group voice-chat join (mainline/gamedialogdefs.lua:1567–1590): text "", its OnShow writes the line
   VOICE_CHAT_JOIN_GROUP_TEXT = { "This group is using voice chat for easier communication.",
     "このグループは連絡を取りやすくするためにボイスチャットを使っています。" },
@@ -56,6 +57,9 @@ local UI = {
   DIALOG_CONFIRMATION_PROMPT_GAMEPAD = { "Press the button sequence to confirm.", "確認のため、ボタンを順に押してください。" },
   COMMUNITIES_DELETE_CONFIRM_STRING = { "DELETE", "削除" },
   -- the community delete (mainline/gamedialogdefs.lua:897–925): text "", OnShow writes the line with the name
+  -- a recipe form's replace question (blizzard_professionsrecipeschematicform.lua:3–21): text "", OnShow's line
+  PROFESSIONS_RECRAFTING_REPLACE_OPTIONAL = { "Do you want to replace %s?\nIt will be destroyed upon Recrafting.",
+    "%sを置き換えますか？\n再製作時に破壊されます。" },
   CONFIRM_DESTROY_COMMUNITY_UNPROMPTED = { "Are you sure you want to delete the group \"%s\"? This can't be undone.",
     "グループ「%s」を削除しますか？元に戻すことはできません。" },
   CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED = {
@@ -176,6 +180,8 @@ describe("the StaticPopup dialogs on Forever", function()
           or _G.CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED
         d.Text:SetText(line:format(club.name))
       end }
+    D.PROFESSIONS_RECRAFT_REPLACE_OPTIONAL_REAGENT = { text = "", button1 = _G.ACCEPT, button2 = _G.CANCEL,
+      OnShow = function(d, data) d.Text:SetText(_G.PROFESSIONS_RECRAFTING_REPLACE_OPTIONAL:format(data.name)) end }
     D.INVITE_COMMUNITY_MEMBER = { text = "", subText = _G.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG,
       button1 = _G.ACCEPT, button2 = _G.CANCEL,
       OnShow = function(d, club)
@@ -203,6 +209,27 @@ describe("the StaticPopup dialogs on Forever", function()
     assert.is_true(WFJ.Popups.init())
   end)
   after_each(function() X.teardown(NAMES) end)
+
+  it("a note dialog's edit box wears the bundled face while it shows; any other dialog's has its own font", function()
+    local D, d = _G.StaticPopupDialogs, _G.StaticPopup1
+    D.SET_GUILDPLAYERNOTE = { text = "Set the note", button1 = _G.ACCEPT, hasEditBox = 1 }
+    d.EditBox, d.scripts = Stub.fontString(""), {}
+    function d:HookScript(name, fn) self.scripts[name] = fn end
+    local own, face = d.EditBox.font.path, WFJ.Font.PATH
+    _G.StaticPopup_Show("SET_GUILDPLAYERNOTE")
+    assert.are.equal(face, d.EditBox.font.path)
+    d.shown = false
+    d.scripts.OnHide(d)
+    assert.are.equal(own, d.EditBox.font.path)
+    _G.StaticPopup_Show("SET_GUILDPLAYERNOTE")
+    assert.are.equal(face, d.EditBox.font.path)
+    d.shown = false -- the frame taken for another dialog without its hide script having run
+    _G.StaticPopup_Show("DELETE_ITEM", "Hearthstone")
+    assert.are.equal(own, d.EditBox.font.path)
+    assert.are.equal("", d.EditBox:GetText()) -- nothing is written into the box
+    _G.StaticPopup2.shown = false
+    assert.is_false(WFJ.Popups.dressNote("SET_GUILDPLAYERNOTE", _G.StaticPopup2)) -- a dialog with no edit box
+  end)
 
   it("the remove-friend confirmation: the caller's line with the friend's name kept; Alt shows English", function()
     local d = _G.StaticPopup_Show("CONFIRM_REMOVE_BN_FRIEND",
@@ -281,6 +308,15 @@ describe("the StaticPopup dialogs on Forever", function()
     assert.are.equal("コミュニティ「Reyn」を削除しますか？元に戻すことはできません。", e.Text:GetText())
   end)
 
+  it("a recipe form's replace question: OnShow's line with the reagent's name kept, and its Accept button", function()
+    local d = _G.StaticPopup_Show("PROFESSIONS_RECRAFT_REPLACE_OPTIONAL_REAGENT", nil, nil, { name = "Heavy Stone" })
+    assert.are.equal("Heavy Stoneを置き換えますか？\n再製作時に破壊されます。", d.Text:GetText())
+    assert.are.equal("承諾", d.ButtonContainer.Buttons[1]:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("Do you want to replace Heavy Stone?\nIt will be destroyed upon Recrafting.", d.Text:GetText())
+    X.alt(WFJ, false)
+  end)
+
   it("the shard-transfer button's combat tooltip translates; its other tooltips are not read", function()
     local d = _G.StaticPopup_Show("SHARD_TRANSFER_IMMEDIATE")
     local b1 = d.ButtonContainer.Buttons[1]
@@ -297,6 +333,20 @@ describe("the StaticPopup dialogs on Forever", function()
     tt:AddLine(_G.YES)
     tt:Show()
     assert.are.equal("Yes", _G.GameTooltipTextLeft1:GetText())
+  end)
+
+  it("the role poll and the plain message box show their words; a name in the message box stays", function()
+    local function button(text) return Stub.button(nil, text) end
+    local title, accept = Stub.fontString(_G.SELECT_YOUR_ROLE), button(_G.ACCEPT)
+    _G.RolePollPopup = { GetRegions = function() return title end, GetChildren = function() return accept end }
+    _G.StaticPopupSpecial_Show = function() end
+    WFJ.Popups.onSpecial(_G.RolePollPopup)
+    assert.are.equal(UI.SELECT_YOUR_ROLE[2], title:GetText())
+    local message, okay = Stub.fontString("Some Addon"), button(_G.OKAY)
+    local box = { GetRegions = function() return message end, GetChildren = function() return okay end }
+    WFJ.Popups.onBasic(box)
+    assert.are.equal("Some Addon", message:GetText())
+    assert.are.equal(0, WFJ.Popups.onBasic(nil))
   end)
 
   it("the add-friend dialog: its info and error lines translate; the BattleTag title and a dropped key stay English",
@@ -322,6 +372,35 @@ describe("the StaticPopup dialogs on Forever", function()
       X.alt(WFJ, true)
       assert.are.equal(UI.BATTLETAG_DESCRIPTION[1], desc:GetText())
       X.alt(WFJ, false)
+    end)
+
+  -- The dialog picks its page after it is shown, and that page writes its own labels; the Send Request button is
+  -- written again on every change of the name box (blizzard_addfriend/addfriendtemplates.lua:94–99, 139–211).
+  it("the add-friend dialog: what its page writes after it is shown, and the button it writes again, translate",
+    function()
+      local label = Stub.fontString("")
+      local frame = { GetRegions = function() return label end, GetChildren = function() return end }
+      function frame.ShowEntry() label.text = _G.CHARACTER_FRIEND_LABEL end
+      _G.AddFriendFrame = frame
+      _G.StaticPopupSpecial_Show = function() end
+      WFJ.Popups.onSpecial(frame) -- the client's show: the page is not chosen yet
+      assert.are.equal("", label:GetText())
+      frame:ShowEntry()
+      assert.are.equal(UI.CHARACTER_FRIEND_LABEL[2], label:GetText())
+      X.alt(WFJ, true)
+      assert.are.equal(UI.CHARACTER_FRIEND_LABEL[1], label:GetText())
+      X.alt(WFJ, false)
+      WFJ.Popups.onSpecial(frame) -- shown again: hooked once
+      frame:ShowEntry()
+      assert.are.equal(UI.CHARACTER_FRIEND_LABEL[2], label:GetText())
+      -- the button: Compat resolved the global at init, so a fresh addon is loaded over it
+      local accept = Stub.button("AddFriendEntryFrameAcceptButton", "")
+      _G.AddFriendEntryFrame_Init = function() accept.fontString.text = _G.CANCEL end
+      finally(function() _G.AddFriendEntryFrame_Init, _G.AddFriendEntryFrameAcceptButton = nil, nil end)
+      local W = X.load("UI/Popups.lua", UI, { before = install })
+      assert.is_true(W.Popups.init())
+      _G.AddFriendEntryFrame_Init()
+      assert.are.equal(UI.CANCEL[2], accept:GetText())
     end)
 
   it("a plain dialog and its buttons translate; Alt shows the live English", function()

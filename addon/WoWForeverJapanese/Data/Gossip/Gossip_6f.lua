@@ -36,6 +36,7 @@ WFJ.Data.add("gossip", {
   ["6f9b53b47cd502a8"] = { "%sは強烈な攻撃を繰り出した。", "." },
   ["6f9d017463c27970"] = { "仕留めた獲物の皮の剥ぎ方はThuwdが教えてくれる。The DragのKodohide Leatherworkersにいるはずだ。", "." },
   ["6f9e2f8c6fa150db"] = { "Rend、Blackhandの息子：Blackrock氏族の無力な族長。あれほど頑固な野郎は他にいない。\n\nsecond Warの終わりに、Rendと弟のMaimは逃げ延び、山の要塞Blackrock Spireに避難所を求めた。そこでRendは、弱体化したBlackrock氏族の大族長を名乗ったのだ。", "." },
+  ["6f9fde79d02cf953"] = { "ふむ……変装はお前の得意分野ではないようだな。", "." },
   ["6fa4caee5a7f7055"] = { "Alterac Valleyの戦いが始まるまで30秒。", "." },
   ["6fa8166f1466a13e"] = { "Kaelsig Veldbarad, ras. Y wirsh odes barad me ko tiras ko lo ash se faergas Y gol majis nud me o mod engoth aelgestron.", "." },
   ["6fab26eb50a940c8"] = { "%sはRune of Escapeを目の前に掲げた。", "." },

@@ -26,6 +26,26 @@
 --   HookScript("OnUpdate") that runs after the client's and shows only a label whose holder is shown. The
 --   coordinates are off unless the player turns them on (CVars worldMapShowPlayerCoords / worldMapShowCursorCoords,
 --   :659–663), and the timer shows only on an outdoor-PvP map (C_PvP.GetOutdoorPvPWaitTime, :708).
+-- Names, while Japanese names are on (surface "worldmap.names", area "ui"):
+-- - The area label: the place under the mouse, drawn by AreaLabelFrameTemplate's Name. AreaLabelDataProvider makes
+--   the label on the canvas (blizzard_sharedmapdataproviders/arealabeldataprovider.lua:4–19) and is found in
+--   WorldMapFrame.dataProviders, which MapCanvasMixin:AddDataProvider keys by the provider (blizzard_mapcanvas.lua:
+--   191–193), by its Label's own fields. The label writes Name from its OnUpdate (EvaluateLabels, :194–239), so the
+--   frame's OnUpdate is post-hooked (HookScript) like the coordinates. A plain label: the frame has a fixed size
+--   (arealabeldataprovider.xml: 400 x 128), nothing reads or measures Name, and nothing protected follows. A zone
+--   shown with its level range carries a coloured suffix (:103–107): the name shows in Japanese and the range stays
+--   as the client wrote it (NameLabels.lead).
+-- - The navigation bar's map buttons stay English: NavBar_AddButton writes each name and measures it at once
+--   (blizzard_framexml/mainline/navigationbar.lua:114, 123), on every map change (WorldMapNavBarMixin:Refresh,
+--   blizzard_worldmaptemplates.lua:527–557, from WorldMapMixin:OnMapChanged → RefreshOverlayFrames, blizzard_worldmap.
+--   lua:355–357, 436–440), the pass that places the map's pins (SetPassThroughButtons, blizzard_mapcanvas/
+--   mapcanvas_dataproviderbase.lua:290, 300). A bundled font left on a button would come back tainted to that measure
+--   (docs/architecture/client-limits.md). The floor dropdown stays English for the same reason: it is an overlay frame
+--   (blizzard_worldmap.lua:307) whose Refresh runs in that pass (RefreshOverlayFrames → secureexecuterange,
+--   :436–440) and writes the floor's name through SetupMenu → GenerateMenu → UpdateToMenuSelections → UpdateText
+--   (blizzard_worldmaptemplates.lua:3–46; blizzard_menu/dropdownbutton.lua:237–261, 327; menutemplates.lua:733–759),
+--   so a hook there would run inside the pass. The window title is a dictionary word (UI/QuestMap); Forever's map
+--   shows no title of its own with the map's name.
 -- Not here: the gamepad footer prompts (FRAME_ACTION_*, blizzard_worldmap.lua:1100–1214), the help plate
 -- (WORLD_MAP_TUTORIAL1 / 4, :1305–1306; never shown: camelot hides its MainHelpPlateButton,
 -- helpplateoverrides.lua:1–3), the completed-quests HelpTip (UI/HelpTips; never shown on camelot:
@@ -40,7 +60,8 @@ WFJ.WorldMap = WorldMap
 
 local SURFACE = "worldmap"
 local STATIC = "worldmap.static"
-WorldMap.SURFACE, WorldMap.STATIC = SURFACE, STATIC
+local NAMES = "worldmap.names"
+WorldMap.SURFACE, WorldMap.STATIC, WorldMap.NAMES = SURFACE, STATIC, NAMES
 local Compat = WFJ.Compat
 
 -- The floor dropdown's and the nav buttons' text are map names; they are unnamed (overlay frames, pooled nav
@@ -53,6 +74,7 @@ local CANDIDATES = {
   filterButton = { "WorldMapFrame.WorldMapTrackingOptionsButton" },
   pinButton = { "WorldMapFrame.WorldMapTrackingPinButton" },
   overlays = { "WorldMapFrame.overlayFrames" },
+  providers = { "WorldMapFrame.dataProviders" },
 }
 
 local HOME = { only = { "WORLD" } }
@@ -123,16 +145,46 @@ local function hookOverlays()
   return n
 end
 
+-- HookScript("OnUpdate") target on the area label: the place's Japanese, a level range after it as written. → 1 | 0
+function WorldMap.onAreaLabel(label)
+  return WFJ.NameLabels.lead(NAMES, "area", type(label) == "table" and label.Name or nil)
+end
+
+-- The area label frame among the map's data providers (see the file header) → frame | nil
+local function areaLabel()
+  local providers = get("providers")
+  if type(providers) ~= "table" then return nil end
+  for provider in pairs(providers) do
+    local label = type(provider) == "table" and provider.Label or nil
+    if type(label) == "table" and type(label.labelInfoByType) == "table" and type(label.Name) == "table" then
+      return label
+    end
+  end
+  return nil
+end
+
+local labelHooked = setmetatable({}, { __mode = "k" })
+
+-- Hooks the area label's OnUpdate once. → 1 when hooked by this call, else 0
+local function hookAreaLabel()
+  local label = areaLabel()
+  if not label or labelHooked[label] or type(label.HookScript) ~= "function" then return 0 end
+  labelHooked[label] = true
+  label:HookScript("OnUpdate", WorldMap.onAreaLabel)
+  return 1
+end
+
 -- HookScript("OnShow") target on WorldMapFrame. → the number of dictionary words found
 function WorldMap.onShow()
   hookOverlays() -- a frame the first init did not find yet
+  hookAreaLabel()
   local n = WorldMap.showHome()
   WFJ.Render.updateBanner(SURFACE)
   return n
 end
 
 function WorldMap.onHide()
-  return WFJ.Render.release(SURFACE)
+  return WFJ.Render.release(SURFACE) + WFJ.Render.release(NAMES)
 end
 
 local hooked = false
@@ -151,6 +203,7 @@ function WorldMap.init()
     frame:HookScript("OnHide", WorldMap.onHide)
   end
   hookOverlays()
+  hookAreaLabel()
   WorldMap.showHome()
   return true
 end

@@ -13,6 +13,7 @@ WFJ.Data.add("english", {
   ["gossip:be52d3045239ee32"] = { text = "army=12 challenge=2 develop=7 forth=3 his=10 knees=13 new=5 now=4 plague=6 we=9 wretched=11" },
   ["gossip:be5aedfec65c08fa"] = { text = "all=3 finished=4 go=1 journal=5 translated=6" },
   ["gossip:be5b31121114a8ec"] = { text = "all=11 herb=5 here=10 hunting=7 if=19 nature=15 never=14 see=18 single=6 soon=21 without=9 wonders=16 work=12" },
+  ["gossip:be641730dd05f491"] = { text = "well=1" },
   ["gossip:be64a0204ce7e34c"] = { text = "hey=1" },
   ["gossip:be6603ff914c0661"] = { text = "knowledge=5 my=1 what=8 wisdom=2 yours=3" },
   ["gossip:be66436a0e546144"] = { text = "king=3 new=2 talking=6 what=5" },

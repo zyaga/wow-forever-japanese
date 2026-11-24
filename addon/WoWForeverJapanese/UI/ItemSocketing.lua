@@ -11,8 +11,18 @@
 --   is copied onto the frame and ItemSocketingFrame_Update calls it by method lookup, :56–58) writes each socket's
 --   BracketFrame.ColorText with _G[strupper(gemColor) .. "_GEM"] in colour-blind mode (:238–297): restricted to the
 --   colour words RED_GEM / YELLOW_GEM / BLUE_GEM / META_GEM / PRISMATIC_GEM. Sockets are keyed by widget.
--- Never touched: ItemSocketingDescription (a GameTooltip showing the item, xml:406; UI/Tooltip's), gem and item
--- names. The confirmation dialogs are StaticPopups (ADR-015 §5).
+-- The socketed item's name (surface "itemsocketing", area "items"): line 1 of ItemSocketingDescription, a GameTooltip
+--   in the window's scroll child (xml:391–417) that ItemSocketingFrame_Update fills with SetSocketedItem (lua:56–67).
+--   The scroll frame's range callback fills it again (:35–37, 69–71), so a refit of the tooltip after a write could
+--   change the range and start that callback. The name is written only from a post-hook on the global
+--   ItemSocketingFrame_Update (called by name from the window's OnEvent and from the bootstrap, :44–46;
+--   blizzard_itemsocketingui_bootstrap.lua:9), never from SetSocketedItem or the range callback, and with no refit:
+--   no write of this addon lays the tooltip out, so none can start the callback, and a fill from the callback is the
+--   client's English alone. While names are on the name shows its Japanese (UI/NameLabels). [unverified] whether a
+--   GameTooltip lays itself out again when a line's text changes with no Show; if it does, the range callback puts
+--   the English back once and stops there (an in-game look at a socketed item settles it).
+-- Never touched: the rest of ItemSocketingDescription (UI/Tooltip's), gem names. The confirmation dialogs are
+-- StaticPopups (ADR-015 §5).
 local _, WFJ = ...
 local ItemSocketing = {}
 WFJ.ItemSocketing = ItemSocketing
@@ -28,6 +38,7 @@ ItemSocketing.NEVER_TOUCH = { "ItemSocketingDescriptionTextLeft1" }
 local CANDIDATES = {
   frame = { "ItemSocketingFrame" }, container = { "ItemSocketingFrame.SocketingContainer" },
   apply = { "ItemSocketingFrame.SocketingContainer.ApplySocketsButton" },
+  itemName = { "ItemSocketingDescriptionTextLeft1" }, update = { "ItemSocketingFrame_Update" },
 }
 local TITLE = { only = { "ITEM_SOCKETING" } }
 local APPLY = { only = { "APPLY" } }
@@ -65,6 +76,13 @@ function ItemSocketing.onUpdate()
   return n
 end
 
+-- hooksecurefunc target (ItemSocketingFrame_Update): the socketed item's name, with no refit. → 1 | 0
+function ItemSocketing.showName()
+  local n = WFJ.NameLabels.show(SURFACE, "itemName", get("itemName"), "items")
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
 function ItemSocketing.release()
   return WFJ.Render.release(SURFACE)
 end
@@ -84,6 +102,7 @@ function ItemSocketing.setup()
   if type(container) == "table" and type(container.Update) == "function" then
     hooksecurefunc(container, "Update", ItemSocketing.onUpdate)
   end
+  if type(get("update")) == "function" then hooksecurefunc("ItemSocketingFrame_Update", ItemSocketing.showName) end
   if type(frame.HookScript) == "function" then
     frame:HookScript("OnShow", ItemSocketing.showStatic)
     frame:HookScript("OnHide", ItemSocketing.release)

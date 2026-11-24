@@ -44,6 +44,7 @@ WFJ.Data.add("english", {
   ["gossip:dff68b8a2714b8b4"] = { text = "and=9 assure=27 disaster=32 fashion=13 finish=8 further=10 generosity=2 helping=18 important=23 interested=20 its=15 kindness=5 me=17 more=12 most=22 need=11 now=7 realm=30 should=14 spell=33 spirit=29 task=24 thank=6 that=26 unchecked=28 unmitigated=31 unrivaled=3 use=16 your=1" },
   ["gossip:dff92f81e70a838a"] = { text = "greetings=1 young=2" },
   ["gossip:dff95d62bc69e5d2"] = { text = "fitting=6 life=2 master=4 my=3 sacrifice=5 your=1" },
+  ["gossip:dff971ea33b91653"] = { text = "i=3 magic=2 need=4 potent=1" },
   ["gossip:dffabc3924b2b31d"] = { text = "attack=1 destroy=4 unchecked=3" },
   ["gossip:dffc89ab72c3c546"] = { text = "returned=2 totems=1" },
 })

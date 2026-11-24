@@ -62,6 +62,7 @@ end
 
 KeyCapture.TOGGLE = "WFJ_TOGGLE"
 KeyCapture.REVEAL = "WFJ_REVEAL"
+KeyCapture.FREEZE = "WFJ_FREEZE_TOOLTIP" -- the frozen tooltip (UI/TooltipFreeze)
 KeyCapture.active = nil -- the capture currently listening, if any
 
 -- opts = { mode, width, onKey(value), onRefused(reason) }. → capture with :start(), :stop(), :input(raw), .active
@@ -152,11 +153,13 @@ function KeyCapture.conflict(key, ours)
 end
 
 -- The toggle binding's current key (the first of up to two), or nil.
-function KeyCapture.toggleKey()
+function KeyCapture.toggleKey() return KeyCapture.keyOf(KeyCapture.TOGGLE) end
+
+-- A binding's current key (the first of up to two), or nil.
+function KeyCapture.keyOf(action)
   local getKey = api("bindingKey")
-  if not getKey then return nil end
-  local key = getKey(KeyCapture.TOGGLE)
-  return key
+  local key = getKey and getKey(action)
+  return type(key) == "string" and key ~= "" and key or nil
 end
 
 -- A key or chord's display name ("CTRL-J", "Mouse Button 4").
@@ -242,6 +245,21 @@ function KeyCapture.setToggle(key)
   end
   save(current())
   return true
+end
+
+-- Gives `action` the key `key` as its first key, and only when nothing is in the way: the action has no key yet
+-- and the key has no action (the client answers "" for a key nothing is bound to). It never takes a key from
+-- another action. Out of combat only, with the same writers as the toggle key.
+-- → "bound" | "taken" (nothing written, and nothing to ask again) | nil (combat, or a client that cannot say: ask
+-- again later)
+function KeyCapture.offerDefault(action, key)
+  local getKey, set, save, current = writers()
+  local actionOf = api("bindingAction")
+  if not getKey or not actionOf or inCombat() ~= false then return nil end
+  if KeyCapture.keyOf(action) or (actionOf(key) or "") ~= "" then return "taken" end
+  if not set(key, action) then return "taken" end
+  save(current())
+  return "bound"
 end
 
 function KeyCapture.clearToggle()

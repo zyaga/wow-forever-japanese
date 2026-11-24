@@ -30,6 +30,7 @@ WFJ.Data.add("english", {
   ["gossip:1cc81bbfefa2146f"] = { text = "check=3 front=2 you=1" },
   ["gossip:1cd1ae3d8c60a0b7"] = { text = "alien=7 desert=5 going=10 here=9 how=6 look=3 might=13 mistake=12 terrible=11 this=1" },
   ["gossip:1cd20643e0e705a4"] = { text = "coastal=1 found=3 village=2" },
+  ["gossip:1cd5f473c31ff79d"] = { text = "shotgun=4 show=8 that=3 work=5" },
   ["gossip:1cdb8059af775f2e"] = { text = "bridge=8 built=10 bums=2 get=3 getting=3 own=9 right=1 started=5 that=7 time=6" },
   ["gossip:1ce38290b3b35b5d"] = { text = "thank=3 that=1 wonderful=2" },
   ["gossip:1cebdb1b635fbf8b"] = { text = "courtyard=1 door=2 fumbles=5 lock=4 rusty=3" },

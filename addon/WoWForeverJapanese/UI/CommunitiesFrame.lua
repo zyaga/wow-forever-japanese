@@ -24,7 +24,10 @@
 --   shared/tabs/rightsidetab.lua:12-20: tooltip + tooltip2, communitiesframe.lua:1058); the disabled
 --   buttons' GameTooltip_ShowDisabledTooltip (communitiesframe.xml:246-249, 280-283, 587-590; lua:1524-1554,
 --   1795, 1820-1828); PostingExpirationText.InfoButton (xml:139-144, lua:844-855); the calendar button
---   (communitiescalendar.lua:22-50: the event titles and the MOTD are the club's own text).
+--   (communitiescalendar.lua:22-50: the event titles and the MOTD are the club's own text); the voice chat button,
+--   VoiceChatHeadset.Button (communitiesframe.xml:458, VoiceChatHeadsetTemplate): its ShowTooltip sets itself as owner
+--   and writes one title, join / leave or the reason voice is off, and maybe a Discord note
+--   (blizzard_chatframe/mainline/voicechatheadsetbutton.lua:223-268).
 -- The communities list (CommunitiesList.ScrollBox, CommunitiesListEntryMixin:Init, communitieslist.lua:402-667): the
 --   finder / join / invitation entries write Name (the same FontString holds club names: each entry is restricted to
 --   the one key its element data names: setGuildFinder / setFindCommunity / setJoinCommunity / an invitation); a
@@ -63,6 +66,7 @@ local k = Kit.new(SURFACE, {
   ticket = { CF .. ".TicketFrame" }, messages = { CF .. ".Chat.MessageFrame" },
   chatTab = { CF .. ".ChatTab" }, rosterTab = { CF .. ".RosterTab" }, benefitsTab = { CF .. ".GuildBenefitsTab" },
   infoTab = { CF .. ".GuildInfoTab" }, playTab = { CF .. ".GuildPreferredPlaySettingsTab" },
+  voiceChat = { CF .. ".VoiceChatHeadset.Button" },
 })
 
 local ALERTS = { "GUILD_NAME_ALERT", "CLUB_FINDER_COMMUNITY_NAME_CHANGE_ALERT", "CLUB_FINDER_GUILD_POSTING_ALERT",
@@ -129,6 +133,9 @@ local TOOLTIPS = {
     "CLUB_FINDER_GUILD_POSTING_ALERT_REMOVED_DESC" } },
   { "calendar", false, { "COMMUNITIES_CALENDAR_TOOLTIP_TITLE", "COMMUNITIES_CALENDAR_EVENT_FORMAT",
     "COMMUNITIES_CALENDAR_CLICK_TO_ADD_INSTRUCTIONS" } },
+  { "voiceChat", false, { "VOICE_CHAT_JOIN", "VOICE_CHAT_LEAVE", "AGE_RESTRICTED_VOICE_CHAT_MINOR_TOOLTIP",
+    "AGE_RESTRICTED_VOICE_CHAT_UNVERIFIED_TOOLTIP", "ERR_GROUPS_VOICE_CHAT_DISABLED", "VOICECHAT_DISABLED",
+    "COMMUNITY_FEATURE_UNAVAILABLE_MUTED", "DISCORD_VOICE_TTS_STT_UNSUPPORTED" } },
 }
 
 -- The chat MessageFrame's client-written lines (communitiesChat).
@@ -205,6 +212,11 @@ function CommunitiesFrame.setup()
   for _, t in ipairs(TOOLTIPS) do k.tooltip(under(t[1], t[2]), t[3]) end
   if hooked then return false end
   hooked = true
+  -- player-written text, its font only (UI/PlayerText): the window's chat box, and a community's name and
+  -- description on an invitation (communitiesinvitationframe.lua:68, 156)
+  WFJ.PlayerText.each(WFJ.PlayerText.box, { CF .. ".ChatEditBox" })
+  WFJ.PlayerText.each(WFJ.PlayerText.follow, { CF .. ".InvitationFrame.Name", CF .. ".InvitationFrame.Description",
+    CF .. ".TicketFrame.Name", CF .. ".TicketFrame.Description" })
   local frame = k.get("frame")
   k.after(k.get("control"), "Update", CommunitiesFrame.onControl)
   k.after(frame, "SetClubFinderPostingExpirationText", CommunitiesFrame.onPosting)

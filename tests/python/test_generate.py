@@ -161,6 +161,8 @@ def test_english_only_types_leave_the_generated_addon_data_unchanged(root, tmp_p
     shutil.copytree(root / "vectors", tmp_path / "vectors")
     (tmp_path / "pipeline").mkdir()  # a branch line's variants are checked against the allowlist
     shutil.copy(root / "pipeline" / "allowlist.txt", tmp_path / "pipeline" / "allowlist.txt")
+    # the name tables leave out the words the screen keeps as written
+    shutil.copy(root / "pipeline" / "names_kept_as_written.txt", tmp_path / "pipeline" / "names_kept_as_written.txt")
     eng = Store(data, english=True)
 
     def line(id_, field, en, src):
@@ -212,14 +214,14 @@ def test_area_rows_ship_as_text_h1_status_in_their_own_shards_and_toc_slot(root,
 
 
 def test_the_committed_area_english_is_the_former_quest_area(root):
-    """The 245 quest-cache area lines live under data/english/area (field text, keyed by quest id);
+    """The 249 quest-cache area lines live under data/english/area (field text, keyed by quest id);
     no quest `area` line remains."""
     from wfj.core.hashing import key
     from wfj.core.normalize import normalize_v1
 
     english = Store(root / "data", english=True)
     area = english.load("area")
-    assert len(area) == 245 and len({ln["hash"] for ln in area}) == 229
+    assert len(area) == 249 and len({ln["hash"] for ln in area}) == 232
     assert {ln["field"] for ln in area} == {"text"}
     # a quest the latest scan did not answer keeps the English of the Forever build that last served it (English is
     # additive, ADR-050), so older Forever quest builds may stay next to the current one

@@ -16,8 +16,9 @@
 -- one of them drops our record (never restored over the client's text).
 -- The height calculator measures hidden spare buttons with the English (GossipFrameShared.lua:124–140, 244–249); the
 -- Japanese suffix is shorter, so the row does not re-layout.
--- Untouched: the title, which is the NPC name (SetGossipTitle(UnitName("npc")), GossipFrameShared.lua:287,
--- Classic/GossipFrame.lua:66–68). Release on GossipFrame's OnHide (a mixin method binding; HookScript runs after it).
+-- The title is the NPC name (SetGossipTitle(UnitName("npc")) → self:SetTitle, gossipframeshared.lua:286, 296–298):
+-- never a dictionary word; while names are on it shows the NPC's Japanese name (UI/NameLabels), after each
+-- SetTitle and each show. Release on GossipFrame's OnHide (a mixin method binding; HookScript runs after it).
 local _, WFJ = ...
 local GossipChrome = {}
 WFJ.GossipChrome = GossipChrome
@@ -28,7 +29,8 @@ local STATIC = SURFACE .. ".static"
 GossipChrome.STATIC = STATIC
 local Compat = WFJ.Compat
 
--- Widgets this module must never record: the NPC name on the title plate (ButtonFrameTemplate's $parentTitleText).
+-- Widgets this module must never read as dictionary words: the NPC name on the title plate (ButtonFrameTemplate's
+-- $parentTitleText).
 GossipChrome.NEVER_TOUCH = { "GossipFrameTitleText" }
 
 local SUFFIX_KEYS = { "TRIVIAL_QUEST_DISPLAY", "IGNORED_QUEST_DISPLAY" }
@@ -64,6 +66,11 @@ function GossipChrome.onRow(a, b, c)
   WFJ.Render.updateBanner(SURFACE)
 end
 
+-- The NPC's name on the title, in Japanese while names are on. → 1 | 0
+function GossipChrome.onTitle()
+  return WFJ.NameLabels.unit(SURFACE, "title", Compat.get(SURFACE, "title"), "npc")
+end
+
 function GossipChrome.release()
   return WFJ.Render.release(SURFACE)
 end
@@ -73,6 +80,7 @@ local hooked = false
 -- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
 function GossipChrome.init()
   Compat.declare(SURFACE, "frame", { "GossipFrame" })
+  Compat.declare(SURFACE, "title", { "GossipFrame.TitleContainer.TitleText", "GossipFrameTitleText" })
   Compat.declare(SURFACE, "scrollUtil", { "ScrollUtil" })
   Compat.declare(SURFACE, "activeQuest", { "GOSSIP_BUTTON_TYPE_ACTIVE_QUEST" })
   Compat.declare(SURFACE, "availableQuest", { "GOSSIP_BUTTON_TYPE_AVAILABLE_QUEST" })
@@ -91,6 +99,10 @@ function GossipChrome.init()
       and type(util.AddInitializedFrameCallback) == "function" then
     util.AddInitializedFrameCallback(panel.ScrollBox, GossipChrome.onRow, GossipChrome, true)
   end
-  if frame.HookScript then frame:HookScript("OnHide", GossipChrome.release) end
+  if type(frame.SetTitle) == "function" then hooksecurefunc(frame, "SetTitle", GossipChrome.onTitle) end
+  if frame.HookScript then
+    frame:HookScript("OnShow", GossipChrome.onTitle)
+    frame:HookScript("OnHide", GossipChrome.release)
+  end
   return true
 end

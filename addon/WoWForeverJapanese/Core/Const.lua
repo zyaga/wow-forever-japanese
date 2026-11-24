@@ -4,15 +4,17 @@ WFJ.ADDON = ADDON
 WFJ.VERSION = C_AddOns.GetAddOnMetadata(ADDON, "Version") or "dev"
 WFJ.NORM_VERSION = "v1"
 WFJ.SCHEMA = 1
+-- when the addon's files began to load, in milliseconds: Main keeps how long they took (the data files are most of
+-- it) in the problem log, where the window test reads it
+WFJ.LOAD_START = type(debugprofilestop) == "function" and debugprofilestop() or nil
 
 -- Translation areas (settings ids `area.<setting>` map onto these; surfaces ask State.areaEnabled(area)).
 -- "ui": Blizzard's own interface words; "books": the book / letter / plaque window.
 WFJ.AREAS = { "quests", "gossip", "items", "spells", "ui", "books" }
 
 -- A quest's title is a name: what a player searches a guide for, links in chat and says to a party member. It
--- stays the client's English, like every other name. The Japanese titles still ship and every surface still knows
--- how to show one: true brings them back (Main hands this to the policy layer as the switch of kind "quest.title").
-WFJ.QUEST_TITLES_JAPANESE = false
+-- follows the names switch (WFJ.State.names) like every other name: the client's English until the player picks
+-- Japanese names. Main hands that switch to the policy layer for kinds "quest.title" and "name".
 
 -- Marker messages: a short bilingual message, never a glyph, so it reads at a glance. A surface with a banner
 -- FontString (the quest window: the stone band under the NPC name) shows them there in MARKER_COLOR; a surface
@@ -29,15 +31,17 @@ WFJ.MARKER_INLINE_COLOR = "|cffffd100"
 -- Generated-data layout (ADR-008; twin of pipeline/wfj/emit/schema.py, parity-tested in data_spec):
 -- a row is positional: field slots, then one h1 (first 32 bits of the English hash) per field at slot+hash,
 -- then the status string (one char per field: "." trusted · "s" stale · "u" unaligned · "m" not shipped).
+-- An item or spell row may end with one count per field at slot+values: how many numbers the client prints for
+-- the English the Japanese is numbered to (Core/Align.check shows the line only while the live line has as many).
 -- The row's *key* is always the game id; slots never move without a schema bump.
 WFJ.SLOTS = {
   -- female: offset to a field's female-variant h1 (slots 12..16), only on rows with gendered English
   quest = { fields = { "title", "objectives", "description", "progress", "completion" }, hash = 5, status = 11,
     female = 11 },
-  item = { fields = { "description" }, hash = 1, status = 3 },
+  item = { fields = { "description" }, hash = 1, status = 3, values = 3 },
   -- `aura` is the buff / debuff wording of a spell, a different string from its tooltip
   -- `description` under the same id. Two fields, so the row is text,text,h1,h1,status.
-  spell = { fields = { "description", "aura" }, hash = 2, status = 5 },
+  spell = { fields = { "description", "aura" }, hash = 2, status = 5, values = 5 },
   ui = { fields = { "text" }, hash = 1, status = 3 }, -- keyed by global-string name / ItemSubClass:c:s
   -- An objective's own text, keyed by QuestObjective id; found by h1 (Core/Objectives.lua, ADR-031)
   objective = { fields = { "text" }, hash = 1, status = 3 },
@@ -50,11 +54,6 @@ for _, slots in pairs(WFJ.SLOTS) do
 end
 WFJ.STATUS = { ["."] = "trusted", s = "stale", u = "unaligned", m = "missing" }
 
--- Keybinding globals read by Bindings.xml (auto-loaded, not in the TOC).
+-- The Keybindings section the addon's bindings sit in (Bindings.xml category; auto-loaded, not in the TOC). The
+-- bindings' own names are written by UI/BindingNames, in the player's language.
 BINDING_HEADER_WFJ = "WoW Forever Japanese"
-BINDING_NAME_WFJ_TOGGLE = "Toggle translation"
-BINDING_NAME_WFJ_VOICE_PAUSE = "Voice: pause / resume"
-BINDING_NAME_WFJ_VOICE_REPLAY = "Voice: play the line again"
-BINDING_NAME_WFJ_STUDY = "Study words: open / collapse the card"
--- Hidden (Bindings.xml hidden="true"); the name explains itself if a client lists it anyway (ADR-018).
-BINDING_NAME_WFJ_REVEAL = "Hold to show the other language (set in WoW Forever Japanese settings)"

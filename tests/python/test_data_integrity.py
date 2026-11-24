@@ -257,8 +257,8 @@ def test_server_only_text_keeps_its_translation_floor(root):
 
 
 def test_gendered_quest_fields_ship_h1f_and_keyed_aliases_as_measured(root, plan_report):
-    """ADR-024: the shipped quest fields whose English has a `$G` code carry the female-variant h1: 160 rows,
-    169 fields across them; quest 8234's completion is one of them. 189 shipped gossip lines (NPC speech
+    """ADR-024: the shipped quest fields whose English has a `$G` code carry the female-variant h1: 161 rows,
+    170 fields across them; quest 8234's completion is one of them. 189 shipped gossip lines (NPC speech
     included) and 10 book pages get a gender alias; none is dropped or ambiguous. A data PR that moves these
     counts updates them knowingly."""
     from wfj.cmd import generate
@@ -270,8 +270,8 @@ def test_gendered_quest_fields_ship_h1f_and_keyed_aliases_as_measured(root, plan
     masked = generate.masked_fields(Store(data, english=True).load("quest"))  # as the real build does
     rows = lua_writer.rows("quest", _quest_lines(root), female, masked)
     gendered = [r for r in rows.values() if len(r) == 16]
-    assert len(gendered) == 160
-    assert sum(1 for r in gendered for v in r[11:] if v != "nil") == 169
+    assert len(gendered) == 161
+    assert sum(1 for r in gendered for v in r[11:] if v != "nil") == 170
     assert rows[8234][-1] == "0xf0af4ecb"  # completion h1f
     # 10 shipped book pages whose English has a `$G` code get an alias too
     assert report["aliases"] == {"gossip": 189, "book": 10}
@@ -326,17 +326,16 @@ def test_every_rejected_hand_written_line_with_english_is_accounted_for(root):
         assert type_ in ("item", "spell")
 
 
-# Every shipped quest, gossip and UI line with something to annotate (no `|`, which the reading box refuses) has
-# a current reading, and every word in it carries all five items with a meaning (docs/systems/readings.md). A
-# batch that adds or changes such a line writes its word list in the same round.
-@pytest.mark.parametrize("type_", ["quest", "gossip", "ui"])
+# Every shipped quest, gossip, UI, item and spell line with something to annotate (no `|`, which the reading box
+# refuses) has a current reading, and every word in it carries all five items with a meaning
+# (docs/systems/readings.md). A batch that adds or changes such a line writes its word list in the same round.
+# An item or spell line is read as it ships (`readings.japanese_of`).
+@pytest.mark.parametrize("type_", ["quest", "gossip", "ui", "item", "spell"])
 def test_meanings_complete(root, type_):
     every = Store(root / "data").load(type_)
-    lines = [ln for ln in every if readings.shipped(ln)]
-    owed = {
-        (ln["id"], ln["field"]) for ln in lines if readings.annotatable(ln["ja"]) and "|" not in ln["ja"]
-    }
-    japanese = readings.shipped_japanese(every)
+    english = Store(root / "data", english=True).load(type_) if type_ in readings.TOOLTIP_TYPES else ()
+    japanese = readings.japanese_of(type_, every, english)
+    owed = {k for k, ja in japanese.items() if readings.annotatable(ja) and "|" not in ja}
     current = {
         (r["id"], r["field"]): r
         for r in readings.check(type_, Store(root / "data" / "reading").load(type_), japanese)["current"]
@@ -356,7 +355,9 @@ def test_no_meaning_copies_a_whole_english_line(root):
 
     hits = []
     for type_ in sorted(readings.TYPES):
-        japanese = readings.shipped_japanese(Store(root / "data").load(type_))
+        japanese = readings.japanese_of(
+            type_, Store(root / "data").load(type_), Store(root / "data", english=True).load(type_)
+        )
         english = {(e["id"], e["field"]): e.get("en", "") for e in Store(root / "data", english=True).load(type_)}
         for rec in readings.check(type_, Store(root / "data" / "reading").load(type_), japanese)["current"]:
             key = (rec["id"], rec["field"])

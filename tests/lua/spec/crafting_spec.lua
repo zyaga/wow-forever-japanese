@@ -513,6 +513,22 @@ describe("the crafting page on the Forever client: list rows, enchant slot, help
       WFJ.Crafting.onFormInit()
     end)
   end)
+  it("a recipe opened from a chat link: the inspect window's form shows the same labels", function()
+    local reagents, track
+    setup(true, function() -- the English globals exist once the setup has run
+      reagents, track = fs(_G.PROFESSIONS_REAGENT_CONTAINER_LABEL), fs(_G.PROFESSIONS_TRACK_RECIPE)
+      _G.InspectRecipeFrame = { SchematicForm = { Reagents = { Label = reagents },
+        TrackRecipeCheckbox = { Text = track }, Init = function() end } }
+    end)
+    _G.InspectRecipeFrame.SchematicForm:Init()
+    assert.are.equal("レシピを追跡", track:GetText())
+    assert.are_not.equal(_G.PROFESSIONS_REAGENT_CONTAINER_LABEL, reagents:GetText())
+    alt(true)
+    assert.are.equal(_G.PROFESSIONS_TRACK_RECIPE, track:GetText())
+    alt(false)
+    _G.InspectRecipeFrame = nil
+  end)
+
   it("the create buttons' disabled reason, the required tools, Track Recipe, the enchant slot's replace hint"
     .. " and an enchant's output line; names kept, Alt shows English", function()
     local tools = fs("")

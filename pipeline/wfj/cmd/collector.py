@@ -4,12 +4,14 @@
   check --body-file FILE
       Reads the send in an issue body (the string the game packed, or the SavedVariables file attached when
       the string was too long to paste) and prints a markdown summary for the issue comment (the
-      collector-check workflow posts it): entries by kind, builds, addon version, rejected entries by reason.
-      It never prints the English. Exit 0 when the send reads and holds at least one valid entry, 1 when it
+      collector-check workflow posts it): entries by kind, builds, addon version, rejected entries by reason,
+      and how many interface string names it carries. It never prints the English. Exit 0 when the send reads
+      and holds at least one valid line or interface string name, 1 when it
       does not, 3 on an internal error (the workflow comments and labels only on 0 / 1). Writes nothing.
   intake (--issue N | --file FILE --number N)
       Reads the send (`gh issue view N`, or a saved issue body), refuses it unless the form's Permission box
-      is ticked, and merges it into data/english/ with the same rules as `wfj import english collector`.
+      is ticked, and merges it into data/english/ with the same rules as `wfj import english collector`
+      (interface string names go to pipeline/ui_keys_seen_in_chat.txt).
       Importing the same send again changes nothing.
 """
 
@@ -54,9 +56,10 @@ def summary(body: str, download: Callable[[str], bytes] = fetch_attachment) -> t
         )
     dump = send.dump
     kinds = Counter(en.type_ for en in dump.entries)
-    builds = sorted({en.build for en in dump.entries})
+    builds = sorted({en.build for en in dump.entries} | {u.build for u in dump.ui_keys})
+    holds = bool(dump.entries or dump.ui_keys)
     lines = [
-        "**This send reads.**" if dump.entries else "**This send holds no line that can be imported.**",
+        "**This send reads.**" if holds else "**This send holds no line that can be imported.**",
         "",
         "| | |",
         "|---|---|",
@@ -64,6 +67,8 @@ def summary(body: str, download: Callable[[str], bytes] = fetch_attachment) -> t
     ]
     for kind in sorted(kinds):
         lines.append(f"| {kind} | {kinds[kind]} |")
+    if dump.ui_keys:  # a count: the names are the game's own, but the comment stays a table of numbers
+        lines.append(f"| interface string names | {len(dump.ui_keys)} |")
     shown = ", ".join(builds[:5]) + (f" and {len(builds) - 5} more" if len(builds) > 5 else "")
     lines.append(f"| Builds | {shown or '-'} |")
     if send.addon:
@@ -73,7 +78,7 @@ def summary(body: str, download: Callable[[str], bytes] = fetch_attachment) -> t
     if dump.rejected:
         rejected = ", ".join(f"{r} {n}" for r, n in sorted(dump.rejected.items()))
         lines.append(f"| Left out | {rejected} |")
-    return bool(dump.entries), "\n".join(lines) + "\n"
+    return holds, "\n".join(lines) + "\n"
 
 
 def _safe(s: str) -> str:

@@ -4,6 +4,7 @@
 {"id": "bc1a6fd81248ccf0", "field": "text", "en": "I know just the one that you speak of $c. You must seek out Brogun Stoneshield on the Warrior's Terrace.", "hash": "bc1a6fd81248ccf0", "src": "vmangos@13b49dc"}
 {"id": "bc208cc1cecd88a5", "field": "text", "en": "%s stops.", "hash": "bc208cc1cecd88a5", "src": "vmangos@13b49dc"}
 {"id": "bc20a2fc8548276c", "field": "text", "en": "DON'T LET THIS STATUE BE MY ONLY COMPANY.  COME OUT AND PLAY!", "hash": "bc20a2fc8548276c", "src": "vmangos@13b49dc"}
+{"id": "bc27c379000a0fde", "field": "text", "en": "We are. Open a portal to the chambers above.", "hash": "bc27c379000a0fde", "src": "collector@1.60.1.71037"}
 {"id": "bc2ee1fbb7dbff09", "field": "text", "en": "It is true, $n.  The wheels of doom now turn, inevitably, toward the true return of Hakkar!", "hash": "bc2ee1fbb7dbff09", "src": "vmangos@13b49dc"}
 {"id": "bc2fdfeb847f7a36", "field": "text", "en": "SQUAWK!!!", "hash": "bc2fdfeb847f7a36", "src": "vmangos@13b49dc"}
 {"id": "bc32c0adba0a7581", "field": "text", "en": "Release the Rabid Thistle Bear for Tharnariun.", "hash": "bc32c0adba0a7581", "src": "vmangos@13b49dc"}
@@ -32,5 +33,6 @@
 {"id": "bce7e42122a0711e", "field": "text", "en": "Do you truly believe you can win against the armies of Kel'Thuzad? No army of the living, no power you could possibly bring to bear can destroy our ranks!", "hash": "bce7e42122a0711e", "src": "vmangos@13b49dc"}
 {"id": "bce8a6ccd4155a93", "field": "text", "en": "Many of the supplies the tailors need come by way of Darnassus.  It is not surprising that they all moved there to work.  If you wish to be a tailor then you best head to Darnassus.", "hash": "bce8a6ccd4155a93", "src": "vmangos@13b49dc"}
 {"id": "bcead923d02e7cf2", "field": "text", "en": "*Sigh* You're probably right, Raven. I'm going back on patrol....", "hash": "bcead923d02e7cf2", "src": "vmangos@13b49dc"}
+{"id": "bcebb22fba723035", "field": "text", "en": "If you seek travel to Auberdine in Darkshore, you have come to the right place. Our people welcome any Alliance members who wish to trade, travel, or aid others in our lands.", "hash": "bcebb22fba723035", "src": "collector@1.60.1.70938", "npcs": [276318]}
 {"id": "bcf634b387c34029", "field": "text", "en": "YOU ARE THE LOSE!", "hash": "bcf634b387c34029", "src": "vmangos@13b49dc"}
 {"id": "bcf9cb134cd64457", "field": "text", "en": "The dark void awaits you!", "hash": "bcf9cb134cd64457", "src": "vmangos@13b49dc"}

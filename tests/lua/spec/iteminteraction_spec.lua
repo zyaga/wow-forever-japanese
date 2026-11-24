@@ -57,6 +57,20 @@ C.suite(getfenv(1), {
       C.tooltip(frame.ButtonFrame.ActionButton, { en("NOT_ENOUGH_CURRENCY"):format("Honor") })
       assert.are.equal("Honorが足りません", _G.GameTooltipTextLeft1:GetText())
     end },
+    { "with names on the interaction's name on the title shows its Japanese after each SetTitle", function(frame, WFJ)
+      finally(function() WFJ.State.setNames(false) end)
+      WFJ.Data.add("name", { [WFJ.Names.key("Titan Research Archive")] = "タイタン・リサーチ・アーカイブ\tたいたん・りさーち・あーかいぶ" })
+      WFJ.State.setNames(true)
+      local title = frame.TitleContainer.TitleText
+      frame:Show()
+      frame:SetTitle("Titan Research Archive")
+      assert.are.equal("タイタン・リサーチ・アーカイブ", title:GetText())
+      C.alt(WFJ, true)
+      assert.are.equal("Titan Research Archive", title:GetText())
+      C.alt(WFJ, false)
+      frame:SetTitle("Convert") -- a title spelled like a dictionary word, with no Japanese in the name list
+      assert.are.equal("Convert", title:GetText())
+    end },
   },
   name = function(frame, WFJ)
     frame:Show()

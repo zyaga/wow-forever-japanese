@@ -281,6 +281,19 @@ local function installPlayerSpellsFrame()
   end
   PS.specGroups, PS.activeGroup = 1, 1
   talents:UpdateTabs() -- InitializeTabSystem at OnLoad (:124–134), before any addon runs
+  -- the tree headers (camelot :1–4, 82–109; ClassTalentTreeHeaderMixin:Setup :330–343): pooled, released and acquired
+  -- again on every refresh, each Name written with its tree's display name
+  PS.treeNames = { "Arms", "Fury", "Protection" }
+  local headerPool = {}
+  function talents.RefreshTreeHeaders(self)
+    self.treeHeaders = {}
+    for i, name in ipairs(PS.treeNames) do
+      local header = headerPool[i] or { Name = Stub.fontString(""), Text = Stub.fontString("0") }
+      headerPool[i] = header
+      header.Name.text = name
+      self.treeHeaders[i] = header
+    end
+  end
 end
 
 -- What UIParentLoadAddOn("Blizzard_PlayerSpells") creates. The spec then forwards ADDON_LOADED the way Main does.
@@ -352,7 +365,13 @@ local function installSkills()
   frame.SkillDetailFrame = detail
   detail.EmptyText = Stub.fontString("")
   detail.Title, detail.Description = Stub.fontString(""), Stub.fontString("")
+  detail.Subtitle = Stub.fontString("")
   detail.Content = { Layout = function() PS.layouts = PS.layouts + 1 end }
+  -- CharacterFrameSidePaneMixin:SetPaneTitle (camelot/characterframe.lua:845–849), reached by method lookup
+  function detail.SetPaneTitle(self, title, subtitle)
+    self.Title.text = title or ""
+    self.Subtitle.text = subtitle or ""
+  end
   local pools = { free = { category = {}, wrapped = {} }, active = {} }
   function pools.EnumerateActive(self)
     local i = 0
@@ -374,7 +393,7 @@ local function installSkills()
   function detail.SetEmpty(self, text) -- :951–960
     self.rowPools:ReleaseAll()
     self:LayoutRows()
-    self.Title.text = ""
+    self:SetPaneTitle(nil, nil)
     self.EmptyText.text = text or ""
     self.EmptyText:Show()
   end
@@ -390,7 +409,7 @@ local function installSkills()
     local s = PS.skill
     if not s then self:SetEmpty(G("SKILL_DETAIL_SELECT_PROMPT")); return end
     self.EmptyText:Hide()
-    self.Title.text = s.name
+    self:SetPaneTitle(s.name, nil)
     self.Description.text = s.description or ""
     self.rowPools:ReleaseAll()
     if s.weapon then

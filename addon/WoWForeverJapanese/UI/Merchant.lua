@@ -7,7 +7,8 @@
 -- Dynamic: MerchantFrame_Update calls MerchantFrame_UpdateMerchantInfo / _UpdateBuybackInfo by global name
 -- (mainline/merchantframe.lua:192–217), so post-hooks on those two globals follow every refresh:
 --   title: UpdateMerchantInfo writes MerchantFrame:SetTitle(UnitName("npc")) (a name: its record is dropped, never
---     matched), and UpdateBuybackInfo SetTitle(MERCHANT_BUYBACK) (lua:274–275, 532–533) → TitleContainer.TitleText
+--     matched as a dictionary word; while names are on it shows the NPC's Japanese name, UI/NameLabels), and
+--     UpdateBuybackInfo SetTitle(MERCHANT_BUYBACK) (lua:274–275, 532–533) → TitleContainer.TitleText
 --     (blizzard_sharedxml/portraitframe.lua:11–13), shown with `only`. A global MerchantFrameTitleText is tried first
 --     (whether the `$parent` name resolves through the unnamed TitleContainer is an in-game check).
 --   page: MerchantPageText, SetFormattedText(MERCHANT_PAGE_NUMBER, page, pages) (lua:280), a template like
@@ -69,9 +70,25 @@ end
 
 local BUYBACK_TITLE = { only = { "MERCHANT_BUYBACK" } }
 
+-- The item rows and the buyback preview: each holds an item's name, written by the two update functions
+-- (MerchantItem<i>Name:SetText(info.name) / (buybackName), MerchantBuyBackItemName:SetText(buybackName),
+-- mainline/merchantframe.lua:298, 419, 557). Never dictionary words; while names are on each shows the item's
+-- Japanese name (UI/NameLabels). An empty row is left. → the number of names shown
+function Merchant.showItemNames()
+  local n = 0
+  for i = 1, 12 do
+    n = n + WFJ.NameLabels.show(SURFACE, "item" .. i, Compat.resolve("MerchantItem" .. i .. "Name"), "items")
+  end
+  return n + WFJ.NameLabels.show(SURFACE, "buybackItem", Compat.resolve("MerchantBuyBackItemName"), "items")
+end
+
 -- hooksecurefunc target: the merchant tab was written. → the number of dictionary words found.
 function Merchant.onMerchantInfo()
   WFJ.SurfaceState.drop(SURFACE, "ui.title") -- the NPC name now: the buyback title's record goes
+  -- the NPC's name: its Japanese while names are on, under the title's own record. Shown from here and not from
+  -- a hook on SetTitle: the buyback tab writes a dictionary title through the same SetTitle
+  WFJ.NameLabels.unit(SURFACE, "ui.title", get("nameText"), "npc")
+  Merchant.showItemNames()
   return WFJ.Labels.showAll(SURFACE, { { "ui.page", get("pageText") } })
 end
 
@@ -80,6 +97,7 @@ end
 -- every SetTitle (the NPC's name never matches, so its SetTitle drops the record as onMerchantInfo does). A frame
 -- without a TitleContainer: the helper finds nothing and the title candidates are shown directly.
 function Merchant.onBuybackInfo()
+  Merchant.showItemNames()
   local n = WFJ.Labels.title(SURFACE, get("frame"), BUYBACK_TITLE, "ui.title")
   if n > 0 then
     WFJ.Render.updateBanner(SURFACE)

@@ -379,7 +379,6 @@ WFJ.Data.add("gloss", {
   [128377] = "追う\tおう\tseek (pursue)",
   [128378] = "追う\tおう\tseeking (following)",
   [128379] = "追う\tおう\tsent (him) to track",
-  [128380] = "追う\tおう\tsent along (made follow)",
   [128381] = "追う\tおう\tsent out to track (made chase)",
   [128382] = "追う\tおう\tset (them) to following",
   [128383] = "追う\tおう\tstalking (following)",

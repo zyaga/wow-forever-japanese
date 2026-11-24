@@ -40,6 +40,7 @@ UnitFrames.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
 -- Names: every unit name widget of the named frames (the compact frames' `name` is pooled and never addressed here).
+-- Never read as dictionary words; a creature's name shows its Japanese through onUnitUpdate while names are on.
 UnitFrames.NEVER_TOUCH = {
   "PlayerFrame.PlayerFrameContent.PlayerFrameContentMain.PlayerName", "PlayerName",
   "TargetFrame.TargetFrameContent.TargetFrameContentMain.Name",
@@ -64,7 +65,40 @@ local GLOBAL_HOOKS = {
   { "CompactRaidGroup_InitializeForGroup", "onGroupInit" },
   { "CompactPartyFrame_Generate", "onPartyGenerate" },
   { "UnitFrame_UpdateTooltip", "onUnitTooltip" },
+  { "UnitFrame_Update", "onUnitUpdate" },
+  { "CompactUnitFrame_UpdateName", "onCompactName" },
 }
+
+-- hooksecurefunc target (UnitFrame_Update): the one writer of a unit frame's name, self.name:SetText(GetUnitName(
+-- self.unit, isParty)) [verified: mainline/unitframe.lua:144–166], called by name from the target, focus, target-of-
+-- target, boss, pet and party frames. While names are on a creature's name shows its Japanese. UI/NameLabels keeps
+-- out a player, a unit a player controls (a pet, whose name its player gave) and a name the client hides from
+-- addons, which it does in combat inside an instance: there the client's text stays. → 1 | 0
+local nameKey = WFJ.Labels.keyer("name.")
+function UnitFrames.onUnitUpdate(frame)
+  if type(frame) ~= "table" or type(frame.name) ~= "table" or type(frame.unit) ~= "string" then return 0 end
+  return WFJ.NameLabels.unit(SURFACE, nameKey(frame.name), frame.name, frame.unit)
+end
+
+-- hooksecurefunc target (CompactUnitFrame_UpdateName): the writer of a nameplate's and a raid-style frame's name,
+-- frame.name:SetText(GetUnitName(frame.unit, …)) [verified: shared/compactunitframe.lua:826–857], called by name.
+-- A nameplate measures its name (GetLineHeight, blizzard_nameplates/blizzard_nameplateunitframe.lua:794) and
+-- anchors its clickable area to it with a restricted call (SetHitTestPoints, :600–610), so this write sits on a path
+-- docs/architecture/client-limits.md warns about [unverified in combat: nameplates appearing and being clicked in a
+-- fight with no blocked action in the problem log keeps this hook; a blocked action removes it].
+-- The same rule as onUnitUpdate, with one more guard: a nameplate the client keeps from addons (a hostile one inside
+-- an instance) is forbidden, and looking into it raises, so it is asked first and left alone. → 1 | 0
+local function isForbidden(frame)
+  return frame.IsForbidden ~= nil and frame:IsForbidden()
+end
+
+function UnitFrames.onCompactName(frame)
+  if type(frame) ~= "table" then return 0 end
+  local ok, forbidden = pcall(isForbidden, frame)
+  if not ok or forbidden then return 0 end
+  if type(frame.name) ~= "table" or type(frame.unit) ~= "string" then return 0 end
+  return WFJ.NameLabels.unit(SURFACE, nameKey(frame.name), frame.name, frame.unit)
+end
 
 local function declareAll()
   for _, name in ipairs(TARGET_STYLE) do Compat.declare(SURFACE, name, { name }) end

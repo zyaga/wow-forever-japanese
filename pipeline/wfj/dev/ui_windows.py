@@ -674,6 +674,7 @@ _OTHER_WINDOWS: dict[str, list[str]] = {
         "Blizzard_SwingTimer/Blizzard_SwingTimer.xml",
         "Blizzard_StatusTrackingBar/Mainline/HonorBar.lua",
         "Blizzard_ActionStatus/Mainline/ActionStatus.lua",
+        "Blizzard_AutoComplete/AutoComplete.lua",  # the name completion box's hint
     ],
     "inspect": [
         "Blizzard_InspectUI/Camelot/Blizzard_InspectUI.lua",
@@ -1357,5 +1358,9 @@ DYNAMIC: dict[str, list[str]] = {
         r"LEVEL_UP(_NO_LINK|_HEALTH|_HEALTH_MANA|_STAT|_SKILL_POINTS|_CHAR_POINTS)?",
         r"DURABILITYDAMAGE_DEATH",
         r"INSTANCE_RESET_[A-Z0-9_]+", r"RANDOM_ROLL_RESULT", r"ACHIEVEMENT_BROADCAST(_SELF)?",
+        # how drunk the character or a player nearby is, written by the client itself when it changes
+        r"DRUNK_MESSAGE_[A-Z0-9_]+",
+        # a duel's end, written by the client itself with the two players' names
+        r"DUEL_WINNER_(KNOCKOUT|RETREAT)",
     ],
 }

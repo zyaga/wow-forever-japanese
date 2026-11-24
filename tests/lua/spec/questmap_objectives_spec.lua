@@ -3,8 +3,9 @@ local Stub = require("tests.lua.spec.wow_stub")
 local QStub = require("tests.lua.spec.stub_questmap")
 
 -- Objective lines on the camelot tracker, the quest list and the map details. A client template
--- ("3/10 Kobold Vermin slain", QUEST_MONSTERS_KILLED) keeps the name and the counts as written; an objective's own
--- server text is found by its fingerprint (Core/Objectives) and keeps the count where the client put it.
+-- ("3/10 Kobold Vermin slain", QUEST_MONSTERS_KILLED; "0/8 Solid Sharpening Stone", QUEST_ITEMS_NEEDED) keeps the
+-- counts, and the name as written until Japanese names are on; an objective's own server text is found by its
+-- fingerprint (Core/Objectives) and keeps the count where the client put it.
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
 FILES[#FILES + 1] = "Core/Objectives.lua"
@@ -14,15 +15,18 @@ FILES[#FILES + 1] = "UI/QuestMap.lua"
 local UI = {
   QUEST_MONSTERS_KILLED = { "%2$d/%3$d %1$s slain", "%1$sを倒す: %2$d/%3$d" },
   QUEST_FACTION_NEEDED = { "%2$s / %3$s %1$s", "%1$s: %2$s / %3$s" },
+  QUEST_ITEMS_NEEDED = { "%2$d/%3$d %1$s", "%1$s: %2$d/%3$d" },
+  QUEST_ITEMS_NEEDED_NOPROGRESS = { "%2$d x %1$s", "%1$s: 必要数 %2$d" },
+  FAILED = { "Failed", "失敗" },
   FACTION_STANDING_LABEL4 = { "Neutral", "中立" }, FACTION_STANDING_LABEL5 = { "Friendly", "友好" },
   COMPLETE = { "Complete", "完了" }, PARENS_TEMPLATE = { "(%s)", "(%s)" },
   TRACKER_HEADER_QUESTS = { "Quests", "クエスト" },
   CLICK_QUEST_DETAILS = { "<Click to view Quest Details>", "<クリックでクエストの詳細を表示>" },
   QUEST_WATCH_QUEST_READY = { "Ready for turn-in", "報告可能" },
-  -- a shorter key sharing the kill line's shape: never read on an objective widget
-  SPELL_STACK = { "%2$d/%3$d %1$s", "スタック" },
   -- camelot's elite tag and the content-tracking module's client lines
   ELITE = { "Elite", "エリート" },
+  -- a quest's tag name, which the quest log's title tooltip shows under the title
+  ["QuestTag:1"] = { "Elite", "エリート" },
   CONTENT_TRACKING_RETRIEVING_INFO = { "|cffff0000Retrieving information...|r", "|cffff0000情報を取得中...|r" },
   CONTENT_TRACKING_LOCATION_UNAVAILABLE = { "|cffff0000Location unavailable|r", "|cffff0000場所が不明です|r" },
   CONTENT_TRACKING_ROUTE_UNAVAILABLE = { "|cffff0000Route unavailable|r", "|cffff0000経路が不明です|r" },
@@ -85,6 +89,37 @@ describe("UI/QuestMap: objective lines", function()
     it("a kill line keeps the mob name and both counts", function()
       local _, lines = trackerLines()
       assert.are.equal("Kobold Verminを倒す: 3/10", lines[1].Text:GetText())
+    end)
+
+    it("an item count line has no words: with names off it stays exactly as the client wrote it", function()
+      Q.quests[9].leaderboard = { { text = "0/8 Solid Sharpening Stone" }, { text = "2 x Linen Cloth" } }
+      local _, lines = trackerLines()
+      assert.are.equal("0/8 Solid Sharpening Stone", lines[1].Text:GetText())
+      assert.are.equal("2 x Linen Cloth", lines[2].Text:GetText())
+    end)
+
+    it("with Japanese names on, the mob, the item and the faction in an objective line are Japanese", function()
+      local NAMES = { ["Kobold Vermin"] = "コボルド・バーミン", ["Solid Sharpening Stone"] = "ソリッド・シャープニング・ストーン",
+        ["Darnassus"] = "ダーナサス", ["Linen Cloth"] = "リネン・クロス" }
+      WFJ.UIStrings.name = function(text) return NAMES[text] end
+      Q.quests[9].leaderboard = { { text = "3/10 Kobold Vermin slain" }, { text = "0/8 Solid Sharpening Stone" },
+        { text = "Neutral / Friendly Darnassus" }, { text = "1/4 Unknown Trinket" }, { text = "2 x Linen Cloth" },
+        { text = "0/1 Tower Marked" } }
+      local _, lines = trackerLines()
+      assert.are.equal("コボルド・バーミンを倒す: 3/10", lines[1].Text:GetText())
+      assert.are.equal("ソリッド・シャープニング・ストーン: 0/8", lines[2].Text:GetText())
+      assert.are.equal("ダーナサス: 中立 / 友好", lines[3].Text:GetText())
+      -- a name the name list has no line for, and an objective's own text of the same shape, stay as written
+      assert.are.equal("1/4 Unknown Trinket", lines[4].Text:GetText())
+      assert.are.equal("リネン・クロス: 必要数 2", lines[5].Text:GetText())
+      assert.are.equal("0/1 Tower Marked", lines[6].Text:GetText())
+      WFJ.UIStrings.name = nil
+    end)
+
+    it("a failed quest's line is Japanese", function()
+      Q.quests[9].leaderboard = { { text = "Failed" } }
+      local _, lines = trackerLines()
+      assert.are.equal("失敗", lines[1].Text:GetText())
     end)
 
     it("a faction line shows the standings in Japanese and the faction as written", function()
@@ -230,6 +265,18 @@ describe("UI/QuestMap: objective lines", function()
       assert.are.equal(QUEST.title, _G.GameTooltipTextLeft1:GetText())
       assert.are.equal("Kobold Verminを倒す: 3/10", _G.GameTooltipTextLeft2:GetText())
       assert.are.equal("<クリックでクエストの詳細を表示>", _G.GameTooltipTextLeft3:GetText())
+    end)
+
+    it("the quest's tag under the title (a QuestTag row's name, as the window test hovered it) is Japanese",
+      function()
+      local tt, button = _G.GameTooltip, CreateFrame("Button")
+      tt:SetOwner(button, "ANCHOR_RIGHT")
+      tt:AddLine(QUEST.title)
+      tt:AddLine("Elite")
+      tt:AddLine("<Click to view Quest Details>")
+      tt:Show()
+      registry.cbs["QuestMapLogTitleButton.OnEnter"](button, 9)
+      assert.are.equal("エリート", _G.GameTooltipTextLeft2:GetText())
     end)
   end)
 

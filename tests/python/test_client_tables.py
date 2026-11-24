@@ -28,7 +28,7 @@ HEADERS = {
     "Achievement": ["ID", "Description_lang", "Title_lang", "Reward_lang"],
     "Achievement_Category": ["ID", "Name_lang"],
     "SkillLineCategory": ["ID", "Name_lang"],
-    "SkillLine": ["ID", "Description_lang"],
+    "SkillLine": ["ID", "DisplayName_lang", "Description_lang"],
     "EmotesTextData": ["ID", "Text_lang"],
     "HolidayDescriptions": ["ID", "Description_lang"],
     "CurrencyTypes": ["ID", "Description_lang"],
@@ -47,6 +47,9 @@ HEADERS = {
     "UiWidgetStringSource": ["ID", "Value_lang"],
     "ItemNameDescription": ["ID", "Description_lang"],
     "TaxiNodes": ["ID", "Name_lang"],
+    "SpellShapeshiftForm": ["ID", "Name_lang"],
+    "TotemCategory": ["ID", "Name_lang"],
+    "ItemSet": ["ID", "Name_lang"],
     "CriteriaTree": ["ID", "Description_lang"],
     "RenownRewards": ["ID", "Name_lang", "Description_lang", "ToastDescription_lang"],
     "SharedString": ["ID", "String_lang"],
@@ -77,7 +80,7 @@ HEADERS = {
     "PVPStat": ["ID", "Description_lang"],
     "CreatureDisplayInfo": ["ID", "ModelID", "ExtendedDisplayInfoID", "Gender"],
     "CreatureDisplayInfoExtra": ["ID", "DisplayRaceID", "DisplaySexID"],
-    "ChrRaces": ["ID", "ClientFileString"],
+    "ChrRaces": ["ID", "ClientFileString", "Name_lang"],
 }
 
 

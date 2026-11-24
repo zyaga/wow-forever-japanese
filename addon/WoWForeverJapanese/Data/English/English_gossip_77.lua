@@ -2,9 +2,11 @@
 local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:7700dbc07ef4547b"] = { text = "challenger=2 found=3 like=4 next=1 poor=6 shoes=8 that=5 want=9" },
+  ["gossip:7702037f4070ebd5"] = { text = "eliminated=2 threat=1" },
   ["gossip:7705d302cc424b4f"] = { text = "anchored=5 before=3 casting=1 properly=4 starting=2 unravel=7 weave=6 wouldn't=8" },
   ["gossip:7705d50c2f6971f5"] = { text = "acquaintance=8 adventurers=11 ah=1 apologize=4 but=21 creatures=17 empty=23 greater=38 here=19 holds=40 know=31 looking=18 lost=12 members=36 mistake=3 mundane=35 my=2 mystical=16 only=27 pleased=9 possessed=6 realize=7 sacred=44 secret=39 seemingly=22 shrine=24 slay=14 treasure=13 truth=30 turned=26 us=41 way=20 we=29 you=5" },
   ["gossip:77088fb2462aea8f"] = { text = "best=7 care=9 regain=3 require=5 rest=1 see=10 strength=2 time=4" },
+  ["gossip:7709148885063464"] = { text = "crocs=2 look=1" },
   ["gossip:770d83a4590d7402"] = { text = "another=1 need=2" },
   ["gossip:770ea11d794aa499"] = { text = "closed=2 curtains=1 only=3 short=4 sure=9 time=5 today=7 visit=10" },
   ["gossip:7713d9c9480713a7"] = { text = "access=5 hidden=2 schematics=3 use=1" },

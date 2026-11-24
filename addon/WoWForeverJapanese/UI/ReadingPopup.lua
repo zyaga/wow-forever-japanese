@@ -45,6 +45,7 @@ local function ensure()
   frame:SetFrameStrata("TOOLTIP")
   -- verified on Forever: blizzard_menu/menu.lua:1567 calls SetClampedToScreen(true) on a frame
   frame:SetClampedToScreen(true)
+  WFJ.ReadingView.solid(frame)
   wordFs = text(frame, 16, 1, 1, 1)
   readingFs = text(frame, 13, 1, 0.82, 0)
   lemmaFs = text(frame, 12, 0.72, 0.72, 0.72)

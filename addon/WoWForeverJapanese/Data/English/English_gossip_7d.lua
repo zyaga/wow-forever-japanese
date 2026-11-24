@@ -11,6 +11,7 @@ WFJ.Data.add("english", {
   ["gossip:7d4ebaa7d3f85fb7"] = { text = "alchemy=8 but=4 cooking=6 help=13 ingredients=7 know=3 thinking=2 what=1 worry=5" },
   ["gossip:7d5aa6f7d979fb3e"] = { text = "crystal=6 curse=7 may=5 now=2 releases=9 rest=4 spirits=1 you=8" },
   ["gossip:7d63e5176f02a67a"] = { text = "fence=2 fix=5 really=4 soon=3 this=1" },
+  ["gossip:7d6b99a01bd074dd"] = { text = "destroy=1 forge=4 need=2 tell=5 weapon=3" },
   ["gossip:7d6cf33314184f19"] = { text = "death=1 go=5 left=7 me=2 nothing=6 take=3" },
   ["gossip:7d724146b967b99e"] = { text = "always=6 busy=4 coming=9 house=1 refuse=8 sort=7 sure=3 there=5" },
   ["gossip:7d74cf70b2b94d89"] = { text = "aid=3 fight=2 greetings=1 wish=5" },

@@ -31,6 +31,7 @@ WFJ.Data.add("gossip", {
   ["bbc9a7a7f1219fe0"] = { "Dun Baldar South Bunkerは誰が支配している？", "." },
   ["bbcefed8fa5e8bc6"] = { "トランスモグリファイア", "." },
   ["bbd6059af83f376d"] = { "厳しい時代には、ドルイドは周りの者にとって大切な友となりうる。Cenarion Enclaveのドルイドの誰にでも尋ねてみるといい。同じことを言うだろう。", "." },
+  ["bbf15a941c200c1f"] = { "我らの潮が……満ちていく……", "." },
   ["bbf52fbc4c8626fe"] = { "ちょっと手を貸してくれ。あの{name}に見られた。", "." },
   ["bbf8281a2bddfa7e"] = { "シュッシュッポッポ！Hallow's Endおめでとう、{name}！", "." },
   ["bbf836df93d60425"] = { "Firelordと呼ばれるRagnarosが、我が主、Prince of AirたるThunderaanを喰らわんとしたのは、Elemental Sunderingの最中のことだった。\n\n<Demitrianは頭を垂れる。その顔は怒りに歪んでいる。>\n\n奴の名を口にしてみろ、この荒れ果てた野営地をお前のはらわたで飾ってやる。黙って聞け。", "." },

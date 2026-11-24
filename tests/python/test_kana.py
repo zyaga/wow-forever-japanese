@@ -71,11 +71,12 @@ def test_every_voiced_line_has_a_current_kana_line(root):
     assert bad == [], f"{len(bad)} voiced lines without a current kana line (wfj voice kana), e.g. {bad[:5]}"
 
 
-def test_name_tables_are_generated_but_not_loaded(root):
+def test_every_name_table_is_generated_and_listed_in_the_toc(root):
     addon = root / "addon" / "WoWForeverJapanese"
-    assert any((addon / "Data" / "Names").glob("Names_*.lua"))
+    tables = sorted(p.name for p in (addon / "Data" / "Names").glob("Names_*.lua"))
+    assert tables
     toc = (addon / "WoWForeverJapanese.toc").read_text(encoding="utf-8")
-    assert "Data\\Names" not in toc
+    assert [t for t in tables if f"Data\\Names\\{t}" not in toc] == []
 
 
 def test_a_name_with_digits_and_a_count_glued_to_a_name():

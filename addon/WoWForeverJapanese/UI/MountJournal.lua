@@ -17,15 +17,34 @@
 --     (lua:533, 540): the same FontString, hence `only`.
 -- Pooled list rows (MountListButtonTemplate, xml:80–190; ScrollBox initializer lua:143–146), walked from the
 -- ScrollBox's initialized-frame callback, keyed by widget: .new NEW_CAPS, .SteadyFlightLabel
--- MOUNT_JOURNAL_STEADY_FLIGHT_ONLY. A row's .name is a mount name and is never read.
+-- MOUNT_JOURNAL_STEADY_FLIGHT_ONLY. A row's .name is a mount's name (MountJournal_InitMountButton, lua:258–262):
+-- never a dictionary word; while names are on it shows the name's Japanese (UI/NameLabels) after the row's
+-- initializer. A row is a plain Button (xml:80): its click selects the mount or opens its menu and its drag
+-- button picks the mount up by the row's index (lua:865–905), so nothing on the way to a summon reads the label.
+-- The initializer counts the name's lines only to nudge it beside the steady-flight note (lua:268–275), before
+-- this write.
 -- Tooltips (help-tooltip owners, each restricted to its keys):
---   MountButton: SetText(self:GetText()) + MOUNT_UNWRAP_TOOLTIP / MOUNT_SUMMON_TOOLTIP (lua:842–861); the usability
---     error line is the server's;
+--   MountButton: SetText(self:GetText()) + MOUNT_UNWRAP_TOOLTIP / MOUNT_SUMMON_TOOLTIP, then the selected mount's
+--     usability error from C_MountJournal.GetMountUsabilityByID as an error line ("Requires Journeyman Riding skill",
+--     SPELL_FAILED_JOURNEYMAN_RIDING_REQUIREMENT) [verified: forever-ui-1.60.1.71037 blizzard_collections/mainline/
+--     blizzard_mountcollection.lua:843-863]. Which errors that call returns is the client's: the line may be any
+--     error key UI/Errors shows (Errors.errorKeys), so the tooltip's keys are those plus the button's own, built per
+--     index. A list row's tooltip is the mount's spell (MountJournalMountButton_UpdateTooltip → SetMountBySpellID,
+--     lua:653-655): UI/Tooltip's;
 --   BottomLeftInset.SuppressedMountEquipmentButton: MOUNT_EQUIPMENT_EXEMPT (lua:30–34).
 -- Not here: the favourite-mount spell frame (hidden on camelot: BLIZZARD_COLLECTIONS_MOUNT_JOURNAL_SHOW_FAVORITES =
 -- false, camelot/blizzard_collectionsconstants.lua:1; lua:1042–1044), the Skyriding flyout (shown only when
 -- DragonridingUtil.IsDragonridingUnlocked(), lua:1170–1173), the filter and right-click menus (UI/Menus).
--- Never touched: mount names, source and lore text (client tables), the search box, the count.
+-- The shown mount's InfoButton.Name (MountJournal_UpdateMountDisplay writes the mount's name, mainline/
+--   blizzard_mountcollection.lua:693) is never a dictionary word (NEVER_TOUCH); while names are on it shows the name's
+--   Japanese (UI/NameLabels) after each update. The client measures it only to place the "New" badge of a mount not
+--   unwrapped yet (:699–700); that pass writes the badge's anchor and the button's label, and the mount is summoned
+--   from the button's own click, which reads MountJournal.selectedMountID, a field that pass never writes (:837–841).
+--   [unverified: whether C_MountJournal.SummonByID is protected on Forever; a summon from the journal in combat
+--   after a fanfare mount was shown would show it]
+-- Never touched: the source and lore text (client tables), the search box, the count.
+-- The search box's placeholder is a label of its own, written once with SEARCH by SearchBoxTemplate_OnLoad
+--   (blizzard_sharedxml/shared/inputbox/inputboxtemplates.lua:175–178): shown; what the player types is not read.
 local _, WFJ = ...
 local MountJournal = {}
 WFJ.MountJournal = MountJournal
@@ -45,23 +64,43 @@ local STATIC_LABELS = { -- record key → { candidate, the one key it shows }
   infoNew = { INFO .. ".New", "NEW_CAPS" },
   togglePlayer = { "MountJournal.MountDisplay.ModelScene.TogglePlayer.TogglePlayerText", "MOUNT_JOURNAL_PLAYER" },
   slotRequirement = { "MountJournal.BottomLeftInset.SlotRequirementLabel", "MOUNT_EQUIPMENT_UNLOCK_REQUIREMENT" },
+  searchHint = { "MountJournal.searchBox.Instructions", "SEARCH" },
 }
 local STATIC_ORDER = {}
 for key in pairs(STATIC_LABELS) do STATIC_ORDER[#STATIC_ORDER + 1] = key end
 table.sort(STATIC_ORDER)
 
 local CANDIDATES = {
-  frame = { "MountJournal" }, mountButton = { "MountJournal.MountButton" },
+  frame = { "MountJournal" }, mountButton = { "MountJournal.MountButton" }, name = { INFO .. ".Name" },
   slotLabel = { "MountJournal.BottomLeftInset.SlotLabel" },
   suppressed = { "MountJournal.BottomLeftInset.SuppressedMountEquipmentButton" },
   filter = { "MountJournal.FilterDropdown" }, list = { "MountJournal.ScrollBox" }, scrollUtil = { "ScrollUtil" },
   updateDisplay = { "MountJournal_UpdateMountDisplay" }, updateEquipment = { "MountJournal_UpdateEquipment" },
+  initButton = { "MountJournal_InitMountButton" },
 }
 
 local BUTTON_KEYS = { "MOUNT", "UNWRAP", "BINDING_NAME_DISMOUNT" }
 local BUTTON = { only = BUTTON_KEYS }
-local BUTTON_TOOLTIP = { only = { "MOUNT", "UNWRAP", "BINDING_NAME_DISMOUNT", "MOUNT_UNWRAP_TOOLTIP",
-  "MOUNT_SUMMON_TOOLTIP" } }
+local BUTTON_TOOLTIP_KEYS = { "MOUNT", "UNWRAP", "BINDING_NAME_DISMOUNT", "MOUNT_UNWRAP_TOOLTIP",
+  "MOUNT_SUMMON_TOOLTIP" }
+-- The button's keys and every error key, one set per index (an index rebuilt brings its own error keys). Without
+-- UI/Errors, the button's keys alone.
+local tooltipSet, tooltipIndex
+local function buttonTooltipKeys()
+  local index = WFJ.UIIndex
+  if tooltipSet == nil or tooltipIndex ~= index then
+    tooltipSet, tooltipIndex = {}, index
+    for _, key in ipairs(BUTTON_TOOLTIP_KEYS) do tooltipSet[key] = true end
+    if index and WFJ.Errors and type(WFJ.Errors.errorKeys) == "function" then
+      for key in pairs(WFJ.Errors.errorKeys(index)) do tooltipSet[key] = true end
+    end
+  end
+  return tooltipSet
+end
+-- HelpTooltip keeps the opts it was given: `only` is read at each walk, so it always names the current index's set
+local BUTTON_TOOLTIP = setmetatable({}, { __index = function(_, field)
+  if field == "only" then return buttonTooltipKeys() end
+end })
 local SLOT = { only = { "MOUNT_EQUIPMENT_NOTICE" } }
 local SUPPRESSED_TOOLTIP = { only = { "MOUNT_EQUIPMENT_EXEMPT" } }
 local ROW_NEW = { only = { "NEW_CAPS" } }
@@ -76,6 +115,7 @@ end
 
 local newKey = WFJ.Labels.keyer("row.new.") -- a pooled row's record keys
 local steadyKey = WFJ.Labels.keyer("row.steady.")
+local nameKey = WFJ.Labels.keyer("row.name.")
 
 -- The labels the client writes once at load. → the number of dictionary words found.
 function MountJournal.showStatic()
@@ -87,9 +127,10 @@ function MountJournal.showStatic()
   return n + WFJ.Labels.dropdown(SURFACE, "filter", get("filter"))
 end
 
--- hooksecurefunc target (MountJournal_UpdateMountDisplay). → 1 | 0
+-- hooksecurefunc target (MountJournal_UpdateMountDisplay): the mount button's word and the mount's name. → 0..2
 function MountJournal.onDisplay()
   return WFJ.Labels.show(SURFACE, "mountButton", get("mountButton"), nil, BUTTON)
+    + WFJ.NameLabels.show(SURFACE, "name", get("name"))
 end
 
 -- hooksecurefunc target (MountJournal_UpdateEquipment). → 1 | 0
@@ -107,6 +148,7 @@ function MountJournal.onRow(a, b)
   if type(row.new) == "table" then WFJ.Labels.show(SURFACE, newKey(row.new), row.new, nil, ROW_NEW) end
   local steady = row.SteadyFlightLabel
   if type(steady) == "table" then WFJ.Labels.show(SURFACE, steadyKey(steady), steady, nil, ROW_STEADY) end
+  if type(row.name) == "table" then WFJ.NameLabels.show(SURFACE, nameKey(row.name), row.name) end
 end
 
 local hooked = false
@@ -130,6 +172,12 @@ function MountJournal.setup()
   local list, util = get("list"), get("scrollUtil")
   if type(list) == "table" and type(util) == "table" and type(util.AddInitializedFrameCallback) == "function" then
     util.AddInitializedFrameCallback(list, MountJournal.onRow, MountJournal, true)
+  end
+  -- Selecting a mount fills the old and the new row again by calling the row's initializer itself, past the
+  -- list's callback [verified: forever-ui-1.60.1.71037 blizzard_collections/mainline/
+  -- blizzard_mountcollection.lua:790-815]: without this the selected row's name went back to English.
+  if type(get("initButton")) == "function" then
+    hooksecurefunc("MountJournal_InitMountButton", function(button) MountJournal.onRow(button) end)
   end
   MountJournal.onDisplay()
   MountJournal.onEquipment()

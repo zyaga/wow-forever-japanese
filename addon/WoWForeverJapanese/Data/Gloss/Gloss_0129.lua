@@ -159,7 +159,6 @@ WFJ.Data.add("gloss", {
   [129156] = "逆用する\tぎゃくようする\tsubvert (turn against)",
   [129157] = "逆立つ\tさかだつ\tbristling",
   [129158] = "逆立てる\tさかだてる\tspiked (standing on end)",
-  [129159] = "逆解析する\tぎゃくかいせきする\tcan reverse engineer",
   [129160] = "逆転させる\tぎゃくてんさせる\tturn (reverse)",
   [129161] = "逆転する\tぎゃくてんする\tare reversed",
   [129162] = "逆転する\tぎゃくてんする\tbegan to turn (against us)",

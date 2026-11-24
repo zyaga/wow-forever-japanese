@@ -28,6 +28,7 @@ WFJ.Data.add("english", {
   ["gossip:8f766ce518dfae6e"] = { text = "destiny=9 go=7 instruction=4 master=3 require=5 true=2 you=1 your=8" },
   ["gossip:8f7db87927cad640"] = { text = "oh=1 tired=3" },
   ["gossip:8f8b1e880e79a8b2"] = { text = "other=2 this=1 unseen=4" },
+  ["gossip:8f8d67b9dc65ceff"] = { text = "ah=1 apron=13 forge=2 good=6 like=5 lines=14 nothing=8 really=9 tan=3 tans=3 tell=16" },
   ["gossip:8f8f2cd472599bdb"] = { text = "all=20 full=17 help=19 ho=1 keeping=18 larders=16 like=9 me=10 new=5 overtime=15 preparing=13 see=12 settled=7 town=4 traveler=2 work=8 working=8" },
   ["gossip:8f93f0a7bab7e9c8"] = { text = "armor=3 done=1 ready=4 your=2" },
   ["gossip:8f9bfd05f2ebaf98"] = { text = "foolish=6 interfered=3 our=1 plans=2 time=5" },

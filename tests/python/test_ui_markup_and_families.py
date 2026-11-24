@@ -100,8 +100,12 @@ def test_adjacent_captures_reordered():
 
 def test_ui_arg_kinds_are_read_from_the_addon(root):
     kinds = validate.ui_arg_kinds(root / "addon/WoWForeverJapanese")
-    # Forever's PLAYER_LEVEL is "Level %s |c%s%s %s|r" (level, colour, race, class), all four text captures
-    assert kinds["PLAYER_LEVEL"] == {1: "text", 2: "text", 3: "text", 4: "text"}
+    # Forever's PLAYER_LEVEL is "Level %s |c%s%s %s|r" (level, colour, spec, class): two text captures, the spec
+    # and the class, free-text captures too, so the spec and the class still may not swap places in the Japanese
+    assert kinds["PLAYER_LEVEL"] == {1: "text", 2: "text", 3: "spec", 4: "class"}
+    assert {"class", "spec"} <= validate.FREE_TEXT_KINDS
+    assert validate.adjacent_captures_reordered("%s %s", "%2$s %1$s", {1: "text", 2: "class"}) == "%1$ %2$"
+    assert validate.adjacent_captures_reordered("%s %s", "%2$s %1$s", {1: "spec", 2: "class"}) == "%1$ %2$"
     assert kinds["SINGLE_DAMAGE_TEMPLATE_WITH_SCHOOL"] == {2: "word"}
 
 

@@ -13,6 +13,7 @@ WFJ.Data.add("english", {
   ["gossip:7e2227aa1d9fe634"] = { text = "cannot=3 come=26 continued=16 demonic=12 destroyed=11 friend=23 going=7 happen=6 hope=27 i=1 imagine=2 it=5 know=4 memory=20 not=8 our=14 safety=15 taint=13 this=22" },
   ["gossip:7e338222cd594944"] = { text = "always=5 busy=9 deer=21 delicacies=7 die=4 dishes=3 his=13 if=10 investigate=24 left=11 mind=18 missing=22 new=6 now=17 preparing=8 rash=20 recipe=14 sure=12 try=15 whips=1" },
   ["gossip:7e361bec32b4cf40"] = { text = "mixture=2 sure=3 this=1 use=5" },
+  ["gossip:7e373228b669b142"] = { text = "any=13 beast=14 better=27 brother=10 but=24 companion=28 difficult=21 far=15 find=29 first=6 friend=2 happy=3 my=9 offer=4 once=25 one=26 pilot=20 reliable=16 rider=19 salutations=1 time=17 train=11" },
   ["gossip:7e37548455e297c1"] = { text = "educated=5 i=1 know=3 listen=4 much=2" },
   ["gossip:7e37a815658642ee"] = { text = "controls=2 who=1" },
   ["gossip:7e38af6f71a16552"] = { text = "artifacts=3 give=7 harmed=8 hunter=5 i=1 powerful=2 search=4 them=6" },
@@ -56,5 +57,6 @@ WFJ.Data.add("english", {
   ["gossip:7ee04716631d742f"] = { text = "here=2 hrm=1 nothing=3" },
   ["gossip:7ee055f998c7403b"] = { text = "me=1 seek=2 who=4" },
   ["gossip:7ee380ec3545855f"] = { text = "earned=7 its=3 mounted=2 reputation=6 sees=8 speed=5 strength=4" },
+  ["gossip:7ee5e3dbbdd4b280"] = { text = "hand=1 note=3 take=4" },
   ["gossip:7eef66a56f487164"] = { text = "more=1 tell=2" },
 })

@@ -165,16 +165,39 @@ local function noVoice(rec)
     and voice.silent(rec.surface, rec.key, m.kind, m.id) == true
 end
 
+-- A run whose lines stand apart (an item's use line, its durability line, then its flavour text): the primary keeps
+-- its Japanese's first `ctx.parts` paragraphs, and a companion with `ctx.from` shows the paragraphs from that one
+-- on, on its own line. Empty paragraphs count on neither side. → the paragraphs from `from` to `to` (to the end
+-- when nil), joined by line breaks
+local function paragraphs(ja, from, to)
+  local out, n = {}, 0
+  for part in (ja .. "\n"):gmatch("(.-)\n") do
+    if part ~= "" then
+      n = n + 1
+      if n >= from and (to == nil or n <= to) then out[#out + 1] = part end
+    end
+  end
+  return table.concat(out, "\n")
+end
+Render.paragraphs = paragraphs
+
 local function desiredOf(rec)
   local m = rec.meta or {}
   local action, payload = translator.resolve(m.area, m.kind, m.id, m.ctx)
   local inline = banners[rec.surface] == nil
+  -- the names the policy layer wrote into this line in Japanese, and a name widget's own name: UI/Readings lays a
+  -- name card on each. Kept on the record only while the Japanese shows.
+  rec.names, rec.nameCard = nil, nil
   if action == "apply" then
+    rec.names, rec.nameCard = payload.names, payload.name
     local prefix = (inline and payload.marker) and inlineMarker(rec, payload.marker) or ""
     if inline and noVoice(rec) then prefix = prefix .. inlineMarker(rec, "novoice") end
     local ja = payload.ja
+    if m.ctx and m.ctx.parts then ja = paragraphs(ja, 1, m.ctx.parts) end
     if m.ctx and m.ctx.partColors then ja = colourParts(ja, m.ctx.partColors) end
     if m.ctx and m.ctx.runColours then ja = colourRuns(ja, m.ctx.runColours) end
+    if m.ctx and m.ctx.tail then ja = ja .. m.ctx.tail end
+    if m.ctx and m.ctx.head then ja = m.ctx.head .. ja end
     return prefix .. ja, WFJ.Font.bundled(rec.font), action, payload.marker
   elseif action == "none" and payload and payload.marker then
     -- A compact row (a quest list title, a tracker header or objective) never carries the missing marker:
@@ -194,7 +217,13 @@ desired = function(rec)
   local follow = ctx and ctx.follow
   if follow then
     local primary = SS.get(rec.surface, follow)
-    if primary then
+    if primary and ctx.from then
+      -- a line of its own in the run: the primary's paragraphs from `from` on, between its own head and tail
+      local pm = primary.meta or {}
+      local action, payload = translator.resolve(pm.area, pm.kind, pm.id, pm.ctx)
+      local part = action == "apply" and paragraphs(payload.ja, ctx.from) or ""
+      if part ~= "" then return (ctx.head or "") .. part .. (ctx.tail or ""), WFJ.Font.bundled(rec.font), "follow" end
+    elseif primary then
       local _, _, action = desiredOf(primary)
       if action == "apply" then return Render.BLANK, nil, "follow" end
     end
@@ -343,7 +372,12 @@ end
 -- Called by a surface with the API-returned English for one logical element.
 -- ctx: { lines = {...} (tooltip align gate), nameScope = <the name line>, refit = function() tooltip:Show() end,
 --        follow = <primary key>, live = <the API English> (quest surfaces: the live check),
---        args, compact = true for a row or fixed-size widget that never carries the missing marker } (all optional)
+--        args, compact = true for a row or fixed-size widget that never carries the missing marker,
+--        tail = text the client wrote after a name (" 135/150", a coloured level range), put after the Japanese
+--        byte for byte, head = the colour code the client wrote before a name, put before it byte for byte,
+--        parts = how many paragraphs of its Japanese a primary keeps, from = the paragraph a companion shows its
+--        own line from (with `follow`; see `paragraphs`) }
+--        (all optional)
 local function show(surface, key, fs, en, area, kind, id, ctx)
   -- Main guards each init step, so surfaces install their hooks even when Render.init failed. Asserting here would
   -- turn one load failure into an error on every hover and window open; nothing to render against renders nothing.
@@ -500,6 +534,7 @@ end
 WFJ.State.on("enabled", function() Render.refresh() end)
 WFJ.State.on("area", function() Render.refresh() end)
 WFJ.State.on("language", function() Render.refresh() end)
+WFJ.State.on("names", function() Render.refresh() end) -- names switched between English and Japanese
 WFJ.State.on("markers", function() Render.refresh() end)
 -- a voice setting changed, or a voice pack loaded: the banners' "no voice yet" message may come or go
 WFJ.State.on("voice", function() Render.refresh() end)

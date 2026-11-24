@@ -1,11 +1,13 @@
 """wfj names collect|hearthstone|export|import|respell|check: Japanese names
 (ADR-078; docs/architecture/data-model.md).
 
-collect [--vmangos DB] [--tables DIR] [--date YYYY-MM-DD]
+collect [--vmangos DB] [--tables DIR] [--scan FILE] [--date YYYY-MM-DD]
     Every English name the game shows gets a `data/name` line: item, spell and unit names from
     `data/english`, creature, object, area, faction and map names and creature titles from the VMaNGOS
     database when given, item name suffixes ("of the Monkey") and flight point names from the client tables
-    in DIR (ItemNameDescription.csv, TaxiNodes.csv) when given, and every run of Latin letters in shipped
+    in DIR (ItemNameDescription.csv, TaxiNodes.csv) when given, the creature names the Forever server gave
+    the scan dev addon's creature pass (a copy of its saved `WFJScan.lua`, `scan_names`) when given, and
+    every run of Latin letters in shipped
     quest, gossip, book, objective, area, item and spell Japanese and the voiced error lines. New names
     come in `missing`; ids are only added; nothing is removed or rewritten.
 hearthstone JAJP.json ENUS.json --build BUILD [--date YYYY-MM-DD]
@@ -106,7 +108,18 @@ def prose_lines(root: Path) -> dict[str, str]:
 
 
 def prose_names(root: Path) -> set[str]:
-    return {run for ja in prose_lines(root).values() for run in names.latin_runs(ja)}
+    return {run for ja in prose_lines(root).values() for run in names.latin_runs(ja)} | interface_names(root)
+
+
+def interface_names(root: Path) -> set[str]:
+    """The English names inside the shipped Japanese of interface lines ("Champion's Hall" in a vendor's
+    line): with Japanese names on, the screen shows such a name's Japanese only when it has a line. A run
+    with no lower-case letter is an abbreviation or a key's name (CPU, ALT) and stays as the client writes
+    it."""
+    return {
+        run for ln in Store(root).load("ui") if shipped(ln)
+        for run in names.latin_runs(ln["ja"]) if any(c.islower() for c in run)
+    }
 
 
 def table_names(folder: Path) -> dict[str, dict[int, str]]:
@@ -128,7 +141,143 @@ def table_names(folder: Path) -> dict[str, dict[int, str]]:
     return out
 
 
-def collect(root: Path, db: Path | None, today: str, tables: Path | None = None) -> dict[str, int]:
+_RANK_NAME = re.compile(r"PVP_RANK_\d+_NAME")
+
+
+# A creature name the server holds for its own use, never a name a player reads: a helper or kill credit
+# ("[DNT] Kill Credit: Tarantula Egg", "Invisible Bunny"), a placeholder ("Level ??", "Thurdril <PH>") or an
+# internal label in parts ("S03 - Scarlet Enclave - Boss - ...").
+_SCAN_INTERNAL = re.compile(
+    r"[\[\](){}<>?]| - |\b(?:DNT|DND|UNUSED|placeholder|kill credit|bunny|invisible|invis|spawner|trigger|"
+    r"controller)\b",
+    re.IGNORECASE,
+)
+
+
+def _version(build: Any) -> tuple[int, ...]:
+    return tuple(int(p) for p in str(build).split(".") if p.isdigit())
+
+
+def scan_names(path: Path) -> dict[str, dict[int, str]]:
+    """{"unit": {id: English}} from the scan dev addon's saved file: the names the Forever server answered
+    for creature ids in its creature pass (`WFJScanDB.creatures[build].names`). A name a later build gave
+    wins; a name the server keeps for its own use (_SCAN_INTERNAL) is left out."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(path.read_text(encoding="utf-8")).get("WFJScanDB")
+    passes = db.get("creatures") if isinstance(db, lua_reader.Table) else None
+    out: dict[int, str] = {}
+    if not isinstance(passes, lua_reader.Table):
+        return {"unit": out}
+    for _build, entry in sorted(passes.named().items(), key=lambda kv: _version(kv[0])):
+        found = entry.get("names") if isinstance(entry, lua_reader.Table) else None
+        if not isinstance(found, lua_reader.Table):
+            continue
+        position = 0
+        for key, value in found.items:
+            if key is None:  # the client writes a run of ids from 1 as plain values
+                position += 1
+            en = value.strip() if isinstance(value, str) else ""
+            if any(c.isalpha() for c in en) and not _SCAN_INTERNAL.search(en):
+                out[position if key is None else lua_reader.as_int_id(key)] = " ".join(en.split())
+    return {"unit": out}
+
+
+def rank_names(folder: Path) -> set[str]:
+    """The PvP rank titles from a client's table folder (GlobalStrings' PVP_RANK_<n>_NAME rows). No interface
+    line is listed for them (a title is a name), so nothing else brings them to the name list."""
+    path = folder / "GlobalStrings.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        return {row["TagText_lang"].strip() for row in csv.DictReader(f)
+                if _RANK_NAME.fullmatch(row["BaseTag"]) and row["TagText_lang"].strip()}
+
+
+_NOT_SHOWN = re.compile(r"[\[(]|\bDN[DT]\b")
+
+
+def skill_names(folder: Path) -> set[str]:
+    """The skill and talent tree names from a client's table folder (SkillLine's DisplayName: "Arms",
+    "Fishing", "Two-Handed Swords"). The spellbook's headers, the skills page and the talent trees show them,
+    and no imported text names them. A row the client marks as not for display is left out."""
+    path = folder / "SkillLine.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("DisplayName_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and not _NOT_SHOWN.search(en)}
+
+
+def race_names(folder: Path) -> set[str]:
+    """The race names from a client's table folder (ChrRaces' Name_lang: "Night Elf", "High Order Skyborne"),
+    as a player's tooltip writes them. A race the addon has a word of its own for shows that word; one it has
+    none for (a race only this client has) is spelled from this line."""
+    path = folder / "ChrRaces.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("Name_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and not _NOT_SHOWN.search(en)}
+
+
+def tool_names(folder: Path) -> set[str]:
+    """The tool category names from a client's table folder (TotemCategory's Name_lang: "Runed Copper Rod",
+    "Great Mage Writings"), which a spell's tooltip lists after "Tools:". Most are an item's name too; a
+    category with no item of that name has no other source."""
+    path = folder / "TotemCategory.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("Name_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and "DO NOT USE" not in en and not _NOT_SHOWN.search(en)}
+
+
+def set_names(folder: Path) -> set[str]:
+    """The item set names from a client's table folder (ItemSet's Name_lang: "Battlegear of Might",
+    "Krol'dok Battlegear"), which a set item's tooltip writes over its set's lines ("<set> (3/5)"). No
+    imported text holds them."""
+    path = folder / "ItemSet.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("Name_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and not _NOT_SHOWN.search(en)}
+
+
+def form_names(folder: Path) -> set[str]:
+    """The shapeshift form names from a client's table folder (SpellShapeshiftForm's Name_lang: "Bear Form",
+    "Creature - Bear"), which a spell's tooltip writes after "Requires". A row named for a season's test
+    ("S03 - Gladiator Stance") is the developers' label, never shown."""
+    path = folder / "SpellShapeshiftForm.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("Name_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and not re.match(r"S\d+ - ", en) and not _NOT_SHOWN.search(en)}
+
+
+def activity_names(folder: Path) -> set[str]:
+    """The group finder's activity names from a client's table folder (GroupFinderActivity's full and short
+    names: "Dire Maul (North)", "Stratholme (Main Gate)"): the dungeons, raids and zones a group is listed
+    for. Their category words ("Dungeons") are interface lines; these are names, and no imported text holds
+    the ones with a wing in brackets."""
+    path = folder / "GroupFinderActivity.csv"
+    if not path.is_file():
+        return set()
+    out: set[str] = set()
+    with path.open(encoding="utf-8", newline="") as f:
+        for row in csv.DictReader(f):
+            for column in ("FullName_lang", "ShortName_lang"):
+                en = (row.get(column) or "").strip()
+                if en and not re.search(r"\bDN[DT]\b|\[", en):
+                    out.add(en)
+    return out
+
+
+def collect(
+    root: Path, db: Path | None, today: str, tables: Path | None = None, scan: Path | None = None
+) -> dict[str, int]:
     seen = english_names(root)
     counts = {f"english {k}": sum(1 for v in seen.values() if k in v) for k in ENGLISH_NAMES}
     sources = []
@@ -136,12 +285,30 @@ def collect(root: Path, db: Path | None, today: str, tables: Path | None = None)
         sources.append(("vmangos", vmangos.read_names(db)))
     if tables is not None:
         sources.append(("tables", table_names(tables)))
+    if scan is not None:
+        sources.append(("scan", scan_names(scan)))
     for source, by_kind in sources:
         for kind, rows in by_kind.items():
             for i, en in rows.items():
                 seen.setdefault(en, defaultdict(set))[kind].add(i)
             counts[f"{source} {kind}"] = len(set(rows.values()))
     prose = prose_names(root)
+    if tables is not None:
+        ranks = rank_names(tables)
+        counts["tables rank"] = len(ranks)
+        skills = skill_names(tables)
+        counts["tables skill"] = len(skills)
+        races = race_names(tables)
+        counts["tables race"] = len(races)
+        activities = activity_names(tables)
+        counts["tables activity"] = len(activities)
+        forms = form_names(tables)
+        counts["tables form"] = len(forms)
+        tools = tool_names(tables)
+        counts["tables tool"] = len(tools)
+        sets = set_names(tables)
+        counts["tables set"] = len(sets)
+        prose |= ranks | skills | races | activities | forms | tools | sets
     counts["prose"] = len(prose)
     lines, added = names.merge(load_lines(root), seen, prose, today)
     save_lines(root, lines)
@@ -637,6 +804,7 @@ def _parser(today: str) -> argparse.ArgumentParser:
     c = sub.add_parser("collect")
     c.add_argument("--vmangos")
     c.add_argument("--tables", help="a client's table folder (ItemNameDescription.csv, TaxiNodes.csv)")
+    c.add_argument("--scan", help="a copy of the scan dev addon's saved WFJScan.lua (its creature names)")
     c.add_argument("--date", default=today)
     h = sub.add_parser("hearthstone")
     h.add_argument("ja")
@@ -728,7 +896,11 @@ def run(argv: Sequence[str]) -> int:
     try:
         if a.cmd == "collect":
             counts = collect(
-                root, Path(a.vmangos) if a.vmangos else None, a.date, Path(a.tables) if a.tables else None
+                root,
+                Path(a.vmangos) if a.vmangos else None,
+                a.date,
+                Path(a.tables) if a.tables else None,
+                Path(a.scan) if a.scan else None,
             )
             print("names collect: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
         elif a.cmd == "hearthstone":

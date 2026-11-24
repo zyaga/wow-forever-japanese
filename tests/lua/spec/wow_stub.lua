@@ -243,6 +243,9 @@ function Stub.install(tocPath)
   _G.AddonList, _G.AddonList_InitAddon, _G.AddonList_HasAnyChanged, _G.HideUIPanel = nil, nil, nil, nil
   _G.UIParent, _G.WFJSettingsTooltip = nil, nil
 
+  -- The client's settings store. No setting is defined: a spec that needs one replaces this table.
+  _G.C_CVar = { GetCVar = function() return nil end, SetCVar = function() end }
+
   -- GetAddOnName(index) reads Stub.addonNames (the AddOn List button).
   Stub.addonNames = {}
   _G.C_AddOns = {
@@ -623,7 +626,11 @@ function Stub.installQuestAPI()
   Stub.quest = { id = 0, title = "", description = "", objectives = "", progress = "", completion = "" }
 
   -- frames [verified: QuestFrame.xml]
-  CreateFrame("Frame", "QuestFrame")
+  local questFrame = CreateFrame("Frame", "QuestFrame")
+  -- the title plate: QuestFrame:SetTitle(UnitName("questnpc")) → TitleContainer.TitleText [verified: mainline/
+  -- questframe.lua:117, blizzard_sharedxml/portraitframe.lua:11–13]. Unnamed, as in the client.
+  questFrame.TitleContainer = { TitleText = Stub.fontString("") }
+  function questFrame.SetTitle(self, text) self.TitleContainer.TitleText.text = text end
   CreateFrame("Frame", "QuestFrameProgressPanel")
   for _, n in ipairs({ "QuestDetailScrollFrame", "QuestRewardScrollFrame", "QuestProgressScrollFrame",
     "QuestDetailScrollChildFrame", "QuestRewardScrollChildFrame" }) do
@@ -659,6 +666,8 @@ function Stub.installQuestAPI()
   _G.QuestInfo_ShowTimer = function() end
   -- the rewards redraw the client runs on QUEST_ITEM_UPDATE (questframe.lua:75–84); the spec writes its English
   _G.QuestInfo_ShowRewards = function() end
+  -- the progress panel's required items writer (mainline/questframe.lua:230); the spec writes its names
+  _G.QuestFrameProgressItems_Update = function() end
   CreateFrame("Frame", "MapQuestInfoRewardsFrame")
   CreateFrame("Frame", "QuestFrameGreetingPanel")
   Stub.namedFontString("CurrentQuestsText", "Current Quests")
@@ -759,6 +768,7 @@ function Stub.tooltipFrame(name)
     if t == 0 then return self.item ~= nil end
     if t == 1 then return self.spell ~= nil end
     if t == 7 then return self.item == nil and self.spell == nil and self.primaryInfo ~= nil end
+    if self.otherType ~= nil then return t == self.otherType end -- a mount's, a companion's or a macro's tooltip
     return false
   end
   function frame:Show()
@@ -906,7 +916,8 @@ function Stub.installTooltipAPI()
   -- Set Stub.noTooltipDataProcessor before installing to model a client that has no TooltipDataProcessor: the
   -- surfaces' defensive path (Tooltip.path "none", TooltipUnit.init false). Forever always has one.
   if not Stub.noTooltipDataProcessor then
-    _G.Enum = { TooltipDataType = { Item = 0, Spell = 1, Unit = 2, UnitAura = 7 } }
+    _G.Enum = { TooltipDataType = { Item = 0, Spell = 1, Unit = 2, UnitAura = 7, CompanionPet = 9, Mount = 10,
+      Macro = 25 } }
     _G.TooltipDataProcessor = {
       AddTooltipPostCall = function(dataType, fn)
         local list = Stub.tooltipPostCalls[dataType] or {}
@@ -915,7 +926,22 @@ function Stub.installTooltipAPI()
       end,
     }
     if not Stub.noSpellDescriptionAPI then
-      _G.C_Spell = { GetSpellDescription = function(id) return Stub.spellDescriptions[id] or "" end }
+      -- Stub.spellNames[id] = name: what GetSpellName answers, and GetSpellInfo(name) for a spell the character knows.
+      -- Every spell's data is loaded unless Stub.unloadedSpells[id]; RequestLoadSpellData records into
+      -- Stub.spellLoadRequests.
+      Stub.spellNames, Stub.unloadedSpells, Stub.spellLoadRequests = {}, {}, {}
+      _G.C_Spell = {
+        IsSpellDataCached = function(id) return not Stub.unloadedSpells[id] end,
+        RequestLoadSpellData = function(id) Stub.spellLoadRequests[#Stub.spellLoadRequests + 1] = id end,
+        GetSpellDescription = function(id) return Stub.spellDescriptions[id] or "" end,
+        GetSpellName = function(id) return Stub.spellNames[id] end,
+        GetSpellInfo = function(which)
+          for id, name in pairs(Stub.spellNames) do
+            if which == id or which == name then return { spellID = id, name = name } end
+          end
+          return nil
+        end,
+      }
     end
   end
 end
@@ -924,6 +950,16 @@ end
 function Stub.fireTooltipSet(frame, kind)
   local dataType = kind == "Item" and 0 or 1
   for _, fn in ipairs(Stub.tooltipPostCalls[dataType] or {}) do fn(frame) end
+end
+
+-- A tooltip of another data kind that shows a spell (a mount, a companion, a macro): `kind` is the
+-- Enum.TooltipDataType name, `data` what the post-call is handed ({ id = … }, or {}).
+function Stub.setOtherTooltip(frame, kind, data, lines)
+  frame.spell, frame.item, frame.primaryInfo = nil, nil, nil
+  frame.otherType = _G.Enum.TooltipDataType[kind]
+  frame:writeLines(lines)
+  frame.shown = true
+  for _, fn in ipairs(Stub.tooltipPostCalls[frame.otherType] or {}) do fn(frame, data) end
 end
 
 function Stub.setItemTooltip(frame, link, lines)
@@ -940,6 +976,7 @@ end
 function Stub.setSpellTooltip(frame, id, lines)
   frame.spell = id and { name = lines[1], id = id } or nil
   frame.primaryInfo = nil
+  frame.otherType = nil
   frame.item = nil
   frame:writeLines(lines)
   frame.shown = true

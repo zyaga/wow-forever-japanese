@@ -16,6 +16,22 @@ describe("State: pub/sub fires in order, setters fire only on change", function(
     assert.are.equal(0, WFJ.State.fire("nobody"))
   end)
 
+  it("names are English until set, and setNames fires only when the value changes", function()
+    local seen = {}
+    -- loaded on its own: the helper that loads several files turns names on for the specs that cover them
+    local fresh = {}
+    H.loadChunk("Core/State.lua", "WoWForeverJapanese", fresh)
+    WFJ = fresh
+    WFJ.State.on("names", function(v) seen[#seen + 1] = v end)
+    assert.is_false(WFJ.State.names)
+    assert.is_false(WFJ.State.setNames(false))
+    assert.is_true(WFJ.State.setNames(true))
+    assert.is_true(WFJ.State.names)
+    assert.is_false(WFJ.State.setNames(1))
+    assert.is_true(WFJ.State.setNames(nil))
+    assert.are.same({ true, false }, seen)
+  end)
+
   it("setEnabled fires only when the value changes", function()
     local n = 0
     WFJ.State.on("enabled", function() n = n + 1 end)

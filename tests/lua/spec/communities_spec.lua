@@ -1,12 +1,14 @@
 -- UI/Communities.lua over a CommunitiesFrame replayed from camelot
 -- blizzard_communities (communitiesframe.xml:303–613, communitiesmemberlist.lua:395–405 + 591–612, the shared
--- ColumnDisplayMixin:LayoutColumns, guildroster.lua:117–222, guildinfo.{xml,lua}, guildnews.xml). Member names, ranks,
--- zones and notes stay English; the surface waits for Blizzard_Communities in either load order.
+-- ColumnDisplayMixin:LayoutColumns, guildroster.lua:117–222, guildinfo.{xml,lua}, guildnews.xml). Member names, ranks
+-- and notes stay English, and a zone does until names are on; the surface waits for Blizzard_Communities in either
+-- load order.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = {}
 for i, f in ipairs(H.UI_FILES) do FILES[i] = f end
+FILES[#FILES + 1] = "Core/Placeholders.lua" -- the class word a member's level line shows
 FILES[#FILES + 1] = "UI/Communities.lua"
 
 local ADDON = "Blizzard_Communities"
@@ -21,7 +23,10 @@ local UI = {
   NOTE_COLON = { "Note:", "メモ:" }, OFFICER_NOTE_COLON = { "Officer's Note", "オフィサーメモ" },
   REMOVE = { "Remove", "削除" }, GROUP_INVITE = { "Group Invite", "グループに招待" },
   FRIENDS_LEVEL_TEMPLATE = { "Level %d %s", "レベル %d %s" }, GUILD_ONLINE_LABEL = { "Online", "オンライン" },
-  LASTONLINE_DAYS = { "%d |4day:days;", "%d日" },
+  LASTONLINE_DAYS = { "%d |4day:days;", "%d日" }, LASTONLINE_MINS = { "< an hour", "1時間未満" },
+  COMMUNITIES_PRESENCE_OFFLINE = { "Offline", "オフライン" }, GUILD = { "Guild", "ギルド" },
+  OFFICER = { "Officer", "オフィサー" },
+  COMMUNITIES_MEMBER_LIST_SHOW_OFFLINE = { "Show Offline Members", "オフラインのメンバーを表示" },
   GUILD_NOTE_EDITLABEL = { "Click here to set a Public Note.", "ここをクリックして公開メモを設定します。" },
   GUILD_OFFICERNOTE_EDITLABEL = { "Click here to set an Officer's Note.", "ここをクリックしてオフィサーメモを設定します。" },
   GUILD_INFO_TITLE = { "Guild Info", "ギルド情報" }, GUILD_MOTD_LABEL = { "Guild Message Of The Day", "今日のギルドメッセージ" },
@@ -39,6 +44,7 @@ local UI = {
 }
 
 local C = {} -- replayed client state
+C.MOBILE = 2 -- Enum.ClubMemberPresence.OnlineMobile
 
 local function en(key) return _G[key] end
 local function fs(text) return Stub.fontString(text or "") end
@@ -99,12 +105,41 @@ local function loadCommunities()
     if not row then
       row = CreateFrame("Button")
       row.NameFrame = { Name = fs() }
+      row.Note = fs() -- the member's note (communitiesmemberlist.lua:1320)
+      row.Zone = fs() -- a place, or the client's line for a member who is not online (lua:1293–1303)
+      row.Rank = fs() -- the rank's name (lua:1313)
       row.CancelInvitationButton = CreateFrame("Button")
+      function row:RefreshExpandedColumns() self.Zone.text = self.zoneNow end -- the client's rewrite (lua:1242)
+      -- the entry's tooltip (CommunitiesMemberListEntryMixin:OnEnter, lua:1169–1219; the script, xml:237)
+      function row:GetMemberInfo() return self.memberInfo end
+      row:SetScript("OnEnter", function(self)
+        local m = self:GetMemberInfo()
+        if not m then return end
+        local tt = _G.GameTooltip
+        tt:SetOwner(self)
+        tt:ClearLines() -- the client's SetOwner empties the tooltip; the stub's keeps its lines
+        tt:AddLine(m.name)
+        tt:AddLine(m.guildRank or "")
+        if m.level then
+          tt:AddLine(string.format(en("COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT"), m.level, m.raceName, m.className))
+        end
+        if m.presence == C.MOBILE then
+          tt:AddLine("In Mobile App")
+        elseif m.zone then
+          tt:AddLine(m.zone)
+        end
+        if m.memberNote then tt:AddLine("|TInterface\\Icons\\Note:0|t " .. m.memberNote) end
+        tt:Show()
+      end)
       C.rows[i] = row
     end
     list.ScrollBox:initFrame(row, data, C.initEntry)
     return row
   end
+  -- the check box under the roster (communitiesmemberlist.xml:284–290) and the channel dropdown
+  list.ShowOfflineButton = { Text = fs(en("COMMUNITIES_MEMBER_LIST_SHOW_OFFLINE")) }
+  frame.StreamDropdown = { Text = fs() }
+  function frame.StreamDropdown.UpdateText() end
   function list.UpdateMemberCount(self)
     self.MemberCount.text = string.format(en("COMMUNITIES_MEMBER_LIST_MEMBER_COUNT_FORMAT"), C.online, C.total)
   end
@@ -143,10 +178,20 @@ local function loadCommunities()
   info.EditMOTDButton = Stub.button(nil, en("GUILD_EDIT_TEXT_LINK"))
   info.EditDetailsButton = Stub.button(nil, en("GUILD_EDIT_TEXT_LINK"))
   info.MOTDScrollFrame = { MOTD = fs() }
+  -- the guild information: the details scroll frame's child holds it (guildinfo.xml:251–265)
+  info.DetailsFrame = { child = { Details = fs() } }
+  function info.DetailsFrame.GetScrollChild(self) return self.child end
+  -- the box the message of the day and the guild information are edited in (guildinfo.xml:328)
+  C.editBox = fs()
+  C.editBox.scripts = {}
+  function C.editBox.HookScript(self, name, fn) self.scripts[name] = fn end
+  _G.CommunitiesGuildTextEditFrame = { Container = { ScrollFrame = { EditBox = C.editBox } } }
   local news = CreateFrame("Frame")
   details.News = news
   news.TitleText = fs(en("GUILD_NEWS_TITLE"))
-  news:addRegion(fs(en("GUILD_NEWS")))
+  news:addRegion(news.TitleText) -- the client lists a keyed label among the frame's regions too, and first
+  C.newsHeader = fs(en("GUILD_NEWS")) -- the unnamed header under it: the same English (guildnews.xml:275–286)
+  news:addRegion(C.newsHeader)
   news.NoNews = fs(en("GUILD_NO_GUILD_NEWS"))
   news.SetFiltersButton = Stub.button(nil, en("GUILD_SET_FILTERS_LINK"))
   Stub.namedFontString("CommunitiesGuildLogFrameTitle", en("GUILD_EVENT_LOG"))
@@ -210,6 +255,7 @@ describe("the Communities guild view on Forever", function()
     H.uiTeardown()
     Stub.keys.alt = false
     _G.CommunitiesFrame, _G.CommunitiesGuildInfoFrame_UpdateChallenges = nil, nil
+    _G.CommunitiesGuildTextEditFrame = nil
   end)
 
   for _, order in ipairs({ { true, "loaded at login" }, { false, "loaded on demand" } }) do
@@ -285,6 +331,121 @@ describe("the Communities guild view on Forever", function()
           assert.are.equal("Close", d.OfficerNoteBackground.OfficerNoteText:GetText())
         end)
 
+      it("the message of the day, the guild information and a roster note wear the bundled face only while "
+        .. "they hold Japanese; the box they are edited in always; with the addon off too", function()
+        local info, face = _G.CommunitiesFrame.GuildDetailsFrame.Info, WFJ.Font.PATH
+        local row = C.entry(1, { name = "Thrall" })
+        assert.are.equal(face, C.editBox.font.path)
+        C.editBox.font.path = "Fonts\\FRIZQT__.TTF" -- the client put its font back
+        C.editBox.scripts.OnShow(C.editBox)
+        assert.are.equal(face, C.editBox.font.path)
+        for _, on in ipairs({ true, false }) do
+          WFJ.State.enabled = on
+          local rankText = _G.CommunitiesFrame.GuildMemberDetailFrame.RankText
+          for _, w in ipairs({ info.MOTDScrollFrame.MOTD, info.DetailsFrame.child.Details, row.Note, row.Rank,
+            rankText }) do
+            w:SetText("今夜9時にレイドです")
+            assert.are.equal(face, w.font.path)
+            assert.are.equal("今夜9時にレイドです", w:GetText())
+            assert.is_true(unrecorded(w)) -- never a translation record: the text is the player's
+            w:SetText("Raid at nine")
+            assert.are.equal("Fonts\\FRIZQT__.TTF", w.font.path)
+          end
+        end
+        -- the pooled row drawn again for a member with no Japanese in the note
+        row.Note:SetText("メインタンク")
+        C.entry(1, { name = "Jaina" })
+        row.Note:SetText("alt")
+        assert.are.equal("Fonts\\FRIZQT__.TTF", row.Note.font.path)
+      end)
+
+      it("a member's note in Japanese wears the bundled face; the placeholder and an English note after it "
+        .. "have the widget's own font", function()
+        local d = _G.CommunitiesFrame.GuildMemberDetailFrame
+        local note, face = d.NoteBackground.PersonalNoteText, WFJ.Font.PATH
+        local member = { name = "Thrall", level = 60, class = "Shaman", zone = "Orgrimmar", rank = "Warchief" }
+        member.note = "ヒーラーです"
+        d:DisplayMember(1, member)
+        assert.are.equal("ヒーラーです", note:GetText())
+        assert.are.equal(face, note.font.path)
+        member.note = nil -- the placeholder: a dictionary line, shown by its record
+        d:DisplayMember(1, member)
+        assert.are.equal("ここをクリックして公開メモを設定します。", note:GetText())
+        member.note = "Healer"
+        d:DisplayMember(1, member)
+        assert.are.equal("Healer", note:GetText())
+        assert.are.equal("Fonts\\FRIZQT__.TTF", note.font.path) -- the record held the widget's own font
+      end)
+
+      it("with Japanese names on a member's zone and class show their Japanese; the rank stays", function()
+        WFJ.Data.add("name", {
+          [WFJ.Names.key("Stormwind City")] = "ストームウィンド・シティ\tすとーむうぃんど・してぃ",
+          [WFJ.Names.key("Dustwallow Marsh")] = "ダストワロウ・マーシュ\tだすとわろう・まーしゅ",
+          [WFJ.Names.key("Guild Master")] = "ギルド・マスター\tぎるど・ますたー",
+        })
+        WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+        WFJ.UIStrings.word = function(text) return WFJ.State.names and WFJ.Placeholders.wordFor(text) or nil end
+        finally(function() WFJ.UIStrings.name, WFJ.UIStrings.word = nil, nil; WFJ.State.setNames(true) end)
+        local row = C.entry(1, { name = "Thrall" })
+        row.Zone.text, row.Rank.text = "Stormwind City", "Guild Master"
+        WFJ.Communities.onRosterRow(row)
+        assert.are.equal("ストームウィンド・シティ", row.Zone:GetText())
+        assert.are.equal("Guild Master", row.Rank:GetText()) -- a guild's leader names its ranks
+        alt(true)
+        assert.are.equal("Stormwind City", row.Zone:GetText())
+        alt(false)
+        assert.are.equal("ストームウィンド・シティ", row.Zone:GetText())
+        row.zoneNow = "Dustwallow Marsh" -- rewritten by the client with no new initialization of the row
+        row:RefreshExpandedColumns()
+        assert.are.equal("ダストワロウ・マーシュ", row.Zone:GetText())
+        row.zoneNow = "Offline" -- the member logs off: the same column holds the client's own line
+        row:RefreshExpandedColumns()
+        assert.are.equal("オフライン", row.Zone:GetText())
+        row.zoneNow = "Stormwind City"
+        row:RefreshExpandedColumns()
+        assert.are.equal("ストームウィンド・シティ", row.Zone:GetText())
+        local d = _G.CommunitiesFrame.GuildMemberDetailFrame
+        d:DisplayMember(1, { name = "Sogo", level = 28, class = "Paladin", zone = "Stormwind City",
+          rank = "Guild Master" })
+        assert.are.equal("レベル 28 パラディン", d.Level:GetText())
+        assert.are.equal("ストームウィンド・シティ", d.ZoneText:GetText())
+        assert.are.equal("Guild Master", d.RankText:GetText())
+        alt(true)
+        assert.are.equal("Level 28 Paladin", d.Level:GetText())
+        assert.are.equal("Stormwind City", d.ZoneText:GetText())
+        alt(false)
+        assert.are.equal("レベル 28 パラディン", d.Level:GetText())
+        WFJ.State.setNames(false)
+        d:DisplayMember(1, { name = "Sogo", level = 28, class = "Paladin", zone = "Stormwind City",
+          rank = "Guild Master" })
+        assert.are.equal("レベル 28 Paladin", d.Level:GetText())
+        assert.are.equal("Stormwind City", d.ZoneText:GetText())
+        row:RefreshExpandedColumns()
+        assert.are.equal("Stormwind City", row.Zone:GetText())
+      end)
+
+      it("the roster's check box label, a row's offline line and the guild's own channel name are Japanese; "
+        .. "a place and a player's channel stay as written", function()
+        local list = _G.CommunitiesFrame.MemberList
+        assert.are.equal("オフラインのメンバーを表示", list.ShowOfflineButton.Text:GetText())
+        local row = C.entry(1, { name = "Thrall" })
+        for shown, ja in pairs({ ["< an hour"] = "1時間未満", ["Offline"] = "オフライン", ["Orgrimmar"] = "Orgrimmar" }) do
+          row.Zone.text = shown
+          WFJ.Communities.onRosterRow(row)
+          assert.are.equal(ja, row.Zone:GetText())
+        end
+        row.zoneNow = "< an hour" -- rewritten by the client with no new initialization of the row
+        row:RefreshExpandedColumns()
+        assert.are.equal("1時間未満", row.Zone:GetText())
+        local stream = _G.CommunitiesFrame.StreamDropdown
+        stream.Text.text = "|cff40ff40Guild|r" -- as the client writes it: the name in the channel's chat colour
+        stream:UpdateText()
+        assert.are.equal("|cff40ff40ギルド|r", stream.Text:GetText())
+        stream.Text.text = "Raid planning"
+        stream:UpdateText()
+        assert.are.equal("Raid planning", stream.Text:GetText())
+      end)
+
       it("the applicants column header translates", function()
         _G.CommunitiesFrame.MemberList.ColumnDisplay:LayoutColumns({ "CLUB_FINDER_APPLICANTS",
           "COMMUNITIES_ROSTER_COLUMN_TITLE_NAME" })
@@ -319,6 +480,112 @@ describe("the Communities guild view on Forever", function()
           tt:SetText(en("COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP"))
           assert.are.equal("クリックで招待を取り消します", _G.GameTooltipTextLeft1:GetText())
         end)
+
+      it("the entry tooltip's race and class show their Japanese while names are on; the rest is never changed",
+        function()
+          WFJ.Data.add("name", {
+            [WFJ.Names.key("High Order Skyborne")] = "ハイ・オーダー・スカイボーン\tはい・おーだー・すかいぼーん",
+            [WFJ.Names.key("Warrior")] = "ウォリアー\tうぉりあー", -- a member named like a class stays as written
+          })
+          WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+          WFJ.UIStrings.word = function(text) return WFJ.State.names and WFJ.Placeholders.wordFor(text) or nil end
+          local was = WFJ.State.names
+          finally(function() WFJ.UIStrings.name, WFJ.UIStrings.word = nil, nil; WFJ.State.setNames(was) end)
+          WFJ.State.setNames(true)
+          local row = C.entry(1, { name = "Thrall" })
+          local tt = _G.GameTooltip
+          local function hover(race, class)
+            tt:SetOwner(row)
+            tt:ClearLines() -- the client's SetOwner empties the tooltip; the stub's keeps its lines
+            tt:AddLine("Warrior") -- the member's name
+            tt:AddLine("Warrior") -- the guild rank
+            tt:AddLine(string.format(en("COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT"), 23, race, class))
+            tt:AddLine("Warrior") -- a note
+            tt:Show()
+            return _G.GameTooltipTextLeft3:GetText()
+          end
+          assert.are.equal("レベル 23 ナイトエルフ ウォリアー", hover("Night Elf", "Warrior"))
+          assert.are.equal("Warrior", _G.GameTooltipTextLeft1:GetText())
+          assert.are.equal("Warrior", _G.GameTooltipTextLeft2:GetText())
+          assert.are.equal("Warrior", _G.GameTooltipTextLeft4:GetText())
+          alt(true)
+          assert.are.equal("Level 23 Night Elf Warrior", _G.GameTooltipTextLeft3:GetText())
+          alt(false)
+          assert.are.equal("レベル 23 ナイトエルフ ウォリアー", _G.GameTooltipTextLeft3:GetText())
+          tt:Hide()
+          assert.are.equal("レベル 23 オーク シャーマン", hover("Orc", "Shaman"))
+          tt:Hide()
+          -- a race with no word of its own: the name list's spelling
+          assert.are.equal("レベル 23 ハイ・オーダー・スカイボーン メイジ", hover("High Order Skyborne", "Mage"))
+          tt:Hide()
+          -- a race neither knows stays as written beside the class's word
+          assert.are.equal("レベル 23 Windshaper Skyborne メイジ", hover("Windshaper Skyborne", "Mage"))
+          tt:Hide()
+          WFJ.State.setNames(false)
+          assert.are.equal("レベル 23 Night Elf Warrior", hover("Night Elf", "Warrior"))
+        end)
+
+      it("with Japanese names on the entry tooltip's zone line shows the zone's Japanese; the member's name, a "
+        .. "rank spelled like the zone and the note stay", function()
+        WFJ.Data.add("name", {
+          [WFJ.Names.key("Orgrimmar")] = "オーグリマー\tおーぐりまー",
+          [WFJ.Names.key("Thrall")] = "スロール\tすろーる",
+        })
+        WFJ.UIStrings.name = function(text) return WFJ.State.names and WFJ.Names.value(text) or nil end
+        WFJ.UIStrings.word = function(text) return WFJ.State.names and WFJ.Placeholders.wordFor(text) or nil end
+        local was, enum = WFJ.State.names, _G.Enum
+        _G.Enum = { ClubMemberPresence = { Online = 1, OnlineMobile = C.MOBILE } } -- clubdocumentation.lua:1683–1688
+        for k, v in pairs(enum or {}) do _G.Enum[k] = v end
+        finally(function()
+          WFJ.UIStrings.name, WFJ.UIStrings.word = nil, nil
+          WFJ.State.setNames(was)
+          _G.Enum = enum
+        end)
+        WFJ.State.setNames(true)
+        local row = C.entry(1, { name = "Thrall" })
+        local function line(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
+        local function hover(member)
+          _G.GameTooltip:Hide()
+          row.memberInfo = member
+          row:GetScript("OnEnter")(row)
+        end
+        local member = { name = "Thrall", guildRank = "Orgrimmar", level = 60, raceName = "Orc", className = "Shaman",
+          zone = "Orgrimmar", presence = 1, memberNote = "Orgrimmar" }
+        hover(member)
+        assert.are.equal("Thrall", line(1)) -- a member named like an NPC
+        assert.are.equal("Orgrimmar", line(2)) -- a rank the guild named like the zone
+        assert.are.equal("レベル 60 オーク シャーマン", line(3))
+        assert.are.equal("オーグリマー", line(4))
+        assert.are.equal("|TInterface\\Icons\\Note:0|t Orgrimmar", line(5))
+        alt(true)
+        assert.are.equal("Orgrimmar", line(4))
+        alt(false)
+        assert.are.equal("オーグリマー", line(4))
+        _G.GameTooltip:Show() -- shown again with the same lines: the line is still ours
+        assert.are.equal("オーグリマー", line(4))
+        assert.are.equal("Orgrimmar", line(2))
+        WFJ.State.setEnabled(false)
+        assert.are.equal("Orgrimmar", line(4))
+        WFJ.State.setEnabled(true)
+        assert.are.equal("オーグリマー", line(4))
+        hover(member) -- the client writes its English again
+        assert.are.equal("オーグリマー", line(4))
+        -- no level line: the zone is found by its text, not by its place
+        hover({ name = "Thrall", guildRank = "Warchief", zone = "Orgrimmar", presence = 1 })
+        assert.are.equal("Warchief", line(2))
+        assert.are.equal("オーグリマー", line(3))
+        -- a zone with no line in the name list stays as written
+        hover({ name = "Thrall", guildRank = "Warchief", zone = "A Place Nobody Spelled", presence = 1 })
+        assert.are.equal("A Place Nobody Spelled", line(3))
+        -- on the mobile app there is no zone line: a rank spelled like the zone is never taken for it
+        hover({ name = "Thrall", guildRank = "Orgrimmar", zone = "Orgrimmar", presence = C.MOBILE })
+        assert.are.equal("Orgrimmar", line(2))
+        assert.are.equal("In Mobile App", line(3))
+        WFJ.State.setNames(false)
+        hover(member)
+        assert.are.equal("Orgrimmar", line(4))
+        assert.are.equal("レベル 60 Orc Shaman", line(3))
+      end)
 
       it("the info header follows CommunitiesGuildInfoFrame_UpdateChallenges", function()
         local info = _G.CommunitiesFrame.GuildDetailsFrame.Info
