@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-23 at commit `bd0d1e705`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-24 at commit `e0e83fe63`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -20,7 +20,7 @@
 | **All** | **91,114** | | | **99.9%** | **53** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
-professions, internal strings): quest 339, gossip 94, item 907, spell 301, ui 313.
+professions, internal strings): quest 339, gossip 94, item 910, spell 439, ui 313.
 
 ### Nothing to translate (counted as done)
 
@@ -367,9 +367,11 @@ Lines are non-empty values; a server cache counts the records this install holds
 | gossip | 11,729 | 11,729 | 100.0% | 0 | 114,845 | 100.0% |
 | ui | 15,393 | 15,393 | 100.0% | 0 | 47,821 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,629 | 100.0% |
+| item | 11,161 | 11,161 | 100.0% | 0 | 60,878 | 100.0% |
+| spell | 26,105 | 26,105 | 100.0% | 1 | 169,210 | 100.0% |
 
-Item, spell, objective and area text take no word cards; HTML book pages
-and lines holding a `|` escape are not counted.
+Item and spell text shows its word cards on a frozen tooltip. Objective and area text
+take none; HTML book pages and lines holding a `|` escape are not counted.
 
 ## English word cards (English first)
 
