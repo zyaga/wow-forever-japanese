@@ -259,6 +259,8 @@ def test_profile_problems_name_each_bad_row():
         {"creature": 6, "voice": "x", "provenance": {}},
         {"creature": 7, "age": "adult", "provenance": {"age": {"source": "machine", "imported": "2026-10-06"}}},
         {"creature": 8, "age": "adult", "provenance": {"age": {"source": "wowhead", "imported": "2026-10-06"}}},
+        # the sex a player's quest window showed, sent with the Collector: a source like the tables
+        {"creature": 9, "gender": "male", "provenance": {"gender": {"source": "collector@1", "imported": "2026-11-24"}}},
     ]
     assert casting.problems(rows) == [
         "voice profiles: bad creature True",
@@ -267,8 +269,8 @@ def test_profile_problems_name_each_bad_row():
         "voice profiles 4: race 'martian' is neither a playable race nor a family",
         "voice profiles 6: unknown field(s) voice",
         "voice profiles 7 age: machine provenance lacks model, batch, reason",
-        "voice profiles 8 age: provenance source 'wowhead' is not client@…, vmangos@…, machine or maintainer",
-    ]  # 5: a race the client's tables gave is taken as read
+        "voice profiles 8 age: provenance source 'wowhead' is not client@…, vmangos@…, collector@…, machine or maintainer",
+    ]  # 5: a race the client's tables gave is taken as read; 9: a Collector sex is a source
 
 
 def test_a_casting_pass_value_stays_while_the_tables_are_silent():
