@@ -15460,6 +15460,12 @@ DRUNK_MESSAGE_ITEM_OTHER1
 DRUNK_MESSAGE_ITEM_OTHER2
 DRUNK_MESSAGE_ITEM_OTHER3
 DRUNK_MESSAGE_ITEM_OTHER4
+# ── Chat: lines the client writes itself that the English Collector found (a pet fed or dismissed, a guild news
+# kill, the idle logout warning) ──
+FEEDPET_LOG_THIRDPERSON
+GUILD_NEWS_FORMAT2
+IDLE_MESSAGE
+SPELLDISMISSPETOTHER
 
 # ── The friends window the client shows when its social system is on (SocialUIFrame) and the add-friend box ──
 ENTER_CHARACTER_NAME_OR_BATTLETAG

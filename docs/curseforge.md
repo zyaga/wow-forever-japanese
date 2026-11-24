@@ -30,13 +30,15 @@ prefers it as text only.
 - **Item and spell tooltips**, and buff and debuff text, with the game's live numbers filled in.
 - **The interface:** windows, labels, menus, popups and messages.
 
-In numbers: **5,850** quests, **11,871** NPC dialogue lines, **923** book pages, **209** letter pages, **11,259** item tooltips, **20,361** spell tooltips, **16,218** UI.
+In numbers: **5,850** quests, **11,872** NPC dialogue lines, **923** book pages, **209** letter pages, **11,259** item tooltips, **20,360** spell tooltips, **16,222** UI.
 
 Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, and so do quest titles, so you can still talk with other players, read guides and search by name.
 
 ### <span style="color:#E8C77E;">Popup dictionary</span>
 
 Point at a Japanese word in quest text, NPC dialogue, a book page or a window label, and a small popup shows its reading, its dictionary form and a short English meaning of the word as that sentence uses it. Nothing is drawn until the pointer is on a word.
+
+**Tooltips too.** While a tooltip shows, press **Ctrl+F** and a copy stays in the same place. Move the mouse onto it and point at any Japanese word: item and spell descriptions have their words' readings and meanings. The key again or Esc closes it. Ctrl+F is set once, only when nothing else uses that key, and can be changed under Keybindings.
 
 ### <span style="color:#E8C77E;">Word list</span>
 
@@ -129,13 +131,15 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 - **アイテムと呪文のツールチップ**、バフ・デバフの説明（数値はゲームの実際の値が入ります）
 - **インターフェース:** ウィンドウ、ラベル、メニュー、ポップアップ、メッセージ
 
-数で見ると: クエスト **5,850**、NPC の会話 **11,871** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **11,259**、呪文のツールチップ **20,361**、UI **16,218**。
+数で見ると: クエスト **5,850**、NPC の会話 **11,872** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **11,259**、呪文のツールチップ **20,360**、UI **16,222**。
 
 人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。クエストのタイトルも英語のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。
 
 ### <span style="color:#E8C77E;">ポップアップ辞書</span>
 
 クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで日本語の単語にマウスを合わせると、読み方・辞書形・その文脈での短い英語の意味が小さなポップアップに表示されます。マウスを合わせるまでは何も表示されません。
+
+**ツールチップでも使えます。** ツールチップが出ているときに **Ctrl+F** を押すと、その場に写しが残ります。マウスを乗せて日本語の単語を指すと、アイテムとスペルの説明文でも読み方と意味が表示されます。もう一度キーを押すか Esc で閉じます。Ctrl+F は、そのキーがほかに使われていないときに一度だけ設定され、キー割り当てで変更できます。
 
 ### <span style="color:#E8C77E;">単語帳</span>
 

@@ -21,7 +21,7 @@ WFJ.Data.add("spell", {
   [1232052] = { "すべての呪文と攻撃のクリティカル率を$N1%上昇させます。", "すべての呪文と攻撃のクリティカル率が$N1%上昇します。", 0xb510d4fb, 0x5f98cbaa, "uu", 1, 1 },
   [1232054] = { "新たな発見を求めて、Mote of PossibilityのそばでIllusion Dust $N1個とRighteous Orb $N2個を組み合わせます。", nil, 0xa1186a22, nil, "um", 2 },
   [1232057] = { "Lucky Doubloonを弾きます。表が出るとLucky Doubloonのクールダウンがリセットされ、$D1の間、すべての呪文と攻撃のクリティカル率が$N1%上昇します。最大$N3回までスタックします。裏が出ると、Lucky Doubloonのスタックがすべて取り除かれます。（戦闘中である必要があります。）", nil, 0x22b09205, nil, "um", 3 },
-  [1232066] = { "移動速度が$N1%増加します。", "移動速度 Increased：$N1%上昇しています。", 0x666adc1e, 0x666adc1e, "uu", 1, 1 },
+  [1232066] = { "移動速度が$N1%増加します。", "移動速度が$N1%上昇しています。", 0x666adc1e, 0x666adc1e, "uu", 1, 1 },
   [1232077] = { "新たな発見を求めて、Mote of PossibilityのそばでIllusion Dust $N1個とRighteous Orb $N2個を組み合わせます。", nil, 0xa1186a22, nil, "um", 2 },
   [1232079] = { "新たな発見を求めて、Mote of PossibilityのそばでIllusion Dust $N1個とRighteous Orb $N2個を組み合わせます。", nil, 0xa1186a22, nil, "um", 2 },
   [1232093] = { "攻撃呪文のGlobal Cooldownが$N1秒短縮されます。", "攻撃呪文のグローバルクールダウンが$N1秒短縮されます。", 0xa6d72f7b, 0xa6d72f7b, "uu", 1, 1 },

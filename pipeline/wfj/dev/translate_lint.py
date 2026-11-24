@@ -85,13 +85,13 @@ reason per problem:
   (exactly the glossary term; a capitalised heading word like `Warrior` does not count) is not checked
   on that row (the word is used in another sense there: "a rogue spark" is a stray one, not the class)
 
-Readings: a quest or gossip draft row may also carry `"words": [[word, reading], …]`, the whole
+Readings: a quest, gossip, item or spell draft row may also carry `"words": [[word, reading], …]`, the whole
 reading of every kanji word in its Japanese, the same list `wfj readings import` takes (ADR-036). They are
 checked with the import's own rules (`readings.word_problems`):
 
 - `words:<problem>`: a word not found after the previous one, with no kanji, holding an ASCII character, or
   with a non-kana reading
-- `words_unexpected`: `words` on a kind that gets no readings (tooltips, books, objectives)
+- `words_unexpected`: `words` on a kind that gets no readings (objectives, area text)
 
 A quest or gossip row whose Japanese holds a kanji and that has no `words` passes, with a warning: its
 readings are still owed (`wfj readings export` picks the line up later).

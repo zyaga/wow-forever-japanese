@@ -153,7 +153,8 @@ DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui", "draft-r70707-ui", "draft-r70755
                  "draft-death-recap-sg12",  # the death recap chat link's label
                  "draft-ui-tracker-menu",  # the tracker menu's Open Quest Map and Untrack entries
                  "draft-ui-item-stats",  # Forever's item stat lines (TOOLTIP_ITEM_STAT_*)
-                 "draft-ui-set-bonus"}  # the item set bonus lines' "(%d) Set: %s" / "Set: %s"
+                 "draft-ui-set-bonus",  # the item set bonus lines' "(%d) Set: %s" / "Set: %s"
+                 "draft-ui-chat-seen"}  # chat lines the client writes itself that the English Collector found
 
 
 def test_every_key_has_one_machine_line_and_its_english(root):

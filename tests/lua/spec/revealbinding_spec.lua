@@ -11,6 +11,7 @@ describe("UI/RevealBinding: a bound modifier is taken over by an override bindin
     WFJ = Loader.load("WoWForeverJapanese")
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
     S, RB = WFJ.Settings, WFJ.RevealBinding
+    _G.WFJ_DB.freezeKeyOffered = true -- the frozen tooltip's first key is another module's write
     Stub.bindingCalls = {}
     fires = {}
     WFJ.State.on("modifier", function(v) fires[#fires + 1] = v end)

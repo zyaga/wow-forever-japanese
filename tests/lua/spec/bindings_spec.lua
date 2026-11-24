@@ -6,15 +6,23 @@ describe("Bindings.xml and its globals", function()
   local xml
   setup(function() xml = H.readFile("addon/WoWForeverJapanese/Bindings.xml") end)
 
-  it("declares WFJ_TOGGLE under header WFJ, the hidden runOnUp WFJ_REVEAL and the voice panel's two", function()
+  it("declares six bindings in the addon's own section, the reveal one hidden and run on release", function()
     local _, count = xml:gsub("<Binding%s", "")
-    assert.are.equal(5, count)
-    assert.is_truthy(xml:find('<Binding name="WFJ_STUDY">WFJ_StudyToggle()</Binding>', 1, true))
-    assert.is_truthy(xml:find('<Binding name="WFJ_VOICE_PAUSE">WFJ_VoicePause()</Binding>', 1, true))
-    assert.is_truthy(xml:find('<Binding name="WFJ_VOICE_REPLAY">WFJ_VoiceReplay()</Binding>', 1, true))
+    assert.are.equal(6, count)
+    -- every binding names the section, so the client lists them together and skips no header row into Other
+    local _, inSection = xml:gsub('<Binding category="BINDING_HEADER_WFJ" ', "")
+    assert.are.equal(6, inSection)
+    assert.is_nil(xml:find("header=", 1, true))
     assert.is_nil(xml:find("SKIP", 1, true)) -- no next-line control
-    assert.is_truthy(xml:find('<Binding name="WFJ_TOGGLE" header="WFJ">WFJ_ToggleTranslation()</Binding>', 1, true))
-    local attrs, body = xml:match('<Binding (name="WFJ_REVEAL"[^>]*)>%s*(.-)%s*</Binding>')
+    local bodies = {
+      WFJ_TOGGLE = "WFJ_ToggleTranslation()", WFJ_STUDY = "WFJ_StudyToggle()", WFJ_VOICE_PAUSE = "WFJ_VoicePause()",
+      WFJ_VOICE_REPLAY = "WFJ_VoiceReplay()", WFJ_FREEZE_TOOLTIP = "WFJ_FreezeTooltip()",
+    }
+    for name, body in pairs(bodies) do
+      local line = '<Binding category="BINDING_HEADER_WFJ" name="' .. name .. '">' .. body .. "</Binding>"
+      assert.is_truthy(xml:find(line, 1, true), name)
+    end
+    local attrs, body = xml:match('<Binding ([^>]*name="WFJ_REVEAL"[^>]*)>%s*(.-)%s*</Binding>')
     assert.is_truthy(attrs)
     assert.is_truthy(attrs:find('runOnUp="true"', 1, true))
     assert.is_truthy(attrs:find('hidden="true"', 1, true))
@@ -44,8 +52,9 @@ describe("Bindings.xml and its globals", function()
     assert.is_string(BINDING_HEADER_WFJ); assert.is_true(#BINDING_HEADER_WFJ > 0)
     assert.is_string(BINDING_NAME_WFJ_TOGGLE); assert.is_true(#BINDING_NAME_WFJ_TOGGLE > 0)
     assert.is_function(WFJ_RevealKey)
-    assert.is_truthy(BINDING_NAME_WFJ_REVEAL:find("settings", 1, true))
+    assert.is_string(BINDING_NAME_WFJ_REVEAL); assert.is_true(#BINDING_NAME_WFJ_REVEAL > 0)
     assert.is_function(WFJ_VoicePause); assert.is_function(WFJ_VoiceReplay)
     assert.is_string(BINDING_NAME_WFJ_VOICE_PAUSE); assert.is_string(BINDING_NAME_WFJ_VOICE_REPLAY)
+    assert.is_function(WFJ_FreezeTooltip); assert.is_string(BINDING_NAME_WFJ_FREEZE_TOOLTIP)
   end)
 end)

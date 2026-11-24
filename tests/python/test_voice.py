@@ -767,12 +767,25 @@ def _recipe(makefile: str, target: str) -> str:
     return "\n".join(out)
 
 
+def test_every_translation_round_gives_tooltip_lines_the_words_already_written():
+    """A batch import and a fix report build the word list of every item and spell line made of sentences
+    already written, after `check` decided what ships, and list the sentences still to draft."""
+    makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
+    for flow in ("import-draft", "report-apply"):
+        chain = next(ln for ln in _recipe(makefile, flow).splitlines() if "$(MAKE) -s check" in ln)
+        steps = chain.split()
+        assert steps.index("check") < steps.index("tooltip-words") < steps.index("names"), flow
+    words = _recipe(makefile, "tooltip-words")
+    assert words.index("wfj readings spread") < words.index("wfj readings export-tooltips")
+
+
 def test_every_translation_round_ends_by_remaking_its_voice():
     """A batch import and a fix report remake the voice of the lines they changed, after `check` decided what
     ships; the voice step pushes and pins only when it made audio."""
     makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
-    assert "$(MAKE) -s check names voice-generate" in _recipe(makefile, "import-draft")
-    assert "$(MAKE) -s check names generate voice-generate validate coverage" in _recipe(makefile, "report-apply")
+    assert "$(MAKE) -s check tooltip-words names voice-generate" in _recipe(makefile, "import-draft")
+    assert ("$(MAKE) -s check tooltip-words names generate voice-generate validate coverage"
+            in _recipe(makefile, "report-apply"))
     generate = _recipe(makefile, "voice-generate")
     assert "wfj voice generate --scope all --players all" in generate
     assert "store-sync --if-changed" in generate

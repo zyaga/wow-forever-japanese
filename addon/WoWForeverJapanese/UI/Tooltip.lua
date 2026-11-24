@@ -455,7 +455,8 @@ local HEADED = { ShoppingTooltip1 = true, ShoppingTooltip2 = true, ItemRefShoppi
 -- the client's compiled tooltip code: no interface string holds the form). `name` is the spell's own name, as the
 -- frame gives it. Some recipes are headed by what they make instead ("Alchemy: Elemental Fire" for the spell
 -- "Transmute: Elemental Fire"): then the row is split at its first separator.
--- → the skill's Japanese with the separator kept, the name after it | nil unless both have Japanese
+-- → the skill's Japanese with the separator kept, the name after it, and the skill's name card ({ ja, reading,
+-- english }) | nil unless both have Japanese
 local function craftHeader(text, name)
   local head, rest
   if type(name) == "string" and name ~= "" and #text > #name + 2 and text:sub(-#name - 2) == ": " .. name then
@@ -464,9 +465,9 @@ local function craftHeader(text, name)
     head, rest = text:match("^(.-): (.+)$")
   end
   if not head then return nil end
-  local skill = WFJ.Names.of(head)
+  local skill, reading = WFJ.Names.of(head)
   if not skill or not WFJ.Names.item(rest) then return nil end
-  return skill .. ": ", rest
+  return skill .. ": ", rest, { ja = skill, reading = reading, english = head }
 end
 
 -- `sets`: { [row] = { key, args } | false } from setBonuses: a set bonus line written with its spell's Japanese, or
@@ -501,15 +502,15 @@ local function showStructural(surface, frame, lines, first, last, refit, name, s
         -- the name line: the name's Japanese while names are on, under the tooltip's own area; a name with no
         -- Japanese is left unwritten
         if isName and l and l.text ~= "" and WFJ.State.names then
-          local head, own
-          if not WFJ.Names.item(l.text) then head, own = craftHeader(l.text, name) end
+          local head, own, skill
+          if not WFJ.Names.item(l.text) then head, own, skill = craftHeader(l.text, name) end
           if (head or WFJ.Names.item(l.text)) and WFJ.Render.show(surface, "name.L" .. i, l.fs, l.text, area, "name",
-              own or l.text, { head = head, refit = refit }) then
+              own or l.text, { head = head, refit = refit, cards = skill and { skill } or nil }) then
             n = n + 1
           end
         end
         if set ~= nil and set ~= false and l then
-          local ctx = { args = set.args, refit = refit }
+          local ctx = { args = set.args, refit = refit, cards = set.cards }
           if WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", set.key, ctx) then n = n + 1 end
         elseif set == nil and l and l.text ~= "" and not isName then
           local key, args, runs
@@ -1268,11 +1269,12 @@ local function setBonuses(id, lines, taken)
   for _, f in ipairs(found) do
     local slot = f.key == "ITEM_SET_BONUS" and 1 or 2 -- the %s
     local inner = f.args[slot]
-    local hit, hitId
+    local hit, hitId, filled
+    local gateCards = WFJ.GateCards or gate
     for _, sid in ipairs(type(inner) == "string" and spells or {}) do
       if not used[sid] and Tooltip.spellDescription(sid) == inner then
-        local ok, text = gate(lookup("spell.description", sid), { inner })
-        if ok then hit, hitId = text, sid end
+        local ok, text, durations = gateCards(lookup("spell.description", sid), { inner })
+        if ok then hit, hitId, filled = text, sid, durations end
         break
       end
     end
@@ -1280,7 +1282,11 @@ local function setBonuses(id, lines, taken)
       local args = {}
       for k, v in pairs(f.args) do args[k] = v end
       args[slot] = hit
-      out[f.row], used[hitId] = { key = f.key, args = args }, true
+      -- the spell's own words, and the cards of what its values filled in (a duration's 秒), go on the line it is
+      -- written into (a frozen copy's cards)
+      local cards = WFJ.Readings and WFJ.Readings.cards("spell.description", hitId) or {}
+      for _, c in ipairs(type(filled) == "table" and filled or {}) do cards[#cards + 1] = c end
+      out[f.row], used[hitId] = { key = f.key, args = args, cards = cards }, true
     else
       out[f.row] = false
       english[#english + 1] = { text = inner }

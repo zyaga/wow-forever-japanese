@@ -1,7 +1,8 @@
 -- Core/Readings.lua: whole-word readings (ADR-036), the read path over WFJ.Data.reading and where each word sits
 -- in the text on screen. Pure: no globals, no frames. The display is UI/Readings.lua.
 --   Readings.words(kind, id)        → { word, reading, gloss, … } | nil; gloss = meaning number or false
---                                      kind = "quest.<field>" | "gossip" | "ui" | "book"
+--                                      kind = "quest.<field>" | "gossip" | "ui" | "book" | "item.description" |
+--                                      "spell.description" | "spell.aura"
 --   Readings.locate(words, text[, guards])
 --                                   → { { first, last, word, reading, gloss }, … }: byte positions, found in order;
 --                                      a word the text lacks is skipped; a match on part of a guard span is passed over
@@ -21,6 +22,8 @@ local _, WFJ = ...
 local Readings = {}
 WFJ.Readings = Readings
 
+local TOOLTIP_FIELDS = { item = { description = true }, spell = { description = true, aura = true } }
+
 local function split(kind)
   if kind == "gossip" then return "gossip", "text" end
   if kind == "ui" then return "ui", "text" end -- ["ui:<KEY>"] (ADR-041)
@@ -28,6 +31,9 @@ local function split(kind)
   if type(kind) ~= "string" then return nil end
   local field = kind:match("^quest%.(%a+)$")
   if field then return "quest", field end
+  -- tooltip text, shown with word cards on a frozen tooltip (UI/TooltipFreeze): ["item:<id>"], ["spell:<id>"]
+  local type_, own = kind:match("^(%a+)%.(%a+)$")
+  if TOOLTIP_FIELDS[type_] and TOOLTIP_FIELDS[type_][own] then return type_, own end
   return nil
 end
 
@@ -274,19 +280,58 @@ end
 -- name said twice gets two spans). A name's span carries `name = true` and the card of a name: its reading and its
 -- English name. A listed word that touches a name's span is left out: a word never anchors inside a name. A name
 -- the text no longer holds is skipped.
+-- The words of a row's list as entries Readings.withNames lays over another line it is written into (a set bonus
+-- line holding its spell's description, a duration holding 秒): { ja, reading, lemma, lemmaReading, english (the
+-- meaning), word = true }, in the list's order. → list (empty when the row has no words)
+function Readings.cards(kind, id)
+  local out = {}
+  local words = Readings.words(kind, id)
+  for i = 1, #(words or {}), 3 do
+    local gloss = words[i + 2] and WFJ.Glosses and WFJ.Glosses.get(words[i + 2])
+    out[#out + 1] = { ja = words[i], reading = words[i + 1], word = true,
+      lemma = gloss and gloss.lemma or nil, lemmaReading = gloss and gloss.lemmaReading or nil,
+      english = gloss and gloss.meaning or nil }
+  end
+  return out
+end
+
 function Readings.withNames(spans, text, names)
   local out = {}
   for i, sp in ipairs(spans or {}) do out[i] = sp end
   if type(text) ~= "string" or type(names) ~= "table" or names[1] == nil then return out end
   local found, from = {}, 1
+  local function place(n, s, e)
+    local reading = type(n.reading) == "string" and n.reading ~= "" and n.reading or n.ja
+    -- `word`: a word of another line's list written into this one (Readings.cards), saved like any word; a name's
+    -- card is not
+    found[#found + 1] = { first = s, last = e, word = n.ja, reading = reading, name = not n.word or nil,
+      card = { lemma = n.lemma or n.ja, lemmaReading = n.lemmaReading or reading, meaning = n.english } }
+  end
   for _, n in ipairs(names) do
     if type(n) == "table" and type(n.ja) == "string" and n.ja ~= "" then
-      local s, e = text:find(n.ja, from, true)
-      if s then
-        local reading = type(n.reading) == "string" and n.reading ~= "" and n.reading or n.ja
-        found[#found + 1] = { first = s, last = e, word = n.ja, reading = reading, name = true,
-          card = { lemma = n.ja, lemmaReading = reading, meaning = n.english } }
-        from = e + 1
+      if n.afterNumber then
+        -- a unit the line's values brought in (秒, 分) stands right after each number it was written with: every such
+        -- place takes its card, however many durations the line holds, and none inside another word (自分), which
+        -- follows no digit
+        local at = 1
+        while true do
+          local s, e = text:find(n.ja, at, true)
+          if not s then break end
+          if s > 1 and text:sub(s - 1, s - 1):find("%d") and not overlaps(found, s, e) then place(n, s, e) end
+          at = e + 1
+        end
+      else
+        local s, e = text:find(n.ja, from, true)
+        if not s then
+          -- a card the line's values brought in is listed after the line's own names, wherever it stands: looked
+          -- for from the start, never over a card already placed
+          s, e = text:find(n.ja, 1, true)
+          if s and overlaps(found, s, e) then s = nil end
+        end
+        if s then
+          place(n, s, e)
+          if e + 1 > from then from = e + 1 end
+        end
       end
     end
   end

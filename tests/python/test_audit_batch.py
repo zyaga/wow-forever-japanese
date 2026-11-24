@@ -94,11 +94,36 @@ def test_good_verdicts_pass_and_words_are_checked_against_the_corrected_japanese
     assert audit_batch.verdict_problems(part, {**ok, "words": WORDS})  # words for the old text are refused
 
 
-def test_item_rows_never_carry_words_and_a_row_out_of_order_is_named():
+def test_item_rows_owe_words_like_quest_rows_and_a_row_out_of_order_is_named():
     part = _part("item")
-    assert audit_batch.verdict_problems(part, _v(part, verdict="match")) == []
-    assert audit_batch.verdict_problems(part, _v(part, verdict="match", words=WORDS))
+    assert audit_batch.verdict_problems(part, _v(part, verdict="match")) == ["words missing"]
+    assert audit_batch.verdict_problems(part, _v(part, verdict="match", words=WORDS)) == []
     assert "does not match" in audit_batch.verdict_problems(part, {**_v(part, verdict="match"), "id": 2})[0]
+
+
+# A hand-written tooltip line ships with its manual breaks joined, and its words are written for that text: a word
+# may stand across a break of the stored text, and the word list is imported under the shipped text's hash.
+WRAPPED = "このペットの呼び出し\n方を習得する。"
+WRAPPED_WORDS = [["呼び出し方", "よびだしかた", "呼び出し方", "よびだしかた", "how to summon"],
+                 ["習得する", "しゅうとくする", "習得する", "しゅうとくする", "learn"]]
+
+
+def test_a_hand_wrapped_item_line_takes_words_for_the_text_it_ships_as(tmp_path):
+    part = {**_part("item", ja=WRAPPED), "en": "Teaches you how to summon this companion."}
+    shipped = "このペットの呼び出し方を習得する。"
+    assert audit_batch.verdict_problems(part, _v(part, verdict="match", words=WRAPPED_WORDS)) == []
+    fixed = "このペットの呼び出し\n方を習得します。"
+    fixed_words = [WRAPPED_WORDS[0], ["習得します", "しゅうとくします", "習得する", "しゅうとくする", "learn"]]
+    other = {**part, "id": 2, "ja_hash": part["ja_hash"]}
+    _write(tmp_path / "i01.jsonl", [part, other])
+    _write(tmp_path / "i01.verdicts.jsonl", [
+        _v(part, verdict="match", words=WRAPPED_WORDS),
+        _v(other, verdict="correct", kind="typo", problem="p", ja=fixed, words=fixed_words),
+    ])
+    assert audit_batch.report(tmp_path, None) == 0
+    assert audit_batch.load_jsonl(tmp_path / "audit.words.jsonl")[0]["ja_hash"] == readings.ja_hash(shipped)
+    corrected = audit_batch.load_jsonl(tmp_path / "audit.correct-words.jsonl")[0]
+    assert corrected["ja_hash"] == readings.ja_hash("このペットの呼び出し方を習得します。")
 
 
 def _write(p, rows):

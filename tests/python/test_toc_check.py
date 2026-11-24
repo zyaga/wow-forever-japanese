@@ -69,6 +69,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/TimeLine.lua",  # the cooldown countdown, before the tooltips that write it
         "UI/Tooltip.lua",
         "UI/TooltipUnit.lua",  # the unit mouseover lines
+        "UI/TooltipFreeze.lua",  # the frozen copy of a tooltip, after the tooltips it reads
         "UI/GameMenu.lua", "UI/Gossip.lua",
         "UI/ItemText.lua",  # the book window
         "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua", "UI/DialogueUIBook.lua",  # Dialogue UI's windows, when it is installed
@@ -102,7 +103,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Popups.lua",
         "UI/Scan.lua",
         # the settings pages' copy, widgets, key capture, the modifier's override binding, the AddOn List button
-        "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua",
+        "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/BindingNames.lua",
             "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua", "UI/CollectorReminder.lua", "UI/IntroWindow.lua",
             "UI/ReportWindow.lua",
             "UI/MinimapButton.lua",  # the minimap button

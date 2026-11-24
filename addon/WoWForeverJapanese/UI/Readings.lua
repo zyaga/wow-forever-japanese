@@ -39,6 +39,12 @@ View.SURFACES = {
   ["dialogueui.title"] = true, -- the quest title in its page header, as the client's quest window's title
 }
 
+-- Surfaces the addon draws itself as a copy of text shown elsewhere, each line carrying its own words (`rec.spans`)
+-- and the kind and id of the line it copies: the frozen tooltip (UI/TooltipFreeze). A line there takes cards
+-- whatever its kind, a window word among them: the copy is a frame of ours the mouse can rest on, which the
+-- tooltip it copies is not.
+View.COPIES = { ["tooltip.frozen"] = true }
+
 -- The frame a box over `anchor` belongs under: UIParent, unless the text sits in a window outside it (Dialogue UI
 -- draws its windows with no parent and fades UIParent out while they show, which would hide a box under UIParent
 -- with it). → that window's top frame, or UIParent
@@ -147,6 +153,15 @@ end
 
 -- ── The box ───────────────────────────────────────────────────────────────
 
+-- A solid fill under a box's tooltip border: the border's own centre lets the text behind show through, which makes
+-- a card over other text hard to read. Drawn on the box itself, so it sits under the border frame.
+function View.solid(frame)
+  local fill = frame:CreateTexture(nil, "BACKGROUND")
+  fill:SetPoint("TOPLEFT", frame, "TOPLEFT", 3, -3)
+  fill:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -3, 3)
+  fill:SetColorTexture(0.04, 0.04, 0.07, 1)
+end
+
 local box, boxText
 local function ensureBox()
   if box then return box end
@@ -154,6 +169,7 @@ local function ensureBox()
   -- Blizzard_SharedXML/Shared/Tooltip/SharedTooltipTemplates.xml, Blizzard_SharedXML.toc:160–161]
   box = CreateFrame("Frame", nil, Compat.resolve("UIParent"), "TooltipBackdropTemplate")
   box:SetFrameStrata("TOOLTIP")
+  View.solid(box)
   -- a template font first, so SetText never meets a FontString without one if the bundled font is refused
   boxText = box:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
   boxText:SetPoint("CENTER", box, "CENTER", 0, 0)
@@ -347,6 +363,8 @@ end
 local function takesCards(rec, fs)
   local m = rec.meta
   if not m or type(fs) ~= "table" or type(fs.CalculateScreenAreaFromCharacterSpan) ~= "function" then return false end
+  -- a copy (the frozen tooltip) brings the line's words, or a name line its name card
+  if View.COPIES[rec.surface] then return rec.spans ~= nil or type(rec.nameCard) == "table" end
   -- a label in a window (a Button's text or a menu entry is an adapter without the span call: refused above); a
   -- widget that holds only a name (a title bar) is one too
   if m.kind == "ui" or m.kind == "name" then return not View.nonWindow(rec.surface) and inWindow(fs) end
@@ -403,9 +421,11 @@ function View.attach(rec)
       View.detach(rec)
       return false
     end
-    -- the card sits on the name itself: a colour code before it or numbers after it are no part of it
-    local spans = WFJ.Readings.withNames({}, rec.applied,
-      { { ja = card.ja or rec.applied, english = card.english, reading = card.reading } })
+    -- the card sits on the name itself: a colour code before it or numbers after it are no part of it. A name
+    -- written before it on the same widget (a recipe heading's skill, "マイニング: ") takes its own card too.
+    local cards = { { ja = card.ja or rec.applied, english = card.english, reading = card.reading } }
+    for _, n in ipairs(type(rec.names) == "table" and rec.names or {}) do cards[#cards + 1] = n end
+    local spans = WFJ.Readings.withNames({}, rec.applied, cards)
     return lay(rec, region(rec), rec.applied, spans)
   end
   -- rec.spans: words already located by the caller (the voice panel shows one sentence of a line whose word list is

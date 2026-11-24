@@ -537,6 +537,8 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     assert "ERROR names not read: this run's test addon has no such read" in out
     # and one from before every row was read says its tooltips were judged by one row only
     assert "ERROR tooltip rows not read: this run's test addon reads the description row only" in out
+    # and one from before the frozen tooltip read says so too
+    assert "ERROR frozen tooltip not read: this run's test addon has no such read" in out
     fine = TOOLTIPS.replace('["408498"] = "3 numbers in the Japanese, 4 on this client"', "").replace(
         '["279845"] = "one Japanese paragraph over 2 lines"', "").replace(
         '["783"] = "says it has no voice, and the voice pack does not list it"', "").replace(
@@ -546,9 +548,29 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
         '["read"] = 120,', '["read"] = 120, ["rows"] = { ["tooltips"] = 120, ["kept"] = 0, ["english"] = { }, ["runs"] = { } }, ')
     # and every hovered frame's tooltip read, none of them English
     fine = fine.replace('["tooltips"] = {', HOVERED + '\n["tooltips"] = {', 1)
+    fine = fine.replace('["tooltips"] = {', FROZE + '\n["tooltips"] = {', 1)
     saved.write_text(fine, encoding="utf-8")
     assert client_surface._texts(args) == 0
-    assert "names: 1 read, 0 shown in Japanese" in capsys.readouterr().out
+    out = capsys.readouterr().out
+    assert "names: 1 read, 0 shown in Japanese" in out
+    assert ("frozen tooltip: 3 item and 0 spell tooltips frozen, 4 Japanese lines copied, 4 word cards, "
+            "0 lines with a word that takes none; key CTRL-F") in out
+
+
+def test_a_word_on_a_frozen_tooltip_with_no_card_fails_the_run_and_a_particle_does_not():
+    record = {"items": 1, "spells": 1, "lines": 3, "cards": 2, "bound": "", "expect": True, "refused": "",
+              "missing": [], "stuck": [], "uncarded": [
+                  ("items 6265", "part", "必要: ファースト・エイド (100)", "ファースト・エイド"),
+                  ("items 7000", "part", "必要: ファースト・エイド (100)", "ファースト・エイド"),
+                  ("spells 133", "none", "売値: 40", "売値"),
+                  ("items 6265", "part", "体力を回復します。", "を"),
+              ]}
+    problems = client_surface.freeze_problems(record)
+    words = [p for p in problems if p.startswith("frozen tooltip word without a card")]
+    # each line once, a particle never
+    assert len(words) == 2
+    assert any("ファースト・エイド in '必要: ファースト・エイド (100)' (items 6265)" in p for p in words)
+    assert any("(no card on the line): 売値" in p for p in words)
 
 
 def test_the_test_addon_carries_each_filled_spells_count_and_reads_tooltips_after_the_closed_windows(root):
@@ -667,11 +689,49 @@ def test_the_names_read_runs_after_the_no_voice_read_and_only_shows_tooltips():
     assert 'settings["names.japanese"] == true' in lua and "names.japanese\"] =" not in body
 
 
+# a frozen tooltip read with nothing wrong
+FROZE = ('["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, '
+         '["missing"] = { }, ["stuck"] = { } },')
+
+
+def test_the_frozen_tooltip_read_runs_last_and_presses_only_the_freeze_binding():
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    assert lua.index("WFJScanNamesRead(function()") < lua.index("outOfCombat(function() WFJScanFreezeRead(")
+    assert lua.index("WFJScanFreezeRead(function()") < lua.index("local function finish(said)")
+    body = lua[lua.index("local function WFJScanFreezeRead"):lua.index("-- The character window, opened by")]
+    # it runs what the key runs, twice per tooltip, and never clicks or uses an item
+    assert body.count("WFJ_FreezeTooltip()") == 2
+    assert "UseContainerItem" not in body and "PickupContainerItem" not in body and ":Click(" not in body
+    # no setting is written: the run shows what this player sees
+    assert "settings[" not in body.replace('settings["readings.enabled"] ~= false', "")
+
+
+def test_the_frozen_tooltip_read_fails_a_missing_line_a_copy_left_open_and_a_copy_with_no_cards():
+    def run(record: str) -> list[str]:
+        return client_surface.freeze_problems(client_surface.read_freeze(
+            "WFJScanDB = {\n[\"probe\"] = {\n" + record + "\n},\n}\n"))
+
+    assert run(FROZE) == []
+    assert client_surface.freeze_problems(None) == [
+        "frozen tooltip not read: this run's test addon has no such read (make scan-install, then run it again)"]
+    assert run(FROZE.replace('["items"] = 3', '["items"] = 0')) == [
+        "frozen tooltip not read: the character carries no item to freeze"]
+    assert run(FROZE.replace('["missing"] = { }', '["missing"] = { ["6948"] = "1 of 4 lines not on the copy" }')) == [
+        "frozen tooltip copy wrong: item 6948 (1 of 4 lines not on the copy)"]
+    assert run(FROZE.replace('["stuck"] = { }', '["stuck"] = { ["6948"] = "left showing" }')) == [
+        "frozen tooltip did not close: item 6948 (left showing)"]
+    assert run(FROZE.replace('["cards"] = 4', '["cards"] = 0')) == [
+        "frozen tooltip has no word cards: 4 Japanese lines copied, none took a card"]
+    # with English showing or the reading box off no card is due
+    assert run(FROZE.replace('["cards"] = 4', '["cards"] = 0').replace("true", "false")) == []
+
+
 LEFT = """
 WFJScanDB = {
 ["probe"] = {
 ["test"] = { ["started"] = "2026-11-22 18:00:00", ["finished"] = "2026-11-22 18:05:00", ["build"] = "70959" },
 ["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
+["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, ["missing"] = { }, ["stuck"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
 ["hover"] = { ["map"] = { ["made"] = 3, ["found"] = 3, ["tips"] = 2, ["english"] = { }, ["runs"] = { } } },
 ["tooltips"] = { ["read"] = 50, ["japanese"] = 45, ["unread"] = 0, ["items"] = 3,

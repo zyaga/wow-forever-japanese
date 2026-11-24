@@ -4,7 +4,8 @@
 -- just play), the selected one described under them, then how names should show (English names or Japanese names,
 -- each with one example name as it will look), and Confirm, which writes those choices' ordinary settings.
 -- The second says what to know to start: the reveal key (named as set, with its Change button), the word cards, the
--- minimap button and, while no voice pack has loaded, the voice download with its address to copy.
+-- key that freezes a tooltip (named as bound), the minimap button and, while no voice pack has loaded, the voice
+-- download with its address to copy.
 -- It is the one addon window that shows both languages at once: the player has not learned the reveal key yet, so
 -- a one-language window could be unreadable to them. The reveal key and the translation switch change nothing
 -- here. Only the addon's own copy (UI/OptionsText), never game text.
@@ -219,6 +220,7 @@ local function build()
   local b = page()
   f.infoPage = b
   f.lead, f.hold, f.readings, f.minimap, f.voice = line(b), line(b, TEXT_WIDTH - CHANGE - 10), line(b), line(b), line(b)
+  f.freeze = line(b)
   f.lead.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   f.capture = WFJ.KeyCapture.new(b, { mode = "reveal", width = CHANGE, onKey = function(v)
     WFJ.Options.setModifier(v)
@@ -246,9 +248,12 @@ local function later(fn, seconds)
   if type(C_Timer) == "table" and type(C_Timer.After) == "function" then C_Timer.After(seconds or 1, fn) else fn() end
 end
 
--- The points for the choice shown: playing only has no word cards to mention.
+-- The points for the choice shown: playing only has no word cards to mention, and a frozen tooltip takes its
+-- cards only while Japanese is what shows.
 local function points(f)
-  if shownPurpose() == "play" then return { f.hold, f.minimap } end
+  local shown = shownPurpose()
+  if shown == "play" then return { f.hold, f.minimap } end
+  if shown == "ja" then return { f.hold, f.readings, f.freeze, f.minimap } end
   return { f.hold, f.readings, f.minimap }
 end
 
@@ -341,7 +346,7 @@ local function layout(f)
 end
 
 local function refused(f)
-  for _, r in ipairs({ f.ask, f.lead, f.hold, f.readings, f.minimap, f.voice }) do
+  for _, r in ipairs({ f.ask, f.lead, f.hold, f.readings, f.freeze, f.minimap, f.voice }) do
     if WFJ.Font.isPending(r.ja) or WFJ.Font.isPending(r.en) then return true end
   end
   return false
@@ -377,8 +382,16 @@ function IntroWindow.refill()
   fill(f.hold, Text.get(english and "intro.hold.en" or "intro.hold", key))
   fill(f.readings, Text.get(english and "intro.readings.en" or "intro.readings"))
   fill(f.minimap, Text.get("intro.minimap"))
+  local freezeKey = WFJ.KeyCapture.keyOf(WFJ.KeyCapture.FREEZE)
+  if freezeKey then
+    fill(f.freeze, Text.get("intro.freeze", KEY:format(WFJ.KeyCapture.keyText(freezeKey))))
+  else
+    fill(f.freeze, Text.get("intro.freeze.unset"))
+  end
   W.setShown(f.readings.ja, shown ~= "play")
   W.setShown(f.readings.en, shown ~= "play")
+  W.setShown(f.freeze.ja, shown == "ja")
+  W.setShown(f.freeze.en, shown == "ja")
   for purpose, c in pairs(f.cards) do
     c.picked = IntroWindow.selected == purpose
     edge(c, c.picked)
@@ -407,6 +420,13 @@ function IntroWindow.refill()
 end
 
 -- Shows one of the two pages.
+-- The key bindings changed (a key set under Keybindings, the freeze key's first binding): an open window names the
+-- freeze key as it is bound now.
+function IntroWindow.bindingsChanged()
+  local f = IntroWindow.frame
+  if f and f:IsShown() then IntroWindow.refill() end
+end
+
 function IntroWindow.show(step)
   IntroWindow.step = step
   IntroWindow.refill()

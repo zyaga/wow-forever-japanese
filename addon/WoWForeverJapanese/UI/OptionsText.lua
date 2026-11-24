@@ -134,6 +134,15 @@ Text.T = {
 
   ["toggleKey"] = { en = "Turn translation on / off", ja = "翻訳のオン・オフ切り替え" },
   ["key.notSet"] = { en = "Not set", ja = "未設定" },
+  -- the names on the client's Keybindings page (UI/BindingNames)
+  ["binding.toggle"] = { en = "Toggle translation", ja = "翻訳のオン／オフ" },
+  -- hidden (Bindings.xml hidden="true"); the name explains itself if a client lists it anyway (ADR-018)
+  ["binding.reveal"] = { en = "Hold to show the other language (set in WoW Forever Japanese settings)",
+    ja = "押している間、もう一方の言語を表示（WoW Forever Japaneseの設定で変更）" },
+  ["binding.study"] = { en = "Study words: open / collapse the card", ja = "単語学習：カードを開く／たたむ" },
+  ["binding.voicePause"] = { en = "Voice: pause / resume", ja = "音声：一時停止／再開" },
+  ["binding.voiceReplay"] = { en = "Voice: play the line again", ja = "音声：もう一度再生" },
+  ["binding.freezeTooltip"] = { en = "Freeze the tooltip (word cards)", ja = "ツールチップを固定（単語カード）" },
 
   ["button.capture"] = { en = "Change", ja = "変更" },
   ["button.capturing"] = { en = "Press a key", ja = "キーを押す" },
@@ -415,6 +424,11 @@ Text.T = {
     ja = "日本語の単語にカーソルを合わせると、読み方が出ます。" },
   ["intro.words"] = { en = "Save a highlighted word to your word list with %s; /wfj study quizzes you on it.",
     ja = "ハイライトした単語は%sで単語帳に保存でき、/wfj study で学習できます。" },
+  -- %s is the key bound to the frozen tooltip; the second wording stands in while the binding has no key
+  ["intro.freeze"] = { en = "Press %s on a tooltip to freeze it, then point at its words.",
+    ja = "ツールチップが出ているときに%sを押すと固定され、中の単語も指せます。" },
+  ["intro.freeze.unset"] = { en = "Set the Freeze the tooltip key under Keybindings to read a tooltip's words.",
+    ja = "「キー割り当て」でツールチップ固定のキーを決めると、ツールチップの単語も読めます。" },
   ["intro.minimap"] = { en = "Minimap button: left-click to report a line, right-click for the menu.",
     ja = "ミニマップのボタン：左クリックで翻訳の報告、右クリックでメニュー。" },
   -- the voice section under both blocks, shown only while no voice pack has loaded

@@ -1,6 +1,6 @@
 # ADR-018: The modifier can be any key: bound keys are taken over by a session override binding, held truth stays the poll
 
-- **Status:** Accepted. Implemented in `Core/Modifier.lua` (classes, `normalize`, `bindingEdge`, `bindingKey`), `Core/Settings.lua` (kind `key`, `check`), `Core/State.lua` (`revealKey`), `Core/Const.lua` (`BINDING_NAME_WFJ_REVEAL`), `UI/RevealBinding.lua`, `UI/KeyCapture.lua`, `Bindings.xml` (`WFJ_REVEAL`), `Main.lua` (`WFJ_RevealKey`, `PLAYER_REGEN_ENABLED`, re-apply on login / reload `PLAYER_ENTERING_WORLD`), `UI/Slash.lua`. In-game verification is checklist 14.
+- **Status:** Accepted. Implemented in `Core/Modifier.lua` (classes, `normalize`, `bindingEdge`, `bindingKey`), `Core/Settings.lua` (kind `key`, `check`), `Core/State.lua` (`revealKey`), `UI/BindingNames.lua` (`BINDING_NAME_WFJ_REVEAL`, in the player's language since [ADR-108](108-the-frozen-tooltip-and-word-cards-on-tooltip-text.md); it was in `Core/Const.lua`), `UI/RevealBinding.lua`, `UI/KeyCapture.lua`, `Bindings.xml` (`WFJ_REVEAL`), `Main.lua` (`WFJ_RevealKey`, `PLAYER_REGEN_ENABLED`, re-apply on login / reload `PLAYER_ENTERING_WORLD`), `UI/Slash.lua`. In-game verification is checklist 14.
 - **Date:** 2026-09-14
 
 ## Context

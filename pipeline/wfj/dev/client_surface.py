@@ -2756,6 +2756,211 @@ local function WFJScanNamesRead(done)
   done()
 end
 
+-- The nameplate read. With Japanese names a creature's name shows on its nameplate, and a nameplate shows only within
+-- the client's nameplate range, so Japanese names widen it and turn off the client's English names over NPC heads
+-- (UI/NamePlateSetting). Into `probe.plates`: each of those settings' value and default, and `limit`, the largest
+-- range the client holds (a larger value set and read back, then the value before it put back).
+local PLATE_CVARS = { "nameplateMaxDistance", "UnitNameNPC", "UnitNameHostleNPC", "UnitNameInteractiveNPC",
+  "UnitNameFriendlySpecialNPCName" }
+local NAMES_SETTING = "names.japanese"
+
+local function WFJScanPlatesRead()
+  local db = probeDb()
+  local settings = addonSettings() or {}
+  local record = { names = settings[NAMES_SETTING] == true, values = {}, defaults = {} }
+  db.plates = record
+  if not (C_CVar and C_CVar.GetCVar and C_CVar.SetCVar) then
+    record.refused = "the client has no C_CVar"
+    return
+  end
+  for _, name in ipairs(PLATE_CVARS) do
+    record.values[name] = C_CVar.GetCVar(name) or "none"
+    record.defaults[name] = C_CVar.GetCVarDefault and C_CVar.GetCVarDefault(name) or "unknown"
+  end
+  local before = C_CVar.GetCVar("nameplateMaxDistance")
+  if before then
+    pcall(C_CVar.SetCVar, "nameplateMaxDistance", "200")
+    record.limit = C_CVar.GetCVar("nameplateMaxDistance")
+    pcall(C_CVar.SetCVar, "nameplateMaxDistance", before)
+  end
+end
+
+-- The load read: what the addon costs. Into `probe.load`: its own Lua memory in KB (the client's per-addon count) and,
+-- from its problem log, how long its files took to load and its setup after them, in milliseconds.
+local function WFJScanLoadRead()
+  local db = probeDb()
+  local record = {}
+  db.load = record
+  local update = (C_AddOns and C_AddOns.UpdateAddOnMemoryUsage) or UpdateAddOnMemoryUsage
+  local get = (C_AddOns and C_AddOns.GetAddOnMemoryUsage) or GetAddOnMemoryUsage
+  if update and get then
+    update()
+    record.kb = get("WoWForeverJapanese")
+  end
+  local timed = type(WFJ_Log) == "table" and WFJ_Log.load
+  if type(timed) == "table" then record.files, record.setup = timed.files, timed.setup end
+end
+
+-- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
+-- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
+-- carries and runs what the key runs (`WFJ_FreezeTooltip`), twice, into `probe.freeze`:
+--   bound    the key the binding has ("" for none)
+--   items    tooltips frozen; lines  Japanese lines on the copies; cards  word-card covers laid on them
+--   missing  an item whose copy did not show, or lacks a line the tooltip showed: a failure
+--   stuck    an item whose copy the key did not close again over the same tooltip: a failure
+--   cards    expected when Japanese shows with the reading box on (`expect`): none at all is a failure
+local FREEZE_MAX = 40 -- items frozen: a few bags' worth tells as much as every one
+
+local function shownTexts(frame, out)
+  for _, r in ipairs({ frame:GetRegions() }) do
+    if r.GetText and r:IsShown() then
+      local text = r:GetText()
+      if readable(text) then out[#out + 1] = { text = text, region = r } end
+    end
+  end
+  return out
+end
+
+-- The Japanese on a copied line that no word card covers, as runs of characters: each covered byte comes from the
+-- cover laid on the line's twin (its `text` and `spans`, UI/Readings), whose text is the line's own or the start of
+-- it. Kana and kanji count; the ideographic punctuation block (E3 80) and the full-width forms (EF: ！？～：) do not.
+local UNCARDED_MAX = 400
+local function uncardedRuns(plain, cover)
+  local covered = {}
+  if cover then
+    for _, sp in ipairs(cover.spans) do
+      if type(sp.first) == "number" and type(sp.last) == "number" then
+        for b = sp.first, sp.last do covered[b] = true end
+      end
+    end
+  end
+  local runs, run, i = {}, "", 1
+  while i <= #plain do
+    local c = plain:byte(i)
+    local n = c >= 240 and 4 or c >= 224 and 3 or c >= 192 and 2 or 1
+    local japanese = n == 3 and c >= 227 and c <= 233 and not (c == 227 and plain:byte(i + 1) == 128)
+    if japanese and not covered[i] then
+      run = run .. plain:sub(i, i + n - 1)
+    elseif run ~= "" then
+      runs[#runs + 1], run = run, ""
+    end
+    i = i + n
+  end
+  if run ~= "" then runs[#runs + 1] = run end
+  return runs
+end
+
+local function WFJScanFreezeRead(done)
+  local db = probeDb()
+  local settings = addonSettings() or {}
+  -- uncarded: { "<what was frozen>\t<covered: none | part>\t<line>\t<runs joined by a space>" }
+  local record = { items = 0, spells = 0, lines = 0, cards = 0, missing = {}, stuck = {}, uncarded = {},
+    bound = GetBindingKey("WFJ_FREEZE_TOOLTIP") or "",
+    expect = settings.enabled ~= false and settings.direction ~= "en" and settings["readings.enabled"] ~= false }
+  db.freeze = record
+  if type(WFJ_FreezeTooltip) ~= "function" then
+    record.refused = "the addon has no freeze binding to run"
+    return done()
+  end
+  done = collectorPaused(done) -- it shows tooltips, as the tooltip read does
+  local function freeze(id, show, counter)
+    counter = counter or "items"
+    if record[counter] >= FREEZE_MAX then return end
+    GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+    GameTooltip:ClearAllPoints()
+    GameTooltip:SetPoint("CENTER", UIParent, "CENTER")
+    show()
+    if not GameTooltip:IsShown() or (GameTooltip:NumLines() or 0) == 0 then return end
+    record[counter] = record[counter] + 1
+    local want = {}
+    for i = 1, GameTooltip:NumLines() do
+      for _, side in ipairs({ "Left", "Right" }) do
+        local region = _G["GameTooltipText" .. side .. i]
+        local text = region and region:IsShown() and region:GetText()
+        if readable(text) then want[#want + 1] = text end
+      end
+    end
+    WFJ_FreezeTooltip()
+    local copy = _G.WFJFrozenTooltip1
+    if not (copy and copy:IsShown()) then
+      record.missing[tostring(id)] = "no copy showed"
+      return
+    end
+    local got = {}
+    for _, t in ipairs(shownTexts(copy, {})) do
+      got[t.text] = true
+      -- the twin a coloured line is measured on is drawn at no opacity: it is not a line of its own
+      if hasJapanese(t.text) and not (t.region.GetAlpha and t.region:GetAlpha() == 0) then
+        record.lines = record.lines + 1
+      end
+    end
+    local lost = 0
+    for _, text in ipairs(want) do if not got[text] then lost = lost + 1 end end
+    if lost > 0 then record.missing[tostring(id)] = lost .. " of " .. #want .. " lines not on the copy" end
+    local covers = {}
+    for _, child in ipairs({ copy:GetChildren() }) do
+      if child ~= copy.NineSlice and child:IsShown() and child.IsMouseMotionEnabled and child:IsMouseMotionEnabled() then
+        record.cards = record.cards + 1
+        if type(child.text) == "string" and type(child.spans) == "table" then covers[#covers + 1] = child end
+      end
+    end
+    -- every Japanese character of every copied line: under a word card or not
+    for _, t in ipairs(shownTexts(copy, {})) do
+      if hasJapanese(t.text) and not (t.region.GetAlpha and t.region:GetAlpha() == 0)
+        and #record.uncarded < UNCARDED_MAX then
+        -- as the copy's twin holds it: no colour codes, a line break escape as a line break
+        local plain = t.text:gsub("|c%%x%%x%%x%%x%%x%%x%%x%%x", ""):gsub("|r", ""):gsub("|n", "\\n")
+        local cover
+        for _, c in ipairs(covers) do
+          if c.text ~= "" and plain:sub(1, #c.text) == c.text then cover = c end
+        end
+        local runs = uncardedRuns(plain, cover)
+        if runs[1] then
+          -- the words the line's cards do cover, so a missing one can be told from a misplaced one
+          local had = {}
+          for _, sp in ipairs(cover and cover.spans or {}) do
+            if type(sp.first) == "number" and type(sp.last) == "number" then had[#had + 1] = plain:sub(sp.first, sp.last) end
+          end
+          record.uncarded[#record.uncarded + 1] = table.concat({ counter .. " " .. tostring(id),
+            cover and ("part:" .. table.concat(had, ",")) or "none", (plain:gsub("[\\t\\n]", " ")),
+            table.concat(runs, " ") }, "\\t")
+        end
+      end
+    end
+    WFJ_FreezeTooltip() -- the same tooltip still shows: the key closes the copy
+    if copy:IsShown() then
+      record.stuck[tostring(id)] = "the key over the same tooltip left the copy showing"
+      copy:Hide()
+    end
+  end
+  local ok, err = pcall(function()
+    for slot = 1, 19 do
+      local id = GetInventoryItemID("player", slot)
+      if id then freeze(id, function() GameTooltip:SetInventoryItem("player", slot) end) end
+    end
+    for bag = 0, 4 do
+      for slot = 1, C_Container.GetContainerNumSlots(bag) or 0 do
+        local id = C_Container.GetContainerItemID(bag, slot)
+        if id then freeze(id, function() GameTooltip:SetBagItem(bag, slot) end) end
+      end
+    end
+    -- the spells the character knows among those that ship Japanese: a spell tooltip's lines (cost, range, cast
+    -- time, cooldown, reagents, requirements) are kinds an item's lack
+    if type(IsPlayerSpell) == "function" then
+      local ids = {}
+      for sid in pairs(VALUES) do ids[#ids + 1] = sid end
+      table.sort(ids)
+      for _, sid in ipairs(ids) do
+        if IsPlayerSpell(sid) then freeze(sid, function() GameTooltip:SetSpellByID(sid) end, "spells") end
+      end
+    end
+  end)
+  if not ok then record.refused = tostring(err) end
+  if _G.WFJFrozenTooltip1 and _G.WFJFrozenTooltip1:IsShown() then _G.WFJFrozenTooltip1:Hide() end
+  GameTooltip:Hide()
+  done()
+end
+
 -- The character window, opened by the player (see above): read every half second while it is open, so each page
 -- the player shows is read; it ends when the player closes it. Not opened in time, the run says so. What was read
 -- is kept from the first read on, and a reload while the window is open ends the run as closing it does: the
@@ -2889,7 +3094,7 @@ local function WFJScanGuildRead(done)
 end
 
 -- The whole window test (`/wfjtest`): the load walk, the live sweep (with the hover read of each window), the
--- closed-window read, the tooltip read, the no-voice read, the names read, then one done line. `/wfjtest hand` also reads the guild and character
+-- closed-window read, the tooltip read, the no-voice read, the names read, the frozen tooltip read, then one done line. `/wfjtest hand` also reads the guild and character
 -- windows, which the player opens when it asks. `probe.test` holds when it ran and on which build, so a result read
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
@@ -3020,6 +3225,11 @@ SlashCmdList.WFJTEST = function(how)
             db.test.part = "names"
             -- in a fight the client hides a tooltip's rows and a unit's name from addons
             outOfCombat(function() WFJScanNamesRead(function()
+            WFJScanPlatesRead() -- out of combat here: the client refuses a setting written in a fight
+            WFJScanLoadRead()
+            db.test.part = "freeze"
+            -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
+            outOfCombat(function() WFJScanFreezeRead(function()
             local function finish(said)
               db.test.part = "done"
               seterrorhandler(shown)
@@ -3054,6 +3264,7 @@ SlashCmdList.WFJTEST = function(how)
                 finish("")
               end)
             end)
+            end) end)
             end) end)
           end) end)
         end) end)
@@ -3732,6 +3943,136 @@ def read_names(text: str) -> dict[str, Any] | None:
     }
 
 
+def read_freeze(text: str) -> dict[str, Any] | None:
+    """The window test's frozen tooltip read out of a saved-variables file, or None when the run had none: the
+    key the binding has (`bound`, "" for none), how many item tooltips it froze (`items`), the Japanese lines on
+    the copies (`lines`), the word-card covers laid on them (`cards`), whether cards were to be expected
+    (`expect`: Japanese showing with the reading box on), why it could not read (`refused`), and two lists of
+    (item id, what was seen): `missing` (a copy that did not show or lacks a line) and `stuck` (a copy the key
+    did not close)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("freeze") if probe is not None else None
+    if record is None:
+        return None
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("items", "spells", "lines", "cards")}
+    out["bound"] = str(record.get("bound") or "")
+    out["expect"] = bool(record.get("expect"))
+    out["refused"] = str(record.get("refused") or "")
+    for kind in ("missing", "stuck"):
+        table = record.get(kind)
+        out[kind] = sorted((str(k), str(v)) for k, v in (table.named() if table is not None else {}).items())
+    rows = record.get("uncarded")
+    out["uncarded"] = [tuple(str(r).split("\t", 3)) for r in (rows.positional() if rows is not None else [])]
+    return out
+
+
+# Kana a word card never takes: the particles and the copula a reading list leaves out (core/readings `_BARE`), and
+# two of them together (には, への).
+_FREEZE_PARTICLES = ["は", "が", "を", "に", "で", "と", "の", "へ", "も", "や", "か", "よ", "ね", "な", "から", "まで"]
+FREEZE_BARE = frozenset(_FREEZE_PARTICLES + ["だ", "です", "ー", "しか"]
+                        + [a + b for a in _FREEZE_PARTICLES for b in _FREEZE_PARTICLES])
+
+
+def uncarded_words(record: dict[str, Any]) -> list[tuple[str, str, str, str]]:
+    """The frozen copies' Japanese that no word card covers, as (what was frozen, "none" | "part", the line, the
+    runs left), a run that is only a particle or the copula left out: the reading lists never give those a card."""
+    out = []
+    for row in record.get("uncarded", []):
+        if len(row) != 4:
+            continue
+        what, covered, line, runs = row
+        left = [r for r in runs.split(" ") if r and r not in FREEZE_BARE]
+        if left:
+            out.append((what, covered, line, " ".join(left)))
+    return out
+
+
+PLATE_WANT = {"UnitNameNPC": "0", "UnitNameHostleNPC": "0", "UnitNameInteractiveNPC": "0",
+              "UnitNameFriendlySpecialNPCName": "0"}
+PLATE_RANGE = 60  # the range Japanese names set (UI/NamePlateSetting WANT), or the client's limit when lower
+
+
+def read_plates(text: str) -> dict[str, Any] | None:
+    """The window test's nameplate read out of a saved-variables file, or None when the run had none: whether
+    Japanese names were on (`names`), each setting's value and default (`values`, `defaults`), the largest
+    nameplate range the client holds (`limit`, "" when unread) and why it could not read (`refused`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("plates") if probe is not None else None
+    if record is None:
+        return None
+    out: dict[str, Any] = {"names": bool(record.get("names")), "refused": str(record.get("refused") or ""),
+                           "limit": str(record.get("limit") or "")}
+    for kind in ("values", "defaults"):
+        table = record.get(kind)
+        out[kind] = {str(k): str(v) for k, v in (table.named() if table is not None else {}).items()}
+    return out
+
+
+def read_load(text: str) -> dict[str, float] | None:
+    """The window test's load read out of a saved-variables file, or None when the run had none: the addon's own
+    memory in KB (`kb`) and how long its files took to load and its setup after them, in ms (`files`, `setup`),
+    each left out when the client or the addon gave none."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("load") if probe is not None else None
+    if record is None:
+        return None
+    return {k: float(v) for k, v in record.named().items() if isinstance(v, (int, float))}
+
+
+def plates_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
+    nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
+    player who changed one by hand sees it here too, as the read cannot tell; a run with names off proves nothing
+    and says nothing."""
+    if record is None or record["refused"] or not record["names"]:
+        return []
+    values = record["values"]
+    out = [f"nameplates: {name} is {values.get(name)} with Japanese names on (English names over NPC heads)"
+           for name, want in PLATE_WANT.items() if values.get(name) not in (want, "none")]
+    try:
+        distance = float(values.get("nameplateMaxDistance", ""))
+        limit = float(record["limit"]) if record["limit"] else float(PLATE_RANGE)
+    except ValueError:
+        return out
+    if distance < min(PLATE_RANGE, limit):
+        out.append(f"nameplates: range {distance:g} with Japanese names on, short of {min(PLATE_RANGE, limit):g}")
+    return out
+
+
+def freeze_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the frozen tooltip read found wrong, one line each. A run whose test addon had no such read, or
+    one that froze nothing, proves nothing about the frozen tooltip and says so."""
+    if record is None:
+        return ["frozen tooltip not read: this run's test addon has no such read (make scan-install, then run it "
+                "again)"]
+    if record["refused"]:
+        return [f"frozen tooltip not read: {record['refused']}"]
+    if not record["items"]:
+        return ["frozen tooltip not read: the character carries no item to freeze"]
+    out = [f"frozen tooltip copy wrong: item {i} ({said})" for i, said in record["missing"]]
+    out += [f"frozen tooltip did not close: item {i} ({said})" for i, said in record["stuck"]]
+    if record["expect"] and record["lines"] and not record["cards"]:
+        out.append(f"frozen tooltip has no word cards: {record['lines']} Japanese lines copied, none took a card")
+    if record["expect"]:
+        # each distinct line once: the same line on twenty tooltips is one fault
+        seen: dict[str, tuple[str, str, str]] = {}
+        for what, covered, line, runs in uncarded_words(record):
+            seen.setdefault(line, (what, covered, runs))
+        out += [f"frozen tooltip word without a card ("
+                f"{'no card on the line' if covered == 'none' else 'cards on ' + covered.removeprefix('part:')}): "
+                f"{runs} in {line!r} ({what})" for line, (what, covered, runs) in sorted(seen.items())]
+    return out
+
+
 def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -> list[str]:
     """What the names read found wrong, one line each, held to the name list (`japanese`: English name → its
     Japanese). A name the list has a line for must show that Japanese; a name it has none for stays the client's
@@ -4133,8 +4474,25 @@ def _own_reads(saved: str) -> list[str]:
         japanese = {ln["en"]: ln["ja"] for ln in load_lines(data_root()) if ln.get("status") == "trusted"}
         shown = sum(1 for _, english, text in names["rows"] if text != english)
         print(f"names: {len(names['rows'])} read, {shown} shown in Japanese")
+    freeze = read_freeze(saved)
+    if freeze is not None:
+        print(f"frozen tooltip: {freeze['items']} item and {freeze['spells']} spell tooltips frozen, "
+              f"{freeze['lines']} Japanese lines copied, {freeze['cards']} word cards, "
+              f"{len(uncarded_words(freeze))} lines with a word that takes none; key {freeze['bound'] or 'none'}")
+    plates = read_plates(saved)
+    if plates is not None and not plates["refused"]:
+        v, d = plates["values"], plates["defaults"]
+        print(f"nameplates: range {v.get('nameplateMaxDistance')} (default {d.get('nameplateMaxDistance')}, the "
+              f"client holds up to {plates['limit'] or 'unknown'}); English names over NPC heads "
+              + ", ".join(f"{k} {v.get(k)}" for k in PLATE_WANT))
+    load = read_load(saved)
+    if load:
+        said = [f"{load['kb'] / 1024:.0f} MB of Lua memory"] if "kb" in load else []
+        said += [f"files loaded in {load['files']:.0f} ms"] if "files" in load else []
+        said += [f"setup {load['setup']:.0f} ms"] if "setup" in load else []
+        print("addon load: " + ", ".join(said))
     return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
-            + names_problems(names, japanese))
+            + names_problems(names, japanese) + freeze_problems(freeze) + plates_problems(plates))
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A

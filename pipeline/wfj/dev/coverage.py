@@ -302,7 +302,9 @@ def measure(root: Path) -> dict[str, Any]:
     words: dict[str, Any] = {}
     rstore = Store(root / "reading")
     for type_ in readings.TYPES:
-        japanese = readings.shipped_japanese(store.load(type_))
+        if type_ not in loaded:
+            loaded[type_] = english.load(type_)
+        japanese = readings.japanese_of(type_, store.load(type_), loaded[type_])
         result = readings.check(type_, rstore.load(type_), japanese)
         covered = {(r["id"], r["field"]) for r in result["current"]}
         can = {k for k, ja in japanese.items()
@@ -510,8 +512,8 @@ def render(m: dict[str, Any], stamp: str) -> str:
         done = _pct(r["with_words"], r["lines"])
         out.append(f"| {type_} | {r['lines']:,} | {r['with_words']:,} | {done} | "
                    f"{r['stale']:,} | {r['words']:,} | {_pct(r['with_meaning'], r['words'])} |")
-    out += ["", "Item, spell, objective and area text take no word cards; HTML book pages",
-            "and lines holding a `|` escape are not counted."]
+    out += ["", "Item and spell text shows its word cards on a frozen tooltip. Objective and area text",
+            "take none; HTML book pages and lines holding a `|` escape are not counted."]
     out += _render_english_cards(m.get("english_cards") or {})
     out += _render_voice(m.get("voice") or {})
     out.append("")

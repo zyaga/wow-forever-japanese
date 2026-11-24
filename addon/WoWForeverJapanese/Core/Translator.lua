@@ -18,7 +18,10 @@
 --          names(ja, kind) → ja, names [optional; the names setting: the English names inside a shown line in
 --            their Japanese, applied to every `apply` text after the align gate and before `expand`, so the
 --            player's own name is never taken for one; `names` goes on the payload for the name card],
---          name(english) → ja, reading | nil [optional; kind "name": `id` is the English the client shows] }
+--          name(english) → ja, reading | nil [optional; kind "name": `id` is the English the client shows],
+--          filled(start) [optional; true starts collecting the cards of what the client's values bring into a line
+--            as it is filled (a game name, a duration's unit), nothing hands them over, as { ja, reading,
+--            english }, and stops; they go on the payload's `names` after the line's own] }
 -- Kind "name": a widget that holds only a name. Known → "apply" { ja, name = { ja, english, reading } }; unknown →
 -- "none" with no marker (a name with no Japanese is not a missing translation).
 -- Live check (ADR-019): a quest surface passes the API English as ctx.live. For a "quest.<field>" entry with an
@@ -51,6 +54,28 @@ function Translator.new(deps)
     if not named and deps.names ~= nil then ja, names = deps.names(ja, kind) end
     if deps.expand ~= nil then ja = (deps.expand(ja)) end
     return { ja = ja, names = names }
+  end
+
+  -- What the client's values brought into the line in Japanese while it is filled (a game name the names choice
+  -- wrote, a duration's unit), as cards like a name's ({ ja, reading, english }): `deps.filled(true)` starts
+  -- collecting them, `deps.filled()` hands them over and stops.
+  local function collecting()
+    if deps.filled ~= nil then deps.filled(true) end
+  end
+  -- → the cards collected since `collecting`, or nil when there are none
+  local function taken()
+    if deps.filled == nil then return nil end
+    local extra = deps.filled()
+    if type(extra) ~= "table" or extra[1] == nil then return nil end
+    return extra
+  end
+  -- → `names` with `extra` after it, a new list (a names list may be a cached one)
+  local function joined(names, extra)
+    if extra == nil then return names end
+    local out = {}
+    for _, n in ipairs(names or {}) do out[#out + 1] = n end
+    for _, n in ipairs(extra) do out[#out + 1] = n end
+    return out
   end
 
   -- The names step on a line's stored text, before its values go in: a value the client fills in can be a
@@ -124,7 +149,9 @@ function Translator.new(deps)
     local names
     if (status == "trusted" or status == "stale") and not gated then
       ja, names = withNames(ja, kind)
+      collecting()
       ja = filled(ja, ctx, entry.values)
+      names = joined(names, taken())
       if ja == nil or ja == "" then return none("fill_failed") end
     end
     if (status == "trusted" or status == "stale") and not gated then
@@ -136,9 +163,12 @@ function Translator.new(deps)
     elseif gated then
       if deps.align == nil then return none("unaligned_ungated") end
       -- align → ok[, text]: `text` is the Japanese with live values filled in; a bare `true` keeps entry.ja.
+      collecting()
       local ok, text = deps.align(entry.ja, ctx and ctx.lines, ctx and ctx.nameScope, entry.values)
+      local extra = taken()
       if not ok then return none("align_failed") end
       local payload = shown((type(text) == "string" and text ~= "") and text or entry.ja, kind)
+      payload.names = joined(payload.names, extra)
       if status == "stale" and deps.marker("stale") then payload.marker = "stale" end
       return "apply", payload
     end
@@ -151,9 +181,12 @@ function Translator.new(deps)
     local status = STATUS[entry.status]
     if status ~= "unaligned" and status ~= "stale" then return none("not_shipped") end
     if deps.alignVariants == nil then return none("unaligned_ungated") end
+    collecting()
     local ok, text = deps.alignVariants(entry.variants, entry.shapes, ctx and ctx.lines, ctx and ctx.nameScope)
+    local extra = taken()
     if not ok or type(text) ~= "string" or text == "" then return none("align_failed") end
     local payload = shown(text, kind)
+    payload.names = joined(payload.names, extra)
     if status == "stale" and deps.marker("stale") then payload.marker = "stale" end
     return "apply", payload
   end
@@ -164,11 +197,25 @@ function Translator.new(deps)
     local status = STATUS[entry.status]
     if status ~= "unaligned" and status ~= "stale" then return none("not_shipped") end
     if deps.alignSections == nil then return none("unaligned_ungated") end
+    collecting()
     local ok, text = deps.alignSections(entry.sections, ctx and ctx.lines, ctx and ctx.nameScope)
+    local extra = taken()
     if not ok or type(text) ~= "string" or text == "" then return none("align_failed") end
     local payload = shown(text, kind)
+    payload.names = joined(payload.names, extra)
     if status == "stale" and deps.marker("stale") then payload.marker = "stale" end
     return "apply", payload
+  end
+
+  -- `ctx.cards`: cards the caller knows the written line holds beyond its own list (a set bonus line's spell words,
+  -- a recipe heading's skill name), in the shape of `filled`'s; they go on the payload's `names` after the rest
+  local resolveLine = T.resolve
+  function T.resolve(area, kind, id, ctx)
+    local action, payload = resolveLine(area, kind, id, ctx)
+    if action == "apply" and type(payload) == "table" and type(ctx) == "table" and type(ctx.cards) == "table" then
+      payload.names = joined(payload.names, ctx.cards[1] ~= nil and ctx.cards or nil)
+    end
+    return action, payload
   end
 
   return T

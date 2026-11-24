@@ -664,13 +664,14 @@ def _plan_readings(
     counts["reading"] = 0
     current: dict[str, list[dict[str, Any]]] = {}
     for type_ in readings.TYPES:
-        japanese = readings.shipped_japanese(store.load(type_))
+        english_lines = (english_store or Store(store.root, english=True)).load(type_)
+        japanese = readings.japanese_of(type_, store.load(type_), english_lines)
         result = readings.check(type_, reading_store_of(store).load(type_), japanese)
         if result["problems"]:
             first = "; ".join(result["problems"][:5])
             raise ValueError(f"invalid data/reading/ records (first shown): {first}")
         current[type_] = readings.addon_keyed(type_, result["current"], store.load(type_))
-        if english_store is not None:
+        if english_store is not None and type_ not in readings.TOOLTIP_TYPES:
             # before the alias copies below, so a copy carries its line's row: an alias has none of its own
             current[type_] = _with_english(type_, current[type_], english_store.load(type_))
         aliases = (alias_of or {}).get(type_, {})

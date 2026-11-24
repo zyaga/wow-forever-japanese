@@ -86,6 +86,10 @@ UIStrings.ARGS = {
   DRUNK_MESSAGE_ITEM_OTHER2 = { [1] = "text", [2] = "name" },
   DRUNK_MESSAGE_ITEM_OTHER3 = { [1] = "text", [2] = "name" },
   DRUNK_MESSAGE_ITEM_OTHER4 = { [1] = "text", [2] = "name" },
+  -- the food and the creature a guild defeated are game names; a player, and a pet a player named, as written
+  FEEDPET_LOG_THIRDPERSON = { [1] = "text", [2] = "name" },
+  SPELLDISMISSPETOTHER = { [1] = "text", [2] = "text" },
+  GUILD_NEWS_FORMAT2 = { [1] = "text", [2] = "name" },
   COMBATLOG_XPGAIN_EXHAUSTION2 = { [1] = "name", [3] = "text", [4] = "text" },
   ERR_AUCTION_WON_S = { [1] = "name" }, ERR_AUCTION_SOLD_S = { [1] = "name" },
   ERR_AUCTION_OUTBID_S = { [1] = "name" }, ERR_AUCTION_EXPIRED_S = { [1] = "name" },

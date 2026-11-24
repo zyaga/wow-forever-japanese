@@ -17,21 +17,32 @@ Pure: no disk.
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable
 from typing import Any
 
-from wfj.core import model
+from wfj.core import model, tooltip_text
 from wfj.core.hashing import key as hash_key
 from wfj.emit.lua_writer import shipped
 
 # The types whose text the addon can show readings on: quest window / quest map fields, gossip greetings,
-# the UI dictionary (ADR-041), hoverable where a plain-text window label shows one of its strings, and
-# book / letter pages (ADR-044), stored by page id, shipped under the page's English hash.
+# the UI dictionary (ADR-041), hoverable where a plain-text window label shows one of its strings,
+# book / letter pages (ADR-044), stored by page id, shipped under the page's English hash, and tooltip text
+# (item and spell lines, ADR-108), hoverable on a frozen tooltip.
 TYPES: dict[str, list[str]] = {
     "quest": model.FIELDS["quest"],
     "gossip": model.FIELDS["gossip"],
     "ui": model.FIELDS["ui"],
     "book": model.FIELDS["book"],
+    "item": model.FIELDS["item"],
+    "spell": model.FIELDS["spell"],
 }
+# Tooltip text. Tooltip lines repeat each other a sentence at a time, apart from an English name or which
+# number a placeholder stands for, so a line's words are written one sentence (a "piece") at a time and a line
+# is put together from its pieces (`pieces`, `assemble`; `wfj readings export-tooltips` / `import-tooltips` /
+# `spread`). Generate ships a hand-written line with its manual breaks joined, and its reading is written and
+# checked for the text as it ships (`japanese_of`). It ships no English word card rows: English first shows
+# the client's own tooltip.
+TOOLTIP_TYPES = tooltip_text.TYPES
 KEYS = ("id", "field", "ja_hash", "words", "provenance")
 PROVENANCE_CLASSES = ("machine", "correction")
 
@@ -41,6 +52,130 @@ _KANJI = re.compile(r"[㐀-䶿一-鿿々]")
 _KANA = re.compile(r"^[ぁ-ゖァ-ヺー]+$")
 _ASCII = re.compile(r"[\x00-\x7f]")
 _HEX16 = re.compile(r"^[0-9a-f]{16}$")
+
+
+# ── tooltip pieces ──────────────────────────────────────────────────────────
+# A piece is one sentence of a tooltip line as it ships (`japanese_of`: a hand-written line's manual breaks
+# are joined, so none falls inside a sentence). A line is cut at its line breaks and after each 。！？ that is
+# not inside brackets or quotes. A `$?…[a][b]` branch whose brackets each hold whole sentences is cut apart at
+# the brackets; a branch whose brackets hold parts of one sentence
+# (`$?pc923[Orgrimmar][Stormwind]へ戻ります。`) stays inside that sentence.
+#
+# A piece's key is the piece with what can never be a word taken out of the comparison: a branch condition,
+# which number a placeholder is (`$N1`, `$N4`), an English name, and a number no counter follows (a quest id,
+# a percentage). The placeholder's letter stays (a duration is not a number: the word after it can read
+# differently), and so does a number a Japanese word follows directly (a counter reads by its number:
+# 3匹 びき, 6匹 ぴき). A word never holds an ASCII character, so two pieces with one key hold the same
+# words in the same order.
+_PIECE_END = "。！？"
+_OPEN, _CLOSE = "（「『(", "）」』)"
+_BRANCH = re.compile(r"\$\?[^\[\]\s]*(?:\[[^\[\]]*\])+")
+_BRACKET = re.compile(r"\[([^\[\]]*)\]")
+_CONDITION = re.compile(r"\$\?[^\[\]\s]*")
+_PLACEHOLDER = re.compile(r"\$([A-Za-z])\d*")
+# an English name: letters, with the spaces and marks a name holds between them ("Welcome!", "Dr. Weavil's")
+_NAME = re.compile(r"(?<!\$)[A-Za-z](?:[A-Za-z' :\-.,!?&/]*[A-Za-z!?.])?")
+_LOOSE_NUMBER = re.compile(r"\d+(?:\.\d+)?(?![\d.]|[^\x00-\x7f])")
+
+
+def piece_key(text: str) -> str:
+    """What makes two pieces the same sentence (see above). "" for a piece that is only a branch condition."""
+    t = _CONDITION.sub("", text)
+    t = _LOOSE_NUMBER.sub("0", t)
+    t = _PLACEHOLDER.sub(r"$\1", t)
+    t = _NAME.sub("A", t)  # never a placeholder's letter: the rule refuses a letter after `$`
+    return " ".join(t.split())
+
+
+def piece_id(text: str) -> str:
+    """The 16-hex id of a piece: the hash of its key."""
+    return hash_key(piece_key(text))
+
+
+def _whole_sentences(branch: re.Match[str]) -> bool:
+    """A branch whose brackets each hold nothing or text that ends a sentence."""
+    texts = [t.strip() for t in _BRACKET.findall(branch.group(0))]
+    return all(not t or t[-1] in _PIECE_END for t in texts)
+
+
+def pieces(ja: str) -> list[tuple[int, int, str]]:
+    """(start, end, key) of every piece of a tooltip line, in text order; `ja[start:end]` is the piece.
+    `ja` is the line as it ships."""
+    cut: set[int] = set()  # a piece ends before this index
+    skip: set[int] = set()  # a character that belongs to no piece
+    held: set[int] = set()  # inside a branch that stays in its sentence: nothing cuts here
+    for m in _BRANCH.finditer(ja):
+        if _whole_sentences(m):
+            first = ja.index("[", m.start())
+            skip.update(range(m.start(), first))  # the condition
+            skip.update(i for i in range(first, m.end()) if ja[i] in "[]")
+        else:
+            held.update(range(m.start(), m.end()))
+    depth = 0
+    for i, ch in enumerate(ja):
+        if ch == "\n":
+            skip.add(i)
+            depth = 0
+        elif i in skip:
+            depth = 0
+        elif ch in _OPEN:
+            depth += 1
+        elif ch in _CLOSE:
+            depth = max(0, depth - 1)
+        elif ch in _PIECE_END and depth == 0 and i not in held and ja[i + 1 : i + 2] not in _PIECE_END:
+            cut.add(i + 1)
+    out: list[tuple[int, int, str]] = []
+    at = 0
+    for i in sorted(skip | cut | {len(ja)}):
+        text = ja[at:i]
+        lead = len(text) - len(text.lstrip())
+        start, end = at + lead, at + len(text.rstrip())
+        if end > start:
+            key = piece_key(ja[start:end])
+            if key:
+                out.append((start, end, key))
+        at = i + 1 if i in skip else i
+    return out
+
+
+def piece_words(ja: str, words: list[list[str]]) -> dict[str, list[list[str]]] | None:
+    """The words of a line, by the piece each stands in: {piece key: its words, in order}. Every piece of
+    the line is in it, with an empty list when nothing in it is listed. None when a word does not stand in
+    the line after the one before it, or stands across two pieces."""
+    spans = pieces(ja)
+    out: dict[str, list[list[str]]] = {}
+    placed: list[tuple[int, list[str]]] = []
+    cursor = 0
+    for entry in words:
+        at = ja.find(entry[0], cursor)
+        if at < 0:
+            return None
+        end = at + len(entry[0])
+        home = next((n for n, (s, e, _k) in enumerate(spans) if s <= at and end <= e), None)
+        if home is None:
+            return None
+        placed.append((home, list(entry)))
+        cursor = end
+    for n, (_s, _e, key) in enumerate(spans):
+        mine = [entry for home, entry in placed if home == n]
+        if key not in out or (not out[key] and mine):
+            out[key] = mine
+    return out
+
+
+def assemble(ja: str, index: dict[str, list[list[str]]]) -> list[list[str]] | None:
+    """The words of a tooltip line put together from pieces already written (`index`: piece key → words).
+    None when a piece with something to annotate is not in the index, or the words put together do not stand
+    in the line in order."""
+    out: list[list[str]] = []
+    for start, end, key in pieces(ja):
+        if key in index:
+            out += [list(w) for w in index[key]]
+        elif annotatable(ja[start:end]):
+            return None
+    if not out or word_problems(ja, out):
+        return None
+    return fill_repeats(ja, out)
 
 
 def needs_reading(ja: str) -> bool:
@@ -241,6 +376,25 @@ def record_problems(type_: str, rec: Any) -> list[str]:
     if "provenance" in rec:
         p += provenance_problems(rec["provenance"])
     return p
+
+
+def japanese_of(
+    type_: str, lines: list[dict[str, Any]], english_lines: Iterable[dict[str, Any]]
+) -> dict[tuple[int | str, str], str]:
+    """(id, field) → the Japanese the addon ships for a type, as a reading is written and checked for it.
+    A tooltip line (item, spell) ships with a hand-written line's manual breaks joined (core/tooltip_text), so
+    its reading is for that text: a word may stand across a break of the stored text, and the record's
+    `ja_hash` is the shipped text's. `english_lines`: the type's English store, which decides the joining."""
+    if type_ in TOOLTIP_TYPES:
+        en = {(ln["id"], ln["field"]): ln["en"] for ln in english_lines if isinstance(ln.get("en"), str)}
+        lines = tooltip_text.joined(lines, en)
+    return shipped_japanese(lines)
+
+
+def hand_written_text(type_: str, ja: str, en: str | None) -> str:
+    """The text a hand-written line ships as, which its reading is written and hashed for: a tooltip line with
+    its manual breaks joined (core/tooltip_text), any other line as it is."""
+    return tooltip_text.join_breaks(ja, en) if type_ in TOOLTIP_TYPES else ja
 
 
 def shipped_japanese(lines: list[dict[str, Any]]) -> dict[tuple[int | str, str], str]:

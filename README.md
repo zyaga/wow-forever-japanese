@@ -30,12 +30,12 @@ or Japanese)
 | | In Japanese |
 |---|---|
 | Quests | 5,850 |
-| NPC dialogue lines | 11,871 |
+| NPC dialogue lines | 11,872 |
 | Book pages | 923 |
 | Letter pages | 209 |
 | Item tooltips | 11,259 |
-| Spell tooltips | 20,361 |
-| UI | 16,218 |
+| Spell tooltips | 20,360 |
+| UI | 16,222 |
 
 ## Install
 
@@ -104,6 +104,12 @@ let go. Alt is the default. Any key can take its place: Ctrl, Shift, one side of
 small popup shows how to read it, its dictionary form, and a short English meaning of the word as the sentence uses it.
 
 ![The popup dictionary above a word in a quest text, showing its reading and meaning](docs/images/word-card.jpg)
+
+**Freeze a tooltip to read it.** A tooltip goes away when the mouse leaves what it belongs to, so you cannot point at
+a word in it. While a tooltip shows, press Ctrl+F: a copy stays in the same place, and the popup dictionary and the
+save click work on its Japanese, including item and spell descriptions. Press the key again or Esc to close it.
+Ctrl+F is set once, only when nothing else uses that key; change it under **Keybindings**, in the WoW Forever
+Japanese section.
 
 **Save words.** While the popup dictionary shows a word, Ctrl+click it to save it to your word list, with its
 reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by all your
@@ -303,12 +309,12 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 | | 日本語化済み |
 |---|---|
 | クエスト | 5,850 |
-| NPC の会話 | 11,871 行 |
+| NPC の会話 | 11,872 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
 | アイテムのツールチップ | 11,259 |
-| 呪文のツールチップ | 20,361 |
-| UI | 16,218 |
+| 呪文のツールチップ | 20,360 |
+| UI | 16,222 |
 
 ### インストール
 
@@ -355,6 +361,8 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 **ポップアップ辞書。** クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで日本語の単語にマウスを合わせると、読み方・辞書形・その文脈での短い英語の意味が表示されます。
 
 ![クエスト本文の単語の上に読み方と意味が表示されたポップアップ辞書](docs/images/word-card.jpg)
+
+**ツールチップを固定して読む。** ツールチップは、マウスが対象から離れると消えるので、中の単語を指すことができません。ツールチップが出ているときに Ctrl+F を押すと、その場に写しが残り、アイテムやスペルの説明文を含む日本語の単語でポップアップ辞書と単語の保存が使えます。もう一度キーを押すか Esc で閉じます。Ctrl+F は、そのキーがほかに使われていないときに一度だけ設定されます。**キー割り当て** の WoW Forever Japanese 欄で変更できます。
 
 **単語の保存。** ポップアップ辞書が出ている単語を Ctrl+クリックすると、読み方・意味・その文と一緒に単語帳に保存されます。単語帳は次回以降も残り、すべてのキャラクターで共通です。`/wfj words` と入力するか、設定の **単語帳** ページかミニマップボタンのメニューから開くと、単語帳全体がテキストで表示され、テキストファイル、表計算ソフト、Anki にコピーできます。保存の操作は Shift+クリック、Mac の Cmd+クリック、普通のクリックにも変えられ、保存のたびにスクリーンショットを撮ることもできます。単語と文にはふりがなも付くので、そのまま Anki のカードに使えます。古いバージョンのアドオンに戻すと単語帳は消えるので、先にコピーしておいてください。
 

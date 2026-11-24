@@ -165,6 +165,61 @@ describe("UI/NamePlateSetting", function()
     assert.are.same({}, writes)
   end)
 
+  -- the nameplate range and the client's English names over NPC heads
+  local OVERHEAD = { "UnitNameNPC", "UnitNameHostleNPC", "UnitNameInteractiveNPC", "UnitNameFriendlySpecialNPCName" }
+
+  it("Japanese names widen the nameplate range and hide the English names over NPC heads; English puts them back",
+    function()
+      boot("0", { schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
+      every("0")
+      cvar.nameplateMaxDistance = "20"
+      for _, name in ipairs(OVERHEAD) do cvar[name] = "1" end
+      cvar.UnitNameFriendlySpecialNPCName = "0" -- already off: nothing to put back
+      login()
+      S.set("names.japanese", true)
+      assert.are.equal("60", cvar.nameplateMaxDistance)
+      for _, name in ipairs(OVERHEAD) do assert.are.equal("0", cvar[name], name) end
+      assert.are.equal("20", _G.WFJ_DB.namePlatesWas.nameplateMaxDistance)
+      assert.are.equal("1", _G.WFJ_DB.namePlatesWas.UnitNameNPC)
+      assert.is_nil(_G.WFJ_DB.namePlatesWas.UnitNameFriendlySpecialNPCName)
+      S.set("names.japanese", false)
+      assert.are.equal("20", cvar.nameplateMaxDistance)
+      for _, name in ipairs({ "UnitNameNPC", "UnitNameHostleNPC", "UnitNameInteractiveNPC" }) do
+        assert.are.equal("1", cvar[name], name)
+      end
+      assert.are.equal("0", cvar.UnitNameFriendlySpecialNPCName)
+      assert.are.equal(0, lines())
+    end)
+
+  it("a client that holds the range to its own limit is not written again at each login", function()
+    boot("1", { schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
+    every("1")
+    cvar.nameplateMaxDistance = "20"
+    _G.C_CVar.SetCVar = function(name, v)
+      writes[#writes + 1] = name .. "=" .. tostring(v)
+      cvar[name] = name == "nameplateMaxDistance" and tostring(math.min(tonumber(v), 41)) or tostring(v)
+    end
+    login()
+    S.set("names.japanese", true)
+    assert.are.equal("41", cvar.nameplateMaxDistance)
+    writes = {}
+    Stub.fireAll("PLAYER_ENTERING_WORLD", false, true)
+    assert.are.same({}, writes)
+  end)
+
+  it("a player who already had Japanese names gets the range and the overhead names at the next login", function()
+    boot("1", { schema = 1, settings = { ["names.japanese"] = true }, intro = true, asked = true, askedNames = true,
+      namePlatesAsked = { nameplateShowFriendlyNpcs = true, nameplateShowEnemies = true, nameplateShowAll = true,
+        nameplateShowEnemyMinions = true, nameplateShowEnemyMinus = true } })
+    every("1")
+    cvar.nameplateMaxDistance = "20"
+    for _, name in ipairs(OVERHEAD) do cvar[name] = "1" end
+    login()
+    assert.are.equal("60", cvar.nameplateMaxDistance)
+    for _, name in ipairs(OVERHEAD) do assert.are.equal("0", cvar[name], name) end
+    assert.are.equal(0, lines())
+  end)
+
   it("a minor setting turned off by hand says nothing: those creatures are the player's call", function()
     boot("0", { schema = 1, settings = {}, intro = true, asked = true, askedNames = true })
     every("0")

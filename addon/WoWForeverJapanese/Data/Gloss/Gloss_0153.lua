@@ -380,6 +380,7 @@ WFJ.Data.add("gloss", {
   [153380] = "いなくなる\tいなくなる\tgone (out of our hair)",
   [153382] = "いる\tいる\t(who are) near",
   [153383] = "いる\tいる\tall it takes (if there is)",
+  [153384] = "いる\tいる\tbe (present)",
   [153385] = "いる\tいる\thas no (there are none)",
   [153386] = "いる\tいる\tif it were not for",
   [153387] = "いる\tいる\tlocated (in)",

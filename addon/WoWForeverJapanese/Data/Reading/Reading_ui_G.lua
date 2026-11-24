@@ -252,6 +252,7 @@ WFJ.Data.add("reading", {
   ["ui:GUILD_NAME_ALERT_WARNING"] = { text = "あなた=あなた=514 ギルド=ギルド=32627 名前=なまえ=57204 変更=へんこう=61657 必要です=ひつようです=73048" },
   ["ui:GUILD_NEWS"] = { text = "ギルド=ギルド=32627 ニュース=ニュース=34056" },
   ["ui:GUILD_NEWS_FILTERS"] = { text = "ギルドニュース=ギルドニュース=32635 フィルター=フィルター=34579" },
+  ["ui:GUILD_NEWS_FORMAT2"] = { text = "倒した=たおした=45561" },
   ["ui:GUILD_NEWS_LINK_ITEM"] = { text = "アイテム=アイテム=31742 チャット=チャット=33610 リンク=リンク=35395" },
   ["ui:GUILD_NEWS_MAKE_STICKY"] = { text = "上部=じょうぶ=37334 固定=こてい=59960" },
   ["ui:GUILD_NEWS_MOTD"] = { text = "今日=きょう=40475 メッセージ=メッセージ=35191" },

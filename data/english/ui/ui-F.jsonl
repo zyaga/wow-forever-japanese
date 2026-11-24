@@ -42,6 +42,7 @@
 {"id": "FEATURE_NOT_YET_AVAILABLE", "field": "text", "en": "This feature is not yet available.", "hash": "82c179b50a8276b2", "src": "db2@1.60.1.71037"}
 {"id": "FEATURE_UNAVAILBLE_PLAYER_IS_NEUTRAL", "field": "text", "en": "This feature is not available until you pick a faction.", "hash": "845b8ccb9a104344", "src": "db2@1.60.1.71037"}
 {"id": "FEAT_OF_STRENGTH_DESCRIPTION", "field": "text", "en": "Feats of Strength are accomplishments that players will find very difficult if not impossible to earn.  Worth no points, Feats of Strength are a collection of past glories on Azeroth.", "hash": "2b9f26539191e81f", "src": "db2@1.60.1.71037"}
+{"id": "FEEDPET_LOG_THIRDPERSON", "field": "text", "en": "%s's pet begins eating a %s.", "hash": "36e29ebaff113847", "src": "db2@1.60.1.71037"}
 {"id": "FEETSLOT", "field": "text", "en": "Feet", "hash": "097bdf123b6c09c0", "src": "db2@1.60.1.71037"}
 {"id": "FILTER", "field": "text", "en": "Filter", "hash": "07e3c6b02e3904a0", "src": "db2@1.60.1.71037"}
 {"id": "FILTERS", "field": "text", "en": "Filters", "hash": "098eac9787acd2e4", "src": "db2@1.60.1.71037"}

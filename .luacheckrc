@@ -43,6 +43,7 @@ globals = {
   -- the voice panel's key bindings
   "WFJ_VoicePause", "WFJ_VoiceReplay", "BINDING_NAME_WFJ_VOICE_PAUSE", "BINDING_NAME_WFJ_VOICE_REPLAY",
   "WFJ_StudyToggle", "BINDING_NAME_WFJ_STUDY", -- the study window's key binding
+  "WFJ_FreezeTooltip", "BINDING_NAME_WFJ_FREEZE_TOOLTIP", -- the frozen tooltip's key binding
   -- The TOC's AddonCompartmentFunc handlers (Blizzard's addon dropdown calls them by name)
   "WFJ_OnAddonCompartmentClick", "WFJ_OnAddonCompartmentEnter", "WFJ_OnAddonCompartmentLeave",
   "WoWForeverJapanese_RegisterVoice", -- the voice pack calls it from its own chunk (ADR-061)

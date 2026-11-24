@@ -51,7 +51,7 @@
 {"id": 12040, "field": "name", "en": "Forest Pendant", "hash": "8b8ed279c9db2f83", "src": "db2@1.60.1.71037"}
 {"id": 12041, "field": "name", "en": "Windshear Leggings", "hash": "d46b092055f8ae6f", "src": "db2@1.60.1.71037"}
 {"id": 12042, "field": "name", "en": "Marsh Chain", "hash": "aafa7414be28565e", "src": "db2@1.60.1.71037"}
-{"id": 12042, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.71037"}
+{"id": 12042, "field": "description", "en": "Equip: Increases healing done by up to 7 and damage done by up to 2 for all magical spells and effects.", "hash": "47a259a220fbde4e", "src": "collector@1.60.1.71037"}
 {"id": 12043, "field": "name", "en": "Desert Choker", "hash": "f1c8c0af27f06b4b", "src": "db2@1.60.1.71037"}
 {"id": 12043, "field": "description", "en": "Equip: Increases your chance to dodge an attack by 1%.", "hash": "15cb314acb3c8207", "src": "collector@1.60.1.71037"}
 {"id": 12044, "field": "name", "en": "Arctic Pendant", "hash": "cae27d1b70a85467", "src": "db2@1.60.1.71037"}

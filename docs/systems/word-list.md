@@ -53,13 +53,13 @@ The key index is rebuilt from the entries on load and kept in memory only; it is
 | `sentence` | the Japanese sentence around the word, as shown |
 | `wf`, `wl` | the word's first and last byte inside `sentence` |
 | `kind`, `id` | the reading row's kind and id |
-| `source` | where it was shown: `quest`, `gossip`, `book` or `window` |
+| `source` | where it was shown: `quest`, `gossip`, `book`, `window`, `item` or `spell` |
 | `questId`, `questTitle` | for a `quest.*` kind only: the quest id and the shipped Japanese quest title |
 | `saved` | `time()` at the save |
 | `shot` | the screenshot's file name, when one was taken |
 
 - **The sentence** is cut at 。！？!? or a line break on each side of the word and kept whole, however long it is (a quest paragraph with no full stop is kept up to its line breaks), so the study card and Anki show the sentence the voice reads. It is the Japanese the player saw, so where the line names the character it holds the character's name: the player's own data, on the player's own machine.
-- **The source** comes from the surface the word was shown on: `questframe.*` and `questmap.*` are `quest` (a quest-window line keyed by its English, such as a conditional description, is still quest text, with no quest id); `gossip` is `gossip`; `itemtext` is `book`; on the voice panel a `quest.*` kind is `quest`, `book` is `book` and anything else `gossip`; every other surface is `window`.
+- **The source** comes from the surface the word was shown on: `questframe.*` and `questmap.*` are `quest` (a quest-window line keyed by its English, such as a conditional description, is still quest text, with no quest id); `gossip` is `gossip`; `itemtext` is `book`; on the voice panel a `quest.*` kind is `quest`, `book` is `book` and anything else `gossip`; every other surface is `window`. On a [frozen tooltip](readings.md#tooltip-text-and-the-frozen-tooltip) the line's kind decides: `item.*` is `item`, `spell.*` is `spell`, `ui` is `window` and `quest.title` is `quest`.
 - Tabs and line breaks inside any field become spaces, so a field never breaks the export's columns.
 
 ### English entries
