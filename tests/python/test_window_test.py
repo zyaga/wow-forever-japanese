@@ -1066,7 +1066,17 @@ WFJScanDB = {
 ["ChatFrame1.Line"] = "Hearthstone",
 ["SomeAddon.Label"] = "Sort bags",
 ["Abbrev"] = "PvP",
+["QuestObjectiveTracker.Line1"] = "0/8 Solid Sharpening Stone",
+["QuestObjectiveTracker.Line2"] = "Kobold Vermin: 3/10",
+["QuestObjectiveTracker.Line3"] = "0/8 Unknown Trinket",
 },
+},
+},
+["names"] = {
+["on"] = true,
+["target"] = {
+["target tooltip row 2"] = "Level 40",
+["target tooltip row 4"] = "12/12 Saltwater Murloc Eye",
 },
 },
 },
@@ -1076,22 +1086,30 @@ WFJScanDB = {
 
 def test_a_game_name_left_english_in_a_window_is_a_line_of_the_result():
     latin = client_surface.read_latin(LATIN)
-    assert set(latin) == {"always on screen", "character"}
-    names = {**JAPANESE, "Warrior": "ウォリアー", "PvP": "ピーブイピー"}
+    assert set(latin) == {"always on screen", "character", "the target's tooltip"}
+    names = {**JAPANESE, "Warrior": "ウォリアー", "PvP": "ピーブイピー",
+             "Solid Sharpening Stone": "ソリッド・シャープニング・ストーン",
+             "Saltwater Murloc Eye": "ソルトウォーター・マーロック・アイ"}
     faults, protected, other = client_surface.latin_names(latin, names, frozenset({"PvP"}))
-    # a whole text that is a name, and a name inside Japanese text; a text on screen with no window open is
-    # filed once; chat is what players typed; a kept-as-written word is never a fault
+    # a whole text that is a name, a name with only counts around it (an objective line), and a name inside
+    # Japanese text; a text on screen with no window open is filed once; chat is what players typed; a
+    # kept-as-written word is never a fault
     assert faults == {
         ("character", "(name left English) Hearthstone"),
         ("character", "(name left English) Warrior"),
         ("character", "(name left English) Kobold Vermin"),
+        ("character", "(name left English) Solid Sharpening Stone"),
+        # the targeted creature's objective row, read by the names read
+        ("the target's tooltip", "(name left English) Saltwater Murloc Eye"),
     }
     assert protected == {"the spellbook": 1}
-    assert other == [("always on screen", "Zyaga"), ("character", "PvP"), ("character", "Sort bags")]
+    # a name the list has no line for, with its counts, is other English, never a fault
+    assert other == [("always on screen", "Zyaga"), ("character", "0/8 Unknown Trinket"), ("character", "PvP"),
+                     ("character", "Sort bags"), ("the target's tooltip", "Level 40")]
     # the baseline allows one with its reason, like any other line of the result
     allowed = {("character", "(name left English) Warrior"): "a reason"}
     new, _ = client_surface.window_test_report(faults, allowed)
-    assert len(new) == 2 and not any("Warrior" in row for row in new)
+    assert len(new) == 4 and not any("Warrior" in row for row in new)
 
 
 def test_every_window_read_keeps_its_latin_text_only_with_japanese_names_on():
@@ -1574,6 +1592,21 @@ def test_a_skill_and_recipe_heading_is_held_to_the_two_names_it_is_made_of():
         "name changed with no line in the name list: spell Mining: Unknown Thing shows マイニング: 何か",
         "name not as the name list spells it: spell Enchanting: Enchant Cloak - Stealth shows "
         "エンチャンティング: Enchant Cloak - Stealth, the list has エンチャンティング: エンチャント・クローク・ステルス"]
+
+
+def test_an_item_with_a_random_suffix_is_held_to_its_name_and_its_suffix():
+    # as the run of build 71091 showed them: the item's and the suffix's lines joined, which the addon writes
+    record = {"refused": None, "on": True, "rows": [
+        ("item", "Charged Gear of Strength", "チャージド・ギア・オブ・ストレングス"),
+        ("item", "Field Plate Vambraces of Nature Protection", "Field Plate Vambraces of Nature Protection"),
+        ("item", "Band of the Unknown", "バンド")]}
+    names = {"Charged Gear": "チャージド・ギア", "of Strength": "オブ・ストレングス",
+             "Field Plate Vambraces": "フィールド・プレート・ヴァンブレイス",
+             "of Nature Protection": "オブ・ネイチャー・プロテクション"}
+    assert client_surface.names_problems(record, names) == [
+        "name changed with no line in the name list: item Band of the Unknown shows バンド",
+        "name left English: item Field Plate Vambraces of Nature Protection (its Japanese is "
+        "フィールド・プレート・ヴァンブレイス・オブ・ネイチャー・プロテクション)"]
 
 
 def test_the_hovers_of_a_window_are_capped_and_a_long_list_does_not_take_them_all(tmp_path):

@@ -19,8 +19,9 @@
 --                                   a creature's name: not listed
 --   SelectableGraveyardPinTemplate  selectablegraveyarddataprovider.lua:57–73
 --   WaypointLocationPinTemplate     waypointlocationdataprovider.lua:165–175 (template name :3–5)
---   QuestPinTemplate                the gamepad-mode lines (questdataprovider.lua:273–276; template name :3–4) and
---                                   the quest's tag line (below)
+--   QuestPinTemplate                the gamepad-mode lines (questdataprovider.lua:273–276; template name :3–4), the
+--                                   quest's tag line (below) and its title, line 1 (UI/QuestMap's title, by the
+--                                   pin's quest id)
 --   QuestBlobPinTemplate            the quest's tag line only (questblobdataprovider.lua:19, 202–213)
 --   DungeonEntrancePinTemplate      the fallback name and the instruction line (dungeonentrancedataprovider.lua:
 --                                   68–74) through CheckShowTooltip
@@ -134,6 +135,19 @@ function MapPins.familyLines(tt, families)
   return n
 end
 
+-- A quest pin's line 1: the quest's title, with camelot's level prefix and the difficulty colour around it
+-- (QuestPinMixin:OnMouseEnter, questdataprovider.lua:233-244; SetQuestTitleLevelAndDifficultyColor,
+-- difficultyutil.lua:84-99), shown the way the quest log shows a title. → 1 | 0
+local function questTitle(tt, owner)
+  local QuestMap = WFJ.QuestMap
+  if not QuestMap or type(owner.GetQuestID) ~= "function" or type(tt.GetName) ~= "function" then return 0 end
+  local ok, questID = pcall(owner.GetQuestID, owner)
+  local name = tt:GetName()
+  if not ok or type(questID) ~= "number" or type(name) ~= "string" then return 0 end
+  local help = WFJ.HelpTooltip
+  return QuestMap.showTitle(help.SURFACE, questID, Compat.resolve(name .. "TextLeft1"), help.refit)
+end
+
 -- Lists the keys a pin template's tooltip may show (a map module's own pins). A template already listed is kept.
 function MapPins.add(template, keys)
   if type(template) ~= "string" or type(keys) ~= "table" or PIN_KEYS[template] then return false end
@@ -164,6 +178,7 @@ function MapPins.onShow(tt)
   local families = LINE_FAMILIES[template]
   if families then n = n + MapPins.familyLines(tt, families) end
   if NAMED[template] then n = n + nameLine(tt) end
+  if template == "QuestPinTemplate" then n = n + questTitle(tt, owner) end
   return n
 end
 

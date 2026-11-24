@@ -88,6 +88,29 @@ describe("UI/Tooltip set bonus lines", function()
     assert.are.same({ "spell", 999, "description", "Something new." }, records[#records])
   end)
 
+  it("a bonus line the client wrote with no text yet shows its own words in Japanese", function()
+    -- as the window test showed set items on Forever 1.60.1.71091: "(4) Set: " and "Set: " with nothing after
+    show({ "Devilsaur Leggings", "Set: ", "(4) Set: " })
+    assert.are.equal("セット: ", left(2):GetText())
+    assert.are.equal("(4) セット: ", left(3):GetText())
+  end)
+
+  it("with Japanese names: the set's heading and the names inside a bonus line in Japanese", function()
+    local rows = {}
+    local names = { ["Devilsaur Armor"] = "デビルソール・アーマー", ["Attack Power"] = "アタック・パワー" }
+    for english, ja in pairs(names) do rows[WFJ.Names.key(english)] = ja .. "\t" .. ja end
+    WFJ.Data.add("name", rows)
+    SPELLS[460232] = { ja = "Attack Powerが$N1上昇します。", status = "u" }
+    bonuses = { 460232 }
+    Stub.spellDescriptions[460232] = "Increases Attack Power by 40."
+    WFJ.State.names = true
+    show({ "Devilsaur Leggings", "Devilsaur Armor (1/2)", "(2) Set: Increases Attack Power by 40." })
+    assert.are.equal("デビルソール・アーマー (1/2)", left(2):GetText())
+    assert.are.equal("(2) セット: アタック・パワーが40上昇します。", left(3):GetText())
+    WFJ.State.names = false
+    SPELLS[460232] = nil
+  end)
+
   it("without the client's set API the lines stay English", function()
     _G.C_Item = nil
     show({ "Devilsaur Leggings", "(2) Set: Improves your chance to hit by 2.0%." })

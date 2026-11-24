@@ -763,6 +763,29 @@ local function playersUnit(frame)
   return ok and controlled == true
 end
 
+-- Text on screen that is what a player wrote, never the game's: an action button's name line, which shows only
+-- a macro's name (ActionButton's UpdateName: C_ActionBar.GetActionText when UsesActionText, blizzard_actionbar/
+-- shared/actionbutton.lua:621-629), and a chat tab whose window the player named: the client names only its first
+-- three windows, GENERAL, COMBAT_LOG and VOICE (FCF_ResetChatWindows, blizzard_chatframebase/mainline/
+-- floatingchatframe.lua:1865-1873), and asks the player for every other name.
+local function playersText(name, plain)
+  if name:find("^ActionButton%%d+%%.?Name$") or name:find("^MultiBar.-Button%%d+%%.?Name$") then return true end
+  if name:find("^ChatFrame%%d+Tab") then
+    return plain ~= GENERAL and plain ~= COMBAT_LOG and plain ~= VOICE
+  end
+  return false
+end
+
+-- Text drawn fully transparent is not on screen: the spellbook's and the professions page's own texts stay as the
+-- client wrote them under the addon's Japanese labels. A text region has its own alpha and no effective one (only
+-- a frame has GetEffectiveAlpha: blizzard_apidocumentationgenerated/simpleregionapidocumentation.lua:10,
+-- simpleframeapidocumentation.lua:366), so its own and its frame's are read.
+local function unseen(region)
+  if region.GetAlpha and region:GetAlpha() == 0 then return true end
+  local parent = region.GetParent and region:GetParent()
+  return parent ~= nil and parent.GetEffectiveAlpha ~= nil and parent:GetEffectiveAlpha() == 0
+end
+
 local function readScreen()
   -- whether the tooltip on screen is a unit's (the creature or player under the mouse)
   local shows, unit = pcall(function() return GameTooltip:IsShown() and GameTooltip:GetUnit() end)
@@ -788,13 +811,14 @@ local function readScreen()
     pcall(function()
       if frame:IsForbidden() or not frame:IsVisible() then return end
       for _, region in ipairs({ frame:GetRegions() }) do
-        if region:GetObjectType() == "FontString" and region:IsVisible() then
+        if region:GetObjectType() == "FontString" and region:IsVisible() and not unseen(region) then
           local plain = plainOf(region)
+          local name = tostring(region:GetDebugName())
+          if plain and playersText(name, plain) then plain = nil end
           if plain and ENGLISH[plain] then
             -- a name plate shows a creature's name and a unit's tooltip under the mouse shows an NPC's title:
             -- names, which stay English, and never part of the window being read (a mob called "Gold" walking
             -- by is not the word Gold left untranslated). Any other tooltip is the window's own and is read.
-            local name = tostring(region:GetDebugName())
             if not name:find("^NamePlate%%d") and not (unitTip and name:find("^GameTooltipText")) then
               record.english[name] = plain
             end
@@ -802,10 +826,7 @@ local function readScreen()
             record.japanese = record.japanese + 1
             pcall(box, region, plain)
           end
-          -- text drawn fully transparent is not on screen: the spellbook's own spell names stay as the client
-          -- wrote them under the addon's Japanese labels
           if latin and plain and kept < LATIN_MAX and not ENGLISH[plain] and plain:find("%%a%%a")
-            and not (region.GetEffectiveAlpha and region:GetEffectiveAlpha() == 0)
             and not playersUnit(frame) then
             kept = kept + 1
             latin[tostring(region:GetDebugName())] = plain:sub(1, LATIN_CHARS)
@@ -2371,7 +2392,8 @@ local function readItem(record, id, data)
     if hasJapanese(shown) and readable(english) and shown ~= english and not shown:find("\\n") then
       local folded, j = 0, i + 1
       while lines[j] and (shownRow(j) == " " or lines[j].leftText == "") do
-        if readable(lines[j].leftText) then folded = folded + 1 end
+        -- the client's own blank row (a set's bonuses end with one, its text a single space) is no row written over
+        if readable(lines[j].leftText) and lines[j].leftText:find("%%S") then folded = folded + 1 end
         j = j + 1
       end
       if folded > 0 then
@@ -2744,6 +2766,13 @@ local function WFJScanNamesRead(done)
       GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
       GameTooltip:SetUnit("target")
       keep("unit", UnitName("target"), shownRow(1))
+      -- the rows under the name: a quest's objective row on a creature it counts for ("12/12 Saltwater Murloc
+      -- Eye") holds a name too, held to the name list with the windows' Latin text
+      record.target = {}
+      for i = 2, math.min(GameTooltip:NumLines(), 30) do
+        local text = shownRow(i)
+        if readable(text) then record.target["target tooltip row " .. i] = text end
+      end
     end
     GameTooltip:Hide()
     -- the zone banner, written by the client's own handler, as on a zone change
@@ -4095,9 +4124,21 @@ def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -
             return None
         return f"{japanese[head]}: {japanese[rest]}"
 
+    def suffixed(english: str) -> str | None:
+        """An item with a random suffix ("Charged Gear of Strength"): the item's name and the suffix's, each
+        spelled by its own line and joined by a middle dot, the split nearest the end first, as the addon reads
+        it (Core/Names.lua, `suffixed`)."""
+        at = len(english)
+        while (first := english.rfind(" of ", 0, at)) > 0:
+            item, suffix = english[:first], english[first + 1:]
+            if item in japanese and suffix in japanese:
+                return f"{japanese[item]}・{japanese[suffix]}"
+            at = first
+        return None
+
     out = []
     for kind, english, shown in record["rows"]:
-        want = japanese.get(english) or joined(english)
+        want = japanese.get(english) or joined(english) or suffixed(english)
         if kind == "player":
             if shown != english:
                 out.append(f"player's name changed: {english} shows {shown}")
@@ -4115,9 +4156,19 @@ def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -
 # (window, `NAME_LEFT <the name>`), so the baseline can allow one with its reason
 NAME_LEFT = "(name left English)"
 TOOLTIP_SHOWN = "tooltip under the mouse"
+TARGET_TOOLTIP = "the target's tooltip"
 OTHER_SHOWN = 200  # texts of the other English on screen the report prints
 _LATIN_RUN = re.compile(r"[A-Za-z][A-Za-z'’\-]*(?: [A-Za-z][A-Za-z'’\-]*)*")
 _JAPANESE = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
+# a count, a range or a mark around a name in a line with no words of its own ("0/8", "2", "x", "-", "(3)")
+_COUNT_TOKEN = re.compile(r"[\d/,.:%()×x\-]+")
+
+
+def _bare_name(text: str) -> str:
+    """`text` without the counts and marks around a name: "0/8 Solid Sharpening Stone" and "Solid Sharpening
+    Stone: 0/8" both give "Solid Sharpening Stone"."""
+    kept = [t for t in text.split() if not _COUNT_TOKEN.fullmatch(t)]
+    return " ".join(kept).rstrip(":")
 # Widgets whose name the addon must leave as the client writes it (docs/architecture/client-limits.md): text
 # written there taints a protected action. Their names are counted, never failed. Chat holds what players typed.
 PROTECTED_NAME_WIDGETS = (
@@ -4142,6 +4193,11 @@ def read_latin(text: str) -> dict[str, dict[str, str]]:
         if latin is not None:
             where = ALWAYS if window == "(nothing open)" else _POOLED.sub("*", str(window))
             out[where] = {str(k): str(v) for k, v in latin.named().items()}
+    # the targeted creature's tooltip rows under its name, which the names read keeps while names are on
+    names = probe.get("names") if probe is not None else None
+    target = names.get("target") if names is not None and hasattr(names, "get") else None
+    if target is not None:
+        out[TARGET_TOOLTIP] = {str(k): str(v) for k, v in target.named().items()}
     hand = _standing_hand(probe)[1] if probe is not None else None
     # only for a run that kept Latin text itself: with names off, an English name is no fault
     for window in HAND_WINDOWS if out and hand is not None else ():
@@ -4181,7 +4237,10 @@ def latin_names(latin: Mapping[str, Mapping[str, str]], japanese: Mapping[str, s
             if _PLAYER_TEXT_WIDGETS.search(widget):
                 continue
             whole = text.strip()
-            runs = [whole] if known(whole) else (
+            bare = _bare_name(whole)
+            # a whole text that is a name, a name with only counts around it (an objective line, "0/8 Solid
+            # Sharpening Stone"), or a name inside Japanese text
+            runs = [whole] if known(whole) else [bare] if bare != whole and known(bare) else (
                 [m.group(0) for m in _LATIN_RUN.finditer(text) if known(m.group(0))]
                 if _JAPANESE.search(text) else [])
             if not runs:

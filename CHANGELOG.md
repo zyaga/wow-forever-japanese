@@ -52,6 +52,10 @@ an old setting stops working). A release moves those lines under its version num
 - The chat lines that say how drunk you or a player nearby are ("You feel tipsy. Whee!") are Japanese.
 - With Japanese names, the spell Blizzard shows its Japanese name. It stayed English because the word is also the company's name.
 - The friends window is Japanese: its tabs, the friends and ignore lists' labels, the recent allies, quick join and recruit-a-friend pages, and the add-friend dialog.
+- With Japanese names, an item set's heading over its set lines shows the set's name in katakana ("クロルドク・バトルギア (3/5)"), and so do the names inside its bonus lines. A bonus line the game shows before its text has loaded ("(4) Set: ") reads (4) セット:.
+- An item whose text is a use or hit line and a flavour line shows each in Japanese on its own line. Where the durability line stood between them, both went onto the first line and the flavour line stayed English.
+- The professions page shows each profession's rank (Apprentice, Journeyman) in Japanese, and with Japanese names its spells' names and the profession tabs' tooltips.
+- The group finder's Post button says in Japanese why it cannot be pressed, the quest log's tooltip shows a quest's tag (Elite) in Japanese, and with Japanese names a quest's map pin shows its title in Japanese.
 - Spell tooltips that stayed English now show in Japanese: the reagents and tools a spell needs, a recipe's name line ("Enchanting: Enchant Boots - Minor Speed"), the item a recipe makes, "Melee Range", "Crafting Reagent", the weapon a spell requires, the class an item is for and a reputation a spell requires.
 - A spell description the game shows with "until canceled" in place of its duration, for a spell your character does not know, now shows in Japanese.
 - A spell that grants an ability ("Gain the Wyvern Strike ability:") shows its heading in Japanese when the game leaves out the ability's own text.

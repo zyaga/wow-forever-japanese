@@ -600,3 +600,8 @@ def test_names_inside_interface_lines_and_the_pvp_rank_titles_reach_the_name_lis
         "ID,Name_lang\n2,Earth Totem\n41,Great Mage Writings\n9,\n", encoding="utf-8")
     assert cmd.tool_names(tmp_path) == {"Earth Totem", "Great Mage Writings"}
     assert cmd.tool_names(tmp_path / "none") == set()
+    (tmp_path / "ItemSet.csv").write_text(
+        "ID,Name_lang\n163,Chain of the Scarlet Crusade\n2135,Krol'dok Battlegear\n9,Test Set (DNT)\n8,\n",
+        encoding="utf-8")
+    assert cmd.set_names(tmp_path) == {"Chain of the Scarlet Crusade", "Krol'dok Battlegear"}
+    assert cmd.set_names(tmp_path / "none") == set()

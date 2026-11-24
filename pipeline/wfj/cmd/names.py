@@ -233,6 +233,18 @@ def tool_names(folder: Path) -> set[str]:
     return {en for en in names_ if en and "DO NOT USE" not in en and not _NOT_SHOWN.search(en)}
 
 
+def set_names(folder: Path) -> set[str]:
+    """The item set names from a client's table folder (ItemSet's Name_lang: "Battlegear of Might",
+    "Krol'dok Battlegear"), which a set item's tooltip writes over its set's lines ("<set> (3/5)"). No
+    imported text holds them."""
+    path = folder / "ItemSet.csv"
+    if not path.is_file():
+        return set()
+    with path.open(encoding="utf-8", newline="") as f:
+        names_ = {(row.get("Name_lang") or "").strip() for row in csv.DictReader(f)}
+    return {en for en in names_ if en and not _NOT_SHOWN.search(en)}
+
+
 def form_names(folder: Path) -> set[str]:
     """The shapeshift form names from a client's table folder (SpellShapeshiftForm's Name_lang: "Bear Form",
     "Creature - Bear"), which a spell's tooltip writes after "Requires". A row named for a season's test
@@ -294,7 +306,9 @@ def collect(
         counts["tables form"] = len(forms)
         tools = tool_names(tables)
         counts["tables tool"] = len(tools)
-        prose |= ranks | skills | races | activities | forms | tools
+        sets = set_names(tables)
+        counts["tables set"] = len(sets)
+        prose |= ranks | skills | races | activities | forms | tools | sets
     counts["prose"] = len(prose)
     lines, added = names.merge(load_lines(root), seen, prose, today)
     save_lines(root, lines)

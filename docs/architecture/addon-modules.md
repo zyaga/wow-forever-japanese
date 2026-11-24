@@ -235,7 +235,7 @@ Modules, in Main's `forever` order (load-on-demand addon in the last column; bla
 
 | Module | Surface(s) | Window | Load-on-demand addon |
 |---|---|---|---|
-| `Professions` | `professions` | Professions book / window title and missing-profession slots | `Blizzard_ProfessionsBook`, `Blizzard_Professions` |
+| `Professions` | `professions` | Professions book / window title and missing-profession slots; the spell buttons' name and rank word drawn over them on the addon's own labels, as `SpellBookNames` does (the buttons are secure and never written; the game's text keeps all but its alpha); a profession tab's tooltip, the profession's name | `Blizzard_ProfessionsBook`, `Blizzard_Professions` |
 | `Crafting` | `crafting` | crafting page, recipe list, schematic, item flyout | `Blizzard_Professions` |
 | `CustomerOrders` | `customerorders` | crafting-orders customer window | `Blizzard_ProfessionsCustomerOrders` |
 | `QuestTimer` | `questtimer` | quest timer panel | |
@@ -368,7 +368,7 @@ Every UI key new on 1.60.1.70009 is shown by the module that owns its window (ea
 | File | What it shows | Hook / form |
 |---|---|---|
 | `UI/SettingsKeys.lua` · `UI/SettingsPanel.lua` | the `GAMEPAD_*` options, `TARGETING_HEADER`, `BINDING_NAME_TOGGLECOOLDOWNVIEWERSETTINGS`; the chat option's age-restriction paragraphs (`OPTION_TOOLTIP_DISABLE_CHAT_AGE_RESTRICTED_MINOR` / `_UNVERIFIED`) | the key lists; colour-wrapped `paragraphs`, like the mute paragraph |
-| `UI/MapPins.lua` | the waypoint pin's gamepad lines (`MAP_PIN_SHARING_TOOLTIP_GAMEPAD`, `MAP_PIN_TOGGLE_FOCUS`) and `SHARE_IN_CHAT`; a quest pin's gamepad lines (`QuestPinTemplate`: `MAP_PIN_TOGGLE_QUEST_FOCUS` / `_DETAILS`; line 1, the quest title, never listed) | the pin templates' key sets; the `icon` form (the input-icon line helper writes "\<atlas>text" with no space, `sharedtooltiptemplates.lua:174–177`) |
+| `UI/MapPins.lua` | the waypoint pin's gamepad lines (`MAP_PIN_SHARING_TOOLTIP_GAMEPAD`, `MAP_PIN_TOGGLE_FOCUS`) and `SHARE_IN_CHAT`; a quest pin's gamepad lines (`QuestPinTemplate`: `MAP_PIN_TOGGLE_QUEST_FOCUS` / `_DETAILS`; line 1, the quest title, is shown by `QuestMap.showTitle` with its level prefix and colour, never as a listed key) | the pin templates' key sets; the `icon` form (the input-icon line helper writes "\<atlas>text" with no space, `sharedtooltiptemplates.lua:174–177`) |
 | `UI/QuestMap.lua` | the quest title's hover: `MAP_PIN_TOGGLE_QUEST_FOCUS`, `CONTEXT_ACTION_LABEL_MORE_ACTIONS`, `OBJECTIVES_VIEW_IN_QUESTLOG`, `PARTY_QUEST_STATUS_ON` | the title tooltip's key set (`icon` for the input-icon lines) |
 | `UI/WorldMap.lua` | the gamepad crosshair's coordinates ("Crosshair: …") | `WORLD_MAP_CROSSHAIR_COORDS` / `_INTEGER` in the cursor label's `only` |
 | `UI/Menus.lua` · `UI/Trainer.lua` | the trainer filter's "Categorize" checkbox and "Filters" submenu; the filter button's text | `MENU_TRAINER_FILTER` holds `CATEGORIZE`, `FILTERS`; 1.60.1.70009 writes `FilterDropdown:SetText(SETTINGS or FILTERS)` directly (`blizzard_trainerui.lua:464`), so `SetText` is post-hooked on the instance (once) next to `Labels.dropdown` |

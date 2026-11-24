@@ -421,23 +421,61 @@ end
 -- first line is empty is refused: an empty English is never a translation target (addon-modules §7).
 local runColors -- below anySecretOf, which it needs
 
-local function showRun(surface, area, kind, id, lines, first, last, refit, runArgs, tag, peeled, scope)
+-- `flavour` = { row, from }: the item's flavour line, below the run with other lines between (Tooltip.flavourRow):
+-- the run keeps the Japanese's paragraphs before `from` and the flavour line shows the rest, in the client's quotes.
+local function showRun(surface, area, kind, id, lines, first, last, refit, runArgs, tag, peeled, scope, flavour)
   tag = tag or "desc"
   local texts = {}
   for i = first, last do texts[#texts + 1] = peeled and peeled[i] or lines[i].text end
+  if flavour then texts[#texts + 1] = lines[flavour.row].text end -- the gate holds the Japanese to both
   local n = 0
   -- line 1 is the name: never replaced, never a number source, but a name the Japanese may legitimately use.
   -- `scope` stands in for it where the run belongs to another item than the tooltip's own (the item a spell makes)
   if WFJ.Render.show(surface, tag, lines[first].fs, lines[first].text, area, kind, id,
       { lines = texts, nameScope = scope or (lines[1] and lines[1].text) or nil, refit = refit, args = runArgs,
-        partColors = runColors(lines, first, last) }) then
+        partColors = runColors(lines, first, last), parts = flavour and flavour.from - 1 or nil }) then
     n = n + 1
   end
   for i = first + 1, last do
     if WFJ.Render.show(surface, tag .. "." .. i, lines[i].fs, lines[i].text, area, kind, id,
         { follow = tag, refit = refit }) then n = n + 1 end
   end
+  if flavour then
+    local l = lines[flavour.row]
+    if WFJ.Render.show(surface, tag .. "." .. flavour.row, l.fs, l.text, area, kind, id,
+        { follow = tag, from = flavour.from, head = '"', tail = '"', refit = refit }) then n = n + 1 end
+  end
   return n
+end
+
+-- An item's flavour line ("\"Need bigger rock.\"", the item's own text in the client's quotes) that is not in
+-- the run: on Forever the durability and requirement lines stand between an item's use or hit line and its flavour
+-- text, so the run stops above them, and a Japanese written for both went whole onto the use line, the flavour line
+-- left English. Taken when the item's Japanese has more paragraphs than the run has lines and the first quoted line
+-- after the run comes before any other trigger line. → { row, from = the first paragraph it shows } | nil
+function Tooltip.flavourRow(id, texts, first, last, stop)
+  if not first then return nil end
+  local lookup = WFJ.Lookup and WFJ.Lookup.get
+  local entry = type(lookup) == "function" and lookup("item.description", id) or nil
+  local ja = type(entry) == "table" and type(entry.ja) == "string" and entry.ja or nil
+  if not ja or not ja:find("\n") then return nil end
+  local paragraphs, lines = 0, 0
+  for part in (ja .. "\n"):gmatch("(.-)\n") do
+    if part ~= "" then paragraphs = paragraphs + 1 end
+  end
+  for row = first, last do
+    if texts[row] ~= "" then lines = lines + 1 end
+  end
+  if paragraphs <= lines then return nil end
+  local pre = prefixes()
+  for row = last + 1, stop or #texts do
+    local text = texts[row]
+    if type(text) == "string" and #text > 2 and text:sub(1, 1) == '"' and text:sub(-1) == '"' then
+      return { row = row, from = lines + 1 }
+    end
+    if isDescription(text, pre) then return nil end -- another trigger line: another run, not this item's text
+  end
+  return nil
 end
 
 -- Structural lines: lines 2…N, left then right, except the description lines [first, last]. A line whose
@@ -546,6 +584,12 @@ local function showStructural(surface, frame, lines, first, last, refit, name, s
             -- no dictionary line, and exactly a name or a list of names: the item a recipe makes, its
             -- ingredients, a set's pieces
             and WFJ.Render.show(surface, "name.L" .. i, l.fs, l.text, area, "name", l.text, { refit = refit }) then
+            n = n + 1
+          elseif not key and side[1] == "L" and WFJ.State.names and WFJ.NameLabels
+            and l.text:find("^.+ %(%d+/%d+%)$")
+            -- a set's heading, ITEM_SET_NAME "<set> (3/5)" (no words of its own, so no dictionary line): the set's
+            -- name in Japanese, its counts as the client wrote them
+            and WFJ.NameLabels.lead(surface, "name.L" .. i, l.fs, area, refit) > 0 then
             n = n + 1
           end
         end
@@ -808,7 +852,8 @@ Tooltip.traceNote = traceNote
 -- record of that spell's description, gated on its own line. An item's stat lines come in `sets` from splitRun,
 -- which decides them on the data, never on what is shown now: hovered with the modifier held, the stat records
 -- are captured but write nothing, and the description's record must still not take their lines.
-local function show(frame, area, kind, id, lines, first, last, name, runArgs, learn, peeled, sets, made, spells)
+local function show(frame, area, kind, id, lines, first, last, name, runArgs, learn, peeled, sets, made, spells,
+    flavour)
   local surface = surfaceOf(frame)
   WFJ.Render.forget(surface)
   if first and lines[first].text == "" then first, last = nil, nil end
@@ -819,7 +864,7 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs, le
   local ok, n = pcall(function()
     local written = 0
     if first then
-      written = showRun(surface, area, kind, id, lines, first, last, refit, runArgs, nil, peeled)
+      written = showRun(surface, area, kind, id, lines, first, last, refit, runArgs, nil, peeled, nil, flavour)
     end
     for row = 1, #lines do
       local s = spells and spells[row]
@@ -1252,14 +1297,22 @@ local function setBonuses(id, lines, taken)
   -- the active line by the client's own "Set: " (its "Set: %s" is shared with the boss loot banner's key)
   local active = Compat.resolve("ITEM_SET_BONUS")
   local prefix = type(active) == "string" and active:match("^(.-)%%s$") or nil
+  -- a bonus line with nothing after its words ("(4) Set: ", "Set: "): the client wrote it before the bonus spell's
+  -- text had loaded [seen in game: Forever 1.60.1.71091], and the template matches no empty value
+  local gray = Compat.resolve("ITEM_SET_BONUS_GRAY")
+  local grayHead = type(gray) == "string" and gray:match("^(.-)%%s$") or nil
+  local grayEmpty = grayHead and grayHead:find("%d", 1, true)
+    and "^" .. grayHead:gsub("[%(%)%.%+%-%*%?%[%]%^%$%%]", "%%%0"):gsub("%%%%d", "(%%d+)") .. "$" or nil
   local found = {}
   for i = 2, #lines do
     local text = lines[i].text
     if not taken(i) and text ~= "" then
       local key, args = index:matchOnly(text, SET_GRAY)
-      if not key and prefix and prefix ~= "" and text:sub(1, #prefix) == prefix and #text > #prefix then
+      if not key and prefix and prefix ~= "" and text:sub(1, #prefix) == prefix and #text >= #prefix then
         key, args = "ITEM_SET_BONUS", { text:sub(#prefix + 1) }
       end
+      local count = not key and grayEmpty and text:match(grayEmpty)
+      if count then key, args = "ITEM_SET_BONUS_GRAY", { count, "" } end
       if key and type(args) == "table" then found[#found + 1] = { row = i, key = key, args = args } end
     end
   end
@@ -1271,7 +1324,9 @@ local function setBonuses(id, lines, taken)
     local inner = f.args[slot]
     local hit, hitId, filled
     local gateCards = WFJ.GateCards or gate
-    for _, sid in ipairs(type(inner) == "string" and spells or {}) do
+    -- no bonus text: the line's own words alone, with nothing to take from a spell
+    if inner == "" then hit = "" end
+    for _, sid in ipairs(type(inner) == "string" and inner ~= "" and spells or {}) do
       if not used[sid] and Tooltip.spellDescription(sid) == inner then
         local ok, text, durations = gateCards(lookup("spell.description", sid), { inner })
         if ok then hit, hitId, filled = text, sid, durations end
@@ -1279,14 +1334,20 @@ local function setBonuses(id, lines, taken)
       end
     end
     if hit then
+      -- the line's template takes the names step before its values go in, and the spell's Japanese is a value:
+      -- the names inside it ("Shadow Resistanceが10上昇します") take it here, as the spell's own tooltip line does
+      local spans
+      if WFJ.State.names then hit, spans = WFJ.Names.inText(hit) end
       local args = {}
       for k, v in pairs(f.args) do args[k] = v end
       args[slot] = hit
-      -- the spell's own words, and the cards of what its values filled in (a duration's 秒), go on the line it is
-      -- written into (a frozen copy's cards)
-      local cards = WFJ.Readings and WFJ.Readings.cards("spell.description", hitId) or {}
+      -- the spell's own words, the names written into it, and the cards of what its values filled in (a
+      -- duration's 秒), go on the line it is written into (a frozen copy's cards)
+      local cards = hitId and WFJ.Readings and WFJ.Readings.cards("spell.description", hitId) or {}
+      for _, c in ipairs(type(spans) == "table" and spans or {}) do cards[#cards + 1] = c end
       for _, c in ipairs(type(filled) == "table" and filled or {}) do cards[#cards + 1] = c end
-      out[f.row], used[hitId] = { key = f.key, args = args, cards = cards }, true
+      out[f.row] = { key = f.key, args = args, cards = cards }
+      if hitId then used[hitId] = true end
     else
       out[f.row] = false
       english[#english + 1] = { text = inner }
@@ -1532,9 +1593,16 @@ function Tooltip.onItem(frame)
     local entry = type(lookup) == "function" and lookup("item.description", id) or nil
     if not (entry and entry.status == ".") then runArgs = nil end
   end
+  -- the flavour line below the run, when the description's Japanese was written for it too; the structural pass
+  -- leaves it to the run (false: no line of its own)
+  local flavour = Tooltip.flavourRow(id, texts, first, last, learnRow and learnRow - 1 or nil)
+  if flavour then
+    sets = sets or {}
+    sets[flavour.row] = false
+  end
   -- No run still has structural lines.
   local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs, learn, texts, sets,
-    nil, spells)
+    nil, spells, flavour)
   remember(frame, link, readLines, right)
   traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
   -- the same tooltip one frame later, as the client drew it: a wrap that moves after this pass shows there

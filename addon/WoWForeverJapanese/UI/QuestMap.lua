@@ -1096,7 +1096,9 @@ end
 -- (questmapframe.lua:2248–2256), each shown only when it is that quest's own English. → the number of lines shown
 function QuestMap.onTitleTooltip(_, button, questID)
   local help = WFJ.HelpTooltip
-  local n = help.walkAs(nil, { only = QuestMap.TITLE_TOOLTIP_KEYS })
+  -- the legend line under the title is the quest's tag ("Elite", "Dungeon"), a QuestTag row's name
+  -- (QuestUtil.SetQuestLegendToTooltip, questutils.lua:604-632)
+  local n = help.walkAs(nil, WFJ.Labels.familiesWith(QuestMap.TITLE_TOOLTIP_KEYS, "QuestTag"))
   local tt = Compat.get(help.SURFACE, "tooltip")
   local dash = Compat.resolve("QUEST_DASH")
   if type(tt) ~= "table" or type(tt.NumLines) ~= "function" or type(tt.GetName) ~= "function"

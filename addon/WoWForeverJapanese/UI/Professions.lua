@@ -28,7 +28,8 @@
 --   blizzard_professionsbook.lua:3–8) and the overview side tab (tooltipText TRADE_SKILLS, SidePanelTabButtonMixin:
 --   OnEnter → SetText; camelot/blizzard_professionsframe.xml:13–17; shareduipaneltemplates.lua:408–422), each
 --   restricted to its one key. The profession side tabs' tooltipText is the profession's name (camelot/
---   blizzard_professionsframe.lua:50): never registered.
+--   blizzard_professionsframe.lua:50): registered with no key and a name line, so it shows the name's Japanese
+--   while names are on.
 -- Names, while Japanese names are on (UI/NameLabels): a slot's ProfessionName (GetProfessionInfo's name, written by
 --   FormatProfession from the page's Update, camelot/blizzard_professionsbook.lua:22–28, 75), after each Update
 --   (post-hooked on the page, which OnShow and the skill events call by method, blizzard_professionsbook.lua:23–33),
@@ -46,12 +47,12 @@
 --   blizzard_professionsbook.lua:52, 118): no dictionary word (`only` keeps it out of the header's keys). While
 --   names are on it shows the name's Japanese, under a record of its own, with the page's other words. It is a
 --   plain label on the slot's frame like the missingText under it; nothing reads or measures it.
--- Never touched: a slot's specialization, and the spell buttons' spellString and
---   subSpellString (the spell's name and its rank
---   word, "Journeyman"): each button is secure and its click casts (ProfessionButtonTemplate inherits
+-- Never written: a slot's specialization, and the spell buttons' spellString and subSpellString (the spell's name
+--   and its rank word, "Journeyman"): each button is secure and its click casts (ProfessionButtonTemplate inherits
 --   SecureFrameTemplate, blizzard_professionsbooktemplates.xml:4, 26–37; OnClick → C_SpellBook.CastSpellBookItem,
---   blizzard_professionsbook.lua:317–352), and the client writes both in UpdateButton (:491–497). The unlearn
---   confirmation is a StaticPopup (ADR-015 §5).
+--   blizzard_professionsbook.lua:317–352), and the client writes both in UpdateButton (:491–497). Their Japanese is
+--   drawn over them instead (the spell buttons' section below). The unlearn confirmation is a StaticPopup
+--   (ADR-015 §5).
 local _, WFJ = ...
 local Professions = {}
 WFJ.Professions = Professions
@@ -178,11 +179,147 @@ end
 function Professions.releasePage() return WFJ.Render.release(BOOK) end
 function Professions.release() return WFJ.Render.release(BOOK) + WFJ.Render.release(SURFACE) end
 
+-- a profession side tab's tooltip is the profession's name alone (tooltipText = GetProfessionInfo's name,
+-- camelot/blizzard_professionsframe.lua:42-50; SidePanelTabButtonMixin:OnEnter, shareduipaneltemplates.lua:408-418)
+local TAB_NAME = { only = {}, nameLine = "ui" }
+
 local function registerTooltips(hostKey)
   for _, slot in ipairs(slotsOf(hostKey)) do
     if type(slot.frame.UnlearnButton) == "table" then WFJ.HelpTooltip.register(slot.frame.UnlearnButton, UNLEARN) end
   end
 end
+
+-- ───────────────────────── the spell buttons' words, drawn over them ─────────────────────────
+-- A slot's SpellButton1 and SpellButton2 are secure and their click casts, so the addon writes nothing into them.
+-- The client writes their spellString (the spell's name) and subSpellString (its rank word, GetSpellSubtext:
+-- "Journeyman", on Forever "Apprentice " with a space after it) in ProfessionSpellButtonMixin:UpdateButton, and
+-- sets the name's colour there; nothing of the client reads, measures or fades either text
+-- [verified: blizzard_professionsbook.lua:458-497]. So, as UI/SpellBookNames does for the spellbook (ADR-058),
+-- the Japanese is this addon's own FontString on this addon's own frame (a child of the page, shown and hidden
+-- with it) placed over the client's text, and the client's text keeps everything but its alpha, set to 0 and put
+-- back when the label goes. A region's SetAlpha is not protected; in combat a text not covered yet is left as it is.
+-- The rank word is a dictionary word and shows whenever the page is Japanese; the spell's name needs names on.
+local BUTTONS = { "SpellButton1", "SpellButton2" }
+local overlay -- this addon's frame over the page
+local covers = setmetatable({}, { __mode = "k" }) -- the client's FontString → { label, alpha, hidden, ... }
+
+local function inCombat()
+  local f = Compat.resolve("InCombatLockdown")
+  return type(f) == "function" and f() and true or false
+end
+
+local function rankJa(en)
+  local index, words = WFJ.UIIndex, WFJ.SpellBookNames and WFJ.SpellBookNames.WORD_KEYS
+  if not index or not words then return nil end
+  local key, args = index:matchOnly(en:match("^%s*(.-)%s*$"),
+    WFJ.Labels.familiesWith(words.subtext, "SpellSubtext").only)
+  local row = key and index.rows[key]
+  return row and index:fill(row[1], args) or nil
+end
+local function spellJa(en)
+  if not WFJ.State.names then return nil end
+  return (WFJ.Names.item(en))
+end
+
+-- The client's text visible again, as the client left it.
+local function uncover(fs, e)
+  if e.label then e.label:Hide() end
+  if not e.hidden then return end
+  if fs:GetAlpha() ~= 0 then -- written by the client since: its own value stays
+    e.hidden = false
+    return
+  end
+  if inCombat() then return end
+  fs:SetAlpha(e.alpha)
+  e.hidden = false
+end
+
+-- One text of a button: its Japanese label over it, or the client's text shown. → 1 when the label shows
+local function cover(fs, find, on)
+  if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(fs.GetAlpha) ~= "function" then return 0 end
+  local e = covers[fs]
+  if not e then
+    e = { alpha = 1, hidden = false }
+    covers[fs] = e
+  end
+  local en = fs:GetText()
+  local ja
+  if on and type(en) == "string" and en ~= "" and not WFJ.SurfaceState.secret(en) and fs:IsShown() then
+    local names = WFJ.State.names and true or false
+    if e.src ~= en or e.names ~= names then e.src, e.names, e.ja = en, names, find(en) or false end
+    ja = e.ja or nil
+  end
+  if not ja or (not e.hidden and inCombat()) then
+    uncover(fs, e)
+    return 0
+  end
+  local label = e.label
+  if not label then
+    label = overlay:CreateFontString(nil, "OVERLAY")
+    label:SetPoint("TOPLEFT", fs, "TOPLEFT", 0, 0)
+    label:SetPoint("TOPRIGHT", fs, "TOPRIGHT", 0, 0)
+    label:SetWordWrap(true)
+    label:SetFont(WFJ.Font.CLIENT, WFJ.Font.DEFAULT_SIZE, "") -- a face the client has: the bundled one may not be yet
+    e.label = label
+  end
+  if e.shown ~= ja then
+    local _, size, flags = fs:GetFont()
+    if WFJ.Font.set(label, WFJ.Font.PATH, WFJ.Font.size(size) or WFJ.Font.DEFAULT_SIZE, flags or "") == false then
+      uncover(fs, e)
+      return 0
+    end
+    label:SetJustifyH(fs:GetJustifyH() or "LEFT")
+    label:SetShadowColor(fs:GetShadowColor())
+    label:SetShadowOffset(fs:GetShadowOffset())
+    label:SetText(ja)
+    e.shown = ja
+  end
+  label:SetTextColor(fs:GetTextColor()) -- a passive spell's colour follows the client at every look
+  label:Show()
+  if not e.hidden then
+    local alpha = fs:GetAlpha()
+    if alpha ~= 0 then e.alpha = alpha end
+    fs:SetAlpha(0)
+    e.hidden = true
+  end
+  return 1
+end
+
+-- One pass over the page's buttons, once a frame while the page shows. → the number of labels showing
+function Professions.coverButtons()
+  if not overlay then return 0 end
+  local State = WFJ.State
+  local on = State.enabled and State.areaEnabled("ui") and not WFJ.Modifier.english()
+  local n = 0
+  for _, slot in ipairs(slotsOf("bookPage")) do
+    for _, b in ipairs(BUTTONS) do
+      local button = slot.frame[b]
+      if type(button) == "table" then
+        local shown = on and type(button.IsVisible) == "function" and button:IsVisible()
+        n = n + cover(button.spellString, spellJa, shown) + cover(button.subSpellString, rankJa, shown)
+      end
+    end
+  end
+  return n
+end
+
+-- Every covered text shown again (the page hid). → nothing
+function Professions.uncoverAll()
+  for fs, e in pairs(covers) do uncover(fs, e) end
+end
+
+local function setupOverlay(page)
+  local create = Compat.resolve("CreateFrame")
+  if overlay or type(page) ~= "table" or type(create) ~= "function" then return end
+  -- a child of the page runs no OnUpdate while the page is hidden
+  overlay = create("Frame", nil, page)
+  overlay:SetAllPoints(page)
+  if type(page.GetFrameLevel) == "function" then overlay:SetFrameLevel(page:GetFrameLevel() + 10) end
+  overlay:SetScript("OnUpdate", WFJ.Perf.wrap("idle.professionbuttons", Professions.coverButtons))
+  overlay:SetScript("OnHide", Professions.uncoverAll)
+  Professions.overlay = overlay
+end
+-- ──────────────────────────────────── end of the spell buttons ────────────────────────────────────
 
 local function hookScript(frame, script, fn)
   if type(frame) == "table" and type(frame.HookScript) == "function" then frame:HookScript(script, fn) end
@@ -208,8 +345,12 @@ function Professions.setupFrame()
   hookUpdate(page, Professions.onPageUpdate)
   hookUpdate(get("rankBar"), Professions.onRankUpdate)
   registerTooltips("bookPage")
+  setupOverlay(page)
   local tab = get("overviewTab")
   if type(tab) == "table" then WFJ.HelpTooltip.register(tab, TITLE) end
+  for _, side in ipairs(type(frame.rightProfessionTabs) == "table" and frame.rightProfessionTabs or {}) do
+    WFJ.HelpTooltip.register(side, TAB_NAME)
+  end
   Professions.onFrameShow()
   -- the crafting page's title, the profession's name: after Labels.title's own SetTitle hook (set up just above), so
   -- a dictionary title keeps its record

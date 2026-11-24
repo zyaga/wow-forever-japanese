@@ -3,10 +3,6 @@
 # One per line, tab-separated: <window>	<English>	<reason>. A window is named as the test lists it. A line
 # allowed for a window is allowed on each of its pages. A line in a window the open sweep showed never fails
 # the check (it is listed to read against the code).
-spellbook	Passive	a spell item's line: the client measures it when it refills the page, and Japanese written there taints the action bars (the spellbook leaves every item line as written)
-spellbook	Racial	a spell item's line: the client measures it when it refills the page, and Japanese written there taints the action bars (the spellbook leaves every item line as written)
-spellbook	Racial Passive	a spell item's line: the client measures it when it refills the page, and Japanese written there taints the action bars (the spellbook leaves every item line as written)
-spellbook	Rank 1	a spell item's line: the client measures it when it refills the page, and Japanese written there taints the action bars (the spellbook leaves every item line as written)
 spellbook	Attack	a spell's name: names stay English
 spellbook	Block	a spell's name: names stay English
 spellbook	Dodge	a spell's name: names stay English

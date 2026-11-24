@@ -25,6 +25,8 @@ local UI = {
   QUEST_WATCH_QUEST_READY = { "Ready for turn-in", "報告可能" },
   -- camelot's elite tag and the content-tracking module's client lines
   ELITE = { "Elite", "エリート" },
+  -- a quest's tag name, which the quest log's title tooltip shows under the title
+  ["QuestTag:1"] = { "Elite", "エリート" },
   CONTENT_TRACKING_RETRIEVING_INFO = { "|cffff0000Retrieving information...|r", "|cffff0000情報を取得中...|r" },
   CONTENT_TRACKING_LOCATION_UNAVAILABLE = { "|cffff0000Location unavailable|r", "|cffff0000場所が不明です|r" },
   CONTENT_TRACKING_ROUTE_UNAVAILABLE = { "|cffff0000Route unavailable|r", "|cffff0000経路が不明です|r" },
@@ -263,6 +265,18 @@ describe("UI/QuestMap: objective lines", function()
       assert.are.equal(QUEST.title, _G.GameTooltipTextLeft1:GetText())
       assert.are.equal("Kobold Verminを倒す: 3/10", _G.GameTooltipTextLeft2:GetText())
       assert.are.equal("<クリックでクエストの詳細を表示>", _G.GameTooltipTextLeft3:GetText())
+    end)
+
+    it("the quest's tag under the title (a QuestTag row's name, as the window test hovered it) is Japanese",
+      function()
+      local tt, button = _G.GameTooltip, CreateFrame("Button")
+      tt:SetOwner(button, "ANCHOR_RIGHT")
+      tt:AddLine(QUEST.title)
+      tt:AddLine("Elite")
+      tt:AddLine("<Click to view Quest Details>")
+      tt:Show()
+      registry.cbs["QuestMapLogTitleButton.OnEnter"](button, 9)
+      assert.are.equal("エリート", _G.GameTooltipTextLeft2:GetText())
     end)
   end)
 

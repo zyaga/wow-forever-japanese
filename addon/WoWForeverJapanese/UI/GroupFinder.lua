@@ -157,8 +157,11 @@ local TOOLTIPS = {
   { LISTING .. ".GroupRoleButtons.RolePollButton", { only = { "ERR_LFG_ROLE_CHECK_ONLY_LEADER" } } },
   { LISTING .. ".GroupRoleButtons.RoleDropdown", { only = { "SELECT_YOUR_ROLE" } } },
   { LISTING .. ".NewPlayerFriendlyButton", { only = { "LFG_LIST_NEW_PLAYER_FRIENDLY_TOOLTIP" } } },
+  -- the button's errorText, every value LFGListingMixin:UpdatePostButtonEnableState gives it
+  -- [verified: blizzard_lfgvanilla_listing.lua:477-530; .xml:329-331]
   { LISTING .. ".PostButton",
-    { only = { "LFG_LIST_TOO_MANY_FOR_ACTIVITY", "LFG_LIST_TOO_MANY_ACTIVITIES_SELECTED" } } },
+    { only = { "LFG_LIST_TOO_MANY_FOR_ACTIVITY", "LFG_LIST_TOO_MANY_ACTIVITIES_SELECTED", "LFG_LIST_ONLY_LEADER_UPDATE",
+      "LFG_LIST_ONLY_LEADER_CREATE", "GROUP_FINDER_PLAYSTYLE_REQUIRED" } } },
   { BROWSE .. ".RefreshButton", { only = { "LFG_LIST_SEARCH_AGAIN" } } },
 }
 

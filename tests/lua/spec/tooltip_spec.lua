@@ -19,6 +19,8 @@ local DATA = {
     [900] = { ja = "移動速度が$N1%上昇します。", status = "u" }, -- names nothing: fits any line with a number
     -- a flavour line: no name or number, so it fits any line; h1 is the hash of its English
     [279845] = { ja = "計り知れない知識と引き換えの、ささやかな賞品。", status = "u", h1 = 0x55c1ba1b },
+    -- Rock on Stick: a hit line and a flavour line, written as two paragraphs
+    [279852] = { ja = "対象の顔を殴りつけ、$N1のダメージを与えます。\nもっと大きい岩がいる。", status = "u" },
   },
   ["spell.description"] = {
     [17] = { ja = "味方にシールドを張り、$N1ダメージを吸収します。$N2秒間持続します。", status = "u" },
@@ -132,6 +134,23 @@ describe("UI/Tooltip: item and spell tooltips", function()
       assert.are.equal(3, TT.runLineOf(0x55c1ba1b, { "n", "Use: x", '"A small prize in exchange for tremendous '
         .. 'knowledge."' }, 2, 3))
       assert.is_nil(TT.runLineOf(nil, { "n", "Use: x", "y" }, 2, 3))
+    end)
+
+    it("a flavour line below the durability line takes the Japanese's last paragraph, in the client's quotes",
+      function()
+      -- as the window test showed item 279852 on Forever: the hit line, the durability line, then the flavour
+      local lines = { "Rock on Stick", "Chance on hit: Bash the target in the face, causing 8 Physical damage.",
+        "Durability 90 / 90", '"Need bigger rock."', "Sell Price: 5c" }
+      Stub.setItemTooltip(tt, "|Hitem:279852:0:0:0:0:0:0:0|h[Rock on Stick]|h", lines)
+      assert.are.equal("対象の顔を殴りつけ、8のダメージを与えます。", fs("GameTooltip", 2):GetText())
+      assert.are.equal("Durability 90 / 90", fs("GameTooltip", 3):GetText())
+      assert.are.equal('"もっと大きい岩がいる。"', fs("GameTooltip", 4):GetText())
+      Stub.keys.alt = true; WFJ.Modifier.refresh() -- Alt gives both lines their English back
+      assert.are.equal(lines[2], fs("GameTooltip", 2):GetText())
+      assert.are.equal(lines[4], fs("GameTooltip", 4):GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      -- another trigger line before the quote: that quote is another run's, never this item's
+      assert.is_nil(TT.flavourRow(279852, { "n", "Chance on hit: x 8.", "Use: y", '"z"' }, 2, 2))
     end)
 
     it("with no line that is its English, or two, the run is kept whole, as before", function()

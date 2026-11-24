@@ -29,6 +29,7 @@ Core/UIStringKeys.lua	other interface lines whose value is a game name	japanese	
 
 # tooltips
 UI/Tooltip.lua	item, spell and aura tooltip name line	japanese	record name.L<i>; comparison tooltips by the name's text
+UI/Tooltip.lua	an item set's heading over its set lines ("Krol'dok Battlegear (3/5)", ITEM_SET_NAME)	japanese	the set's name from the client's ItemSet table (UI/NameLabels lead), its counts as the client wrote them; the names inside a set bonus line take the names step on the bonus spell's Japanese
 UI/Tooltip.lua	a profession's spell name line ("Enchanting: Enchant Boots - Minor Speed")	japanese	the skill and the spell, each in its Japanese, only when both have a line; the spell's name is the one the frame gives, so the line is split at that name and nowhere else; no interface string holds the form (the client's compiled tooltip code writes it)
 UI/TooltipFreeze.lua	the frozen copy of a tooltip: its name lines and the names inside its lines	japanese	copied as the tooltip showed them; each takes its name card from the record the addon kept for that line
 UI/Tooltip.lua	the item a spell makes: its name line under the spell's rows	japanese	a row that is exactly a name and no dictionary line (the structural walk); its use line and flavour text are the item's own text, a run under the item's id
@@ -42,7 +43,7 @@ UI/TooltipUnit.lua	a player's race (in the level line), class and faction lines	
 UI/TooltipUnit.lua	the word in brackets on a player's level line ("(Player)")	japanese	the client's PLAYER word, through the level line's `unitType` value; a player's line never takes the creature templates, UNIT_TYPE_LEVEL_FACTION_TEMPLATE among them
 UI/Taxi.lua	flight point name on the route map's tooltip	japanese	line 1 after each TaxiNodeOnButtonEnter, on the help surface with its refit
 UI/FlightMap.lua	flight point and zone names on the flight map's tooltips	japanese	a node pin's line 1 through UI/MapPins; the zone summary's line 1 after each Show the map owns
-UI/MapPins.lua	a pin's tooltip name line	japanese	line 1 of the pins whose line 1 is a name (flight point, dungeon, map link, area POI, vignette), after each Show; a dictionary word there keeps its record; a quest pin's title is no name
+UI/MapPins.lua	a pin's tooltip name line	japanese	line 1 of the pins whose line 1 is a name (flight point, dungeon, map link, area POI, vignette), after each Show; a dictionary word there keeps its record; a quest pin's title is shown like the quest log's titles (UI/QuestMap.showTitle)
 UI/ItemSocketing.lua	ItemSocketingDescriptionTextLeft1	japanese	the socketed item's name: line 1 of ItemSocketingDescription, filled by SetSocketedItem from ItemSocketingFrame_Update (blizzard_itemsocketingui.lua:56–67); written only after ItemSocketingFrame_Update and never laid out again by the addon, so no write of ours can start the scroll range callback that fills it again (:35–37, 69–71); a fill from that callback stays English. Forever loads the window (its toc limits no game type; pipeline/forever_addons.txt)
 
 # place names
@@ -141,7 +142,8 @@ UI/Professions.lua	each slot's ProfessionName on the overview page	japanese	afte
 UI/Professions.lua	an unlearned secondary slot's missingHeader (the global ProfessionsFrameMissing)	japanese	the profession's name, written once by the slot's OnLoad (camelot/blizzard_professionsbooktemplates.xml:137, 251, 263, 275); shown with the page's other words; nothing reads or measures it
 UI/Professions.lua	the crafting page's title (the profession's name)	japanese	after each SetTitle; the overview page's title is a dictionary word
 UI/Professions.lua	the rank bars' text ("Blacksmithing 135/150")	japanese	the name, the numbers as written (UI/NameLabels lead); a slot's bar with its name, the crafting page's after each Update; a trial's cap note stays English whole
-UI/Professions.lua	the spell buttons' spellString ("Smelting", "Find Minerals")	english protected	a secure button whose click casts (blizzard_professionsbooktemplates.xml:4, 26–31; blizzard_professionsbook.lua:317–352)
+UI/Professions.lua	the spell buttons' spellString ("Smelting", "Find Minerals")	japanese	the addon's own label drawn over the game's text, as UI/SpellBookNames does: the button is secure and its click casts (blizzard_professionsbooktemplates.xml:4, 26–31; blizzard_professionsbook.lua:317–352), so nothing is written into it; only its text's alpha is set to 0 and put back, which nothing of the client reads (blizzard_professionsbook.lua:458–497)
+UI/Professions.lua	a profession side tab's tooltip (its tooltipText, the profession's name)	japanese	the tab registers with the help tooltip with no key and a name line (camelot/blizzard_professionsframe.lua:42–50)
 UI/Reputation.lua	ReputationFrame.ReputationDetailFrame.Title and the faction rows	japanese	an entry's Content.Name and a group header (camelot/reputationframe.lua:279, 332) after each row's initializer, the pane's Title after SetPaneTitle; nothing reads or measures them
 UI/MajorFactionToast.lua	MajorFactionUnlockToast.FactionName	japanese	after each PlayBanner (blizzard_majorfactionunlocktoast.lua:41); only its alpha is animated
 UI/Currency.lua	the currency detail's Title and the list entries' names	japanese	after each Refresh and each entry's initialization, where the name list has the currency's name

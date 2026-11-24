@@ -636,6 +636,10 @@ TABLES: dict[str, Table] = {
         # tooltip lists them after "Tools:". Name_lang is the only field the bytes alone show as text; on
         # 1.60.1.71037 its first four rows are the shaman's four totems.
         _forever_text("TotemCategory", 1134586, 0x86C8149C, 3, (_c("ID", ID), _c("Name_lang", 0))),
+        # Item set names ("Battlegear of Might", Forever's "Krol'dok Battlegear"), for the Japanese names: an
+        # item's tooltip heads its set's lines with "<set> (3/5)". Name_lang is the only field the bytes alone
+        # show as text (db2.text_fields); on 1.60.1.71091 its rows hold the sets a set item's tooltip names.
+        _forever_text("ItemSet", 1343609, 0xF79068A4, 5, (_c("ID", ID), _c("Name_lang", 0))),
         # the client-table text families (ADR-042). Every written column is the row id or a leading
         # string field, so each table is text-only and a hotfix is read as its leading strings (no `record`).
         # Names stay English: a name column is declared unwritten so the string layout reads, and is
