@@ -133,6 +133,8 @@ local popupKey = WFJ.Labels.keyer("popup.") -- a pooled popup FontString's recor
 local achievementKey = WFJ.Labels.keyer("achievement.") -- a pooled achievement block's record key
 local toastKey = WFJ.Labels.keyer("toast.") -- a pooled toast header's record key
 local criterionKey = WFJ.Labels.keyer("criterion.") -- a pooled objective line's record key
+local recipeKey = WFJ.Labels.keyer("recipe.") -- a pooled recipe block's title record key
+local reagentKey = WFJ.Labels.keyer("reagent.") -- a pooled reagent line's record key
 
 -- One module's header as it is now. → 1 | 0
 function Tracker.showHeader(key)
@@ -160,6 +162,30 @@ function Tracker.onAchievement(module, achievementID)
     end
   end
   WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
+-- hooksecurefunc target on ProfessionsRecipeTracker:AddRecipe: a tracked recipe's name and its reagent lines
+-- ("2/5 Linen Cloth", PROFESSIONS_TRACKER_REAGENT_FORMAT; blizzard_professionsrecipetracker.lua:128–197), each name in
+-- Japanese while names are on, the counts where the client put them. A recraft's title is a template around the
+-- name and stays as written. → names shown
+function Tracker.onRecipe(module, recipeID, isRecraft)
+  if type(module) ~= "table" or type(module.GetExistingBlock) ~= "function" or type(recipeID) ~= "number" then
+    return 0
+  end
+  local ok, block = pcall(module.GetExistingBlock, module, isRecraft and -recipeID or recipeID)
+  if not ok or type(block) ~= "table" then return 0 end
+  local n = 0
+  if not isRecraft and type(block.HeaderText) == "table" then
+    n = n + WFJ.NameLabels.wrapped(SURFACE, recipeKey(block.HeaderText), block.HeaderText, "ui")
+  end
+  for _, line in pairs(type(block.usedLines) == "table" and block.usedLines or {}) do
+    local text = type(line) == "table" and line.Text or nil
+    local en = type(text) == "table" and type(text.GetText) == "function" and text:GetText() or nil
+    -- the count before the name: "2/5 " or a range "(2-4) " (PROFESSIONS_TRACKER_REAGENT_COUNT_FORMAT, _RANGE_FORMAT)
+    local lead = type(en) == "string" and (en:match("^%d+/%d+ ") or en:match("^%(%d+%-%d+%) ")) or nil
+    if lead then n = n + WFJ.NameLabels.after(SURFACE, reagentKey(text), text, lead, "ui") end
+  end
   return n
 end
 
@@ -308,6 +334,7 @@ function Tracker.init()
   hookMethod("widget", "SetHeader", Tracker.showZoneHeader)
   Tracker.showZoneHeader() -- the zone the client wrote before this addon loaded
   hookMethod("achievement", "AddAchievement", Tracker.onAchievement)
+  hookMethod("professions", "AddRecipe", Tracker.onRecipe)
   for _, key in ipairs({ "quest", "campaign" }) do
     hookMethod(key, "AddAutoQuestObjectives", Tracker.onAutoQuestPopups)
     Tracker.onAutoQuestPopups(get(key))

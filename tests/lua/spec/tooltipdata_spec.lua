@@ -115,6 +115,23 @@ describe("UI/TooltipData", function()
     WFJ.State.setNames(false)
   end)
 
+  it("a party member's progress: a line no dictionary row takes goes to the tracker's objective reader", function()
+    _G.Enum.TooltipDataType.QuestPartyProgress = 24
+    local read = {}
+    WFJ.QuestMap = { OBJECTIVE_KEYS = { "FAILED" }, showObjective = function(_, _, fs)
+      read[#read + 1] = fs:GetText()
+      return 0
+    end }
+    WFJ.TooltipData.init()
+    tt:SetOwner(Stub.button("QuestBlock9", ""))
+    tt:SetText("Sharpened Steel")
+    tt:AddLine("0/8 Solid Sharpening Stone")
+    tt.primaryInfo = { tooltipData = { type = 24 } }
+    posts[24](tt)
+    assert.are.same({ "0/8 Solid Sharpening Stone" }, read)
+    WFJ.QuestMap = nil
+  end)
+
   it("ignores a tooltip other than GameTooltip and a client without the processor", function()
     WFJ.TooltipData.init()
     assert.are.equal(0, WFJ.TooltipData.walk({}))

@@ -592,3 +592,55 @@ describe("the tracker's achievement criteria", function()
     assert.are.equal("レベル20に到達する。", m:GetExistingBlock(16).usedLines[1].Text:GetText())
   end)
 end)
+
+-- A tracked recipe (ProfessionsRecipeTrackerMixin:AddRecipe, blizzard_professionsrecipetracker.lua:128–197): its
+-- title is the recipe's name and each reagent line is a count and a reagent's name, both names in Japanese while
+-- names are on, the counts kept where the client put them.
+describe("the tracker's recipes", function()
+  local WFJ
+
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installTooltipAPI()
+    WFJ = H.loadChunks(FILES)
+    H.uiSetup(WFJ, UI)
+    installTracker()
+    function _G.ProfessionsRecipeTracker.AddRecipe(self, id, isRecraft, name, reagents)
+      local block = self:GetBlock(isRecraft and -id or id)
+      block.HeaderText = block.HeaderText or Stub.fontString("")
+      block.HeaderText.text = isRecraft and ("Recrafting: " .. name) or name
+      block.usedLines = {}
+      for i, reagent in ipairs(reagents) do block.usedLines[i] = { Text = Stub.fontString(reagent) } end
+      return true
+    end
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Heavy Linen Bandage")] = "ヘヴィ・リネン・バンデージ\tへゔぃ・りねん・ばんでーじ",
+      [WFJ.Names.key("Linen Cloth")] = "リネン・クロス\tりねん・くろす",
+    })
+    assert.is_true(WFJ.Tracker.init())
+  end)
+
+  after_each(function()
+    H.uiTeardown()
+    Stub.keys.alt = false
+    for _, name in ipairs(GLOBALS) do _G[name] = nil end
+  end)
+
+  it("the recipe and its reagents in Japanese with names on, the counts kept; English with names off", function()
+    WFJ.State.setNames(true)
+    local m = _G.ProfessionsRecipeTracker
+    m:AddRecipe(3276, false, "Heavy Linen Bandage", { "2/5 Linen Cloth", "(1-2) Linen Cloth", "1/1 Unknown Dye" })
+    local block = m:GetExistingBlock(3276)
+    assert.are.equal("ヘヴィ・リネン・バンデージ", block.HeaderText:GetText())
+    assert.are.equal("2/5 リネン・クロス", block.usedLines[1].Text:GetText())
+    assert.are.equal("(1-2) リネン・クロス", block.usedLines[2].Text:GetText())
+    assert.are.equal("1/1 Unknown Dye", block.usedLines[3].Text:GetText()) -- no line in the name list
+    -- a recraft's title is a template around the name: left as written
+    m:AddRecipe(3276, true, "Heavy Linen Bandage", { "2/5 Linen Cloth" })
+    assert.are.equal("Recrafting: Heavy Linen Bandage", m:GetExistingBlock(-3276).HeaderText:GetText())
+    WFJ.State.setNames(false)
+    m:AddRecipe(3276, false, "Heavy Linen Bandage", { "2/5 Linen Cloth" })
+    assert.are.equal("Heavy Linen Bandage", m:GetExistingBlock(3276).HeaderText:GetText())
+    assert.are.equal("2/5 Linen Cloth", m:GetExistingBlock(3276).usedLines[1].Text:GetText())
+  end)
+end)

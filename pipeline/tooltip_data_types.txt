@@ -29,7 +29,7 @@ CorruptionCleanser  # not hooked: not on Forever (BfA corruption)
 MinimapMouseover  # hooked: UI/TooltipUnit; the minimap's quest block (title and objectives), names kept
 Flyout  # hooked: UI/TooltipData; the flyout's name and description, SpellFlyout rows matched in their own families
 Quest  # not hooked: a quest link's tooltip [unverified in game: whether quest links use this type]
-QuestPartyProgress  # hooked: UI/TooltipData; the objective templates only (party members' names stay English)
+QuestPartyProgress  # hooked: UI/TooltipData; the objective lines read as the tracker reads them (UI/QuestMap.showObjective: the objective's own text, the templates, a count line whose name has Japanese); party members' names stay English
 Macro  # not hooked: no GameTooltip:SetMacro in the Forever UI [unverified in game]
 Debug  # not hooked: developer only
 Outfit  # not hooked: a retail-era transmog outfit tooltip [unverified in game]

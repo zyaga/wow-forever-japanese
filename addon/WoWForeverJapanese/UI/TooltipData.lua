@@ -21,9 +21,13 @@ local OPTS = { from = 2, names = "ui" }
 local function restricted(keys) return { from = 2, only = keys, names = "ui" } end
 local LOCK_OPTS = restricted({ "BOSS_ALIVE", "BOSS_DEAD", "LOCKED" })
 local SET_OPTS = restricted({ "EQUIPMENT_MANAGER_IGNORE_SLOT", "EQUIPMENT_MANAGER_PLACE_IN_BAGS" })
+-- party members' progress: an objective line is read the way the tracker reads it (UI/QuestMap.showObjective: the
+-- objective's own text, the client's templates, a count line whose name has Japanese), after the dictionary
 local function partyOpts()
   local QM = WFJ.QuestMap
-  return restricted(type(QM) == "table" and QM.OBJECTIVE_KEYS or {})
+  local opts = restricted(type(QM) == "table" and QM.OBJECTIVE_KEYS or {})
+  if type(QM) == "table" and type(QM.showObjective) == "function" then opts.show = QM.showObjective end
+  return opts
 end
 
 local function walkWith(opts)
