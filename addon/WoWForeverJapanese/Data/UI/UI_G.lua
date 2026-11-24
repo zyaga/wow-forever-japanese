@@ -271,6 +271,7 @@ WFJ.Data.add("ui", {
   ["GUILD_NEWS_DUNGEON_ENCOUNTER_HEROIC"] = { "|cffd10000[ヒロイック: %s]|r", 0xd0990339, "." },
   ["GUILD_NEWS_DUNGEON_ENCOUNTER_MYTHIC"] = { "|cffd10000[ミシック: %s]|r", 0x11905b25, "." },
   ["GUILD_NEWS_FILTERS"] = { "ギルドニュースのフィルター", 0xe56e1926, "." },
+  ["GUILD_NEWS_FORMAT2"] = { "%sが%sを倒した", 0xaac1f164, "." },
   ["GUILD_NEWS_LINK_ITEM"] = { "アイテムをチャットにリンク", 0x0befbce6, "." },
   ["GUILD_NEWS_MAKE_STICKY"] = { "上部に固定", 0xee876e5f, "." },
   ["GUILD_NEWS_MOTD"] = { "今日のメッセージ: %s", 0xf00499fa, "." },

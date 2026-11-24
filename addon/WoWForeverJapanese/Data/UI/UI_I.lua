@@ -8,6 +8,7 @@ WFJ.Data.add("ui", {
   ["ICON_SELECTION_DRAG"] = { "表示に使うアイコンをここにドラッグ", 0xcadc704f, "." },
   ["ICON_SELECTION_NOTINLIST"] = { "このアイコンはリストにありません", 0xf3864f64, "." },
   ["ICON_SELECTION_TITLE_CURRENT"] = { "現在のアイコン", 0xd4b26efa, "." },
+  ["IDLE_MESSAGE"] = { "しばらく操作がなかったため、ゲームからログアウトします。ログインしたままにする場合は、キャンセルボタンを押してください。", 0x05e5b59c, "." },
   ["IF_EQUIPPED_TOGETHER"] = { "一緒に装備", 0x04c7664d, "." },
   ["IGNORE"] = { "無視", 0xd7988f8c, "." },
   ["IGNORED"] = { "無視中", 0x5311772e, "." },

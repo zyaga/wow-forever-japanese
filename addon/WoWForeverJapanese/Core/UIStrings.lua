@@ -1279,7 +1279,11 @@ function Index:duration(value, spellOnly)
     local k, a = self:core(v)
     if not k then return nil end
     for _, syn in ipairs(self.synonyms[k] or { k }) do
-      if set[syn] then return self:fill(self.rows[k][1], a) end
+      if set[syn] then
+        -- the words of the line the duration is written with go on the line it is filled into (Main sets this)
+        if type(UIStrings.filledKey) == "function" then UIStrings.filledKey(k) end
+        return self:fill(self.rows[k][1], a)
+      end
     end
     return nil
   end

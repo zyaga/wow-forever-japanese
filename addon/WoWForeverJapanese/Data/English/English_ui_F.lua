@@ -45,6 +45,7 @@ WFJ.Data.add("english", {
   ["ui:FEATURE_NOT_YET_AVAILABLE"] = { text = "available=4 feature=2 this=1 yet=3" },
   ["ui:FEATURE_UNAVAILBLE_PLAYER_IS_NEUTRAL"] = { text = "available=6 faction=1 feature=5 pick=2 this=4 until=3" },
   ["ui:FEAT_OF_STRENGTH_DESCRIPTION"] = { text = "accomplishments=9 difficult=6 earn=4 glories=15 impossible=8 past=14 players=2 points=10 very=5 worth=11" },
+  ["ui:FEEDPET_LOG_THIRDPERSON"] = { text = "pet=1" },
   ["ui:FEETSLOT"] = { text = "feet=1" },
   ["ui:FILTER"] = { text = "filter=1" },
   ["ui:FILTERS"] = { text = "filters=1" },

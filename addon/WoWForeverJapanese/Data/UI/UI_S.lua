@@ -466,6 +466,7 @@ WFJ.Data.add("ui", {
   ["SPELLBOOK_SEARCH_INSTRUCTIONS"] = { "アビリティ、キーワードを検索", 0x4de8cfb2, "." },
   ["SPELLBOOK_TRAINABLE"] = { "トレーナーのもとで習得", 0x9bd646a8, "." },
   ["SPELLBOOK_USE_FLYOUTS"] = { "似た呪文をフライアウトにまとめる", 0x15642f24, "." },
+  ["SPELLDISMISSPETOTHER"] = { "%sの%sは去っていった。", 0x9f4f6105, "." },
   ["SPELLS"] = { "呪文", 0x47896618, "." },
   ["SPELLS_COMBATLOG_TOOLTIP"] = { "呪文と特殊アビリティについてのメッセージを表示します。", 0x018c1e82, "." },
   ["SPELL_ALERT_OPACITY"] = { "呪文アラートの不透明度", 0x725b4d96, "." },

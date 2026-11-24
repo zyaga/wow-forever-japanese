@@ -4,7 +4,8 @@ local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Data.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua",
-  "Core/Readings.lua", "Core/Glosses.lua", "Core/State.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Names.lua", "Core/Settings.lua",
+  "Core/Readings.lua", "Core/Glosses.lua", "Core/State.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Names.lua",
+  "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Compat.lua", "Core/Words.lua",
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/Render.lua", "UI/OptionsText.lua",
   "UI/OptionsWidgets.lua",

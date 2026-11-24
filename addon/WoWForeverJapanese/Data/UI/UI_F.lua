@@ -45,6 +45,7 @@ WFJ.Data.add("ui", {
   ["FEATURE_NOT_YET_AVAILABLE"] = { "この機能はまだ利用できません。", 0x82c179b5, "." },
   ["FEATURE_UNAVAILBLE_PLAYER_IS_NEUTRAL"] = { "勢力を選ぶまで、この機能は利用できません。", 0x845b8ccb, "." },
   ["FEAT_OF_STRENGTH_DESCRIPTION"] = { "偉業は、プレイヤーにとって獲得が非常に難しい、あるいは不可能な功績です。ポイントはありませんが、偉業はAzerothにおける過去の栄光の記録です。", 0x2b9f2653, "." },
+  ["FEEDPET_LOG_THIRDPERSON"] = { "%sのペットが%sを食べ始めた。", 0x36e29eba, "." },
   ["FEETSLOT"] = { "足", 0x097bdf12, "." },
   ["FILTER"] = { "フィルター", 0x07e3c6b0, "." },
   ["FILTERS"] = { "フィルター", 0x098eac97, "." },

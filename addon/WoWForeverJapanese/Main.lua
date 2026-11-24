@@ -168,6 +168,33 @@ end
 -- chose (ADR-028).
 -- `words`: the phrases the client prints where it has no number ("until canceled"), each with its Japanese, set
 -- when the UI index is built.
+-- The cards of what the client's values bring into a line while the translator fills it (Translator `filled`): a
+-- game name the names choice writes in Japanese, a duration's unit from its interface line's own words. Only
+-- while a line is being filled; the frozen tooltip lays them on its copy like the line's own names.
+local filledCards -- nil while no line is being filled
+local function fillCards(start)
+  if start then
+    filledCards = {}
+    return nil
+  end
+  local out = filledCards
+  filledCards = nil
+  return out
+end
+local function noteCard(ja, reading, english)
+  if filledCards and type(ja) == "string" and ja ~= "" then
+    filledCards[#filledCards + 1] = { ja = ja, reading = reading, english = english }
+  end
+end
+-- the words of an interface line the client's values were written with (a duration's 秒), as cards
+local function noteKeyWords(key)
+  if not filledCards then return end
+  for _, card in ipairs(WFJ.Readings.cards("ui", key)) do
+    card.afterNumber = true -- a unit: its card goes on it after every number the line holds it after
+    filledCards[#filledCards + 1] = card
+  end
+end
+
 local spellDuration = {
   render = function(text) return WFJ.UIIndex and WFJ.UIIndex:duration(text, true) or nil end,
   words = {},
@@ -175,6 +202,17 @@ local spellDuration = {
 
 -- The Japanese the tooltip shows for a shipped item / spell entry against these live lines (Align.gate, with the
 -- client's spell durations). → ok, text
+-- The same, with the cards of what the gate filled in (a duration's 秒) for a line written outside the translator
+-- (a set bonus line holding its spell's text). → ok, text, cards | nil
+function WFJ.GateCards(entry, lines)
+  local outer = filledCards
+  fillCards(true)
+  local ok, text = WFJ.Align.gate(entry, lines, spellDuration)
+  local cards = fillCards()
+  filledCards = outer
+  return ok, text, cards
+end
+
 function WFJ.GateText(entry, lines)
   return WFJ.Align.gate(entry, lines, spellDuration)
 end
@@ -374,6 +412,7 @@ function WFJ.OnLoad()
       return WFJ.Names.inText(ja, kind == "book" and ja:find("^%s*<[Hh][Tt][Mm][Ll]") ~= nil)
     end,
     name = WFJ.Names.shown, -- a widget that holds only a name (an item's may carry a suffix) or a list of them
+    filled = fillCards,
     lookup = WFJ.Lookup.get,
     marker = function(name) return WFJ.Settings.get("marker." .. name) end,
     -- the runtime gate for unaligned entries (ADR-007). The duration renderer is UIStrings',
@@ -400,9 +439,16 @@ function WFJ.OnLoad()
   })) end)
   -- a game name the client fills into an interface line, in Japanese while names are on
   WFJ.UIStrings.name = function(text)
-    if WFJ.State.names then return WFJ.Names.value(text) end
-    return nil
+    if not WFJ.State.names then return nil end
+    local ja = WFJ.Names.value(text)
+    if ja and filledCards then
+      local plain, reading = WFJ.Names.item(text) -- a link's label keeps no card: its text is not the name alone
+      if plain then noteCard(plain, reading, text) end
+    end
+    return ja
   end
+  -- an interface line whose Japanese the client's values were written with (a duration): its words go on the line
+  WFJ.UIStrings.filledKey = noteKeyWords
   -- a race or a class the client fills into a player's level line
   WFJ.UIStrings.word = function(text)
     if WFJ.State.names then return WFJ.Placeholders.wordFor(text) end

@@ -553,7 +553,24 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     assert client_surface._texts(args) == 0
     out = capsys.readouterr().out
     assert "names: 1 read, 0 shown in Japanese" in out
-    assert "frozen tooltip: 3 item tooltips frozen, 4 Japanese lines copied, 4 word cards; key CTRL-F" in out
+    assert ("frozen tooltip: 3 item and 0 spell tooltips frozen, 4 Japanese lines copied, 4 word cards, "
+            "0 lines with a word that takes none; key CTRL-F") in out
+
+
+def test_a_word_on_a_frozen_tooltip_with_no_card_fails_the_run_and_a_particle_does_not():
+    record = {"items": 1, "spells": 1, "lines": 3, "cards": 2, "bound": "", "expect": True, "refused": "",
+              "missing": [], "stuck": [], "uncarded": [
+                  ("items 6265", "part", "必要: ファースト・エイド (100)", "ファースト・エイド"),
+                  ("items 7000", "part", "必要: ファースト・エイド (100)", "ファースト・エイド"),
+                  ("spells 133", "none", "売値: 40", "売値"),
+                  ("items 6265", "part", "体力を回復します。", "を"),
+              ]}
+    problems = client_surface.freeze_problems(record)
+    words = [p for p in problems if p.startswith("frozen tooltip word without a card")]
+    # each line once, a particle never
+    assert len(words) == 2
+    assert any("ファースト・エイド in '必要: ファースト・エイド (100)' (items 6265)" in p for p in words)
+    assert any("(no card on the line): 売値" in p for p in words)
 
 
 def test_the_test_addon_carries_each_filled_spells_count_and_reads_tooltips_after_the_closed_windows(root):

@@ -2821,10 +2821,40 @@ local function shownTexts(frame, out)
   return out
 end
 
+-- The Japanese on a copied line that no word card covers, as runs of characters: each covered byte comes from the
+-- cover laid on the line's twin (its `text` and `spans`, UI/Readings), whose text is the line's own or the start of
+-- it. Kana and kanji count; the ideographic punctuation block (E3 80) and the full-width forms (EF: ！？～：) do not.
+local UNCARDED_MAX = 400
+local function uncardedRuns(plain, cover)
+  local covered = {}
+  if cover then
+    for _, sp in ipairs(cover.spans) do
+      if type(sp.first) == "number" and type(sp.last) == "number" then
+        for b = sp.first, sp.last do covered[b] = true end
+      end
+    end
+  end
+  local runs, run, i = {}, "", 1
+  while i <= #plain do
+    local c = plain:byte(i)
+    local n = c >= 240 and 4 or c >= 224 and 3 or c >= 192 and 2 or 1
+    local japanese = n == 3 and c >= 227 and c <= 233 and not (c == 227 and plain:byte(i + 1) == 128)
+    if japanese and not covered[i] then
+      run = run .. plain:sub(i, i + n - 1)
+    elseif run ~= "" then
+      runs[#runs + 1], run = run, ""
+    end
+    i = i + n
+  end
+  if run ~= "" then runs[#runs + 1] = run end
+  return runs
+end
+
 local function WFJScanFreezeRead(done)
   local db = probeDb()
   local settings = addonSettings() or {}
-  local record = { items = 0, lines = 0, cards = 0, missing = {}, stuck = {},
+  -- uncarded: { "<what was frozen>\t<covered: none | part>\t<line>\t<runs joined by a space>" }
+  local record = { items = 0, spells = 0, lines = 0, cards = 0, missing = {}, stuck = {}, uncarded = {},
     bound = GetBindingKey("WFJ_FREEZE_TOOLTIP") or "",
     expect = settings.enabled ~= false and settings.direction ~= "en" and settings["readings.enabled"] ~= false }
   db.freeze = record
@@ -2833,14 +2863,15 @@ local function WFJScanFreezeRead(done)
     return done()
   end
   done = collectorPaused(done) -- it shows tooltips, as the tooltip read does
-  local function freeze(id, show)
-    if record.items >= FREEZE_MAX then return end
+  local function freeze(id, show, counter)
+    counter = counter or "items"
+    if record[counter] >= FREEZE_MAX then return end
     GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
     GameTooltip:ClearAllPoints()
     GameTooltip:SetPoint("CENTER", UIParent, "CENTER")
     show()
     if not GameTooltip:IsShown() or (GameTooltip:NumLines() or 0) == 0 then return end
-    record.items = record.items + 1
+    record[counter] = record[counter] + 1
     local want = {}
     for i = 1, GameTooltip:NumLines() do
       for _, side in ipairs({ "Left", "Right" }) do
@@ -2866,9 +2897,34 @@ local function WFJScanFreezeRead(done)
     local lost = 0
     for _, text in ipairs(want) do if not got[text] then lost = lost + 1 end end
     if lost > 0 then record.missing[tostring(id)] = lost .. " of " .. #want .. " lines not on the copy" end
+    local covers = {}
     for _, child in ipairs({ copy:GetChildren() }) do
       if child ~= copy.NineSlice and child:IsShown() and child.IsMouseMotionEnabled and child:IsMouseMotionEnabled() then
         record.cards = record.cards + 1
+        if type(child.text) == "string" and type(child.spans) == "table" then covers[#covers + 1] = child end
+      end
+    end
+    -- every Japanese character of every copied line: under a word card or not
+    for _, t in ipairs(shownTexts(copy, {})) do
+      if hasJapanese(t.text) and not (t.region.GetAlpha and t.region:GetAlpha() == 0)
+        and #record.uncarded < UNCARDED_MAX then
+        -- as the copy's twin holds it: no colour codes, a line break escape as a line break
+        local plain = t.text:gsub("|c%%x%%x%%x%%x%%x%%x%%x%%x", ""):gsub("|r", ""):gsub("|n", "\\n")
+        local cover
+        for _, c in ipairs(covers) do
+          if c.text ~= "" and plain:sub(1, #c.text) == c.text then cover = c end
+        end
+        local runs = uncardedRuns(plain, cover)
+        if runs[1] then
+          -- the words the line's cards do cover, so a missing one can be told from a misplaced one
+          local had = {}
+          for _, sp in ipairs(cover and cover.spans or {}) do
+            if type(sp.first) == "number" and type(sp.last) == "number" then had[#had + 1] = plain:sub(sp.first, sp.last) end
+          end
+          record.uncarded[#record.uncarded + 1] = table.concat({ counter .. " " .. tostring(id),
+            cover and ("part:" .. table.concat(had, ",")) or "none", (plain:gsub("[\\t\\n]", " ")),
+            table.concat(runs, " ") }, "\\t")
+        end
       end
     end
     WFJ_FreezeTooltip() -- the same tooltip still shows: the key closes the copy
@@ -2886,6 +2942,16 @@ local function WFJScanFreezeRead(done)
       for slot = 1, C_Container.GetContainerNumSlots(bag) or 0 do
         local id = C_Container.GetContainerItemID(bag, slot)
         if id then freeze(id, function() GameTooltip:SetBagItem(bag, slot) end) end
+      end
+    end
+    -- the spells the character knows among those that ship Japanese: a spell tooltip's lines (cost, range, cast
+    -- time, cooldown, reagents, requirements) are kinds an item's lack
+    if type(IsPlayerSpell) == "function" then
+      local ids = {}
+      for sid in pairs(VALUES) do ids[#ids + 1] = sid end
+      table.sort(ids)
+      for _, sid in ipairs(ids) do
+        if IsPlayerSpell(sid) then freeze(sid, function() GameTooltip:SetSpellByID(sid) end, "spells") end
       end
     end
   end)
@@ -3891,13 +3957,36 @@ def read_freeze(text: str) -> dict[str, Any] | None:
     record = probe.get("freeze") if probe is not None else None
     if record is None:
         return None
-    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("items", "lines", "cards")}
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("items", "spells", "lines", "cards")}
     out["bound"] = str(record.get("bound") or "")
     out["expect"] = bool(record.get("expect"))
     out["refused"] = str(record.get("refused") or "")
     for kind in ("missing", "stuck"):
         table = record.get(kind)
         out[kind] = sorted((str(k), str(v)) for k, v in (table.named() if table is not None else {}).items())
+    rows = record.get("uncarded")
+    out["uncarded"] = [tuple(str(r).split("\t", 3)) for r in (rows.positional() if rows is not None else [])]
+    return out
+
+
+# Kana a word card never takes: the particles and the copula a reading list leaves out (core/readings `_BARE`), and
+# two of them together (には, への).
+_FREEZE_PARTICLES = ["は", "が", "を", "に", "で", "と", "の", "へ", "も", "や", "か", "よ", "ね", "な", "から", "まで"]
+FREEZE_BARE = frozenset(_FREEZE_PARTICLES + ["だ", "です", "ー", "しか"]
+                        + [a + b for a in _FREEZE_PARTICLES for b in _FREEZE_PARTICLES])
+
+
+def uncarded_words(record: dict[str, Any]) -> list[tuple[str, str, str, str]]:
+    """The frozen copies' Japanese that no word card covers, as (what was frozen, "none" | "part", the line, the
+    runs left), a run that is only a particle or the copula left out: the reading lists never give those a card."""
+    out = []
+    for row in record.get("uncarded", []):
+        if len(row) != 4:
+            continue
+        what, covered, line, runs = row
+        left = [r for r in runs.split(" ") if r and r not in FREEZE_BARE]
+        if left:
+            out.append((what, covered, line, " ".join(left)))
     return out
 
 
@@ -3973,6 +4062,14 @@ def freeze_problems(record: dict[str, Any] | None) -> list[str]:
     out += [f"frozen tooltip did not close: item {i} ({said})" for i, said in record["stuck"]]
     if record["expect"] and record["lines"] and not record["cards"]:
         out.append(f"frozen tooltip has no word cards: {record['lines']} Japanese lines copied, none took a card")
+    if record["expect"]:
+        # each distinct line once: the same line on twenty tooltips is one fault
+        seen: dict[str, tuple[str, str, str]] = {}
+        for what, covered, line, runs in uncarded_words(record):
+            seen.setdefault(line, (what, covered, runs))
+        out += [f"frozen tooltip word without a card ("
+                f"{'no card on the line' if covered == 'none' else 'cards on ' + covered.removeprefix('part:')}): "
+                f"{runs} in {line!r} ({what})" for line, (what, covered, runs) in sorted(seen.items())]
     return out
 
 
@@ -4379,8 +4476,9 @@ def _own_reads(saved: str) -> list[str]:
         print(f"names: {len(names['rows'])} read, {shown} shown in Japanese")
     freeze = read_freeze(saved)
     if freeze is not None:
-        print(f"frozen tooltip: {freeze['items']} item tooltips frozen, {freeze['lines']} Japanese lines copied, "
-              f"{freeze['cards']} word cards; key {freeze['bound'] or 'none'}")
+        print(f"frozen tooltip: {freeze['items']} item and {freeze['spells']} spell tooltips frozen, "
+              f"{freeze['lines']} Japanese lines copied, {freeze['cards']} word cards, "
+              f"{len(uncarded_words(freeze))} lines with a word that takes none; key {freeze['bound'] or 'none'}")
     plates = read_plates(saved)
     if plates is not None and not plates["refused"]:
         v, d = plates["values"], plates["defaults"]

@@ -421,9 +421,11 @@ function View.attach(rec)
       View.detach(rec)
       return false
     end
-    -- the card sits on the name itself: a colour code before it or numbers after it are no part of it
-    local spans = WFJ.Readings.withNames({}, rec.applied,
-      { { ja = card.ja or rec.applied, english = card.english, reading = card.reading } })
+    -- the card sits on the name itself: a colour code before it or numbers after it are no part of it. A name
+    -- written before it on the same widget (a recipe heading's skill, "マイニング: ") takes its own card too.
+    local cards = { { ja = card.ja or rec.applied, english = card.english, reading = card.reading } }
+    for _, n in ipairs(type(rec.names) == "table" and rec.names or {}) do cards[#cards + 1] = n end
+    local spans = WFJ.Readings.withNames({}, rec.applied, cards)
     return lay(rec, region(rec), rec.applied, spans)
   end
   -- rec.spans: words already located by the caller (the voice panel shows one sentence of a line whose word list is

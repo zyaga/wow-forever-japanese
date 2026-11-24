@@ -16,7 +16,8 @@
 -- A line coloured in parts holds colour codes, and how the client counts bytes around an escape sequence is not
 -- verified (UI/Readings refuses such text). So the words are measured on a twin line: the same text without the
 -- colour codes, same font and width, drawn at the same place with no opacity. Colour codes take no room, so both
--- wrap alike. A line holding any other escape (a texture, a link) takes no cards.
+-- wrap alike. A line holding any other escape (a texture, a link) takes cards on the words before it only, when the
+-- line is left-aligned (a sell price: 売値 before its coins); any other such line takes none.
 local _, WFJ = ...
 local Freeze = {}
 WFJ.TooltipFreeze = Freeze
@@ -133,8 +134,16 @@ local function cardLine(src, text)
   local rec = WFJ.SurfaceState.of(src)
   local meta = rec and rec.meta
   if not meta or rec.applied ~= text or meta.id == nil then return nil end
-  local plain = WFJ.UIStrings.stripColour(text)
-  if plain:find("|", 1, true) then return nil end
+  -- a line break written as its escape (a spell's reagents, "触媒: |n…") is a line break on the twin
+  local plain = WFJ.UIStrings.stripColour(text):gsub("|n", "\n")
+  local escape = plain:find("|", 1, true)
+  if escape then
+    -- a texture or a link after the words (a sell price's coins): the twin holds the words before it alone. A
+    -- left-aligned line starts both at the same place, so those words stand where the copy shows them.
+    if not (src.GetJustifyH and src:GetJustifyH() == "LEFT") then return nil end
+    plain = plain:sub(1, escape - 1)
+    if not plain:find("[\128-\255]") then return nil end -- no Japanese before it
+  end
   return rec, plain
 end
 

@@ -463,6 +463,7 @@
 {"id": "SPELLBOOK_SEARCH_INSTRUCTIONS", "field": "text", "en": "Search abilities, keywords", "hash": "4de8cfb2b2380a27", "src": "db2@1.60.1.70685"}
 {"id": "SPELLBOOK_TRAINABLE", "field": "text", "en": "See your trainer", "hash": "9bd646a819677c91", "src": "db2@1.60.1.71037"}
 {"id": "SPELLBOOK_USE_FLYOUTS", "field": "text", "en": "Group Similar Spells on Flyouts", "hash": "15642f24334c8320", "src": "db2@1.60.1.71037"}
+{"id": "SPELLDISMISSPETOTHER", "field": "text", "en": "%s's %s is dismissed.", "hash": "9f4f6105cb32eae2", "src": "db2@1.60.1.71037"}
 {"id": "SPELLS", "field": "text", "en": "Spells", "hash": "478966186d0738af", "src": "db2@1.60.1.71037"}
 {"id": "SPELLS_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows messages about spells and special abilities.", "hash": "018c1e82a9ea7b60", "src": "db2@1.60.1.71037"}
 {"id": "SPELL_ALERT_OPACITY", "field": "text", "en": "Spell Alert Opacity", "hash": "725b4d96201c024f", "src": "db2@1.60.1.71037"}

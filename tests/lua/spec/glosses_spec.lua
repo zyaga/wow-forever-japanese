@@ -223,6 +223,24 @@ describe("Glosses", function()
     assert.is_true(spans[3].first > spans[2].last) -- the second one is found after the first, not on it again
   end)
 
+  it("a filled-in unit takes its card after every number, a saveable word, never inside another word", function()
+    local text = "自分を守り、20秒の間、2秒ごとに回復する。"
+    local self_ = text:find("自分", 1, true)
+    local listed = { { first = self_, last = self_ + #"自分" - 1, word = "自分", reading = "じぶん", gloss = false } }
+    local unit = { ja = "秒", reading = "びょう", english = "seconds", lemma = "秒", lemmaReading = "びょう",
+      word = true, afterNumber = true }
+    local spans = WFJ.Readings.withNames(listed, text, { unit })
+    local seconds = {}
+    for _, sp in ipairs(spans) do if sp.word == "秒" then seconds[#seconds + 1] = sp end end
+    assert.are.equal(2, #seconds)
+    assert.is_nil(seconds[1].name) -- a word, saved like any other
+    assert.are.equal("seconds", seconds[2].card.meaning)
+    -- 分 inside 自分 follows no number: the word's own card stays
+    local minutes = WFJ.Readings.withNames(listed, text, { { ja = "分", reading = "ふん", word = true,
+      afterNumber = true } })
+    assert.are.same(listed, minutes)
+  end)
+
   it("a reading word never anchors inside a name, and a name the line no longer holds is skipped", function()
     local text = "アイアンフォージの門。"
     local inside = { { first = 1, last = #"アイアン", word = "アイアン", reading = "あいあん", gloss = false } }

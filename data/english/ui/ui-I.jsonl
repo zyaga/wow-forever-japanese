@@ -5,6 +5,7 @@
 {"id": "ICON_SELECTION_DRAG", "field": "text", "en": "Drag an icon here to use it as your display", "hash": "cadc704fe1558571", "src": "db2@1.60.1.71037"}
 {"id": "ICON_SELECTION_NOTINLIST", "field": "text", "en": "This icon is not in the list", "hash": "f3864f642ae0b51f", "src": "db2@1.60.1.71037"}
 {"id": "ICON_SELECTION_TITLE_CURRENT", "field": "text", "en": "Currently Selected", "hash": "d4b26efa1f3ba217", "src": "db2@1.60.1.71037"}
+{"id": "IDLE_MESSAGE", "field": "text", "en": "You have been inactive for some time and will be logged out of the game. If you wish to remain logged in, hit the cancel button.", "hash": "05e5b59ce4e1de7b", "src": "db2@1.60.1.71037"}
 {"id": "IF_EQUIPPED_TOGETHER", "field": "text", "en": "Equipped With", "hash": "04c7664dc43ecc10", "src": "db2@1.60.1.71037"}
 {"id": "IGNORE", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.71037"}
 {"id": "IGNORED", "field": "text", "en": "Ignored", "hash": "5311772e13c44b5f", "src": "db2@1.60.1.71037"}

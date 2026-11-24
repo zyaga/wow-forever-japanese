@@ -268,6 +268,7 @@
 {"id": "GUILD_NEWS_DUNGEON_ENCOUNTER_HEROIC", "field": "text", "en": "|cffd10000[Heroic: %s]|r", "hash": "d0990339bf520bed", "src": "db2@1.60.1.71037"}
 {"id": "GUILD_NEWS_DUNGEON_ENCOUNTER_MYTHIC", "field": "text", "en": "|cffd10000[Mythic: %s]|r", "hash": "11905b2562a54959", "src": "db2@1.60.1.71037"}
 {"id": "GUILD_NEWS_FILTERS", "field": "text", "en": "Guild News Filters", "hash": "e56e1926f66e8ce4", "src": "db2@1.60.1.71037"}
+{"id": "GUILD_NEWS_FORMAT2", "field": "text", "en": "%s defeated %s", "hash": "aac1f16401854006", "src": "db2@1.60.1.71037"}
 {"id": "GUILD_NEWS_LINK_ITEM", "field": "text", "en": "Link Item to Chat", "hash": "0befbce6ec1ee9a5", "src": "db2@1.60.1.71037"}
 {"id": "GUILD_NEWS_MAKE_STICKY", "field": "text", "en": "Make Sticky", "hash": "ee876e5f5f89aaf0", "src": "db2@1.60.1.71037"}
 {"id": "GUILD_NEWS_MOTD", "field": "text", "en": "MotD: %s", "hash": "f00499fa1e26c0ab", "src": "db2@1.60.1.71037"}

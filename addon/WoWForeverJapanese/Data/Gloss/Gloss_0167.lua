@@ -460,4 +460,13 @@ WFJ.Data.add("gloss", {
   [167457] = "認める\tみとめる\tadmitted",
   [167458] = "責任者\tせきにんしゃ\tthe one in charge",
   [167459] = "足を踏み入れる\tあしをふみいれる\tsetting foot on",
+  [167460] = "場合\tばあい\tin the case that",
+  [167461] = "製作者\tせいさくしゃ\tmade by",
+  [167462] = "する\tする\twhile still (logged in)",
+  [167463] = "ログアウトする\tログアウトする\twill be logged out",
+  [167464] = "ログイン\tログイン\tlogged in",
+  [167465] = "去る\tさる\twent away (was dismissed)",
+  [167466] = "場合\tばあい\tif",
+  [167467] = "操作\tそうさ\tinput, activity",
+  [167468] = "食べ始める\tたべはじめる\tbegan eating",
 })
