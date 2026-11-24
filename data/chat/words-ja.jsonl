@@ -1,0 +1,341 @@
+{"word": "よろ", "reading": "よろ", "meaning": "short for よろしく: nice to meet you / thanks in advance", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "よろしく", "reading": "よろしく", "meaning": "nice to meet you / please treat me well", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "よろしくです", "reading": "よろしくです", "meaning": "nice to meet you (casual polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "よろしくお願いします", "reading": "よろしくおねがいします", "meaning": "nice to meet you / thanks in advance (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "よろしくおねがいします", "reading": "よろしくおねがいします", "meaning": "nice to meet you / thanks in advance (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おつ", "reading": "おつ", "meaning": "short for お疲れ様: good work / thanks for the run", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おつです", "reading": "おつです", "meaning": "good work (casual polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おつかれ", "reading": "おつかれ", "meaning": "good work / thanks for the run", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おつかれさま", "reading": "おつかれさま", "meaning": "good work / thanks for the run", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おつかれさまでした", "reading": "おつかれさまでした", "meaning": "good work, said when a run ends (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "お疲れ", "reading": "おつかれ", "meaning": "good work / thanks for the run", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "お疲れ様", "reading": "おつかれさま", "meaning": "good work / thanks for the run", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "お疲れ様です", "reading": "おつかれさまです", "meaning": "good work (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "お疲れ様でした", "reading": "おつかれさまでした", "meaning": "good work, said when a run ends (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おつおつ", "reading": "おつおつ", "meaning": "good work, good work (friendly)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "乙", "reading": "おつ", "meaning": "short for お疲れ様: good work", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "あり", "reading": "あり", "meaning": "short for ありがとう: thanks", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ありです", "reading": "ありです", "meaning": "thanks (casual polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ありがと", "reading": "ありがと", "meaning": "thanks (casual)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ありがとう", "reading": "ありがとう", "meaning": "thank you", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ありがとうございます", "reading": "ありがとうございます", "meaning": "thank you very much (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ありがとうございました", "reading": "ありがとうございました", "meaning": "thank you very much, for something finished", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "あざす", "reading": "あざす", "meaning": "thanks (very casual)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "あざっす", "reading": "あざっす", "meaning": "thanks (very casual)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "感謝", "reading": "かんしゃ", "meaning": "thanks / gratitude", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おめ", "reading": "おめ", "meaning": "short for おめでとう: congrats", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おめです", "reading": "おめです", "meaning": "congrats (casual polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おめでとう", "reading": "おめでとう", "meaning": "congratulations", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おめでとうございます", "reading": "おめでとうございます", "meaning": "congratulations (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おか", "reading": "おか", "meaning": "short for おかえり: welcome back", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おかえり", "reading": "おかえり", "meaning": "welcome back", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おかえりなさい", "reading": "おかえりなさい", "meaning": "welcome back (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ただいま", "reading": "ただいま", "meaning": "I'm back", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ただ", "reading": "ただ", "meaning": "short for ただいま: I'm back", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "こん", "reading": "こん", "meaning": "short for こんにちは or こんばんは: hi", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "こんちゃ", "reading": "こんちゃ", "meaning": "hi (casual)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "こんちは", "reading": "こんちは", "meaning": "hi (casual)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "こんにちは", "reading": "こんにちは", "meaning": "hello", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "こんばんは", "reading": "こんばんは", "meaning": "good evening", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "こんばん", "reading": "こんばん", "meaning": "evening (casual)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おは", "reading": "おは", "meaning": "short for おはよう: morning", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おはよう", "reading": "おはよう", "meaning": "good morning", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おはようございます", "reading": "おはようございます", "meaning": "good morning (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おやすみ", "reading": "おやすみ", "meaning": "good night", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おやすみなさい", "reading": "おやすみなさい", "meaning": "good night (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おやす", "reading": "おやす", "meaning": "night (casual)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "はじめまして", "reading": "はじめまして", "meaning": "nice to meet you (first meeting)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "初めまして", "reading": "はじめまして", "meaning": "nice to meet you (first meeting)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "またね", "reading": "またね", "meaning": "see you", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "また", "reading": "また", "meaning": "again / see you", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "またあとで", "reading": "またあとで", "meaning": "see you later", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "また明日", "reading": "またあした", "meaning": "see you tomorrow", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ではまた", "reading": "ではまた", "meaning": "well then, see you", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "じゃあね", "reading": "じゃあね", "meaning": "bye", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ばいばい", "reading": "ばいばい", "meaning": "bye-bye", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "のし", "reading": "のし", "meaning": "bye (a waving hand)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おち", "reading": "おち", "meaning": "logging off", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "落ち", "reading": "おち", "meaning": "logging off", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "落ちます", "reading": "おちます", "meaning": "I'm logging off", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "落ちる", "reading": "おちる", "meaning": "to log off / to drop", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "寝落ち", "reading": "ねおち", "meaning": "falling asleep at the keyboard", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "寝ます", "reading": "ねます", "meaning": "I'm going to sleep", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "離席", "reading": "りせき", "meaning": "away from the keyboard", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "離席します", "reading": "りせきします", "meaning": "I'm stepping away", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "戻り", "reading": "もどり", "meaning": "back (from being away)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "戻りました", "reading": "もどりました", "meaning": "I'm back", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "もど", "reading": "もど", "meaning": "short for 戻りました: back", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "りょ", "reading": "りょ", "meaning": "short for 了解: got it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "りょうかい", "reading": "りょうかい", "meaning": "understood / got it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "了解", "reading": "りょうかい", "meaning": "understood / got it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "了解です", "reading": "りょうかいです", "meaning": "understood (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "りょです", "reading": "りょです", "meaning": "got it (casual polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おけ", "reading": "おけ", "meaning": "OK", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おっけー", "reading": "おっけー", "meaning": "OK", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "はい", "reading": "はい", "meaning": "yes", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "はーい", "reading": "はーい", "meaning": "yes / okay (friendly)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "いいえ", "reading": "いいえ", "meaning": "no", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "うん", "reading": "うん", "meaning": "yeah", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ううん", "reading": "ううん", "meaning": "nope", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "いいよ", "reading": "いいよ", "meaning": "sure / that's fine", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "いいですよ", "reading": "いいですよ", "meaning": "sure / that's fine (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "だめ", "reading": "だめ", "meaning": "no good / not allowed", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "無理", "reading": "むり", "meaning": "impossible / can't", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "大丈夫", "reading": "だいじょうぶ", "meaning": "okay / no problem", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "大丈夫です", "reading": "だいじょうぶです", "meaning": "I'm fine / no thanks (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "だいじょうぶ", "reading": "だいじょうぶ", "meaning": "okay / no problem", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "問題ない", "reading": "もんだいない", "meaning": "no problem", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ごめん", "reading": "ごめん", "meaning": "sorry", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ごめんなさい", "reading": "ごめんなさい", "meaning": "I'm sorry", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ごめんね", "reading": "ごめんね", "meaning": "sorry (soft)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "すまん", "reading": "すまん", "meaning": "sorry (rough, casual)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "すみません", "reading": "すみません", "meaning": "excuse me / sorry", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "すいません", "reading": "すいません", "meaning": "excuse me / sorry (spoken form)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "申し訳ない", "reading": "もうしわけない", "meaning": "I'm very sorry", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "失礼", "reading": "しつれい", "meaning": "excuse me / rude", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "失礼します", "reading": "しつれいします", "meaning": "excuse me (entering or leaving)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "どんまい", "reading": "どんまい", "meaning": "don't worry about it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ドンマイ", "reading": "ドンマイ", "meaning": "don't worry about it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "気にしないで", "reading": "きにしないで", "meaning": "don't worry about it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ないす", "reading": "ないす", "meaning": "nice", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ナイス", "reading": "ナイス", "meaning": "nice", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "うまい", "reading": "うまい", "meaning": "skilled / well played", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "上手", "reading": "じょうず", "meaning": "skilled", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "すごい", "reading": "すごい", "meaning": "amazing", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "すげー", "reading": "すげー", "meaning": "amazing (rough)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "やばい", "reading": "やばい", "meaning": "awesome or terrible, by context", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "やった", "reading": "やった", "meaning": "yes! / we did it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "よし", "reading": "よし", "meaning": "all right / good", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "さすが", "reading": "さすが", "meaning": "as expected of you / impressive", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "かっこいい", "reading": "かっこいい", "meaning": "cool", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "かわいい", "reading": "かわいい", "meaning": "cute", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "うける", "reading": "うける", "meaning": "that's funny", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "草", "reading": "くさ", "meaning": "lol (from w looking like grass)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "笑", "reading": "わら", "meaning": "lol", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "わろた", "reading": "わろた", "meaning": "I laughed", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "まじ", "reading": "まじ", "meaning": "seriously", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "まじで", "reading": "まじで", "meaning": "seriously", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ほんと", "reading": "ほんと", "meaning": "really", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ほんとに", "reading": "ほんとに", "meaning": "really", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "なるほど", "reading": "なるほど", "meaning": "I see", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "たしかに", "reading": "たしかに", "meaning": "true / indeed", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "そうだね", "reading": "そうだね", "meaning": "that's right", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "そうですね", "reading": "そうですね", "meaning": "that's right (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "そうなんだ", "reading": "そうなんだ", "meaning": "oh, is that so", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "へえ", "reading": "へえ", "meaning": "oh, really", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "えっ", "reading": "えっ", "meaning": "what?", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "あれ", "reading": "あれ", "meaning": "huh? / that", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "うーん", "reading": "うーん", "meaning": "hmm", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "たぶん", "reading": "たぶん", "meaning": "probably", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "もちろん", "reading": "もちろん", "meaning": "of course", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ぜひ", "reading": "ぜひ", "meaning": "by all means", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "お願い", "reading": "おねがい", "meaning": "please / a request", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "お願いします", "reading": "おねがいします", "meaning": "please (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "おねがいします", "reading": "おねがいします", "meaning": "please (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ください", "reading": "ください", "meaning": "please give me / please do", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "どうぞ", "reading": "どうぞ", "meaning": "go ahead / here you are", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "どうも", "reading": "どうも", "meaning": "thanks / hello (light)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ちょっと", "reading": "ちょっと", "meaning": "a little / wait a moment", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ちょっと待って", "reading": "ちょっとまって", "meaning": "wait a moment", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "待って", "reading": "まって", "meaning": "wait", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "少々お待ちください", "reading": "しょうしょうおまちください", "meaning": "please wait a moment (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "すぐ", "reading": "すぐ", "meaning": "right away", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "今", "reading": "いま", "meaning": "now", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "今から", "reading": "いまから", "meaning": "from now", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "あとで", "reading": "あとで", "meaning": "later", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "募集", "reading": "ぼしゅう", "meaning": "recruiting / looking for members", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "募集中", "reading": "ぼしゅうちゅう", "meaning": "now recruiting", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "募集します", "reading": "ぼしゅうします", "meaning": "we are recruiting", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "参加", "reading": "さんか", "meaning": "joining / taking part", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "参加します", "reading": "さんかします", "meaning": "I'll join", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "参加希望", "reading": "さんかきぼう", "meaning": "I'd like to join", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "希望", "reading": "きぼう", "meaning": "wish / request", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "主催", "reading": "しゅさい", "meaning": "the organizer", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "主", "reading": "ぬし", "meaning": "the organizer of the group", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "締め切り", "reading": "しめきり", "meaning": "closed / deadline", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "締め", "reading": "しめ", "meaning": "closed (recruiting ended)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "満員", "reading": "まんいん", "meaning": "full", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "空き", "reading": "あき", "meaning": "an open spot", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "初見", "reading": "しょけん", "meaning": "first time seeing this dungeon or boss", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "初心者", "reading": "しょしんしゃ", "meaning": "beginner", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "未経験", "reading": "みけいけん", "meaning": "no experience", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "経験者", "reading": "けいけんしゃ", "meaning": "experienced player", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "野良", "reading": "のら", "meaning": "a pickup group / a player from outside the guild", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "固定", "reading": "こてい", "meaning": "a fixed group", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "身内", "reading": "みうち", "meaning": "friends and guildmates only", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "周回", "reading": "しゅうかい", "meaning": "running it repeatedly / farming", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "周回します", "reading": "しゅうかいします", "meaning": "we'll run it repeatedly", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "狩り", "reading": "かり", "meaning": "hunting / grinding mobs", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "狩場", "reading": "かりば", "meaning": "a grinding spot", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "金策", "reading": "きんさく", "meaning": "making gold", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "素材集め", "reading": "そざいあつめ", "meaning": "gathering materials", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "レベル上げ", "reading": "レベルあげ", "meaning": "leveling", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "育成", "reading": "いくせい", "meaning": "leveling a character", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "全滅", "reading": "ぜんめつ", "meaning": "a wipe", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "壊滅", "reading": "かいめつ", "meaning": "a wipe", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "立て直し", "reading": "たてなおし", "meaning": "recovering after a wipe", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "釣る", "reading": "つる", "meaning": "to pull (a mob)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "釣り", "reading": "つり", "meaning": "pulling / fishing", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "釣ります", "reading": "つります", "meaning": "I'll pull", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "引く", "reading": "ひく", "meaning": "to pull", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "まとめる", "reading": "まとめる", "meaning": "to gather mobs together", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "まとめ狩り", "reading": "まとめがり", "meaning": "pulling many mobs at once", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "盾", "reading": "たて", "meaning": "tank", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "盾役", "reading": "たてやく", "meaning": "tank", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "火力", "reading": "かりょく", "meaning": "damage dealer / damage", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "火力役", "reading": "かりょくやく", "meaning": "damage dealer", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "回復", "reading": "かいふく", "meaning": "healing / healer", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "回復役", "reading": "かいふくやく", "meaning": "healer", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ヒラ", "reading": "ヒラ", "meaning": "healer", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ヒーラー", "reading": "ヒーラー", "meaning": "healer", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "タンク", "reading": "タンク", "meaning": "tank", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "アタッカー", "reading": "アタッカー", "meaning": "damage dealer", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "近接", "reading": "きんせつ", "meaning": "melee", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "遠隔", "reading": "えんかく", "meaning": "ranged", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "魔法職", "reading": "まほうしょく", "meaning": "caster", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "タゲ", "reading": "タゲ", "meaning": "target / aggro", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "タゲ取り", "reading": "タゲとり", "meaning": "taking aggro", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ヘイト", "reading": "ヘイト", "meaning": "aggro / threat", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "敵視", "reading": "てきし", "meaning": "aggro / threat", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "挑発", "reading": "ちょうはつ", "meaning": "taunt", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "バフ", "reading": "バフ", "meaning": "buff", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "デバフ", "reading": "デバフ", "meaning": "debuff", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "強化", "reading": "きょうか", "meaning": "a buff / strengthening", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "弱体", "reading": "じゃくたい", "meaning": "a debuff / weakening", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "範囲", "reading": "はんい", "meaning": "area of effect", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "範囲攻撃", "reading": "はんいこうげき", "meaning": "area attack", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "単体", "reading": "たんたい", "meaning": "single target", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "継続ダメージ", "reading": "けいぞくダメージ", "meaning": "damage over time", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "詠唱", "reading": "えいしょう", "meaning": "casting", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "詠唱中断", "reading": "えいしょうちゅうだん", "meaning": "interrupting a cast", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "中断", "reading": "ちゅうだん", "meaning": "interrupt", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "沈黙", "reading": "ちんもく", "meaning": "silence", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "気絶", "reading": "きぜつ", "meaning": "stun", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "睡眠", "reading": "すいみん", "meaning": "sleep", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "足止め", "reading": "あしどめ", "meaning": "root / slow", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "蘇生", "reading": "そせい", "meaning": "resurrect", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "蘇生お願いします", "reading": "そせいおねがいします", "meaning": "please resurrect me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "回復お願いします", "reading": "かいふくおねがいします", "meaning": "please heal me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "死んだ", "reading": "しんだ", "meaning": "I died", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "死にました", "reading": "しにました", "meaning": "I died (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "死に戻り", "reading": "しにもどり", "meaning": "running back after dying", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "墓", "reading": "はか", "meaning": "graveyard", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "墓場", "reading": "はかば", "meaning": "graveyard", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "マナ切れ", "reading": "マナぎれ", "meaning": "out of mana", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "マナ待ち", "reading": "マナまち", "meaning": "waiting for mana", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "休憩", "reading": "きゅうけい", "meaning": "a break", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "休憩します", "reading": "きゅうけいします", "meaning": "taking a break", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "飲みます", "reading": "のみます", "meaning": "I'll drink (to recover mana)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "準備", "reading": "じゅんび", "meaning": "preparation", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "準備中", "reading": "じゅんびちゅう", "meaning": "getting ready", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "準備できました", "reading": "じゅんびできました", "meaning": "I'm ready", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "行けます", "reading": "いけます", "meaning": "I can go / ready", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "行きます", "reading": "いきます", "meaning": "I'm going / pulling now", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "いきます", "reading": "いきます", "meaning": "I'm going / pulling now", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "行こう", "reading": "いこう", "meaning": "let's go", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "出発", "reading": "しゅっぱつ", "meaning": "setting off", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "集合", "reading": "しゅうごう", "meaning": "gathering / meet up", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "集合場所", "reading": "しゅうごうばしょ", "meaning": "meeting place", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "入口", "reading": "いりぐち", "meaning": "entrance", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "入り口", "reading": "いりぐち", "meaning": "entrance", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "出口", "reading": "でぐち", "meaning": "exit", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "途中", "reading": "とちゅう", "meaning": "on the way / partway", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "迷った", "reading": "まよった", "meaning": "I got lost", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "どこ", "reading": "どこ", "meaning": "where", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "どこですか", "reading": "どこですか", "meaning": "where is it?", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ここ", "reading": "ここ", "meaning": "here", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "そこ", "reading": "そこ", "meaning": "there", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "こっち", "reading": "こっち", "meaning": "this way", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "あっち", "reading": "あっち", "meaning": "that way", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ついてきて", "reading": "ついてきて", "meaning": "follow me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ついていきます", "reading": "ついていきます", "meaning": "I'll follow", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "先に行って", "reading": "さきにいって", "meaning": "go ahead of me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "招待", "reading": "しょうたい", "meaning": "an invite", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "招待お願いします", "reading": "しょうたいおねがいします", "meaning": "please invite me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "誘って", "reading": "さそって", "meaning": "invite me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "入れて", "reading": "いれて", "meaning": "let me in / invite me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "抜けます", "reading": "ぬけます", "meaning": "I'm leaving the group", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "解散", "reading": "かいさん", "meaning": "disbanding", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ロール", "reading": "ロール", "meaning": "a roll / a role", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ニード", "reading": "ニード", "meaning": "need (loot roll)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "グリード", "reading": "グリード", "meaning": "greed (loot roll)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "パス", "reading": "パス", "meaning": "pass", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ドロップ", "reading": "ドロップ", "meaning": "a drop", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "レア", "reading": "レア", "meaning": "rare", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "装備", "reading": "そうび", "meaning": "gear / to equip", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "武器", "reading": "ぶき", "meaning": "weapon", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "防具", "reading": "ぼうぐ", "meaning": "armor", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "修理", "reading": "しゅうり", "meaning": "repair", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "修理します", "reading": "しゅうりします", "meaning": "I'll repair", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "売ります", "reading": "うります", "meaning": "selling", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "買います", "reading": "かいます", "meaning": "buying", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "売って", "reading": "うって", "meaning": "sell me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "買取", "reading": "かいとり", "meaning": "buying", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "交換", "reading": "こうかん", "meaning": "trade / exchange", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "取引", "reading": "とりひき", "meaning": "a trade", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "値段", "reading": "ねだん", "meaning": "price", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "いくら", "reading": "いくら", "meaning": "how much", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "いくらですか", "reading": "いくらですか", "meaning": "how much is it?", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "安い", "reading": "やすい", "meaning": "cheap", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "高い", "reading": "たかい", "meaning": "expensive", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "無料", "reading": "むりょう", "meaning": "free", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "相場", "reading": "そうば", "meaning": "the going price", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "在庫", "reading": "ざいこ", "meaning": "stock", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "競売", "reading": "きょうばい", "meaning": "auction", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "郵便", "reading": "ゆうびん", "meaning": "mail", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "送ります", "reading": "おくります", "meaning": "I'll send it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "作って", "reading": "つくって", "meaning": "make it for me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "作れます", "reading": "つくれます", "meaning": "I can make it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "作成依頼", "reading": "さくせいいらい", "meaning": "a crafting request", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "素材", "reading": "そざい", "meaning": "materials", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "持ち込み", "reading": "もちこみ", "meaning": "bringing your own materials", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "誰か", "reading": "だれか", "meaning": "someone / anyone", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "誰かいますか", "reading": "だれかいますか", "meaning": "is anyone there?", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "いますか", "reading": "いますか", "meaning": "is (anyone) there?", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "手伝って", "reading": "てつだって", "meaning": "help me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "手伝います", "reading": "てつだいます", "meaning": "I'll help", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "手伝えます", "reading": "てつだえます", "meaning": "I can help", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "助けて", "reading": "たすけて", "meaning": "help!", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "助かります", "reading": "たすかります", "meaning": "that helps, thank you", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "助かりました", "reading": "たすかりました", "meaning": "that helped, thank you", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "教えて", "reading": "おしえて", "meaning": "tell me / teach me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "教えてください", "reading": "おしえてください", "meaning": "please tell me", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "わかった", "reading": "わかった", "meaning": "got it", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "わかりました", "reading": "わかりました", "meaning": "understood (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "わからない", "reading": "わからない", "meaning": "I don't know", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "わかりません", "reading": "わかりません", "meaning": "I don't know (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "知らない", "reading": "しらない", "meaning": "I don't know", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "知ってる", "reading": "しってる", "meaning": "I know", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "できる", "reading": "できる", "meaning": "can do", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "できます", "reading": "できます", "meaning": "I can", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "できない", "reading": "できない", "meaning": "can't", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "できません", "reading": "できません", "meaning": "I can't (polite)", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "がんばって", "reading": "がんばって", "meaning": "good luck / do your best", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "がんばろう", "reading": "がんばろう", "meaning": "let's do our best", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "がんばります", "reading": "がんばります", "meaning": "I'll do my best", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "頑張って", "reading": "がんばって", "meaning": "good luck / do your best", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "頑張ろう", "reading": "がんばろう", "meaning": "let's do our best", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "楽しかった", "reading": "たのしかった", "meaning": "that was fun", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "楽しい", "reading": "たのしい", "meaning": "fun", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "つかれた", "reading": "つかれた", "meaning": "I'm tired", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "疲れた", "reading": "つかれた", "meaning": "I'm tired", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "眠い", "reading": "ねむい", "meaning": "sleepy", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ひま", "reading": "ひま", "meaning": "free / bored", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "暇", "reading": "ひま", "meaning": "free / bored", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "忙しい", "reading": "いそがしい", "meaning": "busy", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ギルメン", "reading": "ギルメン", "meaning": "guild member", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ギルマス", "reading": "ギルマス", "meaning": "guild master", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ギルチャ", "reading": "ギルチャ", "meaning": "guild chat", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "フレ", "reading": "フレ", "meaning": "friend", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "フレンド", "reading": "フレンド", "meaning": "friend", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "フレ登録", "reading": "フレとうろく", "meaning": "adding as a friend", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ささやき", "reading": "ささやき", "meaning": "a whisper", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "個チャ", "reading": "こチャ", "meaning": "a private message", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "誤爆", "reading": "ごばく", "meaning": "sent to the wrong chat", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ラグ", "reading": "ラグ", "meaning": "lag", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "重い", "reading": "おもい", "meaning": "laggy / heavy", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "落ちた", "reading": "おちた", "meaning": "disconnected", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "切断", "reading": "せつだん", "meaning": "a disconnect", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "再起動", "reading": "さいきどう", "meaning": "restart", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "メンテ", "reading": "メンテ", "meaning": "maintenance", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "鯖", "reading": "さば", "meaning": "server", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}

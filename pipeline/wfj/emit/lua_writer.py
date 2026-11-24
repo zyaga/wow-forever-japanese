@@ -356,6 +356,27 @@ def word_table_text(type_: str, rows: dict[str, str], what: str) -> str:
     return "\n".join(lines) + "\n"
 
 
+def chat_list_text(chat: Any) -> str:
+    """The hand-written chat list (`data/chat/`, a `wfj.core.chat_words.ChatList`) as one file:
+    `WFJ.Data.add("chatword", { ["word"] = "reading\tmeaning" })`, `WFJ.Data.add("chatwordEn", { ["word"] =
+    "its Japanese" })` and `WFJ.Data.add("phrase", { [id] = "topic\tEnglish\tJapanese" })`."""
+    lines = [HEADER.format(src="data/chat/"), "local _, WFJ = ..."]
+    lines.append('WFJ.Data.add("chatword", {')
+    lines += [
+        f"  [{lua_string(w)}] = {lua_string(r + chr(9) + m)}," for w, (r, m) in sorted(chat.words_ja.items())
+    ]
+    lines.append("})")
+    lines.append('WFJ.Data.add("chatwordEn", {')
+    lines += [f"  [{lua_string(w)}] = {lua_string(ja)}," for w, ja in sorted(chat.words_en.items())]
+    lines.append("})")
+    lines.append('WFJ.Data.add("phrase", {')
+    lines += [
+        f"  [{p['id']}] = {lua_string(chr(9).join((p['topic'], p['en'], p['ja'])))}," for p in chat.phrases
+    ]
+    lines.append("})")
+    return "\n".join(lines) + "\n"
+
+
 def gloss_text(_shard: int, rows: dict[int, tuple[str, str, str]]) -> str:
     """One file of the word popup's meanings (ADR-039):
     `WFJ.Data.add("gloss", { [n] = "dictionary form\treading\tmeaning" })`, numbered as the reading rows

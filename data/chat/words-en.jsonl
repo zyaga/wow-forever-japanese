@@ -1,0 +1,361 @@
+{"word": "lfg", "ja": "パーティを探しています（Looking For Group）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lfm", "ja": "メンバー募集中（Looking For More）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lf", "ja": "〜を探しています（Looking For）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lf1m", "ja": "あと1人募集（Looking For 1 More）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lf2m", "ja": "あと2人募集（Looking For 2 More）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lf3m", "ja": "あと3人募集（Looking For 3 More）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lf4m", "ja": "あと4人募集（Looking For 4 More）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lfr", "ja": "レイドを探しています（Looking For Raid）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lfw", "ja": "仕事募集／製作します（Looking For Work）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wts", "ja": "売ります（Want To Sell）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wtb", "ja": "買います（Want To Buy）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wtt", "ja": "交換したい（Want To Trade）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wtf", "ja": "なんだこれ（驚き・怒り）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "oom", "ja": "マナ切れ（Out Of Mana）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lom", "ja": "マナ残りわずか（Low On Mana）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "afk", "ja": "離席中（Away From Keyboard）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "brb", "ja": "すぐ戻ります（Be Right Back）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bbl", "ja": "あとで戻ります（Be Back Later）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bbs", "ja": "すぐ戻ります（Be Back Soon）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bio", "ja": "トイレ休憩", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "omw", "ja": "向かっています（On My Way）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "otw", "ja": "向かっています（On The Way）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "inc", "ja": "敵が来る（Incoming）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "inv", "ja": "パーティに招待して（Invite）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "invite", "ja": "パーティに招待する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ty", "ja": "ありがとう（Thank You）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "thx", "ja": "ありがとう（Thanks）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tyvm", "ja": "本当にありがとう（Thank You Very Much）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tysm", "ja": "本当にありがとう（Thank You So Much）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tks", "ja": "ありがとう（Thanks）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "np", "ja": "どういたしまして／問題ない（No Problem）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "yw", "ja": "どういたしまして（You're Welcome）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gg", "ja": "お疲れ様／いい試合（Good Game）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ggs", "ja": "お疲れ様（Good Games）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gj", "ja": "よくやった（Good Job）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gl", "ja": "がんばって（Good Luck）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "glhf", "ja": "がんばって、楽しもう（Good Luck, Have Fun）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hf", "ja": "楽しんで（Have Fun）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gz", "ja": "おめでとう（Congratulations）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "grats", "ja": "おめでとう（Congratulations）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gratz", "ja": "おめでとう（Congratulations）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "congrats", "ja": "おめでとう", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wb", "ja": "おかえり（Welcome Back）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wp", "ja": "上手だった（Well Played）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "nj", "ja": "よくやった（Nice Job）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "n1", "ja": "ナイス（Nice One）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "sry", "ja": "ごめん（Sorry）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "srry", "ja": "ごめん（Sorry）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "mb", "ja": "私のミス（My Bad）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "plz", "ja": "お願い（Please）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pls", "ja": "お願い（Please）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "rdy", "ja": "準備OK（Ready）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "r", "ja": "準備OK（Ready）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "rez", "ja": "蘇生して（Resurrect）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "res", "ja": "蘇生して（Resurrect）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "rezz", "ja": "蘇生して（Resurrect）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "buff", "ja": "バフ（強化魔法）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "buffs", "ja": "バフ（強化魔法）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "debuff", "ja": "デバフ（弱体効果）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "nerf", "ja": "弱体化", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "aggro", "ja": "ヘイト／敵の注意", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "threat", "ja": "ヘイト（敵視）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "taunt", "ja": "挑発", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pull", "ja": "敵を釣る", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "puller", "ja": "敵を釣る役", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wipe", "ja": "全滅", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wiped", "ja": "全滅した", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tank", "ja": "タンク（盾役）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tanks", "ja": "タンク（盾役）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ot", "ja": "サブタンク（Off Tank）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "mt", "ja": "メインタンク（Main Tank）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "heals", "ja": "ヒーラー（回復役）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "healer", "ja": "ヒーラー（回復役）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "heal", "ja": "回復する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dps", "ja": "アタッカー（火力役）／秒間ダメージ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dd", "ja": "アタッカー（Damage Dealer）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "melee", "ja": "近接攻撃役", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ranged", "ja": "遠隔攻撃役", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "caster", "ja": "魔法職", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "cc", "ja": "行動阻害（Crowd Control）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "sheep", "ja": "羊に変える（メイジの行動阻害）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "sap", "ja": "気絶させる（ローグの行動阻害）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "stun", "ja": "気絶", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "root", "ja": "足止め", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "snare", "ja": "移動速度低下", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "kite", "ja": "敵を引き離しながら戦う", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "kiting", "ja": "敵を引き離しながら戦うこと", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "los", "ja": "視線を切る（Line Of Sight）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "aoe", "ja": "範囲攻撃（Area Of Effect）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dot", "ja": "継続ダメージ（Damage Over Time）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dots", "ja": "継続ダメージ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hot", "ja": "継続回復（Heal Over Time）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hots", "ja": "継続回復", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "cd", "ja": "クールダウン（再使用待ち）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "cds", "ja": "クールダウン（強力なスキル）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gcd", "ja": "全体クールダウン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "proc", "ja": "確率で発動する効果", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "crit", "ja": "クリティカル（会心の一撃）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "miss", "ja": "攻撃が外れる", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "resist", "ja": "抵抗（魔法が効かない）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dispel", "ja": "魔法効果を解除する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "decurse", "ja": "呪いを解除する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "cleanse", "ja": "弱体効果を解除する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "interrupt", "ja": "詠唱を中断させる", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "kick", "ja": "詠唱中断（ローグの技）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "silence", "ja": "沈黙", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "mob", "ja": "敵モンスター", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "mobs", "ja": "敵モンスター", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "add", "ja": "追加で来た敵", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "adds", "ja": "追加で来た敵", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "trash", "ja": "ボス以外の雑魚敵", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "boss", "ja": "ボス", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "elite", "ja": "エリート（強敵）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "rare", "ja": "レア（珍しい敵・アイテム）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "patrol", "ja": "巡回している敵", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pat", "ja": "巡回している敵（Patrol）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "respawn", "ja": "敵が再出現する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "spawn", "ja": "敵が出現する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tag", "ja": "敵に最初に攻撃して権利を得る", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tagged", "ja": "先に攻撃された（報酬が得られない）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "grind", "ja": "敵を倒し続けてレベル上げ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "grinding", "ja": "敵を倒し続けること", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "farm", "ja": "周回して集める", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "farming", "ja": "周回して集めること", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "farmer", "ja": "周回して集める人", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bis", "ja": "その部位で最強の装備（Best In Slot）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "boe", "ja": "装備すると譲渡不可（Bind On Equip）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bop", "ja": "拾うと譲渡不可（Bind On Pickup）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bou", "ja": "使うと譲渡不可（Bind On Use）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ilvl", "ja": "アイテムレベル", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "loot", "ja": "戦利品", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "looting", "ja": "戦利品を拾うこと", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "roll", "ja": "ロール（サイコロで決める）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "need", "ja": "ニード（必要なので欲しい）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "greed", "ja": "グリード（余ったら欲しい）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pass", "ja": "パス（いらない）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ml", "ja": "マスタールート（リーダーが配る）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ffa", "ja": "自由に拾える（Free For All）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ms", "ja": "メインスペック（Main Spec）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "os", "ja": "サブスペック（Off Spec）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "reserved", "ja": "予約済み（そのアイテムは主催者のもの）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "sr", "ja": "ソフトリザーブ（欲しい品を予約）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hr", "ja": "ハードリザーブ（主催者が確保）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gdkp", "ja": "ゴールドで競り落とす方式のレイド", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ah", "ja": "オークションハウス", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bank", "ja": "銀行", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "vendor", "ja": "NPC商人／NPCに売る", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "vend", "ja": "NPCに売る", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "mats", "ja": "素材（Materials）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "reagents", "ja": "触媒／素材", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "enchant", "ja": "エンチャント（装備強化）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ench", "ja": "エンチャント", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "enchanter", "ja": "エンチャンター", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bs", "ja": "鍛冶（Blacksmithing）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lw", "ja": "革細工（Leatherworking）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "jc", "ja": "宝石細工（Jewelcrafting）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "alch", "ja": "錬金術（Alchemy）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "herb", "ja": "薬草／薬草採取", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "herbs", "ja": "薬草", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ore", "ja": "鉱石", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "skinning", "ja": "皮はぎ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tailor", "ja": "裁縫師", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tailoring", "ja": "裁縫", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "eng", "ja": "エンジニアリング", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "engi", "ja": "エンジニアリング", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "cooking", "ja": "料理", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "fishing", "ja": "釣り", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "prof", "ja": "専門技能（Profession）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "profs", "ja": "専門技能", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "craft", "ja": "製作する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "crafter", "ja": "製作する人", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tip", "ja": "チップ（お礼のゴールド）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tips", "ja": "チップ（お礼のゴールド）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "fee", "ja": "手数料", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "cod", "ja": "代金引換の郵便（Cash On Delivery）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gold", "ja": "ゴールド", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "g", "ja": "ゴールド", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "s", "ja": "シルバー", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "c", "ja": "カッパー", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ea", "ja": "1個あたり（Each）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "stack", "ja": "スタック（まとめた1束）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "stacks", "ja": "スタック（束）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "obo", "ja": "値段交渉可（Or Best Offer）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pst", "ja": "ささやきで連絡して（Please Send Tell）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pm", "ja": "ささやき（Private Message）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dm", "ja": "ささやき（Direct Message）／ダンジョン名の略にも使う", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "w", "ja": "ささやき（Whisper）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "whisper", "ja": "ささやき", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tell", "ja": "ささやき", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "msg", "ja": "メッセージ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "fp", "ja": "フライトポイント（飛行場）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "fm", "ja": "フライトマスター", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hs", "ja": "ハースストーン（帰還石）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hearth", "ja": "ハースストーンで帰る", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gy", "ja": "墓地（Graveyard）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "inn", "ja": "宿屋", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "port", "ja": "ポータルを出して", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "portal", "ja": "ポータル", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "summon", "ja": "召喚して", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "summ", "ja": "召喚して", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "sum", "ja": "召喚して", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ss", "ja": "ソウルストーン（ウォーロックの蘇生石）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "water", "ja": "水（メイジが作る飲み物）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "food", "ja": "食べ物", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "mount", "ja": "乗り物", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "zep", "ja": "飛行船（Zeppelin）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "boat", "ja": "船", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tram", "ja": "地下鉄", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "xp", "ja": "経験値", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "exp", "ja": "経験値", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lvl", "ja": "レベル", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lv", "ja": "レベル", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ding", "ja": "レベルアップした！", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "rested", "ja": "休息ボーナス", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "quest", "ja": "クエスト", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "q", "ja": "クエスト", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "qs", "ja": "クエスト（複数）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "chain", "ja": "連続クエスト", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "turnin", "ja": "クエストを報告する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "escort", "ja": "護衛クエスト", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "grp", "ja": "グループ（パーティ）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "group", "ja": "グループ（パーティ）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "party", "ja": "パーティ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "raid", "ja": "レイド（大人数コンテンツ）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pug", "ja": "野良パーティ（Pick Up Group）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pugs", "ja": "野良の人たち", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "premade", "ja": "事前に組んだグループ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "guildie", "ja": "ギルドメンバー", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "guildies", "ja": "ギルドメンバー", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gm", "ja": "ギルドマスター", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "officer", "ja": "ギルド役員", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gchat", "ja": "ギルドチャット", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "recruit", "ja": "勧誘する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "recruiting", "ja": "メンバー募集中", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "alt", "ja": "サブキャラ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "alts", "ja": "サブキャラ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "main", "ja": "メインキャラ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "toon", "ja": "キャラクター", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "twink", "ja": "低レベル帯で装備を極めたキャラ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "noob", "ja": "初心者（軽い悪口）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "newb", "ja": "初心者", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pro", "ja": "上手な人", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "carry", "ja": "強い人が手伝って連れて行く", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "boost", "ja": "強い人に手伝ってもらう（有料のことも）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "run", "ja": "ダンジョンを1周すること", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "runs", "ja": "ダンジョン周回", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "reset", "ja": "ダンジョンをリセットする", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lockout", "ja": "入場制限（リセットまで再入場不可）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "id", "ja": "インスタンスの固定ID", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "instance", "ja": "インスタンスダンジョン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dungeon", "ja": "ダンジョン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dung", "ja": "ダンジョン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bg", "ja": "バトルグラウンド", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bgs", "ja": "バトルグラウンド", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pvp", "ja": "対人戦", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pve", "ja": "対モンスター戦", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gank", "ja": "不意打ちで倒す", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ganked", "ja": "不意打ちで倒された", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "camp", "ja": "同じ相手を倒し続ける", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "camped", "ja": "倒され続けている", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "duel", "ja": "決闘", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hk", "ja": "名誉ある殺害（Honorable Kill）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "honor", "ja": "名誉ポイント", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "flag", "ja": "PvP状態になる", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "flagged", "ja": "PvP状態になっている", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "horde", "ja": "ホード", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ally", "ja": "アライアンス", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "alliance", "ja": "アライアンス", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "war", "ja": "ウォリアー", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "warr", "ja": "ウォリアー", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pally", "ja": "パラディン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pala", "ja": "パラディン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hunter", "ja": "ハンター", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "rogue", "ja": "ローグ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "priest", "ja": "プリースト", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "shammy", "ja": "シャーマン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "sham", "ja": "シャーマン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "mage", "ja": "メイジ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lock", "ja": "ウォーロック", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "warlock", "ja": "ウォーロック", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "druid", "ja": "ドルイド", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dudu", "ja": "ドルイド", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "spec", "ja": "スペック（特性の振り方）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "respec", "ja": "特性を振り直す", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "talent", "ja": "特性（タレント）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "talents", "ja": "特性（タレント）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "prot", "ja": "防御特化（Protection）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ret", "ja": "パラディンの攻撃特化（Retribution）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "holy", "ja": "回復特化（Holy）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "resto", "ja": "回復特化（Restoration）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "feral", "ja": "ドルイドの近接特化", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "boomkin", "ja": "ドルイドの魔法攻撃型（ムーンキン）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "disc", "ja": "プリーストの鍛錬（Discipline）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "shadow", "ja": "プリーストの暗黒特化", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "frost", "ja": "氷特化", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "fire", "ja": "炎特化", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "arcane", "ja": "秘術特化", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bm", "ja": "ハンターの獣王特化（Beast Mastery）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "mm", "ja": "ハンターの射撃特化（Marksmanship）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pet", "ja": "ペット", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "pets", "ja": "ペット", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "stealth", "ja": "隠密状態", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ooc", "ja": "戦闘外（Out Of Combat）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ic", "ja": "戦闘中（In Combat）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "irl", "ja": "現実世界で（In Real Life）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "idk", "ja": "わからない（I Don't Know）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "idc", "ja": "気にしない（I Don't Care）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "imo", "ja": "私の意見では（In My Opinion）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "imho", "ja": "私の考えでは（In My Humble Opinion）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lol", "ja": "笑（Laughing Out Loud）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lmao", "ja": "爆笑", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "rofl", "ja": "爆笑", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "haha", "ja": "ははは", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "nvm", "ja": "気にしないで（Never Mind）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ofc", "ja": "もちろん（Of Course）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "tbh", "ja": "正直に言うと（To Be Honest）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "atm", "ja": "今のところ（At The Moment）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "btw", "ja": "ところで（By The Way）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "fyi", "ja": "参考までに（For Your Information）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "asap", "ja": "できるだけ早く", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "rn", "ja": "今すぐ（Right Now）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ikr", "ja": "だよね（I Know, Right）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "jk", "ja": "冗談だよ（Just Kidding）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "omg", "ja": "なんてこと（Oh My God）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "wow", "ja": "すごい", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "nice", "ja": "ナイス／いいね", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gn", "ja": "おやすみ（Good Night）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "gm8", "ja": "おはよう、相棒（挨拶）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "cya", "ja": "またね（See You）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bb", "ja": "バイバイ（Bye Bye）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hi", "ja": "こんにちは", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "hey", "ja": "やあ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "yo", "ja": "よう（軽い挨拶）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "sup", "ja": "調子どう？（What's Up）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "u", "ja": "あなた（you）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ur", "ja": "あなたの（your）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "y", "ja": "なぜ／はい（why / yes）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "k", "ja": "了解（OK）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "kk", "ja": "了解（OK OK）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ok", "ja": "了解", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "yep", "ja": "うん", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "yup", "ja": "うん", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "nope", "ja": "いいえ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "nah", "ja": "いや", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ya", "ja": "うん", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ye", "ja": "うん", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ninja", "ja": "横取りする人", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ninjaed", "ja": "横取りされた", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "scam", "ja": "詐欺", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "scammer", "ja": "詐欺をする人", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "bot", "ja": "自動操作のキャラ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "report", "ja": "通報する", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ignore", "ja": "無視リストに入れる", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "lag", "ja": "ラグ（通信の遅れ）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dc", "ja": "回線切断（Disconnect）", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "dced", "ja": "回線が切れた", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "relog", "ja": "ログインし直す", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "reload", "ja": "UIを再読み込みする", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "addon", "ja": "アドオン", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "macro", "ja": "マクロ", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}
+{"word": "ui", "ja": "ユーザーインターフェース", "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "chat@2026-11-24", "imported": "2026-11-24"}}

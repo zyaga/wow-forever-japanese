@@ -10,7 +10,7 @@
 --   ChatPhrases.translate(msg, "ja"|"en") → the message with each marked phrase in that language | nil when none
 --   ChatPhrases.keep(shown, raw)        remembers a changed message with the message as it arrived
 --   ChatPhrases.sent(text)              → raw, first, last: the kept message whose shown form `text` holds
--- Rows (generated, Data/Chat/ChatList.lua): [id] = "topic<TAB>English<TAB>Japanese".
+-- Rows (generated, Data/Chat/Chat_list.lua): [id] = "topic<TAB>English<TAB>Japanese".
 local _, WFJ = ...
 local ChatPhrases = {}
 WFJ.ChatPhrases = ChatPhrases
