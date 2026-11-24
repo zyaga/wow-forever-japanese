@@ -192,6 +192,17 @@ def export_tooltip_rows(root: Path, *, every: bool = False) -> dict[str, Any]:
     return {"rows": rows, "left": left, "lines": waiting, "shipped": len(state.lines)}
 
 
+def copied_english(type_: str, ja: str, words: list[list[str]], en: str | None) -> list[str]:
+    """The words whose meaning carries the line's whole English line (core/meanings `copies`): the addon never
+    ships a line of the game's English, so such a reading is refused. A one-word UI label may take the game's
+    own word."""
+    from wfj.core import meanings
+
+    if not en or meanings.one_word_label({"type": type_, "ja": ja, "words": words}):
+        return []
+    return [w[0] for w in words if len(w) == 5 and meanings.copies(w[4], en)]
+
+
 def _build_lines(
     root: Path, state: _Tooltips, incoming: dict[str, list[list[str]]], prov: dict[str, Any], *, dry_run: bool
 ) -> dict[str, Any]:
@@ -199,17 +210,31 @@ def _build_lines(
     with a piece of `incoming` (this import's, piece key → words) takes `prov`; a line built from pieces
     already in the store takes the provenance of the first machine reading a piece of it came from. A line
     with a current reading of its own is left alone, a correction among them.
-    → {"lines": n, "by_type": {type: n}, "corrected_only": [the lines made only of corrected sentences]}."""
+    → {"lines": n, "by_type": {type: n}, "corrected_only": [the lines made only of corrected sentences],
+    "empty": [lines whose sentences are all written with no word], "copies": [lines left unbuilt because a
+    meaning carries the line's whole English], "replaced": [lines whose stale correction a built reading
+    replaced]}."""
     words, provs = state.index[0] | incoming, state.index[1]
     built: dict[str, dict[tuple[int | str, str], dict[str, Any]]] = {}
     waiting: list[str] = []  # made only of corrected sentences: a person writes these
+    empty: list[str] = []
+    copies: list[str] = []
     for type_, id_, field, ja, current in state.lines:
         if current or readings.holds_escape(ja):
             continue
         mine = readings.assemble(ja, words)
-        if not mine:
-            continue
         keys = [key for _s, _e, key in readings.pieces(ja) if key in words]
+        if not mine:
+            written = all(
+                key in words or not readings.annotatable(ja[s:e]) for s, e, key in readings.pieces(ja)
+            )
+            if written and keys and not any(words[k] for k in keys):
+                empty.append(f"{type_} {id_}/{field}")
+            continue
+        said = copied_english(type_, ja, mine, state.english.get((type_, id_, field)))
+        if said:
+            copies.append(f"{type_} {id_}/{field}: the meaning of {', '.join(said)}")
+            continue
         if any(key in incoming for key in keys):
             source = prov
         else:
@@ -221,13 +246,21 @@ def _build_lines(
                 continue
             source = machine[0]
         built.setdefault(type_, {})[(id_, field)] = readings.record(id_, field, ja, mine, dict(source))
+    # a correction written for Japanese that has since changed no longer protects its line; replacing it is
+    # right, and said
+    replaced = [
+        f"{type_} {r['id']}/{r['field']}"
+        for type_, recs in built.items() for r in state.records[type_]
+        if (r["id"], r["field"]) in recs and r["provenance"]["class"] == "correction"
+    ]
     if not dry_run:
         store = reading_store(root)
         for type_, recs in built.items():
             merged = {(r["id"], r["field"]): r for r in state.records[type_]} | recs
             store.save(type_, merged.values())
     by_type = {t: len(recs) for t, recs in built.items()}
-    return {"lines": sum(by_type.values()), "by_type": by_type, "corrected_only": waiting}
+    return {"lines": sum(by_type.values()), "by_type": by_type, "corrected_only": waiting, "empty": empty,
+            "copies": copies, "replaced": sorted(replaced)}
 
 
 def spread_store(root: Path, *, dry_run: bool = False) -> dict[str, Any]:
@@ -242,8 +275,14 @@ def import_tooltip_rows(
     """A batch of tooltip sentences with their words (the rows `export-tooltips` wrote, each with `words`).
     A row is checked against its own sentence like any reading; a bad row is rejected with its reason and its
     lines wait. Then every line whose sentences are all written is built (`_build_lines`).
-    → {"pieces": n, "rejected": [str], "lines": n, "by_type": {type: n}}."""
+    → {"pieces": n, "rejected": [str], "duplicates": [str], "unused": [str], "lines": n, "by_type": {type: n},
+    and `_build_lines`' lists}. `duplicates`: a sentence the batch gives twice with other words (the first
+    row's stand); `unused`: a sentence no shipped line holds (its words reach no line)."""
+    state = _tooltips(root)
+    held = {key for _t, _i, _f, ja, _c in state.lines for _s, _e, key in readings.pieces(ja)}
     rejected: list[str] = []
+    duplicates: list[str] = []
+    unused: list[str] = []
     incoming: dict[str, list[list[str]]] = {}
     for n, row in enumerate(rows, 1):
         where = f"row {n}"
@@ -263,10 +302,14 @@ def import_tooltip_rows(
             rejected += [f"{where} {ja[:24]!r}: {x}" for x in bad]
             continue
         key = readings.piece_key(ja)
+        if key not in held:
+            unused.append(f"{where} {ja[:24]!r}")
         # the same sentence under another name or number: the first row's words stand
+        if key in incoming and incoming[key] != [list(w) for w in words]:
+            duplicates.append(f"{where} {ja[:24]!r}: the sentence again with other words; the first row wins")
         incoming.setdefault(key, [list(w) for w in words])
-    res = _build_lines(root, _tooltips(root), incoming, prov, dry_run=dry_run)
-    return {"pieces": len(incoming), "rejected": rejected, **res}
+    res = _build_lines(root, state, incoming, prov, dry_run=dry_run)
+    return {"pieces": len(incoming), "rejected": rejected, "duplicates": duplicates, "unused": unused, **res}
 
 
 def _well_formed(
@@ -312,6 +355,7 @@ def import_rows(
         lines = Store(root).load(type_)
         japanese = shipped_of(root, type_)
         by_key = {(ln["id"], ln["field"]): ln for ln in lines}
+        english = {(e["id"], e["field"]): e.get("en") for e in Store(root, english=True).load(type_)}
         existing = {(r["id"], r["field"]): r for r in store.load(type_)}
         merged = dict(existing)
         for k, rec in recs.items():
@@ -334,6 +378,10 @@ def import_rows(
             bad = readings.word_problems(ja, rec["words"])
             if bad:
                 rejected += [f"{where}: {x}" for x in bad]
+                continue
+            said = copied_english(type_, ja, rec["words"], english.get(k))
+            if said:
+                rejected.append(f"{where}: the meaning of {', '.join(said)} copies the line's whole English")
                 continue
             # a word the line uses twice gets its card both times, whatever the batch listed
             rec["words"] = readings.fill_repeats(ja, rec["words"])
@@ -413,8 +461,15 @@ def fill_store(root: Path, *, dry_run: bool = False) -> dict[str, Any]:
 
 
 def _print_corrected_only(res: dict[str, Any]) -> None:
+    """What building lines left or replaced, a line each."""
     for line in res["corrected_only"]:
         print(f"  not built {line}: made only of corrected sentences; write it with `import --correction`")
+    for line in res["empty"]:
+        print(f"  not built {line}: every sentence is written with no word; nothing to show on it")
+    for line in res["copies"]:
+        print(f"  not built {line} copies the line's whole English")
+    for line in res["replaced"]:
+        print(f"  replaced {line}: its correction was written for Japanese that has since changed")
 
 
 def _run_tooltips(a: argparse.Namespace, root: Path) -> int:
@@ -434,6 +489,10 @@ def _run_tooltips(a: argparse.Namespace, root: Path) -> int:
         res = import_tooltip_rows(root, read_batch(a.batch), prov, dry_run=a.dry_run)
         for line in res["rejected"]:
             print(f"  rejected {line}")
+        for line in res["duplicates"]:
+            print(f"  duplicate {line}")
+        for line in res["unused"]:
+            print(f"  unused {line}: no shipped line holds this sentence")
         _print_corrected_only(res)
         verb = "would build" if a.dry_run else "built"
         print(f"readings import-tooltips: {res['pieces']} sentences · rejected {len(res['rejected'])} · "

@@ -4,6 +4,9 @@ WFJ.ADDON = ADDON
 WFJ.VERSION = C_AddOns.GetAddOnMetadata(ADDON, "Version") or "dev"
 WFJ.NORM_VERSION = "v1"
 WFJ.SCHEMA = 1
+-- when the addon's files began to load, in milliseconds: Main keeps how long they took (the data files are most of
+-- it) in the problem log, where the window test reads it
+WFJ.LOAD_START = type(debugprofilestop) == "function" and debugprofilestop() or nil
 
 -- Translation areas (settings ids `area.<setting>` map onto these; surfaces ask State.areaEnabled(area)).
 -- "ui": Blizzard's own interface words; "books": the book / letter / plaque window.

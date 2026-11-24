@@ -420,6 +420,13 @@ function IntroWindow.refill()
 end
 
 -- Shows one of the two pages.
+-- The key bindings changed (a key set under Keybindings, the freeze key's first binding): an open window names the
+-- freeze key as it is bound now.
+function IntroWindow.bindingsChanged()
+  local f = IntroWindow.frame
+  if f and f:IsShown() then IntroWindow.refill() end
+end
+
 function IntroWindow.show(step)
   IntroWindow.step = step
   IntroWindow.refill()

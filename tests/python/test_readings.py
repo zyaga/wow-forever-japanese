@@ -603,6 +603,15 @@ def test_import_ignores_the_english_column(data, tmp_path):
     assert Store(data / "reading").load("quest") == [_rec()]
 
 
+def test_import_refuses_a_meaning_that_copies_the_lines_whole_english(data, tmp_path, capsys):
+    _english(data, "quest", 456, "description", "I helped a little in the forest.")
+    words = [[*w, w[0], w[1], "a word"] for w in WORDS]
+    words[0][4] = "I helped a little in the forest"
+    assert _import(_batch(tmp_path, [_row(words=words)])) == 1
+    assert "copies the line's whole English" in capsys.readouterr().out
+    assert Store(data / "reading").load("quest") == []
+
+
 def test_export_leaves_out_lines_with_nothing_to_annotate(data, tmp_path):
     # an English-only title has no word; a kana-only line keeps its place (kana words carry meanings)
     Store(data).save(
@@ -1174,6 +1183,45 @@ def test_a_new_tooltip_made_of_written_sentences_needs_no_drafting(sentences, tm
     assert 6 not in item  # one sentence is new: it is exported, the rest of the line is not
     assert "1 line" in capsys.readouterr().out
     assert [r["ja"] for r in _export_tips(tmp_path)] == ["海を渡ります。", "森を守ります。"]
+
+
+def test_tooltip_import_says_what_it_passes_over(sentences, tmp_path, capsys):
+    rows = [
+        _piece_row(LEARN, LEARN_WORDS),
+        _piece_row(LEARN, LEARN_WORDS[:1]),  # the same sentence again, with other words
+        _piece_row("海を渡ります。", [["海", "うみ"]]),  # a sentence no shipped line holds
+        _piece_row(LAST, []),  # written with no word: the duration line has nothing to show
+    ]
+    assert _import_tips(_batch(tmp_path, rows)) == 0
+    printed = capsys.readouterr().out
+    assert "duplicate row 2" in printed
+    assert "unused row 3" in printed
+    assert "not built spell 10/description: every sentence is written with no word" in printed
+    item = {r["id"]: r for r in Store(sentences / "reading").load("item")}
+    assert item[1]["words"] == LEARN_WORDS  # the first row's words
+
+
+def test_tooltip_lines_whose_meaning_copies_their_english_are_not_built(sentences, tmp_path, capsys):
+    _english(sentences, "item", 1, "description", "Teaches you how to make an Elixir of Minor Fortitude.")
+    words = [["作り方", "つくりかた", "作り方", "つくりかた", "Teaches you how to make an Elixir of Minor Fortitude"],
+             ["習得します", "しゅうとくします", "習得する", "しゅうとくする", "learn"]]
+    assert _import_tips(_batch(tmp_path, [_piece_row(LEARN, words)])) == 0
+    assert "not built item 1/description: the meaning of 作り方 copies the line's whole English" in (
+        capsys.readouterr().out)
+    item = {r["id"] for r in Store(sentences / "reading").load("item")}
+    assert 1 not in item and 2 in item  # the line with no English on file is built
+
+
+def test_spread_says_when_it_replaces_a_stale_correction(sentences, tmp_path, capsys):
+    stale = readings.record(1, "description", "古い文。", [["古い", "ふるい"]],
+                            {"class": "correction", "source": "correction@2026-09-01", "imported": "2026-09-01",
+                             "corrects": "readings@old"})
+    Store(sentences / "reading").save("item", [stale])
+    assert _import_tips(_batch(tmp_path, [_piece_row(LEARN, LEARN_WORDS)])) == 0
+    assert "replaced item 1/description: its correction was written for Japanese that has since changed" in (
+        capsys.readouterr().out)
+    item = {r["id"]: r for r in Store(sentences / "reading").load("item")}
+    assert item[1]["provenance"]["class"] == "machine"
 
 
 def test_a_line_built_from_a_corrected_sentence_is_never_a_correction(sentences, tmp_path, capsys):

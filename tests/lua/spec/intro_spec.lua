@@ -300,6 +300,16 @@ describe("UI/IntroWindow, the window", function()
       assert.is_true(f.freeze.en:IsShown())
     end)
 
+    it("names the new key when the binding changes while the window shows", function()
+      _G.GetBindingKey = function() return nil end
+      local f = info("ja")
+      assert.are.equal(T["intro.freeze.unset"].ja, f.freeze.ja:GetText())
+      _G.GetBindingKey = function(action) return action == "WFJ_FREEZE_TOOLTIP" and "CTRL-G" or nil end
+      Stub.fireAll("UPDATE_BINDINGS")
+      local key = ("|cffffd200%s|r"):format(WFJ.KeyCapture.keyText("CTRL-G"))
+      assert.are.equal(T["intro.freeze"].ja:format(key), f.freeze.ja:GetText())
+    end)
+
     it("is left out where a frozen tooltip has no word cards", function()
       _G.GetBindingKey = function() return "CTRL-F" end
       for _, purpose in ipairs({ "en", "play" }) do

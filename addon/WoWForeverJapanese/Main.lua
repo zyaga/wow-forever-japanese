@@ -553,7 +553,11 @@ local function onEvent(self, event, name, ...)
     if name == ADDON then
       if WFJ.loaded then return end -- ADDON_LOADED stays registered for the load-on-demand addons
       WFJ.loaded = true
+      local filesDone = WFJ.LOAD_START and debugprofilestop()
       WFJ.OnLoad()
+      if filesDone and type(WFJ_Log) == "table" then
+        WFJ_Log.load = { files = filesDone - WFJ.LOAD_START, setup = debugprofilestop() - filesDone }
+      end
       self:RegisterEvent("MODIFIER_STATE_CHANGED")
       self:RegisterEvent("PLAYER_ENTERING_WORLD")
       self:RegisterEvent("PLAYER_REGEN_DISABLED")
@@ -577,6 +581,7 @@ local function onEvent(self, event, name, ...)
     if entry then WFJ.TaintWatch.onBlocked(entry) end
   elseif event == "UPDATE_BINDINGS" then
     WFJ.TooltipFreeze.bindingsLoaded(WFJ_DB) -- the frozen tooltip's first key, once the saved bindings are in
+    WFJ.IntroWindow.bindingsChanged() -- the welcome window names the freeze key as it is bound now
   elseif event == "PLAYER_REGEN_DISABLED" then
     WFJ.Options.setCombat(true)
     WFJ.StudyWindow.setCombat(true)

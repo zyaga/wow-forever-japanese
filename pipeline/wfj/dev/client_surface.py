@@ -2785,6 +2785,22 @@ local function WFJScanPlatesRead()
   end
 end
 
+-- The load read: what the addon costs. Into `probe.load`: its own Lua memory in KB (the client's per-addon count) and,
+-- from its problem log, how long its files took to load and its setup after them, in milliseconds.
+local function WFJScanLoadRead()
+  local db = probeDb()
+  local record = {}
+  db.load = record
+  local update = (C_AddOns and C_AddOns.UpdateAddOnMemoryUsage) or UpdateAddOnMemoryUsage
+  local get = (C_AddOns and C_AddOns.GetAddOnMemoryUsage) or GetAddOnMemoryUsage
+  if update and get then
+    update()
+    record.kb = get("WoWForeverJapanese")
+  end
+  local timed = type(WFJ_Log) == "table" and WFJ_Log.load
+  if type(timed) == "table" then record.files, record.setup = timed.files, timed.setup end
+end
+
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
 -- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
 -- carries and runs what the key runs (`WFJ_FreezeTooltip`), twice, into `probe.freeze`:
@@ -3144,6 +3160,7 @@ SlashCmdList.WFJTEST = function(how)
             -- in a fight the client hides a tooltip's rows and a unit's name from addons
             outOfCombat(function() WFJScanNamesRead(function()
             WFJScanPlatesRead() -- out of combat here: the client refuses a setting written in a fight
+            WFJScanLoadRead()
             db.test.part = "freeze"
             -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
             outOfCombat(function() WFJScanFreezeRead(function()
@@ -3908,6 +3925,20 @@ def read_plates(text: str) -> dict[str, Any] | None:
     return out
 
 
+def read_load(text: str) -> dict[str, float] | None:
+    """The window test's load read out of a saved-variables file, or None when the run had none: the addon's own
+    memory in KB (`kb`) and how long its files took to load and its setup after them, in ms (`files`, `setup`),
+    each left out when the client or the addon gave none."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("load") if probe is not None else None
+    if record is None:
+        return None
+    return {k: float(v) for k, v in record.named().items() if isinstance(v, (int, float))}
+
+
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
     nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
@@ -4356,6 +4387,12 @@ def _own_reads(saved: str) -> list[str]:
         print(f"nameplates: range {v.get('nameplateMaxDistance')} (default {d.get('nameplateMaxDistance')}, the "
               f"client holds up to {plates['limit'] or 'unknown'}); English names over NPC heads "
               + ", ".join(f"{k} {v.get(k)}" for k in PLATE_WANT))
+    load = read_load(saved)
+    if load:
+        said = [f"{load['kb'] / 1024:.0f} MB of Lua memory"] if "kb" in load else []
+        said += [f"files loaded in {load['files']:.0f} ms"] if "files" in load else []
+        said += [f"setup {load['setup']:.0f} ms"] if "setup" in load else []
+        print("addon load: " + ", ".join(said))
     return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
             + names_problems(names, japanese) + freeze_problems(freeze) + plates_problems(plates))
 

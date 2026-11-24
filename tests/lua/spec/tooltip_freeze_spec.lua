@@ -4,9 +4,10 @@ local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Data.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua",
-  "Core/Readings.lua", "Core/State.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Names.lua", "Core/Settings.lua",
+  "Core/Readings.lua", "Core/Glosses.lua", "Core/State.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Names.lua", "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Compat.lua", "Core/Words.lua",
-  "UI/Font.lua", "UI/Readings.lua", "UI/Render.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua",
+  "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/Render.lua", "UI/OptionsText.lua",
+  "UI/OptionsWidgets.lua",
   "UI/KeyCapture.lua", "UI/TooltipFreeze.lua" }
 
 local HEARTH = "ホームに設定した場所へ戻ります。"
@@ -285,6 +286,34 @@ describe("UI/TooltipFreeze", function()
       -- the name line has no record: no card
       assert.is_nil(line(1, 1).twin)
     end)
+
+    it("the save click on a copy's word saves it, with the item as its source and the line as its sentence",
+      function()
+        _G.IsMetaKeyDown, _G.IsMacClient = function() return false end, function() return false end
+        _G.C_Timer = { After = function() end }
+        WFJ.Data.add("gloss", { [7] = "場所\tばしょ\tplace" })
+        WFJ.Words.load(nil)
+        write(tip, { "Hearthstone", "Use: returns you." })
+        japanese(tip, 2, "desc", "item.description", 6948, "items")
+        F.toggle()
+        local cover = coverOf(line(1, 2).twin)
+        cover.scripts.OnEnter(cover)
+        Stub.cursor = { 100 + HEARTH:find("場所", 1, true) + 1, 205 } -- on the word (cover origin 100, 200)
+        Stub.keys.ctrl = true
+        cover.scripts.OnUpdate(cover, 0.01)
+        Stub.mouse.LeftButton = true
+        cover.scripts.OnUpdate(cover, 0.01)
+        Stub.mouse.LeftButton = false
+        cover.scripts.OnUpdate(cover, 0.01)
+        Stub.keys.ctrl = false
+        _G.IsMetaKeyDown, _G.IsMacClient, _G.C_Timer = nil, nil, nil
+        assert.are.equal(1, WFJ.Words.count())
+        local e = WFJ.Words.entries()[1]
+        assert.are.equal("item.description:6948:場所", e.key)
+        assert.are.equal("item", e.source)
+        assert.are.equal("place", e.meaning)
+        assert.are.equal(HEARTH, e.sentence)
+      end)
 
     it("a name line takes its name card: the reading and the English name", function()
       WFJ.Data.add("name", { [WFJ.Names.key("Hearthstone")] = "ハースストーン\tはーすすとーん" })
