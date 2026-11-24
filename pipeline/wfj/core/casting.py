@@ -289,7 +289,8 @@ def _field_provenance(p: Any, label: str) -> list[str]:
         return [f"{label}: machine provenance lacks {', '.join(missing)}"] if missing else []
     if src == MAINTAINER or (isinstance(src, str) and _SOURCE.fullmatch(src)):
         return []
-    return [f"{label}: provenance source {src!r} is not client@…, vmangos@…, collector@…, machine or maintainer"]
+    return [f"{label}: provenance source {src!r} "
+            "is not client@…, vmangos@…, collector@…, machine or maintainer"]
 
 
 def missing_age(rows: Iterable[Mapping[str, Any]]) -> list[int]:
