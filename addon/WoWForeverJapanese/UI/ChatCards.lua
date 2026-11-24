@@ -1,34 +1,82 @@
--- UI/ChatCards.lua: TRIAL. Word cards on chat lines, and the copy button on the line under the mouse.
--- Nothing is hooked and no chat line is changed. A timer looks at the mouse while it is over a chat frame, asks the
--- line's own FontString which character is under it (FindCharacterIndexAtCoordinate, as the client's own text
--- selection does: blizzard_sharedxml/scrollingmessageframe.lua:552–570), and Core/ChatWords finds the word there.
--- Japanese first: Japanese words take cards. English first: English words take cards. Never while the reveal key
--- is held, and never on a line whose text the client keeps secret.
+-- UI/ChatCards.lua: word cards on chat lines (docs/systems/chat-tools.md). Nothing is hooked and no chat line is
+-- changed. While the mouse is over a chat frame, a timer asks the line's own FontString which character is under
+-- it (FindCharacterIndexAtCoordinate, as the client's own text selection does [verified: forever
+-- blizzard_sharedxml/scrollingmessageframe.lua:552–570, GetScaledCursorPosition :572–576]), Core/ChatWords finds
+-- the word there, and the word card shows over it. Japanese first: Japanese words. English first: English words.
+-- Never while the reveal key is held, with translation or word cards off, or on a line whose text the client keeps
+-- secret (chat messaging lockdown). The save click saves the word with what the player typed as its sentence.
+--   ChatCards.look()            one look at the mouse (the timer's step; specs call it)
+--   ChatCards.onLine(fn)        fn(line, text) for the readable line under the mouse, fn(nil) when there is none
+--   ChatCards.typedPart(line, text) → what a player typed in that line | nil (not a typed line, or not shaped so)
 local _, WFJ = ...
 local Cards = {}
 WFJ.ChatCards = Cards
 
-local EVERY = 0.04
-local TINT = { 1, 0.82, 0, 0.22 }
+local Compat = WFJ.Compat
+local SURFACE = "chat.cards"
+local CANDIDATES = { frames = { "CHAT_FRAMES" }, typeInfo = { "ChatTypeInfo" }, isSecret = { "issecretvalue" },
+  cursor = { "GetCursorPosition" }, buttonDown = { "IsMouseButtonDown" } }
 
-local anchor, button
-local shown -- { line, text, first, last }
+Cards.EVERY = 0.04 -- seconds between looks
+Cards.FADED = 0.2 -- a line fainter than this has faded out: no card on text the player cannot see
+local TINT = { 1, 0.82, 0, 0.22 } -- the word under the mouse, as on every word-card surface
+
+local anchor
+local shown -- { line, text, first, last, word }
 local wasDown, pressed = false, nil
+local listeners = {}
 
 local function secret(v)
-  local f = _G.issecretvalue
+  local f = Compat.get(SURFACE, "isSecret")
   return type(f) == "function" and f(v) and true or false
 end
 
-local function boundary(text, i)
-  if i == #text + 1 then return true end
-  local c = text:byte(i)
-  return c ~= nil and (c < 0x80 or c >= 0xC0)
+function Cards.onLine(fn) listeners[#listeners + 1] = fn end
+
+local function tell(line, text)
+  for _, fn in ipairs(listeners) do fn(line, text) end
 end
+
+-- ── Which lines a player typed ──────────────────────────────────────────────
+
+-- The chat types a player types into. The table of chat types is read by name: walking it finds no entries on this
+-- client.
+Cards.TYPED = { "SAY", "YELL", "PARTY", "PARTY_LEADER", "RAID", "RAID_LEADER", "RAID_WARNING", "GUILD", "OFFICER",
+  "WHISPER", "WHISPER_INFORM", "INSTANCE_CHAT", "INSTANCE_CHAT_LEADER", "BN_WHISPER", "BN_WHISPER_INFORM",
+  "COMMUNITIES_CHANNEL", "CHANNEL" }
+Cards.CHANNELS = 20 -- CHANNEL1 … CHANNEL20 have a type of their own
+
+local typedIds
+local function typedLine(line)
+  local info = line.messageInfo
+  -- the chat type is the first value the chat frame stores with a line [verified: forever
+  -- blizzard_chatframebase/mainline/chatframeoverrides.lua:416, AddMessage(text, r, g, b, info.id)]
+  local id = type(info) == "table" and type(info.extraData) == "table" and info.extraData[1] or nil
+  local types = Compat.get(SURFACE, "typeInfo")
+  if id == nil or secret(id) or type(types) ~= "table" then return false end
+  if not typedIds then
+    typedIds = {}
+    local names = {}
+    for _, name in ipairs(Cards.TYPED) do names[#names + 1] = name end
+    for i = 1, Cards.CHANNELS do names[#names + 1] = "CHANNEL" .. i end
+    for _, name in ipairs(names) do
+      local t = types[name]
+      if type(t) == "table" and t.id ~= nil then typedIds[t.id] = true end
+    end
+  end
+  return typedIds[id] == true
+end
+
+function Cards.typedPart(line, text)
+  if type(line) ~= "table" or not typedLine(line) then return nil end
+  return WFJ.ChatWords.typedPart(text)
+end
+
+-- ── The card ───────────────────────────────────────────────────────────────
 
 local function ensureAnchor()
   if anchor then return anchor end
-  anchor = CreateFrame("Frame", nil, UIParent)
+  anchor = CreateFrame("Frame", nil, Compat.resolve("UIParent"))
   anchor:SetFrameStrata("MEDIUM")
   anchor.tints = {}
   anchor:Hide()
@@ -43,119 +91,14 @@ local function clear()
   end
   shown = nil
 end
-
-local function hideButton()
-  if button and not button:IsMouseOver() then button:Hide() end
-end
-
-local function ensureButton()
-  if button then return button end
-  button = CreateFrame("Button", nil, UIParent)
-  button:SetFrameStrata("HIGH")
-  button:SetSize(14, 14)
-  local icon = button:CreateTexture(nil, "ARTWORK")
-  icon:SetAllPoints(button)
-  icon:SetTexture("Interface\\Buttons\\UI-GuildButton-PublicNote-Up")
-  button:SetHighlightTexture("Interface\\Buttons\\UI-GuildButton-PublicNote-Up", "ADD")
-  button:SetScript("OnClick", function(self)
-    if Cards.probing and self.line and self.raw then pcall(Cards.probe, self.line, self.raw) end
-    if WFJ.ChatCopy and self.text then WFJ.ChatCopy.show(self.text) end
-  end)
-  -- a label of our own: the game's tooltip font has no Japanese
-  local tip = CreateFrame("Frame", nil, button, "TooltipBackdropTemplate")
-  tip:SetFrameStrata("TOOLTIP")
-  WFJ.ReadingView.solid(tip)
-  local tipText = tip:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-  WFJ.Font.set(tipText, WFJ.Font.PATH, 12, "")
-  tipText:SetPoint("CENTER", tip, "CENTER", 0, 0)
-  tipText:SetText("コピー ・ Copy this line")
-  tip:SetPoint("BOTTOMLEFT", button, "TOPRIGHT", 2, 2)
-  tip:Hide()
-  button:SetScript("OnEnter", function()
-    tip:SetSize(tipText:GetStringWidth() + 18, tipText:GetStringHeight() + 12)
-    tip:Show()
-  end)
-  button:SetScript("OnLeave", function() tip:Hide() end)
-  button:SetScript("OnHide", function() tip:Hide() end)
-  button:Hide()
-  return button
-end
-
--- The chat types a player types into. Only their lines are cut down to the message; every other line (system,
--- loot, emotes, achievements, NPC talk) is copied whole.
-local TYPED = { SAY = true, YELL = true, PARTY = true, PARTY_LEADER = true, RAID = true, RAID_LEADER = true,
-  RAID_WARNING = true, GUILD = true, OFFICER = true, WHISPER = true, WHISPER_INFORM = true, INSTANCE_CHAT = true,
-  INSTANCE_CHAT_LEADER = true, BN_WHISPER = true, BN_WHISPER_INFORM = true, COMMUNITIES_CHANNEL = true }
-local typeNames
-local function typedLine(line)
-  local info = line.messageInfo
-  local id = type(info) == "table" and type(info.extraData) == "table" and info.extraData[1] or nil
-  if id == nil or secret(id) or type(ChatTypeInfo) ~= "table" then return false end
-  if not typeNames then
-    typeNames = {}
-    -- looked up by name: walking ChatTypeInfo with pairs() finds no entries on this client
-    local names = { "CHANNEL" }
-    for name in pairs(TYPED) do names[#names + 1] = name end
-    for i = 1, 20 do names[#names + 1] = "CHANNEL" .. i end
-    for _, name in ipairs(names) do
-      local t = ChatTypeInfo[name]
-      if type(t) == "table" and t.id ~= nil then typeNames[t.id] = name end
-    end
-  end
-  local name = typeNames[id]
-  return name ~= nil and (TYPED[name] or name:find("^CHANNEL") ~= nil)
-end
-
--- What a player typed, out of a typed line: everything after the sender's link and the ": " that closes the
--- line's opening words ("[Name] says: ", "[ギルド] [Name]: "). → that text, or nil when the line is not shaped so
-local function typedPart(text)
-  local _, linkEnd = text:find("|HBNplayer:.-|h.-|h")
-  if not linkEnd then _, linkEnd = text:find("|Hplayer:.-|h.-|h") end
-  if not linkEnd then return nil end
-  local colon = text:find(": ", linkEnd + 1, true)
-  -- the opening words after the name are short and hold no link of their own
-  if not colon or colon - linkEnd > 40 or text:sub(linkEnd + 1, colon):find("|H", 1, true) then return nil end
-  local rest = text:sub(colon + 2)
-  return rest ~= "" and rest or nil
-end
-
--- /wfjchat probe: the next copy click also prints what the chat frame holds for that line.
-function Cards.probe(line, text)
-  local info = line.messageInfo
-  local extra = type(info) == "table" and info.extraData or nil
-  local id = type(extra) == "table" and extra[1] or nil
-  local out = { "messageInfo=" .. type(info), "extraData=" .. type(extra),
-    "n=" .. tostring(type(extra) == "table" and extra.n or nil), "id=" .. (secret(id) and "secret" or tostring(id)) }
-  if type(extra) == "table" then
-    for i = 1, math.min(extra.n or #extra, 8) do
-      out[#out + 1] = i .. ":" .. (secret(extra[i]) and "secret" or type(extra[i]))
-    end
-  end
-  local name
-  if typeNames and id ~= nil and not secret(id) then name = typeNames[id] end
-  out[#out + 1] = "type=" .. tostring(name)
-  out[#out + 1] = "typed=" .. tostring(typedLine(line))
-  out[#out + 1] = "part=" .. tostring(typedPart(text) ~= nil)
-  print("WFJ probe " .. table.concat(out, " "))
-  print("WFJ probe text " .. text:gsub("|", "||"))
-  WFJ_ChatWords.probe = { table.concat(out, " "), text }
-end
-
-local function showButton(line, text)
-  local b = ensureButton()
-  b.line, b.raw = line, text
-  local part = typedLine(line) and typedPart(text) or nil
-  b.text = WFJ.ChatWords.plain(part or text)
-  b:ClearAllPoints()
-  b:SetPoint("TOPRIGHT", line, "TOPRIGHT", 0, 0)
-  b:Show()
-end
+Cards.clear = clear
 
 local function showWord(line, text, w)
-  if shown and shown.line == line and shown.text == text and shown.first == w.first then return end
-  if not boundary(text, w.first) or not boundary(text, w.last + 1) then return end
-  local ok, areas = pcall(line.CalculateScreenAreaFromCharacterSpan, line, w.first, w.last + 1)
-  if not ok or type(areas) ~= "table" or secret(areas) or not areas[1] then return end
+  if shown and shown.line == line and shown.text == text and shown.first == w.first then return true end
+  -- the one guarded call for a word's place on screen (a span that splits a character makes the client exit); a
+  -- chat line's indices count its escape sequences
+  local areas = WFJ.ReadingView.spanAreas(line, text, w.first, w.last, "chat", true)
+  if type(areas) ~= "table" or secret(areas) or not areas[1] then return false end
   clear()
   local a = ensureAnchor()
   a:ClearAllPoints()
@@ -175,31 +118,46 @@ local function showWord(line, text, w)
   end
   local _, size = line:GetFont()
   local r = areas[1]
-  local card = w.card or w.gloss
-  local hint = WFJ.ReadingView and WFJ.ReadingView.hint and WFJ.ReadingView.hint() or nil
-  WFJ.ReadingPopup.show(a, r.left + r.width / 2, r.bottom + r.height + 2, w, card, size, hint)
+  local hint = WFJ.ReadingView.hint and WFJ.ReadingView.hint() or nil
+  WFJ.ReadingPopup.show(a, r.left + r.width / 2, r.bottom + r.height + 2, w, w.card or w.gloss, size, hint)
   shown = { line = line, text = text, first = w.first, last = w.last, word = w }
+  return true
 end
 
--- The save click: a press and a release on the same word, with the save click's modifiers held.
+-- ── The save click ─────────────────────────────────────────────────────────
+
+-- The sentence a chat word is saved with: the stretch of the line it sits in, from where the player's own text
+-- starts when the line is a typed one (the sender and the line's opening words are no part of it).
+-- → sentence, the word's first and last byte in it | nil
+function Cards.sentence(line, text, first, last)
+  for _, r in ipairs(WFJ.ChatWords.runs(text)) do
+    if first >= r.first and last <= r.last then
+      local from = r.first
+      local typed = Cards.typedPart(line, text)
+      if typed then from = math.max(from, #text - #typed + 1) end
+      if first < from then return nil end
+      return text:sub(from, r.last), first - from + 1, last - from + 1
+    end
+  end
+  return nil
+end
+
+-- A press and a release on the same word, with the save click's modifiers held (UI/WordSave decides).
 local function save()
   local s = shown
-  if not s or not WFJ.WordSave then return end
-  local run
-  for _, r in ipairs(WFJ.ChatWords.runs(s.text)) do
-    if s.first >= r.first and s.last <= r.last then run = r end
-  end
-  if not run then return end
+  if not s or not WFJ.WordSave then return nil end
+  local sentence, first, last = Cards.sentence(s.line, s.text, s.first, s.last)
+  if not sentence then return nil end
   local a, w = anchor, s.word
-  a.kind, a.id, a.surface, a.fs = "chat", "chat", "chat", s.line
-  a.text = s.text:sub(run.first, run.last)
-  local word = { word = w.word, reading = w.reading, first = w.first - run.first + 1,
-    last = w.last - run.first + 1, card = w.card or w.gloss }
-  pcall(WFJ.WordSave.release, a, word)
+  -- the cover UI/WordSave expects: what the entry is saved under, and the tints it flashes
+  a.kind, a.id, a.surface, a.fs, a.text = "chat", "chat", "chat", s.line, sentence
+  return WFJ.WordSave.release(a, { word = w.word, reading = w.reading, first = first, last = last,
+    card = w.card or w.gloss })
 end
 
 local function poll()
-  local down = IsMouseButtonDown("LeftButton") == true
+  local isDown = Compat.get(SURFACE, "buttonDown")
+  local down = type(isDown) == "function" and isDown("LeftButton") == true
   if down and not wasDown then
     pressed = shown and shown.first or nil
   elseif not down and wasDown then
@@ -209,62 +167,71 @@ local function poll()
   wasDown = down
 end
 
-local function active()
-  local S = WFJ.State
-  return S and S.enabled and not S.modifierHeld
-end
+-- ── The look ───────────────────────────────────────────────────────────────
 
 local function wordAt(text, i)
   if WFJ.State.direction == "en" then return WFJ.ChatWords.englishAt(text, i) end
   return WFJ.ChatWords.japaneseAt(text, i)
 end
 
-local function look()
-  if not active() or type(CHAT_FRAMES) ~= "table" then
-    clear()
-    hideButton()
-    return
-  end
-  local cx, cy = GetCursorPosition()
-  for _, name in ipairs(CHAT_FRAMES) do
-    local f = _G[name]
-    if f and f.visibleLines and f:IsVisible() and f:IsMouseOver() then
-      local scale = f:GetEffectiveScale()
-      local x, y = cx / scale, cy / scale
+local function cardsOn()
+  local S = WFJ.State
+  return S.enabled and not S.modifierHeld and WFJ.ReadingView.enabled and WFJ.Settings.get("chat.cards") == true
+end
+
+-- The readable chat line under the mouse. → frame, line, text | nil
+local function lineUnderMouse()
+  local names = Compat.get(SURFACE, "frames")
+  if type(names) ~= "table" then return nil end
+  for _, name in ipairs(names) do
+    local f = Compat.resolve(name)
+    if type(f) == "table" and type(f.visibleLines) == "table" and f:IsVisible() and f:IsMouseOver() then
       for _, line in ipairs(f.visibleLines) do
-        if line:IsVisible() and line:GetAlpha() > 0.2 and line:IsMouseOver() then
+        if line:IsVisible() and line:GetAlpha() > Cards.FADED and line:IsMouseOver() then
           local text = line:GetText()
-          if type(text) == "string" and not secret(text) and text ~= "" then
-            showButton(line, text)
-            local ok, i, inside = pcall(line.FindCharacterIndexAtCoordinate, line, x, y)
-            if ok and inside and type(i) == "number" and not secret(i) then
-              local w = WFJ.ReadingView.enabled and wordAt(text, i) or nil
-              if w then
-                showWord(line, text, w)
-                poll()
-                return
-              end
-            end
-            clear()
-            return
-          end
+          if type(text) == "string" and not secret(text) and text ~= "" then return f, line, text end
         end
       end
     end
   end
-  clear()
-  hideButton()
+  return nil
 end
 
-local driver = CreateFrame("Frame")
-local since = 0
-driver:SetScript("OnUpdate", function(_, elapsed)
-  since = since + elapsed
-  if since < EVERY then return end
-  since = 0
-  local ok, err = pcall(look)
-  if not ok and not Cards.failed then
-    Cards.failed = err
-    print("WFJ chat trial: " .. tostring(err))
+function Cards.look()
+  local f, line, text = lineUnderMouse()
+  tell(line, text)
+  if not line or not cardsOn() then
+    clear()
+    return nil
   end
-end)
+  local cursor = Compat.get(SURFACE, "cursor")
+  if type(cursor) ~= "function" then return nil end
+  local cx, cy = cursor()
+  local scale = f:GetEffectiveScale()
+  local ok, i, inside = pcall(line.FindCharacterIndexAtCoordinate, line, cx / scale, cy / scale)
+  local w = ok and inside and type(i) == "number" and not secret(i) and wordAt(text, i) or nil
+  if w and showWord(line, text, w) then
+    poll()
+    return w
+  end
+  clear()
+  return nil
+end
+
+function Cards.shown() return shown end
+
+function Cards.init()
+  for key, names in pairs(CANDIDATES) do Compat.declare(SURFACE, key, names) end
+  if Cards.driver then return false end
+  Cards.driver = CreateFrame("Frame")
+  local since = 0
+  Cards.driver:SetScript("OnUpdate", function(_, elapsed)
+    since = since + elapsed
+    if since < Cards.EVERY then return end
+    since = 0
+    Cards.look()
+  end)
+  return true
+end
+
+WFJ.State.on("chat", clear)

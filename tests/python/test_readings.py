@@ -374,13 +374,15 @@ def test_generate_emits_reading_shards_in_the_toc_and_is_deterministic(data):
         '["gossip:db152bcd2f85b3f0"] = { text = "美しさ=うつくしさ" },'
         in (planned["Data/Reading/Reading_gossip_db.lua"])
     )
-    assert "reading = 2, gloss = 0 }" in planned["Data/Meta.lua"]  # glosses counted after readings
+    assert "reading = 2, gloss = 0, chat = " in planned["Data/Meta.lua"]  # glosses counted after readings
     assert generate.plan(store, []) == planned  # byte-identical rerun
     files = generate.toc_files(planned)
-    assert files[-2:] == [
+    # the chat word lists made from these readings load after them
+    assert [f for f in files if f.startswith("Data/Reading/")][-2:] == [
         "Data/Reading/Reading_gossip_db.lua",
         "Data/Reading/Reading_quest_0000.lua",
     ]
+    assert all(f.startswith("Data/Chat/") for f in files[files.index("Data/Reading/Reading_quest_0000.lua") + 1 :])
 
 
 def test_generate_refuses_a_malformed_reading(data):
@@ -391,7 +393,7 @@ def test_generate_refuses_a_malformed_reading(data):
 
 def test_the_reading_prefix_is_a_generated_folder():
     assert (
-        schema.FILE_PREFIX["reading"] == "Reading" and schema.TOC_ORDER[-2:] == ("reading", "gloss")
+        schema.FILE_PREFIX["reading"] == "Reading" and schema.TOC_ORDER[-3:] == ("reading", "gloss", "chat")
     )
     assert lua_writer.reading_text("quest", 0, []).endswith(
         'WFJ.Data.add("reading", {\n})\n'

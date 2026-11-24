@@ -3,6 +3,7 @@
 import json
 
 import pytest
+
 from wfj.core import chat_words as cw
 from wfj.emit import lua_writer
 

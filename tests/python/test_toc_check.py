@@ -9,7 +9,7 @@ CLIENTS = "pipeline/clients.toml"
 def test_real_toc_fields_and_load_order(root):
     meta, files = toc_check.parse_toc(root / TOC)
     assert meta["Version"] == "@project-version@"
-    assert meta["SavedVariables"] == "WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study"
+    assert meta["SavedVariables"] == "WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords"
     assert meta["Interface"].isdigit()
     # An icon for the AddOn List (a client icon Blizzard's own Vanilla/QuestInfo.xml references) and Notes
     # that say where the settings are.
@@ -31,6 +31,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua",  # the collector, its send, its reminder
         "Core/Intro.lua",  # whether the first-install window is owed
         "Core/Words.lua",  # the saved word list
+        "Core/ChatWords.lua", "Core/ChatPhrases.lua",  # the words and phrases of the chat tools
         "Core/Fsrs.lua", "Core/Study.lua",  # studying it: the memory model, then the queue
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "Core/Diag.lua", "Core/Perf.lua", "Core/BugReport.lua",  # the problem log, its timing, the bug report link
@@ -104,7 +105,11 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Scan.lua",
         # the settings pages' copy, widgets, key capture, the modifier's override binding, the AddOn List button
         "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/BindingNames.lua",
-            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua", "UI/CollectorReminder.lua", "UI/IntroWindow.lua",
+            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua",
+            # the chat tools: word cards, the copy icon, phrase lines, the phrase book, the player's own words
+            "UI/ChatCards.lua", "UI/ChatCopy.lua", "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua",
+            "UI/ChatWordsWindow.lua",
+            "UI/CollectorReminder.lua", "UI/IntroWindow.lua",
             "UI/ReportWindow.lua",
             "UI/MinimapButton.lua",  # the minimap button
             "UI/RevealBinding.lua",

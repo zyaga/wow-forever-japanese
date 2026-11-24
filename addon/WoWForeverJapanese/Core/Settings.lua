@@ -341,3 +341,16 @@ Settings.define{ id = "study.combatHide", kind = "boolean", default = true, appl
   label = "Hide the study window in combat", ja = "戦闘中は学習ウィンドウを隠す" }
 Settings.define{ id = "study.sound", kind = "boolean", default = true, apply = studyChanged,
   label = "Play a sound on Good", ja = "正解のとき音を鳴らす" }
+
+-- The chat tools (docs/systems/chat-tools.md): word cards on chat lines (UI/ChatCards), the copy icon
+-- (UI/ChatCopy), the phrase book's button (UI/PhraseBook) and a received phrase shown in the reader's language
+-- (UI/ChatPhraseLines). A change is followed at once (State "chat").
+local function chatChanged() WFJ.State.fire("chat") end
+Settings.define{ id = "chat.cards", kind = "boolean", default = true, apply = chatChanged,
+  label = "Word cards on chat lines", ja = "チャットの行で単語カードを表示" }
+Settings.define{ id = "chat.copy", kind = "boolean", default = true, apply = chatChanged,
+  label = "Copy icon on the chat line under the mouse", ja = "マウスを置いたチャットの行にコピーのアイコンを表示" }
+Settings.define{ id = "chat.phraseButton", kind = "boolean", default = true, apply = chatChanged,
+  label = "Phrase book button by the chat window", ja = "チャット欄の横に定型文のボタンを表示" }
+Settings.define{ id = "chat.phrases", kind = "boolean", default = true, apply = chatChanged,
+  label = "Show a phrase book phrase in my language", ja = "定型文を自分の言語で表示" }

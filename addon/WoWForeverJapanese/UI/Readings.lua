@@ -14,7 +14,10 @@
 -- layout and scroll are current. Indices are UTF-8 BYTES, right end EXCLUSIVE (scrollingmessageframe.lua:451–467).
 -- A span that splits a character is not a Lua error: the client exits. So
 -- spanAreas is the ONLY caller of that function (a test enforces it) and refuses any index off a character boundary.
--- It also refuses text holding `|`: how the client counts bytes around escape sequences is not verified.
+-- It also refuses text holding `|`, unless the caller says its indices count the text as it is, escape sequences
+-- included: a chat line's do, as the client's own text selection counts them there [verified: forever
+-- blizzard_sharedxml/scrollingmessageframe.lua:486–503, indices into visibleLine:GetText(); seen in game on chat
+-- lines holding player links and colour codes]. Nowhere else is that verified.
 local _, WFJ = ...
 local View = {}
 WFJ.ReadingView = View
@@ -130,11 +133,14 @@ local function boundary(text, i)
   return c ~= nil and (c < 0x80 or c >= 0xC0)
 end
 
--- `first`, `last`: a word's first and last byte (inclusive, as Core/Readings returns them). → areas | nil, why
-function View.spanAreas(fs, text, first, last, where)
+-- `first`, `last`: a word's first and last byte (inclusive, as Core/Readings returns them). `escapes`: true for a
+-- chat line, whose indices count its escape sequences too (UI/ChatCards). → areas | nil, why
+function View.spanAreas(fs, text, first, last, where, escapes)
   local right = last + 1
   local why
-  if type(text) ~= "string" or text:find("|", 1, true) then
+  if type(text) ~= "string" then
+    why = "no text"
+  elseif not escapes and text:find("|", 1, true) then
     why = "text holds an escape sequence"
   elseif first < 1 or right <= first or right > #text + 1 then
     why = "span out of range"

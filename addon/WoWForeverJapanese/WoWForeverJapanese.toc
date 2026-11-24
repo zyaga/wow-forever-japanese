@@ -7,7 +7,7 @@
 ## AddonCompartmentFuncOnLeave: WFJ_OnAddonCompartmentLeave
 ## Version: @project-version@
 ## Author: Zyaga
-## SavedVariables: WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study
+## SavedVariables: WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords
 ## X-License: GPL-2.0-or-later
 ## X-Copyright: Copyright (C) 2026 Zyaga
 ## X-Curse-Project-ID: 1717928
@@ -3062,6 +3062,8 @@ Core\CollectorSend.lua
 Core\CollectorRemind.lua
 Core\Intro.lua
 Core\Words.lua
+Core\ChatWords.lua
+Core\ChatPhrases.lua
 Core\Fsrs.lua
 Core\Study.lua
 Core\RecentLines.lua
@@ -3262,6 +3264,11 @@ UI\FixWindow.lua
 UI\CollectorSendWindow.lua
 UI\WordsWindow.lua
 UI\StudyWindow.lua
+UI\ChatCards.lua
+UI\ChatCopy.lua
+UI\ChatPhraseLines.lua
+UI\PhraseBook.lua
+UI\ChatWordsWindow.lua
 UI\CollectorReminder.lua
 UI\IntroWindow.lua
 UI\ReportWindow.lua

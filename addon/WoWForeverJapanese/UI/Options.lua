@@ -43,6 +43,9 @@ Options.PAGES = {
     -- studying it (Core/Study, UI/StudyWindow): the tab, the daily cap, combat, the counts and the card
     { title = "section.study", rows = { "studyExplain", "study.tab", "study.newPerDay", "study.combatHide",
       "study.sound", "studyStatus", "studyOpen" } },
+    -- the chat tools: word cards on chat, the copy icon, the phrase book, the player's own chat words
+    { title = "section.chat", rows = { "chatExplain", "chat.cards", "chat.copy", "chat.phraseButton",
+      "chat.phrases", "chatWordsOpen", "phraseBookOpen" } },
   } },
   -- Only when the voice pack has registered (Core/Voice): built with the others when the pack is already there, else
   -- added by Options.addPage when it registers. The voice panel's choices are on the same page: a page scrolls.
@@ -500,6 +503,29 @@ function A.studyOpen(page, x, y)
   local b = W.button(page, en, ja, 160, function() WFJ.StudyWindow.open() end)
   b:SetPoint("TOPLEFT", x, y)
   Options.studyOpen = b
+  return 30
+end
+
+function A.chatExplain(page, x, y, width)
+  local en, ja = Text.get("chat.explain")
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 30)
+end
+
+-- Opens the player's own chat words (UI/ChatWordsWindow).
+function A.chatWordsOpen(page, x, y)
+  local en, ja = Text.get("chat.words.open")
+  local b = W.button(page, en, ja, 160, function() WFJ.ChatWordsWindow.open() end)
+  b:SetPoint("TOPLEFT", x, y)
+  Options.chatWordsOpen = b
+  return 30
+end
+
+-- Opens the phrase book's card (UI/PhraseBook), whatever its button's setting says.
+function A.phraseBookOpen(page, x, y)
+  local en, ja = Text.get("chat.book.open")
+  local b = W.button(page, en, ja, 160, function() WFJ.PhraseBook.open() end)
+  b:SetPoint("TOPLEFT", x, y)
+  Options.phraseBookOpen = b
   return 30
 end
 
