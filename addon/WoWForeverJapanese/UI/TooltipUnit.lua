@@ -301,7 +301,11 @@ function TooltipUnit.onUnit(tt, data)
         end
         notes[#notes + 1] = ("row %d quest title: %s"):format(i, id and ("quest " .. id) or why)
       else
-        local shown = WFJ.Labels.show(SURFACE, "L" .. i, fs, refit, only)
+        -- an objective row ("12/12 Saltwater Murloc Eye", its tick a texture of its own) is read the way the tracker
+        -- reads it: the objective's own text, then the client's objective and count forms
+        local shown = kinds[i] == "QuestObjective" and WFJ.QuestMap
+          and WFJ.QuestMap.showObjective(SURFACE, "L" .. i, fs, refit) or 0
+        if shown == 0 then shown = WFJ.Labels.show(SURFACE, "L" .. i, fs, refit, only) end
         if shown == 0 and (named or (playerWords and levelSeen)) then shown = showName(i, fs, refit) end
         if shown > 0 then levelSeen = true end -- a player's first dictionary line is the level line
         n = n + shown
