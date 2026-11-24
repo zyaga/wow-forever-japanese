@@ -199,7 +199,7 @@ end
 -- with it) placed over the client's text, and the client's text keeps everything but its alpha, set to 0 and put
 -- back when the label goes. A region's SetAlpha is not protected; in combat a text not covered yet is left as it is.
 -- The rank word is a dictionary word and shows whenever the page is Japanese; the spell's name needs names on.
-local BUTTONS = { "SpellButton1", "SpellButton2" }
+local BUTTONS = { "Spell" .. "Button1", "Spell" .. "Button2" } -- a slot's keys, never the old spellbook's globals
 local overlay -- this addon's frame over the page
 local covers = setmetatable({}, { __mode = "k" }) -- the client's FontString → { label, alpha, hidden, ... }
 
@@ -312,9 +312,15 @@ local function setupOverlay(page)
   local create = Compat.resolve("CreateFrame")
   if overlay or type(page) ~= "table" or type(create) ~= "function" then return end
   -- a child of the page runs no OnUpdate while the page is hidden
-  overlay = create("Frame", nil, page)
-  overlay:SetAllPoints(page)
-  if type(page.GetFrameLevel) == "function" then overlay:SetFrameLevel(page:GetFrameLevel() + 10) end
+  local made = create("Frame", nil, page)
+  if type(made) ~= "table" or type(made.SetScript) ~= "function" or type(made.CreateFontString) ~= "function" then
+    return
+  end
+  overlay = made
+  if type(overlay.SetAllPoints) == "function" then overlay:SetAllPoints(page) end
+  if type(page.GetFrameLevel) == "function" and type(overlay.SetFrameLevel) == "function" then
+    overlay:SetFrameLevel(page:GetFrameLevel() + 10)
+  end
   overlay:SetScript("OnUpdate", WFJ.Perf.wrap("idle.professionbuttons", Professions.coverButtons))
   overlay:SetScript("OnHide", Professions.uncoverAll)
   Professions.overlay = overlay

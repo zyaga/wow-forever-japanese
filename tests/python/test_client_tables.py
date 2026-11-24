@@ -49,6 +49,7 @@ HEADERS = {
     "TaxiNodes": ["ID", "Name_lang"],
     "SpellShapeshiftForm": ["ID", "Name_lang"],
     "TotemCategory": ["ID", "Name_lang"],
+    "ItemSet": ["ID", "Name_lang"],
     "CriteriaTree": ["ID", "Description_lang"],
     "RenownRewards": ["ID", "Name_lang", "Description_lang", "ToastDescription_lang"],
     "SharedString": ["ID", "String_lang"],

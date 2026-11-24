@@ -31,6 +31,8 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/TextWatch.lua", "UI/TaintWatch.lua",
                 # the spellbook's labels: its own frame's OnUpdate and OnHide, never a spellbook frame's
                 "UI/SpellBookNames.lua",
+                # the professions page's labels: its own frame's OnUpdate and OnHide, never a spell button's
+                "UI/Professions.lua",
                 # the voice player scripts only its own play / pause buttons and its loading-screen frame
                 "UI/VoicePlayer.lua",
                 # the voice panel, its head and its whole-text window script only their own frames

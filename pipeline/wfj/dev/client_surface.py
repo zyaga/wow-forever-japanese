@@ -4102,6 +4102,28 @@ def freeze_problems(record: dict[str, Any] | None) -> list[str]:
     return out
 
 
+def _joined_name(english: str, japanese: Mapping[str, str]) -> str | None:
+    """A profession's spell heads its tooltip with the skill and a name ("Enchanting: Enchant Cloak - Dodge"): two
+    names around one separator, each spelled by its own line."""
+    head, sep, rest = english.partition(": ")
+    if not sep or head not in japanese or rest not in japanese:
+        return None
+    return f"{japanese[head]}: {japanese[rest]}"
+
+
+def _suffixed_name(english: str, japanese: Mapping[str, str]) -> str | None:
+    """An item with a random suffix ("Charged Gear of Strength"): the item's name and the suffix's, each spelled
+    by its own line and joined by a middle dot, the split nearest the end first, as the addon reads it
+    (Core/Names.lua, `suffixed`)."""
+    at = len(english)
+    while (first := english.rfind(" of ", 0, at)) > 0:
+        item, suffix = english[:first], english[first + 1:]
+        if item in japanese and suffix in japanese:
+            return f"{japanese[item]}・{japanese[suffix]}"
+        at = first
+    return None
+
+
 def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -> list[str]:
     """What the names read found wrong, one line each, held to the name list (`japanese`: English name → its
     Japanese). A name the list has a line for must show that Japanese; a name it has none for stays the client's
@@ -4116,29 +4138,9 @@ def names_problems(record: dict[str, Any] | None, japanese: Mapping[str, str]) -
                 "again)"]
     if not record["rows"]:
         return ["names not read: nothing with a name could be read"]
-    def joined(english: str) -> str | None:
-        """A profession's spell heads its tooltip with the skill and a name ("Enchanting: Enchant Cloak - Dodge"):
-        two names around one separator, each spelled by its own line."""
-        head, sep, rest = english.partition(": ")
-        if not sep or head not in japanese or rest not in japanese:
-            return None
-        return f"{japanese[head]}: {japanese[rest]}"
-
-    def suffixed(english: str) -> str | None:
-        """An item with a random suffix ("Charged Gear of Strength"): the item's name and the suffix's, each
-        spelled by its own line and joined by a middle dot, the split nearest the end first, as the addon reads
-        it (Core/Names.lua, `suffixed`)."""
-        at = len(english)
-        while (first := english.rfind(" of ", 0, at)) > 0:
-            item, suffix = english[:first], english[first + 1:]
-            if item in japanese and suffix in japanese:
-                return f"{japanese[item]}・{japanese[suffix]}"
-            at = first
-        return None
-
     out = []
     for kind, english, shown in record["rows"]:
-        want = japanese.get(english) or joined(english) or suffixed(english)
+        want = japanese.get(english) or _joined_name(english, japanese) or _suffixed_name(english, japanese)
         if kind == "player":
             if shown != english:
                 out.append(f"player's name changed: {english} shows {shown}")
