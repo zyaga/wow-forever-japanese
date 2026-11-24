@@ -154,7 +154,9 @@ local function walkImpl(tt)
               shown = WFJ.NameLabels.wrapped(SURFACE, recKey, fs, labelOpts.nameLine, refit)
             end
             if shown == 0 and named then shown = WFJ.NameLabels.wrapped(SURFACE, recKey, fs, labelOpts.names, refit) end
-            if shown == 0 and labelOpts and labelOpts.show then shown = labelOpts.show(SURFACE, recKey, fs, refit) end
+            if shown == 0 and not nameOnly and labelOpts and labelOpts.show then
+              shown = labelOpts.show(SURFACE, recKey, fs, refit)
+            end
             n = n + shown
             if fs:GetText() ~= before then changed = true end
             local kept = WFJ.SurfaceState.get(SURFACE, recKey)
