@@ -3886,6 +3886,7 @@ def read_freeze(text: str) -> dict[str, Any] | None:
 
 PLATE_WANT = {"UnitNameNPC": "0", "UnitNameHostleNPC": "0", "UnitNameInteractiveNPC": "0",
               "UnitNameFriendlySpecialNPCName": "0"}
+PLATE_RANGE = 60  # the range Japanese names set (UI/NamePlateSetting WANT), or the client's limit when lower
 
 
 def read_plates(text: str) -> dict[str, Any] | None:
@@ -3909,16 +3910,21 @@ def read_plates(text: str) -> dict[str, Any] | None:
 
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
-    nameplate range short of the client's limit. A player who turned one back on by hand sees it here too, as the
-    read cannot tell; a run with names off proves nothing and says nothing."""
+    nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
+    player who changed one by hand sees it here too, as the read cannot tell; a run with names off proves nothing
+    and says nothing."""
     if record is None or record["refused"] or not record["names"]:
         return []
     values = record["values"]
     out = [f"nameplates: {name} is {values.get(name)} with Japanese names on (English names over NPC heads)"
            for name, want in PLATE_WANT.items() if values.get(name) not in (want, "none")]
-    distance, limit = values.get("nameplateMaxDistance", ""), record["limit"]
-    if distance and limit and distance != limit:
-        out.append(f"nameplates: range {distance} with Japanese names on, the client holds up to {limit}")
+    try:
+        distance = float(values.get("nameplateMaxDistance", ""))
+        limit = float(record["limit"]) if record["limit"] else float(PLATE_RANGE)
+    except ValueError:
+        return out
+    if distance < min(PLATE_RANGE, limit):
+        out.append(f"nameplates: range {distance:g} with Japanese names on, short of {min(PLATE_RANGE, limit):g}")
     return out
 
 
