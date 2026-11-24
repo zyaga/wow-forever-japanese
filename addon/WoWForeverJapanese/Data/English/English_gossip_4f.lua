@@ -37,6 +37,7 @@ WFJ.Data.add("english", {
   ["gossip:4fdf4df720f4220b"] = { text = "revenge=1" },
   ["gossip:4fe16636f0ecbb07"] = { text = "attack=2 help=1" },
   ["gossip:4fe69eda6a22d2a7"] = { text = "profession=1 trainer=2" },
+  ["gossip:4fea604fd5e927dc"] = { text = "means=1 now=2" },
   ["gossip:4febdf3373a89a4d"] = { text = "dream=1 dust=2 snorts=4" },
   ["gossip:4ff1246fe0b02d5b"] = { text = "community=8 counting=11 donation=16 generosity=20 goal=12 help=6 low=1 only=17 reach=13 ready=28 replenish=3 stocks=2 such=19 take=32 unnoticed=21 use=7 whole=9 you=14 your=5" },
   ["gossip:4ff35ff347878c86"] = { text = "ah=13 all=10 aroma=16 delicacies=9 finest=8 hello=1 kitchen=4 made=11 my=3 sir=6 smell=17 this=7 welcome=5 where=12 wonderful=15" },

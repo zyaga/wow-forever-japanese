@@ -30,7 +30,7 @@ or Japanese)
 | | In Japanese |
 |---|---|
 | Quests | 5,850 |
-| NPC dialogue lines | 11,871 |
+| NPC dialogue lines | 11,872 |
 | Book pages | 923 |
 | Letter pages | 209 |
 | Item tooltips | 11,259 |
@@ -309,7 +309,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 | | 日本語化済み |
 |---|---|
 | クエスト | 5,850 |
-| NPC の会話 | 11,871 行 |
+| NPC の会話 | 11,872 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
 | アイテムのツールチップ | 11,259 |

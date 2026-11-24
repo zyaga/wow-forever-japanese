@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-24 at commit `360fb7892`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-24 at commit `dc153de4c`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,15 +9,15 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 24,200 | 24,179 | 17 | 100.0% | 4 |
-| NPC dialogue (gossip, speech) | 11,870 | 11,869 | 1 | 100.0% | 0 |
+| Quest text | 24,207 | 24,186 | 17 | 100.0% | 4 |
+| NPC dialogue (gossip, speech) | 11,871 | 11,870 | 1 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 710 | 590 | 120 | 100.0% | 0 |
 | Exploration / event objectives | 249 | 247 | 2 | 100.0% | 0 |
 | Item descriptions | 10,658 | 10,657 | 0 | 100.0% | 1 |
 | Spell tooltips + auras | 25,952 | 25,903 | 1 | 99.8% | 48 |
 | Interface strings | 16,218 | 16,218 | 0 | 100.0% | 0 |
-| **All** | **91,114** | | | **99.9%** | **53** |
+| **All** | **91,122** | | | **99.9%** | **53** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 339, gossip 94, item 910, spell 439, ui 313.
@@ -363,11 +363,11 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 22,675 | 22,675 | 100.0% | 195 | 357,546 | 100.0% |
-| gossip | 11,729 | 11,729 | 100.0% | 0 | 114,845 | 100.0% |
+| quest | 22,682 | 22,682 | 100.0% | 195 | 357,629 | 100.0% |
+| gossip | 11,730 | 11,730 | 100.0% | 0 | 114,850 | 100.0% |
 | ui | 15,393 | 15,393 | 100.0% | 0 | 47,821 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,629 | 100.0% |
-| item | 11,161 | 11,161 | 100.0% | 0 | 60,878 | 100.0% |
+| item | 11,161 | 11,161 | 100.0% | 0 | 60,884 | 100.0% |
 | spell | 26,105 | 26,105 | 100.0% | 1 | 169,210 | 100.0% |
 
 Item and spell text shows its word cards on a frozen tooltip. Objective and area text
@@ -380,11 +380,11 @@ translation uses for it. The pairs are read off the meanings the readings alread
 
 | Type | Lines with English and a word list | Words that can take a card | With one | Done |
 |---|---|---|---|---|
-| quest | 22,667 | 462,950 | 421,290 | 91.0% |
-| gossip | 11,723 | 152,152 | 139,565 | 91.7% |
+| quest | 22,674 | 463,062 | 421,367 | 91.0% |
+| gossip | 11,724 | 152,157 | 139,568 | 91.7% |
 | ui | 14,405 | 48,757 | 43,849 | 89.9% |
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
-| **All** | | **708,594** | **645,624** | **91.1%** |
+| **All** | | **708,711** | **645,704** | **91.1%** |
 
 A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
 the client fills in are not counted, and neither are the words that take no card by design: the
@@ -417,8 +417,8 @@ Shipped Japanese the voice does not read, by reason.
 | Why | Lines |
 |---|---|
 | NPC speech in chat, or other NPC text no voiced window shows (from VMaNGOS) | 8,855 |
-| No speaker found for the quest | 804 |
-| Collected in game with no known speaker | 506 |
+| No speaker found for the quest | 811 |
+| Collected in game with no known speaker | 507 |
 | HTML book page (keeps the client's layout) | 38 |
 | A quest log line (the completion text the tracker shows) | 33 |
 | NPC text with no known speaker | 2 |
