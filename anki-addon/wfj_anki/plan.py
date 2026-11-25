@@ -155,7 +155,7 @@ def audio_field(names: list[str]) -> str:
 
 
 class _Note:
-    """One note's fields as they stand, what the add-on last wrote to each, and what a sync decides to write."""
+    """One note's fields as they stand, what the add-on last wrote to each, and what a sync will write."""
 
     def __init__(self, current: dict[str, str] | None, force: bool):
         self.new = current is None
@@ -203,9 +203,9 @@ def note_changes(
     row: Row, current: dict[str, str] | None, fetch: Callable[[str, Row], str | None], force: bool = False
 ) -> tuple[dict[str, str], bool, bool]:
     """The fields to write for `row`: every field of a new note (`current` is None), else only the fields
-    whose value changed and that the player has not edited. `fetch("image" | "audio", row)` brings the row's media
-    into the collection and gives the field's text, or None when a file is missing. `force` writes edited
-    fields too. → the fields to write, whether the image is missing, whether the audio is."""
+    whose value changed and that the player has not edited. `fetch("image" | "audio", row)` brings the row's
+    media into the collection and gives the field's text, or None when a file is missing. `force` writes
+    edited fields too. → the fields to write, whether the image is missing, whether the audio is."""
     note = _Note(current, force)
     for field, value in text_fields(row).items():
         if not note.edited(field):
