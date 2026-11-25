@@ -352,7 +352,7 @@ def test_a_line_voiced_again_under_the_same_file_name_replaces_the_recording(tmp
             if not Path(path).is_file():
                 return None
             self.stored.append(Path(path).read_bytes())
-            return f"wfj-{len(self.stored)}.mp3"
+            return f"voiced{len(self.stored)}.mp3"
 
     col = Disk()
     data = [(saved, table(row(audio=["WoWForeverJapanese_VoiceA/Sound/a-1.mp3"])))]
@@ -362,12 +362,12 @@ def test_a_line_voiced_again_under_the_same_file_name_replaces_the_recording(tmp
     sound.write_bytes(b"voiced again")
     result = sync.apply(col, data)
     assert col.stored == [b"first", b"voiced again"] and result.updated == 1
-    assert col.note()["Audio"] == "[sound:wfj-2.mp3]"
+    assert col.note()["Audio"] == "[sound:voiced2.mp3]"
     # the pack is taken out: the card keeps its recording, and nothing is reported missing
     sound.unlink()
     result = sync.apply(col, data)
     assert (result.updated, result.missing_audio) == (0, 0)
-    assert col.note()["Audio"] == "[sound:wfj-2.mp3]"
+    assert col.note()["Audio"] == "[sound:voiced2.mp3]"
 
 
 def test_a_key_with_markup_in_it_is_matched_and_never_shown_as_markup():
