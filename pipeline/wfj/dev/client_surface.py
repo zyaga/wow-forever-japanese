@@ -2917,38 +2917,62 @@ local function WFJScanBagClickRead(done)
   -- the bags the player uses: the client's own, or a bag addon's that takes the same call (Baganator)
   local wasOpen = type(IsBagOpen) == "function" and IsBagOpen(0)
   if not wasOpen then OpenAllBags() end
+  -- why no button was pointed at, when none was: how many frames got how far, and the first error
+  local skipped = { bagButtons = 0, shown = 0, badSlot = 0, empty = 0, errors = 0 }
+  record.skipped = skipped
   -- the client's own way to point at a frame, as the hover read does: its enter script, then its leave script. Any
   -- bag item button on screen, found by what it is (a button that knows its bag) rather than by a frame name, so a
   -- bag addon's buttons count too.
   local function consider(f)
-    if not (f:IsVisible() and type(f.GetBagID) == "function" and type(f.GetID) == "function") then return end
+    if type(f.GetBagID) ~= "function" or type(f.GetID) ~= "function" then return end
+    skipped.bagButtons = skipped.bagButtons + 1
+    if not f:IsVisible() then return end
+    skipped.shown = skipped.shown + 1
     -- a bag addon's frames answer GetBagID too (a bag slot, a header) with a slot the client refuses: only a slot
     -- from 1 up is asked about
     local bag = f:GetBagID()
     local slot = type(bag) == "number" and bag >= 0 and f:GetID() or nil
-    if type(slot) ~= "number" or slot < 1 or not C_Container.GetContainerItemID(bag, slot) then return end
+    if type(slot) ~= "number" or slot < 1 then
+      skipped.badSlot = skipped.badSlot + 1
+      skipped.sample = skipped.sample or ((f:GetName() or "unnamed") .. " bag " .. tostring(bag) .. " slot "
+        .. tostring(f:GetID()))
+      return
+    end
+    if not C_Container.GetContainerItemID(bag, slot) then
+      skipped.empty = skipped.empty + 1
+      return
+    end
     pointedAt[#pointedAt + 1] = f
     if type(ExecuteFrameScript) == "function" then
       pcall(ExecuteFrameScript, f, "OnEnter")
       pcall(ExecuteFrameScript, f, "OnLeave")
     end
   end
-  local f = EnumerateFrames()
-  while f and #pointedAt < BAG_POINT_MAX do
-    pcall(consider, f) -- a frame the client will not answer for (a forbidden one) is passed over
-    f = EnumerateFrames(f)
+  local function pointAndHide()
+    local f = EnumerateFrames()
+    while f and #pointedAt < BAG_POINT_MAX do
+      -- a frame the client will not answer for (a forbidden one) is passed over
+      local ok, err = pcall(consider, f)
+      if not ok then
+        skipped.errors = skipped.errors + 1
+        skipped.firstError = skipped.firstError or tostring(err)
+      end
+      f = EnumerateFrames(f)
+    end
+    record.pointed = #pointedAt
+    readSafely("after pointing at bag items")
+    SetUIVisibility(false)
+    SetUIVisibility(true)
+    -- what the interface's return sets off runs on the frames after it (a help tip's OnUpdate): waited for, so an
+    -- error it raises lands inside the run
+    C_Timer.After(0.5, function()
+      readSafely("after the interface came back")
+      if not wasOpen and type(CloseAllBags) == "function" then CloseAllBags() end
+      done()
+    end)
   end
-  record.pointed = #pointedAt
-  readSafely("after pointing at bag items")
-  SetUIVisibility(false)
-  SetUIVisibility(true)
-  -- what the interface's return sets off runs on the frames after it (a help tip's OnUpdate): waited for, so an
-  -- error it raises lands inside the run
-  C_Timer.After(0.5, function()
-    readSafely("after the interface came back")
-    if not wasOpen and type(CloseAllBags) == "function" then CloseAllBags() end
-    done()
-  end)
+  -- a bag addon lays its buttons out on the frames after its window opens: waited for
+  C_Timer.After(0.5, pointAndHide)
 end
 
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
@@ -4185,7 +4209,8 @@ def read_load(text: str) -> dict[str, float] | None:
 def read_bagclick(text: str) -> dict[str, Any] | None:
     """The window test's bag click read out of a saved-variables file, or None when the run had none: how many
     values it read (`checked`), the ones carrying the addon's taint as (when, name) (`ours`), the ones carrying
-    another addon's as name → addon (`others`), and why the second pass did not run (`refused`)."""
+    another addon's as name → addon (`others`), why the second pass did not run (`refused`), a read that raised
+    (`failed`), the bag items pointed at (`pointed`) and how far the frames it passed over got (`skipped`)."""
     from wfj.io import lua_reader
 
     db = lua_reader.parse_assignments(text).get("WFJScanDB")
@@ -4195,6 +4220,7 @@ def read_bagclick(text: str) -> dict[str, Any] | None:
         return None
     rows = record.get("ours")
     others = record.get("others")
+    skipped = record.get("skipped")
     return {
         "checked": int(record.get("checked") or 0),
         "ours": [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])],
@@ -4202,6 +4228,7 @@ def read_bagclick(text: str) -> dict[str, Any] | None:
         "refused": str(record.get("refused") or ""),
         "failed": str(record.get("failed") or ""),
         "pointed": int(record.get("pointed") or 0),
+        "skipped": {str(k): str(v) for k, v in (skipped.named() if skipped is not None else {}).items()},
     }
 
 
@@ -4216,6 +4243,10 @@ def bagclick_problems(record: dict[str, Any] | None) -> list[str]:
         out.append(f"bag click read only as the run left it: {record['refused']}")
     if record["failed"]:
         out.append(f"bag click read stopped: {record['failed']}")
+    # a run that pointed at no bag item never ran the item tooltip's code on a bag button, the path under test
+    if record["skipped"] and not record["pointed"] and not record["refused"]:
+        out.append("bag click pointed at no bag item: "
+                   + ", ".join(f"{k} {v}" for k, v in sorted(record["skipped"].items())))
     return out
 
 
