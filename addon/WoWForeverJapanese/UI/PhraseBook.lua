@@ -53,6 +53,9 @@ local function place(f)
   local menu = Compat.resolve("ChatFrameMenuButton")
   if f == button and type(menu) == "table" and menu.IsShown and menu:IsShown() then
     f:SetPoint("BOTTOM", menu, "TOP", 0, -2) -- centred over the chat window's own menu button
+  elseif type(chat) == "table" and chat.buttonSide == "right" then
+    -- the client moved the chat window's buttons to its right side: the card opens there too
+    f:SetPoint("BOTTOMRIGHT", chat, "BOTTOMRIGHT", BUTTON_W + 4, 34)
   elseif type(chat) == "table" then
     f:SetPoint("BOTTOMLEFT", chat, "BOTTOMLEFT", -(BUTTON_W + 4), 34)
   else

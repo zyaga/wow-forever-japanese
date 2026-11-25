@@ -112,6 +112,40 @@ describe("a phrase book phrase in chat", function()
     assert.equals(sent, line:GetText())
   end)
 
+  it("in English first, shows the English phrase after the reveal key, and the Japanese through a redraw", function()
+    WFJ.State.direction = "en"
+    WFJ.State.setEnabled(false)
+    local sent = "|Hplayer:Taro|h[Taro]|h says: " .. raw
+    local line = Env.line(sent, Env.SAY)
+    frame.visibleLines[1] = line
+    WFJ.State.setEnabled(true)
+    local shown = line:GetText()
+    assert.is_truthy(shown:find(P.MARK .. "Hello!", 1, true))
+    WFJ.State.modifierHeld = true
+    Lines.reveal(frame)
+    assert.is_truthy(line:GetText():find("こんにちは", 1, true))
+    line:SetText(sent) -- a redraw puts the history's text back on the line while the key is still held
+    Lines.reveal(frame)
+    assert.is_truthy(line:GetText():find("こんにちは", 1, true))
+    WFJ.State.modifierHeld = false
+    Lines.reveal(frame)
+    assert.equals(shown, line:GetText())
+  end)
+
+  it("changes only what a player typed: no system line, no emptied line, no words before the message", function()
+    local system = Env.line("Taro waves. " .. raw, Env.SYSTEM)
+    local emptied = Env.line("[Taro]: " .. raw, Env.SAY)
+    emptied.messageInfo = nil
+    local dotted = Env.line("|Hplayer:Hello!|h[" .. Env.DOT .. " Hello!]|h says: " .. raw, Env.SAY)
+    frame.visibleLines[1], frame.visibleLines[2], frame.visibleLines[3] = system, emptied, dotted
+    Lines.reveal(frame)
+    assert.equals("Taro waves. " .. raw, system:GetText())
+    assert.equals("[Taro]: " .. raw, emptied:GetText())
+    local text = dotted:GetText()
+    assert.is_truthy(text:find("[" .. Env.DOT .. " Hello!]", 1, true)) -- the sender's label is as it was
+    assert.is_truthy(text:find("says: " .. P.MARK, 1, true))
+  end)
+
   it("changes no line that holds no changed phrase, and never reads a secret line", function()
     local shown = select(2, arrive(raw))
     local plain = Env.line("[Taro]: hello there", Env.SAY)

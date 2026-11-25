@@ -66,7 +66,7 @@ An addon cannot write the clipboard. `UI/ChatCopy` puts a small icon (the guild 
 The icon follows the line `UI/ChatLines` reports (`ChatLines.onLine`), so it never shows on a secret line. It is placed once for a line, and the line's text is read out only on the click. It shows with translation on and `chat.copy` on, whatever the reveal key or `chat.cards` say. The box is a read-only field: it selects all of itself, and typing in it changes nothing.
 
 ### The phrase book
-**The button** (`WFJPhraseButton`, 27 × 26) is the client's own chat button art (`chatframe-button-up`, `-down`, `-highlight`) with a gold 文 where the client's buttons carry their icon. It sits by the chat frame's own buttons, left of the main chat frame, until the player drags it. Its tooltip is a label of the addon's own (the client's tooltip font has no Japanese).
+**The button** (`WFJPhraseButton`, 27 × 26) is the client's own chat button art (`chatframe-button-up`, `-down`, `-highlight`) with a gold 文 where the client's buttons carry their icon. Until the player drags it, it sits centred right above the chat frame's own menu button (the speech bubble), or beside the main chat frame when that button is not shown (on the side the client keeps the chat buttons). The card opens by the chat frame on that same side. Its tooltip is a label of the addon's own (the client's tooltip font has no Japanese).
 
 **The card** (`WFJPhraseCard`, 704 × 416) is built the way the study card is ([Study → The tab and where it lives](study.md#the-tab-and-where-it-lives)): the same backdrop, a minus and an X in the header, the topics as the client's own tabs under it (the strip drawn smaller when nine tabs are wider than the card), the phrases in two columns of up to eight rows (Japanese above, English below in grey), and a footer, "Click a phrase, then press Enter to send it." Every topic shows at one fixed size, so the card never moves under the mouse.
 
@@ -100,7 +100,9 @@ What stays as typed:
 - in Japanese first, the message as it was sent;
 - in English first, the Japanese phrase.
 
-On release the line's own text goes back. The chat history is never rewritten. After a reload the kept messages are gone, so older lines stay as they were drawn.
+On release the line's own text goes back. The chat history is never rewritten.
+
+**Following the switches.** The same pass keeps the visible lines in step with translation and `chat.phrases`: a marked message that arrived while either was off shows its phrase once both are on, and a changed line shows the message as it was sent once either goes off. Only the lines on screen change, and only lines a player typed: of such a line only the message is looked at, never the sender or a link's label. A line already changed keeps the language it was changed into when the direction is switched, until it is drawn again. After a reload the kept messages are gone, so older lines stay as they were drawn.
 
 ### Own chat words
 `UI/ChatWordsWindow` (`WFJChatWordsWindow`, from **My chat words** on the Words settings page or `/wfj chatwords`) is a tool window with two rows of boxes:

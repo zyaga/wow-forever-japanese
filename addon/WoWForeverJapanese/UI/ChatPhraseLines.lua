@@ -49,15 +49,63 @@ local function held(raw)
   return raw
 end
 
+-- What a line holds once the switches are counted in: a typed line that arrived while phrases were off takes its
+-- phrase (only what the player typed is looked at, never the sender or a link's label), and a changed line shows
+-- the message as it was sent once phrases are off. → the text the line now holds
+local function inStep(line, text, active)
+  local P = WFJ.ChatPhrases
+  local marked = text:find(P.MARK, 1, true)
+  if active and not marked then
+    local typed = WFJ.ChatLines.typedPart(line, text)
+    local shown = typed and P.translate(typed, WFJ.State.direction)
+    if shown then
+      P.keep(shown, typed)
+      text = text:sub(1, #text - #typed) .. shown
+      line:SetText(text)
+    end
+  elseif not active and marked then
+    local raw, first, last = P.sent(text)
+    if raw then
+      text = text:sub(1, first - 1) .. raw .. text:sub(last + 1)
+      line:SetText(text)
+    end
+  end
+  return text
+end
+
+-- a line the client is showing, with text an addon may read → its text | nil
+local function readable(line)
+  if type(line.messageInfo) ~= "table" then return nil end -- an emptied line keeps its old text, hidden
+  local text = line:GetText()
+  if type(text) == "string" and not secret(text) then return text end
+  return nil
+end
+
 function Lines.reveal(frame)
   local active = on()
   local holding = WFJ.State.modifierHeld and active
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local P = WFJ.ChatPhrases
-  local restored = false
+  -- the key was released: a line that showed something else takes its own text back, and what UI/ChatSystem writes
+  -- on a visible line (a link's label in Japanese) goes back on over it, before this pass adds its own
+  if not holding and next(revealed) ~= nil then
+    local restored = false
+    for _, line in ipairs(lines) do
+      if revealed[line] then
+        revealed[line] = nil
+        local text, own = readable(line), line.messageInfo and line.messageInfo.message
+        if text and type(own) == "string" and not secret(own) and own ~= text then
+          line:SetText(own)
+          restored = true
+        end
+      end
+    end
+    if restored and WFJ.ChatSystem and WFJ.ChatSystem.show then WFJ.ChatSystem.show(frame) end
+  end
   for _, line in ipairs(lines) do
-    local text = line:GetText()
-    if type(text) == "string" and not secret(text) then
+    local text = readable(line)
+    if text then
+      text = inStep(line, text, active)
       -- every changed message carries the mark: a line without it holds none
       if holding and text:find(P.MARK, 1, true) then
         local raw, first, last = P.sent(text)
@@ -65,35 +113,9 @@ function Lines.reveal(frame)
           line:SetText(text:sub(1, first - 1) .. held(raw) .. text:sub(last + 1))
           revealed[line] = true
         end
-      elseif not holding then
-        if revealed[line] then
-          revealed[line] = nil
-          -- a line UI/ChatSystem does not rewrite still holds what the key showed: its own text goes back
-          local info = line.messageInfo
-          local own = type(info) == "table" and info.message or nil
-          if type(own) == "string" and not secret(own) and own ~= text and P.sent(own) then
-            line:SetText(own)
-            text, restored = own, true
-          end
-        end
-        local marked = text:find(P.MARK, 1, true)
-        if active and not marked then
-          -- a line that arrived while phrases were off (the filter left it as sent) takes its phrase now
-          local shown = P.translate(text, WFJ.State.direction)
-          if shown then
-            P.keep(shown, text)
-            line:SetText(shown)
-          end
-        elseif not active and marked then
-          -- phrases or translation went off: the line shows the message as it was sent
-          local raw, first, last = P.sent(text)
-          if raw then line:SetText(text:sub(1, first - 1) .. raw .. text:sub(last + 1)) end
-        end
       end
     end
   end
-  -- what UI/ChatSystem writes on a visible line (a link's label in Japanese) goes back on over the line's own text
-  if restored and WFJ.ChatSystem and WFJ.ChatSystem.show then WFJ.ChatSystem.show(frame) end
 end
 
 function Lines.revealAll()
