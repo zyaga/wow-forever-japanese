@@ -64,8 +64,7 @@ local fsKey = WFJ.Labels.keyer("msg.")
 
 -- → true when `message` is not ours to read at all: not a string, or a secret value.
 local function secret(message)
-  local isSecret = get("isSecret")
-  if type(isSecret) == "function" and isSecret(message) == true then return true end
+  if Compat.secret(message) then return true end
   return type(message) ~= "string" or message == ""
 end
 
@@ -136,7 +135,6 @@ end
 function CombatText.init()
   Compat.declare(SURFACE, "frame", { "CombatText" })
   Compat.declare(SURFACE, "loader", { "CombatText_LoadUI" })
-  Compat.declare(SURFACE, "isSecret", { "issecretvalue" })
   if hooked then return false end
   if type(get("loader")) ~= "function" and type(get("frame")) ~= "table" then return false end
   local ran = WFJ.LoadOnDemand.when(ADDON, function()

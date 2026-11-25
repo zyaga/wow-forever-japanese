@@ -20,6 +20,51 @@ local function run(relpath, chunk, addonName, ns)
   return result
 end
 
+-- The client's secret values (a unit tooltip line, a chat sender, a unit's GUID in combat). Addon code may hold one
+-- and hand it back to the client; any other use raises in game. H.secret makes a stand-in that raises the same way:
+-- a userdata whose metatable refuses indexing, comparing, concatenating, measuring, arithmetic, tostring and calls
+-- (a string function given one raises too, as it expects a string). H.issecretvalue is the client's test for it,
+-- for a spec to install as `issecretvalue`. Lua 5.1 never calls __eq between a userdata and a string, so `secret ==
+-- "text"` is the one use the stand-in cannot catch; every other use of it fails the spec.
+local secretKinds = setmetatable({}, { __mode = "k" }) -- stand-in → the type the addon sees it as
+local function refuse(what)
+  return function() error("attempt to " .. what .. " a secret value (execution tainted by 'WoWForeverJapanese')", 2) end
+end
+local SECRET_META = {
+  __index = refuse("index"), __newindex = refuse("index"), __eq = refuse("compare"), __lt = refuse("compare"),
+  __le = refuse("compare"), __concat = refuse("concatenate"), __len = refuse("get the length of"),
+  __tostring = refuse("convert"), __call = refuse("call"), __unm = refuse("perform arithmetic on"),
+  __add = refuse("perform arithmetic on"), __sub = refuse("perform arithmetic on"),
+  __mul = refuse("perform arithmetic on"), __div = refuse("perform arithmetic on"),
+  __mod = refuse("perform arithmetic on"), __pow = refuse("perform arithmetic on"),
+}
+
+-- `kind` (optional): the type the addon's `type()` answers for it, "string" (the default), "number" or "boolean".
+function H.secret(kind)
+  local p = newproxy(true)
+  local mt = getmetatable(p)
+  for k, v in pairs(SECRET_META) do mt[k] = v end
+  secretKinds[p] = kind or "string"
+  return p
+end
+
+function H.issecretvalue(v)
+  return v ~= nil and secretKinds[v] ~= nil
+end
+
+-- `type` as the addon's chunks see it: the client answers a secret string's type as "string", so a stand-in answers
+-- with its kind there. Busted's own `type` is left as it is.
+local realType = type
+function H.addonType(v)
+  local kind = v ~= nil and secretKinds[v] or nil
+  if kind then return kind end
+  return realType(v)
+end
+
+-- The environment every addon chunk runs in: the globals, with the addon's `type` above. Writes go to the globals.
+local ADDON_ENV = setmetatable({ type = H.addonType }, { __index = _G, __newindex = _G })
+H.ADDON_ENV = ADDON_ENV
+
 -- One parse per file per process. A parsed chunk runs again for each fresh namespace, and parsing the generated
 -- data again for every test is most of what a whole-addon load costs.
 local chunks = {}
@@ -31,6 +76,7 @@ function H.loadChunk(relpath, addonName, ns)
     local err
     chunk, err = loadfile(path)
     assert(chunk, err)
+    setfenv(chunk, ADDON_ENV)
     chunks[path] = chunk
   end
   return run(relpath, chunk, addonName, ns)
@@ -58,7 +104,7 @@ function H.loadPure(relpath, addonName, ns)
   local chunk, err = loadfile(H.ADDON_DIR .. "/" .. relpath)
   assert(chunk, err)
   local env = {
-    string = string, table = table, math = math, pairs = pairs, ipairs = ipairs, type = type,
+    string = string, table = table, math = math, pairs = pairs, ipairs = ipairs, type = H.addonType,
     tostring = tostring, tonumber = tonumber, select = select, error = error, assert = assert,
     setmetatable = setmetatable, getmetatable = getmetatable, next = next, rawget = rawget, rawset = rawset,
     unpack = unpack, pcall = pcall,

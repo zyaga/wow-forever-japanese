@@ -416,7 +416,7 @@ function Render.keepFont(surface, key)
   local rec = SS.get(surface, key)
   if not rec or rec.applied == nil or not rec.appliedFont or type(rec.fs.GetFont) ~= "function" then return false end
   local path = rec.fs:GetFont()
-  if path == nil or SS.secret(path) or path == rec.appliedFont.path then return false end
+  if SS.secret(path) or path == nil or path == rec.appliedFont.path then return false end
   rec.appliedFont = nil
   return (sync(rec)) == true
 end

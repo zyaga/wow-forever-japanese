@@ -237,8 +237,7 @@ end
 -- over a unit's GUID as a secret value, which addon code may not index or compare: no id then.
 function Collector.creatureId(guid)
   if type(guid) ~= "string" then return nil end
-  local isSecret = WFJ.Compat and WFJ.Compat.resolve("issecretvalue")
-  if type(isSecret) == "function" and isSecret(guid) then return nil end
+  if WFJ.Compat and WFJ.Compat.secret(guid) then return nil end
   local unitType = guid:match("^(%a+)%-")
   if unitType ~= "Creature" and unitType ~= "Vehicle" then return nil end
   return tonumber(guid:match("%-(%d+)%-%x+$"))
@@ -568,7 +567,9 @@ local function recordImpl(kind, id, field, raw)
   -- gossip is keyed by its text, not an id: recordGossip is its only entry point
   if not fields or not fields[field] or kind == "gossip" then return "refused", "bad_kind" end
   if type(id) ~= "number" or id < 1 or id ~= math.floor(id) then return "refused", "bad_id" end
-  if type(raw) ~= "string" or raw == "" then return "refused", "empty" end
+  if type(raw) ~= "string" then return "refused", "empty" end
+  if WFJ.Compat and WFJ.Compat.secret(raw) then return "refused", "secret" end -- a secret may not be compared
+  if raw == "" then return "refused", "empty" end
   local key = kind .. ":" .. id .. ":" .. field
   local m = memo[key]
   if m and m.raw == raw then return m.result, m.reason end
@@ -597,7 +598,9 @@ local function recordGossipImpl(raw, guid)
   if not db or not deps then return "off" end
   if readOnly then return "refused", "read_only" end
   if not deps.enabled() then return "off" end
-  if type(raw) ~= "string" or raw == "" then return "refused", "empty" end
+  if type(raw) ~= "string" then return "refused", "empty" end
+  if WFJ.Compat and WFJ.Compat.secret(raw) then return "refused", "secret" end -- a secret may not be compared
+  if raw == "" then return "refused", "empty" end
   local npc = Collector.creatureId(guid)
   local mkey = "gossip:" .. tostring(npc or 0) .. ":" .. raw
   local m = memo[mkey]
@@ -779,8 +782,9 @@ end
 function Collector.recordQuestNpc(quest, field, guid, sex, display)
   local id = Collector.creatureId(guid)
   if not id then return "refused", "no_creature" end
-  local function whole(v, max)
-    return type(v) == "number" and v >= 1 and v <= max and v == math.floor(v) and v or 0
+  local function whole(v, max) -- a secret number may not be compared: unknown, 0
+    if type(v) ~= "number" or (WFJ.Compat and WFJ.Compat.secret(v)) then return 0 end
+    return v >= 1 and v <= max and v == math.floor(v) and v or 0
   end
   local s = whole(sex, 3)
   local text = ("%d:%d:%d"):format(id, s >= 2 and s or 0, whole(display, 2 ^ 31 - 1))

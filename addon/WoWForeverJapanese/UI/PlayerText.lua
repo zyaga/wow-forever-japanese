@@ -10,10 +10,7 @@ WFJ.PlayerText = PlayerText
 
 local Font, Compat = WFJ.Font, WFJ.Compat
 
-local function secret(text)
-  local isSecret = Compat.resolve("issecretvalue")
-  return type(isSecret) == "function" and isSecret(text) == true
-end
+local function secret(text) return Compat.secret(text) end
 
 -- Whether `text` holds kana, kanji or full-width forms (their first byte in UTF-8).
 function PlayerText.hasJapanese(text)

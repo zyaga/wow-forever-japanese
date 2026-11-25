@@ -50,7 +50,7 @@ local Compat = WFJ.Compat
 ChatSystem.NEVER_TOUCH = {}
 
 local CANDIDATES = { frames = { "CHAT_FRAMES" }, typeInfo = { "ChatTypeInfo" },
-  openTemporary = { "FCF_OpenTemporaryWindow" }, isSecret = { "issecretvalue" },
+  openTemporary = { "FCF_OpenTemporaryWindow" },
   unitName = { "UnitName" }, ambiguate = { "Ambiguate" } }
 
 ChatSystem.MAX_REMEMBERED = 4096 -- distinct Japanese ↔ English pairs held at once; past it, new lines stay English
@@ -59,10 +59,7 @@ local jaToEn, jaArea, remembered, refused = {}, {}, 0, 0
 local hooked = setmetatable({}, { __mode = "k" })
 local ready = false
 
-local function secret(value)
-  local isSecret = Compat.get(SURFACE, "isSecret")
-  return type(isSecret) == "function" and isSecret(value) and true or false
-end
+local function secret(value) return Compat.secret(value) end
 
 -- All system chat: the chat types the event handler adds as the bare text, no sender
 -- prefix: self:AddMessage(arg1, info.r, info.g, info.b, info.id) (chatframeoverrides.lua:408–424): system, loot,
@@ -312,7 +309,10 @@ end
 local function onPlayerLine(frame, message, typeId, eventArgs)
   local byId = prefixedTypeIds()
   local name = byId and byId[typeId]
-  if not name or type(eventArgs) ~= "table" or eventArgs[11] == nil or not on("ui") then return 0 end
+  -- a secret line id (chat messaging lockdown) can be neither compared nor matched: the line stays as written
+  if not name or type(eventArgs) ~= "table" or secret(eventArgs[11]) or eventArgs[11] == nil or not on("ui") then
+    return 0
+  end
   local ja = ChatSystem.prefixed(message, name)
   if not ja or ja == message or not remember(ja, message) then return 0 end
   local lineID = eventArgs[11]
@@ -409,10 +409,10 @@ local function knownNames(eventArgs)
 end
 
 local function onEmoteLine(frame, message, typeId, eventArgs)
-  if not on("ui") then return 0 end
+  local lineID = type(eventArgs) == "table" and eventArgs[11] or nil
+  if not on("ui") or secret(lineID) then return 0 end -- a secret line id may not be compared
   local ja = ChatSystem.emote(message, knownNames(eventArgs))
   if not ja or ja == message or not remember(ja, message) then return 0 end
-  local lineID = type(eventArgs) == "table" and eventArgs[11] or nil
   frame:TransformMessages(function(text, _, _, _, lineType, _, _, _, args)
     if lineType ~= typeId or secret(text) or text ~= message then return false end
     return lineID == nil or (type(args) == "table" and not secret(args[11]) and args[11] == lineID)

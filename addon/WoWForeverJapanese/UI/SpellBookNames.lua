@@ -66,10 +66,7 @@ local function declare()
   Compat.declare(SURFACE, "paged", { "PlayerSpellsFrame.SpellBookFrame.PagedSpellsFrame" })
 end
 
-local function secret(value)
-  local isSecret = Compat.resolve("issecretvalue")
-  return type(isSecret) == "function" and isSecret(value) and true or false
-end
+local function secret(value) return Compat.secret(value) end
 
 local function inCombat()
   local f = Compat.resolve("InCombatLockdown")

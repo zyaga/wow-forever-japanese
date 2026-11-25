@@ -122,7 +122,9 @@ local function speaker(window)
   local id = WFJ.Collector.creatureId(g)
   if not id then return nil end
   local sex = Compat.resolve("UnitSex")
-  return { creature = id, sex = type(sex) == "function" and sex(unit) or nil, unit = unit, guid = g }
+  local s = type(sex) == "function" and sex(unit) or nil
+  if Compat.secret(s) then s = nil end -- the voice is picked by comparing it: a secret one is not known
+  return { creature = id, sex = s, unit = unit, guid = g }
 end
 
 -- The NPC's title as the client shows it under the name in its tooltip ("<Innkeeper>"), or nil. Live text, kept
@@ -134,8 +136,10 @@ local function titleOf(unit)
   local ok, data = pcall(T.GetUnit, unit)
   local line = ok and type(data) == "table" and type(data.lines) == "table" and data.lines[2]
   local text = type(line) == "table" and line.leftText or nil
-  -- the level line ("Level 12 Humanoid", "Level ?? Elite") is no title
-  if type(text) ~= "string" or text == "" or text:find("%d") or text:find("%?%?") then return nil end
+  -- the level line ("Level 12 Humanoid", "Level ?? Elite") is no title; a secret line (in combat) is not read
+  if type(text) ~= "string" or Compat.secret(text) or text == "" or text:find("%d") or text:find("%?%?") then
+    return nil
+  end
   return text
 end
 
@@ -158,6 +162,8 @@ local function describe(window, surface, recKey, who)
     local itemName = Compat.resolve("ItemTextGetItem") -- a book or letter: its own name
     name = type(itemName) == "function" and itemName() or nil
   end
+  -- the panel looks a name up and compares it: a secret one is not shown
+  if Compat.secret(name) then name = nil end
   return ja, name, title, en
 end
 
@@ -718,9 +724,9 @@ local QUEST_EVENTS = {
   QUEST_COMPLETE = { "questframe.reward", "completion", "GetRewardText" },
 }
 
+-- the secret test before the empty test: comparing a secret value raises
 local function readable(v)
-  local isSecret = Compat.resolve("issecretvalue")
-  return type(v) == "string" and v ~= "" and not (type(isSecret) == "function" and isSecret(v))
+  return type(v) == "string" and not Compat.secret(v) and v ~= ""
 end
 
 -- The line the window an event opens will show → surface, record key, kind, id and its area; or nil and why not
@@ -743,7 +749,7 @@ local function opening(event)
   if not q then return nil, "not a window" end
   local getID, getText = Compat.resolve("GetQuestID"), Compat.resolve(q[3])
   local id = type(getID) == "function" and getID() or nil
-  if type(id) ~= "number" or id == 0 then return nil, "no quest" end
+  if type(id) ~= "number" or Compat.secret(id) or id == 0 then return nil, "no quest" end
   local en = type(getText) == "function" and getText() or nil
   local kind, keyId = "quest." .. q[2], id
   if readable(en) and WFJ.QuestFrame and type(WFJ.QuestFrame.fieldSource) == "function" then

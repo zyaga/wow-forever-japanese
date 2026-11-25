@@ -37,8 +37,7 @@ local function report(h)
   local who = h.fromUnit
   if not who then return end
   local ok, display = pcall(h.model.GetDisplayInfo, h.model)
-  local isSecret = Compat.resolve("issecretvalue")
-  if not ok or (type(isSecret) == "function" and isSecret(display)) then return end
+  if not ok or Compat.secret(display) then return end
   if type(display) == "number" and display > 0 then
     h.fromUnit = nil
     pcall(WFJ.State.fire, "speakerDisplay", who.creature, display)
@@ -127,9 +126,9 @@ function Head.load(h, item, wanted, onShown)
   end
   local unit = who.unit
   -- the live unit only while it is still this speaker; a secret GUID cannot be compared, so the creature id stands in
-  local guid, isSecret = Compat.resolve("UnitGUID"), Compat.resolve("issecretvalue")
+  local guid = Compat.resolve("UnitGUID")
   local now = unit and type(guid) == "function" and guid(unit) or nil
-  if now ~= nil and type(isSecret) == "function" and isSecret(now) then now = nil end
+  if Compat.secret(now) then now = nil end
   if unit and (now == nil or now ~= who.guid) then unit = nil end
   local display, source
   if not unit then

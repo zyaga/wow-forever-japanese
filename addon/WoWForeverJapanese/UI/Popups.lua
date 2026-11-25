@@ -226,8 +226,7 @@ end
 local function showPassThrough(dialog, fs)
   local shown = fs:GetText()
   -- a secret value can be neither compared nor matched: the client's line stays
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(isSecret) == "function" and isSecret(shown) then
+  if Compat.secret(shown) then
     WFJ.SurfaceState.drop(SURFACE, widgetKey(fs))
     return 0
   end

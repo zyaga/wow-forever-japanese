@@ -244,7 +244,7 @@ local function cover(fs, find, on)
   end
   local en = fs:GetText()
   local ja
-  if on and type(en) == "string" and en ~= "" and not WFJ.SurfaceState.secret(en) and fs:IsShown() then
+  if on and type(en) == "string" and not WFJ.SurfaceState.secret(en) and en ~= "" and fs:IsShown() then
     local names = WFJ.State.names and true or false
     if e.src ~= en or e.names ~= names then e.src, e.names, e.ja = en, names, find(en) or false end
     ja = e.ja or nil

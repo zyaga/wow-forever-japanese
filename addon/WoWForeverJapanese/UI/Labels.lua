@@ -136,8 +136,7 @@ local function show(surface, recKey, widget, refit, opts)
   end
   local en = fs:GetText()
   -- a secret value (a unit tooltip line in combat) can be neither compared nor matched: the client's line stays
-  local isSecret = WFJ.Compat.resolve("issecretvalue")
-  if type(isSecret) == "function" and isSecret(en) then
+  if Compat.secret(en) then
     WFJ.SurfaceState.drop(surface, recKey)
     return 0
   end
@@ -185,6 +184,11 @@ end
 function Labels.showArgs(surface, recKey, widget, key, args, refit)
   local fs = Labels.widget(widget)
   local en = fs and fs:GetText()
+  -- a secret value can be neither compared nor matched: the client's line stays
+  if Compat.secret(en) then
+    WFJ.SurfaceState.drop(surface, recKey)
+    return 0
+  end
   local rec = fs and WFJ.SurfaceState.get(surface, recKey)
   -- still our Japanese: a caller that re-splits it finds no key, which must not turn the line back to English
   if rec and rec.fs == fs and rec.applied ~= nil and en == rec.applied then return 1 end

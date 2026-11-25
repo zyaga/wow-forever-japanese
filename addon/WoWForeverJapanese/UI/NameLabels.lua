@@ -35,10 +35,7 @@ local _, WFJ = ...
 local NameLabels = {}
 WFJ.NameLabels = NameLabels
 
-local function secret(v)
-  local isSecret = WFJ.Compat.resolve("issecretvalue")
-  return type(isSecret) == "function" and isSecret(v) == true
-end
+local function secret(v) return WFJ.Compat.secret(v) end
 
 local function show(surface, recKey, widget, area, refit)
   local fs = WFJ.Labels.widget(widget)
@@ -194,14 +191,16 @@ function NameLabels.unit(surface, recKey, widget, unit, area)
   end
   local isPlayer = WFJ.Compat.resolve("UnitIsPlayer")
   local player = type(isPlayer) == "function" and isPlayer(unit)
-  -- anything but a plain false is a player, or an answer the client hides: the name stays as written
-  if player ~= false then
+  -- anything but a plain false is a player, or an answer the client hides (a secret, which may not be compared):
+  -- the name stays as written
+  if secret(player) or player ~= false then
     WFJ.SurfaceState.drop(surface, recKey)
     return 0
   end
   -- a unit a player controls (a pet) carries a name its player gave it; any answer but a plain false leaves it
   local controlled = WFJ.Compat.resolve("UnitPlayerControlled")
-  if type(controlled) == "function" and controlled(unit) ~= false then
+  local mine = type(controlled) == "function" and controlled(unit)
+  if type(controlled) == "function" and (secret(mine) or mine ~= false) then
     WFJ.SurfaceState.drop(surface, recKey)
     return 0
   end
