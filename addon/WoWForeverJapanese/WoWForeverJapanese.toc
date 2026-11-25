@@ -7,7 +7,7 @@
 ## AddonCompartmentFuncOnLeave: WFJ_OnAddonCompartmentLeave
 ## Version: @project-version@
 ## Author: Zyaga
-## SavedVariables: WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords
+## SavedVariables: WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords, WFJ_Known
 ## X-License: GPL-2.0-or-later
 ## X-Copyright: Copyright (C) 2026 Zyaga
 ## X-Curse-Project-ID: 1717928
@@ -2783,6 +2783,13 @@ Data\Chat\Chat_ja_09.lua
 Data\Chat\Chat_ja_10.lua
 Data\Chat\Chat_ja_11.lua
 Data\Chat\Chat_list.lua
+Data\Freq\Freq_en_00.lua
+Data\Freq\Freq_en_01.lua
+Data\Freq\Freq_grammar.lua
+Data\Freq\Freq_ja_00.lua
+Data\Freq\Freq_ja_01.lua
+Data\Freq\Freq_ja_02.lua
+Data\Freq\Freq_ja_03.lua
 Data\Names\Names_00.lua
 Data\Names\Names_01.lua
 Data\Names\Names_02.lua
@@ -3062,6 +3069,11 @@ Core\CollectorSend.lua
 Core\CollectorRemind.lua
 Core\Intro.lua
 Core\Words.lua
+Core\WordFrequency.lua
+Core\WordStatus.lua
+Core\WordScore.lua
+Core\WordMarks.lua
+Core\WordImport.lua
 Core\ChatWords.lua
 Core\ChatPhrases.lua
 Core\Fsrs.lua
@@ -3077,6 +3089,7 @@ UI\Frames.lua
 UI\ReadingPopup.lua
 UI\Readings.lua
 UI\WordSave.lua
+UI\WordMarks.lua
 UI\Render.lua
 UI\VoicePlayer.lua
 UI\VoicePanelLooks.lua
@@ -3270,6 +3283,8 @@ UI\ChatCopy.lua
 UI\ChatPhraseLines.lua
 UI\PhraseBook.lua
 UI\ChatWordsWindow.lua
+UI\ChatMarks.lua
+UI\KnownWordsWindow.lua
 UI\CollectorReminder.lua
 UI\IntroWindow.lua
 UI\ReportWindow.lua

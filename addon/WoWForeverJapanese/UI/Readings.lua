@@ -230,8 +230,11 @@ function showHover(cover, word)
   local gloss = glossFor(word)
   if gloss then
     -- a name is not a word to save: its card carries no hint about the save click
-    WFJ.ReadingPopup.show(cover, r.left + r.width / 2, r.bottom + r.height + 2, word, gloss, size,
-      not word.name and View.hint() or nil)
+    local hint = not word.name and View.hint() or nil
+    -- a word with a status carries it on its card, above the save hint (UI/WordMarks)
+    local status = WFJ.WordMarks and WFJ.WordMarks.statusLine(cover, word)
+    if status then hint = hint and (status .. "\n" .. hint) or status end
+    WFJ.ReadingPopup.show(cover, r.left + r.width / 2, r.bottom + r.height + 2, word, gloss, size, hint)
     return
   end
   local b = ensureBox()
@@ -274,6 +277,8 @@ local function measure(cover)
   return words
 end
 
+View.measure = measure -- UI/WordMarks draws a mark under each word from the same rectangles
+
 -- The word under (x, y), in the cover's own coordinates (origin: its BOTTOMLEFT).
 function View.wordAt(words, x, y)
   for _, w in ipairs(words) do
@@ -301,6 +306,10 @@ local function onEnter(cover)
   if not View.enabled then return end
   cover.pressWord, cover.wasDown = nil, View.buttonDown()
   cover.words = measure(cover)
+  if WFJ.WordMarks then
+    WFJ.WordMarks.arrived(cover)
+    WFJ.WordMarks.entered(cover)
+  end
   if cover.words == nil then
     -- the widget shows other text now (dropped outside Render, e.g. a pooled gossip row): this cover is stale.
     -- Hide it so it never takes mouse motion from whatever is laid out there next.
@@ -344,6 +353,10 @@ local function coverFor(fs)
   cover:SetScript("OnEnter", onEnter)
   cover:SetScript("OnLeave", onLeave)
   cover:SetScript("OnHide", onLeave)
+  -- the word status marks follow the text when it is shown again or laid out at another size
+  local function moved(self) if WFJ.WordMarks then WFJ.WordMarks.moved(self) end end
+  cover:SetScript("OnShow", moved)
+  cover:SetScript("OnSizeChanged", moved)
   covers[fs] = cover
   return cover
 end
@@ -399,7 +412,7 @@ local function eligible(rec)
 end
 
 -- Lays the record's cover over `fs` for `text` and its word spans. → true, or false in combat with no cover yet
-local function lay(rec, fs, text, spans)
+local function lay(rec, fs, text, spans, english)
   local cover = coverFor(fs)
   if not cover then return false end
   -- QuestInfo_Display moves its FontStrings between the quest window's panels, the quest map details pane and
@@ -416,6 +429,7 @@ local function lay(rec, fs, text, spans)
   cover.where = tostring(rec.meta.kind) .. " " .. tostring(rec.meta.id)
   cover.kind, cover.id, cover.surface = rec.meta.kind, rec.meta.id, rec.surface
   cover:SetShown(View.enabled)
+  if WFJ.WordMarks then WFJ.WordMarks.laid(cover, rec, english) end
   View.attached = View.attached + 1
   -- a re-attach under a resting mouse (the pane redisplayed on QUEST_LOG_UPDATE) gets no new OnEnter: start again
   if View.enabled and cover.IsMouseOver and cover:IsMouseOver() then onEnter(cover) end
@@ -426,6 +440,7 @@ function View.detach(rec)
   local cover = coverOf(rec)
   if not cover then return end
   cover.spans, cover.text = nil, nil
+  if WFJ.WordMarks then WFJ.WordMarks.clear(cover) end
   onLeave(cover)
   cover:Hide()
 end
@@ -494,7 +509,7 @@ function View.attachEnglish(rec)
     View.detach(rec)
     return false
   end
-  return lay(rec, fs, text, spans)
+  return lay(rec, fs, text, spans, true)
 end
 
 -- ── The save click (UI/WordSave, ADR-069) ────────────────────────────────
@@ -510,8 +525,12 @@ function View.buttonDown()
 end
 
 function View.poll(cover)
-  local save = WFJ.WordSave
-  if not save or save.choice() == "off" then return end
+  local save, marks = WFJ.WordSave, WFJ.WordMarks
+  local saving = save ~= nil and save.choice() ~= "off"
+  -- a place with word status marks on also reads the status clicks (UI/WordMarks): Shift held with either button
+  local marking = marks ~= nil and marks.active(cover) ~= nil
+  if not saving and not marking then return end
+  if marking then marks.pollRight(cover) end
   local down = View.buttonDown()
   if down and not cover.wasDown then
     cover.pressWord = cover.hovered
@@ -524,7 +543,7 @@ function View.poll(cover)
     -- a name's card is never saved: a name is not a word to study
     if w and not w.name and w == cover.hovered and cover:GetLeft() == cover.pressLeft
         and cover:GetBottom() == cover.pressBottom then
-      save.release(cover, w)
+      if not (marking and marks.click(cover, w, "LeftButton")) and saving then save.release(cover, w) end
     end
   end
   cover.wasDown = down
@@ -570,6 +589,7 @@ function View.setEnabled(v)
     if not View.enabled then onLeave(cover) end
     cover:SetShown(View.enabled and cover.spans ~= nil)
   end
+  if WFJ.WordMarks then WFJ.WordMarks.redraw() end
 end
 
 WFJ.State.on("readings", function(v) View.setEnabled(v) end)

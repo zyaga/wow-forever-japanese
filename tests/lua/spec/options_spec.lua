@@ -5,9 +5,9 @@ local Loader = require("tests.lua.spec.loader")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua",
   "Core/Names.lua", "Data/Meta.lua", "Core/State.lua",
   "Core/Settings.lua", "Core/ErrorVoices.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua",
-  "Core/Fsrs.lua", "Core/Study.lua",
+  "Core/Fsrs.lua", "Core/Study.lua", "Core/WordFrequency.lua", "Core/WordStatus.lua", "Core/WordScore.lua",
   "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua",
-  "UI/Options.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua" }
+  "UI/Options.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua", "UI/KnownWordsWindow.lua" }
 local VOICE = { "Core/Voice.lua" } -- the voice pack registry, loaded by the tests that register a pack
 
 -- Every widget the stub created, per page frame (FontStrings and textures live in `children`; frames in Stub.frames).
@@ -94,6 +94,22 @@ describe("Settings pages from the registry and PAGES", function()
     local rows
     for _, page in ipairs(O.PAGES) do if page.id == "words" then rows = page.sections[1].rows end end
     assert.are.same({ "wordsExplain", "words.saveClick", "words.screenshot", "wordsStatus", "wordsExport" }, rows)
+    -- the word status section: the underline, the highlight, the score tag, one switch per place, counts, window
+    local marks
+    for _, page in ipairs(O.PAGES) do
+      if page.id == "words" then
+        for _, section in ipairs(page.sections) do if section.title == "section.marks" then marks = section.rows end end
+      end
+    end
+    assert.are.same({ "marksExplain", "marks.enabled", "marks.underline", "marks.learning", "marks.highlight",
+      "marks.score", "marks.quest", "marks.book", "marks.voicepanel", "marks.tooltip", "marks.chat", "marksStatus",
+      "marksOpen" }, marks)
+    for _, id in ipairs(marks) do
+      local d = S.definition(id)
+      if d then
+        assert.is_true(type(d.label) == "string" and d.label ~= "" and type(d.ja) == "string" and d.ja ~= "", id)
+      end
+    end
     _G.IsMacClient = function() return false end
     local function texts()
       local out = {}

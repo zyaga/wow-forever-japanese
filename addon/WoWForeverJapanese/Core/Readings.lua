@@ -106,6 +106,17 @@ local function englishMap(packed)
   return map
 end
 
+-- → the lower-cased English words a line's row lists, in no order | nil (a line with no row)
+function Readings.englishWords(kind, id)
+  local type_, field = split(kind)
+  local row = type_ and id ~= nil and WFJ.Data.english[type_ .. ":" .. tostring(id)]
+  local packed = row and row[field]
+  if type(packed) ~= "string" then return nil end
+  local out = {}
+  for word in pairs(englishMap(packed)) do out[#out + 1] = word end
+  return out
+end
+
 local function englishCard(ja, jaReading, gloss, ipa)
   return { english = true, ja = ja, jaReading = jaReading, gloss = gloss or nil, ipa = ipa }
 end
