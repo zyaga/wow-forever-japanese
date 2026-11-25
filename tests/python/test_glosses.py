@@ -91,7 +91,7 @@ def test_generate_numbers_each_meaning_once_and_points_the_rows_at_it(data):
     assert generate.plan(store, []) == planned  # byte-identical rerun
     files = generate.toc_files(planned)
     assert schema.gloss_relpath(0) in files
-    assert schema.TOC_ORDER[-3:] == ("reading", "gloss", "chat")  # after the readings; the chat lists read both
+    assert schema.TOC_ORDER[-4:-1] == ("reading", "gloss", "chat")  # after the readings; the chat lists read both
 
 
 def test_a_stale_reading_takes_its_meanings_with_it(data):

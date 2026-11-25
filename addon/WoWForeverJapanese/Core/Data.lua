@@ -4,16 +4,19 @@
 -- pron and common: by a lower-cased English word; name: by the hash of the English name, one string
 -- "Japanese<TAB>reading" per name, read only through Core/Names; chatja and chatword: by a Japanese word; chaten
 -- and chatwordEn: by a lower-cased English word; phrase: by its number, read only through Core/ChatWords and
--- Core/ChatPhrases) and copied in. The same id from two shards is a generator bug and raises at load. Pure: no
+-- Core/ChatPhrases; freqJa: by a Japanese word key, "dictionary form<TAB>reading"; freqEn: by a lower-cased
+-- English word; grammar: by a Japanese word key, read only through Core/WordFrequency) and copied in. The same id from two shards is a generator bug and raises at load. Pure: no
 -- globals, no frames.
 -- Layout: Core/Const.lua (WFJ.SLOTS), ADR-008.
 local _, WFJ = ...
 local Data = { quest = {}, item = {}, spell = {}, gossip = {}, book = {}, ui = {}, objective = {}, area = {},
   reading = {}, gloss = {}, english = {}, pron = {}, common = {}, name = {},
   chatja = {}, chaten = {}, chatword = {}, chatwordEn = {}, phrase = {},
+  freqJa = {}, freqEn = {}, grammar = {},
   counts = { quest = 0, item = 0, spell = 0, gossip = 0, book = 0, ui = 0, objective = 0, area = 0, reading = 0,
     gloss = 0, english = 0, pron = 0, common = 0, name = 0,
-    chatja = 0, chaten = 0, chatword = 0, chatwordEn = 0, phrase = 0 } }
+    chatja = 0, chaten = 0, chatword = 0, chatwordEn = 0, phrase = 0,
+    freqJa = 0, freqEn = 0, grammar = 0 } }
 WFJ.Data = Data
 
 function Data.add(type_, tbl)

@@ -20,6 +20,7 @@ from wfj.core import (
     align,
     chat_words,
     english_cards,
+    frequency,
     glosses,
     numbered,
     pronunciation,
@@ -711,6 +712,40 @@ def _plan_readings(
     if english_store is not None:
         chat_english = _plan_chat(store.root, current, meanings, out, counts, english_store)
         _plan_english(english_store.root, current, out, counts, chat_english)
+        _plan_frequency(store.root, english_store.root, current, out, counts)
+
+
+def _plan_frequency(
+    root: Path,
+    english_root: Path,
+    current: dict[str, list[dict[str, Any]]],
+    out: dict[str, str],
+    counts: dict[str, int],
+) -> None:
+    """The word frequency lists (docs/systems/word-status.md): how often each Japanese word of the shipped
+    readings is used and how many lines list each English word, per kind of text, and the grammar words that
+    start as Ignored (`pipeline/grammar_words.txt`)."""
+    japanese = frequency.japanese_counts(current)
+    english = frequency.english_counts(current, load_common_words(english_root))
+    for shard, rows in sorted(frequency.shards(frequency.rows(japanese), frequency.JA_SHARDS).items()):
+        out[schema.freq_relpath("ja", shard)] = lua_writer.word_table_text(
+            "freqJa", rows,
+            "Japanese words of the game text (dictionary form, its reading), each with how often it is used in "
+            "quest, NPC talk, book, window, item and spell text",
+        )
+    for shard, rows in sorted(frequency.shards(frequency.rows(english), frequency.EN_SHARDS).items()):
+        out[schema.freq_relpath("en", shard)] = lua_writer.word_table_text(
+            "freqEn", rows,
+            "English words of the game text, each with how many lines of quest, NPC talk, book, window, item "
+            "and spell text list it",
+        )
+    grammar, problems = frequency.load_grammar(root.parent / "pipeline", japanese)
+    if problems:
+        raise ValueError("; ".join(problems[:5]))
+    out[schema.FREQ_GRAMMAR] = lua_writer.word_table_text(
+        "grammar", dict.fromkeys(grammar, "1"), "grammar words, which start as Ignored"
+    )
+    counts["freq"] = len(japanese) + len(english) + len(grammar)
 
 
 def _plan_chat(
