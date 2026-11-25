@@ -1005,7 +1005,7 @@ WFJScanDB = {
 ["test"] = { ["started"] = "2026-11-22 18:00:00", ["finished"] = "2026-11-22 18:05:00", ["build"] = "70959" },
 ["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
 ["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, ["missing"] = { }, ["stuck"] = { } },
-["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { } },
+["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { }, ["secretTry"] = { ["looks"] = 7, ["answers"] = { "IsMouseOver" } } },
 ["marks"] = { ["window"] = 9, ["frames"] = 3, ["shown"] = 14, ["texts"] = 2, ["bare"] = false, ["quest"] = 783, ["on"] = true, ["expect"] = true, ["english"] = { }, ["stale"] = { }, ["tags"] = { } },
 ["bagclick"] = { ["checked"] = 412, ["ours"] = { }, ["others"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
