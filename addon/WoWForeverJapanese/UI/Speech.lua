@@ -231,7 +231,7 @@ local function withNames(ja, keep)
   if not WFJ.State.names then return ja end
   local held = {}
   for _, name in ipairs(keep or {}) do
-    if type(name) == "string" and not secret(name) and name ~= "" and ja:find(name, 1, true) then
+    if Compat.readable(name) and ja:find(name, 1, true) then
       local token = "{wfjkeep" .. string.char(97 + #held) .. "}"
       ja = replacePlain(ja, name, token)
       held[#held + 1] = { token, name }
@@ -332,8 +332,7 @@ local function speechEvent(event)
     and (event:find("^CHAT_MSG_MONSTER") or event:find("^CHAT_MSG_RAID_BOSS")) and true or false
 end
 
--- a secret is never compared: comparing one raises
-local function readable(en) return type(en) == "string" and not secret(en) and en ~= "" end
+local readable = Compat.readable
 
 local function shipped(key)
   local entry = WFJ.Lookup.keyed("gossip", key)
@@ -401,7 +400,7 @@ function Speech.targetShape(target, me)
   if type(unitName) == "function" then
     local first, second = unitName("player")
     shape.meSep = type(first) == "string" and not secret(first) and first:find("-", 1, true) ~= nil or false
-    shape.meSurname = type(second) == "string" and not secret(second) and second ~= "" or false
+    shape.meSurname = Compat.readable(second) or false
   end
   return shape
 end
@@ -431,7 +430,7 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   local me = Compat.resolve("UnitName")
   me = type(me) == "function" and me("player") or nil
   if secret(me) then me = nil end -- this character's name is compared with the target's and the party's
-  local toOther = type(target) == "string" and not secret(target) and target ~= "" and target ~= me
+  local toOther = Compat.readable(target) and target ~= me
   lastTarget = Speech.targetShape(target, me)
   lastCollect = "not asked"
   local others, namesParty = {}, false
@@ -525,7 +524,7 @@ function Speech.trace(frame, event, eventArgs, outcome)
     key = not lastNamed and (lastKey or (deps.key and deps.key(en))) or nil
     fields.key, fields.shipped, fields.hasToken = key, keyShipped(key), en:find("%s", 1, true) ~= nil
     local speaker = eventArgs[2]
-    if type(speaker) == "string" and not secret(speaker) and speaker ~= "" then
+    if Compat.readable(speaker) then
       local at = en:find(speaker, 1, true)
       fields.speakerInText = at ~= nil
       if at and not lastNamed then

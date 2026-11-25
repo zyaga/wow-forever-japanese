@@ -170,7 +170,7 @@ function Errors.onAddMessage(frame, message, _, _, _, _, messageID)
     if type(info) == "function" then
       ok, key = pcall(info, messageID) -- another addon's AddMessage may pass any number as its id
     end
-    only = ok and type(key) == "string" and not Compat.secret(key) and key ~= "" and Errors.only(key) or nil
+    only = ok and Compat.readable(key) and Errors.only(key) or nil
   end
   local timer = Compat.get(SURFACE, "timer")
   if type(timer) == "table" and type(timer.After) == "function" then

@@ -724,10 +724,7 @@ local QUEST_EVENTS = {
   QUEST_COMPLETE = { "questframe.reward", "completion", "GetRewardText" },
 }
 
--- the secret test before the empty test: comparing a secret value raises
-local function readable(v)
-  return type(v) == "string" and not Compat.secret(v) and v ~= ""
-end
+local readable = Compat.readable
 
 -- The line the window an event opens will show → surface, record key, kind, id and its area; or nil and why not
 local function opening(event)

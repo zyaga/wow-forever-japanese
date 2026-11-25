@@ -239,7 +239,7 @@ local function watchWindow(entry)
     local createFrame = Compat.resolve("CreateFrame")
     if type(createFrame) ~= "function" then return nil end
     local poller = createFrame("Frame")
-    poller:SetScript("OnUpdate", watch)
+    poller:SetScript("OnUpdate", WFJ.Perf.wrap("idle.dialogueui", watch))
     poller:Show()
     DialogueUI.poller = poller
   end
@@ -670,13 +670,17 @@ local function written(fs, text)
   if body[fs] then guarded(bodyText, fs, text) else guarded(headingText, fs, text) end
 end
 
+-- The FontString a Dialogue UI pool handed out last (the newest active one), or nil.
+function DialogueUI.newest(pool)
+  if type(pool) ~= "table" or type(pool.EnumerateActive) ~= "function" then return nil end
+  local last
+  for _, fs in pool:EnumerateActive() do last = fs end
+  return type(last) == "table" and last or nil
+end
+
 -- After AcquireFontString: the FontString handed out (the newest of the pool) is followed, once.
 local function acquired(self)
-  local pool = self.fontStringPool
-  newest = nil
-  for _, fs in pool:EnumerateActive() do
-    if type(fs) == "table" then newest = fs end
-  end
+  newest = DialogueUI.newest(self.fontStringPool)
   if not newest then return end
   body[newest] = nil
   if not followed[newest] then
@@ -732,10 +736,10 @@ local function release()
   lastHandler, scrollTo = nil, nil
 end
 
--- The tags over a quest page's title ("Daily", "Dungeon") are buttons Dialogue UI makes as needed; one holding a game
--- string gets its Japanese on its text and is laid out again by its own Layout. A tag Dialogue UI fills in after the page
--- drew (its quest data came late) is written by the button's own SetQuestTagNameAndIcon [read: Dialogue UI 1.0.7 b,
--- QuestHeaderWidget.lua]: each tag button found is followed there too, once.
+-- The tags over a quest page's title ("Daily", "Dungeon") are buttons Dialogue UI makes as needed; one holding a
+-- game string gets its Japanese on its text and is laid out again by its own Layout. A tag Dialogue UI fills in after
+-- the page drew (its quest data came late) is written by the button's own SetQuestTagNameAndIcon [read: Dialogue UI
+-- 1.0.7 b, QuestHeaderWidget.lua]: each tag button found is followed there too, once.
 local tagFollowed = setmetatable({}, { __mode = "k" })
 
 -- A tag's Japanese can end up in Dialogue UI's own face, which has no Japanese letters (empty boxes). The one known
@@ -827,7 +831,9 @@ install = function()
   -- the FontString pool the page's texts come from (the newest one it hands out is the one just acquired)
   local pool = f.fontStringPool
   if type(pool) ~= "table" or type(pool.EnumerateActive) ~= "function" then
-    if WFJ.Diag then pcall(WFJ.Diag.log, "dialogueui", "Dialogue UI's window has no fontStringPool: left in English") end
+    if WFJ.Diag then
+      pcall(WFJ.Diag.log, "dialogueui", "Dialogue UI's window has no fontStringPool: left in English")
+    end
     return false
   end
   frame = f

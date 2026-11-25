@@ -394,7 +394,7 @@ local function knownNames(eventArgs)
   local names, seen = {}, {}
   local function add(n)
     -- secret first: a secret value can be neither compared nor used as a key
-    if type(n) == "string" and not secret(n) and n ~= "" and not seen[n] then seen[n] = true; names[#names + 1] = n end
+    if Compat.readable(n) and not seen[n] then seen[n] = true; names[#names + 1] = n end
   end
   local sender = type(eventArgs) == "table" and eventArgs[2] or nil
   add(sender)
@@ -541,7 +541,7 @@ end
 local function namesIn(ja, keep)
   local held = {}
   for _, name in ipairs(keep) do
-    if type(name) == "string" and not secret(name) and name ~= "" and WFJ.Names.of(name) and ja:find(name, 1, true) then
+    if Compat.readable(name) and WFJ.Names.of(name) and ja:find(name, 1, true) then
       local token = "{wfjkeep" .. string.char(97 + #held) .. "}"
       ja = replacePlain(ja, name, token)
       held[#held + 1] = { token, name }

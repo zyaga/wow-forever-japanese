@@ -53,8 +53,14 @@ end
 -- addon code may hold it and hand it back to the client, but comparing, matching, indexing or measuring it raises.
 -- Every read of client text that can be secret asks this before anything else; false on a client without secrets.
 function Compat.secret(v)
-  local f = Compat.resolve("issecretvalue")
+  local f = env("issecretvalue")
   return type(f) == "function" and f(v) == true
+end
+
+-- A client string the addon may read: a string, not secret and not empty. The secret test comes first, since
+-- comparing a secret with "" raises.
+function Compat.readable(v)
+  return type(v) == "string" and not Compat.secret(v) and v ~= ""
 end
 
 -- Calls a client function by name through the env (Compat.resolve); nil when the client lacks it.

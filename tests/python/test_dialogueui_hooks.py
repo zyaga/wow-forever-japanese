@@ -19,13 +19,13 @@ DUI_FILES = ("UI/DialogueUI.lua", "UI/DialogueUIFrames.lua", "UI/DialogueUIBook.
 # the modules' own tables: functions on these are the addon's API, never Dialogue UI's
 OWN = {"DialogueUI", "Frames", "Book", "Holder", "WFJ"}
 
-# obj.Key = function / obj.a.Key = function
+# a function assigned to an object's field
 FIELD_FUNCTION = re.compile(r"\b([A-Za-z_]\w*)((?:\.\w+)*)\.(\w+)\s*=\s*function\b")
-# function obj:Method( / function obj.Method(
+# a method defined on an object
 FUNCTION_DEF = re.compile(r"\bfunction\s+([A-Za-z_]\w*)((?:\.\w+)*)[.:](\w+)\s*\(")
-# obj[k] = function
+# a function assigned to an object's index
 INDEX_FUNCTION = re.compile(r"\b([A-Za-z_]\w*)\s*\[[^\]\n]+\]\s*=\s*function\b")
-# obj[k] = wrap(obj[k]) / obj.Key = wrap(obj.Key)
+# an index or field replaced by a wrapper of itself
 INDEX_WRAP = re.compile(r"\b([A-Za-z_]\w*)\s*\[\s*([^\]\n]+?)\s*\]\s*=\s*[\w.:]+\s*\(\s*\1\s*\[\s*\2\s*\]")
 FIELD_WRAP = re.compile(r"\b([A-Za-z_]\w*)\.(\w+)\s*=\s*[\w.:]+\s*\(\s*\1\.\2\b")
 # obj.Method = someFunction (a method name, PascalCase, given a plain name)

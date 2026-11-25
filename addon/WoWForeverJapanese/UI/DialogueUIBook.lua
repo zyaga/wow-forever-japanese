@@ -281,11 +281,9 @@ end
 -- Formatter:AcquireFontStringByTag].
 blockObject = function(obj, data)
   if type(obj) == "table" then return obj end
-  local pool = frame and frame.fontStringPool
-  if type(pool) ~= "table" or type(pool.EnumerateActive) ~= "function" or type(data) ~= "table" then return nil end
-  local newest
-  for _, fs in pool:EnumerateActive() do newest = fs end
-  if type(newest) == "table" and type(newest.GetText) == "function" and newest:GetText() == data.text then
+  if type(data) ~= "table" then return nil end
+  local newest = WFJ.DialogueUI.newest(frame and frame.fontStringPool)
+  if newest and type(newest.GetText) == "function" and newest:GetText() == data.text then
     return newest
   end
   return nil

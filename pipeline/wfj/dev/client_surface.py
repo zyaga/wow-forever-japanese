@@ -3299,9 +3299,10 @@ end
 -- `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
-WFJ_TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, bagclick, freeze"
-WFJ_TEST_PARTS = {}
-for name in WFJ_TEST_PART_NAMES:gmatch("[^, ]+") do WFJ_TEST_PARTS[name] = true end
+-- (a test holds this list to the parts table)
+local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, bagclick, freeze"
+local TEST_PARTS = {}
+for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
 SlashCmdList.WFJTEST = function(how)
   if not japaneseOn() or InCombatLockdown() then return end
@@ -3320,8 +3321,8 @@ SlashCmdList.WFJTEST = function(how)
   how = strtrim(how or "")
   -- one part's name runs that part alone; "hand" and "tabs" are ways to run the whole test
   local section = how ~= "" and how ~= "hand" and how ~= "tabs" and how or nil
-  if section and not WFJ_TEST_PARTS[section] then
-    print("WFJ test: no part named " .. section .. ". Parts: " .. WFJ_TEST_PART_NAMES)
+  if section and not TEST_PARTS[section] then
+    print("WFJ test: no part named " .. section .. ". Parts: " .. TEST_PART_NAMES)
     return
   end
   testRunning = true
@@ -3408,7 +3409,6 @@ SlashCmdList.WFJTEST = function(how)
     if type(_G[key]) ~= "string" then missing[#missing + 1] = key end
   end
   db.test.strings = { asked = #KEYS, missing = missing }
-  db.test.part = "load"
   -- a fight that starts during the load walk would end the live sweep before it began, and the run with it: the
   -- sweep waits for the fight to end
   local function outOfCombat(fn)

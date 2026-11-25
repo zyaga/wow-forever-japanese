@@ -75,7 +75,7 @@ local function pool(frame)
     return ipairs(copy)
   end
   -- Dialogue UI's pools are tables with methods: the specs check none of them is replaced
-  function p:Acquire() return p.acquire() end
+  function p.Acquire() return p.acquire() end
   return p
 end
 
@@ -338,7 +338,7 @@ function DUI.installChatPanel()
   function list:UpdateView() self.views = self.views + 1 end
   c.lines = list.content
   c.GetChildren = function() return view end
-  function c:AddMessage(text, name, event)
+  function c.AddMessage(_, text, name, event)
     if event == "CHAT_MSG_MONSTER_EMOTE" then
       if text:find("%%s") then text = text:format(name) else text = text:gsub("%%", "") end
     end
@@ -409,12 +409,12 @@ function DUI.makeFlyout()
   f.Title = Stub.fontString("")
   f.texts = {}
   f.fontStringPool = {}
-  function f.fontStringPool:Acquire()
+  function f.fontStringPool.Acquire()
     local fs = Stub.fontString("")
     f.texts[#f.texts + 1] = fs
     return fs
   end
-  function f.fontStringPool:EnumerateActive()
+  function f.fontStringPool.EnumerateActive()
     local copy = {}
     for i, fs in ipairs(f.texts) do copy[i] = fs end
     return ipairs(copy)

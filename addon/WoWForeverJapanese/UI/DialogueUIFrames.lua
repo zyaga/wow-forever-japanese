@@ -347,9 +347,8 @@ end
 
 -- After the pool's Acquire: the text it handed out (its newest) is followed, once.
 local function flyAcquired(fly, pool)
-  local fs
-  for _, x in pool:EnumerateActive() do fs = x end
-  if type(fs) ~= "table" or flyTexts[fs] then return end
+  local fs = WFJ.DialogueUI.newest(pool)
+  if not fs or flyTexts[fs] then return end
   flyTexts[fs] = true
   hook(fs, "SetText", function(x, text) guarded(flyParagraph, fly, x, text) end)
 end

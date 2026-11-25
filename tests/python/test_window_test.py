@@ -814,10 +814,10 @@ def test_one_part_of_the_window_test_runs_alone_and_is_judged_alone(tmp_path):
     """`/wfjtest <part>` runs one part (with the part it needs), and `make window-test` judges that part and the
     errors of its run: the rest of the saved file is an earlier run's."""
     lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
-    names = lua[lua.index('WFJ_TEST_PART_NAMES = "') + 23:].split('"', 1)[0].split(", ")
+    names = lua[lua.index('local TEST_PART_NAMES = "') + 25:].split('"', 1)[0].split(", ")
     assert names == [p.split(" ")[0] for p in _parts(lua)]
     run = lua[lua.index("SlashCmdList.WFJTEST = function(how)"):]
-    assert 'print("WFJ test: no part named " .. section .. ". Parts: " .. WFJ_TEST_PART_NAMES)' in run
+    assert 'print("WFJ test: no part named " .. section .. ". Parts: " .. TEST_PART_NAMES)' in run
     assert "code = WFJScanAddonCode, section = section }" in run
     # an earlier run's failing freeze record is not this run's
     bad_freeze = FROZE.replace('["cards"] = 4', '["cards"] = 0')
