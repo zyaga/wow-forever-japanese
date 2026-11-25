@@ -2,6 +2,7 @@
 read that file and hold the result to the baseline of lines a window may keep."""
 
 import argparse
+import re
 import shutil
 import subprocess
 
@@ -30,6 +31,20 @@ WFJScanDB = {
 },
 }
 """
+
+def _parts(lua: str) -> list[str]:
+    """The window test's parts in run order, as `/wfjtest` builds them: each part's name with the read it calls."""
+    run = lua[lua.index("SlashCmdList.WFJTEST = function(how)"):]
+    table = run[run.index("local parts = {"):run.index("local byName = {}")]
+    return [f"{name} {call}" for name, call in
+            re.findall(r'\{ "(\w+)", function\(nxt\).*?(WFJScan\w+)', table, re.S)]
+
+
+def _before(lua: str, first: str, then: str) -> bool:
+    """Whether the part that calls `first` runs before the part that calls `then`."""
+    calls = [p.split(" ")[1] for p in _parts(lua)]
+    return calls.index(first) < calls.index(then)
+
 
 
 def test_the_saved_result_is_read_per_window_with_the_idle_screen_filed_once():
@@ -87,8 +102,9 @@ def test_the_load_walk_waits_for_the_test_on_a_played_client():
     assert "local AT_LOGIN = true" in at_login and "local AT_LOGIN = false" in on_test
     assert "if not started and AT_LOGIN then" in on_test
     # the test loads the windows' addons itself, before it opens anything
-    assert on_test.index('db.test.part = "load"') < on_test.index('db.test.part = "live"')
-    assert "WFJScanWalk(function()" in on_test
+    assert _before(on_test, "WFJScanWalk", "WFJScanLiveSweep")
+    # a run of the live part alone loads the windows' addons first too
+    assert '{ "live", function(nxt) outOfCombat(function() WFJScanLiveSweep(nxt) end) end, needs = "walk" }' in on_test
 
 
 def test_translated_english_lists_lines_whose_japanese_differs(tmp_path):
@@ -439,7 +455,7 @@ def test_the_test_lists_the_dictionary_strings_the_client_does_not_hand_to_addon
     assert 'local KEYS = {\n  "A_KEY",\n  "B_KEY",\n}' in lua
     run = lua[lua.index("SlashCmdList.WFJTEST = function(how)"):]
     assert 'if type(_G[key]) ~= "string" then missing[#missing + 1] = key end' in run
-    assert run.index("db.test.strings = { asked = #KEYS, missing = missing }") < run.index("WFJScanWalk(function()")
+    assert run.index("db.test.strings = { asked = #KEYS, missing = missing }") < run.index("WFJScanWalk(nxt)")
     saved = """
 WFJScanDB = {
 ["probe"] = {
@@ -581,8 +597,8 @@ def test_the_test_addon_carries_each_filled_spells_count_and_reads_tooltips_afte
     assert "local VALUES = {\n  [3] = 1,\n  [5] = 2,\n}" in lua
     # the count is read the way the addon reads a line's values, and a fight is waited out first
     assert 'if not (last and text:sub(last, s - 1) == " to ") then n = n + 1 end' in lua
-    assert lua.index("WFJScanClosedRead(function()") < lua.index("outOfCombat(function() WFJScanTooltipRead(")
-    assert lua.index("WFJScanTooltipRead(function()") < lua.index("WFJScanCharacterRead(function()\n")
+    assert _before(lua, "WFJScanClosedRead", "WFJScanTooltipRead")
+    assert "outOfCombat(function() WFJScanTooltipRead(nxt) end)" in lua
     # a spell is asked for, and read at the moment the client says its text is there: asked cold the client
     # answers with nothing, and it does not keep the text of thousands of spells asked at once
     assert 'if type(load) == "function" then pcall(load, id) end' in lua
@@ -627,8 +643,8 @@ def test_the_no_voice_read_keeps_the_voice_entrys_own_list_and_shows_quests_the_
     assert 'hooksecurefunc("WoWForeverJapanese_VoiceNotMade", function(list)' in lua
     assert "pcall(QuestMapFrame_ShowQuestDetails, quests[at])" in lua
     assert 'listedNoVoice[showing .. "-description"] == true' in lua
-    assert lua.index("WFJScanTooltipRead(function()") < lua.index("outOfCombat(function() WFJScanNoVoiceRead(")
-    assert lua.index("WFJScanNoVoiceRead(function()") < lua.index("WFJScanCharacterRead(function()\n")
+    assert _before(lua, "WFJScanTooltipRead", "WFJScanNoVoiceRead")
+    assert "outOfCombat(function() WFJScanNoVoiceRead(nxt) end)" in lua
     body = lua[lua.index("local function WFJScanNoVoiceRead"):lua.index("-- The character window, opened by")]
     assert "AbandonQuest" not in body and "SetAbandonQuest" not in body and ":Click(" not in body
 
@@ -679,8 +695,8 @@ def test_the_names_read_says_why_it_proved_nothing():
 
 def test_the_names_read_runs_after_the_no_voice_read_and_only_shows_tooltips():
     lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
-    assert lua.index("WFJScanNoVoiceRead(function()") < lua.index("outOfCombat(function() WFJScanNamesRead(")
-    assert lua.index("WFJScanNamesRead(function()") < lua.index("WFJScanCharacterRead(function()\n")
+    assert _before(lua, "WFJScanNoVoiceRead", "WFJScanNamesRead")
+    assert "outOfCombat(function() WFJScanNamesRead(nxt) end)" in lua
     body = lua[lua.index("local function WFJScanNamesRead"):lua.index("-- The character window, opened by")]
     assert "UseContainerItem" not in body and "PickupContainerItem" not in body and ":Click(" not in body
     # a player's name and a name the client hides are never taken for a game name
@@ -696,8 +712,8 @@ FROZE = ('["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] 
 
 def test_the_frozen_tooltip_read_runs_last_and_presses_only_the_freeze_binding():
     lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
-    assert lua.index("WFJScanNamesRead(function()") < lua.index("outOfCombat(function() WFJScanFreezeRead(")
-    assert lua.index("WFJScanFreezeRead(function()") < lua.index("local function finish(said)")
+    assert _parts(lua)[-1] == "freeze WFJScanFreezeRead"
+    assert "outOfCombat(function() WFJScanFreezeRead(nxt) end)" in lua
     body = lua[lua.index("local function WFJScanFreezeRead"):lua.index("-- The character window, opened by")]
     # it runs what the key runs, twice per tooltip, and never clicks or uses an item
     assert body.count("WFJ_FreezeTooltip()") == 2
@@ -732,8 +748,9 @@ BAGGED = ('["bagclick"] = { ["checked"] = 412, ["ours"] = { }, '
 
 def test_the_bag_click_read_runs_out_of_combat_before_the_freeze_and_never_uses_an_item():
     lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
-    assert lua.index("WFJScanNamesRead(function()") < lua.index("WFJScanBagClickRead(function()")
-    assert lua.index("WFJScanBagClickRead(function()") < lua.index("outOfCombat(function() WFJScanFreezeRead(")
+    assert _before(lua, "WFJScanNamesRead", "WFJScanBagClickRead")
+    assert _before(lua, "WFJScanBagClickRead", "WFJScanFreezeRead")
+    assert "outOfCombat(function() WFJScanBagClickRead(nxt) end)" in lua
     body = lua[lua.index("local function WFJScanBagClickRead"):lua.index("-- The frozen tooltip read.")]
     assert "UseContainerItem" not in body and ":Click(" not in body and "PickupContainerItem" not in body
     # the interface is hidden and shown again, as Dialogue UI and Alt+Z do, the next frames are waited for so an
@@ -745,7 +762,6 @@ def test_the_bag_click_read_runs_out_of_combat_before_the_freeze_and_never_uses_
 
 
 def test_the_bag_click_read_lists_the_same_values_the_addon_watches():
-    import re
     from pathlib import Path
 
     def names(text: str, table: str) -> list[str]:
@@ -781,6 +797,33 @@ def test_the_bag_click_read_fails_a_value_carrying_the_addons_taint_and_only_lis
         '["others"]', '["refused"] = "the client has no SetUIVisibility or OpenAllBags", ["others"]')
     assert run(refused) == [
         "bag click read only as the run left it: the client has no SetUIVisibility or OpenAllBags"]
+    # a run that reached no bag item never ran the path under test: it fails and says how far the frames got
+    unreached = BAGGED.replace(
+        '["others"]', '["skipped"] = { ["bagButtons"] = 858, ["shown"] = 8, ["badSlot"] = 3, ["empty"] = 5, '
+        '["errors"] = 0 }, ["others"]')
+    assert run(unreached) == [
+        "bag click pointed at no bag item: badSlot 3, bagButtons 858, empty 5, errors 0, shown 8"]
+    assert run(unreached.replace('["checked"] = 412', '["checked"] = 412, ["tooltips"] = 8')) == []
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    body = lua[lua.index("local function WFJScanBagClickRead"):lua.index("-- The frozen tooltip read.")]
+    # the bag addon's buttons are waited for, and a bag item's tooltip is shown whatever addon draws the bags
+    assert "C_Timer.After(0.5, pointAndHide)" in body and "GameTooltip:SetBagItem(bag, slot)" in body
+
+
+def test_one_part_of_the_window_test_runs_alone_and_is_judged_alone(tmp_path):
+    """`/wfjtest <part>` runs one part (with the part it needs), and `make window-test` judges that part and the
+    errors of its run: the rest of the saved file is an earlier run's."""
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    names = lua[lua.index('WFJ_TEST_PART_NAMES = "') + 23:].split('"', 1)[0].split(", ")
+    assert names == [p.split(" ")[0] for p in _parts(lua)]
+    run = lua[lua.index("SlashCmdList.WFJTEST = function(how)"):]
+    assert 'print("WFJ test: no part named " .. section .. ". Parts: " .. WFJ_TEST_PART_NAMES)' in run
+    assert "code = WFJScanAddonCode, section = section }" in run
+    # an earlier run's failing freeze record is not this run's
+    bad_freeze = FROZE.replace('["cards"] = 4', '["cards"] = 0')
+    saved = "WFJScanDB = {\n[\"probe\"] = {\n" + bad_freeze + "\n" + BAGGED + "\n},\n}\n"
+    assert client_surface._own_reads(saved, "bagclick") == []
+    assert client_surface._own_reads(saved, "freeze") != []
 
 LEFT = """
 WFJScanDB = {

@@ -3298,6 +3298,10 @@ end
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
+-- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
+WFJ_TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, bagclick, freeze"
+WFJ_TEST_PARTS = {}
+for name in WFJ_TEST_PART_NAMES:gmatch("[^, ]+") do WFJ_TEST_PARTS[name] = true end
 local testRunning = false
 SlashCmdList.WFJTEST = function(how)
   if not japaneseOn() or InCombatLockdown() then return end
@@ -3313,12 +3317,19 @@ SlashCmdList.WFJTEST = function(how)
     print("WFJ test: already running")
     return
   end
+  how = strtrim(how or "")
+  -- one part's name runs that part alone; "hand" and "tabs" are ways to run the whole test
+  local section = how ~= "" and how ~= "hand" and how ~= "tabs" and how or nil
+  if section and not WFJ_TEST_PARTS[section] then
+    print("WFJ test: no part named " .. section .. ". Parts: " .. WFJ_TEST_PART_NAMES)
+    return
+  end
   testRunning = true
   pagesOnly = how == "tabs"
   local db = probeDb()
   db.test = { started = date("%%Y-%%m-%%d %%H:%%M:%%S"), build = tostring((select(2, GetBuildInfo()))),
     errors = {}, blocked = {}, warnings = {}, clicks = pagesOnly and "tabs" or "all",
-    code = WFJScanAddonCode }
+    code = WFJScanAddonCode, section = section }
   -- every Lua error, every warning and every action the client refused an addon while the test runs, each with
   -- its count
   local shown = geterrorhandler()
@@ -3410,69 +3421,79 @@ SlashCmdList.WFJTEST = function(how)
       fn()
     end)
   end
-  WFJScanWalk(function()
-    db.test.part = "live"
-    outOfCombat(function() WFJScanLiveSweep(function()
+  local function finish(said)
+    db.test.part = "done"
+    seterrorhandler(shown)
+    watcher:UnregisterAllEvents()
+    readGrabbed()
+    testRunning = false
+    db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
+    pcall(sayCounts, db)
+    print("WFJ test done: /reload to save, then the result can be read" .. said)
+  end
+  -- The run's parts in order, each named: `/wfjtest <name>` runs that part alone (with the parts it needs), so a
+  -- change to one area is checked without the whole run. The whole run is the bar before a merge.
+  local parts = {
+    { "walk", function(nxt) WFJScanWalk(nxt) end },
+    -- a fight that starts during the load walk would end the live sweep before it began: it waits for the end
+    { "live", function(nxt) outOfCombat(function() WFJScanLiveSweep(nxt) end) end, needs = "walk" },
+    { "closed", function(nxt)
       db.opened = nil -- an earlier run's bare-window list is not this run's
-      db.test.part = "closed"
-      WFJScanClosedRead(function()
-        db.test.part = "tooltips"
-        -- in a fight the client hides a tooltip's rows from addons: nothing could be read
-        outOfCombat(function() WFJScanTooltipRead(function()
-          db.test.part = "novoice"
-          outOfCombat(function() WFJScanNoVoiceRead(function()
-            db.test.part = "names"
-            -- in a fight the client hides a tooltip's rows and a unit's name from addons
-            outOfCombat(function() WFJScanNamesRead(function()
-            WFJScanPlatesRead() -- out of combat here: the client refuses a setting written in a fight
-            WFJScanLoadRead()
-            db.test.part = "bagclick"
-            -- out of combat here: the interface is hidden and shown again
-            WFJScanBagClickRead(function()
-            db.test.part = "freeze"
-            -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
-            outOfCombat(function() WFJScanFreezeRead(function()
-            local function finish(said)
-              db.test.part = "done"
-              seterrorhandler(shown)
-              watcher:UnregisterAllEvents()
-              readGrabbed()
-              testRunning = false
-              db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
-              pcall(sayCounts, db)
-              print("WFJ test done: /reload to save, then the result can be read" .. said)
-            end
-            -- The guild and character windows are the player's to open, so a plain run does not wait for them:
-            -- what the last `/wfjtest hand` read of them stands for this run while the build is the same.
-            if how ~= "hand" then
-              db.test.hand = false
-              return finish(". Guild and character windows not read in this run (/wfjtest hand reads them)")
-            end
-            db.test.hand = true
-            db.test.part = "guild"
-            WFJScanGuildRead(function()
-              db.test.part = "character"
-              WFJScanCharacterRead(function()
-                local unopened = {}
-                for window, why in pairs(db.test.unopened or {}) do
-                  if window == "guild" or window == "character" or window == "guild pages" then
-                    unopened[window] = why
-                  end
-                end
-                local hover = type(db.hover) == "table" and db.hover or {}
-                db.hand = { build = db.test.build, code = db.test.code, at = date("%%Y-%%m-%%d %%H:%%M:%%S"),
-                  guild = db.live.guild, character = db.live.character, unopened = unopened,
-                  hover = { guild = hover.guild, character = hover.character } }
-                finish("")
-              end)
-            end)
-            end) end) end)
-            end) end)
-          end) end)
-        end) end)
+      WFJScanClosedRead(nxt)
+    end, needs = "walk" },
+    -- in a fight the client hides a tooltip's rows from addons: nothing could be read
+    { "tooltips", function(nxt) outOfCombat(function() WFJScanTooltipRead(nxt) end) end },
+    { "novoice", function(nxt) outOfCombat(function() WFJScanNoVoiceRead(nxt) end) end },
+    -- in a fight the client hides a tooltip's rows and a unit's name from addons
+    { "names", function(nxt) outOfCombat(function() WFJScanNamesRead(nxt) end) end },
+    -- the client refuses a setting written in a fight
+    { "plates", function(nxt) outOfCombat(function() WFJScanPlatesRead() nxt() end) end },
+    { "load", function(nxt) WFJScanLoadRead() nxt() end },
+    -- the interface is hidden and shown again, which waits for the end of a fight too
+    { "bagclick", function(nxt) outOfCombat(function() WFJScanBagClickRead(nxt) end) end },
+    -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
+    { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
+  }
+  local byName = {}
+  for _, part in ipairs(parts) do byName[part[1]] = part end
+  local chosen = parts
+  if section then
+    chosen = { byName[section].needs and byName[byName[section].needs] or nil, byName[section] }
+    if chosen[1] == nil then chosen = { byName[section] } end
+  end
+  local function run(i)
+    local part = chosen[i]
+    if part then
+      db.test.part = part[1]
+      return part[2](function() run(i + 1) end)
+    end
+    if section then return finish(" (only the " .. section .. " part; plain /wfjtest runs them all)") end
+    -- The guild and character windows are the player's to open, so a plain run does not wait for them:
+    -- what the last `/wfjtest hand` read of them stands for this run while the build is the same.
+    if how ~= "hand" then
+      db.test.hand = false
+      return finish(". Guild and character windows not read in this run (/wfjtest hand reads them)")
+    end
+    db.test.hand = true
+    db.test.part = "guild"
+    WFJScanGuildRead(function()
+      db.test.part = "character"
+      WFJScanCharacterRead(function()
+        local unopened = {}
+        for window, why in pairs(db.test.unopened or {}) do
+          if window == "guild" or window == "character" or window == "guild pages" then
+            unopened[window] = why
+          end
+        end
+        local hover = type(db.hover) == "table" and db.hover or {}
+        db.hand = { build = db.test.build, code = db.test.code, at = date("%%Y-%%m-%%d %%H:%%M:%%S"),
+          guild = db.live.guild, character = db.live.character, unopened = unopened,
+          hover = { guild = hover.guild, character = hover.character } }
+        finish("")
       end)
-    end) end)
-  end)
+    end)
+  end
+  run(1)
 end
 """
 
@@ -4722,9 +4743,13 @@ def client_build_beside(saved: Path) -> str | None:
     return None
 
 
-def _own_reads(saved: str) -> list[str]:
-    """Prints what the tooltip read, the no-voice read and the names read saw and gives back their problems."""
-    tooltips = read_tooltips(saved)
+def _own_reads(saved: str, section: str | None = None) -> list[str]:
+    """Prints what the tooltip read, the no-voice read and the names read saw and gives back their problems; for a
+    run of one part (`section`), only that part's: the others' records are an earlier run's."""
+    def part(name: str) -> bool:
+        return section is None or section == name
+
+    tooltips = read_tooltips(saved) if part("tooltips") else None
     if tooltips is not None:
         print(f"tooltips: {tooltips['read']} spells read ({tooltips['japanese']} in Japanese, "
               f"{tooltips['unread']} the client had not loaded), {tooltips['items']} items; "
@@ -4739,12 +4764,12 @@ def _own_reads(saved: str) -> list[str]:
             print(f"tooltips: loading {tooltips['load']}")
         for why, (n, ids) in sorted(tooltips.get("why", {}).items()):
             print(f"tooltips: {n} not read, {why}, e.g. {ids}")
-    no_voice = read_no_voice(saved)
+    no_voice = read_no_voice(saved) if part("novoice") else None
     if no_voice is not None:
         print(f"no-voice message: {no_voice['quests']} quests read in the quest log, {no_voice['said']} said they "
               f"have no voice; voice pack {'loaded' if no_voice['pack'] else 'not loaded'}, "
               f"{no_voice['listed']} lines listed with no voice")
-    names = read_names(saved)
+    names = read_names(saved) if part("names") else None
     japanese: dict[str, str] = {}
     if names is not None and names["rows"]:
         from wfj.io.names_store import load_lines
@@ -4753,33 +4778,37 @@ def _own_reads(saved: str) -> list[str]:
         japanese = {ln["en"]: ln["ja"] for ln in load_lines(data_root()) if ln.get("status") == "trusted"}
         shown = sum(1 for _, english, text in names["rows"] if text != english)
         print(f"names: {len(names['rows'])} read, {shown} shown in Japanese")
-    freeze = read_freeze(saved)
+    freeze = read_freeze(saved) if part("freeze") else None
     if freeze is not None:
         print(f"frozen tooltip: {freeze['items']} item and {freeze['spells']} spell tooltips frozen, "
               f"{freeze['lines']} Japanese lines copied, {freeze['cards']} word cards, "
               f"{len(uncarded_words(freeze))} lines with a word that takes none; key {freeze['bound'] or 'none'}")
-    bagclick = read_bagclick(saved)
+    bagclick = read_bagclick(saved) if part("bagclick") else None
     if bagclick is not None:
         print(f"bag click: {bagclick['checked']} values read, {bagclick['pointed']} bag item buttons pointed at, "
               f"{bagclick['tooltips']} bag item tooltips shown, "
               f"{len(bagclick['ours'])} tainted by the addon"
               + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(bagclick["others"].items()))
                  if bagclick["others"] else ""))
-    plates = read_plates(saved)
+    plates = read_plates(saved) if part("plates") else None
     if plates is not None and not plates["refused"]:
         v, d = plates["values"], plates["defaults"]
         print(f"nameplates: range {v.get('nameplateMaxDistance')} (default {d.get('nameplateMaxDistance')}, the "
               f"client holds up to {plates['limit'] or 'unknown'}); English names over NPC heads "
               + ", ".join(f"{k} {v.get(k)}" for k in PLATE_WANT))
-    load = read_load(saved)
+    load = read_load(saved) if part("load") else None
     if load:
         said = [f"{load['kb'] / 1024:.0f} MB of Lua memory"] if "kb" in load else []
         said += [f"files loaded in {load['files']:.0f} ms"] if "files" in load else []
         said += [f"setup {load['setup']:.0f} ms"] if "setup" in load else []
         print("addon load: " + ", ".join(said))
-    return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
-            + names_problems(names, japanese) + freeze_problems(freeze) + plates_problems(plates)
-            + bagclick_problems(bagclick))
+    out = included_problems(saved) + tooltip_problems(tooltips) if part("tooltips") else []
+    out += no_voice_problems(no_voice) if part("novoice") else []
+    out += names_problems(names, japanese) if part("names") else []
+    out += freeze_problems(freeze) if part("freeze") else []
+    out += plates_problems(plates) if part("plates") else []
+    out += bagclick_problems(bagclick) if part("bagclick") else []
+    return out
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A
@@ -5094,12 +5123,19 @@ def _texts(args: argparse.Namespace) -> int:
     elif not info.get("finished"):
         print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
         return 2
-    if info.get("absent"):
+    # a run of one part (`/wfjtest <part>`) is judged on that part and the errors of its run; the rest of the
+    # saved file is an earlier run's
+    section = info.get("section") or None
+    windows = section in (None, "live", "closed")
+    if section:
+        print(f"window test: a run of the {section} part only; plain /wfjtest runs them all and is the bar before "
+              "a merge")
+    if info.get("absent") and windows:
         print(f"windows this client does not have: {info['absent']}")
-    if info.get("hand"):
+    if info.get("hand") and windows:
         print(f"guild and character windows: {info['hand']}, not in this run")
     asked, missing = read_missing_strings(args.saved.read_text(encoding="utf-8", errors="replace"))
-    if asked:
+    if asked and not section:
         # grouped by the first two words of the name: a whole family missing reads as one line
         groups: dict[str, int] = {}
         for name in missing:
@@ -5131,9 +5167,12 @@ def _texts(args: argparse.Namespace) -> int:
     # a closed window read without being shown is the same kind of list
     bare = [row for row in new if row.startswith(("opened ", "closed "))]
     new = [row for row in new if row not in bare]
-    print(f"window test of build {info.get('build')}, run {info.get('started')}: {len(found)} English lines on "
-          f"screen, {len(found) - len(new) - len(bare)} allowed by the baseline, {len(new)} new in the windows "
-          f"opened the client's way, {len(bare)} to read in closed windows")
+    if not windows:
+        found, new, bare, gone, hovered = set(), [], [], [], []
+    print(f"window test of build {info.get('build')}, run {info.get('started')}"
+          + (f": {len(found)} English lines on screen, {len(found) - len(new) - len(bare)} allowed by the baseline, "
+             f"{len(new)} new in the windows opened the client's way, {len(bare)} to read in closed windows"
+             if windows else ""))
     for row in new:
         print(f"NEW   {row}")
     for row in bare:
@@ -5145,9 +5184,11 @@ def _texts(args: argparse.Namespace) -> int:
                                   log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
     # the open sweep shows a window without the client's own opening code, so a window that needs data it was
     # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
-    problems += _own_reads(args.saved.read_text(encoding="utf-8", errors="replace"))
-    problems += tooltip_row_problems(args.saved.read_text(encoding="utf-8", errors="replace"))
-    problems += hover_problems(hover, hovered)
+    problems += _own_reads(args.saved.read_text(encoding="utf-8", errors="replace"), section)
+    if section in (None, "tooltips"):
+        problems += tooltip_row_problems(args.saved.read_text(encoding="utf-8", errors="replace"))
+    if windows:
+        problems += hover_problems(hover, hovered)
     noted = [row for row in problems if ": [open] " in row or any(own in row for own in OWN_REFUSALS)]
     listed = args.baseline.with_name("ui_test_game_errors.txt")
     own = game_own_errors([row for row in problems if row not in noted],
@@ -5161,12 +5202,17 @@ def _texts(args: argparse.Namespace) -> int:
         print(f"noted {row}")
     for row, why in sorted(own.items()):
         print(f"game  {row}\n      listed: {why}")
-    _say_rows(args.saved.read_text(encoding="utf-8", errors="replace"))
-    _say_hover(hover, hovered, hover_allowed)
-    _say_traces(args.saved.read_text(encoding="utf-8", errors="replace"))
-    _say_included(args.saved.read_text(encoding="utf-8", errors="replace"))
-    _say_other(bool(latin), protected, other)
-    _say_left(args.saved.read_text(encoding="utf-8", errors="replace"), new)
+    if section in (None, "tooltips"):
+        _say_rows(args.saved.read_text(encoding="utf-8", errors="replace"))
+    if windows:
+        _say_hover(hover, hovered, hover_allowed)
+    if section in (None, "tooltips"):
+        _say_traces(args.saved.read_text(encoding="utf-8", errors="replace"))
+        _say_included(args.saved.read_text(encoding="utf-8", errors="replace"))
+    if windows:
+        _say_other(bool(latin), protected, other)
+    if section in (None, "tooltips", "live"):
+        _say_left(args.saved.read_text(encoding="utf-8", errors="replace"), new)
     return 1 if new or failing else 0
 
 
