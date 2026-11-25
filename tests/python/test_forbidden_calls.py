@@ -39,7 +39,7 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/VoicePanel.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua",
                 # the quest log's play / pause button
                 "UI/VoiceQuestLog.lua",
-                # Dialogue UI's windows: a child frame of ours that hears each window close, and the book's page events
+                # Dialogue UI's windows: a frame of ours that polls them, and our own event frames
                 "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua",
                 "UI/DialogueUIBook.lua",
                 # the frozen tooltip scripts only its own copy frames

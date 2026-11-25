@@ -69,7 +69,6 @@ local function declareAll()
   for _, name in ipairs(BAR_CONTAINERS) do Compat.declare(SURFACE, name, { name }) end
   for _, name in ipairs(AURA_FRAMES) do Compat.declare(SURFACE, name, { name }) end
   Compat.declare(SURFACE, "auraMixin", { "AuraButtonMixin" })
-  Compat.declare(SURFACE, "issecretvalue", { "issecretvalue" })
   Compat.declare(SURFACE, "framerate", { "FramerateFrame.FramerateText" })
   Compat.declare(SURFACE, "completeBox", { "AutoCompleteBox" })
   Compat.declare(SURFACE, "completeHint", { "AutoCompleteInstructions" })
@@ -116,8 +115,7 @@ function HudLabels.onDuration(button)
   local en = fs:GetText()
   -- in combat an aura's time left can be a secret value (issecretvalue, blizzard_sharedxmlbase/securetypes.lua:6):
   -- it may be written but not compared, so the client's line stays
-  local secret = get("issecretvalue")
-  if type(secret) == "function" and secret(en) then return 0 end
+  if Compat.secret(en) then return 0 end
   local key = durationKey(fs)
   local rec = WFJ.SurfaceState.get(SURFACE, key)
   -- The client rewrites the same value every frame (its OnUpdate). While the record still stands for that English,
@@ -224,7 +222,7 @@ local FPS = { only = { "FPS_COUNTER_CPU_BOUND", "FPS_COUNTER_GPU_BOUND" } }
 function HudLabels.onFramerate(fs)
   -- the bare number ("60.0", four times a second) is no word: never looked up, so it never fills the match memo
   local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
-  if type(text) ~= "string" or not text:find("%a") then
+  if type(text) ~= "string" or Compat.secret(text) or not text:find("%a") then
     WFJ.SurfaceState.drop(SURFACE, "framerate")
     return 0
   end

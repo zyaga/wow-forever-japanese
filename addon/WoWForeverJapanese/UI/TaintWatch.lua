@@ -153,10 +153,7 @@ function TaintWatch.events()
   return table.concat(out, "\n")
 end
 
-local function isSecret(v)
-  local f = C.resolve("issecretvalue")
-  return type(f) == "function" and f(v) and true or false
-end
+local function isSecret(v) return C.secret(v) end
 
 -- One game event into the ring, with its first argument when that is a number, a boolean or one short token (an
 -- addon name, a unit, an id). Chat events, any text with a space and a player's GUID are left out: the log keeps no

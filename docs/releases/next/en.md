@@ -3,3 +3,4 @@
 - **Chat tools.** Point at a word in chat for its card, LFM and WTS included. A 文 button opens a phrase book: phrases go out in English, and players with the addon read them in their own language. An icon on a chat line copies it.
 - **NPCs speak in their own voice.** A quest line whose speaker the addon could not name was read by one narrator. Each line is now read in the voice of the NPC who says it, and a translated line with no voice yet says so: `[音声なし / No Voice Yet]`.
 - **More of the game in Japanese:** Forever 1.60.1.71037 with 28 Collector sends (265 NPC lines, 325 quest texts, 129 new quests), almost every spell tooltip, and the friends, group finder, professions, guild and calendar windows.
+- **Fewer errors:** hovering a creature in combat no longer floods the error list, and a blocked bag item (the Hearthstone) now stays in the addon's log.

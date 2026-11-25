@@ -2,3 +2,4 @@
 # An error is set aside only when its message holds the text, it carries its call stack, and neither names
 # this addon or the test addon. Anything else fails the run.
 Blizzard_RaidUI.lua:87: attempt to compare number with nil	The raid window's class buttons count a group that does not exist outside a raid (RaidClassButton_Update, called on a unit's pet or name update). The client raises it by itself once the raid window's code is loaded.
+HelpTip.lua:450: attempt to index field 'info' (a nil value)	A help tip on screen ("You have unspent Talent points." on the talents button) does not survive the whole interface being hidden and shown again, as Alt+Z does and the bag click read does: hiding runs its OnHide, which clears its info (helptip.lua:405-424), and showing brings it back with its OnUpdate still set, which reads that info (:441-450).

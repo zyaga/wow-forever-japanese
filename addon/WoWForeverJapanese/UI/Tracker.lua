@@ -248,8 +248,7 @@ local function showBannerTitle()
   local id = type(banner) == "table" and banner.questID or nil
   if type(title) ~= "table" or type(title.GetText) ~= "function" or type(id) ~= "number" then return 0 end
   local en = title:GetText()
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(isSecret) == "function" and isSecret(en) then return 0 end
+  if Compat.secret(en) then return 0 end
   if type(en) ~= "string" or en == "" then return 0 end
   return WFJ.Render.show(SURFACE, "banner.title", title, en, "quests", "quest.title", id, { live = en, compact = true })
     and 1 or 0

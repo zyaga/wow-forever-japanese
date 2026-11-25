@@ -76,6 +76,8 @@ UI/ScrappingMachine.lua	ScrappingMachineFrame.TitleContainer.TitleText	japanese	
 UI/ItemInteraction.lua	ItemInteractionFrame title	japanese	interaction data: shown when the name list has a line for it
 UI/Bank.lua	BankFrameTitleText	english not-a-game-name	the title is a dictionary line, matched by key
 UI/VoicePanel.lua	the speaking NPC's name and title	japanese	the addon's own frame: written in the bundled face while names are on and Japanese shows; only a line a creature says (a player offering a quest keeps the name they carry); a book's name stays
+UI/VoicePanel.lua	the speaker's name on each row of the waiting list	japanese	the addon's own frame, in the bundled face: the same lookup and the same conditions as the speaking NPC's name
+UI/VoicePanelText.lua	the speaker's name over the whole-text window	japanese	the addon's own frame, in the bundled face: VoicePanelText.speakerName, the one lookup every frame of the panel names a speaker by
 UI/ClickBinding.lua	the tutorial's ThrallName	japanese	XML text written once (blizzard_clickbindingui.xml:292), nothing measures it: shown with the static labels
 
 # units

@@ -156,6 +156,22 @@ describe("UI/TooltipUnit: quest titles and line kinds", function()
       WFJ.UIStrings.name = nil
     end)
 
+    it("in combat every line is secret: each row stays the client's and keeps no record", function()
+      local lines = { "Murloc Warrior", "Level 40", "Wolf Pelts", "0/4 Young Thistle Boar slain",
+        "12/12 Saltwater Murloc Eye", "Alliance" }
+      local rows = kinds({ "UnitName", "None", "QuestTitle", "QuestObjective", "QuestObjective", "None" })
+      hover(lines, rows) -- out of combat first, so rows hold records when combat starts
+      assert.are_not.equal("0/4 Young Thistle Boar slain", left(4))
+      local secret = {}
+      for _, l in ipairs(lines) do secret[l] = true end
+      _G.issecretvalue = function(v) return secret[v] == true end
+      WFJ.State.names = true
+      hover(lines, rows)
+      for i, l in ipairs(lines) do assert.are.equal(l, left(i)) end
+      assert.are.equal(0, WFJ.SurfaceState.count(WFJ.TooltipUnit.SURFACE))
+      WFJ.State.names, _G.issecretvalue = false, nil
+    end)
+
     it("a title on a row the client did not tag QuestTitle is read as a unit line, not a quest", function()
       hover({ "Young Thistle Boar", "Wolf Pelts" }, kinds({ "UnitName", "None" }))
       assert.are.equal("Wolf Pelts", left(2))

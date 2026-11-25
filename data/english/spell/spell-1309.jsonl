@@ -29,10 +29,10 @@
 {"id": 1309214, "field": "name", "en": "(DNT) Death Warning", "hash": "804470e69a23e5e1", "src": "db2@1.60.1.71037"}
 {"id": 1309230, "field": "name", "en": "Resist Snare/Root 10", "hash": "3ffbd5ef3f3289f6", "src": "db2@1.60.1.71037"}
 {"id": 1309230, "field": "description", "en": "Reduces the hit chance of Root and Snare effects against you by $s1%.", "hash": "2ff366ecb1f1b4d7", "src": "db2@1.60.1.71037"}
-{"id": 1309241, "field": "name", "en": "Legwraps of Suspended Time", "hash": "51037cfbaa04fb02", "src": "db2@1.60.1.71037"}
+{"id": 1309241, "field": "name", "en": "Legwraps of Gathering Flame", "hash": "d6cf9a219e9aa443", "src": "db2@1.60.1.71091"}
 {"id": 1309241, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects. When you have not moved for $s3 sec, this effect is doubled.", "hash": "088bce8de7774246", "src": "db2@1.60.1.71037"}
 {"id": 1309241, "field": "aura", "en": "Healing done increased by up to $s1 and damage done increased by up to $s2.", "hash": "23d08faca85d9393", "src": "db2@1.60.1.71037"}
-{"id": 1309243, "field": "name", "en": "Legwraps of Suspended Time", "hash": "51037cfbaa04fb02", "src": "db2@1.60.1.71037"}
+{"id": 1309243, "field": "name", "en": "Legwraps of Gathering Flame", "hash": "d6cf9a219e9aa443", "src": "db2@1.60.1.71091"}
 {"id": 1309243, "field": "aura", "en": "Healing done increased by up to $s1 and damage done increased by up to $s2.", "hash": "23d08faca85d9393", "src": "db2@1.60.1.71037"}
 {"id": 1309245, "field": "name", "en": "(DNT) Death Warning", "hash": "804470e69a23e5e1", "src": "db2@1.60.1.71037"}
 {"id": 1309268, "field": "name", "en": "Black Warden Saber Mount", "hash": "97892f6c3cd4f6a5", "src": "db2@1.60.1.71037"}

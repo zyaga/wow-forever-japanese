@@ -2830,6 +2830,196 @@ local function WFJScanLoadRead()
   if type(timed) == "table" then record.files, record.setup = timed.files, timed.setup end
 end
 
+-- The bag click read. A bag item's right-click reads these before it uses the item (ContainerFrameItemButton_OnClick,
+-- mainline/containerframe.lua:1503-1611, and the button's own fields, :1845); one carrying the addon's taint makes
+-- the use a forbidden call out of combat, the addon named. Each global that is a table is read one level down too
+-- (MerchantFrame's fields, BankFrame's, ItemButtonUtil's). Read three times: as the run left them; with the backpack
+-- open after the mouse was pointed at its items the client's way (a player points at the Hearthstone before using it,
+-- and the item tooltip runs the addon's code); and after the whole interface was hidden and shown again (what Dialogue
+-- UI does around a talk, and Alt+Z), so a hook of the addon's that runs inside either is caught. Into
+-- `probe.bagclick`:
+--   checked  values read; ours  { "<when>\\t<name>" } carrying the addon's taint: a failure
+--   others   name → the addon whose taint it carries (listed, not failed); refused  why the second pass did not run
+local BAG_CLICK_GLOBALS = { "ContainerFrameItemButton_OnClick", "MerchantFrame_ResetRefundItem", "MerchantFrame",
+  "StackSplitFrame", "BankFrame", "GuildBankFrame", "MailFrame", "AuctionFrame", "AuctionHouseFrame", "TradeFrame",
+  "ItemUpgradeFrame", "ObliterumForgeFrame", "ChallengesKeystoneFrame", "AzeriteRespecFrame", "RuneforgeFrame",
+  "ItemLocation", "ItemButtonUtil", "BankUtil_IsAccountBankDepositRefundable", "ContainerFrame_GetExtendedPriceString",
+  "ContainerFrame_IsAccountBankTab", "C_Container", "C_Cursor", "C_Item", "C_AuctionHouse", "C_ItemSocketInfo",
+  "C_ArtifactUI", "C_MountJournal", "GetCursorInfo", "SpellCanTargetItem", "SpellCanTargetItemID", "CursorHasItem",
+  "MerchantFrame_ConfirmExtendedItemCost", "MerchantFrame_ConfirmHighCostItem", "MerchantFrame_SetRefundItem",
+  "StaticPopup_Show" }
+local BAG_CLICK_MERCHANT = { "selectedTab", "extendedCost", "highPrice" }
+
+local BAG_POINT_MAX = 8 -- bag items pointed at: the item tooltip's code is the same for each
+local function WFJScanBagClickRead(done)
+  local db = probeDb()
+  local record = { checked = 0, ours = {}, others = {} }
+  db.bagclick = record
+  local listed = {}
+  local function note(when, name, secure, owner)
+    record.checked = record.checked + 1
+    if secure or owner == nil then return end
+    if owner == "WoWForeverJapanese" then
+      if not listed[name] then
+        listed[name] = true
+        record.ours[#record.ours + 1] = when .. "\\t" .. name
+      end
+    elseif owner == "WFJScan" then
+      -- the read's own steps run as the test addon, so what they write carries its taint, not this addon's: counted,
+      -- so a pass is read knowing it cannot show taint the addon would leave on that route
+      record.own = (record.own or 0) + 1
+    else
+      record.others[name] = tostring(owner)
+    end
+  end
+  local function fields(when, label, t)
+    for key in pairs(t) do
+      if type(key) == "string" then note(when, label .. "." .. key, issecurevariable(t, key)) end
+    end
+  end
+  local pointedAt = {} -- the bag item buttons pointed at, read with the rest
+  local function read(when)
+    for i, button in ipairs(pointedAt) do fields(when, button:GetName() or ("bag item button " .. i), button) end
+    for _, name in ipairs(BAG_CLICK_GLOBALS) do
+      note(when, name, issecurevariable(name))
+      local value = _G[name]
+      if type(value) == "table" then fields(when, name, value) end
+    end
+    if type(MerchantFrame) == "table" then
+      for _, key in ipairs(BAG_CLICK_MERCHANT) do
+        note(when, "MerchantFrame." .. key, issecurevariable(MerchantFrame, key))
+      end
+    end
+    if type(BankFrame) == "table" and type(rawget(BankFrame, "BankPanel")) == "table" then
+      fields(when, "BankFrame.BankPanel", BankFrame.BankPanel)
+    end
+    local frames = { "ContainerFrameCombinedBags" }
+    for i = 1, 13 do frames[#frames + 1] = "ContainerFrame" .. i end
+    for _, name in ipairs(frames) do
+      local f = _G[name]
+      if type(f) == "table" then
+        fields(when, name, f)
+        local items = rawget(f, "Items")
+        if type(items) == "table" then
+          for i, button in ipairs(items) do
+            if type(button) == "table" then fields(when, name .. ".Items[" .. i .. "]", button) end
+          end
+        end
+      end
+    end
+  end
+  -- a read that raises is recorded and the run goes on: the rest of the test must still run
+  local function readSafely(when)
+    local ok, err = pcall(read, when)
+    if not ok then record.failed = when .. ": " .. tostring(err) end
+  end
+  readSafely("after the run")
+  if type(SetUIVisibility) ~= "function" or type(OpenAllBags) ~= "function" then
+    record.refused = "the client has no SetUIVisibility or OpenAllBags"
+    return done()
+  end
+  -- the bags the player uses: the client's own, or a bag addon's that takes the same call (Baganator)
+  local wasOpen = type(IsBagOpen) == "function" and IsBagOpen(0)
+  if not wasOpen then OpenAllBags() end
+  -- why no button was pointed at, when none was: how many frames got how far, and the first error
+  local skipped = { bagButtons = 0, shown = 0, badSlot = 0, empty = 0, errors = 0 }
+  record.skipped = skipped
+  -- the client's own way to point at a frame, as the hover read does: its enter script, then its leave script. Any
+  -- bag item button on screen, found by what it is (a button that knows its bag) rather than by a frame name, so a
+  -- bag addon's buttons count too.
+  local function consider(f)
+    if type(f.GetBagID) ~= "function" or type(f.GetID) ~= "function" then return end
+    skipped.bagButtons = skipped.bagButtons + 1
+    if not f:IsVisible() then return end
+    skipped.shown = skipped.shown + 1
+    -- a bag addon's frames answer GetBagID too (a bag slot, a header) with a slot the client refuses: only a slot
+    -- from 1 up is asked about
+    local bag = f:GetBagID()
+    local slot = type(bag) == "number" and bag >= 0 and f:GetID() or nil
+    if type(slot) ~= "number" or slot < 1 then
+      skipped.badSlot = skipped.badSlot + 1
+      skipped.sample = skipped.sample or ((f:GetName() or "unnamed") .. " bag " .. tostring(bag) .. " slot "
+        .. tostring(f:GetID()))
+      return
+    end
+    if not C_Container.GetContainerItemID(bag, slot) then
+      skipped.empty = skipped.empty + 1
+      return
+    end
+    pointedAt[#pointedAt + 1] = f
+    if type(ExecuteFrameScript) == "function" then
+      pcall(ExecuteFrameScript, f, "OnEnter")
+      pcall(ExecuteFrameScript, f, "OnLeave")
+    end
+  end
+  local function finish()
+    if not wasOpen and type(CloseAllBags) == "function" then CloseAllBags() end
+    done()
+  end
+  local function pointAndHide()
+    local f = EnumerateFrames()
+    while f and #pointedAt < BAG_POINT_MAX do
+      -- a frame the client will not answer for (a forbidden one) is passed over
+      local ok, err = pcall(consider, f)
+      if not ok then
+        skipped.errors = skipped.errors + 1
+        skipped.firstError = skipped.firstError or tostring(err)
+      end
+      f = EnumerateFrames(f)
+    end
+    record.pointed = #pointedAt
+    -- what a bag item button's enter script calls, run for the items in the bags whatever addon draws their buttons
+    -- (a bag addon's may not be on screen or found): the item tooltip's code on a bag item, the path under test
+    local shown = 0
+    if type(GameTooltip) == "table" and type(GameTooltip.SetBagItem) == "function" then
+      for bag = 0, 4 do
+        local ok, slots = pcall(C_Container.GetContainerNumSlots, bag)
+        slots = ok and tonumber(slots) or 0
+        for slot = 1, slots do
+          if shown < BAG_POINT_MAX and C_Container.GetContainerItemID(bag, slot) then
+            local ok, err = pcall(function()
+              GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+              GameTooltip:SetBagItem(bag, slot)
+              GameTooltip:Hide()
+            end)
+            if ok then
+              shown = shown + 1
+            else
+              skipped.errors = skipped.errors + 1
+              skipped.firstError = skipped.firstError or tostring(err)
+            end
+          end
+        end
+      end
+    end
+    record.tooltips = shown
+    readSafely("after pointing at bag items")
+    -- the client shows a hidden interface again only out of combat: a fight that started during the wait above
+    -- would leave it hidden, so the toggle is not done then and the run says so
+    if InCombatLockdown() then
+      record.refused = "a fight started before the interface could be hidden and shown"
+      return finish()
+    end
+    SetUIVisibility(false)
+    SetUIVisibility(true)
+    -- what the interface's return sets off runs on the frames after it (a help tip's OnUpdate): waited for, so an
+    -- error it raises lands inside the run
+    C_Timer.After(0.5, function()
+      readSafely("after the interface came back")
+      finish()
+    end)
+  end
+  -- a bag addon lays its buttons out on the frames after its window opens: waited for. A raise inside the timer
+  -- would end the run with no done line, so it is recorded and the run goes on.
+  C_Timer.After(0.5, function()
+    local ok, err = pcall(pointAndHide)
+    if not ok then
+      record.failed = "pointing at bag items: " .. tostring(err)
+      finish()
+    end
+  end)
+end
+
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
 -- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
 -- carries and runs what the key runs (`WFJ_FreezeTooltip`), twice, into `probe.freeze`:
@@ -3239,11 +3429,17 @@ local function WFJScanGuildRead(done)
 end
 
 -- The whole window test (`/wfjtest`): the load walk, the live sweep (with the hover read of each window), the
--- closed-window read, the tooltip read, the no-voice read, the names read, the frozen tooltip read, then one done line. `/wfjtest hand` also reads the guild and character
+-- closed-window read, the tooltip read, the no-voice read, the names read, the bag click read, the frozen tooltip read,
+-- then one done line. `/wfjtest hand` also reads the guild and character
 -- windows, which the player opens when it asks. `probe.test` holds when it ran and on which build, so a result read
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
 SLASH_WFJTEST1 = "/wfjtest"
+-- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
+-- (a test holds this list to the parts table)
+local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, bagclick, freeze"
+local TEST_PARTS = {}
+for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
 SlashCmdList.WFJTEST = function(how)
   if not japaneseOn() or InCombatLockdown() then return end
@@ -3259,12 +3455,19 @@ SlashCmdList.WFJTEST = function(how)
     print("WFJ test: already running")
     return
   end
+  how = strtrim(how or "")
+  -- one part's name runs that part alone; "hand" and "tabs" are ways to run the whole test
+  local section = how ~= "" and how ~= "hand" and how ~= "tabs" and how or nil
+  if section and not TEST_PARTS[section] then
+    print("WFJ test: no part named " .. section .. ". Parts: " .. TEST_PART_NAMES)
+    return
+  end
   testRunning = true
   pagesOnly = how == "tabs"
   local db = probeDb()
   db.test = { started = date("%%Y-%%m-%%d %%H:%%M:%%S"), build = tostring((select(2, GetBuildInfo()))),
     errors = {}, blocked = {}, warnings = {}, clicks = pagesOnly and "tabs" or "all",
-    code = WFJScanAddonCode }
+    code = WFJScanAddonCode, section = section }
   -- every Lua error, every warning and every action the client refused an addon while the test runs, each with
   -- its count
   local shown = geterrorhandler()
@@ -3343,7 +3546,6 @@ SlashCmdList.WFJTEST = function(how)
     if type(_G[key]) ~= "string" then missing[#missing + 1] = key end
   end
   db.test.strings = { asked = #KEYS, missing = missing }
-  db.test.part = "load"
   -- a fight that starts during the load walk would end the live sweep before it began, and the run with it: the
   -- sweep waits for the fight to end
   local function outOfCombat(fn)
@@ -3356,68 +3558,81 @@ SlashCmdList.WFJTEST = function(how)
       fn()
     end)
   end
-  WFJScanWalk(function()
-    db.test.part = "live"
-    outOfCombat(function() WFJScanLiveSweep(function()
+  local function finish(said)
+    db.test.part = "done"
+    seterrorhandler(shown)
+    watcher:UnregisterAllEvents()
+    readGrabbed()
+    testRunning = false
+    db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
+    pcall(sayCounts, db)
+    print("WFJ test done: /reload to save, then the result can be read" .. said)
+  end
+  -- The run's parts in order, each named: `/wfjtest <name>` runs that part alone (with the parts it needs), so a
+  -- change to one area is checked without the whole run. The whole run is the bar before a merge.
+  local parts = {
+    { "walk", function(nxt) WFJScanWalk(nxt) end },
+    -- a fight that starts during the load walk would end the live sweep before it began: it waits for the end
+    { "live", function(nxt) outOfCombat(function() WFJScanLiveSweep(nxt) end) end, needs = "walk" },
+    { "closed", function(nxt)
       db.opened = nil -- an earlier run's bare-window list is not this run's
-      db.test.part = "closed"
-      WFJScanClosedRead(function()
-        db.test.part = "tooltips"
-        -- in a fight the client hides a tooltip's rows from addons: nothing could be read
-        outOfCombat(function() WFJScanTooltipRead(function()
-          db.test.part = "novoice"
-          outOfCombat(function() WFJScanNoVoiceRead(function()
-            db.test.part = "names"
-            -- in a fight the client hides a tooltip's rows and a unit's name from addons
-            outOfCombat(function() WFJScanNamesRead(function()
-            WFJScanPlatesRead() -- out of combat here: the client refuses a setting written in a fight
-            WFJScanLoadRead()
-            db.test.part = "chat"
-            WFJScanChatRead() -- the addon's own chat windows: opened, read and closed at once
-            db.test.part = "freeze"
-            -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
-            outOfCombat(function() WFJScanFreezeRead(function()
-            local function finish(said)
-              db.test.part = "done"
-              seterrorhandler(shown)
-              watcher:UnregisterAllEvents()
-              readGrabbed()
-              testRunning = false
-              db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
-              pcall(sayCounts, db)
-              print("WFJ test done: /reload to save, then the result can be read" .. said)
-            end
-            -- The guild and character windows are the player's to open, so a plain run does not wait for them:
-            -- what the last `/wfjtest hand` read of them stands for this run while the build is the same.
-            if how ~= "hand" then
-              db.test.hand = false
-              return finish(". Guild and character windows not read in this run (/wfjtest hand reads them)")
-            end
-            db.test.hand = true
-            db.test.part = "guild"
-            WFJScanGuildRead(function()
-              db.test.part = "character"
-              WFJScanCharacterRead(function()
-                local unopened = {}
-                for window, why in pairs(db.test.unopened or {}) do
-                  if window == "guild" or window == "character" or window == "guild pages" then
-                    unopened[window] = why
-                  end
-                end
-                local hover = type(db.hover) == "table" and db.hover or {}
-                db.hand = { build = db.test.build, code = db.test.code, at = date("%%Y-%%m-%%d %%H:%%M:%%S"),
-                  guild = db.live.guild, character = db.live.character, unopened = unopened,
-                  hover = { guild = hover.guild, character = hover.character } }
-                finish("")
-              end)
-            end)
-            end) end)
-            end) end)
-          end) end)
-        end) end)
+      WFJScanClosedRead(nxt)
+    end, needs = "walk" },
+    -- in a fight the client hides a tooltip's rows from addons: nothing could be read
+    { "tooltips", function(nxt) outOfCombat(function() WFJScanTooltipRead(nxt) end) end },
+    { "novoice", function(nxt) outOfCombat(function() WFJScanNoVoiceRead(nxt) end) end },
+    -- in a fight the client hides a tooltip's rows and a unit's name from addons
+    { "names", function(nxt) outOfCombat(function() WFJScanNamesRead(nxt) end) end },
+    -- the client refuses a setting written in a fight
+    { "plates", function(nxt) outOfCombat(function() WFJScanPlatesRead() nxt() end) end },
+    { "load", function(nxt) WFJScanLoadRead() nxt() end },
+    -- the addon's own chat windows: opened, read and closed at once
+    { "chat", function(nxt) WFJScanChatRead() nxt() end },
+    -- the interface is hidden and shown again, which waits for the end of a fight too
+    { "bagclick", function(nxt) outOfCombat(function() WFJScanBagClickRead(nxt) end) end },
+    -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
+    { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
+  }
+  local byName = {}
+  for _, part in ipairs(parts) do byName[part[1]] = part end
+  local chosen = parts
+  if section then
+    chosen = { byName[section].needs and byName[byName[section].needs] or nil, byName[section] }
+    if chosen[1] == nil then chosen = { byName[section] } end
+  end
+  local function run(i)
+    local part = chosen[i]
+    if part then
+      db.test.part = part[1]
+      return part[2](function() run(i + 1) end)
+    end
+    if section then return finish(" (only the " .. section .. " part; plain /wfjtest runs them all)") end
+    -- The guild and character windows are the player's to open, so a plain run does not wait for them:
+    -- what the last `/wfjtest hand` read of them stands for this run while the build is the same.
+    if how ~= "hand" then
+      db.test.hand = false
+      return finish(". Guild and character windows not read in this run (/wfjtest hand reads them)")
+    end
+    db.test.hand = true
+    db.test.part = "guild"
+    WFJScanGuildRead(function()
+      db.test.part = "character"
+      WFJScanCharacterRead(function()
+        local unopened = {}
+        for window, why in pairs(db.test.unopened or {}) do
+          if window == "guild" or window == "character" or window == "guild pages" then
+            unopened[window] = why
+          end
+        end
+        local hover = type(db.hover) == "table" and db.hover or {}
+        db.hand = { build = db.test.build, code = db.test.code, at = date("%%Y-%%m-%%d %%H:%%M:%%S"),
+          guild = db.live.guild, character = db.live.character, unopened = unopened,
+          hover = { guild = hover.guild, character = hover.character } }
+        finish("")
       end)
-    end) end)
-  end)
+    end)
+  end
+  run(1)
 end
 """
 
@@ -4175,6 +4390,53 @@ def read_load(text: str) -> dict[str, float] | None:
     return {k: float(v) for k, v in record.named().items() if isinstance(v, (int, float))}
 
 
+def read_bagclick(text: str) -> dict[str, Any] | None:
+    """The window test's bag click read out of a saved-variables file, or None when the run had none: how many
+    values it read (`checked`), the ones carrying the addon's taint as (when, name) (`ours`), the ones carrying
+    another addon's as name → addon (`others`), why the second pass did not run (`refused`), a read that raised
+    (`failed`), the bag item buttons pointed at (`pointed`), the bag item tooltips shown (`tooltips`), the values the
+    test's own steps tainted (`own`) and how far the frames it passed over got (`skipped`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("bagclick") if probe is not None else None
+    if record is None:
+        return None
+    rows = record.get("ours")
+    others = record.get("others")
+    skipped = record.get("skipped")
+    return {
+        "checked": int(record.get("checked") or 0),
+        "ours": [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])],
+        "others": {str(k): str(v) for k, v in (others.named() if others is not None else {}).items()},
+        "refused": str(record.get("refused") or ""),
+        "failed": str(record.get("failed") or ""),
+        "pointed": int(record.get("pointed") or 0),
+        "tooltips": int(record.get("tooltips") or 0),
+        "own": int(record.get("own") or 0),
+        "skipped": {str(k): str(v) for k, v in (skipped.named() if skipped is not None else {}).items()},
+    }
+
+
+def bagclick_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the bag click read found wrong, one line each: every value a bag item's click reads that carries the
+    addon's taint (the game would refuse the item's use in the addon's name). A run whose test addon had no such
+    read says so."""
+    if record is None:
+        return ["bag click not read: this run's test addon has no such read (make scan-install, then run it again)"]
+    out = [f"bag click value tainted by the addon ({when}): {name}" for when, name in record["ours"]]
+    if record["refused"]:
+        out.append(f"bag click read only as the run left it: {record['refused']}")
+    if record["failed"]:
+        out.append(f"bag click read stopped: {record['failed']}")
+    # a run that pointed at no bag item never ran the item tooltip's code on a bag button, the path under test
+    if record["skipped"] and not record["pointed"] and not record["tooltips"] and not record["refused"]:
+        out.append("bag click pointed at no bag item: "
+                   + ", ".join(f"{k} {v}" for k, v in sorted(record["skipped"].items())))
+    return out
+
+
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
     nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
@@ -4684,9 +4946,13 @@ def client_build_beside(saved: Path) -> str | None:
     return None
 
 
-def _own_reads(saved: str) -> list[str]:
-    """Prints what the tooltip read, the no-voice read and the names read saw and gives back their problems."""
-    tooltips = read_tooltips(saved)
+def _own_reads(saved: str, section: str | None = None) -> list[str]:
+    """Prints what the tooltip read, the no-voice read and the names read saw and gives back their problems; for a
+    run of one part (`section`), only that part's: the others' records are an earlier run's."""
+    def part(name: str) -> bool:
+        return section is None or section == name
+
+    tooltips = read_tooltips(saved) if part("tooltips") else None
     if tooltips is not None:
         print(f"tooltips: {tooltips['read']} spells read ({tooltips['japanese']} in Japanese, "
               f"{tooltips['unread']} the client had not loaded), {tooltips['items']} items; "
@@ -4701,12 +4967,12 @@ def _own_reads(saved: str) -> list[str]:
             print(f"tooltips: loading {tooltips['load']}")
         for why, (n, ids) in sorted(tooltips.get("why", {}).items()):
             print(f"tooltips: {n} not read, {why}, e.g. {ids}")
-    no_voice = read_no_voice(saved)
+    no_voice = read_no_voice(saved) if part("novoice") else None
     if no_voice is not None:
         print(f"no-voice message: {no_voice['quests']} quests read in the quest log, {no_voice['said']} said they "
               f"have no voice; voice pack {'loaded' if no_voice['pack'] else 'not loaded'}, "
               f"{no_voice['listed']} lines listed with no voice")
-    names = read_names(saved)
+    names = read_names(saved) if part("names") else None
     japanese: dict[str, str] = {}
     if names is not None and names["rows"]:
         from wfj.io.names_store import load_lines
@@ -4715,30 +4981,43 @@ def _own_reads(saved: str) -> list[str]:
         japanese = {ln["en"]: ln["ja"] for ln in load_lines(data_root()) if ln.get("status") == "trusted"}
         shown = sum(1 for _, english, text in names["rows"] if text != english)
         print(f"names: {len(names['rows'])} read, {shown} shown in Japanese")
-    freeze = read_freeze(saved)
+    freeze = read_freeze(saved) if part("freeze") else None
     if freeze is not None:
         print(f"frozen tooltip: {freeze['items']} item and {freeze['spells']} spell tooltips frozen, "
               f"{freeze['lines']} Japanese lines copied, {freeze['cards']} word cards, "
               f"{len(uncarded_words(freeze))} lines with a word that takes none; key {freeze['bound'] or 'none'}")
-    chat = read_chat(saved)
+    chat = read_chat(saved) if part("chat") else None
     if chat is not None and not chat["refused"]:
         print(f"chat tools: {chat['topics']} topics and {chat['phrases']} phrases on the phrase card, "
               f"{chat['words']} text regions in the chat words window")
-    plates = read_plates(saved)
+    bagclick = read_bagclick(saved) if part("bagclick") else None
+    if bagclick is not None:
+        print(f"bag click: {bagclick['checked']} values read, {bagclick['pointed']} bag item buttons pointed at, "
+              f"{bagclick['tooltips']} bag item tooltips shown, "
+              f"{len(bagclick['ours'])} tainted by the addon, {bagclick['own']} by the test's own steps "
+              "(which the read cannot tell from the addon's)"
+              + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(bagclick["others"].items()))
+                 if bagclick["others"] else ""))
+    plates = read_plates(saved) if part("plates") else None
     if plates is not None and not plates["refused"]:
         v, d = plates["values"], plates["defaults"]
         print(f"nameplates: range {v.get('nameplateMaxDistance')} (default {d.get('nameplateMaxDistance')}, the "
               f"client holds up to {plates['limit'] or 'unknown'}); English names over NPC heads "
               + ", ".join(f"{k} {v.get(k)}" for k in PLATE_WANT))
-    load = read_load(saved)
+    load = read_load(saved) if part("load") else None
     if load:
         said = [f"{load['kb'] / 1024:.0f} MB of Lua memory"] if "kb" in load else []
         said += [f"files loaded in {load['files']:.0f} ms"] if "files" in load else []
         said += [f"setup {load['setup']:.0f} ms"] if "setup" in load else []
         print("addon load: " + ", ".join(said))
-    return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
-            + names_problems(names, japanese) + chat_problems(chat) + freeze_problems(freeze)
-            + plates_problems(plates))
+    out = included_problems(saved) + tooltip_problems(tooltips) if part("tooltips") else []
+    out += no_voice_problems(no_voice) if part("novoice") else []
+    out += names_problems(names, japanese) if part("names") else []
+    out += chat_problems(chat) if part("chat") else []
+    out += freeze_problems(freeze) if part("freeze") else []
+    out += plates_problems(plates) if part("plates") else []
+    out += bagclick_problems(bagclick) if part("bagclick") else []
+    return out
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A
@@ -5040,25 +5319,22 @@ def _say_other(read: bool, protected: Mapping[str, int], other: list[tuple[str, 
         print(f"OTHER (and {len(other) - OTHER_SHOWN} more)")
 
 
-def _texts(args: argparse.Namespace) -> int:
-    """The `texts` command: the window test's saved result against the baseline. → the exit code."""
-    info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
-    now = client_build_beside(args.saved)
-    if now and info.get("build") and now != info["build"]:
-        print(f"window test: the saved run is of build {info['build']} and the client is on {now} now: "
-              "run /wfjtest again on this build")
-        return 2
-    if not info.get("finished") and info.get("part") in ("guild", "character"):
-        print(f"window test: the run stopped while waiting for the {info['part']} window; the rest is read below")
-    elif not info.get("finished"):
-        print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
-        return 2
-    if info.get("absent"):
+def _say_head(info: dict[str, str], text: str) -> str | None:
+    """Prints what the run was before its result: one part or the whole test, the windows this client lacks, the
+    hand read and the interface strings the client does not hand to addons. → the part a run of one part ran.
+    A run of one part (`/wfjtest <part>`) is judged on that part and the errors of its run; the rest of the saved
+    file is an earlier run's."""
+    section = info.get("section") or None
+    windows = section in (None, "live", "closed")
+    if section:
+        print(f"window test: a run of the {section} part only; plain /wfjtest runs them all and is the bar before "
+              "a merge")
+    if info.get("absent") and windows:
         print(f"windows this client does not have: {info['absent']}")
-    if info.get("hand"):
+    if info.get("hand") and windows:
         print(f"guild and character windows: {info['hand']}, not in this run")
-    asked, missing = read_missing_strings(args.saved.read_text(encoding="utf-8", errors="replace"))
-    if asked:
+    asked, missing = read_missing_strings(text)
+    if asked and not section:
         # grouped by the first two words of the name: a whole family missing reads as one line
         groups: dict[str, int] = {}
         for name in missing:
@@ -5067,48 +5343,15 @@ def _texts(args: argparse.Namespace) -> int:
         print(f"dictionary strings the client does not hand to addons: {len(missing)} of {asked}")
         for head, n in sorted(groups.items(), key=lambda kv: (-kv[1], kv[0]))[:40]:
             print(f"read  not handed to addons\t{head}\t{n}")
-    latin = read_latin(args.saved.read_text(encoding="utf-8", errors="replace"))
-    faults, protected, other = _names_in_windows(latin)
-    found |= faults
-    baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
-    # a hovered tooltip's lines are held to the baseline by the hover read, never taken for a line on screen
-    hover_baseline = {key: why for key, why in baseline.items() if key[1].startswith(f"{HOVER} ")}
-    baseline = {key: why for key, why in baseline.items() if key not in hover_baseline}
-    new, gone = window_test_report(found, baseline)
-    hover = read_hover(args.saved.read_text(encoding="utf-8", errors="replace"))
-    hover_seen = {(w, f"{HOVER} {_line(text)}") for w, entry in (hover or {}).items()
-                  for _, text, _, _ in [*entry["english"], *entry["runs"]]}
-    gone += sorted(f"{w}\t{en}" for w, en in hover_baseline
-                   if not any((seen_w == w or seen_w.split(" > ")[0] == w) and seen_en == en
-                              for seen_w, seen_en in hover_seen))
-    names = read_names(args.saved.read_text(encoding="utf-8", errors="replace"))
-    listed_names = _name_list() if hover_seen else ({}, frozenset())
-    hovered, hover_allowed = hover_faults(hover or {}, hover_baseline, *listed_names,
-                                          names_on=bool(names and names["on"]))
-    # a window the open sweep showed did not run the client's opening code, so a surface that works from that
-    # code never ran: its English is a list to read against the code, never a failure, like its errors
-    # a closed window read without being shown is the same kind of list
-    bare = [row for row in new if row.startswith(("opened ", "closed "))]
-    new = [row for row in new if row not in bare]
-    print(f"window test of build {info.get('build')}, run {info.get('started')}: {len(found)} English lines on "
-          f"screen, {len(found) - len(new) - len(bare)} allowed by the baseline, {len(new)} new in the windows "
-          f"opened the client's way, {len(bare)} to read in closed windows")
-    for row in new:
-        print(f"NEW   {row}")
-    for row in bare:
-        print(f"read  {row}")
-    for row in gone:
-        print(f"gone  {row}")
-    log = args.log or args.saved.with_name("WoWForeverJapanese.lua")
-    problems = read_test_problems(args.saved.read_text(encoding="utf-8", errors="replace"),
-                                  log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
+    return section
+
+
+def _say_errors(problems: list[str], listed: Path) -> list[str]:
+    """Prints the run's problems as failures, as errors of windows shown bare and as the game's own errors that
+    `listed` sets aside. → the failures."""
     # the open sweep shows a window without the client's own opening code, so a window that needs data it was
     # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
-    problems += _own_reads(args.saved.read_text(encoding="utf-8", errors="replace"))
-    problems += tooltip_row_problems(args.saved.read_text(encoding="utf-8", errors="replace"))
-    problems += hover_problems(hover, hovered)
     noted = [row for row in problems if ": [open] " in row or any(own in row for own in OWN_REFUSALS)]
-    listed = args.baseline.with_name("ui_test_game_errors.txt")
     own = game_own_errors([row for row in problems if row not in noted],
                           read_game_errors(listed.read_text(encoding="utf-8")) if listed.exists() else {})
     failing = [row for row in problems if row not in noted and row not in own]
@@ -5120,12 +5363,92 @@ def _texts(args: argparse.Namespace) -> int:
         print(f"noted {row}")
     for row, why in sorted(own.items()):
         print(f"game  {row}\n      listed: {why}")
-    _say_rows(args.saved.read_text(encoding="utf-8", errors="replace"))
-    _say_hover(hover, hovered, hover_allowed)
-    _say_traces(args.saved.read_text(encoding="utf-8", errors="replace"))
-    _say_included(args.saved.read_text(encoding="utf-8", errors="replace"))
-    _say_other(bool(latin), protected, other)
-    _say_left(args.saved.read_text(encoding="utf-8", errors="replace"), new)
+    return failing
+
+
+def _say_tail(text: str, section: str | None, hover: tuple[Any, Any, Any], latin: tuple[Any, Any, Any],
+              new: list[str]) -> None:
+    """Prints the lists that end a result, those of the parts the run ran: tooltip rows, hovered tooltips, traces,
+    included text, Latin words in windows and the lines left English."""
+    windows = section in (None, "live", "closed")
+    if section in (None, "tooltips"):
+        _say_rows(text)
+    if section in (None, "live"):
+        _say_hover(*hover)
+    if section in (None, "tooltips"):
+        _say_traces(text)
+        _say_included(text)
+    if windows:
+        _say_other(*latin)
+    if section in (None, "tooltips", "live"):
+        _say_left(text, new)
+
+
+def _texts(args: argparse.Namespace) -> int:
+    """The `texts` command: the window test's saved result against the baseline. → the exit code."""
+    text = args.saved.read_text(encoding="utf-8", errors="replace")
+    info, found = read_window_test(text)
+    now = client_build_beside(args.saved)
+    if now and info.get("build") and now != info["build"]:
+        print(f"window test: the saved run is of build {info['build']} and the client is on {now} now: "
+              "run /wfjtest again on this build")
+        return 2
+    if not info.get("finished") and info.get("part") in ("guild", "character"):
+        print(f"window test: the run stopped while waiting for the {info['part']} window; the rest is read below")
+    elif not info.get("finished"):
+        print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
+        return 2
+    section = _say_head(info, text)
+    windows = section in (None, "live", "closed")
+    latin = read_latin(text)
+    faults, protected, other = _names_in_windows(latin)
+    found |= faults
+    baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
+    # a hovered tooltip's lines are held to the baseline by the hover read, never taken for a line on screen
+    hover_baseline = {key: why for key, why in baseline.items() if key[1].startswith(f"{HOVER} ")}
+    baseline = {key: why for key, why in baseline.items() if key not in hover_baseline}
+    new, gone = window_test_report(found, baseline)
+    hover = read_hover(text)
+    hover_seen = {(w, f"{HOVER} {_line(text)}") for w, entry in (hover or {}).items()
+                  for _, text, _, _ in [*entry["english"], *entry["runs"]]}
+    gone += sorted(f"{w}\t{en}" for w, en in hover_baseline
+                   if not any((seen_w == w or seen_w.split(" > ")[0] == w) and seen_en == en
+                              for seen_w, seen_en in hover_seen))
+    names = read_names(text)
+    listed_names = _name_list() if hover_seen else ({}, frozenset())
+    hovered, hover_allowed = hover_faults(hover or {}, hover_baseline, *listed_names,
+                                          names_on=bool(names and names["on"]))
+    # a window the open sweep showed did not run the client's opening code, so a surface that works from that
+    # code never ran: its English is a list to read against the code, never a failure, like its errors
+    # a closed window read without being shown is the same kind of list
+    bare = [row for row in new if row.startswith(("opened ", "closed "))]
+    new = [row for row in new if row not in bare]
+    if not windows:
+        found, new, bare, gone, hovered = set(), [], [], [], []
+    elif section == "closed":
+        # the live and hover records are an earlier run's: only the windows read closed are this run's
+        found = {row for row in found if row[0].startswith(("closed ", "opened "))}
+        new, gone, hovered = [], [], []
+    print(f"window test of build {info.get('build')}, run {info.get('started')}"
+          + (f": {len(found)} English lines on screen, {len(found) - len(new) - len(bare)} allowed by the baseline, "
+             f"{len(new)} new in the windows opened the client's way, {len(bare)} to read in closed windows"
+             if windows else ""))
+    for row in new:
+        print(f"NEW   {row}")
+    for row in bare:
+        print(f"read  {row}")
+    for row in gone:
+        print(f"gone  {row}")
+    log = args.log or args.saved.with_name("WoWForeverJapanese.lua")
+    problems = read_test_problems(text,
+                                  log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
+    problems += _own_reads(text, section)
+    if section in (None, "tooltips"):
+        problems += tooltip_row_problems(text)
+    if section in (None, "live"):
+        problems += hover_problems(hover, hovered)
+    failing = _say_errors(problems, args.baseline.with_name("ui_test_game_errors.txt"))
+    _say_tail(text, section, (hover, hovered, hover_allowed), (bool(latin), protected, other), new)
     return 1 if new or failing else 0
 
 

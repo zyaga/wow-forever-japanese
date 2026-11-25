@@ -632,20 +632,16 @@ end
 -- compared or matched by addon code (an action button's tooltip in combat holds only secret lines); `type()` of one
 -- is still "string", so it is asked about explicitly.
 local function anySecret(texts)
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(isSecret) ~= "function" then return false end
   for _, text in ipairs(texts) do
-    if isSecret(text) then return true end
+    if Compat.secret(text) then return true end
   end
   return false
 end
 
 -- The same over loose values, which may hold a nil before a secret (a list would stop at the hole).
 local function anySecretOf(...)
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(isSecret) ~= "function" then return false end
   for i = 1, select("#", ...) do
-    if isSecret((select(i, ...))) then return true end
+    if Compat.secret((select(i, ...))) then return true end
   end
   return false
 end
@@ -691,8 +687,8 @@ local TRACE_MAX = 400
 -- A long value is cut at 70 bytes, moved back to the start of a character: a cut inside a Japanese character is
 -- not UTF-8, and an edit box given text that is not UTF-8 shows none of it.
 local function plain(v)
-  if v == nil then return "nil" end
   if anySecretOf(v) then return "<secret>" end
+  if v == nil then return "nil" end
   local t = tostring(v)
   if #t <= 70 then return t end
   local cut = 70
@@ -1174,7 +1170,7 @@ local function showHidden(frame, kind, id, lines)
     descEn, descSource = texts[first], "the client's data"
   elseif kind == "spell.description" then
     local d = Tooltip.spellDescription(id)
-    if type(d) == "string" and d ~= "" and not anySecretOf(d) then descEn, descSource = d, "the spell API" end
+    if type(d) == "string" and not anySecretOf(d) and d ~= "" then descEn, descSource = d, "the spell API" end
   end
   local runArgs = (kind == "item.description" and first and descEn) and peelTrailer(texts, first, last) or nil
   if runArgs then -- only an ungated translation takes the trailer's Japanese; a gated one keeps the whole line
@@ -1629,8 +1625,8 @@ function Tooltip.appendedDescription(frame, data, texts)
   local want = type(lineTypes) == "table" and lineTypes.SpellDescription or nil
   if type(id) ~= "number" or anySecretOf(id) or want == nil then return nil end
   for _, line in ipairs(data.lines) do
-    local text = type(line) == "table" and line.type == want and line.leftText or nil
-    if type(text) == "string" and text ~= "" and not anySecretOf(text) then
+    local text = type(line) == "table" and not anySecretOf(line.type) and line.type == want and line.leftText or nil
+    if type(text) == "string" and not anySecretOf(text) and text ~= "" then
       for row = #texts, 2, -1 do
         if texts[row] == text then return row, id end
       end
@@ -1857,7 +1853,7 @@ function Tooltip.onCompareShow(frame)
     -- the "Equipped" tab above the comparison (tooltipcomparisonmanager.lua:241-247)
     local header = type(frame.CompareHeader) == "table" and frame.CompareHeader.Label or nil
     local htext = type(header) == "table" and type(header.GetText) == "function" and header:GetText() or nil
-    if type(htext) == "string" and htext ~= "" and not anySecret({ htext }) then
+    if type(htext) == "string" and not anySecret({ htext }) and htext ~= "" then
       local key = index:matchOnly(htext, COMPARE_HEADER_KEYS)
       if key and WFJ.Render.show(surface, "ui.header", header, htext, "ui", "ui", key, {}) then n = n + 1 end
     end

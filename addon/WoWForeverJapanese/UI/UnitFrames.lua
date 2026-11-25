@@ -105,7 +105,6 @@ local function declareAll()
   Compat.declare(SURFACE, "partyFrame", { "PartyFrame" })
   Compat.declare(SURFACE, "compactParty", { "CompactPartyFrame" })
   Compat.declare(SURFACE, "tooltip", { "GameTooltip" })
-  Compat.declare(SURFACE, "isSecret", { "issecretvalue" })
   for _, hook in ipairs(GLOBAL_HOOKS) do Compat.declare(SURFACE, hook[1], { hook[1] }) end
   Compat.declare(SURFACE, "enDead", { "DEAD" })
   Compat.declare(SURFACE, "enOffline", { "PLAYER_OFFLINE" })
@@ -143,10 +142,7 @@ function UnitFrames.showStatic()
 end
 
 -- → true when `text` must not be read further (a secret value: comparing it from addon code can raise).
-local function secret(text)
-  local isSecret = get("isSecret")
-  return type(isSecret) == "function" and isSecret(text) == true
-end
+local function secret(text) return Compat.secret(text) end
 
 -- hooksecurefunc target (CompactUnitFrame_UpdateStatusText). Runs on every health event of every compact frame, so it
 -- does the least it can: one GetText, and Labels.show only for one of the two words or over an existing record.

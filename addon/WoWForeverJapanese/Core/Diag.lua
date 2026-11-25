@@ -8,7 +8,7 @@
 --            what is left on the frame's own table and on what it inherits, and the Lua memory then;
 --   memory   the Lua memory, sampled on a timer.
 -- The log holds no text the game showed, no names and no chat: only addon and frame names, counts and times.
-local _, WFJ = ...
+local ADDON, WFJ = ...
 local Diag = {}
 WFJ.Diag = Diag
 
@@ -17,6 +17,11 @@ Diag.MAX_ENTRIES = 500
 Diag.MAX_SESSIONS = 50 -- session entries kept; the oldest go past this
 Diag.SPEECH_SHARE = 100 -- speechline entries a full log keeps
 Diag.MAX_LINES = 50 -- the most /wfj log prints
+-- A block and the taint that led to it are what the log is for, and are rare: other entries never push them out,
+-- and only the newest MAX_KEPT of them stay. A field another addon tainted is not kept this way: an action bar
+-- addon can turn many, and they would push out this addon's own blocks.
+Diag.KEPT = { blocked = true, turned = true, taint = true, context = true }
+Diag.MAX_KEPT = 50
 Diag.CHECK_INTERVAL = 5 -- seconds between hook checks
 Diag.MEMORY_EVERY = 60 -- hook checks between memory samples (5 minutes)
 Diag.BLOCK_EVENTS = { "ADDON_ACTION_BLOCKED", "ADDON_ACTION_FORBIDDEN" }
@@ -46,22 +51,35 @@ function Diag.load(saved)
 end
 
 -- Over the cap, the oldest memory sample goes first; then the oldest speechline while they hold more than
--- SPEECH_SHARE entries (one per NPC line, so the most numerous); then the oldest problem entry; then the oldest
--- speechline; then the oldest session. A full log of problem entries still keeps the latest NPC lines, so a line
--- that stayed English can be traced. Never more than MAX_SESSIONS session entries, and a problem entry is never
--- dropped to make room for a session.
+-- SPEECH_SHARE entries (one per NPC line, so the most numerous); then the oldest problem entry that is not a block or
+-- taint entry (KEPT); then the oldest speechline; then the oldest session; a KEPT entry only last. A full log of
+-- problem entries still keeps the latest NPC lines, so a line that stayed English can be traced. Never more than
+-- MAX_SESSIONS session entries or MAX_KEPT block and taint entries, and a problem entry is never dropped to make room
+-- for a session.
 local function oldest(list, keep)
   for i, e in ipairs(list) do
     if keep(e) then return i end
   end
   return nil
 end
+local function kept(e) return Diag.KEPT[e.kind] == true and (e.kind ~= "turned" or e.by == ADDON) end
+local function forget(gone)
+  local key = tostring(gone.kind) .. "\0" .. tostring(gone.msg)
+  if repeats[key] == gone then repeats[key] = nil end -- its next repeat starts a new entry
+end
 local function trim(list)
-  local sessions = 0
-  for _, e in ipairs(list) do if e.kind == "session" then sessions = sessions + 1 end end
+  local sessions, keptN = 0, 0
+  for _, e in ipairs(list) do
+    if e.kind == "session" then sessions = sessions + 1 end
+    if kept(e) then keptN = keptN + 1 end
+  end
   while sessions > Diag.MAX_SESSIONS do
     table.remove(list, oldest(list, function(e) return e.kind == "session" end))
     sessions = sessions - 1
+  end
+  while keptN > Diag.MAX_KEPT do
+    forget(table.remove(list, oldest(list, kept)))
+    keptN = keptN - 1
   end
   local speech = 0
   for _, e in ipairs(list) do if e.kind == "speechline" then speech = speech + 1 end end
@@ -71,12 +89,11 @@ local function trim(list)
     local drop = oldest(list, function(e) return e.kind == "memory" end)
       or oldest(list, function(e) return e.kind == "slow" or e.kind == "perf" end)
       or (speech > Diag.SPEECH_SHARE and oldest(list, function(e) return e.kind == "speechline" end))
-      or oldest(list, function(e) return e.kind ~= "session" and e.kind ~= "speechline" end)
+      or oldest(list, function(e) return e.kind ~= "session" and e.kind ~= "speechline" and not kept(e) end)
+      or oldest(list, function(e) return e.kind ~= "session" and not kept(e) end)
       or oldest(list, function(e) return e.kind ~= "session" end) or 1
     if list[drop].kind == "speechline" then speech = speech - 1 end
-    local gone = table.remove(list, drop)
-    local key = tostring(gone.kind) .. "\0" .. tostring(gone.msg)
-    if repeats[key] == gone then repeats[key] = nil end -- its next repeat starts a new entry
+    forget(table.remove(list, drop))
   end
 end
 

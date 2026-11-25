@@ -68,16 +68,24 @@ local function call(fn, ...)
   return fn(...)
 end
 
+-- A value the client keeps secret counts as unavailable: every reader of these compares or matches them.
+local function unlocked(v)
+  if WFJ.Compat and WFJ.Compat.secret(v) then return nil end
+  return v
+end
+
 local function player()
   local className, classFile = call(UnitClass, "player")
   local raceName, raceFile = call(UnitRace, "player")
-  local name = call(UnitName, "player")
+  className, classFile = unlocked(className), unlocked(classFile)
+  raceName, raceFile = unlocked(raceName), unlocked(raceFile)
+  local name = unlocked(call(UnitName, "player"))
   if name ~= nil and name == _G.UNKNOWNOBJECT then name = nil end
   return {
     name = name, className = className, classFile = classFile,
     raceName = raceName, raceFile = raceFile,
     raceWord = WFJ.Collector and WFJ.Collector.raceWord(raceName, raceFile) or nil,
-    sex = call(UnitSex, "player"),
+    sex = unlocked(call(UnitSex, "player")),
   }
 end
 WFJ.player = player -- the voice panel fills a line's tokens part by part, as the window filled the whole line

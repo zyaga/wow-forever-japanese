@@ -81,7 +81,7 @@ local CANDIDATES = {
   -- the settings window's two layout dialogs (cooldownviewersettingsdialogs.xml:3, 9), built from Edit Mode's
   -- dialog templates: only their Cancel button's word is this surface's
   layoutDialog = { "CooldownViewerLayoutDialog" }, importDialog = { "CooldownViewerImportLayoutDialog" },
-  tooltip = { "GameTooltip" }, isSecret = { "issecretvalue" }, categoryEnum = { "Enum.CooldownViewerCategory" },
+  tooltip = { "GameTooltip" }, categoryEnum = { "Enum.CooldownViewerCategory" },
 }
 
 local TITLE = { only = { "COOLDOWN_VIEWER_SETTINGS_TITLE" } }
@@ -131,9 +131,7 @@ local function get(key) return Compat.get(SURFACE, key) end
 
 -- → true when `value` is a secret value on this client (never on a client without the API).
 local function secret(value)
-  local fn = get("isSecret")
-  if type(fn) ~= "function" then return false end
-  local ok, result = pcall(fn, value)
+  local ok, result = pcall(Compat.secret, value)
   return ok and result == true
 end
 
