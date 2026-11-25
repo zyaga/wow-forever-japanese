@@ -28,24 +28,23 @@ def key_of(entry: list[Any]) -> str:
     return f"{entry[0]}\t{entry[1]}"
 
 
-def _distinct(records: Iterable[Mapping[str, Any]]) -> Iterable[Mapping[str, Any]]:
-    """Each line once: a line also shipped under another key (a female variant, a repeated quest's text) is
-    the same record's word list again, and is not more text."""
+def _lines(current: Mapping[str, list[dict[str, Any]]]) -> Iterable[tuple[int, dict[str, Any]]]:
+    """(place of its kind in KINDS, record) for each line, once: a line also shipped under another key (a
+    female variant, a repeated quest's text) is the same record's word list again, and is not more text. It
+    counts for the first kind that holds it."""
     seen: set[int] = set()
-    for rec in records:
-        mark = id(rec["words"])
-        if mark not in seen:
-            seen.add(mark)
-            yield rec
+    for at, kind in enumerate(KINDS):
+        for rec in current.get(kind, []):
+            mark = id(rec["words"])
+            if mark not in seen:
+                seen.add(mark)
+                yield at, rec
 
 
 def japanese_counts(current: Mapping[str, list[dict[str, Any]]]) -> Counts:
     """{word key: uses per kind} over the reading records that ship."""
     out: Counts = {}
-    distinct = _distinct(rec for kind in KINDS for rec in current.get(kind, []))
-    kind_of = {id(rec["words"]): kind for kind in reversed(KINDS) for rec in current.get(kind, [])}
-    for rec in distinct:
-        at = KINDS.index(kind_of[id(rec["words"])])
+    for at, rec in _lines(current):
         for entry in rec["words"]:
             out.setdefault(key_of(entry), [0] * len(KINDS))[at] += 1
     return out
@@ -55,9 +54,7 @@ def english_counts(current: Mapping[str, list[dict[str, Any]]], common: Iterable
     """{English word: lines per kind that list it} over the records' English word card rows, plus every word
     of the common word list (a word no line lists has no count)."""
     out: Counts = {word: [0] * len(KINDS) for word in common}
-    kind_of = {id(rec["words"]): kind for kind in reversed(KINDS) for rec in current.get(kind, [])}
-    for rec in _distinct(rec for kind in KINDS for rec in current.get(kind, [])):
-        at = KINDS.index(kind_of[id(rec["words"])])
+    for at, rec in _lines(current):
         for pair in (rec.get("english") or "").split():
             out.setdefault(pair.rpartition("=")[0], [0] * len(KINDS))[at] += 1
     return out

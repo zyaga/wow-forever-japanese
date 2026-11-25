@@ -68,7 +68,6 @@ local function relabel()
   W.put(frame.counts, W.pick(Window.countsText(lang)), 12)
   W.put(frame.score, W.pick(Window.scoreText(lang)), 12)
 end
-Window.relabel = relabel
 
 -- Marks the box's words and leaves the pieces it could not find in the box. → the import's result
 function Window.import()
@@ -130,8 +129,6 @@ function Window.open()
   frame:Show()
   return frame
 end
-
-function Window.frame() return frame end
 
 WFJ.State.on("language", function() if frame and frame:IsShown() then pcall(relabel) end end)
 WFJ.State.on("wordStatus", function() if frame and frame:IsShown() then pcall(relabel) end end)

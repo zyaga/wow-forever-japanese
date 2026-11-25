@@ -61,6 +61,3 @@ function Frequency.uses(lang, key) return build(lang).usesOf[key] end
 function Frequency.grammar(key) return WFJ.Data.grammar[key] ~= nil end
 function Frequency.forms(word) return build("ja").forms[word] end
 function Frequency.read(reading) return build("ja").read[reading] end
-
--- The lists are read again after the data changes (specs load data after the module).
-function Frequency.reset() lists = {} end

@@ -24,7 +24,6 @@ local PLACE = {
   voicepanel = "voicepanel",
   ["tooltip.frozen"] = "tooltip",
 }
-Marks.PLACE = PLACE
 
 local UNDERLINE = { unknown = { 0.95, 0.25, 0.25, 0.9 }, learning = { 0.1, 0.4, 1, 1 } }
 local HIGHLIGHT = { 0.2, 0.9, 0.3, 0.2 }
