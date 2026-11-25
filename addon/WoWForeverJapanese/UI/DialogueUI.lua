@@ -27,7 +27,7 @@ local S = {
 -- from self:AcquireFontString), sets the piece and measures it at once; InsertText and AcquireAndSetSubHeader do the
 -- same with one text]
 DialogueUI.MEMBERS = { "FormatParagraph", "AcquireFontString", "AcquireLeftFontString", "InsertText",
-  "UpdateQuestTitle", "AcquireOptionButton", "ReleaseAllObjects", "OnSettingsChanged", "HandleGossip",
+  "UpdateQuestTitle", "AcquireOptionButton", "ReleaseAllObjects", "HandleGossip",
   "HandleQuestDetail", "HandleQuestProgress", "HandleQuestComplete", "HandleQuestGreeting" }
 
 Compat.declare(SURFACE, "getQuestID", { "GetQuestID" })
@@ -47,7 +47,10 @@ local MAX_ERRORS = 5
 local errors = 0
 local run -- the line whose paragraphs Dialogue UI is writing now: { holder, slots, english, done, fontStrings, … }
 local writing = false -- this module is writing a text: the hook on that FontString lets its own write pass
-local touched = false -- the page shows a line this module looked up: a reveal key or switch change redraws it
+local pageLines = {} -- the page's lines written in full: written again in place when the reveal key or a switch changes
+-- the page's other texts this module may write (a heading, an option's label, an objective line): FontString →
+-- { en = what Dialogue UI wrote, shown = what it shows now, again = fn → its text now or nil for the English, obj }
+local rows = setmetatable({}, { __mode = "k" })
 local holders = {} -- surface .. key → text holder
 local cards = {} -- word-card records on the page's paragraphs
 local patched = setmetatable({}, { __mode = "k" }) -- option buttons whose writers are followed
@@ -60,7 +63,6 @@ local newest -- the FontString AcquireFontString handed out last
 -- every option again on each redraw. Emptied when it grows past KEY_CACHE_MAX.
 local keyCache, keyCount, KEY_CACHE_MAX = {}, 0, 500
 local lastHandler -- the page handler Dialogue UI ran last: another page's lines are shown anew, as a new window's
-local scrollTo -- where the reader was when this module asked for a redraw (the redraw scrolls to the top)
 
 local function call(key, ...)
   local fn = Compat.get(SURFACE, key)
@@ -349,7 +351,7 @@ end
 local function render(el)
   local h = holder(el.surface, el.key)
   local rec = WFJ.SurfaceState.get(el.surface, el.key)
-  -- the same line laid out again (a redraw for the reveal key or a switch, the greeting again on a quest log update):
+  -- the same line laid out again (Dialogue UI drawing the page again, the greeting again on a quest log update):
   -- the record already holds what to show, and showing it anew would start its voice line again
   if h.shown and rec and rec.fs == h and rec.en == el.en and rec.meta and rec.meta.id == el.id then return h end
   -- the font is left to the record: a record of the last line on this holder carries the face it applied, so setting
@@ -414,7 +416,7 @@ end
 -- the page is about to be laid out again, or its window closed
 local function resetPage()
   cards = DialogueUI.detachCards(cards)
-  touched = false
+  pageLines, rows = {}, setmetatable({}, { __mode = "k" })
   run = nil
 end
 
@@ -445,7 +447,6 @@ end
 -- ── Rows: titles, options, objective lines (no records, no markers) ────────
 
 local function rowJapanese(en, area, kind, id, live)
-  touched = true
   local text, _, action = WFJ.Render.preview(S.rows, en, nil, area, kind, id, { compact = true, live = live })
   if action == "apply" and type(text) == "string" then return text end
   return nil
@@ -468,7 +469,6 @@ local OWN_WORDS = { Requirements = "必要なもの" }
 local function headingWord(en)
   local ja = gameWord(en)
   if ja or OWN_WORDS[en] == nil then return ja end
-  touched = true
   local S_ = WFJ.State
   if S_ and S_.enabled and not S_.showsEnglish() and S_.areaEnabled("ui") then return OWN_WORDS[en] end
   return nil
@@ -488,16 +488,8 @@ local function questRow(questInfo)
   return rowJapanese(questInfo.title, "quests", "quest.title", questInfo.questID, questInfo.title)
 end
 
--- for UI/DialogueUIFrames: lookups for frames that are not the page (they never mark the page for a redraw)
-local function apart(fn)
-  return function(...)
-    local was = touched
-    local res = { fn(...) }
-    touched = was
-    return unpack(res)
-  end
-end
-DialogueUI.preview, DialogueUI.gameWord, DialogueUI.questTitle = apart(rowJapanese), apart(gameWord), apart(questRow)
+-- for UI/DialogueUIFrames: the same lookups for its frames
+DialogueUI.preview, DialogueUI.gameWord, DialogueUI.questTitle = rowJapanese, gameWord, questRow
 DialogueUI.face = function(...) return face(...) end
 
 -- Option buttons. Dialogue UI writes a button's label in SetButtonText (the label, then its Layout sizes the button to
@@ -506,6 +498,11 @@ DialogueUI.face = function(...) return face(...) end
 -- Japanese and the button's own Layout sizes it again. Layout only measures and anchors; the fields the button's
 -- click reads (onClickFunc, id, gossipOptionID, type) are never written here.
 local ROW = { gossip = true, availableQuest = true, activeQuest = true }
+
+-- `fs` shows `shown` over the `en` Dialogue UI wrote; `again()` gives its text when what shows changes.
+local function follow(fs, en, shown, again, obj)
+  rows[fs] = { en = en, shown = shown, again = again, obj = obj }
+end
 
 -- The label of `b` as `text` (nil: as Dialogue UI left it) in the bundled face or its own, laid out again when
 -- anything changed.
@@ -527,33 +524,51 @@ end
 -- gets Dialogue UI's face back.
 local function buttonText(b, name, large)
   if ROW[b.type] then return relabel(b, nil, false, large) end
+  local en = type(b.Name) == "table" and b.Name:GetText() or nil
   local ja = DialogueUI.active() and gameWord(name) or nil
   relabel(b, ja, ja ~= nil, large)
+  if type(en) == "string" then follow(b.Name, en, ja or en, function() return gameWord(name) end) end
 end
 
 -- A gossip option: its Japanese name in place of the English one inside the label Dialogue UI wrote (it keeps the
 -- hotkey, and the icon Dialogue UI picked by the English name).
 local function gossipLabel(b, data)
-  if not (DialogueUI.active() and type(data) == "table" and type(data.name) == "string") then return end
-  local ja = gossipRow(data.name)
-  local label = ja and b.Name:GetText()
+  if not (DialogueUI.active() and type(data) == "table" and type(data.name) == "string")
+      or type(b.Name) ~= "table" then
+    return
+  end
+  local name = data.name
+  local ja = gossipRow(name)
+  local label = b.Name:GetText()
   if type(label) ~= "string" then return end
-  local s, e = label:find(data.name, 1, true)
-  if s then relabel(b, label:sub(1, s - 1) .. ja .. label:sub(e + 1), true, false) end
+  local s, e = label:find(name, 1, true)
+  if not s then return end
+  local function with(j) return label:sub(1, s - 1) .. j .. label:sub(e + 1) end
+  if ja then relabel(b, with(ja), true, false) end
+  local id = gossipKey(name)
+  follow(b.Name, label, ja and with(ja) or label, function()
+    local now = id and rowJapanese(name, "gossip", "gossip", id) or nil
+    return now and with(now) or nil
+  end)
 end
 
 -- A quest row: its Japanese title at the end of the label Dialogue UI wrote (after the level it may put first). It
 -- runs again whenever Dialogue UI writes the row again (the quest's data loading late).
 local function questLabel(b, questInfo)
   if not (DialogueUI.active() and type(questInfo) == "table" and type(questInfo.title) == "string"
-      and type(questInfo.questID) == "number") then
+      and type(questInfo.questID) == "number" and type(b.Name) == "table") then
     return
   end
   local title = questInfo.title
   local ja = questRow(questInfo)
-  local label = ja and b.Name:GetText()
+  local label = b.Name:GetText()
   if type(label) ~= "string" or #label < #title or label:sub(-#title) ~= title then return end
-  relabel(b, label:sub(1, #label - #title) .. ja, true, true)
+  local function with(j) return label:sub(1, #label - #title) .. j end
+  if ja then relabel(b, with(ja), true, true) end
+  follow(b.Name, label, ja and with(ja) or label, function()
+    local now = questRow(questInfo)
+    return now and with(now) or nil
+  end)
 end
 
 local WRITERS = { SetButtonText = buttonText, SetGossip = gossipLabel, SetQuestName = questLabel }
@@ -573,7 +588,6 @@ end
 -- line in Japanese, or nil when none is
 local function objectiveLines(self, text)
   if self.handler ~= "HandleQuestProgress" or type(text) ~= "string" or text:sub(1, 2) ~= "- " then return nil end
-  touched = true
   local out, any = {}, false
   for line in (text .. "\n"):gmatch("(.-)\n") do
     local core = line:match("^%- (.*)$")
@@ -597,7 +611,6 @@ local function showTitle(self)
       or type(en) ~= "string" or en == "" or fs:GetText() ~= en then
     return
   end
-  touched = true
   WFJ.Render.show(S.title, "title", fs, en, "quests", "quest.title", id, { live = en, compact = true })
 end
 
@@ -617,6 +630,7 @@ local function fill(el, k, fs)
   el.done = k
   if k == #el.english then
     run = nil
+    pageLines[#pageLines + 1] = el
     guarded(attachCards, el)
   end
 end
@@ -626,7 +640,6 @@ end
 local function startLine(fs, text)
   local el = identify(frame, text)
   if not el then return false end
-  touched = true
   local shown, h = guarded(render, el)
   local slots = shown and spread(el.prefix .. h.text, #el.english)
   if not slots then return false end
@@ -649,24 +662,30 @@ local function bodyText(fs, text)
   -- FormatParagraph asks for no font object; a line's paragraphs come only from there
   if body[fs].obj == nil and startLine(fs, text) then return end
   -- the progress page's objective lines, or a reward line ("You will be able to choose …")
-  local ja = objectiveLines(frame, text) or gameWord(text)
+  local function again() return objectiveLines(frame, text) or gameWord(text) end
+  local ja = again()
   face(fs, fontObject(body[fs].obj), ja ~= nil)
   if ja then write(fs, ja) end
+  follow(fs, text, ja or text, again, fontObject(body[fs].obj))
 end
 
 -- A heading Dialogue UI just wrote (AcquireAndSetSubHeader sizes the band behind it from the text's width right
 -- after): a game word, or Requirements in the addon's own word, in the bundled face.
 local function headingText(fs, text)
-  local ja = headingWord(text)
-  if not ja then return undress(fs) end
   local obj = type(fs.GetFontObject) == "function" and fs:GetFontObject() or nil
-  WFJ.Font.bundle(fs, type(obj) == "table" and obj or Compat.resolve("DUIFont_Quest_SubHeader"))
+  obj = type(obj) == "table" and obj or Compat.resolve("DUIFont_Quest_SubHeader")
+  local ja = headingWord(text)
+  follow(fs, text, ja or text, function() return headingWord(text) end, obj)
+  if not ja then return undress(fs) end
+  WFJ.Font.bundle(fs, obj)
   write(fs, ja)
 end
 
 -- After a pooled FontString's SetText, before Dialogue UI measures it.
 local function written(fs, text)
-  if writing or type(text) ~= "string" or not DialogueUI.active() then return end
+  if writing then return end
+  rows[fs] = nil -- Dialogue UI wrote it anew
+  if type(text) ~= "string" or not DialogueUI.active() then return end
   if body[fs] then guarded(bodyText, fs, text) else guarded(headingText, fs, text) end
 end
 
@@ -710,30 +729,50 @@ local function footerButtons(self)
   end
 end
 
--- The page is drawn again by Dialogue UI's own redraw (it runs the page's handler again a frame later), so its
--- layout fits the text now showing.
-local function redraw()
-  if not (DialogueUI.active() and touched and frame) then return end
-  if type(frame.IsVisible) == "function" and not frame:IsVisible() then return end
-  local sf = frame.ScrollFrame
-  scrollTo = type(sf) == "table" and (sf.scrollTarget or sf.value) or nil
-  frame:OnSettingsChanged()
+-- The reveal key or a switch changed what shows: the page's texts are written again in place, each line from its
+-- record (UI/Render brought it up to date first) and each other text from its lookup. Dialogue UI is never asked to
+-- draw the page again: its redraw would run under this addon's name and rebuild the option buttons with it, and a
+-- click on one could then get a bag item's use blocked in this addon's name. A text keeps the room Dialogue UI
+-- measured for it until Dialogue UI draws the page again.
+local function refresh()
+  if not (DialogueUI.active() and frame) then return end
+  cards = DialogueUI.detachCards(cards)
+  for _, el in ipairs(pageLines) do
+    local slots = spread(el.prefix .. el.holder.text, #el.english)
+    local japanese = el.holder.font.path == WFJ.Font.PATH
+    for k, fs in ipairs(el.fontStrings) do
+      if fs:GetText() == el.slots[k] then -- still this line's paragraph
+        face(fs, fontObject(body[fs] and body[fs].obj), japanese)
+        if slots[k] ~= el.slots[k] then write(fs, slots[k]) end
+      end
+    end
+    el.slots = slots
+    guarded(attachCards, el)
+  end
+  for fs, r in pairs(rows) do
+    local now = fs:GetText()
+    if now ~= r.shown then
+      rows[fs] = nil -- written since by someone else
+    else
+      local ja = r.again()
+      local want = ja or r.en
+      face(fs, r.obj or (type(fs.GetFontObject) == "function" and fs:GetFontObject() or nil), ja ~= nil)
+      if now ~= want then write(fs, want) end
+      r.shown = want
+    end
+  end
 end
 
--- after a page handler ran for the redraw this module asked for: back to where the reader was
+-- after each page handler: the tags over the quest title
 local headerTags -- below, with the other pieces found by their shape
-local function restoreScroll(self)
+local function afterHandler(self)
   if DialogueUI.active() then guarded(headerTags, self) end
-  local v = scrollTo
-  scrollTo = nil
-  local sf = self.ScrollFrame
-  if type(v) == "number" and v > 0 and type(sf) == "table" and type(sf.SnapTo) == "function" then sf:SnapTo(v) end
 end
 
 local function release()
   resetPage()
   forgetLines()
-  lastHandler, scrollTo = nil, nil
+  lastHandler = nil
 end
 
 -- The tags over a quest page's title ("Daily", "Dungeon") are buttons Dialogue UI makes as needed; one holding a
@@ -852,11 +891,11 @@ install = function()
   hook(f, "ReleaseAllObjects", function(self) guarded(newPage, self) end)
   for _, handler in ipairs({ "HandleGossip", "HandleQuestDetail", "HandleQuestProgress", "HandleQuestComplete",
     "HandleQuestGreeting" }) do
-    hook(f, handler, function(self) guarded(restoreScroll, self) end)
+    hook(f, handler, function(self) guarded(afterHandler, self) end)
   end
   DialogueUI.onClose(f, release)
   for _, event in ipairs({ "language", "enabled", "area", "markers" }) do
-    WFJ.State.on(event, function() guarded(redraw) end)
+    WFJ.State.on(event, function() guarded(refresh) end)
   end
   if WFJ.VoicePlayer and type(WFJ.VoicePlayer.addWindow) == "function" then
     -- "npc" is the unit Dialogue UI itself names the speaker by on quest and gossip pages

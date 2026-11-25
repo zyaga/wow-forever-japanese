@@ -248,7 +248,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     it("lists the members it relies on", function()
       load()
       for _, m in ipairs({ "FormatParagraph", "AcquireFontString", "AcquireLeftFontString", "InsertText",
-        "UpdateQuestTitle", "AcquireOptionButton", "ReleaseAllObjects", "OnSettingsChanged", "HandleGossip",
+        "UpdateQuestTitle", "AcquireOptionButton", "ReleaseAllObjects", "HandleGossip",
         "HandleQuestDetail", "HandleQuestProgress", "HandleQuestComplete", "HandleQuestGreeting" }) do
         local found = false
         for _, x in ipairs(WFJ.DialogueUI.MEMBERS) do if x == m then found = true end end
@@ -430,17 +430,35 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       ship({ gossip = { ["Hello."] = "こんにちは。", ["Train me."] = "訓練してくれ。" } })
     end)
 
-    it("holding the key redraws the page in the live English, letting go brings the Japanese back", function()
+    it("holding the key shows the live English in place, letting go brings the Japanese back", function()
       open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." } })
-      local lines = shown
+      local lines, redraws = shown, frame.redraws
       alt(true)
       assert.are.same({ "Hello." }, DUI.paragraphs())
       assert.are.same({ "1. Train me." }, DUI.labels())
-      assert.are_not.equal(WFJ.Font.PATH, frame.fontStringPool.active[1].measuredFont[1])
+      assert.are_not.equal(WFJ.Font.PATH, (frame.fontStringPool.active[1]:GetFont()))
       alt(false)
       assert.are.same({ "こんにちは。" }, DUI.paragraphs())
       assert.are.same({ "1. 訓練してくれ。" }, DUI.labels())
+      assert.are.equal(WFJ.Font.PATH, (frame.fontStringPool.active[1]:GetFont()))
       assert.are.equal(lines, shown) -- no line was shown anew: no voice restarts
+      -- Dialogue UI is never asked to draw the page again: its redraw would rebuild the option buttons under this
+      -- addon's name
+      assert.are.equal(redraws, frame.redraws)
+    end)
+
+    it("in English first, holding the key shows the Japanese in place and letting go the English", function()
+      WFJ.State.setDirection("en")
+      open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." } })
+      assert.are.same({ "Hello." }, DUI.paragraphs())
+      assert.are.same({ "1. Train me." }, DUI.labels())
+      alt(true)
+      assert.are.same({ "こんにちは。" }, DUI.paragraphs())
+      assert.are.same({ "1. 訓練してくれ。" }, DUI.labels())
+      alt(false)
+      assert.are.same({ "Hello." }, DUI.paragraphs())
+      assert.are.same({ "1. Train me." }, DUI.labels())
+      WFJ.State.setDirection("ja")
     end)
 
     it("the quest title follows the key too", function()
@@ -466,7 +484,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.same({ "Hello." }, DUI.paragraphs())
     end)
 
-    it("keeps the reader's place when it redraws the page for the key", function()
+    it("keeps the reader's place when the key changes the page", function()
       open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." } })
       frame.ScrollFrame.value = 120
       alt(true)

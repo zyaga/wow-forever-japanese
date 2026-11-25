@@ -34,7 +34,7 @@ This narrows ADR-004: an optional adapter that runs only when the player already
 
 - Putting the Japanese in before Dialogue UI measures the text lets Dialogue UI lay out and size the Japanese itself, in the bundled font set on each line before it is measured. Rewriting the text after layout would leave Dialogue UI's sizes fitted to the English. The `SetText` hook on each pooled FontString gives that order without replacing any of Dialogue UI's methods.
 - Following methods with `hooksecurefunc` instead of replacing them keeps the addon's taint out of every value Dialogue UI writes, its click handlers first of all, so its clicks and the game windows they open run as they would without this addon.
-- The reveal key, the master switch, the area switches and the markers ask Dialogue UI to draw the page again with its own redraw. The wrappers reuse the line records they already made, so a hold or a release never starts a voice line again.
+- The reveal key, the master switch, the area switches and the markers write the page's texts again in place: each line from its record, each heading, option and objective line from its lookup. Dialogue UI is never asked to draw the page again, because its redraw would run under this addon's name and rebuild the option buttons with it, and a click on one could then get a bag item's use blocked in this addon's name. A hold or a release never starts a voice line again.
 - Keys are the same as on Blizzard's windows (quest id and field, the English-keyed variants of ADR-054, the gossip and book keys of the English), so every line that ships for Blizzard's windows ships for Dialogue UI's with no data change.
 - Hooking instance methods and checking the members on install keeps a Dialogue UI update that changes its internals to "English again", never a broken window.
 
@@ -46,7 +46,7 @@ This narrows ADR-004: an optional adapter that runs only when the player already
 
 ### Negative
 - The modules follow Dialogue UI's internals, which can change in its updates. The member check and the error limit bound the damage to English text.
-- Holding the reveal key uses Dialogue UI's own redraw, which clears its gossip history and a reward the player had chosen on the turn-in page. The module puts the page's scroll position back after the redraw.
+- Holding the reveal key changes the words but not the room Dialogue UI measured for them: while it is held, a text much longer in the other language can overlap the next one or leave a gap, until Dialogue UI draws the page again. The page keeps its scroll position, its gossip history and a reward the player had chosen.
 - Dialogue UI fades the game interface out while its window shows, so the word card and reading box move under the Dialogue UI window while they point at its text. The voice panel is lifted out from under the faded interface for that time and goes back after; under it, only its 3D head would draw (a model ignores its parent's alpha).
 - Lines already in Dialogue UI's chat panel keep what they showed when they arrived (the panel keeps its own list), so the reveal key and the switches change only lines arriving while they are set.
 - The tooltip, chat panel and popups are found by their shape, not a name; a Dialogue UI update that changes that shape leaves them in English.
