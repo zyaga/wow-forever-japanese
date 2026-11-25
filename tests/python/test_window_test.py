@@ -854,6 +854,9 @@ def test_the_secret_chat_line_try_puts_secret_lines_where_the_chat_tools_look_an
     assert 'real:SetText(secretwrap("WFJ secret line"))' in body
     assert "every[method] = function() return secretwrap(plain) end" in body
     assert "visibleLines = { real, every }" in body
+    # not shown to the client's own per-frame walk of the chat frames, visible to the chat tools
+    assert "frame.IsShown = function() return false end" in body
+    assert "frame.IsVisible = function() return true end" in body
     # listed in CHAT_FRAMES only for the wait, then taken out again with its global
     steps = ["CHAT_FRAMES[#CHAT_FRAMES + 1] = NAME", "C_Timer.After(0.3", "table.remove(CHAT_FRAMES, i)",
              "_G[NAME] = nil"]

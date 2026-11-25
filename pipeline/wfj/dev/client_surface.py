@@ -3360,7 +3360,9 @@ local function WFJScanSecretLine(done)
   local frame = setmetatable({ visibleLines = { real, every } },
     { __index = function() return function() end end })
   frame.IsVisible = function() return true end
-  frame.IsShown = frame.IsVisible
+  -- the client's own walk of CHAT_FRAMES on every frame (FCF_OnUpdate) reads a shown chat frame's parts: this one
+  -- says it is not shown there, and the chat tools ask IsVisible
+  frame.IsShown = function() return false end
   frame.IsMouseOver = function()
     try.looks = try.looks + 1
     return true
