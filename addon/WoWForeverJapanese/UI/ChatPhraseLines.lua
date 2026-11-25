@@ -13,18 +13,14 @@ WFJ.ChatPhraseLines = Lines
 
 local Compat = WFJ.Compat
 local SURFACE = "chat.phrases"
-local CANDIDATES = { frames = { "CHAT_FRAMES" }, isSecret = { "issecretvalue" },
+local CANDIDATES = { frames = { "CHAT_FRAMES" },
   openTemporary = { "FCF_OpenTemporaryWindow" },
   addFilter = { "ChatFrameUtil.AddMessageEventFilter", "ChatFrame_AddMessageEventFilter" } }
 
--- the chat events a player types into
-Lines.EVENTS = { "SAY", "YELL", "PARTY", "PARTY_LEADER", "RAID", "RAID_LEADER", "RAID_WARNING", "GUILD", "OFFICER",
-  "WHISPER", "WHISPER_INFORM", "CHANNEL", "INSTANCE_CHAT", "INSTANCE_CHAT_LEADER" }
+-- the chat events a player types into: one event for each chat type UI/ChatLines lists
+Lines.EVENTS = WFJ.ChatLines.TYPED
 
-local function secret(v)
-  local f = Compat.get(SURFACE, "isSecret")
-  return type(f) == "function" and f(v) and true or false
-end
+local secret = WFJ.ChatLines.secret
 
 local function on()
   return WFJ.State.enabled and WFJ.Settings.get("chat.phrases") == true
@@ -52,27 +48,35 @@ local function held(raw)
 end
 
 function Lines.reveal(frame)
-  local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local holding = WFJ.State.modifierHeld and on()
+  if not holding and next(revealed) == nil then return end -- nothing to show and nothing to put back
+  local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local P = WFJ.ChatPhrases
+  local restored = false
   for _, line in ipairs(lines) do
     local text = line:GetText()
     if type(text) == "string" and not secret(text) then
-      if holding then
+      -- every changed message carries the mark: a line without it holds none
+      if holding and text:find(P.MARK, 1, true) then
         local raw, first, last = P.sent(text)
         if raw then
           line:SetText(text:sub(1, first - 1) .. held(raw) .. text:sub(last + 1))
           revealed[line] = true
         end
-      elseif revealed[line] then
+      elseif not holding and revealed[line] then
         revealed[line] = nil
         -- a line UI/ChatSystem does not rewrite still holds what the key showed: its own text goes back
         local info = line.messageInfo
         local own = type(info) == "table" and info.message or nil
-        if type(own) == "string" and not secret(own) and own ~= text and P.sent(own) then line:SetText(own) end
+        if type(own) == "string" and not secret(own) and own ~= text and P.sent(own) then
+          line:SetText(own)
+          restored = true
+        end
       end
     end
   end
+  -- what UI/ChatSystem writes on a visible line (a link's label in Japanese) goes back on over the line's own text
+  if restored and WFJ.ChatSystem and WFJ.ChatSystem.show then WFJ.ChatSystem.show(frame) end
 end
 
 function Lines.revealAll()

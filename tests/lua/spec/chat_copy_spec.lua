@@ -12,7 +12,7 @@ describe("copying a chat line", function()
     WFJ = Env.setup()
     Copy = WFJ.ChatCopy
     frame = Env.chatFrame({ { SAID, Env.SAY }, { GUILD, Env.GUILD }, { LOOT, Env.SYSTEM } })
-    WFJ.ChatCards.init()
+    WFJ.ChatLines.init()
     Copy.init()
   end)
   after_each(Env.teardown)
@@ -33,32 +33,54 @@ describe("copying a chat line", function()
 
   it("puts the icon on the line under the mouse and opens the box with that line", function()
     frame.visibleLines[2].over = true
-    WFJ.ChatCards.look()
+    WFJ.ChatLines.look()
     local button = Copy.button()
     assert.is_true(button:IsShown())
-    assert.equals("時間: 9時でいい？", button.text)
     button:GetScript("OnClick")(button)
     assert.is_true(_G.WFJChatCopyWindow:IsShown())
+    assert.equals("時間: 9時でいい？", _G.WFJChatCopyWindow.field.getText())
     frame.visibleLines[2].over = false
-    WFJ.ChatCards.look()
+    WFJ.ChatLines.look()
     assert.is_false(button:IsShown())
+  end)
+
+  it("places the icon once for a line, not on every look", function()
+    frame.visibleLines[2].over = true
+    WFJ.ChatLines.look()
+    local button = Copy.button()
+    button.point = "kept"
+    WFJ.ChatLines.look()
+    assert.equals("kept", button.point)
+  end)
+
+  it("stops looking at the mouse when neither the cards nor the icon is wanted", function()
+    local driver = WFJ.ChatLines.driver
+    assert.is_true(driver:IsShown())
+    WFJ.Settings.set("chat.copy", false)
+    assert.is_true(driver:IsShown()) -- the cards still want it
+    WFJ.Settings.set("chat.cards", false)
+    assert.is_false(driver:IsShown())
+    WFJ.Settings.set("chat.copy", true)
+    assert.is_true(driver:IsShown())
+    WFJ.State.setEnabled(false)
+    assert.is_false(driver:IsShown())
   end)
 
   it("shows no icon on a secret line, with the setting off, or with translation off", function()
     frame.visibleLines[1].over = true
     Env.secrets[SAID] = true
-    WFJ.ChatCards.look()
+    WFJ.ChatLines.look()
     assert.is_nil(Copy.button())
     Env.secrets[SAID] = nil
     WFJ.Settings.set("chat.copy", false)
-    WFJ.ChatCards.look()
+    WFJ.ChatLines.look()
     assert.is_nil(Copy.button())
     WFJ.Settings.set("chat.copy", true)
     WFJ.State.enabled = false
-    WFJ.ChatCards.look()
+    WFJ.ChatLines.look()
     assert.is_nil(Copy.button())
     WFJ.State.enabled = true
-    WFJ.ChatCards.look()
+    WFJ.ChatLines.look()
     assert.is_true(Copy.button():IsShown())
   end)
 end)

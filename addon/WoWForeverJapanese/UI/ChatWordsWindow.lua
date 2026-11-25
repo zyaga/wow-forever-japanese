@@ -25,7 +25,7 @@ function Window.items()
     for word in pairs(words) do keys[#keys + 1] = word end
     table.sort(keys)
     for _, word in ipairs(keys) do
-      items[#items + 1] = { left = word, text = text(words[word]), word = word, lang = lang, index = #items + 1 }
+      items[#items + 1] = { left = word, text = text(words[word]), word = word, lang = lang }
     end
   end
   add("ja", own.ja, function(e)
@@ -51,7 +51,6 @@ end
 -- → true when the word was kept
 function Window.add(lang, word, a, b)
   local ok = WFJ.ChatWords.add(lang, word, a, b)
-  if ok and WFJ.ChatCards then WFJ.ChatCards.clear() end
   Window.refresh()
   return ok
 end

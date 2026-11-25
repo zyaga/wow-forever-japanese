@@ -2,11 +2,12 @@
 -- (docs/systems/chat-tools.md). Three layers, looked up in this order: the player's own words (the saved table
 -- given to load), the chat list written for chat (Data chatword / chatwordEn), and the general lists generated
 -- from the shipped readings (Data chatja / chaten). Pure: no globals, no frames. The display is UI/ChatCards.
---   ChatWords.japaneseAt(text, i) → { first, last, word, reading, gloss } | nil   (gloss: a card table)
+--   ChatWords.japaneseAt(text, i) → { first, last, word, reading, card } | nil
 --   ChatWords.englishAt(text, i)  → { first, last, word, reading, card } | nil
 --   ChatWords.plain(text)         → the line without escape sequences (a link keeps its label)
 --   ChatWords.typedPart(text)     → what a player typed, out of a typed chat line | nil
 --   ChatWords.runs(text)          → { { first, last }, … }: the stretches drawn as typed
+--   ChatWords.onChange            called after the player's own words change (set by UI/ChatCards)
 -- `i` is a byte of `text` as FontString:FindCharacterIndexAtCoordinate gives it; the text is a chat line as the
 -- chat frame holds it, escape sequences included. A link's label (a player, an item) never takes a card.
 local _, WFJ = ...
@@ -35,6 +36,7 @@ function ChatWords.add(lang, word, a, b)
   else
     own.ja[word] = { reading = a, meaning = type(b) == "string" and b or "" }
   end
+  if ChatWords.onChange then ChatWords.onChange() end
   return true
 end
 
@@ -44,6 +46,7 @@ function ChatWords.remove(word)
   local lower = word:lower()
   local had = own.ja[word] ~= nil or own.en[lower] ~= nil
   own.ja[word], own.en[lower] = nil, nil
+  if had and ChatWords.onChange then ChatWords.onChange() end
   return had
 end
 
@@ -181,7 +184,7 @@ local function withEndings(text, lastChar, last, limit)
 end
 
 -- The Japanese stretch first..last of `text` cut into words: the longest listed word at each place (with its
--- endings), else one character. → { { first, last, word, reading, gloss } … }, unlisted characters left out
+-- endings), else one character. → { { first, last, word, reading, card } … }, unlisted characters left out
 local function segment(text, first, last)
   local starts, i = {}, first
   while i <= last do
@@ -198,7 +201,7 @@ local function segment(text, first, last)
       local reading, card = japanese(text:sub(s, e))
       if reading then
         local wordEnd = withEndings(text, starts[k + len - 1], e, last)
-        out[#out + 1] = { first = s, last = wordEnd, word = text:sub(s, wordEnd), reading = reading, gloss = card }
+        out[#out + 1] = { first = s, last = wordEnd, word = text:sub(s, wordEnd), reading = reading, card = card }
         taken = len
         while k + taken <= count and starts[k + taken] <= wordEnd do taken = taken + 1 end
         break
@@ -262,13 +265,18 @@ function ChatWords.englishAt(text, i)
   local token = text:sub(first, last)
   local lower = token:lower()
   local ja, jaReading, gloss = english(lower)
+  local said = WFJ.Data.pron[lower]
   if not ja then
-    -- a plural or a contraction takes its base word's card (heals → heal, you're → you)
-    local base = lower:match("^(%a+)'%a+$") or lower:match("^(%a+)s$")
-    if base then ja, jaReading, gloss = english(base) end
+    -- a contraction takes its first word's card (you're → you; never a negative: can't is not can), as on every
+    -- English word card; a plural takes its singular's (heals → heal)
+    local base = WFJ.Readings.contractionHead(lower) or lower:match("^(%a+)s$")
+    if base then
+      ja, jaReading, gloss = english(base)
+      said = said or WFJ.Data.pron[base]
+    end
   end
   if not ja then return nil end
   return { first = first, last = last, word = token,
     reading = ja == jaReading and ja or (ja .. "（" .. jaReading .. "）"),
-    card = { english = true, ja = ja, jaReading = jaReading, gloss = gloss, ipa = WFJ.Data.pron[lower] } }
+    card = WFJ.Readings.englishCard(ja, jaReading, gloss, said) }
 end

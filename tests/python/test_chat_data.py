@@ -1,5 +1,6 @@
 """The committed chat data (`data/chat/`) and the chat word lists generated into the addon."""
 
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -7,7 +8,17 @@ from wfj.core import chat_words as cw
 
 ADDON = Path("addon") / "WoWForeverJapanese"
 MAX_GENERATED_BYTES = 6 * 1024 * 1024  # the chat lists are always in memory: a jump in size is looked at
-MAX_PER_TOPIC = 16  # the phrase card is one fixed size: two columns of eight
+
+
+def lua_number(root: Path, rel: str, name: str) -> int:
+    """A number the addon defines as `<name> = <digits>` in one of its Lua files."""
+    found = re.findall(rf"^(?:local )?{re.escape(name)} = (\d+)\b", (root / ADDON / rel).read_text("utf-8"), re.M)
+    assert len(found) == 1, f"{rel}: {name} defined {len(found)} times"
+    return int(found[0])
+
+
+def test_the_pipeline_lists_no_word_longer_than_the_addon_looks_for(root):
+    assert lua_number(root, "Core/ChatWords.lua", "MAX_CHARS") == cw.MAX_CHARS
 
 
 def test_the_chat_list_is_long_enough_to_be_useful(root):
@@ -29,7 +40,10 @@ def test_the_phrase_book_has_enough_phrases_and_no_topic_outgrows_the_card(root)
     assert len(chat.phrases) >= 120
     per_topic = Counter(p["topic"] for p in chat.phrases)
     assert len(per_topic) >= 6
-    assert {t: n for t, n in per_topic.items() if n > MAX_PER_TOPIC} == {}
+    # the phrase card is one fixed size: what it has room for is the addon's own number
+    room = lua_number(root, "UI/PhraseBook.lua", "Book.COLS") * lua_number(root, "UI/PhraseBook.lua", "Book.ROWS")
+    assert room == 16
+    assert {t: n for t, n in per_topic.items() if n > room} == {}
     assert [p["id"] for p in chat.phrases] == list(range(1, len(chat.phrases) + 1))
 
 

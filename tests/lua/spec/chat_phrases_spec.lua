@@ -42,6 +42,20 @@ describe("Core/ChatPhrases", function()
     assert.is_nil(P.translate("", "ja"))
   end)
 
+  it("translates a message once however many chat frames show it", function()
+    local P = load()
+    P.list() -- the phrases are read once, before any message
+    local real, lowered = string.lower, 0
+    string.lower = function(s) lowered = lowered + 1; return real(s) end -- luacheck: ignore
+    local first = P.translate(DOT .. " Hello!", "ja")
+    local again = P.translate(DOT .. " Hello!", "ja")
+    P.translate("no dot here", "ja")
+    string.lower = real -- luacheck: ignore
+    assert.equals(first, again)
+    assert.equals(1, lowered)
+    assert.equals(P.MARK .. "Hello!", P.translate(DOT .. " Hello!", "en")) -- another direction is another answer
+  end)
+
   it("gives what is typed for a phrase: the dot, a space and its English", function()
     local P = load()
     assert.equals(DOT .. " Hello!", P.typed(P.list()[1]))

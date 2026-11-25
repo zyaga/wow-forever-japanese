@@ -562,6 +562,7 @@ function WFJ.OnLoad()
   end)
   -- the chat tools, after ChatSystem has hooked the chat frames: the phrase lines' pass over the visible lines
   -- runs after its own
+  step("chatlines", WFJ.ChatLines.init)
   step("chatcards", WFJ.ChatCards.init)
   step("chatcopy", WFJ.ChatCopy.init)
   step("chatphraselines", WFJ.ChatPhraseLines.init)

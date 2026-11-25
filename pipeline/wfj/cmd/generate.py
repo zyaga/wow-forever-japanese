@@ -769,7 +769,7 @@ def _plan_english(
     current: dict[str, list[dict[str, Any]]],
     out: dict[str, str],
     counts: dict[str, int],
-    chat_english: set[str] | None = None,
+    chat_english: set[str],
 ) -> None:
     """The English word card rows, one file beside each reading shard that has any, then the word tables."""
     for type_, recs_of_type in current.items():
@@ -836,7 +836,7 @@ def _plan_english_words(
     english_root: Path,
     current: dict[str, list[dict[str, Any]]],
     out: dict[str, str],
-    chat_english: set[str] | None = None,
+    chat_english: set[str],
 ) -> None:
     """The common word list and the pronunciation table, the latter cut down to the words a card can show:
     a line's own words, the common list's, and the chat lists' (`chat_english`)."""
@@ -850,7 +850,7 @@ def _plan_english_words(
     if not path.is_file():
         return
     said, _ = pronunciation.parse_table(path.read_text(encoding="utf-8"))
-    used = set(common) | (chat_english or set())
+    used = set(common) | chat_english
     for recs in current.values():
         for rec in recs:
             for pair in (rec.get("english") or "").split():

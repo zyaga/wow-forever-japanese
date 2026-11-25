@@ -18,8 +18,24 @@ describe("a phrase book phrase in chat", function()
   end)
   after_each(Env.teardown)
 
-  it("is listening on every chat event a player types into", function()
+  it("is listening on every chat event a player types into, a BattleNet whisper among them", function()
+    assert.equals(WFJ.ChatLines.TYPED, Lines.EVENTS)
     for _, e in ipairs(Lines.EVENTS) do assert.equals(Lines.filter, Env.filters["CHAT_MSG_" .. e]) end
+    assert.equals(Lines.filter, Env.filters["CHAT_MSG_BN_WHISPER"])
+  end)
+
+  it("puts back what the chat code writes on a line after the reveal key is released", function()
+    local shows = 0
+    WFJ.ChatSystem = { show = function() shows = shows + 1 end }
+    local shown = select(2, arrive(raw))
+    frame.visibleLines[1] = Env.line("[Taro]: " .. shown, Env.SAY)
+    Lines.reveal(frame) -- the key is not held and nothing was shown: nothing to do
+    assert.equals(0, shows)
+    WFJ.State.modifierHeld = true
+    Lines.reveal(frame)
+    WFJ.State.modifierHeld = false
+    Lines.reveal(frame)
+    assert.equals(1, shows)
   end)
 
   it("shows a marked phrase in the reader's language and passes the rest of the event on", function()
@@ -66,6 +82,12 @@ describe("a phrase book phrase in chat", function()
     WFJ.State.modifierHeld = true
     Lines.reveal(frame)
     assert.equals("[Taro]: " .. P.MARK .. "こんにちは！", line:GetText())
+  end)
+
+  it("knows a secret value without the mouse tracker having started", function()
+    -- this spec never starts UI/ChatLines: its answer comes from the names it declared when its file loaded
+    Env.secrets[raw] = true
+    assert.is_true(WFJ.ChatLines.secret(raw))
   end)
 
   it("changes no line that holds no changed phrase, and never reads a secret line", function()

@@ -24,7 +24,7 @@ describe("the player's own chat words", function()
     local items = Window.items()
     assert.equals(1, #items)
     assert.equals("ぬるぽ", items[1].left)
-    assert.equals("a joke word", WFJ.ChatWords.japaneseAt("ぬるぽ", 1).gloss.meaning)
+    assert.equals("a joke word", WFJ.ChatWords.japaneseAt("ぬるぽ", 1).card.meaning)
   end)
 
   it("adds an English word with its Japanese, listed after the Japanese words", function()

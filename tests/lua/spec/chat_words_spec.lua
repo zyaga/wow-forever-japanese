@@ -8,6 +8,7 @@ local function load()
   local WFJ = {}
   H.loadPure("Core/Data.lua", "WoWForeverJapanese", WFJ)
   H.loadPure("Core/Glosses.lua", "WoWForeverJapanese", WFJ)
+  H.loadPure("Core/Readings.lua", "WoWForeverJapanese", WFJ)
   H.loadPure("Core/ChatWords.lua", "WoWForeverJapanese", WFJ)
   WFJ.Data.add("gloss", { [1] = "今日\tきょう\ttoday", [2] = "ダンジョン\tダンジョン\tdungeon",
     [3] = "行く\tいく\tto go", [4] = "必要\tひつよう\tneed" })
@@ -40,7 +41,7 @@ describe("Core/ChatWords", function()
     local found = wordsOf(W.japaneseAt, GUILD)
     assert.is_table(found["今日"])
     assert.equals("きょう", found["今日"].reading)
-    assert.equals("today", found["今日"].gloss.meaning)
+    assert.equals("today", found["今日"].card.meaning)
     assert.is_table(found["ダンジョン"])
     assert.is_nil(found["ギルド"]) -- a link's label
     local labelFirst = GUILD:find("ギルド", 1, true)
@@ -59,7 +60,7 @@ describe("Core/ChatWords", function()
       assert.equals(first, w.first)
       assert.equals(last, w.last)
       assert.equals("行きませんか", w.word)
-      assert.equals("行く", w.gloss.lemma)
+      assert.equals("行く", w.card.lemma)
     end
   end)
 
@@ -83,15 +84,32 @@ describe("Core/ChatWords", function()
     assert.is_nil(found["deadmines"])
   end)
 
+  it("gives a contraction its first word's card, and a negative none", function()
+    local WFJ = load()
+    WFJ.Data.add("chaten", { you = "あなた=あなた=1", can = "できる=できる=3" })
+    assert.equals("あなた", WFJ.ChatWords.englishAt("you're late", 2).card.ja)
+    assert.is_nil(WFJ.ChatWords.englishAt("can't go", 2))
+  end)
+
+  it("says when the player's own words change", function()
+    local W = load().ChatWords
+    local n = 0
+    W.onChange = function() n = n + 1 end
+    W.add("ja", "ぬるぽ", "ぬるぽ", "a joke")
+    W.remove("ぬるぽ")
+    W.remove("ぬるぽ") -- no longer there: nothing changed
+    assert.equals(2, n)
+  end)
+
   it("takes an own word before the chat list, and the chat list before the generated list", function()
     local WFJ = load()
     local W = WFJ.ChatWords
     WFJ.Data.add("chatja", { ["よろ"] = "よろ=2" })
-    assert.equals("short for よろしく", W.japaneseAt("よろ", 1).gloss.meaning)
+    assert.equals("short for よろしく", W.japaneseAt("よろ", 1).card.meaning)
     assert.is_true(W.add("ja", "よろ", "よろ", "mine"))
-    assert.equals("mine", W.japaneseAt("よろ", 1).gloss.meaning)
+    assert.equals("mine", W.japaneseAt("よろ", 1).card.meaning)
     assert.is_true(W.remove("よろ"))
-    assert.equals("short for よろしく", W.japaneseAt("よろ", 1).gloss.meaning)
+    assert.equals("short for よろしく", W.japaneseAt("よろ", 1).card.meaning)
 
     assert.equals("必要", W.englishAt("need", 1).card.ja)
     WFJ.Data.add("chatwordEn", { need = "いる" })
@@ -103,7 +121,7 @@ describe("Core/ChatWords", function()
   it("keeps the saved own words in the table it was given", function()
     local W = load().ChatWords
     local saved = W.load({ ja = { ["ぬるぽ"] = { reading = "ぬるぽ", meaning = "a joke" } } })
-    assert.equals("a joke", W.japaneseAt("ぬるぽ", 1).gloss.meaning)
+    assert.equals("a joke", W.japaneseAt("ぬるぽ", 1).card.meaning)
     W.add("en", "pog", "すごい")
     assert.equals("すごい", saved.en.pog.ja)
   end)

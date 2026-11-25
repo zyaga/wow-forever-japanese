@@ -8,8 +8,9 @@ local Env = {}
 
 Env.FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/Readings.lua", "Core/Glosses.lua",
   "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua", "Core/Words.lua", "Core/ChatWords.lua",
-  "Core/ChatPhrases.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/WordSave.lua",
-  "UI/ChatCards.lua", "UI/ChatCopy.lua", "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua", "UI/ChatWordsWindow.lua" }
+  "Core/ChatPhrases.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua",
+  "UI/Readings.lua", "UI/WordSave.lua", "UI/ChatLines.lua", "UI/ChatCards.lua", "UI/ChatCopy.lua",
+  "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua", "UI/ChatWordsWindow.lua" }
 
 Env.SAY, Env.GUILD, Env.SYSTEM = 1, 3, 9 -- chat type ids, as ChatTypeInfo holds them here
 Env.DOT = "\194\183"
@@ -68,6 +69,9 @@ function Env.setup()
     function f:SetShown(v) if v then self:Show() else self:Hide() end end
     function f:SetEnabled(v) self.enabled = v and true or false end
     function f.GetPoint() return "BOTTOMLEFT", nil, "BOTTOMLEFT", 300, 400 end
+    function f:SetAllPoints(target) self.allPoints = target or true end
+    function f.GetLeft() return 100 end
+    function f.GetBottom() return 200 end
     function f:Insert(t) self.text = (self.text or "") .. t end
     function f:HighlightText() self.highlighted = true end
     f.SetNormalAtlas, f.SetPushedAtlas, f.SetHighlightAtlas, f.SetHighlightTexture = Env.noop, Env.noop, Env.noop,
@@ -122,12 +126,7 @@ function Env.setup()
   Env.db = WFJ.Settings.load(nil, 1, {})
   WFJ.Words.load(nil)
   WFJ.ChatWords.load(nil)
-  WFJ.ReadingView = { enabled = true, hint = Env.noop, solid = Env.noop, flash = Env.noop,
-    -- as UI/Readings' guarded call answers for a chat line (its own checks are in readings_spec)
-    spanAreas = function(fs, _, first, last, where, escapes)
-      Env.span = { where = where, escapes = escapes }
-      return fs:CalculateScreenAreaFromCharacterSpan(first, last + 1)
-    end }
+  -- the word card is recorded, not drawn; everything up to it is the addon's own (UI/Readings)
   WFJ.ReadingPopup = {
     show = function(anchor, _, _, word, card) Env.card = { anchor = anchor, word = word, card = card } end,
     hide = function() Env.card = nil end,

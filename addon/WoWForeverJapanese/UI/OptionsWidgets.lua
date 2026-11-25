@@ -246,6 +246,27 @@ function W.toolWindow(name, width, height)
   return f
 end
 
+-- A small label beside `owner` while the mouse is on it, in the bundled face (the client's tooltip font has no
+-- Japanese). `text()` gives the words each time it shows, so they follow the language.
+function W.hoverLabel(owner, text)
+  local tip = CreateFrame("Frame", nil, owner, "TooltipBackdropTemplate")
+  tip:SetFrameStrata("TOOLTIP")
+  if WFJ.ReadingView and WFJ.ReadingView.solid then WFJ.ReadingView.solid(tip) end
+  tip.text = tip:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+  tip.text:SetPoint("CENTER", tip, "CENTER", 0, 0)
+  tip:SetPoint("BOTTOMLEFT", owner, "TOPRIGHT", 2, 2)
+  tip:Hide()
+  owner:SetScript("OnEnter", function()
+    tip.text:SetText(text())
+    WFJ.Font.set(tip.text, WFJ.Font.PATH, 12, "")
+    tip:SetSize(tip.text:GetStringWidth() + 18, tip.text:GetStringHeight() + 12)
+    tip:Show()
+  end)
+  owner:SetScript("OnLeave", function() tip:Hide() end)
+  owner:SetScript("OnHide", function() tip:Hide() end)
+  return tip
+end
+
 -- A copy box's text, its cursor back at the start (W.copyBox snaps back to `value` after an edit).
 function W.setBox(box, value)
   box.value = value

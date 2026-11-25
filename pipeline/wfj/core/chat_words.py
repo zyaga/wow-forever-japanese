@@ -17,7 +17,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-Meaning = tuple[str, str, str]  # (dictionary form, its reading, meaning), as wfj.core.glosses numbers them
+from wfj.core import model
+from wfj.core.glosses import Meaning
 
 MAX_CHARS = 12  # the longest Japanese word the addon looks for in a chat line (Core/ChatWords MAX_CHARS)
 JA_SHARDS = 12  # files the Japanese list is spread over
@@ -118,6 +119,10 @@ def _rows(path: Path) -> Iterable[tuple[str, dict[str, Any]]]:
             raise ValueError(f"{where}: a line is one JSON object")
         if not isinstance(rec.get("provenance"), dict) or not rec["provenance"]:
             raise ValueError(f"{where}: provenance is required")
+        # the checks every store's provenance passes: its class, its source, its date, a machine line's model
+        problems = model.provenance_problems(rec["provenance"], where)
+        if problems:
+            raise ValueError(f"{where}: provenance: {problems[0]}")
         yield where, rec
 
 

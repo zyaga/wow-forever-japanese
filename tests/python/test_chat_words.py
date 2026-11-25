@@ -107,6 +107,11 @@ def test_no_chat_folder_is_no_chat_list(tmp_path):
     ("name", "row", "why"),
     [
         (cw.WORDS_JA, {"word": "おつ", "reading": "おつ", "meaning": "thanks"}, "provenance"),
+        # the checks every store's provenance passes: a source as name@ref, and a machine row's model
+        (cw.WORDS_JA, {"word": "おつ", "reading": "おつ", "meaning": "thanks",
+                       "provenance": PROV | {"source": "somewhere"}}, "source must look like name@ref"),
+        (cw.WORDS_EN, {"word": "wts", "ja": "売ります",
+                       "provenance": {k: v for k, v in PROV.items() if k != "model"}}, "needs model"),
         (cw.WORDS_JA, {"word": "よろ", "reading": "よろ", "meaning": "again", "provenance": PROV}, "twice"),
         (cw.WORDS_JA, {"word": "おつ", "reading": "お\tつ", "meaning": "x", "provenance": PROV}, "tab"),
         (cw.WORDS_EN, {"word": "LFG", "ja": "募集", "provenance": PROV}, "lower"),

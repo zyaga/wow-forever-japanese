@@ -72,8 +72,14 @@ local function phraseAt(lower, i)
   return nil
 end
 
+-- the last message looked at: the client hands the same message to the filter once for each chat frame
+local lastMsg, lastDirection, lastShown
+
 function ChatPhrases.translate(msg, direction)
   if type(msg) ~= "string" or msg == "" then return nil end
+  if not (msg:find(DOT, 1, true) or msg:find(JA_DOT, 1, true)) then return nil end
+  if msg == lastMsg and direction == lastDirection then return lastShown end
+  lastMsg, lastDirection, lastShown = msg, direction, nil
   if not list then build() end
   local lower = msg:lower() -- ASCII letters only; every other byte, and so every position, is unchanged
   local out, pos, changed = {}, 1, false
@@ -95,7 +101,8 @@ function ChatPhrases.translate(msg, direction)
   end
   if not changed then return nil end
   out[#out + 1] = msg:sub(pos)
-  return table.concat(out)
+  lastShown = table.concat(out)
+  return lastShown
 end
 
 -- ── What was sent (for the reveal key) ───────────────────────────────────────

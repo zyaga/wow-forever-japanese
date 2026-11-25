@@ -107,7 +107,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/BindingNames.lua",
             "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua",
             # the chat tools: word cards, the copy icon, phrase lines, the phrase book, the player's own words
-            "UI/ChatCards.lua", "UI/ChatCopy.lua", "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua",
+            "UI/ChatLines.lua", "UI/ChatCards.lua", "UI/ChatCopy.lua", "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua",
             "UI/ChatWordsWindow.lua",
             "UI/CollectorReminder.lua", "UI/IntroWindow.lua",
             "UI/ReportWindow.lua",

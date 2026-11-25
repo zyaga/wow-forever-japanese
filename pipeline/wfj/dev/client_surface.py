@@ -2889,15 +2889,6 @@ end
 --   words    the text regions the chat words window shows
 --   stuck    the card still showing after the command that closes it: a failure
 -- It types nothing into chat and sends nothing: it never clicks a phrase.
-local function holdsJapanese(text)
-  for i = 1, #text - 2 do
-    local c = text:byte(i)
-    -- kana and kanji lead bytes; the ideographic punctuation block (E3 80) is not a word
-    if c >= 227 and c <= 233 and not (c == 227 and text:byte(i + 1) == 128) then return true end
-  end
-  return false
-end
-
 local function WFJScanChatRead()
   local db = probeDb()
   local settings = addonSettings() or {}
@@ -2910,7 +2901,7 @@ local function WFJScanChatRead()
     return
   end
   local function judge(what, text)
-    if record.expect and readable(text) and not holdsJapanese(text) then
+    if record.expect and readable(text) and not hasJapanese(text) then
       record.english[#record.english + 1] = what .. "\t" .. text
     end
   end
@@ -2944,7 +2935,7 @@ local function WFJScanChatRead()
           local ja, en = row.ja and row.ja:GetText(), row.en and row.en:GetText()
           if not readable(ja) or not readable(en) then
             record.blank[#record.blank + 1] = "topic " .. name .. " row " .. n .. "\ta line is missing"
-          elseif not holdsJapanese(ja) then
+          elseif not hasJapanese(ja) then
             record.blank[#record.blank + 1] = "topic " .. name .. " row " .. n .. "\tno Japanese: " .. ja
           end
         end

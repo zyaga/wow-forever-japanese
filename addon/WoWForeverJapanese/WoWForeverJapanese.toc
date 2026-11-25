@@ -3264,6 +3264,7 @@ UI\FixWindow.lua
 UI\CollectorSendWindow.lua
 UI\WordsWindow.lua
 UI\StudyWindow.lua
+UI\ChatLines.lua
 UI\ChatCards.lua
 UI\ChatCopy.lua
 UI\ChatPhraseLines.lua

@@ -31,12 +31,12 @@ sequenceDiagram
 ```
 
 ### Word cards on chat lines
-`UI/ChatCards` hooks nothing and changes no chat line. A timer looks every 0.04 seconds. While the mouse is over a visible chat frame (the frames listed in `CHAT_FRAMES`), it finds the visible line under the mouse and asks that line's own FontString which byte is under the cursor, with `FindCharacterIndexAtCoordinate`, the call the client's own text selection uses. `Core/ChatWords` finds the word at that byte, and the card shows over it with the gold tint of every word-card surface. The card is the word card's own box (`UI/ReadingPopup`), with the save click's hint under it until the player has saved a word once.
+Nothing is hooked and no chat line is changed. `UI/ChatLines` runs a timer every 0.04 seconds, only while word cards or the copy icon are on and translation is on. While the mouse is over a visible chat frame (the frames listed in `CHAT_FRAMES`), it finds the visible line under the mouse and tells its listeners. `UI/ChatCards` asks that line's own FontString which byte is under the cursor, with `FindCharacterIndexAtCoordinate`, the call the client's own text selection uses. `Core/ChatWords` finds the word at that byte, and `UI/Readings` draws it as on every word-card surface: the gold tint, then the word card (`UI/ReadingPopup`) or, with meanings off (`readings.glosses`), the reading box, with the save click's hint until the player has saved a word once. While the mouse rests on the word that is showing, nothing is looked up again.
 
 - **Japanese first:** Japanese words take cards. **English first:** English words take cards, with how the word is said, the Japanese word used for it and that word's reading, as on an English word card ([Readings → English word cards](readings.md#english-word-cards)).
 - **No card** while the reveal key is held, with translation off, with `readings.enabled` off, with `chat.cards` off, on a line that has faded out (alpha 0.2 or less), or on a line whose text the client keeps secret (`issecretvalue`, the chat lockdown). A secret index from the client is refused the same way.
 - **A link's label** (a player, an item, a quest) never takes a card, and neither does any escape sequence: `ChatWords.runs` lists the stretches of a line drawn as typed, outside every `|c…`, `|r`, `|T…|t`, `|A…|a`, `|K…|k` and the whole of a `|H…|h<label>|h` link.
-- **The word's place on screen** comes from `View.spanAreas`, the one guarded call that may ask the client for a span's rectangles ([Readings → The guard](readings.md#the-guard)). Chat passes its sixth argument, `escapes`, as true: a chat line's byte indices count its escape sequences, as the client's own text selection counts them there. No other caller passes it.
+- **The word's place on screen** comes from `View.chatSpanAreas`, the chat line's entry point to the one guarded call that may ask the client for a span's rectangles ([Readings → The guard](readings.md#the-guard)). A chat line's byte indices count its escape sequences, as the client's own text selection counts them there, so this entry point alone lets text holding `|` through. Every other check stays, and no caller can switch one off.
 
 **The save click** ([Word list](word-list.md)) works on a chat word as on any word-card surface: a press and a release on the same word, with the save click's modifiers held. The entry's sentence is the stretch of the line the word sits in, and on a line a player typed it starts where their message starts, so the sender and the line's opening words ("[Name] says: ") are no part of it. The entry's kind and id are both `chat`.
 
@@ -62,7 +62,7 @@ An addon cannot write the clipboard. `UI/ChatCopy` puts a small icon (the guild 
 - Any other line (system, loot, an emote) is given whole.
 - Escape codes are taken out; a link keeps its label.
 
-The icon follows `UI/ChatCards`' line under the mouse (`ChatCards.onLine`), so it never shows on a secret line. It shows with translation on and `chat.copy` on, whatever the reveal key or `chat.cards` say.
+The icon follows the line `UI/ChatLines` reports (`ChatLines.onLine`), so it never shows on a secret line. It is placed once for a line, and the line's text is read out only on the click. It shows with translation on and `chat.copy` on, whatever the reveal key or `chat.cards` say. The box is a read-only field: it selects all of itself, and typing in it changes nothing.
 
 ### The phrase book
 **The button** (`WFJPhraseButton`, 27 × 26) is the client's own chat button art (`chatframe-button-up`, `-down`, `-highlight`) with a gold 文 where the client's buttons carry their icon. It sits by the chat frame's own buttons, left of the main chat frame, until the player drags it. Its tooltip is a label of the addon's own (the client's tooltip font has no Japanese).
@@ -152,12 +152,13 @@ The in-game window test reads the chat tools after the names read and before the
 ## Key files
 - `addon/WoWForeverJapanese/Core/ChatWords.lua`: `load`, `add`, `remove`, `own` (the player's words); `japaneseAt`, `englishAt` (the word at a byte and its card); `runs`, `plain`, `typedPart`; the verb endings (pure)
 - `addon/WoWForeverJapanese/Core/ChatPhrases.lua`: `list`, `topics`, `typed`, `translate`, `keep`, `sent`; the mark `MARK` and the 200 kept messages (pure)
-- `addon/WoWForeverJapanese/UI/ChatCards.lua`: the timer, `look`, `onLine`, `typedPart`, `sentence`, the save click; `TYPED`, the chat types a player types into
+- `addon/WoWForeverJapanese/UI/ChatLines.lua`: the timer, `look`, `onLine`, `typedPart`, `secret`; `TYPED`, the chat types a player types into
+- `addon/WoWForeverJapanese/UI/ChatCards.lua`: `follow` (the listener), `sentence`, `shown`, `clear`; the cover `UI/Readings` draws on and `UI/WordSave` saves from
 - `addon/WoWForeverJapanese/UI/ChatCopy.lua`: `textOf`, `show`, `follow`; the icon and the copy box
 - `addon/WoWForeverJapanese/UI/ChatPhraseLines.lua`: `filter`, `reveal`, `revealAll`; `EVENTS`, the chat events the filter is on
 - `addon/WoWForeverJapanese/UI/PhraseBook.lua`: the button and the card, `open`, `collapse`, `close`, `toggle`, `type`, `pick`, the shared spot
 - `addon/WoWForeverJapanese/UI/ChatWordsWindow.lua`: `open`, `items`, `add`, `remove`
-- `addon/WoWForeverJapanese/UI/Readings.lua`: `View.spanAreas` and its `escapes` argument
+- `addon/WoWForeverJapanese/UI/Readings.lua`: `View.chatSpanAreas`, `View.showHover`, `View.clearHover`, `View.poll` (the save click)
 - `addon/WoWForeverJapanese/Core/Data.lua`: the `chatja`, `chaten`, `chatword`, `chatwordEn` and `phrase` kinds
 - `addon/WoWForeverJapanese/Core/Settings.lua`, `UI/Options.lua`, `UI/OptionsText.lua`, `UI/Slash.lua`, `Main.lua`; `WoWForeverJapanese.toc`: `WFJ_ChatWords` in `## SavedVariables`
 - `pipeline/wfj/core/chat_words.py`: `japanese_rows`, `english_rows`, `shards`, `load` (the `data/chat/` checks), `game_english_clashes`
@@ -172,7 +173,7 @@ The in-game window test reads the chat tools after the names read and before the
 - No phrase and no English chat word of several words is a line of the game's own English; the generated English list ships single lower-cased words only. No English game text is stored.
 - A line the client keeps secret is never read: no card, no icon, no change.
 - Nothing hooks the chat frame's methods or writes a Blizzard frame's fields. The card reads the line's FontString; the filter and the display refresh callback are the client's own ways in; the phrase goes into the chat box with its own `Insert`. Nothing here is a protected call, and the addon never sends a message.
-- Every span asked of the client goes through `View.spanAreas`, and only chat lines pass `escapes`.
+- Every span asked of the client goes through the one guarded call in `UI/Readings`; a chat line's goes through `View.chatSpanAreas`, and `View.spanAreas` takes no argument that lets escape sequences through.
 - `WFJ_ChatWords` and the kept messages are the player's own: never shipped, and the kept messages are never saved.
 
 ## Edge cases

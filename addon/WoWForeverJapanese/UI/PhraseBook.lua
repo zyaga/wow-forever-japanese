@@ -248,22 +248,7 @@ local function buildButton()
   b:SetScript("OnMouseDown", function(self) self.glyph:SetPoint("CENTER", self, "CENTER", -1, -2) end)
   b:SetScript("OnMouseUp", function(self) self.glyph:SetPoint("CENTER", self, "CENTER", 0, 0) end)
   b:SetScript("OnClick", function() Book.open() end)
-  -- a label of the addon's own: the client's tooltip font has no Japanese
-  local tip = CreateFrame("Frame", nil, b, "TooltipBackdropTemplate")
-  tip:SetFrameStrata("TOOLTIP")
-  WFJ.ReadingView.solid(tip)
-  tip.text = tip:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-  tip.text:SetPoint("CENTER", tip, "CENTER", 0, 0)
-  tip:SetPoint("BOTTOMLEFT", b, "TOPRIGHT", 2, 2)
-  tip:Hide()
-  b:SetScript("OnEnter", function()
-    tip.text:SetText(pick("chat.book.title"))
-    WFJ.Font.set(tip.text, WFJ.Font.PATH, 12, "")
-    tip:SetSize(tip.text:GetStringWidth() + 18, tip.text:GetStringHeight() + 12)
-    tip:Show()
-  end)
-  b:SetScript("OnLeave", function() tip:Hide() end)
-  b:SetScript("OnHide", function() tip:Hide() end)
+  W.hoverLabel(b, function() return pick("chat.book.title") end)
   b:Hide()
   button = b
   return b
@@ -274,13 +259,13 @@ end
 -- One place decides: the card when open; else the button, unless it was closed for the session, its setting is
 -- off, translation is off, or there is no chat frame for it to sit by.
 local function apply()
-  local wanted = WFJ.State.enabled and not closed and WFJ.Settings.get("chat.phraseButton") == true
-    and type(Compat.get(SURFACE, "chatFrame")) == "table"
+  local showButton = not cardOpen and WFJ.State.enabled and not closed
+    and WFJ.Settings.get("chat.phraseButton") == true and type(Compat.get(SURFACE, "chatFrame")) == "table"
   if card then card:SetShown(cardOpen) end
-  if not cardOpen and wanted and not button then buildButton() end
+  if showButton and not button then buildButton() end
   if button then
-    if not cardOpen and wanted then place(button) end
-    button:SetShown(not cardOpen and wanted)
+    if showButton then place(button) end
+    button:SetShown(showButton)
   end
 end
 

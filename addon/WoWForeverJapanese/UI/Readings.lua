@@ -14,10 +14,11 @@
 -- layout and scroll are current. Indices are UTF-8 BYTES, right end EXCLUSIVE (scrollingmessageframe.lua:451–467).
 -- A span that splits a character is not a Lua error: the client exits. So
 -- spanAreas is the ONLY caller of that function (a test enforces it) and refuses any index off a character boundary.
--- It also refuses text holding `|`, unless the caller says its indices count the text as it is, escape sequences
--- included: a chat line's do, as the client's own text selection counts them there [verified: forever
--- blizzard_sharedxml/scrollingmessageframe.lua:486–503, indices into visibleLine:GetText(); seen in game on chat
--- lines holding player links and colour codes]. Nowhere else is that verified.
+-- spanAreas also refuses text holding `|`: how the client counts bytes around escape sequences is verified for one
+-- kind of text only, a chat line, whose indices count the line as it is, escape sequences included, as the client's
+-- own text selection counts them there [verified: forever blizzard_sharedxml/scrollingmessageframe.lua:486–503,
+-- indices into visibleLine:GetText(); seen in game on chat lines holding player links and colour codes]. A chat
+-- line goes through chatSpanAreas, which keeps every other check.
 local _, WFJ = ...
 local View = {}
 WFJ.ReadingView = View
@@ -133,9 +134,9 @@ local function boundary(text, i)
   return c ~= nil and (c < 0x80 or c >= 0xC0)
 end
 
--- `first`, `last`: a word's first and last byte (inclusive, as Core/Readings returns them). `escapes`: true for a
--- chat line, whose indices count its escape sequences too (UI/ChatCards). → areas | nil, why
-function View.spanAreas(fs, text, first, last, where, escapes)
+-- `first`, `last`: a word's first and last byte (inclusive, as Core/Readings returns them). `escapes`: the text may
+-- hold escape sequences its indices count. → areas | nil, why
+local function areasOf(fs, text, first, last, where, escapes)
   local right = last + 1
   local why
   if type(text) ~= "string" then
@@ -155,6 +156,15 @@ function View.spanAreas(fs, text, first, last, where, escapes)
   local ok, areas = pcall(fs.CalculateScreenAreaFromCharacterSpan, fs, first, right)
   if not ok or type(areas) ~= "table" then return nil, "no areas" end
   return areas
+end
+
+function View.spanAreas(fs, text, first, last, where)
+  return areasOf(fs, text, first, last, where, false)
+end
+
+-- A word's areas on a visible chat line (UI/ChatCards): the one kind of text whose escape sequences are counted.
+function View.chatSpanAreas(line, text, first, last)
+  return areasOf(line, text, first, last, "chat", true)
 end
 
 -- ── The box ───────────────────────────────────────────────────────────────
@@ -185,7 +195,9 @@ end
 
 local TINT = { 1, 0.82, 0, 0.22 } -- gold, low alpha: the word under the mouse
 
-local function clearHover(cover)
+local clearHover, showHover
+
+function clearHover(cover)
   for _, t in ipairs(cover.tints) do t:Hide() end
   cover.hovered = nil
   if box and box.owner == cover then box:Hide(); box.owner = nil end
@@ -198,7 +210,7 @@ local function glossFor(word)
   return word.card or WFJ.Glosses.get(word.gloss) -- card: a class / race word (Core/Readings.withTokenWords)
 end
 
-local function showHover(cover, word)
+function showHover(cover, word)
   clearHover(cover)
   cover.hovered = word
   for i, r in ipairs(word.rects) do
@@ -235,6 +247,10 @@ local function showHover(cover, word)
 end
 
 -- ── Hit testing ───────────────────────────────────────────────────────────
+
+-- For a caller that owns its cover and finds its own word (UI/ChatCards, on a chat line): `cover` carries `fs` and
+-- `tints`; `word` carries `rects` and what a card needs (`word`, `reading`, and `card` or `gloss`).
+View.showHover, View.clearHover = showHover, clearHover
 
 -- The words' rectangles, now: nil when the FontString no longer shows the text the cover was attached for.
 local function measure(cover)
