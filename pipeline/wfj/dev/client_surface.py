@@ -2832,9 +2832,12 @@ end
 
 -- The bag click read. A bag item's right-click reads these before it uses the item (ContainerFrameItemButton_OnClick,
 -- mainline/containerframe.lua:1503-1611, and the button's own fields, :1845); one carrying the addon's taint makes
--- the use a forbidden call out of combat, the addon named. Read twice: as the run left them, then with the backpack
--- open after the whole interface was hidden and shown again (what Dialogue UI does around a talk, and Alt+Z), so a
--- hook of the addon's that runs inside that show is caught. Into `probe.bagclick`:
+-- the use a forbidden call out of combat, the addon named. Each global that is a table is read one level down too
+-- (MerchantFrame's fields, BankFrame's, ItemButtonUtil's). Read three times: as the run left them; with the backpack
+-- open after the mouse was pointed at its items the client's way (a player points at the Hearthstone before using it,
+-- and the item tooltip runs the addon's code); and after the whole interface was hidden and shown again (what Dialogue
+-- UI does around a talk, and Alt+Z), so a hook of the addon's that runs inside either is caught. Into
+-- `probe.bagclick`:
 --   checked  values read; ours  { "<when>\\t<name>" } carrying the addon's taint: a failure
 --   others   name → the addon whose taint it carries (listed, not failed); refused  why the second pass did not run
 local BAG_CLICK_GLOBALS = { "ContainerFrameItemButton_OnClick", "MerchantFrame_ResetRefundItem", "MerchantFrame",
@@ -2870,11 +2873,18 @@ local function WFJScanBagClickRead()
     end
   end
   local function read(when)
-    for _, name in ipairs(BAG_CLICK_GLOBALS) do note(when, name, issecurevariable(name)) end
+    for _, name in ipairs(BAG_CLICK_GLOBALS) do
+      note(when, name, issecurevariable(name))
+      local value = _G[name]
+      if type(value) == "table" then fields(when, name, value) end
+    end
     if type(MerchantFrame) == "table" then
       for _, key in ipairs(BAG_CLICK_MERCHANT) do
         note(when, "MerchantFrame." .. key, issecurevariable(MerchantFrame, key))
       end
+    end
+    if type(BankFrame) == "table" and type(rawget(BankFrame, "BankPanel")) == "table" then
+      fields(when, "BankFrame.BankPanel", BankFrame.BankPanel)
     end
     local frames = { "ContainerFrameCombinedBags" }
     for i = 1, 13 do frames[#frames + 1] = "ContainerFrame" .. i end
@@ -2898,6 +2908,26 @@ local function WFJScanBagClickRead()
   end
   local wasOpen = type(IsBagOpen) == "function" and IsBagOpen(0)
   if not wasOpen then OpenBackpack() end
+  -- the client's own way to point at a frame, as the hover read does: its enter script, then its leave script
+  local pointed = 0
+  for _, name in ipairs({ "ContainerFrameCombinedBags", "ContainerFrame1" }) do
+    local f = _G[name]
+    local items = type(f) == "table" and f:IsShown() and rawget(f, "Items")
+    if type(items) == "table" then
+      for _, button in ipairs(items) do
+        if pointed < 8 and type(button) == "table" and button:IsVisible() and type(button.GetBagID) == "function"
+            and C_Container.GetContainerItemID(button:GetBagID(), button:GetID()) then
+          pointed = pointed + 1
+          if type(ExecuteFrameScript) == "function" then
+            pcall(ExecuteFrameScript, button, "OnEnter")
+            pcall(ExecuteFrameScript, button, "OnLeave")
+          end
+        end
+      end
+    end
+  end
+  record.pointed = pointed
+  read("after pointing at bag items")
   SetUIVisibility(false)
   SetUIVisibility(true)
   read("after the interface came back")
