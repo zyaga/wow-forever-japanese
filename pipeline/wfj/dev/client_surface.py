@@ -2879,6 +2879,101 @@ local function uncardedRuns(plain, cover)
   return runs
 end
 
+-- The chat tools read. The phrase book's card and the player's own chat words window are the addon's own windows:
+-- no sweep above opens them. This opens each the addon's own way (its slash command), reads it and closes it
+-- again, into `probe.chat`:
+--   topics   the card's topic tabs; phrases  the phrase rows read over every topic
+--   blank    a tab with no words on it or with its words cut off, or a phrase row missing a line: a failure
+--   sizes    the card's size on each topic: more than one is a failure (the card must not move under the mouse)
+--   english  with Japanese showing (`expect`), a heading, tab or label holding no Japanese: a failure
+--   words    the text regions the chat words window shows
+--   stuck    the card still showing after the command that closes it: a failure
+-- It types nothing into chat and sends nothing: it never clicks a phrase.
+local function holdsJapanese(text)
+  for i = 1, #text - 2 do
+    local c = text:byte(i)
+    -- kana and kanji lead bytes; the ideographic punctuation block (E3 80) is not a word
+    if c >= 227 and c <= 233 and not (c == 227 and text:byte(i + 1) == 128) then return true end
+  end
+  return false
+end
+
+local function WFJScanChatRead()
+  local db = probeDb()
+  local settings = addonSettings() or {}
+  local record = { topics = 0, phrases = 0, words = 0, blank = {}, sizes = {}, english = {},
+    expect = settings.enabled ~= false and settings.direction ~= "en" }
+  db.chat = record
+  local slash = type(SlashCmdList) == "table" and SlashCmdList.WFJ or nil
+  if type(slash) ~= "function" then
+    record.refused = "the addon has no slash command to run"
+    return
+  end
+  local function judge(what, text)
+    if record.expect and readable(text) and not holdsJapanese(text) then
+      record.english[#record.english + 1] = what .. "\t" .. text
+    end
+  end
+  local ok, err = pcall(function()
+    slash("phrases")
+    local card = _G.WFJPhraseCard
+    if not (card and card:IsShown()) then
+      record.refused = "the phrase card did not open"
+      return
+    end
+    judge("phrase card heading", card.title and card.title:GetText())
+    judge("phrase card foot", card.foot and card.foot:GetText())
+    local sizes = {}
+    for _, tab in ipairs(type(card.tabs) == "table" and card.tabs or {}) do
+      record.topics = record.topics + 1
+      local name = tostring(tab.topic)
+      local said = tab.Text and tab.Text:GetText()
+      if not readable(said) then
+        record.blank[#record.blank + 1] = "tab " .. name .. "\tno words"
+      elseif tab.Text.IsTruncated and tab.Text:IsTruncated() then
+        record.blank[#record.blank + 1] = "tab " .. name .. "\tcut off: " .. said
+      else
+        judge("tab " .. name, said)
+      end
+      if card.tabSystem and card.tabSystem.SetTab then card.tabSystem:SetTab(tab.tabID) end
+      sizes[math.floor(card:GetWidth() + 0.5) .. "x" .. math.floor(card:GetHeight() + 0.5)] = true
+      local shown = 0
+      for n, row in ipairs(type(card.rows) == "table" and card.rows or {}) do
+        if row:IsShown() then
+          shown = shown + 1
+          local ja, en = row.ja and row.ja:GetText(), row.en and row.en:GetText()
+          if not readable(ja) or not readable(en) then
+            record.blank[#record.blank + 1] = "topic " .. name .. " row " .. n .. "\ta line is missing"
+          elseif not holdsJapanese(ja) then
+            record.blank[#record.blank + 1] = "topic " .. name .. " row " .. n .. "\tno Japanese: " .. ja
+          end
+        end
+      end
+      if shown == 0 then record.blank[#record.blank + 1] = "topic " .. name .. "\tno phrases" end
+      record.phrases = record.phrases + shown
+    end
+    for size in pairs(sizes) do record.sizes[#record.sizes + 1] = size end
+    table.sort(record.sizes)
+    slash("phrases") -- the same command closes the card
+    if card:IsShown() then
+      record.stuck = true
+      card:Hide()
+    end
+    slash("chatwords")
+    local window = _G.WFJChatWordsWindow
+    if not (window and window:IsShown()) then
+      record.refusedWords = "the chat words window did not open"
+      return
+    end
+    for _, shown in ipairs(shownTexts(window, {})) do
+      record.words = record.words + 1
+      judge("chat words window", shown.text)
+    end
+    window:Hide()
+  end)
+  if not ok then record.refused = tostring(err) end
+end
+
 local function WFJScanFreezeRead(done)
   local db = probeDb()
   local settings = addonSettings() or {}
@@ -3256,6 +3351,8 @@ SlashCmdList.WFJTEST = function(how)
             outOfCombat(function() WFJScanNamesRead(function()
             WFJScanPlatesRead() -- out of combat here: the client refuses a setting written in a fight
             WFJScanLoadRead()
+            db.test.part = "chat"
+            WFJScanChatRead() -- the addon's own chat windows: opened, read and closed at once
             db.test.part = "freeze"
             -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
             outOfCombat(function() WFJScanFreezeRead(function()
@@ -4077,6 +4174,57 @@ def plates_problems(record: dict[str, Any] | None) -> list[str]:
     return out
 
 
+def read_chat(text: str) -> dict[str, Any] | None:
+    """The window test's chat tools read out of a saved-variables file, or None when the run had none: the
+    phrase card's topic tabs (`topics`) and the phrase rows read over them (`phrases`), the text regions the
+    chat words window showed (`words`), whether Japanese was to be expected (`expect`), why it could not read
+    (`refused`, `refused_words`), whether the card stayed open (`stuck`), the card's sizes over its topics
+    (`sizes`), and two lists of (what, what was seen): `blank` (a tab or a row with no words, or cut off) and
+    `english` (a heading, tab or label with no Japanese in it)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("chat") if probe is not None else None
+    if record is None:
+        return None
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("topics", "phrases", "words")}
+    out["expect"] = bool(record.get("expect"))
+    out["stuck"] = bool(record.get("stuck"))
+    out["refused"] = str(record.get("refused") or "")
+    out["refused_words"] = str(record.get("refusedWords") or "")
+    sizes = record.get("sizes")
+    out["sizes"] = [str(v) for v in (sizes.positional() if sizes is not None else [])]
+    for kind in ("blank", "english"):
+        rows = record.get(kind)
+        out[kind] = [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])]
+    return out
+
+
+def chat_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the chat tools read found wrong, one line each. A run whose test addon had no such read, or one
+    that could not open the phrase card, proves nothing about the chat tools and says so."""
+    if record is None:
+        return ["chat tools not read: this run's test addon has no such read (make scan-install, then run it "
+                "again)"]
+    if record["refused"]:
+        return [f"chat tools not read: {record['refused']}"]
+    if not record["topics"]:
+        return ["phrase card has no topics"]
+    out = [f"phrase card: {what} ({seen})" for what, seen in record["blank"]]
+    if len(record["sizes"]) > 1:
+        out.append(f"phrase card changes size between topics: {', '.join(record['sizes'])}")
+    if record["stuck"]:
+        out.append("phrase card did not close on its own command")
+    if record["refused_words"]:
+        out.append(f"chat words window not read: {record['refused_words']}")
+    elif not record["words"]:
+        out.append("chat words window shows no text")
+    if record["expect"]:
+        out += [f"chat tools left English: {seen!r} ({what})" for what, seen in record["english"]]
+    return out
+
+
 def freeze_problems(record: dict[str, Any] | None) -> list[str]:
     """What the frozen tooltip read found wrong, one line each. A run whose test addon had no such read, or
     one that froze nothing, proves nothing about the frozen tooltip and says so."""
@@ -4540,6 +4688,10 @@ def _own_reads(saved: str) -> list[str]:
         print(f"frozen tooltip: {freeze['items']} item and {freeze['spells']} spell tooltips frozen, "
               f"{freeze['lines']} Japanese lines copied, {freeze['cards']} word cards, "
               f"{len(uncarded_words(freeze))} lines with a word that takes none; key {freeze['bound'] or 'none'}")
+    chat = read_chat(saved)
+    if chat is not None and not chat["refused"]:
+        print(f"chat tools: {chat['topics']} topics and {chat['phrases']} phrases on the phrase card, "
+              f"{chat['words']} text regions in the chat words window")
     plates = read_plates(saved)
     if plates is not None and not plates["refused"]:
         v, d = plates["values"], plates["defaults"]
@@ -4553,7 +4705,8 @@ def _own_reads(saved: str) -> list[str]:
         said += [f"setup {load['setup']:.0f} ms"] if "setup" in load else []
         print("addon load: " + ", ".join(said))
     return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
-            + names_problems(names, japanese) + freeze_problems(freeze) + plates_problems(plates))
+            + names_problems(names, japanese) + chat_problems(chat) + freeze_problems(freeze)
+            + plates_problems(plates))
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A

@@ -183,6 +183,7 @@ local function buildCard()
   end
   movable(f)
   card = f
+  f.tabs, f.rows = tabs, rows -- the in-game window test walks them (pipeline/wfj/dev/client_surface.py)
   f.title = f:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
   f.title:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -PAD)
   f.close = CreateFrame("Button", nil, f, "UIPanelCloseButton")
