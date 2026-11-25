@@ -2904,7 +2904,12 @@ local function WFJScanBagClickRead(done)
       end
     end
   end
-  read("after the run")
+  -- a read that raises is recorded and the run goes on: the rest of the test must still run
+  local function readSafely(when)
+    local ok, err = pcall(read, when)
+    if not ok then record.failed = when .. ": " .. tostring(err) end
+  end
+  readSafely("after the run")
   if type(SetUIVisibility) ~= "function" or type(OpenAllBags) ~= "function" then
     record.refused = "the client has no SetUIVisibility or OpenAllBags"
     return done()
@@ -2915,28 +2920,32 @@ local function WFJScanBagClickRead(done)
   -- the client's own way to point at a frame, as the hover read does: its enter script, then its leave script. Any
   -- bag item button on screen, found by what it is (a button that knows its bag) rather than by a frame name, so a
   -- bag addon's buttons count too.
+  local function consider(f)
+    if not (f:IsVisible() and type(f.GetBagID) == "function" and type(f.GetID) == "function") then return end
+    -- a bag addon's frames answer GetBagID too (a bag slot, a header) with a slot the client refuses: only a slot
+    -- from 1 up is asked about
+    local bag = f:GetBagID()
+    local slot = type(bag) == "number" and bag >= 0 and f:GetID() or nil
+    if type(slot) ~= "number" or slot < 1 or not C_Container.GetContainerItemID(bag, slot) then return end
+    pointedAt[#pointedAt + 1] = f
+    if type(ExecuteFrameScript) == "function" then
+      pcall(ExecuteFrameScript, f, "OnEnter")
+      pcall(ExecuteFrameScript, f, "OnLeave")
+    end
+  end
   local f = EnumerateFrames()
   while f and #pointedAt < BAG_POINT_MAX do
-    if f:IsVisible() and type(f.GetBagID) == "function" and type(f.GetID) == "function" then
-      local ok, bag = pcall(f.GetBagID, f)
-      if ok and type(bag) == "number" and C_Container.GetContainerItemID(bag, f:GetID()) then
-        pointedAt[#pointedAt + 1] = f
-        if type(ExecuteFrameScript) == "function" then
-          pcall(ExecuteFrameScript, f, "OnEnter")
-          pcall(ExecuteFrameScript, f, "OnLeave")
-        end
-      end
-    end
+    pcall(consider, f) -- a frame the client will not answer for (a forbidden one) is passed over
     f = EnumerateFrames(f)
   end
   record.pointed = #pointedAt
-  read("after pointing at bag items")
+  readSafely("after pointing at bag items")
   SetUIVisibility(false)
   SetUIVisibility(true)
   -- what the interface's return sets off runs on the frames after it (a help tip's OnUpdate): waited for, so an
   -- error it raises lands inside the run
   C_Timer.After(0.5, function()
-    read("after the interface came back")
+    readSafely("after the interface came back")
     if not wasOpen and type(CloseAllBags) == "function" then CloseAllBags() end
     done()
   end)
@@ -4191,6 +4200,8 @@ def read_bagclick(text: str) -> dict[str, Any] | None:
         "ours": [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])],
         "others": {str(k): str(v) for k, v in (others.named() if others is not None else {}).items()},
         "refused": str(record.get("refused") or ""),
+        "failed": str(record.get("failed") or ""),
+        "pointed": int(record.get("pointed") or 0),
     }
 
 
@@ -4203,6 +4214,8 @@ def bagclick_problems(record: dict[str, Any] | None) -> list[str]:
     out = [f"bag click value tainted by the addon ({when}): {name}" for when, name in record["ours"]]
     if record["refused"]:
         out.append(f"bag click read only as the run left it: {record['refused']}")
+    if record["failed"]:
+        out.append(f"bag click read stopped: {record['failed']}")
     return out
 
 
@@ -4691,7 +4704,8 @@ def _own_reads(saved: str) -> list[str]:
               f"{len(uncarded_words(freeze))} lines with a word that takes none; key {freeze['bound'] or 'none'}")
     bagclick = read_bagclick(saved)
     if bagclick is not None:
-        print(f"bag click: {bagclick['checked']} values read, {len(bagclick['ours'])} tainted by the addon"
+        print(f"bag click: {bagclick['checked']} values read, {bagclick['pointed']} bag items pointed at, "
+              f"{len(bagclick['ours'])} tainted by the addon"
               + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(bagclick["others"].items()))
                  if bagclick["others"] else ""))
     plates = read_plates(saved)
