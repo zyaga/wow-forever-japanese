@@ -2960,6 +2960,30 @@ local function WFJScanBagClickRead(done)
       f = EnumerateFrames(f)
     end
     record.pointed = #pointedAt
+    -- what a bag item button's enter script calls, run for the items in the bags whatever addon draws their buttons
+    -- (a bag addon's may not be on screen or found): the item tooltip's code on a bag item, the path under test
+    local shown = 0
+    if type(GameTooltip) == "table" and type(GameTooltip.SetBagItem) == "function" then
+      for bag = 0, 4 do
+        local slots = C_Container.GetContainerNumSlots(bag) or 0
+        for slot = 1, slots do
+          if shown < BAG_POINT_MAX and C_Container.GetContainerItemID(bag, slot) then
+            local ok, err = pcall(function()
+              GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+              GameTooltip:SetBagItem(bag, slot)
+              GameTooltip:Hide()
+            end)
+            if ok then
+              shown = shown + 1
+            else
+              skipped.errors = skipped.errors + 1
+              skipped.firstError = skipped.firstError or tostring(err)
+            end
+          end
+        end
+      end
+    end
+    record.tooltips = shown
     readSafely("after pointing at bag items")
     SetUIVisibility(false)
     SetUIVisibility(true)
@@ -4210,7 +4234,7 @@ def read_bagclick(text: str) -> dict[str, Any] | None:
     """The window test's bag click read out of a saved-variables file, or None when the run had none: how many
     values it read (`checked`), the ones carrying the addon's taint as (when, name) (`ours`), the ones carrying
     another addon's as name → addon (`others`), why the second pass did not run (`refused`), a read that raised
-    (`failed`), the bag items pointed at (`pointed`) and how far the frames it passed over got (`skipped`)."""
+    (`failed`), the bag item buttons pointed at (`pointed`), the bag item tooltips shown (`tooltips`) and how far the frames it passed over got (`skipped`)."""
     from wfj.io import lua_reader
 
     db = lua_reader.parse_assignments(text).get("WFJScanDB")
@@ -4228,6 +4252,7 @@ def read_bagclick(text: str) -> dict[str, Any] | None:
         "refused": str(record.get("refused") or ""),
         "failed": str(record.get("failed") or ""),
         "pointed": int(record.get("pointed") or 0),
+        "tooltips": int(record.get("tooltips") or 0),
         "skipped": {str(k): str(v) for k, v in (skipped.named() if skipped is not None else {}).items()},
     }
 
@@ -4244,7 +4269,7 @@ def bagclick_problems(record: dict[str, Any] | None) -> list[str]:
     if record["failed"]:
         out.append(f"bag click read stopped: {record['failed']}")
     # a run that pointed at no bag item never ran the item tooltip's code on a bag button, the path under test
-    if record["skipped"] and not record["pointed"] and not record["refused"]:
+    if record["skipped"] and not record["pointed"] and not record["tooltips"] and not record["refused"]:
         out.append("bag click pointed at no bag item: "
                    + ", ".join(f"{k} {v}" for k, v in sorted(record["skipped"].items())))
     return out
@@ -4735,7 +4760,8 @@ def _own_reads(saved: str) -> list[str]:
               f"{len(uncarded_words(freeze))} lines with a word that takes none; key {freeze['bound'] or 'none'}")
     bagclick = read_bagclick(saved)
     if bagclick is not None:
-        print(f"bag click: {bagclick['checked']} values read, {bagclick['pointed']} bag items pointed at, "
+        print(f"bag click: {bagclick['checked']} values read, {bagclick['pointed']} bag item buttons pointed at, "
+              f"{bagclick['tooltips']} bag item tooltips shown, "
               f"{len(bagclick['ours'])} tainted by the addon"
               + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(bagclick["others"].items()))
                  if bagclick["others"] else ""))
