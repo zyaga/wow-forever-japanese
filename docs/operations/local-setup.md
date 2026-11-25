@@ -91,6 +91,7 @@ The Lua and luarocks versions CI uses are the inputs of `.github/actions/lua-too
 | `make import-collector DUMP=<file>` | adds one player's collector dump (a SavedVariables file at hand) to `data/english/`, replacing stand-in English with what the Forever client showed. The path may contain spaces. See [Collector dumps](#collector-dumps) |
 | `make collector-intake ISSUE=N [BODY=<saved issue body>]` | a player's collector send (a `collector-send` issue): reads the string or the attached file and imports it with the same rules: [Collector sends](collector-sends.md) |
 | `make report-intake ISSUE=N` / `make report-apply ISSUE=N MODEL=<model id>` | a player's fix report: [Fix reports](fix-reports.md) |
+| `make intro-images` | the welcome tour's pictures: cuts each source in `docs/images/tour/` to its box, scales it to 512 x 256 and writes `addon/WoWForeverJapanese/Media/Tour/<page>.tga` (uncompressed, 32 bits a pixel). It uses `sips`, the image tool macOS ships, so it runs on a Mac and installs nothing. Commit the TGA files with their sources ([Settings → Welcome window](../systems/settings.md#welcome-window)) |
 
 ### Import and client tooling
 

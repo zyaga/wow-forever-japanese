@@ -99,6 +99,8 @@ Each place has its own switch. With a place off, no mark, no score tag, no statu
 
 Three more settings shape the marks everywhere: `marks.underline` (on), `marks.highlight` (Common words) and `marks.score` (on, the score tags). The Words page shows all eight in its **Word status** section, with the counts, the whole game's score and the **Known words** button ([Settings → Settings pages](settings.md#settings-pages)). A change redraws the marks at once.
 
+**In the welcome tour.** After Study Japanese or Study English, the welcome window's tour has a word status page: the Shift+click, the underline, the green highlight and the score tag, and `/wfj known` ([Settings → Welcome window](settings.md#welcome-window)). Just play turns word cards off, so it shows no marks and its tour has no such page.
+
 ### The comprehension score
 A text's score is known words over counted words, as a whole percent. An Ignored word is in neither; a Learning word counts as not known; a name, a class or race word and a word with no card are not words here.
 
