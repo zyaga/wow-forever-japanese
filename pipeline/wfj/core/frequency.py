@@ -1,9 +1,9 @@
 """How often each word of the game's text is used (docs/systems/word-status.md).
 
-A Japanese word is its dictionary form with that form's reading; a word listed without one is itself with its
-reading. An English word is the lower-cased word of a line's English word card row. Each word carries one count
-per kind of text, in `KINDS` order: for Japanese how many times it is used, for English how many lines list it.
-The addon ranks the words itself (most used first, ties by key), so a new word changes one file.
+A Japanese word is its dictionary form with that form's reading; a word listed without one is itself with
+its reading. An English word is the lower-cased word of a line's English word card row. Each word carries one
+count per kind of text, in `KINDS` order: for Japanese how many times it is used, for English how many lines
+list it. The addon ranks the words itself (most used first, ties by key), so a new word changes one file.
 """
 
 from __future__ import annotations
@@ -89,16 +89,16 @@ def load_grammar(pipeline_dir: Path, known: Iterable[str]) -> tuple[list[str], l
         return [], []
     words, problems = set(known), []
     keys: list[str] = []
-    for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
-        line = line.split("#", 1)[0].rstrip()
-        if not line:
+    for n, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        key = raw.split("#", 1)[0].rstrip()
+        if not key:
             continue
-        if line.count("\t") != 1:
+        if key.count("\t") != 1:
             problems.append(f"{GRAMMAR_FILE}:{n}: a line is word<TAB>reading")
-        elif line in keys:
-            problems.append(f"{GRAMMAR_FILE}:{n}: {line!r} is listed twice")
-        elif line not in words:
-            problems.append(f"{GRAMMAR_FILE}:{n}: {line!r} is not a word of the game's text")
+        elif key in keys:
+            problems.append(f"{GRAMMAR_FILE}:{n}: {key!r} is listed twice")
+        elif key not in words:
+            problems.append(f"{GRAMMAR_FILE}:{n}: {key!r} is not a word of the game's text")
         else:
-            keys.append(line)
+            keys.append(key)
     return keys, problems

@@ -4621,6 +4621,15 @@ def marks_problems(record: dict[str, Any] | None) -> list[str]:
     return out
 
 
+def _marks_read(saved: str) -> dict[str, Any] | None:
+    """The word status read, with its line of the result printed when it read anything."""
+    marks = read_marks(saved)
+    if marks is not None and not marks["refused"]:
+        print(f"word status: {marks['window']} text regions in the known words window, "
+              f"{marks['shown']} marks showing on {marks['frames']} marked texts")
+    return marks
+
+
 def freeze_problems(record: dict[str, Any] | None) -> list[str]:
     """What the frozen tooltip read found wrong, one line each. A run whose test addon had no such read, or
     one that froze nothing, proves nothing about the frozen tooltip and says so."""
@@ -5092,10 +5101,7 @@ def _own_reads(saved: str, section: str | None = None) -> list[str]:
     if chat is not None and not chat["refused"]:
         print(f"chat tools: {chat['topics']} topics and {chat['phrases']} phrases on the phrase card, "
               f"{chat['words']} text regions in the chat words window")
-    marks = read_marks(saved) if part("marks") else None
-    if marks is not None and not marks["refused"]:
-        print(f"word status: {marks['window']} text regions in the known words window, "
-              f"{marks['shown']} marks showing on {marks['frames']} marked texts")
+    marks = _marks_read(saved) if part("marks") else None
     bagclick = read_bagclick(saved) if part("bagclick") else None
     if bagclick is not None:
         print(f"bag click: {bagclick['checked']} values read, {bagclick['pointed']} bag item buttons pointed at, "

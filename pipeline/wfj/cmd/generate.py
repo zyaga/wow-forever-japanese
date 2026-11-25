@@ -730,8 +730,8 @@ def _plan_frequency(
     for shard, rows in sorted(frequency.shards(frequency.rows(japanese), frequency.JA_SHARDS).items()):
         out[schema.freq_relpath("ja", shard)] = lua_writer.word_table_text(
             "freqJa", rows,
-            "Japanese words of the game text (dictionary form, its reading), each with how often it is used in "
-            "quest, NPC talk, book, window, item and spell text",
+            "Japanese words of the game text (dictionary form, its reading), each with how often it is used "
+            "in quest, NPC talk, book, window, item and spell text",
         )
     for shard, rows in sorted(frequency.shards(frequency.rows(english), frequency.EN_SHARDS).items()):
         out[schema.freq_relpath("en", shard)] = lua_writer.word_table_text(
