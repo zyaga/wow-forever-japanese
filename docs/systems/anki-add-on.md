@@ -73,7 +73,7 @@ One note type, `WoW Forever Japanese`, one card (`Card`), notes in the deck `WoW
 | `Japanese sentence` | an English word's Japanese sentence |
 | `Image` | an HTML image tag naming the stored screenshot (its name starts with `wfj-`) |
 | `Audio` | `[sound:wfj-…]`, one per file, in play order |
-| `Source`, `Quest`, `Saved`, `Lang` | where it was shown, the Japanese quest title, the save date (UTC, `YYYY-MM-DD`), `en` or empty |
+| `Source`, `Quest`, `Quest ID`, `Saved`, `Lang` | where it was shown, the Japanese quest title, the quest's number (shown after the source on the back: "quest 456"), the save date (UTC, `YYYY-MM-DD`), `en` or empty |
 | `Sync` | the add-on's record, as JSON: a short hash of what it last wrote to each field, and of the files behind `Image` and `Audio` |
 
 The first sync makes the note type. A note type the add-on made earlier with fewer fields gains the new ones without losing a note. A note type of the same name without a `Sync` field is the player's own and is left alone; the add-on then uses `WoW Forever Japanese (add-on)`.

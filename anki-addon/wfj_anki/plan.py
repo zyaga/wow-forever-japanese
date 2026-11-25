@@ -36,6 +36,7 @@ FIELDS = [
     "Audio",
     "Source",
     "Quest",
+    "Quest ID",
     "Saved",
     "Lang",
     "Sync",
@@ -53,6 +54,7 @@ _TEXT = {
     "Japanese sentence": "jaSentence",
     "Source": "source",
     "Quest": "questTitle",
+    "Quest ID": "questId",
     "Lang": "lang",
 }
 

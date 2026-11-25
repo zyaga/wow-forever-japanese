@@ -98,6 +98,7 @@ def test_a_new_word_becomes_one_note_with_its_fields():
     assert note["Word (furigana)"] == "生[い]き 物[もの]"
     assert note["Source"] == "quest"
     assert note["Quest"] == "生き物を減らせ"
+    assert note["Quest ID"] == "456"
     assert note["Saved"].startswith("2026-")
     assert note["Lang"] == ""
     assert note["Image"] == "" and note["Audio"] == ""

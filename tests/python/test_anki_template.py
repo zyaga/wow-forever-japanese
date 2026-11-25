@@ -41,6 +41,7 @@ def test_the_back_has_readings_the_word_its_form_meaning_image_and_audio():
     assert '<img src="shot.jpg">' in back
     assert "replay-button" in back
     assert "自然界のバランス" in back
+    assert "quest 456" in text(back)  # where it is from, with the quest's number
 
 
 def test_word_alone_puts_only_the_word_on_the_front():
