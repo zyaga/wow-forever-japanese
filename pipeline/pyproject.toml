@@ -12,7 +12,7 @@ dependencies = []
 
 [project.optional-dependencies]
 # exact: a new release never changes CI on its own; bump deliberately. pytest-xdist runs the tests on every core.
-dev = ["pytest==9.2.0", "pytest-xdist==3.8.0", "ruff==0.17.6", "coverage==7.17.3"]
+dev = ["pytest==9.2.0", "pytest-xdist==3.8.0", "ruff==0.17.6", "coverage==7.17.4"]
 
 [project.scripts]
 wfj = "wfj.cli:main"
@@ -60,9 +60,11 @@ source = ["wfj"]
 # the tests run in parallel worker processes: each is measured and writes its own data file, and
 # `make coverage-py` adds them up (`coverage combine`) before the report
 patch = ["subprocess"]
-# run only under their own interpreters (the PyTorch venv, the Modal client), never the pipeline's
-omit = ["wfj/io/qwen_worker.py", "wfj/io/qwen_modal.py", "wfj/io/align_modal.py", "wfj/dev/align_reazon.py",
-        "wfj/dev/align_qwen.py"]
+# run only under their own interpreters (the PyTorch venv, the Modal client), never the pipeline's.
+# Each pattern starts with a wildcard: a pattern without one is read against the folder a process starts in,
+# and a test that starts Python in a temp folder would count these files as never run
+omit = ["*/wfj/io/qwen_worker.py", "*/wfj/io/qwen_modal.py", "*/wfj/io/align_modal.py",
+        "*/wfj/dev/align_reazon.py", "*/wfj/dev/align_qwen.py"]
 
 [tool.coverage.report]
 skip_empty = true
