@@ -314,6 +314,17 @@ local function buildWhole()
   whole:Hide()
 end
 
+-- A line's speaker as the panel's frames name them: the Japanese name while names are on, Japanese is showing and an
+-- NPC says the line; the client's English otherwise, and for a name with no Japanese. → the name, whether Japanese
+function Text.speakerName(item, english)
+  local name = item.name
+  if type(name) ~= "string" or english or not WFJ.State.names or item.speaker == nil or not WFJ.Names then
+    return name, false
+  end
+  local ja = WFJ.Names.of(name)
+  return ja or name, ja ~= nil
+end
+
 -- The window's text and colours for `item` in the panel's look (parchment behind dark text on a parchment look).
 -- `english`: the reveal key is held: the line's English, with no word cards (they never show while English does).
 function Text.refreshWhole(item, L, english)
@@ -330,7 +341,10 @@ function Text.refreshWhole(item, L, english)
     whole.text:SetTextColor(1, 1, 1)
     whole.text:SetShadowOffset(1, -1)
   end
-  whole.title:SetText(item.name or "")
+  local name, japanese = Text.speakerName(item, english)
+  local titleFont = WFJ.Compat.resolve("GameFontNormalLarge")
+  if japanese then WFJ.Font.bundle(whole.title, titleFont) else WFJ.Font.restore(whole.title, titleFont) end
+  whole.title:SetText(name or "")
   if english then
     if WFJ.ReadingView and wholeRec.fs then pcall(WFJ.ReadingView.detach, wholeRec) end
     whole.text:SetText(item.en or item.ja or "")
