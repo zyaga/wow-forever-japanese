@@ -91,6 +91,32 @@ describe("Core/ChatWords", function()
     assert.is_nil(WFJ.ChatWords.englishAt("can't go", 2))
   end)
 
+  it("gives a plural its singular's card, and never a short word another word's", function()
+    local WFJ = load()
+    WFJ.Data.add("chaten", { i = "私=わたし=1", ha = "ハッ=ハッ=1", doe = "雌鹿=めじか=1", gold = "ゴールド=ゴールド=2",
+      boss = "ボス=ボス=2" })
+    local W = WFJ.ChatWords
+    assert.is_nil(W.englishAt("is", 1))
+    assert.is_nil(W.englishAt("has", 1))
+    assert.is_nil(W.englishAt("does", 1))
+    assert.equals("ゴールド", W.englishAt("golds", 1).card.ja)
+    assert.equals("ボス", W.englishAt("boss", 1).card.ja)
+  end)
+
+  it("refuses an own word no chat line could give, and drops a saved entry that is not a word", function()
+    local W = load().ChatWords
+    assert.is_false(W.add("en", "two words", "二語"))
+    assert.is_false(W.add("en", "a=b", "x"))
+    assert.is_false(W.add("ja", "abcぬるぽ", "ぬるぽ"))
+    assert.is_false(W.add("ja", ("あ"):rep(13), "あ"))
+    assert.is_true(W.add("ja", ("あ"):rep(12), "あ"))
+    assert.is_true(W.add("en", "don't", "しないで"))
+    local saved = W.load({ ja = { ["ぬるぽ"] = 5, ["よろ"] = { reading = "よろ" }, [7] = { reading = "x" } },
+      en = { pog = "すごい", gg = { ja = "おつかれ" } } })
+    assert.same({ ["よろ"] = { reading = "よろ" } }, saved.ja)
+    assert.same({ gg = { ja = "おつかれ" } }, saved.en)
+  end)
+
   it("says when the player's own words change", function()
     local W = load().ChatWords
     local n = 0
@@ -130,6 +156,8 @@ describe("Core/ChatWords", function()
     local W = load().ChatWords
     assert.equals("[Guild] [Hana]: おつ  ok",
       W.plain("|cff40ff40[Guild] |Hplayer:Hana|h[Hana]|h: おつ|r |TInterface\\x:0|t ok"))
+    -- a bar the player typed (the client doubles it) is a bar, not the start of a code
+    assert.equals("type |n or |cff00ff00", W.plain("type ||n or ||cff00ff00"))
   end)
 
   it("gives what a player typed out of a typed line, or nothing when the line is not shaped so", function()
@@ -137,6 +165,11 @@ describe("Core/ChatWords", function()
     assert.equals("今日はダンジョンに行きませんか", W.typedPart(GUILD))
     assert.equals("help: now", W.typedPart("|Hplayer:Bob|h[Bob]|h yells: help: now"))
     assert.equals("hello there", W.typedPart("To |Hplayer:Hana|h[Hana]|h: hello there"))
+    assert.equals("hi all", W.typedPart("|HplayerCommunity:Bob:1:2|h[Bob]|h: hi all"))
+    assert.equals("hi all", W.typedPart("|HBNplayerCommunity:x:1:2|h[Bob]|h: hi all"))
+    -- an icon the client draws after the name is not part of the opening words
+    local icon = "|A:recentally-icon-with-a-long-name:12:12:0:0|a"
+    assert.equals("hello", W.typedPart("|Hplayer:Bob|h[Bob]|h" .. icon .. " says: hello"))
     assert.is_nil(W.typedPart("|Hplayer:Bob|h[Bob]|h has come online."))
     assert.is_nil(W.typedPart("You receive loot: |Hitem:1|h[Thing]|h."))
   end)

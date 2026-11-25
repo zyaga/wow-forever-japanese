@@ -112,8 +112,10 @@ function Lines.init()
   if not Lines.filtering then
     Lines.filtering = true
     for _, e in ipairs(Lines.EVENTS) do add("CHAT_MSG_" .. e, Lines.filter) end
-    WFJ.State.on("language", Lines.revealAll)
-    WFJ.State.on("chat", Lines.revealAll)
+    -- guarded: an error here would stop every later listener for the reveal key
+    local function all() pcall(Lines.revealAll) end
+    WFJ.State.on("language", all)
+    WFJ.State.on("chat", all)
     if type(Compat.get(SURFACE, "openTemporary")) == "function" then
       hooksecurefunc("FCF_OpenTemporaryWindow", Lines.hookAll) -- a whisper / temporary window made later
     end

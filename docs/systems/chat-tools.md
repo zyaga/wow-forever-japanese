@@ -1,6 +1,6 @@
 # Chat tools
 
-> Study and play tools on the chat window: word cards on chat lines, a copy icon on the line under the mouse, a phrase book that types a short English phrase any player can read and that players with the addon read in their own language, and a window for the player's own chat words. Code: `Core/ChatWords.lua` (the word lists and where a word sits in a line), `Core/ChatPhrases.lua` (the phrases and the phrase mark), `UI/ChatCards.lua` (the tint, the card and the save click on chat lines), `UI/ChatCopy.lua` (the copy icon and the copy box), `UI/ChatPhraseLines.lua` (the message filter and the reveal key on phrase lines), `UI/PhraseBook.lua` (the 文 button and the phrase card), `UI/ChatWordsWindow.lua` (the own words window), `View.spanAreas` in `UI/Readings.lua`, the `chat.*` settings in `Core/Settings.lua`, the Chat section of the Words page in `UI/Options.lua`, the strings in `UI/OptionsText.lua`, `/wfj phrases` and `/wfj chatwords` in `UI/Slash.lua`, the `chatwords`, `chatcards`, `chatcopy`, `chatphraselines` and `phrasebook` load steps in `Main.lua`; in the pipeline `wfj/core/chat_words.py` and the chat step of `wfj/cmd/generate.py`. Decision: [ADR-109](../adr/109-chat-tools.md).
+> Study and play tools on the chat window: word cards on chat lines, a copy icon on the line under the mouse, a phrase book that types a short English phrase any player can read and that players with the addon read in their own language, and a window for the player's own chat words. Code: `Core/ChatWords.lua` (the word lists and where a word sits in a line), `Core/ChatPhrases.lua` (the phrases and the phrase mark), `UI/ChatLines.lua` (the timer that finds the chat line under the mouse; load step `chatlines`), `UI/ChatCards.lua` (the tint, the card and the save click on chat lines), `UI/ChatCopy.lua` (the copy icon and the copy box), `UI/ChatPhraseLines.lua` (the message filter and the reveal key on phrase lines), `UI/PhraseBook.lua` (the 文 button and the phrase card), `UI/ChatWordsWindow.lua` (the own words window), `View.chatSpanAreas` in `UI/Readings.lua`, the `chat.*` settings in `Core/Settings.lua`, the Chat section of the Words page in `UI/Options.lua`, the strings in `UI/OptionsText.lua`, `/wfj phrases` and `/wfj chatwords` in `UI/Slash.lua`, the `chatwords`, `chatcards`, `chatcopy`, `chatphraselines` and `phrasebook` load steps in `Main.lua`; in the pipeline `wfj/core/chat_words.py` and the chat step of `wfj/cmd/generate.py`. Decision: [ADR-109](../adr/109-chat-tools.md).
 
 ## Purpose
 Chat is where a learner meets Japanese and English that nobody translated: what other players type. The addon never rewrites that text. It helps the reader instead: pointing at a word shows its card, as on quest text; a line can be copied out to a dictionary or a translator; and a small book of fixed phrases lets two players who share no language say the common things (greetings, group, loot, trade) and each read them in their own language. A player without the addon sees nothing new: a phrase reaches them as a middle dot and plain English.
@@ -9,17 +9,18 @@ Chat is where a learner meets Japanese and English that nobody translated: what 
 ```mermaid
 sequenceDiagram
   participant U as Player
-  participant C as UI/ChatCards (timer)
+  participant L as UI/ChatLines (timer)
+  participant C as UI/ChatCards
   participant W as Core/ChatWords
-  participant V as UI/Readings (spanAreas)
+  participant V as UI/Readings (chatSpanAreas)
   participant B as UI/PhraseBook
   participant P as Core/ChatPhrases
   participant F as UI/ChatPhraseLines (filter)
-  C->>C: every 0.04 s: the visible chat line under the mouse
+  L->>C: every 0.04 s: the visible chat line under the mouse
   C->>C: FindCharacterIndexAtCoordinate on that line's FontString
   C->>W: japaneseAt / englishAt(text, byte)
   W-->>C: the word's span and its card (own words, chat list, general list)
-  C->>V: spanAreas(line, text, first, last, "chat", true)
+  C->>V: chatSpanAreas(line, text, first, last)
   V-->>C: the word's rectangles
   C->>U: gold tint and word card
   U->>B: click the 文 button, then a phrase
@@ -49,7 +50,7 @@ Nothing is hooked and no chat line is changed. `UI/ChatLines` runs a timer every
 | the chat list | `data/chat/words-ja.jsonl` (341 words), `words-en.jsonl` (361 words); shipped as `Data/Chat/Chat_list.lua` (`chatword`, `chatwordEn`) | Japanese: reading, meaning. English: its Japanese |
 | the general lists | generated from the shipped readings: `Data/Chat/Chat_ja_NN.lua` (`chatja`, about 65,500 words), `Chat_en_NN.lua` (`chaten`, about 18,600 words) | Japanese: the reading and meaning number used most. English: the Japanese dictionary form used most, its reading and meaning number |
 
-An English word found in none of them falls back to the common word list (`English_Common.lua`), and a plural or a contraction takes its base word's card (`heals` takes `heal`'s, `you're` takes `you`'s).
+An English word found in none of them falls back to the common word list (`English_Common.lua`), and a contraction takes its first word's card (`you're` takes `you`'s). A plural with no row of its own takes its singular's when the singular has four letters or more (`golds` takes `gold`'s); a shorter word never borrows a card, so `is` does not take `i`'s.
 
 **Cutting Japanese into words.** Chat has no reading rows, so `ChatWords` cuts the Japanese stretch around the mouse itself: at each place, the longest listed word (up to 12 characters), else one character, which takes no card. A listed word that ends in hiragana (a stem: 行き, 食べ, 倒し) takes any run of verb and adjective endings right after it into the same target (ます, ません, ませんか, ました, ましょう, たい, ない, て, た, ている, …), so 行きませんか is one word with 行き's card. A word that ends in a kanji or katakana takes none (私たち stays 私 and たち).
 
@@ -147,7 +148,7 @@ The Words page's third section, **Chat** / チャット: an explanation, four sw
 The buttons: **My chat words** (the own words window) and **Open the phrase book**.
 
 ### The window test
-The in-game window test reads the chat tools after the names read and before the frozen tooltip read ([Testing → Window test](../testing/strategy.md)). It opens the phrase card with `/wfj phrases`, reads every topic tab and phrase row, checks the card keeps one size and closes on the same command, then opens the chat words window with `/wfj chatwords` and reads it. It never clicks a phrase. The copy box opens only from a hover, so the test does not open it; its text is held by its spec.
+The in-game window test reads the chat tools after the names read and before the frozen tooltip read ([Testing → Window test](../testing/strategy.md)). It opens the phrase card with `/wfj phrases`, reads every topic tab and phrase row, checks the card keeps one size and closes on the same command, then opens the chat words window with `/wfj chatwords` and reads it. A card the player had open is left open. It never clicks a phrase. The copy box is opened through the copy icon's own click handler on a line of the test's own, and the test checks that the box holds that line without its colour codes and that its heading and footer are Japanese. Another addon cannot reach the addon's own functions or put the mouse on a word, so a word card on a real chat line is not read by the test: the specs hold where a word's span may sit, and a hover in game is the check.
 
 ## Key files
 - `addon/WoWForeverJapanese/Core/ChatWords.lua`: `load`, `add`, `remove`, `own` (the player's words); `japaneseAt`, `englishAt` (the word at a byte and its card); `runs`, `plain`, `typedPart`; the verb endings (pure)
@@ -181,6 +182,10 @@ The in-game window test reads the chat tools after the names read and before the
 - **A phrase typed without the dot**: left as typed, so a sentence that happens to match a phrase is never changed.
 - **A reload**: the kept messages are gone, so a phrase line from before it stays as it was drawn and no longer switches on the reveal key.
 - **A Japanese word inside a link's label** (a player named in Japanese, a linked item): no card.
+- **A particle after a word that ends in hiragana**: the endings a verb takes (て, た, か, よ, ね and the rest) are joined to any word ending in hiragana, so a word in no list can be cut oddly (それから gives それか with それ's card).
+- **A word saved from chat twice**: a chat word is kept once for its dictionary form, with the sentence of the first save.
+- **Two lines showing the same phrase**: the reveal key shows the longest kept message that fits the line, and of equals the one that arrived last, so a line sent as `· Hello!` can show `・こんにちは！` when both were received.
+- **An own word no chat line could give** (an English word with a space, a Japanese word with Latin letters or more than 12 characters): refused, with a note in the window.
 - **A typed line not shaped as expected** (no sender link, or a link in the opening words): the copy box takes the whole line, and the save click uses the stretch the word sits in.
 - **An English chat word saved with the save click**: there is no shipped line behind a chat sentence, so the entry has no Japanese sentence for the back of its study card.
 - **`/wfj phrases` with the button turned off**: the card still opens; collapsing it shows no button.

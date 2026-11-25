@@ -47,11 +47,11 @@ local function place(f)
     f:SetPoint(p[1], parent, p[2], p[3], p[4])
     return
   end
+  -- never dragged: beside the chat window itself, so it is right however early this runs and follows the chat
+  -- window when the player moves it (the screen clamp keeps it on screen)
   local chat = Compat.get(SURFACE, "chatFrame")
-  local left = type(chat) == "table" and chat.GetLeft and chat:GetLeft() or nil
-  local bottom = type(chat) == "table" and chat.GetBottom and chat:GetBottom() or nil
-  if left and bottom then
-    f:SetPoint("BOTTOMLEFT", parent, "BOTTOMLEFT", math.max(left - BUTTON_W - 4, 0), bottom + 34)
+  if type(chat) == "table" then
+    f:SetPoint("BOTTOMLEFT", chat, "BOTTOMLEFT", -(BUTTON_W + 4), 34)
   else
     f:SetPoint("LEFT", parent, "LEFT", 4, 0)
   end

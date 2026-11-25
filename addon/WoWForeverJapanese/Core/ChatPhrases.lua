@@ -62,12 +62,22 @@ function ChatPhrases.typed(phrase)
   return DOT .. " " .. phrase.en
 end
 
--- The phrase that starts at byte `i` of the lower-cased message (spaces after the dot skipped).
+local WIDE_SPACE = "\227\128\128" -- the space a Japanese keyboard types
+
+-- The phrase that starts at byte `i` of the lower-cased message (spaces after the dot skipped). A phrase that ends
+-- in a letter or digit is not one when a letter or digit follows it (a longer word, not the phrase).
 -- → phrase, its last byte
 local function phraseAt(lower, i)
-  while lower:byte(i) == 32 do i = i + 1 end
+  while true do
+    if lower:byte(i) == 32 then i = i + 1
+    elseif lower:sub(i, i + 2) == WIDE_SPACE then i = i + 3
+    else break end
+  end
   for _, e in ipairs(byText) do
-    if lower:sub(i, i + #e.text - 1) == e.text then return e.phrase, i + #e.text - 1 end
+    local last = i + #e.text - 1
+    if lower:sub(i, last) == e.text and not (e.text:find("%w$") and lower:find("^%w", last + 1)) then
+      return e.phrase, last
+    end
   end
   return nil
 end
@@ -117,11 +127,18 @@ function ChatPhrases.keep(shown, raw)
   kept[keptAt] = { shown = shown, raw = raw }
 end
 
+-- The kept message a line of text holds. Of several that fit, the longest is the line's own (a shorter one is a
+-- part of it), and of equals the one that arrived last.
 function ChatPhrases.sent(text)
   if type(text) ~= "string" then return nil end
-  for _, k in ipairs(kept) do
-    local first, last = text:find(k.shown, 1, true)
-    if first then return k.raw, first, last end
+  local best, bestFirst, bestLast
+  for back = 0, #kept - 1 do
+    local k = kept[(keptAt - 1 - back) % #kept + 1] -- newest first
+    if not best or #k.shown > #best.shown then
+      local first, last = text:find(k.shown, 1, true)
+      if first then best, bestFirst, bestLast = k, first, last end
+    end
   end
+  if best then return best.raw, bestFirst, bestLast end
   return nil
 end

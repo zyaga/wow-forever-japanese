@@ -70,15 +70,15 @@ describe("copying a chat line", function()
     frame.visibleLines[1].over = true
     Env.secrets[SAID] = true
     WFJ.ChatLines.look()
-    assert.is_nil(Copy.button())
+    assert.is_false(Copy.button() ~= nil and Copy.button():IsShown())
     Env.secrets[SAID] = nil
     WFJ.Settings.set("chat.copy", false)
     WFJ.ChatLines.look()
-    assert.is_nil(Copy.button())
+    assert.is_false(Copy.button() ~= nil and Copy.button():IsShown())
     WFJ.Settings.set("chat.copy", true)
     WFJ.State.enabled = false
     WFJ.ChatLines.look()
-    assert.is_nil(Copy.button())
+    assert.is_false(Copy.button() ~= nil and Copy.button():IsShown())
     WFJ.State.enabled = true
     WFJ.ChatLines.look()
     assert.is_true(Copy.button():IsShown())

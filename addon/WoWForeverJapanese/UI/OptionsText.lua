@@ -138,6 +138,9 @@ Text.T = {
   ["chat.words.remove"] = { en = "Remove", ja = "削除" },
   ["chat.words.removeOne"] = { en = "Remove %s", ja = "%sを削除" },
   ["chat.words.empty"] = { en = "No words of your own yet.", ja = "自分の単語はまだありません。" },
+  ["chat.words.refused"] = {
+    en = "Not added. A Japanese word is Japanese only, up to 12 characters; an English word is one word.",
+    ja = "追加できません。日本語の単語は日本語だけで12文字まで、英語の単語は1語だけです。" },
   -- studying the word list (UI/StudyWindow): the settings section, the tab, the card
   ["section.study"] = { en = "Study", ja = "学習" },
   ["study.explain"] = {

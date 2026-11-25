@@ -2905,8 +2905,11 @@ local function WFJScanChatRead()
       record.english[#record.english + 1] = what .. "\t" .. text
     end
   end
+  -- as the player left them: a card already open stays open, a button hidden for the session stays hidden
+  local wasOpen = _G.WFJPhraseCard and _G.WFJPhraseCard:IsShown() or false
+  local hadButton = _G.WFJPhraseButton and _G.WFJPhraseButton:IsShown() or false
   local ok, err = pcall(function()
-    slash("phrases")
+    if not wasOpen then slash("phrases") end
     local card = _G.WFJPhraseCard
     if not (card and card:IsShown()) then
       record.refused = "the phrase card did not open"
@@ -2945,10 +2948,34 @@ local function WFJScanChatRead()
     end
     for size in pairs(sizes) do record.sizes[#record.sizes + 1] = size end
     table.sort(record.sizes)
-    slash("phrases") -- the same command closes the card
-    if card:IsShown() then
-      record.stuck = true
-      card:Hide()
+    if not wasOpen then
+      slash("phrases") -- the same command closes the card
+      if card:IsShown() then
+        record.stuck = true
+        card:Hide()
+      end
+    end
+    -- the copy box, opened by the copy icon's own click handler on a line of this read's own (no chat line is read)
+    local icon = _G.WFJChatCopyButton
+    local click = icon and icon:GetScript("OnClick")
+    if not click then
+      record.refusedCopy = "the copy icon was not made"
+    else
+      local line, text = icon.line, icon.text
+      icon.line, icon.text = {}, "|cffffffffWFJ テスト|r"
+      local clicked, why = pcall(click, icon)
+      icon.line, icon.text = line, text
+      local box = _G.WFJChatCopyWindow
+      if not clicked then
+        record.refusedCopy = tostring(why)
+      elseif not (box and box:IsShown()) then
+        record.refusedCopy = "the copy box did not open"
+      else
+        record.copy = box.field and box.field.getText and box.field.getText() or ""
+        judge("copy box heading", box.title and box.title:GetText())
+        judge("copy box foot", box.foot and box.foot:GetText())
+        box:Hide()
+      end
     end
     slash("chatwords")
     local window = _G.WFJChatWordsWindow
@@ -2963,6 +2990,9 @@ local function WFJScanChatRead()
     window:Hide()
   end)
   if not ok then record.refused = tostring(err) end
+  local card, button = _G.WFJPhraseCard, _G.WFJPhraseButton
+  if card and not wasOpen and card:IsShown() then card:Hide() end
+  if button and not hadButton and button:IsShown() then button:Hide() end
 end
 
 local function WFJScanFreezeRead(done)
@@ -4165,11 +4195,16 @@ def plates_problems(record: dict[str, Any] | None) -> list[str]:
     return out
 
 
+# what the copy box must hold for the line the chat tools read hands the copy icon
+COPY_PROBE = "WFJ テスト"
+
+
 def read_chat(text: str) -> dict[str, Any] | None:
     """The window test's chat tools read out of a saved-variables file, or None when the run had none: the
     phrase card's topic tabs (`topics`) and the phrase rows read over them (`phrases`), the text regions the
     chat words window showed (`words`), whether Japanese was to be expected (`expect`), why it could not read
-    (`refused`, `refused_words`), whether the card stayed open (`stuck`), the card's sizes over its topics
+    (`refused`, `refused_words`, `refused_copy`), what the copy box held (`copy`), whether the card stayed open
+    (`stuck`), the card's sizes over its topics
     (`sizes`), and two lists of (what, what was seen): `blank` (a tab or a row with no words, or cut off) and
     `english` (a heading, tab or label with no Japanese in it)."""
     from wfj.io import lua_reader
@@ -4184,6 +4219,8 @@ def read_chat(text: str) -> dict[str, Any] | None:
     out["stuck"] = bool(record.get("stuck"))
     out["refused"] = str(record.get("refused") or "")
     out["refused_words"] = str(record.get("refusedWords") or "")
+    out["refused_copy"] = str(record.get("refusedCopy") or "")
+    out["copy"] = str(record.get("copy") or "")
     sizes = record.get("sizes")
     out["sizes"] = [str(v) for v in (sizes.positional() if sizes is not None else [])]
     for kind in ("blank", "english"):
@@ -4207,6 +4244,10 @@ def chat_problems(record: dict[str, Any] | None) -> list[str]:
         out.append(f"phrase card changes size between topics: {', '.join(record['sizes'])}")
     if record["stuck"]:
         out.append("phrase card did not close on its own command")
+    if record["refused_copy"]:
+        out.append(f"copy box not read: {record['refused_copy']}")
+    elif record["copy"] != COPY_PROBE:
+        out.append(f"copy box holds {record['copy']!r}, not the line without its codes ({COPY_PROBE!r})")
     if record["refused_words"]:
         out.append(f"chat words window not read: {record['refused_words']}")
     elif not record["words"]:

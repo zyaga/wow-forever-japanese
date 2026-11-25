@@ -24,13 +24,31 @@ function ChatWords.load(saved)
   if type(saved) ~= "table" then saved = {} end
   if type(saved.ja) ~= "table" then saved.ja = {} end
   if type(saved.en) ~= "table" then saved.en = {} end
+  -- a saved entry that is not a word with its fields would raise on every look at a chat line: it is dropped
+  for word, e in pairs(saved.ja) do
+    if not (type(word) == "string" and type(e) == "table" and type(e.reading) == "string") then saved.ja[word] = nil end
+  end
+  for word, e in pairs(saved.en) do
+    if not (type(word) == "string" and type(e) == "table" and type(e.ja) == "string") then saved.en[word] = nil end
+  end
   own = saved
   return saved
 end
 
--- Japanese: word, reading, meaning. English: word, its Japanese, that Japanese's reading. → true when kept
+-- Whether a chat line could ever give this word: an English word is one run of letters, digits and apostrophes; a
+-- Japanese word holds no ASCII and is no longer than the longest word tried.
+function ChatWords.findable(lang, word)
+  if type(word) ~= "string" or word == "" then return false end
+  if lang == "en" then return word:find("^[%w']+$") ~= nil and word:find("%a") ~= nil end
+  if word:find("[%z\1-\127]") then return false end
+  local _, chars = word:gsub("[^\128-\191]", "")
+  return chars <= MAX_CHARS
+end
+
+-- Japanese: word, reading, meaning. English: word, its Japanese, that Japanese's reading. → true when kept; a word
+-- no chat line could give is refused
 function ChatWords.add(lang, word, a, b)
-  if type(word) ~= "string" or word == "" or type(a) ~= "string" or a == "" then return false end
+  if type(a) ~= "string" or a == "" or not ChatWords.findable(lang, word) then return false end
   if lang == "en" then
     own.en[word:lower()] = { ja = a, reading = (type(b) == "string" and b ~= "") and b or a }
   else
@@ -108,24 +126,30 @@ end
 function ChatWords.plain(text)
   if type(text) ~= "string" then return "" end
   local s = text
+  -- a bar the player typed arrives doubled: it is set aside first, so what follows it is not read as a code
+  s = s:gsub("||", "\1")
   s = s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|cn[^:]*:", ""):gsub("|r", "")
   s = s:gsub("|H.-|h(.-)|h", "%1")
   s = s:gsub("|T.-|t", ""):gsub("|A.-|a", ""):gsub("|K.-|k", "")
-  s = s:gsub("|n", "\n"):gsub("||", "|")
+  s = s:gsub("|n", "\n"):gsub("\1", "|")
   return s
 end
 
 -- What a player typed, out of a typed line: everything after the sender's link and the ": " that closes the line's
 -- opening words ("[Name] says: ", "[ギルド] [Name]: "). The opening words after the name are short and hold no link
--- of their own. → that text, or nil when the line is not shaped so (it is then copied whole)
+-- of their own; an icon the client draws beside the name is not counted among them. The sender's link is a player
+-- link of any kind (player, BNplayer, playerCommunity, BNplayerCommunity).
+-- → that text, or nil when the line is not shaped so (it is then copied whole)
 local OPENING = 40
 function ChatWords.typedPart(text)
   if type(text) ~= "string" then return nil end
-  local _, linkEnd = text:find("|HBNplayer:.-|h.-|h")
-  if not linkEnd then _, linkEnd = text:find("|Hplayer:.-|h.-|h") end
+  local _, linkEnd = text:find("|H%a*[Pp]layer%a*:.-|h.-|h")
   if not linkEnd then return nil end
   local colon = text:find(": ", linkEnd + 1, true)
-  if not colon or colon - linkEnd > OPENING or text:sub(linkEnd + 1, colon):find("|H", 1, true) then return nil end
+  if not colon then return nil end
+  local opening = text:sub(linkEnd + 1, colon)
+  if opening:find("|H", 1, true) then return nil end
+  if #opening:gsub("|A.-|a", ""):gsub("|T.-|t", "") > OPENING then return nil end
   local rest = text:sub(colon + 2)
   return rest ~= "" and rest or nil
 end
@@ -268,8 +292,9 @@ function ChatWords.englishAt(text, i)
   local said = WFJ.Data.pron[lower]
   if not ja then
     -- a contraction takes its first word's card (you're → you; never a negative: can't is not can), as on every
-    -- English word card; a plural takes its singular's (heals → heal)
-    local base = WFJ.Readings.contractionHead(lower) or lower:match("^(%a+)s$")
+    -- English word card; a plural with no row of its own takes its singular's (golds → gold). Only a singular of
+    -- four letters or more: a shorter one is another word ("is" is not "i", "has" is not "ha")
+    local base = WFJ.Readings.contractionHead(lower) or lower:match("^(%a%a%a+[^s])s$")
     if base then
       ja, jaReading, gloss = english(base)
       said = said or WFJ.Data.pron[base]

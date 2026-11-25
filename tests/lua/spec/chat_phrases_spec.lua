@@ -42,6 +42,31 @@ describe("Core/ChatPhrases", function()
     assert.is_nil(P.translate("", "ja"))
   end)
 
+  it("skips a Japanese keyboard's space after the dot, and takes no phrase that runs on into a word", function()
+    local P = load()
+    assert.equals(P.MARK .. "こんにちは！", P.translate(JA_DOT .. "\227\128\128こんにちは！", "ja"))
+    local WFJ = {}
+    H.loadPure("Core/Data.lua", "WoWForeverJapanese", WFJ)
+    H.loadPure("Core/ChatPhrases.lua", "WoWForeverJapanese", WFJ)
+    WFJ.Data.add("phrase", { [1] = "answers\tThanks\tありがとう" })
+    assert.is_nil(WFJ.ChatPhrases.translate(DOT .. " Thanksgiving", "ja"))
+    assert.equals(WFJ.ChatPhrases.MARK .. "ありがとう, all", WFJ.ChatPhrases.translate(DOT .. " Thanks, all", "ja"))
+  end)
+
+  it("gives a line its own sent message: the longest that fits, and of equals the last to arrive", function()
+    local P = load()
+    local one = P.translate(DOT .. " Hello!", "ja")
+    local two = P.translate(DOT .. " Hello!" .. DOT .. " I'm ready.", "ja")
+    P.keep(one, DOT .. " Hello!")
+    P.keep(two, DOT .. " Hello!" .. DOT .. " I'm ready.")
+    local raw, first, last = P.sent("[Bob]: " .. two)
+    assert.equals(DOT .. " Hello!" .. DOT .. " I'm ready.", raw)
+    assert.equals(#"[Bob]: " + 1, first)
+    assert.equals(#"[Bob]: " + #two, last)
+    P.keep(one, JA_DOT .. "こんにちは！") -- the same shown text, sent another way, later
+    assert.equals(JA_DOT .. "こんにちは！", (P.sent("[Hana]: " .. one)))
+  end)
+
   it("translates a message once however many chat frames show it", function()
     local P = load()
     P.list() -- the phrases are read once, before any message

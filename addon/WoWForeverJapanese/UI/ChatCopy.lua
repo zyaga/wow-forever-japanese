@@ -42,7 +42,7 @@ end
 
 local function ensureButton()
   if button then return button end
-  button = CreateFrame("Button", nil, Compat.resolve("UIParent"))
+  button = CreateFrame("Button", "WFJChatCopyButton", Compat.resolve("UIParent"))
   button:SetFrameStrata("HIGH")
   button:SetSize(14, 14)
   local icon = button:CreateTexture(nil, "ARTWORK")
@@ -77,5 +77,7 @@ function Copy.button() return button end
 
 function Copy.init()
   WFJ.ChatLines.onLine(Copy.follow)
+  -- made with the chat window, not at the first hover, so the icon and its box can be checked before any hover
+  if type(Compat.resolve("ChatFrame1")) == "table" then ensureButton() end
   return true
 end

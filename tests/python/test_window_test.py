@@ -694,6 +694,7 @@ def test_the_names_read_runs_after_the_no_voice_read_and_only_shows_tooltips():
 
 # a chat tools read with nothing wrong
 CHAT = ('["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, '
+        '["copy"] = "WFJ テスト", '
         '["sizes"] = { "592x380" }, ["english"] = { } },')
 
 
@@ -704,6 +705,8 @@ def test_the_chat_tools_read_opens_the_addons_own_windows_and_never_types_into_c
     body = lua[lua.index("local function WFJScanChatRead"):lua.index("local function WFJScanFreezeRead")]
     # the addon's own command opens and closes the card, then opens the words window
     assert body.count('slash("phrases")') == 2 and body.count('slash("chatwords")') == 1
+    # a card the player had open is left open, and the copy box is opened by the copy icon's own handler
+    assert "if not wasOpen then slash(" in body and 'icon:GetScript("OnClick")' in body
     # it never clicks a phrase, so nothing is typed into chat or sent
     assert ":Click(" not in body and "SendChatMessage" not in body and "Insert(" not in body
     # no setting is written: the run shows what this player sees
@@ -735,6 +738,10 @@ def test_the_chat_tools_read_fails_a_blank_tab_a_card_that_changes_size_and_engl
         "chat words window not read: the chat words window did not open"]
     assert run(CHAT.replace('["words"] = 12', '["words"] = 0')) == [
         "chat words window shows no text"]
+    assert run(CHAT.replace('["copy"] = "WFJ テスト"', '["refusedCopy"] = "the copy box did not open"')) == [
+        "copy box not read: the copy box did not open"]
+    assert run(CHAT.replace('"WFJ テスト"', '"|cffffffffWFJ テスト|r"')) == [
+        "copy box holds '|cffffffffWFJ テスト|r', not the line without its codes ('WFJ テスト')"]
 
 
 # a frozen tooltip read with nothing wrong
@@ -780,7 +787,7 @@ WFJScanDB = {
 ["test"] = { ["started"] = "2026-11-22 18:00:00", ["finished"] = "2026-11-22 18:05:00", ["build"] = "70959" },
 ["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
 ["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, ["missing"] = { }, ["stuck"] = { } },
-["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, ["sizes"] = { "592x380" }, ["english"] = { } },
+["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
 ["hover"] = { ["map"] = { ["made"] = 3, ["found"] = 3, ["tips"] = 2, ["english"] = { }, ["runs"] = { } } },
 ["tooltips"] = { ["read"] = 50, ["japanese"] = 45, ["unread"] = 0, ["items"] = 3,

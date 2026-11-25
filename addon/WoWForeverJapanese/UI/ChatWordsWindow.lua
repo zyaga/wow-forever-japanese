@@ -51,6 +51,11 @@ end
 -- → true when the word was kept
 function Window.add(lang, word, a, b)
   local ok = WFJ.ChatWords.add(lang, word, a, b)
+  -- a refused word stays in its boxes, with why
+  if frame and frame.note then
+    frame.note:SetText(ok and "" or pick("chat.words.refused"))
+    WFJ.Font.set(frame.note, WFJ.Font.PATH, 11, "")
+  end
   Window.refresh()
   return ok
 end
@@ -143,12 +148,16 @@ local function build()
     if picked then Window.remove(picked.word) end
   end)
   f.remove:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", LEFT, 4)
+  f.note = f:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+  f.note:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", LEFT + 150, 10)
+  f.note:SetTextColor(1, 0.5, 0.4)
   return f
 end
 
 function Window.open()
   if not frame then build() end
   picked = nil
+  frame.note:SetText("")
   relabel()
   frame:Show()
   return frame

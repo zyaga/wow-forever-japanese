@@ -117,3 +117,4 @@ end
 
 WFJ.State.on("chat", clear)
 WFJ.State.on("glosses", clear) -- meanings on or off: the next look shows the card or the reading box
+WFJ.State.on("direction", clear) -- the other language's words take the cards now
