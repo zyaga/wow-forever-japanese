@@ -100,9 +100,9 @@ Text.T = {
   -- topics, the player's own chat words
   ["section.chat"] = { en = "Chat", ja = "チャット" },
   ["chat.explain"] = {
-    en = "Point at a word in chat for its card. Click the small icon on a chat line to copy it. The 文 button "
-      .. "opens the phrase book: a phrase is sent in English with a dot in front, and anyone with this addon "
-      .. "reads it in their own language.",
+    en = "Point at a word in chat for its card. Click the small icon on a chat line to copy it. The small "
+      .. "button by the chat window opens the phrase book: a phrase is sent in English with a dot in front, and "
+      .. "anyone with this addon reads it in their own language.",
     ja = "チャットの単語にマウスを置くと単語カードが出ます。行の小さなアイコンでその行をコピーできます。"
       .. "「文」ボタンで定型文を開きます。定型文は点を付けた英語で送られ、このアドオンを使う人には"
       .. "自分の言語で表示されます。" },
@@ -523,6 +523,7 @@ Text.SLASH = {
   "/wfj config [collector | about]  ·  /wfj fix  (report a line)",
   "/wfj bug  (report a bug or an idea)  ·  /wfj words  (the saved word list)",
   "/wfj study [reset]  (study your saved words; reset puts the card back)",
+  "/wfj phrases  (the phrase book)  ·  /wfj chatwords  (your own chat words)",
   "/wfj collector [on | off | status | path | clear | send [all]]",
   "/wfj intro  (the welcome window)",
 }

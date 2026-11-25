@@ -102,6 +102,7 @@ describe("word cards on chat", function()
     assert.equals("今日", entries[1].word)
     assert.equals("今日はダンジョンに行きませんか need help", entries[1].sentence)
     assert.equals("today", entries[1].meaning)
+    assert.equals("chat", entries[1].source)
   end)
 
   it("does not save without the save click's key", function()

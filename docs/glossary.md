@@ -668,7 +668,7 @@ _Avoid_: furigana, ruby, reading tooltip (it is not a GameTooltip), popup
 → [Readings](systems/readings.md) · [ADR-036](adr/036-readings-hover-word-lists.md)
 
 **Word card**:
-The [[Word-reading box]]'s larger form (`UI/ReadingPopup`): for a [[Word]] that carries a [[Meaning]], the word and its reading (a [[Kana word]] shown once), the [[Dictionary form]] and its reading when it differs (laid out like the head line, in pale blue and muted gold), then the meaning, in a 280 px card above the word, kept on screen. Shown instead of the reading-only box while `readings.glosses` is on (default on; the *Show word meanings in the reading box* checkbox on the main settings page, or `/wfj glosses on|off`); a word with no meaning still gets the reading-only box. Same rules as the box: nothing drawn until the mouse is on a word, never while English shows. Shown on quest and gossip prose, [[Window label]]s, plain-text [[Book page]]s and a [[Frozen tooltip]] ([Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away)).
+The [[Word-reading box]]'s larger form (`UI/ReadingPopup`): for a [[Word]] that carries a [[Meaning]], the word and its reading (a [[Kana word]] shown once), the [[Dictionary form]] and its reading when it differs (laid out like the head line, in pale blue and muted gold), then the meaning, in a 280 px card above the word, kept on screen. Shown instead of the reading-only box while `readings.glosses` is on (default on; the *Show word meanings in the reading box* checkbox on the main settings page, or `/wfj glosses on|off`); a word with no meaning still gets the reading-only box. Same rules as the box: nothing drawn until the mouse is on a word, never while English shows. Shown on quest and gossip prose, [[Window label]]s, plain-text [[Book page]]s, a [[Frozen tooltip]] and chat lines (the [[Chat tools]], found from the [[Chat word list]]) ([Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away)).
 Player-facing text (the README, the listing) calls it the popup dictionary.
 _Avoid_: gloss box, dictionary popup, tooltip (it is not a GameTooltip)
 → [Readings](systems/readings.md) · [ADR-039](adr/039-word-meanings-written-in-context.md)
@@ -707,6 +707,31 @@ _Avoid_: flashcard on its own (say study card), quiz, review window, Anki card (
 A graded [[Word]] whose scheduled time has passed: the [[Study card]] asks it before any new word, the earliest first. The grade sets the time: **Good** puts it at now plus the word's stability in whole days, at least one (the FSRS-6 interval at 90% retention); **Again** at now plus one 10-minute relearn step. A word never graded is **new**, not due: new words come in saved order while the day's count is under `study.newPerDay` (20 by default; the day rolls at the client's local midnight). The tab's count is the due words plus the new words still allowed today. In Japanese: 復習 (the card's footer and the settings page; the tab shows N語).
 _Avoid_: overdue, pending, expired, scheduled (a word with a future time is scheduled, not due), due for a word never graded (it is new)
 → [Study → The queue](systems/study.md#the-queue) · [ADR-071](adr/071-study-the-word-list-in-game.md)
+
+**Chat tools**:
+The addon's help on the chat window, none of which rewrites what a player typed: [[Word card]]s on chat lines (Japanese words in [[Japanese first]], English words in [[English first]]), a copy icon on the chat line under the mouse that opens that line in a box to copy, the [[Phrase book]], received [[Phrase mark]] lines shown in the reader's language, and [[Own chat words]]. Four settings turn the parts off: `chat.cards`, `chat.copy`, `chat.phraseButton`, `chat.phrases`. In Japanese: チャット.
+_Avoid_: chat translation (no chat line is translated), chat translator
+→ [Chat tools](systems/chat-tools.md) · [ADR-109](adr/109-chat-tools.md)
+
+**Chat word list**:
+The words a chat line's [[Word card]] can show, in three layers looked up in order: the player's [[Own chat words]], the hand-written chat list (`data/chat/words-ja.jsonl` and `words-en.jsonl`: chat words and abbreviations in both languages, with [[Provenance]]), and the general lists `make generate` builds from the shipped readings (each Japanese word with the reading and meaning it carries most, each English word with the [[Dictionary form]] of the Japanese word used for it most). Chat has no reading rows of its own: the card is found from these lists, so it shows a word's most used meaning, not one written for the chat sentence.
+_Avoid_: chat dictionary, chat glossary, chat reading rows (chat has none), vocabulary
+→ [Chat tools → The word lists](systems/chat-tools.md#the-word-lists) · [ADR-109](adr/109-chat-tools.md)
+
+**Own chat words**:
+Words a player adds by hand for chat, in the chat words window (`/wfj chatwords`, or **My chat words** on the Words settings page): a Japanese word with its [[Reading]] and [[Meaning]], or an English word with its Japanese. Kept account-wide in `WFJ_ChatWords`, never shipped, and looked up before every shipped [[Chat word list]]. Not the [[Word list]]: own chat words teach the addon a word; the word list keeps words the player saved to study. In Japanese: 自分のチャット単語.
+_Avoid_: custom dictionary, user words, my words (ambiguous with the word list), saved words (that is the word list)
+→ [Chat tools → Own chat words](systems/chat-tools.md#own-chat-words) · [ADR-109](adr/109-chat-tools.md)
+
+**Phrase book**:
+The addon's book of fixed chat phrases, each written in English and Japanese, in topics (greetings, group, combat, dungeon, loot, trade, guild, travel, answers; `data/chat/phrases.jsonl`). It opens from a small button with a gold 文 by the chat frame, or `/wfj phrases`; clicking a phrase types the [[Phrase mark]] and the phrase's English into the chat box, and the player sends it. No phrase is a line of the game's own English. In Japanese: 定型文.
+_Avoid_: phrasebook as one word, quick chat, macros, canned messages, templates, emotes (the game's emotes are another thing)
+→ [Chat tools → The phrase book](systems/chat-tools.md#the-phrase-book) · [ADR-109](adr/109-chat-tools.md)
+
+**Phrase mark**:
+The middle dot (`·`, or `・` in Japanese text) a [[Phrase book]] phrase is sent with: `· Hello!`. A player without the addon reads a bullet and plain English. With the addon, a dot followed by exactly one of the book's phrases, in either language, is drawn as a gold 文 and the phrase is shown in the reader's [[Direction]]'s language; holding the [[Modifier]] shows the message as it was sent (Japanese first) or the Japanese phrase (English first). A dot before anything else, and a phrase without the dot, stay as typed.
+_Avoid_: bullet, marker (that is the [[Stale marker]] family), prefix, tag
+→ [Chat tools → The phrase mark and received phrases](systems/chat-tools.md#the-phrase-mark-and-received-phrases) · [ADR-109](adr/109-chat-tools.md)
 
 **Window label**:
 A plain-text label in a window: a FontString showing one [[UI string]] (the quest window's 報酬 and 以下の報酬から1つ選択できます, the character sheet's section labels, mail's 宛先:) whose parent is not a Button or a protected frame, on a [[Surface]] that is a window: not a button, tab, menu, dropdown or tooltip, and not the HUD (tracker, alerts, error and combat text, unit frames, zone text; `View.NON_WINDOW`). The only interface text that takes a [[Word card]], apart from a window word on a [[Frozen tooltip]]. Narrower than [[Label]], which also covers buttons.

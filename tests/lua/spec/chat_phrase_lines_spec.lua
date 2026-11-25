@@ -80,6 +80,17 @@ describe("a phrase book phrase in chat", function()
     assert.equals("[Taro]: " .. shown, hidden:GetText())
   end)
 
+  it("picks up a chat window made later", function()
+    local later = { visibleLines = {}, callbacks = {} }
+    function later:AddOnDisplayRefreshedCallback(fn) self.callbacks[#self.callbacks + 1] = fn end
+    _G.ChatFrame11 = later
+    _G.CHAT_FRAMES[#_G.CHAT_FRAMES + 1] = "ChatFrame11"
+    assert.equals(1, Lines.hookAll())
+    assert.equals(Lines.reveal, later.callbacks[1])
+    assert.equals(0, Lines.hookAll())
+    _G.ChatFrame11 = nil
+  end)
+
   it("runs its pass after each redraw of a chat frame, and on the reveal key", function()
     assert.equals(Lines.reveal, frame.callbacks[1])
     local shown = select(2, arrive(raw))

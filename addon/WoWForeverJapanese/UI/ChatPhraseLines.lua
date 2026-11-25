@@ -14,6 +14,7 @@ WFJ.ChatPhraseLines = Lines
 local Compat = WFJ.Compat
 local SURFACE = "chat.phrases"
 local CANDIDATES = { frames = { "CHAT_FRAMES" }, isSecret = { "issecretvalue" },
+  openTemporary = { "FCF_OpenTemporaryWindow" },
   addFilter = { "ChatFrameUtil.AddMessageEventFilter", "ChatFrame_AddMessageEventFilter" } }
 
 -- the chat events a player types into
@@ -84,6 +85,21 @@ end
 
 local hooked = setmetatable({}, { __mode = "k" })
 
+-- The reveal pass on every chat frame not hooked yet. → the number newly hooked
+function Lines.hookAll()
+  local n = 0
+  local names = Compat.get(SURFACE, "frames")
+  for _, name in ipairs(type(names) == "table" and names or {}) do
+    local f = Compat.resolve(name)
+    if type(f) == "table" and not hooked[f] and type(f.AddOnDisplayRefreshedCallback) == "function" then
+      hooked[f] = true
+      f:AddOnDisplayRefreshedCallback(Lines.reveal)
+      n = n + 1
+    end
+  end
+  return n
+end
+
 -- Called after UI/ChatSystem has hooked the chat frames (Main), so this pass runs after its own.
 function Lines.init()
   for key, names in pairs(CANDIDATES) do Compat.declare(SURFACE, key, names) end
@@ -94,14 +110,10 @@ function Lines.init()
     for _, e in ipairs(Lines.EVENTS) do add("CHAT_MSG_" .. e, Lines.filter) end
     WFJ.State.on("language", Lines.revealAll)
     WFJ.State.on("chat", Lines.revealAll)
-  end
-  local names = Compat.get(SURFACE, "frames")
-  for _, name in ipairs(type(names) == "table" and names or {}) do
-    local f = Compat.resolve(name)
-    if type(f) == "table" and not hooked[f] and type(f.AddOnDisplayRefreshedCallback) == "function" then
-      hooked[f] = true
-      f:AddOnDisplayRefreshedCallback(Lines.reveal)
+    if type(Compat.get(SURFACE, "openTemporary")) == "function" then
+      hooksecurefunc("FCF_OpenTemporaryWindow", Lines.hookAll) -- a whisper / temporary window made later
     end
   end
+  Lines.hookAll()
   return true
 end
