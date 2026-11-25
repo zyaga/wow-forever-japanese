@@ -63,12 +63,27 @@ class Syncer:
         self.seen: tuple[Any, ...] | None = None  # the saved files and the settings of the last sync
         self.last: sync.Result | None = None
         self.problem = ""
+        self.found: tuple[str, list[discover.SavedFile]] | None = None  # the folder setting and what it gave
+
+    def profile_opened(self) -> None:
+        """Another profile is another collection: nothing a sync learned about the last one holds for it."""
+        self.seen, self.last, self.problem = None, None, ""
+        self.request()
 
     def settings(self) -> Settings:
         return from_config(mw.addonManager.getConfig(MODULE))
 
-    def files(self, settings: Settings) -> list[discover.SavedFile]:
-        return discover.find(settings.folder, platform.system(), Path.home())
+    def files(self, settings: Settings, look: bool = False) -> list[discover.SavedFile]:
+        """The saved files to read. Looking for the game walks every drive, which can wait on a sleeping one,
+        and this runs each time Anki comes to the front: so the files found once are used while they are still
+        there, and the search runs again only when the player asks or the folder setting changes."""
+        kept = self.found
+        usable = not look and kept is not None and kept[0] == settings.folder and bool(kept[1])
+        if usable and all(f.path.is_file() for f in kept[1]):
+            return kept[1]
+        files = discover.find(settings.folder, platform.system(), Path.home())
+        self.found = (settings.folder, files)
+        return files
 
     def request(self, asked: bool = False, done: Callable[[], None] | None = None) -> None:
         if mw.col is None or self.running:
@@ -78,7 +93,7 @@ class Syncer:
             return
         self.waiting = False
         settings = self.settings()
-        files = self.files(settings)
+        files = self.files(settings, look=asked)
         seen = (discover.signature(files), settings)
         if not sync.due(seen, self.seen, self.last, asked):
             return
@@ -304,7 +319,7 @@ def start() -> None:
     mw.form.menuTools.addMenu(menu)
     mw.addonManager.setConfigAction(MODULE, open_settings)
 
-    gui_hooks.profile_did_open.append(syncer.request)
+    gui_hooks.profile_did_open.append(syncer.profile_opened)
     gui_hooks.state_did_change.append(_state_changed)
     gui_hooks.browser_will_show_context_menu.append(_browser_menu)
     qconnect(mw.app.applicationStateChanged, _application_state)

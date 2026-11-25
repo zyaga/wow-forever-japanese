@@ -60,7 +60,7 @@ def test_a_sync_is_passed_over_while_nothing_changed():
 def test_the_hooks_the_sync_is_wired_to():
     source = (ADDON / "wfj_anki" / "ui.py").read_text(encoding="utf-8")
     for wiring in (
-        "gui_hooks.profile_did_open.append",
+        "gui_hooks.profile_did_open.append(syncer.profile_opened)",
         "mw.app.applicationStateChanged",
         "menuTools.addMenu",
         "gui_hooks.state_did_change.append",

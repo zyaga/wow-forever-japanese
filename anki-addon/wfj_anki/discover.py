@@ -96,7 +96,8 @@ def signature(files: list[SavedFile]) -> tuple[tuple[str, int, int], ...]:
 
 def screenshot(client: Path, name: str) -> Path | None:
     """Where a screenshot of that file name is, or None for a name that is not a plain file name."""
-    if not name or name != PurePosixPath(name.replace("\\", "/")).name or name in (".", ".."):
+    # a colon would name a drive on Windows, and so a file outside the folder
+    if not name or ":" in name or name != PurePosixPath(name.replace("\\", "/")).name or name in (".", ".."):
         return None
     return client / "Screenshots" / name
 
@@ -108,6 +109,6 @@ def sound(client: Path, relative: str) -> Path | None:
     parts = PurePosixPath(relative.replace("\\", "/")).parts
     if len(parts) != 3 or parts[1] != "Sound" or not parts[0].startswith(ADDON_PREFIX):
         return None
-    if any(p in ("", ".", "..") for p in parts):
+    if any(p in ("", ".", "..") or ":" in p for p in parts):
         return None
     return client / "Interface" / "AddOns" / parts[0] / "Sound" / parts[2]

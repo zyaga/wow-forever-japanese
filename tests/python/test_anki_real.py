@@ -113,6 +113,11 @@ def test_a_card_choice_rewrites_the_template_and_no_note(seen):
     assert "[anki:play:q:0][anki:play:q:1]" in question  # Anki's marks for the two sound files
 
 
+def test_a_card_the_player_restyled_is_left_until_a_choice_changes(seen):
+    assert seen["own_styling_left"] is True
+    assert seen["choice_rewrites_styling"] is True
+
+
 def test_an_older_note_type_gains_the_new_field_and_loses_nothing(seen):
     assert seen["upgraded"] is True
     assert seen["fields_after_upgrade"] is True

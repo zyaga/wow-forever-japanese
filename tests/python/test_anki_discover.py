@@ -86,7 +86,7 @@ def test_media_paths_stay_inside_the_client(tmp_path):
         discover.screenshot(client, "WoWScrnShot_112526_101500.jpg")
         == client / "Screenshots" / "WoWScrnShot_112526_101500.jpg"
     )
-    for bad in ("", "../secret.jpg", "a/b.jpg", "..", "C:\\x\\y.jpg", "/etc/passwd"):
+    for bad in ("", "../secret.jpg", "a/b.jpg", "..", "C:\\x\\y.jpg", "/etc/passwd", "C:evil.jpg"):
         assert discover.screenshot(client, bad) is None
     assert (
         discover.sound(client, "WoWForeverJapanese_VoiceA/Sound/a-1.mp3")
@@ -101,5 +101,6 @@ def test_media_paths_stay_inside_the_client(tmp_path):
         "WoWForeverJapanese_VoiceA/Other/a.mp3",
         "../WoWForeverJapanese_VoiceA/Sound/a.mp3",
         "WoWForeverJapanese_VoiceA/Sound/b/a.mp3",
+        "WoWForeverJapanese_VoiceA/Sound/C:a.mp3",
     ):
         assert discover.sound(client, bad) is None

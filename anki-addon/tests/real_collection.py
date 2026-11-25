@@ -181,6 +181,17 @@ def main() -> None:
         out["card_count_after_choice"] = col.db.scalar("select count() from cards where nid = ?", note_id)
         out["question"] = col.get_note(note_id).cards()[0].question()
 
+        # the player restyles the card by hand: kept, until a card choice changes
+        model = chosen.model
+        model["css"] += "\n.card { letter-spacing: 9px; }"
+        col.models.update_dict(model)
+        again = AnkiNotes(col, Settings(front="word", audio="front"), shrink=media.qt_shrink)
+        out["own_styling_left"] = again.prepare() is False and again.model["css"].endswith("letter-spacing: 9px; }")
+        back = AnkiNotes(col, Settings(), shrink=media.qt_shrink)
+        out["choice_rewrites_styling"] = back.prepare() is True and "letter-spacing: 9px" not in back.model["css"]
+        chosen = AnkiNotes(col, Settings(front="word", audio="front"), shrink=media.qt_shrink)
+        chosen.prepare()
+
         # a note type the add-on made in an earlier version, with one field fewer
         model = chosen.model
         col.models.remove_field(model, next(f for f in model["flds"] if f["name"] == "Japanese sentence"))

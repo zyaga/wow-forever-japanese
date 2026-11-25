@@ -292,3 +292,18 @@ def test_a_field_added_by_a_later_version_fills_an_older_note():
     note["Japanese sentence"] = ""
     run(col, table(row(jaSentence="文。")))
     assert col.note()["Japanese sentence"] == "文。"
+
+
+def test_reset_rewrites_an_edited_image_and_audio_too():
+    shot = CLIENT / "Screenshots" / "WoWScrnShot_112526_101500.jpg"
+    a1 = CLIENT / "Interface/AddOns/WoWForeverJapanese_VoiceA/Sound/a-1.mp3"
+    col = Collection(files={str(shot), str(a1)})
+    data = table(row(shot=shot.name, audio=["WoWForeverJapanese_VoiceA/Sound/a-1.mp3"]))
+    run(col, data)
+    col.note()["Image"], col.note()["Audio"] = '<img src="mine.jpg">', "[sound:mine.mp3]"
+    run(col, data)
+    assert col.note()["Image"] == '<img src="mine.jpg">'  # kept by an ordinary sync
+    result = run(col, data, reset={"quest.description:456:生き物"})
+    assert result.updated == 1
+    assert col.note()["Image"] == '<img src="wfj-WoWScrnShot_112526_101500.jpg">'
+    assert col.note()["Audio"] == "[sound:wfj-a-1.mp3]"

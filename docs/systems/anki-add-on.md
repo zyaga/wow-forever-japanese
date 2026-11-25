@@ -83,6 +83,7 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - **English word** (saved in English first). Front: the English sentence with the word marked, or the word alone. Back: the word, its pronunciation, the Japanese word the line uses for it, the Japanese sentence, the audio and the image.
 - **Two card choices** in the settings window: the front shows the whole sentence (default) or the word alone; the sentence's audio plays with the answer (default) or with the question too. `notetype.card` keeps one of the marked blocks in `templates/front.html` for each choice. A choice rewrites the note type's template and styling, so every card follows at once, old ones too, and no note changes. Playing audio only from a button is Anki's own deck option, so it is not a third choice.
 - `templates/style.css` styles the card in light and dark, at desktop and phone width.
+- The collection keeps a mark of the card the add-on last wrote. The add-on rewrites the template and styling only when its own card changes (a card choice, a new version of the add-on). A player who restyles the note type by hand keeps that until then.
 
 ### A sync
 `sync.apply` runs `plan.py`'s rules against what the add-on's notes hold now, and `collection.py` writes the result:
@@ -98,6 +99,8 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - It is skipped when no saved file changed since the last sync (same paths, sizes and modified times) and the settings are the same, unless media was missing last time or the player asked.
 - It waits while a card is being studied (adding notes then would redraw the card under the player) and runs when the player leaves the review. A Sync now runs at once.
 - It never runs while no collection is open, and one sync runs at a time, in the background.
+- Opening another profile starts over: that profile gets its own first sync and its own last result.
+- The game's folders are searched once and remembered while the saved files are still there. A Sync now, or a changed folder setting, searches again.
 - A word saved in game reaches Anki only after the next `/reload` or logout, because that is when the client writes the file.
 
 ### The settings window
@@ -123,13 +126,13 @@ The first sync makes the note type. A note type the add-on made earlier with few
 
 ## Packaging and release
 - `make anki-package` writes `build/anki/WoWForeverJapanese.ankiaddon`: a zip of the add-on's own files at its root (Python, JSON, Markdown, HTML, CSS; no cache or test file), with the version written into `manifest.json` (the next release's unless `ANKI_VERSION=` is given). The same tree always gives the same file.
-- The Release workflow builds it from the tagged tree and adds it to the GitHub release after the addon's zip is live. A problem there is a warning, not a failed release; running the release again adds the file ([Release](../operations/release.md)).
+- The Release workflow builds it from the tagged tree and adds it to the GitHub release after the addon's zip is live. A problem there is a warning, not a failed release; the file is then added by hand ([Release](../operations/release.md)).
 - The AnkiWeb listing is not made yet. Uploading there is done by hand from the maintainer's AnkiWeb account.
 - `make anki-cards` draws the card for each front choice, front and back, light and dark, at desktop and phone width, for a Japanese word (with image and audio) and an English word, into `build/anki/cards/` (`CARD_IMAGE=` picks the stand-in screenshot; needs Chrome). It fails when a picture is missing.
 
 ## Testing
-- **Lua (busted):** `tests/lua/spec/anki_export_spec.lua` (rows equal the export's values, an old entry gets its furigana and audio, a frozen list is still copied, the guarded logout step, no pack), `tests/lua/spec/words_window_spec.lua` (the add-on line).
-- **Python (pytest), without Anki:** `test_anki_savedvars.py` (fixture `tests/fixtures/anki/WoWForeverJapanese.lua`), `test_anki_discover.py`, `test_anki_plan.py` (the sync rules against an in-memory stand-in for the collection: adds, updates, hand edits, reset, other note types, media, removed words, the note type, when a sync is due), `test_anki_settings.py`, `test_anki_text.py`, `test_anki_template.py` (the templates rendered for each choice and both languages), `test_anki_package.py`.
+- **Lua (busted):** `tests/lua/spec/anki_export_spec.lua` (rows equal the export's values, an old entry gets its furigana and audio, a frozen list is still copied, the guarded save that the logout step in `Main.lua` calls, no pack; the step itself is checked in the game, by reading the saved file after a `/reload`), `tests/lua/spec/words_window_spec.lua` (the add-on line).
+- **Python (pytest), without Anki:** `test_anki_savedvars.py` (fixture `tests/fixtures/anki/WoWForeverJapanese.lua`), `test_anki_discover.py`, `test_anki_plan.py` (the sync rules against an in-memory stand-in for the collection: adds, updates, hand edits, reset, media, removed words), `test_anki_text.py` (the add-on's words in both languages, when a sync is due, the hooks it is wired to), `test_anki_settings.py`, `test_anki_text.py`, `test_anki_template.py` (the templates rendered for each choice and both languages), `test_anki_package.py`.
 - **On a real Anki collection:** `test_anki_real.py` runs `anki-addon/tests/real_collection.py` with Anki's own Python (`ANKI_PYTHON`, or where Anki's launcher keeps it) against a throwaway collection, and checks that a card's type, queue, due, interval, ease, reps and lapses and the review log are the same before and after a sync and a reset. `anki-addon/tests/settings_window.py` draws the settings window with Anki's Qt and no Anki window. Both are skipped where Anki is not installed, as in CI.
 - **By hand:** the first run in Anki (install the file, the menu, the hooks, the window, a sync after `/reload`) is the maintainer's ([Testing → Anki add-on](../testing/strategy.md#anki-add-on-checklist)).
 

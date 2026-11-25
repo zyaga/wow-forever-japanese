@@ -187,7 +187,8 @@ class _Note:
         if self.edited(field):
             return False
         mark = fingerprint(json.dumps(named))
-        if not self.new and self.sources.get(field) == mark and self.now.get(field, "") != "":
+        same = self.sources.get(field) == mark and self.now.get(field, "") != ""
+        if same and not self.new and not self.force:
             return False  # the same files as last time, and the field still holds them
         value = fetch()
         if value is None:

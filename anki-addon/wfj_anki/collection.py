@@ -8,8 +8,12 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from . import media, notetype
+from . import media, notetype, plan
 from .settings import Settings
+
+# where the collection keeps a mark of the card the add-on last wrote: the card is rewritten when the add-on's
+# own card changes (a card choice, a new version), never because the player changed the note type's template
+CARD_MARK = "wowForeverJapaneseCard"
 
 
 class AnkiNotes:
@@ -40,6 +44,7 @@ class AnkiNotes:
         the
         card's template and styling as the choices have them. → whether anything was written."""
         front, back, css = notetype.card(self.settings)
+        mark = plan.fingerprint("\0".join((front, back, css)))
         models = self.col.models
         model = self._own()
         if model is None:
@@ -51,6 +56,7 @@ class AnkiNotes:
             models.add_template(model, template)
             model["css"] = css
             models.add_dict(model)
+            self.col.set_config(CARD_MARK, mark)
             self.model = models.by_name(self._name)
             return True
         changed = False
@@ -60,12 +66,15 @@ class AnkiNotes:
                 models.add_field(model, models.new_field(name))
                 changed = True
         template = model["tmpls"][0]
-        if (template["qfmt"], template["afmt"], model["css"]) != (front, back, css):
+        rewrite = self.col.get_config(CARD_MARK, None) != mark
+        if rewrite and (template["qfmt"], template["afmt"], model["css"]) != (front, back, css):
             template["qfmt"], template["afmt"], model["css"] = front, back, css
             changed = True
         if changed:
             models.update_dict(model)
             model = models.get(model["id"])
+        if rewrite:
+            self.col.set_config(CARD_MARK, mark)
         self.model = model
         return changed
 
