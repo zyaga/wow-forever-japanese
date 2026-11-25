@@ -245,6 +245,16 @@ describe("Word status marks on a cover", function()
     assert.are.equal(4, #shown(RED))
   end)
 
+  it("shows nothing for a player who only plays (word cards off), and everything for one who studies", function()
+    -- what the welcome window's Just play writes, then what either study choice writes
+    S.set("readings.enabled", false); settle()
+    assert.are.equal(0, #shown(RED) + #shown(GREEN))
+    assert.is_nil(tag())
+    S.set("readings.enabled", true); settle()
+    assert.are.equal(4, #shown(RED))
+    assert.are.equal("理解度 0%", tag())
+  end)
+
   it("Shift+click steps the word's status and Shift+right-click ignores it or takes that back", function()
     local key = "生き物\tいきもの"
     cover.scripts.OnEnter(cover)

@@ -1,11 +1,11 @@
 -- UI/IntroWindow.lua: the welcome window (docs/systems/settings.md). Core/Intro decides when it is owed (once to
 -- every player); Main hands it IntroWindow.request, which opens it. It can be opened again from the settings pages
--- and /wfj intro. Two pages. The first asks what the player is here for: three cards (study Japanese, study English,
+-- and /wfj intro. The first page asks what the player is here for: three cards (study Japanese, study English,
 -- just play), the selected one described under them, then how names should show (English names or Japanese names,
 -- each with one example name as it will look), and Confirm, which writes those choices' ordinary settings.
--- The second says what to know to start: the reveal key (named as set, with its Change button), the word cards, the
--- key that freezes a tooltip (named as bound), the minimap button and, while no voice pack has loaded, the voice
--- download with its address to copy.
+-- After it comes a short tour, one page at a time with Back and Next: each page of IntroWindow.PAGES has a heading,
+-- one picture (Media/Tour) and a few points, and a page that does not fit the player's choice is left out. A new
+-- page is a new entry of that list, its picture and its texts.
 -- It is the one addon window that shows both languages at once: the player has not learned the reveal key yet, so
 -- a one-language window could be unreadable to them. The reveal key and the translation switch change nothing
 -- here. Only the addon's own copy (UI/OptionsText), never game text.
@@ -23,13 +23,16 @@ local LINE, BLOCK = 7, 14 -- between lines in a block; above and below the rule 
 local HEAD = 10 -- under a block's opening line
 local KEY = "|cffffd200%s|r" -- the reveal key's name, in the gold the client uses for key names
 local BOX, BUTTON = 20, 22
+local PICTURE_H = math.floor(TEXT_WIDTH / 2) -- a tour picture is twice as wide as it is tall
+local MEDIA = "Interface\\AddOns\\WoWForeverJapanese\\Media\\Tour\\"
 
 IntroWindow.frame = nil
 IntroWindow.closedByPlayer = false -- Close, Esc or any hide outside a cinematic: it stays closed
 IntroWindow.waiting = false -- a cinematic is playing: open when it ends
 local watcher -- the frame that hears the cinematic events, made by the first request
 
-IntroWindow.step = "pick" -- "pick": the question and its three cards; "info": what the choice means
+IntroWindow.step = "pick" -- "pick": the question and its three cards; "info": the tour
+IntroWindow.page = 1 -- which of the tour's pages shows, among the ones the choice has
 IntroWindow.selected = nil -- the card clicked on the first page; nothing is written until Confirm
 IntroWindow.names = false -- the names choice clicked on the first page: Japanese names, or the client's English
 -- The example both name options show: one NPC's name as the client writes it and as the name tables spell it. The
@@ -68,6 +71,65 @@ local function shownPurpose()
     if S.get("direction") == w.direction and S.get("readings.enabled") == w.cards then return purpose end
   end
   return nil
+end
+
+-- The tour, in order. `picture` is a file of Media/Tour; `points` name the lines under it (POINTS below); `who`
+-- lists the choices that see the page (every choice when it is missing; "other" is settings that match no choice).
+-- A frozen tooltip takes its cards only while Japanese is what shows, so only studying Japanese has that page.
+IntroWindow.PAGES = {
+  { id = "start", picture = "start", points = { "lead", "hold", "minimap" } },
+  { id = "cards", picture = "cards", points = { "readings", "words", "export" },
+    who = { ja = true, en = true, other = true } },
+  { id = "status", picture = "status", points = { "status.click", "status.marks", "status.import" },
+    who = { ja = true, en = true, other = true } },
+  { id = "freeze", picture = "freeze", points = { "freeze", "freeze.close" }, who = { ja = true } },
+  { id = "chat", picture = "chat", points = { "chat.cards", "chat.copy", "chat.phrases" } },
+  { id = "more", picture = "more", points = { "more.names", "more.report" } },
+}
+
+-- Each point's English and Japanese for the choice shown, with the keys named as they are set now; nothing for a
+-- point that does not apply (it is then left out of its page).
+local POINTS = {
+  lead = function(shown) return Text.get(shown == "en" and "intro.lead.en" or "intro.lead") end,
+  hold = function(shown)
+    return Text.get(shown == "en" and "intro.hold.en" or "intro.hold", KEY:format(WFJ.Options.keyName()))
+  end,
+  minimap = function() return Text.get("intro.minimap") end,
+  readings = function(shown) return Text.get(shown == "en" and "intro.readings.en" or "intro.readings") end,
+  words = function()
+    local click = WFJ.Settings.get("words.saveClick")
+    if click == "off" then return nil end
+    local d = WFJ.Settings.definition("words.saveClick")
+    return Text.get("intro.words", KEY:format(d.choiceText and d.choiceText[click] or click))
+  end,
+  export = function() return Text.get("intro.export") end,
+  ["status.click"] = function() return Text.get("intro.status.click") end,
+  ["status.marks"] = function() return Text.get("intro.status.marks") end,
+  ["status.import"] = function() return Text.get("intro.status.import") end,
+  freeze = function()
+    local key = WFJ.KeyCapture.keyOf(WFJ.KeyCapture.FREEZE)
+    if key then return Text.get("intro.freeze", KEY:format(WFJ.KeyCapture.keyText(key))) end
+    return Text.get("intro.freeze.unset")
+  end,
+  ["freeze.close"] = function() return Text.get("intro.freeze.close") end,
+  ["chat.cards"] = function(shown)
+    if shown == "play" then return nil end -- playing only has no word cards
+    return Text.get("intro.chat.cards")
+  end,
+  ["chat.copy"] = function() return Text.get("intro.chat.copy") end,
+  ["chat.phrases"] = function() return Text.get("intro.chat.phrases") end,
+  ["more.names"] = function() return Text.get("intro.more.names") end,
+  ["more.report"] = function() return Text.get("intro.more.report") end,
+}
+
+-- → the tour's pages for the choice the settings match now, in order
+function IntroWindow.pages()
+  local audience = shownPurpose() or "other"
+  local out = {}
+  for _, def in ipairs(IntroWindow.PAGES) do
+    if def.who == nil or def.who[audience] then out[#out + 1] = def end
+  end
+  return out
 end
 
 -- Two font strings per point, not W.label: a W.label re-shows one language whenever the reveal key flips. The
@@ -215,29 +277,51 @@ local function build()
   W.put(f.later.en, en, 11)
   f.later.ja:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
 
-  -- the second page: what a new player must know, each point in Japanese with its English under it. The hold-key
-  -- point leaves room for the settings page's own Change button at its right.
-  local b = page()
-  f.infoPage = b
-  f.lead, f.hold, f.readings, f.minimap, f.voice = line(b), line(b, TEXT_WIDTH - CHANGE - 10), line(b), line(b), line(b)
-  f.freeze = line(b)
-  f.lead.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
-  f.capture = WFJ.KeyCapture.new(b, { mode = "reveal", width = CHANGE, onKey = function(v)
+  -- the tour: one page frame per entry of PAGES, with its heading, its picture and its points, every text in
+  -- Japanese with its English under it
+  f.tour = {}
+  for _, def in ipairs(IntroWindow.PAGES) do
+    local p = page()
+    local t = { frame = p, head = line(p), points = {} }
+    t.head.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
+    t.picture = p:CreateTexture(nil, "ARTWORK")
+    t.picture:SetSize(TEXT_WIDTH, PICTURE_H)
+    t.picture:SetTexture(MEDIA .. def.picture)
+    for i, key in ipairs(def.points) do
+      -- the hold-key point leaves room for the settings page's own Change button at its right
+      t.points[i] = line(p, key == "hold" and TEXT_WIDTH - CHANGE - 10 or nil)
+      t[key] = t.points[i]
+    end
+    f.tour[def.id] = t
+  end
+  local start, more = f.tour.start.frame, f.tour.more.frame
+  f.hold = f.tour.start.hold
+  f.capture = WFJ.KeyCapture.new(start, { mode = "reveal", width = CHANGE, onKey = function(v)
     WFJ.Options.setModifier(v)
     IntroWindow.refill()
   end, onRefused = function() IntroWindow.refill() end })
-  f.box = W.copyBox(b, LEFT, 0, TEXT_WIDTH - 12, WFJ.Options.VOICE_URL)
+  -- the voice download, on the last page while no voice pack has loaded
+  f.voice = line(more)
+  f.box = W.copyBox(more, LEFT, 0, TEXT_WIDTH - 12, WFJ.Options.VOICE_URL)
   fill(f.voice, Text.get("intro.voice"))
-  f.voiceTitle = b:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+  f.voiceTitle = more:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
   en, ja = Text.get("intro.voiceTitle")
   W.put(f.voiceTitle, ja .. " / " .. en, 14)
   f.voiceTitle:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
-  f.leadRule, f.voiceRule = rule(b), rule(b)
-  -- the foot: Back at the left, Close at the right, each caption in both languages (nothing for W.pick to switch)
+  f.voiceRule = rule(more)
+  -- the foot of every tour page: Back at the left, the page's number, Next at the right (Start on the last page),
+  -- each caption in both languages (nothing for W.pick to switch)
+  f.foot = CreateFrame("Frame", nil, f)
+  f.foot:SetPoint("BOTTOMLEFT", 0, BOTTOM)
+  f.foot:SetPoint("BOTTOMRIGHT", 0, BOTTOM)
+  f.foot:SetHeight(BUTTON + 2 * PAD)
   en, ja = Text.get("intro.back")
-  f.back = W.button(b, ja .. " / " .. en, nil, 130, function() IntroWindow.show("pick") end)
-  en, ja = Text.get("intro.close")
-  f.close = W.button(b, ja .. " / " .. en, nil, 130, function() IntroWindow.close() end)
+  f.back = W.button(f.foot, ja .. " / " .. en, nil, 130, function() IntroWindow.back() end)
+  f.back:SetPoint("BOTTOMLEFT", LEFT, PAD)
+  f.next = W.button(f.foot, "", nil, 130, function() IntroWindow.next() end)
+  f.next:SetPoint("BOTTOMRIGHT", -LEFT, PAD)
+  f.count = f.foot:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+  f.count:SetPoint("BOTTOM", 0, PAD + 5)
   f:HookScript("OnHide", function() IntroWindow.hidden() end)
   IntroWindow.frame = f
   return f
@@ -246,15 +330,6 @@ end
 -- Runs fn after `seconds` (1 by default), or now where the client timer is missing (the specs).
 local function later(fn, seconds)
   if type(C_Timer) == "table" and type(C_Timer.After) == "function" then C_Timer.After(seconds or 1, fn) else fn() end
-end
-
--- The points for the choice shown: playing only has no word cards to mention, and a frozen tooltip takes its
--- cards only while Japanese is what shows.
-local function points(f)
-  local shown = shownPurpose()
-  if shown == "play" then return { f.hold, f.minimap } end
-  if shown == "ja" then return { f.hold, f.readings, f.freeze, f.minimap } end
-  return { f.hold, f.readings, f.minimap }
 end
 
 -- The first page: the question centred, the three cards side by side, the note under them.
@@ -305,10 +380,11 @@ local function layoutPick(f)
   f:SetHeight(TOP + used + PAD + 4 + BOTTOM)
 end
 
--- The second page: the opening line, a rule, the points; while no voice pack has loaded, a rule and the voice
--- section; then the two buttons. Each piece hangs from the one above it, so the gaps never depend on a measured
--- height; only the window's does.
-local function layoutInfo(f, voice)
+-- One tour page: the heading, the picture, the points that apply; on the first page the Change button beside the
+-- hold-key point, and on the last, while no voice pack has loaded, a rule and the voice section. Each piece hangs
+-- from the one above it, so the gaps never depend on a measured height. → the height the page needs
+local function layoutPage(f, def)
+  local t = f.tour[def.id]
   local prev, used
   local function chain(region, gap, x, h)
     region:ClearAllPoints()
@@ -320,33 +396,51 @@ local function layoutInfo(f, voice)
     chain(r.ja, gap)
     chain(r.en, PAIR)
   end
-  f.lead.ja:ClearAllPoints()
-  f.lead.ja:SetPoint("TOPLEFT", f.infoPage, "TOPLEFT", LEFT, -PAD - 2)
-  prev, used = f.lead.ja, PAD + 2 + height(f.lead.ja)
-  chain(f.lead.en, PAIR)
-  chain(f.leadRule, BLOCK, 0, 1)
-  for i, r in ipairs(points(f)) do pair(r, i == 1 and BLOCK or POINT) end
-  f.capture.button:ClearAllPoints()
-  f.capture.button:SetPoint("TOPRIGHT", f.hold.ja, "TOPLEFT", TEXT_WIDTH, 3)
-  if voice then
+  t.head.ja:ClearAllPoints()
+  t.head.ja:SetPoint("TOPLEFT", t.frame, "TOPLEFT", LEFT, -PAD - 2)
+  prev, used = t.head.ja, PAD + 2 + height(t.head.ja)
+  chain(t.head.en, PAIR)
+  chain(t.picture, HEAD, 0, PICTURE_H)
+  local first = true
+  for _, r in ipairs(t.points) do
+    if not r.off then
+      pair(r, first and BLOCK or POINT)
+      first = false
+    end
+  end
+  if def.id == "start" then
+    f.capture.button:ClearAllPoints()
+    f.capture.button:SetPoint("TOPRIGHT", f.hold.ja, "TOPLEFT", TEXT_WIDTH, 3)
+  end
+  if def.id == "more" and f.voiceShown then
     chain(f.voiceRule, BLOCK + 2, 0, 1)
     chain(f.voiceTitle, BLOCK)
     pair(f.voice, HEAD)
     chain(f.box, LINE + 2, 6, BOX) -- InputBoxTemplate's left cap sits outside the frame
   end
-  f.back:ClearAllPoints()
-  f.back:SetPoint("BOTTOMLEFT", f.infoPage, "BOTTOMLEFT", LEFT, PAD)
-  f.close:ClearAllPoints()
-  f.close:SetPoint("BOTTOMRIGHT", f.infoPage, "BOTTOMRIGHT", -LEFT, PAD)
-  f:SetHeight(TOP + used + BLOCK + 6 + BUTTON + PAD + BOTTOM)
+  return used
+end
+
+-- The tour: every page the choice has is laid out, and the window takes the tallest one's height, so it does not
+-- change size under the mouse from one page to the next.
+local function layoutTour(f)
+  local tall = 0
+  for _, def in ipairs(IntroWindow.pages()) do tall = math.max(tall, layoutPage(f, def)) end
+  f:SetHeight(TOP + tall + BLOCK + 6 + BUTTON + PAD + BOTTOM)
 end
 
 local function layout(f)
-  if IntroWindow.step == "info" then layoutInfo(f, f.voiceShown) else layoutPick(f) end
+  if IntroWindow.step == "info" then layoutTour(f) else layoutPick(f) end
 end
 
 local function refused(f)
-  for _, r in ipairs({ f.ask, f.lead, f.hold, f.readings, f.freeze, f.minimap, f.voice }) do
+  local lines = { f.ask, f.voice }
+  for _, def in ipairs(IntroWindow.PAGES) do
+    local t = f.tour[def.id]
+    lines[#lines + 1] = t.head
+    for _, r in ipairs(t.points) do lines[#lines + 1] = r end
+  end
+  for _, r in ipairs(lines) do
     if WFJ.Font.isPending(r.ja) or WFJ.Font.isPending(r.en) then return true end
   end
   return false
@@ -375,23 +469,20 @@ function IntroWindow.refill()
   local f = IntroWindow.frame
   if not f then return end
   local shown = shownPurpose()
-  local english = shown == "en"
-  local key = KEY:format(WFJ.Options.keyName())
-  local leadEn, leadJa = Text.get(english and "intro.lead.en" or "intro.lead")
-  fill(f.lead, leadEn, leadJa, true)
-  fill(f.hold, Text.get(english and "intro.hold.en" or "intro.hold", key))
-  fill(f.readings, Text.get(english and "intro.readings.en" or "intro.readings"))
-  fill(f.minimap, Text.get("intro.minimap"))
-  local freezeKey = WFJ.KeyCapture.keyOf(WFJ.KeyCapture.FREEZE)
-  if freezeKey then
-    fill(f.freeze, Text.get("intro.freeze", KEY:format(WFJ.KeyCapture.keyText(freezeKey))))
-  else
-    fill(f.freeze, Text.get("intro.freeze.unset"))
+  for _, def in ipairs(IntroWindow.PAGES) do
+    local t = f.tour[def.id]
+    local title = (def.id == "start" and shown == "en") and "intro.tour.start.en" or ("intro.tour." .. def.id)
+    local titleEn, titleJa = Text.get(title)
+    fill(t.head, titleEn, titleJa, true)
+    for i, key in ipairs(def.points) do
+      local r = t.points[i]
+      local en, ja = POINTS[key](shown)
+      r.off = en == nil
+      if en then fill(r, en, ja) end
+      W.setShown(r.ja, en ~= nil)
+      W.setShown(r.en, en ~= nil)
+    end
   end
-  W.setShown(f.readings.ja, shown ~= "play")
-  W.setShown(f.readings.en, shown ~= "play")
-  W.setShown(f.freeze.ja, shown == "ja")
-  W.setShown(f.freeze.en, shown == "ja")
   for purpose, c in pairs(f.cards) do
     c.picked = IntroWindow.selected == purpose
     edge(c, c.picked)
@@ -408,8 +499,18 @@ function IntroWindow.refill()
   local aboutEn, aboutJa = Text.get("intro.about." .. (IntroWindow.selected or "ja"))
   W.put(f.about.ja, BULLET.ja .. aboutJa:gsub("\n", "\n" .. BULLET.ja), 13)
   W.put(f.about.en, BULLET.en .. aboutEn:gsub("\n", "\n" .. BULLET.en), 12)
-  W.setShown(f.pickPage, IntroWindow.step ~= "info")
-  W.setShown(f.infoPage, IntroWindow.step == "info")
+  local pages = IntroWindow.pages()
+  IntroWindow.page = math.max(1, math.min(IntroWindow.page, #pages))
+  local current = IntroWindow.step == "info" and pages[IntroWindow.page] or nil
+  W.setShown(f.pickPage, current == nil)
+  W.setShown(f.foot, current ~= nil)
+  for _, def in ipairs(IntroWindow.PAGES) do W.setShown(f.tour[def.id].frame, def == current) end
+  if current then
+    -- the last page's button starts the game: it closes the window
+    local en, ja = Text.get(IntroWindow.page == #pages and "intro.close" or "intro.next")
+    f.next:setLabel(ja .. " / " .. en)
+    W.put(f.count, IntroWindow.page .. " / " .. #pages, 11)
+  end
   for _, region in ipairs({ f.voiceRule, f.voiceTitle, f.voice.ja, f.voice.en, f.box }) do
     W.setShown(region, f.voiceShown)
   end
@@ -419,7 +520,7 @@ function IntroWindow.refill()
   later(function() if f:IsShown() then layout(f) end end, 0)
 end
 
--- Shows one of the two pages.
+-- Shows the question ("pick") or the tour from its first page ("info").
 -- The key bindings changed (a key set under Keybindings, the freeze key's first binding): an open window names the
 -- freeze key as it is bound now.
 function IntroWindow.bindingsChanged()
@@ -429,6 +530,21 @@ end
 
 function IntroWindow.show(step)
   IntroWindow.step = step
+  if step == "info" then IntroWindow.page = 1 end
+  IntroWindow.refill()
+end
+
+-- Next: the page after this one; on the last page it is Start, and closes the window.
+function IntroWindow.next()
+  if IntroWindow.page >= #IntroWindow.pages() then return IntroWindow.close() end
+  IntroWindow.page = IntroWindow.page + 1
+  IntroWindow.refill()
+end
+
+-- Back: the page before this one; from the first tour page, the question.
+function IntroWindow.back()
+  if IntroWindow.page <= 1 then return IntroWindow.show("pick") end
+  IntroWindow.page = IntroWindow.page - 1
   IntroWindow.refill()
 end
 
@@ -444,7 +560,7 @@ function IntroWindow.selectNames(japanese)
   IntroWindow.refill()
 end
 
--- Confirm: the selected choice's settings and the names choice, then the second page.
+-- Confirm: the selected choice's settings and the names choice, then the tour.
 function IntroWindow.pick(purpose)
   local w = WRITES[purpose]
   -- confirming the choice the settings already match must not undo a study tab the player hid
