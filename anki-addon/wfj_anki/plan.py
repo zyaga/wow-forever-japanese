@@ -11,6 +11,7 @@ Anki.
 from __future__ import annotations
 
 import hashlib
+import html
 import json
 import time
 import unicodedata
@@ -63,6 +64,8 @@ class Row:
     values: dict[str, Any]
     shot: str
     audio: tuple[str, ...]
+    source: str = ""  # the client and account it was saved on, the same on every machine: "_forever_/NAME"
+    saved: float = 0  # when it was saved in the game
 
 
 def rows(tables: list[tuple[Any, Any]]) -> tuple[list[Row], bool]:
@@ -92,6 +95,7 @@ def rows(tables: list[tuple[Any, Any]]) -> tuple[list[Row], bool]:
             if key in by_key and by_key[key][0] >= written:
                 continue
             audio = entry.get("audio")
+            when = entry.get("saved")
             by_key[key] = (
                 written,
                 Row(
@@ -100,6 +104,8 @@ def rows(tables: list[tuple[Any, Any]]) -> tuple[list[Row], bool]:
                     values=entry,
                     shot=_text(entry.get("shot")),
                     audio=tuple(a for a in audio if isinstance(a, str)) if isinstance(audio, list) else (),
+                    source=f"{saved.client.name}/{saved.path.parent.parent.name}",
+                    saved=when if isinstance(when, (int, float)) and not isinstance(when, bool) else 0,
                 ),
             )
     return [row for _, row in by_key.values()], newer
@@ -114,14 +120,10 @@ def _text(value: Any) -> str:
 
 
 def text_fields(row: Row) -> dict[str, str]:
-    """The note's text fields as the game gives them."""
+    """The note's text fields as the game gives them: the game writes them ready for a field, as HTML."""
     out = {field: _text(row.values.get(name)) for field, name in _TEXT.items()}
-    saved = row.values.get("saved")
-    out["Saved"] = (
-        time.strftime("%Y-%m-%d", time.localtime(saved))
-        if isinstance(saved, (int, float)) and not isinstance(saved, bool)
-        else ""
-    )
+    # the day in UTC, so a player who travels does not get every card rewritten
+    out["Saved"] = time.strftime("%Y-%m-%d", time.gmtime(row.saved)) if row.saved else ""
     return out
 
 
@@ -147,7 +149,7 @@ def _record(text: str) -> tuple[dict[str, str], dict[str, str]]:
 
 
 def image_field(name: str) -> str:
-    return f'<img src="{name}">'
+    return f'<img src="{html.escape(name, quote=True)}">'
 
 
 def audio_field(names: list[str]) -> str:
@@ -177,8 +179,9 @@ class _Note:
             self.writes[field] = value
         self.wrote[field] = fingerprint(value)
 
-    def media(self, field: str, named: object, fetch: Callable[[], str | None]) -> bool:
-        """Fill a media field from the files the game names. → whether a file was missing."""
+    def media(self, field: str, named: object, state: object, fetch: Callable[[], str | None]) -> bool:
+        """Fill a media field from the files the game names; `state` tells one version of those files from the
+        next. → whether a file the note needs was missing."""
         if not named:
             # the game names no file (no screenshot taken, the voice pack off): what the note holds stays
             if self.new:
@@ -186,7 +189,7 @@ class _Note:
             return False
         if self.edited(field):
             return False
-        mark = fingerprint(json.dumps(named))
+        mark = fingerprint(json.dumps(state))
         same = self.sources.get(field) == mark and self.now.get(field, "") != ""
         if same and not self.new and not self.force:
             return False  # the same files as last time, and the field still holds them
@@ -194,28 +197,37 @@ class _Note:
         if value is None:
             if self.new:
                 self.put(field, "")
-            return True
+            # a field that holds something keeps it, so a file gone from the game is no loss to report
+            return self.now.get(field, "") == ""
         self.put(field, value)
         self.sources[field] = mark
         return False
 
 
 def note_changes(
-    row: Row, current: dict[str, str] | None, fetch: Callable[[str, Row], str | None], force: bool = False
+    row: Row,
+    current: dict[str, str] | None,
+    fetch: Callable[[str, Row], str | None],
+    force: bool = False,
+    state: Callable[[str, Row], object] | None = None,
 ) -> tuple[dict[str, str], bool, bool]:
     """The fields to write for `row`: every field of a new note (`current` is None), else only the fields
     whose value changed and that the player has not edited. `fetch("image" | "audio", row)` brings the row's
     media into the collection and gives the field's text, or None when a file is missing. `force` writes
-    edited fields too. → the fields to write, whether the image is missing, whether the audio is."""
+    edited fields too; `state("audio", row)` tells one version of the row's sound files from the next.
+    → the fields to write, whether the image is missing, whether the audio is."""
     note = _Note(current, force)
     for field, value in text_fields(row).items():
         if not note.edited(field):
             note.put(field, value)
-    no_image = note.media("Image", row.shot, lambda: fetch("image", row))
-    no_audio = note.media("Audio", list(row.audio), lambda: fetch("audio", row))
+    sounds = list(row.audio)
+    no_image = note.media("Image", row.shot, row.shot, lambda: fetch("image", row))
+    # a line voiced again keeps its file names, so the files' own state is asked for where it is known
+    version = state("audio", row) if state else sounds
+    no_audio = note.media("Audio", sounds, version, lambda: fetch("audio", row))
     record = json.dumps({"f": note.wrote, "src": note.sources}, sort_keys=True)
     if note.new:
-        note.writes["Key"] = row.key
+        note.writes["Key"] = html.escape(row.key, quote=False)
     if record != note.now.get("Sync", ""):
         note.writes["Sync"] = record
     return note.writes, no_image, no_audio

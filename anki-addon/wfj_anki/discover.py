@@ -11,6 +11,7 @@ from pathlib import Path, PurePosixPath
 GAME = "World of Warcraft"
 SAVED_NAME = "WoWForeverJapanese.lua"
 ADDON_PREFIX = "WoWForeverJapanese"
+_NEVER = ':<>"[]'  # characters no screenshot or sound file of the game's has in its name
 
 
 @dataclass(frozen=True)
@@ -96,8 +97,11 @@ def signature(files: list[SavedFile]) -> tuple[tuple[str, int, int], ...]:
 
 def screenshot(client: Path, name: str) -> Path | None:
     """Where a screenshot of that file name is, or None for a name that is not a plain file name."""
-    # a colon would name a drive on Windows, and so a file outside the folder
-    if not name or ":" in name or name != PurePosixPath(name.replace("\\", "/")).name or name in (".", ".."):
+    # a colon would name a drive on Windows, and so a file outside the folder; the others would break out of
+    # the field's markup
+    if not name or name in (".", "..") or any(c in name for c in _NEVER):
+        return None
+    if name != PurePosixPath(name.replace("\\", "/")).name:
         return None
     return client / "Screenshots" / name
 
@@ -109,6 +113,6 @@ def sound(client: Path, relative: str) -> Path | None:
     parts = PurePosixPath(relative.replace("\\", "/")).parts
     if len(parts) != 3 or parts[1] != "Sound" or not parts[0].startswith(ADDON_PREFIX):
         return None
-    if any(p in ("", ".", "..") or ":" in p for p in parts):
+    if any(p in ("", ".", "..") or any(c in p for c in _NEVER) for p in parts):
         return None
     return client / "Interface" / "AddOns" / parts[0] / "Sound" / parts[2]

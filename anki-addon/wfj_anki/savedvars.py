@@ -15,7 +15,7 @@ from typing import Any
 _TOKEN = re.compile(
     r"""
     (?P<space>\s+|--[^\n]*)
-  | (?P<string>"(?:[^"\\]|\\.|\\\n)*")
+  | (?P<string>"(?:[^"\\]|\\.)*")
   | (?P<number>-?(?:0[xX][0-9a-fA-F]+|\d+\.?\d*(?:[eE][-+]?\d+)?|\.\d+(?:[eE][-+]?\d+)?))
   | (?P<name>[A-Za-z_][A-Za-z0-9_]*)
   | (?P<punct>[{}\[\]=,;])

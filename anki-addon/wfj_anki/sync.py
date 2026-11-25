@@ -16,9 +16,11 @@ class Notes(Protocol):
     def notes(self) -> dict[str, tuple[Any, dict[str, str]]]: ...  # the add-on's notes: key → (id, fields)
     def add(self, fields: dict[str, str]) -> None: ...
     def update(self, note_id: Any, writes: dict[str, str]) -> None: ...
-    def store(
-        self, kind: str, path: Path
-    ) -> str | None: ...  # a file into the media; its name there, or None
+    # a file into the media; its name there, or None
+    def store(self, kind: str, path: Path) -> str | None: ...
+    # for each place words are saved, the newest word a sync has seen
+    def marks(self) -> dict[str, float]: ...
+    def set_marks(self, marks: dict[str, float]) -> None: ...
 
 
 @dataclass
@@ -30,6 +32,7 @@ class Result:
     words: int = 0
     files: int = 0
     tables: int = 0  # the saved files that hold the table the game writes for the add-on
+    deleted: int = 0  # words left without a note: the player deleted their notes in Anki
     newer: bool = False  # a saved file was written by a newer addon version than this add-on reads
 
     @property
@@ -42,10 +45,57 @@ def read(files: list[discover.SavedFile]) -> list[tuple[discover.SavedFile, Any]
     return [(f, savedvars.read(f.path, TABLE)) for f in files]
 
 
-def apply(col: Notes, tables: list[tuple[discover.SavedFile, Any]], reset: set[str] | None = None) -> Result:
-    """Add a note for each word that has none and rewrite what changed in the others. With `reset`, only the
-    notes
-    of those keys are touched, and every field of them is written from the game."""
+class _Media:
+    """The rows' files into the collection, each file once a sync."""
+
+    def __init__(self, col: Notes):
+        self.col = col
+        self.stored: dict[Path, str | None] = {}
+
+    def _store(self, kind: str, path: Path | None) -> str | None:
+        if path is None:
+            return None
+        if path not in self.stored:
+            self.stored[path] = self.col.store(kind, path)
+        return self.stored[path]
+
+    def fetch(self, kind: str, row: plan.Row) -> str | None:
+        """The field's text for the row's image or audio, or None when a file is missing."""
+        if kind == "image":
+            name = self._store(kind, discover.screenshot(row.client, row.shot))
+            return plan.image_field(name) if name else None
+        names = []
+        for relative in row.audio:
+            name = self._store(kind, discover.sound(row.client, relative))
+            if not name:
+                return None
+            names.append(name)
+        return plan.audio_field(names)
+
+
+def _sizes(_kind: str, row: plan.Row) -> object:
+    """Each of the row's sound files with its size: a line voiced again keeps its file names."""
+    sizes = []
+    for relative in row.audio:
+        path = discover.sound(row.client, relative)
+        try:
+            sizes.append([relative, path.stat().st_size if path else None])
+        except OSError:
+            sizes.append([relative, None])
+    return sizes
+
+
+def apply(
+    col: Notes,
+    tables: list[tuple[discover.SavedFile, Any]],
+    reset: set[str] | None = None,
+    again: bool = False,
+) -> Result:
+    """Add a note for each new word and rewrite what changed in the others. With `reset`, only the notes of
+    those keys are touched, and every field of them is written from the game.
+
+    A word a sync has seen before and that has no note now was deleted in Anki by the player: it is not added
+    again, unless `again` asks for every word of the game's list to have a note."""
     rows, newer = plan.rows(tables)
     result = Result(
         words=len(rows),
@@ -54,33 +104,17 @@ def apply(col: Notes, tables: list[tuple[discover.SavedFile, Any]], reset: set[s
         tables=sum(1 for _, table in tables if isinstance(table, dict)),
     )
     notes = col.notes()
-    stored: dict[Path, str | None] = {}
-
-    def store(kind: str, path: Path | None) -> str | None:
-        if path is None:
-            return None
-        if path not in stored:
-            stored[path] = col.store(kind, path)
-        return stored[path]
-
-    def fetch(kind: str, row: plan.Row) -> str | None:
-        if kind == "image":
-            name = store(kind, discover.screenshot(row.client, row.shot))
-            return plan.image_field(name) if name else None
-        names = []
-        for relative in row.audio:
-            name = store(kind, discover.sound(row.client, relative))
-            if not name:
-                return None
-            names.append(name)
-        return plan.audio_field(names)
-
+    media = _Media(col)
+    seen_before = dict(col.marks())
     for row in rows:
         existing = notes.get(row.key)
         if reset is not None and (existing is None or row.key not in reset):
             continue
+        if existing is None and not again and row.saved <= seen_before.get(row.source, -1):
+            result.deleted += 1
+            continue
         writes, no_image, no_audio = plan.note_changes(
-            row, existing[1] if existing else None, fetch, force=reset is not None
+            row, existing[1] if existing else None, media.fetch, force=reset is not None, state=_sizes
         )
         result.missing_images += no_image
         result.missing_audio += no_audio
@@ -90,11 +124,16 @@ def apply(col: Notes, tables: list[tuple[discover.SavedFile, Any]], reset: set[s
         elif writes:
             col.update(existing[0], writes)
             result.updated += 1
+    if reset is None:
+        marks = dict(seen_before)
+        for row in rows:
+            marks[row.source] = max(marks.get(row.source, -1), row.saved)
+        if marks != seen_before:
+            col.set_marks(marks)
     return result
 
 
 def due(seen: object, last_seen: object, last: Result | None, asked: bool) -> bool:
     """Whether a sync has anything to look at: the player asked, a saved file or a setting changed since the
-    last
-    one (`seen` against `last_seen`), or the last one could not find some media."""
+    last one (`seen` against `last_seen`), or the last one could not find some media."""
     return asked or seen != last_seen or bool(last and last.pending)

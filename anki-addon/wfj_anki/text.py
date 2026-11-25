@@ -7,6 +7,11 @@ from .sync import Result
 T = {
     "menu": ("WoW Forever Japanese", "WoW Forever Japanese"),
     "sync": ("Sync now", "今すぐ同期"),
+    "again": ("Add deleted cards again", "削除したカードをもう一度追加"),
+    "deleted": (
+        "{n} word(s) have no card because you deleted it. Tools → WoW Forever Japanese → Add deleted cards again brings them back.",
+        "{n} 語はカードを削除したため追加していません。ツール → WoW Forever Japanese →「削除したカードをもう一度追加」で戻せます。",
+    ),
     "settings": ("Settings…", "設定…"),
     "reset": ("WoW Forever Japanese: reset to the game's data", "WoW Forever Japanese：ゲームのデータに戻す"),
     "title": ("WoW Forever Japanese", "WoW Forever Japanese"),
@@ -93,6 +98,8 @@ def summary(result: Result | None, japanese: bool) -> str:
         lines.append(get("done", japanese, added=result.added, updated=result.updated, words=result.words))
     else:
         lines.append(get("nothing", japanese, words=result.words))
+    if result.deleted:
+        lines.append(get("deleted", japanese, n=result.deleted))
     if result.missing_images:
         lines.append(get("missing_images", japanese, n=result.missing_images))
     if result.missing_audio:

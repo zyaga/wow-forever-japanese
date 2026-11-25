@@ -1,5 +1,6 @@
 """What a sync of the Anki add-on adds, rewrites and leaves alone, against a stand-in for the collection."""
 
+import html
 from pathlib import Path
 
 from anki_addon import FIXTURES  # noqa: F401  (puts the add-on on the path)
@@ -47,9 +48,16 @@ class Collection:
         self.files = set(files)  # the files that exist in the game's folders
         self.stored = []
         self.next = 1
+        self.seen = {}
+
+    def marks(self):
+        return dict(self.seen)
+
+    def set_marks(self, marks):
+        self.seen = dict(marks)
 
     def notes(self):
-        return {fields["Key"]: (note_id, dict(fields)) for note_id, fields in self.mine.items()}
+        return {html.unescape(fields["Key"]): (note_id, dict(fields)) for note_id, fields in self.mine.items()}
 
     def add(self, fields):
         self.mine[self.next] = dict(fields)
@@ -71,8 +79,8 @@ class Collection:
         return next(f for f in self.mine.values() if f["Key"] == key)
 
 
-def run(col, *tables, reset=None):
-    return sync.apply(col, [(FILE, t) for t in tables], reset=reset)
+def run(col, *tables, reset=None, again=False):
+    return sync.apply(col, [(FILE, t) for t in tables], reset=reset, again=again)
 
 
 def test_a_new_word_becomes_one_note_with_its_fields():
@@ -307,3 +315,63 @@ def test_reset_rewrites_an_edited_image_and_audio_too():
     assert result.updated == 1
     assert col.note()["Image"] == '<img src="wfj-WoWScrnShot_112526_101500.jpg">'
     assert col.note()["Audio"] == "[sound:wfj-a-1.mp3]"
+
+
+def test_a_note_deleted_in_anki_stays_deleted():
+    col = Collection()
+    run(col, table(row(), row(key="k2", word="数", saved=1790000100)))
+    gone = next(i for i, f in col.mine.items() if f["Key"] == "k2")
+    del col.mine[gone]
+    later = table(row(), row(key="k2", word="数", saved=1790000100), row(key="k3", word="森", saved=1790000200))
+    result = run(col, later)
+    assert (result.added, result.deleted) == (1, 1)  # the new word arrives, the deleted one does not come back
+    assert {f["Key"] for f in col.mine.values()} == {"quest.description:456:生き物", "k3"}
+    # until the player asks for every word again
+    result = run(col, later, again=True)
+    assert (result.added, result.deleted) == (1, 0)
+    assert len(col.mine) == 3
+
+
+def test_another_account_s_older_words_are_still_new():
+    col = Collection()
+    run(col, table(row(saved=1790000500)))
+    other = SavedFile(Path("/game/_retail_"), Path("/game/_retail_/WTF/Account/TWO/SavedVariables/x.lua"))
+    result = sync.apply(col, [(FILE, table(row(saved=1790000500))), (other, table(row(key="k2", saved=1780000000)))])
+    assert result.added == 1
+
+
+def test_a_line_voiced_again_under_the_same_file_name_replaces_the_recording(tmp_path):
+    client = tmp_path / "_forever_"
+    sound = client / "Interface/AddOns/WoWForeverJapanese_VoiceA/Sound/a-1.mp3"
+    sound.parent.mkdir(parents=True)
+    sound.write_bytes(b"first")
+    saved = SavedFile(client, client / "WTF/Account/ONE/SavedVariables/WoWForeverJapanese.lua")
+
+    class Disk(Collection):
+        def store(self, kind, path):
+            if not Path(path).is_file():
+                return None
+            self.stored.append(Path(path).read_bytes())
+            return f"wfj-{len(self.stored)}.mp3"
+
+    col = Disk()
+    data = [(saved, table(row(audio=["WoWForeverJapanese_VoiceA/Sound/a-1.mp3"])))]
+    sync.apply(col, data)
+    sync.apply(col, data)
+    assert col.stored == [b"first"]
+    sound.write_bytes(b"voiced again")
+    result = sync.apply(col, data)
+    assert col.stored == [b"first", b"voiced again"] and result.updated == 1
+    assert col.note()["Audio"] == "[sound:wfj-2.mp3]"
+    # the pack is taken out: the card keeps its recording, and nothing is reported missing
+    sound.unlink()
+    result = sync.apply(col, data)
+    assert (result.updated, result.missing_audio) == (0, 0)
+    assert col.note()["Audio"] == "[sound:wfj-2.mp3]"
+
+
+def test_a_key_with_markup_in_it_is_matched_and_never_shown_as_markup():
+    col = Collection()
+    run(col, table(row(key="chat:chat:<b>&x")))
+    assert col.note()["Key"] == "chat:chat:&lt;b&gt;&amp;x"
+    assert run(col, table(row(key="chat:chat:<b>&x"))).added == 0

@@ -97,6 +97,11 @@ def test_a_note_of_the_players_own_with_the_same_key_is_never_touched(seen):
     assert (seen["own_notes"], seen["all_notes"]) == (1, 2)
 
 
+def test_a_note_deleted_in_anki_is_not_made_again_until_asked(seen):
+    assert (seen["deleted_stays"]["added"], seen["deleted_stays"]["deleted"]) == (0, 1)
+    assert (seen["deleted_back"]["added"], seen["deleted_back"]["deleted"]) == (1, 0)
+
+
 def test_a_word_gone_from_the_game_keeps_its_note(seen):
     assert counts(seen["gone"]) == (0, 0)
     assert seen["still_there"] is True

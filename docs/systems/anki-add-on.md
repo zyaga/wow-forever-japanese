@@ -73,7 +73,7 @@ One note type, `WoW Forever Japanese`, one card (`Card`), notes in the deck `WoW
 | `Japanese sentence` | an English word's Japanese sentence |
 | `Image` | an HTML image tag naming the stored screenshot (its name starts with `wfj-`) |
 | `Audio` | `[sound:wfj-…]`, one per file, in play order |
-| `Source`, `Quest`, `Saved`, `Lang` | where it was shown, the Japanese quest title, the save date (local, `YYYY-MM-DD`), `en` or empty |
+| `Source`, `Quest`, `Saved`, `Lang` | where it was shown, the Japanese quest title, the save date (UTC, `YYYY-MM-DD`), `en` or empty |
 | `Sync` | the add-on's record, as JSON: a short hash of what it last wrote to each field, and of the files behind `Image` and `Audio` |
 
 The first sync makes the note type. A note type the add-on made earlier with fewer fields gains the new ones without losing a note. A note type of the same name without a `Sync` field is the player's own and is left alone; the add-on then uses `WoW Forever Japanese (add-on)`.
@@ -94,11 +94,17 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - **One undo step.** Everything a sync writes is one entry in Anki's undo list, named `WoW Forever Japanese`.
 - The result shows as a short tooltip (`N new, M updated`), nothing when nothing changed. The settings window shows the last sync's result: words found, missing screenshots and sound files with their counts, a folder with no saved file, a table too new to read, or a saved file from an addon that has not written `WFJ_Anki` yet.
 
+- **Deleted cards stay deleted.** The collection keeps, for each client and account, the newest saved word a sync has seen. A word no newer than that with no note was deleted in Anki by the player, so it is not added again. **Tools → WoW Forever Japanese → Add deleted cards again** makes a note for every word of the game's list once more, and the settings window says how many words were left out.
+- **Markup.** The game writes each row's text ready for a field: `&`, `<`, `>`, `[` and `]` are escaped, so a stage direction in angle brackets, a link's label in square brackets, or text another player typed in chat shows as text and never as a tag or a reading. The only markup is the game's own: the saved word in bold and the readings. The key is escaped when it is written to the note and read back the same way.
+- **A line voiced again.** A re-voiced line keeps its file names, so the mark of a note's audio holds each file's size too: when a file changes, the card gets the new recording.
+
 ### When a sync runs
 - When a profile opens, when Anki becomes the active application again, and from **Tools → WoW Forever Japanese → Sync now** (or the settings window's Sync now).
 - It is skipped when no saved file changed since the last sync (same paths, sizes and modified times) and the settings are the same, unless media was missing last time or the player asked.
 - It waits while a card is being studied (adding notes then would redraw the card under the player) and runs when the player leaves the review. A Sync now runs at once.
 - It never runs while no collection is open, and one sync runs at a time, in the background.
+- It never runs beside Anki's own sync with AnkiWeb: it waits for that to finish, then looks again, since the collection may have come from another device. After a profile opens it waits a moment for the same reason.
+- Media that is missing is looked for on the next three checks, then left until a saved file changes or the player asks.
 - Opening another profile starts over: that profile gets its own first sync and its own last result.
 - The game's folders are searched once and remembered while the saved files are still there. A Sync now, or a changed folder setting, searches again.
 - A word saved in game reaches Anki only after the next `/reload` or logout, because that is when the client writes the file.
@@ -152,6 +158,8 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - **A screenshot whose name the addon guessed wrong** ([Word list → Screenshots](word-list.md#screenshots)): counted as missing in the settings window, never blanks a field.
 
 ## Limits
+- A note whose `Sync` field was emptied or damaged by hand has every filled field counted as the player's own, so nothing in it is rewritten. Reset to the game's data puts it right.
+- `Saved` is the day in UTC.
 - Desktop Anki only: Anki's add-ons do not run in the phone apps. The cards reach the phone apps through AnkiWeb sync, and the template works there.
 - New words arrive after a `/reload` or a logout in the game, not when they are saved.
 - Anki and the game keep separate schedules; the add-on never reads or writes `WFJ_Study`.

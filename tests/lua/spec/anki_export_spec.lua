@@ -137,6 +137,26 @@ describe("AnkiExport", function()
     assert.are.equal("", row.lemma)
   end)
 
+  it("escapes what Anki would read as markup, and keeps its own bold and readings", function()
+    local text = "<Mivinは品物を示す>数[Loot]を減らせ & 進め。"
+    save(W, { text = text, word = "数", reading = "かず", lemma = "数", lemmaReading = "かず",
+      meaning = "number <of things> & more", questTitle = "<題>" })
+    local row = A.build(W.entries(), T, deps(W)).rows[1]
+    assert.are.equal("&lt;Mivinは品物を示す&gt;<b>数</b>&#91;Loot&#93;を減らせ &amp; 進め。", row.sentence)
+    assert.are.equal("&lt;Mivinは品物を示す&gt;<b>数[かず]</b>&#91;Loot&#93;を減らせ &amp; 進め。", row.sentenceFurigana)
+    assert.are.equal("number &lt;of things&gt; &amp; more", row.meaning)
+    assert.are.equal("&lt;題&gt;", row.questTitle)
+    assert.are.equal("quest.description:456:数", row.key) -- the key is matched, never shown as markup
+  end)
+
+  it("escapes markup in an English sentence too, such as text another player typed", function()
+    save(W, { kind = "chat", id = "chat", text = 'look <img src=x onerror="go()"> creatures here', word = "creatures",
+      reading = "", meaning = "生き物", english = { jaSentence = "" } })
+    local row = A.build(W.entries(), T, deps(W)).rows[1]
+    assert.are.equal('look &lt;img src=x onerror="go()"&gt; <b>creatures</b> here', row.sentenceFurigana)
+    assert.is_nil(row.sentence:find("<img", 1, true))
+  end)
+
   it("exports a list saved by a newer version, as the export window does", function()
     W.load({ schema = 99, entries = { { key = "k", word = "数", reading = "かず", sentence = "数を減らせ。", wf = 1, wl = 3,
       kind = "quest.description", id = 1, extra = { 1 } } } })

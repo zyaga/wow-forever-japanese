@@ -163,6 +163,15 @@ def main() -> None:
         out["own_notes"] = len(notes.notes())
         out["all_notes"] = col.db.scalar("select count() from notes")
 
+        # a note the player deletes in Anki is not made again, until the player asks for it
+        extra = "quest.description:456:数"
+        both = table(row(meaning="again", reading="イキモノ"), row(key=extra, word="数", saved=1790000100))
+        sync.apply(notes, [(saved, both)])
+        col.remove_notes([notes.notes()[extra][0]])
+        out["deleted_stays"] = vars(sync.apply(notes, [(saved, both)]))
+        out["deleted_back"] = vars(sync.apply(notes, [(saved, both)], again=True))
+        col.remove_notes([notes.notes()[extra][0]])
+
         # a word gone from the game
         out["gone"] = vars(sync.apply(notes, [(saved, table())]))
         out["still_there"] = KEY in notes.notes()

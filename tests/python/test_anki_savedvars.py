@@ -68,3 +68,12 @@ def test_keys_without_brackets_and_number_keys():
         "f": 1000.0,
     }
     assert savedvars.parse('T = { [1] = "one", [2] = "two" }', "T") == ["one", "two"]
+
+
+def test_a_long_broken_string_is_given_up_on_at_once():
+    import time
+
+    text = 'WFJ_Anki = { "' + "\\\n" * 2000  # a string that never ends, full of escaped line ends
+    start = time.monotonic()
+    assert savedvars.parse(text, "WFJ_Anki") is None
+    assert time.monotonic() - start < 1

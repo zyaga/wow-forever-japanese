@@ -37,6 +37,8 @@ from .collection import AnkiNotes
 from .settings import AUDIOS, FRONTS, Settings, from_config, to_config
 
 MODULE = __name__.split(".")[0]
+RETRIES = 3  # looks for media that was missing, while no saved file changes
+PROFILE_WAIT_MS = 3000
 
 
 def japanese() -> bool:
@@ -63,12 +65,15 @@ class Syncer:
         self.seen: tuple[Any, ...] | None = None  # the saved files and the settings of the last sync
         self.last: sync.Result | None = None
         self.problem = ""
+        self.retries = 0
+        self.web_sync = False  # Anki's own sync with AnkiWeb is running
         self.found: tuple[str, list[discover.SavedFile]] | None = None  # the folder setting and what it gave
 
     def profile_opened(self) -> None:
         """Another profile is another collection: nothing a sync learned about the last one holds for it."""
         self.seen, self.last, self.problem = None, None, ""
-        self.request()
+        # Anki starts its own sync right after a profile opens: this one waits to see whether it does
+        mw.progress.single_shot(PROFILE_WAIT_MS, self.request)
 
     def settings(self) -> Settings:
         return from_config(mw.addonManager.getConfig(MODULE))
@@ -85,25 +90,50 @@ class Syncer:
         self.found = (settings.folder, files)
         return files
 
-    def request(self, asked: bool = False, done: Callable[[], None] | None = None) -> None:
-        if mw.col is None or self.running:
-            return
+    def request(
+        self, asked: bool = False, done: Callable[[], None] | None = None, again: bool = False
+    ) -> None:
+        """`done` is called whether or not a sync ran, so a window waiting on it never waits for good."""
+        if not self._start(asked, done, again) and done:
+            done()
+
+    def _start(self, asked: bool, done: Callable[[], None] | None, again: bool) -> bool:
+        # never beside Anki's own sync with AnkiWeb: it may be replacing the collection
+        if mw.col is None or self.running or self.web_sync:
+            return False
         if mw.state == "review" and not asked:
             self.waiting = True
-            return
+            return False
         self.waiting = False
         settings = self.settings()
         files = self.files(settings, look=asked)
-        seen = (discover.signature(files), settings)
+        seen = (discover.signature(files), settings, mw.pm.name)
+        if seen != self.seen:
+            self.retries = 0
+        elif not asked and self.last and self.last.pending:
+            # a file that is gone for good is looked for a few times, not every time Anki comes to the front
+            if self.retries >= RETRIES:
+                return False
+            self.retries += 1
         if not sync.due(seen, self.seen, self.last, asked):
-            return
-        self._run(settings, files, seen, None, asked, done)
+            return False
+        self._run(settings, files, seen, None, asked, done, again)
+        return True
 
     def reset(self, note_ids: list[Any]) -> None:
-        if mw.col is None or self.running:
+        if mw.col is None or self.running or self.web_sync:
             return
         settings = self.settings()
-        self._run(settings, self.files(settings), None, note_ids, True, None)
+        self._run(settings, self.files(settings), None, note_ids, True, None, False)
+
+    def web_sync_started(self) -> None:
+        self.web_sync = True
+
+    def web_sync_finished(self) -> None:
+        """Anki's sync may have brought another device's collection: look again."""
+        self.web_sync = False
+        self.seen = None
+        self.request()
 
     def _run(
         self,
@@ -113,6 +143,7 @@ class Syncer:
         reset_ids: list[Any] | None,
         asked: bool,
         done: Callable[[], None] | None,
+        again: bool,
     ) -> None:
         self.running = True
 
@@ -120,7 +151,7 @@ class Syncer:
             notes = AnkiNotes(col, settings, shrink=media.qt_shrink)
             prepared = notes.prepare()
             reset = notes.keys_of(reset_ids) if reset_ids is not None else None
-            result = sync.apply(notes, sync.read(files), reset=reset)
+            result = sync.apply(notes, sync.read(files), reset=reset, again=again)
             return result, notes.finish(), prepared
 
         def finished(outcome: tuple[sync.Result, Any, bool]) -> None:
@@ -314,12 +345,17 @@ def start() -> None:
     qconnect(sync_action.triggered, lambda: syncer.request(asked=True))
     settings_action = QAction(t("settings"), mw)
     qconnect(settings_action.triggered, open_settings)
+    again_action = QAction(t("again"), mw)
+    qconnect(again_action.triggered, lambda: syncer.request(asked=True, again=True))
     menu.addAction(sync_action)
+    menu.addAction(again_action)
     menu.addAction(settings_action)
     mw.form.menuTools.addMenu(menu)
     mw.addonManager.setConfigAction(MODULE, open_settings)
 
     gui_hooks.profile_did_open.append(syncer.profile_opened)
     gui_hooks.state_did_change.append(_state_changed)
+    gui_hooks.sync_will_start.append(syncer.web_sync_started)
+    gui_hooks.sync_did_finish.append(syncer.web_sync_finished)
     gui_hooks.browser_will_show_context_menu.append(_browser_menu)
     qconnect(mw.app.applicationStateChanged, _application_state)

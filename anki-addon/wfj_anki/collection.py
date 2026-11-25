@@ -5,6 +5,7 @@ review or a schedule."""
 
 from __future__ import annotations
 
+import html
 from pathlib import Path
 from typing import Any
 
@@ -14,6 +15,9 @@ from .settings import Settings
 # where the collection keeps a mark of the card the add-on last wrote: the card is rewritten when the add-on's
 # own card changes (a card choice, a new version), never because the player changed the note type's template
 CARD_MARK = "wowForeverJapaneseCard"
+# and, for each place words are saved, the newest word a sync has seen: a word no newer than that with no note
+# was deleted by the player, and stays deleted
+SEEN_MARK = "wowForeverJapaneseSeen"
 
 
 class AnkiNotes:
@@ -89,7 +93,7 @@ class AnkiNotes:
         found = {}
         for note_id, joined in self.col.db.all("select id, flds from notes where mid = ?", self.model["id"]):
             fields = dict(zip(names, joined.split("\x1f"), strict=False))
-            key = fields.get("Key", "")
+            key = html.unescape(fields.get("Key", ""))
             if key and key not in found:
                 found[key] = (note_id, fields)
         return found
@@ -121,6 +125,13 @@ class AnkiNotes:
             note[name] = value
         self.col.update_note(note)
 
+    def marks(self) -> dict[str, float]:
+        marks = self.col.get_config(SEEN_MARK, None)
+        return dict(marks) if isinstance(marks, dict) else {}
+
+    def set_marks(self, marks: dict[str, float]) -> None:
+        self.col.set_config(SEEN_MARK, marks)
+
     def store(self, kind: str, path: Path) -> str | None:
         ready = media.picture(path, self.shrink) if kind == "image" else media.sound(path)
         if ready is None:
@@ -135,5 +146,5 @@ class AnkiNotes:
         for note_id in note_ids:
             note = self.col.get_note(note_id)
             if note.mid == self.model["id"] and note["Key"]:
-                keys.add(note["Key"])
+                keys.add(html.unescape(note["Key"]))
         return keys

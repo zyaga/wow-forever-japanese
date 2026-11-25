@@ -129,8 +129,8 @@ voice. Nothing to copy by hand. To install it, open the latest addon release on 
 release), download `WoWForeverJapanese.ankiaddon` and open it with Anki, or use **Tools → Add-ons → Install from
 file** in Anki. Then restart Anki. It finds the World of Warcraft folder in the usual places; if it does not, choose
 the folder under **Tools → WoW Forever Japanese → Settings**. New words reach Anki after a `/reload` or a logout in
-the game. Cards go into the deck **WoW Forever Japanese**. A card you edit by hand keeps your edit, your study
-progress is never changed, and your other cards are never touched. The Anki add-on runs on the computer only; the
+the game. Cards go into the deck **WoW Forever Japanese**. A card you edit by hand keeps your edit, a card you delete stays
+deleted, your study progress is never changed, and your other cards are never touched. The Anki add-on runs on the computer only; the
 cards reach the phone apps through AnkiWeb as usual.
 
 **Study them in game.** A small tab at the right edge of the screen says how many saved words are due. Click it for one
@@ -388,7 +388,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 |---|---|
 | ![コピー用のテキストで保存した単語が表示された単語帳ウィンドウ](docs/images/word-list.jpg) | ![保存した単語から作った Anki のカード。ふりがな付きの単語と文、意味、ゲーム内のスクリーンショット](docs/images/anki-card.jpg) |
 
-**Anki アドオン。** パソコン版 Anki（25.09 以降）用の小さなアドオンを入れると、カードを自動で作ります。保存した単語はすべて、文、裏面のふりがな、スクリーンショット、NPC の声による文の音声が付いたカードとして Anki に届きます。手でコピーする必要はありません。インストールは、[リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で最新のアドオンのリリース（名前がバージョン番号のもの。**Voice** のリリースではありません）を開き、`WoWForeverJapanese.ankiaddon` をダウンロードして Anki で開くか、Anki の **ツール → アドオン → ファイルからインストール** を使います。そのあと Anki を再起動してください。World of Warcraft のフォルダは通常の場所から自動で探します。見つからないときは **ツール → WoW Forever Japanese → 設定** でフォルダを選んでください。新しい単語は、ゲームで `/reload` かログアウトをしたあとに Anki に届きます。カードは **WoW Forever Japanese** というデッキに入ります。手で編集したカードはその内容が残り、学習の進み具合は変わらず、ほかのカードには一切触れません。Anki アドオンはパソコンでのみ動きます。カードはいつもどおり AnkiWeb を通してスマートフォンのアプリにも届きます。
+**Anki アドオン。** パソコン版 Anki（25.09 以降）用の小さなアドオンを入れると、カードを自動で作ります。保存した単語はすべて、文、裏面のふりがな、スクリーンショット、NPC の声による文の音声が付いたカードとして Anki に届きます。手でコピーする必要はありません。インストールは、[リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で最新のアドオンのリリース（名前がバージョン番号のもの。**Voice** のリリースではありません）を開き、`WoWForeverJapanese.ankiaddon` をダウンロードして Anki で開くか、Anki の **ツール → アドオン → ファイルからインストール** を使います。そのあと Anki を再起動してください。World of Warcraft のフォルダは通常の場所から自動で探します。見つからないときは **ツール → WoW Forever Japanese → 設定** でフォルダを選んでください。新しい単語は、ゲームで `/reload` かログアウトをしたあとに Anki に届きます。カードは **WoW Forever Japanese** というデッキに入ります。手で編集したカードはその内容が残り、削除したカードは削除されたままで、学習の進み具合は変わらず、ほかのカードには一切触れません。Anki アドオンはパソコンでのみ動きます。カードはいつもどおり AnkiWeb を通してスマートフォンのアプリにも届きます。
 
 **ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。音声を入れていれば、答えを見たときに保存した文がNPCの声で読み上げられ、単語帳からその録音を Anki 用に書き出すこともできます。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
 
