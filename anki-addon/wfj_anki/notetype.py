@@ -1,6 +1,7 @@
 """The add-on's note type: its name, its fields and its one card, built from the chosen card choices.
 
-The look belongs to the note type, so a changed choice rewrites the template and every card follows, old and new.
+The look belongs to the note type, so a changed choice rewrites the template and every card follows, old and
+new.
 The template files hold both fronts and the front's audio between marker comments; the choice keeps one.
 """
 

@@ -1,4 +1,5 @@
-"""The add-on's settings, as Anki keeps them (a JSON object per add-on). A value that is not one of the choices
+"""The add-on's settings, as Anki keeps them (a JSON object per add-on). A value that is not one of the
+choices
 counts as not set, so a hand-edited config can never stop a sync."""
 
 from __future__ import annotations

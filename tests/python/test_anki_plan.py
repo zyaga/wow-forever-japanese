@@ -3,7 +3,6 @@
 from pathlib import Path
 
 from anki_addon import FIXTURES  # noqa: F401  (puts the add-on on the path)
-
 from wfj_anki import plan, sync
 from wfj_anki.discover import SavedFile
 
@@ -13,11 +12,23 @@ FILE = SavedFile(CLIENT, CLIENT / "WTF/Account/ONE/SavedVariables/WoWForeverJapa
 
 def row(**over):
     base = {
-        "key": "quest.description:456:生き物", "lang": "", "word": "生き物", "reading": "いきもの", "lemma": "生き物",
-        "lemmaReading": "いきもの", "meaning": "living thing", "sentence": "少しの<b>生き物</b>たちを狩れ。",
-        "wordFurigana": "生[い]き 物[もの]", "sentenceFurigana": "少しの<b>生[い]き 物[もの]</b>たちを狩れ。",
-        "jaSentence": "", "source": "quest", "questId": 456, "questTitle": "生き物を減らせ", "saved": 1790000000,
-        "shot": "", "audio": {},
+        "key": "quest.description:456:生き物",
+        "lang": "",
+        "word": "生き物",
+        "reading": "いきもの",
+        "lemma": "生き物",
+        "lemmaReading": "いきもの",
+        "meaning": "living thing",
+        "sentence": "少しの<b>生き物</b>たちを狩れ。",
+        "wordFurigana": "生[い]き 物[もの]",
+        "sentenceFurigana": "少しの<b>生[い]き 物[もの]</b>たちを狩れ。",
+        "jaSentence": "",
+        "source": "quest",
+        "questId": 456,
+        "questTitle": "生き物を減らせ",
+        "saved": 1790000000,
+        "shot": "",
+        "audio": {},
     }
     base.update(over)
     return base
@@ -216,9 +227,23 @@ def test_a_path_outside_the_games_folders_is_never_read():
 
 def test_an_english_word_carries_its_japanese_sentence():
     col = Collection()
-    run(col, table(row(key="quest.description:456:en:creatures", lang="en", word="creatures", reading="KREE-churz",
-                       lemma="", lemmaReading="", meaning="生き物 (いきもの)", wordFurigana="creatures",
-                       sentenceFurigana="Hunt a few <b>creatures</b>.", jaSentence="少しの生き物たちを狩れ。")))
+    run(
+        col,
+        table(
+            row(
+                key="quest.description:456:en:creatures",
+                lang="en",
+                word="creatures",
+                reading="KREE-churz",
+                lemma="",
+                lemmaReading="",
+                meaning="生き物 (いきもの)",
+                wordFurigana="creatures",
+                sentenceFurigana="Hunt a few <b>creatures</b>.",
+                jaSentence="少しの生き物たちを狩れ。",
+            )
+        ),
+    )
     note = col.note()
     assert note["Lang"] == "en"
     assert note["Sentence"] == "Hunt a few <b>creatures</b>."
@@ -228,16 +253,26 @@ def test_an_english_word_carries_its_japanese_sentence():
 def test_the_same_key_in_two_files_takes_the_newest():
     col = Collection()
     other = SavedFile(Path("/game/_retail_"), Path("/game/_retail_/WTF/Account/ONE/SavedVariables/x.lua"))
-    result = sync.apply(col, [(FILE, table(row(meaning="old"), written=100)),
-                              (other, table(row(meaning="new"), row(key="k2"), written=200))])
+    result = sync.apply(
+        col,
+        [
+            (FILE, table(row(meaning="old"), written=100)),
+            (other, table(row(meaning="new"), row(key="k2"), written=200)),
+        ],
+    )
     assert result.added == 2
     assert col.note("quest.description:456:生き物")["Meaning"] == "new"
 
 
 def test_tables_and_rows_that_are_not_what_the_addon_writes_are_passed_over():
     col = Collection()
-    bad = [None, {}, {"schema": 2, "rows": [row()]}, {"schema": 1, "rows": "x"},
-           {"schema": 1, "rows": [None, {"word": "no key"}, {"key": ""}, {"key": 5}, row(key="ok", word=7)]}]
+    bad = [
+        None,
+        {},
+        {"schema": 2, "rows": [row()]},
+        {"schema": 1, "rows": "x"},
+        {"schema": 1, "rows": [None, {"word": "no key"}, {"key": ""}, {"key": 5}, row(key="ok", word=7)]},
+    ]
     result = sync.apply(col, [(FILE, t) for t in bad])
     assert result.added == 1
     assert col.note("ok")["Word"] == "7"
@@ -250,6 +285,7 @@ def test_a_field_added_by_a_later_version_fills_an_older_note():
     note = col.note()
     del note["Japanese sentence"]  # as a note made before the field existed reads: no value, no record of one
     import json
+
     record = json.loads(note["Sync"])
     record["f"].pop("Japanese sentence", None)
     note["Sync"] = json.dumps(record)

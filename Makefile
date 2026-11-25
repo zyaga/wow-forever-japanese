@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: tooltip-words scan-names-copy creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-owed voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: anki-package anki-cards tooltip-words scan-names-copy creature-copy voice-time voice-reencode voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-dondata-fetch voice-owed voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -75,7 +75,7 @@ luac: ## every addon Lua file parses (works under LuaJIT and PUC Lua 5.1 alike)
 lint: lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-public ## ruff + luacheck + Core/ frame-access gate + no English data in the addon + public-check
 
 lint-py:
-	cd pipeline && $(PY) -m ruff check . ../tests/python
+	cd pipeline && $(PY) -m ruff check . ../tests/python ../anki-addon
 
 lint-lua:
 	eval "$$($(LUAROCKS) --lua-version=5.1 path)"; $(LUACHECK) $(ADDON) tests/lua --no-color
@@ -705,6 +705,16 @@ package: $(PACKAGER) ## rehearse the next release locally: build + check its zip
 	  && { $(PACKAGER_BASH) $(abspath $(PACKAGER)) -d > ../package.log 2>&1 || { echo "package: the packager failed, see build/package.log"; exit 1; }; } \
 	  && $(PY) -m wfj package-check .release/*.zip --version "$$version" \
 	  && cp .release/*.zip .. && echo "package: build/$$(basename .release/*.zip) (packager log: build/package.log)"
+
+# The Anki add-on (docs/systems/anki-add-on.md). ANKI_VERSION is the next release's unless given.
+ANKI_VERSION ?= $(shell cd pipeline && $(PY) -m wfj release next-version --allow-empty 2>/dev/null | sed -n 's/^version=//p')
+CARD_IMAGE ?= docs/images/hero.jpg
+
+anki-package: ## the file Anki installs, build/anki/WoWForeverJapanese.ankiaddon [ANKI_VERSION=x.y.z]
+	$(PY) anki-addon/tools/package.py build/anki/WoWForeverJapanese.ankiaddon --version "$(or $(ANKI_VERSION),0.0.0)"
+
+anki-cards: ## draw the add-on's cards (each choice, front and back, light and dark, desktop and phone) into build/anki/cards [CARD_IMAGE=<a screenshot>] (needs Chrome)
+	$(PY) anki-addon/tools/render_cards.py build/anki/cards --image $(CARD_IMAGE)
 
 # VERSION is taken from the command line only (`make release VERSION=1.0.0`), never from the environment.
 RELEASE_VERSION := $(if $(filter command line,$(origin VERSION)),$(VERSION))

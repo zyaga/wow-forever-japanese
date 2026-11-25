@@ -1,4 +1,5 @@
-"""Finds the game's folders: where World of Warcraft is, which of its clients hold the addon's saved file, and where
+"""Finds the game's folders: where World of Warcraft is, which of its clients hold the addon's saved file, and
+where
 a word's screenshot and sound files sit. Paths in, paths out: nothing here opens a file."""
 
 from __future__ import annotations
@@ -30,8 +31,12 @@ def default_roots(system: str, home: Path, volumes: Path = Path("/Volumes")) -> 
         roots = []
         for letter in string.ascii_uppercase[2:]:
             drive = Path(f"{letter}:/")
-            roots += [drive / "Program Files (x86)" / GAME, drive / "Program Files" / GAME, drive / GAME,
-                      drive / "Games" / GAME]
+            roots += [
+                drive / "Program Files (x86)" / GAME,
+                drive / "Program Files" / GAME,
+                drive / GAME,
+                drive / "Games" / GAME,
+            ]
         return roots
     # a Windows game run through Wine: the two usual prefixes
     inside = Path("drive_c") / "Program Files (x86)" / GAME
@@ -66,7 +71,8 @@ def saved_files(root: Path) -> list[SavedFile]:
 
 
 def find(folder: str, system: str, home: Path, volumes: Path = Path("/Volumes")) -> list[SavedFile]:
-    """The saved files to read: under the folder the player chose, or under the first usual place that has any."""
+    """The saved files to read: under the folder the player chose, or under the first usual place that has
+    any."""
     if folder.strip():
         return saved_files(Path(folder.strip()).expanduser())
     for root in default_roots(system, home, volumes):
@@ -96,7 +102,8 @@ def screenshot(client: Path, name: str) -> Path | None:
 
 
 def sound(client: Path, relative: str) -> Path | None:
-    """Where a voice pack's sound file is, from `<pack folder>/Sound/<file>`; None for anything else, so a saved
+    """Where a voice pack's sound file is, from `<pack folder>/Sound/<file>`; None for anything else, so a
+    saved
     file can never name a file outside the addon's own pack folders."""
     parts = PurePosixPath(relative.replace("\\", "/")).parts
     if len(parts) != 3 or parts[1] != "Sound" or not parts[0].startswith(ADDON_PREFIX):

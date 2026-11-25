@@ -4,7 +4,8 @@ Run with the Python that Anki itself runs on, so `anki` (and Qt) are the real on
 
     <Anki's python> anki-addon/tests/real_collection.py <empty folder>
 
-The test suite starts it (tests/python/test_anki_real.py) and checks the answers; nothing here touches a profile.
+The test suite starts it (tests/python/test_anki_real.py) and checks the answers. Nothing here touches a
+profile.
 """
 
 from __future__ import annotations
@@ -17,7 +18,6 @@ ADDON = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ADDON))
 
 from anki.collection import Collection  # noqa: E402
-
 from wfj_anki import discover, media, notetype, sync  # noqa: E402
 from wfj_anki.collection import AnkiNotes  # noqa: E402
 from wfj_anki.settings import Settings  # noqa: E402
@@ -29,10 +29,23 @@ AUDIO = ["WoWForeverJapanese_VoiceA/Sound/a-1.mp3", "WoWForeverJapanese_VoiceA/S
 
 def row(**over):
     base = {
-        "key": KEY, "lang": "", "word": "生き物", "reading": "いきもの", "lemma": "生き物", "lemmaReading": "いきもの",
-        "meaning": "living thing", "sentence": "少しの<b>生き物</b>たちを狩れ。", "wordFurigana": "生[い]き 物[もの]",
-        "sentenceFurigana": "少しの<b>生[い]き 物[もの]</b>たちを狩れ。", "jaSentence": "", "source": "quest",
-        "questId": 456, "questTitle": "生き物を減らせ", "saved": 1790000000, "shot": SHOT, "audio": AUDIO,
+        "key": KEY,
+        "lang": "",
+        "word": "生き物",
+        "reading": "いきもの",
+        "lemma": "生き物",
+        "lemmaReading": "いきもの",
+        "meaning": "living thing",
+        "sentence": "少しの<b>生き物</b>たちを狩れ。",
+        "wordFurigana": "生[い]き 物[もの]",
+        "sentenceFurigana": "少しの<b>生[い]き 物[もの]</b>たちを狩れ。",
+        "jaSentence": "",
+        "source": "quest",
+        "questId": 456,
+        "questTitle": "生き物を減らせ",
+        "saved": 1790000000,
+        "shot": SHOT,
+        "audio": AUDIO,
     }
     base.update(over)
     return base
@@ -62,8 +75,11 @@ def game(folder: Path) -> discover.SavedFile:
 
 
 def card_state(col, note_id):
-    return col.db.all("select type, queue, due, ivl, factor, reps, lapses, left, odue, did from cards "
-                      "where nid = ? order by ord", note_id)
+    return col.db.all(
+        "select type, queue, due, ivl, factor, reps, lapses, left, odue, did from cards "
+        "where nid = ? order by ord",
+        note_id,
+    )
 
 
 def main() -> None:
@@ -94,6 +110,7 @@ def main() -> None:
         out["picture_bytes"] = picture.stat().st_size if picture.is_file() else 0
         out["source_bytes"] = (saved.client / "Screenshots" / SHOT).stat().st_size
         from aqt.qt import QImage
+
         out["picture_width"] = QImage(str(picture)).width()
 
         # the same data again
@@ -126,16 +143,23 @@ def main() -> None:
         sync.apply(notes, [(saved, table(row(meaning="again", reading="イキモノ")))])
         kept = notes.notes()[KEY][1]
         out["edit_kept"] = (kept["Meaning"], kept["Reading"])
-        out["reset"] = vars(sync.apply(notes, [(saved, table(row(meaning="again", reading="イキモノ")))],
-                                       reset=notes.keys_of([note_id, other.id])))
+        out["reset"] = vars(
+            sync.apply(
+                notes,
+                [(saved, table(row(meaning="again", reading="イキモノ")))],
+                reset=notes.keys_of([note_id, other.id]),
+            )
+        )
         out["after_reset"] = notes.notes()[KEY][1]["Meaning"]
         out["schedule_kept_after_reset"] = card_state(col, note_id) == state
         out["reviews_kept_after_reset"] = col.db.all("select * from revlog order by id") == reviews
 
         # the player's own note
         other = col.get_note(other.id)
-        out["other_untouched"] = (list(other.fields),
-                                  col.db.scalar("select mod from notes where id = ?", other.id)) == other_before
+        out["other_untouched"] = (
+            list(other.fields),
+            col.db.scalar("select mod from notes where id = ?", other.id),
+        ) == other_before
         out["own_notes"] = len(notes.notes())
         out["all_notes"] = col.db.scalar("select count() from notes")
 
@@ -148,7 +172,10 @@ def main() -> None:
         before = (notes.model["tmpls"][0]["qfmt"], notes.model["tmpls"][0]["afmt"])
         chosen = AnkiNotes(col, Settings(front="word", audio="front"), shrink=media.qt_shrink)
         out["choice_changed"] = chosen.prepare()
-        out["template_differs"] = (chosen.model["tmpls"][0]["qfmt"], chosen.model["tmpls"][0]["afmt"]) != before
+        out["template_differs"] = (
+            chosen.model["tmpls"][0]["qfmt"],
+            chosen.model["tmpls"][0]["afmt"],
+        ) != before
         out["choice_again"] = chosen.prepare()
         out["notes_untouched_by_choice"] = col.db.all("select id, mod from notes order by id") == mods
         out["card_count_after_choice"] = col.db.scalar("select count() from cards where nid = ?", note_id)
@@ -160,7 +187,9 @@ def main() -> None:
         col.models.update_dict(model)
         older = AnkiNotes(col, Settings(), shrink=media.qt_shrink)
         out["upgraded"] = older.prepare()
-        out["fields_after_upgrade"] = sorted(f["name"] for f in older.model["flds"]) == sorted(notetype.FIELDS)
+        out["fields_after_upgrade"] = sorted(f["name"] for f in older.model["flds"]) == sorted(
+            notetype.FIELDS
+        )
         out["note_kept_through_upgrade"] = older.notes()[KEY][1]["Word"] == "生き物"
         out["schedule_kept_through_upgrade"] = card_state(col, note_id) == state
 

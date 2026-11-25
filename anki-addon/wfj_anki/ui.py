@@ -1,4 +1,5 @@
-"""The add-on inside Anki: when a sync runs, the menu lines, the browser's reset action and the settings window.
+"""The add-on inside Anki: when a sync runs, the menu lines, the browser's reset action and the settings
+window.
 The only module, with `__init__`, that touches Anki's windows."""
 
 from __future__ import annotations
@@ -12,8 +13,23 @@ import anki.lang
 import aqt
 from aqt import gui_hooks, mw
 from aqt.operations import QueryOp, on_op_finished
-from aqt.qt import (QAction, QButtonGroup, QDialog, QDialogButtonBox, QFileDialog, QHBoxLayout, QLabel, QLineEdit,
-                    QMenu, QPushButton, QRadioButton, Qt, QVBoxLayout, QWidget, qconnect)
+from aqt.qt import (
+    QAction,
+    QButtonGroup,
+    QDialog,
+    QDialogButtonBox,
+    QFileDialog,
+    QHBoxLayout,
+    QLabel,
+    QLineEdit,
+    QMenu,
+    QPushButton,
+    QRadioButton,
+    Qt,
+    QVBoxLayout,
+    QWidget,
+    qconnect,
+)
 from aqt.utils import showWarning, tooltip
 
 from . import discover, media, sync, text
@@ -33,9 +49,12 @@ def t(key: str, **values: object) -> str:
 
 # ── When a sync runs ────────────────────────────────────────────────────────
 
+
 class Syncer:
-    """A sync runs when a profile opens, when Anki becomes the active application and when the player asks. It is
-    passed over while nothing changed since the last one, and waits while a card is being studied: adding notes
+    """A sync runs when a profile opens, when Anki becomes the active application and when the player asks. It
+    is
+    passed over while nothing changed since the last one, and waits while a card is being studied: adding
+    notes
     then would redraw the card under the player."""
 
     def __init__(self) -> None:
@@ -71,8 +90,15 @@ class Syncer:
         settings = self.settings()
         self._run(settings, self.files(settings), None, note_ids, True, None)
 
-    def _run(self, settings: Settings, files: list[discover.SavedFile], seen: tuple[Any, ...] | None,
-             reset_ids: list[Any] | None, asked: bool, done: Callable[[], None] | None) -> None:
+    def _run(
+        self,
+        settings: Settings,
+        files: list[discover.SavedFile],
+        seen: tuple[Any, ...] | None,
+        reset_ids: list[Any] | None,
+        asked: bool,
+        done: Callable[[], None] | None,
+    ) -> None:
         self.running = True
 
         def work(col: Any) -> tuple[sync.Result, Any, bool]:
@@ -120,10 +146,18 @@ syncer = Syncer()
 
 # ── The settings window ─────────────────────────────────────────────────────
 
+
 class SettingsDialog(QDialog):
-    def __init__(self, parent: QWidget | None, settings: Settings, summary: Callable[[], str],
-                 count: Callable[[str], int], save: Callable[[Settings], None],
-                 sync_now: Callable[[Callable[[], None]], None], ja: bool):
+    def __init__(
+        self,
+        parent: QWidget | None,
+        settings: Settings,
+        summary: Callable[[], str],
+        count: Callable[[str], int],
+        save: Callable[[Settings], None],
+        sync_now: Callable[[Callable[[], None]], None],
+        ja: bool,
+    ):
         super().__init__(parent)
         self._summary, self._count, self._save, self._sync_now, self._ja = summary, count, save, sync_now, ja
         say = lambda key, **values: text.get(key, ja, **values)  # noqa: E731
@@ -182,7 +216,9 @@ class SettingsDialog(QDialog):
         label.setContentsMargins(0, 8, 0, 0)
         return label
 
-    def _choices(self, box: QVBoxLayout, values: tuple[str, ...], keys: tuple[str, ...], chosen: str) -> QButtonGroup:
+    def _choices(
+        self, box: QVBoxLayout, values: tuple[str, ...], keys: tuple[str, ...], chosen: str
+    ) -> QButtonGroup:
         group = QButtonGroup(self)
         for index, (value, key) in enumerate(zip(values, keys, strict=True)):
             button = QRadioButton(self._say(key))
@@ -192,8 +228,11 @@ class SettingsDialog(QDialog):
         return group
 
     def chosen(self) -> Settings:
-        return Settings(folder=self.folder.text().strip(), front=FRONTS[max(self.front.checkedId(), 0)],
-                        audio=AUDIOS[max(self.audio.checkedId(), 0)])
+        return Settings(
+            folder=self.folder.text().strip(),
+            front=FRONTS[max(self.front.checkedId(), 0)],
+            audio=AUDIOS[max(self.audio.checkedId(), 0)],
+        )
 
     def _browse(self) -> None:
         start = self.folder.text().strip() or str(Path.home())
@@ -238,12 +277,13 @@ def open_settings() -> None:
 
 # ── Wiring ──────────────────────────────────────────────────────────────────
 
+
 def _browser_menu(browser: aqt.browser.Browser, menu: QMenu) -> None:
     action = menu.addAction(t("reset"))
     qconnect(action.triggered, lambda: syncer.reset(list(browser.selected_notes())))
 
 
-def _state_changed(new_state: str, old_state: str) -> None:
+def _state_changed(new_state: str, _old_state: str) -> None:
     if syncer.waiting and new_state != "review":
         syncer.request()
 
@@ -264,7 +304,7 @@ def start() -> None:
     mw.form.menuTools.addMenu(menu)
     mw.addonManager.setConfigAction(MODULE, open_settings)
 
-    gui_hooks.profile_did_open.append(lambda: syncer.request())
+    gui_hooks.profile_did_open.append(syncer.request)
     gui_hooks.state_did_change.append(_state_changed)
     gui_hooks.browser_will_show_context_menu.append(_browser_menu)
     qconnect(mw.app.applicationStateChanged, _application_state)

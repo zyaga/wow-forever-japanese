@@ -1,9 +1,9 @@
 """Reads one saved table out of a World of Warcraft SavedVariables file.
 
-The client writes the file as Lua assignments: `Name = { ... }`, one after another. Only what the client writes is
-understood: tables, strings, numbers, true, false and nil, `["key"] = value` and `[n] = value` entries, values with
-no key (a list), and `--` comments. Anything else ends the read with nothing, never with an error: the file belongs
-to the game, and a half-written or damaged one must not stop Anki.
+The client writes the file as Lua assignments: `Name = { ... }`, one after another. Only what the client
+writes is understood: tables, strings, numbers, true, false and nil, `["key"] = value` and `[n] = value`
+entries, values with no key (a list), and `--` comments. Anything else ends the read with nothing, never with
+an error: the file belongs to the game, and a half-written or damaged one must not stop Anki.
 """
 
 from __future__ import annotations
@@ -23,8 +23,19 @@ _TOKEN = re.compile(
     re.VERBOSE | re.DOTALL,
 )
 
-_ESCAPES = {"n": "\n", "r": "\r", "t": "\t", "a": "\a", "b": "\b", "f": "\f", "v": "\v", "\\": "\\", '"': '"',
-            "'": "'", "\n": "\n"}
+_ESCAPES = {
+    "n": "\n",
+    "r": "\r",
+    "t": "\t",
+    "a": "\a",
+    "b": "\b",
+    "f": "\f",
+    "v": "\v",
+    "\\": "\\",
+    '"': '"',
+    "'": "'",
+    "\n": "\n",
+}
 _ESCAPE = re.compile(r"\\(\d{1,3}|.)", re.DOTALL)
 _WORDS = {"true": True, "false": False, "nil": None}
 
@@ -40,7 +51,7 @@ def _unescape(body: str) -> str:
     out = bytearray()
     at = 0
     for match in _ESCAPE.finditer(body):
-        out += body[at:match.start()].encode("utf-8")
+        out += body[at : match.start()].encode("utf-8")
         code = match.group(1)
         if code.isdigit():
             out.append(int(code) % 256)
@@ -109,8 +120,11 @@ class _Reader:
             kind, text = self.peek()
             if kind == "punct" and text in ",;":
                 self.token()
-        if keyed and all(isinstance(k, int) and not isinstance(k, bool) for k in keyed) \
-                and sorted(keyed) == list(range(1, len(keyed) + 1)):
+        if (
+            keyed
+            and all(isinstance(k, int) and not isinstance(k, bool) for k in keyed)
+            and sorted(keyed) == list(range(1, len(keyed) + 1))
+        ):
             return [keyed[i] for i in range(1, len(keyed) + 1)]
         return keyed
 
@@ -144,7 +158,8 @@ def parse(text: str, name: str) -> Any:
 
 
 def read(path: Path | str, name: str) -> Any:
-    """The value of the global `name` in the file at `path`, or None when the file or the value cannot be read."""
+    """The value of the global `name` in the file at `path`, or None when the file or the value cannot be
+    read."""
     try:
         text = Path(path).read_text(encoding="utf-8", errors="replace")
     except OSError:

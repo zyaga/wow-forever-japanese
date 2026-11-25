@@ -1,7 +1,6 @@
 """The Anki add-on's settings: defaults when nothing is saved, and a bad value never breaks a sync."""
 
 from anki_addon import FIXTURES  # noqa: F401  (puts the add-on on the path)
-
 from wfj_anki import settings
 
 

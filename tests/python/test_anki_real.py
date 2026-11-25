@@ -13,7 +13,6 @@ from pathlib import Path
 
 import pytest
 from anki_addon import ADDON
-
 from wfj_anki import notetype
 
 
@@ -36,8 +35,13 @@ def seen(tmp_path_factory):
     if python is None:
         pytest.skip("Anki is not installed here")
     folder = tmp_path_factory.mktemp("anki")
-    run = subprocess.run([python, str(ADDON / "tests" / "real_collection.py"), str(folder)],
-                         capture_output=True, text=True, timeout=300)
+    run = subprocess.run(
+        [python, str(ADDON / "tests" / "real_collection.py"), str(folder)],
+        capture_output=True,
+        text=True,
+        timeout=300,
+        check=False,
+    )
     assert run.returncode == 0, run.stderr[-3000:]
     return json.loads(run.stdout.strip().splitlines()[-1])
 
@@ -125,14 +129,24 @@ def test_the_settings_window_shows_and_saves_the_choices(tmp_path):
     python = anki_python()
     if python is None:
         pytest.skip("Anki is not installed here")
-    run = subprocess.run([python, str(ADDON / "tests" / "settings_window.py"), str(tmp_path)],
-                         capture_output=True, text=True, timeout=300)
+    run = subprocess.run(
+        [python, str(ADDON / "tests" / "settings_window.py"), str(tmp_path)],
+        capture_output=True,
+        text=True,
+        timeout=300,
+        check=False,
+    )
     assert run.returncode == 0, run.stderr[-3000:]
     seen = json.loads(run.stdout.strip().splitlines()[-1])
-    for name, language in (("settings-en.png", "Found 2 saved word list(s)."), ("settings-ja.png", "単語帳が 2 件見つかりました。")):
+    for name, language in (
+        ("settings-en.png", "Found 2 saved word list(s)."),
+        ("settings-ja.png", "単語帳が 2 件見つかりました。"),
+    ):
         assert (tmp_path / name).stat().st_size > 0
         window = seen[name]
         assert window["found"] == language
-        assert window["saved"] == [{"folder": "/Volumes/Games/World of Warcraft", "front": "word", "audio": "back"}]
+        assert window["saved"] == [
+            {"folder": "/Volumes/Games/World of Warcraft", "front": "word", "audio": "back"}
+        ]
         assert window["status"].count("\n") == 1
         assert window["empty"] != window["found"]

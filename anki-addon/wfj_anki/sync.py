@@ -16,7 +16,9 @@ class Notes(Protocol):
     def notes(self) -> dict[str, tuple[Any, dict[str, str]]]: ...  # the add-on's notes: key → (id, fields)
     def add(self, fields: dict[str, str]) -> None: ...
     def update(self, note_id: Any, writes: dict[str, str]) -> None: ...
-    def store(self, kind: str, path: Path) -> str | None: ...  # a file into the media; its name there, or None
+    def store(
+        self, kind: str, path: Path
+    ) -> str | None: ...  # a file into the media; its name there, or None
 
 
 @dataclass
@@ -41,11 +43,16 @@ def read(files: list[discover.SavedFile]) -> list[tuple[discover.SavedFile, Any]
 
 
 def apply(col: Notes, tables: list[tuple[discover.SavedFile, Any]], reset: set[str] | None = None) -> Result:
-    """Add a note for each word that has none and rewrite what changed in the others. With `reset`, only the notes
+    """Add a note for each word that has none and rewrite what changed in the others. With `reset`, only the
+    notes
     of those keys are touched, and every field of them is written from the game."""
     rows, newer = plan.rows(tables)
-    result = Result(words=len(rows), files=len(tables), newer=newer,
-                    tables=sum(1 for _, table in tables if isinstance(table, dict)))
+    result = Result(
+        words=len(rows),
+        files=len(tables),
+        newer=newer,
+        tables=sum(1 for _, table in tables if isinstance(table, dict)),
+    )
     notes = col.notes()
     stored: dict[Path, str | None] = {}
 
@@ -72,8 +79,9 @@ def apply(col: Notes, tables: list[tuple[discover.SavedFile, Any]], reset: set[s
         existing = notes.get(row.key)
         if reset is not None and (existing is None or row.key not in reset):
             continue
-        writes, no_image, no_audio = plan.note_changes(row, existing[1] if existing else None, fetch,
-                                                       force=reset is not None)
+        writes, no_image, no_audio = plan.note_changes(
+            row, existing[1] if existing else None, fetch, force=reset is not None
+        )
         result.missing_images += no_image
         result.missing_audio += no_audio
         if existing is None:
@@ -86,6 +94,7 @@ def apply(col: Notes, tables: list[tuple[discover.SavedFile, Any]], reset: set[s
 
 
 def due(seen: object, last_seen: object, last: Result | None, asked: bool) -> bool:
-    """Whether a sync has anything to look at: the player asked, a saved file or a setting changed since the last
+    """Whether a sync has anything to look at: the player asked, a saved file or a setting changed since the
+    last
     one (`seen` against `last_seen`), or the last one could not find some media."""
     return asked or seen != last_seen or bool(last and last.pending)

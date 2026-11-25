@@ -1,7 +1,6 @@
 """The Anki add-on reads the game's saved file as the client writes it, and never fails on a bad one."""
 
 from anki_addon import FIXTURES
-
 from wfj_anki import savedvars
 
 SAVED = FIXTURES / "WoWForeverJapanese.lua"
@@ -18,7 +17,10 @@ def test_reads_the_table_the_client_wrote():
     assert first["sentenceFurigana"] == "少しの<b>生[い]き 物[もの]</b>たちを狩れ。"
     assert first["questId"] == 456
     assert first["ratio"] == -0.5
-    assert first["audio"] == ["WoWForeverJapanese_VoiceA/Sound/a-1.mp3", "WoWForeverJapanese_VoiceA/Sound/a-2.mp3"]
+    assert first["audio"] == [
+        "WoWForeverJapanese_VoiceA/Sound/a-1.mp3",
+        "WoWForeverJapanese_VoiceA/Sound/a-2.mp3",
+    ]
     assert rows[1]["audio"] == {}  # an empty table has no shape: the caller treats it as no files
 
 
@@ -52,7 +54,17 @@ def test_a_damaged_file_gives_nothing_and_never_raises(tmp_path):
 
 
 def test_keys_without_brackets_and_number_keys():
-    text = 'T = { a = 1, [2] = "two", [1] = "one", ["b"] = { 1, 2, 3 }, c = false, d = nil, e = 0x10, f = 1e3 }'
-    assert savedvars.parse(text, "T") == {"a": 1, 2: "two", 1: "one", "b": [1, 2, 3], "c": False, "d": None,
-                                          "e": 16, "f": 1000.0}
+    text = (
+        'T = { a = 1, [2] = "two", [1] = "one", ["b"] = { 1, 2, 3 }, c = false, d = nil, e = 0x10, f = 1e3 }'
+    )
+    assert savedvars.parse(text, "T") == {
+        "a": 1,
+        2: "two",
+        1: "one",
+        "b": [1, 2, 3],
+        "c": False,
+        "d": None,
+        "e": 16,
+        "f": 1000.0,
+    }
     assert savedvars.parse('T = { [1] = "one", [2] = "two" }', "T") == ["one", "two"]

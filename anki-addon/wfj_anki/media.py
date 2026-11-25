@@ -1,7 +1,9 @@
 """A file of the game's, ready for Anki's media: its name there and its bytes.
 
-A screenshot is the whole screen, often several megabytes, and every card's media is sent to AnkiWeb and to the
-phone, so a picture is made smaller when Qt is there to do it. The sound files are small already and go as they are.
+A screenshot is the whole screen, often several megabytes, and every card's media is sent to AnkiWeb and to
+the
+phone, so a picture is made smaller when Qt is there to do it. The sound files are small already and go as
+they are.
 """
 
 from __future__ import annotations

@@ -4,7 +4,6 @@ import importlib.util
 import re
 
 from anki_addon import ADDON
-
 from wfj_anki import notetype
 from wfj_anki.settings import Settings
 

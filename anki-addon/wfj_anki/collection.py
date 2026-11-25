@@ -1,4 +1,5 @@
-"""The add-on's side of an Anki collection: its note type, its deck, its notes and the media. The only module that
+"""The add-on's side of an Anki collection: its note type, its deck, its notes and the media. The only module
+that
 calls Anki's collection, and it writes nothing but note types, notes' fields and media files: never a card, a
 review or a schedule."""
 
@@ -22,7 +23,8 @@ class AnkiNotes:
     # ── the note type and the deck ───────────────────────────────────────────
 
     def _own(self) -> dict[str, Any] | None:
-        """The add-on's note type. One of the same name that lacks the add-on's own field is the player's, and is
+        """The add-on's note type. One of the same name that lacks the add-on's own field is the player's, and
+        is
         left alone: the add-on's then takes a second name."""
         for name in (notetype.NAME, notetype.NAME + " (add-on)"):
             model = self.col.models.by_name(name)
@@ -34,7 +36,8 @@ class AnkiNotes:
         raise RuntimeError("two note types use the add-on's names")
 
     def prepare(self) -> bool:
-        """Make the note type, or bring one made earlier up to date: missing fields added (no note loses one), the
+        """Make the note type, or bring one made earlier up to date: missing fields added (no note loses one),
+        the
         card's template and styling as the choices have them. → whether anything was written."""
         front, back, css = notetype.card(self.settings)
         models = self.col.models

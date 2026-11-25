@@ -1,5 +1,6 @@
 """Draws the add-on's cards as pictures, without Anki: every card choice, front and back, light and dark, at a
-desktop and a phone width, for a Japanese word and an English one. For looking at the design, and for the docs.
+desktop and a phone width, for a Japanese word and an English one. For looking at the design, and for the
+docs.
 
     python anki-addon/tools/render_cards.py <out folder> [--chrome <path>] [--image <file>]
 
@@ -27,11 +28,18 @@ _FIELD = re.compile(r"\{\{(?:(furigana|kanji):)?([^}#^/]+)\}\}")
 # Anki's furigana filter: the text since the last space or tag, then its reading in brackets
 _RUBY = re.compile(r" ?([^ >]+?)\[(.+?)\]")
 _SOUND = re.compile(r"\[sound:[^\]]+\]")
-_PLAY = ('<a class="replay-button soundLink" href="#"><svg class="playImage" viewBox="0 0 64 64" version="1.1">'
-         '<circle cx="32" cy="32" r="29" /><path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z" />'
-         "</svg></a>")
+_PLAY = (
+    '<a class="replay-button soundLink" href="#"><svg class="playImage" viewBox="0 0 64 64" version="1.1">'
+    '<circle cx="32" cy="32" r="29" /><path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z" />'
+    "</svg></a>"
+)
 
-CHROMES = ("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "google-chrome", "chromium", "chrome")
+CHROMES = (
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "google-chrome",
+    "chromium",
+    "chrome",
+)
 
 
 def render(template: str, fields: dict[str, str]) -> str:
@@ -56,29 +64,51 @@ def render(template: str, fields: dict[str, str]) -> str:
 
 def samples(image: str) -> dict[str, dict[str, str]]:
     blank = dict.fromkeys(plan.FIELDS, "")
-    japanese = dict(blank, **{
-        "Key": "quest.description:456:倒す", "Word": "倒して", "Reading": "たおして", "Dictionary form": "倒す",
-        "Its reading": "たおす", "Meaning": "to defeat, to bring down",
-        "Sentence": "森[もり]を 荒[あ]らすコボルドを<b>倒[たお]して</b>、ろうそくを 八本[はっぽん] 持[も]ち 帰[かえ]ってほしい。",
-        "Word (furigana)": "倒[たお]して", "Image": f'<img src="{image}">' if image else "",
-        "Audio": "[sound:wfj-456-description-2.mp3]", "Source": "quest", "Quest": "コボルドのろうそく",
-        "Saved": "2026-11-25",
-    })
-    english = dict(blank, **{
-        "Key": "quest.description:456:en:candles", "Word": "candles", "Reading": "KAN-dlz",
-        "Meaning": "ろうそく", "Sentence": "Bring me eight of their <b>candles</b>, and be quick about it.",
-        "Word (furigana)": "candles", "Japanese sentence": "ろうそくを八本持ち帰ってほしい。",
-        "Audio": "[sound:wfj-456-description-2.mp3]", "Source": "quest", "Quest": "コボルドのろうそく",
-        "Saved": "2026-11-25", "Lang": "en",
-    })
+    japanese = dict(
+        blank,
+        **{
+            "Key": "quest.description:456:倒す",
+            "Word": "倒して",
+            "Reading": "たおして",
+            "Dictionary form": "倒す",
+            "Its reading": "たおす",
+            "Meaning": "to defeat, to bring down",
+            "Sentence": "森[もり]を 荒[あ]らすコボルドを<b>倒[たお]して</b>、ろうそくを 八本[はっぽん] 持[も]ち 帰[かえ]ってほしい。",
+            "Word (furigana)": "倒[たお]して",
+            "Image": f'<img src="{image}">' if image else "",
+            "Audio": "[sound:wfj-456-description-2.mp3]",
+            "Source": "quest",
+            "Quest": "コボルドのろうそく",
+            "Saved": "2026-11-25",
+        },
+    )
+    english = dict(
+        blank,
+        **{
+            "Key": "quest.description:456:en:candles",
+            "Word": "candles",
+            "Reading": "KAN-dlz",
+            "Meaning": "ろうそく",
+            "Sentence": "Bring me eight of their <b>candles</b>, and be quick about it.",
+            "Word (furigana)": "candles",
+            "Japanese sentence": "ろうそくを八本持ち帰ってほしい。",
+            "Audio": "[sound:wfj-456-description-2.mp3]",
+            "Source": "quest",
+            "Quest": "コボルドのろうそく",
+            "Saved": "2026-11-25",
+            "Lang": "en",
+        },
+    )
     return {"japanese": japanese, "english": english}
 
 
 def page(body: str, css: str, night: bool) -> str:
     classes = "card nightMode" if night else "card"
-    return (f'<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">'
-            f"<style>html{{background:{'#07080c' if night else '#efe9dd'}}}{css}</style></head>"
-            f'<body class="{classes}">{body}</body></html>')
+    return (
+        f'<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">'
+        f"<style>html{{background:{'#07080c' if night else '#efe9dd'}}}{css}</style></head>"
+        f'<body class="{classes}">{body}</body></html>'
+    )
 
 
 def pages(image: str) -> dict[str, str]:
@@ -131,12 +161,24 @@ def main() -> None:
             frame.write_text(
                 f'<!doctype html><body style="margin:0;background:#000"><iframe src="{source.name}" '
                 f'style="border:0;display:block;width:{width}px;height:{height}px"></iframe></body>',
-                encoding="utf-8")
-            subprocess.run([browser, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-                            "--allow-file-access-from-files",
-                            f"--window-size={width},{height}", "--force-device-scale-factor=2",
-                            f"--screenshot={picture}", frame.as_uri()],
-                           check=True, capture_output=True, timeout=120)
+                encoding="utf-8",
+            )
+            subprocess.run(
+                [
+                    browser,
+                    "--headless=new",
+                    "--disable-gpu",
+                    "--hide-scrollbars",
+                    "--allow-file-access-from-files",
+                    f"--window-size={width},{height}",
+                    "--force-device-scale-factor=2",
+                    f"--screenshot={picture}",
+                    frame.as_uri(),
+                ],
+                check=True,
+                capture_output=True,
+                timeout=120,
+            )
             made.append(picture)
     missing = [str(p) for p in made if not p.is_file() or p.stat().st_size == 0]
     if missing:

@@ -16,7 +16,6 @@ ADDON = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ADDON))
 
 from aqt.qt import QApplication  # noqa: E402
-
 from wfj_anki import sync, text, ui  # noqa: E402
 from wfj_anki.settings import Settings  # noqa: E402
 
@@ -29,16 +28,26 @@ def main() -> None:
     for ja in (False, True):
         saved: list[Settings] = []
         result = sync.Result(added=3, updated=1, words=42, files=1, tables=1, missing_images=2)
-        dialog = ui.SettingsDialog(None, Settings(folder="/Volumes/Games/World of Warcraft", front="word"),
-                                   lambda result=result, ja=ja: text.summary(result, ja),
-                                   lambda folder: 2 if folder else 0, saved.append, lambda done: done(), ja)
+        dialog = ui.SettingsDialog(
+            None,
+            Settings(folder="/Volumes/Games/World of Warcraft", front="word"),
+            lambda result=result, ja=ja: text.summary(result, ja),
+            lambda folder: 2 if folder else 0,
+            saved.append,
+            lambda done: done(),
+            ja,
+        )
         dialog.show()
         app.processEvents()
         name = f"settings-{'ja' if ja else 'en'}.png"
         dialog.grab().save(str(out / name))
         dialog._accept()
-        seen[name] = {"saved": [vars(s) for s in saved], "found": dialog.found.text(),
-                      "status": dialog.status.text(), "title": dialog.windowTitle()}
+        seen[name] = {
+            "saved": [vars(s) for s in saved],
+            "found": dialog.found.text(),
+            "status": dialog.status.text(),
+            "title": dialog.windowTitle(),
+        }
         dialog.folder.setText("")
         dialog._look()
         seen[name]["empty"] = dialog.found.text()
