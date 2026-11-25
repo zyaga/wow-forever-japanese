@@ -661,6 +661,14 @@ describe("Settings pages from the registry and PAGES", function()
     l.en.GetStringHeight = function() return 52 end -- the one shown line, wrapped (one language)
     assert.are.equal(64, WFJ.OptionsWidgets.labelHeight(l, 40)) -- its height + 12
     assert.are.equal(40, WFJ.OptionsWidgets.labelHeight(l, 40) - 24) -- (sanity: 52 + 12)
+    -- a page is laid out once and changes language later: the row takes the taller language, and the label still
+    -- shows what it showed
+    local before = l.en:GetText()
+    l.en.GetStringHeight = function(self) return self:GetText() == "en" and 70 or 20 end
+    assert.are.equal(82, WFJ.OptionsWidgets.labelHeight(l, 40))
+    l.en.GetStringHeight = function(self) return self:GetText() == "en" and 20 or 70 end
+    assert.are.equal(82, WFJ.OptionsWidgets.labelHeight(l, 40))
+    assert.are.equal(before, l.en:GetText())
   end)
 
   it("uses no legacy InterfaceOptions API and creates no font object", function()

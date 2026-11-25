@@ -138,6 +138,13 @@ form. Names and small words such as *the*, *is* and *of* have no popup. Ctrl+cli
 sentence and the Japanese sentence, and the study card then asks it English first. The Japanese voice plays only
 while the key is held.
 
+**Chat tools.** Point at a word in a chat line and the popup dictionary shows it too: Japanese words, or English words
+when the game shows English first. A small icon on the line under the mouse opens it in a box, selected, so you can
+copy it into a dictionary or a translator. The 文 button by the chat window opens a phrase book: click a phrase and
+it goes into the chat box as English with a small dot in front, ready to send. Players without the addon read plain
+English; players with it see the phrase in their own language. Nothing else anyone types is changed. You can add
+your own chat words with `/wfj chatwords`, and the **Words** settings page has a switch for each part.
+
 **Japanese voice.** With the voice installed ([see below](#add-the-japanese-voice)), quest offers, progress and
 turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC
 speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know. Your character says its
@@ -373,6 +380,8 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 **ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。音声を入れていれば、答えを見たときに保存した文がNPCの声で読み上げられ、単語帳からその録音を Anki 用に書き出すこともできます。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
 
 **英語を学ぶ場合。** 設定ページの **ゲームの文字**（Game text）を **English first** にするか、ようこそ画面で **英語を学ぶ** を選びます。ゲームは本来の英語のまま表示され、Alt を押している間だけ日本語が表示されます。同じキーで、向きが逆になります。クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで英語の単語にマウスを合わせると、発音、その行の翻訳で使われている日本語の単語と読み方、その辞書形が表示されます。名前や *the*、*is*、*of* のような短い語には表示されません。Ctrl+クリックで英語の単語を英語の文と日本語の文と一緒に保存でき、学習カードは英語から出題します。日本語音声は、キーを押している間だけ再生されます。
+
+**チャットの補助。** チャットの行で単語にマウスを合わせると、そこでもポップアップ辞書が出ます。日本語優先なら日本語の単語、英語優先なら英語の単語です。マウスを置いた行の小さなアイコンを押すと、その行が選択された状態で枠に表示されるので、辞書や翻訳サービスにコピーできます。チャット欄の横の「文」ボタンで定型文を開きます。定型文をクリックすると、先頭に小さな点の付いた英語がチャットの入力欄に入り、そのまま送れます。アドオンのない人には普通の英語として届き、アドオンのある人には自分の言語で表示されます。それ以外にだれかが入力した文は変わりません。`/wfj chatwords` で自分のチャット単語を追加でき、設定の **単語帳** ページで機能ごとにオン・オフできます。
 
 **日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。それ以外はナレーターが読み、どの行も同じ音量で再生されます。
 

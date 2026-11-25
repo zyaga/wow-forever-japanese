@@ -12,7 +12,7 @@ local TAIL = {
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
   "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua", "Core/Intro.lua",
-  "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua",
+  "Core/Words.lua", "Core/ChatWords.lua", "Core/ChatPhrases.lua", "Core/Fsrs.lua", "Core/Study.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/Perf.lua", -- the write paths' timing
   "Core/BugReport.lua",
@@ -77,7 +77,11 @@ local TAIL = {
   "UI/Popups.lua",
   "UI/Scan.lua",
   "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/BindingNames.lua", "UI/FixWindow.lua",
-  "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua", "UI/CollectorReminder.lua",
+  "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua",
+  -- the chat tools
+  "UI/ChatLines.lua", "UI/ChatCards.lua", "UI/ChatCopy.lua", "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua",
+  "UI/ChatWordsWindow.lua",
+  "UI/CollectorReminder.lua",
   "UI/IntroWindow.lua",
   "UI/ReportWindow.lua",
   "UI/MinimapButton.lua",
@@ -104,7 +108,7 @@ local WINDOW_NAMESPACES = { "character", "reputation", "skills", "spellbook", "t
   "channels", "quickjoin", "recentallies", "recruitafriend", "reportframe", "helpframe", "statusnotices",
   "bnettoast", "settingspanel", "settingstutorials", "quickkeybind", "colorpicker", "chatconfig",
   "texttospeech", "chattabs", "combatlog", "addonlist", "scripterrors", "splash", "eventtrace", "chromietime",
-  "alerts", "errors", "chatsystem", "speech", "bossbanner", "cinematic", "coinpickup", "combatfeedback",
+  "alerts", "errors", "chatsystem", "chat", "speech", "bossbanner", "cinematic", "coinpickup", "combatfeedback",
   "equipmentflyout",
   "ghostframe",
   "guildinvite", "instanceabandon", "npe", "loothistory", "lossofcontrol", "majorfactiontoast",

@@ -324,6 +324,17 @@ describe("the minimap menu's word list entry", function()
     opened = 0
     entry.action()
     assert.are.equal(1, opened)
+    -- the phrase book's entry sits after the study entry, just before Settings, and opens the card
+    WFJ.PhraseBook = { open = function() opened = opened + 100 end }
+    local items = WFJ.MinimapButton.items()
+    local book
+    for i, it in ipairs(items) do
+      if it.text == "Phrase book" or it.text == "定型文" then book = i end
+    end
+    assert.are.equal(#items - 2, book)
+    assert.is_true(book > studyAt)
+    items[book].action()
+    assert.are.equal(101, opened)
     F.clear()
   end)
 end)

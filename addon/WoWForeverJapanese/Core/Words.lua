@@ -85,6 +85,7 @@ function Words.source(surface, kind)
   -- a tooltip line (a word saved from a frozen tooltip)
   if type(kind) == "string" and kind:find("^item%.") then return "item" end
   if type(kind) == "string" and kind:find("^spell%.") then return "spell" end
+  if kind == "chat" then return "chat" end -- a word saved from a chat line (UI/ChatCards)
   return "gossip"
 end
 

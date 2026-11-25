@@ -196,6 +196,25 @@ describe("Readings", function()
       fs.text = esc
       assert.has_no.errors(function() assert.is_nil((V.spanAreas(fs, esc, 11, 16))) end)
       assert.are.equal(0, fs.spanCalls)
+      -- a chat line's indices count its escape sequences (the client's own text selection counts them so there):
+      -- through the chat line's own entry point the span goes through, and a span that splits a character is
+      -- refused all the same. The chat line here exits only on a split character or a bad range, as the client
+      -- does for one.
+      local chat = Stub.fontString(esc, "F.ttf", 14, "")
+      chat.spanCalls = 0
+      function chat:CalculateScreenAreaFromCharacterSpan(a, b)
+        self.spanCalls = self.spanCalls + 1
+        if not isBoundary(self.text, a) or not isBoundary(self.text, b) or b <= a then error("CRASH") end
+        return { { left = a, bottom = 0, width = b - a, height = 14 } }
+      end
+      assert.is_nil((V.spanAreas(chat, esc, 11, 16, "chat")))
+      -- no caller can switch the check off
+      assert.is_nil((V.spanAreas(chat, esc, 11, 16, "chat", true)))
+      assert.are.equal(0, chat.spanCalls)
+      assert.is_table((V.chatSpanAreas(chat, esc, 11, 16)))
+      assert.are.equal(1, chat.spanCalls)
+      assert.has_no.errors(function() assert.is_nil((V.chatSpanAreas(chat, esc, 12, 16))) end)
+      assert.are.equal(1, chat.spanCalls)
     end)
 
     it("calls the client for every whole word of a line (bytes, right end exclusive)", function()

@@ -109,6 +109,14 @@ end
 local function englishCard(ja, jaReading, gloss, ipa)
   return { english = true, ja = ja, jaReading = jaReading, gloss = gloss or nil, ipa = ipa }
 end
+Readings.englishCard = englishCard -- Core/ChatWords builds a chat word's card the same way
+
+-- A contraction with no card of its own takes its first word's (you're → you, let's → let); never a negative
+-- (can't is not can). → that first word, or nil
+function Readings.contractionHead(lower)
+  if lower:find("n't$") then return nil end
+  return lower:match("^(%a+)'")
+end
 
 -- A capitalised word inside a sentence is a name, and names take no card (the pipeline leaves them out of the rows
 -- the same way): true when the word at `first` starts its sentence or its line.
@@ -168,7 +176,7 @@ function Readings.englishLookup(kind, id, text)
       said = WFJ.Data.pron[lower]
       -- a contraction with no card of its own takes its first word's (you're → you, let's → let); never a
       -- negative (can't is not can)
-      local head = not ja and not lower:find("n't$") and lower:match("^(%a+)'") or nil
+      local head = not ja and Readings.contractionHead(lower) or nil
       if head then
         ja, jaReading, gloss = find(head)
         said = said or WFJ.Data.pron[head]

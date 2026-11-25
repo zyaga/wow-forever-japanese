@@ -18,6 +18,7 @@ from typing import Any
 from wfj.cmd.voice_displays import DISPLAYS
 from wfj.core import (
     align,
+    chat_words,
     english_cards,
     glosses,
     numbered,
@@ -708,7 +709,46 @@ def _plan_readings(
         out[schema.gloss_relpath(gshard)] = lua_writer.gloss_text(gshard, rows)
     counts["gloss"] = len(meanings)
     if english_store is not None:
-        _plan_english(english_store.root, current, out, counts)
+        chat_english = _plan_chat(store.root, current, meanings, out, counts, english_store)
+        _plan_english(english_store.root, current, out, counts, chat_english)
+
+
+def _plan_chat(
+    root: Path,
+    current: dict[str, list[dict[str, Any]]],
+    meanings: dict[glosses.Meaning, int],
+    out: dict[str, str],
+    counts: dict[str, int],
+    english_store: Store,
+) -> set[str]:
+    """The chat word lists (docs/systems/chat-tools.md): the two general lists made from the readings that
+    ship, and the hand-written chat list of `data/chat/`. → every English word a chat card can show, for the
+    pronunciation table."""
+    records = [rec for recs in current.values() for rec in recs]
+    japanese = chat_words.japanese_rows(records, meanings)
+    english = chat_words.english_rows(records, meanings)
+    for shard, rows in sorted(chat_words.shards(japanese, chat_words.JA_SHARDS).items()):
+        out[schema.chat_relpath("ja", shard)] = lua_writer.word_table_text(
+            "chatja", rows,
+            "Japanese words of the game text, each with the reading and meaning it is used with most",
+        )
+    for shard, rows in sorted(chat_words.shards(english, chat_words.EN_SHARDS).items()):
+        out[schema.chat_relpath("en", shard)] = lua_writer.word_table_text(
+            "chaten", rows,
+            "English words of the game text, each with the Japanese word used for it most",
+        )
+    counts["chat"] = len(japanese) + len(english)
+    said = set(english)
+    chat = chat_words.load(root)
+    if chat is not None:
+        lines = (ln.get("en") for type_ in schema.GENERATED_TYPES for ln in english_store.load(type_))
+        clashes = chat_words.game_english_clashes(chat, lines)
+        if clashes:
+            raise ValueError(f"data/chat/ holds lines of the game's own English: {'; '.join(clashes[:5])}")
+        out[schema.CHAT_LIST] = lua_writer.chat_list_text(chat)
+        counts["chat"] += len(chat.words_ja) + len(chat.words_en) + len(chat.phrases)
+        said.update(w for w in chat.words_en if " " not in w)
+    return said
 
 
 def _by_shard(type_: str, records: list[dict[str, Any]]) -> list[tuple[int | str, list[dict[str, Any]]]]:
@@ -725,7 +765,11 @@ def _by_shard(type_: str, records: list[dict[str, Any]]) -> list[tuple[int | str
 
 
 def _plan_english(
-    english_root: Path, current: dict[str, list[dict[str, Any]]], out: dict[str, str], counts: dict[str, int]
+    english_root: Path,
+    current: dict[str, list[dict[str, Any]]],
+    out: dict[str, str],
+    counts: dict[str, int],
+    chat_english: set[str],
 ) -> None:
     """The English word card rows, one file beside each reading shard that has any, then the word tables."""
     for type_, recs_of_type in current.items():
@@ -733,7 +777,7 @@ def _plan_english(
             if any(rec.get("english") for rec in recs):
                 out[schema.english_relpath(type_, shard)] = lua_writer.english_text(type_, recs)
     counts["english"] = sum(1 for recs in current.values() for rec in recs if rec.get("english"))
-    _plan_english_words(english_root, current, out)
+    _plan_english_words(english_root, current, out, chat_english)
 
 
 def _with_english(
@@ -789,9 +833,13 @@ def load_common_words(english_root: Path) -> dict[str, tuple[str, str]]:
 
 
 def _plan_english_words(
-    english_root: Path, current: dict[str, list[dict[str, Any]]], out: dict[str, str]
+    english_root: Path,
+    current: dict[str, list[dict[str, Any]]],
+    out: dict[str, str],
+    chat_english: set[str],
 ) -> None:
-    """The common word list and the pronunciation table, the latter cut down to the words a card can show."""
+    """The common word list and the pronunciation table, the latter cut down to the words a card can show:
+    a line's own words, the common list's, and the chat lists' (`chat_english`)."""
     common = load_common_words(english_root)
     if common:
         out[schema.ENGLISH_COMMON] = lua_writer.word_table_text(
@@ -802,7 +850,7 @@ def _plan_english_words(
     if not path.is_file():
         return
     said, _ = pronunciation.parse_table(path.read_text(encoding="utf-8"))
-    used = set(common)
+    used = set(common) | chat_english
     for recs in current.values():
         for rec in recs:
             for pair in (rec.get("english") or "").split():

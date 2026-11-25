@@ -356,6 +356,8 @@ function WFJ.OnLoad()
   WFJ_Study = step("study", function()
     return WFJ.Study.load(WFJ_Study, WFJ.Words.entries(), WFJ.Words.readonly())
   end) or WFJ_Study
+  -- the player's own chat words: the same guard
+  WFJ_ChatWords = step("chatwords", function() return WFJ.ChatWords.load(WFJ_ChatWords) end) or WFJ_ChatWords
   -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua
   -- (Environment "All"; CompressionMethod.Zlib, Base64Variant.StandardUrlSafe), used the same way by
   -- Blizzard_CooldownViewer/CooldownViewerSettingsDataStoreSerialization.lua:277–281]. A client without it leaves
@@ -566,6 +568,13 @@ function WFJ.OnLoad()
   step("speech", function() -- NPC speech
     WFJ.Speech.init({ key = gossipKey, expand = expand, keyAs = gossipKeyAs, expandAs = expandAs })
   end)
+  -- the chat tools, after ChatSystem has hooked the chat frames: the phrase lines' pass over the visible lines
+  -- runs after its own
+  step("chatlines", WFJ.ChatLines.init)
+  step("chatcards", WFJ.ChatCards.init)
+  step("chatcopy", WFJ.ChatCopy.init)
+  step("chatphraselines", WFJ.ChatPhraseLines.init)
+  step("phrasebook", function() return WFJ.PhraseBook.init(WFJ_DB) end)
   -- menu entries (written once each menu is shown) and HelpTip callouts, for every window above
   step("menus", WFJ.Menus.init)
   step("menus.untagged", WFJ.MenusUntagged.init) -- the Options dropdowns and untagged context menus

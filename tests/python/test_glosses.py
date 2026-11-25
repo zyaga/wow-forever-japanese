@@ -87,11 +87,11 @@ def test_generate_numbers_each_meaning_once_and_points_the_rows_at_it(data):
     rows = planned["Data/Reading/Reading_quest_0000.lua"]
     assert '["quest:456"] = { description = "森=もり 倒して=たおして=2 調査した=ちょうさした=3 いる=いる=1" },' in rows
     assert '["quest:457"] = { description = "森=もり 倒して=たおして=2" },' in rows
-    assert "gloss = 3 }" in planned["Data/Meta.lua"]
+    assert "gloss = 3," in planned["Data/Meta.lua"]
     assert generate.plan(store, []) == planned  # byte-identical rerun
     files = generate.toc_files(planned)
-    assert files[-1] == schema.gloss_relpath(0)  # after the readings
-    assert schema.TOC_ORDER[-2:] == ("reading", "gloss")
+    assert schema.gloss_relpath(0) in files
+    assert schema.TOC_ORDER[-3:] == ("reading", "gloss", "chat")  # after the readings; the chat lists read both
 
 
 def test_a_stale_reading_takes_its_meanings_with_it(data):
@@ -150,7 +150,10 @@ def test_a_new_meaning_takes_the_next_number_and_changes_only_what_uses_it(data)
     assert _numbers(data).splitlines()[-1] == "4\t森\tもり\tforest"  # sorts before 調査する, numbered last
     assert _gloss_rows(after) == _gloss_rows(before) + ['  [4] = "森\\tもり\\tforest",']
     changed = {rel for rel in after if after[rel] != before.get(rel)}
-    assert changed == {schema.gloss_relpath(0), "Data/Reading/Reading_quest_0000.lua", "Data/Meta.lua"}
+    # the new word is a chat word too: the one chat list file it falls in changes with it
+    chat = {rel for rel in changed if rel.startswith("Data/Chat/")}
+    assert len(chat) == 1
+    assert changed - chat == {schema.gloss_relpath(0), "Data/Reading/Reading_quest_0000.lua", "Data/Meta.lua"}
     rows = after["Data/Reading/Reading_quest_0000.lua"].splitlines()
     old_rows = before["Data/Reading/Reading_quest_0000.lua"].splitlines()
     assert [r for r in rows if "quest:457" not in r] == [r for r in old_rows if "quest:457" not in r]
@@ -162,7 +165,7 @@ def test_a_meaning_no_line_uses_keeps_its_number_and_ships_nowhere(data):
     Store(data).save("quest", [_line(456, "description", "変わった。"), _line(457, "description", "森で倒して帰る。")])
     planned = _generate(data)
     assert _gloss_rows(planned) == ['  [2] = "倒す\\tたおす\\tdefeat",']
-    assert "gloss = 1 }" in planned["Data/Meta.lua"]  # the shipped meanings, not the file's lines
+    assert "gloss = 1," in planned["Data/Meta.lua"]  # the shipped meanings, not the file's lines
     assert len(_numbers(data).splitlines()) == 3  # いる and 調査する keep their lines
     _add_forest(data)
     assert '[4] = "森' in _generate(data)[schema.gloss_relpath(0)]  # never 1 or 3

@@ -492,6 +492,16 @@ function Slash.handle(msg)
     if not pcall(SW.open) then say("the study window is not available on this client") end
     return
   end
+  if lower == "phrases" then -- the phrase book's card, whatever its button's setting says
+    local ok = WFJ.PhraseBook and pcall(WFJ.PhraseBook.toggle)
+    if not ok then say("the phrase book is not available on this client") end
+    return
+  end
+  if lower == "chatwords" then -- the player's own chat words
+    local ok = WFJ.ChatWordsWindow and pcall(WFJ.ChatWordsWindow.open)
+    if not ok then say("the chat words window is not available on this client") end
+    return
+  end
   if lower == "intro" then -- the welcome window, again
     local ok = WFJ.IntroWindow and pcall(WFJ.IntroWindow.open)
     if not ok then say("the welcome window is not available on this client") end

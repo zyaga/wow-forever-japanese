@@ -11,7 +11,8 @@ local IDS = { "enabled", "direction", "names.japanese",
   "voice.muteDialog", "voice.button", "voice.mark",
   "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head",
   "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.lock",
-  "words.saveClick", "words.screenshot", "study.tab", "study.newPerDay", "study.combatHide", "study.sound" }
+  "words.saveClick", "words.screenshot", "study.tab", "study.newPerDay", "study.combatHide", "study.sound",
+  "chat.cards", "chat.copy", "chat.phraseButton", "chat.phrases" }
 local DEFAULTS = { enabled = true, modifier = "alt",
   ["names.japanese"] = false, -- English until the player picks
   ["area.quests"] = true, ["area.gossip"] = true,
@@ -32,7 +33,9 @@ local DEFAULTS = { enabled = true, modifier = "alt",
   ["voice.panel.head"] = true, ["voice.panel.hoverButtons"] = true, ["voice.panel.fade"] = true,
   ["voice.panel.lock"] = false,
   ["words.saveClick"] = "ctrl", ["words.screenshot"] = false, -- the word list: Ctrl+click, no screenshot
-  ["study.tab"] = true, ["study.newPerDay"] = "20", ["study.combatHide"] = true, ["study.sound"] = true } -- studying it
+  ["study.tab"] = true, ["study.newPerDay"] = "20", ["study.combatHide"] = true, ["study.sound"] = true, -- studying it
+  -- the chat tools
+  ["chat.cards"] = true, ["chat.copy"] = true, ["chat.phraseButton"] = true, ["chat.phrases"] = true }
 
 describe("Settings registry", function()
   local WFJ, S

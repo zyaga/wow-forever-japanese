@@ -555,6 +555,8 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     assert "ERROR tooltip rows not read: this run's test addon reads the description row only" in out
     # and one from before the frozen tooltip read says so too
     assert "ERROR frozen tooltip not read: this run's test addon has no such read" in out
+    # and one from before the chat tools read
+    assert "ERROR chat tools not read: this run's test addon has no such read" in out
     # and one from before the bag click read
     assert "ERROR bag click not read: this run's test addon has no such read" in out
     fine = TOOLTIPS.replace('["408498"] = "3 numbers in the Japanese, 4 on this client"', "").replace(
@@ -567,6 +569,7 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     # and every hovered frame's tooltip read, none of them English
     fine = fine.replace('["tooltips"] = {', HOVERED + '\n["tooltips"] = {', 1)
     fine = fine.replace('["tooltips"] = {', FROZE + '\n["tooltips"] = {', 1)
+    fine = fine.replace('["tooltips"] = {', CHAT + '\n["tooltips"] = {', 1)
     # and the bag click read, with nothing tainted by the addon
     fine = fine.replace('["tooltips"] = {', BAGGED + '\n["tooltips"] = {', 1)
     saved.write_text(fine, encoding="utf-8")
@@ -709,6 +712,58 @@ def test_the_names_read_runs_after_the_no_voice_read_and_only_shows_tooltips():
     assert 'settings["names.japanese"] == true' in lua and "names.japanese\"] =" not in body
 
 
+# a chat tools read with nothing wrong
+CHAT = ('["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, '
+        '["copy"] = "WFJ テスト", '
+        '["sizes"] = { "592x380" }, ["english"] = { } },')
+
+
+def test_the_chat_tools_read_opens_the_addons_own_windows_and_never_types_into_chat():
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    assert _before(lua, "WFJScanNamesRead", "WFJScanChatRead")
+    assert _before(lua, "WFJScanChatRead", "WFJScanFreezeRead")
+    body = lua[lua.index("local function WFJScanChatRead"):lua.index("local function WFJScanFreezeRead")]
+    # the addon's own command opens and closes the card, then opens the words window
+    assert body.count('slash("phrases")') == 2 and body.count('slash("chatwords")') == 1
+    # a card the player had open is left open, and the copy box is opened by the copy icon's own handler
+    assert "if not wasOpen then slash(" in body and 'icon:GetScript("OnClick")' in body
+    # it never clicks a phrase, so nothing is typed into chat or sent
+    assert ":Click(" not in body and "SendChatMessage" not in body and "Insert(" not in body
+    # no setting is written: the run shows what this player sees
+    assert "settings[" not in body and "settings.enabled =" not in body
+
+
+def test_the_chat_tools_read_fails_a_blank_tab_a_card_that_changes_size_and_english_left_in_a_heading():
+    def run(record: str) -> list[str]:
+        return client_surface.chat_problems(client_surface.read_chat(
+            "WFJScanDB = {\n[\"probe\"] = {\n" + record + "\n},\n}\n"))
+
+    assert run(CHAT) == []
+    assert client_surface.chat_problems(None) == [
+        "chat tools not read: this run's test addon has no such read (make scan-install, then run it again)"]
+    assert run(CHAT.replace('["expect"] = true', '["expect"] = true, ["refused"] = "the phrase card did not open"')) == [
+        "chat tools not read: the phrase card did not open"]
+    assert run(CHAT.replace('["topics"] = 9', '["topics"] = 0')) == [
+        "phrase card has no topics"]
+    assert run(CHAT.replace('["blank"] = { }', '["blank"] = { "tab combat\\tno words" }')) == [
+        "phrase card: tab combat (no words)"]
+    assert run(CHAT.replace('{ "592x380" }', '{ "592x380", "592x412" }')) == [
+        "phrase card changes size between topics: 592x380, 592x412"]
+    assert run(CHAT.replace('["english"] = { }', '["english"] = { "phrase card heading\\tPhrase book" }')) == [
+        "chat tools left English: 'Phrase book' (phrase card heading)"]
+    assert run(CHAT.replace('["expect"] = true', '["expect"] = true, ["stuck"] = true')) == [
+        "phrase card did not close on its own command"]
+    assert run(CHAT.replace('["expect"] = true',
+                            '["expect"] = true, ["refusedWords"] = "the chat words window did not open"')) == [
+        "chat words window not read: the chat words window did not open"]
+    assert run(CHAT.replace('["words"] = 12', '["words"] = 0')) == [
+        "chat words window shows no text"]
+    assert run(CHAT.replace('["copy"] = "WFJ テスト"', '["refusedCopy"] = "the copy box did not open"')) == [
+        "copy box not read: the copy box did not open"]
+    assert run(CHAT.replace('"WFJ テスト"', '"|cffffffffWFJ テスト|r"')) == [
+        "copy box holds '|cffffffffWFJ テスト|r', not the line without its codes ('WFJ テスト')"]
+
+
 # a frozen tooltip read with nothing wrong
 FROZE = ('["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, '
          '["missing"] = { }, ["stuck"] = { } },')
@@ -837,6 +892,7 @@ WFJScanDB = {
 ["test"] = { ["started"] = "2026-11-22 18:00:00", ["finished"] = "2026-11-22 18:05:00", ["build"] = "70959" },
 ["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
 ["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, ["missing"] = { }, ["stuck"] = { } },
+["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { } },
 ["bagclick"] = { ["checked"] = 412, ["ours"] = { }, ["others"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
 ["hover"] = { ["map"] = { ["made"] = 3, ["found"] = 3, ["tips"] = 2, ["english"] = { }, ["runs"] = { } } },

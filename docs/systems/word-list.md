@@ -35,10 +35,12 @@ The save click is read by `UI/Readings` while the mouse is over a covered word a
 - `exists`: an entry with the same key is already in the list; nothing changes. Chat prints `Already saved: <word>`.
 - `refused`: the list was saved by a newer addon version (below), or the input is incomplete. Chat prints that the list cannot be changed here.
 
+**A chat word.** The save click works on a word card on a chat line too ([Chat tools → Word cards on chat lines](chat-tools.md#word-cards-on-chat-lines)). `UI/ChatCards` reads the click by its own poll, the same way, and hands `UI/WordSave` a cover of its own whose kind and id are both `chat`. The text it saves from is the stretch of the line the word sits in; on a line a player typed that stretch starts where the message starts, so the sentence is what the player typed, without the sender and the line's opening words ("[Name] says: "). The key is `chat:chat:<dictionary form or word>`, so a word saved once from chat is not added again from another chat line.
+
 ### The key
-An entry's key is `<kind>:<id>:<dictionary form>`, or `<kind>:<id>:<word>` when the word has no dictionary form (a word with no meaning, or a class / race word). `kind` and `id` are the reading row's: `quest.description:456`, `gossip:<16-hex English hash>`, `ui:<string key>`, `book:<English hash>`. So:
+An entry's key is `<kind>:<id>:<dictionary form>`, or `<kind>:<id>:<word>` when the word has no dictionary form (a word with no meaning, or a class / race word). `kind` and `id` are the reading row's: `quest.description:456`, `gossip:<16-hex English hash>`, `ui:<string key>`, `book:<English hash>`, and `chat:chat` for every word saved from a chat line. So:
 - the same word saved again from the same text is not added twice, even as another inflection (倒して and 倒した in one quest description share 倒す);
-- the same word from another quest, NPC line, page or label is a new entry, with its own sentence;
+- the same word from another quest, NPC line, page or label is a new entry, with its own sentence (chat is one source: a chat word is saved once);
 - a reworded translation keeps its key, because the key holds no Japanese line text.
 
 The key index is rebuilt from the entries on load and kept in memory only; it is never saved.
@@ -59,7 +61,7 @@ The key index is rebuilt from the entries on load and kept in memory only; it is
 | `shot` | the screenshot's file name, when one was taken |
 
 - **The sentence** is cut at 。！？!? or a line break on each side of the word and kept whole, however long it is (a quest paragraph with no full stop is kept up to its line breaks), so the study card and Anki show the sentence the voice reads. It is the Japanese the player saw, so where the line names the character it holds the character's name: the player's own data, on the player's own machine.
-- **The source** comes from the surface the word was shown on: `questframe.*` and `questmap.*` are `quest` (a quest-window line keyed by its English, such as a conditional description, is still quest text, with no quest id); `gossip` is `gossip`; `itemtext` is `book`; on the voice panel a `quest.*` kind is `quest`, `book` is `book` and anything else `gossip`; every other surface is `window`. On a [frozen tooltip](readings.md#tooltip-text-and-the-frozen-tooltip) the line's kind decides: `item.*` is `item`, `spell.*` is `spell`, `ui` is `window` and `quest.title` is `quest`.
+- **The source** comes from the surface the word was shown on: `questframe.*` and `questmap.*` are `quest` (a quest-window line keyed by its English, such as a conditional description, is still quest text, with no quest id); `gossip` is `gossip`; `itemtext` is `book`; on the voice panel a `quest.*` kind is `quest`, `book` is `book` and anything else `gossip`; every other surface is `window`. On a [frozen tooltip](readings.md#tooltip-text-and-the-frozen-tooltip) the line's kind decides: `item.*` is `item`, `spell.*` is `spell`, `ui` is `window` and `quest.title` is `quest`. A chat word's kind `chat` is none of these, so its source is `gossip`.
 - Tabs and line breaks inside any field become spaces, so a field never breaks the export's columns.
 
 ### English entries
@@ -74,7 +76,7 @@ In English first the save click on an English word saves that word ([Readings �
 | `lemma`, `lemmaReading` | empty: an English entry has no dictionary form |
 | `meaning` | the Japanese word the shipped translation uses for it in that line, with its reading in brackets when the reading differs |
 | `sentence`, `wf`, `wl` | the English sentence the client showed, cut at . ! ? and line breaks, and the word's place in it |
-| `jaSentence` | the sentence of the line's shipped Japanese that holds the Japanese word (`WordSave.japaneseSentence`), with the player's name and class filled in as the game shows them; empty when the line or the word is not found |
+| `jaSentence` | the sentence of the line's shipped Japanese that holds the Japanese word (`WordSave.japaneseSentence`), with the player's name and class filled in as the game shows them; empty when the line or the word is not found, and always empty for a chat word (no shipped line stands behind what a player typed) |
 
 The other fields (`kind`, `id`, `source`, `questId`, `questTitle`, `saved`, `shot`) are as above. The same English word saved again from the same text is not added twice, whatever its capitals; the same word from another line is a new entry. The English sentence is what the client showed this player, kept in the player's own `WFJ_Words` on their machine and never shipped, like the names and lines the voice panel keeps.
 
@@ -145,6 +147,7 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 - `addon/WoWForeverJapanese/Core/Words.lua`: load, key, source, sentence cut, add, remove last, clear, export, screenshot name, the save-click choices (`matches`, `hidden`, `nextFree`) (pure: no frames, no globals)
 - `addon/WoWForeverJapanese/UI/Readings.lua`: the poll, and the flash / hide card / reshow hooks
 - `addon/WoWForeverJapanese/UI/WordSave.lua`: the save: the modifiers, the entry, the screenshot sequence, the chat lines, the hint text
+- `addon/WoWForeverJapanese/UI/ChatCards.lua`: the save click on a chat word and its sentence (`ChatCards.sentence`)
 - `addon/WoWForeverJapanese/UI/ReadingPopup.lua`: the hint line on the card
 - `addon/WoWForeverJapanese/UI/WordsWindow.lua`: the export window (it follows the `words` event, as the study queue does), Include images and Include audio
 - `addon/WoWForeverJapanese/UI/StudyVoice.lua`: `cell` (an entry's Anki sound tags) and `fileList` (the files to copy, one `<pack folder>/Sound/<file>` a line, sorted)
@@ -173,4 +176,4 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 - **The reveal key moved onto the save click.** The save click moves to the next free choice with a chat line; at load the move is silent.
 
 ## Related
-- [Readings](readings.md) · [Study](study.md) · [Settings](settings.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [Testing → Word list checklist](../testing/strategy.md#word-list-checklist) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)
+- [Readings](readings.md) · [Study](study.md) · [Chat tools](chat-tools.md) · [Settings](settings.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [Testing → Word list checklist](../testing/strategy.md#word-list-checklist) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)

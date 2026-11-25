@@ -96,6 +96,51 @@ Text.T = {
   },
   ["words.status"] = { en = "%s words saved", ja = "保存した単語：%s語" },
   ["words.export"] = { en = "Export the word list", ja = "単語帳を書き出す" },
+  -- the chat tools (docs/systems/chat-tools.md): the settings section, the copy box, the phrase book and its
+  -- topics, the player's own chat words
+  ["section.chat"] = { en = "Chat", ja = "チャット" },
+  ["chat.explain"] = {
+    en = "Point at a word in chat for its card. Click the small icon on a chat line to copy it. The small "
+      .. "button by the chat window opens the phrase book: a phrase is sent in English with a dot in front, and "
+      .. "anyone with this addon reads it in their own language.",
+    ja = "チャットの単語にマウスを置くと単語カードが出ます。行の小さなアイコンでその行をコピーできます。"
+      .. "「文」ボタンで定型文を開きます。定型文は点を付けた英語で送られ、このアドオンを使う人には"
+      .. "自分の言語で表示されます。" },
+  ["chat.words.open"] = { en = "My chat words", ja = "自分のチャット単語" },
+  ["chat.book.open"] = { en = "Open the phrase book", ja = "定型文を開く" },
+  ["chat.copy.title"] = { en = "Copy", ja = "コピー" },
+  ["chat.copy.tip"] = { en = "Copy this line", ja = "この行をコピー" },
+  ["chat.copy.how"] = { en = "Press Ctrl+C (Mac: Cmd+C) to copy, Esc to close.",
+    ja = "Ctrl+C（Mac は Cmd+C）でコピー、Esc で閉じます。" },
+  ["chat.book.title"] = { en = "Phrase book", ja = "定型文" },
+  ["chat.book.how"] = { en = "Click a phrase, then press Enter to send it.",
+    ja = "定型文をクリックして、Enter で送信します。" },
+  ["chat.topic.greetings"] = { en = "Greetings", ja = "挨拶" },
+  ["chat.topic.group"] = { en = "Group", ja = "パーティ" },
+  ["chat.topic.combat"] = { en = "Combat", ja = "戦闘" },
+  ["chat.topic.dungeon"] = { en = "Dungeon", ja = "ダンジョン" },
+  ["chat.topic.loot"] = { en = "Loot", ja = "戦利品" },
+  ["chat.topic.trade"] = { en = "Trade", ja = "取引" },
+  ["chat.topic.guild"] = { en = "Guild", ja = "ギルド" },
+  ["chat.topic.travel"] = { en = "Travel", ja = "移動" },
+  ["chat.topic.answers"] = { en = "Answers", ja = "返事" },
+  ["chat.words.title"] = { en = "My chat words", ja = "自分のチャット単語" },
+  ["chat.words.explain"] = {
+    en = "Words you add here take a card in chat, before every word the addon ships. They stay on this account.",
+    ja = "ここに追加した単語は、アドオンの単語より先にチャットでカードが出ます。このアカウントにだけ保存されます。" },
+  ["chat.words.ja"] = { en = "A Japanese word", ja = "日本語の単語" },
+  ["chat.words.en"] = { en = "An English word", ja = "英語の単語" },
+  ["chat.words.word"] = { en = "Word", ja = "単語" },
+  ["chat.words.reading"] = { en = "Reading", ja = "読み" },
+  ["chat.words.meaning"] = { en = "Meaning", ja = "意味" },
+  ["chat.words.japanese"] = { en = "Its Japanese", ja = "日本語" },
+  ["chat.words.add"] = { en = "Add", ja = "追加" },
+  ["chat.words.remove"] = { en = "Remove", ja = "削除" },
+  ["chat.words.removeOne"] = { en = "Remove %s", ja = "%sを削除" },
+  ["chat.words.empty"] = { en = "No words of your own yet.", ja = "自分の単語はまだありません。" },
+  ["chat.words.refused"] = {
+    en = "Not added. A Japanese word is Japanese only, up to 12 characters; an English word is one word.",
+    ja = "追加できません。日本語の単語は日本語だけで12文字まで、英語の単語は1語だけです。" },
   -- studying the word list (UI/StudyWindow): the settings section, the tab, the card
   ["section.study"] = { en = "Study", ja = "学習" },
   ["study.explain"] = {
@@ -130,6 +175,7 @@ Text.T = {
     ja = "今日の新しい単語は終わりました。また明日。" },
   ["study.empty"] = { en = "Save more words to study them here.", ja = "単語を保存すると、ここで学習できます。" },
   ["minimap.study"] = { en = "Study words (%s due)", ja = "単語を学習（%s）" },
+  ["minimap.phrases"] = { en = "Phrase book", ja = "定型文" },
   ["section.slash"] = { en = "Slash commands", ja = "スラッシュコマンド" },
 
   ["toggleKey"] = { en = "Turn translation on / off", ja = "翻訳のオン・オフ切り替え" },
@@ -481,6 +527,7 @@ Text.SLASH = {
   "/wfj config [collector | about]  ·  /wfj fix  (report a line)",
   "/wfj bug  (report a bug or an idea)  ·  /wfj words  (the saved word list)",
   "/wfj study [reset]  (study your saved words; reset puts the card back)",
+  "/wfj phrases  (the phrase book)  ·  /wfj chatwords  (your own chat words)",
   "/wfj collector [on | off | status | path | clear | send [all]]",
   "/wfj intro  (the welcome window)",
 }
