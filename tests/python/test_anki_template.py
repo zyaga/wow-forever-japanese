@@ -26,28 +26,28 @@ def text(html):
 def test_the_front_has_no_reading_and_marks_the_saved_word():
     front, _, _ = sides("japanese")
     assert "<rt>" not in front and "[" not in front
-    assert "<b>倒して</b>" in front
-    assert "森を荒らすコボルドを" in front.replace(" ", "")
-    assert "to defeat" not in front
+    assert "<b>足を伸ばして</b>" in front
+    assert "少し 足を伸ばして BoarとSaberを狩り" in text(front)
+    assert "journey forth" not in front
     assert "<img" not in front
 
 
 def test_the_back_has_readings_the_word_its_form_meaning_image_and_audio():
     _, back, _ = sides("japanese")
-    assert "<ruby><rb>森</rb><rt>もり</rt></ruby>" in back
-    assert "<b><ruby><rb>倒</rb><rt>たお</rt></ruby>して</b>" in back
-    assert "倒す" in back and "たおす" in back
-    assert "to defeat, to bring down" in back
+    assert "<ruby><rb>数</rb><rt>かず</rt></ruby>" in back
+    assert "<b><ruby><rb>足</rb><rt>あし</rt></ruby>を<ruby><rb>伸</rb><rt>の</rt></ruby>ばして</b>" in back
+    assert "足を伸ばす" in back and "あしをのばす" in back
+    assert "journey forth (travel a bit farther)" in back
     assert '<img src="shot.jpg">' in back
     assert "replay-button" in back
-    assert "コボルドのろうそく" in back
+    assert "自然界のバランス" in back
 
 
 def test_word_alone_puts_only_the_word_on_the_front():
     front, back, _ = sides("japanese", front="word")
-    assert text(front) == "コボルドのろうそく 倒して"
-    assert "森" not in front
-    assert "<rt>もり</rt>" in back  # the back is the same
+    assert text(front) == "自然界のバランス 足を伸ばして"
+    assert "狩" not in front
+    assert "<rt>かず</rt>" in back  # the back is the same
 
 
 def test_the_audio_sits_on_the_side_the_choice_names():

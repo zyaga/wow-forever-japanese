@@ -1,9 +1,9 @@
 # Word list
 
-> The player's saved words: the save click on a highlighted word keeps it, with its reading, meaning and sentence, in an account-wide list that an export window turns into tab-separated text for a text file, a spreadsheet or Anki. Code: `Core/Words.lua`, `UI/Readings.lua` (reads the save click), `UI/WordSave.lua` (saves), `UI/ReadingPopup.lua` (the card's hint), `UI/WordsWindow.lua`, `UI/StudyVoice.lua` (the export's audio), the Words page in `UI/Options.lua`, `UI/OptionsText.lua`, `UI/MinimapButton.lua`, `UI/Slash.lua`, the `words.saveClick` and `words.screenshot` settings in `Core/Settings.lua`, the `words` load step in `Main.lua`. Decisions: [ADR-069](../adr/069-saved-word-list.md), [ADR-081](../adr/081-english-first-and-english-word-cards.md) (English entries), [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) (the sentence's audio).
+> The player's saved words: the save click on a highlighted word keeps it, with its reading, meaning and sentence, in an account-wide list that an export window turns into tab-separated text for a text file, a spreadsheet or Anki. Code: `Core/Words.lua`, `UI/Readings.lua` (reads the save click), `UI/WordSave.lua` (saves), `UI/ReadingPopup.lua` (the card's hint), `UI/WordsWindow.lua`, `UI/StudyVoice.lua` (the export's audio), `Core/AnkiExport.lua` (the copy for the Anki add-on), the Words page in `UI/Options.lua`, `UI/OptionsText.lua`, `UI/MinimapButton.lua`, `UI/Slash.lua`, the `words.saveClick` and `words.screenshot` settings in `Core/Settings.lua`, the `words` load step and the `ankiexport` logout step in `Main.lua`. Decisions: [ADR-069](../adr/069-saved-word-list.md), [ADR-081](../adr/081-english-first-and-english-word-cards.md) (English entries), [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) (the sentence's audio), [ADR-110](../adr/110-a-ready-made-export-for-the-anki-add-on.md) (the copy for the Anki add-on).
 
 ## Purpose
-A learner who meets a word worth keeping can save it without leaving the game, and later study it elsewhere. The list holds what the [word card](readings.md) already shows (the word, its reading, its dictionary form and meaning) plus the sentence it came from, so a card made from it has context. The addon only keeps the list and shows it as text: it never writes a file of its own and never talks to another program.
+A learner who meets a word worth keeping can save it without leaving the game, and later study it elsewhere. The list holds what the [word card](readings.md) already shows (the word, its reading, its dictionary form and meaning) plus the sentence it came from, so a card made from it has context. The addon keeps the list and shows it as text. It never talks to another program and cannot write a file of its own: everything it keeps is in its saved variables, which the client writes. At logout and `/reload` it also saves a ready-made copy of the whole list there, `WFJ_Anki`, which the [Anki add-on](anki-add-on.md) reads to make cards by itself ([below](#the-anki-add-on)).
 
 ## How it works
 ```mermaid
@@ -130,11 +130,26 @@ quest.description:456:少し	少し	すこし	少し	すこし	a little	…<b>�
 - There is no Copy button: the Forever client blocks `CopyToClipboard` for addons (an addon's call raises `ADDON_ACTION_FORBIDDEN`, seen in game), so the selected text and Cmd+C / Ctrl+C are the way to copy. The game's font has no symbol for a tab, so the tabs between columns show as small boxes; the copied text holds real tabs.
 - **Remove last** removes the newest entry. **Clear all** clears only on a second click within 5 seconds (as the collector's Clear does). Both are refused for a list from a newer version.
 - With no words, the window says how to save one. A word saved while the window is open shows in the text at once.
+- Under everything else, one line in both languages says the Anki add-on does all of this by itself (cards, images and audio) and that new words reach Anki after `/reload` or logout, with the add-on's address (`WordsWindow.ADDON_URL`, the Anki section of the site) in a copy box. The line moves down with the rows above it (`layAddon`), so the window's other rows stay where they were.
 
 The export holds the addon's own Japanese, readings and meanings, the player's own data (sentences, dates, file names) and, with Include audio, voice pack folder and file names. For a Japanese word it holds no English game text. An [English entry](#english-entries) holds the English word and the English sentence the client showed the player.
 
+### The Anki add-on
+The [Anki add-on](anki-add-on.md) turns the list into Anki cards with no copying by hand. The addon's part is one table, written at logout and `/reload` (the `ankiexport` step, last in the `PLAYER_LOGOUT` branch of `Main.lua`, so a fault in it costs none of the tables before it):
+
+```lua
+WFJ_Anki = { schema = 1, written = <time()>, voice = <a voice pack is loaded>, rows = { <row>, … } }
+```
+
+- `Core/AnkiExport.build(entries, now, deps)` makes one row per entry, in saved order, from the same helpers the export uses: `Words.bold` for the sentence, `Words.furigana` and `Words.sentenceFurigana` for the furigana, and `StudyVoice.find` (handed in by `Main.lua`, so Core stays free of UI) for the sound files, written `<pack folder>/Sound/<file>` in play order.
+- It is rebuilt from the whole list each time, so a word saved before this version gets its furigana and audio too. A list from a newer addon version is still copied, as the export window still exports it.
+- A fault while building keeps the table that was loaded and records `ankiexport` in the problem log. With no voice pack loaded, `voice` is false and every row's audio list is empty.
+- Nothing in the game reads `WFJ_Anki`; it holds nothing `WFJ_Words` and the export do not already hold, plus pack folder and file names. An older addon version does not list it in its TOC, so the client drops it at that version's first logout.
+
+The table shape and the add-on's side are in [Anki add-on](anki-add-on.md); the decision is [ADR-110](../adr/110-a-ready-made-export-for-the-anki-add-on.md). The export window stays for spreadsheets, text files and players without the add-on.
+
 ### Studying it
-The list can also be studied in game, one card at a time, on an FSRS-6 schedule ([Study](study.md), [ADR-071](../adr/071-study-the-word-list-in-game.md)). The study state lives beside the list in its own SavedVariables table, `WFJ_Study`, keyed by the same key and holding numbers only; it is pruned to the list at load and after **Remove last** and **Clear all**, so a word removed and saved again starts as new. The export is unchanged by it: no study column, no change to any line. A word's sentence audio is never stored in the list: the study card and Include audio find it each time from the shipped line and the loaded packs, so the list keeps `schema = 1` and words saved earlier get audio too. Studying in game and importing into Anki keep separate schedules; the addon never reads or writes Anki's.
+The list can also be studied in game, one card at a time, on an FSRS-6 schedule ([Study](study.md), [ADR-071](../adr/071-study-the-word-list-in-game.md)). The study state lives beside the list in its own SavedVariables table, `WFJ_Study`, keyed by the same key and holding numbers only; it is pruned to the list at load and after **Remove last** and **Clear all**, so a word removed and saved again starts as new. The export is unchanged by it: no study column, no change to any line. A word's sentence audio is never stored in the list: the study card and Include audio find it each time from the shipped line and the loaded packs, so the list keeps `schema = 1` and words saved earlier get audio too. Studying in game and studying in Anki keep separate schedules; neither the addon nor the Anki add-on reads or writes the other's.
 
 ### Where to find it
 - **The word card** shows a grey hint, `Ctrl+click: save word ・ Ctrl+clickで単語を保存` (naming the chosen click), until the first save ever; nothing while the save click is `off`.
@@ -155,8 +170,9 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 - `addon/WoWForeverJapanese/UI/Options.lua`, `UI/OptionsText.lua`: the Words page and every string, in English and Japanese
 - `addon/WoWForeverJapanese/UI/MinimapButton.lua`, `UI/Slash.lua`, `UI/IntroWindow.lua`: the other ways in
 - `addon/WoWForeverJapanese/Core/Settings.lua`: `words.saveClick` (its `choiceHidden` and `check`), `words.screenshot`, the move on a reveal key change (a `revealKey` listener)
-- `addon/WoWForeverJapanese/Main.lua`: the `words` load step; `WoWForeverJapanese.toc`: `WFJ_Words` in `## SavedVariables`
-- `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`, `tests/lua/spec/words_click_spec.lua`, `tests/lua/spec/settings_spec.lua`
+- `addon/WoWForeverJapanese/Core/AnkiExport.lua`: the rows of `WFJ_Anki` (pure)
+- `addon/WoWForeverJapanese/Main.lua`: the `words` load step and the `ankiexport` logout step; `WoWForeverJapanese.toc`: `WFJ_Words` and `WFJ_Anki` in `## SavedVariables`
+- `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`, `tests/lua/spec/words_click_spec.lua`, `tests/lua/spec/settings_spec.lua`, `tests/lua/spec/anki_export_spec.lua`
 
 ## Invariants
 - For a Japanese word, no English game text is stored or shown. An English entry keeps the English word and sentence the client showed this player, in the player's own saved variables, never shipped. Otherwise the list holds the shipped Japanese, readings, meanings (a class or race card's English name is the meaning its card already shows), Japanese quest titles and source keys (a gossip or book key is a hash, not text). [Principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away).
@@ -164,7 +180,7 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 - The cover never takes clicks (its clicks are off and passed on to its parent, the frame the text sits in): the save click is read by polling, so every click, drag and wheel scroll reaches the frame it reached before. A press that ends after the cover moved (a window dragged by its text, the voice panel) is a drag, not a save.
 - One screenshot at a time: a save while one is still waiting for the client's answer takes none and prints at once. The file is named after the time of the capture, not of the answer. A wait the client never answers ends after 5 seconds: the card comes back, the line prints, and the next save can take a screenshot again.
 - A failed load never replaces the saved list, and a list from a newer version is never written.
-- The addon never reads the Screenshots folder and never writes a file of its own; the player moves the text, the images and the sound files.
+- The addon never reads the Screenshots folder and never writes a file of its own. With the export window the player moves the text, the images and the sound files; with the Anki add-on, the add-on reads them from the game's folder.
 
 ## Edge cases
 - **Meanings off.** A kanji word still saves with its dictionary form and meaning (they come from the meaning table, not from the card on screen). A kana word is not a hover target with meanings off, so it cannot be saved then.
@@ -176,4 +192,4 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 - **The reveal key moved onto the save click.** The save click moves to the next free choice with a chat line; at load the move is silent.
 
 ## Related
-- [Readings](readings.md) · [Study](study.md) · [Chat tools](chat-tools.md) · [Settings](settings.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [Testing → Word list checklist](../testing/strategy.md#word-list-checklist) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)
+- [Readings](readings.md) · [Anki add-on](anki-add-on.md) · [Study](study.md) · [Chat tools](chat-tools.md) · [Settings](settings.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-110](../adr/110-a-ready-made-export-for-the-anki-add-on.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [Testing → Word list checklist](../testing/strategy.md#word-list-checklist) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)
