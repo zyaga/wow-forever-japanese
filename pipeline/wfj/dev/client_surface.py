@@ -2864,7 +2864,11 @@ local function WFJScanBagClickRead(done)
         listed[name] = true
         record.ours[#record.ours + 1] = when .. "\\t" .. name
       end
-    elseif owner ~= "WFJScan" then
+    elseif owner == "WFJScan" then
+      -- the read's own steps run as the test addon, so what they write carries its taint, not this addon's: counted,
+      -- so a pass is read knowing it cannot show taint the addon would leave on that route
+      record.own = (record.own or 0) + 1
+    else
       record.others[name] = tostring(owner)
     end
   end
@@ -2948,6 +2952,10 @@ local function WFJScanBagClickRead(done)
       pcall(ExecuteFrameScript, f, "OnLeave")
     end
   end
+  local function finish()
+    if not wasOpen and type(CloseAllBags) == "function" then CloseAllBags() end
+    done()
+  end
   local function pointAndHide()
     local f = EnumerateFrames()
     while f and #pointedAt < BAG_POINT_MAX do
@@ -2965,7 +2973,8 @@ local function WFJScanBagClickRead(done)
     local shown = 0
     if type(GameTooltip) == "table" and type(GameTooltip.SetBagItem) == "function" then
       for bag = 0, 4 do
-        local slots = C_Container.GetContainerNumSlots(bag) or 0
+        local ok, slots = pcall(C_Container.GetContainerNumSlots, bag)
+        slots = ok and tonumber(slots) or 0
         for slot = 1, slots do
           if shown < BAG_POINT_MAX and C_Container.GetContainerItemID(bag, slot) then
             local ok, err = pcall(function()
@@ -2985,18 +2994,30 @@ local function WFJScanBagClickRead(done)
     end
     record.tooltips = shown
     readSafely("after pointing at bag items")
+    -- the client shows a hidden interface again only out of combat: a fight that started during the wait above
+    -- would leave it hidden, so the toggle is not done then and the run says so
+    if InCombatLockdown() then
+      record.refused = "a fight started before the interface could be hidden and shown"
+      return finish()
+    end
     SetUIVisibility(false)
     SetUIVisibility(true)
     -- what the interface's return sets off runs on the frames after it (a help tip's OnUpdate): waited for, so an
     -- error it raises lands inside the run
     C_Timer.After(0.5, function()
       readSafely("after the interface came back")
-      if not wasOpen and type(CloseAllBags) == "function" then CloseAllBags() end
-      done()
+      finish()
     end)
   end
-  -- a bag addon lays its buttons out on the frames after its window opens: waited for
-  C_Timer.After(0.5, pointAndHide)
+  -- a bag addon lays its buttons out on the frames after its window opens: waited for. A raise inside the timer
+  -- would end the run with no done line, so it is recorded and the run goes on.
+  C_Timer.After(0.5, function()
+    local ok, err = pcall(pointAndHide)
+    if not ok then
+      record.failed = "pointing at bag items: " .. tostring(err)
+      finish()
+    end
+  end)
 end
 
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
@@ -4255,7 +4276,8 @@ def read_bagclick(text: str) -> dict[str, Any] | None:
     """The window test's bag click read out of a saved-variables file, or None when the run had none: how many
     values it read (`checked`), the ones carrying the addon's taint as (when, name) (`ours`), the ones carrying
     another addon's as name → addon (`others`), why the second pass did not run (`refused`), a read that raised
-    (`failed`), the bag item buttons pointed at (`pointed`), the bag item tooltips shown (`tooltips`) and how far the frames it passed over got (`skipped`)."""
+    (`failed`), the bag item buttons pointed at (`pointed`), the bag item tooltips shown (`tooltips`), the values the
+    test's own steps tainted (`own`) and how far the frames it passed over got (`skipped`)."""
     from wfj.io import lua_reader
 
     db = lua_reader.parse_assignments(text).get("WFJScanDB")
@@ -4274,6 +4296,7 @@ def read_bagclick(text: str) -> dict[str, Any] | None:
         "failed": str(record.get("failed") or ""),
         "pointed": int(record.get("pointed") or 0),
         "tooltips": int(record.get("tooltips") or 0),
+        "own": int(record.get("own") or 0),
         "skipped": {str(k): str(v) for k, v in (skipped.named() if skipped is not None else {}).items()},
     }
 
@@ -4787,7 +4810,8 @@ def _own_reads(saved: str, section: str | None = None) -> list[str]:
     if bagclick is not None:
         print(f"bag click: {bagclick['checked']} values read, {bagclick['pointed']} bag item buttons pointed at, "
               f"{bagclick['tooltips']} bag item tooltips shown, "
-              f"{len(bagclick['ours'])} tainted by the addon"
+              f"{len(bagclick['ours'])} tainted by the addon, {bagclick['own']} by the test's own steps "
+              "(which the read cannot tell from the addon's)"
               + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(bagclick["others"].items()))
                  if bagclick["others"] else ""))
     plates = read_plates(saved) if part("plates") else None
@@ -5164,7 +5188,7 @@ def _say_tail(text: str, section: str | None, hover: tuple[Any, Any, Any], latin
     windows = section in (None, "live", "closed")
     if section in (None, "tooltips"):
         _say_rows(text)
-    if windows:
+    if section in (None, "live"):
         _say_hover(*hover)
     if section in (None, "tooltips"):
         _say_traces(text)
@@ -5216,6 +5240,10 @@ def _texts(args: argparse.Namespace) -> int:
     new = [row for row in new if row not in bare]
     if not windows:
         found, new, bare, gone, hovered = set(), [], [], [], []
+    elif section == "closed":
+        # the live and hover records are an earlier run's: only the windows read closed are this run's
+        found = {row for row in found if row[0].startswith(("closed ", "opened "))}
+        new, gone, hovered = [], [], []
     print(f"window test of build {info.get('build')}, run {info.get('started')}"
           + (f": {len(found)} English lines on screen, {len(found) - len(new) - len(bare)} allowed by the baseline, "
              f"{len(new)} new in the windows opened the client's way, {len(bare)} to read in closed windows"
@@ -5232,7 +5260,7 @@ def _texts(args: argparse.Namespace) -> int:
     problems += _own_reads(text, section)
     if section in (None, "tooltips"):
         problems += tooltip_row_problems(text)
-    if windows:
+    if section in (None, "live"):
         problems += hover_problems(hover, hovered)
     failing = _say_errors(problems, args.baseline.with_name("ui_test_game_errors.txt"))
     _say_tail(text, section, (hover, hovered, hover_allowed), (bool(latin), protected, other), new)

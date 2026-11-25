@@ -8,7 +8,7 @@
 --            what is left on the frame's own table and on what it inherits, and the Lua memory then;
 --   memory   the Lua memory, sampled on a timer.
 -- The log holds no text the game showed, no names and no chat: only addon and frame names, counts and times.
-local _, WFJ = ...
+local ADDON, WFJ = ...
 local Diag = {}
 WFJ.Diag = Diag
 
@@ -18,7 +18,8 @@ Diag.MAX_SESSIONS = 50 -- session entries kept; the oldest go past this
 Diag.SPEECH_SHARE = 100 -- speechline entries a full log keeps
 Diag.MAX_LINES = 50 -- the most /wfj log prints
 -- A block and the taint that led to it are what the log is for, and are rare: other entries never push them out,
--- and only the newest MAX_KEPT of them stay.
+-- and only the newest MAX_KEPT of them stay. A field another addon tainted is not kept this way: an action bar
+-- addon can turn many, and they would push out this addon's own blocks.
 Diag.KEPT = { blocked = true, turned = true, taint = true, context = true }
 Diag.MAX_KEPT = 50
 Diag.CHECK_INTERVAL = 5 -- seconds between hook checks
@@ -61,7 +62,7 @@ local function oldest(list, keep)
   end
   return nil
 end
-local function kept(e) return Diag.KEPT[e.kind] == true end
+local function kept(e) return Diag.KEPT[e.kind] == true and (e.kind ~= "turned" or e.by == ADDON) end
 local function forget(gone)
   local key = tostring(gone.kind) .. "\0" .. tostring(gone.msg)
   if repeats[key] == gone then repeats[key] = nil end -- its next repeat starts a new entry

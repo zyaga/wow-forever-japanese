@@ -128,7 +128,8 @@ describe("Core/Diag", function()
     local D = fresh()
     local db = D.load(nil)
     D.log("blocked", "UseContainerItem() <containerframe.lua:1611>")
-    D.log("turned", "MerchantFrame.selectedTab")
+    D.log("turned", "MerchantFrame.selectedTab", { by = "WoWForeverJapanese" })
+    D.log("turned", "MultiBarBottomLeftButton1.action", { by = "SomeBarAddon" }) -- another addon's: not kept
     D.log("taint", "scan 1")
     D.log("context", "events before MerchantFrame.selectedTab")
     for i = 1, D.MAX_ENTRIES * 2 do D.log("write", "writer " .. i) end
@@ -137,10 +138,11 @@ describe("Core/Diag", function()
     local kinds = {}
     for _, e in ipairs(db.entries) do kinds[e.kind] = (kinds[e.kind] or 0) + 1 end
     assert.are.same({ 1, 1, 1, 1 }, { kinds.blocked, kinds.turned, kinds.taint, kinds.context })
+    for _, e in ipairs(db.entries) do assert.are_not.equal("SomeBarAddon", e.by) end
     for i = 1, D.MAX_KEPT + 3 do D.log("blocked", "block " .. i) end
     local blocks, first = 0, nil
     for _, e in ipairs(db.entries) do
-      if D.KEPT[e.kind] then
+      if D.KEPT[e.kind] and (e.kind ~= "turned" or e.by == "WoWForeverJapanese") then
         blocks = blocks + 1
         first = first or e.msg
       end

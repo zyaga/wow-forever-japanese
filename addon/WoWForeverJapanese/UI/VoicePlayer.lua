@@ -700,20 +700,17 @@ end
 local ready = false -- init ran: the queue and the settings it reads are there
 
 -- A window another addon draws in place of the client's (UI/DialogueUI): its lines (`surfaces`) belong to it, `unit`
--- names its NPC (nil for a book), and it gets the replay control. Its close is heard through a child frame of ours,
--- because that addon sets its window's own OnHide script again after load, which drops a hook made with HookScript.
+-- names its NPC (nil for a book), and it gets the replay control. `onClose(frame, fn)` is how that addon's module
+-- hears the window close: a script of ours on the window or a child of it would run inside that addon's own hide.
 -- → true when added
-function VoicePlayer.addWindow(window, surfaces, unit)
+function VoicePlayer.addWindow(window, surfaces, unit, onClose)
   local frame = Compat.resolve(window)
-  local createFrame = Compat.resolve("CreateFrame")
-  if buttons[window] or type(frame) ~= "table" or type(createFrame) ~= "function" then return false end
+  if buttons[window] or type(frame) ~= "table" or type(onClose) ~= "function" then return false end
   WINDOWS[#WINDOWS + 1] = window
   SPEAKER_UNIT[window] = unit
   for _, s in ipairs(surfaces) do WINDOW_OF[s] = window end
   buttons[window] = createButton(window)
-  local watcher = createFrame("Frame", nil, frame)
-  watcher:SetScript("OnHide", function() if ready then closed(window) end end)
-  watcher:Show()
+  onClose(frame, function() if ready then closed(window) end end)
   return true
 end
 

@@ -860,7 +860,8 @@ install = function()
   end
   if WFJ.VoicePlayer and type(WFJ.VoicePlayer.addWindow) == "function" then
     -- "npc" is the unit Dialogue UI itself names the speaker by on quest and gossip pages
-    WFJ.VoicePlayer.addWindow("DUIQuestFrame", { S.detail, S.progress, S.reward, S.greeting, S.gossip }, "npc")
+    WFJ.VoicePlayer.addWindow("DUIQuestFrame", { S.detail, S.progress, S.reward, S.greeting, S.gossip }, "npc",
+      DialogueUI.onClose)
   end
   installed = true
   if WFJ.Diag then pcall(WFJ.Diag.log, "dialogueui", "Dialogue UI found: its quest and gossip window gets Japanese") end

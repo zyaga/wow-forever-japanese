@@ -3,4 +3,4 @@
 - **NPCs speak in their own voice.** A quest line whose speaker the addon could not name was read by one narrator. Each line is now read in the voice of the NPC who says it, and a translated line with no voice yet says so: `[音声なし / No Voice Yet]`.
 - **Forever 1.60.1.71037 in Japanese**, with what players sent in 28 Collector sends: 265 NPC lines, 325 quest progress and turn-in texts, 129 new quests, and 45 item and spell tooltips.
 - **More in Japanese:** almost every spell tooltip (reagents, tools, recipes, requirements, mounts, pets, macros), and the friends, group finder, professions and calendar windows, stat tooltips and more of the guild window.
-- **Fewer blocks and errors:** hovering a creature in combat no longer floods the error list, and a bag item (the Hearthstone) is no longer blocked in this addon's name after a Dialogue UI talk.
+- **Fewer errors:** hovering a creature in combat no longer floods the error list, and a blocked bag item (the Hearthstone) now stays in the addon's log.

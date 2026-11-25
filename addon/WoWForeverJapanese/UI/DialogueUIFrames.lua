@@ -78,7 +78,7 @@ local added = setmetatable({}, { __mode = "k" })
 -- After AddLeftLine / AddRightLine: the line Dialogue UI just added (the last row's column 1 or 2) gets its Japanese,
 -- in the bundled face; a line it uses again that wore ours gets its own face back.
 local function lineAdded(self, col, text)
-  if type(text) ~= "string" or text == "" then return end
+  if not WFJ.Compat.readable(text) then return end
   local row = self.grid and self.numLines and self.grid[self.numLines]
   local fs = type(row) == "table" and row[col] or nil
   if type(fs) ~= "table" or type(fs.SetText) ~= "function" then return end
@@ -111,7 +111,8 @@ local function itemRun(data, lines)
   local texts = {}
   for i, line in ipairs(lines) do
     local t = type(line) == "table" and line.leftText or nil
-    if type(t) ~= "string" then return nil end -- a line the client may not let the addon read
+    -- a line the client may not let the addon read (none, or secret in combat)
+    if type(t) ~= "string" or WFJ.Compat.secret(t) then return nil end
     texts[i] = t
   end
   local first, last = T.itemRun(texts)
@@ -224,7 +225,8 @@ end
 
 -- After AddMessage: the entry Dialogue UI just added (the last) shows the Japanese, measured again.
 local function chatAdded(panel, text, name, event)
-  if type(text) ~= "string" or not WFJ.DialogueUI.active() then return end
+  -- a line or speaker the client keeps secret in combat is left as Dialogue UI drew it
+  if not WFJ.Compat.readable(text) or WFJ.Compat.secret(name) or not WFJ.DialogueUI.active() then return end
   local ja = chatLine(text)
   if not ja then return end
   chatFont()
@@ -232,7 +234,7 @@ local function chatAdded(panel, text, name, event)
   local entry = list and list.content[#list.content]
   local stored = type(entry) == "table" and entry[1]
   local en = asStored(text, name, event)
-  if type(stored) ~= "string" or #stored < #en or stored:sub(-#en) ~= en then return end
+  if type(stored) ~= "string" or WFJ.Compat.secret(stored) or #stored < #en or stored:sub(-#en) ~= en then return end
   local shown = stored:sub(1, #stored - #en) .. asStored(ja, name, event)
   entry[1] = shown
   list:CalculateAllExtent()

@@ -356,7 +356,7 @@ function Book.install()
     end)
   end
   if WFJ.VoicePlayer and type(WFJ.VoicePlayer.addWindow) == "function" then
-    WFJ.VoicePlayer.addWindow("DUIBookFrame", { SURFACE }, nil)
+    WFJ.VoicePlayer.addWindow("DUIBookFrame", { SURFACE }, nil, WFJ.DialogueUI.onClose)
   end
   installed = true
   return true

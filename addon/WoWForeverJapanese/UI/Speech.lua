@@ -504,6 +504,7 @@ function Speech.translateNamed(en)
   if key ~= nil and shipped(key) then return nil end
   local unitName = Compat.resolve("UnitName")
   local me = type(unitName) == "function" and unitName("player") or nil
+  if secret(me) then me = nil end -- compared with each name the line holds
   return (translateOthers(en, (otherNames(en, nil, me))))
 end
 
