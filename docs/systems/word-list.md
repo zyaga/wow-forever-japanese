@@ -136,6 +136,9 @@ The export holds the addon's own Japanese, readings and meanings, the player's o
 ### Studying it
 The list can also be studied in game, one card at a time, on an FSRS-6 schedule ([Study](study.md), [ADR-071](../adr/071-study-the-word-list-in-game.md)). The study state lives beside the list in its own SavedVariables table, `WFJ_Study`, keyed by the same key and holding numbers only; it is pruned to the list at load and after **Remove last** and **Clear all**, so a word removed and saved again starts as new. The export is unchanged by it: no study column, no change to any line. A word's sentence audio is never stored in the list: the study card and Include audio find it each time from the shipped line and the loaded packs, so the list keeps `schema = 1` and words saved earlier get audio too. Studying in game and importing into Anki keep separate schedules; the addon never reads or writes Anki's.
 
+### Word status
+Saving a word moves its [word status](word-status.md) up: a saved word with no status becomes Learning, and a word that is already Learning, Known or Ignored keeps its status. `Core/WordStatus.sync` runs at load and on the list's change event, `words`, and never moves a status down. A word whose study card grows stable becomes Known ([Study → Word status](study.md#word-status)).
+
 ### Where to find it
 - **The word card** shows a grey hint, `Ctrl+click: save word ・ Ctrl+clickで単語を保存` (naming the chosen click), until the first save ever; nothing while the save click is `off`.
 - **The About page line and the word list window's empty state** say how to save a word, naming the save click as set.
@@ -176,4 +179,4 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 - **The reveal key moved onto the save click.** The save click moves to the next free choice with a chat line; at load the move is silent.
 
 ## Related
-- [Readings](readings.md) · [Study](study.md) · [Chat tools](chat-tools.md) · [Settings](settings.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [Testing → Word list checklist](../testing/strategy.md#word-list-checklist) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)
+- [Readings](readings.md) · [Study](study.md) · [Chat tools](chat-tools.md) · [Word status](word-status.md) · [Settings](settings.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [Testing → Word list checklist](../testing/strategy.md#word-list-checklist) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)

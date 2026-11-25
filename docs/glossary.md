@@ -733,6 +733,56 @@ The middle dot (`·`, or `・` in Japanese text) a [[Phrase book]] phrase is sen
 _Avoid_: bullet, marker (that is the [[Stale marker]] family), prefix, tag
 → [Chat tools → The phrase mark and received phrases](systems/chat-tools.md#the-phrase-mark-and-received-phrases) · [ADR-109](adr/109-chat-tools.md)
 
+**Word status**:
+What the player knows of a [[Word]], one of four: **Unknown** (未知), **Learning** (学習中), **Known** (既知) or **Ignored** (無視). It belongs to the [[Word key]], so every inflection shares it on every line, and Japanese and English words are kept apart. With nothing set a word is Unknown, except a word of the [[Grammar list]] (Ignored) and a する verb whose noun is Known (Known); a status the player set always wins. Shift+click steps Unknown, Learning, Known; Shift+right-click ignores. Saving a word makes it Learning, and a [[Study card]] stable for 21 days makes it Known; nothing moves a status down. Kept account-wide in `WFJ_Known`. In Japanese: 習得状況.
+_Avoid_: tracking (there is no fifth status), mastered, learned, seen, familiarity, level
+→ [Word status](systems/word-status.md) · [ADR-111](adr/111-word-status-marks-frequency-and-score.md)
+
+**Word key**:
+What a [[Word status]] and a [[Frequency list]] row belong to: for a Japanese word its [[Dictionary form]], a tab and that form's [[Reading]] (`倒す<TAB>たおす`; a word with no dictionary form is itself with its reading), so 倒して and 倒した are one word; for an English word its lower-cased form, a contraction taking its first word and a plural with no row of its own its singular. A name and a class or race word have none.
+_Avoid_: lemma on its own (the key holds the reading too), word id, headword
+→ [Word status → The word key](systems/word-status.md#the-word-key)
+
+**Status underline**:
+The line under a word that shows its [[Word status]]: red under Unknown, blue under Learning, none under Known or Ignored. It sits in the measured gap between text lines, a whole number of screen pixels thick. `marks.underline` turns it off. Not the [[Highlight]].
+_Avoid_: marker (that is the [[Stale marker]] family), squiggle, furigana line
+→ [Word status → The marks](systems/word-status.md#the-marks)
+
+**Highlight**:
+The soft green box behind an Unknown word worth stopping for, picked by `marks.highlight`: the words of the [[Learn-next set]] (the default), those that are also the only Unknown word of their sentence, the only Unknown word of a sentence, or none. Never behind a Learning, Known or Ignored word. Not the gold tint of the word under the mouse, and not the [[Status underline]]. In Japanese: ハイライト.
+_Avoid_: tint (the gold hover tint), sentence tint, i+1 marker
+→ [Word status → The marks](systems/word-status.md#the-marks)
+
+**Learn-next set**:
+The 300 most used words of the game's text (by the [[Frequency list]]) whose [[Word status]] is Unknown: the words worth learning next. It moves as the player marks words. A word in it shows **Common** (頻出) on its [[Word card]] and takes the default [[Highlight]].
+_Avoid_: top 300 (it skips words already known), core vocabulary, frequency band
+→ [Word status → The marks](systems/word-status.md#the-marks)
+
+**Comprehension score**:
+How much of a text the player knows: known words over counted words, a whole percent. An Ignored word is in neither, a Learning word counts as not known, names and words with no card are not counted. A quest is scored as one text (description, objectives, progress, turn-in). The whole game's score weights every word by how often the game uses it, with one figure per kind of text. Shown as the [[Score tag]] and in the [[Known words window]]. In Japanese: 理解度.
+_Avoid_: coverage (that is how much of the game ships in Japanese), progress, accuracy
+→ [Word status → The comprehension score](systems/word-status.md#the-comprehension-score)
+
+**Score tag**:
+The small `Known 84%` (`理解度 84%`) over the top right corner of a quest text, an NPC talk line or a book page with at least 5 counted words: its [[Comprehension score]], once per text. `marks.score` turns it off.
+_Avoid_: badge, percent label, score marker
+→ [Word status → The comprehension score](systems/word-status.md#the-comprehension-score)
+
+**Grammar list**:
+The shipped list of grammar words that start as Ignored (`pipeline/grammar_words.txt`, generated to `Data/Freq/Grammar.lua`): sentence endings, particles and set patterns the readings list as words (だろう, について, から). Never a content word: an adverb, a pronoun or a conjunction is vocabulary. A player's own [[Word status]] wins over it.
+_Avoid_: stop words, function words (some function words are vocabulary), particle list
+→ [Word status → The frequency data](systems/word-status.md#the-frequency-data)
+
+**Known words window**:
+The tool window for [[Word status]] in bulk (`/wfj known`, or **Known words** on the Words settings page): paste a word list from any tool and mark its words Known or Ignored, see what did not match, export the player's statuses as text, and read the counts and the whole game's [[Comprehension score]]. An import never changes a status the player set by hand. In Japanese: 既知の単語.
+_Avoid_: import window, known list, deck import
+→ [Word status → The known words window](systems/word-status.md#the-known-words-window)
+
+**Frequency list**:
+How often each [[Word key]] of the game's shipped text is used, per kind of text (quest, NPC talk, book, window, item, spell), built by `make generate` from the shipped readings (`Data/Freq/`): Japanese words counted by use, English words by the lines that list them. The addon ranks the words from it (most used first) for the [[Learn-next set]], the rank on the [[Word card]] and the whole game's [[Comprehension score]]. Counts of single words only, never a line.
+_Avoid_: word frequency dictionary, corpus, an outside list (it is the game's own text)
+→ [Word status → The frequency data](systems/word-status.md#the-frequency-data) · [ADR-111](adr/111-word-status-marks-frequency-and-score.md)
+
 **Window label**:
 A plain-text label in a window: a FontString showing one [[UI string]] (the quest window's 報酬 and 以下の報酬から1つ選択できます, the character sheet's section labels, mail's 宛先:) whose parent is not a Button or a protected frame, on a [[Surface]] that is a window: not a button, tab, menu, dropdown or tooltip, and not the HUD (tracker, alerts, error and combat text, unit frames, zone text; `View.NON_WINDOW`). The only interface text that takes a [[Word card]], apart from a window word on a [[Frozen tooltip]]. Narrower than [[Label]], which also covers buttons.
 _Avoid_: UI label (too wide: buttons are labels too), window text, header, static text

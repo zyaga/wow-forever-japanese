@@ -200,6 +200,19 @@ An English word saved in English first is studied English first: the card shows 
 - **status:** implemented; in-game check pending (the gold mark's layout timing, the tab at the screen edge, the sentence's voice and its play button)
 - **regen-triggers:** `Core/Fsrs.lua`, `Core/Study.lua`, `UI/StudyWindow.lua`, `UI/StudyVoice.lua`, `UI/Readings.lua`, `UI/Options.lua`, `UI/OptionsText.lua`, `Core/Settings.lua`
 
+### Word status
+Every word of the game's Japanese has a status the player sets: **Unknown**, **Learning**, **Known** or **Ignored** ([Word status](systems/word-status.md), [ADR-111](adr/111-word-status-marks-frequency-and-score.md)). A status belongs to the word's dictionary form, so 倒して and 倒した share 倒す's. Where the player reads, a red line sits under an Unknown word and a blue line under a Learning word, and a soft green highlight picks out the Unknown words worth learning next: by default the 300 most used words of the game's own text that are still Unknown (or, by a setting, the only new word of a sentence, both, or none). A small tag over a quest text, an NPC line or a book page says how much of it the player knows (`Known 84%` / `理解度 84%`).
+
+- **Changing a status.** With the mouse on a word, Shift+click steps Unknown, Learning, Known; Shift+right-click ignores it, or takes it back. A chat line says what changed. The word card shows the status, the word's rank among the game's words and **Common** for a word to learn next. While the save click is Shift+click, the status clicks are off and the card says so.
+- **By itself.** Grammar words (sentence endings, particles, set patterns) start as Ignored, and a する verb counts as Known once its noun is. Saving a word makes it Learning, and a word studied until its card is stable for 21 days becomes Known. Nothing moves a status down.
+- **Known words window.** `/wfj known`, or **Known words** on the Words settings page: paste a word list from any tool (furigana, HTML tags and anything not Japanese are dropped) and mark its words Known or Ignored; words the game does not use stay in the box. A status set by hand is never changed by an import. **Export** gives the statuses back as text. The window shows the last import's numbers, the counts, and how much of the whole game's text the player knows, overall and per kind of text.
+- **Places.** Quests and NPC talk, books and letters, the voice panel and the frozen tooltip each have a switch, on by default; chat has one, off by default. Live tooltips, buttons, menus, the HUD and names never take marks, and nothing shows while English is showing.
+- **English first.** English words take the same statuses, marks, score and import, in a list of their own.
+
+The Words settings page's **Word status** section holds the underline, highlight and score switches, the five place switches, the counts and the **Known words** button. Statuses are kept on the account (`WFJ_Known`).
+- **feature-id:** `word-status`
+- **status:** implemented; in-game check pending
+
 ### Chat tools
 Help for reading and writing chat, without rewriting what anyone typed ([Chat tools](systems/chat-tools.md), [ADR-109](adr/109-chat-tools.md)).
 
