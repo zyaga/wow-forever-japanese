@@ -769,7 +769,7 @@ _Avoid_: badge, percent label, score marker
 → [Word status → The comprehension score](systems/word-status.md#the-comprehension-score)
 
 **Grammar list**:
-The shipped list of grammar words that start as Ignored (`pipeline/grammar_words.txt`, generated to `Data/Freq/Grammar.lua`): sentence endings, particles and set patterns the readings list as words (だろう, について, から). Never a content word: an adverb, a pronoun or a conjunction is vocabulary. A player's own [[Word status]] wins over it.
+The shipped list of grammar words that start as Ignored (`pipeline/grammar_words.txt`, generated to `Data/Freq/Freq_grammar.lua`): sentence endings, particles and set patterns the readings list as words (だろう, について, から). Never a content word: an adverb, a pronoun or a conjunction is vocabulary. A player's own [[Word status]] wins over it.
 _Avoid_: stop words, function words (some function words are vocabulary), particle list
 → [Word status → The frequency data](systems/word-status.md#the-frequency-data)
 

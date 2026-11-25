@@ -2785,11 +2785,11 @@ Data\Chat\Chat_ja_11.lua
 Data\Chat\Chat_list.lua
 Data\Freq\Freq_en_00.lua
 Data\Freq\Freq_en_01.lua
+Data\Freq\Freq_grammar.lua
 Data\Freq\Freq_ja_00.lua
 Data\Freq\Freq_ja_01.lua
 Data\Freq\Freq_ja_02.lua
 Data\Freq\Freq_ja_03.lua
-Data\Freq\Grammar.lua
 Data\Names\Names_00.lua
 Data\Names\Names_01.lua
 Data\Names\Names_02.lua

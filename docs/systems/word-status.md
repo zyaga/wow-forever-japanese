@@ -47,7 +47,7 @@ An English word (in English first) is its lower-cased form, by the rule English 
 
 With no status set by the player a word is Unknown, with two exceptions:
 
-- a word on the grammar list (`Data/Freq/Grammar.lua`) is Ignored;
+- a word on the grammar list (`Data/Freq/Freq_grammar.lua`) is Ignored;
 - a する verb whose noun is Known is Known (準備する is Known once 準備 is).
 
 A status the player set always wins, an explicit Unknown included. An Unknown the player set is kept as theirs (`"u"`), as against a word nobody touched: a grammar word or a する verb of a Known noun set to Unknown stays Unknown, and so does a saved word, whatever its study card says later.
@@ -176,7 +176,7 @@ WFJ_Known = {
 
 - **`Data/Freq/Freq_ja_NN.lua`** (4 files, `WFJ.Data.freqJa`): every distinct Japanese word key of the shipped reading rows, `["dictionary form<TAB>reading"] = "q,g,b,u,i,s"`: how many times it is used in quest, NPC talk, book, window, item and spell text. A line shipped under two keys (a female variant, a repeated quest's text) is counted once. Today: 30,495 words, 787,821 uses.
 - **`Data/Freq/Freq_en_NN.lua`** (2 files, `WFJ.Data.freqEn`): every English word of the shipped English word card rows and of the common word list, `["word"] = "q,g,b,u,i,s"`: how many lines of each kind list it.
-- **`Data/Freq/Grammar.lua`** (`WFJ.Data.grammar`, `[key] = "1"`): the grammar list, from `pipeline/grammar_words.txt`.
+- **`Data/Freq/Freq_grammar.lua`** (`WFJ.Data.grammar`, `[key] = "1"`): the grammar list, from `pipeline/grammar_words.txt`.
 
 A word's file is the CRC-32 of its key modulo the file count. The files hold counts, never ranks: `Core/WordFrequency` sorts each list once (most used first, equal totals by key), so a new word changes one file. The frequency files total about 2.1 MB; a test fails above 3 MB.
 

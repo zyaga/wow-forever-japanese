@@ -742,9 +742,10 @@ def _plan_frequency(
     grammar, problems = frequency.load_grammar(root.parent / "pipeline", japanese)
     if problems:
         raise ValueError("; ".join(problems[:5]))
-    out[schema.FREQ_GRAMMAR] = lua_writer.word_table_text(
-        "grammar", dict.fromkeys(grammar, "1"), "grammar words, which start as Ignored"
-    )
+    if grammar:  # a store with no grammar list ships no file for it
+        out[schema.FREQ_GRAMMAR] = lua_writer.word_table_text(
+            "grammar", dict.fromkeys(grammar, "1"), "grammar words, which start as Ignored"
+        )
     counts["freq"] = len(japanese) + len(english) + len(grammar)
 
 

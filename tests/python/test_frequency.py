@@ -76,7 +76,7 @@ def test_the_generated_frequency_files_stay_small(root):
 
 def test_every_grammar_word_ships_and_is_a_row_of_the_japanese_list(root):
     text = "".join(f.read_text("utf-8") for f in sorted((root / ADDON / "Data" / "Freq").glob("Freq_ja_*.lua")))
-    grammar = (root / ADDON / "Data" / "Freq" / "Grammar.lua").read_text("utf-8")
+    grammar = (root / ADDON / "Data" / "Freq" / "Freq_grammar.lua").read_text("utf-8")
     listed = [
         ln.split("#", 1)[0].rstrip()
         for ln in (root / "pipeline" / fq.GRAMMAR_FILE).read_text("utf-8").splitlines()

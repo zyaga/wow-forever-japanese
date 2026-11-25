@@ -109,7 +109,7 @@ Text.T = {
   ["marks.known"] = { en = "Known", ja = "既知" },
   ["marks.ignored"] = { en = "Ignored", ja = "無視" },
   ["marks.common"] = { en = "Common", ja = "頻出" },
-  ["marks.clickHint"] = { en = "Shift+click: status ・ Shift+right-click: ignore",
+  ["marks.clickHint"] = { en = "Shift+click: status, Shift+right-click: ignore",
     ja = "Shift+クリック：状態を変更 ・ Shift+右クリック：無視" },
   ["marks.clickOff"] = { en = "Shift+click saves words now: pick another save click to set a status by click",
     ja = "Shift+クリックは単語の保存に使われています。状態を変えるには保存のクリックを変更してください" },
@@ -554,7 +554,7 @@ Text.T = {
   ["intro.chat.copy"] = { en = "The small icon on a chat line copies it, ready to paste into a translator.",
     ja = "行の小さなアイコンでコピーして、翻訳サービスに貼り付けられます。" },
   ["intro.chat.phrases"] = {
-    en = "The 文 button opens phrases that players with this addon read in their own language.",
+    en = "The phrase button by the chat window opens phrases that players with this addon read in their language.",
     ja = "「文」ボタンの定型文は、このアドオンを使う相手には相手の言語で表示されます。" },
   ["intro.more.names"] = { en = "Names can show in Japanese: a choice on the first page and in the settings.",
     ja = "名前を日本語で表示できます。最初のページか設定で選べます。" },

@@ -73,7 +73,7 @@ FILE_PREFIX = {
     # the chat word lists: Chat_ja_<NN>.lua and Chat_en_<NN>.lua from the readings, Chat_list.lua from
     # data/chat/
     "chat": "Chat",
-    # how often each word is used: Freq_ja_<NN>.lua and Freq_en_<NN>.lua from the readings, Grammar.lua from
+    # how often each word is used: Freq_ja_<NN>.lua and Freq_en_<NN>.lua from the readings, Freq_grammar.lua from
     # pipeline/grammar_words.txt
     "freq": "Freq",
 }
@@ -133,7 +133,7 @@ def chat_relpath(language: str, shard: int) -> str:
     return f"Data/Chat/Chat_{language}_{shard:02d}.lua"
 
 
-FREQ_GRAMMAR = "Data/Freq/Grammar.lua"  # the words that start as Ignored
+FREQ_GRAMMAR = "Data/Freq/Freq_grammar.lua"  # the words that start as Ignored
 
 
 def freq_relpath(language: str, shard: int) -> str:
