@@ -25,6 +25,7 @@ an old setting stops working). A release moves those lines under its version num
 - Japanese for what Forever 1.60.1.70959 and 1.60.1.71037 added and for what players sent with the English Collector in 28 sends: 265 NPC lines, 325 quest progress and turn-in texts, 129 new quest titles with their objectives and descriptions (with word cards), and 45 item and spell tooltips.
 
 ### Changed
+- The welcome window is now a short tour. After you pick what you are here for, it shows a page for each feature that fits your choice (reading in Japanese and the hold key, word cards and the word list, word status, freezing a tooltip, the chat tools, and names, reporting a line and the voice), each with a picture and a few lines on how to use it. Next and Back move through it and the last page's button closes it. `/wfj intro` opens it again.
 - The English Collector now finds game messages in chat that nobody has translated yet, such as "Rex seems to be sobering up." It keeps only the name of the game's own text template for that message (here `DRUNK_MESSAGE_OTHER1`), never the message, so no player's name is kept. Send it in as before and those messages can be put into Japanese.
 - The addon's key bindings have their own section, WoW Forever Japanese, in the game's Keybindings instead of sitting under Other, and their names are Japanese or English like the settings pages.
 - The word card and the reading box have a solid background, so text behind them no longer shows through.

@@ -2,5 +2,5 @@
 - **Know your words.** Mark any word Unknown, Learning, Known or Ignored with Shift+click. Words you do not know are underlined in quests, NPC talk and books, the common ones worth learning next are highlighted, and a tag shows how much of a text you already know. Paste a list from Anki with `/wfj known` to mark thousands at once.
 - **Freeze a tooltip and read it.** Press Ctrl+F while a tooltip shows and a copy stays put. Point at a Japanese word on it for its reading and meaning, item and spell descriptions included.
 - **Chat tools.** Point at a word in chat for its card, LFM and WTS included. A 文 button opens a phrase book: phrases go out in English, and players with the addon read them in their own language.
-- **NPCs speak in their own voice.** Each quest line is now read in the voice of the NPC who says it, and a translated line with no voice yet says so: `[音声なし / No Voice Yet]`.
-- **More of the game in Japanese:** Forever 1.60.1.71037 with 28 Collector sends (265 NPC lines, 325 quest texts, 129 new quests), almost every spell tooltip, and the friends, group finder, professions, guild and calendar windows.
+- **A welcome tour.** The welcome window now walks you through each feature with a picture and how to use it. `/wfj intro` opens it again.
+- **More in Japanese, and NPCs in their own voice:** Forever 1.60.1.71037 with 28 Collector sends (265 NPC lines, 325 quest texts, 129 new quests), almost every spell tooltip, and more windows. Each quest line is read in the voice of the NPC who says it.

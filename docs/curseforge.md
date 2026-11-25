@@ -46,7 +46,7 @@ While the popup shows a word, **Ctrl+click** it to save it with its reading, mea
 
 ### <span style="color:#E8C77E;">Study whichever you want</span>
 
-The first time you log in, a welcome window asks what you are here for: **Study Japanese**, **Study English** or **Just play**. Pick one and press **Confirm**; you can change it later in the settings or with `/wfj intro`.
+The first time you log in, a welcome window asks what you are here for: **Study Japanese**, **Study English** or **Just play**. Pick one and press **Confirm**. A short tour follows: a page for each feature that fits your choice, with a picture and how to use it, and **Next** and **Back** to move through it. You can change your choice later in the settings or with `/wfj intro`.
 
 **Study English** turns the addon around for Japanese players learning English. The game stays in its own <span style="color:#8CB8E8;">English</span>, and holding <span style="color:#E0605A;">**Alt**</span> shows the Japanese. Point at an English word in quest text, NPC dialogue, a book page or a window label, and a popup shows how it is said, the Japanese word the translation uses for it there with its reading, and that word's dictionary form. **Ctrl+click** saves the English word with its sentence and the Japanese sentence, and the study card asks it English first. Names and small words such as *the*, *is* and *of* have no popup. The Japanese voice plays only while the key is held.
 
@@ -155,7 +155,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ### <span style="color:#E8C77E;">学びたい言語を選べます</span>
 
-初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**、**英語を学ぶ**、**日本語で遊ぶ** の3つです。1つ選んで **決定** を押します。あとで設定か `/wfj intro` で変えられます。
+初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**、**英語を学ぶ**、**日本語で遊ぶ** の3つです。1つ選んで **決定** を押します。そのあと、選んだ使い方に合った機能を1ページずつ、画像と使い方つきで紹介します。**次へ** と **戻る** で進めます。あとで設定か `/wfj intro` で変えられます。
 
 **英語を学ぶ** を選ぶと、英語を勉強中の方のために向きが逆になります。ゲームは本来の<span style="color:#8CB8E8;">英語</span>のまま表示され、<span style="color:#E0605A;">**Alt**</span> を押している間だけ日本語が表示されます。クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで英語の単語にマウスを合わせると、発音、その行の翻訳で使われている日本語の単語と読み方、その辞書形がポップアップに表示されます。**Ctrl+クリック** で英語の単語を英語の文と日本語の文と一緒に保存でき、学習カードは英語から出題します。名前や *the*、*is*、*of* のような短い語にはポップアップは出ません。日本語音声は、キーを押している間だけ再生されます。
 

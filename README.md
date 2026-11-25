@@ -63,8 +63,9 @@ or Japanese)
 At the character select screen, click **AddOns**, make sure **WoW Forever Japanese** is ticked, and log in.
 
 The first time you log in, a welcome window asks what you are here for: **Study Japanese**, **Study English** or
-**Just play**. Pick one and press **Confirm**; nothing changes before that. You can open it again from the settings
-or with `/wfj intro`.
+**Just play**. Pick one and press **Confirm**; nothing changes before that. A short tour follows: a page for each
+feature that fits your choice, with a picture and how to use it, and **Next** and **Back** to move through it. You
+can open it again from the settings or with `/wfj intro`.
 
 ![The AddOns list at character select with WoW Forever Japanese ticked](docs/images/addon-list.jpg)
 
@@ -354,7 +355,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 キャラクター選択画面で **AddOns** を押し、**WoW Forever Japanese** にチェックが入っていることを確認してからログインします。
 
-初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**（Study Japanese）、**英語を学ぶ**（Study English）、**日本語で遊ぶ**（Just play）の3つです。1つ選んで **決定** を押すまで、設定は何も変わりません。設定画面か `/wfj intro` でいつでも開き直せます。
+初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**（Study Japanese）、**英語を学ぶ**（Study English）、**日本語で遊ぶ**（Just play）の3つです。1つ選んで **決定** を押すまで、設定は何も変わりません。そのあと、選んだ使い方に合った機能を1ページずつ、画像と使い方つきで紹介します。**次へ** と **戻る** で進めます。設定画面か `/wfj intro` でいつでも開き直せます。
 
 ![キャラクター選択画面の AddOns 一覧で WoW Forever Japanese にチェックが入っている画面](docs/images/addon-list.jpg)
 
