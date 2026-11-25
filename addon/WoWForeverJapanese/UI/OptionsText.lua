@@ -175,6 +175,7 @@ Text.T = {
     ja = "今日の新しい単語は終わりました。また明日。" },
   ["study.empty"] = { en = "Save more words to study them here.", ja = "単語を保存すると、ここで学習できます。" },
   ["minimap.study"] = { en = "Study words (%s due)", ja = "単語を学習（%s）" },
+  ["minimap.phrases"] = { en = "Phrase book", ja = "定型文" },
   ["section.slash"] = { en = "Slash commands", ja = "スラッシュコマンド" },
 
   ["toggleKey"] = { en = "Turn translation on / off", ja = "翻訳のオン・オフ切り替え" },

@@ -68,7 +68,7 @@ The icon follows the line `UI/ChatLines` reports (`ChatLines.onLine`), so it nev
 ### The phrase book
 **The button** (`WFJPhraseButton`, 27 × 26) is the client's own chat button art (`chatframe-button-up`, `-down`, `-highlight`) with a gold 文 where the client's buttons carry their icon. It sits by the chat frame's own buttons, left of the main chat frame, until the player drags it. Its tooltip is a label of the addon's own (the client's tooltip font has no Japanese).
 
-**The card** (`WFJPhraseCard`, 592 × 416) is built the way the study card is ([Study → The tab and where it lives](study.md#the-tab-and-where-it-lives)): the same backdrop, a minus and an X in the header, the topics as the client's own tabs under it, the phrases in two columns of up to eight rows (Japanese above, English below in grey), and a footer, "Click a phrase, then press Enter to send it." Every topic shows at one fixed size, so the card never moves under the mouse.
+**The card** (`WFJPhraseCard`, 704 × 416) is built the way the study card is ([Study → The tab and where it lives](study.md#the-tab-and-where-it-lives)): the same backdrop, a minus and an X in the header, the topics as the client's own tabs under it (the strip drawn smaller when nine tabs are wider than the card), the phrases in two columns of up to eight rows (Japanese above, English below in grey), and a footer, "Click a phrase, then press Enter to send it." Every topic shows at one fixed size, so the card never moves under the mouse.
 
 | action | what happens |
 |---|---|
@@ -80,7 +80,7 @@ The icon follows the line `UI/ChatLines` reports (`ChatLines.onLine`), so it nev
 | `/wfj phrases` | opens the card, or collapses it when it is open, whatever `chat.phraseButton` says |
 | **Open the phrase book** on the Words page | opens the card |
 
-The button shows only with translation on, `chat.phraseButton` on, the card closed, and a chat frame to sit by. Nothing in the book is a protected call, and nothing it does sends a message: the player always presses Enter.
+The button shows with `chat.phraseButton` on, the card closed, and a chat frame to sit by, with translation on or off, like the study tab. The minimap menu has a **Phrase book** line that opens the card after the X hid both. Nothing in the book is a protected call, and nothing it does sends a message: the player always presses Enter.
 
 **The phrases** (`data/chat/phrases.jsonl`): 132 phrases in 9 topics (greetings, group, combat, dungeon, loot, trade, guild, travel, answers), at most 16 per topic, the most the card has room for. Each has an id, a topic, its English and its Japanese.
 

@@ -115,7 +115,8 @@ function W.label(parent, en, ja, x, y, width, size)
   if width then l.ja:SetWidth(width) end
   l.ja:SetJustifyH("LEFT")
   l.ja:SetText("")
-  function l.show() W.put(l.en, W.pick(l.pair[1], l.pair[2]), size or 12) end
+  l.size = size or 12
+  function l.show() W.put(l.en, W.pick(l.pair[1], l.pair[2]), l.size) end
   W.setPair(l, en, ja)
   register(parent, l.show)
   return l
@@ -131,7 +132,18 @@ end
 -- (the specs' stub) the minimum stands.
 function W.labelHeight(l, minimum)
   if not l.en.GetStringHeight then return minimum end
-  return math.max(minimum, math.ceil(l.en:GetStringHeight()) + 12)
+  -- a page is laid out once and the label changes language later: room for the taller of its two texts
+  local tall = math.ceil(l.en:GetStringHeight())
+  if l.pair and l.show then
+    for i = 1, 2 do
+      if type(l.pair[i]) == "string" and l.pair[i] ~= "" then
+        W.put(l.en, l.pair[i], l.size or 12)
+        tall = math.max(tall, math.ceil(l.en:GetStringHeight()))
+      end
+    end
+    l.show()
+  end
+  return math.max(minimum, tall + 12)
 end
 
 -- A section header in the style of the client's own settings pages [verified: SettingsListSectionHeaderTemplate,

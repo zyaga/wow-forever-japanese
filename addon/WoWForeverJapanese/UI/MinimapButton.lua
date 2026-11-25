@@ -134,6 +134,10 @@ function MinimapButton.items()
     items[#items + 1] = { kind = "button", text = tx("minimap.study"):format(WFJ.StudyWindow.counts().waiting),
       action = function() WFJ.StudyWindow.open() end }
   end
+  if WFJ.PhraseBook then
+    items[#items + 1] = { kind = "button", text = tx("minimap.phrases"),
+      action = function() WFJ.PhraseBook.open() end }
+  end
   items[#items + 1] = { kind = "button", text = tx("button.settings"), action = function() C.openOptions() end }
   items[#items + 1] = { kind = "button", text = tx("minimap.hide"),
     action = function() S.set("minimapButton", false) end }

@@ -17,7 +17,7 @@ local CANDIDATES = { chatFrame = { "ChatFrame1" }, activeBox = { "ChatFrameUtil.
 
 Book.COLS = 2
 Book.ROWS = 8 -- the fullest topic the card has room for is COLS x ROWS phrases (a test holds the data to it)
-local COL_W, ROW_H, PAD, HEAD, TABS_H, FOOT = 284, 38, 12, 34, 36, 24
+local COL_W, ROW_H, PAD, HEAD, TABS_H, FOOT = 340, 38, 12, 34, 36, 24
 local PAGE_TOP = HEAD + TABS_H + 6
 local BUTTON_W, BUTTON_H = 27, 26
 
@@ -50,7 +50,10 @@ local function place(f)
   -- never dragged: beside the chat window itself, so it is right however early this runs and follows the chat
   -- window when the player moves it (the screen clamp keeps it on screen)
   local chat = Compat.get(SURFACE, "chatFrame")
-  if type(chat) == "table" then
+  local menu = Compat.resolve("ChatFrameMenuButton")
+  if f == button and type(menu) == "table" and menu.IsShown and menu:IsShown() then
+    f:SetPoint("BOTTOM", menu, "TOP", 0, -2) -- centred over the chat window's own menu button
+  elseif type(chat) == "table" then
     f:SetPoint("BOTTOMLEFT", chat, "BOTTOMLEFT", -(BUTTON_W + 4), 34)
   else
     f:SetPoint("LEFT", parent, "LEFT", 4, 0)
@@ -95,12 +98,24 @@ local function fontTabs()
   if not card then return end
   for _, tab in ipairs(tabs) do
     tab.Text:SetText(pick("chat.topic." .. tab.topic))
-    WFJ.Font.set(tab.Text, WFJ.Font.PATH, 12, "")
+    WFJ.Font.set(tab.Text, WFJ.Font.PATH, 14, "")
     -- a tab made with no text was given a text area of almost no width, and the tab's own sizing reads that width
     -- back [verified: forever blizzard_sharedxml/shared/tabsystem/tabsystemtemplates.lua:225–250, UpdateTabWidth]:
     -- cleared, so it measures the words (a cut-off tab is blank and shows the client's tooltip)
     tab.Text:SetWidth(0)
     if tab.UpdateTabWidth then tab:UpdateTabWidth() end
+  end
+  -- the client's tabs have a least width of their own, and nine of them are wider than the card: the strip is
+  -- drawn smaller so every topic sits inside it (the words are set larger above to make up for it)
+  local total = 0
+  for _, tab in ipairs(tabs) do total = total + (tab.GetWidth and tab:GetWidth() or 0) + 1 end
+  local room = Book.COLS * COL_W
+  local ts = card.tabSystem
+  if ts.SetScale then
+    local scale = total > room and room / total or 1
+    ts:SetScale(scale)
+    ts:ClearAllPoints() -- offsets are counted in the strip's own, smaller units
+    ts:SetPoint("BOTTOMLEFT", card, "TOPLEFT", PAD / scale, -(HEAD + TABS_H) / scale)
   end
   if card.tabSystem.MarkDirty then card.tabSystem:MarkDirty() end
 end
@@ -257,9 +272,9 @@ end
 -- ── What is on screen ──────────────────────────────────────────────────────
 
 -- One place decides: the card when open; else the button, unless it was closed for the session, its setting is
--- off, translation is off, or there is no chat frame for it to sit by.
+-- off, or there is no chat frame for it to sit by. Like the study card, it shows with translation off too.
 local function apply()
-  local showButton = not cardOpen and WFJ.State.enabled and not closed
+  local showButton = not cardOpen and not closed
     and WFJ.Settings.get("chat.phraseButton") == true and type(Compat.get(SURFACE, "chatFrame")) == "table"
   if card then card:SetShown(cardOpen) end
   if showButton and not button then buildButton() end

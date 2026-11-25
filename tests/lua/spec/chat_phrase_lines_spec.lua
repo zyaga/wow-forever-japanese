@@ -90,6 +90,28 @@ describe("a phrase book phrase in chat", function()
     assert.is_true(WFJ.ChatLines.secret(raw))
   end)
 
+  it("keeps a visible line in step with the translation switch, both ways", function()
+    WFJ.State.setEnabled(false)
+    assert.is_false(arrive(raw)) -- left as sent
+    local sent = "|Hplayer:Taro|h[Taro]|h says: " .. raw
+    local line = Env.line(sent, Env.SAY)
+    frame.visibleLines[1] = line
+    Lines.reveal(frame)
+    assert.equals(sent, line:GetText())
+    WFJ.State.setEnabled(true) -- the switch runs the pass itself
+    local shown = line:GetText()
+    assert.is_truthy(shown:find(P.MARK, 1, true))
+    assert.is_nil(shown:find(raw, 1, true))
+    WFJ.State.modifierHeld = true
+    Lines.reveal(frame)
+    assert.equals(sent, line:GetText())
+    WFJ.State.modifierHeld = false
+    Lines.reveal(frame)
+    assert.equals(shown, line:GetText())
+    WFJ.State.setEnabled(false)
+    assert.equals(sent, line:GetText())
+  end)
+
   it("changes no line that holds no changed phrase, and never reads a secret line", function()
     local shown = select(2, arrive(raw))
     local plain = Env.line("[Taro]: hello there", Env.SAY)

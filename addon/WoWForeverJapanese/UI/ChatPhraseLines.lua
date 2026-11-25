@@ -6,7 +6,9 @@
 -- 150–166 (a callback's second return onwards replace the arguments), :202 ChatFrameUtil.AddMessageEventFilter].
 -- The reveal key: after UI/ChatSystem's own pass over the visible lines, a line holding a changed phrase shows, in
 -- Japanese first, the message as it was sent, and in English first the Japanese phrase; on release its own text
--- goes back. The history is never rewritten.
+-- goes back. The same pass keeps a visible line in step with the switches: a marked message that arrived while
+-- phrases or translation were off shows its phrase once they are on, and a changed one shows the message as sent
+-- once they are off. The history is never rewritten.
 local _, WFJ = ...
 local Lines = {}
 WFJ.ChatPhraseLines = Lines
@@ -48,8 +50,8 @@ local function held(raw)
 end
 
 function Lines.reveal(frame)
-  local holding = WFJ.State.modifierHeld and on()
-  if not holding and next(revealed) == nil then return end -- nothing to show and nothing to put back
+  local active = on()
+  local holding = WFJ.State.modifierHeld and active
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local P = WFJ.ChatPhrases
   local restored = false
@@ -63,14 +65,29 @@ function Lines.reveal(frame)
           line:SetText(text:sub(1, first - 1) .. held(raw) .. text:sub(last + 1))
           revealed[line] = true
         end
-      elseif not holding and revealed[line] then
-        revealed[line] = nil
-        -- a line UI/ChatSystem does not rewrite still holds what the key showed: its own text goes back
-        local info = line.messageInfo
-        local own = type(info) == "table" and info.message or nil
-        if type(own) == "string" and not secret(own) and own ~= text and P.sent(own) then
-          line:SetText(own)
-          restored = true
+      elseif not holding then
+        if revealed[line] then
+          revealed[line] = nil
+          -- a line UI/ChatSystem does not rewrite still holds what the key showed: its own text goes back
+          local info = line.messageInfo
+          local own = type(info) == "table" and info.message or nil
+          if type(own) == "string" and not secret(own) and own ~= text and P.sent(own) then
+            line:SetText(own)
+            text, restored = own, true
+          end
+        end
+        local marked = text:find(P.MARK, 1, true)
+        if active and not marked then
+          -- a line that arrived while phrases were off (the filter left it as sent) takes its phrase now
+          local shown = P.translate(text, WFJ.State.direction)
+          if shown then
+            P.keep(shown, text)
+            line:SetText(shown)
+          end
+        elseif not active and marked then
+          -- phrases or translation went off: the line shows the message as it was sent
+          local raw, first, last = P.sent(text)
+          if raw then line:SetText(text:sub(1, first - 1) .. raw .. text:sub(last + 1)) end
         end
       end
     end
@@ -116,6 +133,7 @@ function Lines.init()
     local function all() pcall(Lines.revealAll) end
     WFJ.State.on("language", all)
     WFJ.State.on("chat", all)
+    WFJ.State.on("enabled", all)
     if type(Compat.get(SURFACE, "openTemporary")) == "function" then
       hooksecurefunc("FCF_OpenTemporaryWindow", Lines.hookAll) -- a whisper / temporary window made later
     end
