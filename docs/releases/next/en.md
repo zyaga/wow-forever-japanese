@@ -2,5 +2,5 @@
 - **Freeze a tooltip and read it.** Press Ctrl+F while a tooltip shows and a copy stays put. Point at a Japanese word on it for its reading and meaning, item and spell descriptions included. Esc or the key again closes it.
 - **NPCs speak in their own voice.** A quest line whose speaker the addon could not name was read by one narrator. Each line is now read in the voice of the NPC who says it, and a translated line with no voice yet says so: `[音声なし / No Voice Yet]`.
 - **Forever 1.60.1.71037 in Japanese**, with what players sent in 28 Collector sends: 265 NPC lines, 325 quest progress and turn-in texts, 129 new quests, and 45 item and spell tooltips.
-- **Almost every spell tooltip in Japanese:** reagents, tools, recipes and what they make, requirements, "until canceled" durations, mounts, companion pets, macros, and spells that include another spell's text.
-- **More windows in Japanese:** friends, the group finder, the professions page, stat tooltips, more of the guild window (Japanese you type there shows now), the calendar, and every item's equip and use lines.
+- **More in Japanese:** almost every spell tooltip (reagents, tools, recipes, requirements, mounts, pets, macros), and the friends, group finder, professions and calendar windows, stat tooltips and more of the guild window.
+- **Fewer blocks and errors:** hovering a creature in combat no longer floods the error list, and a bag item (the Hearthstone) is no longer blocked in this addon's name after a Dialogue UI talk.
