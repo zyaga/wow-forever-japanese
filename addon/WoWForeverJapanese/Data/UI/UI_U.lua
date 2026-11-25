@@ -257,6 +257,7 @@ WFJ.Data.add("ui", {
   ["USER_SURVEY_DIALOG_TEXT"] = { "World of Warcraftでの体験について、いくつかの質問にお答えいただけませんか？「はい」をクリックすると、外部ブラウザのウィンドウでアンケートが開きます。", 0xd8efec9b, "." },
   ["USER_SURVEY_STATUS_READY"] = { "アンケートに回答可能", 0xaa1f2d79, "." },
   ["USER_SURVEY_STATUS_READY_DESCRIPTION"] = { "ご意見をお聞かせください! ここをクリックしてアンケートを開きます。", 0x7cd00a54, "." },
+  ["USE_COLORBLIND_MODE"] = { "UIの色覚サポートモードを有効にする", 0xb2480a15, "." },
   ["USE_COMBINED_BAGS_TEXT"] = { "バッグをまとめる", 0xf82db185, "." },
   ["USE_FULL_TEXT_MODE"] = { "文章形式で表示", 0x54bde010, "." },
   ["USE_GUILDBANK_REPAIR"] = { "修理にギルドの資金を使いますか？", 0x2a7320ce, "." },

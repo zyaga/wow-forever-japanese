@@ -21,7 +21,8 @@ Forever is game type `camelot`, a member of the `mainline` family (ADR-029):
   (the Forever window sweep in docs/research/);
 - `## AllowLoad: Glue` (header) and `[AllowLoad glue]` (line) are the login screens, where no addon runs;
 - `<Addon>_Mainline.toc` is read in preference to `<Addon>.toc`;
-- an XML file's `<Include file>` and `<Script file>` are followed, relative to that XML.
+- an XML file's `<Include file>` and `<Script file>` are followed: beside that XML file, else from the addon's
+  folder.
 
 The default output is one `<addon> <state> <files>` line per addon, sorted: state is `gated` (the header keeps
 camelot out), `glue`, `lod` (LoadOnDemand) or `login`; files is the size of the camelot load set found in the
@@ -100,6 +101,18 @@ def state(toc: Path, game: str = "camelot") -> str:
     return "lod" if lod else "login"
 
 
+def _resolve(base: str, named: str) -> str:
+    """`named` as written in a file of the folder `base`, with its `..` and `.` segments worked out."""
+    parts: list[str] = []
+    for part in f"{base}/{named}".replace("\\", "/").split("/"):
+        if part == "..":
+            if parts:
+                parts.pop()
+        elif part not in ("", "."):
+            parts.append(part)
+    return "/".join(parts)
+
+
 def _expand(index: dict[str, Path], rel: str, seen: list[str]) -> None:
     key = rel.casefold()
     if key in seen or key not in index:
@@ -108,16 +121,12 @@ def _expand(index: dict[str, Path], rel: str, seen: list[str]) -> None:
     if not key.endswith(".xml"):
         return
     text = index[key].read_text(encoding="utf-8-sig", errors="ignore")
-    base = key.rsplit("/", 1)[0]
+    base, addon = key.rsplit("/", 1)[0], key.split("/", 1)[0]
     for m in _INCLUDE.finditer(text):
-        parts: list[str] = []
-        for part in f"{base}/{m.group(1)}".replace("\\", "/").split("/"):
-            if part == "..":
-                if parts:
-                    parts.pop()
-            elif part not in ("", "."):
-                parts.append(part)
-        _expand(index, "/".join(parts), seen)
+        beside = _resolve(base, m.group(1))
+        # the client also finds a path written from the addon's folder (Mainline\ItemButtonTemplate.xml names
+        # its script as Mainline\ItemButtonTemplate.lua)
+        _expand(index, beside if beside.casefold() in index else _resolve(addon, m.group(1)), seen)
 
 
 def load_set(index: dict[str, Path], addon: str, toc: Path, game: str = "camelot") -> list[str]:

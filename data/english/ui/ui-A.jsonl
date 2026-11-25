@@ -154,6 +154,7 @@
 {"id": "ADD_IGNORE_LABEL", "field": "text", "en": "Enter name of player to ignore\nor\nShift click a name from the chat window:", "hash": "7d9f009dfc92b423", "src": "db2@1.60.1.71037"}
 {"id": "ADD_NEW_FRIEND", "field": "text", "en": "Add New Friend", "hash": "38e313da29e76b80", "src": "db2@1.60.1.71037"}
 {"id": "ADD_WOW_FRIEND", "field": "text", "en": "Add WoW Friend", "hash": "ab7597e5160aef0f", "src": "db2@1.60.1.71037"}
+{"id": "ADJUST_COLORBLIND_STRENGTH", "field": "text", "en": "Adjust Strength", "hash": "9de0d8998db70df9", "src": "db2@1.60.1.71037"}
 {"id": "ADJUST_MOTION_SICKNESS_SHAKE", "field": "text", "en": "Camera Shake", "hash": "80c17c7fcdb89262", "src": "db2@1.60.1.71037"}
 {"id": "ADVANCED_ANTIALIASING_MSAA_FORMAT", "field": "text", "en": "Color %dx / Depth %dx", "hash": "c2b3f341f48719e1", "src": "db2@1.60.1.71037"}
 {"id": "ADVANCED_COMBAT_LOGGING", "field": "text", "en": "Advanced Combat Logging", "hash": "459285fdbcd75ed9", "src": "db2@1.60.1.71037"}

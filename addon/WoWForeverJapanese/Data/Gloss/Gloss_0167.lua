@@ -469,4 +469,12 @@ WFJ.Data.add("gloss", {
   [167466] = "場合\tばあい\tif",
   [167467] = "操作\tそうさ\tinput, activity",
   [167468] = "食べ始める\tたべはじめる\tbegan eating",
+  [167469] = "する\tする\tmake (enable)",
+  [167470] = "インターフェース\tインターフェース\tinterfaces",
+  [167471] = "合わせる\tあわせる\tfor (to suit)",
+  [167472] = "型\tかた\ttype",
+  [167473] = "特性\tとくせい\ttypes (traits)",
+  [167474] = "色覚\tしきかく\tcolor vision",
+  [167475] = "色覚\tしきかく\tcolor vision (colorblind)",
+  [167476] = "表示する\tひょうじする\tadds (shows)",
 })

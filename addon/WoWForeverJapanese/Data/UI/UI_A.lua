@@ -157,6 +157,7 @@ WFJ.Data.add("ui", {
   ["ADD_IGNORE_LABEL"] = { "無視するプレイヤーの名前を入力\nまたは\nチャットウィンドウの名前をShift+クリック:", 0x7d9f009d, "." },
   ["ADD_NEW_FRIEND"] = { "新しいフレンドを追加", 0x38e313da, "." },
   ["ADD_WOW_FRIEND"] = { "WoWフレンドに追加", 0xab7597e5, "." },
+  ["ADJUST_COLORBLIND_STRENGTH"] = { "強さの調整", 0x9de0d899, "." },
   ["ADJUST_MOTION_SICKNESS_SHAKE"] = { "カメラの揺れ", 0x80c17c7f, "." },
   ["ADVANCED_ANTIALIASING_MSAA_FORMAT"] = { "カラー %dx / 深度 %dx", 0xc2b3f341, "." },
   ["ADVANCED_COMBAT_LOGGING"] = { "高度な戦闘ログ", 0x459285fd, "." },

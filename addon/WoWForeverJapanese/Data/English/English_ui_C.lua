@@ -513,6 +513,8 @@ WFJ.Data.add("english", {
   ["ui:COLLECTION_UNOPENED_PLURAL"] = { text = "collection=1 items=3 unopened=2" },
   ["ui:COLLECTION_UNOPENED_SINGULAR"] = { text = "collection=1 item=3 unopened=2" },
   ["ui:COLOR"] = { text = "color=1" },
+  ["ui:COLORBLIND_FILTER"] = { text = "colorblind=1" },
+  ["ui:COLORBLIND_OPTION_NONE"] = { text = "none=1" },
   ["ui:COLORIZE"] = { text = "colorize=1" },
   ["ui:COLORS"] = { text = "colors=1" },
   ["ui:COLORS_ITEM_QUALITY"] = { text = "item=1" },

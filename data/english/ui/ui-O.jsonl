@@ -61,6 +61,7 @@
 {"id": "OPTION_TARGETFPS_CHECK", "field": "text", "en": "Enable this option to dynamically reduce graphics quality if you fall below a specific framerate.", "hash": "d33160aded6a2c43", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_ACCESSIBILITY_FONT_SIZE", "field": "text", "en": "Adjust the display size of text used throughout the game", "hash": "d18f3e56453b2927", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_ACTION_TARGETING", "field": "text", "en": "A targeting system that dynamically targets enemies based on where you're looking. Works alongside the standard targeting system.", "hash": "2dbe2e9b1a53553a", "src": "db2@1.60.1.71037"}
+{"id": "OPTION_TOOLTIP_ADJUST_COLORBLIND_STRENGTH", "field": "text", "en": "Adjusts the strength of the selected colorblind filter.", "hash": "87cfa37a2e78dba0", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_ADVANCED_COMBAT_LOGGING", "field": "text", "en": "Enables extra logging data when writing the combat log to a text file. This may cause additional network lag when using the \"combatlog\" chat command.", "hash": "3243aa78e4c7c709", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_ADVANCED_MSAA", "field": "text", "en": "Sets the Multisample Anti-Aliasing mode. Both the number of color and depth samples can be specified.", "hash": "8a7391c843813306", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_ALTERNATE_SCREEN_EFFECTS", "field": "text", "en": "Modifies certain effects, such as the screen fading to white or bright spells, to help reduce photosensitivity issues", "hash": "f6e9c512d93a1b4c", "src": "db2@1.60.1.71037"}
@@ -109,6 +110,7 @@
 {"id": "OPTION_TOOLTIP_CINEMATIC_SUBTITLES", "field": "text", "en": "Enables subtitles during cinematics.", "hash": "eddf132d3784bb5a", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_CLEAR_AFK", "field": "text", "en": "Automatically exit Away mode\nupon moving or talking.", "hash": "2705235304e95578", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_CLICK_TO_MOVE", "field": "text", "en": "Use mouse clicks to move your character to destinations.", "hash": "c37472619bdc2962", "src": "db2@1.60.1.71037"}
+{"id": "OPTION_TOOLTIP_COLORBLIND_FILTER", "field": "text", "en": "Adjusts the game color for specific types of colorblindness.", "hash": "3c804715e4c769c7", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_MODE", "field": "text", "en": "Sets the direction that combat text scrolls.", "hash": "19238523d56ecd4e", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_AURAS", "field": "text", "en": "Shows a message when the player gains or loses an aura.", "hash": "17891e2e91e3214b", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_AURA_FADE", "field": "text", "en": "Shows a message when an aura fades from the player.", "hash": "5f3e5c68cd07df8e", "src": "db2@1.60.1.70425"}
@@ -352,6 +354,7 @@
 {"id": "OPTION_TOOLTIP_UNIT_NAME_OWN", "field": "text", "en": "Display your character's name in the game world.", "hash": "1ec2bcf2cfceba08", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_UNIT_SECONDARY_NAME_OWN", "field": "text", "en": "Display your character's secondary name in the game world.", "hash": "4463fa2a860dc38a", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_USEIPV6", "field": "text", "en": "Enables the use of IPv6, the technology behind the next-generation Internet.\nRequires IPv6 connectivity to the Internet.  Checking this box without IPv6 connectivity may prevent you from playing WoW.", "hash": "0c708e9691a544a9", "src": "db2@1.60.1.71037"}
+{"id": "OPTION_TOOLTIP_USE_COLORBLIND_MODE", "field": "text", "en": "Adds additional information to tooltips and several other interfaces.", "hash": "a038551f8940afad", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_USE_COMBINED_BAGS", "field": "text", "en": "When checked your inventory will display as a single bag window", "hash": "f86dc6f4db29a22e", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_USE_UISCALE", "field": "text", "en": "Check to use the UI Scale Slider, uncheck to use the system default scale.", "hash": "9d1b8efed0e43964", "src": "db2@1.60.1.71037"}
 {"id": "OPTION_TOOLTIP_VERTICAL_SYNC", "field": "text", "en": "Synchronizes your framerate to some fraction of your monitor's refresh rate. Enable this if you see excessive screen tearing in game.", "hash": "ceb21404fea47000", "src": "db2@1.60.1.71037"}

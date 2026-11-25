@@ -35,7 +35,7 @@ or Japanese)
 | Letter pages | 209 |
 | Item tooltips | 11,259 |
 | Spell tooltips | 20,360 |
-| UI | 16,222 |
+| UI | 16,232 |
 
 ## Install
 
@@ -321,7 +321,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 | 手紙 | 209 ページ |
 | アイテムのツールチップ | 11,259 |
 | 呪文のツールチップ | 20,360 |
-| UI | 16,222 |
+| UI | 16,232 |
 
 ### インストール
 
