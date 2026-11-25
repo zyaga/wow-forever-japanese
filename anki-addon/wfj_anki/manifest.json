@@ -1,0 +1,7 @@
+{
+  "package": "wow_forever_japanese",
+  "name": "WoW Forever Japanese",
+  "homepage": "https://foreverjapanese.com/#anki",
+  "min_point_version": 250900,
+  "human_version": "@project-version@"
+}

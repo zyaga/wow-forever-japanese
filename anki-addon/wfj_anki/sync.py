@@ -27,6 +27,7 @@ class Result:
     missing_audio: int = 0
     words: int = 0
     files: int = 0
+    tables: int = 0  # the saved files that hold the table the game writes for the add-on
     newer: bool = False  # a saved file was written by a newer addon version than this add-on reads
 
     @property
@@ -43,7 +44,8 @@ def apply(col: Notes, tables: list[tuple[discover.SavedFile, Any]], reset: set[s
     """Add a note for each word that has none and rewrite what changed in the others. With `reset`, only the notes
     of those keys are touched, and every field of them is written from the game."""
     rows, newer = plan.rows(tables)
-    result = Result(words=len(rows), files=len(tables), newer=newer)
+    result = Result(words=len(rows), files=len(tables), newer=newer,
+                    tables=sum(1 for _, table in tables if isinstance(table, dict)))
     notes = col.notes()
     stored: dict[Path, str | None] = {}
 
@@ -81,3 +83,9 @@ def apply(col: Notes, tables: list[tuple[discover.SavedFile, Any]], reset: set[s
             col.update(existing[0], writes)
             result.updated += 1
     return result
+
+
+def due(seen: object, last_seen: object, last: Result | None, asked: bool) -> bool:
+    """Whether a sync has anything to look at: the player asked, a saved file or a setting changed since the last
+    one (`seen` against `last_seen`), or the last one could not find some media."""
+    return asked or seen != last_seen or bool(last and last.pending)

@@ -119,3 +119,20 @@ def test_an_older_note_type_gains_the_new_field_and_loses_nothing(seen):
 def test_a_note_type_of_the_same_name_that_is_the_players_is_left_alone(seen):
     assert seen["own_name_when_taken"] == notetype.NAME + " (add-on)"
     assert seen["theirs_fields"] == ["Key"]
+
+
+def test_the_settings_window_shows_and_saves_the_choices(tmp_path):
+    python = anki_python()
+    if python is None:
+        pytest.skip("Anki is not installed here")
+    run = subprocess.run([python, str(ADDON / "tests" / "settings_window.py"), str(tmp_path)],
+                         capture_output=True, text=True, timeout=300)
+    assert run.returncode == 0, run.stderr[-3000:]
+    seen = json.loads(run.stdout.strip().splitlines()[-1])
+    for name, language in (("settings-en.png", "Found 2 saved word list(s)."), ("settings-ja.png", "単語帳が 2 件見つかりました。")):
+        assert (tmp_path / name).stat().st_size > 0
+        window = seen[name]
+        assert window["found"] == language
+        assert window["saved"] == [{"folder": "/Volumes/Games/World of Warcraft", "front": "word", "audio": "back"}]
+        assert window["status"].count("\n") == 1
+        assert window["empty"] != window["found"]

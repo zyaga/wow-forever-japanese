@@ -17,6 +17,7 @@ class AnkiNotes:
         self.settings = settings
         self.shrink = shrink
         self.model: dict[str, Any] | None = None
+        self._undo: int | None = None  # the sync's one step in Anki's undo list, started by its first write
 
     # ── the note type and the deck ───────────────────────────────────────────
 
@@ -81,14 +82,28 @@ class AnkiNotes:
                 found[key] = (note_id, fields)
         return found
 
+    def _writing(self) -> None:
+        if self._undo is None:
+            self._undo = self.col.add_custom_undo_entry(notetype.NAME)
+
+    def finish(self) -> Any:
+        """Close the sync's undo step. → Anki's record of what changed, or None when no note was written."""
+        if self._undo is None:
+            return None
+        changes = self.col.merge_undo_entries(self._undo)
+        self._undo = None
+        return changes
+
     def add(self, fields: dict[str, str]) -> None:
         assert self.model is not None
+        self._writing()
         note = self.col.new_note(self.model)
         for name, value in fields.items():
             note[name] = value
         self.col.add_note(note, self._deck())
 
     def update(self, note_id: Any, writes: dict[str, str]) -> None:
+        self._writing()
         note = self.col.get_note(note_id)
         for name, value in writes.items():
             note[name] = value
