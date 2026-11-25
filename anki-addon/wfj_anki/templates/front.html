@@ -1,0 +1,12 @@
+<div class="wfj wfj-front">
+{{#Quest}}<div class="wfj-from">{{Quest}}</div>{{/Quest}}
+{{^Lang}}
+<!--sentence--><div class="wfj-sentence" lang="ja">{{kanji:Sentence}}</div><!--/sentence-->
+<!--word--><div class="wfj-word wfj-alone" lang="ja">{{Word}}</div><!--/word-->
+{{/Lang}}
+{{#Lang}}
+<!--sentence--><div class="wfj-sentence wfj-en">{{Sentence}}</div><!--/sentence-->
+<!--word--><div class="wfj-word wfj-alone wfj-en">{{Word}}</div><!--/word-->
+{{/Lang}}
+<!--audio-->{{#Audio}}<div class="wfj-audio">{{Audio}}</div>{{/Audio}}<!--/audio-->
+</div>

@@ -1,0 +1,139 @@
+/* WoW Forever Japanese. A paper card by day, a night-ink card in Anki's night mode; gold marks the saved word. */
+.card {
+  margin: 0;
+  padding: 0;
+  background: #efe9dd;
+  color: #1b1d26;
+  font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: center;
+}
+.card.nightMode, .card.night_mode { background: #07080c; color: #f4efe6; }
+
+.wfj {
+  --paper: #fbf8f1;
+  --ink: #1b1d26;
+  --soft: #5d5a52;
+  --faint: #8c877b;
+  --line: rgba(27, 29, 38, 0.12);
+  --gold: #9a6a1c;
+  --mark: rgba(232, 190, 110, 0.38);
+  box-sizing: border-box;
+  max-width: 720px;
+  margin: 28px auto;
+  padding: 36px 40px 28px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 18px 48px rgba(27, 29, 38, 0.12);
+}
+.nightMode .wfj, .night_mode .wfj {
+  --paper: #12151f;
+  --ink: #f4efe6;
+  --soft: #cbc4b8;
+  --faint: #8e887d;
+  --line: rgba(255, 255, 255, 0.1);
+  --gold: #e8be6e;
+  --mark: rgba(232, 190, 110, 0.2);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+}
+
+.wfj-from {
+  margin-bottom: 20px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.wfj-sentence {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 30px;
+  line-height: 2.1;
+  text-align: left;
+  text-wrap: pretty;
+}
+.wfj-front .wfj-sentence { line-height: 1.8; }
+.wfj-sentence.wfj-en {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 26px;
+  line-height: 1.6;
+}
+/* the saved word, as the game's gold tint marks it */
+.wfj-sentence b {
+  padding: 2px 3px;
+  border-bottom: 2px solid var(--gold);
+  border-radius: 4px 4px 0 0;
+  background: var(--mark);
+  font-weight: inherit;
+}
+.wfj rt {
+  color: var(--soft);
+  font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-size: 0.42em;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.wfj-sentence b rt { color: var(--gold); }
+
+.wfj-rule { height: 1px; margin: 26px 0 22px; background: var(--line); }
+
+.wfj-word {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+.wfj-word.wfj-en { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; line-height: 1.4; }
+.wfj-word.wfj-alone { padding: 48px 0; font-size: 60px; line-height: 1.5; }
+.wfj-form { margin-top: 2px; color: var(--soft); font-size: 17px; }
+.wfj-label {
+  margin-right: 10px;
+  padding: 1px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--faint);
+  font-size: 12px;
+}
+.wfj-kana { margin-left: 10px; color: var(--faint); }
+.wfj-form .wfj-kana:first-child { margin-left: 0; }
+.wfj-meaning { margin-top: 12px; font-size: 22px; line-height: 1.5; }
+.wfj-other {
+  margin-top: 14px;
+  color: var(--soft);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.wfj-audio { margin-top: 20px; }
+.wfj-audio .replay-button { display: inline-block; margin: 0 4px; text-decoration: none; }
+.wfj-audio .replay-button svg { width: 44px; height: 44px; }
+.wfj-audio .replay-button svg circle { fill: transparent; stroke: var(--gold); stroke-width: 2px; }
+.wfj-audio .replay-button svg path { fill: var(--gold); stroke: none; }
+
+.wfj-image { margin-top: 22px; }
+.wfj-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.wfj-foot { margin-top: 24px; color: var(--faint); font-size: 12px; letter-spacing: 0.06em; }
+.wfj-dot { margin: 0 8px; }
+
+.mobile .wfj, .android .wfj, .iphone .wfj { margin: 12px; padding: 24px 20px 20px; }
+@media (max-width: 520px) {
+  .wfj { margin: 12px; padding: 24px 20px 20px; }
+  .wfj-sentence { font-size: 24px; }
+  .wfj-sentence.wfj-en { font-size: 21px; }
+  .wfj-word { font-size: 36px; }
+  .wfj-word.wfj-alone { padding: 32px 0; font-size: 44px; }
+  .wfj-meaning { font-size: 19px; }
+}

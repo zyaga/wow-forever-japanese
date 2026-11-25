@@ -1,0 +1,25 @@
+<div class="wfj wfj-back">
+{{#Quest}}<div class="wfj-from">{{Quest}}</div>{{/Quest}}
+{{^Lang}}
+<div class="wfj-sentence" lang="ja">{{furigana:Sentence}}</div>
+<div class="wfj-rule"></div>
+<div class="wfj-entry">
+<div class="wfj-word" lang="ja">{{furigana:Word (furigana)}}</div>
+{{#Dictionary form}}<div class="wfj-form" lang="ja"><span class="wfj-label">辞書形</span>{{Dictionary form}}<span class="wfj-kana">{{Its reading}}</span></div>{{/Dictionary form}}
+{{#Meaning}}<div class="wfj-meaning">{{Meaning}}</div>{{/Meaning}}
+</div>
+{{/Lang}}
+{{#Lang}}
+<div class="wfj-sentence wfj-en">{{Sentence}}</div>
+<div class="wfj-rule"></div>
+<div class="wfj-entry">
+<div class="wfj-word wfj-en">{{Word}}</div>
+{{#Reading}}<div class="wfj-form"><span class="wfj-kana">{{Reading}}</span></div>{{/Reading}}
+{{#Meaning}}<div class="wfj-meaning" lang="ja">{{Meaning}}</div>{{/Meaning}}
+{{#Japanese sentence}}<div class="wfj-other" lang="ja">{{Japanese sentence}}</div>{{/Japanese sentence}}
+</div>
+{{/Lang}}
+{{#Audio}}<div class="wfj-audio">{{Audio}}</div>{{/Audio}}
+{{#Image}}<div class="wfj-image">{{Image}}</div>{{/Image}}
+<div class="wfj-foot">WoW Forever Japanese<span class="wfj-dot">·</span>{{Source}}<span class="wfj-dot">·</span>{{Saved}}</div>
+</div>
