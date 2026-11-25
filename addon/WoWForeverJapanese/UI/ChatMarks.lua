@@ -66,7 +66,9 @@ local function draw(line, text)
     local areas = WFJ.ReadingView.chatSpanAreas(line, text, w.first, w.last)
     if type(areas) == "table" and not WFJ.ChatLines.secret(areas) and areas[1] then
       local rects = {}
-      for i, a in ipairs(areas) do rects[i] = { left = a.left, bottom = a.bottom, width = a.width, height = a.height } end
+      for i, a in ipairs(areas) do
+        rects[i] = { left = a.left, bottom = a.bottom, width = a.width, height = a.height }
+      end
       local lang, key = WFJ.WordStatus.keyOf(w)
       words[#words + 1] = { rects = rects }
       list[#list + 1] = { first = w.first, last = w.last, lang = lang, key = key }

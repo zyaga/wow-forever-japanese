@@ -5,8 +5,8 @@
 -- "Japanese<TAB>reading" per name, read only through Core/Names; chatja and chatword: by a Japanese word; chaten
 -- and chatwordEn: by a lower-cased English word; phrase: by its number, read only through Core/ChatWords and
 -- Core/ChatPhrases; freqJa: by a Japanese word key, "dictionary form<TAB>reading"; freqEn: by a lower-cased
--- English word; grammar: by a Japanese word key, read only through Core/WordFrequency) and copied in. The same id from two shards is a generator bug and raises at load. Pure: no
--- globals, no frames.
+-- English word; grammar: by a Japanese word key, read only through Core/WordFrequency) and copied in. The same id
+-- from two shards is a generator bug and raises at load. Pure: no globals, no frames.
 -- Layout: Core/Const.lua (WFJ.SLOTS), ADR-008.
 local _, WFJ = ...
 local Data = { quest = {}, item = {}, spell = {}, gossip = {}, book = {}, ui = {}, objective = {}, area = {},

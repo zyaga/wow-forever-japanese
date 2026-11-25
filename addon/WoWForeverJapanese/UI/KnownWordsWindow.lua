@@ -49,7 +49,8 @@ local function relabel()
   if not frame then return end
   put(frame.title, "known.title", 13)
   put(frame.explain, "known.explain", 12)
-  put(frame.boxLabel, box == "missing" and "known.missing" or box == "exported" and "known.exported" or "known.paste", 11)
+  local label = box == "missing" and "known.missing" or box == "exported" and "known.exported" or "known.paste"
+  put(frame.boxLabel, label, 11)
   local langEn, langJa = Text.get("known.language")
   local nameEn, nameJa = Text.get("known.language." .. lang)
   frame.language:setLabel(langEn .. ": " .. nameEn, langJa .. "：" .. nameJa)

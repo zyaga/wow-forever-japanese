@@ -94,6 +94,21 @@ describe("Settings pages from the registry and PAGES", function()
     local rows
     for _, page in ipairs(O.PAGES) do if page.id == "words" then rows = page.sections[1].rows end end
     assert.are.same({ "wordsExplain", "words.saveClick", "words.screenshot", "wordsStatus", "wordsExport" }, rows)
+    -- the word status section: the underline, the highlight, the score tag, one switch per place, counts, window
+    local marks
+    for _, page in ipairs(O.PAGES) do
+      if page.id == "words" then
+        for _, section in ipairs(page.sections) do if section.title == "section.marks" then marks = section.rows end end
+      end
+    end
+    assert.are.same({ "marksExplain", "marks.underline", "marks.highlight", "marks.score", "marks.quest", "marks.book",
+      "marks.voicepanel", "marks.tooltip", "marks.chat", "marksStatus", "marksOpen" }, marks)
+    for _, id in ipairs(marks) do
+      local d = S.definition(id)
+      if d then
+        assert.is_true(type(d.label) == "string" and d.label ~= "" and type(d.ja) == "string" and d.ja ~= "", id)
+      end
+    end
     _G.IsMacClient = function() return false end
     local function texts()
       local out = {}

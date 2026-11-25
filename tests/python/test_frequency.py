@@ -87,3 +87,15 @@ def test_every_grammar_word_ships_and_is_a_row_of_the_japanese_list(root):
         lua = '["' + key.replace("\t", "\\t") + '"]'
         assert lua in text, key
         assert lua in grammar, key
+
+
+def test_the_trials_names_are_nowhere_in_the_addon(root):
+    trial = ("words.plusOne", "words.learnNext", "words.statusMarks", "words.highlight", "words.score", "word_freq_mvp")
+    hits = [
+        f"{path.relative_to(root)}: {name}"
+        for path in sorted((root / ADDON).rglob("*.lua"))
+        if "Data" not in path.relative_to(root / ADDON).parts
+        for name in trial
+        if name in path.read_text("utf-8")
+    ]
+    assert hits == []

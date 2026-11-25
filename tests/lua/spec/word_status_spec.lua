@@ -44,7 +44,8 @@ describe("Core/WordStatus", function()
     assert.is_nil(S.keyOf(nil))
   end)
 
-  it("keys an English word by its lower-cased form, a contraction by its first word, a plural by its singular", function()
+  it("keys an English word by its lower-cased form, a contraction by its first word, a plural by its singular",
+  function()
     local S = load()
     local card = { english = true, ja = "敵", jaReading = "てき" }
     assert.are.same({ "en", "enemy" }, { S.keyOf({ word = "Enemy", card = card }) })

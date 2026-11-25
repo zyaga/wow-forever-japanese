@@ -7,10 +7,12 @@ local F = require("tests.lua.spec.stub_fixwindow")
 local Env = {}
 
 Env.FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/Readings.lua", "Core/Glosses.lua",
-  "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua", "Core/Words.lua", "Core/ChatWords.lua",
+  "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua", "Core/Words.lua", "Core/WordFrequency.lua",
+  "Core/WordStatus.lua", "Core/WordScore.lua", "Core/WordMarks.lua", "Core/WordImport.lua", "Core/ChatWords.lua",
   "Core/ChatPhrases.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua",
-  "UI/Readings.lua", "UI/WordSave.lua", "UI/ChatLines.lua", "UI/ChatCards.lua", "UI/ChatCopy.lua",
-  "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua", "UI/ChatWordsWindow.lua" }
+  "UI/Readings.lua", "UI/WordSave.lua", "UI/WordMarks.lua", "UI/ChatLines.lua", "UI/ChatCards.lua", "UI/ChatCopy.lua",
+  "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua", "UI/ChatWordsWindow.lua", "UI/ChatMarks.lua",
+  "UI/KnownWordsWindow.lua" }
 
 Env.SAY, Env.GUILD, Env.SYSTEM = 1, 3, 9 -- chat type ids, as ChatTypeInfo holds them here
 Env.DOT = "\194\183"
@@ -95,7 +97,8 @@ function Env.setup()
     end
     return f
   end
-  for _, name in ipairs({ "WFJChatCopyWindow", "WFJPhraseCard", "WFJPhraseButton", "WFJChatWordsWindow" }) do
+  for _, name in ipairs({ "WFJChatCopyWindow", "WFJPhraseCard", "WFJPhraseButton", "WFJChatWordsWindow",
+    "WFJKnownWordsWindow" }) do
     _G[name] = nil -- the stub keeps named frames from an earlier test
   end
   Env.secrets, Env.down, Env.ctrl, Env.card, Env.filters, Env.opened = {}, false, true, nil, {}, nil
