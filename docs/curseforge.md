@@ -50,6 +50,10 @@ The first time you log in, a welcome window asks what you are here for: **Study 
 
 **Study English** turns the addon around for Japanese players learning English. The game stays in its own <span style="color:#8CB8E8;">English</span>, and holding <span style="color:#E0605A;">**Alt**</span> shows the Japanese. Point at an English word in quest text, NPC dialogue, a book page or a window label, and a popup shows how it is said, the Japanese word the translation uses for it there with its reading, and that word's dictionary form. **Ctrl+click** saves the English word with its sentence and the Japanese sentence, and the study card asks it English first. Names and small words such as *the*, *is* and *of* have no popup. The Japanese voice plays only while the key is held.
 
+### <span style="color:#E8C77E;">Know your words</span>
+
+Give any word a status: **Unknown**, **Learning**, **Known** or **Ignored**. Point at a word and Shift+click to step it; Shift+right-click ignores it. Words you do not know yet are underlined in quest text, NPC dialogue, books, the voice panel and a frozen tooltip (and in chat, if you switch that on), and a soft green highlight picks out the ones worth learning next: the most common words in the game's own text that you do not know. A small tag on a quest, an NPC line or a book page says how much of it you already know, and the **Words** settings page shows the same for the whole game. To start from what you know, open `/wfj known` and paste a word list from Anki or any other tool: commas, spaces, tabs and new lines all work, and each word the game uses is marked Known. Saving a word makes it Learning, and a word you have studied in game for long enough becomes Known by itself. Each place has its own switch. In English first it all works on English words.
+
 ### <span style="color:#E8C77E;">Chat tools</span>
 
 Point at a word in a chat line and the popup dictionary shows it there too: Japanese words, or English words when the game shows English first. A small icon on the line under the mouse opens it in a box, selected, to copy into a dictionary or a translator. The **文** button by the chat window opens a phrase book: click a phrase and it goes into the chat box as English with a small dot in front, ready to send. Players without the addon read plain English; players with it see the phrase in their own language. Nothing else anyone types is changed. Add your own chat words with `/wfj chatwords`, and turn each part on or off on the **Words** settings page.
@@ -154,6 +158,10 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**、**英語を学ぶ**、**日本語で遊ぶ** の3つです。1つ選んで **決定** を押します。あとで設定か `/wfj intro` で変えられます。
 
 **英語を学ぶ** を選ぶと、英語を勉強中の方のために向きが逆になります。ゲームは本来の<span style="color:#8CB8E8;">英語</span>のまま表示され、<span style="color:#E0605A;">**Alt**</span> を押している間だけ日本語が表示されます。クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで英語の単語にマウスを合わせると、発音、その行の翻訳で使われている日本語の単語と読み方、その辞書形がポップアップに表示されます。**Ctrl+クリック** で英語の単語を英語の文と日本語の文と一緒に保存でき、学習カードは英語から出題します。名前や *the*、*is*、*of* のような短い語にはポップアップは出ません。日本語音声は、キーを押している間だけ再生されます。
+
+### <span style="color:#E8C77E;">単語の習得状況</span>
+
+どの単語にも **未知**、**学習中**、**既知**、**無視** のいずれかの状態を付けられます。単語にマウスを合わせて Shift+クリックで状態が切り替わり、Shift+右クリックで無視になります。まだ知らない単語には、クエスト本文、NPC の会話、本、ボイスパネル、固定したツールチップで下線が付き（チャットは設定でオンにできます）、次に覚えるとよい単語は薄い緑でハイライトされます。ゲームの文章によく出てくる、まだ知らない単語です。クエスト、NPC のセリフ、本のページには、その文章をどのくらい知っているかが小さく表示され、**単語帳** の設定ページにはゲーム全体の数字が出ます。すでに知っている単語から始めるには、`/wfj known` を開いて、Anki などの単語リストを貼り付けます。コンマ、スペース、タブ、改行のどれで区切ってあっても読み取り、ゲームに出てくる単語を既知にします。単語を保存すると学習中になり、ゲーム内の学習で十分に定着した単語は自動で既知になります。表示する場所ごとにオン・オフを選べます。英語優先のときは、英語の単語で同じように使えます。
 
 ### <span style="color:#E8C77E;">チャットの補助</span>
 

@@ -361,6 +361,8 @@ function WFJ.OnLoad()
   -- what the player knows of each word: the same guard. A saved word and a studied card move a status up, now and
   -- whenever the list or a card changes.
   WFJ_Known = step("wordstatus", function() return WFJ.WordStatus.load(WFJ_Known) end) or WFJ_Known
+  -- the words are put in order once, here, rather than under the first quest window the player opens
+  step("wordfrequency", function() return WFJ.WordFrequency.count(WFJ.State.direction == "en" and "en" or "ja") end)
   local function followWords()
     step("wordstatus.sync", function() WFJ.WordStatus.sync(WFJ.Words.entries(), WFJ.Study.card) end)
   end
