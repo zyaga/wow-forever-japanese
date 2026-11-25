@@ -256,7 +256,9 @@ local function appendedImpl(tt, opts)
   local ok, err = pcall(function()
     for i = 1, tt:NumLines() or 0 do
       local fs = Compat.resolve(name .. "TextLeft" .. i)
-      if type(fs) == "table" and type(fs.GetText) == "function" and (fs:GetText() or "") ~= "" then
+      -- a secret line (an item tooltip in combat) is the client's: it may not even be compared
+      if type(fs) == "table" and type(fs.GetText) == "function" and not Compat.secret(fs:GetText())
+          and (fs:GetText() or "") ~= "" then
         local before = fs:GetText()
         n = n + WFJ.Labels.show(APPENDED, "L" .. i, fs, relayout, opts)
         if fs:GetText() ~= before then changed = true end
@@ -272,13 +274,15 @@ function HelpTooltip.appended(tt, opts)
   return WFJ.Perf.call("help", appendedImpl, tt, opts)
 end
 
--- The kind of tooltip data `tt` was built from (Enum.TooltipDataType), or nil for lines written in Lua.
+-- The kind of tooltip data `tt` was built from (Enum.TooltipDataType), or nil for lines written in Lua. A kind the
+-- client keeps secret is nil too: it is compared with the adopted kind, and a secret may not be compared.
 function HelpTooltip.dataKind(tt)
   local ok, kind = pcall(function()
     local info = tt:GetPrimaryTooltipInfo()
     return info and info.tooltipData and info.tooltipData.type
   end)
-  return ok and kind or nil
+  if not ok or Compat.secret(kind) then return nil end
+  return kind or nil
 end
 
 -- `tt` built from tooltip data of a kind no other module handles: walked now and on its later Show / SetText

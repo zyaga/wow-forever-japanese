@@ -18,6 +18,41 @@ local NPC = "Innkeeper Allison"
 describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
   local WFJ, data, frame, logs, shown, caught, collected
 
+  -- What hooksecurefunc left on each table it was given: [table][name] = the function it put there. Any other change
+  -- of a Dialogue UI method is a function of the addon's own in its place, which would run Dialogue UI's code (and
+  -- every value it writes) on the addon's taint.
+  local hookedBy
+  local function spyHooks()
+    hookedBy = setmetatable({}, { __mode = "k" })
+    local real = _G.hooksecurefunc
+    _G.hooksecurefunc = function(a, b, c)
+      real(a, b, c)
+      if type(a) == "table" then
+        hookedBy[a] = hookedBy[a] or {}
+        hookedBy[a][b] = a[b]
+      end
+    end
+  end
+  -- `obj[name]` is still `orig`, or `orig` followed by hooksecurefunc and nothing else
+  local function own(obj, name, orig)
+    local now = obj[name]
+    return now == orig or (hookedBy[obj] ~= nil and hookedBy[obj][name] == now)
+  end
+  local function methods(obj, names)
+    local out = {}
+    for _, n in ipairs(names) do out[n] = obj[n] end
+    return out
+  end
+  local function allOwn(obj, before)
+    for name, orig in pairs(before) do assert.is_true(own(obj, name, orig), name) end
+  end
+
+  -- one frame of the addon's own watching frame (Dialogue UI's windows opening and closing, the interface coming back)
+  local function tick(seconds)
+    local p = WFJ.DialogueUI.poller
+    p.scripts.OnUpdate(p, seconds or 0.25)
+  end
+
   local function key(en) return WFJ.Collector.key(en, PLAYER) end
 
   -- { [kind] = { [id] = ja | { ja, status } } }, gossip ids given by English
@@ -38,6 +73,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     opts = opts or {}
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     DUI.installGameAPI()
+    spyHooks()
     Stub.units.npc = { name = NPC, guid = "Creature-0-4372-0-17-6740-0000A1B2C3" }
     if opts.present ~= false then
       frame = DUI.installQuestFrame({ without = opts.without })
@@ -108,9 +144,75 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     it("installs once when Dialogue UI was loaded first", function()
       assert.is_true(load())
       assert.is_true(WFJ.DialogueUI.installed())
-      local wrapped = frame.FormatParagraph
+      local now = methods(frame, WFJ.DialogueUI.MEMBERS)
       assert.is_false(WFJ.DialogueUI.install())
-      assert.are.equal(wrapped, frame.FormatParagraph)
+      for name, fn in pairs(now) do assert.are.equal(fn, frame[name], name) end
+    end)
+
+    -- A method of Dialogue UI's replaced by a function of the addon's would run Dialogue UI's own code, and every
+    -- value it writes (an option's click handler), on the addon's taint: each is only ever followed with
+    -- hooksecurefunc, so Dialogue UI's own function runs first, as it is.
+    local FRAME_METHODS = { "FormatParagraph", "FormatQuestText", "AcquireFontString", "AcquireLeftFontString",
+      "InsertText", "AcquireAndSetSubHeader", "FormatRewards", "AcquireOptionButton", "AcquireExitButton",
+      "UpdateQuestTitle", "ReleaseAllObjects", "OnSettingsChanged", "HandleGossip", "HandleQuestDetail",
+      "HandleQuestProgress", "HandleQuestComplete", "HandleQuestGreeting" }
+    for _, name in ipairs(FRAME_METHODS) do
+      it("leaves the window's " .. name .. " as Dialogue UI's own (followed by hooksecurefunc only)", function()
+        load({ loaded = false })
+        local before = methods(frame, { name })
+        Stub.loadedAddons.DialogueUI = true
+        WFJ.LoadOnDemand.loaded("DialogueUI")
+        assert.is_true(WFJ.DialogueUI.installed())
+        allOwn(frame, before)
+      end)
+    end
+
+    for _, name in ipairs({ "SetButtonText", "SetGossip", "SetQuestName", "SetQuest" }) do
+      it("leaves an option button's " .. name .. " as Dialogue UI's own", function()
+        load({ loaded = false })
+        local b = frame:AcquireOptionButton()
+        b.inUse = false
+        local before, exit = methods(b, { name }), methods(frame.ExitButton, { name })
+        Stub.loadedAddons.DialogueUI = true
+        WFJ.LoadOnDemand.loaded("DialogueUI")
+        ship({ gossip = { ["Hello."] = "こんにちは。", ["Train me."] = "訓練してくれ。" } })
+        open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." }, quests = { { id = 5, title = "Wolves" } } })
+        assert.are.equal("1. 訓練してくれ。", frame.buttons[1].Name:GetText())
+        allOwn(b, before)
+        allOwn(frame.ExitButton, exit)
+      end)
+    end
+
+    it("leaves a pooled paragraph's SetText as the client's own (followed by hooksecurefunc only)", function()
+      load()
+      ship({ gossip = { ["Hello."] = "こんにちは。" } })
+      local fs = frame.fontStringPool.acquire()
+      frame.fontStringPool.release()
+      local before = methods(fs, { "SetText" })
+      open("GOSSIP_SHOW", { gossip = "Hello." })
+      assert.are.same({ "こんにちは。" }, DUI.paragraphs())
+      allOwn(fs, before)
+    end)
+
+    it("an option's click fields are Dialogue UI's own, and the Japanese label is written after them", function()
+      load()
+      ship({ gossip = { ["Hello."] = "こんにちは。", ["Make this inn your home."] = "この宿を拠点にする。" },
+        ["quest.title"] = { [5] = "狼退治" } })
+      open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Make this inn your home." },
+        quests = { { id = 5, title = "Wolves Across the Border", level = 4 } } })
+      local opt, quest = frame.buttons[1], frame.buttons[2]
+      assert.are.equal("1. この宿を拠点にする。", opt.Name:GetText())
+      assert.are.equal(DUI.SELECT_OPTION, opt.onClickFunc)
+      assert.are.equal("gossip", opt.type)
+      assert.are.equal(0, opt.id)
+      assert.are.equal("[4] 狼退治", quest.Name:GetText())
+      assert.are.equal(DUI.SELECT_QUEST, quest.onClickFunc)
+      assert.are.equal(5, quest.questID)
+      assert.are.equal("Wolves Across the Border", quest.questInfo.title) -- the quest's data is never changed
+      -- the button sized itself again to the Japanese, with the padding Dialogue UI chose for it
+      assert.are.equal("1. この宿を拠点にする。", opt.measuredText)
+      assert.is_false(opt.largePadding)
+      assert.is_true(quest.largePadding)
     end)
 
     it("installs when Dialogue UI loads after this addon", function()
@@ -129,17 +231,24 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         assert.truthy(logs[1]:find(member, 1, true), member)
         ship({ gossip = { ["Hello, traveller."] = "ようこそ、旅の人。" } })
         if frame.HandleGossip and frame.ReleaseAllObjects and frame.FormatParagraph and frame.AcquireLeftFontString
-            and frame.AcquireOptionButton then
+            and frame.AcquireFontString and frame.AcquireOptionButton then
           open("GOSSIP_SHOW", { gossip = "Hello, traveller." })
           assert.are.same({ "Hello, traveller." }, DUI.paragraphs(), member)
         end
       end
     end)
 
+    it("installs nothing and logs one line without the window's FontString pool", function()
+      load({ without = { "fontStringPool" } })
+      assert.is_false(WFJ.DialogueUI.installed())
+      assert.are.equal(1, #logs)
+      assert.truthy(logs[1]:find("fontStringPool", 1, true))
+    end)
+
     it("lists the members it relies on", function()
       load()
-      for _, m in ipairs({ "FormatParagraph", "FormatQuestText", "AcquireLeftFontString", "InsertText",
-        "UpdateQuestTitle", "AcquireOptionButton", "ReleaseAllObjects", "OnSettingsChanged", "HandleGossip",
+      for _, m in ipairs({ "FormatParagraph", "AcquireFontString", "AcquireLeftFontString", "InsertText",
+        "UpdateQuestTitle", "AcquireOptionButton", "ReleaseAllObjects", "HandleGossip",
         "HandleQuestDetail", "HandleQuestProgress", "HandleQuestComplete", "HandleQuestGreeting" }) do
         local found = false
         for _, x in ipairs(WFJ.DialogueUI.MEMBERS) do if x == m then found = true end end
@@ -217,12 +326,14 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal(WFJ.Font.PATH, frame.fontStringPool.active[2].measuredFont[1])
     end)
 
+    -- Dialogue UI made one FontString per paragraph of the English; the marker line goes right above the first
     it("a quest with no Japanese shows the live English after the missing marker", function()
       ship({})
       open("QUEST_DETAIL", QUEST)
       local p = DUI.paragraphs()
       assert.truthy(p[1]:find(WFJ.MARKER.missing, 1, true))
-      assert.are.equal(QUEST.description, p[2])
+      assert.are.equal(QUEST.description, p[1]:sub(-#QUEST.description))
+      assert.truthy(p[1]:find("|r\n", 1, true))
       assert.are.equal(QUEST.title, frame.FrontFrame.Header.Title:GetText()) -- a title carries no marker
     end)
   end)
@@ -247,7 +358,15 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       open("GOSSIP_SHOW", { gossip = "Hello." })
       local p = DUI.paragraphs()
       assert.truthy(p[1]:find(WFJ.MARKER.stale, 1, true))
-      assert.are.equal("こんにちは。", p[2])
+      assert.are.equal("こんにちは。", p[1]:sub(-#"こんにちは。"))
+    end)
+
+    it("Japanese with more paragraphs than the English goes into the paragraphs Dialogue UI made, none lost", function()
+      ship({ gossip = { ["Hello.\n\nWelcome."] = "一。\n\n二。\n\n三。", ["Hi.\n\nBye."] = "一つだけ。" } })
+      open("GOSSIP_SHOW", { gossip = "Hello.\n\nWelcome." })
+      assert.are.same({ "一。\n\n二。", "三。" }, DUI.paragraphs())
+      open("GOSSIP_SHOW", { gossip = "Hi.\n\nBye." })
+      assert.are.same({ "一つだけ。", "" }, DUI.paragraphs())
     end)
 
     it("options and quest rows are Japanese with hotkeys and levels kept, in the bundled font", function()
@@ -311,17 +430,35 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       ship({ gossip = { ["Hello."] = "こんにちは。", ["Train me."] = "訓練してくれ。" } })
     end)
 
-    it("holding the key redraws the page in the live English, letting go brings the Japanese back", function()
+    it("holding the key shows the live English in place, letting go brings the Japanese back", function()
       open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." } })
-      local lines = shown
+      local lines, redraws = shown, frame.redraws
       alt(true)
       assert.are.same({ "Hello." }, DUI.paragraphs())
       assert.are.same({ "1. Train me." }, DUI.labels())
-      assert.are_not.equal(WFJ.Font.PATH, frame.fontStringPool.active[1].measuredFont[1])
+      assert.are_not.equal(WFJ.Font.PATH, (frame.fontStringPool.active[1]:GetFont()))
       alt(false)
       assert.are.same({ "こんにちは。" }, DUI.paragraphs())
       assert.are.same({ "1. 訓練してくれ。" }, DUI.labels())
+      assert.are.equal(WFJ.Font.PATH, (frame.fontStringPool.active[1]:GetFont()))
       assert.are.equal(lines, shown) -- no line was shown anew: no voice restarts
+      -- Dialogue UI is never asked to draw the page again: its redraw would rebuild the option buttons under this
+      -- addon's name
+      assert.are.equal(redraws, frame.redraws)
+    end)
+
+    it("in English first, holding the key shows the Japanese in place and letting go the English", function()
+      WFJ.State.setDirection("en")
+      open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." } })
+      assert.are.same({ "Hello." }, DUI.paragraphs())
+      assert.are.same({ "1. Train me." }, DUI.labels())
+      alt(true)
+      assert.are.same({ "こんにちは。" }, DUI.paragraphs())
+      assert.are.same({ "1. 訓練してくれ。" }, DUI.labels())
+      alt(false)
+      assert.are.same({ "Hello." }, DUI.paragraphs())
+      assert.are.same({ "1. Train me." }, DUI.labels())
+      WFJ.State.setDirection("ja")
     end)
 
     it("the quest title follows the key too", function()
@@ -347,7 +484,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.same({ "Hello." }, DUI.paragraphs())
     end)
 
-    it("keeps the reader's place when it redraws the page for the key", function()
+    it("keeps the reader's place when the key changes the page", function()
       open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." } })
       frame.ScrollFrame.value = 120
       alt(true)
@@ -374,9 +511,11 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
 
     it("a new page shows a line anew; closing the window lets the same line show anew next time", function()
       open("GOSSIP_SHOW", { gossip = "Hello." })
+      tick()
       local first = shown
       assert.is_true(first > 0)
       frame:Hide()
+      tick()
       open("GOSSIP_SHOW", { gossip = "Hello." })
       assert.is_true(shown > first)
     end)
@@ -399,8 +538,8 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     end)
 
     it("each Japanese paragraph gets its share of the line's words", function()
-      ship({ gossip = { ["Hello. The spirits wake."] = "こんにちは。\n\n精霊が目覚める。" } })
-      open("GOSSIP_SHOW", { gossip = "Hello. The spirits wake." })
+      ship({ gossip = { ["Hello.\n\nThe spirits wake."] = "こんにちは。\n\n精霊が目覚める。" } })
+      open("GOSSIP_SHOW", { gossip = "Hello.\n\nThe spirits wake." })
       local second = frame.fontStringPool.active[2]
       local rec
       for _, r in ipairs(attached) do if r.fs == second then rec = r end end
@@ -427,8 +566,8 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     end)
 
     it("no cards while English shows", function()
-      ship({ gossip = { ["Hello. The spirits wake."] = "こんにちは。\n\n精霊が目覚める。" } })
-      open("GOSSIP_SHOW", { gossip = "Hello. The spirits wake." })
+      ship({ gossip = { ["Hello.\n\nThe spirits wake."] = "こんにちは。\n\n精霊が目覚める。" } })
+      open("GOSSIP_SHOW", { gossip = "Hello.\n\nThe spirits wake." })
       local n = #attached
       alt(true)
       assert.are.equal(n, #attached)
@@ -575,13 +714,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         [7000] = "装備：Staminaが5上昇します。\n使用：10秒間、移動速度が上がります。" } })
       game(WORDS)
       local tip = DUI.installTooltip()
-      -- Dialogue UI's own reader of the client's tooltip data: one line per data line [read: Tooltip_Private.lua,
-      -- ProcessTooltipDataLines]
-      function tip:ProcessTooltipData(tipData)
-        self.numLines, self.grid, self.tooltipData = 0, {}, tipData
-        for _, line in ipairs(tipData.lines) do self:AddLeftLine(line.leftText) end
-        return true
-      end
+      local before = methods(tip, { "AddLeftLine", "AddRightLine", "ProcessTooltipData", "ProcessTooltipDataLines" })
       Stub.loadedAddons.DialogueUI = true
       WFJ.LoadOnDemand.loaded("DialogueUI")
       local item = { isItem = true, id = 6948, lines = { { leftText = "Hearthstone" },
@@ -592,19 +725,23 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       -- the Japanese lines wear the bundled face (Dialogue UI's own has no Japanese letters); the name keeps its own
       local function ours(t)
         local out = {}
-        for i = 1, t.numLines do out[i] = (t.grid[i][1]:GetFont()) == WFJ.Font.PATH end
+        for i = 1, t.numLines do
+          if t.grid[i] then out[#out + 1] = (t.grid[i][1]:GetFont()) == WFJ.Font.PATH end
+        end
         return out
       end
       assert.are.same({ false, true, true }, ours(tip))
       assert.is_true(tip.fontChanged)
+      allOwn(tip, before)
       -- Dialogue UI's data is never changed: it reads it again on its own updates
       assert.are.equal("Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your"
         .. " home location.", item.lines[2].leftText)
-      -- a run of two effect lines: the Japanese on the first, the second gone, as on the game's tooltip
+      -- a run of two effect lines: the Japanese on the first, the second out of the layout, as on the game's tooltip
       tip:ProcessTooltipData({ isItem = true, id = 7000, lines = { { leftText = "Belt of Haste" },
         { leftText = "Equip: +5 Stamina." }, { leftText = "Use: Increases run speed for 10 sec." } } })
       assert.are.same({ "Belt of Haste", "装備：Staminaが5上昇します。\n使用：10秒間、移動速度が上がります。" },
         tip:texts())
+      assert.is_nil(tip.grid[3])
       -- no Japanese for the item, the reveal key held, or not an item: the lines as the client wrote them
       tip:ProcessTooltipData({ isItem = true, id = 8000, lines = { { leftText = "Rock" },
         { leftText = "Use: Throw it." } } })
@@ -623,7 +760,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("Use: Returns you home.", tip:texts()[2])
     end)
 
-    it("the effect line's face: Dialogue UI's again on a reused line, and ours only inside the data pass", function()
+    it("the effect line's face: Dialogue UI's again on a reused line, and ours only for the data's run", function()
       load({ loaded = false })
       ship({ ["item.description"] = { [6948] = "使用：Hearthstoneの場所に戻ります。" } })
       game(WORDS)
@@ -639,22 +776,17 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         self.grid[self.numLines] = { fs }
         return fs
       end
-      function tip:ProcessTooltipData(tipData)
-        self.numLines, self.grid, self.tooltipData = 0, {}, tipData
-        for _, line in ipairs(tipData.lines) do self:AddLeftLine(line.leftText) end
-        return true
-      end
       Stub.loadedAddons.DialogueUI = true
       WFJ.LoadOnDemand.loaded("DialogueUI")
       tip:ProcessTooltipData({ isItem = true, id = 6948, lines = { { leftText = "Hearthstone" },
         { leftText = "Use: Returns you home." } } })
       assert.are.equal("使用：Hearthstoneの場所に戻ります。", pool[2]:GetText())
       assert.are.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
-      -- the Japanese of a data pass is ours only during that pass: the same text written right after it is not
+      -- the Japanese of a data pass is ours only for that pass's run: the same text written as a line of its own is not
       tip:AddLeftLine("使用：Hearthstoneの場所に戻ります。")
       assert.are_not.equal(WFJ.Font.PATH, (pool[3]:GetFont()))
-      -- Dialogue UI redraws from the data it kept, which is the copy it was given (its comparison toggle): the
-      -- Japanese line and its face again, and the reveal key still reaches the client's English
+      -- Dialogue UI redraws from the data it kept, the client's own (its comparison toggle): the Japanese line and its
+      -- face again, and the reveal key still reaches the client's English
       local kept = tip.tooltipData
       tip:ProcessTooltipData(kept)
       assert.are.equal("使用：Hearthstoneの場所に戻ります。", pool[2]:GetText())
@@ -674,7 +806,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("Use: Throw it.", pool[2]:GetText())
       assert.are_not.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
       assert.is_true(tip.fontChanged)
-      -- Dialogue UI's own error inside a pass is raised again, and the pass's Japanese is forgotten all the same
+      -- Dialogue UI's own error inside a pass is raised as it is, and nothing of that pass is ours
       local fail = true
       local add = tip.AddLeftLine
       function tip:AddLeftLine(text, ...)
@@ -729,8 +861,8 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       local fly = DUI.makeFlyout()
       Stub.loadedAddons.DialogueUI = true
       WFJ.LoadOnDemand.loaded("DialogueUI")
-      fly.questData = { questID = 2, rawText = "Well done, $N.$B$BNow we are safe." }
-      fly:SetQuestText("Sharptalon's Claw", { "Well done, Reyn.", "Now we are safe." })
+      fly:SetQuestData({ questID = 2, rawText = "Well done, $N.$B$BNow we are safe.", title = "Sharptalon's Claw",
+        paragraphs = { "Well done, Reyn.", "Now we are safe." } })
       assert.are.equal("Sharptalon's Claw", fly.Title:GetText())
       assert.are.same({ "よくやった。", "これで安心だ。" }, fly:paragraphs())
     end)
@@ -745,23 +877,25 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       Stub.loadedAddons.DialogueUI = true
       WFJ.LoadOnDemand.loaded("DialogueUI")
       local en = "Well done, $N.$B$BNow we are safe."
-      fly.questData = { questID = 2, rawText = en }
-      fly:SetQuestText("Sharptalon's Claw", { "Well done, Reyn.", "Now we are safe." })
+      local paras = { "Well done, Reyn.", "Now we are safe." }
+      local before = methods(fly, { "SetQuestText", "SetQuestData" })
+      local acquire = fly.fontStringPool.Acquire
+      fly:SetQuestData({ questID = 2, rawText = en, title = "Sharptalon's Claw", paragraphs = paras })
       assert.are.equal("Sharptalonの鉤爪", fly.Title:GetText())
       assert.are.same({ "よくやった。", "これで安心だ。" }, fly:paragraphs())
       assert.are.same({ WFJ.Font.PATH, WFJ.Font.PATH }, fly.measuredIn)
+      allOwn(fly, before)
+      assert.is_true(own(fly.fontStringPool, "Acquire", acquire))
       -- an error alert, no Japanese, or the key held: the flyout's own text
-      fly.questData = { questID = 2, rawText = en, isError = true }
-      fly:SetQuestText("Sharptalon's Claw", { "Quest failed." })
+      fly:SetQuestData({ questID = 2, rawText = en, isError = true, title = "Sharptalon's Claw",
+        paragraphs = { "Quest failed." } })
       assert.are.same({ "Quest failed." }, fly:paragraphs())
-      fly.questData = { questID = 9, rawText = "Thanks." }
-      fly:SetQuestText("Other Quest", { "Thanks." })
+      fly:SetQuestData({ questID = 9, rawText = "Thanks.", title = "Other Quest", paragraphs = { "Thanks." } })
       assert.are.equal("Other Quest", fly.Title:GetText())
       assert.are.same({ "Thanks." }, fly:paragraphs())
       Stub.keys.alt = true
       WFJ.Modifier.refresh()
-      fly.questData = { questID = 2, rawText = en }
-      fly:SetQuestText("Sharptalon's Claw", { "Well done, Reyn.", "Now we are safe." })
+      fly:SetQuestData({ questID = 2, rawText = en, title = "Sharptalon's Claw", paragraphs = paras })
       assert.are.equal("Sharptalon's Claw", fly.Title:GetText())
       assert.are.same({ "Well done, Reyn.", "Now we are safe." }, fly:paragraphs())
       Stub.keys.alt = false
@@ -799,15 +933,20 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       Stub.loadedAddons.DialogueUI = true
       WFJ.LoadOnDemand.loaded("DialogueUI")
       WFJ.Speech = { translate = function(en) return en == "Stay alert!" and "油断するな！" or nil end }
+      local add = panel.AddMessage
       panel:AddMessage("Stay alert!", "Guard", "CHAT_MSG_MONSTER_SAY")
-      assert.are.equal("油断するな！", panel.lines[1][1])
+      assert.is_true(own(panel, "AddMessage", add))
+      -- the line Dialogue UI kept (the speaker's words before it), what it shows, and its height measured again
+      assert.are.equal("Guard says: 油断するな！", panel.lines[1][1])
+      assert.are.equal("Guard says: 油断するな！", panel.list.objects[1]:GetText())
+      assert.are.same({ "Guard says: 油断するな！", WFJ.Font.PATH }, { panel.list.measured[1][1], panel.list.measured[1][2] })
       assert.are.equal(WFJ.Font.PATH, (_G.DUIFont_ChatFont:GetFont()))
       Stub.keys.alt = true
       WFJ.Modifier.refresh()
       panel:AddMessage("Stay alert!", "Guard", "CHAT_MSG_MONSTER_SAY")
-      assert.are.equal("Stay alert!", panel.lines[2][1])
+      assert.are.equal("Guard says: Stay alert!", panel.lines[2][1])
       panel:AddMessage("Unknown words.", "Guard", "CHAT_MSG_MONSTER_SAY")
-      assert.are.equal("Unknown words.", panel.lines[3][1])
+      assert.are.equal("Guard says: Unknown words.", panel.lines[3][1])
     end)
 
     it("the chat panel asks for the Japanese with the party's names when Speech offers it", function()
@@ -818,7 +957,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       WFJ.Speech = { translate = function() return nil end,
         translateNamed = function(en) return en == "Thanks, Sky!" and "ありがとう、Sky！" or nil end }
       panel:AddMessage("Thanks, Sky!", "Ignatz", "CHAT_MSG_MONSTER_SAY")
-      assert.are.equal("ありがとう、Sky！", panel.lines[1][1])
+      assert.are.equal("Ignatz says: ありがとう、Sky！", panel.lines[1][1])
     end)
 
     it("the chat panel's font reporting a size not above 0 takes the bundled face at the default size", function()
@@ -846,18 +985,55 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     it("a quest popup made after install is found after a quest event and shows the Japanese title", function()
       DUI.questNames[2] = "Sharptalon's Claw"
       local popup = DUI.makePopup()
+      local before = methods(popup, { "SetTitle", "SetQuestDataByID" })
       Stub.fireAll("QUEST_ACCEPTED", 2)
       DUI.flush()
       popup:SetQuestDataByID(2)
       assert.are.equal("Sharptalonの鉤爪", popup.Title:GetText())
+      assert.are.equal("Sharptalonの鉤爪", popup.scaledFor) -- Dialogue UI scaled the Japanese to fit
+      allOwn(popup, before)
     end)
 
     it("the voice panel is lifted out of the faded interface while a Dialogue UI window is open", function()
       local lifts = {}
       WFJ.VoicePanel = { lift = function(on) lifts[#lifts + 1] = on end }
       open("GOSSIP_SHOW", { gossip = "Hello." })
+      tick()
       frame:Hide()
+      tick()
       assert.are.same({ true, false }, { lifts[#lifts - 1], lifts[#lifts] })
+    end)
+
+    -- Dialogue UI shows the hidden interface again with the window's close: the bags and a vendor come back in that
+    -- same call, so nothing of the addon may run there. A frame of the addon's own, outside the interface, notices it.
+    it("notices the interface coming back from a frame of its own, never from a script on UIParent", function()
+      load({ loaded = false })
+      local ui = CreateFrame("Frame", "UIParent")
+      ui.shown = true
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      assert.is_nil(ui.scripts.OnShow)
+      assert.is_nil(frame.scripts.OnShow)
+      local poller = WFJ.DialogueUI.poller
+      assert.is_nil(poller.parent)
+      local lifts = {}
+      WFJ.VoicePanel = { lift = function(on) lifts[#lifts + 1] = on end }
+      tick()
+      -- the window opens and Dialogue UI hides the interface; then the window closes in combat, and the interface
+      -- comes back later: the panel stays lifted until it does
+      ui.shown = false
+      open("GOSSIP_SHOW", { gossip = "Hello." })
+      tick()
+      assert.is_true(lifts[#lifts])
+      frame:Hide()
+      tick()
+      assert.is_true(lifts[#lifts])
+      local n = #lifts
+      ui.shown = true
+      tick(0.05) -- the interface is looked at every 0.2 seconds
+      assert.are.equal(n, #lifts)
+      tick(0.2)
+      assert.is_false(lifts[#lifts])
     end)
 
     it("an option named like a game string keeps its own Japanese; Goodbye's face comes off for English", function()
@@ -867,7 +1043,8 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("1. また会おう", frame.buttons[1].Name:GetText())
       assert.are.equal("さようなら", frame.ExitButton.Name:GetText())
       alt(true)
-      assert.are_not.equal(WFJ.Font.PATH, frame.ExitButton.measuredFont[1])
+      assert.are.equal("Goodbye", frame.ExitButton.Name:GetText())
+      assert.are_not.equal(WFJ.Font.PATH, (frame.ExitButton.Name:GetFont()))
     end)
 
     it("an NPC emote whose Japanese holds another % stays English (Dialogue UI formats it)", function()
@@ -877,7 +1054,11 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       WFJ.LoadOnDemand.loaded("DialogueUI")
       WFJ.Speech = { translate = function() return "%sが50%の力で叫ぶ。" end }
       panel:AddMessage("%s shouts at half strength.", "Ogre", "CHAT_MSG_MONSTER_EMOTE")
-      assert.are.equal("%s shouts at half strength.", panel.lines[1][1])
+      assert.are.equal("Ogre shouts at half strength.", panel.lines[1][1])
+      -- an emote whose Japanese has only the speaker's %s is filled with the name as Dialogue UI fills the English
+      WFJ.Speech = { translate = function() return "%sが叫ぶ。" end }
+      panel:AddMessage("%s shouts.", "Ogre", "CHAT_MSG_MONSTER_EMOTE")
+      assert.are.equal("Ogreが叫ぶ。", panel.lines[2][1])
     end)
 
     it("a scan that fails on a frame starts again from the first frame next time", function()
@@ -890,7 +1071,9 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       end
       assert.has_no.errors(function()
         frame:Hide()
+        tick()
         frame:Show()
+        tick()
         DUI.flush()
       end)
       assert.is_true(WFJ.DialogueUI.active())
@@ -968,10 +1151,12 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       WFJ.VoiceQueue.init({})
       WFJ.VoicePlayer.init({})
       open("QUEST_DETAIL", QUEST)
+      tick() -- a frame passes with the window open, as it always does in the game
       assert.are.same({ "Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\2-description.mp3" }, played)
       assert.are.equal("2-description", WFJ.VoicePlayer.current())
       assert.is_true(WFJ.VoicePlayer.button("DUIQuestFrame"):IsShown())
       frame:Hide()
+      tick() -- the close is seen by the module's own watching frame, never inside Dialogue UI's hide
       assert.is_nil(WFJ.VoicePlayer.current())
       assert.is_false(WFJ.VoicePlayer.button("DUIQuestFrame"):IsShown())
     end)

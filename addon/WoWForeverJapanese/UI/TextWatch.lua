@@ -12,10 +12,7 @@ local entries = {} -- { fs, fn, text, font }
 local byFs = setmetatable({}, { __mode = "k" })
 local driver
 
-local function secret(value)
-  local isSecret = WFJ.Compat.resolve("issecretvalue")
-  return type(isSecret) == "function" and isSecret(value) and true or false
-end
+local function secret(value) return WFJ.Compat.secret(value) end
 
 local function fontOf(fs)
   if type(fs.GetFont) ~= "function" then return nil end
@@ -30,9 +27,13 @@ local function check(e)
   local text = fs:GetText()
   if secret(text) then return false end
   local font = fontOf(fs)
+  if secret(font) then return false end
   if text == e.text and font == e.font then return false end
   pcall(e.fn)
-  e.text, e.font = fs:GetText(), fontOf(fs)
+  -- what the callback left is compared on the next frame: a secret one is not kept, since it may not be compared
+  local after, afterFont = fs:GetText(), fontOf(fs)
+  if secret(after) or secret(afterFont) then after, afterFont = nil, nil end
+  e.text, e.font = after, afterFont
   return true
 end
 

@@ -2,8 +2,9 @@
 -- turns the client's book window off, reads every page of a book, splits each into blocks (paragraphs, or an HTML
 -- page's headings and paragraphs), measures them and shows the whole book in one scroll. The blocks live in one
 -- content table its window keeps; this module writes each page's Japanese into that page's blocks after Dialogue UI
--- showed them, then has Dialogue UI measure and show the same table again. Nothing of Dialogue UI is shipped or
--- required; a page whose Japanese cannot be placed stays English.
+-- showed them, then has Dialogue UI measure and show the same table again. Its methods are only followed with
+-- hooksecurefunc, never replaced (ADR-073). Nothing of Dialogue UI is shipped or required; a page whose Japanese
+-- cannot be placed stays English.
 local _, WFJ = ...
 local Book = {}
 WFJ.DialogueUIBook = Book
@@ -261,7 +262,9 @@ end
 
 -- A block Dialogue UI laid out in a FontString: a word card for a plain page's Japanese, with its share of the
 -- page's words (an HTML page keeps the client's layout and takes none).
+local blockObject -- below
 local function card(obj, data, index)
+  obj = blockObject(obj, data)
   local placed = book and book.placed[index]
   if not (placed and type(obj) == "table" and type(data) == "table" and data.text == placed.text) then return end
   local pg = book.pages[placed.page]
@@ -273,17 +276,27 @@ local function card(obj, data, index)
     pg.listed or nil, placed.at, 0)
 end
 
-local hooked = setmetatable({}, { __mode = "k" }) -- scroll frames whose block writer is wrapped
+-- The FontString SetObjectData just wrote a block into: the one it was given, else the one it took from the book's
+-- pool for it (the pool's newest) [read: Dialogue UI 1.0.7 c, BookUI.lua ScrollFrame:SetObjectData,
+-- Formatter:AcquireFontStringByTag].
+blockObject = function(obj, data)
+  if type(obj) == "table" then return obj end
+  if type(data) ~= "table" then return nil end
+  local newest = WFJ.DialogueUI.newest(frame and frame.fontStringPool)
+  if newest and type(newest.GetText) == "function" and newest:GetText() == data.text then
+    return newest
+  end
+  return nil
+end
+
+local hooked = setmetatable({}, { __mode = "k" }) -- scroll frames whose block writer is followed
 local function hookScroll(f)
   local sf = f.ScrollFrame
   if type(sf) ~= "table" or type(sf.SetObjectData) ~= "function" or hooked[sf] then return end
   hooked[sf] = true
-  local orig = sf.SetObjectData
-  sf.SetObjectData = function(self, obj, data, index, ...)
-    local o = orig(self, obj, data, index, ...)
-    if active() then guarded(card, o, data, index) end
-    return o
-  end
+  Compat.resolve("hooksecurefunc")(sf, "SetObjectData", function(_, obj, data, index)
+    if active() then guarded(card, obj, data, index) end
+  end)
 end
 
 local function afterShow(self)
@@ -343,7 +356,7 @@ function Book.install()
     end)
   end
   if WFJ.VoicePlayer and type(WFJ.VoicePlayer.addWindow) == "function" then
-    WFJ.VoicePlayer.addWindow("DUIBookFrame", { SURFACE }, nil)
+    WFJ.VoicePlayer.addWindow("DUIBookFrame", { SURFACE }, nil, WFJ.DialogueUI.onClose)
   end
   installed = true
   return true

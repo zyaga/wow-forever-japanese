@@ -113,7 +113,7 @@ local function showLua(fs, recKey)
   local index = WFJ.UIIndex
   if not index or type(fs) ~= "table" or type(fs.GetText) ~= "function" then return 0 end
   local text = fs:GetText()
-  if type(text) ~= "string" or text == "" then return 0 end
+  if type(text) ~= "string" or Compat.secret(text) or text == "" then return 0 end
   local key = index:exactKey(text)
   return WFJ.Labels.show(SURFACE, recKey, fs, nil, { only = key and exactSet(key) or luaTemplates(index) })
 end
@@ -126,7 +126,9 @@ end
 local function linesFor(frame, message, messageID)
   local out, seen = {}, {}
   local function add(fs)
-    if type(fs) == "table" and not seen[fs] and type(fs.GetText) == "function" and fs:GetText() == message
+    -- a line showing a secret value is another message: it may not be compared
+    if type(fs) == "table" and not seen[fs] and type(fs.GetText) == "function" and not Compat.secret(fs:GetText())
+        and fs:GetText() == message
         and (type(fs.IsShown) ~= "function" or fs:IsShown()) then
       seen[fs] = true
       out[#out + 1] = fs
@@ -144,7 +146,7 @@ local lineKey = WFJ.Labels.keyer("line.")
 
 -- The line(s) `message` went to, in Japanese: by the id's key (`only`), else by the Lua-line rule. → lines shown
 function Errors.render(frame, message, messageID, only)
-  if type(message) ~= "string" or message == "" then return 0 end
+  if type(message) ~= "string" or Compat.secret(message) or message == "" then return 0 end
   local n = 0
   for _, fs in ipairs(linesFor(frame, message, messageID)) do
     local key = lineKey(fs)
@@ -159,15 +161,16 @@ end
 
 -- hooksecurefunc target (UIErrorsFrame:AddMessage). → 1 (a render is on its way) | 0
 function Errors.onAddMessage(frame, message, _, _, _, _, messageID)
-  if type(frame) ~= "table" or type(message) ~= "string" or message == "" then return 0 end
+  -- a secret message (the client may hide one in combat) can be neither compared nor matched: it stays as written
+  if type(frame) ~= "table" or type(message) ~= "string" or Compat.secret(message) or message == "" then return 0 end
   local only
-  if type(messageID) == "number" then
+  if type(messageID) == "number" and not Compat.secret(messageID) then
     local info = Compat.get(SURFACE, "messageInfo")
     local ok, key = false, nil
     if type(info) == "function" then
       ok, key = pcall(info, messageID) -- another addon's AddMessage may pass any number as its id
     end
-    only = ok and type(key) == "string" and key ~= "" and Errors.only(key) or nil
+    only = ok and Compat.readable(key) and Errors.only(key) or nil
   end
   local timer = Compat.get(SURFACE, "timer")
   if type(timer) == "table" and type(timer.After) == "function" then
@@ -180,11 +183,15 @@ end
 
 -- The record of the line `messageType` shows while it is our Japanese for `message`. → rec, fs | nil
 local function ours(frame, messageType, message)
-  if type(messageType) ~= "number" or type(message) ~= "string" then return nil end
+  -- runs inside the client's own call: a secret message or line text is never compared there
+  if type(messageType) ~= "number" or type(message) ~= "string" or Compat.secret(messageType)
+      or Compat.secret(message) then
+    return nil
+  end
   local fs = frame:GetFontStringByID(messageType)
   local rec = type(fs) == "table" and WFJ.SurfaceState.get(SURFACE, lineKey(fs)) or nil
   if not rec or rec.fs ~= fs or rec.en ~= message or type(rec.applied) ~= "string" then return nil end
-  if fs:GetText() ~= rec.applied then return nil end
+  if Compat.secret(fs:GetText()) or fs:GetText() ~= rec.applied then return nil end
   return rec, fs
 end
 

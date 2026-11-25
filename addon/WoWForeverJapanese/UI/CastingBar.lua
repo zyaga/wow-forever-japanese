@@ -39,10 +39,10 @@ local function get(key) return Compat.get(SURFACE, key) end
 local function showTarget(bar)
   local fs = bar.CastTargetNameText
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" then return 0 end
-  local secret, unitName = get("issecretvalue"), Compat.resolve("UnitName")
+  local unitName = Compat.resolve("UnitName")
   local shown = fs:GetText()
   local name = type(unitName) == "function" and unitName("target") or nil
-  if type(secret) == "function" and (secret(shown) or secret(name)) then return 0 end
+  if Compat.secret(shown) or Compat.secret(name) then return 0 end
   local rec = WFJ.SurfaceState.get(SURFACE, "target")
   local ours = rec ~= nil and rec.fs == fs and rec.applied ~= nil and rec.applied == shown -- still our Japanese
   if type(name) ~= "string" or name == "" or (shown ~= name and not ours) then
@@ -56,8 +56,7 @@ end
 function CastingBar.onEvent(bar)
   local text = type(bar) == "table" and bar.Text or nil
   if type(text) ~= "table" or type(text.GetText) ~= "function" then return 0 end
-  local secret = get("issecretvalue")
-  if type(secret) == "function" and secret(text:GetText()) then return 0 end
+  if Compat.secret(text:GetText()) then return 0 end
   local n = WFJ.Labels.show(SURFACE, "text", text, nil, KEYS)
   if n == 0 then n = WFJ.NameLabels.show(SURFACE, "text", text) end
   return n + showTarget(bar)
@@ -68,7 +67,6 @@ local hooked = false
 -- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
 function CastingBar.init()
   Compat.declare(SURFACE, "bar", { "PlayerCastingBarFrame" })
-  Compat.declare(SURFACE, "issecretvalue", { "issecretvalue" })
   local bar = get("bar")
   if hooked or type(bar) ~= "table" or type(bar.HookScript) ~= "function" then return false end
   hooked = true

@@ -20268,6 +20268,7 @@
 {"en": "Summermoon", "ja": "サマームーン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-011@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Summertide", "ja": "サマータイド", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-011@2026-11-10", "imported": "2026-11-10"}}
 {"en": "summit", "ja": "サミット", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-008@2026-11-11", "imported": "2026-11-11"}}
+{"en": "summits", "ja": "サミット", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-respell-summits@2026-11-25", "imported": "2026-11-25"}}
 {"en": "Summom", "ja": "サモン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-008@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Summon", "ja": "サモン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-008@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Summoned", "ja": "サモンド", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-008@2026-11-11", "imported": "2026-11-11"}}

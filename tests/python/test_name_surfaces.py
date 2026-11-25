@@ -75,3 +75,20 @@ def test_every_module_that_shows_a_name_in_japanese_has_a_spec_about_names(root)
         if not any(_NAMES_ON.search(text) for text in found):
             bare.append(module)
     assert bare == [], f"modules marked japanese with no spec that puts a name in Japanese: {bare}"
+
+
+def test_the_voice_panels_frames_name_a_speaker_through_one_lookup():
+    """The panel, its waiting list and its whole-text window each show a speaker's name. A frame that wrote
+    `item.name` itself showed English while Japanese names were on: every one goes through `speakerName`."""
+    import re
+    from pathlib import Path
+
+    ui = Path(__file__).resolve().parents[2] / "addon" / "WoWForeverJapanese" / "UI"
+    for path in sorted(ui.glob("VoicePanel*.lua")):
+        code = "\n".join(line.split("--", 1)[0] for line in path.read_text(encoding="utf-8").splitlines())
+        body = code
+        if path.name == "VoicePanelText.lua":
+            start = code.index("function Text.speakerName(")
+            body = code[:start] + code[code.index("\nend", start):]
+        assert re.search(r"\bitem\.name\b", body) is None, f"{path.name} reads item.name outside speakerName"
+

@@ -42,7 +42,7 @@ local Compat = WFJ.Compat
 Speech.NEVER_TOUCH = {}
 
 local CANDIDATES = { frames = { "CHAT_FRAMES" }, typeInfo = { "ChatTypeInfo" }, bubbles = { "C_ChatBubbles" },
-  raidWarning = { "RaidWarningFrame" }, openTemporary = { "FCF_OpenTemporaryWindow" }, isSecret = { "issecretvalue" },
+  raidWarning = { "RaidWarningFrame" }, openTemporary = { "FCF_OpenTemporaryWindow" },
   timer = { "C_Timer" } }
 
 Speech.TYPES = { "MONSTER_SAY", "MONSTER_YELL", "MONSTER_WHISPER", "MONSTER_EMOTE", "MONSTER_PARTY",
@@ -56,10 +56,7 @@ local ready = false
 
 local function get(key) return Compat.get(SURFACE, key) end
 
-local function secret(value)
-  local isSecret = get("isSecret")
-  return type(isSecret) == "function" and isSecret(value) and true or false
-end
+local function secret(value) return Compat.secret(value) end
 
 local ids -- { [chat type id] = type name }
 local function typeIds()
@@ -90,7 +87,8 @@ end
 -- The Japanese for the server's English (with its `%s`, before the speaker is filled in). key: its gossip key when
 -- the caller already has it. → ja | nil
 function Speech.translate(en, key)
-  if type(en) ~= "string" or en == "" or not deps.key then return nil end
+  -- the secret test first: a line another window repeats (Dialogue UI's chat panel) may be a secret
+  if type(en) ~= "string" or secret(en) or en == "" or not deps.key then return nil end
   local raw = shippedJa(key or deps.key(en))
   if not raw then return nil end
   local ja = deps.expand and deps.expand(raw) or raw
@@ -233,7 +231,7 @@ local function withNames(ja, keep)
   if not WFJ.State.names then return ja end
   local held = {}
   for _, name in ipairs(keep or {}) do
-    if type(name) == "string" and not secret(name) and name ~= "" and ja:find(name, 1, true) then
+    if Compat.readable(name) and ja:find(name, 1, true) then
       local token = "{wfjkeep" .. string.char(97 + #held) .. "}"
       ja = replacePlain(ja, name, token)
       held[#held + 1] = { token, name }
@@ -314,12 +312,13 @@ end
 -- hooksecurefunc target (a chat frame's AddMessage). → 1 | 0
 -- true for no language ("" or nil) or one of this character's languages; a secret, or no way to list them, → false
 function Speech.knownLanguage(language)
-  if language == nil or (not secret(language) and language == "") then return true end
   if secret(language) then return false end
+  if language == nil or language == "" then return true end
   local numLanguages, byIndex = Compat.resolve("GetNumLanguages"), Compat.resolve("GetLanguageByIndex")
   if type(numLanguages) ~= "function" or type(byIndex) ~= "function" then return false end
   for i = 1, numLanguages() or 0 do
-    if byIndex(i) == language then return true end
+    local known = byIndex(i)
+    if not secret(known) and known == language then return true end
   end
   return false
 end
@@ -333,8 +332,7 @@ local function speechEvent(event)
     and (event:find("^CHAT_MSG_MONSTER") or event:find("^CHAT_MSG_RAID_BOSS")) and true or false
 end
 
--- a secret is never compared: comparing one raises
-local function readable(en) return type(en) == "string" and not secret(en) and en ~= "" end
+local readable = Compat.readable
 
 local function shipped(key)
   local entry = WFJ.Lookup.keyed("gossip", key)
@@ -401,8 +399,8 @@ function Speech.targetShape(target, me)
   local unitName = Compat.resolve("UnitName")
   if type(unitName) == "function" then
     local first, second = unitName("player")
-    shape.meSep = type(first) == "string" and first:find("-", 1, true) ~= nil or false
-    shape.meSurname = type(second) == "string" and second ~= "" or false
+    shape.meSep = type(first) == "string" and not secret(first) and first:find("-", 1, true) ~= nil or false
+    shape.meSurname = Compat.readable(second) or false
   end
   return shape
 end
@@ -419,6 +417,8 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   local lineID = eventArgs[11]
   if type(en) ~= "string" then return why("no English", frame, event, en) end
   if secret(en) or secret(line) then return why("secret text", frame, event, en) end
+  -- the line id is compared with each history entry's: a secret one may not be
+  if secret(lineID) then return why("secret line id", frame, event, en) end
   -- what the NPC said goes to the Collector like a gossip line, keyed the same way, with the speaker's creature
   -- id from the event's GUID (eventArgs[12]); NPC speech is in no client file, so playing is how it is found. A
   -- line the NPC says to another player (eventArgs[5], the target) may hold that player's name, which would end
@@ -429,7 +429,8 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   local guid, target, language = eventArgs[12], eventArgs[5], eventArgs[3]
   local me = Compat.resolve("UnitName")
   me = type(me) == "function" and me("player") or nil
-  local toOther = type(target) == "string" and target ~= "" and not secret(target) and target ~= me
+  if secret(me) then me = nil end -- this character's name is compared with the target's and the party's
+  local toOther = Compat.readable(target) and target ~= me
   lastTarget = Speech.targetShape(target, me)
   lastCollect = "not asked"
   local others, namesParty = {}, false
@@ -503,6 +504,7 @@ function Speech.translateNamed(en)
   if key ~= nil and shipped(key) then return nil end
   local unitName = Compat.resolve("UnitName")
   local me = type(unitName) == "function" and unitName("player") or nil
+  if secret(me) then me = nil end -- compared with each name the line holds
   return (translateOthers(en, (otherNames(en, nil, me))))
 end
 
@@ -523,7 +525,7 @@ function Speech.trace(frame, event, eventArgs, outcome)
     key = not lastNamed and (lastKey or (deps.key and deps.key(en))) or nil
     fields.key, fields.shipped, fields.hasToken = key, keyShipped(key), en:find("%s", 1, true) ~= nil
     local speaker = eventArgs[2]
-    if type(speaker) == "string" and not secret(speaker) and speaker ~= "" then
+    if Compat.readable(speaker) then
       local at = en:find(speaker, 1, true)
       fields.speakerInText = at ~= nil
       if at and not lastNamed then
@@ -574,7 +576,7 @@ function Speech.onRaidWarning(frame, event, message, playerName)
   local okEn, enBody = pcall(string.format, message, playerName, playerName)
   if not ok or not okEn then return 0 end
   for fs in pool:EnumerateActive() do
-    if fs.messageOrder == frame.messageCounter and fs:GetText() == enBody then
+    if fs.messageOrder == frame.messageCounter and not secret(fs:GetText()) and fs:GetText() == enBody then
       local me = Compat.resolve("UnitName")
       warnText[fs] = { en = enBody, ja = jaBody, keep = { type(me) == "function" and me("player") or nil } }
       setBubble(fs, warnText[fs])

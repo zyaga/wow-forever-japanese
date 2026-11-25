@@ -122,7 +122,9 @@ local function speaker(window)
   local id = WFJ.Collector.creatureId(g)
   if not id then return nil end
   local sex = Compat.resolve("UnitSex")
-  return { creature = id, sex = type(sex) == "function" and sex(unit) or nil, unit = unit, guid = g }
+  local s = type(sex) == "function" and sex(unit) or nil
+  if Compat.secret(s) then s = nil end -- the voice is picked by comparing it: a secret one is not known
+  return { creature = id, sex = s, unit = unit, guid = g }
 end
 
 -- The NPC's title as the client shows it under the name in its tooltip ("<Innkeeper>"), or nil. Live text, kept
@@ -134,8 +136,10 @@ local function titleOf(unit)
   local ok, data = pcall(T.GetUnit, unit)
   local line = ok and type(data) == "table" and type(data.lines) == "table" and data.lines[2]
   local text = type(line) == "table" and line.leftText or nil
-  -- the level line ("Level 12 Humanoid", "Level ?? Elite") is no title
-  if type(text) ~= "string" or text == "" or text:find("%d") or text:find("%?%?") then return nil end
+  -- the level line ("Level 12 Humanoid", "Level ?? Elite") is no title; a secret line (in combat) is not read
+  if type(text) ~= "string" or Compat.secret(text) or text == "" or text:find("%d") or text:find("%?%?") then
+    return nil
+  end
   return text
 end
 
@@ -158,6 +162,8 @@ local function describe(window, surface, recKey, who)
     local itemName = Compat.resolve("ItemTextGetItem") -- a book or letter: its own name
     name = type(itemName) == "function" and itemName() or nil
   end
+  -- the panel looks a name up and compares it: a secret one is not shown
+  if Compat.secret(name) then name = nil end
   return ja, name, title, en
 end
 
@@ -694,20 +700,17 @@ end
 local ready = false -- init ran: the queue and the settings it reads are there
 
 -- A window another addon draws in place of the client's (UI/DialogueUI): its lines (`surfaces`) belong to it, `unit`
--- names its NPC (nil for a book), and it gets the replay control. Its close is heard through a child frame of ours,
--- because that addon sets its window's own OnHide script again after load, which drops a hook made with HookScript.
+-- names its NPC (nil for a book), and it gets the replay control. `onClose(frame, fn)` is how that addon's module
+-- hears the window close: a script of ours on the window or a child of it would run inside that addon's own hide.
 -- → true when added
-function VoicePlayer.addWindow(window, surfaces, unit)
+function VoicePlayer.addWindow(window, surfaces, unit, onClose)
   local frame = Compat.resolve(window)
-  local createFrame = Compat.resolve("CreateFrame")
-  if buttons[window] or type(frame) ~= "table" or type(createFrame) ~= "function" then return false end
+  if buttons[window] or type(frame) ~= "table" or type(onClose) ~= "function" then return false end
   WINDOWS[#WINDOWS + 1] = window
   SPEAKER_UNIT[window] = unit
   for _, s in ipairs(surfaces) do WINDOW_OF[s] = window end
   buttons[window] = createButton(window)
-  local watcher = createFrame("Frame", nil, frame)
-  watcher:SetScript("OnHide", function() if ready then closed(window) end end)
-  watcher:Show()
+  onClose(frame, function() if ready then closed(window) end end)
   return true
 end
 
@@ -718,10 +721,7 @@ local QUEST_EVENTS = {
   QUEST_COMPLETE = { "questframe.reward", "completion", "GetRewardText" },
 }
 
-local function readable(v)
-  local isSecret = Compat.resolve("issecretvalue")
-  return type(v) == "string" and v ~= "" and not (type(isSecret) == "function" and isSecret(v))
-end
+local readable = Compat.readable
 
 -- The line the window an event opens will show → surface, record key, kind, id and its area; or nil and why not
 local function opening(event)
@@ -743,7 +743,7 @@ local function opening(event)
   if not q then return nil, "not a window" end
   local getID, getText = Compat.resolve("GetQuestID"), Compat.resolve(q[3])
   local id = type(getID) == "function" and getID() or nil
-  if type(id) ~= "number" or id == 0 then return nil, "no quest" end
+  if type(id) ~= "number" or Compat.secret(id) or id == 0 then return nil, "no quest" end
   local en = type(getText) == "function" and getText() or nil
   local kind, keyId = "quest." .. q[2], id
   if readable(en) and WFJ.QuestFrame and type(WFJ.QuestFrame.fieldSource) == "function" then

@@ -87,7 +87,6 @@ local function declare()
   Compat.declare(SURFACE, "frame", { F })
   Compat.declare(SURFACE, "tabTitle", { F .. ".TabTitle" })
   Compat.declare(SURFACE, "log", { "GuildBankMessageFrame" })
-  Compat.declare(SURFACE, "isSecret", { "issecretvalue" })
   for key, l in pairs(LABELS) do Compat.declare(SURFACE, key, { l[1] }) end
 end
 
@@ -126,10 +125,7 @@ end
 local logJa = {} -- Japanese → the English it stands for, for the lines of the current log
 
 local function on() return WFJ.State.enabled and WFJ.State.areaEnabled("ui") end
-local function secret(v)
-  local isSecret = get("isSecret")
-  return type(isSecret) == "function" and isSecret(v) and true or false
-end
+local function secret(v) return Compat.secret(v) end
 
 -- The Japanese of one log line, or nil (not a log template, an untrusted row, a failed fill). → ja | nil
 function GuildBank.logLine(message)

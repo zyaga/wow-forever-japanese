@@ -75,8 +75,7 @@ local ONLY_PLAYER = { only = PLAYER_KEYS }
 local function isPlayer(data)
   local guid = type(data) == "table" and data.guid or nil
   if type(guid) ~= "string" then return false end
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(isSecret) == "function" and isSecret(guid) then return false end
+  if Compat.secret(guid) then return false end
   local info = Compat.resolve("C_PlayerInfo")
   if type(info) ~= "table" or type(info.GUIDIsPlayer) ~= "function" then return false end
   return info.GUIDIsPlayer(guid) == true
@@ -93,11 +92,10 @@ local NAMED_BY_THE_GAME = { Creature = true, Vehicle = true, GameObject = true }
 local objectType
 local function gameNamed(data)
   local guid = type(data) == "table" and data.guid or nil
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(isSecret) == "function" and isSecret(guid) then return false end
+  if Compat.secret(guid) then return false end
   if guid == nil and objectType ~= nil and type(data) == "table" then
     local kind = data.type
-    if type(isSecret) == "function" and isSecret(kind) then return false end
+    if Compat.secret(kind) then return false end
     return kind == objectType
   end
   if type(guid) ~= "string" then return false end
@@ -108,8 +106,7 @@ TooltipUnit.gameNamed = gameNamed
 -- A line that is exactly a game name (the unit's name, the title under it, its faction), in Japanese. → 1 | 0
 local function showName(row, fs, refit)
   local text = fs:GetText()
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(isSecret) == "function" and isSecret(text) then return 0 end
+  if Compat.secret(text) then return 0 end
   if type(text) ~= "string" or text == "" or not WFJ.Names.item(text) then return 0 end
   return WFJ.Render.show(SURFACE, "L" .. row, fs, text, "ui", "name", text, { refit = refit }) and 1 or 0
 end
@@ -137,7 +134,10 @@ function TooltipUnit.lineKinds(data)
   for name, value in pairs(enum) do names[value] = name end
   for _, line in ipairs(data.lines) do
     local row, kind = line.lineIndex, line.type
-    if type(row) == "number" and kind ~= nil then out[row] = names[kind] end
+    -- a secret row or kind is skipped: it may be neither compared nor used as a key
+    if type(row) == "number" and not Compat.secret(row) and not Compat.secret(kind) and kind ~= nil then
+      out[row] = names[kind]
+    end
   end
   return out
 end
@@ -161,9 +161,8 @@ end
 -- the client shows a quest title on a unit only for a quest the player has; still several → only when their Japanese
 -- agrees. → quest id | nil, why
 function TooltipUnit.questFor(title)
-  local isSecret = Compat.resolve("issecretvalue")
   -- the secret check first: comparing or searching a secret value is itself an error
-  if type(title) ~= "string" or (type(isSecret) == "function" and isSecret(title)) or title == "" then
+  if type(title) ~= "string" or Compat.secret(title) or title == "" then
     return nil, "no readable title"
   end
   local h1 = WFJ.Hash.h32x2(WFJ.Normalize.v1(WFJ.Collector.text(title)))
@@ -208,8 +207,7 @@ WFJ.UIStrings.questTitle = TooltipUnit.titleJapanese
 -- one line is a name) lets a one-line block through, still read only as a quest title by its hash.
 -- → the block in Japanese | nil, notes
 function TooltipUnit.minimapBlock(text, single)
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(text) ~= "string" or (type(isSecret) == "function" and isSecret(text))
+  if type(text) ~= "string" or Compat.secret(text)
     or (not single and not text:find("\n", 1, true)) then
     return nil
   end
@@ -260,7 +258,8 @@ function TooltipUnit.onUnit(tt, data)
   local kinds, notes = TooltipUnit.lineKinds(data), {}
   if lines == 1 then
     local fs = Compat.resolve(name .. "TextLeft1")
-    local single = minimapType ~= nil and type(data) == "table" and data.type == minimapType
+    local single = minimapType ~= nil and type(data) == "table" and not Compat.secret(data.type)
+      and data.type == minimapType
     local ja, why = TooltipUnit.minimapBlock(type(fs) == "table" and fs:GetText() or nil, single)
     if ja and WFJ.State.enabled ~= false and not WFJ.Modifier.english() and WFJ.State.areaEnabled("quests") then
       fs:SetText(ja)

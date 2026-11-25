@@ -85,13 +85,13 @@ end
 -- NPC says the line; the client's English otherwise. A name with no Japanese stays as the client showed it.
 local function showWho(item)
   local ja = WFJ.State.names and not revealed() and item.speaker ~= nil and WFJ.Names ~= nil
-  local name, title = item.name, item.title
-  if ja and type(name) == "string" then name = WFJ.Names.of(name) or name end
+  local title = item.title
+  local name, nameJa = WFJ.VoicePanelText.speakerName(item, revealed())
   if ja and type(title) == "string" then title = WFJ.Names.of(title) or title end
   f.name:SetText(name or "")
   f.title:SetText(title and ("<" .. title:gsub("^<", ""):gsub(">$", "") .. ">") or "")
   local L = look()
-  for _, pair in ipairs({ { f.name, name ~= item.name, L.nameFont }, { f.title, title ~= item.title, L.titleFont } }) do
+  for _, pair in ipairs({ { f.name, nameJa, L.nameFont }, { f.title, title ~= item.title, L.titleFont } }) do
     local object = Compat.resolve(pair[3])
     if pair[2] then WFJ.Font.bundle(pair[1], object) else WFJ.Font.restore(pair[1], object) end
   end
@@ -382,8 +382,10 @@ local function applyControls()
   for _, b in ipairs(f.controls) do b:SetAlpha(a) end
 end
 
+-- a waiting line's speaker is named as the panel names the one speaking
 local function lineLabel(item)
-  return ("%s  ·  %s"):format(item.name or "?", word(item.surface))
+  local name = WFJ.VoicePanelText.speakerName(item, revealed())
+  return ("%s  ·  %s"):format(name or "?", word(item.surface))
 end
 
 -- The lines waiting their turn, above the panel, while there are any: each row plays its line now.

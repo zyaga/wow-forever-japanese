@@ -41,7 +41,7 @@ DeathRecap.NEVER_TOUCH = {}
 local CANDIDATES = {
   opener = { "OpenDeathRecapUI" }, frame = { "DeathRecapFrame" }, title = { "DeathRecapFrame.Title" },
   unavailable = { "DeathRecapFrame.Unavailable" }, close = { "DeathRecapFrame.CloseButton" },
-  box = { "DeathRecapFrame.ScrollBox" }, scrollUtil = { "ScrollUtil" }, secret = { "issecretvalue" },
+  box = { "DeathRecapFrame.ScrollBox" }, scrollUtil = { "ScrollUtil" },
   tooltip = { "GameTooltip" },
 }
 
@@ -69,9 +69,7 @@ end
 -- Labels.show, which drops it.
 local function readable(widget)
   if type(widget) ~= "table" or type(widget.GetText) ~= "function" then return true end
-  local secret = get("secret")
-  if type(secret) ~= "function" then return true end
-  return not secret(widget:GetText())
+  return not Compat.secret(widget:GetText())
 end
 
 local casterKey = WFJ.Labels.keyer("caster.") -- a pooled row's record key (follows the widget, never the index)

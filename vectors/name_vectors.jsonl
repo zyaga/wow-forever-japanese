@@ -12,7 +12,7 @@
 {"t": "hash", "en": "Shikrik", "key": "0542fb2d2cfbfb13"}
 {"t": "hash", "en": "Wrahk", "key": "068920b73b1a9dd4"}
 {"t": "hash", "en": "Green Sludges", "key": "077d55e6823640a0"}
-{"t": "hash", "en": "Stoneshatter", "key": "088a0e20144ec1e8"}
+{"t": "hash", "en": "Benedict's Chest", "key": "088a35944701c915"}
 {"t": "hash", "en": "How to Make Friend", "key": "0947cb62a9730245"}
 {"t": "hash", "en": "Blackwood Recurve Bow", "key": "09efc5725dd834c8"}
 {"t": "hash", "en": "Name", "key": "0a8d43cf96cb99f1"}
@@ -21,8 +21,8 @@
 {"t": "hash", "en": "mana potion", "key": "0d2a6bb5bba11f81"}
 {"t": "hash", "en": "Summon Spectral Knight", "key": "0e07fe7f1df0bb13"}
 {"t": "hash", "en": "Bael'dun Excavator", "key": "0eea572bb0615e50"}
-{"t": "hash", "en": "Bristlebark Belt", "key": "0fe8b14f8945053a"}
-{"t": "hash", "en": "Sealed Folder", "key": "10ff0c27955361d4"}
+{"t": "hash", "en": "Dredge Boots", "key": "0fe928af40ef3f7b"}
+{"t": "hash", "en": "Girdle of Thero-shan", "key": "110003a802eaf15c"}
 {"t": "hash", "en": "Pattern: Corehound Belt", "key": "120e842744712543"}
 {"t": "hash", "en": "Unstable Sentinel", "key": "134dfe36df0324ab"}
 {"t": "hash", "en": "Proto-Drake Egg", "key": "145e276df3ab8c9b"}
@@ -30,8 +30,8 @@
 {"t": "hash", "en": "ice thistle yeti", "key": "16b13c78c16fc3f8"}
 {"t": "hash", "en": "General of the Sentinel Army", "key": "17c2a05316ad0426"}
 {"t": "hash", "en": "Crate of Alchemy Goods", "key": "18eac55d8e9683b1"}
-{"t": "hash", "en": "Prospector Gehn", "key": "19ee721035b6683d"}
-{"t": "hash", "en": "Gift from the Embalmer", "key": "1b14b10572e6f665"}
+{"t": "hash", "en": "Initialize Twin", "key": "19ef40ccfee15684"}
+{"t": "hash", "en": "Mercurial Circlet", "key": "1b17865f2ba603fa"}
 {"t": "hash", "en": "Broodmother Valraxx", "key": "1c23b2b0e42e05fd"}
 {"t": "hash", "en": "Widowmaker", "key": "1d2b96cebc26c1ff"}
 {"t": "hash", "en": "Webwood Slicer", "key": "1e337a90f90b4438"}
@@ -39,19 +39,19 @@
 {"t": "hash", "en": "Debug Frost Spell", "key": "204ab4f42ac6fe74"}
 {"t": "hash", "en": "Grunt's AnkleWraps", "key": "213ea7d84dd666ef"}
 {"t": "hash", "en": "Formula: Enchant Shield - Stamina", "key": "225cce706c7c18e1"}
-{"t": "hash", "en": "Enchant Weapon - Superior Striking", "key": "238afc1783eefa2c"}
-{"t": "hash", "en": "Champion's Dragonhide Helm", "key": "24b6de61565b2cf4"}
-{"t": "hash", "en": "Level 38 Cloth Supplies", "key": "25cdac98248a151e"}
+{"t": "hash", "en": "Gardening Gloves", "key": "238b04cc4849292b"}
+{"t": "hash", "en": "Uther's Strength", "key": "24b7ef5e3a7579c2"}
+{"t": "hash", "en": "Despawn Caster", "key": "25d1d641b4641d78"}
 {"t": "hash", "en": "Increased Arcane Resist 29", "key": "26afd3754a304042"}
 {"t": "hash", "en": "Silver Mail Shoulderpads (Test)", "key": "27e07f8f89a95ef8"}
 {"t": "hash", "en": "Toggled Effect", "key": "290fbad6b717e26c"}
 {"t": "hash", "en": "Bleakwood Curse", "key": "2a2f056023ce2e7e"}
 {"t": "hash", "en": "Pattern: Azure Gustwoven Hood", "key": "2b3c660c328fd64e"}
 {"t": "hash", "en": "Troll Speed", "key": "2c1296794611e797"}
-{"t": "hash", "en": "Defiler's Den", "key": "2d2bd12b2c84d614"}
-{"t": "hash", "en": "Rough Vulture Feathers", "key": "2e3a46c5d36168de"}
-{"t": "hash", "en": "Tuskarr", "key": "2f323556183dccf2"}
-{"t": "hash", "en": "Blinding Flare", "key": "303e77cc57abc0ca"}
+{"t": "hash", "en": "Kearnen's Journal", "key": "2d2c1aea948ba216"}
+{"t": "hash", "en": "Alchemical Implements", "key": "2e3aadba60126a63"}
+{"t": "hash", "en": "Twilight's Shroud", "key": "2f334be61d3b5100"}
+{"t": "hash", "en": "Linkue Combatant Icon", "key": "303e9483fb83b881"}
 {"t": "hash", "en": "Octofinger Gauntlets", "key": "316d59512d65fe83"}
 {"t": "hash", "en": "Bonegnaw", "key": "326ae621f695f474"}
 {"t": "hash", "en": "Ranger-Apprentice Cape", "key": "337ab0f494211d5f"}
@@ -59,10 +59,10 @@
 {"t": "hash", "en": "of the Bear", "key": "3493f5391f8ab9aa"}
 {"t": "hash", "en": "The Storm", "key": "34f220f1304add45"}
 {"t": "hash", "en": "Hooked Net", "key": "3591e96ad2031ba1"}
-{"t": "hash", "en": "Death Coil Damage Increase", "key": "36b1f4306a106a0d"}
-{"t": "hash", "en": "Fire Resist Leather Gear", "key": "37b64a48c8359959"}
-{"t": "hash", "en": "Bro'kin", "key": "38c3e2ce3b750861"}
-{"t": "hash", "en": "Jadefire Pants", "key": "39df45c6a7e3a7f6"}
+{"t": "hash", "en": "Glinteye Slippers", "key": "36b2291640344094"}
+{"t": "hash", "en": "Speak with Heads", "key": "37b6d59a2686bfcb"}
+{"t": "hash", "en": "Apothecary Berard", "key": "38c3f5ed88374d0e"}
+{"t": "hash", "en": "Blackforge Leggings", "key": "39df564c46dd976b"}
 {"t": "hash", "en": "Deprecated Tattered Shirt", "key": "3b3463fb00a4d7b0"}
 {"t": "hash", "en": "Skeletal Torch", "key": "3c51e2abf6413b93"}
 {"t": "hash", "en": "Rough-hewn Kodo Leggings", "key": "3cbb316024044124"}
@@ -71,161 +71,161 @@
 {"t": "hash", "en": "Zul'Farrak", "key": "3f70d79987be3b41"}
 {"t": "hash", "en": "Mighty Troll's Blood Elixir", "key": "3fbd38b5f27da092"}
 {"t": "hash", "en": "QAEnchant Shield +8 Frost Resistance", "key": "406d2845ef28a5e3"}
-{"t": "hash", "en": "copper modulators", "key": "4070afe343ee7386"}
-{"t": "hash", "en": "Rune Band of Wizardry", "key": "4175b9d427963dfa"}
+{"t": "hash", "en": "Enchanted Sigil: Flowing Waters", "key": "4070c44224b6af24"}
+{"t": "hash", "en": "Mithril Bar Collector", "key": "417696436e233bcc"}
 {"t": "hash", "en": "AQWar - Resource, Cooking, Horde, Tier 4", "key": "419479fd6f9dafa2"}
-{"t": "hash", "en": "Dalaran Adept", "key": "429a84aca4ce90bb"}
-{"t": "hash", "en": "Mith'rethis the Enchanter", "key": "43cddc4ae5b62268"}
-{"t": "hash", "en": "Stone Fury", "key": "44e90a1b798d6008"}
+{"t": "hash", "en": "Libram: Seal of Protection III", "key": "429bed6b2eafe22d"}
+{"t": "hash", "en": "Grimtotem Sorcerer", "key": "43d00ba5725c4387"}
+{"t": "hash", "en": "Frostwolf keep", "key": "44e9ca895f5391cd"}
 {"t": "hash", "en": "Mr. O'Breen", "key": "45e97a2bbf1bacb0"}
 {"t": "hash", "en": "Skull of Impending Doom", "key": "470209e0481092b9"}
 {"t": "hash", "en": "Bath'rah the Windwatcher", "key": "480c9ad14122d87c"}
 {"t": "hash", "en": "Pizznukle", "key": "494aba90b19afcb6"}
-{"t": "hash", "en": "Guild Tabard", "key": "4a798f6117cc3550"}
-{"t": "hash", "en": "Deprecated Magister's Mantle", "key": "4b4fe958087c3336"}
-{"t": "hash", "en": "[PH] Horde A1 Tower Pre-Banner BIG", "key": "4c6cff0353e299a8"}
-{"t": "hash", "en": "Increased Stamina 22", "key": "4d65edbc8a7e5d98"}
-{"t": "hash", "en": "Crab Claw", "key": "4e7079ea768fe620"}
+{"t": "hash", "en": "Engrave Bracers - Unfair Advantage", "key": "4a7a49cd0ed154ee"}
+{"t": "hash", "en": "Marn Euhorn", "key": "4b50d3a2eb0892c3"}
+{"t": "hash", "en": "Fel Tear", "key": "4c6d1bd5199f0a95"}
+{"t": "hash", "en": "Increased Stamina 23", "key": "4d65edbd8a7e5d99"}
+{"t": "hash", "en": "ornate mithril breastplate", "key": "4e70d04986cf373d"}
 {"t": "hash", "en": "Increase Spell Dam +9", "key": "4f9bc802d45e5f10"}
 {"t": "hash", "en": "Battlefield Inspiration", "key": "505e11bb2e48b78c"}
 {"t": "hash", "en": "Savannah Cub", "key": "516f40783088e56c"}
 {"t": "hash", "en": "Thunder Applejack", "key": "52841d8e6c396ad5"}
-{"t": "hash", "en": "The Happy Bobber", "key": "53a41783a29ea392"}
-{"t": "hash", "en": "Maxan", "key": "54bedc7a7d57a5c2"}
-{"t": "hash", "en": "Mine!", "key": "55ceacb7c0e51fab"}
-{"t": "hash", "en": "Test Stab R50", "key": "56e760adf38693b4"}
-{"t": "hash", "en": "Grovekeeper Handguards", "key": "57e951c2be6385ef"}
-{"t": "hash", "en": "Gordunni Trap", "key": "590cc1f63cad4ab7"}
+{"t": "hash", "en": "Holiday - Lunar Teleport Cap: Thunderbluff", "key": "53a52ba0b86a401d"}
+{"t": "hash", "en": "Mazen", "key": "54bf64988548acc8"}
+{"t": "hash", "en": "Miner", "key": "55cead08c0e51ffc"}
+{"t": "hash", "en": "Send Fray Combatant", "key": "56e8ce383c293ff7"}
+{"t": "hash", "en": "Shapeshifting Sentinel's Strides", "key": "57eb49ceeb2fb26a"}
+{"t": "hash", "en": "Mugg's Crosser", "key": "590cdf45f2ca7b5d"}
 {"t": "hash", "en": "Curse of the Bleakheart Proc", "key": "5a312ca291250ef3"}
 {"t": "hash", "en": "(DNT) Experimental Boss Buff - Health Regeneration", "key": "5b409866ec8e9617"}
-{"t": "hash", "en": "liches", "key": "5c4f218d205d81dd"}
-{"t": "hash", "en": "Discoverer's Delight - Cancel Aura", "key": "5d5238df965c4d55"}
-{"t": "hash", "en": "Blackguard", "key": "5e6bf23a196713dc"}
-{"t": "hash", "en": "Elune'ara", "key": "5f8b8d8b7c8b83d0"}
-{"t": "hash", "en": "Increased Spell Hit Chance 1", "key": "6090993d3bedfe2f"}
-{"t": "hash", "en": "Maexxna - Inner Web Door", "key": "61921017716ab50c"}
-{"t": "hash", "en": "The Frostwolf Artichoke", "key": "62ae02226d59aa66"}
-{"t": "hash", "en": "Field Captain Arunnel", "key": "63cff99d0dbe5ea8"}
+{"t": "hash", "en": "Banded Helm", "key": "5c4f907465505a7a"}
+{"t": "hash", "en": "the Master Angler", "key": "5d52dea4092f7762"}
+{"t": "hash", "en": "Duke Anvillaxx", "key": "5e6cf9d12068f402"}
+{"t": "hash", "en": "Holy Conduit", "key": "5f8f603bbbf50ae0"}
+{"t": "hash", "en": "Increased Spell Hit Chance 2", "key": "6090993e3bedfe30"}
+{"t": "hash", "en": "Green Power Crystal", "key": "61937de2119d5a25"}
+{"t": "hash", "en": "Eye of Arachnida", "key": "62afdcb274623141"}
+{"t": "hash", "en": "Sentry Larsen", "key": "63cfff3c1e22db9b"}
 {"t": "hash", "en": "Defias Tower I", "key": "64df34c996b3d988"}
 {"t": "hash", "en": "of Shadow Resistance", "key": "654b69e58c0e08c1"}
-{"t": "hash", "en": "Blackrock Depths Arena Thelrin Focus", "key": "6600fef204ebfb63"}
-{"t": "hash", "en": "Portals", "key": "66f4a554f265d166"}
-{"t": "hash", "en": "Soldier of the Frozen Wastes", "key": "681dbf493008a5a2"}
-{"t": "hash", "en": "Muddy Note", "key": "6944efe6075d2f9c"}
-{"t": "hash", "en": "Bestial Focus", "key": "6a59d571703867bb"}
-{"t": "hash", "en": "Elixir of Spirit", "key": "6b77d8ef72377608"}
-{"t": "hash", "en": "Brass-fitted Flam-Tamp Flange", "key": "6ca1754eaf6a287e"}
-{"t": "hash", "en": "Rafael Langrom", "key": "6dab249d9cda615f"}
+{"t": "hash", "en": "Champion's Satin Hood", "key": "66040291d1333c72"}
+{"t": "hash", "en": "Rune of Soul Siphon", "key": "66f505d000b84159"}
+{"t": "hash", "en": "Might of Kalimdor Infantry", "key": "68203652e61ee9bb"}
+{"t": "hash", "en": "Swinegart Spearhide", "key": "694602362ea192e6"}
+{"t": "hash", "en": "Colossus of Regal", "key": "6a59ed80021bb14c"}
+{"t": "hash", "en": "Argent Deathcharger", "key": "6b782aea389447f7"}
+{"t": "hash", "en": "Putanni", "key": "6ca17da64e5960b4"}
+{"t": "hash", "en": "The Black Sleep", "key": "6dab40b659ae0698"}
 {"t": "hash", "en": "Putress", "key": "6ee64c398e86d2e2"}
-{"t": "hash", "en": "Air Elemental Core", "key": "7014f8ce4891b885"}
-{"t": "hash", "en": "Lifeless Stone", "key": "7150da21ebc28cd9"}
+{"t": "hash", "en": "Seal of Khaz'Mul", "key": "70157de3b5663b13"}
+{"t": "hash", "en": "Lady Prestor", "key": "7153867cb85781a2"}
 {"t": "hash", "en": "The Affray", "key": "71a4d2099d6e3aa3"}
-{"t": "hash", "en": "90 Epic Frost Robes", "key": "728a4c2e72aea53a"}
-{"t": "hash", "en": "Fel-Slime Crystal", "key": "73b9e3c9d4674ea2"}
-{"t": "hash", "en": "Onyx Idol", "key": "749c5e37c5dd4d30"}
-{"t": "hash", "en": "Gold Bar", "key": "757d1ac7d924eb08"}
+{"t": "hash", "en": "Amber Idol", "key": "728e833fac731e28"}
+{"t": "hash", "en": "murk worms", "key": "73baaf15040ed12c"}
+{"t": "hash", "en": "Improved Judgement of Light", "key": "749e34fd114fb54c"}
+{"t": "hash", "en": "Falconcrest", "key": "757e2efa3cb619ce"}
 {"t": "hash", "en": "Test Strike W35", "key": "765d545ad6d5882f"}
-{"t": "hash", "en": "Sandra Bartan", "key": "768c212e5a861369"}
-{"t": "hash", "en": "Elixir of Frost Power", "key": "77af862d433dd899"}
-{"t": "hash", "en": "Priest", "key": "789f549d50160e6f"}
-{"t": "hash", "en": "Sorcerer Robe", "key": "79a1a35e9e8bdff4"}
-{"t": "hash", "en": "Immolation", "key": "7ac18bc777244e61"}
-{"t": "hash", "en": "Summon Frail Skeleton", "key": "7be51b986c3c0398"}
-{"t": "hash", "en": "Necromancer", "key": "7cec0ced2b5dd31b"}
+{"t": "hash", "en": "Brother Danil", "key": "768c93572a9f58a3"}
+{"t": "hash", "en": "Tame Armored Scorpid", "key": "77af9008d1aa0fec"}
+{"t": "hash", "en": "[DNT] Riosustrasz Fight Initialization", "key": "78a0a8462bedb185"}
+{"t": "hash", "en": "Conjurer's Robe", "key": "79a1feb8d9bd67a9"}
+{"t": "hash", "en": "Maltorius", "key": "7ac3a871e28c0005"}
+{"t": "hash", "en": "Shipping Schedule", "key": "7be54c03eb5a1350"}
+{"t": "hash", "en": "Captain's Shoulderguards", "key": "7ced2c4b6651c499"}
 {"t": "hash", "en": "Level 55 Test Gear Leather - Druid 2", "key": "7d0e7592bd4c5d52"}
-{"t": "hash", "en": "Cloudy Skyforged Wristguards", "key": "7dfb9285b77b7f1c"}
-{"t": "hash", "en": "New Avalon Defender", "key": "7f22e2d752c1eba8"}
-{"t": "hash", "en": "TEST GEAR WARRIOR", "key": "80267a1cc8fdbfff"}
-{"t": "hash", "en": "Felpaw Wolf", "key": "81493045ba581b32"}
+{"t": "hash", "en": "Drakonid Corpse Trigger", "key": "7dfbc27bcb0ecd37"}
+{"t": "hash", "en": "Hecklefang Snarler", "key": "7f2425f6b83e83c8"}
+{"t": "hash", "en": "Schematic: White Rocket Cluster", "key": "80298a580077ddc6"}
+{"t": "hash", "en": "Frost Nova", "key": "814b760c7d985bff"}
 {"t": "hash", "en": "AQWar - Resource, Herbs, Horde, Tier 5", "key": "8162ef453520252d"}
 {"t": "hash", "en": "Stone Guard's Crackling Leather Leggings", "key": "818f6658650e34f1"}
-{"t": "hash", "en": "Totemic Leather Belt", "key": "825973af1c13e562"}
-{"t": "hash", "en": "Yagyin Digest", "key": "8379991f69121dba"}
-{"t": "hash", "en": "War Horn Shaker - Big", "key": "845e0112b1f156c7"}
-{"t": "hash", "en": "Stendel's Pond", "key": "856c03e072aa6c8f"}
-{"t": "hash", "en": "Half-Eaten Fish", "key": "867f276a111505d5"}
-{"t": "hash", "en": "General's Chain Sabatons", "key": "878990f4d2e4b7f0"}
-{"t": "hash", "en": "Shadowcrawl", "key": "88a6f48badf02bd0"}
-{"t": "hash", "en": "Hukku's Guardians", "key": "89adaab7c7875472"}
-{"t": "hash", "en": "Decimate", "key": "8aa4fc8fa11c80ef"}
-{"t": "hash", "en": "Summon Thunderstrike", "key": "8bcbea930f53ce25"}
-{"t": "hash", "en": "Bailor", "key": "8cfbe9a828c5a53b"}
-{"t": "hash", "en": "Flimsy Female Tauren Mask", "key": "8dfab6adf618546a"}
-{"t": "hash", "en": "Russet Gloves", "key": "8f0bbae095a5b7b2"}
-{"t": "hash", "en": "Libram: Blessing of Might VII", "key": "901bd1126565dda9"}
-{"t": "hash", "en": "Frostbrand Attack", "key": "912be958d644cda6"}
-{"t": "hash", "en": "Spirit Burn II", "key": "922e76ab92f6522e"}
-{"t": "hash", "en": "Ocean's Breeze", "key": "9368008eead4cf50"}
-{"t": "hash", "en": "Enchant Chest - Minor Intellect", "key": "947824699577ccf3"}
-{"t": "hash", "en": "Bonds", "key": "9585a8a87d413e22"}
-{"t": "hash", "en": "Slime-encrusted Pads", "key": "9675cc0942d33e48"}
-{"t": "hash", "en": "Stone Sleeper", "key": "97910a89a00b5b4d"}
-{"t": "hash", "en": "Plans: Fiery Chain Girdle", "key": "98dd4e0d45844db1"}
-{"t": "hash", "en": "north", "key": "99e212ecdd7233e9"}
-{"t": "hash", "en": "Barbecued Buzzard Wing", "key": "9b11e7b0fe537d49"}
-{"t": "hash", "en": "Scroll of Agility", "key": "9c2d01911b8b8909"}
-{"t": "hash", "en": "Premier Scalemail Wristguards", "key": "9d4f7ded1e689f54"}
-{"t": "hash", "en": "Increase Arcane Dam 41", "key": "9e5526fed3abe0f4"}
-{"t": "hash", "en": "Lanie Reed", "key": "9f75ccc127b834c9"}
-{"t": "hash", "en": "Emrys Flintbeard", "key": "a08db716b84b2d6f"}
-{"t": "hash", "en": "Throw Stick", "key": "a1c2d53a390260bb"}
-{"t": "hash", "en": "Handcrafted Staff", "key": "a2b484619b681eb6"}
-{"t": "hash", "en": "Keepsake of Remembrance", "key": "a3e28cf7cf22b409"}
-{"t": "hash", "en": "Deep Flora Bindings", "key": "a521f10efd5e5bf5"}
-{"t": "hash", "en": "Haunted Trap", "key": "a63b6a0a1f462570"}
+{"t": "hash", "en": "Frost Vial", "key": "825c45fad103c84b"}
+{"t": "hash", "en": "Blacksmithing Skill +10", "key": "8379b3867c8a461f"}
+{"t": "hash", "en": "World Imp Trainer", "key": "845e1d4f75fc85db"}
+{"t": "hash", "en": "Rose's Thorn", "key": "856ce74a6aebab66"}
+{"t": "hash", "en": "Monster - Shield, Buckler Metal Damaged", "key": "8680bf59466af3ef"}
+{"t": "hash", "en": "Stonecloth Belt", "key": "878bfc7af7e61848"}
+{"t": "hash", "en": "Moonkin (Druid - Tauren)", "key": "88a7303fbc425dcb"}
+{"t": "hash", "en": "Naga Battle Gloves", "key": "89ae3454542c3430"}
+{"t": "hash", "en": "Recall", "key": "8aa6c85840ef430a"}
+{"t": "hash", "en": "Vanguard Legplates", "key": "8bcbfa01f9418504"}
+{"t": "hash", "en": "Dark Hooded Cape", "key": "8cfc96934400cfca"}
+{"t": "hash", "en": "Krasus", "key": "8dfb192884ba1024"}
+{"t": "hash", "en": "Mountaineer Yuttha", "key": "8f0c779c7e972902"}
+{"t": "hash", "en": "Summon Zulian Stalker", "key": "901ccb0353a91970"}
+{"t": "hash", "en": "Lord Tony Romano", "key": "912d4c5c44a5ad23"}
+{"t": "hash", "en": "Spirit Burn IV", "key": "922e76b892f6523b"}
+{"t": "hash", "en": "Moss-twined Heart", "key": "9369824861379ae7"}
+{"t": "hash", "en": "Swarmtender's Gloves", "key": "94784a3f9419f046"}
+{"t": "hash", "en": "Books", "key": "9585ef46813a610a"}
+{"t": "hash", "en": "S03 - Item - T2 - Warrior - Damage 4P Bonus", "key": "9677822246e9a661"}
+{"t": "hash", "en": "Gazlowe's Ledger", "key": "9793d3e710b3e2e5"}
+{"t": "hash", "en": "Soul of Stromgarde", "key": "98dd9cf92f6618d7"}
+{"t": "hash", "en": "notes", "key": "99e2915ce560dd47"}
+{"t": "hash", "en": "Ice Troll", "key": "9b12a8f0a60eab93"}
+{"t": "hash", "en": "Etched Note", "key": "9c2dae5c9408d593"}
+{"t": "hash", "en": "Prairie Ring", "key": "9d50773273fc448b"}
+{"t": "hash", "en": "Increase Arcane Dam 43", "key": "9e552700d3abe0f6"}
+{"t": "hash", "en": "Increased Bow", "key": "9f772b7ac2156c81"}
+{"t": "hash", "en": "Ooze Covered Mithril Deposit", "key": "a09071066311b178"}
+{"t": "hash", "en": "Monster - Axe, 2H Horde Black Tombstone", "key": "a1c2f0ab8b08db70"}
+{"t": "hash", "en": "Holistic Herbalism", "key": "a2b4ddd66c1e6a52"}
+{"t": "hash", "en": "Defias Profiteer", "key": "a3e32ac28b0716ea"}
+{"t": "hash", "en": "Ro'Bark", "key": "a5227bebb092b8f2"}
+{"t": "hash", "en": "Tirisfal Glades", "key": "a63bfbd22abf200d"}
 {"t": "hash", "en": "Lost One Mudlurker", "key": "a75f82dccb91f59f"}
 {"t": "hash", "en": "fathom stone", "key": "a87c170bcc90c234"}
 {"t": "hash", "en": "Plans: Blue Glittering Axe", "key": "a96d3a35adb1f03c"}
-{"t": "hash", "en": "Belgrom's Revenge", "key": "aa666eb1d6025c98"}
-{"t": "hash", "en": "Chromatic Mantles of the Dawn", "key": "ab9543b6a9c1c97b"}
-{"t": "hash", "en": "Bind Self (TEST)", "key": "acb0d6c5211097f6"}
+{"t": "hash", "en": "Box o' Squirrels", "key": "aa6cc6a1d8b12ac1"}
+{"t": "hash", "en": "Techbot's Memory Core", "key": "ab95b7a20ac05cf4"}
+{"t": "hash", "en": "Spire of the Stoneshaper", "key": "acb10abaf7eb2037"}
 {"t": "hash", "en": "Holy Spring", "key": "adc79154c5cbebfd"}
 {"t": "hash", "en": "Serenity's Shore", "key": "aed1c7dc8f10608b"}
 {"t": "hash", "en": "Hnaz Blunderflame", "key": "aff0819a2f2b0da0"}
 {"t": "hash", "en": "Tharnariun Cure 1", "key": "b10a5ab921dafe6b"}
 {"t": "hash", "en": "Lieutenant Commander's Dragonhide Headdress", "key": "b21909ca04c6a3cc"}
-{"t": "hash", "en": "Greater Scythe", "key": "b360b75ab7ccce4a"}
-{"t": "hash", "en": "Lingering Highborne", "key": "b488c271609f67e2"}
-{"t": "hash", "en": "Ice Giant", "key": "b5a802eb23eb2966"}
-{"t": "hash", "en": "Dalar", "key": "b6c04f347775fd78"}
+{"t": "hash", "en": "Guerrilla Cleaver", "key": "b361a1f8397f3605"}
+{"t": "hash", "en": "Satchel of Iron Bombs", "key": "b4899ec52cd7a6df"}
+{"t": "hash", "en": "Naga Power Stones", "key": "b5a832c7ddbd720f"}
+{"t": "hash", "en": "Dance", "key": "b6c0d63f7f66c4af"}
 {"t": "hash", "en": "Barkeep Morag", "key": "b7c1ba7b38bff7d4"}
 {"t": "hash", "en": "The Scarlet Champion", "key": "b844b5f7633b1726"}
 {"t": "hash", "en": "Moonpetal Lilies", "key": "b8d01c333b3d8b2b"}
 {"t": "hash", "en": "Wildfire", "key": "b9d08d47736ef5e8"}
 {"t": "hash", "en": "Pathfinder Bracers", "key": "baf97bdb8aee33c0"}
 {"t": "hash", "en": "Virtuous Bracers", "key": "bc101d81a017e9f3"}
-{"t": "hash", "en": "Great Strength", "key": "bd00a5661d23c41e"}
-{"t": "hash", "en": "Plans: Bloodsoul Gauntlets", "key": "be170ccc235a3d8e"}
+{"t": "hash", "en": "Formula: Enchant 2H Weapon - Lesser Spirit", "key": "bd014da5cb862ab3"}
+{"t": "hash", "en": "Vance Undergloom", "key": "be17a2fcf5b2774a"}
 {"t": "hash", "en": "Doodad_SmallFirePit76", "key": "be3da86bdeff7fdf"}
-{"t": "hash", "en": "Summon Bat Loa", "key": "bf1453c9012ee525"}
+{"t": "hash", "en": "Brightcloth Gloves", "key": "bf16664ed811a999"}
 {"t": "hash", "en": "Ada Gelhardt - Give Rewards", "key": "bf18a98e3add2b47"}
 {"t": "hash", "en": "Receive Reward AND Quest Object, Darnassus Guard", "key": "bffd7f829d0a9c7a"}
-{"t": "hash", "en": "Splat", "key": "c0108a0fd04ac206"}
-{"t": "hash", "en": "Waylaid Crate: Journeyman Ingots", "key": "c11c21e84bc60ace"}
+{"t": "hash", "en": "Split", "key": "c0108e27d04bc10e"}
+{"t": "hash", "en": "Krastinov's Bag of Horrors", "key": "c11cac70be4da815"}
 {"t": "hash", "en": "Kibler's Exotic Pets", "key": "c161566bbb8b1edf"}
 {"t": "hash", "en": "Iaadaria Bitterwind", "key": "c25c1e70770f67d2"}
 {"t": "hash", "en": "of Regeneration", "key": "c2a630ea21742ab3"}
 {"t": "hash", "en": "Theodrus Frostbeard", "key": "c365dffa5150be03"}
 {"t": "hash", "en": "Bag Vendor", "key": "c47a3a82301c0eed"}
 {"t": "hash", "en": "Dark Iron Fanny Pack", "key": "c5550fd77803bf4b"}
-{"t": "hash", "en": "Pattern: Trapper's Leather Armor", "key": "c6650f80c1718c64"}
-{"t": "hash", "en": "Ravaged Caravan", "key": "c76b37846b8ab7a3"}
-{"t": "hash", "en": "Razzashi Coin", "key": "c861923053d59582"}
-{"t": "hash", "en": "Flamescarred Girdle", "key": "c97a3139e9ccd63b"}
-{"t": "hash", "en": "Summon Ghosts of Naxxramas", "key": "ca8af5bcaff016be"}
-{"t": "hash", "en": "Guchie Jinglepocket", "key": "cb993764f45b4829"}
+{"t": "hash", "en": "Elder Azj'Tordin", "key": "c665142197aac7d4"}
+{"t": "hash", "en": "The Shadowfoot Stabber", "key": "c76ddfd2046a6cb6"}
+{"t": "hash", "en": "Fist of Revelation", "key": "c8622835d44e0de1"}
+{"t": "hash", "en": "Brigade Girdle", "key": "c97b05d1857d326d"}
+{"t": "hash", "en": "Hoof-Holstered Blade", "key": "ca8b0af719f0a5cb"}
+{"t": "hash", "en": "Formula: Enchant Bracer - Lesser Deflection", "key": "cb9990562d965730"}
 {"t": "hash", "en": "Scytheclaw", "key": "ccb34c1e8299e6d0"}
 {"t": "hash", "en": "Kor'gresh", "key": "cdc3af47f0271e39"}
 {"t": "hash", "en": "Lathar'Lazal", "key": "cecf43e0b02f5e3c"}
-{"t": "hash", "en": "Pattern: Mantle of the Timbermaw", "key": "cfd8b95d9924287d"}
-{"t": "hash", "en": "Sillithus Flag, Horde, and speed limit (DND)", "key": "d0dae57573682d50"}
-{"t": "hash", "en": "Tuber Spawner", "key": "d1ccc161b407632e"}
-{"t": "hash", "en": "Tyler", "key": "d2d2fcdda7dd554f"}
-{"t": "hash", "en": "Anachronos Quest Credit DND", "key": "d3e78d282bf85d22"}
-{"t": "hash", "en": "Whimsical Waistwrap", "key": "d4e6cc45e2656be1"}
+{"t": "hash", "en": "Pat's Firework Cluster Guy (YELLOW)", "key": "cfda115cb769cefc"}
+{"t": "hash", "en": "Zandalarian Hero Medallion", "key": "d0db072462b6fdd2"}
+{"t": "hash", "en": "Risen Bones", "key": "d1ccf5e622a2c781"}
+{"t": "hash", "en": "Tymor", "key": "d2d34504abd6d7da"}
+{"t": "hash", "en": "Gauntlets of Steadfast Determination", "key": "d3e88cc820fbb0b1"}
+{"t": "hash", "en": "Tablet of Stoneclaw Totem", "key": "d4e774a3457a7ff8"}
 {"t": "hash", "en": "Shadow Reflector", "key": "d5f9d5021e296bce"}
-{"t": "hash", "en": "Pattern: Totemic Leather Leggings", "key": "d73a04bacf987e1b"}
-{"t": "hash", "en": "Warrior's Girdle", "key": "d856a1fe50e5723a"}
+{"t": "hash", "en": "tribal", "key": "d73924bfbb86efbd"}
+{"t": "hash", "en": "Smouldering Leggings", "key": "d85614357a6df4cf"}
 {"t": "hash", "en": "Doodad_CentaurTeleporter01", "key": "d9339acd6c169a16"}
 {"t": "hash", "en": "Tome of Arcane Intellect III", "key": "da5c7e2c8dbde399"}
 {"t": "hash", "en": "Reforged Blade of Heroes", "key": "db636dcd4d84ef37"}
@@ -233,8 +233,8 @@
 {"t": "hash", "en": "Fist-sized Spinneret", "key": "ddd29bd64b376b44"}
 {"t": "hash", "en": "Sorrow Wing", "key": "df191eacb7e0f3d6"}
 {"t": "hash", "en": "Blackwing Spell Marker", "key": "e04498bd7efa980f"}
-{"t": "hash", "en": "Truthbearer", "key": "e16a8326ada67c73"}
-{"t": "hash", "en": "Golem Fist", "key": "e2738b91928d8f05"}
+{"t": "hash", "en": "Twill Bracers", "key": "e16955db07ff15dd"}
+{"t": "hash", "en": "Biznicks 247x128 Accurascope", "key": "e2731d5bd8f63db4"}
 {"t": "hash", "en": "Amplify Magic", "key": "e39e1829b5a46245"}
 {"t": "hash", "en": "Orb of Mistmantle", "key": "e4b7438fdbde1bfe"}
 {"t": "hash", "en": "Doomulus Prime", "key": "e5fc2b6f9997f7bc"}
@@ -242,8 +242,8 @@
 {"t": "hash", "en": "Lend Pet (NYI)", "key": "e84f7cfe65d581c4"}
 {"t": "hash", "en": "Restless Shade", "key": "e967edf759731529"}
 {"t": "hash", "en": "Wushoolay's Charm of Nature", "key": "ea6fb9a1860ae4ec"}
-{"t": "hash", "en": "Shadow Lash", "key": "eb78b62d59221671"}
-{"t": "hash", "en": "Defias Scum", "key": "ec965c8adc52ff71"}
+{"t": "hash", "en": "Do Not Duplicate", "key": "eb767e5c580f9fea"}
+{"t": "hash", "en": "Aberrant Bloat", "key": "ec95e623219522df"}
 {"t": "hash", "en": "Affray Spectator", "key": "ed9383d78c95a922"}
 {"t": "hash", "en": "Engrave Helm - Advanced Warding", "key": "ee63e4a9c85ee5bb"}
 {"t": "hash", "en": "grinding stones", "key": "ef94c8a739c2c74c"}
@@ -252,7 +252,7 @@
 {"t": "hash", "en": "Uther Lightbringer", "key": "f2647ffa76e72836"}
 {"t": "hash", "en": "Celebras the Redeemed", "key": "f38bfa3de7cfc991"}
 {"t": "hash", "en": "Break Big Stuff", "key": "f4a9df0f68e26138"}
-{"t": "hash", "en": "Legashi Rogue", "key": "f5c9d17f040f974a"}
+{"t": "hash", "en": "PvPRankHorde", "key": "f5c4f4d8f635e88d"}
 {"t": "hash", "en": "Bloodscalp Ears", "key": "f70f659e490cf5e0"}
 {"t": "hash", "en": "Sentinel Arynia Cloudsbreak", "key": "f82d76b7af85b64a"}
 {"t": "hash", "en": "100 Health", "key": "f95440c9768c9d66"}

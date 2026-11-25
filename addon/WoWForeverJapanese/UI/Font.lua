@@ -17,6 +17,16 @@ function Font.size(size)
   return size
 end
 
+-- Whether any of a FontString's font values is one the client keeps secret.
+local function secretFont(...)
+  local C = WFJ.Compat
+  if not C then return false end
+  for i = 1, select("#", ...) do
+    if C.secret((select(i, ...))) then return true end
+  end
+  return false
+end
+
 -- Font changes the client refused: on a fresh launch the bundled font file is not loaded yet when the
 -- addon builds its own widgets at load, and SetFont returns false. fs → { path, size, flags } (weak keys).
 local pending = setmetatable({}, { __mode = "k" })
@@ -49,6 +59,8 @@ local restored = setmetatable({}, { __mode = "k" })
 -- size an earlier fit shrank it to), else at its own. → the size set, or nil when the client refused the font
 function Font.bundle(fs, fontObject)
   local path, size, flags = fs:GetFont()
+  -- a font the client keeps secret (a combat string's) can be neither compared nor kept to give back: left as it is
+  if secretFont(path, size, flags) then return nil end
   local curSize, curFlags = size, flags or ""
   if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
     local _, objSize, objFlags = fontObject:GetFont()
@@ -91,6 +103,7 @@ function Font.follow(fs, fontObject)
   size = Font.size(size)
   if type(path) ~= "string" or not size then return false end
   local hasPath, hasSize = fs:GetFont()
+  if secretFont(hasPath, hasSize) then return false end
   if hasPath == path and hasSize == size then return false end
   return fs:SetFont(path, size, flags or "") ~= false
 end

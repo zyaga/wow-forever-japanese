@@ -19,7 +19,7 @@ local _, WFJ = ...
 local ChatUnlisted = {}
 WFJ.ChatUnlisted = ChatUnlisted
 
-local SURFACE = "chatsystem" -- these are the chat surface's lines: its secret test is read under the same name
+local SURFACE = "chatsystem" -- these are the chat surface's lines: its names are read under the same surface
 local Compat = WFJ.Compat
 
 local CANDIDATES = { globals = { "_G" }, clock = { "debugprofilestop" }, after = { "C_Timer.After" },
@@ -47,10 +47,7 @@ local lineMemo, lineCount = {}, 0
 local recorded = {} -- names handed to the collector this session
 local scheduled, failed = false, false
 
-local function secret(value)
-  local isSecret = Compat.get(SURFACE, "isSecret")
-  return type(isSecret) == "function" and isSecret(value) and true or false
-end
+local function secret(value) return Compat.secret(value) end
 
 local function hasJapanese(name)
   local index = WFJ.UIIndex
@@ -231,7 +228,8 @@ end
 -- A chat line of a plain type that stayed English. Nothing is looked up here: the line waits for a slice.
 -- → true when it was queued
 function ChatUnlisted.seen(line)
-  if failed or type(line) ~= "string" or line == "" or secret(line) then return false end
+  -- the secret test before the empty test: comparing a secret value raises
+  if failed or type(line) ~= "string" or secret(line) or line == "" then return false end
   if not WFJ.Settings.get("collector.enabled") then return false end -- nothing would be kept: pay nothing
   if lineMemo[line] or #queue >= ChatUnlisted.QUEUE_MAX then return false end
   if lineCount >= ChatUnlisted.MEMO_MAX then lineMemo, lineCount = {}, 0 end

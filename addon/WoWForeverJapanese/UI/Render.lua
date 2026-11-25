@@ -23,8 +23,7 @@ Render.BLANK = " " -- what a companion line shows while its primary is applied
 
 -- The client's secret test, for the record machine (which reads no global itself).
 SS.secret = function(v)
-  local f = WFJ.Compat and WFJ.Compat.resolve("issecretvalue")
-  return type(f) == "function" and f(v) == true
+  return WFJ.Compat ~= nil and WFJ.Compat.secret(v)
 end
 
 function Render.init(T)
@@ -237,7 +236,7 @@ end
 -- with (the gossip ScrollBox's measure widgets) → text, font | nil (show the English as is). Writes nothing.
 -- `ctx` (optional): as Render.show's (a UI template's `args`).
 function Render.preview(surface, en, font, area, kind, id, ctx)
-  if not translator then return nil end
+  if not translator or SS.secret(en) then return nil end
   local text, f, action = desired({ surface = surface, en = en, font = font,
     meta = { area = area, kind = kind, id = id, ctx = ctx } })
   return text, f, action
@@ -382,6 +381,11 @@ local function show(surface, key, fs, en, area, kind, id, ctx)
   -- Main guards each init step, so surfaces install their hooks even when Render.init failed. Asserting here would
   -- turn one load failure into an error on every hover and window open; nothing to render against renders nothing.
   if not translator then return false end
+  -- a secret English (a unit tooltip line in combat) can be neither compared nor matched: the client's line stays
+  if SS.secret(en) then
+    SS.drop(surface, key)
+    return false
+  end
   -- a font the client keeps secret (seen on chat lines in a busy trade channel and on combat text): SetFont with it
   -- raises from addon code, so the line keeps its English
   local path, size, flags = fs:GetFont()
@@ -412,7 +416,7 @@ function Render.keepFont(surface, key)
   local rec = SS.get(surface, key)
   if not rec or rec.applied == nil or not rec.appliedFont or type(rec.fs.GetFont) ~= "function" then return false end
   local path = rec.fs:GetFont()
-  if path == nil or SS.secret(path) or path == rec.appliedFont.path then return false end
+  if SS.secret(path) or path == nil or path == rec.appliedFont.path then return false end
   rec.appliedFont = nil
   return (sync(rec)) == true
 end

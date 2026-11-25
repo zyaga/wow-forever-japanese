@@ -449,6 +449,11 @@ function QuestMap.showObjective(surface, recKey, fs, refit)
     return 0
   end
   local en = fs:GetText()
+  -- a unit tooltip's lines are secret in combat: a secret can be neither compared nor matched, so the client's stays
+  if WFJ.Compat.secret(en) then
+    WFJ.SurfaceState.drop(surface, recKey)
+    return 0
+  end
   local rec = WFJ.SurfaceState.get(surface, recKey)
   if rec and rec.fs == fs and rec.applied ~= nil and en == rec.applied then return 1 end
   if type(en) ~= "string" or en == "" then

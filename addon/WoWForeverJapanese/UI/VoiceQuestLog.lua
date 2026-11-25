@@ -42,9 +42,10 @@ local function rememberSpeaker(questID, panelName)
   local who = P.speaker("QuestFrame")
   if not who then return end
   local unitName = Compat.resolve("UnitName")
+  local name = type(unitName) == "function" and unitName("questnpc") or nil
+  if Compat.secret(name) then name = nil end -- kept in saved variables and compared later: never a secret
   if type(db.voiceSpeakers) ~= "table" then db.voiceSpeakers = {} end
-  db.voiceSpeakers[questID .. "-" .. field] = { c = who.creature, s = who.sex,
-    n = type(unitName) == "function" and unitName("questnpc") or nil, t = P.titleOf("questnpc") }
+  db.voiceSpeakers[questID .. "-" .. field] = { c = who.creature, s = who.sex, n = name, t = P.titleOf("questnpc") }
 end
 
 local function rememberDisplay(creature, display)

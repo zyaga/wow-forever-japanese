@@ -49,14 +49,23 @@ describe("Render: refresh on state, per-FontString font", function()
 
   it("a widget whose font the client keeps secret (combat text in combat) keeps its English and its font", function()
     local SECRET = {} -- stands for the client's secret font height
-    WFJ.Compat = { resolve = function(name)
-      if name == "issecretvalue" then return function(v) return v == SECRET end end
-    end }
+    WFJ.Compat = { secret = function(v) return v == SECRET end }
     local q = Stub.fontString("Quest text", "F.ttf", SECRET, "OUTLINE")
     assert.is_false(showQuest(q))
     assert.are.equal("Quest text", q:GetText())
     assert.are.equal(0, q.calls.addonSetFont) -- SetFont with a secret height raises from tainted code
     assert.are.equal(0, WFJ.SurfaceState.count("quest"))
+    WFJ.Compat = nil
+  end)
+
+  it("a secret English (a unit tooltip line in combat) is never written over and leaves no record", function()
+    local SECRET = "Quest text"
+    WFJ.Compat = { secret = function(v) return v == SECRET end }
+    local q = Stub.fontString(SECRET, "F.ttf", 12, "")
+    assert.is_false(showQuest(q))
+    assert.are.equal(SECRET, q:GetText())
+    assert.are.equal(0, WFJ.SurfaceState.count("quest"))
+    assert.is_nil((R.preview("quest", SECRET, nil, "quests", "quest.description", 1)))
     WFJ.Compat = nil
   end)
 
