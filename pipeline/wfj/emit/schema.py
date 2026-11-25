@@ -73,8 +73,8 @@ FILE_PREFIX = {
     # the chat word lists: Chat_ja_<NN>.lua and Chat_en_<NN>.lua from the readings, Chat_list.lua from
     # data/chat/
     "chat": "Chat",
-    # how often each word is used: Freq_ja_<NN>.lua and Freq_en_<NN>.lua from the readings, Freq_grammar.lua from
-    # pipeline/grammar_words.txt
+    # how often each word is used: Freq_ja_<NN>.lua and Freq_en_<NN>.lua from the readings, and
+    # Freq_grammar.lua from pipeline/grammar_words.txt
     "freq": "Freq",
 }
 # Generated types in TOC load order: numeric-id shards, the keyed types, then the UI strings.
