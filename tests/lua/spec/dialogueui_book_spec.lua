@@ -216,6 +216,7 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     DUI.flush()
     assert.are.equal(WFJ.Font.PATH, (_G.DUIFont_Book_Paragraph:GetFont()))
     assert.are.equal(WFJ.Font.PATH, book.ScrollFrame.content[1].measuredFont[1])
+    tick() -- a frame passes with the book open, as it always does in the game
     book:Hide()
     tick()
     assert.are.same({ "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 16, "" },
@@ -229,6 +230,7 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     DUI.openBook({ PLAIN })
     DUI.flush()
     assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, { _G.DUIFont_Book_Paragraph:GetFont() })
+    tick() -- a frame passes with the book open, as it always does in the game
     book:Hide()
     tick()
     assert.are.same({ "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", WFJ.Font.DEFAULT_SIZE, "" },
@@ -242,6 +244,7 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     DUI.openBook({ PLAIN })
     DUI.flush()
     assert.are.equal(WFJ.Font.PATH, (_G.DUIFont_Book_Paragraph:GetFont()))
+    tick() -- a frame passes with the book open, as it always does in the game
     book:Hide()
     tick()
     assert.are.same(orig, { _G.DUIFont_Book_Paragraph:GetFont() })

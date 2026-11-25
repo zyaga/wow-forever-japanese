@@ -555,6 +555,8 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     assert "ERROR tooltip rows not read: this run's test addon reads the description row only" in out
     # and one from before the frozen tooltip read says so too
     assert "ERROR frozen tooltip not read: this run's test addon has no such read" in out
+    # and one from before the bag click read
+    assert "ERROR bag click not read: this run's test addon has no such read" in out
     fine = TOOLTIPS.replace('["408498"] = "3 numbers in the Japanese, 4 on this client"', "").replace(
         '["279845"] = "one Japanese paragraph over 2 lines"', "").replace(
         '["783"] = "says it has no voice, and the voice pack does not list it"', "").replace(
@@ -565,6 +567,8 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     # and every hovered frame's tooltip read, none of them English
     fine = fine.replace('["tooltips"] = {', HOVERED + '\n["tooltips"] = {', 1)
     fine = fine.replace('["tooltips"] = {', FROZE + '\n["tooltips"] = {', 1)
+    # and the bag click read, with nothing tainted by the addon
+    fine = fine.replace('["tooltips"] = {', BAGGED + '\n["tooltips"] = {', 1)
     saved.write_text(fine, encoding="utf-8")
     assert client_surface._texts(args) == 0
     out = capsys.readouterr().out
@@ -807,7 +811,9 @@ def test_the_bag_click_read_fails_a_value_carrying_the_addons_taint_and_only_lis
     lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
     body = lua[lua.index("local function WFJScanBagClickRead"):lua.index("-- The frozen tooltip read.")]
     # the bag addon's buttons are waited for, and a bag item's tooltip is shown whatever addon draws the bags
-    assert "C_Timer.After(0.5, pointAndHide)" in body and "GameTooltip:SetBagItem(bag, slot)" in body
+    assert "local ok, err = pcall(pointAndHide)" in body and "GameTooltip:SetBagItem(bag, slot)" in body
+    # a fight that started during the wait leaves the interface alone, and the bags are closed again either way
+    assert 'record.refused = "a fight started before the interface could be hidden and shown"' in body
 
 
 def test_one_part_of_the_window_test_runs_alone_and_is_judged_alone(tmp_path):

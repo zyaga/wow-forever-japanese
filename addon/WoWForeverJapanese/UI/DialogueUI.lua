@@ -724,9 +724,9 @@ end
 
 -- After AcquireAcceptButton / AcquireExitButton: Dialogue UI makes each once, the first time it is needed.
 local function footerButtons(self)
-  for _, b in ipairs({ self.AcceptButton, self.ExitButton }) do
-    if type(b) == "table" then patch(b) end
-  end
+  -- each by name: a list of the two would end at the first one not made yet
+  if type(self.AcceptButton) == "table" then patch(self.AcceptButton) end
+  if type(self.ExitButton) == "table" then patch(self.ExitButton) end
 end
 
 -- The reveal key or a switch changed what shows: the page's texts are written again in place, each line from its
