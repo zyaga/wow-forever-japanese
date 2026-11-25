@@ -732,13 +732,16 @@ BAGGED = ('["bagclick"] = { ["checked"] = 412, ["ours"] = { }, '
 
 def test_the_bag_click_read_runs_out_of_combat_before_the_freeze_and_never_uses_an_item():
     lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
-    assert lua.index("WFJScanNamesRead(function()") < lua.index("WFJScanBagClickRead()")
-    assert lua.index("WFJScanBagClickRead() --") < lua.index("outOfCombat(function() WFJScanFreezeRead(")
+    assert lua.index("WFJScanNamesRead(function()") < lua.index("WFJScanBagClickRead(function()")
+    assert lua.index("WFJScanBagClickRead(function()") < lua.index("outOfCombat(function() WFJScanFreezeRead(")
     body = lua[lua.index("local function WFJScanBagClickRead"):lua.index("-- The frozen tooltip read.")]
     assert "UseContainerItem" not in body and ":Click(" not in body and "PickupContainerItem" not in body
-    # the interface is hidden and shown again, as Dialogue UI and Alt+Z do, and the backpack left as it was
-    assert body.index("SetUIVisibility(false)") < body.index("SetUIVisibility(true)")
-    assert "CloseBackpack()" in body
+    # the interface is hidden and shown again, as Dialogue UI and Alt+Z do, the next frames are waited for so an
+    # error they raise lands in the run, and the bags are left as they were
+    assert body.index("SetUIVisibility(false)") < body.index("SetUIVisibility(true)") < body.index("C_Timer.After(")
+    assert "OpenAllBags()" in body and "CloseAllBags()" in body
+    # any bag item button on screen is pointed at, a bag addon's too, never found by a frame name alone
+    assert "EnumerateFrames()" in body and "GetBagID" in body
 
 
 def test_the_bag_click_read_lists_the_same_values_the_addon_watches():
@@ -775,9 +778,9 @@ def test_the_bag_click_read_fails_a_value_carrying_the_addons_taint_and_only_lis
     assert run(tainted) == [
         "bag click value tainted by the addon (after the interface came back): MerchantFrame.selectedTab"]
     refused = BAGGED.replace(
-        '["others"]', '["refused"] = "the client has no SetUIVisibility or OpenBackpack", ["others"]')
+        '["others"]', '["refused"] = "the client has no SetUIVisibility or OpenAllBags", ["others"]')
     assert run(refused) == [
-        "bag click read only as the run left it: the client has no SetUIVisibility or OpenBackpack"]
+        "bag click read only as the run left it: the client has no SetUIVisibility or OpenAllBags"]
 
 LEFT = """
 WFJScanDB = {

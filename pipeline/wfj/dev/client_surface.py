@@ -2850,7 +2850,8 @@ local BAG_CLICK_GLOBALS = { "ContainerFrameItemButton_OnClick", "MerchantFrame_R
   "StaticPopup_Show" }
 local BAG_CLICK_MERCHANT = { "selectedTab", "extendedCost", "highPrice" }
 
-local function WFJScanBagClickRead()
+local BAG_POINT_MAX = 8 -- bag items pointed at: the item tooltip's code is the same for each
+local function WFJScanBagClickRead(done)
   local db = probeDb()
   local record = { checked = 0, ours = {}, others = {} }
   db.bagclick = record
@@ -2872,7 +2873,9 @@ local function WFJScanBagClickRead()
       if type(key) == "string" then note(when, label .. "." .. key, issecurevariable(t, key)) end
     end
   end
+  local pointedAt = {} -- the bag item buttons pointed at, read with the rest
   local function read(when)
+    for i, button in ipairs(pointedAt) do fields(when, button:GetName() or ("bag item button " .. i), button) end
     for _, name in ipairs(BAG_CLICK_GLOBALS) do
       note(when, name, issecurevariable(name))
       local value = _G[name]
@@ -2902,36 +2905,41 @@ local function WFJScanBagClickRead()
     end
   end
   read("after the run")
-  if type(SetUIVisibility) ~= "function" or type(OpenBackpack) ~= "function" then
-    record.refused = "the client has no SetUIVisibility or OpenBackpack"
-    return
+  if type(SetUIVisibility) ~= "function" or type(OpenAllBags) ~= "function" then
+    record.refused = "the client has no SetUIVisibility or OpenAllBags"
+    return done()
   end
+  -- the bags the player uses: the client's own, or a bag addon's that takes the same call (Baganator)
   local wasOpen = type(IsBagOpen) == "function" and IsBagOpen(0)
-  if not wasOpen then OpenBackpack() end
-  -- the client's own way to point at a frame, as the hover read does: its enter script, then its leave script
-  local pointed = 0
-  for _, name in ipairs({ "ContainerFrameCombinedBags", "ContainerFrame1" }) do
-    local f = _G[name]
-    local items = type(f) == "table" and f:IsShown() and rawget(f, "Items")
-    if type(items) == "table" then
-      for _, button in ipairs(items) do
-        if pointed < 8 and type(button) == "table" and button:IsVisible() and type(button.GetBagID) == "function"
-            and C_Container.GetContainerItemID(button:GetBagID(), button:GetID()) then
-          pointed = pointed + 1
-          if type(ExecuteFrameScript) == "function" then
-            pcall(ExecuteFrameScript, button, "OnEnter")
-            pcall(ExecuteFrameScript, button, "OnLeave")
-          end
+  if not wasOpen then OpenAllBags() end
+  -- the client's own way to point at a frame, as the hover read does: its enter script, then its leave script. Any
+  -- bag item button on screen, found by what it is (a button that knows its bag) rather than by a frame name, so a
+  -- bag addon's buttons count too.
+  local f = EnumerateFrames()
+  while f and #pointedAt < BAG_POINT_MAX do
+    if f:IsVisible() and type(f.GetBagID) == "function" and type(f.GetID) == "function" then
+      local ok, bag = pcall(f.GetBagID, f)
+      if ok and type(bag) == "number" and C_Container.GetContainerItemID(bag, f:GetID()) then
+        pointedAt[#pointedAt + 1] = f
+        if type(ExecuteFrameScript) == "function" then
+          pcall(ExecuteFrameScript, f, "OnEnter")
+          pcall(ExecuteFrameScript, f, "OnLeave")
         end
       end
     end
+    f = EnumerateFrames(f)
   end
-  record.pointed = pointed
+  record.pointed = #pointedAt
   read("after pointing at bag items")
   SetUIVisibility(false)
   SetUIVisibility(true)
-  read("after the interface came back")
-  if not wasOpen and type(CloseBackpack) == "function" then CloseBackpack() end
+  -- what the interface's return sets off runs on the frames after it (a help tip's OnUpdate): waited for, so an
+  -- error it raises lands inside the run
+  C_Timer.After(0.5, function()
+    read("after the interface came back")
+    if not wasOpen and type(CloseAllBags) == "function" then CloseAllBags() end
+    done()
+  end)
 end
 
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
@@ -3362,7 +3370,8 @@ SlashCmdList.WFJTEST = function(how)
             WFJScanPlatesRead() -- out of combat here: the client refuses a setting written in a fight
             WFJScanLoadRead()
             db.test.part = "bagclick"
-            WFJScanBagClickRead() -- out of combat here: the interface is hidden and shown again
+            -- out of combat here: the interface is hidden and shown again
+            WFJScanBagClickRead(function()
             db.test.part = "freeze"
             -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
             outOfCombat(function() WFJScanFreezeRead(function()
@@ -3400,7 +3409,7 @@ SlashCmdList.WFJTEST = function(how)
                 finish("")
               end)
             end)
-            end) end)
+            end) end) end)
             end) end)
           end) end)
         end) end)
