@@ -99,7 +99,7 @@ describe("Core/Diag", function()
     assert.are.equal(D.MAX_SESSIONS, sessions)
     assert.are.equal("4", db.entries[1].build)
     D.log("memory", "sample")
-    for i = 1, D.MAX_ENTRIES - D.MAX_SESSIONS - 1 do D.log("blocked", tostring(i)) end
+    for i = 1, D.MAX_ENTRIES - D.MAX_SESSIONS - 1 do D.log("write", tostring(i)) end
     assert.are.equal(D.MAX_ENTRIES, #db.entries)
     D.log("hook", "new")
     assert.are.equal("hook", db.entries[#db.entries].kind) -- the new problem is kept
@@ -107,7 +107,7 @@ describe("Core/Diag", function()
     D.log("hook", "newer")
     assert.are.equal("newer", db.entries[#db.entries].msg)
     assert.are.equal("2", (function()
-      for _, e in ipairs(db.entries) do if e.kind == "blocked" then return e.msg end end
+      for _, e in ipairs(db.entries) do if e.kind == "write" then return e.msg end end
     end)()) -- the oldest problem went
   end)
 
@@ -124,10 +124,35 @@ describe("Core/Diag", function()
     assert.are.equal("translated 1", db.entries[2].msg)
   end)
 
+  it("a block and its taint entries are never pushed out by other entries; only their newest MAX_KEPT stay", function()
+    local D = fresh()
+    local db = D.load(nil)
+    D.log("blocked", "UseContainerItem() <containerframe.lua:1611>")
+    D.log("turned", "MerchantFrame.selectedTab")
+    D.log("taint", "scan 1")
+    D.log("context", "events before MerchantFrame.selectedTab")
+    for i = 1, D.MAX_ENTRIES * 2 do D.log("write", "writer " .. i) end
+    for i = 1, D.MAX_ENTRIES do D.log("speechline", "translated " .. i) end
+    assert.are.equal(D.MAX_ENTRIES, #db.entries)
+    local kinds = {}
+    for _, e in ipairs(db.entries) do kinds[e.kind] = (kinds[e.kind] or 0) + 1 end
+    assert.are.same({ 1, 1, 1, 1 }, { kinds.blocked, kinds.turned, kinds.taint, kinds.context })
+    for i = 1, D.MAX_KEPT + 3 do D.log("blocked", "block " .. i) end
+    local blocks, first = 0, nil
+    for _, e in ipairs(db.entries) do
+      if D.KEPT[e.kind] then
+        blocks = blocks + 1
+        first = first or e.msg
+      end
+    end
+    assert.are.equal(D.MAX_KEPT, blocks)
+    assert.are.equal("block 4", first) -- the oldest went first, the four from before among them
+  end)
+
   it("a log full of problem entries still keeps the latest speechlines, up to their share", function()
     local D = fresh()
     local db = D.load(nil)
-    for i = 1, D.MAX_ENTRIES do D.log("blocked", "problem " .. i) end
+    for i = 1, D.MAX_ENTRIES do D.log("write", "problem " .. i) end
     D.log("speechline", "no Japanese a")
     assert.are.equal(D.MAX_ENTRIES, #db.entries)
     assert.are.equal("no Japanese a", db.entries[#db.entries].msg) -- kept; the oldest problem went

@@ -726,12 +726,66 @@ def test_the_frozen_tooltip_read_fails_a_missing_line_a_copy_left_open_and_a_cop
     assert run(FROZE.replace('["cards"] = 4', '["cards"] = 0').replace("true", "false")) == []
 
 
+BAGGED = ('["bagclick"] = { ["checked"] = 412, ["ours"] = { }, '
+          '["others"] = { ["ContainerFrame1.Items[2].bagID"] = "Baganator" } },')
+
+
+def test_the_bag_click_read_runs_out_of_combat_before_the_freeze_and_never_uses_an_item():
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    assert lua.index("WFJScanNamesRead(function()") < lua.index("WFJScanBagClickRead()")
+    assert lua.index("WFJScanBagClickRead() --") < lua.index("outOfCombat(function() WFJScanFreezeRead(")
+    body = lua[lua.index("local function WFJScanBagClickRead"):lua.index("-- The frozen tooltip read.")]
+    assert "UseContainerItem" not in body and ":Click(" not in body and "PickupContainerItem" not in body
+    # the interface is hidden and shown again, as Dialogue UI and Alt+Z do, and the backpack left as it was
+    assert body.index("SetUIVisibility(false)") < body.index("SetUIVisibility(true)")
+    assert "CloseBackpack()" in body
+
+
+def test_the_bag_click_read_lists_the_same_values_the_addon_watches():
+    import re
+    from pathlib import Path
+
+    def names(text: str, table: str) -> list[str]:
+        body = re.search(table + r" = \{(.*?)\}", text, re.S)
+        assert body is not None, table
+        return re.findall(r'"([^"]+)"', body.group(1))
+
+    watch = (Path(__file__).resolve().parents[2] / "addon/WoWForeverJapanese/UI/TaintWatch.lua").read_text(
+        encoding="utf-8")
+    lua = client_surface.TEXT_LUA
+    assert names(lua, "local BAG_CLICK_GLOBALS") == names(watch, "TaintWatch.BAG_CLICK_GLOBALS")
+    assert names(lua, "local BAG_CLICK_MERCHANT") == names(watch, "TaintWatch.BAG_CLICK_MERCHANT")
+
+
+def test_the_bag_click_read_fails_a_value_carrying_the_addons_taint_and_only_lists_another_addons():
+    def saved(record: str) -> str:
+        return "WFJScanDB = {\n[\"probe\"] = {\n" + record + "\n},\n}\n"
+
+    def run(record: str) -> list[str]:
+        return client_surface.bagclick_problems(client_surface.read_bagclick(saved(record)))
+
+    assert run(BAGGED) == []
+    read = client_surface.read_bagclick(saved(BAGGED))
+    assert read is not None
+    assert read["others"] == {"ContainerFrame1.Items[2].bagID": "Baganator"}
+    assert client_surface.bagclick_problems(None) == [
+        "bag click not read: this run's test addon has no such read (make scan-install, then run it again)"]
+    tainted = BAGGED.replace(
+        '["ours"] = { }', '["ours"] = { "after the interface came back\\tMerchantFrame.selectedTab" }')
+    assert run(tainted) == [
+        "bag click value tainted by the addon (after the interface came back): MerchantFrame.selectedTab"]
+    refused = BAGGED.replace(
+        '["others"]', '["refused"] = "the client has no SetUIVisibility or OpenBackpack", ["others"]')
+    assert run(refused) == [
+        "bag click read only as the run left it: the client has no SetUIVisibility or OpenBackpack"]
+
 LEFT = """
 WFJScanDB = {
 ["probe"] = {
 ["test"] = { ["started"] = "2026-11-22 18:00:00", ["finished"] = "2026-11-22 18:05:00", ["build"] = "70959" },
 ["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
 ["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, ["missing"] = { }, ["stuck"] = { } },
+["bagclick"] = { ["checked"] = 412, ["ours"] = { }, ["others"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
 ["hover"] = { ["map"] = { ["made"] = 3, ["found"] = 3, ["tips"] = 2, ["english"] = { }, ["runs"] = { } } },
 ["tooltips"] = { ["read"] = 50, ["japanese"] = 45, ["unread"] = 0, ["items"] = 3,

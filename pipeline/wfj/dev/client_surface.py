@@ -2830,6 +2830,80 @@ local function WFJScanLoadRead()
   if type(timed) == "table" then record.files, record.setup = timed.files, timed.setup end
 end
 
+-- The bag click read. A bag item's right-click reads these before it uses the item (ContainerFrameItemButton_OnClick,
+-- mainline/containerframe.lua:1503-1611, and the button's own fields, :1845); one carrying the addon's taint makes
+-- the use a forbidden call out of combat, the addon named. Read twice: as the run left them, then with the backpack
+-- open after the whole interface was hidden and shown again (what Dialogue UI does around a talk, and Alt+Z), so a
+-- hook of the addon's that runs inside that show is caught. Into `probe.bagclick`:
+--   checked  values read; ours  { "<when>\\t<name>" } carrying the addon's taint: a failure
+--   others   name → the addon whose taint it carries (listed, not failed); refused  why the second pass did not run
+local BAG_CLICK_GLOBALS = { "ContainerFrameItemButton_OnClick", "MerchantFrame_ResetRefundItem", "MerchantFrame",
+  "StackSplitFrame", "BankFrame", "GuildBankFrame", "MailFrame", "AuctionFrame", "AuctionHouseFrame", "TradeFrame",
+  "ItemUpgradeFrame", "ObliterumForgeFrame", "ChallengesKeystoneFrame", "AzeriteRespecFrame", "RuneforgeFrame",
+  "ItemLocation", "ItemButtonUtil", "BankUtil_IsAccountBankDepositRefundable", "ContainerFrame_GetExtendedPriceString",
+  "ContainerFrame_IsAccountBankTab", "C_Container", "C_Cursor", "C_Item", "C_AuctionHouse", "C_ItemSocketInfo",
+  "C_ArtifactUI", "C_MountJournal", "GetCursorInfo", "SpellCanTargetItem", "SpellCanTargetItemID", "CursorHasItem",
+  "MerchantFrame_ConfirmExtendedItemCost", "MerchantFrame_ConfirmHighCostItem", "MerchantFrame_SetRefundItem",
+  "StaticPopup_Show" }
+local BAG_CLICK_MERCHANT = { "selectedTab", "extendedCost", "highPrice" }
+
+local function WFJScanBagClickRead()
+  local db = probeDb()
+  local record = { checked = 0, ours = {}, others = {} }
+  db.bagclick = record
+  local listed = {}
+  local function note(when, name, secure, owner)
+    record.checked = record.checked + 1
+    if secure or owner == nil then return end
+    if owner == "WoWForeverJapanese" then
+      if not listed[name] then
+        listed[name] = true
+        record.ours[#record.ours + 1] = when .. "\\t" .. name
+      end
+    elseif owner ~= "WFJScan" then
+      record.others[name] = tostring(owner)
+    end
+  end
+  local function fields(when, label, t)
+    for key in pairs(t) do
+      if type(key) == "string" then note(when, label .. "." .. key, issecurevariable(t, key)) end
+    end
+  end
+  local function read(when)
+    for _, name in ipairs(BAG_CLICK_GLOBALS) do note(when, name, issecurevariable(name)) end
+    if type(MerchantFrame) == "table" then
+      for _, key in ipairs(BAG_CLICK_MERCHANT) do
+        note(when, "MerchantFrame." .. key, issecurevariable(MerchantFrame, key))
+      end
+    end
+    local frames = { "ContainerFrameCombinedBags" }
+    for i = 1, 13 do frames[#frames + 1] = "ContainerFrame" .. i end
+    for _, name in ipairs(frames) do
+      local f = _G[name]
+      if type(f) == "table" then
+        fields(when, name, f)
+        local items = rawget(f, "Items")
+        if type(items) == "table" then
+          for i, button in ipairs(items) do
+            if type(button) == "table" then fields(when, name .. ".Items[" .. i .. "]", button) end
+          end
+        end
+      end
+    end
+  end
+  read("after the run")
+  if type(SetUIVisibility) ~= "function" or type(OpenBackpack) ~= "function" then
+    record.refused = "the client has no SetUIVisibility or OpenBackpack"
+    return
+  end
+  local wasOpen = type(IsBagOpen) == "function" and IsBagOpen(0)
+  if not wasOpen then OpenBackpack() end
+  SetUIVisibility(false)
+  SetUIVisibility(true)
+  read("after the interface came back")
+  if not wasOpen and type(CloseBackpack) == "function" then CloseBackpack() end
+end
+
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
 -- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
 -- carries and runs what the key runs (`WFJ_FreezeTooltip`), twice, into `probe.freeze`:
@@ -3123,7 +3197,8 @@ local function WFJScanGuildRead(done)
 end
 
 -- The whole window test (`/wfjtest`): the load walk, the live sweep (with the hover read of each window), the
--- closed-window read, the tooltip read, the no-voice read, the names read, the frozen tooltip read, then one done line. `/wfjtest hand` also reads the guild and character
+-- closed-window read, the tooltip read, the no-voice read, the names read, the bag click read, the frozen tooltip read,
+-- then one done line. `/wfjtest hand` also reads the guild and character
 -- windows, which the player opens when it asks. `probe.test` holds when it ran and on which build, so a result read
 -- later is known to be a whole run of that build. The open sweep is not part of it (see the closed-window read);
 -- `/wfjopen` still runs it alone.
@@ -3256,6 +3331,8 @@ SlashCmdList.WFJTEST = function(how)
             outOfCombat(function() WFJScanNamesRead(function()
             WFJScanPlatesRead() -- out of combat here: the client refuses a setting written in a fight
             WFJScanLoadRead()
+            db.test.part = "bagclick"
+            WFJScanBagClickRead() -- out of combat here: the interface is hidden and shown again
             db.test.part = "freeze"
             -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
             outOfCombat(function() WFJScanFreezeRead(function()
@@ -4057,6 +4134,39 @@ def read_load(text: str) -> dict[str, float] | None:
     return {k: float(v) for k, v in record.named().items() if isinstance(v, (int, float))}
 
 
+def read_bagclick(text: str) -> dict[str, Any] | None:
+    """The window test's bag click read out of a saved-variables file, or None when the run had none: how many
+    values it read (`checked`), the ones carrying the addon's taint as (when, name) (`ours`), the ones carrying
+    another addon's as name → addon (`others`), and why the second pass did not run (`refused`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("bagclick") if probe is not None else None
+    if record is None:
+        return None
+    rows = record.get("ours")
+    others = record.get("others")
+    return {
+        "checked": int(record.get("checked") or 0),
+        "ours": [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])],
+        "others": {str(k): str(v) for k, v in (others.named() if others is not None else {}).items()},
+        "refused": str(record.get("refused") or ""),
+    }
+
+
+def bagclick_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the bag click read found wrong, one line each: every value a bag item's click reads that carries the
+    addon's taint (the game would refuse the item's use in the addon's name). A run whose test addon had no such
+    read says so."""
+    if record is None:
+        return ["bag click not read: this run's test addon has no such read (make scan-install, then run it again)"]
+    out = [f"bag click value tainted by the addon ({when}): {name}" for when, name in record["ours"]]
+    if record["refused"]:
+        out.append(f"bag click read only as the run left it: {record['refused']}")
+    return out
+
+
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
     nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
@@ -4540,6 +4650,11 @@ def _own_reads(saved: str) -> list[str]:
         print(f"frozen tooltip: {freeze['items']} item and {freeze['spells']} spell tooltips frozen, "
               f"{freeze['lines']} Japanese lines copied, {freeze['cards']} word cards, "
               f"{len(uncarded_words(freeze))} lines with a word that takes none; key {freeze['bound'] or 'none'}")
+    bagclick = read_bagclick(saved)
+    if bagclick is not None:
+        print(f"bag click: {bagclick['checked']} values read, {len(bagclick['ours'])} tainted by the addon"
+              + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(bagclick["others"].items()))
+                 if bagclick["others"] else ""))
     plates = read_plates(saved)
     if plates is not None and not plates["refused"]:
         v, d = plates["values"], plates["defaults"]
@@ -4553,7 +4668,8 @@ def _own_reads(saved: str) -> list[str]:
         said += [f"setup {load['setup']:.0f} ms"] if "setup" in load else []
         print("addon load: " + ", ".join(said))
     return (tooltip_problems(tooltips) + included_problems(saved) + no_voice_problems(no_voice)
-            + names_problems(names, japanese) + freeze_problems(freeze) + plates_problems(plates))
+            + names_problems(names, japanese) + freeze_problems(freeze) + plates_problems(plates)
+            + bagclick_problems(bagclick))
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A
