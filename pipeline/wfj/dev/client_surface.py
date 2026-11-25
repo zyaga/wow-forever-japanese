@@ -3070,8 +3070,12 @@ local function uncardedRuns(plain, cover)
 end
 
 -- The word status read. The known words window is the addon's own window, which no sweep opens: this opens it the
--- addon's own way (its slash command), reads it and hides it again. Then it looks at every frame that carries word
--- status marks (a word-card cover, a chat line's overlay), wherever the run left them. Into `probe.marks`:
+-- addon's own way (its slash command), reads it and hides it again. Then it puts a marked text on screen itself:
+-- it opens the quest log on the character's first quest, the way the no-voice read does, waits for the pane, and
+-- looks at every frame that carries word status marks (a word-card cover, a chat line's overlay). The quest log is
+-- closed again when the read opened it. Into `probe.marks`:
+--   quest    the quest whose text it showed; noquest  the character has no quest to show
+--   on       the marks are switched on for quest text (a run with them off has nothing to read)
 --   window   the text regions the known words window shows
 --   english  with Japanese showing (`expect`), a text of that window holding no Japanese: a failure
 --   frames   the frames that carry marks; shown  the marks showing on them
@@ -3080,16 +3084,18 @@ end
 --            between them: a failure (every word is unknown then, so a build that draws nothing shows here)
 --   tags     a score tag showing something other than a percent: a failure
 -- It changes no status: it clicks nothing and imports nothing.
-local function WFJScanMarksRead()
+local marksReader = CreateFrame("Frame")
+local function WFJScanMarksRead(done)
   local db = probeDb()
   local saved = addonSettings() or {}
   local record = { window = 0, frames = 0, shown = 0, texts = 0, english = {}, stale = {}, tags = {},
-    expect = saved.enabled ~= false and saved.direction ~= "en" }
+    expect = saved.enabled ~= false and saved.direction ~= "en",
+    on = saved.enabled ~= false and saved["marks.enabled"] ~= false and saved["marks.quest"] ~= false }
   db.marks = record
   local slash = type(SlashCmdList) == "table" and SlashCmdList.WFJ or nil
   if type(slash) ~= "function" then
     record.refused = "the addon has no slash command to run"
-    return
+    return done()
   end
   local wasOpen = _G.WFJKnownWordsWindow and _G.WFJKnownWordsWindow:IsShown() or false
   local ok, err = pcall(function()
@@ -3108,6 +3114,7 @@ local function WFJScanMarksRead()
   end)
   if not ok then record.refused = tostring(err) end
   if not wasOpen and _G.WFJKnownWordsWindow then _G.WFJKnownWordsWindow:Hide() end
+  local function look()
   local frame = EnumerateFrames()
   while frame do
     pcall(function()
@@ -3136,6 +3143,38 @@ local function WFJScanMarksRead()
   record.bare = record.texts > 0 and record.shown == 0 and next(known) == nil
     and saved["marks.enabled"] ~= false and saved["marks.underline"] ~= false
     and saved["marks.quest"] ~= false or false
+  end
+  local opened = false
+  local fine, why = pcall(function()
+    for i = 1, C_QuestLog.GetNumQuestLogEntries() do
+      local info = C_QuestLog.GetInfo(i)
+      if type(info) == "table" and not info.isHeader and not info.isHidden and type(info.questID) == "number" then
+        record.quest = info.questID
+        break
+      end
+    end
+    if not record.quest then return end
+    if not (QuestMapFrame and QuestMapFrame:IsVisible()) then
+      ToggleQuestLog()
+      opened = true
+    end
+    QuestMapFrame_ShowQuestDetails(record.quest)
+  end)
+  if not fine then record.refused = tostring(why) end
+  if not record.quest then
+    record.noquest = true
+    look()
+    return done()
+  end
+  local ticks = 0
+  marksReader:SetScript("OnUpdate", function()
+    ticks = ticks + 1
+    if ticks < NOVOICE_TICKS then return end
+    marksReader:SetScript("OnUpdate", nil)
+    pcall(look)
+    if opened then pcall(ToggleQuestLog) end -- closed again, the way it was opened
+    done()
+  end)
 end
 
 -- The chat tools read. The phrase book's card and the player's own chat words window are the addon's own windows:
@@ -3658,7 +3697,7 @@ SlashCmdList.WFJTEST = function(how)
     -- the addon's own chat windows: opened, read and closed at once
     { "chat", function(nxt) WFJScanChatRead() nxt() end },
     -- the addon's own known words window, and the word status marks wherever they are
-    { "marks", function(nxt) WFJScanMarksRead() nxt() end },
+    { "marks", function(nxt) outOfCombat(function() WFJScanMarksRead(nxt) end) end },
     -- the interface is hidden and shown again, which waits for the end of a fight too
     { "bagclick", function(nxt) outOfCombat(function() WFJScanBagClickRead(nxt) end) end },
     -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
@@ -4594,7 +4633,9 @@ def read_marks(text: str) -> dict[str, Any] | None:
     """The window test's word status read out of a saved-variables file, or None when the run had none: the text
     regions the known words window showed (`window`), the frames that carry word status marks (`frames`) and the
     marks showing on them (`shown`), the visible marked texts with words (`texts`), whether none of them showed
-    a mark although no word has a status (`bare`), whether Japanese was to be expected (`expect`), why it could
+    a mark although no word has a status (`bare`), the quest whose text the read showed (`quest`, 0 when the
+    character has none), whether the marks are on for quest text (`on`), whether Japanese was to be expected
+    (`expect`), why it could
     not read (`refused`), and three lists: `english` (a text of the window with no Japanese in it), `stale` (a frame
     showing marks with no text attached any more) and `tags` (a score tag that is not a percent)."""
     from wfj.io import lua_reader
@@ -4604,8 +4645,9 @@ def read_marks(text: str) -> dict[str, Any] | None:
     record = probe.get("marks") if probe is not None else None
     if record is None:
         return None
-    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("window", "frames", "shown", "texts")}
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("window", "frames", "shown", "texts", "quest")}
     out["expect"] = bool(record.get("expect"))
+    out["on"] = bool(record.get("on"))
     out["bare"] = bool(record.get("bare"))
     out["refused"] = str(record.get("refused") or "")
     for kind in ("english", "stale", "tags"):
@@ -4631,6 +4673,10 @@ def marks_problems(record: dict[str, Any] | None) -> list[str]:
     if record["bare"]:
         out.append(f"no word status mark on {record['texts']} marked texts although no word has a status yet")
     out += [f"score tag does not show a percent: {seen!r}" for seen in record["tags"]]
+    if record["on"] and not record["quest"]:
+        out.append("word status marks not read on any text: the character has no quest in its log to show")
+    elif record["on"] and not record["texts"]:
+        out.append(f"word status marks not read on any text: quest {record['quest']} showed no marked text")
     return out
 
 
@@ -4639,7 +4685,7 @@ def _marks_read(saved: str) -> dict[str, Any] | None:
     marks = read_marks(saved)
     if marks is not None and not marks["refused"]:
         print(f"word status: {marks['window']} text regions in the known words window, "
-              f"{marks['shown']} marks showing on {marks['frames']} marked texts")
+              f"{marks['shown']} marks showing on {marks['texts']} marked texts of quest {marks['quest']}")
     return marks
 
 
