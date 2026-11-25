@@ -28,6 +28,7 @@ ignore:
   - Makefile
   - README.md
   - SECURITY.md
+  - anki-addon
   - data
   - docs
   - pipeline
