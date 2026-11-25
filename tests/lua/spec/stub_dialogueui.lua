@@ -1,13 +1,15 @@
 -- A stand-in for the Dialogue UI addon's two windows, written for these specs from how that addon behaves (read at
--- its 1.0.7 b source; none of its code is here). What the adapter relies on:
+-- its 1.0.7 c source; none of its code is here). What the adapter relies on:
 --   * DUIQuestFrame's page handlers run self:ReleaseAllObjects() first, then lay the page out top to bottom.
 --   * FormatParagraph splits its text on control characters and, per piece, acquires a pooled FontString
---     (self:AcquireLeftFontString, which calls SetFontObject on it), sets the text and measures it at once.
+--     (self:AcquireLeftFontString, which takes it from self:AcquireFontString and calls SetFontObject on it), sets
+--     the text and measures it at once. The pool's EnumerateActive lists the FontStrings in use, newest last.
 --   * Quest bodies go through self:FormatQuestText(offsetY, method), which reads the text itself; the offer's
 --     objectives through FormatParagraph; the progress page's objective lines ("- line" rows) through InsertText.
---   * UpdateQuestTitle writes FrontFrame.Header.Title; option buttons write their label in SetButtonText, gossip
---     options through SetGossip(data, hotkey) and quest rows through SetQuestName(questInfo), which also runs again
---     when the quest's data loads late.
+--   * UpdateQuestTitle writes FrontFrame.Header.Title; option buttons write their label in SetButtonText (the label,
+--     then Layout measures it), gossip options through SetGossip(data, hotkey) and quest rows through
+--     SetQuestName(questInfo), which also runs again when the quest's data loads late. Before writing the label each
+--     sets the fields its click reads (type, id, gossipOptionID, onClickFunc).
 --   * OnSettingsChanged re-runs the current handler one frame later (C_Timer.After 0); its HideUI hides the frame.
 --   * DUIBookFrame caches every page's paragraphs into one content table (entries { text, fontTag, isPageStart }),
 --     measures them with its book font objects, then ShowUI hands the table to its ScrollFrame, which writes an
@@ -72,32 +74,50 @@ local function pool(frame)
     for i, f in ipairs(p.active) do copy[i] = f end
     return ipairs(copy)
   end
+  -- Dialogue UI's pools are tables with methods: the specs check none of them is replaced
+  function p:Acquire() return p.acquire() end
   return p
 end
+
+-- Dialogue UI's option click: it reads the button's own handler [read: UITemplates.lua OnClick]
+local function SELECT_OPTION() end
+local function SELECT_QUEST() end
+local function GOODBYE_CLICK() end
+DUI.SELECT_OPTION, DUI.SELECT_QUEST, DUI.GOODBYE_CLICK = SELECT_OPTION, SELECT_QUEST, GOODBYE_CLICK
 
 local function button(frame)
   local b = CreateFrame("Button", nil, frame)
   b.Name = Stub.fontString("")
   b.Name:SetFontObject(_G.DUIFont_Quest_Gossip)
-  function b:SetButtonText(name)
-    self.Name:SetText(name)
+  -- sizes the button to its label as it shows now
+  function b:Layout(largePadding)
     self.measuredFont = { self.Name:GetFont() }
+    self.measuredText = self.Name:GetText()
+    self.largePadding = largePadding
+    self.layouts = (self.layouts or 0) + 1
+  end
+  function b:SetButtonText(name, largePadding)
+    self.Name:SetText(name)
+    self:Layout(largePadding)
   end
   function b:SetGossip(data, hotkey)
+    self.gossipOptionID = data.gossipOptionID
     self.iconFor = data.name -- some option icons are picked by the option's English name
+    self.id, self.type, self.onClickFunc = data.orderIndex or 0, "gossip", SELECT_OPTION
     local name = data.name
     if hotkey then name = hotkey .. ". " .. name end
-    self:SetButtonText(name)
+    self:SetButtonText(name, false)
   end
   function b:SetQuestName(questInfo)
     if questInfo.level then
-      self:SetButtonText(("[%d] %s"):format(questInfo.level, questInfo.title))
+      self:SetButtonText(("[%d] %s"):format(questInfo.level, questInfo.title), true)
     else
-      self:SetButtonText(questInfo.title)
+      self:SetButtonText(questInfo.title, true)
     end
   end
   function b:SetQuest(questInfo, hotkey)
-    self.questInfo, self.hotkey = questInfo, hotkey
+    self.type, self.onClickFunc = "availableQuest", SELECT_QUEST
+    self.questInfo, self.hotkey, self.questID = questInfo, hotkey, questInfo.questID
     self:SetQuestName(questInfo)
   end
   -- the quest's data arrived after the button was set: the label is written again from the same questInfo
@@ -137,6 +157,13 @@ function DUI.installQuestFrame(opts)
   f.FrontFrame.Header.GetChildren = function() return tag end
   f.headings = {}
   f.ExitButton = button(f)
+  f.ExitButton.type, f.ExitButton.onClickFunc = "goodbye", GOODBYE_CLICK
+  -- the option buttons in use, in the order they were taken
+  f.optionButtonPool = { EnumerateActive = function()
+    local out = {}
+    for _, b in ipairs(f.buttons) do if b.inUse then out[#out + 1] = b end end
+    return ipairs(out)
+  end }
   -- the page scroll: ReleaseAllObjects puts it back at the top
   f.ScrollFrame = { value = 0 }
   function f.ScrollFrame:SnapTo(v) self.value = v end
@@ -294,39 +321,84 @@ function DUI.installQuestFrame(opts)
   return f
 end
 
--- Dialogue UI's chat panel: an unnamed frame that keeps the lines it was given.
+-- Dialogue UI's chat panel: an unnamed frame whose scroll view (a child frame) keeps the lines it was given in its
+-- data provider's list, each with the speaker's words before it, measured through the panel's font object as they
+-- come in (ChatFrame.lua AddMessage, ScrollViewDataProvider:AddContent / CalculateAllExtent).
+local CHAT_PREFIX = { CHAT_MSG_MONSTER_SAY = "%s says: ", CHAT_MSG_MONSTER_YELL = "%s yells: " }
 function DUI.installChatPanel()
   fontObject("DUIFont_ChatFont", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 10)
   local c = CreateFrame("Frame")
-  c.lines = {}
-  function c:AddMessage(text, name, event) self.lines[#self.lines + 1] = { text, name, event } end
+  local view = CreateFrame("Frame", nil, c)
+  local list = { content = {}, objects = {}, measured = {}, isVisible = true, views = 0 }
+  view.dataProvider = list
+  function list:CalculateAllExtent()
+    self.measured = {}
+    for i, v in ipairs(self.content) do self.measured[i] = { v[1], _G.DUIFont_ChatFont:GetFont() } end
+  end
+  function list:UpdateView() self.views = self.views + 1 end
+  c.lines = list.content
+  c.GetChildren = function() return view end
+  function c:AddMessage(text, name, event)
+    if event == "CHAT_MSG_MONSTER_EMOTE" then
+      if text:find("%%s") then text = text:format(name) else text = text:gsub("%%", "") end
+    end
+    local prefix = CHAT_PREFIX[event]
+    if prefix then text = prefix:format(name) .. text end
+    list.content[#list.content + 1] = { text, event }
+    list.measured[#list.content] = { text, _G.DUIFont_ChatFont:GetFont() }
+    local obj = Stub.fontString("")
+    obj.dataIndex = #list.content
+    obj:SetText(text)
+    list.objects[#list.objects + 1] = obj
+  end
   c.SendContentToClipboard = function() end
   c.UpdateVisibility = function() end
+  c.list = list
   return c
 end
 
--- Dialogue UI's item tooltip: an unnamed frame with a line grid.
+-- Dialogue UI's item tooltip: an unnamed frame with a line grid (Tooltip_Base.lua). A line is added to the grid's
+-- next row (left) or the current row's second column (right); an empty text adds nothing. Its reader of the client's
+-- tooltip data keeps the data and adds one line per data line (Tooltip_Private.lua ProcessTooltipData,
+-- ProcessTooltipDataLines). Its layout, when it shows, passes over a row with no entry.
 function DUI.installTooltip()
   local t = CreateFrame("Frame")
-  t.numLines, t.rights = 0, {} -- its grid is made on first use, as Dialogue UI's is
+  t.numLines, t.grid = 0, {}
   t.ProcessInfo = function() end
   function t:AddLeftLine(text)
-    self.grid = self.grid or {}
+    if not text or text == "" then return end
     self.numLines = self.numLines + 1
     local fs = Stub.fontString(text)
     self.grid[self.numLines] = { fs }
     return fs
   end
   function t:AddRightLine(text)
+    if not text or text == "" then return end
     local fs = Stub.fontString(text)
-    self.rights[self.numLines] = fs
+    self.grid[self.numLines] = self.grid[self.numLines] or {}
+    self.grid[self.numLines][2] = fs
     return fs
   end
+  function t:ProcessTooltipDataLines(lines)
+    for _, line in ipairs(lines) do
+      if line.leftText then self:AddLeftLine(line.leftText) end
+      if line.rightText then self:AddRightLine(line.rightText) end
+    end
+  end
+  function t:ProcessTooltipData(tipData)
+    self.numLines, self.grid, self.tooltipData = 0, {}, tipData
+    self:ProcessTooltipDataLines(tipData.lines, 1)
+    return true
+  end
+  -- the rows its layout shows, in order
   function t:texts()
     local out = {}
-    for i = 1, self.numLines do out[i] = self.grid[i][1]:GetText() end
+    for i = 1, self.numLines do
+      if self.grid[i] then out[#out + 1] = self.grid[i][1]:GetText() end
+    end
     return out
   end
+  function t:right(row) return self.grid[row] and self.grid[row][2] end
   return t
 end
 
@@ -336,20 +408,33 @@ function DUI.makeFlyout()
   local f = CreateFrame("Frame")
   f.Title = Stub.fontString("")
   f.texts = {}
-  f.fontStringPool = { Acquire = function()
+  f.fontStringPool = {}
+  function f.fontStringPool:Acquire()
     local fs = Stub.fontString("")
     f.texts[#f.texts + 1] = fs
     return fs
-  end }
+  end
+  function f.fontStringPool:EnumerateActive()
+    local copy = {}
+    for i, fs in ipairs(f.texts) do copy[i] = fs end
+    return ipairs(copy)
+  end
+  -- SetQuestData keeps the quest's data (its paragraphs among it) and writes it with SetQuestText
   function f:SetQuestText(title, paragraphs)
     self.texts = {}
     self.Title:SetText(title)
     self.measuredIn = {}
     for _, text in ipairs(paragraphs) do
-      local fs = self.fontStringPool:Acquire()
-      fs:SetText(text)
-      self.measuredIn[#self.measuredIn + 1] = fs.font and fs.font.path or "client" -- the face it is measured in
+      if text ~= "" and text ~= " " then
+        local fs = self.fontStringPool:Acquire()
+        fs:SetText(text)
+        self.measuredIn[#self.measuredIn + 1] = fs.font and fs.font.path or "client" -- the face it is measured in
+      end
     end
+  end
+  function f:SetQuestData(data)
+    self.questData = data
+    self:SetQuestText(data.title, data.paragraphs)
   end
   f.SetQuestRewards = function() end
   function f:paragraphs()
@@ -364,7 +449,12 @@ end
 function DUI.makePopup()
   local p = CreateFrame("Frame")
   p.Title = Stub.fontString("")
-  function p:SetTitle(title) self.Title:SetText(title) end
+  -- the name written, then scaled to fit as it shows (Widget_QuestPopup.lua SetTitle, FontUtil SetAutoScalingText)
+  function p:SetTitle(title)
+    self.Title:SetText("")
+    self.Title:SetText(title)
+    self.scaledFor = self.Title:GetText()
+  end
   function p:SetQuestDataByID(questID)
     self.questID = questID
     self:SetTitle(DUI.questNames[questID])
@@ -449,6 +539,7 @@ function DUI.installBookFrame(opts)
   fontObject("DUIFont_Book_H1", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 20)
   local f = CreateFrame("Frame", "DUIBookFrame")
   f.measures, f.shows = 0, 0
+  f.fontStringPool = pool(f) -- the texts its scroll frame lays blocks out in (BookUI.lua Formatter)
   function f:Hide()
     self.shown = false
     if self.scripts.OnHide then self.scripts.OnHide(self) end
@@ -459,8 +550,9 @@ function DUI.installBookFrame(opts)
     local sf = { objects = {} }
     self.ScrollFrame = sf
     sf.SetContent = function(x, content) x.content = content end
+    -- a block with no object yet takes one from the book's pool
     sf.SetObjectData = function(x, obj, data, contentIndex)
-      obj = obj or Stub.fontString("")
+      obj = obj or f.fontStringPool.acquire()
       obj.parent = f
       obj.GetParent = function(o) return o.parent end
       obj.CalculateScreenAreaFromCharacterSpan = AREA

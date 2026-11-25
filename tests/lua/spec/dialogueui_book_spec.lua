@@ -35,7 +35,7 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     DUI.installItemTextAPI()
     if opts.present ~= false then
       book = DUI.installBookFrame({ without = opts.without })
-      Stub.loadedAddons.DialogueUI = true
+      Stub.loadedAddons.DialogueUI = opts.loaded ~= false
     end
     WFJ = H.loadChunks(FILES)
     WFJ.Compat.init(function(name) return _G[name] end)
@@ -73,6 +73,12 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     Stub.keys.alt = down
     WFJ.Modifier.refresh()
     DUI.flush()
+  end
+
+  -- one frame of the addon's own watching frame, which sees the book close
+  local function tick()
+    local p = WFJ.DialogueUI.poller
+    p.scripts.OnUpdate(p, 0.25)
   end
 
   it("does nothing without Dialogue UI's book window", function()
@@ -211,6 +217,7 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     assert.are.equal(WFJ.Font.PATH, (_G.DUIFont_Book_Paragraph:GetFont()))
     assert.are.equal(WFJ.Font.PATH, book.ScrollFrame.content[1].measuredFont[1])
     book:Hide()
+    tick()
     assert.are.same({ "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 16, "" },
       { _G.DUIFont_Book_Paragraph:GetFont() })
   end)
@@ -223,6 +230,7 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     DUI.flush()
     assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, { _G.DUIFont_Book_Paragraph:GetFont() })
     book:Hide()
+    tick()
     assert.are.same({ "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", WFJ.Font.DEFAULT_SIZE, "" },
       { _G.DUIFont_Book_Paragraph:GetFont() })
   end)
@@ -235,7 +243,38 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     DUI.flush()
     assert.are.equal(WFJ.Font.PATH, (_G.DUIFont_Book_Paragraph:GetFont()))
     book:Hide()
+    tick()
     assert.are.same(orig, { _G.DUIFont_Book_Paragraph:GetFont() })
+  end)
+
+  -- A method of Dialogue UI's replaced by a function of the addon's would run its code on the addon's taint: the book's
+  -- methods and its scroll frame's block writer are only followed with hooksecurefunc.
+  it("leaves the book's methods and its block writer as Dialogue UI's own (followed by hooksecurefunc only)", function()
+    load({ loaded = false })
+    local wrapped = {}
+    local real = _G.hooksecurefunc
+    _G.hooksecurefunc = function(a, b, c)
+      real(a, b, c)
+      wrapped[a] = wrapped[a] or {}
+      wrapped[a][b] = a[b]
+    end
+    book:Init()
+    local sf = book.ScrollFrame
+    local before = { [book] = {}, [sf] = { SetObjectData = sf.SetObjectData } }
+    for _, m in ipairs({ "ShowUI", "OnSettingsChanged", "Init" }) do before[book][m] = book[m] end
+    Stub.loadedAddons.DialogueUI = true
+    WFJ.LoadOnDemand.loaded("DialogueUI")
+    assert.is_true(WFJ.DialogueUIBook.installed())
+    ship({ [PLAIN] = PLAIN_JA })
+    DUI.openBook({ PLAIN })
+    DUI.flush()
+    book:layout()
+    for obj, names in pairs(before) do
+      for name, orig in pairs(names) do
+        local now = obj[name]
+        assert.is_true(now == orig or (wrapped[obj] ~= nil and wrapped[obj][name] == now), name)
+      end
+    end
   end)
 
   it("plain-text page blocks get word cards for their share of the page's words", function()
@@ -256,5 +295,8 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     assert.are.equal("dialogueui.book", rec.surface)
     assert.are.equal("book", rec.meta.kind)
     assert.is_table(rec.spans)
+    -- the block's FontString is the one Dialogue UI took from its pool and wrote the block into
+    assert.are.equal(book.ScrollFrame.objects[rec.fs.contentIndex], rec.fs)
+    assert.are.equal(rec.applied, rec.fs:GetText())
   end)
 end)
