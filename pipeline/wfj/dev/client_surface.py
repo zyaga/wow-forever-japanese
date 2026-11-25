@@ -3186,6 +3186,8 @@ end
 --   english  with Japanese showing (`expect`), a heading, tab or label holding no Japanese: a failure
 --   words    the text regions the chat words window shows
 --   stuck    the card still showing after the command that closes it: a failure
+--   secretLines    the chat lines on screen whose text the client keeps secret
+--   secretAnswers  what such a line answers with a secret (IsVisible, GetAlpha, ...)
 -- It types nothing into chat and sends nothing: it never clicks a phrase.
 local function WFJScanChatRead()
   local db = probeDb()
@@ -3203,6 +3205,24 @@ local function WFJScanChatRead()
       record.english[#record.english + 1] = what .. "\t" .. text
     end
   end
+  -- the chat lines on screen whose text the client keeps secret: how many, and which questions about itself such
+  -- a line answers with a secret (asked, never tested). The game cannot be made to show one, so a run with none
+  -- proved nothing about them and says so.
+  record.secretLines, record.secretAnswers = 0, {}
+  local kept = {}
+  for _, name in ipairs(type(CHAT_FRAMES) == "table" and issecretvalue and CHAT_FRAMES or {}) do
+    local chat = _G[name]
+    for _, line in ipairs(type(chat) == "table" and type(chat.visibleLines) == "table" and chat.visibleLines or {}) do
+      if issecretvalue(line:GetText()) then
+        record.secretLines = record.secretLines + 1
+        for _, method in ipairs({ "IsVisible", "IsShown", "GetAlpha", "IsMouseOver", "GetWidth" }) do
+          if issecretvalue(line[method](line)) then kept[method] = true end
+        end
+      end
+    end
+  end
+  for method in pairs(kept) do record.secretAnswers[#record.secretAnswers + 1] = method end
+  table.sort(record.secretAnswers)
   -- as the player left them: a card already open stays open, a button hidden for the session stays hidden
   local wasOpen = _G.WFJPhraseCard and _G.WFJPhraseCard:IsShown() or false
   local hadButton = _G.WFJPhraseButton and _G.WFJPhraseButton:IsShown() or false
@@ -4577,8 +4597,9 @@ def read_chat(text: str) -> dict[str, Any] | None:
     chat words window showed (`words`), whether Japanese was to be expected (`expect`), why it could not read
     (`refused`, `refused_words`, `refused_copy`), what the copy box held (`copy`), whether the card stayed open
     (`stuck`), the card's sizes over its topics
-    (`sizes`), and two lists of (what, what was seen): `blank` (a tab or a row with no words, or cut off) and
-    `english` (a heading, tab or label with no Japanese in it)."""
+    (`sizes`), the chat lines on screen the client kept secret (`secret_lines`) and what they answered with a
+    secret (`secret_answers`), and two lists of (what, what was seen): `blank` (a tab or a row with no words, or
+    cut off) and `english` (a heading, tab or label with no Japanese in it)."""
     from wfj.io import lua_reader
 
     db = lua_reader.parse_assignments(text).get("WFJScanDB")
@@ -4595,6 +4616,9 @@ def read_chat(text: str) -> dict[str, Any] | None:
     out["copy"] = str(record.get("copy") or "")
     sizes = record.get("sizes")
     out["sizes"] = [str(v) for v in (sizes.positional() if sizes is not None else [])]
+    out["secret_lines"] = int(record.get("secretLines") or 0)
+    answers = record.get("secretAnswers")
+    out["secret_answers"] = [str(v) for v in (answers.positional() if answers is not None else [])]
     for kind in ("blank", "english"):
         rows = record.get(kind)
         out[kind] = [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])]
@@ -4627,6 +4651,15 @@ def chat_problems(record: dict[str, Any] | None) -> list[str]:
     if record["expect"]:
         out += [f"chat tools left English: {seen!r} ({what})" for what, seen in record["english"]]
     return out
+
+
+def secret_lines_note(record: dict[str, Any]) -> str:
+    """What a run saw of chat lines the client keeps secret. The game cannot be made to show one, so a run with
+    none on screen proved nothing about how the chat tools take them."""
+    if not record["secret_lines"]:
+        return "no secret chat line was on screen, so the chat tools were not tried on one"
+    answers = ", ".join(record["secret_answers"]) or "nothing"
+    return f"{record['secret_lines']} secret chat lines on screen, answering {answers} with a secret"
 
 
 def read_marks(text: str) -> dict[str, Any] | None:
@@ -5159,7 +5192,7 @@ def _own_reads(saved: str, section: str | None = None) -> list[str]:
     chat = read_chat(saved) if part("chat") else None
     if chat is not None and not chat["refused"]:
         print(f"chat tools: {chat['topics']} topics and {chat['phrases']} phrases on the phrase card, "
-              f"{chat['words']} text regions in the chat words window")
+              f"{chat['words']} text regions in the chat words window; {secret_lines_note(chat)}")
     marks = _marks_read(saved) if part("marks") else None
     bagclick = read_bagclick(saved) if part("bagclick") else None
     if bagclick is not None:

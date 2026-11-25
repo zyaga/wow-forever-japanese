@@ -824,6 +824,25 @@ def test_the_chat_tools_read_fails_a_blank_tab_a_card_that_changes_size_and_engl
         "copy box holds '|cffffffffWFJ テスト|r', not the line without its codes ('WFJ テスト')"]
 
 
+def test_the_chat_tools_read_counts_secret_chat_lines_and_what_they_answer_with_a_secret():
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    body = lua[lua.index("local function WFJScanChatRead"):lua.index("local function WFJScanFreezeRead")]
+    # a secret answer is asked for and handed to issecretvalue, never tested or compared
+    assert "if issecretvalue(line[method](line)) then kept[method] = true end" in body
+    assert '"IsVisible", "IsShown", "GetAlpha", "IsMouseOver", "GetWidth"' in body
+
+    def note(record: str) -> str:
+        return client_surface.secret_lines_note(client_surface.read_chat(
+            "WFJScanDB = {\n[\"probe\"] = {\n" + record + "\n},\n}\n"))
+
+    assert note(CHAT) == "no secret chat line was on screen, so the chat tools were not tried on one"
+    seen = CHAT.replace('["expect"] = true',
+                        '["expect"] = true, ["secretLines"] = 3, ["secretAnswers"] = { "IsMouseOver", "IsVisible" }')
+    assert note(seen) == "3 secret chat lines on screen, answering IsMouseOver, IsVisible with a secret"
+    assert client_surface.chat_problems(client_surface.read_chat(
+        "WFJScanDB = {\n[\"probe\"] = {\n" + seen + "\n},\n}\n")) == []
+
+
 # a frozen tooltip read with nothing wrong
 FROZE = ('["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, '
          '["missing"] = { }, ["stuck"] = { } },')

@@ -85,6 +85,18 @@ describe("word status marks on chat", function()
     assert.equals(0, marks())
   end)
 
+  it("marks no line that answers whether it shows or how faint it is with a secret", function()
+    for _, method in ipairs({ "IsVisible", "GetAlpha" }) do
+      local answer, was = {}, line[method]
+      Env.secrets[answer] = true
+      line[method] = function() return answer end
+      assert.equals(0, ChatMarks.look(), method)
+      assert.equals(0, marks(), method)
+      line[method] = was
+    end
+    assert.equals(1, ChatMarks.look())
+  end)
+
   it("marks nothing while the reveal key is held or with word cards off", function()
     Stub.keys.alt = true
     WFJ.Modifier.refresh()
