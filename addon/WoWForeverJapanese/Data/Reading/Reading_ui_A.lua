@@ -144,6 +144,7 @@ WFJ.Data.add("reading", {
   ["ui:ADD_IGNORE_LABEL"] = { text = "無視する=むしする=98771 プレイヤー=プレイヤー=34799 名前=なまえ=57204 入力=にゅうりょく=47706 または=または=26678 チャット=チャット=33610 ウィンドウ=ウィンドウ=32006 名前=なまえ=57204 クリック=クリック=32710" },
   ["ui:ADD_NEW_FRIEND"] = { text = "新しい=あたらしい=86631 フレンド=フレンド=34649 追加=ついか=128409" },
   ["ui:ADD_WOW_FRIEND"] = { text = "フレンド=フレンド=34649 追加=ついか=128409" },
+  ["ui:ADJUST_COLORBLIND_STRENGTH"] = { text = "強さ=つよさ=70841 調整=ちょうせい=124507" },
   ["ui:ADJUST_MOTION_SICKNESS_SHAKE"] = { text = "カメラ=カメラ=32427 揺れ=ゆれ=84265" },
   ["ui:ADVANCED_ANTIALIASING_MSAA_FORMAT"] = { text = "カラー=カラー=32434 深度=しんど=96608" },
   ["ui:ADVANCED_COMBAT_LOGGING"] = { text = "高度な=こうどな=138178 戦闘=せんとう=77414 ログ=ログ=35567" },

@@ -21,7 +21,8 @@ Forever is game type `camelot`, a member of the `mainline` family (ADR-029):
   (the Forever window sweep in docs/research/);
 - `## AllowLoad: Glue` (header) and `[AllowLoad glue]` (line) are the login screens, where no addon runs;
 - `<Addon>_Mainline.toc` is read in preference to `<Addon>.toc`;
-- an XML file's `<Include file>` and `<Script file>` are followed: beside that XML file, else from the addon's folder.
+- an XML file's `<Include file>` and `<Script file>` are followed: beside that XML file, else from the addon's
+  folder.
 
 The default output is one `<addon> <state> <files>` line per addon, sorted: state is `gated` (the header keeps
 camelot out), `glue`, `lod` (LoadOnDemand) or `login`; files is the size of the camelot load set found in the

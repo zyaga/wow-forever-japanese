@@ -322,7 +322,7 @@ blizzard_transformtree lod 5
 blizzard_transmog lod 7
 blizzard_transmogshared lod 1
 blizzard_tutorialmanager login 13
-blizzard_tutorials login 15
+blizzard_tutorials login 16
 blizzard_tutorialtemplates lod 1
 blizzard_uierrorsframe login 3
 blizzard_uiframemanager login 2

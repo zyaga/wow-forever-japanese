@@ -139,6 +139,7 @@ WFJ.Data.add("english", {
   ["ui:ADD_IGNORE_LABEL"] = { text = "chat=6 click=9 enter=4 ignore=1 name=3 or=5 player=2 window=7" },
   ["ui:ADD_NEW_FRIEND"] = { text = "add=3" },
   ["ui:ADD_WOW_FRIEND"] = { text = "add=2" },
+  ["ui:ADJUST_COLORBLIND_STRENGTH"] = { text = "adjust=2" },
   ["ui:ADJUST_MOTION_SICKNESS_SHAKE"] = { text = "camera=1" },
   ["ui:ADVANCED_ANTIALIASING_MSAA_FORMAT"] = { text = "color=1" },
   ["ui:ADVANCED_COMBAT_LOGGING"] = { text = "advanced=1" },

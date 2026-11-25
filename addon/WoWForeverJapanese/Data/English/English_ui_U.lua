@@ -170,6 +170,7 @@ WFJ.Data.add("english", {
   ["ui:USEIPV6"] = { text = "available=2 enable=3" },
   ["ui:USER_SURVEY_DIALOG_TEXT"] = { text = "about=2 browser=9 clicking=7 experience=1 external=8 open=12 questions=4 survey=11 window=10" },
   ["ui:USER_SURVEY_STATUS_READY_DESCRIPTION"] = { text = "click=4 feedback=1 here=3 survey=5" },
+  ["ui:USE_COLORBLIND_MODE"] = { text = "enable=4" },
   ["ui:USE_COMBINED_BAGS_TEXT"] = { text = "combine=2" },
   ["ui:USE_GUILDBANK_REPAIR"] = { text = "funds=3 guild=2 repair=1 use=4" },
   ["ui:USE_NO_DROP"] = { text = "item=2 this=1 using=3 you=4" },

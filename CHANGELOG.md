@@ -10,6 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
+- The colorblind settings in the options window (the colorblind mode, the filter, its strength and the three filter types) are in Japanese, with word cards. The tool that lists the game's interface text had missed the file they sit in.
 - Word cards on chat. Point at a word in any chat line and its word card shows: a Japanese word's reading and meaning in Japanese first, an English word's pronunciation and Japanese in English first, chat shorthand such as LFM, WTS and OOM included. The save click saves the word with the message as its sentence. The line itself is never changed. A setting on the Words page, Word cards on chat lines, turns it off.
 - A phrase book for talking across languages. A small 文 button by the chat window opens it (drag it anywhere; the minus collapses it, the X hides it, `/wfj phrases` opens it again). Click one of 132 phrases in 9 topics and it is typed into the chat box in English with a small dot in front; press Enter to send. Players without the addon read plain English. Players with it see a gold 文 and the phrase in their own language. Holding the reveal key shows the message as it was sent.
 - Copy a chat line. A small icon on the chat line under the mouse opens a box with that line selected, ready for Ctrl+C (Cmd+C on a Mac): only the message for a line a player typed, the whole line otherwise.

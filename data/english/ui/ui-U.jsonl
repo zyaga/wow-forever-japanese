@@ -254,6 +254,7 @@
 {"id": "USER_SURVEY_DIALOG_TEXT", "field": "text", "en": "We'd like to invite you to answer a few questions about your World of Warcraft experience! Clicking Yes will open an external browser window to fill out the survey.", "hash": "d8efec9b011164b0", "src": "db2@1.60.1.71037"}
 {"id": "USER_SURVEY_STATUS_READY", "field": "text", "en": "Research Survey Available", "hash": "aa1f2d799b9fbb54", "src": "db2@1.60.1.71037"}
 {"id": "USER_SURVEY_STATUS_READY_DESCRIPTION", "field": "text", "en": "We want your feedback! Click here to access the survey.", "hash": "7cd00a54e57ab492", "src": "db2@1.60.1.71037"}
+{"id": "USE_COLORBLIND_MODE", "field": "text", "en": "Enable UI Colorblind Mode", "hash": "b2480a159afb0cb1", "src": "db2@1.60.1.71037"}
 {"id": "USE_COMBINED_BAGS_TEXT", "field": "text", "en": "Combine Bags", "hash": "f82db1858ca5489e", "src": "db2@1.60.1.71037"}
 {"id": "USE_FULL_TEXT_MODE", "field": "text", "en": "Use Verbose Mode", "hash": "54bde010094d5bcf", "src": "db2@1.60.1.71037"}
 {"id": "USE_GUILDBANK_REPAIR", "field": "text", "en": "Do you want to use guild funds for repair?", "hash": "2a7320cedd967ca7", "src": "db2@1.60.1.71037"}
