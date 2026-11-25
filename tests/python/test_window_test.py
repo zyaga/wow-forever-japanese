@@ -713,7 +713,7 @@ def test_the_names_read_runs_after_the_no_voice_read_and_only_shows_tooltips():
 
 
 # a chat tools read with nothing wrong
-CHAT = ('["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, '
+CHAT = ('["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["list"] = 9, ["expect"] = true, ["blank"] = { }, '
         '["copy"] = "WFJ テスト", '
         '["sizes"] = { "592x380" }, ["english"] = { } },')
 
@@ -758,6 +758,10 @@ def test_the_chat_tools_read_fails_a_blank_tab_a_card_that_changes_size_and_engl
         "chat words window not read: the chat words window did not open"]
     assert run(CHAT.replace('["words"] = 12', '["words"] = 0')) == [
         "chat words window shows no text"]
+    assert run(CHAT.replace('["list"] = 9', '["list"] = 0')) == ["word list window shows no text"]
+    assert run(CHAT.replace('["expect"] = true', '["expect"] = true, ["refusedList"] = '
+                            '"the word list window\'s add-on line ends below the window"')) == [
+        "word list window not read: the word list window's add-on line ends below the window"]
     assert run(CHAT.replace('["copy"] = "WFJ テスト"', '["refusedCopy"] = "the copy box did not open"')) == [
         "copy box not read: the copy box did not open"]
     assert run(CHAT.replace('"WFJ テスト"', '"|cffffffffWFJ テスト|r"')) == [
@@ -892,7 +896,7 @@ WFJScanDB = {
 ["test"] = { ["started"] = "2026-11-22 18:00:00", ["finished"] = "2026-11-22 18:05:00", ["build"] = "70959" },
 ["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
 ["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, ["missing"] = { }, ["stuck"] = { } },
-["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { } },
+["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["list"] = 9, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { } },
 ["bagclick"] = { ["checked"] = 412, ["ours"] = { }, ["others"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
 ["hover"] = { ["map"] = { ["made"] = 3, ["found"] = 3, ["tips"] = 2, ["english"] = { }, ["runs"] = { } } },

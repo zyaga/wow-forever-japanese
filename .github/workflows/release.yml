@@ -157,7 +157,7 @@ jobs:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
       # The Anki add-on is a file of the same release, built from the tagged tree. The addon's zip is live by now,
-      # so a problem here is a warning: the file can be added by running the release again.
+      # so a problem here is a warning: the file is then added by hand (docs/operations/release.md).
       - name: Add the Anki add-on to the GitHub release
         continue-on-error: true
         run: |

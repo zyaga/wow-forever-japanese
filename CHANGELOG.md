@@ -22,6 +22,8 @@ an old setting stops working). A release moves those lines under its version num
 - With a voice pack installed, a translated line that has no voice yet says so on its window: `[音声なし / No Voice Yet]`. A setting on the Voice page, Mark lines with no voice yet, turns the message off.
 - Japanese names for 2,668 more creatures, most of them Forever's own that the name list did not have yet, so with Japanese names on their nameplates and tooltips show katakana too.
 - Japanese for what Forever 1.60.1.70959 and 1.60.1.71037 added and for what players sent with the English Collector in 28 sends: 265 NPC lines, 325 quest progress and turn-in texts, 129 new quest titles with their objectives and descriptions (with word cards), and 45 item and spell tooltips.
+- An Anki add-on that makes your cards. Install `WoWForeverJapanese.ankiaddon` from the GitHub release in desktop Anki (25.09 or later), and every word you save becomes a card in the deck WoW Forever Japanese, with the sentence, furigana on the back, the screenshot and the sentence in its NPC's voice. Words saved earlier are added too. New words reach Anki after a /reload or a logout. Cards you edit keep your edits, your study progress is never changed, and your other cards are never touched.
+- The word list window has a line about the Anki add-on, with its address to copy. The export text and its copy steps are as before.
 
 ### Changed
 - The English Collector now finds game messages in chat that nobody has translated yet, such as "Rex seems to be sobering up." It keeps only the name of the game's own text template for that message (here `DRUNK_MESSAGE_OTHER1`), never the message, so no player's name is kept. Send it in as before and those messages can be put into Japanese.

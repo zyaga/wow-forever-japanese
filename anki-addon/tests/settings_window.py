@@ -30,7 +30,7 @@ def main() -> None:
         result = sync.Result(added=3, updated=1, words=42, files=1, tables=1, missing_images=2)
         dialog = ui.SettingsDialog(
             None,
-            Settings(folder="/Volumes/Games/World of Warcraft", front="word"),
+            Settings(folder="D:/Games/World of Warcraft", front="word"),
             lambda result=result, ja=ja: text.summary(result, ja),
             lambda folder: 2 if folder else 0,
             saved.append,

@@ -3077,12 +3077,13 @@ end
 --   sizes    the card's size on each topic: more than one is a failure (the card must not move under the mouse)
 --   english  with Japanese showing (`expect`), a heading, tab or label holding no Japanese: a failure
 --   words    the text regions the chat words window shows
+--   list     the text regions the word list window shows (`/wfj words`), read here because it is opened the same way
 --   stuck    the card still showing after the command that closes it: a failure
 -- It types nothing into chat and sends nothing: it never clicks a phrase.
 local function WFJScanChatRead()
   local db = probeDb()
   local settings = addonSettings() or {}
-  local record = { topics = 0, phrases = 0, words = 0, blank = {}, sizes = {}, english = {},
+  local record = { topics = 0, phrases = 0, words = 0, list = 0, blank = {}, sizes = {}, english = {},
     expect = settings.enabled ~= false and settings.direction ~= "en" }
   db.chat = record
   local slash = type(SlashCmdList) == "table" and SlashCmdList.WFJ or nil
@@ -3178,6 +3179,25 @@ local function WFJScanChatRead()
       judge("chat words window", shown.text)
     end
     window:Hide()
+    slash("words")
+    local list = _G.WFJWordsWindow
+    if not (list and list:IsShown()) then
+      record.refusedList = "the word list window did not open"
+      return
+    end
+    for _, shown in ipairs(shownTexts(list, {})) do
+      record.list = record.list + 1
+      judge("word list window", shown.text)
+    end
+    -- its last row, the Anki add-on's address, is placed under whatever rows show: it must end inside the window
+    local last = list.addonBox
+    local bottom, floor = last and last:GetBottom(), list:GetBottom()
+    if not (bottom and floor) then
+      record.refusedList = "the word list window has no add-on line to measure"
+    elseif bottom < floor then
+      record.refusedList = "the word list window's add-on line ends below the window"
+    end
+    list:Hide()
   end)
   if not ok then record.refused = tostring(err) end
   local card, button = _G.WFJPhraseCard, _G.WFJPhraseButton
@@ -4464,8 +4484,8 @@ COPY_PROBE = "WFJ テスト"
 def read_chat(text: str) -> dict[str, Any] | None:
     """The window test's chat tools read out of a saved-variables file, or None when the run had none: the
     phrase card's topic tabs (`topics`) and the phrase rows read over them (`phrases`), the text regions the
-    chat words window showed (`words`), whether Japanese was to be expected (`expect`), why it could not read
-    (`refused`, `refused_words`, `refused_copy`), what the copy box held (`copy`), whether the card stayed open
+    chat words window showed (`words`) and the word list window (`list`), whether Japanese was to be expected
+    (`expect`), why it could not read (`refused`, `refused_words`, `refused_copy`, `refused_list`), what the copy box held (`copy`), whether the card stayed open
     (`stuck`), the card's sizes over its topics
     (`sizes`), and two lists of (what, what was seen): `blank` (a tab or a row with no words, or cut off) and
     `english` (a heading, tab or label with no Japanese in it)."""
@@ -4476,12 +4496,13 @@ def read_chat(text: str) -> dict[str, Any] | None:
     record = probe.get("chat") if probe is not None else None
     if record is None:
         return None
-    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("topics", "phrases", "words")}
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("topics", "phrases", "words", "list")}
     out["expect"] = bool(record.get("expect"))
     out["stuck"] = bool(record.get("stuck"))
     out["refused"] = str(record.get("refused") or "")
     out["refused_words"] = str(record.get("refusedWords") or "")
     out["refused_copy"] = str(record.get("refusedCopy") or "")
+    out["refused_list"] = str(record.get("refusedList") or "")
     out["copy"] = str(record.get("copy") or "")
     sizes = record.get("sizes")
     out["sizes"] = [str(v) for v in (sizes.positional() if sizes is not None else [])]
@@ -4514,6 +4535,10 @@ def chat_problems(record: dict[str, Any] | None) -> list[str]:
         out.append(f"chat words window not read: {record['refused_words']}")
     elif not record["words"]:
         out.append("chat words window shows no text")
+    if record["refused_list"]:
+        out.append(f"word list window not read: {record['refused_list']}")
+    elif not record["list"] and not record["refused_words"]:
+        out.append("word list window shows no text")
     if record["expect"]:
         out += [f"chat tools left English: {seen!r} ({what})" for what, seen in record["english"]]
     return out

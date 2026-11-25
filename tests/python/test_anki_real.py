@@ -146,7 +146,7 @@ def test_the_settings_window_shows_and_saves_the_choices(tmp_path):
         window = seen[name]
         assert window["found"] == language
         assert window["saved"] == [
-            {"folder": "/Volumes/Games/World of Warcraft", "front": "word", "audio": "back"}
+            {"folder": "D:/Games/World of Warcraft", "front": "word", "audio": "back"}
         ]
         assert window["status"].count("\n") == 1
         assert window["empty"] != window["found"]

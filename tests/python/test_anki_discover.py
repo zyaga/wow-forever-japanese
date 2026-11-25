@@ -60,12 +60,15 @@ def test_with_no_folder_chosen_the_usual_places_are_tried(tmp_path):
 
 
 def test_the_usual_places_per_system(tmp_path):
-    mac = discover.default_roots("Darwin", Path("/Users/someone"), tmp_path / "none")
+    home = tmp_path / "home"
+    mac = discover.default_roots("Darwin", home, tmp_path / "none")
     assert Path("/Applications/World of Warcraft") in mac
-    windows = discover.default_roots("Windows", Path("C:/Users/someone"))
+    assert home / "Applications" / "World of Warcraft" in mac
+    windows = discover.default_roots("Windows", home)
     assert Path("C:/Program Files (x86)/World of Warcraft") in windows
     assert Path("D:/Games/World of Warcraft") in windows
-    assert discover.default_roots("Linux", Path("/home/someone"))
+    other = discover.default_roots("Linux", home)
+    assert other and all(home in root.parents for root in other)
 
 
 def test_the_signature_changes_when_a_saved_file_does(tmp_path):

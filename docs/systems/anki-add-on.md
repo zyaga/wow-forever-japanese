@@ -71,7 +71,7 @@ One note type, `WoW Forever Japanese`, one card (`Card`), notes in the deck `WoW
 | `Sentence` | the sentence in furigana format, the word in bold |
 | `Word (furigana)` | the word in furigana format |
 | `Japanese sentence` | an English word's Japanese sentence |
-| `Image` | `<img src="wfj-…">` |
+| `Image` | an HTML image tag naming the stored screenshot (its name starts with `wfj-`) |
 | `Audio` | `[sound:wfj-…]`, one per file, in play order |
 | `Source`, `Quest`, `Saved`, `Lang` | where it was shown, the Japanese quest title, the save date (local, `YYYY-MM-DD`), `en` or empty |
 | `Sync` | the add-on's record, as JSON: a short hash of what it last wrote to each field, and of the files behind `Image` and `Audio` |
