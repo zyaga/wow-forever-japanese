@@ -114,11 +114,13 @@ describe("Core/WordStatus", function()
   end)
 
   it("keeps its statuses across a load, and drops an entry that is not one", function()
-    local S, kept = load({ schema = 1, ja = { ["敵\tてき"] = "k", ["谷\tたに"] = "x", [7] = "k" }, en = { enemy = "l" } })
+    local S, kept = load({ schema = 1, ja = { ["敵\tてき"] = "k", ["谷\tたに"] = "x", [7] = "k" }, en = { enemy = "l" },
+      stray = { 1, 2, 3 } })
     assert.are.equal("known", S.get("ja", "敵\tてき"))
     assert.are.equal("learning", S.get("en", "enemy"))
     assert.is_nil(kept.ja["谷\tたに"])
     assert.is_nil(kept.ja[7])
+    assert.is_nil(kept.stray) -- a field the table does not have is not written back
   end)
 
   it("never writes a table saved by a newer version", function()

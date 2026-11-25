@@ -72,6 +72,10 @@ function Status.load(t)
     end
   end
   if type(t.lastImport) ~= "table" then t.lastImport = nil end
+  -- the table holds these fields and nothing else: anything more would be written back at every logout
+  for field in pairs(t) do
+    if field ~= "schema" and field ~= "ja" and field ~= "en" and field ~= "lastImport" then t[field] = nil end
+  end
   saved = t
   changed()
   return t
