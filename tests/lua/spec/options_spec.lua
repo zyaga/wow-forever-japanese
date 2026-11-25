@@ -101,8 +101,9 @@ describe("Settings pages from the registry and PAGES", function()
         for _, section in ipairs(page.sections) do if section.title == "section.marks" then marks = section.rows end end
       end
     end
-    assert.are.same({ "marksExplain", "marks.underline", "marks.highlight", "marks.score", "marks.quest", "marks.book",
-      "marks.voicepanel", "marks.tooltip", "marks.chat", "marksStatus", "marksOpen" }, marks)
+    assert.are.same({ "marksExplain", "marks.enabled", "marks.underline", "marks.learning", "marks.highlight",
+      "marks.score", "marks.quest", "marks.book", "marks.voicepanel", "marks.tooltip", "marks.chat", "marksStatus",
+      "marksOpen" }, marks)
     for _, id in ipairs(marks) do
       local d = S.definition(id)
       if d then

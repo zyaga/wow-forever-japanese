@@ -12,7 +12,8 @@ local IDS = { "enabled", "direction", "names.japanese",
   "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head",
   "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.lock",
   "words.saveClick", "words.screenshot",
-  "marks.underline", "marks.highlight", "marks.score", "marks.quest", "marks.book", "marks.voicepanel",
+  "marks.enabled", "marks.underline", "marks.learning", "marks.highlight", "marks.score", "marks.quest",
+  "marks.book", "marks.voicepanel",
   "marks.tooltip", "marks.chat",
   "study.tab", "study.newPerDay", "study.combatHide", "study.sound",
   "chat.cards", "chat.copy", "chat.phraseButton", "chat.phrases" }
@@ -37,6 +38,7 @@ local DEFAULTS = { enabled = true, modifier = "alt",
   ["voice.panel.lock"] = false,
   ["words.saveClick"] = "ctrl", ["words.screenshot"] = false, -- the word list: Ctrl+click, no screenshot
   -- the word status marks: underlines, the common-word highlight and the score tag on, every place but chat
+  ["marks.enabled"] = true, ["marks.learning"] = true,
   ["marks.underline"] = true, ["marks.highlight"] = "common", ["marks.score"] = true, ["marks.quest"] = true,
   ["marks.book"] = true, ["marks.voicepanel"] = true, ["marks.tooltip"] = true, ["marks.chat"] = false,
   ["study.tab"] = true, ["study.newPerDay"] = "20", ["study.combatHide"] = true, ["study.sound"] = true, -- studying it

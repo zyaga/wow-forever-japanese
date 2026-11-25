@@ -97,7 +97,7 @@ Each place has its own switch. With a place off, no mark, no score tag, no statu
 | `marks.tooltip` | on | the frozen tooltip |
 | `marks.chat` | off | chat lines (see [Chat](#chat)) and the chat word card |
 
-Three more settings shape the marks everywhere: `marks.underline` (on), `marks.highlight` (Common words) and `marks.score` (on, the score tags). The Words page shows all eight in its **Word status** section, with the counts, the whole game's score and the **Known words** button ([Settings → Settings pages](settings.md#settings-pages)). A change redraws the marks at once.
+Five more settings shape the marks everywhere: `marks.enabled` (on; off switches the whole feature off: no mark, no tag, no status line on the word card and no status click, while the statuses themselves are kept), `marks.underline` (on, the underline under Unknown words), `marks.learning` (on, the underline under Learning words), `marks.highlight` (Common words) and `marks.score` (on, the score tags). The Words page shows all ten in its **Word status** section, with the counts, the whole game's score and the **Known words** button ([Settings → Settings pages](settings.md#settings-pages)). A change redraws the marks at once.
 
 **In the welcome tour.** After Study Japanese or Study English, the welcome window's tour has a word status page: the Shift+click, the underline, the green highlight and the score tag, and `/wfj known` ([Settings → Welcome window](settings.md#welcome-window)). Just play turns word cards off, so it shows no marks and its tour has no such page.
 

@@ -3134,7 +3134,8 @@ local function WFJScanMarksRead()
   end
   local known = type(WFJ_Known) == "table" and type(WFJ_Known.ja) == "table" and WFJ_Known.ja or {}
   record.bare = record.texts > 0 and record.shown == 0 and next(known) == nil
-    and saved["marks.underline"] ~= false and saved["marks.quest"] ~= false or false
+    and saved["marks.enabled"] ~= false and saved["marks.underline"] ~= false
+    and saved["marks.quest"] ~= false or false
 end
 
 -- The chat tools read. The phrase book's card and the player's own chat words window are the addon's own windows:

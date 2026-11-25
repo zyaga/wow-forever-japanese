@@ -45,7 +45,8 @@ Options.PAGES = {
       "study.sound", "studyStatus", "studyOpen" } },
     -- the word status marks (Core/WordStatus, UI/WordMarks): the underline, the highlight, the score tag, one
     -- switch per place, the counts and the known words window
-    { title = "section.marks", rows = { "marksExplain", "marks.underline", "marks.highlight", "marks.score",
+    { title = "section.marks", rows = { "marksExplain", "marks.enabled", "marks.underline", "marks.learning",
+      "marks.highlight", "marks.score",
       "marks.quest", "marks.book", "marks.voicepanel", "marks.tooltip", "marks.chat", "marksStatus", "marksOpen" } },
     -- the chat tools: word cards on chat, the copy icon, the phrase book, the player's own chat words
     { title = "section.chat", rows = { "chatExplain", "chat.cards", "chat.copy", "chat.phraseButton",

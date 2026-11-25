@@ -3,7 +3,8 @@
 --   Marks.sentences(text, english) → { { first, last }, … }
 --   Marks.plan(text, words, opts)  → { [i] = { underline = "unknown" | "learning" | nil, highlight = bool } }
 -- `words`: { { first, last, lang, key }, … } in the text's byte positions; a word with no key takes no mark.
--- `opts`: { underline = bool, highlight = "off" | "common" | "commonNew" | "new", english = bool }.
+-- `opts`: { underline = bool (unknown words), learning = bool (learning words),
+-- highlight = "off" | "common" | "commonNew" | "new", english = bool }.
 -- The underline shows a word's status. The highlight picks out unknown words: the ones to learn next, the one
 -- unknown word of a sentence that has no other, or the words that are both.
 local _, WFJ = ...
@@ -62,7 +63,9 @@ function Marks.plan(text, words, opts)
   for i, w in ipairs(words) do
     local status = statuses[i]
     local mark = {}
-    if opts.underline and (status == "unknown" or status == "learning") then mark.underline = status end
+    if (status == "unknown" and opts.underline) or (status == "learning" and opts.learning) then
+      mark.underline = status
+    end
     if status == "unknown" then
       if mode == "common" then
         mark.highlight = Status.learnNext(w.lang, w.key)

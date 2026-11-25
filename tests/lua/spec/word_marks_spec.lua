@@ -52,11 +52,16 @@ describe("Core/WordMarks", function()
     S.set("ja", "敵\tてき", "known")
     S.set("ja", "倒す\tたおす", "learning")
     S.set("ja", "谷\tたに", "ignored")
-    local plan = Marks.plan(TEXT, words(), { underline = true, highlight = "off" })
+    local plan = Marks.plan(TEXT, words(), { underline = true, learning = true, highlight = "off" })
     assert.are.equal("- learning - - unknown - unknown -", underlines(plan))
     assert.are.equal("- - - - - - - -", highlights(plan))
-    plan = Marks.plan(TEXT, words(), { underline = false, highlight = "off" })
+    plan = Marks.plan(TEXT, words(), { underline = false, learning = false, highlight = "off" })
     assert.are.equal("- - - - - - - -", underlines(plan))
+    -- each of the two underlines has its own switch
+    plan = Marks.plan(TEXT, words(), { underline = true, learning = false, highlight = "off" })
+    assert.are.equal("- - - - unknown - unknown -", underlines(plan))
+    plan = Marks.plan(TEXT, words(), { underline = false, learning = true, highlight = "off" })
+    assert.are.equal("- learning - - - - - -", underlines(plan))
   end)
 
   it("highlights the words to learn next in the common mode", function()
@@ -95,7 +100,8 @@ describe("Core/WordMarks", function()
       { first = 1, last = 6, lang = "en", key = "defeat" }, { first = 12, last = 16, lang = "en", key = "enemy" },
       { first = 29, last = 34, lang = "en", key = "valley" },
     }
-    local plan = WFJ.WordMarksPlan.plan(text, list, { underline = true, highlight = "new", english = true })
+    local plan = WFJ.WordMarksPlan.plan(text, list,
+      { underline = true, learning = true, highlight = "new", english = true })
     assert.are.equal("unknown unknown unknown", underlines(plan))
     assert.are.equal("- - H", highlights(plan))
   end)

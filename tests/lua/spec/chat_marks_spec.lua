@@ -68,6 +68,13 @@ describe("word status marks on chat", function()
     assert.equals(0, ChatMarks.look())
   end)
 
+  it("marks nothing with the whole feature switched off", function()
+    ChatMarks.look()
+    S.set("marks.enabled", false)
+    assert.equals(0, marks())
+    assert.equals(0, ChatMarks.look())
+  end)
+
   it("marks no line that has faded out and no line the client keeps secret", function()
     line.alpha = 0.1
     assert.equals(0, ChatMarks.look())

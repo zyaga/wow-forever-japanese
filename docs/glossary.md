@@ -744,7 +744,7 @@ _Avoid_: lemma on its own (the key holds the reading too), word id, headword
 → [Word status → The word key](systems/word-status.md#the-word-key)
 
 **Status underline**:
-The line under a word that shows its [[Word status]]: red under Unknown, blue under Learning, none under Known or Ignored. It sits in the measured gap between text lines, a whole number of screen pixels thick. `marks.underline` turns it off. Not the [[Highlight]].
+The line under a word that shows its [[Word status]]: red under Unknown, blue under Learning, none under Known or Ignored. It sits in the measured gap between text lines, a whole number of screen pixels thick. `marks.underline` turns it off under Unknown words and `marks.learning` under Learning words. Not the [[Highlight]].
 _Avoid_: marker (that is the [[Stale marker]] family), squiggle, furigana line
 → [Word status → The marks](systems/word-status.md#the-marks)
 

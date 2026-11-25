@@ -52,7 +52,7 @@ The first time you log in, a welcome window asks what you are here for: **Study 
 
 ### <span style="color:#E8C77E;">Know your words</span>
 
-Give any word a status: **Unknown**, **Learning**, **Known** or **Ignored**. Point at a word and Shift+click to step it; Shift+right-click ignores it. Words you do not know yet are underlined in quest text, NPC dialogue, books, the voice panel and a frozen tooltip (and in chat, if you switch that on), and a soft green highlight picks out the ones worth learning next: the most common words in the game's own text that you do not know. A small tag on a quest, an NPC line or a book page says how much of it you already know, and the **Words** settings page shows the same for the whole game. To start from what you know, open `/wfj known` and paste a word list from Anki or any other tool: commas, spaces, tabs and new lines all work, and each word the game uses is marked Known. Saving a word makes it Learning, and a word you have studied in game for long enough becomes Known by itself. Each place has its own switch. In English first it all works on English words.
+Give any word a status: **Unknown**, **Learning**, **Known** or **Ignored**. Point at a word and Shift+click to step it; Shift+right-click ignores it. Words you do not know yet are underlined in quest text, NPC dialogue, books, the voice panel and a frozen tooltip (and in chat, if you switch that on), and a soft green highlight picks out the ones worth learning next: the most common words in the game's own text that you do not know. A small tag on a quest, an NPC line or a book page says how much of it you already know, and the **Words** settings page shows the same for the whole game. To start from what you know, open `/wfj known` and paste a word list from Anki or any other tool: commas, spaces, tabs and new lines all work, and each word the game uses is marked Known. Saving a word makes it Learning, and a word you have studied in game for long enough becomes Known by itself. The **Words** settings page has a switch for the whole feature, for each underline, for the highlight and for each place. In English first it all works on English words.
 
 ### <span style="color:#E8C77E;">Chat tools</span>
 
@@ -161,7 +161,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ### <span style="color:#E8C77E;">単語の習得状況</span>
 
-どの単語にも **未知**、**学習中**、**既知**、**無視** のいずれかの状態を付けられます。単語にマウスを合わせて Shift+クリックで状態が切り替わり、Shift+右クリックで無視になります。まだ知らない単語には、クエスト本文、NPC の会話、本、ボイスパネル、固定したツールチップで下線が付き（チャットは設定でオンにできます）、次に覚えるとよい単語は薄い緑でハイライトされます。ゲームの文章によく出てくる、まだ知らない単語です。クエスト、NPC のセリフ、本のページには、その文章をどのくらい知っているかが小さく表示され、**単語帳** の設定ページにはゲーム全体の数字が出ます。すでに知っている単語から始めるには、`/wfj known` を開いて、Anki などの単語リストを貼り付けます。コンマ、スペース、タブ、改行のどれで区切ってあっても読み取り、ゲームに出てくる単語を既知にします。単語を保存すると学習中になり、ゲーム内の学習で十分に定着した単語は自動で既知になります。表示する場所ごとにオン・オフを選べます。英語優先のときは、英語の単語で同じように使えます。
+どの単語にも **未知**、**学習中**、**既知**、**無視** のいずれかの状態を付けられます。単語にマウスを合わせて Shift+クリックで状態が切り替わり、Shift+右クリックで無視になります。まだ知らない単語には、クエスト本文、NPC の会話、本、ボイスパネル、固定したツールチップで下線が付き（チャットは設定でオンにできます）、次に覚えるとよい単語は薄い緑でハイライトされます。ゲームの文章によく出てくる、まだ知らない単語です。クエスト、NPC のセリフ、本のページには、その文章をどのくらい知っているかが小さく表示され、**単語帳** の設定ページにはゲーム全体の数字が出ます。すでに知っている単語から始めるには、`/wfj known` を開いて、Anki などの単語リストを貼り付けます。コンマ、スペース、タブ、改行のどれで区切ってあっても読み取り、ゲームに出てくる単語を既知にします。単語を保存すると学習中になり、ゲーム内の学習で十分に定着した単語は自動で既知になります。設定の **単語帳** ページで、機能全体、それぞれの下線、ハイライト、表示する場所ごとにオン・オフを選べます。英語優先のときは、英語の単語で同じように使えます。
 
 ### <span style="color:#E8C77E;">チャットの補助</span>
 

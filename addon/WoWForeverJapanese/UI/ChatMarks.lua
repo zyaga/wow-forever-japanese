@@ -19,7 +19,9 @@ local function on()
   local S = WFJ.State
   -- only while the direction's own language shows, as the chat cards
   local own = S.showsEnglish() == (S.direction == "en")
-  return S.enabled and own and WFJ.ReadingView.enabled and WFJ.Settings.get("marks.chat") == true
+  local Settings = WFJ.Settings
+  return S.enabled and own and WFJ.ReadingView.enabled and Settings.get("marks.enabled") == true
+    and Settings.get("marks.chat") == true
 end
 
 -- Every word of a chat line: → { { first, last, word, reading, card }, … } in the line's own bytes.
@@ -84,7 +86,8 @@ local function draw(line, text)
     end
   end
   local plan = WFJ.WordMarksPlan.plan(text, list, { underline = WFJ.Settings.get("marks.underline"),
-    highlight = WFJ.Settings.get("marks.highlight"), english = english })
+    learning = WFJ.Settings.get("marks.learning"), highlight = WFJ.Settings.get("marks.highlight"),
+    english = english })
   overlay:Show()
   return WFJ.WordMarks.paint(overlay, words, plan)
 end
@@ -126,7 +129,8 @@ end
 
 local function follow()
   drawnAt = -1 -- a setting moved: every line is drawn again
-  local want = WFJ.State.enabled and WFJ.Settings.get("marks.chat") == true
+  local want = WFJ.State.enabled and WFJ.Settings.get("marks.enabled") == true
+    and WFJ.Settings.get("marks.chat") == true
   if ChatMarks.driver then
     if want then ChatMarks.driver:Show() else ChatMarks.driver:Hide() end
   end

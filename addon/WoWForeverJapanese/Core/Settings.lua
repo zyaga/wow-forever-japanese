@@ -330,12 +330,17 @@ Settings.define{ id = "words.saveClick", kind = "choice", choices = { "ctrl", "s
 Settings.define{ id = "words.screenshot", kind = "boolean", default = false,
   label = "Take a screenshot when saving a word", ja = "単語を保存するときにスクリーンショットを撮る" }
 
--- The word status marks (Core/WordStatus, UI/WordMarks, docs/systems/word-status.md): the underline that shows a
--- word's status, the highlight that picks out words to stop for, the score tag, and one switch per place. A
--- change redraws the marks on screen (State "wordMarks").
+-- The word status marks (Core/WordStatus, UI/WordMarks, docs/systems/word-status.md): one switch for all of it
+-- (off: no mark, no tag, no status on the word card, no status click), the underline under unknown words and the
+-- one under learning words, the highlight that picks out words to stop for, the score tag, and one switch per
+-- place. A change redraws the marks on screen (State "wordMarks").
 local function marksChanged() WFJ.State.fire("wordMarks") end
+Settings.define{ id = "marks.enabled", kind = "boolean", default = true, apply = marksChanged,
+  label = "Word status marks", ja = "単語の習得状況の印" }
 Settings.define{ id = "marks.underline", kind = "boolean", default = true, apply = marksChanged,
   label = "Underline words I don't know yet", ja = "まだ知らない単語に下線を引く" }
+Settings.define{ id = "marks.learning", kind = "boolean", default = true, apply = marksChanged,
+  label = "Underline words I'm learning", ja = "学習中の単語に下線を引く" }
 Settings.define{ id = "marks.highlight", kind = "choice", choices = { "off", "common", "commonNew", "new" },
   default = "common", apply = marksChanged,
   label = "Highlight", ja = "ハイライト",

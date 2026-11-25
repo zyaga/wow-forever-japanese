@@ -43,7 +43,9 @@ local function setting(id) return WFJ.Settings.get(id) end
 -- → the cover's place when its setting is on, else nil. A chat word's cover (UI/ChatCards) is the chat place.
 function Marks.active(cover)
   local place = cover.marksPlace or (cover.kind == "chat" and "chat") or nil
-  if not place or not View.enabled or not setting("marks." .. place) then return nil end
+  if not place or not View.enabled or not setting("marks.enabled") or not setting("marks." .. place) then
+    return nil
+  end
   return place
 end
 
@@ -176,7 +178,7 @@ local function draw(cover, measured)
     list[i] = { first = w.first, last = w.last, lang = lang, key = key }
   end
   local plan = WFJ.WordMarksPlan.plan(cover.text, list, { underline = setting("marks.underline"),
-    highlight = setting("marks.highlight"), english = cover.english == true })
+    learning = setting("marks.learning"), highlight = setting("marks.highlight"), english = cover.english == true })
   Marks.paint(cover, words, plan)
 end
 
