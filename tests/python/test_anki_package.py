@@ -19,6 +19,8 @@ def test_the_file_holds_the_add_on_at_its_top(tmp_path):
         packed = archive.namelist()
         manifest = json.loads(archive.read("manifest.json"))
         config = json.loads(archive.read("config.json"))
+        licence = archive.read("LICENSE")
+        header = archive.read("__init__.py").decode("utf-8")
     assert packed == names
     for needed in (
         "__init__.py",
@@ -38,6 +40,8 @@ def test_the_file_holds_the_add_on_at_its_top(tmp_path):
         "__pycache__" in n or n.startswith(("tests/", "tools/", "wfj_anki/")) or n == "meta.json"
         for n in packed
     )
+    assert licence == (ROOT / "LICENSE").read_bytes()
+    assert "Copyright (C) 2026 Zyaga" in header and "GPL-2.0-or-later" in header
     assert manifest["human_version"] == "1.2.3"
     assert manifest["package"] and manifest["name"] == "WoW Forever Japanese"
     assert manifest["min_point_version"] >= 250900

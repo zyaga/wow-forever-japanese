@@ -2,7 +2,8 @@
 
     python anki-addon/tools/package.py <out file> --version <x.y.z>
 
-Only the files the add-on runs are packed; the version is written into the manifest.
+Only the files the add-on runs are packed, with the repository's licence beside them; the version is written
+into the manifest.
 """
 
 from __future__ import annotations
@@ -13,6 +14,7 @@ import zipfile
 from pathlib import Path
 
 SOURCE = Path(__file__).resolve().parents[1] / "wfj_anki"
+LICENSE = Path(__file__).resolve().parents[2] / "LICENSE"
 PACKED = {".py", ".json", ".md", ".html", ".css"}
 VERSION_MARK = "@project-version@"
 
@@ -29,8 +31,8 @@ def build(out: Path, version: str) -> list[str]:
     out.parent.mkdir(parents=True, exist_ok=True)
     names = []
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
-        for path in files():
-            name = path.relative_to(SOURCE).as_posix()
+        for path in [LICENSE, *files()]:
+            name = "LICENSE" if path == LICENSE else path.relative_to(SOURCE).as_posix()
             data = path.read_bytes()
             if name == "manifest.json":
                 manifest = json.loads(data.decode("utf-8").replace(VERSION_MARK, version))

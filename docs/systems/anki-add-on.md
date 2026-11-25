@@ -131,7 +131,7 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - `anki-addon/tools/package.py`: the `.ankiaddon` file; `anki-addon/tools/render_cards.py`: the card pictures
 
 ## Packaging and release
-- `make anki-package` writes `build/anki/WoWForeverJapanese.ankiaddon`: a zip of the add-on's own files at its root (Python, JSON, Markdown, HTML, CSS; no cache or test file), with the version written into `manifest.json` (the next release's unless `ANKI_VERSION=` is given). The same tree always gives the same file.
+- `make anki-package` writes `build/anki/WoWForeverJapanese.ankiaddon`: a zip of the add-on's own files at its root (Python, JSON, Markdown, HTML, CSS; no cache or test file) and the repository's `LICENSE`, with the version written into `manifest.json` (the next release's unless `ANKI_VERSION=` is given). The same tree always gives the same file.
 - The Release workflow builds it from the tagged tree and adds it to the GitHub release after the addon's zip is live. A problem there is a warning, not a failed release; the file is then added by hand ([Release](../operations/release.md)).
 - The AnkiWeb listing is not made yet. Uploading there is done by hand from the maintainer's AnkiWeb account.
 - `make anki-cards` draws the card for each front choice, front and back, light and dark, at desktop and phone width, for a Japanese word (with image and audio) and an English word, into `build/anki/cards/` (`CARD_IMAGE=` picks the stand-in screenshot; needs Chrome). It fails when a picture is missing.

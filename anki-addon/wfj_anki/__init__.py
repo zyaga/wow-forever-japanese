@@ -2,6 +2,10 @@
 
 Inside Anki this starts the add-on. Outside it (the tests import the modules that do not need Anki) it does
 nothing.
+
+Copyright (C) 2026 Zyaga
+License: GPL-2.0-or-later (the LICENSE file beside this one)
+https://foreverjapanese.com/
 """
 
 try:
