@@ -83,7 +83,8 @@ end
 
 function Lines.reveal(frame)
   local active = on()
-  local holding = WFJ.State.modifierHeld and active
+  -- the other language is asked for (the reveal key, in either direction)
+  local holding = active and WFJ.State.showsEnglish() ~= (WFJ.State.direction == "en")
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local P = WFJ.ChatPhrases
   -- the key was released: a line that showed something else takes its own text back, and what UI/ChatSystem writes

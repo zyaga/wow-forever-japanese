@@ -80,7 +80,10 @@ end
 
 local function cardsOn()
   local S = WFJ.State
-  return S.enabled and not S.modifierHeld and WFJ.ReadingView.enabled and WFJ.Settings.get("chat.cards") == true
+  -- only while the direction's own language shows: the reveal key puts the other one on screen, and a chat line
+  -- is not rewritten for it
+  local own = S.showsEnglish() == (S.direction == "en")
+  return S.enabled and own and WFJ.ReadingView.enabled and WFJ.Settings.get("chat.cards") == true
 end
 
 local function wordAt(text, i)

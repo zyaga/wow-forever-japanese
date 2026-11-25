@@ -81,8 +81,9 @@ def test_every_exclusion_names_a_key_the_forever_ui_can_reach(root):
 
 # Modules that declare a Compat namespace but are not a translated surface.
 # the word-reading box rides the quest / gossip surfaces, no window; Dialogue UI's windows are another addon's, not
-# the client's, so no inventory lists them
-NOT_SURFACES = {"scan", "readings", "dialogueui"}
+# the client's, so no inventory lists them; the chat tools (word cards, the copy icon, the phrase book) ride the chat
+# frame, whose own strings are the `chatsystem` and `chattabs` surfaces
+NOT_SURFACES = {"scan", "readings", "dialogueui", "chat"}
 _SURFACE_CONST = re.compile(r'^local (?:SURFACE|DECLARE) = "([a-z.]+)"', re.M)
 
 
