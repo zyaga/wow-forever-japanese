@@ -27,6 +27,7 @@ local BOX, BUTTON = 20, 22
 -- a tour picture is drawn at its file's own size, centred, so it is as sharp as the screenshot it was cut from
 local PICTURE_W, PICTURE_H = 512, 256
 local PICTURE_X = math.floor((TEXT_WIDTH - PICTURE_W) / 2)
+local HEAD_ROOM, PICTURE_GAP = 44, 24 -- a tour page's heading (two lines), and the gap above and below its picture
 local MEDIA = "Interface\\AddOns\\WoWForeverJapanese\\Media\\Tour\\"
 
 IntroWindow.frame = nil
@@ -286,7 +287,9 @@ local function build()
   for _, def in ipairs(IntroWindow.PAGES) do
     local p = page()
     local t = { frame = p, head = line(p), points = {} }
+    -- the heading as the question page's: gold, centred, the English under it
     t.head.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
+    for _, fs in ipairs({ t.head.ja, t.head.en }) do fs:SetJustifyH("CENTER") end
     t.picture = p:CreateTexture(nil, "ARTWORK")
     t.picture:SetSize(PICTURE_W, PICTURE_H)
     t.picture:SetTexture(MEDIA .. def.picture)
@@ -319,9 +322,9 @@ local function build()
   f.foot:SetPoint("BOTTOMRIGHT", 0, BOTTOM)
   f.foot:SetHeight(BUTTON + 2 * PAD)
   en, ja = Text.get("intro.back")
-  f.back = W.button(f.foot, ja .. " / " .. en, nil, 130, function() IntroWindow.back() end)
+  f.back = W.button(f.foot, ja .. " / " .. en, nil, 150, function() IntroWindow.back() end)
   f.back:SetPoint("BOTTOMLEFT", LEFT, PAD)
-  f.next = W.button(f.foot, "", nil, 130, function() IntroWindow.next() end)
+  f.next = W.button(f.foot, "", nil, 150, function() IntroWindow.next() end) -- as wide as Confirm, in its place
   f.next:SetPoint("BOTTOMRIGHT", -LEFT, PAD)
   f.count = f.foot:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
   f.count:SetPoint("BOTTOM", 0, PAD + 5)
@@ -351,7 +354,8 @@ local function layoutPick(f)
   local spare = f.tall - (TOP + body + foot + BOTTOM)
   local function share(part) return math.floor(spare * part) end
   f.ask.ja:ClearAllPoints()
-  f.ask.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(PAD + 4 + share(0.15)))
+  f.headY = PAD + 4 + share(0.15) -- the tour's headings sit at the same height
+  f.ask.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -f.headY)
   f.ask.en:ClearAllPoints()
   f.ask.en:SetPoint("TOPLEFT", f.ask.ja, "BOTTOMLEFT", 0, -4)
   local used = PAD + 4 + share(0.15) + askH
@@ -393,33 +397,34 @@ local function layoutPick(f)
   f.later.ja:SetPoint("BOTTOMLEFT", f.later.en, "TOPLEFT", 0, 3)
 end
 
--- One tour page: the heading, the picture, the points that apply; on the first page the Change button beside the
--- hold-key point, and on the last, while no voice pack has loaded, a rule and the voice section. Each piece hangs
--- from the one above it, so the gaps never depend on a measured height. → the height the page needs
+-- One tour page, laid out like the question page so the window reads as one thing: the heading centred where the
+-- question's heading is, the picture, the points that apply; on the first page the Change button beside the
+-- hold-key point, and on the last, while no voice pack has loaded, a rule and the voice section. The heading, the
+-- picture and the first point sit at the same height on every page, whatever the page holds, so nothing jumps
+-- from one page to the next; only what is under the picture differs.
 local function layoutPage(f, def)
   local t = f.tour[def.id]
-  local prev, used
-  local function chain(region, gap, x, h)
+  local y = f.headY or (PAD + 4)
+  -- puts `region` at the running height, `x` in from the text's left edge, and moves on by `h`
+  local function place(region, x, h)
     region:ClearAllPoints()
-    region:SetPoint("TOPLEFT", prev, "BOTTOMLEFT", x or 0, -gap)
-    used = used + gap + (h or (region.GetObjectType and region:GetObjectType() == "FontString" and height(region) or 0))
-    prev = region
+    region:SetPoint("TOPLEFT", t.frame, "TOPLEFT", LEFT + x, -y)
+    y = y + h
   end
-  local function pair(r, gap, x)
-    chain(r.ja, gap, x)
-    chain(r.en, PAIR)
-  end
-  t.head.ja:ClearAllPoints()
-  t.head.ja:SetPoint("TOPLEFT", t.frame, "TOPLEFT", LEFT, -PAD - 2)
-  prev, used = t.head.ja, PAD + 2 + height(t.head.ja)
-  chain(t.head.en, PAIR)
-  chain(t.picture, HEAD, PICTURE_X, PICTURE_H)
+  -- the heading's two lines take a fixed room, not their measured height, so the picture never moves
+  place(t.head.ja, 0, HEAD_ROOM)
+  t.head.en:ClearAllPoints()
+  t.head.en:SetPoint("TOP", t.head.ja, "BOTTOM", 0, -4)
+  y = y + PICTURE_GAP
+  place(t.picture, PICTURE_X, PICTURE_H)
+  y = y + PICTURE_GAP
   local first = true
   for _, r in ipairs(t.points) do
     if not r.off then
-      -- the first point hangs from the centred picture: back to the text's left edge
-      pair(r, first and BLOCK or POINT, first and -PICTURE_X or 0)
+      if not first then y = y + POINT + 6 end
       first = false
+      place(r.ja, 0, height(r.ja) + PAIR)
+      place(r.en, 0, height(r.en))
     end
   end
   if def.id == "start" then
@@ -427,12 +432,14 @@ local function layoutPage(f, def)
     f.capture.button:SetPoint("TOPRIGHT", f.hold.ja, "TOPLEFT", TEXT_WIDTH, 3)
   end
   if def.id == "more" and f.voiceShown then
-    chain(f.voiceRule, BLOCK + 2, 0, 1)
-    chain(f.voiceTitle, BLOCK)
-    pair(f.voice, HEAD)
-    chain(f.box, LINE + 2, 6, BOX) -- InputBoxTemplate's left cap sits outside the frame
+    y = y + BLOCK + 2
+    place(f.voiceRule, 0, 1)
+    y = y + BLOCK
+    place(f.voiceTitle, 0, height(f.voiceTitle) + HEAD)
+    place(f.voice.ja, 0, height(f.voice.ja) + PAIR)
+    place(f.voice.en, 0, height(f.voice.en) + LINE + 2)
+    place(f.box, 6, BOX) -- InputBoxTemplate's left cap sits outside the frame
   end
-  return used
 end
 
 -- The tour: every page the choice has is laid out, and the window keeps the one height it has on the question,
@@ -487,7 +494,8 @@ function IntroWindow.refill()
     local t = f.tour[def.id]
     local title = (def.id == "start" and shown == "en") and "intro.tour.start.en" or ("intro.tour." .. def.id)
     local titleEn, titleJa = Text.get(title)
-    fill(t.head, titleEn, titleJa, true)
+    W.put(t.head.ja, titleJa, 17)
+    W.put(t.head.en, titleEn, 12)
     for i, key in ipairs(def.points) do
       local r = t.points[i]
       local en, ja = POINTS[key](shown)

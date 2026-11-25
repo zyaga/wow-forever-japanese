@@ -139,8 +139,9 @@ Text.T = {
   ["known.language.ja"] = { en = "Japanese", ja = "日本語" },
   ["known.language.en"] = { en = "English", ja = "英語" },
   ["known.as"] = { en = "Mark as", ja = "状態" },
-  ["known.last"] = { en = "Last import:  marked %s   already so %s   left as set by hand %s   not in the game %s",
-    ja = "前回の取り込み：  変更 %s   変更なし %s   手動の設定を維持 %s   ゲームにない単語 %s" },
+  -- one line in the window: kept short enough never to wrap
+  ["known.last"] = { en = "Last import: %s marked, %s already marked, %s left as set, %s not in the game.",
+    ja = "前回の取り込み：追加 %s・済み %s・手動のまま %s・ゲームにない %s" },
   -- the chat tools (docs/systems/chat-tools.md): the settings section, the copy box, the phrase book and its
   -- topics, the player's own chat words
   ["section.chat"] = { en = "Chat", ja = "チャット" },

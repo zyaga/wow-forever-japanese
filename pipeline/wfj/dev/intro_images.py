@@ -25,8 +25,8 @@ OUT = Path("addon") / "WoWForeverJapanese" / "Media" / "Tour"
 BOXES: dict[str, tuple[str, int, int, int, int]] = {
     "start": ("start.jpg", 0, 120, 590, 295),
     "cards": ("cards.jpg", 0, 24, 585, 292),
-    "status": ("status.jpg", 0, 24, 585, 292),
-    "freeze": ("freeze.jpg", 0, 24, 585, 292),
+    "status": ("status.png", 230, 215, 860, 430),
+    "freeze": ("freeze.png", 20, 0, 358, 179),
     "chat": ("chat.png", 0, 22, 857, 428),
     "more": ("more.png", 0, 20, 590, 295),
 }

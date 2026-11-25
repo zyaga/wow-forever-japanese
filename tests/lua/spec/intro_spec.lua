@@ -750,6 +750,25 @@ describe("UI/IntroWindow, the window", function()
       for _, h in ipairs(heights) do assert.are.equal(heights[1], h) end
     end)
 
+    it("puts the heading, the picture and the first point at the same height on every page", function()
+      local f = confirm("ja")
+      local function at(def)
+        local t = f.tour[def.id]
+        local first
+        for _, r in ipairs(t.points) do
+          if not r.off then first = r break end
+        end
+        return { t.head.ja.point[5], t.picture.point[5], first.ja.point[5] }
+      end
+      local want = at(IW.PAGES[1])
+      for _, def in ipairs(IW.pages()) do
+        f.next.scripts.OnClick(f.next)
+        assert.are.same(want, at(def), def.id) -- whatever the page holds: two points or three, a voice section
+      end
+      -- and the heading sits where the question's does, so it does not move on Confirm either
+      assert.are.equal(f.ask.ja.point[5], want[1])
+    end)
+
     it("opened again, starts on the question", function()
       local f = confirm("ja")
       f.next.scripts.OnClick(f.next)

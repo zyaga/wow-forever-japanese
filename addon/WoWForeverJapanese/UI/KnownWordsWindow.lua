@@ -8,7 +8,7 @@ WFJ.KnownWordsWindow = Window
 
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
 
-local WIDTH, HEIGHT, LEFT = 580, 540, 16
+local WIDTH, HEIGHT, LEFT = 580, 530, 16
 local INNER = WIDTH - 2 * LEFT
 local frame
 local lang -- the language of the words being pasted: nil until the window opens (then the one being studied)
@@ -121,9 +121,17 @@ local function build()
   f.import:SetPoint("TOPLEFT", LEFT, -384)
   f.export = W.button(f, "", nil, 140, function() Window.export() end)
   f.export:SetPoint("TOPLEFT", LEFT + 150, -384)
-  f.last = line(-416, 0.5, 1, 0.5)
-  f.counts = line(-436)
-  f.score = line(-458, 1, 0.82, 0)
+  -- the three lines under the buttons hang one from the next, so a line that wraps pushes the others down
+  -- instead of running into them
+  local function under(above, r, g, b)
+    local fs = line(0, r, g, b)
+    fs:ClearAllPoints()
+    fs:SetPoint("TOPLEFT", above, "BOTTOMLEFT", 0, -8)
+    return fs
+  end
+  f.last = line(-416)
+  f.counts = under(f.last)
+  f.score = under(f.counts, 1, 0.82, 0)
   return f
 end
 

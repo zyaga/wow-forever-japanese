@@ -115,7 +115,7 @@ It shows once per text: where a window lays a line out in several paragraphs, th
 **The whole game's score** weights every word by how often the game uses it (Ignored words left out), with one figure per kind of text: quests, NPC talk, books, windows, items, spells. The known words window and the Words page show it for the language being studied, the whole figure to one decimal place.
 
 ### The known words window
-`UI/KnownWordsWindow` (`WFJKnownWordsWindow`, 580 × 540, from `/wfj known` or **Known words** on the Words page) is a tool window. It shows no game text, and every string of it is in one language at a time, following the direction and the reveal key.
+`UI/KnownWordsWindow` (`WFJKnownWordsWindow`, 580 × 530, from `/wfj known` or **Known words** on the Words page) is a tool window. It shows no game text, and every string of it is in one language at a time, following the direction and the reveal key.
 
 - **Words in:** Japanese or English; it opens on the language being studied (English in English first).
 - **Mark as:** Known or Ignored.
