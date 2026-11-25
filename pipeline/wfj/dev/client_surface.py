@@ -5110,9 +5110,75 @@ def _say_other(read: bool, protected: Mapping[str, int], other: list[tuple[str, 
         print(f"OTHER (and {len(other) - OTHER_SHOWN} more)")
 
 
+def _say_head(info: dict[str, str], text: str) -> str | None:
+    """Prints what the run was before its result: one part or the whole test, the windows this client lacks, the
+    hand read and the interface strings the client does not hand to addons. → the part a run of one part ran.
+    A run of one part (`/wfjtest <part>`) is judged on that part and the errors of its run; the rest of the saved
+    file is an earlier run's."""
+    section = info.get("section") or None
+    windows = section in (None, "live", "closed")
+    if section:
+        print(f"window test: a run of the {section} part only; plain /wfjtest runs them all and is the bar before "
+              "a merge")
+    if info.get("absent") and windows:
+        print(f"windows this client does not have: {info['absent']}")
+    if info.get("hand") and windows:
+        print(f"guild and character windows: {info['hand']}, not in this run")
+    asked, missing = read_missing_strings(text)
+    if asked and not section:
+        # grouped by the first two words of the name: a whole family missing reads as one line
+        groups: dict[str, int] = {}
+        for name in missing:
+            head = "_".join(name.split("_")[:2])
+            groups[head] = groups.get(head, 0) + 1
+        print(f"dictionary strings the client does not hand to addons: {len(missing)} of {asked}")
+        for head, n in sorted(groups.items(), key=lambda kv: (-kv[1], kv[0]))[:40]:
+            print(f"read  not handed to addons\t{head}\t{n}")
+    return section
+
+
+def _say_errors(problems: list[str], listed: Path) -> list[str]:
+    """Prints the run's problems as failures, as errors of windows shown bare and as the game's own errors that
+    `listed` sets aside. → the failures."""
+    # the open sweep shows a window without the client's own opening code, so a window that needs data it was
+    # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
+    noted = [row for row in problems if ": [open] " in row or any(own in row for own in OWN_REFUSALS)]
+    own = game_own_errors([row for row in problems if row not in noted],
+                          read_game_errors(listed.read_text(encoding="utf-8")) if listed.exists() else {})
+    failing = [row for row in problems if row not in noted and row not in own]
+    print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare, {len(own)} the "
+          "game's own)")
+    for row in failing:
+        print(f"ERROR {row}")
+    for row in noted:
+        print(f"noted {row}")
+    for row, why in sorted(own.items()):
+        print(f"game  {row}\n      listed: {why}")
+    return failing
+
+
+def _say_tail(text: str, section: str | None, hover: tuple[Any, Any, Any], latin: tuple[Any, Any, Any],
+              new: list[str]) -> None:
+    """Prints the lists that end a result, those of the parts the run ran: tooltip rows, hovered tooltips, traces,
+    included text, Latin words in windows and the lines left English."""
+    windows = section in (None, "live", "closed")
+    if section in (None, "tooltips"):
+        _say_rows(text)
+    if windows:
+        _say_hover(*hover)
+    if section in (None, "tooltips"):
+        _say_traces(text)
+        _say_included(text)
+    if windows:
+        _say_other(*latin)
+    if section in (None, "tooltips", "live"):
+        _say_left(text, new)
+
+
 def _texts(args: argparse.Namespace) -> int:
     """The `texts` command: the window test's saved result against the baseline. → the exit code."""
-    info, found = read_window_test(args.saved.read_text(encoding="utf-8", errors="replace"))
+    text = args.saved.read_text(encoding="utf-8", errors="replace")
+    info, found = read_window_test(text)
     now = client_build_beside(args.saved)
     if now and info.get("build") and now != info["build"]:
         print(f"window test: the saved run is of build {info['build']} and the client is on {now} now: "
@@ -5123,28 +5189,9 @@ def _texts(args: argparse.Namespace) -> int:
     elif not info.get("finished"):
         print("window test: no finished run in the saved file (run /wfjtest, wait for its done line, /reload)")
         return 2
-    # a run of one part (`/wfjtest <part>`) is judged on that part and the errors of its run; the rest of the
-    # saved file is an earlier run's
-    section = info.get("section") or None
+    section = _say_head(info, text)
     windows = section in (None, "live", "closed")
-    if section:
-        print(f"window test: a run of the {section} part only; plain /wfjtest runs them all and is the bar before "
-              "a merge")
-    if info.get("absent") and windows:
-        print(f"windows this client does not have: {info['absent']}")
-    if info.get("hand") and windows:
-        print(f"guild and character windows: {info['hand']}, not in this run")
-    asked, missing = read_missing_strings(args.saved.read_text(encoding="utf-8", errors="replace"))
-    if asked and not section:
-        # grouped by the first two words of the name: a whole family missing reads as one line
-        groups: dict[str, int] = {}
-        for name in missing:
-            head = "_".join(name.split("_")[:2])
-            groups[head] = groups.get(head, 0) + 1
-        print(f"dictionary strings the client does not hand to addons: {len(missing)} of {asked}")
-        for head, n in sorted(groups.items(), key=lambda kv: (-kv[1], kv[0]))[:40]:
-            print(f"read  not handed to addons\t{head}\t{n}")
-    latin = read_latin(args.saved.read_text(encoding="utf-8", errors="replace"))
+    latin = read_latin(text)
     faults, protected, other = _names_in_windows(latin)
     found |= faults
     baseline = read_window_baseline(args.baseline.read_text(encoding="utf-8")) if args.baseline.exists() else {}
@@ -5152,13 +5199,13 @@ def _texts(args: argparse.Namespace) -> int:
     hover_baseline = {key: why for key, why in baseline.items() if key[1].startswith(f"{HOVER} ")}
     baseline = {key: why for key, why in baseline.items() if key not in hover_baseline}
     new, gone = window_test_report(found, baseline)
-    hover = read_hover(args.saved.read_text(encoding="utf-8", errors="replace"))
+    hover = read_hover(text)
     hover_seen = {(w, f"{HOVER} {_line(text)}") for w, entry in (hover or {}).items()
                   for _, text, _, _ in [*entry["english"], *entry["runs"]]}
     gone += sorted(f"{w}\t{en}" for w, en in hover_baseline
                    if not any((seen_w == w or seen_w.split(" > ")[0] == w) and seen_en == en
                               for seen_w, seen_en in hover_seen))
-    names = read_names(args.saved.read_text(encoding="utf-8", errors="replace"))
+    names = read_names(text)
     listed_names = _name_list() if hover_seen else ({}, frozenset())
     hovered, hover_allowed = hover_faults(hover or {}, hover_baseline, *listed_names,
                                           names_on=bool(names and names["on"]))
@@ -5180,39 +5227,15 @@ def _texts(args: argparse.Namespace) -> int:
     for row in gone:
         print(f"gone  {row}")
     log = args.log or args.saved.with_name("WoWForeverJapanese.lua")
-    problems = read_test_problems(args.saved.read_text(encoding="utf-8", errors="replace"),
+    problems = read_test_problems(text,
                                   log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
-    # the open sweep shows a window without the client's own opening code, so a window that needs data it was
-    # never given errors by itself: listed, never a failure. The live sweep opens windows the client's way.
-    problems += _own_reads(args.saved.read_text(encoding="utf-8", errors="replace"), section)
+    problems += _own_reads(text, section)
     if section in (None, "tooltips"):
-        problems += tooltip_row_problems(args.saved.read_text(encoding="utf-8", errors="replace"))
+        problems += tooltip_row_problems(text)
     if windows:
         problems += hover_problems(hover, hovered)
-    noted = [row for row in problems if ": [open] " in row or any(own in row for own in OWN_REFUSALS)]
-    listed = args.baseline.with_name("ui_test_game_errors.txt")
-    own = game_own_errors([row for row in problems if row not in noted],
-                          read_game_errors(listed.read_text(encoding="utf-8")) if listed.exists() else {})
-    failing = [row for row in problems if row not in noted and row not in own]
-    print(f"errors during the run: {len(failing)} (and {len(noted)} from windows shown bare, {len(own)} the "
-          "game's own)")
-    for row in failing:
-        print(f"ERROR {row}")
-    for row in noted:
-        print(f"noted {row}")
-    for row, why in sorted(own.items()):
-        print(f"game  {row}\n      listed: {why}")
-    if section in (None, "tooltips"):
-        _say_rows(args.saved.read_text(encoding="utf-8", errors="replace"))
-    if windows:
-        _say_hover(hover, hovered, hover_allowed)
-    if section in (None, "tooltips"):
-        _say_traces(args.saved.read_text(encoding="utf-8", errors="replace"))
-        _say_included(args.saved.read_text(encoding="utf-8", errors="replace"))
-    if windows:
-        _say_other(bool(latin), protected, other)
-    if section in (None, "tooltips", "live"):
-        _say_left(args.saved.read_text(encoding="utf-8", errors="replace"), new)
+    failing = _say_errors(problems, args.baseline.with_name("ui_test_game_errors.txt"))
+    _say_tail(text, section, (hover, hovered, hover_allowed), (bool(latin), protected, other), new)
     return 1 if new or failing else 0
 
 
