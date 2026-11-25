@@ -122,7 +122,7 @@
 {"id": 1308733, "field": "name", "en": "Overdrive", "hash": "dc3ce40fc7f1fc85", "src": "db2@1.60.1.71037"}
 {"id": 1308733, "field": "description", "en": "Increases Haste by $s1% for $d.", "hash": "b0ddc558b3e40b67", "src": "db2@1.60.1.71037"}
 {"id": 1308733, "field": "aura", "en": "Haste increased by $s1%.", "hash": "269d2af7c7638c8d", "src": "db2@1.60.1.71037"}
-{"id": 1308764, "field": "name", "en": "Might of Bedrock", "hash": "2956658744eec6f7", "src": "db2@1.60.1.71037"}
+{"id": 1308764, "field": "name", "en": "Pauldrons of Shattered Summits", "hash": "a66ff5a783c756e4", "src": "db2@1.60.1.71091"}
 {"id": 1308764, "field": "description", "en": "Strength increased by $s1 in Mountainous areas.", "hash": "cba6c44e9bb4cd6b", "src": "db2@1.60.1.71037"}
 {"id": 1308764, "field": "aura", "en": "In a Mountainous area, Strength increased by $s1.", "hash": "e2393eeaeead7aae", "src": "db2@1.60.1.71037"}
 {"id": 1308769, "field": "name", "en": "Talusguard", "hash": "0ede0406b0892480", "src": "db2@1.60.1.71037"}
