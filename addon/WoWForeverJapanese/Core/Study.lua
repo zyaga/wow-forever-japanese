@@ -156,5 +156,6 @@ function Study.answer(key, rating, now, today)
   else
     c.due = now + math.max(1, math.floor(s + 0.5)) * Study.DAY
   end
+  if WFJ.State then WFJ.State.fire("studied", key) end -- Core/WordStatus follows a card that grew stable
   return c
 end

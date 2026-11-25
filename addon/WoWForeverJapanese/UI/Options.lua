@@ -43,6 +43,10 @@ Options.PAGES = {
     -- studying it (Core/Study, UI/StudyWindow): the tab, the daily cap, combat, the counts and the card
     { title = "section.study", rows = { "studyExplain", "study.tab", "study.newPerDay", "study.combatHide",
       "study.sound", "studyStatus", "studyOpen" } },
+    -- the word status marks (Core/WordStatus, UI/WordMarks): the underline, the highlight, the score tag, one
+    -- switch per place, the counts and the known words window
+    { title = "section.marks", rows = { "marksExplain", "marks.underline", "marks.highlight", "marks.score",
+      "marks.quest", "marks.book", "marks.voicepanel", "marks.tooltip", "marks.chat", "marksStatus", "marksOpen" } },
     -- the chat tools: word cards on chat, the copy icon, the phrase book, the player's own chat words
     { title = "section.chat", rows = { "chatExplain", "chat.cards", "chat.copy", "chat.phraseButton",
       "chat.phrases", "chatWordsOpen", "phraseBookOpen" } },
@@ -477,6 +481,35 @@ function A.wordsExport(page, x, y)
   local b = W.button(page, en, ja, 160, function() WFJ.WordsWindow.open() end)
   b:SetPoint("TOPLEFT", x, y)
   Options.wordsExport = b
+  return 30
+end
+
+function A.marksExplain(page, x, y, width)
+  local en, ja = Text.get("marks.explain")
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 30)
+end
+
+-- The counts and how much of the game's text is known, for the language being studied.
+function A.marksStatus(page, x, y, width)
+  local counts = W.label(page, "", "", x, y, width)
+  local score = W.label(page, "", "", x, y - 22, width)
+  local function fill()
+    local K = WFJ.KnownWordsWindow
+    W.setPair(counts, K.countsText(K.studied()))
+    W.setPair(score, K.scoreText(K.studied()))
+  end
+  fill()
+  Options.refreshers[#Options.refreshers + 1] = fill
+  Options.marksStatus = counts
+  return 66
+end
+
+-- Opens the known words window (UI/KnownWordsWindow).
+function A.marksOpen(page, x, y)
+  local en, ja = Text.get("marks.open")
+  local b = W.button(page, en, ja, 160, function() WFJ.KnownWordsWindow.open() end)
+  b:SetPoint("TOPLEFT", x, y)
+  Options.marksOpen = b
   return 30
 end
 

@@ -358,6 +358,15 @@ function WFJ.OnLoad()
   end) or WFJ_Study
   -- the player's own chat words: the same guard
   WFJ_ChatWords = step("chatwords", function() return WFJ.ChatWords.load(WFJ_ChatWords) end) or WFJ_ChatWords
+  -- what the player knows of each word: the same guard. A saved word and a studied card move a status up, now and
+  -- whenever the list or a card changes.
+  WFJ_Known = step("wordstatus", function() return WFJ.WordStatus.load(WFJ_Known) end) or WFJ_Known
+  local function followWords()
+    step("wordstatus.sync", function() WFJ.WordStatus.sync(WFJ.Words.entries(), WFJ.Study.card) end)
+  end
+  followWords()
+  WFJ.State.on("words", followWords)
+  WFJ.State.on("studied", followWords)
   -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua
   -- (Environment "All"; CompressionMethod.Zlib, Base64Variant.StandardUrlSafe), used the same way by
   -- Blizzard_CooldownViewer/CooldownViewerSettingsDataStoreSerialization.lua:277–281]. A client without it leaves
@@ -572,6 +581,7 @@ function WFJ.OnLoad()
   -- runs after its own
   step("chatlines", WFJ.ChatLines.init)
   step("chatcards", WFJ.ChatCards.init)
+  step("chatmarks", WFJ.ChatMarks.init) -- the word status marks on chat lines
   step("chatcopy", WFJ.ChatCopy.init)
   step("chatphraselines", WFJ.ChatPhraseLines.init)
   step("phrasebook", function() return WFJ.PhraseBook.init(WFJ_DB) end)

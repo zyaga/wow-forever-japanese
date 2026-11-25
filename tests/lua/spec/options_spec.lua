@@ -5,9 +5,9 @@ local Loader = require("tests.lua.spec.loader")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua",
   "Core/Names.lua", "Data/Meta.lua", "Core/State.lua",
   "Core/Settings.lua", "Core/ErrorVoices.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua",
-  "Core/Fsrs.lua", "Core/Study.lua",
+  "Core/Fsrs.lua", "Core/Study.lua", "Core/WordFrequency.lua", "Core/WordStatus.lua", "Core/WordScore.lua",
   "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua",
-  "UI/Options.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua" }
+  "UI/Options.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua", "UI/KnownWordsWindow.lua" }
 local VOICE = { "Core/Voice.lua" } -- the voice pack registry, loaded by the tests that register a pack
 
 -- Every widget the stub created, per page frame (FontStrings and textures live in `children`; frames in Stub.frames).

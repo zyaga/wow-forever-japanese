@@ -12,11 +12,12 @@ local TAIL = {
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
   "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua", "Core/Intro.lua",
-  "Core/Words.lua", "Core/ChatWords.lua", "Core/ChatPhrases.lua", "Core/Fsrs.lua", "Core/Study.lua",
+  "Core/Words.lua", "Core/WordFrequency.lua", "Core/WordStatus.lua", "Core/WordScore.lua", "Core/WordMarks.lua",
+  "Core/WordImport.lua", "Core/ChatWords.lua", "Core/ChatPhrases.lua", "Core/Fsrs.lua", "Core/Study.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/Perf.lua", -- the write paths' timing
   "Core/BugReport.lua",
-  "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/Render.lua",
+  "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/WordMarks.lua", "UI/Render.lua",
   "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua",
   "UI/StudyVoice.lua",
   "UI/VoicePanel.lua", "UI/VoiceQuestLog.lua",
@@ -81,6 +82,7 @@ local TAIL = {
   -- the chat tools
   "UI/ChatLines.lua", "UI/ChatCards.lua", "UI/ChatCopy.lua", "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua",
   "UI/ChatWordsWindow.lua",
+  "UI/ChatMarks.lua", "UI/KnownWordsWindow.lua", -- the word status marks on chat, the known words window
   "UI/CollectorReminder.lua",
   "UI/IntroWindow.lua",
   "UI/ReportWindow.lua",
