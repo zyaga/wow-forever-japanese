@@ -30,6 +30,7 @@ function Env.line(text, typeId)
   line.over, line.alpha, line.index = false, 1, nil
   function line.IsVisible() return true end
   function line:GetAlpha() return self.alpha end
+  function line.GetWidth() return 400 end
   function line:IsMouseOver() return self.over end
   function line:FindCharacterIndexAtCoordinate() return self.index, self.index ~= nil end
   -- the client exits on a span that splits a character: here that is an error a spec would see

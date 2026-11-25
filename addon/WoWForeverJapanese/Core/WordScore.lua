@@ -69,5 +69,6 @@ end
 
 function Score.percent(known, counted)
   if not counted or counted <= 0 then return nil end
-  return math.floor(100 * known / counted + 0.5)
+  -- rounded down: a text with a word still unknown never reads as 100
+  return math.floor(100 * known / counted)
 end

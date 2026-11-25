@@ -15,7 +15,7 @@
 -- With no status set by the player a word is unknown, unless it is a grammar word (ignored) or a する verb whose
 -- noun is known (known). A status the player set wins.
 -- Saved (WFJ_Known, account-wide): { schema = 1, ja = { [key] = "k" | "l" | "i" | "u" }, en = { … },
--- lastImport = { ja = { … }, en = { … } } }. "u" is kept only where the word would otherwise not be unknown.
+-- lastImport = { ja = { … }, en = { … } } }. "u" is an unknown the player set, as against a word never touched.
 local _, WFJ = ...
 local Status = {}
 WFJ.WordStatus = Status
@@ -148,9 +148,8 @@ end
 
 function Status.set(lang, key, status)
   if frozen or not CODE[status] or type(key) ~= "string" or not saved[lang] then return false end
-  saved[lang][key] = nil
-  -- an unknown word that would be unknown anyway keeps no entry
-  if not (status == "unknown" and Status.get(lang, key) == "unknown") then saved[lang][key] = CODE[status] end
+  -- an unknown the player set is kept too: it is their word on it, and a later save or study card leaves it be
+  saved[lang][key] = CODE[status]
   changed()
   return true
 end
@@ -225,8 +224,8 @@ local function entryKey(e)
 end
 
 -- `entries`: the saved words (Core/Words); `cardOf(entryKey)`: a word's study card, or nil. A saved word with no
--- status becomes learning; a word whose card is stable for KNOWN_AT days becomes known unless it is ignored.
--- Nothing is ever moved down.
+-- status becomes learning; a word whose card is stable for KNOWN_AT days becomes known unless the player set it
+-- ignored or unknown. Nothing is ever moved down.
 function Status.sync(entries, cardOf)
   if frozen then return end
   local moved = false
@@ -235,12 +234,14 @@ function Status.sync(entries, cardOf)
     if lang then
       local now = Status.get(lang, key)
       local card = cardOf and cardOf(e.key)
+      local own = saved[lang][key]
       if card and type(card.s) == "number" and card.s >= Status.KNOWN_AT then
-        if now ~= "known" and now ~= "ignored" then
+        -- never over a word the player set ignored or unknown by hand
+        if now ~= "known" and own ~= "i" and own ~= "u" then
           saved[lang][key] = CODE.known
           moved = true
         end
-      elseif now == "unknown" and saved[lang][key] == nil then
+      elseif now == "unknown" and own == nil then
         saved[lang][key] = CODE.learning
         moved = true
       end

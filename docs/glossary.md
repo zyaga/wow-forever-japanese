@@ -759,7 +759,7 @@ _Avoid_: top 300 (it skips words already known), core vocabulary, frequency band
 → [Word status → The marks](systems/word-status.md#the-marks)
 
 **Comprehension score**:
-How much of a text the player knows: known words over counted words, a whole percent. An Ignored word is in neither, a Learning word counts as not known, names and words with no card are not counted. A quest is scored as one text (description, objectives, progress, turn-in). The whole game's score weights every word by how often the game uses it, with one figure per kind of text. Shown as the [[Score tag]] and in the [[Known words window]]. In Japanese: 理解度.
+How much of a text the player knows: known words over counted words, a whole percent rounded down. An Ignored word is in neither, a Learning word counts as not known, names and words with no card are not counted. A quest is scored as one text (description, objectives, progress, turn-in). The whole game's score weights every word by how often the game uses it, with one figure per kind of text. Shown as the [[Score tag]] and in the [[Known words window]]. In Japanese: 理解度.
 _Avoid_: coverage (that is how much of the game ships in Japanese), progress, accuracy
 → [Word status → The comprehension score](systems/word-status.md#the-comprehension-score)
 

@@ -330,6 +330,86 @@ describe("Word status marks on a cover", function()
     assert.is_true(c.scoreFs == nil or c.scoreFs.shown == false)
   end)
 
+  it("marks prose only: never a window's own label, a name widget or a quest title on the same surface", function()
+    WFJ.Data.add("reading", { ["ui:REWARDS"] = { text = "報酬=ほうしゅう" }, ["quest:456x"] = {} })
+    local function shownOn(kind, id, key, text)
+      local label = spanFontString(text)
+      label.parentFrame = CreateFrame("Frame")
+      R.show("questframe.detail", key, label, text, "quests", kind, id)
+      settle()
+      local c = coverOf(label)
+      local n = 0
+      for _, t in ipairs(c and c.markTex or {}) do if t.shown ~= false then n = n + 1 end end
+      return c, n
+    end
+    local c = coverOf(fs)
+    assert.are.equal("quest", c.marksPlace)
+    -- the cover of a line of another kind on the same surface has no place, so no mark, click or status line
+    for _, kind in ipairs({ "ui", "name", "quest.title" }) do
+      local cover2 = { surface = "questframe.detail" }
+      Marks.laid(cover2, { surface = "questframe.detail", key = "x", meta = { kind = kind, id = 1 } }, false)
+      assert.is_nil(cover2.marksPlace, kind)
+      assert.is_nil(Marks.active(cover2), kind)
+    end
+    assert.is_function(shownOn) -- (the label path itself is laid by UI/Labels; its kind is what decides)
+  end)
+
+  it("has a place for books, the voice panel and the frozen tooltip, each with its own switch", function()
+    local places = { itemtext = "marks.book", ["dialogueui.book"] = "marks.book", voicepanel = "marks.voicepanel",
+      ["tooltip.frozen"] = "marks.tooltip", gossip = "marks.quest", ["dialogueui.gossip"] = "marks.quest" }
+    for surface, id in pairs(places) do
+      local c = { surface = surface }
+      Marks.laid(c, { surface = surface, key = "text", meta = { kind = "gossip", id = "g" } }, false)
+      assert.is_truthy(Marks.active(c), surface)
+      S.set(id, false)
+      assert.is_nil(Marks.active(c), surface)
+      S.set(id, true)
+    end
+    -- a surface that is no reading place has none
+    local c = { surface = "tracker" }
+    Marks.laid(c, { surface = "tracker", key = "x", meta = { kind = "gossip", id = "g" } }, false)
+    assert.is_nil(c.marksPlace)
+  end)
+
+  it("draws nothing with translation off", function()
+    WFJ.State.setEnabled(false)
+    settle()
+    assert.are.equal(0, #shown(RED) + #shown(GREEN))
+    assert.is_nil(tag())
+    WFJ.State.setEnabled(true)
+    settle()
+    assert.are.equal(4, #shown(RED))
+  end)
+
+  it("tags the text itself and its first paragraph only, never the voice panel's copy of it", function()
+    cover.marksPlace, cover.recKey = "voicepanel", "text"
+    S.set("marks.voicepanel", true)
+    Marks.redraw(); settle()
+    assert.is_nil(tag())
+    cover.marksPlace, cover.recKey = "quest", "description.2"
+    Marks.redraw(); settle()
+    assert.is_nil(tag())
+    cover.recKey = "description.1"
+    Marks.redraw(); settle()
+    assert.are.equal("理解度 0%", tag())
+  end)
+
+  it("offers no status click while the reveal key is Shift, and still shows the status", function()
+    S.set("modifier", "shift")
+    local line = Marks.statusLine(cover, { word = "生き物", reading = "いきもの", gloss = 7 })
+    assert.is_truthy(line:find("#1", 1, true))
+    assert.is_nil(line:find("Shift", 1, true))
+    assert.is_false(Marks.click(cover, { word = "生き物", reading = "いきもの", gloss = 7 }, "LeftButton"))
+  end)
+
+  it("still ignores a word with Shift+right-click while Shift+click is the save click", function()
+    S.set("words.saveClick", "shift")
+    cover.scripts.OnEnter(cover)
+    click("生き物", "RightButton")
+    assert.are.equal("ignored", Status.get("ja", "生き物\tいきもの"))
+    assert.are.equal(0, WFJ.Words.count())
+  end)
+
   it("marks the client's English words in English first", function()
     S.set("direction", "en")
     settle()

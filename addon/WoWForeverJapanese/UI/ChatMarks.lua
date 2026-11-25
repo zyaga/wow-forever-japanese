@@ -25,18 +25,27 @@ end
 -- Every word of a chat line: → { { first, last, word, reading, card }, … } in the line's own bytes.
 function ChatMarks.words(text, english)
   local Words = WFJ.ChatWords
-  local find = english and Words.englishAt or Words.japaneseAt
   local out = {}
   for _, run in ipairs(Words.runs(text)) do
     local i = run.first
     while i <= run.last do
-      local w = find(text, i)
-      if w and w.last >= i then
-        out[#out + 1] = w
-        i = w.last + 1
+      local b = text:byte(i)
+      if english then
+        local w = Words.englishAt(text, i)
+        if w and w.last >= i then
+          out[#out + 1] = w
+          i = w.last + 1
+        else
+          i = i + ((b >= 0xF0 and 4) or (b >= 0xE0 and 3) or (b >= 0xC0 and 2) or 1)
+        end
+      elseif b >= 0xC0 then
+        -- a stretch of Japanese: every byte up to the next ASCII one, cut into words in one pass
+        local last = i
+        while last < run.last and text:byte(last + 1) >= 0x80 do last = last + 1 end
+        for _, w in ipairs(Words.japaneseIn(text, i, last)) do out[#out + 1] = w end
+        i = last + 1
       else
-        local c = text:byte(i)
-        i = i + ((c >= 0xF0 and 4) or (c >= 0xE0 and 3) or (c >= 0xC0 and 2) or 1)
+        i = i + 1
       end
     end
   end
@@ -58,7 +67,7 @@ local function draw(line, text)
   end
   overlay:ClearAllPoints()
   overlay:SetAllPoints(line)
-  overlay.text = text
+  overlay.text, overlay.width = text, line:GetWidth()
   local english = WFJ.State.direction == "en"
   local words, list = {}, {}
   for _, w in ipairs(ChatMarks.words(text, english)) do
@@ -99,10 +108,12 @@ function ChatMarks.look()
         if type(text) == "string" and text ~= "" and not WFJ.ChatLines.secret(text) then
           live[line] = true
           local overlay = overlays[line]
-          if redraw or not overlay or overlay.text ~= text then
+          -- drawn again for other text, and for the same text laid out at another width
+          if redraw or not overlay or overlay.text ~= text or overlay.width ~= line:GetWidth() then
             draw(line, text)
             drawn = drawn + 1
           end
+          overlays[line]:SetAlpha(line:GetAlpha()) -- the marks fade with their line
         end
       end
     end
@@ -134,6 +145,7 @@ function ChatMarks.init()
   end)
   WFJ.State.on("wordMarks", follow)
   WFJ.State.on("enabled", follow)
+  WFJ.State.on("language", follow) -- the other language's words take the marks: every line is drawn again
   follow()
   return true
 end

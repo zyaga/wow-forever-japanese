@@ -96,6 +96,17 @@ describe("word status marks on chat", function()
     assert.equals(2, marks()) -- need: an underline and the highlight
   end)
 
+  it("draws again for the other language's words when the direction changes, and fades with its line", function()
+    ChatMarks.look()
+    assert.equals(4, marks())
+    S.set("direction", "en")
+    assert.equals(1, ChatMarks.look())
+    assert.equals(2, marks())
+    line.alpha = 0.5
+    ChatMarks.look()
+    assert.equals(0.5, overlay().alpha)
+  end)
+
   it("takes a line's marks down when the line shows other text", function()
     ChatMarks.look()
     line:SetText("|Hplayer:Taro:12:SAY|h[Taro]|h says: ok")

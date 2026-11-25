@@ -71,6 +71,11 @@ end
 
 -- Marks the box's words and leaves the pieces it could not find in the box. → the import's result
 function Window.import()
+  -- statuses saved by a newer version cannot be changed here: the pasted words stay in the box, with why
+  if WFJ.WordStatus.readonly() then
+    W.put(frame.last, W.pick(Text.get("marks.refused")), 12)
+    return nil
+  end
   local result = WFJ.WordImport.apply(lang, frame.text.getText(), as)
   box = #result.missing > 0 and "missing" or "paste"
   frame.text.editor:SetText(table.concat(result.missing, "\n"))

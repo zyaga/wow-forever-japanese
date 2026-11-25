@@ -14,7 +14,8 @@ local IntroWindow = {}
 WFJ.IntroWindow = IntroWindow
 
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
-local WIDTH, LEFT = 520, 26
+local WIDTH, LEFT = 640, 26
+local HEIGHT = 620 -- the window is this tall on every page, so nothing moves under the mouse from page to page
 local TEXT_WIDTH = WIDTH - 2 * LEFT
 -- the inset panel moved up under the title bar and down to the bottom edge, as in UI/CollectorReminder
 local INSET_TOP, INSET_BOTTOM = 24, 4
@@ -23,7 +24,9 @@ local LINE, BLOCK = 7, 14 -- between lines in a block; above and below the rule 
 local HEAD = 10 -- under a block's opening line
 local KEY = "|cffffd200%s|r" -- the reveal key's name, in the gold the client uses for key names
 local BOX, BUTTON = 20, 22
-local PICTURE_H = math.floor(TEXT_WIDTH / 2) -- a tour picture is twice as wide as it is tall
+-- a tour picture is drawn at its file's own size, centred, so it is as sharp as the screenshot it was cut from
+local PICTURE_W, PICTURE_H = 512, 256
+local PICTURE_X = math.floor((TEXT_WIDTH - PICTURE_W) / 2)
 local MEDIA = "Interface\\AddOns\\WoWForeverJapanese\\Media\\Tour\\"
 
 IntroWindow.frame = nil
@@ -285,7 +288,7 @@ local function build()
     local t = { frame = p, head = line(p), points = {} }
     t.head.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
     t.picture = p:CreateTexture(nil, "ARTWORK")
-    t.picture:SetSize(TEXT_WIDTH, PICTURE_H)
+    t.picture:SetSize(PICTURE_W, PICTURE_H)
     t.picture:SetTexture(MEDIA .. def.picture)
     for i, key in ipairs(def.points) do
       -- the hold-key point leaves room for the settings page's own Change button at its right
@@ -335,49 +338,59 @@ end
 -- The first page: the question centred, the three cards side by side, the note under them.
 local function layoutPick(f)
   local a = f.pickPage
+  local askH = height(f.ask.ja) + 4 + height(f.ask.en)
+  local namesH = height(f.namesAsk.ja) + PAIR + height(f.namesAsk.en)
+  -- what the page needs from its top to under the note on names, then the room the Confirm row takes at the foot
+  local body = PAD + 4 + askH + 18 + CARD_H + 16 + ABOUT + 10 + namesH + 8 + NAME_H + 8 + NAMES_NOTE
+  local foot = 16 + BUTTON + PAD
+  -- never shorter than the question needs; the tour takes the same height
+  f.tall = math.max(HEIGHT, TOP + body + foot + BOTTOM)
+  f:SetHeight(f.tall)
+  -- The window is as tall as the tour's pages need, which is more than the question does: the room left over is
+  -- shared out between the page's blocks, so the page fills the window instead of leaving it empty at the bottom.
+  local spare = f.tall - (TOP + body + foot + BOTTOM)
+  local function share(part) return math.floor(spare * part) end
   f.ask.ja:ClearAllPoints()
-  f.ask.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -PAD - 4)
+  f.ask.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(PAD + 4 + share(0.15)))
   f.ask.en:ClearAllPoints()
   f.ask.en:SetPoint("TOPLEFT", f.ask.ja, "BOTTOMLEFT", 0, -4)
-  local used = PAD + 4 + height(f.ask.ja) + 4 + height(f.ask.en)
+  local used = PAD + 4 + share(0.15) + askH
   for i, purpose in ipairs(PURPOSES) do
     local c = f.cards[purpose]
     c:ClearAllPoints()
-    c:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT + (i - 1) * (CARD_W + CARD_GAP), -(used + 18))
+    c:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT + (i - 1) * (CARD_W + CARD_GAP), -(used + 18 + share(0.15)))
   end
-  used = used + 18 + CARD_H
-  -- what the selected card does, in a fixed space so the window keeps its size from one card to the next
+  used = used + 18 + share(0.15) + CARD_H
+  -- what the selected card does, in a fixed space so nothing moves from one card to the next
   f.about.ja:ClearAllPoints()
-  f.about.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 16))
+  f.about.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 16 + share(0.1)))
   f.about.en:ClearAllPoints()
   f.about.en:SetPoint("TOPLEFT", f.about.ja, "TOPLEFT", math.floor(TEXT_WIDTH / 2) + 6, 0)
-  used = used + 16 + ABOUT
+  used = used + 16 + share(0.1) + ABOUT
   -- the names question on one line pair, then its two answers side by side
   f.namesAsk.ja:ClearAllPoints()
-  f.namesAsk.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 10))
+  f.namesAsk.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 10 + share(0.25)))
   f.namesAsk.en:ClearAllPoints()
   f.namesAsk.en:SetPoint("TOPLEFT", f.namesAsk.ja, "BOTTOMLEFT", 0, -PAIR)
-  used = used + 10 + height(f.namesAsk.ja) + PAIR + height(f.namesAsk.en)
+  used = used + 10 + share(0.25) + namesH
   for i, japanese in ipairs({ false, true }) do
     local c = f.nameCards[japanese]
     c:ClearAllPoints()
     c:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT + (i - 1) * (NAME_W + NAME_GAP), -(used + 8))
   end
   used = used + 8 + NAME_H
-  -- the note has a fixed space, so the window keeps its size from one answer to the other
+  -- the note has a fixed space, so nothing moves from one answer to the other
   f.namesNote.ja:ClearAllPoints()
   f.namesNote.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 8))
   f.namesNote.en:ClearAllPoints()
   f.namesNote.en:SetPoint("TOPLEFT", f.namesNote.ja, "BOTTOMLEFT", 0, -3)
-  used = used + 8 + NAMES_NOTE
+  -- Confirm sits at the window's foot, where the tour's Next button is, with the two lines beside it
   f.confirm:ClearAllPoints()
-  f.confirm:SetPoint("TOPRIGHT", a, "TOPLEFT", LEFT + TEXT_WIDTH, -(used + 16))
-  f.later.ja:ClearAllPoints()
-  f.later.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 13)) -- the two lines centred on the button
+  f.confirm:SetPoint("BOTTOMRIGHT", a, "BOTTOMRIGHT", -LEFT, PAD)
   f.later.en:ClearAllPoints()
-  f.later.en:SetPoint("TOPLEFT", f.later.ja, "BOTTOMLEFT", 0, -3)
-  used = used + 16 + BUTTON + 4
-  f:SetHeight(TOP + used + PAD + 4 + BOTTOM)
+  f.later.en:SetPoint("BOTTOMLEFT", a, "BOTTOMLEFT", LEFT, PAD + 1)
+  f.later.ja:ClearAllPoints()
+  f.later.ja:SetPoint("BOTTOMLEFT", f.later.en, "TOPLEFT", 0, 3)
 end
 
 -- One tour page: the heading, the picture, the points that apply; on the first page the Change button beside the
@@ -392,19 +405,20 @@ local function layoutPage(f, def)
     used = used + gap + (h or (region.GetObjectType and region:GetObjectType() == "FontString" and height(region) or 0))
     prev = region
   end
-  local function pair(r, gap)
-    chain(r.ja, gap)
+  local function pair(r, gap, x)
+    chain(r.ja, gap, x)
     chain(r.en, PAIR)
   end
   t.head.ja:ClearAllPoints()
   t.head.ja:SetPoint("TOPLEFT", t.frame, "TOPLEFT", LEFT, -PAD - 2)
   prev, used = t.head.ja, PAD + 2 + height(t.head.ja)
   chain(t.head.en, PAIR)
-  chain(t.picture, HEAD, 0, PICTURE_H)
+  chain(t.picture, HEAD, PICTURE_X, PICTURE_H)
   local first = true
   for _, r in ipairs(t.points) do
     if not r.off then
-      pair(r, first and BLOCK or POINT)
+      -- the first point hangs from the centred picture: back to the text's left edge
+      pair(r, first and BLOCK or POINT, first and -PICTURE_X or 0)
       first = false
     end
   end
@@ -421,12 +435,12 @@ local function layoutPage(f, def)
   return used
 end
 
--- The tour: every page the choice has is laid out, and the window takes the tallest one's height, so it does not
--- change size under the mouse from one page to the next.
+-- The tour: every page the choice has is laid out, and the window keeps the one height it has on the question,
+-- so it does not change size under the mouse from one page to the next. A hidden page's lines do not always
+-- report their height, so the height never comes from what the pages measure.
 local function layoutTour(f)
-  local tall = 0
-  for _, def in ipairs(IntroWindow.pages()) do tall = math.max(tall, layoutPage(f, def)) end
-  f:SetHeight(TOP + tall + BLOCK + 6 + BUTTON + PAD + BOTTOM)
+  for _, def in ipairs(IntroWindow.pages()) do layoutPage(f, def) end
+  f:SetHeight(f.tall or HEIGHT)
 end
 
 local function layout(f)

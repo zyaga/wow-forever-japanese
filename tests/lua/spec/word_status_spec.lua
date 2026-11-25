@@ -72,10 +72,12 @@ describe("Core/WordStatus", function()
     assert.are.equal("unknown", S.get("ja", "増加する\tぞうかする"))
     assert.are.equal("unknown", S.get("ja", "だろう\tだろう"))
     assert.are.equal("u", kept.ja["だろう\tだろう"])
-    -- an unknown word that would be unknown anyway keeps no entry
+    -- an unknown the player set is kept as theirs, as against a word nobody touched
     S.set("ja", "敵\tてき", "known")
     S.set("ja", "敵\tてき", "unknown")
-    assert.is_nil(kept.ja["敵\tてき"])
+    assert.are.equal("u", kept.ja["敵\tてき"])
+    assert.are.equal("unknown", S.own("ja", "敵\tてき"))
+    assert.is_nil(S.own("ja", "谷\tたに"))
   end)
 
   it("steps unknown, learning, known, unknown, and takes an ignored word back to unknown", function()
@@ -155,6 +157,23 @@ describe("Core/WordStatus", function()
     assert.are.equal("ignored", S.get("ja", "敵\tてき"))
     S.set("ja", "倒す\tたおす", "known")
     S.sync(entries, function() return nil end)
+    assert.are.equal("known", S.get("ja", "倒す\tたおす"))
+  end)
+
+  it("leaves a saved word the player set back to unknown as it is, whatever its study card says", function()
+    local S = load()
+    local entries = { { key = "a", word = "倒して", reading = "たおして", lemma = "倒す", lemmaReading = "たおす" } }
+    S.sync(entries, function() return nil end)
+    assert.are.equal("learning", S.get("ja", "倒す\tたおす"))
+    S.step("ja", "倒す\tたおす") -- known
+    S.step("ja", "倒す\tたおす") -- back to unknown, by the player's hand
+    S.sync(entries, function() return nil end)
+    assert.are.equal("unknown", S.get("ja", "倒す\tたおす"))
+    S.sync(entries, function() return { s = 30 } end)
+    assert.are.equal("unknown", S.get("ja", "倒す\tたおす"))
+    -- a learning word is what a stable card moves up
+    S.set("ja", "倒す\tたおす", "learning")
+    S.sync(entries, function() return { s = 30 } end)
     assert.are.equal("known", S.get("ja", "倒す\tたおす"))
   end)
 

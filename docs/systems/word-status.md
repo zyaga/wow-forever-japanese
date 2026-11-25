@@ -50,7 +50,7 @@ With no status set by the player a word is Unknown, with two exceptions:
 - a word on the grammar list (`Data/Freq/Grammar.lua`) is Ignored;
 - a する verb whose noun is Known is Known (準備する is Known once 準備 is).
 
-A status the player set always wins, an explicit Unknown included: an Unknown set on a grammar word or on a する verb of a Known noun is kept, and an Unknown on any other word keeps no entry, since it is Unknown anyway.
+A status the player set always wins, an explicit Unknown included. An Unknown the player set is kept as theirs (`"u"`), as against a word nobody touched: a grammar word or a する verb of a Known noun set to Unknown stays Unknown, and so does a saved word, whatever its study card says later.
 
 ### Changing a status
 While the mouse is on a word on a marked place (its place's setting on):
@@ -69,7 +69,7 @@ A click counts when it is pressed and released on the same word, read by polling
 ### The marks
 The marks are textures on the word-card cover that `UI/Readings` already lays over the text, so they scroll and clip with it, and they are never made in combat on their own (a cover is only made out of combat). `UI/WordMarks` draws them 0.05 seconds after a cover is laid, once for any number of asks; again with the rectangles just measured when the mouse enters the cover; again when the cover is shown or changes size; and on every marked cover when a status changes, an import runs, a setting moves or word cards are switched (State events `wordStatus` and `wordMarks`). A cover that is detached loses its marks at once.
 
-**The underline.** Red (Unknown) or blue (Learning), inset one unit at each end of the word's box. `WordMarks.gap` measures the smallest space between the bottom of one text line and the top of the line below, from the words' own boxes (a single line counts as room enough). The line is two screen pixels thick when that gap is at least 4 units and one pixel otherwise, set on the pixel grid with the client's `PixelUtil` so it draws the same thickness everywhere. It sits in the middle of the gap when the gap is at least the line's thickness, and straight under the word's box when the lines leave no gap, so it never covers the line below. `/wfj debug` lists each marked text with the gap it measured.
+**The underline.** Red (Unknown) or blue (Learning), inset one unit at each end of the word's box. `WordMarks.gap` measures the smallest space between the bottom of one text line and the top of the line below, from the words' own boxes (a single line counts as room enough). The line is at least two screen pixels thick when that gap is at least 4 units and at least one pixel otherwise, set on the pixel grid with the client's `PixelUtil` so it draws the same thickness everywhere. It sits in the middle of the gap when the gap is at least the line's thickness, and straight under the word's box when the lines leave no gap, so it never covers the line below. `/wfj debug` lists each marked text with the gap it measured.
 
 **The highlight.** A soft green box behind an Unknown word, never behind a Learning, Known or Ignored one. The setting `marks.highlight` picks which:
 
@@ -91,7 +91,7 @@ Each place has its own switch. With a place off, no mark, no score tag, no statu
 
 | setting | default | surfaces |
 |---|---|---|
-| `marks.quest` | on | the quest window's offer, progress, turn-in and greeting text, the quest log's details and its popup, NPC talk; Dialogue UI's quest, greeting, talk and title text |
+| `marks.quest` | on | the quest window's offer, progress, turn-in and greeting text, the quest log's details and its popup, NPC talk; Dialogue UI's quest, greeting and talk text. A window's own headings and labels, a widget that holds only a name, and a quest's title (a name) take word cards and never a mark |
 | `marks.book` | on | book and letter pages, and Dialogue UI's book |
 | `marks.voicepanel` | on | the voice panel's text |
 | `marks.tooltip` | on | the frozen tooltip |
@@ -102,7 +102,7 @@ Three more settings shape the marks everywhere: `marks.underline` (on), `marks.h
 **In the welcome tour.** After Study Japanese or Study English, the welcome window's tour has a word status page: the Shift+click, the underline, the green highlight and the score tag, and `/wfj known` ([Settings → Welcome window](settings.md#welcome-window)). Just play turns word cards off, so it shows no marks and its tour has no such page.
 
 ### The comprehension score
-A text's score is known words over counted words, as a whole percent. An Ignored word is in neither; a Learning word counts as not known; a name, a class or race word and a word with no card are not words here.
+A text's score is known words over counted words, as a whole percent rounded down, so a text with a word still unknown never reads as 100. An Ignored word is in neither; a Learning word counts as not known; a name, a class or race word and a word with no card are not words here.
 
 **The score tag** sits over the top right corner of the text: `Known 84%` (`理解度 84%`), red under 60%, yellow from 60%, green from 80%, purple from 95%. It shows on:
 
@@ -133,7 +133,7 @@ It shows once per text: where a window lays a line out in several paragraphs, th
 3. that, after a polite or past ending is removed (ました, ません, ない, たい, て, た and the rest, longest first);
 4. when the piece is all kana, the reading of exactly one dictionary form. A kana piece that is the reading of several is not matched.
 
-An English piece matches its key in the English frequency list. A line that is `word<TAB>reading` of one game word (an exported line, a two-column list) is that word exactly, and a third column naming a status (`known`, `learning`, `ignored`, `unknown`) sets that status; an English line `word<TAB>status` does the same.
+An English piece matches its key in the English frequency list. A line that is `word<TAB>reading` of one game word (a two-column list) is that word exactly. A line whose last column names a status (`known`, `learning`, `ignored`, `unknown`) is an exported line: it sets that word to that status as it is, whatever the word (a chat word has no row of the frequency list) and whatever status the word had. Any other word that already has a status keeps it.
 
 A word the player already set by hand to something else keeps its status and is counted as left. After the import the box holds the pieces the game's text does not use, under "Not found in the game's text". An import announces its changes once, at the end.
 
@@ -143,7 +143,7 @@ A word the player already set by hand to something else keeps its status and is 
 `Status.sync` runs at load and whenever the word list or a study card changes (State events `words` and `studied`):
 
 - a saved word with no status becomes Learning;
-- a word whose study card is stable for 21 days or more (`WordStatus.KNOWN_AT`, the card's stability read, never written) becomes Known, unless it is Ignored.
+- a word whose study card is stable for 21 days or more (`WordStatus.KNOWN_AT`, the card's stability read, never written) becomes Known, unless the player set it Ignored or Unknown.
 
 Nothing ever moves a status down. The saved entry's key is its dictionary form and reading (its `lemma` and `lemmaReading`), or the word and its reading; an English entry its English key. See [Word list](word-list.md) and [Study](study.md).
 
@@ -167,7 +167,7 @@ WFJ_Known = {
 }
 ```
 
-- `"u"` is kept only where the word would otherwise not be Unknown (a grammar word, a する verb of a Known noun).
+- `"u"` is an Unknown the player set, as against a word with no entry, which nobody touched.
 - At load an entry whose key is not a string or whose code is not one of the four is dropped, and so is any field but `schema`, `ja`, `en` and `lastImport`.
 - **A table saved by a newer version of the addon** (a higher `schema`) is kept exactly as it is and never written: every word reads as its default, a status click prints that the statuses cannot be changed here, and an import and the automatic moves do nothing.
 

@@ -7,8 +7,8 @@
 -- and HTML tags are dropped, and so is everything not of the language. A Japanese piece is matched as a dictionary
 -- form (in every reading the game has for it), then as a form the game's text uses, then with a polite or past
 -- ending removed, then, when it is all kana, as the reading of exactly one dictionary form. A line that is
--- "word<TAB>reading" of one game word (an exported line, a two-column list) is that word exactly, and a third
--- column naming a status sets that status. A word the player set by hand keeps its status.
+-- "word<TAB>reading" of one game word (a two-column list) is that word exactly, and a line whose last column names
+-- a status (an exported line) sets that word to that status. Otherwise a word that already has a status keeps it.
 local _, WFJ = ...
 local Import = {}
 WFJ.WordImport = Import
@@ -67,18 +67,19 @@ local function pieces(lang, line)
   return s:gmatch("%S+")
 end
 
--- A line that names one word exactly: "word<TAB>reading[<TAB>status]" (English: "word[<TAB>status]" with a status).
--- → key, status | nil
+-- A line that names one word exactly: "word<TAB>reading[<TAB>status]" (English: "word<TAB>status"). A line that
+-- carries a status is an exported one and is taken as it is, whatever the word (a chat word has no row of the
+-- frequency list); without a status the word must be one of the game's. → key, status | nil
 local function exact(lang, line)
   local a, b, c = line:match("^%s*([^\t]+)\t([^\t]*)\t?([^\t]*)")
   if not a then return nil end
   if lang == "en" then
-    local key = a:lower()
-    if STATUSES[b] and WFJ.WordFrequency.rank("en", key) then return key, b end
+    if STATUSES[b] then return a:lower(), b end
     return nil
   end
   local key = a .. "\t" .. b
-  if WFJ.WordFrequency.rank("ja", key) then return key, STATUSES[c] and c or nil end
+  if STATUSES[c] and b ~= "" then return key, c end
+  if WFJ.WordFrequency.rank("ja", key) then return key, nil end
   return nil
 end
 
@@ -87,13 +88,14 @@ function Import.apply(lang, text, status)
   local out = { marked = 0, already = 0, kept = 0, missing = {} }
   if type(text) ~= "string" or (status ~= "known" and status ~= "ignored") or Status.readonly() then return out end
   local seenPiece, seenKey = {}, {}
-  local function mark(key, to)
+  -- `stated`: the line names its own status (an exported line), which is then set whatever the word had
+  local function mark(key, to, stated)
     if seenKey[key] then return end
     seenKey[key] = true
     local own = Status.own(lang, key)
     if own == to or (own == nil and Status.get(lang, key) == to) then
       out.already = out.already + 1
-    elseif own ~= nil then
+    elseif own ~= nil and not stated then
       out.kept = out.kept + 1 -- set by hand to something else
     else
       Status.set(lang, key, to)
@@ -105,7 +107,7 @@ function Import.apply(lang, text, status)
       local line = raw:gsub("%b[]", ""):gsub("%b<>", " ")
       local key, lineStatus = exact(lang, line)
       if key then
-        mark(key, lineStatus or status)
+        mark(key, lineStatus or status, lineStatus ~= nil)
       else
         for piece in pieces(lang, line) do
           if not seenPiece[piece] then

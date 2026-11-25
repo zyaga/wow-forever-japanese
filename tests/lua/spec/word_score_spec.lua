@@ -49,9 +49,10 @@ describe("Core/WordScore", function()
     assert.are.equal(31, Score.game("ja").known)
   end)
 
-  it("gives a whole percent, and none for a text with nothing counted", function()
+  it("gives a whole percent rounded down, and none for a text with nothing counted", function()
     local Score = Env.load().WordScore
-    assert.are.equal(67, Score.percent(2, 3))
+    assert.are.equal(66, Score.percent(2, 3))
+    assert.are.equal(99, Score.percent(199, 200)) -- a word still unknown never reads as 100
     assert.are.equal(100, Score.percent(5, 5))
     assert.is_nil(Score.percent(0, 0))
   end)

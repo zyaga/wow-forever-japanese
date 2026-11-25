@@ -19,7 +19,7 @@ local PLACE = {
   ["questframe.greeting"] = "quest", ["questmap.info"] = "quest", ["questmap.popup.info"] = "quest",
   gossip = "quest",
   ["dialogueui.detail"] = "quest", ["dialogueui.progress"] = "quest", ["dialogueui.reward"] = "quest",
-  ["dialogueui.greeting"] = "quest", ["dialogueui.gossip"] = "quest", ["dialogueui.title"] = "quest",
+  ["dialogueui.greeting"] = "quest", ["dialogueui.gossip"] = "quest",
   itemtext = "book", ["dialogueui.book"] = "book",
   voicepanel = "voicepanel",
   ["tooltip.frozen"] = "tooltip",
@@ -116,7 +116,9 @@ end
 
 -- The tag over the text's top right corner. Where a window lays a line out in paragraphs, the first one carries it.
 local function drawScore(cover)
-  if not SCORED[cover.kind] or not setting("marks.score") then return end
+  -- on the text itself, never on a copy of it: the voice panel and the frozen tooltip show lines of these kinds too
+  local place = cover.marksPlace
+  if (place ~= "quest" and place ~= "book") or not SCORED[cover.kind] or not setting("marks.score") then return end
   local part = type(cover.recKey) == "string" and cover.recKey:match("%.(%d+)$")
   if part and part ~= "1" then return end
   local lang = cover.english and "en" or "ja"
@@ -191,8 +193,13 @@ local function schedule(cover)
 end
 
 -- UI/Readings laid `cover` over a line: `rec` is the line's record, `english` true for the client's own English.
+-- A place's surfaces also hold text that is no prose: a window's own labels and headings (kind "ui"), a widget
+-- that holds only a name, and a quest's title, which is a name. Those take word cards and never a mark.
+local NOT_PROSE = { ui = true, name = true, ["quest.title"] = true }
+
 function Marks.laid(cover, rec, english)
-  cover.marksPlace = PLACE[rec.surface]
+  local kind = rec.meta and rec.meta.kind
+  cover.marksPlace = not NOT_PROSE[kind] and PLACE[rec.surface] or nil
   cover.recKey, cover.english = rec.key, english == true
   hide(cover)
   if cover.marksPlace then
@@ -245,6 +252,12 @@ local function shiftSaves()
   return WFJ.WordSave ~= nil and WFJ.WordSave.choice() == "shift"
 end
 
+-- Whether the reveal key is a Shift key: holding it flips the language on screen, so it cannot also mark a word.
+local function shiftReveals()
+  local key = WFJ.Modifier and WFJ.Modifier.key and WFJ.Modifier.key()
+  return type(key) == "string" and key:lower():find("shift", 1, true) ~= nil
+end
+
 -- The word card's lines for a word with a status: its status, its place among the game's words, whether it is
 -- one to learn next, and how to change it. → text | nil (a name, a place that is off)
 function Marks.statusLine(cover, word)
@@ -258,13 +271,16 @@ function Marks.statusLine(cover, word)
   if status == "unknown" and WFJ.WordStatus.learnNext(lang, key) then
     line = line .. " ・ |cff66dd66" .. pick("marks.common") .. "|r"
   end
+  if shiftReveals() then return line end -- no click to name
   return line .. "\n" .. pick(shiftSaves() and "marks.clickOff" or "marks.clickHint")
 end
 
 -- A click released on the word it started on, with Shift held: the left button steps the word's status and the
 -- right one ignores it or takes that back. → true when the click was a status click
 function Marks.click(cover, word, button)
-  if not Marks.active(cover) or shiftSaves() or Compat.call("IsShiftKeyDown") ~= true then return false end
+  -- the left button with Shift is the save click's when that is how words are saved; the right one never is
+  if not Marks.active(cover) or shiftReveals() or (button ~= "RightButton" and shiftSaves()) then return false end
+  if Compat.call("IsShiftKeyDown") ~= true then return false end
   local lang, key = WFJ.WordStatus.keyOf(word)
   if not lang then return false end
   local to

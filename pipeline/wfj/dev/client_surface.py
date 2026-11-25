@@ -3075,13 +3075,15 @@ end
 --   window   the text regions the known words window shows
 --   english  with Japanese showing (`expect`), a text of that window holding no Japanese: a failure
 --   frames   the frames that carry marks; shown  the marks showing on them
---   stale    a frame showing marks with no text attached to it any more: a failure (marks left over other text)
+--   stale    a frame showing marks whose text is gone or is no longer what they were drawn for: a failure
+--   bare     with no status saved yet and the underline on, visible marked texts with words and not one mark
+--            between them: a failure (every word is unknown then, so a build that draws nothing shows here)
 --   tags     a score tag showing something other than a percent: a failure
 -- It changes no status: it clicks nothing and imports nothing.
 local function WFJScanMarksRead()
   local db = probeDb()
   local saved = addonSettings() or {}
-  local record = { window = 0, frames = 0, shown = 0, english = {}, stale = {}, tags = {},
+  local record = { window = 0, frames = 0, shown = 0, texts = 0, english = {}, stale = {}, tags = {},
     expect = saved.enabled ~= false and saved.direction ~= "en" }
   db.marks = record
   local slash = type(SlashCmdList) == "table" and SlashCmdList.WFJ or nil
@@ -3103,9 +3105,9 @@ local function WFJScanMarksRead()
         record.english[#record.english + 1] = shown.text
       end
     end
-    if not wasOpen then window:Hide() end
   end)
   if not ok then record.refused = tostring(err) end
+  if not wasOpen and _G.WFJKnownWordsWindow then _G.WFJKnownWordsWindow:Hide() end
   local frame = EnumerateFrames()
   while frame do
     pcall(function()
@@ -3116,9 +3118,12 @@ local function WFJScanMarksRead()
         if mark:IsShown() then showing = showing + 1 end
       end
       record.shown = record.shown + showing
-      if showing > 0 and frame:IsVisible() and frame.text == nil then
+      local owner = frame.fs
+      local now = owner and owner.GetText and owner:GetText() or frame.text
+      if showing > 0 and frame:IsVisible() and (frame.text == nil or now ~= frame.text) then
         record.stale[#record.stale + 1] = tostring(frame.surface or "chat")
       end
+      if frame.marksPlace and frame.spans and frame:IsVisible() then record.texts = record.texts + 1 end
       local tag = frame.scoreFs
       if tag and tag:IsShown() and frame:IsVisible() then
         local said = tag:GetText()
@@ -3127,6 +3132,9 @@ local function WFJScanMarksRead()
     end)
     frame = EnumerateFrames(frame)
   end
+  local known = type(WFJ_Known) == "table" and type(WFJ_Known.ja) == "table" and WFJ_Known.ja or {}
+  record.bare = record.texts > 0 and record.shown == 0 and next(known) == nil
+    and saved["marks.underline"] ~= false and saved["marks.quest"] ~= false or false
 end
 
 -- The chat tools read. The phrase book's card and the player's own chat words window are the addon's own windows:
@@ -4584,8 +4592,9 @@ def chat_problems(record: dict[str, Any] | None) -> list[str]:
 def read_marks(text: str) -> dict[str, Any] | None:
     """The window test's word status read out of a saved-variables file, or None when the run had none: the text
     regions the known words window showed (`window`), the frames that carry word status marks (`frames`) and the
-    marks showing on them (`shown`), whether Japanese was to be expected (`expect`), why it could not read
-    (`refused`), and three lists: `english` (a text of the window with no Japanese in it), `stale` (a frame
+    marks showing on them (`shown`), the visible marked texts with words (`texts`), whether none of them showed
+    a mark although no word has a status (`bare`), whether Japanese was to be expected (`expect`), why it could
+    not read (`refused`), and three lists: `english` (a text of the window with no Japanese in it), `stale` (a frame
     showing marks with no text attached any more) and `tags` (a score tag that is not a percent)."""
     from wfj.io import lua_reader
 
@@ -4594,8 +4603,9 @@ def read_marks(text: str) -> dict[str, Any] | None:
     record = probe.get("marks") if probe is not None else None
     if record is None:
         return None
-    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("window", "frames", "shown")}
+    out: dict[str, Any] = {k: int(record.get(k) or 0) for k in ("window", "frames", "shown", "texts")}
     out["expect"] = bool(record.get("expect"))
+    out["bare"] = bool(record.get("bare"))
     out["refused"] = str(record.get("refused") or "")
     for kind in ("english", "stale", "tags"):
         rows = record.get(kind)
@@ -4617,6 +4627,8 @@ def marks_problems(record: dict[str, Any] | None) -> list[str]:
     if record["expect"]:
         out += [f"known words window left English: {seen!r}" for seen in record["english"]]
     out += [f"word status marks left on a text that is gone ({where})" for where in record["stale"]]
+    if record["bare"]:
+        out.append(f"no word status mark on {record['texts']} marked texts although no word has a status yet")
     out += [f"score tag does not show a percent: {seen!r}" for seen in record["tags"]]
     return out
 

@@ -79,6 +79,25 @@ describe("Core/WordImport", function()
     assert.are.equal("unknown", again.WordStatus.get("ja", "開く\tひらく")) -- the other reading was never set
   end)
 
+  it("takes an exported line as it is: a word outside the game's list, and over a status the word already had",
+  function()
+    local WFJ = Env.load()
+    local S = WFJ.WordStatus
+    S.set("ja", "よろ\tよろ", "ignored") -- a chat word: no row of the frequency list
+    S.set("ja", "敵\tてき", "known")
+    local text = WFJ.WordImport.export("ja")
+    local again = Env.load()
+    again.WordStatus.set("ja", "敵\tてき", "learning") -- as a saved word's would be
+    local r = again.WordImport.apply("ja", text, "known")
+    assert.are.same({ 2, 0, 0, 0 }, { r.marked, r.already, r.kept, #r.missing })
+    assert.are.same(S.entries("ja"), again.WordStatus.entries("ja"))
+    -- a two-column line with no status names a word of the game exactly, and still leaves a hand-set status be
+    again.WordStatus.set("ja", "開く\tあく", "ignored")
+    r = again.WordImport.apply("ja", "開く\tあく\n青い\tあおい", "known")
+    assert.are.same({ 1, 0, 1 }, { r.marked, r.already, r.kept })
+    assert.are.equal("unknown", again.WordStatus.get("ja", "開く\tひらく"))
+  end)
+
   it("imports and exports English words in the English list", function()
     local WFJ = Env.load()
     local r = WFJ.WordImport.apply("en", "Enemy, you're; Zebra 12 敵", "known")

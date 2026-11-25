@@ -89,13 +89,14 @@ def test_every_grammar_word_ships_and_is_a_row_of_the_japanese_list(root):
         assert lua in grammar, key
 
 
-def test_the_trials_names_are_nowhere_in_the_addon(root):
-    trial = ("words.plusOne", "words.learnNext", "words.statusMarks", "words.highlight", "words.score", "word_freq_mvp")
+def test_the_word_status_settings_all_sit_under_marks(root):
+    # the word list's own group (`words.`) holds the save click and the screenshot, and nothing of word status
+    elsewhere = ("words.plusOne", "words.learnNext", "words.statusMarks", "words.highlight", "words.score")
     hits = [
         f"{path.relative_to(root)}: {name}"
         for path in sorted((root / ADDON).rglob("*.lua"))
         if "Data" not in path.relative_to(root / ADDON).parts
-        for name in trial
+        for name in elsewhere
         if name in path.read_text("utf-8")
     ]
     assert hits == []

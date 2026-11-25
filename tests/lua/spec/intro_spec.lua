@@ -487,7 +487,7 @@ describe("UI/IntroWindow, the window", function()
     assert.is_false(f.voice.en:IsShown())
     assert.is_false(f.box:IsShown())
     assert.is_false(f.voiceTitle:IsShown())
-    assert.is_true(f.size[2] < tall)
+    assert.are.equal(tall, f.size[2]) -- the window is one size on every page, with the voice section or without
   end)
 
   it("/wfj intro opens it again for anyone, any number of times, and never touches the asked flag", function()
@@ -511,15 +511,17 @@ describe("UI/IntroWindow, the window", function()
     Stub.fontSetFails = true -- the client refuses the bundled face until its file loads
     local f = IW.open()
     assert.are.equal(1, #ticks)
-    local before = f.size[2]
+    -- the window keeps its size, so the layout shows in where the cards sit under the question above them
+    local function confirmAt() return f.cards.ja.point[5] end
+    local before = confirmAt()
     function f.ask.ja.GetStringHeight() return 40 end -- the face that lands wraps the line to more rows
     ticks[1].fn(ticks[1].t)
-    assert.are.equal(before, f.size[2]) -- still refused: nothing measured again yet
+    assert.are.equal(before, confirmAt()) -- still refused: nothing measured again yet
     assert.is_false(ticks[1].t.cancelled)
     Stub.fontSetFails = false
     WFJ.Font.retryPending()
     ticks[1].fn(ticks[1].t)
-    assert.is_true(f.size[2] > before)
+    assert.is_true(confirmAt() < before) -- pushed down by the taller line
     assert.is_true(ticks[1].t.cancelled)
     IW.open() -- nothing refused now: no second ticker
     assert.are.equal(1, #ticks)

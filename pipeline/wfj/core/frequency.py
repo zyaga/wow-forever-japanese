@@ -86,7 +86,7 @@ def load_grammar(pipeline_dir: Path, known: Iterable[str]) -> tuple[list[str], l
         return [], []
     words, problems = set(known), []
     keys: list[str] = []
-    for n, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+    for n, raw in enumerate(path.read_text(encoding="utf-8-sig").splitlines(), start=1):
         key = raw.split("#", 1)[0].rstrip()
         if not key:
             continue

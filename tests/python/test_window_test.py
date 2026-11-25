@@ -713,8 +713,8 @@ def test_the_names_read_runs_after_the_no_voice_read_and_only_shows_tooltips():
 
 
 # a word status read with nothing wrong
-MARKS = ('["marks"] = { ["window"] = 9, ["frames"] = 3, ["shown"] = 14, ["expect"] = true, ["english"] = { }, '
-         '["stale"] = { }, ["tags"] = { } },')
+MARKS = ('["marks"] = { ["window"] = 9, ["frames"] = 3, ["shown"] = 14, ["texts"] = 2, ["bare"] = false, '
+         '["expect"] = true, ["english"] = { }, ["stale"] = { }, ["tags"] = { } },')
 
 
 def test_the_word_status_read_opens_the_known_words_window_and_changes_no_status():
@@ -724,10 +724,13 @@ def test_the_word_status_read_opens_the_known_words_window_and_changes_no_status
     body = lua[lua.index("local function WFJScanMarksRead"):lua.index("-- The chat tools read.")]
     # the addon's own command opens the window, and a window the player had open is left open
     assert body.count('slash("known")') == 1 and "if not wasOpen then slash(" in body
-    assert "if not wasOpen then window:Hide() end" in body
+    assert "if not wasOpen and _G.WFJKnownWordsWindow then _G.WFJKnownWordsWindow:Hide() end" in body
     # it clicks nothing and imports nothing, so no status changes; no setting is written
     assert ":Click(" not in body and "GetScript(" not in body and "SetText(" not in body
-    assert "saved[" not in body and "saved.enabled =" not in body
+    assert "saved.enabled =" not in body and 'saved["marks.underline"] =' not in body
+    assert 'saved["marks.quest"] =' not in body and "WFJ_Known.ja[" not in body
+    # the window is hidden again even when reading it raised
+    assert body.index("if not ok then record.refused") < body.index("_G.WFJKnownWordsWindow:Hide()")
     # every frame that carries marks is looked at, never a forbidden one
     assert "EnumerateFrames(frame)" in body and "frame:IsForbidden()" in body
 
@@ -753,7 +756,11 @@ def test_the_word_status_read_fails_english_in_the_window_marks_left_behind_and_
     assert run(MARKS.replace('["tags"] = { }', '["tags"] = { "nil" }')) == [
         "score tag does not show a percent: 'nil'"]
     # a run with no marked text on screen is not a fault: a character with no quest open shows none
-    assert run(MARKS.replace('["frames"] = 3, ["shown"] = 14', '["frames"] = 0, ["shown"] = 0')) == []
+    assert run(MARKS.replace('["frames"] = 3, ["shown"] = 14, ["texts"] = 2',
+                             '["frames"] = 0, ["shown"] = 0, ["texts"] = 0')) == []
+    # marked texts on screen, no status saved yet, and not one mark drawn: the marks do not work
+    assert run(MARKS.replace('["shown"] = 14', '["shown"] = 0').replace('["bare"] = false', '["bare"] = true')) == [
+        "no word status mark on 2 marked texts although no word has a status yet"]
 
 
 # a chat tools read with nothing wrong
@@ -937,7 +944,7 @@ WFJScanDB = {
 ["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
 ["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, ["missing"] = { }, ["stuck"] = { } },
 ["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { } },
-["marks"] = { ["window"] = 9, ["frames"] = 3, ["shown"] = 14, ["expect"] = true, ["english"] = { }, ["stale"] = { }, ["tags"] = { } },
+["marks"] = { ["window"] = 9, ["frames"] = 3, ["shown"] = 14, ["texts"] = 2, ["bare"] = false, ["expect"] = true, ["english"] = { }, ["stale"] = { }, ["tags"] = { } },
 ["bagclick"] = { ["checked"] = 412, ["ours"] = { }, ["others"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
 ["hover"] = { ["map"] = { ["made"] = 3, ["found"] = 3, ["tips"] = 2, ["english"] = { }, ["runs"] = { } } },

@@ -528,7 +528,7 @@ Text.T = {
     ja = "無料の「WoW Forever Japanese Voice」で、日本語を読み上げます。" },
   ["intro.close"] = { en = "Start", ja = "始める" },
   -- the tour after the question: Next, each page's heading (the first page's is worded for the direction), and
-  -- the points the first version of the window did not have
+  -- the points of the pages on saved words, word status, the frozen tooltip, chat and the rest
   ["intro.next"] = { en = "Next", ja = "次へ" },
   ["intro.tour.start"] = { en = "Reading the game in Japanese", ja = "ゲームを日本語で読む" },
   ["intro.tour.start.en"] = { en = "The game in English, Japanese one key away", ja = "英語のまま、キー1つで日本語" },
@@ -539,23 +539,22 @@ Text.T = {
   ["intro.tour.more"] = { en = "More", ja = "そのほか" },
   ["intro.export"] = { en = "The Words settings page exports your list for Anki or a spreadsheet.",
     ja = "設定の「単語帳」ページから、Ankiや表計算ソフト用に書き出せます。" },
-  ["intro.status.click"] = {
-    en = "Shift+click a word to mark it Unknown, Learning or Known. Words you don't know yet are underlined.",
-    ja = "単語をShift+クリックすると「未知・学習中・既知」が切り替わります。まだ知らない単語には下線が付きます。" },
+  -- each point is short enough to stay on one line in the window
+  ["intro.status.click"] = { en = "Shift+click a word to mark it Unknown, Learning or Known.",
+    ja = "Shift+クリックで、単語を「未知・学習中・既知」に切り替えます。" },
   ["intro.status.marks"] = {
-    en = "A green highlight is a common word worth learning next. The small tag says how much of the text you know.",
-    ja = "緑のハイライトは、次に覚えるとよい頻出の単語です。小さな表示は、その文章をどのくらい知っているかです。" },
+    en = "Unknown words are underlined; common ones worth learning next are highlighted green.",
+    ja = "知らない単語には下線、次に覚えたい頻出の単語には緑のハイライトが付きます。" },
   ["intro.status.import"] = { en = "Type /wfj known to paste a word list from Anki or another tool.",
-    ja = "/wfj known で、Ankiなどの単語リストを貼り付けて取り込めます。" },
+    ja = "/wfj known で、Ankiなどの単語リストを取り込めます。" },
   ["intro.freeze.close"] = { en = "Esc or the same key closes the copy.", ja = "Escか同じキーで閉じます。" },
   ["intro.chat.cards"] = { en = "Point at a word in chat for its card.",
     ja = "チャットの単語にカーソルを合わせると、単語カードが出ます。" },
   ["intro.chat.copy"] = { en = "The small icon on a chat line copies it, ready to paste into a translator.",
-    ja = "チャットの行の小さなアイコンでその行をコピーでき、翻訳サービスに貼り付けられます。" },
+    ja = "行の小さなアイコンでコピーして、翻訳サービスに貼り付けられます。" },
   ["intro.chat.phrases"] = {
-    en = "The 文 button opens a phrase book: phrases go out in English, and players with this addon read them in "
-      .. "their own language.",
-    ja = "「文」ボタンで定型文を開けます。定型文は英語で送られ、このアドオンを使う人には自分の言語で表示されます。" },
+    en = "The 文 button opens phrases that players with this addon read in their own language.",
+    ja = "「文」ボタンの定型文は、このアドオンを使う相手には相手の言語で表示されます。" },
   ["intro.more.names"] = { en = "Names can show in Japanese: a choice on the first page and in the settings.",
     ja = "名前を日本語で表示できます。最初のページか設定で選べます。" },
   ["intro.more.report"] = { en = "Found wrong or odd Japanese? Report the line from the minimap button.",

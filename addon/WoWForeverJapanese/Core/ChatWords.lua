@@ -236,6 +236,9 @@ local function segment(text, first, last)
   return out
 end
 
+-- Every word of the Japanese stretch first..last of a chat line, found in one pass (UI/ChatMarks marks them all).
+ChatWords.japaneseIn = segment
+
 function ChatWords.japaneseAt(text, i)
   if type(text) ~= "string" or type(i) ~= "number" then return nil end
   local b = text:byte(i)
