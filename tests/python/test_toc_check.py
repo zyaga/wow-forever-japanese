@@ -9,7 +9,7 @@ CLIENTS = "pipeline/clients.toml"
 def test_real_toc_fields_and_load_order(root):
     meta, files = toc_check.parse_toc(root / TOC)
     assert meta["Version"] == "@project-version@"
-    assert meta["SavedVariables"] == "WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords, WFJ_Anki"
+    assert meta["SavedVariables"] == "WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords, WFJ_Known, WFJ_Anki"
     assert meta["Interface"].isdigit()
     # An icon for the AddOn List (a client icon Blizzard's own Vanilla/QuestInfo.xml references) and Notes
     # that say where the settings are.
@@ -32,11 +32,14 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Intro.lua",  # whether the first-install window is owed
         "Core/Words.lua",  # the saved word list
         "Core/AnkiExport.lua",  # the list ready-made for the Anki add-on
+        # word status: how often a word is used, its status, the score, the mark plan, the import
+        "Core/WordFrequency.lua", "Core/WordStatus.lua", "Core/WordScore.lua", "Core/WordMarks.lua",
+        "Core/WordImport.lua",
         "Core/ChatWords.lua", "Core/ChatPhrases.lua",  # the words and phrases of the chat tools
         "Core/Fsrs.lua", "Core/Study.lua",  # studying it: the memory model, then the queue
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "Core/Diag.lua", "Core/Perf.lua", "Core/BugReport.lua",  # the problem log, its timing, the bug report link
-        "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/Render.lua",
+        "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/WordMarks.lua", "UI/Render.lua",
         "UI/VoicePlayer.lua",  # voice playback, after Render that starts a line
         # the voice panel: its looks, head and text before the panel that uses them
         "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua",
@@ -110,6 +113,7 @@ def test_real_toc_fields_and_load_order(root):
             # the chat tools: word cards, the copy icon, phrase lines, the phrase book, the player's own words
             "UI/ChatLines.lua", "UI/ChatCards.lua", "UI/ChatCopy.lua", "UI/ChatPhraseLines.lua", "UI/PhraseBook.lua",
             "UI/ChatWordsWindow.lua",
+            "UI/ChatMarks.lua", "UI/KnownWordsWindow.lua",  # word status marks on chat, the known words window
             "UI/CollectorReminder.lua", "UI/IntroWindow.lua",
             "UI/ReportWindow.lua",
             "UI/MinimapButton.lua",  # the minimap button
@@ -124,7 +128,7 @@ def test_real_toc_fields_and_load_order(root):
         generated,
         key=lambda f: (
             ["Meta", "Vectors", "ErrorSounds", "Displays", "SpellShapes", "SpellIncludes", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
-             "English", "Reading", "Gloss", "Chat", "Names"].index(
+             "English", "Reading", "Gloss", "Chat", "Freq", "Names"].index(
                 f.split("/")[1].split("_")[0].replace(".lua", "")
             ),
             f,

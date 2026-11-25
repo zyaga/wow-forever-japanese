@@ -72,6 +72,9 @@ WFJ_Study = {
 - **Versions.** A table saved by a newer addon version (a higher `schema`) is kept exactly as it is and never written: the queue is empty, the card opens on the done state, and a grade is refused with the word list's chat line (the list cannot be changed here). An older addon version does not list `WFJ_Study` in its TOC, so the client drops it at that version's first logout; the word list itself is untouched.
 - The client writes SavedVariables on `/reload`, logout and a normal exit. Grades given since the last of those are lost in a crash.
 
+### Word status
+`Study.answer` fires the State event `studied` with the card's key after each grade. `Core/WordStatus.sync` follows it (and runs at load): a word whose card is stable for 21 days or more (`s >= WordStatus.KNOWN_AT`) becomes Known in the [word status](word-status.md) list, unless it is Ignored. The stability is read, never written, and no grade ever moves a status down: a word graded Again keeps the status it had.
+
 ### The card
 The card (`WFJStudyCard`, 320 × 214, movable) shows one word at a time.
 
@@ -143,7 +146,7 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 
 ## Key files
 - `addon/WoWForeverJapanese/Core/Fsrs.lua`: the FSRS-6 model: `W()` (a fresh copy of the 21 defaults), `retrievability`, `review` (pure)
-- `addon/WoWForeverJapanese/Core/Study.lua`: `load`, `prune`, `next`, `counts`, `answer`, `card`, `readonly`; the relearn step and the day length (pure)
+- `addon/WoWForeverJapanese/Core/Study.lua`: `load`, `prune`, `next`, `counts`, `answer` (fires `studied`), `card`, `readonly`; the relearn step and the day length (pure)
 - `addon/WoWForeverJapanese/UI/StudyWindow.lua`: the tab and the card, the done state, the position, combat, the tick, `open` / `collapse` / `close` / `toggle`, `resetPosition` (`/wfj study reset`), `setCombat` (from Main's combat events), `WFJ_StudyToggle` (the binding)
 - `addon/WoWForeverJapanese/UI/StudyVoice.lua`: `find` (the sentence's files and stop time, or the reason it has none), `play`, `toggle`, `stop`, `playing`, `available`; `cell` and `fileList` for the word list's export
 - `addon/WoWForeverJapanese/Core/Voice.lua`: `Voice.line(kind, id)` (a shipped line's main recording, or why not) and `Voice.soundPath(folder, file)`
@@ -185,4 +188,4 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 - **`/wfj study <setting> <value>`** falls through to the settings grammar (only `reset` is the window's own word), so `/wfj study tab off` and `/wfj study newPerDay 10` set the settings.
 
 ## Related
-- [Word list](word-list.md) · [Readings](readings.md) · [Settings](settings.md) · [Voice over](voice.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-081](../adr/081-english-first-and-english-word-cards.md) · [Testing → Study checklist](../testing/strategy.md#study-checklist) · [App capabilities → Study](../app-capabilities.md#study) · [Glossary](../glossary.md)
+- [Word list](word-list.md) · [Readings](readings.md) · [Word status](word-status.md) · [Settings](settings.md) · [Voice over](voice.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-081](../adr/081-english-first-and-english-word-cards.md) · [Testing → Study checklist](../testing/strategy.md#study-checklist) · [App capabilities → Study](../app-capabilities.md#study) · [Glossary](../glossary.md)

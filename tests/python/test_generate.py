@@ -163,6 +163,8 @@ def test_english_only_types_leave_the_generated_addon_data_unchanged(root, tmp_p
     shutil.copy(root / "pipeline" / "allowlist.txt", tmp_path / "pipeline" / "allowlist.txt")
     # the name tables leave out the words the screen keeps as written
     shutil.copy(root / "pipeline" / "names_kept_as_written.txt", tmp_path / "pipeline" / "names_kept_as_written.txt")
+    # the frequency lists ship the grammar words that start as Ignored
+    shutil.copy(root / "pipeline" / "grammar_words.txt", tmp_path / "pipeline" / "grammar_words.txt")
     eng = Store(data, english=True)
 
     def line(id_, field, en, src):

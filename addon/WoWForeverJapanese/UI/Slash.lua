@@ -352,6 +352,10 @@ function Slash.debug(sub, arg)
       WFJ.Data.count("reading"), RV.enabled and "on" or "off", RV.attached, RV.refused,
       RV.refusedAt and (" (first: " .. RV.refusedAt .. ")") or "", WFJ.Render.readingErrors or 0)
     say("glosses: %d meanings loaded · %s", WFJ.Data.count("gloss"), RV.glossesOn and "on" or "off")
+    if WFJ.WordMarks then -- the word status marks: the texts marked now and the line gap measured for each
+      local n, list = WFJ.WordMarks.report()
+      say("word marks: %d texts marked%s", n, n > 0 and (" · " .. list) or "")
+    end
   end
   local nUnknown, unknownList = WFJ.Placeholders.unknownTokens()
   local listed = nUnknown > 0 and (" (" .. table.concat(unknownList, " ") .. ")") or ""
@@ -495,6 +499,11 @@ function Slash.handle(msg)
   if lower == "phrases" then -- the phrase book's card, whatever its button's setting says
     local ok = WFJ.PhraseBook and pcall(WFJ.PhraseBook.toggle)
     if not ok then say("the phrase book is not available on this client") end
+    return
+  end
+  if lower == "known" then -- the known words window: import, export, counts and scores
+    local ok = WFJ.KnownWordsWindow and pcall(WFJ.KnownWordsWindow.open)
+    if not ok then say("the known words window is not available on this client") end
     return
   end
   if lower == "chatwords" then -- the player's own chat words

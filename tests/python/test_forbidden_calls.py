@@ -46,7 +46,9 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/TooltipFreeze.lua",
                 # the chat tools script only their own frames: the timer that finds the chat line under the mouse,
                 # the copy icon, the phrase button and card with their rows, the own-words window's fields
-                "UI/ChatLines.lua", "UI/ChatCopy.lua", "UI/PhraseBook.lua", "UI/ChatWordsWindow.lua"}
+                "UI/ChatLines.lua", "UI/ChatCopy.lua", "UI/PhraseBook.lua", "UI/ChatWordsWindow.lua",
+                # the word status marks on chat script only their own timer frame
+                "UI/ChatMarks.lua"}
 
 PATTERNS = {
     "PanelTemplates_SetTab": re.compile(r"\bPanelTemplates_SetTab\s*\("),

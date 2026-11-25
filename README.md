@@ -63,8 +63,9 @@ or Japanese)
 At the character select screen, click **AddOns**, make sure **WoW Forever Japanese** is ticked, and log in.
 
 The first time you log in, a welcome window asks what you are here for: **Study Japanese**, **Study English** or
-**Just play**. Pick one and press **Confirm**; nothing changes before that. You can open it again from the settings
-or with `/wfj intro`.
+**Just play**. Pick one and press **Confirm**; nothing changes before that. A short tour follows: a page for each
+feature that fits your choice, with a picture and how to use it, and **Next** and **Back** to move through it. You
+can open it again from the settings or with `/wfj intro`.
 
 ![The AddOns list at character select with WoW Forever Japanese ticked](docs/images/addon-list.jpg)
 
@@ -148,6 +149,16 @@ how it is said, the Japanese word the translation uses for it there with its rea
 form. Names and small words such as *the*, *is* and *of* have no popup. Ctrl+click saves the English word with its
 sentence and the Japanese sentence, and the study card then asks it English first. The Japanese voice plays only
 while the key is held.
+
+**Know your words.** Give any word a status: **Unknown**, **Learning**, **Known** or **Ignored**. Point at a word
+and Shift+click to step it; Shift+right-click ignores it. Words you do not know yet are underlined in quest text,
+NPC dialogue, books, the voice panel and a frozen tooltip (and in chat, if you switch that on), and a soft green
+highlight picks out the ones worth learning next: the most common words in the game's own text that you do not know.
+A small tag on a quest, an NPC line or a book page says how much of it you already know, and the **Words** settings
+page shows the same for the whole game. To start from what you know, open `/wfj known` and paste a word list from
+Anki or any other tool: commas, spaces, tabs and new lines all work, and each word the game uses is marked Known.
+Saving a word makes it Learning, and a word you have studied in game for long enough becomes Known by itself. The
+**Words** settings page has a switch for the whole feature, for each underline, for the highlight and for each place. In English first it all works on English words.
 
 **Chat tools.** Point at a word in a chat line and the popup dictionary shows it too: Japanese words, or English words
 when the game shows English first. A small icon on the line under the mouse opens it in a box, selected, so you can
@@ -355,7 +366,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 キャラクター選択画面で **AddOns** を押し、**WoW Forever Japanese** にチェックが入っていることを確認してからログインします。
 
-初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**（Study Japanese）、**英語を学ぶ**（Study English）、**日本語で遊ぶ**（Just play）の3つです。1つ選んで **決定** を押すまで、設定は何も変わりません。設定画面か `/wfj intro` でいつでも開き直せます。
+初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**（Study Japanese）、**英語を学ぶ**（Study English）、**日本語で遊ぶ**（Just play）の3つです。1つ選んで **決定** を押すまで、設定は何も変わりません。そのあと、選んだ使い方に合った機能を1ページずつ、画像と使い方つきで紹介します。**次へ** と **戻る** で進めます。設定画面か `/wfj intro` でいつでも開き直せます。
 
 ![キャラクター選択画面の AddOns 一覧で WoW Forever Japanese にチェックが入っている画面](docs/images/addon-list.jpg)
 
@@ -393,6 +404,8 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 **ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。音声を入れていれば、答えを見たときに保存した文がNPCの声で読み上げられ、単語帳からその録音を Anki 用に書き出すこともできます。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
 
 **英語を学ぶ場合。** 設定ページの **ゲームの文字**（Game text）を **English first** にするか、ようこそ画面で **英語を学ぶ** を選びます。ゲームは本来の英語のまま表示され、Alt を押している間だけ日本語が表示されます。同じキーで、向きが逆になります。クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで英語の単語にマウスを合わせると、発音、その行の翻訳で使われている日本語の単語と読み方、その辞書形が表示されます。名前や *the*、*is*、*of* のような短い語には表示されません。Ctrl+クリックで英語の単語を英語の文と日本語の文と一緒に保存でき、学習カードは英語から出題します。日本語音声は、キーを押している間だけ再生されます。
+
+**単語の習得状況。** どの単語にも **未知**、**学習中**、**既知**、**無視** のいずれかの状態を付けられます。単語にマウスを合わせて Shift+クリックで状態が切り替わり、Shift+右クリックで無視になります。まだ知らない単語には、クエスト本文、NPC の会話、本、ボイスパネル、固定したツールチップで下線が付き（チャットは設定でオンにできます）、次に覚えるとよい単語は薄い緑でハイライトされます。ゲームの文章によく出てくる、まだ知らない単語です。クエスト、NPC のセリフ、本のページには、その文章をどのくらい知っているかが小さく表示され、**単語帳** の設定ページにはゲーム全体の数字が出ます。すでに知っている単語から始めるには、`/wfj known` を開いて、Anki などの単語リストを貼り付けます。コンマ、スペース、タブ、改行のどれで区切ってあっても読み取り、ゲームに出てくる単語を既知にします。単語を保存すると学習中になり、ゲーム内の学習で十分に定着した単語は自動で既知になります。設定の **単語帳** ページで、機能全体、それぞれの下線、ハイライト、表示する場所ごとにオン・オフを選べます。英語優先のときは、英語の単語で同じように使えます。
 
 **チャットの補助。** チャットの行で単語にマウスを合わせると、そこでもポップアップ辞書が出ます。日本語優先なら日本語の単語、英語優先なら英語の単語です。マウスを置いた行の小さなアイコンを押すと、その行が選択された状態で枠に表示されるので、辞書や翻訳サービスにコピーできます。チャット欄の横の「文」ボタンで定型文を開きます。定型文をクリックすると、先頭に小さな点の付いた英語がチャットの入力欄に入り、そのまま送れます。アドオンのない人には普通の英語として届き、アドオンのある人には自分の言語で表示されます。それ以外にだれかが入力した文は変わりません。`/wfj chatwords` で自分のチャット単語を追加でき、設定の **単語帳** ページで機能ごとにオン・オフできます。
 

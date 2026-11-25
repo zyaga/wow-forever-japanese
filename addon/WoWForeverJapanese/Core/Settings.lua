@@ -330,6 +330,37 @@ Settings.define{ id = "words.saveClick", kind = "choice", choices = { "ctrl", "s
 Settings.define{ id = "words.screenshot", kind = "boolean", default = false,
   label = "Take a screenshot when saving a word", ja = "単語を保存するときにスクリーンショットを撮る" }
 
+-- The word status marks (Core/WordStatus, UI/WordMarks, docs/systems/word-status.md): one switch for all of it
+-- (off: no mark, no tag, no status on the word card, no status click), the underline under unknown words and the
+-- one under learning words, the highlight that picks out words to stop for, the score tag, and one switch per
+-- place. A change redraws the marks on screen (State "wordMarks").
+local function marksChanged() WFJ.State.fire("wordMarks") end
+Settings.define{ id = "marks.enabled", kind = "boolean", default = true, apply = marksChanged,
+  label = "Word status marks", ja = "単語の習得状況の印" }
+Settings.define{ id = "marks.underline", kind = "boolean", default = true, apply = marksChanged,
+  label = "Underline words I don't know yet", ja = "まだ知らない単語に下線を引く" }
+Settings.define{ id = "marks.learning", kind = "boolean", default = true, apply = marksChanged,
+  label = "Underline words I'm learning", ja = "学習中の単語に下線を引く" }
+Settings.define{ id = "marks.highlight", kind = "choice", choices = { "off", "common", "commonNew", "new" },
+  default = "common", apply = marksChanged,
+  label = "Highlight", ja = "ハイライト",
+  choiceText = { off = "Off", common = "Common words", commonNew = "Common words that are the only new word",
+    new = "The only new word in a sentence" },
+  choiceTextJa = { off = "オフ", common = "よく出る単語", commonNew = "よく出る単語で、文中ただ1つの新しい単語",
+    new = "文中ただ1つの新しい単語" } }
+Settings.define{ id = "marks.score", kind = "boolean", default = true, apply = marksChanged,
+  label = "Show how much of a text I know", ja = "文章の理解度を表示" }
+Settings.define{ id = "marks.quest", kind = "boolean", default = true, apply = marksChanged,
+  label = "Marks on quests and NPC talk", ja = "クエストとNPCの会話に印を付ける" }
+Settings.define{ id = "marks.book", kind = "boolean", default = true, apply = marksChanged,
+  label = "Marks on books and letters", ja = "本と手紙に印を付ける" }
+Settings.define{ id = "marks.voicepanel", kind = "boolean", default = true, apply = marksChanged,
+  label = "Marks on the voice panel", ja = "ボイスパネルに印を付ける" }
+Settings.define{ id = "marks.tooltip", kind = "boolean", default = true, apply = marksChanged,
+  label = "Marks on the frozen tooltip", ja = "固定したツールチップに印を付ける" }
+Settings.define{ id = "marks.chat", kind = "boolean", default = false, apply = marksChanged,
+  label = "Marks on chat", ja = "チャットに印を付ける" }
+
 -- Studying the word list (Core/Study, UI/StudyWindow, ADR-071). A change redraws the window (State "study"); the
 -- daily cap is a choice because the registry has no number kind, and four steps are enough to pick from.
 local function studyChanged() WFJ.State.fire("study") end

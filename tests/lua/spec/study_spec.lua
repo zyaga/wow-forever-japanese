@@ -184,4 +184,18 @@ describe("Study", function()
       assert.are.same({ ["2026-09-22"] = 1 }, S.table().days)
     end)
   end)
+  it("announces a graded word, so a status can follow a card that grew stable", function()
+    local ns = {}
+    local fired = {}
+    ns.State = { on = function() end,
+      fire = function(event, key) fired[#fired + 1] = event .. ":" .. tostring(key) end }
+    H.loadPure("Core/Fsrs.lua", nil, ns)
+    H.loadPure("Core/Study.lua", nil, ns)
+    ns.Study.load(nil, E)
+    ns.Study.answer("a", ns.Study.GOOD, NOW, TODAY)
+    assert.are.same({ "studied:a" }, fired)
+    assert.is_nil(ns.Study.answer("nope", ns.Study.GOOD, NOW, TODAY))
+    assert.are.equal(1, #fired) -- a refused grade announces nothing
+  end)
+
 end)

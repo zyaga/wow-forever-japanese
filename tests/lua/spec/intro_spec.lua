@@ -227,10 +227,10 @@ describe("UI/IntroWindow, the window", function()
     local lead, hold, readings = "intro.lead", "intro.hold", "intro.readings"
     if english then lead, hold, readings = "intro.lead.en", "intro.hold.en", "intro.readings.en" end
     return {
-      { f.lead, T[lead].ja, T[lead].en },
+      { f.tour.start.lead, T[lead].ja, T[lead].en },
       { f.hold, T[hold].ja:format(key), T[hold].en:format(key) },
-      { f.readings, T[readings].ja, T[readings].en },
-      { f.minimap, T["intro.minimap"].ja, T["intro.minimap"].en },
+      { f.tour.cards.readings, T[readings].ja, T[readings].en },
+      { f.tour.start.minimap, T["intro.minimap"].ja, T["intro.minimap"].en },
     }
   end
   local function assertBoth(f, english)
@@ -255,7 +255,7 @@ describe("UI/IntroWindow, the window", function()
     assert.are.equal("WoW Forever Japanese", f.title:GetText())
     assert.are.same({ "TOP", 0, -135 }, f.point) -- where the client's own popups open
     assert.is_true(f.pickPage:IsShown())
-    assert.is_false(f.infoPage:IsShown())
+    assert.is_false(f.tour.start.frame:IsShown())
     assert.are.same({ T["intro.ask"].ja, T["intro.ask"].en }, { f.ask.ja:GetText(), f.ask.en:GetText() })
     for _, purpose in ipairs({ "ja", "en", "play" }) do
       local c = f.cards[purpose]
@@ -286,36 +286,35 @@ describe("UI/IntroWindow, the window", function()
       _G.GetBindingKey = function(action) return action == "WFJ_FREEZE_TOOLTIP" and "CTRL-F" or nil end
       local f = info("ja")
       local key = ("|cffffd200%s|r"):format(WFJ.KeyCapture.keyText("CTRL-F"))
-      assert.are.equal(T["intro.freeze"].ja:format(key), f.freeze.ja:GetText())
-      assert.are.equal(T["intro.freeze"].en:format(key), f.freeze.en:GetText())
-      assert.is_true(f.freeze.ja:IsShown())
-      assert.is_table(f.freeze.ja.point)
+      assert.are.equal(T["intro.freeze"].ja:format(key), f.tour.freeze.freeze.ja:GetText())
+      assert.are.equal(T["intro.freeze"].en:format(key), f.tour.freeze.freeze.en:GetText())
+      assert.is_true(f.tour.freeze.freeze.ja:IsShown())
+      assert.is_table(f.tour.freeze.freeze.ja.point)
     end)
 
     it("points at Keybindings while the binding has no key", function()
       _G.GetBindingKey = function() return nil end
       local f = info("ja")
-      assert.are.equal(T["intro.freeze.unset"].ja, f.freeze.ja:GetText())
-      assert.are.equal(T["intro.freeze.unset"].en, f.freeze.en:GetText())
-      assert.is_true(f.freeze.en:IsShown())
+      assert.are.equal(T["intro.freeze.unset"].ja, f.tour.freeze.freeze.ja:GetText())
+      assert.are.equal(T["intro.freeze.unset"].en, f.tour.freeze.freeze.en:GetText())
+      assert.is_true(f.tour.freeze.freeze.en:IsShown())
     end)
 
     it("names the new key when the binding changes while the window shows", function()
       _G.GetBindingKey = function() return nil end
       local f = info("ja")
-      assert.are.equal(T["intro.freeze.unset"].ja, f.freeze.ja:GetText())
+      assert.are.equal(T["intro.freeze.unset"].ja, f.tour.freeze.freeze.ja:GetText())
       _G.GetBindingKey = function(action) return action == "WFJ_FREEZE_TOOLTIP" and "CTRL-G" or nil end
       Stub.fireAll("UPDATE_BINDINGS")
       local key = ("|cffffd200%s|r"):format(WFJ.KeyCapture.keyText("CTRL-G"))
-      assert.are.equal(T["intro.freeze"].ja:format(key), f.freeze.ja:GetText())
+      assert.are.equal(T["intro.freeze"].ja:format(key), f.tour.freeze.freeze.ja:GetText())
     end)
 
     it("is left out where a frozen tooltip has no word cards", function()
       _G.GetBindingKey = function() return "CTRL-F" end
       for _, purpose in ipairs({ "en", "play" }) do
         local f = info(purpose)
-        assert.is_false(f.freeze.ja:IsShown())
-        assert.is_false(f.freeze.en:IsShown())
+        for _, page in ipairs(IW.pages()) do assert.are_not.equal("freeze", page.id) end
         f.back.scripts.OnClick(f.back)
       end
     end)
@@ -366,7 +365,7 @@ describe("UI/IntroWindow, the window", function()
       assert.are.same({ "en", true, true }, settings())
       assert.is_true(WFJ.Settings.get("names.japanese"))
       assert.is_true(WFJ.State.names) -- at once: the name tables are always in memory
-      assert.is_true(f.infoPage:IsShown())
+      assert.is_true(f.tour.start.frame:IsShown())
       -- back to English names, by the same two clicks
       f.back.scripts.OnClick(f.back)
       f.nameCards[false].scripts.OnClick(f.nameCards[false])
@@ -397,7 +396,7 @@ describe("UI/IntroWindow, the window", function()
     f.cards.en.scripts.OnClick(f.cards.en)
     f.confirm.scripts.OnClick(f.confirm)
     assert.are.same({ "en", true, true }, settings())
-    assert.is_true(f.infoPage:IsShown())
+    assert.is_true(f.tour.start.frame:IsShown())
     assert.is_false(f.pickPage:IsShown())
     assertBoth(f, true)
     assert.is_truthy(f.hold.en:GetText():find("Ctrl", 1, true))
@@ -409,8 +408,7 @@ describe("UI/IntroWindow, the window", function()
     f.cards.play.scripts.OnClick(f.cards.play)
     f.confirm.scripts.OnClick(f.confirm)
     assert.are.same({ "ja", false, false }, settings())
-    assert.is_false(f.readings.ja:IsShown())
-    assert.is_false(f.readings.en:IsShown())
+    for _, page in ipairs(IW.pages()) do assert.are_not.equal("cards", page.id) end
     f.back.scripts.OnClick(f.back)
     f.cards.ja.scripts.OnClick(f.cards.ja)
     f.confirm.scripts.OnClick(f.confirm)
@@ -489,7 +487,7 @@ describe("UI/IntroWindow, the window", function()
     assert.is_false(f.voice.en:IsShown())
     assert.is_false(f.box:IsShown())
     assert.is_false(f.voiceTitle:IsShown())
-    assert.is_true(f.size[2] < tall)
+    assert.are.equal(tall, f.size[2]) -- the window is one size on every page, with the voice section or without
   end)
 
   it("/wfj intro opens it again for anyone, any number of times, and never touches the asked flag", function()
@@ -513,15 +511,17 @@ describe("UI/IntroWindow, the window", function()
     Stub.fontSetFails = true -- the client refuses the bundled face until its file loads
     local f = IW.open()
     assert.are.equal(1, #ticks)
-    local before = f.size[2]
+    -- the window keeps its size, so the layout shows in where the cards sit under the question above them
+    local function confirmAt() return f.cards.ja.point[5] end
+    local before = confirmAt()
     function f.ask.ja.GetStringHeight() return 40 end -- the face that lands wraps the line to more rows
     ticks[1].fn(ticks[1].t)
-    assert.are.equal(before, f.size[2]) -- still refused: nothing measured again yet
+    assert.are.equal(before, confirmAt()) -- still refused: nothing measured again yet
     assert.is_false(ticks[1].t.cancelled)
     Stub.fontSetFails = false
     WFJ.Font.retryPending()
     ticks[1].fn(ticks[1].t)
-    assert.is_true(f.size[2] > before)
+    assert.is_true(confirmAt() < before) -- pushed down by the taller line
     assert.is_true(ticks[1].t.cancelled)
     IW.open() -- nothing refused now: no second ticker
     assert.are.equal(1, #ticks)
@@ -572,7 +572,7 @@ describe("UI/IntroWindow, the window", function()
     Stub.fireAll("CINEMATIC_STOP")
     run()
     assert.is_true(f:IsShown())
-    f.close.scripts.OnClick(f.close, "LeftButton")
+    IW.close()
     run()
     assert.is_false(f:IsShown())
     cinematic = true
@@ -645,17 +645,154 @@ describe("UI/IntroWindow, the window", function()
     assert.is_true(IW.frame.box:IsShown())
   end)
 
+  describe("the tour after the question", function()
+    local function ids()
+      local out = {}
+      for i, page in ipairs(IW.pages()) do out[i] = page.id end
+      return out
+    end
+    local function confirm(purpose)
+      local f = IW.open()
+      f.cards[purpose].scripts.OnClick(f.cards[purpose])
+      f.confirm.scripts.OnClick(f.confirm)
+      return f
+    end
+    local function shownPage(f)
+      local shown
+      for _, def in ipairs(IW.PAGES) do
+        if f.tour[def.id].frame:IsShown() then
+          assert.is_nil(shown, "two pages show at once")
+          shown = def.id
+        end
+      end
+      return shown
+    end
+
+    it("has the pages its choice calls for, in the list's order", function()
+      confirm("ja")
+      assert.are.same({ "start", "cards", "status", "freeze", "chat", "more" }, ids())
+      confirm("en")
+      assert.are.same({ "start", "cards", "status", "chat", "more" }, ids())
+      confirm("play")
+      assert.are.same({ "start", "chat", "more" }, ids())
+    end)
+
+    it("goes forward with Next and back with Back, one page showing, with its number and the count", function()
+      local f = confirm("ja")
+      assert.are.equal("start", shownPage(f))
+      assert.are.equal("1 / 6", f.count:GetText())
+      assert.is_truthy(f.next.caption:GetText():find("次へ", 1, true) and f.next.caption:GetText():find("Next", 1, true))
+      f.next.scripts.OnClick(f.next)
+      assert.are.equal("cards", shownPage(f))
+      assert.are.equal("2 / 6", f.count:GetText())
+      f.next.scripts.OnClick(f.next)
+      assert.are.equal("status", shownPage(f))
+      f.back.scripts.OnClick(f.back)
+      assert.are.equal("cards", shownPage(f))
+      f.back.scripts.OnClick(f.back)
+      f.back.scripts.OnClick(f.back) -- from the first tour page: the question
+      assert.is_true(f.pickPage:IsShown())
+      assert.is_nil(shownPage(f))
+      assert.is_false(f.foot:IsShown())
+      assert.is_true(f:IsShown())
+    end)
+
+    it("heads every page and words every point in both languages, with the keys named as set", function()
+      local f = confirm("ja")
+      WFJ.Settings.set("words.saveClick", "ctrl")
+      IW.refill()
+      for _, def in ipairs(IW.PAGES) do
+        local t = f.tour[def.id]
+        assert.is_truthy(t.head.ja:GetText() ~= "" and t.head.en:GetText() ~= "", def.id)
+        assert.are_not.equal(t.head.ja:GetText(), t.head.en:GetText())
+        for i, key in ipairs(def.points) do
+          local r = t.points[i]
+          assert.is_truthy(r.ja:GetText() ~= "" and r.en:GetText() ~= "", def.id .. " " .. key)
+          assert.is_nil(r.ja:GetText():find("\226\128\148", 1, true), key) -- no em dash
+        end
+      end
+      assert.is_truthy(f.tour.cards.words.en:GetText():find("Ctrl+click", 1, true))
+      assert.is_truthy(f.tour.status["status.import"].en:GetText():find("/wfj known", 1, true))
+      assert.is_truthy(f.tour.chat["chat.copy"].en:GetText():find("translator", 1, true))
+      -- the save click off: the point that names it is left out, the rest of its page stays
+      WFJ.Settings.set("words.saveClick", "off")
+      IW.refill()
+      assert.is_false(f.tour.cards.words.ja:IsShown())
+      assert.is_true(f.tour.cards.readings.ja:IsShown())
+    end)
+
+    it("leaves the chat word card point out for playing only", function()
+      local f = confirm("play")
+      assert.is_false(f.tour.chat["chat.cards"].ja:IsShown())
+      assert.is_true(f.tour.chat["chat.copy"].ja:IsShown())
+      assert.is_true(f.tour.chat["chat.phrases"].ja:IsShown())
+    end)
+
+    it("shows each page's picture from the tour's own files", function()
+      local f = confirm("ja")
+      for _, def in ipairs(IW.PAGES) do
+        assert.are.equal("Interface\\AddOns\\WoWForeverJapanese\\Media\\Tour\\" .. def.picture,
+          f.tour[def.id].picture.texture)
+        assert.is_table(f.tour[def.id].picture.point, def.id) -- placed by the layout
+      end
+    end)
+
+    it("keeps one height over all of its pages", function()
+      local f = confirm("ja")
+      local heights = {}
+      local set = f.SetHeight
+      function f:SetHeight(h)
+        heights[#heights + 1] = h
+        return set(self, h)
+      end
+      for _ = 2, #IW.pages() do f.next.scripts.OnClick(f.next) end
+      assert.is_true(#heights >= #IW.pages() - 1)
+      for _, h in ipairs(heights) do assert.are.equal(heights[1], h) end
+    end)
+
+    it("puts the heading, the picture and the first point at the same height on every page", function()
+      local f = confirm("ja")
+      local function at(def)
+        local t = f.tour[def.id]
+        local first
+        for _, r in ipairs(t.points) do
+          if not r.off then first = r break end
+        end
+        return { t.head.ja.point[5], t.picture.point[5], first.ja.point[5] }
+      end
+      local want = at(IW.PAGES[1])
+      for _, def in ipairs(IW.pages()) do
+        f.next.scripts.OnClick(f.next)
+        assert.are.same(want, at(def), def.id) -- whatever the page holds: two points or three, a voice section
+      end
+      -- and the heading sits where the question's does, so it does not move on Confirm either
+      assert.are.equal(f.ask.ja.point[5], want[1])
+    end)
+
+    it("opened again, starts on the question", function()
+      local f = confirm("ja")
+      f.next.scripts.OnClick(f.next)
+      IW.close()
+      IW.open()
+      assert.is_true(f.pickPage:IsShown())
+      f.confirm.scripts.OnClick(f.confirm)
+      assert.are.equal("1 / 6", f.count:GetText())
+    end)
+  end)
+
   it("the Start button, labelled in both languages, closes it, and Esc closes it", function()
     local f = IW.open()
-    local caption = f.close.caption:GetText()
+    f.confirm.scripts.OnClick(f.confirm)
+    for _ = 2, #IW.pages() do f.next.scripts.OnClick(f.next) end -- to the last page, where Next is Start
+    local caption = f.next.caption:GetText()
     assert.is_truthy(caption:find("始める", 1, true))
     assert.is_truthy(caption:find("Start", 1, true))
     Stub.keys.alt = true
     WFJ.Modifier.refresh()
-    assert.are.equal(caption, f.close.caption:GetText())
+    assert.are.equal(caption, f.next.caption:GetText())
     Stub.keys.alt = false
     WFJ.Modifier.refresh()
-    f.close.scripts.OnClick(f.close, "LeftButton")
+    f.next.scripts.OnClick(f.next, "LeftButton")
     assert.is_false(f:IsShown())
     local special = false
     for _, name in ipairs(_G.UISpecialFrames) do if name == "WFJIntro" then special = true end end

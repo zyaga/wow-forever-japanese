@@ -440,6 +440,41 @@ def test_content_and_file_names_in_a_repo(repo):
     assert any(p.startswith(f"{name}:1: codename") for p in problems)
 
 
+def test_content_reads_only_what_changed_since_it_was_found_clean(repo):
+    files = pc._tracked(repo)
+    assert sorted(pc.unread(repo, files)) == sorted(files)
+    assert pc.check_content(repo) == []
+    assert pc.unread(repo, files) == []
+    # an edit that is not staged, then the same edit staged: read both times, and cleared once clean
+    (repo / "README.md").write_text("# Title\n\nSee [the guide](docs/guide.md). More.\n")
+    assert pc.unread(repo, files) == ["README.md"]
+    _git(repo, "add", ".")
+    assert pc.unread(repo, files) == ["README.md"]
+    assert pc.check_content(repo) == []
+    assert pc.unread(repo, files) == []
+    # the same bytes under another name are another file: the name is checked too
+    (repo / "copy.md").write_text((repo / "README.md").read_text())
+    _git(repo, "add", ".")
+    assert pc.unread(repo, pc._tracked(repo)) == ["copy.md"]
+
+
+def test_a_file_with_a_problem_is_read_and_reported_every_run(repo):
+    (repo / "notes.md").write_text("per Zebra-12\n")
+    _git(repo, "add", ".")
+    first = pc.check_content(repo)
+    assert first and pc.check_content(repo) == first
+    assert pc.unread(repo, pc._tracked(repo)) == ["notes.md"]
+
+
+def test_changed_rules_read_everything_again(repo):
+    assert pc.check_content(repo) == []
+    files = pc._tracked(repo)
+    assert pc.unread(repo, files) == []
+    rules = pc.private_rules.rules_path(repo)
+    rules.write_text(rules.read_text() + "\n")
+    assert sorted(pc.unread(repo, files)) == sorted(files)
+
+
 def test_a_checkout_without_the_rules_checks_the_public_ones(clone):
     (clone / "notes.md").write_text(J(["Zebra-12 by Marisol, kept in /Us", "ers/someone/x\n"]))
     _git(clone, "add", ".")

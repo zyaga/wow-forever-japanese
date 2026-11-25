@@ -137,6 +137,9 @@ A word's file is the CRC-32 of the word modulo the file count, so a new word cha
 - a phrase holds a middle dot, or a phrase's English or Japanese starts with another phrase's (the addon reads a marked phrase from its first character);
 - a phrase's English, or an English chat word of several words, is word for word a line of the game's own English in `data/english/` (compared without case or outer spaces). One English word is never a clash: single English words may ship.
 
+### Word status marks on chat
+With `marks.chat` on (off by default, in the Word status section of the Words page), `UI/ChatMarks` puts the [word status](word-status.md) marks on chat lines: a red or blue underline by each word's status and the soft green highlight the highlight setting picks. A timer looks at the visible lines every 0.25 seconds; each line that shows new text gets an overlay of its own, and the words `Core/ChatWords` finds there are placed through `View.chatSpanAreas`. Nothing is hooked and no chat line is changed. A faded line, a secret line, a link's label and an escape sequence take no marks, and chat lines take no score tag. The chat word card shows the word's status line and takes the status clicks (Shift+click, Shift+right-click) while `marks.chat` is on.
+
 ### Settings
 The Words page's third section, **Chat** / チャット: an explanation, four switches, all on by default, and two buttons ([Settings → Settings pages](settings.md#settings-pages)). A change is followed at once (the State event `chat`).
 
@@ -161,6 +164,7 @@ The in-game window test reads the chat tools after the names read and before the
 - `addon/WoWForeverJapanese/UI/ChatPhraseLines.lua`: `filter`, `reveal`, `revealAll`; `EVENTS`, the chat events the filter is on
 - `addon/WoWForeverJapanese/UI/PhraseBook.lua`: the button and the card, `open`, `collapse`, `close`, `toggle`, `type`, `pick`, the shared spot
 - `addon/WoWForeverJapanese/UI/ChatWordsWindow.lua`: `open`, `items`, `add`, `remove`
+- `addon/WoWForeverJapanese/UI/ChatMarks.lua`: the word status marks on chat lines, `words`, `look` ([Word status](word-status.md#chat))
 - `addon/WoWForeverJapanese/UI/Readings.lua`: `View.chatSpanAreas`, `View.showHover`, `View.clearHover`, `View.poll` (the save click)
 - `addon/WoWForeverJapanese/Core/Data.lua`: the `chatja`, `chaten`, `chatword`, `chatwordEn` and `phrase` kinds
 - `addon/WoWForeverJapanese/Core/Settings.lua`, `UI/Options.lua`, `UI/OptionsText.lua`, `UI/Slash.lua`, `Main.lua`; `WoWForeverJapanese.toc`: `WFJ_ChatWords` in `## SavedVariables`
@@ -194,4 +198,4 @@ The in-game window test reads the chat tools after the names read and before the
 - **The X**: hides both frames for the session only; the button is back after the next login or reload.
 
 ## Related
-- [Readings](readings.md) · [Word list](word-list.md) · [Study](study.md) · [Settings](settings.md) · [Pipeline](pipeline.md) · [ADR-109](../adr/109-chat-tools.md) · [ADR-081](../adr/081-english-first-and-english-word-cards.md) · [Architecture → Addon modules](../architecture/addon-modules.md) · [App capabilities → Chat tools](../app-capabilities.md#chat-tools) · [Glossary](../glossary.md)
+- [Readings](readings.md) · [Word list](word-list.md) · [Study](study.md) · [Word status](word-status.md) · [Settings](settings.md) · [Pipeline](pipeline.md) · [ADR-109](../adr/109-chat-tools.md) · [ADR-081](../adr/081-english-first-and-english-word-cards.md) · [Architecture → Addon modules](../architecture/addon-modules.md) · [App capabilities → Chat tools](../app-capabilities.md#chat-tools) · [Glossary](../glossary.md)

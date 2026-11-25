@@ -656,6 +656,9 @@ pronunciation: ## fetch the pinned CMU Pronouncing Dictionary and write data/eng
 english-cards: ## how many English words get a card per surface, and the words that most often get none
 	cd pipeline && $(PY) -m wfj english-cards report
 
+intro-images: ## the welcome tour's pictures: docs/images/tour/ cut and written as Media/Tour/*.tga (on a Mac: it uses sips)
+	$(PY) pipeline/wfj/dev/intro_images.py .
+
 generate: ## data/ → addon Data/*.lua + the TOC's generated block (deterministic; validate diffs it)
 	cd pipeline && $(PY) -m wfj generate
 

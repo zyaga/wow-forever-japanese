@@ -28,6 +28,7 @@ without them, such as a fresh clone or a CI run, checks the public rules only an
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -53,6 +54,11 @@ IMAGE_PAGES = ("README.md", "docs/curseforge.md")
 IMAGE_DIR = "docs/images/"
 IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".gif", ".webp")
 SYMLINK_MODE = "120000"
+FILE_MODES = {"100644", "100755"}
+# The files `content` found clean, kept in the git folder so the next run reads only what changed.
+CLEARED = "wfj-public-check-cleared"
+# Below this many files the workers cost more to start than the reading does.
+POOL_FROM = 200
 GLOB_CHARS = "*?["
 
 
@@ -158,13 +164,77 @@ def _content_of(repo: Path, f: str, rules: pt.PrivateRules) -> list[str]:
     return problems
 
 
+def _rules_stamp(repo: Path) -> str:
+    """Changes whenever the answer for an unchanged file could: the private rules, or the code that checks."""
+    h = hashlib.sha256()
+    for path in (Path(__file__), Path(pt.__file__), private_rules.rules_path(repo)):
+        h.update(path.read_bytes() if path and path.is_file() else b"-")
+        h.update(b"\0")
+    return h.hexdigest()
+
+
+def _versions(repo: Path) -> dict[str, str]:
+    """`<blob id> <path>` for each tracked regular file whose working copy is what the index holds. A file
+    edited since it was staged, a symlink and a submodule have no entry, so they are read on every run."""
+    edited = {p for p in _git_out(repo, "diff-files", "--name-only", "-z").split("\0") if p}
+    out = {}
+    for entry in _git_out(repo, "ls-files", "-s", "-z").split("\0"):
+        meta, _, path = entry.partition("\t")
+        parts = meta.split(" ")
+        if path and len(parts) == 3 and parts[0] in FILE_MODES and parts[2] == "0" and path not in edited:
+            out[path] = f"{parts[1]} {path}"
+    return out
+
+
+def _cleared_path(repo: Path) -> Path | None:
+    info = private_rules.git_info_dir(repo)
+    return info.parent / CLEARED if info else None
+
+
+def _cleared(path: Path | None, stamp: str) -> set[str]:
+    """The versions an earlier run found clean under the same rules; nothing when the rules changed."""
+    if path is None or not path.is_file():
+        return set()
+    first, _, rest = path.read_text(encoding="utf-8", errors="replace").partition("\n")
+    return set(rest.split("\n")) - {""} if first == stamp else set()
+
+
+def _remember(path: Path | None, stamp: str, clean: set[str]) -> None:
+    if path is None:
+        return
+    tmp = path.with_name(f"{path.name}.{os.getpid()}")
+    try:
+        tmp.write_text("\n".join([stamp, *sorted(clean)]) + "\n", encoding="utf-8")
+        os.replace(tmp, path)
+    except OSError:
+        tmp.unlink(missing_ok=True)  # the list only saves time; the next run reads everything
+
+
+def unread(repo: Path, files: Sequence[str]) -> list[str]:
+    """The tracked files `content` has to read: every one not already found clean in this exact version."""
+    versions = _versions(repo)
+    cleared = _cleared(_cleared_path(repo), _rules_stamp(repo))
+    return [f for f in files if versions.get(f) not in cleared]
+
+
 def check_content(repo: Path) -> list[str]:
-    # data/ is well over 100 MB of text; one process per core keeps the check to seconds.
+    """data/ is well over 100 MB of text, so a file found clean is not read again until it changes: its
+    blob id and path are kept in the git folder, under a stamp of the rules and of this code. A fresh
+    clone has no such list and reads everything."""
     files = _tracked(repo)
     rules = private_rules.load(repo)
-    with ProcessPoolExecutor() as pool:
-        results = pool.map(_content_of, [repo] * len(files), files, [rules] * len(files), chunksize=64)
-        return [p for problems in results for p in problems]
+    stamp, versions, where = _rules_stamp(repo), _versions(repo), _cleared_path(repo)
+    cleared = _cleared(where, stamp)
+    todo = [f for f in files if versions.get(f) not in cleared]
+    if len(todo) < POOL_FROM:
+        results = [_content_of(repo, f, rules) for f in todo]
+    else:
+        with ProcessPoolExecutor() as pool:
+            results = list(pool.map(_content_of, [repo] * len(todo), todo, [rules] * len(todo), chunksize=64))
+    clean = {versions[f] for f, problems in zip(todo, results, strict=True) if not problems and f in versions}
+    # a version no tracked file has any more is dropped, so the list stays the size of the checkout
+    _remember(where, stamp, (cleared & set(versions.values())) | clean)
+    return [p for problems in results for p in problems]
 
 
 # ------------------------------------------------------------------------------------------- comments
