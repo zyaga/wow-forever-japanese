@@ -9,7 +9,7 @@ CLIENTS = "pipeline/clients.toml"
 def test_real_toc_fields_and_load_order(root):
     meta, files = toc_check.parse_toc(root / TOC)
     assert meta["Version"] == "@project-version@"
-    assert meta["SavedVariables"] == "WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords"
+    assert meta["SavedVariables"] == "WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords, WFJ_Anki"
     assert meta["Interface"].isdigit()
     # An icon for the AddOn List (a client icon Blizzard's own Vanilla/QuestInfo.xml references) and Notes
     # that say where the settings are.
@@ -31,6 +31,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua",  # the collector, its send, its reminder
         "Core/Intro.lua",  # whether the first-install window is owed
         "Core/Words.lua",  # the saved word list
+        "Core/AnkiExport.lua",  # the list ready-made for the Anki add-on
         "Core/ChatWords.lua", "Core/ChatPhrases.lua",  # the words and phrases of the chat tools
         "Core/Fsrs.lua", "Core/Study.lua",  # studying it: the memory model, then the queue
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
