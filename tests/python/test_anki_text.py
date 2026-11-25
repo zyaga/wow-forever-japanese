@@ -11,7 +11,7 @@ def test_every_line_has_both_languages_and_the_same_blanks():
     for key, (en, ja) in text.T.items():
         assert en.strip() and ja.strip(), key
         assert sorted(re.findall(r"\{(\w+)\}", en)) == sorted(re.findall(r"\{(\w+)\}", ja)), key
-        assert "—" not in en + ja, key
+        assert chr(0x2014) not in en + ja, key
 
 
 def test_every_line_the_window_and_the_menu_ask_for_exists():

@@ -59,7 +59,8 @@ Text.T = {
       .. "それぞれのファイルを探してコピーし、Ankiのメディアフォルダに貼り付けてください。最後に単語の一覧をAnkiに取り込んでください。",
   },
   ["words.addon"] = {
-    en = "The Anki add-on does all of this by itself: cards, images and audio. New words reach Anki after /reload or logout. Get it here:",
+    en = "The Anki add-on does all of this by itself: cards, images and audio. "
+      .. "New words reach Anki after /reload or logout. Get it here:",
     ja = "Ankiアドオンなら、カード作成・画像・音声まですべて自動です。新しい単語は /reload かログアウトのあと Anki に届きます。入手はこちら：",
   },
   ["words.audioNone"] = { en = "None of these words has a recording to copy.", ja = "コピーできる録音のある単語はありません。" },
