@@ -1,5 +1,6 @@
 """The file Anki installs: the add-on's own files at the top of a zip, with the version in its manifest."""
 
+import ast
 import importlib.util
 import json
 import zipfile
@@ -44,7 +45,7 @@ def test_the_file_holds_the_add_on_at_its_top(tmp_path):
     assert "Copyright (C) 2026 Zyaga" in header and "GPL-2.0-or-later" in header
     assert manifest["human_version"] == "1.2.3"
     assert manifest["package"] and manifest["name"] == "WoW Forever Japanese"
-    assert manifest["min_point_version"] >= 250900
+    assert manifest["min_point_version"] == 231000  # Anki 23.10, the oldest the real-Anki tests ran on
     assert config == {"folder": "", "front": "sentence", "audio": "back"}
 
 
@@ -63,3 +64,18 @@ def test_the_release_adds_the_file_to_the_github_release():
     assert 'gh release upload "v$VERSION" build/anki/WoWForeverJapanese.ankiaddon --clobber' in workflow
     makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
     assert "anki-package:" in makefile and "anki-cards:" in makefile
+
+
+def test_the_add_on_keeps_to_the_python_of_the_oldest_anki_it_allows():
+    """Anki 23.10 runs on Python 3.9: its grammar, and no zip(strict=), which came with 3.10."""
+    for path in sorted((ADDON / "wfj_anki").glob("*.py")):
+        tree = ast.parse(path.read_text(encoding="utf-8"), feature_version=(3, 9))
+        strict = [
+            node.lineno
+            for node in ast.walk(tree)
+            if isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Name)
+            and node.func.id == "zip"
+            and any(k.arg == "strict" for k in node.keywords)
+        ]
+        assert strict == [], f"{path.name}: zip(strict=) on line {strict}"

@@ -1,6 +1,6 @@
 # Anki add-on
 
-> A small add-on for desktop Anki (25.09 or later) that reads the game's saved file and turns every saved word into an Anki card by itself, with its screenshot and its sentence's audio. Two halves: the addon writes a ready-made copy of the word list at logout and `/reload` (`Core/AnkiExport.lua`, the `ankiexport` step in `Main.lua`), and the add-on in `anki-addon/wfj_anki/` reads it and writes notes. Decision: [ADR-110](../adr/110-a-ready-made-export-for-the-anki-add-on.md).
+> A small add-on for desktop Anki (23.10 or later) that reads the game's saved file and turns every saved word into an Anki card by itself, with its screenshot and its sentence's audio. Two halves: the addon writes a ready-made copy of the word list at logout and `/reload` (`Core/AnkiExport.lua`, the `ankiexport` step in `Main.lua`), and the add-on in `anki-addon/wfj_anki/` reads it and writes notes. Decision: [ADR-110](../adr/110-a-ready-made-export-for-the-anki-add-on.md).
 
 ## Purpose
 The [word list](word-list.md)'s export window makes a player copy text, import it and then copy every screenshot and sound file into Anki's media folder by hand, again for each new word. The add-on does all of that: after the player installs it (and points it at the World of Warcraft folder if it is not found), saved words show up in Anki as finished cards, with furigana on the back, the screenshot and the sentence in its NPC's voice. Words saved before the add-on are filled in too. It only ever changes notes it made, keeps a field the player edited, and never touches a card's schedule or review history.
@@ -128,7 +128,7 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - `anki-addon/wfj_anki/ui.py`: the menu, the browser action, the hooks (`profile_did_open`, `state_did_change`, Qt's `applicationStateChanged`) and the settings window; with `__init__.py`, the only code that knows Qt
 - `anki-addon/wfj_anki/text.py`: the add-on's words in English and Japanese
 - `anki-addon/wfj_anki/templates/`: `front.html`, `back.html`, `style.css`
-- `anki-addon/wfj_anki/manifest.json` (the oldest Anki it runs on: 25.09), `config.json`, `config.md`
+- `anki-addon/wfj_anki/manifest.json` (the oldest Anki it runs on: 23.10), `config.json`, `config.md`
 - `anki-addon/tools/package.py`: the `.ankiaddon` file; `anki-addon/tools/render_cards.py`: the card pictures
 
 ## Packaging and release
@@ -140,7 +140,7 @@ The first sync makes the note type. A note type the add-on made earlier with few
 ## Testing
 - **Lua (busted):** `tests/lua/spec/anki_export_spec.lua` (rows equal the export's values, an old entry gets its furigana and audio, a frozen list is still copied, the guarded save that the logout step in `Main.lua` calls, no pack; the step itself is checked in the game, by reading the saved file after a `/reload`), `tests/lua/spec/words_window_spec.lua` (the add-on line).
 - **Python (pytest), without Anki:** `test_anki_savedvars.py` (fixture `tests/fixtures/anki/WoWForeverJapanese.lua`), `test_anki_discover.py`, `test_anki_plan.py` (the sync rules against an in-memory stand-in for the collection: adds, updates, hand edits, reset, media, removed words), `test_anki_text.py` (the add-on's words in both languages, when a sync is due, the hooks it is wired to), `test_anki_settings.py`, `test_anki_text.py`, `test_anki_template.py` (the templates rendered for each choice and both languages), `test_anki_package.py`.
-- **On a real Anki collection:** `test_anki_real.py` runs `anki-addon/tests/real_collection.py` with Anki's own Python (`ANKI_PYTHON`, or where Anki's launcher keeps it) against a throwaway collection, and checks that a card's type, queue, due, interval, ease, reps and lapses and the review log are the same before and after a sync and a reset. `anki-addon/tests/settings_window.py` draws the settings window with Anki's Qt and no Anki window. Both are skipped where Anki is not installed, as in CI.
+- **On a real Anki collection:** `test_anki_real.py` runs `anki-addon/tests/real_collection.py` with Anki's own Python (`ANKI_PYTHON`, or where Anki's launcher keeps it) against a throwaway collection, and checks that a card's type, queue, due, interval, ease, reps and lapses and the review log are the same before and after a sync and a reset. `anki-addon/tests/settings_window.py` draws the settings window with Anki's Qt and no Anki window. Both are skipped where Anki is not installed, as in CI. The same file passed against Anki 23.10.1 (its `anki` and `aqt` packages on Python 3.9, named by `ANKI_PYTHON`), which is why 23.10 is the oldest Anki the package allows; the add-on's code keeps to Python 3.9.
 - **By hand:** the first run in Anki (install the file, the menu, the hooks, the window, a sync after `/reload`) is the maintainer's ([Testing → Anki add-on](../testing/strategy.md#anki-add-on-checklist)).
 
 ## Invariants

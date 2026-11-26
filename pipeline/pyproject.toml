@@ -25,6 +25,10 @@ include = ["wfj*"]
 line-length = 110
 target-version = "py311"
 
+[tool.ruff.per-file-target-version]
+# the Anki add-on runs inside Anki, and Anki before 25.07 ships Python 3.9
+"../anki-addon/wfj_anki/**" = "py39"
+
 [tool.ruff.lint]
 select = [
     "E", "F", "I", "B", "UP",

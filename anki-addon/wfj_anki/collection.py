@@ -92,7 +92,8 @@ class AnkiNotes:
         names = [f["name"] for f in self.model["flds"]]
         found = {}
         for note_id, joined in self.col.db.all("select id, flds from notes where mid = ?", self.model["id"]):
-            fields = dict(zip(names, joined.split("\x1f"), strict=False))
+            # Anki before 25.07 runs on Python 3.9, where zip() takes no `strict`
+            fields = dict(zip(names, joined.split("\x1f")))
             named = (html.unescape(fields.get("Game", "")), html.unescape(fields.get("Key", "")))
             if named[1] and named not in found:
                 found[named] = (note_id, fields)
