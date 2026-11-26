@@ -4,8 +4,8 @@
 
 An addon that shows World of Warcraft: Forever in Japanese: quests, NPC dialogue, books, item and spell tooltips,
 and the game's interface. Hold **Alt** and the game's own English comes back; let go and the Japanese returns. Alt
-is only the default: any key can be chosen. Names of people, places, creatures, items and spells stay in English
-everywhere, and so do quest titles.
+is only the default: any key can be chosen. Names of people, places, creatures, items and spells, and quest
+titles, show the way you choose: in English, or in Japanese katakana.
 
 It works the other way round too, for Japanese players studying English: choose **English first** and the game
 stays in English, with the Japanese one key away and a popup that shows how each English word is said and its
@@ -123,6 +123,18 @@ for Anki cards. Going back to an older version of the addon loses the list, so c
 |---|---|
 | ![The word list window, with the saved words as text to copy](docs/images/word-list.jpg) | ![An Anki card made from a saved word: the word and sentence with furigana, the meaning and the in-game screenshot](docs/images/anki-card.jpg) |
 
+**Anki add-on.** A small add-on for desktop Anki (23.10 or later) makes the cards for you: every word you save shows
+up in Anki as a finished card, with the sentence, furigana on the back, the screenshot and the sentence in its NPC's
+voice. Nothing to copy by hand. To install it, open **Tools → Add-ons → Get Add-ons** in Anki,
+paste the code `612475471` and restart Anki ([its page on AnkiWeb](https://ankiweb.net/shared/info/612475471)). Anki then offers each new version
+by itself. The same add-on is also a file, `WoWForeverJapanese.ankiaddon`, on the latest addon release on the
+[releases page](https://github.com/zyaga/wow-forever-japanese/releases) (named with a version number, not a **Voice**
+release): open it with Anki. It finds the World of Warcraft folder in the usual places; if it does not, choose
+the folder under **Tools → WoW Forever Japanese → Settings**. New words reach Anki after a `/reload` or a logout in
+the game. Cards go into the deck **WoW Forever Japanese**. A card you edit by hand keeps your edit, a card you delete stays
+deleted, your study progress is never changed, and your other cards are never touched. Sync Anki on all your devices before you install or update the add-on: a new version can change the card's fields, and Anki then asks you to pick one side to keep. The Anki add-on runs on the computer only; the
+cards reach the phone apps through AnkiWeb as usual.
+
 **Study them in game.** A small tab at the right edge of the screen says how many saved words are due. Click it for one
 card at a time: the word in the sentence it came from, then its reading and meaning, and **Again** or **Good** to say
 how it went; the same FSRS schedule Anki uses decides when the word comes back, and when nothing is due you are done.
@@ -160,7 +172,8 @@ your own chat words with `/wfj chatwords`, and the **Words** settings page has a
 turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC
 speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know. Your character says its
 own error lines, such as being out of range, in Japanese too, in a voice modelled on its race's own error lines. A
-narrator reads the rest, and every line plays at the same loudness.
+narrator reads books and letters and the quests an object or an item gives, and every line plays at the same
+loudness. A line that has no voice yet stays silent and says so on its window: `[音声なし / No Voice Yet]`.
 
 **Voice panel.** While a line plays, a panel at the bottom of the screen shows who is speaking: their face, their
 name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. The panel follows the
@@ -256,9 +269,7 @@ No GitHub account? Post the bug in **#bug-reports** on the [Discord](https://for
 Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action
 bar stay Japanese in combat, the cooldown countdown too.
 
-**Why are names still in English?** On purpose. Names of people, places, creatures, items and spells are never
-changed, and neither is a quest's title, so what you read matches what other players say and what guides call
-things. The quest's text under the title is Japanese.
+**Are names in English or Japanese?** You choose how names show. The welcome window asks, with an example of each: **English names**, so what you read matches what other players say and what guides call things, or **Japanese names**, which shows the names of people, places, creatures, items, spells, skills and factions in katakana, on tooltips, nameplates, the map, chat and inside quest text. With Japanese names, holding Alt shows the English name, and pointing at a name shows its reading and its English name. Quest titles follow the same choice, and you can change it on the settings page.
 
 **What do the markers mean?** **[未翻訳 / Not Translated]** means the line has no translation yet and is shown in
 the game's English. **[要更新 / English Changed]** means the English changed after the line was translated.
@@ -308,7 +319,7 @@ and why: [docs](docs/overview.md). What changed in each release: [`CHANGELOG.md`
 
 ## 日本語
 
-World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前はすべて英語のままです。クエストのタイトルも英語のままです。
+World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前とクエストのタイトルは、英語か日本語（カタカナ）かを選べます。
 
 逆向きにも使えます。英語を学びたい方は **英語優先**（English first）を選ぶと、ゲームは英語のまま、キーひとつで日本語を表示でき、英語の単語にマウスを合わせると発音と日本語の単語が表示されます。
 
@@ -388,6 +399,8 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 |---|---|
 | ![コピー用のテキストで保存した単語が表示された単語帳ウィンドウ](docs/images/word-list.jpg) | ![保存した単語から作った Anki のカード。ふりがな付きの単語と文、意味、ゲーム内のスクリーンショット](docs/images/anki-card.jpg) |
 
+**Anki アドオン。** パソコン版 Anki（23.10 以降）用の小さなアドオンを入れると、カードを自動で作ります。保存した単語はすべて、文、裏面のふりがな、スクリーンショット、NPC の声による文の音声が付いたカードとして Anki に届きます。手でコピーする必要はありません。インストールは、Anki の **ツール → アドオン → 新たにアドオンを取得** を開き、コード `612475471` を貼り付けて、Anki を再起動します（[AnkiWeb のページ](https://ankiweb.net/shared/info/612475471)）。新しいバージョンは Anki が自動で知らせます。同じアドオンは、[リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)の最新のアドオンのリリース（名前がバージョン番号のもの。**Voice** のリリースではありません）にも `WoWForeverJapanese.ankiaddon` というファイルで置いてあります。Anki で開いてください。World of Warcraft のフォルダは通常の場所から自動で探します。見つからないときは **ツール → WoW Forever Japanese → 設定** でフォルダを選んでください。新しい単語は、ゲームで `/reload` かログアウトをしたあとに Anki に届きます。カードは **WoW Forever Japanese** というデッキに入ります。手で編集したカードはその内容が残り、削除したカードは削除されたままで、学習の進み具合は変わらず、ほかのカードには一切触れません。アドオンを入れる前や更新する前に、すべての端末で Anki を同期しておいてください。新しいバージョンでカードのフィールドが変わると、Anki はどちらか一方のデータを選ぶよう求めます。Anki アドオンはパソコンでのみ動きます。カードはいつもどおり AnkiWeb を通してスマートフォンのアプリにも届きます。
+
 **ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。音声を入れていれば、答えを見たときに保存した文がNPCの声で読み上げられ、単語帳からその録音を Anki 用に書き出すこともできます。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
 
 **英語を学ぶ場合。** 設定ページの **ゲームの文字**（Game text）を **English first** にするか、ようこそ画面で **英語を学ぶ** を選びます。ゲームは本来の英語のまま表示され、Alt を押している間だけ日本語が表示されます。同じキーで、向きが逆になります。クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで英語の単語にマウスを合わせると、発音、その行の翻訳で使われている日本語の単語と読み方、その辞書形が表示されます。名前や *the*、*is*、*of* のような短い語には表示されません。Ctrl+クリックで英語の単語を英語の文と日本語の文と一緒に保存でき、学習カードは英語から出題します。日本語音声は、キーを押している間だけ再生されます。
@@ -396,7 +409,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 **チャットの補助。** チャットの行で単語にマウスを合わせると、そこでもポップアップ辞書が出ます。日本語優先なら日本語の単語、英語優先なら英語の単語です。マウスを置いた行の小さなアイコンを押すと、その行が選択された状態で枠に表示されるので、辞書や翻訳サービスにコピーできます。チャット欄の横の「文」ボタンで定型文を開きます。定型文をクリックすると、先頭に小さな点の付いた英語がチャットの入力欄に入り、そのまま送れます。アドオンのない人には普通の英語として届き、アドオンのある人には自分の言語で表示されます。それ以外にだれかが入力した文は変わりません。`/wfj chatwords` で自分のチャット単語を追加でき、設定の **単語帳** ページで機能ごとにオン・オフできます。
 
-**日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。それ以外はナレーターが読み、どの行も同じ音量で再生されます。
+**日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。本や手紙、物やアイテムから受けるクエストはナレーターが読み、どの行も同じ音量で再生されます。まだ音声のない行は読み上げず、ウィンドウに `[音声なし / No Voice Yet]` と表示されます。
 
 **音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。パネルは声に合わせて単語ごとに進み、文が始まるとページが切り替わり、話している単語に淡い色が付きます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。一時停止の両側にある小さな矢印で、前の文や次の文から再生できます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
 
@@ -447,7 +460,7 @@ GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/di
 
 ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
-**名前が英語のままなのはなぜ？** 意図した仕様です。人物・地名・モンスター・アイテム・呪文の名前は変えません。クエストのタイトルも英語のままです（タイトルの下の本文は日本語です）。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
+**名前は英語ですか、日本語ですか？** 名前の表示は選べます。ようこそ画面で、それぞれの例を見て選びます。**英語の名前** は、ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。**日本語の名前** は、人物・地名・モンスター・アイテム・呪文・スキル・勢力の名前を、ツールチップ、ネームプレート、マップ、チャット、クエスト本文の中でカタカナで表示します。日本語の名前では、Alt を押している間は英語の名前に戻り、名前にマウスを合わせると読み方と英語の名前が表示されます。クエストのタイトルも同じ選択に従い、設定ページであとから変更できます。
 
 **マーカーは何を表している？** **[未翻訳 / Not Translated]** はまだ翻訳がなく、ゲームの英語のまま表示されている行です。**[要更新 / English Changed]** は翻訳のあとで英語の原文が変わった行です。
 

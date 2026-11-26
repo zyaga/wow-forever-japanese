@@ -2,8 +2,8 @@
 
 The text of the addon's CurseForge project page. It is the README condensed; when one changes, change the other.
 Paste everything under "Description" into the project's description with the editor set to Markdown. The
-`<span style="color:…">` tags are the editor's own colour syntax. The page has no images: the maintainer
-prefers it as text only.
+`<span style="color:…">` tags are the editor's own colour syntax. The page has no pictures (the maintainer
+prefers it as text), apart from the Ko-fi button, which is Ko-fi's own image and links to the support page.
 
 - **Project name:** WoW Forever Japanese (日本語化)
 - **Summary:** Play WoW Forever in Japanese: quests, NPC dialogue, tooltips and menus, with the English one
@@ -22,6 +22,8 @@ prefers it as text only.
 
 **Discord:** https://foreverjapanese.com/discord (help, bug reports, translation fixes and chat, in English or Japanese).
 
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://foreverjapanese.com/support)
+
 ### <span style="color:#E8C77E;">What it translates</span>
 
 - **Quests:** the quest window, the quest log and the objective lines in the tracker.
@@ -32,7 +34,7 @@ prefers it as text only.
 
 In numbers: **5,850** quests, **11,872** NPC dialogue lines, **923** book pages, **209** letter pages, **11,259** item tooltips, **20,360** spell tooltips, **16,232** UI.
 
-Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, and so do quest titles, so you can still talk with other players, read guides and search by name.
+Names of people, places, creatures, items and spells, and quest titles, show the way you choose. The welcome window asks: **English names**, so you can still talk with other players, read guides and search by name, or **Japanese names**, which shows them in katakana. You can change it in the settings.
 
 ### <span style="color:#E8C77E;">Popup dictionary</span>
 
@@ -43,6 +45,8 @@ Point at a Japanese word in quest text, NPC dialogue, a book page or a window la
 ### <span style="color:#E8C77E;">Word list</span>
 
 While the popup shows a word, **Ctrl+click** it to save it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. Type `/wfj words` to copy the whole list as text for Anki, a spreadsheet or a text file: the word and its sentence come with furigana for your cards, and a screenshot taken when you saved the word can come along. With the voice installed, the study card speaks each saved sentence in its NPC's voice, and the export can bring those recordings to Anki too. Choose the click on the **Words** settings page.
+
+**Anki add-on.** A small add-on for desktop Anki makes the cards for you, with furigana, the screenshot and the sentence's audio, and nothing to copy by hand. In Anki, open **Tools → Add-ons → Get Add-ons** and paste the code `612475471` ([its page on AnkiWeb](https://ankiweb.net/shared/info/612475471)). New words reach Anki after a `/reload` or a logout; cards you edit and your other cards are left as they are. Sync Anki on all your devices before you install or update the add-on: a new version can change the card's fields, and Anki then asks you to pick one side to keep.
 
 ### <span style="color:#E8C77E;">Study whichever you want</span>
 
@@ -60,7 +64,7 @@ Point at a word in a chat line and the popup dictionary shows it there too: Japa
 
 ### <span style="color:#E8C77E;">Japanese voice</span>
 
-With **WoW Forever Japanese Voice** installed (a free, separate download), quest offers, progress and turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know, and your character says its own error lines, such as being out of range, in Japanese too, in a voice modelled on its race's own. Names stay English on screen, and the voice says them in Japanese sounds that match the English you read. Every line plays at the same loudness. The NPC's English voice is silenced as the window opens, so it does not start under the Japanese. An NPC's greeting is read aloud only the first time you hear it, and a setting does the same for quest lines; the window's play button reads a line again.
+With **WoW Forever Japanese Voice** installed (a free, separate download), quest offers, progress and turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know, and your character says its own error lines, such as being out of range, in Japanese too, in a voice modelled on its race's own. Whichever names you chose for the screen, the voice says them in Japanese sounds that match their English. Every line plays at the same loudness. The NPC's English voice is silenced as the window opens, so it does not start under the Japanese. An NPC's greeting is read aloud only the first time you hear it, and a setting does the same for quest lines; the window's play button reads a line again. A line that has no voice yet stays silent and says so on its window: `[音声なし / No Voice Yet]`.
 
 While a line plays, a **voice panel** at the bottom of the screen shows the speaker's face, their name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. The panel follows the voice word by word: the page turns as each sentence starts, and a soft tint marks the words as they are spoken. Close the window and the line keeps playing, so you can walk on while the NPC finishes; lines that start meanwhile wait their turn in a list above the panel. Hold <span style="color:#E0605A;">**Alt**</span> and the panel shows the line's English while the voice goes on. Point at the panel for pause and play again, with two small arrows that play the line from the sentence before or the next one. The quest log has a play button too. The panel can be moved, shrunk to a small strip, switched to a dark style or turned off.
 
@@ -97,7 +101,7 @@ No GitHub account? Post the line in **#translation-fixes** on the Discord: https
 
 Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action bar stay Japanese in combat, the cooldown countdown too.
 
-**Why are names still in English?** On purpose, so what you read matches what other players say and what guides call things. A quest's title stays English for the same reason; the text under it is Japanese.
+**Are names in English or Japanese?** You choose how names show. The welcome window asks, with an example of each: **English names**, so what you read matches what other players say and what guides call things, or **Japanese names**, which shows the names of people, places, creatures, items, spells, skills and factions in katakana, on tooltips, nameplates, the map, chat and inside quest text. With Japanese names, holding Alt shows the English name, and pointing at a name shows its reading and its English name. Quest titles follow the same choice, and you can change it on the settings page.
 
 **What do the markers mean?** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> means the line has no translation yet and is shown in the game's English. <span style="color:#E8C77E;">[要更新 / English Changed]</span> means the English changed after the line was translated.
 
@@ -131,6 +135,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 **Discord:** https://foreverjapanese.com/discord （質問、不具合の報告、翻訳の修正、雑談。英語でも日本語でも）
 
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://foreverjapanese.com/support)
+
 ### <span style="color:#E8C77E;">翻訳される内容</span>
 
 - **クエスト:** クエストウィンドウ、クエストログ、トラッカーの目標
@@ -141,7 +147,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 数で見ると: クエスト **5,850**、NPC の会話 **11,872** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **11,259**、呪文のツールチップ **20,360**、UI **16,232**。
 
-人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。クエストのタイトルも英語のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。
+人物・地名・モンスター・アイテム・呪文の名前とクエストのタイトルは、表示を選べます。ようこそ画面で、ほかのプレイヤーとの会話や攻略情報の検索にそのまま使える **英語の名前** か、カタカナで表示する **日本語の名前** を選びます。設定であとから変更できます。
 
 ### <span style="color:#E8C77E;">ポップアップ辞書</span>
 
@@ -152,6 +158,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 ### <span style="color:#E8C77E;">単語帳</span>
 
 ポップアップが出ている単語を **Ctrl+クリック** すると、読み方・意味・その文と一緒に保存されます。単語帳は次回以降も残り、すべてのキャラクターで共通です。`/wfj words` で単語帳全体を Anki・表計算ソフト・テキストファイル用のテキストとしてコピーできます。単語と文にはカード用のふりがなが付き、保存したときのスクリーンショットも添えられます。音声を入れていれば、学習カードが保存した文をNPCの声で読み上げ、その録音も書き出してAnkiで使えます。保存の操作は設定の **単語帳** ページで選べます。
+
+**Anki アドオン。** パソコン版 Anki 用の小さなアドオンが、ふりがな・スクリーンショット・文の音声付きのカードを自動で作ります。手でコピーする必要はありません。Anki の **ツール → アドオン → 新たにアドオンを取得** を開き、コード `612475471` を貼り付けてください（[AnkiWeb のページ](https://ankiweb.net/shared/info/612475471)）。新しい単語は `/reload` かログアウトのあとに Anki に届きます。手で編集したカードやほかのカードはそのまま残ります。アドオンを入れる前や更新する前に、すべての端末で Anki を同期しておいてください。新しいバージョンでカードのフィールドが変わると、Anki はどちらか一方のデータを選ぶよう求めます。
 
 ### <span style="color:#E8C77E;">学びたい言語を選べます</span>
 
@@ -169,7 +177,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ### <span style="color:#E8C77E;">日本語音声</span>
 
-**WoW Forever Japanese Voice**（無料の別ダウンロード）を入れると、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。名前は画面では英語のままで、音声では読んでいる英語に合わせたカタカナの音で読み上げます。どの行も同じ音量で再生されます。日本語で読み上げる行では、ウィンドウが開いた時点で NPC の英語の声を止めるので、日本語に英語が重なりません。NPC のあいさつは初めて聞くときだけ読み上げます。クエストの音声も設定で同じようにできます。ウィンドウの再生ボタンでもう一度聞けます。
+**WoW Forever Japanese Voice**（無料の別ダウンロード）を入れると、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。画面の名前がどちらでも、音声では英語の名前に合わせたカタカナの音で読み上げます。どの行も同じ音量で再生されます。日本語で読み上げる行では、ウィンドウが開いた時点で NPC の英語の声を止めるので、日本語に英語が重なりません。NPC のあいさつは初めて聞くときだけ読み上げます。クエストの音声も設定で同じようにできます。ウィンドウの再生ボタンでもう一度聞けます。まだ音声のない行は読み上げず、ウィンドウに `[音声なし / No Voice Yet]` と表示されます。
 
 読み上げ中は、画面下の **音声パネル** に話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。パネルは声に合わせて単語ごとに進み、文が始まるとページが切り替わり、話している単語に淡い色が付きます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ちます。<span style="color:#E0605A;">**Alt**</span> を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると一時停止ともう一度再生のボタンが出て、両側の小さな矢印で前の文や次の文から再生できます。クエストログにも再生ボタンがあります。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
 
@@ -206,7 +214,7 @@ GitHub アカウントがなければ、Discord の **#translation-fixes** に�
 
 ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
-**名前が英語のままなのはなぜ？** 意図した仕様です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。クエストのタイトルも同じ理由で英語のままです（タイトルの下の本文は日本語です）。
+**名前は英語ですか、日本語ですか？** 名前の表示は選べます。ようこそ画面で、それぞれの例を見て選びます。**英語の名前** は、ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。**日本語の名前** は、人物・地名・モンスター・アイテム・呪文・スキル・勢力の名前を、ツールチップ、ネームプレート、マップ、チャット、クエスト本文の中でカタカナで表示します。日本語の名前では、Alt を押している間は英語の名前に戻り、名前にマウスを合わせると読み方と英語の名前が表示されます。クエストのタイトルも同じ選択に従い、設定ページであとから変更できます。
 
 **マーカーは何を表している？** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> はまだ翻訳がなく、ゲームの英語のまま表示されている行です。<span style="color:#E8C77E;">[要更新 / English Changed]</span> は翻訳のあとで英語の原文が変わった行です。
 

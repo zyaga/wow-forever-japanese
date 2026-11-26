@@ -689,9 +689,19 @@ _Avoid_: English popup, reverse card, translation tooltip
 → [Readings → English word cards](systems/readings.md#english-word-cards) · [ADR-081](adr/081-english-first-and-english-word-cards.md)
 
 **Word list**:
-The player's own list of saved [[Word]]s, kept account-wide in the SavedVariables table `WFJ_Words` across sessions. Each entry holds the word, its [[Reading]], its [[Dictionary form]] and that form's reading, its [[Meaning]], the Japanese sentence it was shown in, where it was shown and when it was saved; one entry per source text and dictionary form. Filled by the [[Save click]], studied in game on the [[Study card]], and exported from the word list window as tab-separated text for a text file, a spreadsheet or Anki. In Japanese: 単語帳.
+The player's own list of saved [[Word]]s, kept account-wide in the SavedVariables table `WFJ_Words` across sessions. Each entry holds the word, its [[Reading]], its [[Dictionary form]] and that form's reading, its [[Meaning]], the Japanese sentence it was shown in, where it was shown and when it was saved; one entry per source text and dictionary form. Filled by the [[Save click]], studied in game on the [[Study card]], exported from the word list window as tab-separated text for a text file, a spreadsheet or Anki, and copied ready-made for the [[Anki add-on]] as the [[Anki export]]. In Japanese: 単語帳.
 _Avoid_: flashcards as a name for the list (the study card and Anki make cards from it; the list is the list), vocab list, vocabulary, bookmarks, favourites, deck (Anki's term)
 → [Word list](systems/word-list.md) · [ADR-069](adr/069-saved-word-list.md) · [ADR-071](adr/071-study-the-word-list-in-game.md)
+
+**Anki add-on**:
+The small add-on for desktop Anki (23.10 or later) that players install from AnkiWeb (code `612475471`) and that also ships with the addon's releases as `WoWForeverJapanese.ankiaddon` (source in `anki-addon/`). It reads the [[Anki export]] from the game's folder and makes one note per [[Word list]] key in its own note type, `WoW Forever Japanese`, in the deck of that name, with the screenshot and the sentence's audio in Anki's media. It writes only its own notes' fields: never a card's schedule or review history, never a note of another note type, never a deletion, and a field the player edited is kept. It is not the addon: say "the addon" for the game side and "the Anki add-on" for this. In Japanese: Anki アドオン.
+_Avoid_: Anki plugin, Anki addon (one word: that is the game's addon), the sync addon, importer
+→ [Anki add-on](systems/anki-add-on.md) · [ADR-110](adr/110-a-ready-made-export-for-the-anki-add-on.md)
+
+**Anki export**:
+The ready-made copy of the whole [[Word list]] the addon writes at logout and `/reload` into the SavedVariables table `WFJ_Anki`, for the [[Anki add-on]] to read: one row per entry with its fields, the sentence with the word in bold, the word's and the sentence's furigana, the screenshot file name and the sentence's sound files as `<pack folder>/Sound/<file>`. Rebuilt from the list each time (`Core/AnkiExport`), never read back in game, never shipped. Not the export window's text: that is the **export**, which the player copies by hand.
+_Avoid_: Anki sync (the sync is the add-on's), `WFJ_Words` (the list itself), Anki file
+→ [Anki add-on → The game's side](systems/anki-add-on.md#the-games-side-wfj_anki) · [Word list → The Anki add-on](systems/word-list.md#the-anki-add-on)
 
 **Save click**:
 The mouse click that adds the highlighted [[Word]] (gold tint, [[Word card]] or [[Word-reading box]] showing) to the [[Word list]]: Ctrl+click by default, or Shift+click, Cmd+click (Mac only) or a plain click, set by `words.saveClick` (`off` turns it off). Never the [[Modifier]]'s own key. The addon reads the mouse button while the mouse is over the word; it does not take the click, so the window under the text gets it as before.
@@ -700,7 +710,7 @@ _Avoid_: bookmark, save key (it is a click), Ctrl+click on its own (the click is
 
 **Study card**:
 The one-word flashcard the addon shows in game for the [[Word list]] (`UI/StudyWindow`): the saved [[Word]], large, over the Japanese sentence it was saved from with the word marked gold; **Show answer** reveals its [[Reading]], its [[Dictionary form]] when it differs and its [[Meaning]], then **Again** or **Good** grades it and FSRS-6 sets when it is next [[Due]]. The sentence is a [[Surface]] for [[Word card]]s (`study`), minus the tested word, whose reading is the answer. With a [[Voice pack]], the answer side plays the saved sentence from its line's [[Sentence file]]s, in the line's main voice, found each time and never saved with the word (`UI/StudyVoice`). It collapses to the **study tab**, a small tab at the screen edge with the count of words that wait, shown only while some do; the tab, `/wfj study`, the minimap button's menu, the **Study words** key binding and the Words settings page open the card. The two frames together are the study window (the combat setting's word). In Japanese: 学習カード; the tab: 学習タブ.
-_Avoid_: flashcard on its own (say study card), quiz, review window, Anki card (Anki makes those from the export), deck
+_Avoid_: flashcard on its own (say study card), quiz, review window, Anki card (Anki makes those, from the export or through the [[Anki add-on]]), deck
 → [Study](systems/study.md) · [ADR-071](adr/071-study-the-word-list-in-game.md) · [ADR-092](adr/092-a-saved-words-sentence-audio-is-found-not-stored.md)
 
 **Due**:

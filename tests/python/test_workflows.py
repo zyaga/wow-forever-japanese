@@ -341,13 +341,18 @@ def test_changelog_gate_and_data_delta_run_on_pull_requests_only(root):
     assert '>> "$GITHUB_STEP_SUMMARY"' in delta
 
 
-def test_the_write_token_reaches_the_push_and_publish_steps_only(release):
+def test_the_write_token_reaches_the_push_publish_and_add_on_steps_only(release):
     job = _block(release, "release", 2)
     assert "persist-credentials: false" in _steps(job)[0]
     holders = [s for s in _steps(job) if "secrets.GITHUB_TOKEN" in s]
-    assert len(holders) == 2
+    assert len(holders) == 3
     assert "name: Push the changelog commit and tag" in holders[0]
     assert "name: Publish to CurseForge and GitHub" in holders[1]
+    # the third adds one more file to the release the step before made, and runs nothing but the repo's own
+    # packer and the GitHub CLI
+    assert "name: Add the Anki add-on to the GitHub release" in holders[2]
+    ran = [line.strip() for line in holders[2].split("run: |")[1].split("env:")[0].splitlines() if line.strip()]
+    assert [line.split()[0] for line in ran] == ["python", "gh"]
 
 
 def test_a_resume_refuses_an_already_published_version(release):

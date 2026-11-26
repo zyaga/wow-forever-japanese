@@ -78,7 +78,7 @@ describe("the word list window", function()
     assert.are.equal(WFJ.Words.export({ images = true }, _G.date), f.text.value)
     assert.is_truthy(f.text.value:find('<img src="WoWScrnShot_092126_165320.jpg">', 1, true))
     assert.is_true(shown(f.shotsPath))
-    assert.are.equal(570, f.size[2]) -- taller, so the two folder paths fit inside the frame
+    assert.are.equal(588, f.size[2]) -- taller, so the two folder paths and the add-on line fit inside the frame
     f.images:SetChecked(false)
     f.images.scripts.OnClick(f.images)
     assert.are.equal(520, f.size[2])
@@ -125,6 +125,27 @@ describe("the word list window", function()
     assert.are.equal(WFJ.Words.export({}, _G.date), f.text.value)
     assert.is_false(shown(f.audioLines))
     _G.IsMacClient = nil
+  end)
+
+  it("names the Anki add-on, with its address to copy, under whatever rows show above it", function()
+    add(WFJ.Words, "生き物")
+    local f = WW.open()
+    assert.are.equal(WW.ADDON_URL, f.addonBox:GetText())
+    assert.is_truthy(WW.ADDON_URL:find("^https://foreverjapanese%.com/"))
+    assert.are.equal(ja("words.addon"), f.addon.en:GetText())
+    local en = WFJ.OptionsText.T["words.addon"].en
+    assert.is_truthy(en:find("Anki add-on", 1, true))
+    assert.is_truthy(en:find("/reload", 1, true))
+    -- under the Include images box, which is the last row of the plain window
+    local plain = f.addon.en.point[3]
+    assert.is_true(plain < -346 - 28)
+    assert.are.equal(520, f.size[2])
+    -- and under the folder paths once they show
+    f.images:SetChecked(true)
+    f.images.scripts.OnClick(f.images)
+    assert.is_true(f.addon.en.point[3] < -460 - 20)
+    assert.is_true(f.addon.en.point[3] < plain)
+    assert.is_true(-f.addonBox.point[3] + 20 < f.size[2] - 32) -- inside the frame
   end)
 
   it("Include audio says so when no saved word has a recording", function()

@@ -14,12 +14,14 @@ local HEIGHT_IMAGES = 570 -- with Include images ticked: room for the two folder
 local ROW = 28 -- a checkbox row
 local AUDIO_LINES = 96 -- the file list's box
 local BOTTOM = 40 -- the frame below the page's last row: the page starts 32 down, and a margin
+local ADDON_GAP, ADDON_LABEL, ADDON_BOX = 10, 34, 22 -- the Anki add-on line: the space above it, its label, its box
 local INNER = WIDTH - 2 * LEFT
 local ARM_SECONDS = 5 -- Clear all needs a second click within this long, as the collector's Clear does
 
 WordsWindow.SCREENSHOTS = "World of Warcraft/_forever_/Screenshots"
 WordsWindow.ANKI_MAC = "~/Library/Application Support/Anki2/User 1/collection.media"
 WordsWindow.ANKI_WIN = "%APPDATA%\\Anki2\\User 1\\collection.media"
+WordsWindow.ADDON_URL = "https://foreverjapanese.com/#anki"
 
 WordsWindow.frame = nil
 
@@ -40,17 +42,17 @@ local function at(frame, y, x)
 end
 
 -- Include audio sits under the images rows when they show; ticked, its hint, Anki's folder and the file list
--- under it. `found`: the entries' files (StudyVoice.findAll), when Include audio is ticked. → the frame's height
+-- under it. `found`: the entries' files (StudyVoice.findAll), when Include audio is ticked. → the bottom of the
+-- page's last row
 local function layAudio(images, offered, found)
   local f = WordsWindow.frame
-  local base = images and HEIGHT_IMAGES or HEIGHT
   for _, w in ipairs({ f.audio, f.audio.label.en, f.audio.label.ja }) do show(w, offered) end
   for _, w in ipairs(f.audioRows) do show(w, found ~= nil) end
-  if not offered then return base end
   local y = images and -490 or -374
+  if not offered then return y + 8 end -- the rows above end a little higher than the audio box would start
   at(f.audio, y + 5)
   at(f.audio.label.en, y, LEFT + 30)
-  if not found then return base end
+  if not found then return y - ROW end
   at(f.audioHint.en, y - ROW - 4)
   at(f.ankiFolder, y - ROW - 96, LEFT + 6) -- InputBoxTemplate's left cap sits outside the frame
   at(f.audioLines.frame, y - ROW - 124)
@@ -58,7 +60,16 @@ local function layAudio(images, offered, found)
   local lines = SV.fileList(WFJ.Words.entries(), found)
   W.setPair(f.audioHint, Text.get("words.audioHint", #lines))
   f.audioLines:setText(#lines > 0 and table.concat(lines, "\n") or W.pick(Text.get("words.audioNone")))
-  return math.max(base, -(y - ROW - 124 - AUDIO_LINES) + BOTTOM)
+  return y - ROW - 124 - AUDIO_LINES
+end
+
+-- The Anki add-on line sits under whatever rows show above it. → the frame's height
+local function layAddon(images, bottom)
+  local f = WordsWindow.frame
+  local y = bottom - ADDON_GAP
+  at(f.addon.en, y)
+  at(f.addonBox, y - ADDON_LABEL, LEFT + 6) -- InputBoxTemplate's left cap sits outside the frame
+  return math.max(images and HEIGHT_IMAGES or HEIGHT, -(y - ADDON_LABEL - ADDON_BOX) + BOTTOM)
 end
 
 local function fill()
@@ -72,7 +83,7 @@ local function fill()
   local audio = found and function(e) return SV.cell(found[e]) end or nil
   f.text:setText(WFJ.Words.export({ images = images, audio = audio }, date()))
   for _, w in ipairs(f.imageRows) do show(w, images) end
-  f:SetHeight(layAudio(images, offered, found))
+  f:SetHeight(layAddon(images, layAudio(images, offered, found)))
   -- new text drops the selection; the box keeps its focus, so select it again for Cmd+C
   local box = f.text.box
   if box.HasFocus and box:HasFocus() then box:HighlightText() end
@@ -146,6 +157,10 @@ local function build()
   f.audioLines = W.scrollText(p, LEFT, 0, INNER, AUDIO_LINES)
   -- shown only with Include audio ticked
   f.audioRows = { f.audioHint.en, f.audioHint.ja, f.ankiFolder, f.audioLines }
+  -- placed by layAddon, under the rows above
+  f.addon = W.label(p, "", "", LEFT, 0, INNER)
+  W.setPair(f.addon, Text.get("words.addon"))
+  f.addonBox = W.copyBox(p, LEFT, 0, INNER - 12, WordsWindow.ADDON_URL)
   f.message = W.label(p, "", "", LEFT + 460, -316, INNER - 460)
   f.message.en:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   WordsWindow.frame = f

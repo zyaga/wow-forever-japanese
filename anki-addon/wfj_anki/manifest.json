@@ -1,0 +1,8 @@
+{
+  "package": "612475471",
+  "conflicts": ["wow_forever_japanese"],
+  "name": "WoW Forever Japanese",
+  "homepage": "https://foreverjapanese.com/#anki",
+  "min_point_version": 231000,
+  "human_version": "@project-version@"
+}

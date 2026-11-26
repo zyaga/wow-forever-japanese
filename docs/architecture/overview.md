@@ -12,7 +12,7 @@ The project's non-negotiable rules (Blizzard API only, names stay in English, Ja
 ```
 wow-forever-japanese/
 ├── addon/WoWForeverJapanese/        the shipped folder (the packager zips only this)
-│   ├── WoWForeverJapanese.toc       @project-version@ · Interface from clients.toml · SavedVariables: WFJ_DB, WFJ_Collector, WFJ_Log
+│   ├── WoWForeverJapanese.toc       @project-version@ · Interface from clients.toml · SavedVariables: WFJ_DB, WFJ_Collector, WFJ_Log, WFJ_Words, WFJ_Study, WFJ_ChatWords, WFJ_Anki
 │   ├── Core/   pure logic: Const Compat Normalize Hash Data Lookup Align Objectives Placeholders State Settings
 │   │           Modifier Translator UIStrings SurfaceState Collector Readings Glosses RecentLines Reports ReportText
 │   ├── UI/     Font Render ButtonText Labels LoadOnDemand HelpTooltip QuestFrame QuestMap Gossip ItemText Tooltip
@@ -30,11 +30,13 @@ wow-forever-japanese/
 │                   chat/  the chat word lists and the phrase book's phrases (hand-written, with provenance)
 │                   english/  the same layout, English prose, never shipped
 ├── vectors/        hash, align and report vectors: canonical JSONL + a generated Lua twin each (`make vectors`)
+├── anki-addon/     the Anki add-on (docs/systems/anki-add-on.md): wfj_anki/ (the add-on Anki installs, templates/)
+│                   tools/ (package.py → the .ankiaddon file, render_cards.py)  tests/ (scripts run with Anki's own Python)
 ├── tests/          python/  lua/spec/ (helpers, loader, wow_stub, *_spec)  fixtures/
 ├── docs/  ·  .github/ (workflows pr, release, report-check, collector-check, labels; issue forms; labels.tsv)
 ├── .pkgmeta  .luacheckrc  Makefile  README.md  LICENSE  ATTRIBUTION.md  CHANGELOG.md
 ```
-Main commands: `make data` (import → check → generate) · `make test` · `make validate` (the CI gate: schema, provenance, collisions, referential integrity, regenerate-and-diff, then luac) · `make coverage` · `make package` · `make release`. The full list is `make help`; the verbs are in [Pipeline](../systems/pipeline.md).
+Main commands: `make data` (import → check → generate) · `make test` · `make validate` (the CI gate: schema, provenance, collisions, referential integrity, regenerate-and-diff, then luac) · `make coverage` · `make package` · `make release` · `make anki-package` (the Anki add-on's file) · `make anki-cards` (pictures of its card). The full list is `make help`; the verbs are in [Pipeline](../systems/pipeline.md).
 
 ## Diagram
 ```mermaid

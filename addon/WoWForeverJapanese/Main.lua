@@ -678,6 +678,15 @@ local function onEvent(self, event, name, ...)
       local rows = WFJ.Perf.summary(200) -- every label: the counters take no time and sort last
       if rows ~= "" then WFJ.Diag.log("perf", "session totals", { rows = rows }) end
     end)
+    -- the word list ready-made for the Anki add-on, saved with this logout; last and guarded, so a fault in it
+    -- costs none of the tables above
+    step("ankiexport", function()
+      local W, SV = WFJ.Words, WFJ.StudyVoice
+      WFJ_Anki = WFJ.AnkiExport.save(WFJ_Anki, W.entries(), time(), {
+        furigana = W.furigana, sentenceFurigana = W.sentenceFurigana, bold = W.bold,
+        isQuest = W.isQuestKind, audio = function(e) return (SV.find(e)) end, voice = WFJ.Voice.hasPack(),
+      }, function(err) WFJ.Diag.initFailed("ankiexport", err) end)
+    end)
   elseif event == "MODIFIER_STATE_CHANGED" then
     WFJ.Modifier.refresh()
   elseif event == "PLAYER_ENTERING_WORLD" then

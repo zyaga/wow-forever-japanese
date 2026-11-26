@@ -12,7 +12,8 @@ local TAIL = {
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
   "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua", "Core/Intro.lua",
-  "Core/Words.lua", "Core/WordFrequency.lua", "Core/WordStatus.lua", "Core/WordScore.lua", "Core/WordMarks.lua",
+  "Core/Words.lua", "Core/AnkiExport.lua", "Core/WordFrequency.lua", "Core/WordStatus.lua", "Core/WordScore.lua",
+  "Core/WordMarks.lua",
   "Core/WordImport.lua", "Core/ChatWords.lua", "Core/ChatPhrases.lua", "Core/Fsrs.lua", "Core/Study.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/Perf.lua", -- the write paths' timing
