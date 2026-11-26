@@ -5,8 +5,8 @@
 --   AnkiExport.build(entries, now, deps) → { schema, written, voice, rows }: a row's text values are HTML, ready for
 --     an Anki field (the saved word in <b>, readings as `word[reading]`); key, shot and audio are plain
 --   AnkiExport.save(current, entries, now, deps, onError) → the table to keep in WFJ_Anki
--- deps: furigana(word, reading), sentenceFurigana(entry), bold(entry) (Core/Words); audio(entry) → what
--- StudyVoice.find returns, or nil; voice: a voice pack is loaded.
+-- deps: furigana(word, reading), sentenceFurigana(entry), bold(entry), isQuest(kind) (Core/Words); audio(entry) →
+-- what StudyVoice.find returns, or nil; voice: a voice pack is loaded.
 -- The rows are rebuilt from the whole list each time, so a word saved before a field existed gets it too. Nothing
 -- reads the table in game.
 local _, WFJ = ...
@@ -57,13 +57,15 @@ end
 
 local function row(e, deps)
   local en = e.lang == "en"
+  -- a word saved before entries kept their quest's number still names it: a quest entry's id is that number
+  local questId = e.questId or (deps.isQuest(e.kind) and e.id) or nil
   local safe = escaped(e)
   return {
     key = text(e.key), lang = text(e.lang), word = safe.word, reading = safe.reading, lemma = esc(e.lemma),
     lemmaReading = esc(e.lemmaReading), meaning = esc(e.meaning), sentence = text(deps.bold(safe)),
     wordFurigana = en and safe.word or text(deps.furigana(safe.word, safe.reading)),
     sentenceFurigana = text(deps.sentenceFurigana(safe)), jaSentence = esc(e.jaSentence), source = esc(e.source),
-    questId = e.questId, questTitle = esc(e.questTitle), saved = type(e.saved) == "number" and e.saved or nil,
+    questId = questId, questTitle = esc(e.questTitle), saved = type(e.saved) == "number" and e.saved or nil,
     shot = text(e.shot), audio = files(deps.audio(e)),
   }
 end

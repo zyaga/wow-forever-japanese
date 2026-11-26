@@ -137,3 +137,6 @@
   .wfj-word.wfj-alone { padding: 32px 0; font-size: 44px; }
   .wfj-meaning { font-size: 19px; }
 }
+.wfj-source { text-transform: capitalize; }
+.wfj-foot a { color: inherit; text-decoration: none; }
+.wfj-foot a:hover { text-decoration: underline; }

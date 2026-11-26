@@ -33,7 +33,7 @@ end
 local function deps(W, o)
   o = o or {}
   return {
-    furigana = W.furigana, sentenceFurigana = W.sentenceFurigana, bold = W.bold,
+    furigana = W.furigana, sentenceFurigana = W.sentenceFurigana, bold = W.bold, isQuest = W.isQuestKind,
     audio = o.audio or function() return nil end, voice = o.voice == true,
   }
 end
@@ -121,6 +121,7 @@ describe("AnkiExport", function()
     end })).rows[1]
     assert.are.equal("少しの<b>生[い]き 物[もの]</b>たちを狩り、数を減らしてほしい。", row.sentenceFurigana)
     assert.are.same({ "P/Sound/a.mp3" }, row.audio)
+    assert.are.equal(456, row.questId)
     assert.are.equal("", row.shot)
     assert.are.equal("", row.questTitle)
   end)

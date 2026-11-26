@@ -684,7 +684,7 @@ local function onEvent(self, event, name, ...)
       local W, SV = WFJ.Words, WFJ.StudyVoice
       WFJ_Anki = WFJ.AnkiExport.save(WFJ_Anki, W.entries(), time(), {
         furigana = W.furigana, sentenceFurigana = W.sentenceFurigana, bold = W.bold,
-        audio = function(e) return (SV.find(e)) end, voice = WFJ.Voice.hasPack(),
+        isQuest = W.isQuestKind, audio = function(e) return (SV.find(e)) end, voice = WFJ.Voice.hasPack(),
       }, function(err) WFJ.Diag.initFailed("ankiexport", err) end)
     end)
   elseif event == "MODIFIER_STATE_CHANGED" then
