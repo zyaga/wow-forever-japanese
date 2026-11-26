@@ -107,7 +107,8 @@ function ChatMarks.look()
     local f = Compat.resolve(name)
     if type(f) == "table" and type(f.visibleLines) == "table" and f:IsVisible() then
       for _, line in ipairs(f.visibleLines) do
-        local text = line:IsVisible() and line:GetAlpha() > WFJ.ChatLines.FADED and line:GetText() or nil
+        local alpha = WFJ.ChatLines.showing(line)
+        local text = alpha and line:GetText() or nil
         if type(text) == "string" and text ~= "" and not WFJ.ChatLines.secret(text) then
           live[line] = true
           local overlay = overlays[line]
@@ -116,7 +117,7 @@ function ChatMarks.look()
             draw(line, text)
             drawn = drawn + 1
           end
-          overlays[line]:SetAlpha(line:GetAlpha()) -- the marks fade with their line
+          overlays[line]:SetAlpha(alpha) -- the marks fade with their line
         end
       end
     end
