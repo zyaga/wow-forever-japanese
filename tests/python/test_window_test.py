@@ -774,6 +774,7 @@ def test_the_word_status_read_fails_english_in_the_window_marks_left_behind_and_
 
 # a chat tools read with nothing wrong
 CHAT = ('["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["list"] = 9, ["expect"] = true, ["blank"] = { }, '
+        '["secretTry"] = { ["looks"] = 7, ["answers"] = { "GetText", "IsVisible" } }, '
         '["copy"] = "WFJ テスト", '
         '["sizes"] = { "592x380" }, ["english"] = { } },')
 
@@ -826,6 +827,60 @@ def test_the_chat_tools_read_fails_a_blank_tab_a_card_that_changes_size_and_engl
         "copy box not read: the copy box did not open"]
     assert run(CHAT.replace('"WFJ テスト"', '"|cffffffffWFJ テスト|r"')) == [
         "copy box holds '|cffffffffWFJ テスト|r', not the line without its codes ('WFJ テスト')"]
+
+
+def test_the_chat_tools_read_counts_secret_chat_lines_and_what_they_answer_with_a_secret():
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    body = lua[lua.index("local function WFJScanChatRead"):lua.index("local function WFJScanFreezeRead")]
+    # a secret answer is asked for and handed to issecretvalue, never tested or compared
+    assert "if issecretvalue(line[method](line)) then kept[method] = true end" in body
+    assert '"IsVisible", "IsShown", "GetAlpha", "IsMouseOver", "GetWidth"' in body
+
+    def note(record: str) -> str:
+        return client_surface.secret_lines_note(client_surface.read_chat(
+            "WFJScanDB = {\n[\"probe\"] = {\n" + record + "\n},\n}\n"))
+
+    made = ("the chat tools looked 7 times at the test's own secret chat lines (a text region holding secret "
+            "text answers GetText, IsVisible with a secret); ")
+    assert note(CHAT) == made + "no secret chat line of the game's own was on screen"
+    seen = CHAT.replace('["expect"] = true',
+                        '["expect"] = true, ["secretLines"] = 3, ["secretAnswers"] = { "IsMouseOver", "IsVisible" }')
+    assert note(seen) == made + "3 of the game's own on screen, answering IsMouseOver, IsVisible with a secret"
+    assert client_surface.chat_problems(client_surface.read_chat(
+        "WFJScanDB = {\n[\"probe\"] = {\n" + seen + "\n},\n}\n")) == []
+
+
+def test_the_secret_chat_line_try_puts_secret_lines_where_the_chat_tools_look_and_takes_them_away():
+    lua = client_surface.probe_lua({"entries": []}, walk=True, english=["Friends"], keys=["FRIENDS"])
+    body = lua[lua.index("local function WFJScanSecretLine"):lua.index("local function WFJScanFreezeRead")]
+    assert '{ "chat", function(nxt) WFJScanChatRead() WFJScanSecretLine(nxt) end },' in lua
+    # a real text region given secret text, and a line whose every answer is a secret
+    assert 'real:SetText(secretwrap("WFJ secret line"))' in body
+    assert "every[method] = function() return secretwrap(plain) end" in body
+    assert "visibleLines = { real, every }" in body
+    # not shown to the client's own per-frame walk of the chat frames, visible to the chat tools
+    assert "frame.IsShown = function() return false end" in body
+    assert "frame.IsVisible = function() return true end" in body
+    # listed in CHAT_FRAMES only for the wait, then taken out again with its global
+    # it waits for the chat tools' looks, not a fixed time: a slow frame of a whole run is longer than any wait
+    assert "if try.looks < 3 and GetTime() - started < 3 then return C_Timer.After(0.1, wait) end" in body
+    steps = ["CHAT_FRAMES[#CHAT_FRAMES + 1] = NAME", "local function wait()", "table.remove(CHAT_FRAMES, i)",
+             "_G[NAME] = nil"]
+    assert [body.index(step) for step in steps] == sorted(body.index(step) for step in steps)
+
+    def run(record: str) -> list[str]:
+        return client_surface.chat_problems(client_surface.read_chat(
+            "WFJScanDB = {\n[\"probe\"] = {\n" + record + "\n},\n}\n"))
+
+    tried = '["secretTry"] = { ["looks"] = 7, ["answers"] = { "GetText", "IsVisible" } }, '
+    assert run(CHAT) == []
+    assert run(CHAT.replace(tried, "")) == [
+        "secret chat line not tried: this run's test addon has no such try (make scan-install, then run it again)"]
+    assert run(CHAT.replace(tried, '["secretTry"] = { ["looks"] = 0, ["refused"] = "no secretwrap" }, ')) == [
+        "secret chat line not tried: no secretwrap"]
+    assert run(CHAT.replace('["looks"] = 7', '["looks"] = 0')) == [
+        "secret chat line not tried: the chat tools never looked at the test's chat frame (chat word cards and "
+        "the copy icon are both off, or translation is off)"]
 
 
 # a frozen tooltip read with nothing wrong
@@ -956,7 +1011,7 @@ WFJScanDB = {
 ["test"] = { ["started"] = "2026-11-22 18:00:00", ["finished"] = "2026-11-22 18:05:00", ["build"] = "70959" },
 ["names"] = { ["on"] = true, ["rows"] = { { ["kind"] = "player", ["english"] = "Reyn", ["shown"] = "Reyn" } } },
 ["freeze"] = { ["items"] = 3, ["lines"] = 4, ["cards"] = 4, ["bound"] = "CTRL-F", ["expect"] = true, ["missing"] = { }, ["stuck"] = { } },
-["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["list"] = 9, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { } },
+["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["list"] = 9, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { }, ["secretTry"] = { ["looks"] = 7, ["answers"] = { "IsMouseOver" } } },
 ["marks"] = { ["window"] = 9, ["frames"] = 3, ["shown"] = 14, ["texts"] = 2, ["bare"] = false, ["quest"] = 783, ["on"] = true, ["expect"] = true, ["english"] = { }, ["stale"] = { }, ["tags"] = { } },
 ["bagclick"] = { ["checked"] = 412, ["ours"] = { }, ["others"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },

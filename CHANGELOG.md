@@ -35,6 +35,7 @@ an old setting stops working). A release moves those lines under its version num
 - Quest texts and item and spell tooltips the game reworded on 1.60.1.70959 and 1.60.1.71037 follow the new wording.
 
 ### Fixed
+- Chat word cards and the copy icon no longer throw an error, and stop working, while the mouse is over chat that the game keeps from addons. Those lines are skipped, and the chat underlines skip them too.
 - Hovering a creature in combat no longer fills the error list. In a fight the game locks the text of a creature's tooltip, and a quest objective line on it was read anyway, thousands of times a session. Every place the addon reads text the game can lock in combat (tooltips, chat, combat text, nameplates) now checks first and leaves the game's own text alone.
 - With Japanese names chosen, the voice panel's list of lines waiting their turn and its whole-text window show each speaker's name in Japanese too. They showed it in English.
 - Using an item from your bags (the Hearthstone, food, a scroll at a vendor) could be blocked by the game with this addon named, after a talk with an NPC in Dialogue UI's window or after the interface was hidden and shown again. The addon no longer replaces any of Dialogue UI's own functions or runs inside the interface's return, which was one way that could happen; its Japanese in Dialogue UI is added after Dialogue UI draws. A block that still happens is kept in the addon's log, where other entries can no longer push it out.

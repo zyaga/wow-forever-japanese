@@ -7,6 +7,7 @@
 --   ChatLines.look()                 one look at the mouse (the timer's step; specs call it)
 --   ChatLines.typedPart(line, text)  → what a player typed in that line | nil (not a typed line, or not shaped so)
 --   ChatLines.secret(value)          → true when the client keeps the value from addons
+--   ChatLines.showing(line)          → the line's alpha when it is visible and not faded out | nil
 --   ChatLines.TYPED                  the chat types a player types into
 local _, WFJ = ...
 local Lines = {}
@@ -70,8 +71,21 @@ end
 
 -- ── The look ───────────────────────────────────────────────────────────────
 
+-- A line that holds secret text answers the questions about itself with secret values, and testing or comparing
+-- one is an error: each answer is checked before it is used.
+-- → the line's alpha, when the line is visible and has not faded out | nil
+function Lines.showing(line)
+  local visible = line:IsVisible()
+  if secret(visible) or not visible then return nil end
+  local alpha = line:GetAlpha()
+  if secret(alpha) or alpha <= Lines.FADED then return nil end
+  return alpha
+end
+
 local function readable(line)
-  if not (line:IsVisible() and line:GetAlpha() > Lines.FADED and line:IsMouseOver()) then return nil end
+  if not Lines.showing(line) then return nil end
+  local over = line:IsMouseOver()
+  if secret(over) or not over then return nil end
   local text = line:GetText()
   if type(text) == "string" and not secret(text) and text ~= "" then return text end
   return nil

@@ -3187,6 +3187,8 @@ end
 --   words    the text regions the chat words window shows
 --   list     the text regions the word list window shows (`/wfj words`), read here because it is opened the same way
 --   stuck    the card still showing after the command that closes it: a failure
+--   secretLines    the chat lines on screen whose text the client keeps secret
+--   secretAnswers  what such a line answers with a secret (IsVisible, GetAlpha, ...)
 -- It types nothing into chat and sends nothing: it never clicks a phrase.
 local function WFJScanChatRead()
   local db = probeDb()
@@ -3204,6 +3206,24 @@ local function WFJScanChatRead()
       record.english[#record.english + 1] = what .. "\t" .. text
     end
   end
+  -- the chat lines on screen whose text the client keeps secret: how many, and which questions about itself such
+  -- a line answers with a secret (asked, never tested). The game cannot be made to show one, so a run with none
+  -- proved nothing about them and says so.
+  record.secretLines, record.secretAnswers = 0, {}
+  local kept = {}
+  for _, name in ipairs(type(CHAT_FRAMES) == "table" and issecretvalue and CHAT_FRAMES or {}) do
+    local chat = _G[name]
+    for _, line in ipairs(type(chat) == "table" and type(chat.visibleLines) == "table" and chat.visibleLines or {}) do
+      if issecretvalue(line:GetText()) then
+        record.secretLines = record.secretLines + 1
+        for _, method in ipairs({ "IsVisible", "IsShown", "GetAlpha", "IsMouseOver", "GetWidth" }) do
+          if issecretvalue(line[method](line)) then kept[method] = true end
+        end
+      end
+    end
+  end
+  for method in pairs(kept) do record.secretAnswers[#record.secretAnswers + 1] = method end
+  table.sort(record.secretAnswers)
   -- as the player left them: a card already open stays open, a button hidden for the session stays hidden
   local wasOpen = _G.WFJPhraseCard and _G.WFJPhraseCard:IsShown() or false
   local hadButton = _G.WFJPhraseButton and _G.WFJPhraseButton:IsShown() or false
@@ -3311,6 +3331,79 @@ local function WFJScanChatRead()
   local card, button = _G.WFJPhraseCard, _G.WFJPhraseButton
   if card and not wasOpen and card:IsShown() then card:Hide() end
   if button and not hadButton and button:IsShown() then button:Hide() end
+end
+
+-- The secret chat line try. The client keeps some chat text secret, and a line holding it answers questions about
+-- itself (is it visible, how faint, is the mouse on it) with secret values, which tainted code may not test. No
+-- such line can be ordered up, so the test makes its own with `secretwrap` and puts them where the chat tools
+-- look: a chat frame of the test's own, listed in CHAT_FRAMES until they have looked (three seconds at most),
+-- that says the mouse is on it. It holds two lines: a real text region given secret text (what it answers is what a secret chat line
+-- answers, kept in `answers`), and a line that answers every question with a secret. An error the chat tools
+-- throw on either is caught like any other error of the run. `looks` counts the looks the chat tools took.
+local function WFJScanSecretLine(done)
+  local db = probeDb()
+  db.chat = db.chat or {}
+  local try = { looks = 0, answers = {} }
+  db.chat.secretTry = try
+  if type(secretwrap) ~= "function" or type(issecretvalue) ~= "function" or type(CHAT_FRAMES) ~= "table" then
+    try.refused = "this client has no secretwrap, issecretvalue or CHAT_FRAMES"
+    return done()
+  end
+  local ASKED = { "IsVisible", "IsShown", "GetAlpha", "IsMouseOver", "GetWidth", "GetText" }
+  local holder, real
+  local every = {}
+  -- a client that refuses any of this proves nothing here and says why; nothing is listed until it all worked
+  local made, why = pcall(function()
+    holder = CreateFrame("Frame", nil, UIParent)
+    holder:SetSize(200, 20)
+    holder:SetPoint("BOTTOMLEFT", UIParent, "TOPLEFT", 0, 40) -- shown, and off the screen
+    real = holder:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    real:SetPoint("LEFT")
+    real:SetText(secretwrap("WFJ secret line"))
+    for _, method in ipairs(ASKED) do
+      local ok, answer = pcall(real[method], real)
+      if ok and issecretvalue(answer) then try.answers[#try.answers + 1] = method end
+    end
+    for _, method in ipairs(ASKED) do
+      local plain = method == "GetText" and "WFJ secret line" or (method == "GetAlpha" or method == "GetWidth") and 1
+      if plain == false then plain = true end
+      every[method] = function() return secretwrap(plain) end
+    end
+  end)
+  if not made then
+    try.refused = tostring(why)
+    if holder then holder:Hide() end
+    return done()
+  end
+  -- anything else asked of the frame, by the client's own walks of CHAT_FRAMES too, is a call that does nothing
+  local NAME = "WFJScanSecretChat"
+  local frame = setmetatable({ visibleLines = { real, every } },
+    { __index = function() return function() end end })
+  frame.IsVisible = function() return true end
+  -- the client's own walk of CHAT_FRAMES on every frame (FCF_OnUpdate) reads a shown chat frame's parts: this one
+  -- says it is not shown there, and the chat tools ask IsVisible
+  frame.IsShown = function() return false end
+  frame.IsMouseOver = function()
+    try.looks = try.looks + 1
+    return true
+  end
+  _G[NAME] = frame
+  CHAT_FRAMES[#CHAT_FRAMES + 1] = NAME
+  -- until the chat tools have looked a few times, or three seconds: in a whole run a single slow frame can be
+  -- longer than any fixed wait, and the wait would end before their timer had a turn
+  local started, turns = GetTime(), 0
+  local function wait()
+    turns = turns + 1
+    if try.looks < 3 and GetTime() - started < 3 then return C_Timer.After(0.1, wait) end
+    try.turns, try.seconds = turns, GetTime() - started
+    for i = #CHAT_FRAMES, 1, -1 do
+      if CHAT_FRAMES[i] == NAME then table.remove(CHAT_FRAMES, i) end
+    end
+    _G[NAME] = nil
+    holder:Hide()
+    done()
+  end
+  C_Timer.After(0.1, wait)
 end
 
 local function WFJScanFreezeRead(done)
@@ -3715,7 +3808,7 @@ SlashCmdList.WFJTEST = function(how)
     { "plates", function(nxt) outOfCombat(function() WFJScanPlatesRead() nxt() end) end },
     { "load", function(nxt) WFJScanLoadRead() nxt() end },
     -- the addon's own chat windows: opened, read and closed at once
-    { "chat", function(nxt) WFJScanChatRead() nxt() end },
+    { "chat", function(nxt) WFJScanChatRead() WFJScanSecretLine(nxt) end },
     -- the addon's own known words window, and the word status marks wherever they are
     { "marks", function(nxt) outOfCombat(function() WFJScanMarksRead(nxt) end) end },
     -- the interface is hidden and shown again, which waits for the end of a fight too
@@ -4597,8 +4690,9 @@ def read_chat(text: str) -> dict[str, Any] | None:
     chat words window showed (`words`) and the word list window (`list`), whether Japanese was to be expected
     (`expect`), why it could not read (`refused`, `refused_words`, `refused_copy`, `refused_list`), what the copy box held (`copy`), whether the card stayed open
     (`stuck`), the card's sizes over its topics
-    (`sizes`), and two lists of (what, what was seen): `blank` (a tab or a row with no words, or cut off) and
-    `english` (a heading, tab or label with no Japanese in it)."""
+    (`sizes`), the chat lines on screen the client kept secret (`secret_lines`) and what they answered with a
+    secret (`secret_answers`), and two lists of (what, what was seen): `blank` (a tab or a row with no words, or
+    cut off) and `english` (a heading, tab or label with no Japanese in it)."""
     from wfj.io import lua_reader
 
     db = lua_reader.parse_assignments(text).get("WFJScanDB")
@@ -4616,6 +4710,15 @@ def read_chat(text: str) -> dict[str, Any] | None:
     out["copy"] = str(record.get("copy") or "")
     sizes = record.get("sizes")
     out["sizes"] = [str(v) for v in (sizes.positional() if sizes is not None else [])]
+    out["secret_lines"] = int(record.get("secretLines") or 0)
+    answers = record.get("secretAnswers")
+    out["secret_answers"] = [str(v) for v in (answers.positional() if answers is not None else [])]
+    tried = record.get("secretTry")
+    out["secret_try"] = None
+    if tried is not None:
+        kept = tried.get("answers")
+        out["secret_try"] = {"looks": int(tried.get("looks") or 0), "refused": str(tried.get("refused") or ""),
+                             "answers": [str(v) for v in (kept.positional() if kept is not None else [])]}
     for kind in ("blank", "english"):
         rows = record.get(kind)
         out[kind] = [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])]
@@ -4651,7 +4754,36 @@ def chat_problems(record: dict[str, Any] | None) -> list[str]:
         out.append("word list window shows no text")
     if record["expect"]:
         out += [f"chat tools left English: {seen!r} ({what})" for what, seen in record["english"]]
-    return out
+    return out + secret_try_problems(record)
+
+
+def secret_try_problems(record: dict[str, Any]) -> list[str]:
+    """Why the secret chat line try proved nothing, when it did not: an error the chat tools throw on the test's
+    secret lines fails the run with the run's other errors, so the try only has to show that they looked."""
+    tried = record.get("secret_try")
+    if tried is None:
+        return ["secret chat line not tried: this run's test addon has no such try (make scan-install, then run "
+                "it again)"]
+    if tried["refused"]:
+        return [f"secret chat line not tried: {tried['refused']}"]
+    if not tried["looks"]:
+        return ["secret chat line not tried: the chat tools never looked at the test's chat frame (chat word "
+                "cards and the copy icon are both off, or translation is off)"]
+    return []
+
+
+def secret_lines_note(record: dict[str, Any]) -> str:
+    """What a run saw of chat lines the client keeps secret. The game cannot be made to show one, so a run with
+    none on screen proved nothing about how the chat tools take them."""
+    tried = record.get("secret_try")
+    made = ""
+    if tried is not None and tried["looks"]:
+        made = (f"the chat tools looked {tried['looks']} times at the test's own secret chat lines (a text region "
+                f"holding secret text answers {', '.join(tried['answers']) or 'nothing'} with a secret); ")
+    if not record["secret_lines"]:
+        return made + "no secret chat line of the game's own was on screen"
+    answers = ", ".join(record["secret_answers"]) or "nothing"
+    return made + f"{record['secret_lines']} of the game's own on screen, answering {answers} with a secret"
 
 
 def read_marks(text: str) -> dict[str, Any] | None:
@@ -5184,7 +5316,7 @@ def _own_reads(saved: str, section: str | None = None) -> list[str]:
     chat = read_chat(saved) if part("chat") else None
     if chat is not None and not chat["refused"]:
         print(f"chat tools: {chat['topics']} topics and {chat['phrases']} phrases on the phrase card, "
-              f"{chat['words']} text regions in the chat words window")
+              f"{chat['words']} text regions in the chat words window; {secret_lines_note(chat)}")
     marks = _marks_read(saved) if part("marks") else None
     bagclick = read_bagclick(saved) if part("bagclick") else None
     if bagclick is not None:
