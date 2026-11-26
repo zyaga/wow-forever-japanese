@@ -38,6 +38,7 @@ from .settings import AUDIOS, FRONTS, Settings, from_config, to_config
 MODULE = __name__.split(".")[0]
 RETRIES = 3  # looks for media that was missing, while no saved file changes
 PROFILE_WAIT_MS = 3000
+NOTICE_MS = 9000  # long enough to read two lines
 
 
 def japanese() -> bool:
@@ -64,6 +65,7 @@ class Syncer:
         self.seen: tuple[Any, ...] | None = None  # the saved files and the settings of the last sync
         self.last: sync.Result | None = None
         self.problem = ""
+        self.told = ""  # the notice an unasked sync last showed: each is shown once while Anki is open
         self.retries = 0
         self.web_sync = False  # Anki's own sync with AnkiWeb is running
         self.found: tuple[str, list[discover.SavedFile]] | None = None  # the folder setting and what it gave
@@ -169,6 +171,11 @@ class Syncer:
                 tooltip(t("tip_added", added=result.added, updated=result.updated))
             elif asked and done is None:
                 tooltip(text.summary(result, japanese()))
+            elif not asked:
+                note = text.notice(result, japanese())
+                if note and note != self.told:
+                    self.told = note
+                    tooltip(note, period=NOTICE_MS)
             if done:
                 done()
 

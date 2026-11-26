@@ -77,3 +77,19 @@ def test_what_the_folder_holds_is_said_a_game_a_line():
     assert said[1].startswith("Retail: nothing for Anki yet.")
     assert said[2] == "World of Warcraft: 3 word(s) for Anki."
     assert text.found([("classic-era", 0, True)], True) == "Classic Era：Anki 用の単語 0 語。"
+
+
+def test_an_unasked_sync_that_read_no_word_list_says_why():
+    assert text.notice(Result(files=0), False).endswith("Tools → WoW Forever Japanese → Settings.")
+    assert "too old" in text.notice(Result(files=1, tables=0), False)
+    assert "Check for Updates" in text.notice(Result(files=1, tables=0, newer=True), False)
+    assert "更新して" in text.notice(Result(files=1, tables=0), True)
+    # a sync that read a word list has nothing to explain, whatever it changed
+    assert text.notice(Result(files=1, tables=1), False) == ""
+    assert text.notice(Result(files=2, tables=1, words=3, added=3), False) == ""
+
+
+def test_the_notice_is_shown_once_and_only_by_a_sync_nobody_asked_for():
+    ui = (ADDON / "wfj_anki" / "ui.py").read_text(encoding="utf-8")
+    shown = ui[ui.index("elif not asked:") :]
+    assert "note != self.told" in shown[:200] and "tooltip(note, period=NOTICE_MS)" in shown[:260]

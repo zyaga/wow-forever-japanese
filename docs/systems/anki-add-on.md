@@ -155,7 +155,8 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - **Several clients or accounts** hold words: every saved file is read; a key in two of them takes the newer table's row, with media from that row's client.
 - **Notes imported by hand** from the export window are another note type, so they stay as they are and the add-on adds its own note beside them.
 - **A pack turned off or a screenshot deleted:** the field keeps what it holds. A pack updated with new files for the sentence brings the new files.
-- **The addon is older than the add-on's first version** (no `WFJ_Anki` in the file): the settings window says to update the addon and `/reload` once.
+- **The addon is older than the add-on's first version** (no `WFJ_Anki` in the file): the settings window says to update the addon and `/reload` once, and so does a tooltip, below.
+- **A sync that could read no word list says why, once.** A sync the player did not ask for is otherwise silent when it changes nothing, so a player whose cards never come would see nothing at all. When it finds no saved file, only a file from an older addon, or a file newer than it reads, it shows a tooltip with what to do (`text.notice`). Each of the three is shown once while Anki is open.
 - **A screenshot whose name the addon guessed wrong** ([Word list → Screenshots](word-list.md#screenshots)): counted as missing in the settings window, never blanks a field.
 
 ## Limits

@@ -69,6 +69,18 @@ T = {
         "game, then /reload once.",
         "単語帳は見つかりましたが、ゲームのアドオンがまだ Anki 用のデータを書き出していません。ゲームのアドオンを更新して、一度 /reload してください。",
     ),
+    "tip_old_addon": (
+        "WoW Forever Japanese: your word list was found, but the game's addon is too old to send it to Anki. Update the addon in the game, then /reload once.",
+        "WoW Forever Japanese：単語帳は見つかりましたが、ゲームのアドオンが古く、Anki に送れません。ゲームのアドオンを更新して、一度 /reload してください。",
+    ),
+    "tip_newer": (
+        "WoW Forever Japanese: the game's addon is newer than this add-on. Update this add-on (Tools → Add-ons → Check for Updates) to read your word list.",
+        "WoW Forever Japanese：ゲームのアドオンのほうが新しいバージョンです。単語帳を読むには、このアドオンを更新してください（ツール → アドオン → 更新を確認）。",
+    ),
+    "tip_not_found": (
+        "WoW Forever Japanese: no saved word list was found. Choose your World of Warcraft folder in Tools → WoW Forever Japanese → Settings.",
+        "WoW Forever Japanese：保存された単語帳が見つかりません。ツール → WoW Forever Japanese → 設定 で World of Warcraft のフォルダを選んでください。",
+    ),
     "tip_added": (
         "WoW Forever Japanese: {added} new, {updated} updated",
         "WoW Forever Japanese：新規 {added}、更新 {updated}",
@@ -97,6 +109,18 @@ def found(games: list[tuple[str, int, bool]], japanese: bool) -> str:
         name = plan.game_label(game) or "World of Warcraft"
         lines.append(get("found_game" if ready else "found_old", japanese, game=name, n=words))
     return "\n".join(lines)
+
+
+def notice(result: Result, japanese: bool) -> str:
+    """What a sync nobody asked for says when it could read no word list, so a player whose cards never come
+    learns why without opening the menu. Nothing when the sync could read one."""
+    if result.files == 0:
+        return get("tip_not_found", japanese)
+    if result.newer:
+        return get("tip_newer", japanese)
+    if result.tables == 0:
+        return get("tip_old_addon", japanese)
+    return ""
 
 
 def summary(result: Result | None, japanese: bool) -> str:
