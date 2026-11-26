@@ -172,7 +172,8 @@ your own chat words with `/wfj chatwords`, and the **Words** settings page has a
 turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC
 speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know. Your character says its
 own error lines, such as being out of range, in Japanese too, in a voice modelled on its race's own error lines. A
-narrator reads the rest, and every line plays at the same loudness.
+narrator reads books and letters and the quests an object or an item gives, and every line plays at the same
+loudness. A line that has no voice yet stays silent and says so on its window: `[音声なし / No Voice Yet]`.
 
 **Voice panel.** While a line plays, a panel at the bottom of the screen shows who is speaking: their face, their
 name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. The panel follows the
@@ -409,7 +410,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 **チャットの補助。** チャットの行で単語にマウスを合わせると、そこでもポップアップ辞書が出ます。日本語優先なら日本語の単語、英語優先なら英語の単語です。マウスを置いた行の小さなアイコンを押すと、その行が選択された状態で枠に表示されるので、辞書や翻訳サービスにコピーできます。チャット欄の横の「文」ボタンで定型文を開きます。定型文をクリックすると、先頭に小さな点の付いた英語がチャットの入力欄に入り、そのまま送れます。アドオンのない人には普通の英語として届き、アドオンのある人には自分の言語で表示されます。それ以外にだれかが入力した文は変わりません。`/wfj chatwords` で自分のチャット単語を追加でき、設定の **単語帳** ページで機能ごとにオン・オフできます。
 
-**日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。それ以外はナレーターが読み、どの行も同じ音量で再生されます。
+**日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。本や手紙、物やアイテムから受けるクエストはナレーターが読み、どの行も同じ音量で再生されます。まだ音声のない行は読み上げず、ウィンドウに `[音声なし / No Voice Yet]` と表示されます。
 
 **音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。パネルは声に合わせて単語ごとに進み、文が始まるとページが切り替わり、話している単語に淡い色が付きます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。一時停止の両側にある小さな矢印で、前の文や次の文から再生できます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
 
