@@ -159,6 +159,7 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - **A screenshot whose name the addon guessed wrong** ([Word list → Screenshots](word-list.md#screenshots)): counted as missing in the settings window, never blanks a field.
 
 ## Limits
+- **A changed note type asks for a one-way sync.** Anki cannot merge a change to a note type's fields: after a version of the add-on adds a field, Anki's next sync with AnkiWeb asks the player to upload or download the whole collection. The player-facing text says to sync every device before installing or updating, and a field is added only when a feature needs one.
 - A note whose `Sync` field was emptied or damaged by hand has every filled field counted as the player's own, so nothing in it is rewritten. Reset to the game's data puts it right.
 - `Saved` is the day in UTC.
 - Desktop Anki only: Anki's add-ons do not run in the phone apps. The cards reach the phone apps through AnkiWeb sync, and the template works there.

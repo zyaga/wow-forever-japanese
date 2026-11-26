@@ -44,7 +44,7 @@ Point at a Japanese word in quest text, NPC dialogue, a book page or a window la
 
 While the popup shows a word, **Ctrl+click** it to save it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. Type `/wfj words` to copy the whole list as text for Anki, a spreadsheet or a text file: the word and its sentence come with furigana for your cards, and a screenshot taken when you saved the word can come along. With the voice installed, the study card speaks each saved sentence in its NPC's voice, and the export can bring those recordings to Anki too. Choose the click on the **Words** settings page.
 
-**Anki add-on.** A small add-on for desktop Anki makes the cards for you, with furigana, the screenshot and the sentence's audio, and nothing to copy by hand. Download `WoWForeverJapanese.ankiaddon` from the addon's latest GitHub release and open it with Anki. New words reach Anki after a `/reload` or a logout; cards you edit and your other cards are left as they are.
+**Anki add-on.** A small add-on for desktop Anki makes the cards for you, with furigana, the screenshot and the sentence's audio, and nothing to copy by hand. Download `WoWForeverJapanese.ankiaddon` from the addon's latest GitHub release and open it with Anki. New words reach Anki after a `/reload` or a logout; cards you edit and your other cards are left as they are. Sync Anki on all your devices before you install or update the add-on: a new version can change the card's fields, and Anki then asks you to pick one side to keep.
 
 ### <span style="color:#E8C77E;">Study whichever you want</span>
 
@@ -155,7 +155,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ポップアップが出ている単語を **Ctrl+クリック** すると、読み方・意味・その文と一緒に保存されます。単語帳は次回以降も残り、すべてのキャラクターで共通です。`/wfj words` で単語帳全体を Anki・表計算ソフト・テキストファイル用のテキストとしてコピーできます。単語と文にはカード用のふりがなが付き、保存したときのスクリーンショットも添えられます。音声を入れていれば、学習カードが保存した文をNPCの声で読み上げ、その録音も書き出してAnkiで使えます。保存の操作は設定の **単語帳** ページで選べます。
 
-**Anki アドオン。** パソコン版 Anki 用の小さなアドオンが、ふりがな・スクリーンショット・文の音声付きのカードを自動で作ります。手でコピーする必要はありません。アドオンの最新の GitHub リリースから `WoWForeverJapanese.ankiaddon` をダウンロードし、Anki で開いてください。新しい単語は `/reload` かログアウトのあとに Anki に届きます。手で編集したカードやほかのカードはそのまま残ります。
+**Anki アドオン。** パソコン版 Anki 用の小さなアドオンが、ふりがな・スクリーンショット・文の音声付きのカードを自動で作ります。手でコピーする必要はありません。アドオンの最新の GitHub リリースから `WoWForeverJapanese.ankiaddon` をダウンロードし、Anki で開いてください。新しい単語は `/reload` かログアウトのあとに Anki に届きます。手で編集したカードやほかのカードはそのまま残ります。アドオンを入れる前や更新する前に、すべての端末で Anki を同期しておいてください。新しいバージョンでカードのフィールドが変わると、Anki はどちらか一方のデータを選ぶよう求めます。
 
 ### <span style="color:#E8C77E;">学びたい言語を選べます</span>
 
