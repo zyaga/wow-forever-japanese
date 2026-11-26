@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.15.0 - 2026-11-26
+
 ### Added
 - Word status. Give any word a status: Unknown, Learning, Known or Ignored (point at it and Shift+click to step it, Shift+right-click to ignore it). Words you do not know yet are underlined in quest text, NPC dialogue, books, the voice panel and a frozen tooltip, a soft green highlight picks out the most common words you do not know yet, and a small tag says how much of a quest, an NPC line or a book page you already know. `/wfj known` (or the Words settings page) opens a window where you paste a word list from Anki or another tool to mark every word the game uses as Known, and get your statuses back as text. Saving a word makes it Learning, and a word studied in game until its card is stable for three weeks becomes Known. The Words settings page has a switch for the whole feature, one for the underline under unknown words and one for the underline under words you are learning, a choice of what to highlight (common words, the only new word in a sentence, both, or nothing), the score tags, and each place; marks on chat are off until you switch them on. In English first it works on English words.
 - The colorblind settings in the options window (the colorblind mode, the filter, its strength and the three filter types) are in Japanese, with word cards. The tool that lists the game's interface text had missed the file they sit in.
