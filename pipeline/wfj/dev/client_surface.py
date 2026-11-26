@@ -3313,9 +3313,12 @@ local function WFJScanChatRead()
       record.refusedList = "the word list window did not open"
       return
     end
-    for _, shown in ipairs(shownTexts(list, {})) do
-      record.list = record.list + 1
-      judge("word list window", shown.text)
+    -- its labels sit on its page, a child frame, not on the window itself
+    for _, holder in ipairs({ list, list.page }) do
+      for _, shown in ipairs(shownTexts(holder, {})) do
+        record.list = record.list + 1
+        judge("word list window", shown.text)
+      end
     end
     -- its last row, the Anki add-on's address, is placed under whatever rows show: it must end inside the window
     local last = list.addonBox
