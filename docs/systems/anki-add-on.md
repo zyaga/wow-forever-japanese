@@ -128,7 +128,7 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - `anki-addon/wfj_anki/ui.py`: the menu, the browser action, the hooks (`profile_did_open`, `state_did_change`, Qt's `applicationStateChanged`) and the settings window; with `__init__.py`, the only code that knows Qt
 - `anki-addon/wfj_anki/text.py`: the add-on's words in English and Japanese
 - `anki-addon/wfj_anki/templates/`: `front.html`, `back.html`, `style.css`
-- `anki-addon/wfj_anki/manifest.json` (the oldest Anki it runs on: 23.10), `config.json`, `config.md`
+- `anki-addon/wfj_anki/manifest.json` (its AnkiWeb number as the package name, and the oldest Anki it runs on: 23.10), `config.json`, `config.md`
 - `anki-addon/tools/package.py`: the `.ankiaddon` file; `anki-addon/tools/render_cards.py`: the card pictures
 
 ## Packaging and release
@@ -166,7 +166,7 @@ The first sync makes the note type. A note type the add-on made earlier with few
 - Desktop Anki only: Anki's add-ons do not run in the phone apps. The cards reach the phone apps through AnkiWeb sync, and the template works there.
 - New words arrive after a `/reload` or a logout in the game, not when they are saved.
 - Anki and the game keep separate schedules; the add-on never reads or writes `WFJ_Study`.
-- The AnkiWeb listing is not made yet; the add-on is installed from the file on the GitHub release.
+- **Updates come from AnkiWeb, and the upload there is by hand.** The add-on is [listed on AnkiWeb](https://ankiweb.net/shared/info/612475471) (code `612475471`), and Anki checks there once a day for a newer file. The package is named by that number, so a copy installed from the release file lands in the same folder and is updated the same way. The manifest names the folder an earlier file used (`wow_forever_japanese`) as a conflict, so Anki switches that copy off; a manifest must never name its own folder there, or Anki switches the add-on off when it is updated. The maintainer uploads the file after each release ([Releasing](../operations/release.md)).
 
 ## Related
 - [Word list](word-list.md) · [Study](study.md) · [Voice over](voice.md) · [ADR-110](../adr/110-a-ready-made-export-for-the-anki-add-on.md) · [ADR-092](../adr/092-a-saved-words-sentence-audio-is-found-not-stored.md) · [ADR-069](../adr/069-saved-word-list.md) · [Testing → Anki add-on](../testing/strategy.md#anki-add-on-checklist) · [Release](../operations/release.md) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)

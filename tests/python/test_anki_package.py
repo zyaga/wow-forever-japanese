@@ -44,7 +44,11 @@ def test_the_file_holds_the_add_on_at_its_top(tmp_path):
     assert licence == (ROOT / "LICENSE").read_bytes()
     assert "Copyright (C) 2026 Zyaga" in header and "GPL-2.0-or-later" in header
     assert manifest["human_version"] == "1.2.3"
-    assert manifest["package"] and manifest["name"] == "WoW Forever Japanese"
+    assert manifest["name"] == "WoW Forever Japanese"
+    # the add-on's AnkiWeb number: installed from the file it lands in the folder AnkiWeb uses, so Anki offers
+    # its updates either way; the folder an earlier file used is switched off, and it never names itself
+    assert manifest["package"] == "612475471"
+    assert manifest["conflicts"] == ["wow_forever_japanese"]
     assert manifest["min_point_version"] == 231000  # Anki 23.10, the oldest the real-Anki tests ran on
     assert config == {"folder": "", "front": "sentence", "audio": "back"}
 

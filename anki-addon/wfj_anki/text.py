@@ -75,7 +75,7 @@ T = {
     ),
     "tip_newer": (
         "WoW Forever Japanese: the game's addon is newer than this add-on. Update this add-on (Tools → Add-ons → Check for Updates) to read your word list.",
-        "WoW Forever Japanese：ゲームのアドオンのほうが新しいバージョンです。単語帳を読むには、このアドオンを更新してください（ツール → アドオン → 更新を確認）。",
+        "WoW Forever Japanese：ゲームのアドオンのほうが新しいバージョンです。単語帳を読むには、このアドオンを更新してください（ツール → アドオン → アップデートを確認）。",
     ),
     "tip_not_found": (
         "WoW Forever Japanese: no saved word list was found. Choose your World of Warcraft folder in Tools → WoW Forever Japanese → Settings.",

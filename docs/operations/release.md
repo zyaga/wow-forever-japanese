@@ -128,9 +128,9 @@ A new Forever client build: a pull request that updates `pipeline/clients.toml` 
 
 ## The Anki add-on
 
-The Anki add-on ([Anki add-on](../systems/anki-add-on.md)) ships with each addon release as one more file of the GitHub release, `WoWForeverJapanese.ankiaddon`, with the release's version. Players install it by opening that file with Anki. `make anki-package` builds the same file locally into `build/anki/` (the next release's version, or `ANKI_VERSION=X.Y.Z`).
+The Anki add-on ([Anki add-on](../systems/anki-add-on.md)) ships with each addon release as one more file of the GitHub release, `WoWForeverJapanese.ankiaddon`, with the release's version. Players install it from AnkiWeb with the code `612475471`, or by opening that file with Anki. Either way it lands in the folder AnkiWeb uses (the package is named by that number), so Anki offers every player the next version. `make anki-package` builds the same file locally into `build/anki/` (the next release's version, or `ANKI_VERSION=X.Y.Z`).
 
-**AnkiWeb** is by hand: only the maintainer's AnkiWeb account can upload there. Download the file from the GitHub release and upload it on the add-on's AnkiWeb page (the first upload creates the listing). The listing does not exist yet; once it does, its address goes in the README and on the site.
+**AnkiWeb** is by hand: only the maintainer's AnkiWeb account can upload there. After every release that changes the add-on, download the file from the GitHub release and upload it on [the add-on's AnkiWeb page](https://ankiweb.net/shared/info/612475471) (Update, then the file under its branch), and raise the branch's second version number when the tests have run on a newer Anki. Anki offers the new file to players within a day. The page's text is [docs/ankiweb.md](../ankiweb.md).
 
 ## Rollback
 

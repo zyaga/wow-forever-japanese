@@ -5,10 +5,11 @@ When the README's Anki paragraph changes, change this too. Paste everything unde
 listing's description box (it takes Markdown). The pictures are read from this repository's `docs/images/`
 on the main branch.
 
+- **Listing:** https://ankiweb.net/shared/info/612475471 (code `612475471`)
 - **Title:** WoW Forever Japanese
-- **Tags:** `japanese vocabulary games wow`
+- **Tags:** `japanese vocabulary games gaming wow forever`
 - **Support page:** `https://foreverjapanese.com/discord`
-- **Branch:** supports `23.10.0` to the newest Anki the tests ran on, with no `-` in front (a plain maximum
+- **Branch:** supports `23.10.1` to the newest Anki the tests ran on, with no `-` in front (a plain maximum
   never blocks a newer Anki). The file is `WoWForeverJapanese.ankiaddon` from `make anki-package`, or from
   the GitHub release.
 
@@ -144,7 +145,7 @@ World of Warcraft を日本語で遊び、覚えたい単語をクリックす�
 
 ### 最初の同期の前に
 
-最初の実行でノートタイプが追加されるため、Anki は AnkiWeb との一方向の同期を求めます。先にすべての端末を同期してから、パソコンで **AnkiWeb へアップロード** を選んでください。
+最初の実行でノートタイプが追加されるため、Anki は AnkiWeb との一方向の同期を求めます。先にすべての端末を同期してから、パソコンで **AnkiWeb にアップロード** を選んでください。
 
 ### 対応環境
 
