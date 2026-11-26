@@ -3316,8 +3316,8 @@ end
 -- The secret chat line try. The client keeps some chat text secret, and a line holding it answers questions about
 -- itself (is it visible, how faint, is the mouse on it) with secret values, which tainted code may not test. No
 -- such line can be ordered up, so the test makes its own with `secretwrap` and puts them where the chat tools
--- look: a chat frame of the test's own, listed in CHAT_FRAMES for a third of a second, that says the mouse is on
--- it. It holds two lines: a real text region given secret text (what it answers is what a secret chat line
+-- look: a chat frame of the test's own, listed in CHAT_FRAMES until they have looked (three seconds at most),
+-- that says the mouse is on it. It holds two lines: a real text region given secret text (what it answers is what a secret chat line
 -- answers, kept in `answers`), and a line that answers every question with a secret. An error the chat tools
 -- throw on either is caught like any other error of the run. `looks` counts the looks the chat tools took.
 local function WFJScanSecretLine(done)
@@ -3369,14 +3369,21 @@ local function WFJScanSecretLine(done)
   end
   _G[NAME] = frame
   CHAT_FRAMES[#CHAT_FRAMES + 1] = NAME
-  C_Timer.After(0.3, function()
+  -- until the chat tools have looked a few times, or three seconds: in a whole run a single slow frame can be
+  -- longer than any fixed wait, and the wait would end before their timer had a turn
+  local started, turns = GetTime(), 0
+  local function wait()
+    turns = turns + 1
+    if try.looks < 3 and GetTime() - started < 3 then return C_Timer.After(0.1, wait) end
+    try.turns, try.seconds = turns, GetTime() - started
     for i = #CHAT_FRAMES, 1, -1 do
       if CHAT_FRAMES[i] == NAME then table.remove(CHAT_FRAMES, i) end
     end
     _G[NAME] = nil
     holder:Hide()
     done()
-  end)
+  end
+  C_Timer.After(0.1, wait)
 end
 
 local function WFJScanFreezeRead(done)

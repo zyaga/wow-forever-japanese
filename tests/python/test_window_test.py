@@ -858,7 +858,9 @@ def test_the_secret_chat_line_try_puts_secret_lines_where_the_chat_tools_look_an
     assert "frame.IsShown = function() return false end" in body
     assert "frame.IsVisible = function() return true end" in body
     # listed in CHAT_FRAMES only for the wait, then taken out again with its global
-    steps = ["CHAT_FRAMES[#CHAT_FRAMES + 1] = NAME", "C_Timer.After(0.3", "table.remove(CHAT_FRAMES, i)",
+    # it waits for the chat tools' looks, not a fixed time: a slow frame of a whole run is longer than any wait
+    assert "if try.looks < 3 and GetTime() - started < 3 then return C_Timer.After(0.1, wait) end" in body
+    steps = ["CHAT_FRAMES[#CHAT_FRAMES + 1] = NAME", "local function wait()", "table.remove(CHAT_FRAMES, i)",
              "_G[NAME] = nil"]
     assert [body.index(step) for step in steps] == sorted(body.index(step) for step in steps)
 
