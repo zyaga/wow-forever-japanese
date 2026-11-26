@@ -68,3 +68,12 @@ def test_the_hooks_the_sync_is_wired_to():
     ):
         assert wiring in source
     assert "if mw.col is None or self.running" in source
+
+
+def test_what_the_folder_holds_is_said_a_game_a_line():
+    assert "No saved word list found" in text.found([], False)
+    said = text.found([("forever", 102, True), ("retail", 1, False), ("", 3, True)], False).split("\n")
+    assert said[0] == "Forever: 102 word(s) for Anki."
+    assert said[1].startswith("Retail: nothing for Anki yet.")
+    assert said[2] == "World of Warcraft: 3 word(s) for Anki."
+    assert text.found([("classic-era", 0, True)], True) == "Classic Era：Anki 用の単語 0 語。"

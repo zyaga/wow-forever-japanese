@@ -20,6 +20,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from .discover import game as client_game
+
 SCHEMA = 1  # the newest shape of the game's table this version reads
 
 FIELDS = [
@@ -37,6 +39,7 @@ FIELDS = [
     "Source",
     "Quest",
     "Quest ID",
+    "Game",
     "Saved",
     "Lang",
     "Sync",
@@ -59,6 +62,18 @@ _TEXT = {
 }
 
 
+_GAMES = {"forever": "Forever", "retail": "Retail", "classic-era": "Classic Era", "classic": "Classic"}
+
+
+def game_label(game: str) -> str:
+    """The game's name as a note shows it."""
+    return _GAMES.get(game) or game.replace("-", " ").title()
+
+
+def game_tag(game: str) -> str:
+    return f"wow::{game}"
+
+
 @dataclass(frozen=True)
 class Row:
     key: str
@@ -68,15 +83,22 @@ class Row:
     audio: tuple[str, ...]
     source: str = ""  # the client and account it was saved on, the same on every machine: "_forever_/NAME"
     saved: float = 0  # when it was saved in the game
+    game: str = ""  # which game it was saved in ("forever", "retail"), from the client folder's name
+
+    @property
+    def identity(self) -> tuple[str, str]:
+        """What tells this word's note from every other: two games can save the same word under one key."""
+        return (game_label(self.game), self.key)
 
 
 def rows(tables: list[tuple[Any, Any]]) -> tuple[list[Row], bool]:
-    """The words of every saved file, one per key (the newest file's when two hold the same key), in saved
-    order.
+    """The words of every saved file, one per game and key (the newest file's when two of a game hold the
+    same key), in saved order.
     Also whether a table from a newer addon version was seen: it is passed over, never half read."""
     newer = False
-    by_key: dict[str, tuple[float, Row]] = {}
+    by_key: dict[tuple[str, str], tuple[float, Row]] = {}
     for saved, table in tables:
+        game = client_game(saved.client)
         if not isinstance(table, dict):
             continue
         schema = table.get("schema")
@@ -94,11 +116,11 @@ def rows(tables: list[tuple[Any, Any]]) -> tuple[list[Row], bool]:
             key = entry.get("key")
             if not isinstance(key, str) or not key:
                 continue
-            if key in by_key and by_key[key][0] >= written:
+            if (game, key) in by_key and by_key[game, key][0] >= written:
                 continue
             audio = entry.get("audio")
             when = entry.get("saved")
-            by_key[key] = (
+            by_key[game, key] = (
                 written,
                 Row(
                     key=key,
@@ -108,6 +130,7 @@ def rows(tables: list[tuple[Any, Any]]) -> tuple[list[Row], bool]:
                     audio=tuple(a for a in audio if isinstance(a, str)) if isinstance(audio, list) else (),
                     source=f"{saved.client.name}/{saved.path.parent.parent.name}",
                     saved=when if isinstance(when, (int, float)) and not isinstance(when, bool) else 0,
+                    game=game,
                 ),
             )
     return [row for _, row in by_key.values()], newer
@@ -230,6 +253,9 @@ def note_changes(
     record = json.dumps({"f": note.wrote, "src": note.sources}, sort_keys=True)
     if note.new:
         note.writes["Key"] = html.escape(row.key, quote=False)
+    # the game is part of which note a word is, like the key: written once, then left as it stands
+    if row.game and not note.now.get("Game", ""):
+        note.writes["Game"] = game_label(row.game)
     if record != note.now.get("Sync", ""):
         note.writes["Sync"] = record
     return note.writes, no_image, no_audio

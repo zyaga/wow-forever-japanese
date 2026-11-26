@@ -198,13 +198,13 @@ class SettingsDialog(QDialog):
         parent: QWidget | None,
         settings: Settings,
         summary: Callable[[], str],
-        count: Callable[[str], int],
+        look: Callable[[str], str],
         save: Callable[[Settings], None],
         sync_now: Callable[[Callable[[], None]], None],
         ja: bool,
     ):
         super().__init__(parent)
-        self._summary, self._count, self._save, self._sync_now, self._ja = summary, count, save, sync_now, ja
+        self._summary, self._found, self._save, self._sync_now, self._ja = summary, look, save, sync_now, ja
         say = lambda key, **values: text.get(key, ja, **values)  # noqa: E731
         self._say = say
         self.setWindowTitle(say("title"))
@@ -287,8 +287,7 @@ class SettingsDialog(QDialog):
             self._look()
 
     def _look(self) -> None:
-        n = self._count(self.folder.text().strip())
-        self.found.setText(self._say("found", n=n) if n else self._say("not_found"))
+        self.found.setText(self._found(self.folder.text().strip()))
 
     def refresh(self) -> None:
         self.status.setText(self._summary())
@@ -308,13 +307,14 @@ def open_settings() -> None:
     def save(settings: Settings) -> None:
         mw.addonManager.writeConfig(MODULE, to_config(settings))
 
-    def count(folder: str) -> int:
-        return len(discover.find(folder, platform.system(), Path.home()))
+    def look(folder: str) -> str:
+        files = discover.find(folder, platform.system(), Path.home())
+        return text.found(sync.games(sync.read(files)), japanese())
 
     def sync_now(done: Callable[[], None]) -> None:
         syncer.request(asked=True, done=done)
 
-    dialog = SettingsDialog(mw, syncer.settings(), syncer.summary, count, save, sync_now, japanese())
+    dialog = SettingsDialog(mw, syncer.settings(), syncer.summary, look, save, sync_now, japanese())
     if dialog.exec():
         # a saved card choice reaches the cards with the next sync
         syncer.request(asked=True, done=lambda: None)

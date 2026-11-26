@@ -32,7 +32,9 @@ def main() -> None:
             None,
             Settings(folder="D:/Games/World of Warcraft", front="word"),
             lambda result=result, ja=ja: text.summary(result, ja),
-            lambda folder: 2 if folder else 0,
+            lambda folder, ja=ja: text.found(
+                [("forever", 102, True), ("retail", 0, False)] if folder else [], ja
+            ),
             saved.append,
             lambda done: done(),
             ja,

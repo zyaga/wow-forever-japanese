@@ -23,6 +23,7 @@ from wfj_anki.collection import AnkiNotes  # noqa: E402
 from wfj_anki.settings import Settings  # noqa: E402
 
 KEY = "quest.description:456:生き物"
+NAMED = ("Forever", KEY)  # the note of that word saved in Forever
 SHOT = "WoWScrnShot_112526_101500.jpg"
 AUDIO = ["WoWForeverJapanese_VoiceA/Sound/a-1.mp3", "WoWForeverJapanese_VoiceA/Sound/a-2.mp3"]
 
@@ -100,8 +101,9 @@ def main() -> None:
         out["fields"] = [f["name"] for f in notes.model["flds"]]
         out["first"] = vars(sync.apply(notes, [(saved, table(row()))]))
         mine = notes.notes()
-        note_id, fields = mine[KEY]
+        note_id, fields = mine[NAMED]
         out["note"] = fields
+        out["tags"] = list(col.get_note(note_id).tags)
         out["deck"] = col.decks.name(col.db.scalar("select did from cards where nid = ?", note_id))
         out["cards"] = col.db.scalar("select count() from cards where nid = ?", note_id)
         media_dir = Path(col.media.dir())
@@ -130,7 +132,7 @@ def main() -> None:
 
         # the game's value changes
         out["third"] = vars(sync.apply(notes, [(saved, table(row(meaning="a living thing")))]))
-        after = notes.notes()[KEY][1]
+        after = notes.notes()[NAMED][1]
         out["changed_fields"] = sorted(f for f in fields if fields[f] != after[f])
         out["meaning"] = after["Meaning"]
         out["schedule_kept"] = card_state(col, note_id) == state
@@ -141,7 +143,7 @@ def main() -> None:
         note["Meaning"] = "my own words"
         col.update_note(note)
         sync.apply(notes, [(saved, table(row(meaning="again", reading="イキモノ")))])
-        kept = notes.notes()[KEY][1]
+        kept = notes.notes()[NAMED][1]
         out["edit_kept"] = (kept["Meaning"], kept["Reading"])
         out["reset"] = vars(
             sync.apply(
@@ -150,7 +152,7 @@ def main() -> None:
                 reset=notes.keys_of([note_id, other.id]),
             )
         )
-        out["after_reset"] = notes.notes()[KEY][1]["Meaning"]
+        out["after_reset"] = notes.notes()[NAMED][1]["Meaning"]
         out["schedule_kept_after_reset"] = card_state(col, note_id) == state
         out["reviews_kept_after_reset"] = col.db.all("select * from revlog order by id") == reviews
 
@@ -167,14 +169,14 @@ def main() -> None:
         extra = "quest.description:456:数"
         both = table(row(meaning="again", reading="イキモノ"), row(key=extra, word="数", saved=1790000100))
         sync.apply(notes, [(saved, both)])
-        col.remove_notes([notes.notes()[extra][0]])
+        col.remove_notes([notes.notes()[("Forever", extra)][0]])
         out["deleted_stays"] = vars(sync.apply(notes, [(saved, both)]))
         out["deleted_back"] = vars(sync.apply(notes, [(saved, both)], again=True))
-        col.remove_notes([notes.notes()[extra][0]])
+        col.remove_notes([notes.notes()[("Forever", extra)][0]])
 
         # a word gone from the game
         out["gone"] = vars(sync.apply(notes, [(saved, table())]))
-        out["still_there"] = KEY in notes.notes()
+        out["still_there"] = NAMED in notes.notes()
 
         # another card choice: the template changes, no note does
         mods = col.db.all("select id, mod from notes order by id")
@@ -195,9 +197,13 @@ def main() -> None:
         model["css"] += "\n.card { letter-spacing: 9px; }"
         col.models.update_dict(model)
         again = AnkiNotes(col, Settings(front="word", audio="front"), shrink=media.qt_shrink)
-        out["own_styling_left"] = again.prepare() is False and again.model["css"].endswith("letter-spacing: 9px; }")
+        out["own_styling_left"] = again.prepare() is False and again.model["css"].endswith(
+            "letter-spacing: 9px; }"
+        )
         back = AnkiNotes(col, Settings(), shrink=media.qt_shrink)
-        out["choice_rewrites_styling"] = back.prepare() is True and "letter-spacing: 9px" not in back.model["css"]
+        out["choice_rewrites_styling"] = (
+            back.prepare() is True and "letter-spacing: 9px" not in back.model["css"]
+        )
         chosen = AnkiNotes(col, Settings(front="word", audio="front"), shrink=media.qt_shrink)
         chosen.prepare()
 
@@ -210,7 +216,7 @@ def main() -> None:
         out["fields_after_upgrade"] = sorted(f["name"] for f in older.model["flds"]) == sorted(
             notetype.FIELDS
         )
-        out["note_kept_through_upgrade"] = older.notes()[KEY][1]["Word"] == "生き物"
+        out["note_kept_through_upgrade"] = older.notes()[NAMED][1]["Word"] == "生き物"
         out["schedule_kept_through_upgrade"] = card_state(col, note_id) == state
 
         # a note type of the same name that is the player's own

@@ -13,9 +13,10 @@ TABLE = "WFJ_Anki"
 
 
 class Notes(Protocol):
-    def notes(self) -> dict[str, tuple[Any, dict[str, str]]]: ...  # the add-on's notes: key → (id, fields)
-    def add(self, fields: dict[str, str]) -> None: ...
-    def update(self, note_id: Any, writes: dict[str, str]) -> None: ...
+    # the add-on's notes: (game, key) → (id, fields); a note made before notes named their game has ""
+    def notes(self) -> dict[tuple[str, str], tuple[Any, dict[str, str]]]: ...
+    def add(self, fields: dict[str, str], tags: list[str]) -> None: ...
+    def update(self, note_id: Any, writes: dict[str, str], tags: list[str]) -> None: ...
     # a file into the media; its name there, or None
     def store(self, kind: str, path: Path) -> str | None: ...
     # for each place words are saved, the newest word a sync has seen
@@ -85,14 +86,26 @@ def _sizes(_kind: str, row: plan.Row) -> object:
     return sizes
 
 
+def games(tables: list[tuple[discover.SavedFile, Any]]) -> list[tuple[str, int, bool]]:
+    """Each game the saved files are from: its name, how many words it holds for Anki, and whether its addon
+    has written its list for Anki at all."""
+    by_game: dict[str, list[tuple[discover.SavedFile, Any]]] = {}
+    for saved, table in tables:
+        by_game.setdefault(discover.game(saved.client), []).append((saved, table))
+    return [
+        (game, len(plan.rows(group)[0]), any(isinstance(table, dict) for _, table in group))
+        for game, group in by_game.items()
+    ]
+
+
 def apply(
     col: Notes,
     tables: list[tuple[discover.SavedFile, Any]],
-    reset: set[str] | None = None,
+    reset: set[tuple[str, str]] | None = None,
     again: bool = False,
 ) -> Result:
     """Add a note for each new word and rewrite what changed in the others. With `reset`, only the notes of
-    those keys are touched, and every field of them is written from the game.
+    those games and keys are touched, and every field of them is written from the game.
 
     A word a sync has seen before and that has no note now was deleted in Anki by the player: it is not added
     again, unless `again` asks for every word of the game's list to have a note."""
@@ -107,8 +120,13 @@ def apply(
     media = _Media(col)
     seen_before = dict(col.marks())
     for row in rows:
-        existing = notes.get(row.key)
-        if reset is not None and (existing is None or row.key not in reset):
+        named = row.identity
+        # a note made before notes named their game is the word's note for the first game that has the word
+        unnamed = ("", row.key)
+        existing = notes.get(named)
+        if existing is None and unnamed in notes:
+            named, existing = unnamed, notes.pop(unnamed)
+        if reset is not None and (existing is None or named not in reset):
             continue
         if existing is None and not again and row.saved <= seen_before.get(row.source, -1):
             result.deleted += 1
@@ -118,11 +136,13 @@ def apply(
         )
         result.missing_images += no_image
         result.missing_audio += no_audio
+        # the game's tag goes on with the game's name, once: a tag the player takes off stays off
+        tags = [plan.game_tag(row.game)] if "Game" in writes else []
         if existing is None:
-            col.add({field: writes.get(field, "") for field in plan.FIELDS})
+            col.add({field: writes.get(field, "") for field in plan.FIELDS}, tags)
             result.added += 1
         elif writes:
-            col.update(existing[0], writes)
+            col.update(existing[0], writes, tags)
             result.updated += 1
     if reset is None:
         marks = dict(seen_before)

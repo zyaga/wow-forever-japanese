@@ -49,6 +49,7 @@ class Collection:
         self.stored = []
         self.next = 1
         self.seen = {}
+        self.tags = {}  # note id → the tags it was given
 
     def marks(self):
         return dict(self.seen)
@@ -57,14 +58,19 @@ class Collection:
         self.seen = dict(marks)
 
     def notes(self):
-        return {html.unescape(fields["Key"]): (note_id, dict(fields)) for note_id, fields in self.mine.items()}
+        return {
+            (fields.get("Game", ""), html.unescape(fields["Key"])): (note_id, dict(fields))
+            for note_id, fields in self.mine.items()
+        }
 
-    def add(self, fields):
+    def add(self, fields, tags):
         self.mine[self.next] = dict(fields)
+        self.tags[self.next] = list(tags)
         self.next += 1
 
-    def update(self, note_id, writes):
+    def update(self, note_id, writes, tags):
         self.mine[note_id].update(writes)
+        self.tags[note_id] = self.tags.get(note_id, []) + list(tags)
 
     def store(self, kind, path):
         if str(path) not in self.files:
@@ -154,7 +160,9 @@ def test_reset_rewrites_an_edited_field_from_the_game():
     run(col, table(row(), row(key="k2", word="数")))
     col.note("quest.description:456:生き物")["Meaning"] = "mine"
     col.note("k2")["Meaning"] = "also mine"
-    result = run(col, table(row(), row(key="k2", word="数")), reset={"quest.description:456:生き物"})
+    result = run(
+        col, table(row(), row(key="k2", word="数")), reset={("Forever", "quest.description:456:生き物")}
+    )
     assert result.updated == 1
     assert col.note("quest.description:456:生き物")["Meaning"] == "living thing"
     assert col.note("k2")["Meaning"] == "also mine"  # not one of the notes asked for
@@ -261,7 +269,7 @@ def test_an_english_word_carries_its_japanese_sentence():
 
 def test_the_same_key_in_two_files_takes_the_newest():
     col = Collection()
-    other = SavedFile(Path("/game/_retail_"), Path("/game/_retail_/WTF/Account/ONE/SavedVariables/x.lua"))
+    other = SavedFile(CLIENT, CLIENT / "WTF/Account/TWO/SavedVariables/x.lua")
     result = sync.apply(
         col,
         [
@@ -312,7 +320,7 @@ def test_reset_rewrites_an_edited_image_and_audio_too():
     col.note()["Image"], col.note()["Audio"] = '<img src="mine.jpg">', "[sound:mine.mp3]"
     run(col, data)
     assert col.note()["Image"] == '<img src="mine.jpg">'  # kept by an ordinary sync
-    result = run(col, data, reset={"quest.description:456:生き物"})
+    result = run(col, data, reset={("Forever", "quest.description:456:生き物")})
     assert result.updated == 1
     assert col.note()["Image"] == '<img src="wfj-WoWScrnShot_112526_101500.jpg">'
     assert col.note()["Audio"] == "[sound:wfj-a-1.mp3]"
@@ -323,9 +331,14 @@ def test_a_note_deleted_in_anki_stays_deleted():
     run(col, table(row(), row(key="k2", word="数", saved=1790000100)))
     gone = next(i for i, f in col.mine.items() if f["Key"] == "k2")
     del col.mine[gone]
-    later = table(row(), row(key="k2", word="数", saved=1790000100), row(key="k3", word="森", saved=1790000200))
+    later = table(
+        row(), row(key="k2", word="数", saved=1790000100), row(key="k3", word="森", saved=1790000200)
+    )
     result = run(col, later)
-    assert (result.added, result.deleted) == (1, 1)  # the new word arrives, the deleted one does not come back
+    assert (result.added, result.deleted) == (
+        1,
+        1,
+    )  # the new word arrives, the deleted one does not come back
     assert {f["Key"] for f in col.mine.values()} == {"quest.description:456:生き物", "k3"}
     # until the player asks for every word again
     result = run(col, later, again=True)
@@ -337,7 +350,9 @@ def test_another_account_s_older_words_are_still_new():
     col = Collection()
     run(col, table(row(saved=1790000500)))
     other = SavedFile(Path("/game/_retail_"), Path("/game/_retail_/WTF/Account/TWO/SavedVariables/x.lua"))
-    result = sync.apply(col, [(FILE, table(row(saved=1790000500))), (other, table(row(key="k2", saved=1780000000)))])
+    result = sync.apply(
+        col, [(FILE, table(row(saved=1790000500))), (other, table(row(key="k2", saved=1780000000)))]
+    )
     assert result.added == 1
 
 
@@ -376,3 +391,51 @@ def test_a_key_with_markup_in_it_is_matched_and_never_shown_as_markup():
     run(col, table(row(key="chat:chat:<b>&x")))
     assert col.note()["Key"] == "chat:chat:&lt;b&gt;&amp;x"
     assert run(col, table(row(key="chat:chat:<b>&x"))).added == 0
+
+
+RETAIL = SavedFile(Path("/game/_retail_"), Path("/game/_retail_/WTF/Account/ONE/SavedVariables/x.lua"))
+
+
+def test_the_same_key_in_two_games_is_two_notes_each_named_and_tagged_for_its_game():
+    col = Collection()
+    both = [(FILE, table(row(meaning="forever's"))), (RETAIL, table(row(meaning="retail's")))]
+    result = sync.apply(col, both)
+    assert result.added == 2
+    by_game = {fields["Game"]: (fields["Meaning"], col.tags[note_id]) for note_id, fields in col.mine.items()}
+    assert by_game == {
+        "Forever": ("forever's", ["wow::forever"]),
+        "Retail": ("retail's", ["wow::retail"]),
+    }
+    again = sync.apply(col, both)
+    assert (again.added, again.updated) == (0, 0)
+
+
+def test_a_note_made_before_notes_named_their_game_is_kept_and_named_once():
+    col = Collection()
+    run(col, table(row()))
+    note_id = next(iter(col.mine))
+    col.mine[note_id]["Game"], col.tags[note_id] = "", []
+    result = run(col, table(row()))
+    assert (result.added, result.updated) == (0, 1)
+    assert col.mine[note_id]["Game"] == "Forever" and col.tags[note_id] == ["wow::forever"]
+    col.tags[note_id] = []  # the player takes the tag off
+    assert run(col, table(row(meaning="changed"))).updated == 1
+    assert col.tags[note_id] == []
+
+
+def test_a_folder_that_names_no_game_gives_a_note_without_one():
+    col = Collection()
+    plain = SavedFile(Path("/game"), Path("/game/WTF/Account/ONE/SavedVariables/x.lua"))
+    sync.apply(col, [(plain, table(row()))])
+    assert col.note()["Game"] == "" and col.tags == {1: []}
+
+
+def test_each_game_is_listed_with_its_words_and_whether_it_is_ready_for_anki():
+    era = SavedFile(
+        Path("/game/_classic_era_"), Path("/game/_classic_era_/WTF/Account/ONE/SavedVariables/x.lua")
+    )
+    assert sync.games([(FILE, table(row(), row(key="k2"))), (RETAIL, None), (era, table())]) == [
+        ("forever", 2, True),
+        ("retail", 0, False),
+        ("classic-era", 0, True),
+    ]

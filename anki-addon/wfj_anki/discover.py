@@ -55,6 +55,15 @@ def clients(root: Path) -> list[Path]:
     return [p for p in inside if p.name.startswith("_") and p.name.endswith("_") and (p / "WTF").is_dir()]
 
 
+def game(client: Path) -> str:
+    """Which game a client folder is, from its name: `_classic_era_` is "classic-era". Empty for a folder that
+    is not named the way the launcher names them."""
+    name = client.name
+    if len(name) > 2 and name.startswith("_") and name.endswith("_"):
+        return name.strip("_").replace("_", "-").lower()
+    return ""
+
+
 def saved_files(root: Path) -> list[SavedFile]:
     """Every account's copy of the addon's saved file, in every client under `root`."""
     found = []

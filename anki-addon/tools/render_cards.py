@@ -80,6 +80,7 @@ def samples(image: str) -> dict[str, dict[str, str]]:
             "Source": "quest",
             "Quest": "自然界のバランス",
             "Quest ID": "456",
+            "Game": "Forever",
             "Saved": "2026-11-25",
         },
     )

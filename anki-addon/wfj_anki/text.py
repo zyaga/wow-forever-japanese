@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from . import plan
 from .sync import Result
 
 T = {
@@ -23,7 +24,11 @@ T = {
     "folder_hint": ("Leave empty to look in the usual places", "空欄なら通常の場所を探します"),
     "browse": ("Browse…", "参照…"),
     "choose": ("Choose your World of Warcraft folder", "World of Warcraft のフォルダを選んでください"),
-    "found": ("Found {n} saved word list(s).", "単語帳が {n} 件見つかりました。"),
+    "found_game": ("{game}: {n} word(s) for Anki.", "{game}：Anki 用の単語 {n} 語。"),
+    "found_old": (
+        "{game}: nothing for Anki yet. Update the addon in that game, then /reload once.",
+        "{game}：Anki 用のデータがまだありません。そのゲームのアドオンを更新して、一度 /reload してください。",
+    ),
     "not_found": (
         "No saved word list found here. Choose the folder named World of Warcraft, and save a word in the game first.",
         "ここには単語帳が見つかりません。World of Warcraft という名前のフォルダを選んでください。先にゲームで単語を保存しておく必要があります。",
@@ -81,6 +86,17 @@ T = {
 
 def get(key: str, japanese: bool, **values: object) -> str:
     return T[key][1 if japanese else 0].format(**values)
+
+
+def found(games: list[tuple[str, int, bool]], japanese: bool) -> str:
+    """What the folder holds, a game a line."""
+    if not games:
+        return get("not_found", japanese)
+    lines = []
+    for game, words, ready in games:
+        name = plan.game_label(game) or "World of Warcraft"
+        lines.append(get("found_game" if ready else "found_old", japanese, game=name, n=words))
+    return "\n".join(lines)
 
 
 def summary(result: Result | None, japanese: bool) -> str:

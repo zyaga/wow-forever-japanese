@@ -59,6 +59,7 @@ def test_the_note_type_the_note_and_its_one_card(seen):
     note = seen["note"]
     assert note["Sentence"] == "少しの<b>生[い]き 物[もの]</b>たちを狩れ。"
     assert note["Meaning"] == "living thing"
+    assert note["Game"] == "Forever" and seen["tags"] == ["wow::forever"]
 
 
 def test_the_media_is_in_the_collection_and_the_picture_is_made_smaller(seen):
@@ -149,14 +150,12 @@ def test_the_settings_window_shows_and_saves_the_choices(tmp_path):
     assert run.returncode == 0, run.stderr[-3000:]
     seen = json.loads(run.stdout.strip().splitlines()[-1])
     for name, language in (
-        ("settings-en.png", "Found 2 saved word list(s)."),
-        ("settings-ja.png", "単語帳が 2 件見つかりました。"),
+        ("settings-en.png", "Forever: 102 word(s) for Anki.\nRetail: nothing for Anki yet."),
+        ("settings-ja.png", "Forever：Anki 用の単語 102 語。\nRetail：Anki 用のデータがまだありません。"),
     ):
         assert (tmp_path / name).stat().st_size > 0
         window = seen[name]
-        assert window["found"] == language
-        assert window["saved"] == [
-            {"folder": "D:/Games/World of Warcraft", "front": "word", "audio": "back"}
-        ]
+        assert window["found"].startswith(language)
+        assert window["saved"] == [{"folder": "D:/Games/World of Warcraft", "front": "word", "audio": "back"}]
         assert window["status"].count("\n") == 1
         assert window["empty"] != window["found"]

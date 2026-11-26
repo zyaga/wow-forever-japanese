@@ -73,6 +73,7 @@ One note type, `WoW Forever Japanese`, one card (`Card`), notes in the deck `WoW
 | `Japanese sentence` | an English word's Japanese sentence |
 | `Image` | an HTML image tag naming the stored screenshot (its name starts with `wfj-`) |
 | `Audio` | `[sound:wfj-…]`, one per file, in play order |
+| `Game` | the game the word was saved in (`Forever`, `Retail`, `Classic Era`), from the client folder's name (`_forever_`); empty for a folder not named that way. Written once, with the tag `wow::forever` (or the game's own), and shown in the back's foot line. A tag the player removes is not added again |
 | `Source`, `Quest`, `Quest ID`, `Saved`, `Lang` | where it was shown, the Japanese quest title, the quest's number (shown after the source on the back: "quest 456"), the save date (UTC, `YYYY-MM-DD`), `en` or empty |
 | `Sync` | the add-on's record, as JSON: a short hash of what it last wrote to each field, and of the files behind `Image` and `Audio` |
 
@@ -87,12 +88,12 @@ The first sync makes the note type. A note type the add-on made earlier with few
 
 ### A sync
 `sync.apply` runs `plan.py`'s rules against what the add-on's notes hold now, and `collection.py` writes the result:
-- **Adds.** A key with no add-on note gets one, every field filled.
+- **Adds.** A word is told from every other by its game and its key, so the same quest and word saved in two games are two notes. A game's key with no add-on note gets one, every field filled. A note made before notes named their game is taken as the word's note for the first game that has the word, and is named and tagged then.
 - **Updates.** A field of an existing note is written only when the game's value changed **and** the field still holds what the add-on last wrote (its text hashes to the `Sync` entry, Unicode form fixed first). A field with no `Sync` entry, added by a later version, counts as untouched while it is empty. After a write the new hash is stored.
 - **Keeps hand edits.** A field the player changed no longer matches its hash and is skipped; the note's other fields still update. **WoW Forever Japanese: reset to the game's data**, in the card browser's right-click menu, rewrites every field of the selected add-on notes from the game.
 - **Media.** A row's screenshot is made no wider than 1600 pixels and stored as a JPEG (by Anki's own Qt; without it a JPEG or PNG goes as it is); sound files go as they are. Both are stored in Anki's media with a `wfj-` prefix, apart from the player's own files. The same files as last time are not stored again. A file that is missing leaves the field as it was and is tried at the next sync, even when no saved file changed. An `Image` or `Audio` field that holds something is never emptied by a row that names no file (no screenshot taken, a pack turned off).
 - **One undo step.** Everything a sync writes is one entry in Anki's undo list, named `WoW Forever Japanese`.
-- The result shows as a short tooltip (`N new, M updated`), nothing when nothing changed. The settings window shows the last sync's result: words found, missing screenshots and sound files with their counts, a folder with no saved file, a table too new to read, or a saved file from an addon that has not written `WFJ_Anki` yet.
+- The result shows as a short tooltip (`N new, M updated`), nothing when nothing changed. Under the folder, the settings window lists each game found there with how many words it holds for Anki, or that its addon has not written its list for Anki yet. It also shows the last sync's result: words found, missing screenshots and sound files with their counts, a folder with no saved file, a table too new to read, or a saved file from an addon that has not written `WFJ_Anki` yet.
 
 - **Deleted cards stay deleted.** The collection keeps, for each client and account, the newest saved word a sync has seen. A word no newer than that with no note was deleted in Anki by the player, so it is not added again. **Tools → WoW Forever Japanese → Add deleted cards again** makes a note for every word of the game's list once more, and the settings window says how many words were left out.
 - **Markup.** The game writes each row's text ready for a field: `&`, `<`, `>`, `[` and `]` are escaped, so a stage direction in angle brackets, a link's label in square brackets, or text another player typed in chat shows as text and never as a tag or a reading. The only markup is the game's own: the saved word in bold and the readings. The key is escaped when it is written to the note and read back the same way.

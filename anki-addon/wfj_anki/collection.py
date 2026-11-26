@@ -87,15 +87,15 @@ class AnkiNotes:
 
     # ── what a sync asks for ─────────────────────────────────────────────────
 
-    def notes(self) -> dict[str, tuple[Any, dict[str, str]]]:
+    def notes(self) -> dict[tuple[str, str], tuple[Any, dict[str, str]]]:
         assert self.model is not None
         names = [f["name"] for f in self.model["flds"]]
         found = {}
         for note_id, joined in self.col.db.all("select id, flds from notes where mid = ?", self.model["id"]):
             fields = dict(zip(names, joined.split("\x1f"), strict=False))
-            key = html.unescape(fields.get("Key", ""))
-            if key and key not in found:
-                found[key] = (note_id, fields)
+            named = (html.unescape(fields.get("Game", "")), html.unescape(fields.get("Key", "")))
+            if named[1] and named not in found:
+                found[named] = (note_id, fields)
         return found
 
     def _writing(self) -> None:
@@ -110,19 +110,23 @@ class AnkiNotes:
         self._undo = None
         return changes
 
-    def add(self, fields: dict[str, str]) -> None:
+    def add(self, fields: dict[str, str], tags: list[str]) -> None:
         assert self.model is not None
         self._writing()
         note = self.col.new_note(self.model)
         for name, value in fields.items():
             note[name] = value
+        for tag in tags:
+            note.add_tag(tag)
         self.col.add_note(note, self._deck())
 
-    def update(self, note_id: Any, writes: dict[str, str]) -> None:
+    def update(self, note_id: Any, writes: dict[str, str], tags: list[str]) -> None:
         self._writing()
         note = self.col.get_note(note_id)
         for name, value in writes.items():
             note[name] = value
+        for tag in tags:
+            note.add_tag(tag)
         self.col.update_note(note)
 
     def marks(self) -> dict[str, float]:
@@ -139,12 +143,12 @@ class AnkiNotes:
         name, data = ready
         return self.col.media.write_data(name, data)
 
-    def keys_of(self, note_ids: list[Any]) -> set[str]:
-        """The word keys of those notes that are the add-on's."""
+    def keys_of(self, note_ids: list[Any]) -> set[tuple[str, str]]:
+        """The game and word key of those notes that are the add-on's."""
         assert self.model is not None
         keys = set()
         for note_id in note_ids:
             note = self.col.get_note(note_id)
             if note.mid == self.model["id"] and note["Key"]:
-                keys.add(html.unescape(note["Key"]))
+                keys.add((html.unescape(note["Game"]), html.unescape(note["Key"])))
         return keys
