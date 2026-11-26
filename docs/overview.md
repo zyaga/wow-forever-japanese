@@ -21,3 +21,4 @@
 - [Lessons](lessons/)
 - [Legal](legal/licensing.md): licensing (GPL-2.0-or-later, corpus provenance, font, game text)
 - [CurseForge description](curseforge.md): the listing text
+- [AnkiWeb listing](ankiweb.md): the Anki add-on's page on AnkiWeb

@@ -2,8 +2,8 @@
 
 The text of the addon's CurseForge project page. It is the README condensed; when one changes, change the other.
 Paste everything under "Description" into the project's description with the editor set to Markdown. The
-`<span style="color:…">` tags are the editor's own colour syntax. The page has no images: the maintainer
-prefers it as text only.
+`<span style="color:…">` tags are the editor's own colour syntax. The page has no pictures (the maintainer
+prefers it as text), apart from the Ko-fi button, which is Ko-fi's own image and links to the support page.
 
 - **Project name:** WoW Forever Japanese (日本語化)
 - **Summary:** Play WoW Forever in Japanese: quests, NPC dialogue, tooltips and menus, with the English one
@@ -21,6 +21,8 @@ prefers it as text only.
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how it works).
 
 **Discord:** https://foreverjapanese.com/discord (help, bug reports, translation fixes and chat, in English or Japanese).
+
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://foreverjapanese.com/support)
 
 ### <span style="color:#E8C77E;">What it translates</span>
 
@@ -132,6 +134,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと使い方の紹介）
 
 **Discord:** https://foreverjapanese.com/discord （質問、不具合の報告、翻訳の修正、雑談。英語でも日本語でも）
+
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://foreverjapanese.com/support)
 
 ### <span style="color:#E8C77E;">翻訳される内容</span>
 
