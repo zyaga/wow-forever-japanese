@@ -15,7 +15,7 @@ from aqt import gui_hooks, mw
 from aqt.operations import QueryOp, on_op_finished
 from aqt.qt import (
     QAction,
-    QButtonGroup,
+    QComboBox,
     QDialog,
     QDialogButtonBox,
     QFileDialog,
@@ -24,7 +24,6 @@ from aqt.qt import (
     QLineEdit,
     QMenu,
     QPushButton,
-    QRadioButton,
     Qt,
     QVBoxLayout,
     QWidget,
@@ -264,20 +263,20 @@ class SettingsDialog(QDialog):
 
     def _choices(
         self, box: QVBoxLayout, values: tuple[str, ...], keys: tuple[str, ...], chosen: str
-    ) -> QButtonGroup:
-        group = QButtonGroup(self)
-        for index, (value, key) in enumerate(zip(values, keys, strict=True)):
-            button = QRadioButton(self._say(key))
-            button.setChecked(value == chosen)
-            group.addButton(button, index)
-            box.addWidget(button)
-        return group
+    ) -> QComboBox:
+        # a dropdown, not radio buttons: Anki on macOS draws a radio button's mark cut off at its edge
+        combo = QComboBox(self)
+        for key in keys:
+            combo.addItem(self._say(key))
+        combo.setCurrentIndex(values.index(chosen) if chosen in values else 0)
+        box.addWidget(combo, 0, Qt.AlignmentFlag.AlignLeft)
+        return combo
 
     def chosen(self) -> Settings:
         return Settings(
             folder=self.folder.text().strip(),
-            front=FRONTS[max(self.front.checkedId(), 0)],
-            audio=AUDIOS[max(self.audio.checkedId(), 0)],
+            front=FRONTS[max(self.front.currentIndex(), 0)],
+            audio=AUDIOS[max(self.audio.currentIndex(), 0)],
         )
 
     def _browse(self) -> None:
