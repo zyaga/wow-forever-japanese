@@ -4,8 +4,8 @@
 
 An addon that shows World of Warcraft: Forever in Japanese: quests, NPC dialogue, books, item and spell tooltips,
 and the game's interface. Hold **Alt** and the game's own English comes back; let go and the Japanese returns. Alt
-is only the default: any key can be chosen. Names of people, places, creatures, items and spells stay in English
-everywhere, and so do quest titles.
+is only the default: any key can be chosen. Names of people, places, creatures, items and spells stay in English,
+and so do quest titles, unless you choose Japanese names: then they show in katakana.
 
 It works the other way round too, for Japanese players studying English: choose **English first** and the game
 stays in English, with the Japanese one key away and a popup that shows how each English word is said and its
@@ -268,9 +268,8 @@ No GitHub account? Post the bug in **#bug-reports** on the [Discord](https://for
 Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action
 bar stay Japanese in combat, the cooldown countdown too.
 
-**Why are names still in English?** On purpose. Names of people, places, creatures, items and spells are never
-changed, and neither is a quest's title, so what you read matches what other players say and what guides call
-things. The quest's text under the title is Japanese.
+**Why are names in English?** That is the default, so what you read matches what other players say and what guides
+call things. A quest's title stays English for the same reason; the text under it is Japanese. If you would rather read them in Japanese, pick **Japanese names** in the welcome window or on the settings page: the names of people, places, creatures, items, spells, skills and factions then show in katakana, on tooltips, nameplates, the map, chat and inside quest text. Holding Alt shows the English name, and pointing at a Japanese name shows its reading and its English name.
 
 **What do the markers mean?** **[未翻訳 / Not Translated]** means the line has no translation yet and is shown in
 the game's English. **[要更新 / English Changed]** means the English changed after the line was translated.
@@ -320,7 +319,7 @@ and why: [docs](docs/overview.md). What changed in each release: [`CHANGELOG.md`
 
 ## 日本語
 
-World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前はすべて英語のままです。クエストのタイトルも英語のままです。
+World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前は英語のままです。クエストのタイトルも英語のままです。「日本語の名前」を選ぶと、カタカナで表示されます。
 
 逆向きにも使えます。英語を学びたい方は **英語優先**（English first）を選ぶと、ゲームは英語のまま、キーひとつで日本語を表示でき、英語の単語にマウスを合わせると発音と日本語の単語が表示されます。
 
@@ -461,7 +460,7 @@ GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/di
 
 ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
-**名前が英語のままなのはなぜ？** 意図した仕様です。人物・地名・モンスター・アイテム・呪文の名前は変えません。クエストのタイトルも英語のままです（タイトルの下の本文は日本語です）。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
+**名前が英語なのはなぜ？** 初期設定です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。クエストのタイトルも同じ理由で英語のままです（タイトルの下の本文は日本語です）。日本語で読みたい場合は、ようこそ画面か設定ページで **日本語の名前** を選んでください。人物・地名・モンスター・アイテム・呪文・スキル・勢力の名前が、ツールチップ、ネームプレート、マップ、チャット、クエスト本文の中でカタカナで表示されます。Alt を押している間は英語の名前に戻り、日本語の名前にマウスを合わせると読み方と英語の名前が表示されます。
 
 **マーカーは何を表している？** **[未翻訳 / Not Translated]** はまだ翻訳がなく、ゲームの英語のまま表示されている行です。**[要更新 / English Changed]** は翻訳のあとで英語の原文が変わった行です。
 
