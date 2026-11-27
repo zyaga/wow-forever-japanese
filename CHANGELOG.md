@@ -16,6 +16,7 @@ an old setting stops working). A release moves those lines under its version num
 - When the game does refuse an action because of the addon, a line in chat now says so once, with what to do (`/reload` clears it), and `/wfj bug` includes what the addon found so the cause can be fixed.
 
 ### Changed
+- The addon's background check for values it left on the game's tables is much lighter: one pass after login in steps of at most 2 milliseconds, then nothing unless the game refuses an action. Before, it ran all session and a single step could take long enough to feel.
 - With Japanese names on, the Professions window shows each recipe's name in its list and each reagent's name in the crafting form in Japanese, the counts as the game writes them. A name with no Japanese yet stays English.
 - The bug report form asks whether the problem still happens with only this addon on.
 

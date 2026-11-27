@@ -290,6 +290,7 @@ describe("addon loads in TOC order and answers /wfj version", function()
     Stub.fireAll("ADDON_ACTION_BLOCKED", "SomeOtherAddon", "CastSpellByName()")
     Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
     Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
+    WFJ.TaintWatch.finish() -- the scan a block asks for is read by the walk, a little per timer tick
     local blocked, kinds = nil, {}
     for _, e in ipairs(WFJ_Log.entries) do
       if e.kind == "blocked" then blocked = e end

@@ -91,6 +91,8 @@ describe("UI/TaintWatch", function()
     assert.are.equal(1, #writes)
     assert.is_truthy(writes[1].msg:find("MerchantFrame.selectedTab", 1, true))
     assert.are.equal(2, writes[1].n)
+    assert.are.equal(0, #entriesOf("taint")) -- asked for, and read a little at a time by the walk
+    TW.finish()
     local scans = entriesOf("taint")
     assert.are.equal(1, #scans)
     assert.are.equal("merchant tab written tainted", scans[1].reason)
@@ -141,6 +143,7 @@ describe("UI/TaintWatch", function()
     assert.are.equal("WFJ_DB", scan.globals)
     assert.is_true(TW.onBlocked())
     assert.is_false(TW.onBlocked())
+    TW.finish()
     assert.are.equal(2, #entriesOf("taint")) -- the slash scan and the block's, each its own entry
     assert.are.equal(1, #entriesOf("context")) -- a repeat of the same block reads the ring no more
     _G.WFJ_DB = nil
@@ -273,8 +276,9 @@ describe("UI/TaintWatch", function()
     assert.is_false(TW.scanWhenSafe())
     fighting = false
     assert.is_true(TW.scanWhenSafe())
-    assert.are.equal(1, #entriesOf("taint"))
     assert.is_false(TW.scanWhenSafe()) -- once
+    TW.finish()
+    assert.are.equal(1, #entriesOf("taint"))
     _G.InCombatLockdown = nil
   end)
 

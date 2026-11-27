@@ -6,8 +6,8 @@
 --            seconds; the first time one reads as tainted by this addon, a "turned" entry with the recent events;
 --   writers  a post-hook on the Blizzard function that writes each of those fields: a "write" entry with the call
 --            stack when the value comes out tainted (the stack names the path that carried the taint);
---   bars     every CHECK_EVERY * SWEEP_EVERY seconds out of combat, any field on the action bars that newly reads
---            as tainted, for fields not on the list;
+--   bars     every CHECK_EVERY * SWEEP_EVERY seconds out of combat, one action bar in turn: any field on it that
+--            newly reads as tainted, for fields not on the list;
 --   events   the last RING game events, and the addon's own timed passes (Core/Perf) as "wfj <label>" lines, saved
 --            with each entry above and with each block;
 --   scan     at each different block of a session, and on /wfj taint: every field that reads as tainted under the
@@ -24,7 +24,7 @@ local C = WFJ.Compat
 TaintWatch.CHECK_EVERY = 2 -- seconds between field checks
 -- field checks between bar sweeps: once a minute. A sweep walks every action bar (about 6 ms in game, a felt hitch
 -- every 10 s when it ran every fifth check), and the taint it looks for builds up and stays.
-TaintWatch.SWEEP_EVERY = 30
+TaintWatch.SWEEP_EVERY = 5
 TaintWatch.RING = 200 -- game events and the addon's own passes kept
 TaintWatch.SCAN_DEPTH = 2
 
@@ -292,18 +292,20 @@ end
 local seenBarField = {}
 
 -- Out of combat: any field on the bars that newly reads as tainted. → the number found
-function TaintWatch.sweepBars()
+function TaintWatch.sweepBars(only)
   if inCombat() then return 0 end
   local n = 0
-  for _, name in ipairs(TaintWatch.BARS) do
-    walk(C.resolve(name), name, 0, {}, function(label, by)
-      if not seenBarField[label] and by ~= "unreadable" then
-        seenBarField[label] = true
-        n = n + 1
-        WFJ.Diag.log("turned", label, { by = tostring(by), reason = "bar sweep", combat = false,
-          events = TaintWatch.events() })
-      end
-    end)
+  for i, name in ipairs(TaintWatch.BARS) do
+    if only == nil or only == i then
+      walk(C.resolve(name), name, 0, {}, function(label, by)
+        if not seenBarField[label] and by ~= "unreadable" then
+          seenBarField[label] = true
+          n = n + 1
+          WFJ.Diag.log("turned", label, { by = tostring(by), reason = "bar sweep", combat = false,
+            events = TaintWatch.events() })
+        end
+      end)
+    end
   end
   return n
 end
@@ -394,23 +396,34 @@ function TaintWatch.onBlocked(entry)
   return true
 end
 
--- Runs the queued block scan when combat is over. → true when it ran
+-- Asks for the queued block's scan when combat is over: the walk's next round, read a little at a time, ends with
+-- the "taint" entry a scan logs. A scan in one go reads every root and every global name, long enough to see.
+-- → true when it was asked for
 function TaintWatch.scanWhenSafe()
   if not TaintWatch.scanPending or inCombat() then return false end
   TaintWatch.scanPending = false
-  TaintWatch.scan("block " .. tostring(TaintWatch.scanFor))
+  TaintWatch.summaryAfter("block " .. tostring(TaintWatch.scanFor))
   return true
 end
 
--- The first time each field reads as tainted by this addon, found by a walk that never stops: a few hundred keys
--- every ORIGIN_EVERY seconds over the scan's roots and the frames the addon's declarations resolved to, round after
--- round. A block-time scan shows everything the taint reached; this shows the order it got there, each field with
--- the time it was first seen and, for the first ORIGIN_EVENTS of them, the events and passes before it. Rows of one
--- list (Items[3], Items[4]) are one field. It only reads.
+-- The first time each field reads as tainted by this addon, found by a walk over the scan's roots and the frames
+-- the addon's declarations resolved to. It runs one round after login and one more each time the game refuses an
+-- action (ORIGIN_ROUNDS at most), a little at a time: a step ends after ORIGIN_MS milliseconds or ORIGIN_KEYS keys,
+-- in the middle of a table when it has to, so no step is long enough to see. A block-time scan shows everything
+-- the taint reached; this shows the order it got there, each field with the time it was first seen and, for the
+-- first ORIGIN_EVENTS of them, the events and passes before it. Rows of one list (Items[3], Items[4]) are one
+-- field. It only reads.
 TaintWatch.ORIGIN_EVERY = 0.1
 TaintWatch.ORIGIN_KEYS = 500 -- keys checked per step
+TaintWatch.ORIGIN_MS = 2 -- milliseconds a step may take
+TaintWatch.ORIGIN_ROUNDS = 4 -- rounds a session runs: the first after login, the others after a refused action
 TaintWatch.ORIGIN_MAX = 300 -- fields a session logs
 TaintWatch.ORIGIN_EVENTS = 4
+local originWanted = 1 -- rounds asked for so far
+local roundOpen = false -- a round was started and its end is not logged yet
+local summaryAsked = {} -- the reasons a round's summary was asked for, waiting for the next round to start
+local summary -- the open round's summary: { reasons, groups, order, found, globals }
+local scanRoots -- name → true for SCAN_ROOTS, built at the first round
 local originQueue, originSeen, originFirst, originCount, originRound = {}, {}, {}, 0, 0
 
 TaintWatch.GLOBAL_MAX = 250 -- global names a session logs
@@ -470,23 +483,86 @@ local function rememberRoot(root)
   if count < TaintWatch.TRACE_ROOTS then roots[root] = true end
 end
 
-local function originSeed()
-  if originRound > 0 then
-    WFJ.Diag.log("sweep", "round " .. originRound .. " finished", { checked = originChecked })
+-- What a block-time scan lists, gathered as the round reads: any addon's taint under the scan's roots, this
+-- addon's alone elsewhere, and the global names this addon tainted.
+local function summarize(label, by, root)
+  if not summary then return end
+  if root == "_G" then
+    local name = label:match("^_G%.([^.%[]+)$")
+    if name then
+      if by == WFJ.ADDON then summary.globals[#summary.globals + 1] = name end
+      return
+    end
   end
+  if scanRoots[root] then
+    if by ~= WFJ.ADDON and label:find("^DUI") then return end -- another addon's own frame
+  elseif by ~= WFJ.ADDON then
+    return
+  end
+  summary.found = summary.found + 1
+  local key = label:gsub("%[[^%]]*%]", "[n]") .. " (" .. tostring(by) .. ")"
+  if not summary.groups[key] then
+    summary.groups[key] = 0
+    summary.order[#summary.order + 1] = key
+  end
+  summary.groups[key] = summary.groups[key] + 1
+end
+
+local function originSeed()
   originRound = originRound + 1
   originChecked = 0
   originSeen = {}
+  roundOpen = true
+  if not scanRoots then
+    scanRoots = {}
+    for _, name in ipairs(TaintWatch.SCAN_ROOTS) do scanRoots[name] = true end
+  end
+  if #summaryAsked > 0 then
+    summary = { reasons = summaryAsked, groups = {}, order = {}, found = 0, globals = {} }
+    summaryAsked = {}
+  end
   pcall(TaintWatch.armPersisted)
   -- every global name and one level under each global table: popped last, so the named roots are read first
   originQueue[#originQueue + 1] = { _G, "_G", 1 }
   for _, name in ipairs(TaintWatch.SCAN_ROOTS) do
-    originQueue[#originQueue + 1] = { C.resolve(name), name, TaintWatch.SCAN_DEEP[name] or TaintWatch.SCAN_DEPTH }
+    local root = C.resolve(name)
+    originQueue[#originQueue + 1] = { root, name, TaintWatch.SCAN_DEEP[name] or TaintWatch.SCAN_DEPTH }
+    -- a pool's rows are reached through EnumerateActive, which only reads
+    for _, key in ipairs(TaintWatch.SCAN_POOLS[name] or {}) do
+      local pool = type(root) == "table" and root[key]
+      pcall(function()
+        for row in pool:EnumerateActive() do
+          local id = type(row) == "table" and (row.questID or row.layoutIndex) or "?"
+          originQueue[#originQueue + 1] = { row, name .. "." .. key .. "[" .. tostring(id) .. "]", 1, name }
+        end
+      end)
+    end
   end
   originQueue[#originQueue + 1] = { C.resolve("UIParent"), "UIParent", 1 }
   for _, entry in ipairs(C.tables()) do
     originQueue[#originQueue + 1] = { entry[2], entry[1], TaintWatch.COMPAT_DEPTH }
   end
+end
+
+-- The end of a round: its count, and the summary when one was asked for.
+local function finishRound()
+  roundOpen = false
+  WFJ.Diag.log("sweep", "round " .. originRound .. " finished", { checked = originChecked })
+  local sum = summary
+  summary = nil
+  if not sum then return end
+  local hits = {}
+  for i, key in ipairs(sum.order) do
+    if i > TaintWatch.SCAN_HITS then
+      hits[#hits + 1] = "… " .. (#sum.order - TaintWatch.SCAN_HITS) .. " more kinds"
+      break
+    end
+    hits[#hits + 1] = sum.groups[key] > 1 and (key .. " x" .. sum.groups[key]) or key
+  end
+  table.sort(sum.globals)
+  local why = table.concat(sum.reasons, "; ")
+  WFJ.Diag.log("taint", "scan " .. clock() .. " " .. why, { reason = why, checked = originChecked,
+    fields = table.concat(hits, " | "), globals = table.concat(sum.globals, " | ") })
 end
 
 -- The first fields found tainted this session, as "<time> <field>": what a bug report says when the client then
@@ -499,6 +575,7 @@ end
 function TaintWatch.causes() return table.concat(causes, "; ") end
 
 local function originHit(label, by, root)
+  summarize(label, by, root)
   if by ~= WFJ.ADDON then return end
   local key = label:gsub("%[[^%]]*%]", "[n]")
   if originFirst[key] then return end
@@ -523,20 +600,72 @@ local function originHit(label, by, root)
 end
 
 -- One step of the walk. → the number of keys checked
+-- Another round of the walk after the one that is open or done, ORIGIN_ROUNDS a session at most. → whether one
+-- will run
+function TaintWatch.walkAgain()
+  local want = originRound + 1
+  if want > TaintWatch.ORIGIN_ROUNDS then return false end
+  if originWanted < want then originWanted = want end
+  return true
+end
+
+-- A round that ends with a scan's "taint" entry for `reason`. → whether one will run
+function TaintWatch.summaryAfter(reason)
+  if not TaintWatch.walkAgain() and originRound >= originWanted then return false end
+  summaryAsked[#summaryAsked + 1] = tostring(reason)
+  return true
+end
+
+-- Whether the walk has nothing left to read.
+function TaintWatch.walkDone()
+  return #originQueue == 0 and not roundOpen and originRound >= originWanted
+end
+
+-- The rounds asked for, read to their end in one go: for a check that cannot wait on the timer.
+function TaintWatch.finish()
+  for _ = 1, 1000000 do
+    if TaintWatch.walkDone() then return end
+    TaintWatch.originStep()
+  end
+end
+
+-- One step of the walk. → the number of keys checked
+-- Another round of the walk, asked for when the game refuses an action. → whether one will run
+function TaintWatch.walkAgain()
+  if originWanted >= TaintWatch.ORIGIN_ROUNDS then return false end
+  originWanted = originWanted + 1
+  return true
+end
+
+-- One step of the walk. → the number of keys checked
 function TaintWatch.originStep()
+  -- between rounds nothing is read: the queue is empty and no round is owed
+  if TaintWatch.walkDone() then return 0 end
+  local clock = C.resolve("debugprofilestop")
+  local started = type(clock) == "function" and clock() or nil
   local checked = 0
-  while checked < TaintWatch.ORIGIN_KEYS do
+  local function spent()
+    return checked >= TaintWatch.ORIGIN_KEYS or (started ~= nil and clock() - started >= TaintWatch.ORIGIN_MS)
+  end
+  while not spent() do
     local item = table.remove(originQueue)
     if not item then
-      originSeed()
-      break -- a round ends the step, so an empty root list can never spin
+      if roundOpen then finishRound() end
+      if originRound < originWanted then originSeed() end
+      break -- a round's end or start ends the step, so an empty root list can never spin
     end
     local t, label, depth, root = item[1], item[2], item[3], item[4] or item[2]
-    if type(t) == "table" and (originSeen[t] or -1) < depth and not forbidden(t) then
-      local again = originSeen[t] ~= nil
-      originSeen[t] = depth
-      pcall(function()
-        for k, v in pairs(t) do
+    local resumed = item[5] ~= nil or item.resumed
+    if type(t) == "table" and (resumed or (originSeen[t] or -1) < depth) and not forbidden(t) then
+      local again = item.again
+      if not resumed then
+        again = originSeen[t] ~= nil
+        originSeen[t] = depth
+      end
+      -- the table is read from where the last step left it; a key gone since then ends its read
+      local ok = pcall(function()
+        local k, v = next(t, item[5])
+        while k ~= nil do
           local named = type(k) == "string"
           if named and not again then
             checked = checked + 1
@@ -547,8 +676,15 @@ function TaintWatch.originStep()
             originQueue[#originQueue + 1] = { v, named and label .. "." .. k or label .. "[" .. tostring(k) .. "]",
               depth - 1, root }
           end
+          if spent() then
+            -- at the far end of the queue: what the table has queued so far is read first, then the rest of it
+            table.insert(originQueue, 1, { t, label, depth, root, k, resumed = true, again = again })
+            return
+          end
+          k, v = next(t, k)
         end
       end)
+      if not ok then originSeen[t] = depth end
     end
   end
   originChecked = originChecked + checked
@@ -579,7 +715,7 @@ local function onSetTab(frame)
   if not TaintWatch.wrote("MerchantFrame.selectedTab", frame, "selectedTab") then return end
   if scannedMerchant or inCombat() then return end
   scannedMerchant = true
-  TaintWatch.scan("merchant tab written tainted")
+  TaintWatch.summaryAfter("merchant tab written tainted")
 end
 
 -- The writers of FIELDS. → the number of hooks placed
@@ -842,12 +978,16 @@ function TaintWatch.init()
   TaintWatch.checkFields("load")
   local timer = C.resolve("C_Timer")
   if type(timer) == "table" and type(timer.NewTicker) == "function" then
-    local ticks = 0
+    local ticks, barAt = 0, 0
     timer.NewTicker(TaintWatch.CHECK_EVERY, WFJ.Perf.wrap("idle.watch.tick", function()
       ticks = ticks + 1
       TaintWatch.checkFields("timer")
       TaintWatch.scanWhenSafe()
-      if ticks % TaintWatch.SWEEP_EVERY == 0 then TaintWatch.sweepBars() end
+      -- one bar a time, in turn: a sweep of all twelve in one go was long enough to feel
+      if ticks % TaintWatch.SWEEP_EVERY == 0 then
+        barAt = barAt % #TaintWatch.BARS + 1
+        TaintWatch.sweepBars(barAt)
+      end
     end))
     timer.NewTicker(TaintWatch.ORIGIN_EVERY, WFJ.Perf.wrap("idle.watch.origin", TaintWatch.originStep))
   end

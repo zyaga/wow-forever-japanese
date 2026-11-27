@@ -2176,3 +2176,65 @@ def test_the_cover_read_fails_on_a_cover_out_of_step_beside_its_text_with_a_fiel
     assert client_surface.covers_problems(clean) == []
     assert "older build" in client_surface.covers_problems(dict(clean, noread=True))[0]
     assert client_surface.read_covers("WFJScanDB = {}") is None and len(client_surface.covers_problems(None)) == 1
+
+
+WATCH_SAVED = """WFJScanDB = {
+["watch"] = {
+["build"] = "71139",
+["code"] = "abc",
+["windows"] = {
+["MerchantFrame"] = {
+["opens"] = 4,
+["reads"] = 3,
+["checked"] = 2100,
+["at"] = "2026-11-27 10:00:00",
+["ours"] = {
+"MerchantFrame.selectedTab",
+},
+},
+["CharacterFrame"] = {
+["opens"] = 1,
+["reads"] = 1,
+["checked"] = 900,
+["at"] = "2026-11-27 10:01:00",
+["ours"] = {
+},
+},
+},
+},
+["probe"] = {
+["open"] = {
+["asked"] = {
+"CharacterMicroButton",
+"GuildMicroButton",
+},
+["presses"] = 1,
+["windows"] = {
+"CharacterFrame",
+"CommunitiesFrame",
+"CharacterFrame",
+},
+},
+},
+}
+"""
+
+
+def test_a_window_read_in_play_fails_only_on_a_value_in_the_addons_name():
+    watch = client_surface.read_watch(WATCH_SAVED)
+    assert (watch["build"], watch["code"]) == ("71139", "abc")
+    assert watch["windows"]["MerchantFrame"]["checked"] == 2100 and watch["windows"]["CharacterFrame"]["ours"] == []
+    assert client_surface.watch_problems(watch) == [
+        "a window opened in play carries the addon's taint (MerchantFrame): MerchantFrame.selectedTab"]
+    assert client_surface.read_watch("WFJScanDB = {}") is None and client_surface.watch_problems(None) == []
+
+
+def test_the_open_step_fails_when_it_did_not_finish_or_a_window_it_opened_was_not_read():
+    watch = client_surface.read_watch(WATCH_SAVED)
+    opened = client_surface.read_open(WATCH_SAVED)
+    assert opened["asked"] == ["CharacterMicroButton", "GuildMicroButton"] and opened["presses"] == 1
+    assert client_surface.open_problems(opened, watch) == ["open step: CommunitiesFrame showed and was not read"]
+    assert client_surface.open_problems(dict(opened, refused="the button was not clicked"), watch) == [
+        "open step not finished: the button was not clicked"]
+    assert len(client_surface.open_problems(dict(opened, windows=[]), watch)) == 1
+    assert len(client_surface.open_problems(None, watch)) == 1
