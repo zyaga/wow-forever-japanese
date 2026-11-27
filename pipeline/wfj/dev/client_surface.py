@@ -4550,9 +4550,9 @@ end
   --   1  as it is, before anything
   --   2  the player opens the window and clicks the Reputation tab, 3 closes it: the base, with nothing of the
   --      test's before it in the session. Run it first thing after a reload.
-  --   4  the test addon shows the reputation pane itself: a run that carries the test addon's name from its start,
-  --      with the addon's own hooks running inside it; 5 the window put away
-  --   6  the player opens it again, 7 closes it: a run that starts clean, after step 4 happened in the session
+  -- The test never opens the window itself: a run it starts carries the test addon's name from its first line, and
+  -- says nothing about the addon. A copy of the addon with a switch (WFJ_ISOLATE_BUILD) gets one round per switch
+  -- value instead, each opened by the player.
   -- Values the client writes before the addon's hooks run (CharacterFrame.activeSubframe,
   -- ReputationFrame.needsInitialSelection) and after them (the detail pane's ViewRenownButton.factionID, the filter
   -- dropdown's menuGenerator) are all in the list, so the step and the place a name comes in can be read off it.
@@ -4718,18 +4718,7 @@ end
     end
     byPlayer("2 the player's own click showed the reputation pane, nothing of the test's before it",
       "3 the player closed the window",
-      "WFJ test: open the character window, click the Reputation tab, then close the window.", function()
-        local ok, err = pcall(ToggleCharacter, "ReputationFrame")
-        C_Timer.After(1.5, function()
-          step("4 the test addon showed the reputation pane", not ok and tostring(err) or nil)
-          if shown() then pcall(HideUIPanel, _G.CharacterFrame) end
-          C_Timer.After(1, function()
-            step("5 the window put away")
-            byPlayer("6 the player's own click showed the reputation pane again", "7 the player closed the window",
-              "WFJ test: once more: open the character window, click the Reputation tab, then close the window.", done)
-          end)
-        end)
-      end)
+      "WFJ test: open the character window, click the Reputation tab, then close the window.", done)
   end
 
   WFJScanTaint.watch = function(done) done() end
