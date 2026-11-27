@@ -449,6 +449,11 @@ end
 -- → the cover laid on `fs`, or nil: its state, and its frame under `frame`
 function View.coverAt(fs) return covers[fs] end
 
+-- Every cover and the text it lies on, for a check of the running game: visit(fs, frame) per cover.
+function WFJ_ReadingCovers(visit)
+  for fs, cover in pairs(covers) do visit(fs, cover.frame) end
+end
+
 -- the cover of a record's FontString, own or an adapter's (whatever text that FontString holds now)
 local function coverOf(rec)
   local fs = rec and rec.fs

@@ -3127,6 +3127,62 @@ local function WFJScanTouchRead(done)
   end)
 end
 
+-- The popup dictionary cover read. A cover is the addon's own frame laid over a text, and what the mouse meets
+-- there: a cover that is missing, lies beside its text, or stays when its text hides is a popup dictionary that does
+-- not answer or answers in the wrong place. A cover also sits among the client's frames, so it may carry no field
+-- (the client's layout code reads fields off every child it lays out) and may not be a layout frame's own child.
+-- Read as they are now, over whatever is on screen. Into `probe.covers`:
+--   total  covers the addon holds; shown  those showing; noread  the addon has no such read (an older build)
+--   stray    { "<text>" } a cover showing while its text is not, or hidden while its text shows: a failure
+--   beside   { "<text>" } a showing cover whose box is not its text's box: a failure
+--   fields   { "<text>\\t<keys>" } a cover's frame carrying a field: a failure
+--   inLayout { "<text>" } a cover that is a layout frame's own child: a failure
+local COVERS_MAX = 40
+local function WFJScanCoversRead(done)
+  local db = probeDb()
+  local record = { total = 0, shown = 0, stray = {}, beside = {}, fields = {}, inLayout = {} }
+  db.covers = record
+  if type(WFJ_ReadingCovers) ~= "function" then
+    record.noread = true
+    return done()
+  end
+  local function note(list, text)
+    if #list < COVERS_MAX then list[#list + 1] = text end
+  end
+  local function label(fs)
+    local ok, name = pcall(function() return fs:GetDebugName() end)
+    return ok and type(name) == "string" and name or "unnamed"
+  end
+  local function near(a, b) return a ~= nil and b ~= nil and math.abs(a - b) <= 1.5 end
+  pcall(WFJ_ReadingCovers, function(fs, frame)
+    record.total = record.total + 1
+    local name = label(fs)
+    local okF, forbidden = pcall(function() return frame:IsForbidden() end)
+    if not okF or forbidden then return end
+    local frameShown, textShown = frame:IsVisible() and true or false, fs:IsVisible() and true or false
+    if frameShown then record.shown = record.shown + 1 end
+    if frameShown ~= textShown then note(record.stray, name) end
+    if frameShown and textShown then
+      local l, b, w, h = frame:GetRect()
+      local fl, fb, fw, fh = fs:GetRect()
+      if l and fl and not (near(l, fl) and near(b, fb) and near(w, fw) and near(h, fh)) then note(record.beside, name) end
+    end
+    local keys = {}
+    for key in pairs(frame) do
+      if type(key) == "string" then keys[#keys + 1] = key end
+    end
+    if #keys > 0 then
+      table.sort(keys)
+      note(record.fields, name .. "\\t" .. table.concat(keys, " "))
+    end
+    local parent = frame:GetParent()
+    if type(parent) == "table" and type(parent.Layout) == "function" and type(parent.GetLayoutChildren) == "function" then
+      note(record.inLayout, name)
+    end
+  end)
+  done()
+end
+
 -- The chat send read. A slash command the player types runs from the chat box's Enter handler through the client's
 -- own send code (chatframeeditbox.lua:451-455, 426, 296, 271) to the command's function; a value on that path that
 -- carries an addon's taint makes the client refuse a command that needs a clean run (a guild invite). Read here:
@@ -3982,7 +4038,7 @@ SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
 -- (a test holds this list to the parts table)
 local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, "
-  .. "touch, send, freeze"
+  .. "touch, send, covers, freeze"
 local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
@@ -4142,6 +4198,7 @@ SlashCmdList.WFJTEST = function(how)
     -- after the windows were walked and opened, so the frames the addon makes on them exist
     { "touch", function(nxt) WFJScanTouchRead(nxt) end },
     { "send", function(nxt) WFJScanSendRead(nxt) end },
+    { "covers", function(nxt) WFJScanCoversRead(nxt) end },
     -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
     { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
   }
@@ -5146,6 +5203,43 @@ def send_problems(record: dict[str, Any] | None) -> list[str]:
             if by in SEND_ADDONS and not _SEND_OWN.match(name)]
 
 
+def read_covers(text: str) -> dict[str, Any] | None:
+    """The window test's popup dictionary cover read out of a saved-variables file, or None when the run had none:
+    how many covers the addon holds (`total`) and shows (`shown`), whether the addon had no such read (`noread`),
+    and the texts whose cover is out of step with them (`stray`), beside them (`beside`), carries a field
+    (`fields`, as (text, keys)) or is a layout frame's own child (`in_layout`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("covers") if probe is not None else None
+    if record is None:
+        return None
+
+    def rows(key: str) -> list[str]:
+        found = record.get(key)
+        return [str(r) for r in (found.positional() if found is not None else [])]
+
+    return {"total": int(record.get("total") or 0), "shown": int(record.get("shown") or 0),
+            "noread": bool(record.get("noread")), "stray": rows("stray"), "beside": rows("beside"),
+            "fields": [tuple((r.split("\t", 1) + [""])[:2]) for r in rows("fields")], "in_layout": rows("inLayout")}
+
+
+def covers_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the popup dictionary cover read found wrong, one line each."""
+    if record is None:
+        return ["popup dictionary covers not read: this run's test addon has no such read (make scan-install, then "
+                "run it again)"]
+    if record["noread"]:
+        return ["popup dictionary covers not read: the addon in the game has no read for them (an older build)"]
+    out = [f"popup dictionary cover out of step with its text (one shows, the other does not): {name}"
+           for name in record["stray"]]
+    out += [f"popup dictionary cover not over its text: {name}" for name in record["beside"]]
+    out += [f"popup dictionary cover carries a field ({keys}): {name}" for name, keys in record["fields"]]
+    out += [f"popup dictionary cover is a layout frame's own child: {name}" for name in record["in_layout"]]
+    return out
+
+
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
     nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
@@ -5760,7 +5854,7 @@ def client_build_beside(saved: Path) -> str | None:
 
 
 def _taint_reads(saved: str, part: Any, ui: Path | None) -> list[str]:
-    """Prints what the crafting, touch and chat send reads saw and gives back their problems; `part(name)` says
+    """Prints what the crafting, touch, chat send and cover reads saw and gives back their problems; `part(name)` says
     whether this run holds that part."""
     out: list[str] = []
     craft = read_craft(saved) if part("craft") else None
@@ -5787,6 +5881,10 @@ def _taint_reads(saved: str, part: Any, ui: Path | None) -> list[str]:
             names = [name for name, _ in send[key]]
             print(f"chat send path: {label} taints {len(names)} values" + (": " + ", ".join(names[:40]) if names else ""))
     out += send_problems(send) if part("send") else []
+    covers = read_covers(saved) if part("covers") else None
+    if covers is not None and not covers["noread"]:
+        print(f"popup dictionary covers: {covers['total']} held, {covers['shown']} showing")
+    out += covers_problems(covers) if part("covers") else []
     return out
 
 

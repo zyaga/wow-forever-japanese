@@ -2066,6 +2066,21 @@ TAINT_SAVED = """WFJScanDB = {
 ["line"] = 164,
 ["recipe"] = 7,
 },
+["covers"] = {
+["total"] = 9,
+["shown"] = 4,
+["stray"] = {
+"QuestInfoDescriptionText",
+},
+["beside"] = {
+},
+["fields"] = {
+"QuestInfoObjectivesText\\tid ignoreInLayout",
+},
+["inLayout"] = {
+"GearManagerPopupFrame.BorderBox.Text",
+},
+},
 ["send"] = {
 ["checked"] = 40,
 ["tainted"] = {
@@ -2140,3 +2155,17 @@ def test_the_send_read_fails_on_a_chat_send_value_the_addon_or_the_test_addon_ta
     # an addon's own slash command entry is its own to write; another addon's taint is not this addon's to fix
     assert client_surface.send_problems(record) == ["chat send path value tainted by WFJScan: ChatFrame1EditBox.text"]
     assert client_surface.read_send("WFJScanDB = {}") is None and len(client_surface.send_problems(None)) == 1
+
+
+def test_the_cover_read_fails_on_a_cover_out_of_step_beside_its_text_with_a_field_or_in_a_layout_frame():
+    record = client_surface.read_covers(TAINT_SAVED)
+    assert (record["total"], record["shown"]) == (9, 4)
+    assert client_surface.covers_problems(record) == [
+        "popup dictionary cover out of step with its text (one shows, the other does not): QuestInfoDescriptionText",
+        "popup dictionary cover carries a field (id ignoreInLayout): QuestInfoObjectivesText",
+        "popup dictionary cover is a layout frame's own child: GearManagerPopupFrame.BorderBox.Text",
+    ]
+    clean = dict(record, stray=[], fields=[], in_layout=[])
+    assert client_surface.covers_problems(clean) == []
+    assert "older build" in client_surface.covers_problems(dict(clean, noread=True))[0]
+    assert client_surface.read_covers("WFJScanDB = {}") is None and len(client_surface.covers_problems(None)) == 1
