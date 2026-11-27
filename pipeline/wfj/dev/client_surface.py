@@ -3059,13 +3059,33 @@ local function WFJScanTouchRead(done)
     end
     return ours > 0 and secure == 0, keys, tainted
   end
+  -- Whether the addon made `f`: its own keys say so, or its global name carries the addon's taint, or a frame above it
+  -- is the addon's (a button the addon built from a client template holds the template's keys beside the addon's).
+  local function made(f)
+    local known = madeBy[f]
+    if known ~= nil then return known end
+    madeBy[f] = false -- a parent loop ends here
+    local mine = (look(f))
+    if not mine then
+      local okN, name = pcall(f.GetName, f)
+      if okN and type(name) == "string" and _G[name] == f then
+        local okS, isSecure, by = pcall(issecurevariable, _G, name)
+        mine = okS and not isSecure and by == ADDON
+      end
+    end
+    if not mine then
+      local okP, parent = pcall(f.GetParent, f)
+      mine = okP and parent ~= nil and parent ~= UIParent and parent ~= WorldFrame and made(parent) or false
+    end
+    madeBy[f] = mine
+    return mine
+  end
   local function read(f)
     record.frames = record.frames + 1
     local okF, forbidden = pcall(function() return f.IsForbidden and f:IsForbidden() end)
     if not okF or forbidden then return end
-    local made, keys, tainted = look(f)
-    madeBy[f] = made
-    if not made then
+    local _, keys, tainted = look(f)
+    if not made(f) then
       for _, key in ipairs(tainted) do
         record.onClientN = record.onClientN + 1
         if #record.onClient < TOUCH_MAX then record.onClient[#record.onClient + 1] = nameOf(f) .. "." .. key end
@@ -3074,15 +3094,9 @@ local function WFJScanTouchRead(done)
     end
     record.made = record.made + 1
     -- the nearest ancestor the addon did not make: its fields are read by the client when that is a client frame
-    local parent = f:GetParent()
-    while parent and madeBy[parent] == nil do madeBy[parent] = (look(parent)) end
-    while parent and madeBy[parent] do
-      parent = parent:GetParent()
-      if parent and madeBy[parent] == nil then madeBy[parent] = (look(parent)) end
-    end
     -- only a frame directly under a client frame is one of that frame's children; UIParent holds every window
     local direct = f:GetParent()
-    if not direct or madeBy[direct] or direct == UIParent or direct == WorldFrame then return end
+    if not direct or direct == UIParent or direct == WorldFrame or made(direct) then return end
     record.insideN = record.insideN + 1
     table.sort(keys)
     local sig = table.concat(keys, " ")
@@ -4949,9 +4963,17 @@ def client_field_names(ui: Path) -> set[str]:
     return names
 
 
-# A client field the addon may taint, with the reason: none today. A line here is a decision, never a way past a
-# failure.
-TOUCH_ALLOWED: dict[str, str] = {}
+# A client field the addon may taint, with the reason. A line here is a decision, never a way past a failure.
+_SMF_BAR = ("a message frame's scroll bar, set from the frame's display refresh "
+            "(blizzard_sharedxml/shared/scroll/scrollutil.lua:175-195). A line the addon rewrote through the client's "
+            "TransformMessages is stored by a closure the client taints on purpose (scrollingmessageframe.lua:795-824), "
+            "so the refresh that reads it runs in the addon's name. Only scrollbar.lua and scrollcontroller.lua read "
+            "the value")
+TOUCH_ALLOWED: dict[str, str] = {
+    "CommunitiesFrame.Chat.ScrollBar.scrollPercentage": _SMF_BAR,
+    "CommunitiesFrame.Chat.ScrollBar.visibleExtentPercentage": _SMF_BAR,
+    "CommunitiesFrame.Chat.ScrollBar.panExtentPercentage": _SMF_BAR,
+}
 
 
 def read_touch(text: str) -> dict[str, Any] | None:

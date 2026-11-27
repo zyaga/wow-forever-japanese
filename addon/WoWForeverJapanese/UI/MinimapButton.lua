@@ -297,7 +297,8 @@ local function build()
   -- on whichever side it leans to. Its centre is the hole's centre as seen in game [in-game check].
   icon:SetSize(24, 24)
   icon:SetPoint("TOPLEFT", 4.5, -4)
-  b.icon = icon
+  -- kept on the module, never on the button: the button is a child of the client's minimap
+  MinimapButton.iconTexture = icon
   local border = b:CreateTexture(nil, "OVERLAY")
   border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
   border:SetSize(52, 52)
@@ -308,8 +309,8 @@ local function build()
   b:SetScript("OnClick", function(self, mouseButton)
     -- the mouse-up that ends a drag is not a click: a click within DRAG_GRACE seconds of the drag's end is dropped;
     -- the flag is time-based, so a client that sends no click after a drag never swallows the next one
-    local stop = self.dragStoppedAt
-    self.dragStoppedAt = nil
+    local stop = MinimapButton.dragStoppedAt
+    MinimapButton.dragStoppedAt = nil
     if stop and (GetTime() - stop) <= MinimapButton.DRAG_GRACE then return end
     MinimapButton.click(self, mouseButton)
   end)
@@ -320,7 +321,7 @@ local function build()
   b:SetScript("OnDragStop", function(self)
     self:SetScript("OnUpdate", nil)
     MinimapButton.setAngle(MinimapButton.cursorAngle())
-    self.dragStoppedAt = GetTime()
+    MinimapButton.dragStoppedAt = GetTime()
   end)
   b:SetScript("OnEnter", function(self) MinimapButton.showTooltip(self) end)
   b:SetScript("OnLeave", function() MinimapButton.hideTooltip() end)

@@ -2049,3 +2049,78 @@ def test_the_result_command_prints_each_hovered_english_row_and_the_counts_per_w
     assert not any(ln.startswith("HOVER") and "Elwynn" in ln for ln in out)  # a name, with names off
     assert "ERROR English on hovered tooltips: 1 rows or words in 1 windows (listed below as HOVER)" in out
     assert "gone  calendar\t(hover) Gone Line" in out  # a hover line the baseline still lists, no longer seen
+
+
+TAINT_SAVED = """WFJScanDB = {
+["probe"] = {
+["craft"] = {
+["checked"] = 12,
+["ours"] = {
+"opened\\tProfessionsFrame.CraftingPage.RankBar.ratio",
+},
+["others"] = {
+["MerchantFrame.x"] = "OtherAddon",
+},
+["own"] = 2,
+["shown"] = true,
+["line"] = 164,
+["recipe"] = 7,
+},
+["touch"] = {
+["frames"] = 900,
+["made"] = 5,
+["insideN"] = 3,
+["onClientN"] = 4,
+["onClient"] = {
+"UIErrorsFrame.ShouldDisplayMessageType",
+"CommunitiesFrame.Chat.ScrollBar.scrollPercentage",
+},
+["inside"] = {
+"id ignoreInLayout tints\\t2\\tQuestInfoFrame",
+"tints\\t1\\tQuestInfoFrame",
+},
+},
+},
+}
+"""
+
+
+def test_the_crafting_read_fails_on_a_value_the_addon_tainted_and_on_a_window_it_could_not_read():
+    record = client_surface.read_craft(TAINT_SAVED)
+    assert record["checked"] == 12 and record["shown"] and record["line"] == 164 and record["recipe"] == 7
+    assert record["ours"] == [("opened", "ProfessionsFrame.CraftingPage.RankBar.ratio")]
+    assert record["others"] == {"MerchantFrame.x": "OtherAddon"}  # another addon's taint is named, never a failure
+    assert client_surface.craft_problems(record) == [
+        "crafting window value tainted by the addon (opened): ProfessionsFrame.CraftingPage.RankBar.ratio"]
+    clean = dict(record, ours=[])
+    assert client_surface.craft_problems(clean) == []
+    assert client_surface.craft_problems(dict(clean, refused="no profession")) == [
+        "crafting window not read: no profession"]
+    assert client_surface.read_craft("WFJScanDB = {}") is None
+    assert len(client_surface.craft_problems(None)) == 1  # a run without the read proves nothing
+
+
+def test_the_touch_read_fails_on_a_client_field_and_on_a_field_name_the_client_reads(tmp_path):
+    record = client_surface.read_touch(TAINT_SAVED)
+    assert (record["frames"], record["made"], record["inside_n"], record["on_client_n"]) == (900, 5, 3, 4)
+    assert record["inside"] == [(["id", "ignoreInLayout", "tints"], 2, "QuestInfoFrame"),
+                                (["tints"], 1, "QuestInfoFrame")]
+    (tmp_path / "blizzard_x").mkdir()
+    (tmp_path / "blizzard_x" / "layout.lua").write_text("if not region.ignoreInLayout then use(region:GetID()) end\n")
+    (tmp_path / "blizzard_x" / "frame.xml").write_text('<Frame parentKey="id"/>\n')
+    names = client_surface.client_field_names(tmp_path)
+    assert {"ignoreInLayout", "GetID", "id"} <= names and "tints" not in names
+    problems = client_surface.touch_problems(record, names)
+    assert problems == [
+        "client field tainted by the addon: UIErrorsFrame.ShouldDisplayMessageType",  # the allowed one is not listed
+        "client fields tainted by the addon: 2 more",
+        "the addon's frame inside a client frame carries fields the client's code names (2 frames, e.g. under "
+        "QuestInfoFrame): id ignoreInLayout",
+    ]
+    # with no UI source to check against, no field of a frame inside a client frame can be cleared
+    assert len(client_surface.touch_problems(record, None)) == 4
+    assert client_surface.read_touch("WFJScanDB = {}") is None and len(client_surface.touch_problems(None, names)) == 1
+
+
+def test_every_allowed_client_field_gives_its_reason():
+    assert all(len(reason) > 40 for reason in client_surface.TOUCH_ALLOWED.values())

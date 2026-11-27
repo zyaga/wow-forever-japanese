@@ -99,15 +99,20 @@ the screen. NPC speech is server text (VMaNGOS `broadcast_text`), keyed like gos
    shown text with the incoming English (`THROTTLED_MESSAGE_TYPES`, `TryFlashingExistingMessage`,
    `uierrorsframe.lua:54–75, 118–127`). Once the line shows Japanese that comparison never holds, so without help the
    client re-adds the line and replays its error sound / voice line on every press (`:146–155`). `UI/Errors.lua`
-   wraps the **instance's** `ShouldDisplayMessageType` (`Errors.wrapShould`), which is called only from
-   `TryDisplayMessage`: the frame's event handler and the voice-channel error display (`blizzard_channels`). While
-   the line of that id is our Japanese for that same English, the wrapper puts the client's English back for the
-   length of the original check, then restores the Japanese; the client decides exactly as it would without the
-   addon: a throttled type flashes its existing line silently, any other type adds a new line. When the check starts
-   a flash, the flash's `origMsg` is set to the Japanese, so the flash (`OnUpdate`, `:31–52`) ends on the Japanese.
-   **Taint:** the wrapper runs only inside the errors frame's event handler and the voice-channel error display,
-   neither of which reaches a protected call. `TryFlashingExistingMessage` itself is not touched: it is also used by
-   `AddExternalMessage`, which Blizzard's action code calls, and wrapping it would put addon code on those paths.
+   replaces nothing of the frame for this. A frame of the addon's own listens for `UI_ERROR_MESSAGE` and
+   `UI_INFO_MESSAGE` ahead of the client's frame (the client's frame is registered for the two events again after
+   the listener, only for an event it still listens for). While the line of that id is our Japanese for that same
+   English, the listener writes the client's English back, so the client decides exactly as it would without the
+   addon: a throttled type flashes its existing line silently, any other type adds a new line. A post-hook on
+   `TryDisplayMessage` then puts the Japanese back and flashes the line with the addon's own timer, since the
+   client's flash stops on a line whose text changed (`OnUpdate`, `:31–52`). A line the client's frame never checked
+   gets its Japanese back on the next frame.
+   **Taint:** an earlier version wrapped the instance's `ShouldDisplayMessageType`. A function of the frame written
+   by the addon makes every error display run in the addon's name, and what that display writes
+   (`flashingFontStrings`, a line's `origMsg`) is read by `AddExternalMessage`, which the client's key bindings and
+   character window call. The window test's `touch` part fails on any field of the frame the addon wrote. Whether
+   events reach frames in the order they registered is checked in game: when the client's frame runs first, a
+   repeat sounds again and the addon logs one line saying so.
 6. **A line Blizzard's Lua adds: an exact dictionary English, or one of the Lua-formatted templates.** Most of the
    frame's Lua call sites pass no id (`UIErrorsFrame:AddMessage(KEY, 1, .1, .1, 1)`); `AddExternalErrorMessage`
    passes `LE_GAME_ERR_SYSTEM`. A line with no id, with `LE_GAME_ERR_SYSTEM`, or whose id's key did not match (§1) is

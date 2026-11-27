@@ -45,14 +45,14 @@ describe("the minimap button", function()
     assert.is_true(b:IsShown())
     assert.are.same(at(MB.DEFAULT_ANGLE), b.point)
     assert.is_nil(db.minimap)
-    assert.are.equal(MB.ICON, b.icon.texture)
-    assert.are.equal("WFJMinimapButtonIcon", b.icon.name) -- the `<name>Icon` the template's press moves
+    assert.are.equal(MB.ICON, MB.iconTexture.texture)
+    assert.are.equal("WFJMinimapButtonIcon", MB.iconTexture.name) -- the `<name>Icon` the template's press moves
   end)
 
   it("the button wears the rimless minimap icon, larger than the ring's hole so no edge shows", function()
     assert.are.equal("Interface\\AddOns\\WoWForeverJapanese\\Media\\minimap", MB.ICON)
-    assert.are.equal(MB.ICON, b.icon.texture)
-    assert.are.same({ 24, 24 }, b.icon.size)
+    assert.are.equal(MB.ICON, MB.iconTexture.texture)
+    assert.are.same({ 24, 24 }, MB.iconTexture.size)
   end)
 
   it("a drag moves it around the rim and saves the angle; the mouse-up that ends it is no click", function()
