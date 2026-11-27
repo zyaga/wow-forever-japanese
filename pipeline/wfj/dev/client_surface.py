@@ -4190,8 +4190,10 @@ end
     if not always and rec.reads >= WATCH_READS then return end
     rec.reads = rec.reads + 1
     rec.at = date("%%Y-%%m-%%d %%H:%%M:%%S")
+    -- each read starts its list again: a value an earlier read (or an earlier session, before a fix) found in the
+    -- addon's name is a finding of that read, not of this one
     local listed = {}
-    for _, n in ipairs(rec.ours) do listed[n] = true end
+    rec.ours = {}
     local job = { root = frame, stack = {}, seen = {}, left = WATCH_KEYS }
     function job.visit(n, isSecure, owner)
       rec.checked = rec.checked + 1
