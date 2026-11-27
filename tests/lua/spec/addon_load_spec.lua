@@ -282,7 +282,7 @@ describe("addon loads in TOC order and answers /wfj version", function()
   it("keeps a problem log: a session on load, a blocked action naming this addon, /wfj log prints it", function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()
-    Loader.load("WoWForeverJapanese")
+    local loaded = Loader.load("WoWForeverJapanese")
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
     assert.are.equal(1, WFJ_Log.version)
     assert.are.equal("session", WFJ_Log.entries[#WFJ_Log.entries].kind)
@@ -290,7 +290,7 @@ describe("addon loads in TOC order and answers /wfj version", function()
     Stub.fireAll("ADDON_ACTION_BLOCKED", "SomeOtherAddon", "CastSpellByName()")
     Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
     Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
-    WFJ.TaintWatch.finish() -- the scan a block asks for is read by the walk, a little per timer tick
+    loaded.TaintWatch.finish() -- the scan a block asks for is read by the walk, a little per timer tick
     local blocked, kinds = nil, {}
     for _, e in ipairs(WFJ_Log.entries) do
       if e.kind == "blocked" then blocked = e end
