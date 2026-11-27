@@ -4642,7 +4642,30 @@ end
         return ("text %%.0f, container %%.0f, box %%.0f, %%d letters"):format(fs:GetStringHeight() or 0,
           container:GetHeight() or 0, box:GetHeight() or 0, #(fs:GetText() or ""))
       end)
-      return ok and out or nil
+      -- how each faction row's name is drawn: a name that holds text and shows nothing has a width, a face, an
+      -- alpha or a shown state that says why
+      local rows = {}
+      pcall(function()
+        for i, row in ipairs(pane.ScrollBox:GetFrames()) do
+          local name = type(row.Content) == "table" and row.Content.Name or row.Name
+          if i <= 10 and type(name) == "table" then
+            local face, size = name:GetFont()
+            local r, gr, b, a = name:GetTextColor()
+            rows[#rows + 1] = ("row %%d: %%d letters, drawn %%.0f wide in %%.0f, %%.0f high, face %%s@%%s, alpha %%.2f/%%.2f, "
+              .. "colour %%.1f %%.1f %%.1f, shown %%s visible %%s, lines %%s, own SetText %%s, scale field %%s"):format(i,
+              #(name:GetText() or ""), name:GetStringWidth() or -1, name:GetWidth() or -1, name:GetStringHeight() or -1,
+              tostring(face):match("[^\\\\/]+$") or tostring(face), tostring(size), name:GetAlpha() or -1, a or -1,
+              r or -1, gr or -1, b or -1, tostring(name:IsShown()), tostring(name:IsVisible()),
+              tostring(name.GetNumLines and name:GetNumLines()), tostring(rawget(name, "SetText") ~= nil),
+              tostring(rawget(name, "baseLineHeight")))
+          end
+        end
+      end)
+      -- and what a test copy of the addon logged since the last step
+      local log = type(_G.WFJ_ISOLATE_LOG) == "table" and _G.WFJ_ISOLATE_LOG or {}
+      local logged = #log > 0 and (" || LOG || " .. table.concat(log, " || ")) or ""
+      for i = #log, 1, -1 do log[i] = nil end
+      return (ok and out or "?") .. (#rows > 0 and (" || " .. table.concat(rows, " || ")) or "") .. logged
     end
     local function step(label, raised)
       record.steps[#record.steps + 1] = { label = label, at = date("%%H:%%M:%%S"), raised = raised, owners = owners(),
@@ -4722,7 +4745,11 @@ end
     end
     byPlayer("2 the player's own click showed the reputation pane, nothing of the test's before it",
       "3 the player closed the window",
-      "WFJ test: open the character window, click the Reputation tab, then close the window.", done)
+      "WFJ test: open the character window, click the Reputation tab, then close the window.", function()
+        -- a second open by the player: what a first open shows wrongly and a second shows rightly differs here
+        byPlayer("4 the player's own click showed the reputation pane a second time", "5 the player closed the window",
+          "WFJ test: once more: open the character window, click the Reputation tab, then close the window.", done)
+      end)
   end
 
   WFJScanTaint.watch = function(done) done() end
