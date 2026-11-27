@@ -4187,7 +4187,9 @@ end
       w.windows[name] = rec
     end
     rec.opens = rec.opens + 1
-    if not always and rec.reads >= WATCH_READS then return end
+    -- a window whose last read found something is read again at every open, until a read finds it clean: a
+    -- finding from before a fix must not stand for good because the window had used up its reads
+    if not always and rec.reads >= WATCH_READS and #rec.ours == 0 then return end
     rec.reads = rec.reads + 1
     rec.at = date("%%Y-%%m-%%d %%H:%%M:%%S")
     -- each read starts its list again: a value an earlier read (or an earlier session, before a fix) found in the
