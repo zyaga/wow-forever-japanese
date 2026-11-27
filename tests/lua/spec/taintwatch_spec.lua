@@ -418,6 +418,17 @@ describe("UI/TaintWatch", function()
     assert.are.equal("ShowUIPanel [Interface/AddOns/SomeAddon/Code/Talk.lua]:12", callers[1].msg)
   end)
 
+  it("stops reading calls after a session's worth: the client's own calls never end", function()
+    local stacks = 0
+    _G.debugstack = function()
+      stacks = stacks + 1
+      return "[Interface/AddOns/Blizzard_UIParent/UIParent.lua]:1: in function 'q'\n[C]: ?"
+    end
+    for _ = 1, TW.CALLED_LOOKS + 50 do TW.called("SetCVar", "x") end
+    assert.is_true(stacks <= TW.CALLED_LOOKS)
+    assert.are.equal(0, #entriesOf("caller"))
+  end)
+
   it("keeps the session's first tainted fields for the bug report", function()
     assert.are.equal("", TW.causes())
   end)

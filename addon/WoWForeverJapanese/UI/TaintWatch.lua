@@ -743,8 +743,12 @@ function TaintWatch.outsideCaller(s)
   return nil
 end
 
+TaintWatch.CALLED_LOOKS = 2000 -- calls read per session: the client's own calls of these functions never end
+local calledLooks = 0
+
 function TaintWatch.called(fn, a1)
-  if calledCount >= TaintWatch.CALLED_MAX then return end
+  if calledCount >= TaintWatch.CALLED_MAX or calledLooks >= TaintWatch.CALLED_LOOKS then return end
+  calledLooks = calledLooks + 1
   local s = stack()
   local caller = TaintWatch.outsideCaller(s)
   if not caller then return end
