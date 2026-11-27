@@ -90,7 +90,12 @@ local function write(cvar, value)
     return
   end
   pending[cvar] = nil
-  pcall(C.SetCVar, cvar, value) -- a value past the client's limit is never worth an error
+  local watch = WFJ.TaintWatch
+  if watch and watch.cvar then
+    pcall(watch.cvar, cvar, function() pcall(C.SetCVar, cvar, value) end)
+  else
+    pcall(C.SetCVar, cvar, value) -- a value past the client's limit is never worth an error
+  end
 end
 
 local function current(cvar)

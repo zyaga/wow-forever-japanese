@@ -3020,6 +3020,136 @@ local function WFJScanBagClickRead(done)
   end)
 end
 
+-- The crafting window read. The window is opened the way the client opens it for a player: the test asks the
+-- client for the trade skill (C_TradeSkillUI.OpenTradeSkill), the client answers with its own event, and the window's
+-- own code opens it in a fresh run that carries no addon's taint. A field of the window that then carries the
+-- addon's taint was written while one of the addon's hooks had poisoned what that code reads; the recipe form marks
+-- reagents in the bags, so the taint reaches the bag buttons and from there a vendor and the action bars. Read once
+-- with the window open and once after the client opened another recipe. Into `probe.craft`:
+--   checked  values read; ours  { "<when>\\t<name>" } carrying the addon's taint: a failure
+--   others   name → the addon whose taint it carries; own  values the test's own steps tainted
+--   refused  why the window was not read; line  the skill line opened; recipe  the recipe opened
+local CRAFT_WAIT = 5 -- seconds the client is given to answer
+local CRAFT_FRAMES = { "CharacterBag0Slot", "CharacterBag1Slot", "CharacterBag2Slot", "CharacterBag3Slot",
+  "CharacterReagentBag0Slot", "MainMenuBarBackpackButton", "ContainerFrameCombinedBags", "MerchantFrame" }
+local function WFJScanCraftRead(done)
+  local db = probeDb()
+  local record = { checked = 0, ours = {}, others = {}, own = 0 }
+  db.craft = record
+  local listed = {}
+  local function note(when, name, secure, owner)
+    record.checked = record.checked + 1
+    if secure or owner == nil then return end
+    if owner == "WoWForeverJapanese" then
+      if not listed[name] then
+        listed[name] = true
+        record.ours[#record.ours + 1] = when .. "\\t" .. name
+      end
+    elseif owner == "WFJScan" then
+      record.own = record.own + 1
+    else
+      record.others[name] = tostring(owner)
+    end
+  end
+  local function fields(when, label, t)
+    if type(t) ~= "table" then return end
+    for key in pairs(t) do
+      if type(key) == "string" then note(when, label .. "." .. key, issecurevariable(t, key)) end
+    end
+  end
+  local function read(when)
+    local frame = _G.ProfessionsFrame
+    fields(when, "ProfessionsFrame", frame)
+    local page = type(frame) == "table" and rawget(frame, "CraftingPage") or nil
+    if type(page) == "table" then
+      fields(when, "CraftingPage", page)
+      fields(when, "CraftingPage.RankBar", rawget(page, "RankBar"))
+      fields(when, "CraftingPage.SchematicForm", rawget(page, "SchematicForm"))
+      local list = rawget(page, "RecipeList")
+      fields(when, "CraftingPage.RecipeList", list)
+      if type(list) == "table" then fields(when, "CraftingPage.RecipeList.ScrollBox", rawget(list, "ScrollBox")) end
+    end
+    for _, name in ipairs(CRAFT_FRAMES) do fields(when, name, _G[name]) end
+  end
+  local function readSafely(when)
+    local ok, err = pcall(read, when)
+    if not ok then record.failed = when .. ": " .. tostring(err) end
+  end
+  local api = C_TradeSkillUI
+  if type(api) ~= "table" or type(api.OpenTradeSkill) ~= "function" or type(GetProfessions) ~= "function"
+      or type(GetProfessionInfo) ~= "function" then
+    record.refused = "the client has no OpenTradeSkill or GetProfessions"
+    return done()
+  end
+  -- the first profession the character has: its two main ones, then cooking
+  local owned = { GetProfessions() }
+  local line
+  for _, i in ipairs({ 1, 2, 5 }) do
+    local index = owned[i]
+    if index and not line then line = select(7, GetProfessionInfo(index)) end
+  end
+  if type(line) ~= "number" then
+    record.refused = "the character has no profession with a crafting window"
+    return done()
+  end
+  record.line = line
+  local function shown()
+    local frame = _G.ProfessionsFrame
+    return type(frame) == "table" and frame:IsShown()
+  end
+  if shown() then
+    record.refused = "the crafting window was already open"
+    return done()
+  end
+  local function close()
+    if type(api.CloseTradeSkill) == "function" then pcall(api.CloseTradeSkill) end
+    C_Timer.After(0.5, done)
+  end
+  local function second()
+    readSafely("window open")
+    local ids = type(api.GetAllRecipeIDs) == "function" and api.GetAllRecipeIDs() or nil
+    local pick
+    for _, id in ipairs(type(ids) == "table" and ids or {}) do
+      local info = type(api.GetRecipeInfo) == "function" and api.GetRecipeInfo(id) or nil
+      if type(info) == "table" and info.learned then pick = id end
+    end
+    if not pick or type(api.OpenRecipe) ~= "function" then
+      record.norecipe = true
+      return close()
+    end
+    record.recipe = pick
+    pcall(api.OpenRecipe, pick)
+    C_Timer.After(1.5, function()
+      readSafely("recipe opened")
+      close()
+    end)
+  end
+  -- one opening of the window, then `after()` once it shows (or the read ends, when it does not)
+  local function open(after)
+    local ok, err = pcall(api.OpenTradeSkill, line)
+    if not ok then
+      record.refused = "OpenTradeSkill raised: " .. tostring(err)
+      return done()
+    end
+    local waited = 0
+    local ticker
+    ticker = C_Timer.NewTicker(0.25, function()
+      waited = waited + 0.25
+      if shown() then
+        ticker:Cancel()
+        record.shown = true
+        return C_Timer.After(1.5, after)
+      end
+      if waited >= CRAFT_WAIT then
+        ticker:Cancel()
+        record.refused = "the crafting window did not open for skill line " .. tostring(line)
+        done()
+      end
+    end)
+  end
+  open(second)
+end
+
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
 -- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
 -- carries and runs what the key runs (`WFJ_FreezeTooltip`), twice, into `probe.freeze`:
@@ -3661,7 +3791,7 @@ end
 SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
 -- (a test holds this list to the parts table)
-local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, freeze"
+local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, freeze"
 local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
@@ -3816,6 +3946,8 @@ SlashCmdList.WFJTEST = function(how)
     { "marks", function(nxt) outOfCombat(function() WFJScanMarksRead(nxt) end) end },
     -- the interface is hidden and shown again, which waits for the end of a fight too
     { "bagclick", function(nxt) outOfCombat(function() WFJScanBagClickRead(nxt) end) end },
+    -- the client refuses to open a window in a fight
+    { "craft", function(nxt) outOfCombat(function() WFJScanCraftRead(nxt) end) end },
     -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
     { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
   }
@@ -4663,6 +4795,49 @@ def bagclick_problems(record: dict[str, Any] | None) -> list[str]:
     return out
 
 
+def read_craft(text: str) -> dict[str, Any] | None:
+    """The window test's crafting window read out of a saved-variables file, or None when the run had none: how many
+    values it read (`checked`), the ones carrying the addon's taint as (when, name) (`ours`), the ones carrying
+    another addon's as name → addon (`others`), the values the test's own steps tainted (`own`), why the window was
+    not read (`refused`), a read that raised (`failed`), whether the window opened (`shown`), the skill line and the
+    recipe opened (`line`, `recipe`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("craft") if probe is not None else None
+    if record is None:
+        return None
+    rows = record.get("ours")
+    others = record.get("others")
+    return {
+        "checked": int(record.get("checked") or 0),
+        "ours": [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])],
+        "others": {str(k): str(v) for k, v in (others.named() if others is not None else {}).items()},
+        "own": int(record.get("own") or 0),
+        "refused": str(record.get("refused") or ""),
+        "failed": str(record.get("failed") or ""),
+        "shown": bool(record.get("shown")),
+        "line": int(record.get("line") or 0),
+        "recipe": int(record.get("recipe") or 0),
+    }
+
+
+def craft_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the crafting window read found wrong, one line each: every value of the window, the bag buttons or the
+    vendor window that carries the addon's taint after the client opened the window itself (from there the taint
+    reaches a vendor and the action bars). A window that was not read is a problem too: the read proves nothing."""
+    if record is None:
+        return ["crafting window not read: this run's test addon has no such read (make scan-install, then run it "
+                "again)"]
+    out = [f"crafting window value tainted by the addon ({when}): {name}" for when, name in record["ours"]]
+    if record["refused"]:
+        out.append(f"crafting window not read: {record['refused']}")
+    if record["failed"]:
+        out.append(f"crafting window read stopped: {record['failed']}")
+    return out
+
+
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
     nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
@@ -5349,6 +5524,14 @@ def _own_reads(saved: str, section: str | None = None) -> list[str]:
     out += freeze_problems(freeze) if part("freeze") else []
     out += plates_problems(plates) if part("plates") else []
     out += bagclick_problems(bagclick) if part("bagclick") else []
+    craft = read_craft(saved) if part("craft") else None
+    if craft is not None:
+        print(f"crafting window: {craft['checked']} values read, {len(craft['ours'])} tainted by the addon, "
+              f"{craft['own']} by the test's own steps, skill line {craft['line'] or 'none'}, "
+              f"recipe {craft['recipe'] or 'none'}"
+              + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(craft["others"].items()))
+                 if craft["others"] else ""))
+    out += craft_problems(craft) if part("craft") else []
     return out
 
 

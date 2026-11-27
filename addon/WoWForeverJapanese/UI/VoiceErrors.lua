@@ -45,12 +45,17 @@ local function getCVar(name)
   return type(get) == "function" and get(name) or nil
 end
 
-local function setCVar(name, value)
+local function rawSetCVar(name, value)
   local C = Compat.resolve("C_CVar")
   if type(C) == "table" and type(C.SetCVar) == "function" then return C.SetCVar(name, value) end
   local set = Compat.resolve("SetCVar")
   if type(set) == "function" then return set(name, value) end
   return nil
+end
+local function setCVar(name, value)
+  local watch = WFJ.TaintWatch
+  if watch and watch.cvar then return watch.cvar(name, rawSetCVar, name, value) end
+  return rawSetCVar(name, value)
 end
 
 -- The character's race (the client's file name, "Tauren"), sex (UnitSex: 2 male, 3 female) and race id

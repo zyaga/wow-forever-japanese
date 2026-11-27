@@ -330,17 +330,74 @@ end
 -- protected call the client blocks in combat [verified: forever blizzard_apidocumentationgenerated/
 -- simplescriptregionapidocumentation.lua:689–691, IsProtectedFunction], so a line shown first in combat gets its
 -- cover the next time it is attached out of combat.
+-- A client layout frame reads fields off every child it lays out (ignoreInLayout, layoutIndex) and sizes itself
+-- around the shown ones [verified: forever blizzard_sharedxml/layoutframe.lua:33-41]. A field of ours there is a value
+-- written by an addon that the client's own code reads: the layout runs tainted from that read on, and so does
+-- whatever the client does next in the same pass. So a cover carries no field the client looks for, and it is never a
+-- child of a layout frame: it goes under the nearest ancestor that is not one, still laid over the text.
+local function isLayout(frame)
+  if type(frame) ~= "table" or type(frame.IsLayoutFrame) ~= "function" then return false end
+  local ok, yes = pcall(frame.IsLayoutFrame, frame)
+  return ok and yes == true
+end
+
+local function hostOf(fs)
+  local parent = fs:GetParent()
+  local host = parent
+  while isLayout(host) and type(host.GetParent) == "function" and host:GetParent() do host = host:GetParent() end
+  return host or parent, parent
+end
+
+-- A cover under another frame than its text's parent no longer hides with that parent, so it follows the parent's
+-- show and hide (one pair of script hooks per parent; the cover found through its text's current parent).
+local followed = setmetatable({}, { __mode = "k" }) -- a text's parent → { cover → true }
+local function follow(cover, parent)
+  if cover.following == parent then return end
+  if cover.following and followed[cover.following] then followed[cover.following][cover] = nil end
+  cover.following = parent
+  if not parent then return end
+  local set = followed[parent]
+  if not set then
+    set = setmetatable({}, { __mode = "k" })
+    followed[parent] = set
+    if type(parent.HookScript) == "function" then
+      parent:HookScript("OnHide", function()
+        for c in pairs(set) do c:Hide() end
+      end)
+      parent:HookScript("OnShow", function()
+        for c in pairs(set) do c:SetShown(View.enabled and c.text ~= nil) end
+      end)
+    end
+  end
+  set[cover] = true
+end
+
+-- Puts the cover under the frame its text needs it under. → nothing
+local function place(cover, fs)
+  local host, parent = hostOf(fs)
+  if cover:GetParent() ~= host then
+    cover:SetParent(host)
+    cover:ClearAllPoints()
+    cover:SetAllPoints(fs)
+  end
+  if host ~= parent then
+    -- above the layout frame's own children, which the cover no longer sits among
+    if type(parent.GetFrameLevel) == "function" then cover:SetFrameLevel(parent:GetFrameLevel() + 2) end
+    follow(cover, parent)
+  else
+    follow(cover, nil)
+  end
+end
+
 local function coverFor(fs)
   local cover = covers[fs]
   if cover then return cover end
   local inCombat = Compat.resolve("InCombatLockdown")
   if type(inCombat) == "function" and inCombat() then return nil end
-  cover = CreateFrame("Frame", nil, fs:GetParent())
+  cover = CreateFrame("Frame", nil, (hostOf(fs)))
   cover:SetAllPoints(fs)
   cover:SetMouseMotionEnabled(true)
-  -- a cover inside a Blizzard ResizeLayout frame must never count toward its size
-  -- [verified: forever mainline blizzard_sharedxml/layoutframe.lua:28, :37 (region.ignoreInLayout)]
-  cover.ignoreInLayout = true
+  place(cover, fs)
   -- the text under the cover keeps its own mouse motion, and the cover never takes clicks: its clicks are off and
   -- passed on to its parent, the frame the text sits in, so a search box behind its placeholder ("Search") still
   -- takes the click. Both calls are protected in combat, like the motion one, and a cover is only made out of combat
@@ -418,17 +475,14 @@ local function lay(rec, fs, text, spans, english)
   -- QuestInfo_Display moves its FontStrings between the quest window's panels, the quest map details pane and
   -- its popup (UI/QuestMap.lua: re-parented [verified: mainline/questinfo.lua:99–110]); the cover follows, or it
   -- would stay under a hidden parent and never see the mouse.
-  local parent = fs:GetParent()
-  if cover:GetParent() ~= parent then
-    cover:SetParent(parent)
-    cover:ClearAllPoints()
-    cover:SetAllPoints(fs)
-  end
+  place(cover, fs)
   onLeave(cover)
   cover.text, cover.spans = text, spans
   cover.where = tostring(rec.meta.kind) .. " " .. tostring(rec.meta.id)
   cover.kind, cover.id, cover.surface = rec.meta.kind, rec.meta.id, rec.surface
-  cover:SetShown(View.enabled)
+  -- a cover that follows a hidden parent stays hidden until that parent shows
+  local parent = cover.following
+  cover:SetShown(View.enabled and (parent == nil or type(parent.IsShown) ~= "function" or parent:IsShown()))
   if WFJ.WordMarks then WFJ.WordMarks.laid(cover, rec, english) end
   View.attached = View.attached + 1
   -- a re-attach under a resting mouse (the pane redisplayed on QUEST_LOG_UPDATE) gets no new OnEnter: start again

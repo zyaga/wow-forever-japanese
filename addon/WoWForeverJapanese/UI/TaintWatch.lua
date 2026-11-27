@@ -34,7 +34,14 @@ TaintWatch.SNAPPED = { "MainActionBar", "StanceBar", "PetActionBar", "MainStatus
   "SecondaryStatusTrackingBarContainer", "MultiBarBottomLeft", "MultiBarBottomRight", "MultiBarLeft",
   "MultiBarRight", "MultiBar5", "MultiBar6", "MultiBar7", "PossessActionBar" }
 -- the frames the block-time scan walks
-TaintWatch.SCAN_ROOTS = { "StanceBar", "PetActionBar", "MainActionBar", "MultiBarBottomLeft", "MultiBarBottomRight",
+-- the client modules that react when any setting changes, and the tables the bar update reads first: walked before
+-- the rest so a scan's list starts with them
+TaintWatch.LISTENER_ROOTS = { "StatusTrackingBarManager", "CVarCallbackRegistry", "ActionBarButtonEventsFrame",
+  "ActionBarActionEventsFrame", "ActionBarController", "OverrideActionBar", "PossessActionBar",
+  "GamepadMainActionBarFrame", "MainMenuBarBackpackButton", "ContainerFrameSettingsManager", "UIParent" }
+TaintWatch.SCAN_ROOTS = { "StatusTrackingBarManager", "CVarCallbackRegistry", "ActionBarButtonEventsFrame",
+  "ActionBarActionEventsFrame", "ActionBarController", "OverrideActionBar", "PossessActionBar",
+  "GamepadMainActionBarFrame", "MainMenuBarBackpackButton", "ContainerFrameSettingsManager", "StanceBar", "PetActionBar", "MainActionBar", "MultiBarBottomLeft", "MultiBarBottomRight",
   "MultiBarLeft", "MultiBarRight", "MultiBar5", "MultiBar6", "MultiBar7", "EditModeManagerFrame",
   "MainStatusTrackingBarContainer", "SecondaryStatusTrackingBarContainer", "MicroButtonAndBagsBar",
   "ObjectiveTrackerFrame", "GameTooltip", "PlayerSpellsFrame", "QuestMapFrame", "WorldMapFrame", "QuestCache",
@@ -58,7 +65,7 @@ TaintWatch.SCAN_DEEP = { ObjectiveTrackerFrame = 5, QuestMapFrame = 3, QuestCach
 -- pools whose rows the scan walks: a pool is a proxy that only has methods (CreateFramePool = CreateSecureFramePool,
 -- blizzard_sharedxmlbase/pools.lua:736, 857), so its rows are reached through EnumerateActive, which only reads
 TaintWatch.SCAN_POOLS = { QuestScrollFrame = { "titleFramePool", "objectiveFramePool" } }
-TaintWatch.SCAN_HITS = 200 -- tainted fields a scan entry lists; the count is always whole
+TaintWatch.SCAN_HITS = 400 -- tainted fields a scan entry lists; the count is always whole
 -- events too frequent to say anything about a taint
 TaintWatch.NOISY = {}
 for _, e in ipairs({ "COMBAT_LOG_EVENT_UNFILTERED", "UNIT_POWER_FREQUENT", "UNIT_POWER_UPDATE", "UNIT_HEALTH",
@@ -73,6 +80,7 @@ for _, e in ipairs({ "COMBAT_LOG_EVENT_UNFILTERED", "UNIT_POWER_FREQUENT", "UNIT
   "UNIT_RANGEDDAMAGE", "UNIT_ATTACK_SPEED", "UNIT_DAMAGE", "UNIT_RESISTANCES", "UNIT_STATS",
   "PLAYER_SOFT_ENEMY_CHANGED", "PLAYER_SOFT_INTERACT_CHANGED", "PLAYER_SOFT_FRIEND_CHANGED", "CVAR_UPDATE",
   "WORLD_CURSOR_TOOLTIP_UPDATE", "COMBAT_LOG_MESSAGE", "ACTION_RANGE_CHECK_UPDATE",
+  "CONSOLE_MESSAGE", "ITEM_DATA_LOAD_RESULT",
   "SPELL_ACTIVATION_OVERLAY_HIDE" }) do
   TaintWatch.NOISY[e] = true
 end
@@ -179,6 +187,7 @@ end
 
 function TaintWatch.onEvent(event, a1)
   if TaintWatch.NOISY[event] or event:find("^CHAT_MSG_") then return end
+  if event == "PLAYER_LOGIN" then pcall(TaintWatch.selfTest) end
   local arg = ""
   local t = type(a1)
   if (t == "number" or t == "boolean") and not isSecret(a1) then
@@ -303,10 +312,19 @@ end
 -- Every tainted field under SCAN_ROOTS and every global this addon tainted, logged as "taint" entries.
 -- → fields found, globals found
 function TaintWatch.scan(reason)
+  -- rows of one list (Items[3].count, Items[4].count) are one line with their number, so a bag's 150 fields cannot
+  -- fill the list and hide what came after them
   local hits, seen, checked, found = {}, {}, 0, 0
+  local order, groups = {}, {}
   local function hit(label, by)
+    if by ~= WFJ.ADDON and by ~= "unreadable" and label:find("^DUI") then return end -- another addon's own frame
     found = found + 1
-    if found <= TaintWatch.SCAN_HITS then hits[#hits + 1] = label .. " (" .. tostring(by) .. ")" end
+    local key = label:gsub("%[[^%]]*%]", "[n]") .. " (" .. tostring(by) .. ")"
+    if not groups[key] then
+      groups[key] = 0
+      order[#order + 1] = key
+    end
+    groups[key] = groups[key] + 1
   end
   for _, name in ipairs(TaintWatch.SCAN_ROOTS) do
     local root = C.resolve(name)
@@ -330,7 +348,13 @@ function TaintWatch.scan(reason)
   for _, entry in ipairs(C.tables()) do
     checked = checked + walk(entry[2], entry[1], TaintWatch.COMPAT_DEPTH, seen, ours)
   end
-  if found > #hits then hits[#hits + 1] = "… " .. (found - #hits) .. " more" end
+  for i, key in ipairs(order) do
+    if i > TaintWatch.SCAN_HITS then
+      hits[#hits + 1] = "… " .. (#order - TaintWatch.SCAN_HITS) .. " more kinds"
+      break
+    end
+    hits[#hits + 1] = groups[key] > 1 and (key .. " x" .. groups[key]) or key
+  end
   local globals = {}
   for name in pairs(_G) do
     if type(name) == "string" then
@@ -370,6 +394,221 @@ function TaintWatch.scanWhenSafe()
   if not TaintWatch.scanPending or inCombat() then return false end
   TaintWatch.scanPending = false
   TaintWatch.scan("block " .. tostring(TaintWatch.scanFor))
+  return true
+end
+
+-- The first time each field reads as tainted by this addon, found by a walk that never stops: a few hundred keys
+-- every ORIGIN_EVERY seconds over the scan's roots and the frames the addon's declarations resolved to, round after
+-- round. A block-time scan shows everything the taint reached; this shows the order it got there, each field with
+-- the time it was first seen and, for the first ORIGIN_EVENTS of them, the events and passes before it. Rows of one
+-- list (Items[3], Items[4]) are one field. It only reads.
+TaintWatch.ORIGIN_EVERY = 0.1
+TaintWatch.ORIGIN_KEYS = 500 -- keys checked per step
+TaintWatch.ORIGIN_MAX = 300 -- fields a session logs
+TaintWatch.ORIGIN_EVENTS = 4
+local originQueue, originSeen, originFirst, originCount, originRound = {}, {}, {}, 0, 0
+
+-- Tables a client function reads on the way to a field the walk found tainted, checked first in every round.
+TaintWatch.ORIGIN_EXTRA = {}
+TaintWatch.GLOBAL_MAX = 250 -- global names a session logs
+TaintWatch.TRACE_ROOTS = 60 -- roots kept for tracing
+TaintWatch.OWN_GLOBAL = { "^_G%.WFJ", "^_G%.WoWForeverJapanese", "^_G%.SLASH_WFJ", "^_G%.BINDING_[A-Z]+_WFJ" }
+
+local globalCount = 0
+
+local function byPath(path)
+  local obj
+  for part in path:gmatch("[^.]+") do
+    if obj == nil then obj = C.resolve(part) else obj = type(obj) == "table" and obj[part] or nil end
+    if obj == nil then return nil end
+  end
+  return obj
+end
+
+local originChecked = 0
+local armed = {}
+
+-- A root the walk found tainted is traced method by method from the next login on, in every session, so the next
+-- time it turns the entry names the method and the calls that led to it. `_G` and UIParent are too wide to hook.
+local function rootObject(root)
+  for _, entry in ipairs(C.tables()) do
+    if entry[1] == root then return entry[2] end
+  end
+  return byPath(root)
+end
+
+function TaintWatch.armPersisted()
+  local roots = type(WFJ_Log) == "table" and WFJ_Log.traceRoots or nil
+  if type(roots) ~= "table" then return 0 end
+  local n = 0
+  for root in pairs(roots) do
+    if not armed[root] then
+      local obj = rootObject(root)
+      if type(obj) == "table" then
+        armed[root] = true
+        TaintWatch.traceObject(root, obj)
+        n = n + 1
+      end
+    end
+  end
+  return n
+end
+
+local function rememberRoot(root)
+  if type(WFJ_Log) ~= "table" or root == nil or root == "_G" or root == "UIParent" then return end
+  local roots = WFJ_Log.traceRoots
+  if type(roots) ~= "table" then
+    roots = {}
+    WFJ_Log.traceRoots = roots
+  end
+  if roots[root] then return end
+  local count = 0
+  for _ in pairs(roots) do count = count + 1 end
+  if count < TaintWatch.TRACE_ROOTS then roots[root] = true end
+end
+
+local function originSeed()
+  if originRound > 0 then
+    WFJ.Diag.log("sweep", "round " .. originRound .. " finished", { checked = originChecked })
+  end
+  originRound = originRound + 1
+  originChecked = 0
+  originSeen = {}
+  pcall(TaintWatch.armPersisted)
+  -- every global name and one level under each global table: popped last, so the named roots are read first
+  originQueue[#originQueue + 1] = { _G, "_G", 1 }
+  for _, name in ipairs(TaintWatch.SCAN_ROOTS) do
+    originQueue[#originQueue + 1] = { C.resolve(name), name, TaintWatch.SCAN_DEEP[name] or TaintWatch.SCAN_DEPTH }
+  end
+  originQueue[#originQueue + 1] = { C.resolve("UIParent"), "UIParent", 1 }
+  for _, entry in ipairs(C.tables()) do
+    originQueue[#originQueue + 1] = { entry[2], entry[1], TaintWatch.COMPAT_DEPTH }
+  end
+  for _, path in ipairs(TaintWatch.ORIGIN_EXTRA) do
+    originQueue[#originQueue + 1] = { byPath(path), path, 1 }
+  end
+end
+
+local function originHit(label, by, root)
+  if by ~= WFJ.ADDON then return end
+  local key = label:gsub("%[[^%]]*%]", "[n]")
+  if originFirst[key] then return end
+  originFirst[key] = true
+  if key:find("^_G%.") then
+    for _, own in ipairs(TaintWatch.OWN_GLOBAL) do
+      if key:find(own) then return end
+    end
+    globalCount = globalCount + 1
+    if globalCount <= TaintWatch.GLOBAL_MAX then
+      WFJ.Diag.log("global", key, { round = originRound, order = globalCount, combat = inCombat() })
+    end
+    return
+  end
+  rememberRoot(root)
+  originCount = originCount + 1
+  if originCount > TaintWatch.ORIGIN_MAX then return end
+  local fields = { example = label, round = originRound, order = originCount, combat = inCombat() }
+  if originCount <= TaintWatch.ORIGIN_EVENTS then fields.events = TaintWatch.events() end
+  WFJ.Diag.log("origin", key, fields)
+end
+
+-- One step of the walk. → the number of keys checked
+function TaintWatch.originStep()
+  local checked = 0
+  while checked < TaintWatch.ORIGIN_KEYS do
+    local item = table.remove(originQueue)
+    if not item then
+      originSeed()
+      break -- a round ends the step, so an empty root list can never spin
+    end
+    local t, label, depth, root = item[1], item[2], item[3], item[4] or item[2]
+    if type(t) == "table" and (originSeen[t] or -1) < depth and not forbidden(t) then
+      local again = originSeen[t] ~= nil
+      originSeen[t] = depth
+      pcall(function()
+        for k, v in pairs(t) do
+          local named = type(k) == "string"
+          if named and not again then
+            checked = checked + 1
+            local tainted, by = check(t, k)
+            if tainted then originHit(label .. "." .. k, by, root) end
+          end
+          if depth > 0 and type(v) == "table" and k ~= "parent" then
+            originQueue[#originQueue + 1] = { v, named and label .. "." .. k or label .. "[" .. tostring(k) .. "]",
+              depth - 1, root }
+          end
+        end
+      end)
+    end
+  end
+  originChecked = originChecked + checked
+  return checked
+end
+
+-- What the client's own listeners for a changed setting write, read right after this addon wrote a setting: the
+-- status bar manager rewrites shownBarIndices on every such event, and the settings cache keeps the new value.
+local function cvarProbe(name)
+  local out = {}
+  local function add(label, t, key)
+    if type(t) ~= "table" then
+      out[#out + 1] = label .. "=missing"
+      return
+    end
+    local tainted, by = check(t, key)
+    out[#out + 1] = label .. "=" .. (tainted and ("TAINTED:" .. tostring(by)) or "clean")
+  end
+  add("StatusTrackingBarManager.shownBarIndices", C.resolve("StatusTrackingBarManager"), "shownBarIndices")
+  local registry = C.resolve("CVarCallbackRegistry")
+  add("cvarValueCache." .. tostring(name), type(registry) == "table" and registry.cvarValueCache or nil, name)
+  return table.concat(out, " ")
+end
+
+-- Runs `fn` (one settings write of this addon) and logs what the client's listeners left behind, once per setting
+-- and outcome. → fn's results
+function TaintWatch.cvar(name, fn, ...)
+  local before = cvarProbe(name)
+  local a, b = fn(...)
+  local after = cvarProbe(name)
+  pcall(WFJ.Diag.log, "cvar", tostring(name) .. " before[" .. before .. "] after[" .. after .. "]",
+    { combat = inCombat() })
+  return a, b
+end
+
+-- Once per install of this build, at login before the world is entered: one setting written twice from addon code
+-- (off and back, so nothing changes), then what the bars look like after the client's own entering-world update.
+-- It answers whether a settings write of ours is enough to taint the bar layout. The result waits in the log for the
+-- next reload; a chat line says when it is done.
+TaintWatch.SELFTEST = "cvar-1"
+function TaintWatch.selfTest()
+  if type(WFJ_Log) ~= "table" or WFJ_Log.taintSelfTest == TaintWatch.SELFTEST or inCombat() then return false end
+  local cv = C.resolve("C_CVar")
+  if type(cv) ~= "table" or type(cv.GetCVar) ~= "function" or type(cv.SetCVar) ~= "function" then return false end
+  WFJ_Log.taintSelfTest = TaintWatch.SELFTEST
+  local name = "Sound_EnableDialog"
+  local value = tostring(cv.GetCVar(name))
+  local before = cvarProbe(name)
+  cv.SetCVar(name, value == "1" and "0" or "1")
+  cv.SetCVar(name, value)
+  WFJ.Diag.log("selftest", "write before[" .. before .. "] after[" .. cvarProbe(name) .. "]",
+    { events = TaintWatch.events() })
+  local timer = C.resolve("C_Timer")
+  if type(timer) == "table" and type(timer.After) == "function" then
+    timer.After(12, function()
+      local out = {}
+      for _, f in ipairs(TaintWatch.fields or fieldList()) do
+        local t = f[2] and C.resolve(f[2]) or nil
+        if f[2] == nil or type(t) == "table" then
+          local tainted, by = check(t, f[3])
+          if tainted then out[#out + 1] = f[1] .. ":" .. tostring(by) end
+        end
+      end
+      WFJ.Diag.log("selftest", "bars 12s after login: " .. (#out == 0 and "all clean" or table.concat(out, " ")),
+        { manager = cvarProbe(name) })
+      if not inCombat() then TaintWatch.scan("selftest") end
+      local p = C.resolve("print")
+      if type(p) == "function" then p("WFJ: taint self-test done. /reload now.") end
+    end)
+  end
   return true
 end
 
@@ -529,6 +768,104 @@ end
 
 local started = false
 
+-- Client functions whose writes last the session and that an addon cannot read back (a panel's layout attributes
+-- are written on the first call that asks for them and carry the taint of that call from then on [verified: forever
+-- blizzard_uiparentpanelmanager/shared/uiparentpanelmanager.lua:85-109]). A call of one with an addon's file on the
+-- stack is logged with that stack: the line that made the call, in this addon or another.
+TaintWatch.CALLED = { "ShowUIPanel", "HideUIPanel", "ToggleUIPanel", "SetUIPanelShown", "SetUIPanelAttribute",
+  "UpdateUIPanelPositions", "UIPanelUpdateScaleForFit", "GetUIPanelWidth", "GetUIPanelHeight", "MaximizeUIPanel",
+  "RestoreUIPanelArea", "ToggleFrame", "CloseWindows", "CloseAllWindows", "CloseSpecialWindows", "ToggleGameMenu",
+  "OpenAllBags", "CloseAllBags", "ToggleAllBags", "OpenBag", "CloseBag", "ToggleBag", "ToggleBackpack",
+  "OpenBackpack", "CloseBackpack", "StaticPopup_Show", "StaticPopup_Hide", "ToggleCharacter", "ToggleQuestLog",
+  "ToggleWorldMap", "ToggleFriendsFrame", "UIParent_ManageFramePositions", "ManageFramePositions",
+  "ActionBarController_UpdateAll", "PanelTemplates_SetTab", "MerchantFrame_Update", "SetCVar" }
+TaintWatch.CALLED_MAX = 30 -- distinct callers a session logs
+TaintWatch.CALLED_EVENTS = 3 -- of them, the first few keep the events before the call
+
+local calledSeen, calledCount = {}, 0
+
+-- → the first stack line from an addon that is not the client's own and not this watcher, or nil
+function TaintWatch.outsideCaller(s)
+  for line in tostring(s):gmatch("[^\n]+") do
+    local addon = line:match("[Aa]dd[Oo]ns[/\\]([^/\\]+)[/\\]")
+    if addon and not addon:find("^Blizzard_") and not line:find("TaintWatch.lua", 1, true) then
+      return (line:gsub("^%s+", ""))
+    end
+  end
+  return nil
+end
+
+function TaintWatch.called(fn, a1)
+  if calledCount >= TaintWatch.CALLED_MAX then return end
+  local s = stack()
+  local caller = TaintWatch.outsideCaller(s)
+  if not caller then return end
+  local site = caller:match("^(.-:%d+)") or caller
+  local key = fn .. " " .. site
+  if calledSeen[key] then return end
+  calledSeen[key] = true
+  calledCount = calledCount + 1
+  local combat = C.resolve("InCombatLockdown")
+  WFJ.Diag.log("caller", key, { arg = tostring(WFJ.Diag.nameOf(a1)), stack = s,
+    events = calledCount <= TaintWatch.CALLED_EVENTS and TaintWatch.events() or nil,
+    combat = type(combat) == "function" and combat() or false })
+end
+
+-- A client window whose fields the walk found tainted is traced method by method from the next login on (the roots
+-- are kept in the log): every function the object carries gets a post-hook that looks for a field tainted since the
+-- last look, so the first entry names the method after which taint first shows and the calls that led to it.
+TaintWatch.TRACED_PER_OBJECT = 8
+TaintWatch.TRACED_LOOKS = 3000 -- method calls an object is read after, per session
+TaintWatch.TRACED_EVENTS = 4
+
+local tracedCount = 0
+
+local function tracedLook(label, method, obj, state)
+  if state.hits >= TaintWatch.TRACED_PER_OBJECT then return end
+  -- an object that stays clean stops being read: its methods can run every frame
+  state.looks = (state.looks or 0) + 1
+  if state.looks > TaintWatch.TRACED_LOOKS then
+    state.hits = TaintWatch.TRACED_PER_OBJECT
+    return
+  end
+  for k in pairs(obj) do
+    if type(k) == "string" and not state.seen[k] then
+      local tainted, by = check(obj, k)
+      if tainted then
+        state.seen[k] = true
+        state.hits = state.hits + 1
+        tracedCount = tracedCount + 1
+        local fields = { by = tostring(by), stack = stack(), order = tracedCount, combat = inCombat() }
+        if tracedCount <= TaintWatch.TRACED_EVENTS then fields.events = TaintWatch.events() end
+        WFJ.Diag.log("traced", label .. ":" .. method .. " -> " .. k, fields)
+        if state.hits >= TaintWatch.TRACED_PER_OBJECT then return end
+      end
+    end
+  end
+end
+
+function TaintWatch.traceObject(label, obj)
+  local h = C.resolve("hooksecurefunc")
+  if type(obj) ~= "table" or type(h) ~= "function" then return 0 end
+  local state, names = { seen = {}, hits = 0 }, {}
+  for k, v in pairs(obj) do
+    if type(k) == "string" then
+      if check(obj, k) then state.seen[k] = true end
+      if type(v) == "function" then names[#names + 1] = k end
+    end
+  end
+  WFJ.Diag.log("traced", label .. " armed", { methods = #names, already = (function()
+    local t = {}
+    for k in pairs(state.seen) do t[#t + 1] = k end
+    table.sort(t)
+    return table.concat(t, " ")
+  end)() })
+  for _, name in ipairs(names) do
+    pcall(h, obj, name, function() tracedLook(label, name, obj, state) end)
+  end
+  return #names
+end
+
 -- Called by Main after Diag. → the number of writer hooks placed, or false on a client without issecurevariable
 function TaintWatch.init()
   if started then return false end
@@ -551,6 +888,9 @@ function TaintWatch.init()
       TaintWatch.push(fn .. " " .. tostring(WFJ.Diag.nameOf(frame)))
     end)
   end
+  for _, fn in ipairs(TaintWatch.CALLED) do
+    hook(nil, fn, function(a1) TaintWatch.called(fn, a1) end)
+  end
   local n = hookWriters()
   TaintWatch.checkFields("load")
   local timer = C.resolve("C_Timer")
@@ -562,6 +902,7 @@ function TaintWatch.init()
       TaintWatch.scanWhenSafe()
       if ticks % TaintWatch.SWEEP_EVERY == 0 then TaintWatch.sweepBars() end
     end))
+    timer.NewTicker(TaintWatch.ORIGIN_EVERY, WFJ.Perf.wrap("idle.watch.origin", TaintWatch.originStep))
   end
   return n
 end
