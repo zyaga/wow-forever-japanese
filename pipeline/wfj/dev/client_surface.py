@@ -3132,7 +3132,8 @@ end
 -- carries an addon's taint makes the client refuse a command that needs a clean run (a guild invite). Read here:
 -- every field of each chat edit box, the globals that path names, and each entry of the slash command tables.
 -- Into `probe.send`:
---   checked  values read; tainted  { "<name>\\t<addon>" } carrying any addon's taint
+--   checked  values read; tainted  { "<name>\\t<addon>" } carrying any addon's taint when the read began
+--   afterInsert / afterOpen  the same, for what an addon's own insert into the chat box and its own open added
 local SEND_GLOBALS = { "ACTIVE_CHAT_EDIT_BOX", "LAST_ACTIVE_CHAT_EDIT_BOX", "CHAT_FOCUS_OVERRIDE", "DEFAULT_CHAT_FRAME",
   "SELECTED_CHAT_FRAME", "SELECTED_DOCK_FRAME", "ChatFrameUtil", "ChatFrameEditBoxMixin", "ChatFrameEditBoxBaseMixin",
   "ChatFrameMixin", "SlashCmdList", "hash_SlashCmdList", "hash_EmoteTokenList", "hash_ChatTypeInfoList", "ChatTypeInfo",
@@ -3146,34 +3147,65 @@ local SEND_TABLES = { "ChatFrameUtil", "ChatFrameEditBoxMixin", "ChatFrameEditBo
   "hash_ChatTypeInfoList", "C_GuildInfo", "C_PartyInfo" }
 local function WFJScanSendRead(done)
   local db = probeDb()
-  local record = { checked = 0, tainted = {} }
+  local record = { checked = 0, tainted = {}, afterInsert = {}, afterOpen = {} }
   db.send = record
-  local function look(t, key, name)
-    record.checked = record.checked + 1
-    local ok, isSecure, by = pcall(issecurevariable, t, key)
-    if ok and not isSecure and #record.tainted < 200 then
-      record.tainted[#record.tainted + 1] = name .. "\\t" .. tostring(by)
+  -- every tainted value of the send path, as name → the addon whose taint it carries
+  local function snapshot()
+    local found = {}
+    local function look(t, key, name)
+      record.checked = record.checked + 1
+      local ok, isSecure, by = pcall(issecurevariable, t, key)
+      if ok and not isSecure then found[name] = tostring(by) end
     end
-  end
-  for _, name in ipairs(SEND_GLOBALS) do look(_G, name, name) end
-  for _, name in ipairs(SEND_TABLES) do
-    local t = _G[name]
-    if type(t) == "table" then
-      for key in pairs(t) do
-        if type(key) == "string" then look(t, key, name .. "." .. key) end
-      end
-    end
-  end
-  for i = 1, NUM_CHAT_WINDOWS or 10 do
-    for _, name in ipairs({ "ChatFrame" .. i .. "EditBox", "ChatFrame" .. i }) do
-      local f = _G[name]
-      look(_G, name, name)
-      if type(f) == "table" then
-        for key in pairs(f) do
-          if type(key) == "string" then look(f, key, name .. "." .. key) end
+    for _, name in ipairs(SEND_GLOBALS) do look(_G, name, name) end
+    for _, name in ipairs(SEND_TABLES) do
+      local t = _G[name]
+      if type(t) == "table" then
+        for key in pairs(t) do
+          if type(key) == "string" then look(t, key, name .. "." .. key) end
         end
       end
     end
+    for i = 1, NUM_CHAT_WINDOWS or 10 do
+      for _, name in ipairs({ "ChatFrame" .. i .. "EditBox", "ChatFrame" .. i }) do
+        local f = _G[name]
+        look(_G, name, name)
+        if type(f) == "table" then
+          for key in pairs(f) do
+            if type(key) == "string" then look(f, key, name .. "." .. key) end
+          end
+        end
+      end
+    end
+    return found
+  end
+  -- what `now` holds that `before` did not, into `list`
+  local function added(list, before, now)
+    for name, by in pairs(now) do
+      if before[name] ~= by and #list < 200 then list[#list + 1] = name .. "\\t" .. by end
+    end
+    table.sort(list)
+  end
+  local base = snapshot()
+  added(record.tainted, {}, base)
+  -- What an addon leaves on the path when it writes into the chat box itself, as the phrase book does: first text
+  -- put into the box, then the box opened with the client's own call. Both are the test's own writes, so they
+  -- carry the test addon's name; the chat box is put away again and a reload clears them.
+  local box = _G.ChatFrame1EditBox
+  if type(box) == "table" and type(box.Insert) == "function" then
+    pcall(box.Insert, box, "x")
+    local now = snapshot()
+    added(record.afterInsert, base, now)
+    base = now
+    pcall(box.SetText, box, "")
+  end
+  local open = type(ChatFrameUtil) == "table" and ChatFrameUtil.OpenChat or _G.ChatFrame_OpenChat
+  if type(open) == "function" then
+    pcall(open, "")
+    added(record.afterOpen, base, snapshot())
+    local active = type(ChatFrameUtil) == "table" and type(ChatFrameUtil.GetActiveWindow) == "function"
+      and ChatFrameUtil.GetActiveWindow() or nil
+    if active and type(ChatFrameUtil.DeactivateChat) == "function" then pcall(ChatFrameUtil.DeactivateChat, active) end
   end
   done()
 end
@@ -5082,8 +5114,9 @@ _SEND_OWN = re.compile(r"^(hash_SlashCmdList|hash_ChatTypeInfoList)\./")
 
 def read_send(text: str) -> dict[str, Any] | None:
     """The window test's chat send read out of a saved-variables file, or None when the run had none: how many
-    values of the chat send path it read (`checked`) and the ones carrying an addon's taint as (name, addon)
-    (`tainted`)."""
+    values of the chat send path it read (`checked`), the ones carrying an addon's taint as (name, addon)
+    (`tainted`), and what an addon's own insert into the chat box and its own open of it added (`after_insert`,
+    `after_open`)."""
     from wfj.io import lua_reader
 
     db = lua_reader.parse_assignments(text).get("WFJScanDB")
@@ -5091,12 +5124,13 @@ def read_send(text: str) -> dict[str, Any] | None:
     record = probe.get("send") if probe is not None else None
     if record is None:
         return None
-    rows = record.get("tainted")
-    return {
-        "checked": int(record.get("checked") or 0),
-        "tainted": [tuple((str(r).split("\t", 1) + [""])[:2])
-                    for r in (rows.positional() if rows is not None else [])],
-    }
+
+    def pairs_of(key: str) -> list[tuple[str, ...]]:
+        rows = record.get(key)
+        return [tuple((str(r).split("\t", 1) + [""])[:2]) for r in (rows.positional() if rows is not None else [])]
+
+    return {"checked": int(record.get("checked") or 0), "tainted": pairs_of("tainted"),
+            "after_insert": pairs_of("afterInsert"), "after_open": pairs_of("afterOpen")}
 
 
 SEND_ADDONS = ("WoWForeverJapanese", "WFJScan")
@@ -5748,6 +5782,10 @@ def _taint_reads(saved: str, part: Any, ui: Path | None) -> list[str]:
     if send is not None:
         print(f"chat send path: {send['checked']} values read, {len(send['tainted'])} tainted"
               + (": " + ", ".join(f"{name} ({by})" for name, by in send["tainted"][:40]) if send["tainted"] else ""))
+        for label, key in (("an addon's own insert into the chat box", "after_insert"),
+                           ("an addon's own open of the chat box", "after_open")):
+            names = [name for name, _ in send[key]]
+            print(f"chat send path: {label} taints {len(names)} values" + (": " + ", ".join(names[:40]) if names else ""))
     out += send_problems(send) if part("send") else []
     return out
 
