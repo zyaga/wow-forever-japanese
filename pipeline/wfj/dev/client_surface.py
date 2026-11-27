@@ -4604,8 +4604,23 @@ end
       table.sort(out)
       return out
     end
+    -- How the description sits in its scroll box: the text's own height, the height of the container the scroll box
+    -- scrolls, and the height of the box. A container shorter than the text cuts the text off.
+    local function fit()
+      local pane = _G.ReputationFrame
+      local detail = type(pane) == "table" and pane.ReputationDetailFrame or nil
+      local sf = type(detail) == "table" and detail.Description or nil
+      if type(sf) ~= "table" or type(sf.GetFontString) ~= "function" then return nil end
+      local ok, out = pcall(function()
+        local fs, container, box = sf:GetFontString(), sf:GetFontStringContainer(), sf:GetScrollBox()
+        return ("text %%.0f, container %%.0f, box %%.0f, %%d letters"):format(fs:GetStringHeight() or 0,
+          container:GetHeight() or 0, box:GetHeight() or 0, #(fs:GetText() or ""))
+      end)
+      return ok and out or nil
+    end
     local function step(label, raised)
-      record.steps[#record.steps + 1] = { label = label, at = date("%%H:%%M:%%S"), raised = raised, owners = owners() }
+      record.steps[#record.steps + 1] = { label = label, at = date("%%H:%%M:%%S"), raised = raised, owners = owners(),
+        fit = fit() }
     end
     local function shown()
       local frame = _G.CharacterFrame
@@ -4656,14 +4671,16 @@ end
         record.refused = "translation was off"
         return done()
       end
-      local order = { "none", "title", "rows", "list", "empty", "description", "everything" }
+      -- the copy may name its own rounds (WFJ_ISOLATE_ORDER), each a value of the switch it understands
+      local own = type(_G.WFJ_ISOLATE_ORDER) == "table" and _G.WFJ_ISOLATE_ORDER or nil
+      local order = own or { "none", "title", "rows", "list", "empty", "description", "everything" }
       local function variant(i)
         local what = order[i]
         if not what then
           _G.WFJ_ISOLATE = nil
           return done()
         end
-        _G.WFJ_ISOLATE = what ~= "everything" and what or nil
+        if own then _G.WFJ_ISOLATE = what else _G.WFJ_ISOLATE = what ~= "everything" and what or nil end
         byPlayer("only " .. what .. ": the player's own click showed the reputation pane",
           "only " .. what .. ": the player closed the window",
           "WFJ test (" .. i .. " of " .. #order .. "): open the character window, click the Reputation tab, close it.",
@@ -6122,7 +6139,7 @@ def read_isolate(text: str) -> list[dict[str, Any]] | None:
     for step in steps.positional():
         rows = step.get("owners")
         out.append({"label": str(step.get("label") or ""), "at": str(step.get("at") or ""),
-                    "raised": str(step.get("raised") or ""),
+                    "raised": str(step.get("raised") or ""), "fit": str(step.get("fit") or ""),
                     "owners": [tuple((str(r).split("\t", 1) + [""])[:2])
                                for r in (rows.positional() if rows is not None else [])]})
     return out
@@ -6136,7 +6153,8 @@ def print_isolate(steps: list[dict[str, Any]]) -> None:
         new = {k: v for k, v in now.items() if before.get(k) != v}
         gone = [k for k in before if k not in now]
         print(f"isolate  {step['at']} {step['label']}: {len(now)} values carry a name, {len(new)} new or changed"
-              + (f", raised: {step['raised']}" if step["raised"] else ""))
+              + (f", raised: {step['raised']}" if step["raised"] else "")
+              + (f" [description: {step['fit']}]" if step.get("fit") else ""))
         for key in sorted(new):
             print(f"isolate      {key}: {new[key]}" + (f" (was {before[key]})" if key in before else ""))
         for key in sorted(gone):
