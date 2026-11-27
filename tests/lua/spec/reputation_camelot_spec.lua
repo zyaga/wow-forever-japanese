@@ -228,6 +228,31 @@ describe("the reputation frame's faction description", function()
     assert.are.equal("ストームウィンドの軍と市民は人間の首都を守っている。", sf:GetText())
   end)
 
+  it("a Japanese text taller than the client's scroll range and the box is drawn smaller until it fits", function()
+    -- the box never learns the Japanese height (its range is the client's, for the English), so the text must fit it
+    local sf = Stub.scrollingFont("")
+    local path = "Fonts\\ARIALN.TTF"
+    sf.fs.font = { path = path, size = 14, flags = "" }
+    function sf.fs.GetStringHeight(f) return f.font.size * 10 end -- ten lines at any size
+    function sf.container.GetHeight(c) return c.height end
+    function sf.box.GetHeight() return 100 end
+    sf.container.height = 120 -- the client's height for its English
+    local _, refit = WFJ.Labels.scrolling(sf)
+    refit()
+    assert.are.equal(12, sf.fs.font.size) -- 140 → 120: two sizes down
+    assert.are.equal(120, sf.container.height)
+    refit() -- again on the same text (the reveal key released): the height set here is not taken for the client's
+    assert.are.equal(12, sf.fs.font.size)
+    sf.container.height = 400 -- the client measured a longer English: the first size comes back
+    refit()
+    assert.are.equal(14, sf.fs.font.size)
+    assert.are.equal(140, sf.container.height)
+    sf.container.height = 20 -- a text that cannot fit stops at the smallest size
+    refit()
+    assert.are.equal(10, sf.fs.font.size) -- the box shows 100, and ten lines fit it at size 10
+    assert.are.equal(0, sf.box.fullUpdates)
+  end)
+
   it("a description no row has stays English; a dictionary word that is no FactionDescription row too", function()
     local sf = detail().Description
     detail():SetDescription("A faction nobody translated.")

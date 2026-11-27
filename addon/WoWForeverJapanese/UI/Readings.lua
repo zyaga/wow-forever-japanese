@@ -312,8 +312,12 @@ local function onEnter(cover)
   end
   if cover.words == nil then
     -- the widget shows other text now (dropped outside Render, e.g. a pooled gossip row): this cover is stale.
-    -- Hide it so it never takes mouse motion from whatever is laid out there next.
-    cover.spans, cover.text = nil, nil
+    -- Hide it so it never takes mouse motion from whatever is laid out there next. A widget that is only out of
+    -- sight (a cover one level above a hidden section) keeps its words for when the section shows again.
+    local fs = cover.fs
+    if type(fs) ~= "table" or type(fs.IsVisible) ~= "function" or fs:IsVisible() then
+      cover.spans, cover.text = nil, nil
+    end
     cover.frame:Hide()
   elseif cover.words[1] then
     cover.frame:SetScript("OnUpdate", function() onUpdate(cover) end)
@@ -495,7 +499,7 @@ local function lay(rec, fs, text, spans, english)
   cover.kind, cover.id, cover.surface = rec.meta.kind, rec.meta.id, rec.surface
   -- a cover that follows a hidden parent stays hidden until that parent shows
   local parent = cover.following
-  cover.frame:SetShown(View.enabled and (parent == nil or type(parent.IsShown) ~= "function" or parent:IsShown()))
+  cover.frame:SetShown(View.enabled and (parent == nil or type(parent.IsVisible) ~= "function" or parent:IsVisible()))
   if WFJ.WordMarks then WFJ.WordMarks.laid(cover, rec, english) end
   View.attached = View.attached + 1
   -- a re-attach under a resting mouse (the pane redisplayed on QUEST_LOG_UPDATE) gets no new OnEnter: start again
@@ -654,7 +658,10 @@ function View.setEnabled(v)
   View.enabled = v and true or false
   for _, cover in pairs(covers) do
     if not View.enabled then onLeave(cover) end
-    cover.frame:SetShown(View.enabled and cover.spans ~= nil)
+    -- as at attach: a cover that follows a hidden parent stays hidden until that parent shows
+    local parent = cover.following
+    cover.frame:SetShown(View.enabled and cover.spans ~= nil
+      and (parent == nil or type(parent.IsVisible) ~= "function" or parent:IsVisible()))
   end
   if WFJ.WordMarks then WFJ.WordMarks.redraw() end
 end

@@ -166,7 +166,8 @@ own `FullUpdate`, the box's and the bar's state took the addon's name, and the c
 (the reputation pane's filter menu, a button's faction) came out in the addon's name too, from the player's own
 click. The scroll code runs inside whatever the client is doing when the box updates. So the rule above has no
 exception for "a value nothing important reads": an entry in that list needs an isolated test that shows the value
-is never read on the way to anything else.
+is never read on the way to anything else. The price is that the box keeps the scroll range it measured for the
+English, so `Labels.scrolling` draws a taller Japanese text smaller until it fits that range.
 
 When the game refuses an action because of the addon, the addon says so once in chat, and the bug report
 (`/wfj bug`) carries the first values of that session it found in its own name (`UI/TaintWatch.lua`).
