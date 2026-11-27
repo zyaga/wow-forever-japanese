@@ -4428,6 +4428,93 @@ end
     entered("at login")
   end
 
+  -- Everything that takes the addon's name, as it happens. Once at login and then over and over while the test
+  -- runs (and for a while after), every frame's keys, every global name and one level under each global table are
+  -- read; a key in the addon's name not seen before is kept with the time, the part of the test running then and
+  -- the number of the sweep. The first sweep is what was there at login; anything after it came during the run,
+  -- and the part beside it is what was running. Into `WFJScanDB.watch.marks`:
+  --   { "<name>\t<time>\t<part>\t<sweep>" }
+  local SWEEP_MS = 4 -- milliseconds a frame: the test's own run, so it may cost more than play would bear
+  local SWEEP_MARKS = 2500
+  local SWEEP_AFTER = 25 -- seconds it goes on after the test ends
+  local sweep = { seen = {}, n = 0 }
+  local function sweepPart()
+    local probe = type(WFJScanDB) == "table" and WFJScanDB.probe or nil
+    local test = type(probe) == "table" and probe.test or nil
+    return type(test) == "table" and test.finished == nil and tostring(test.part or "starting") or "no test"
+  end
+  local function sweepNote(name)
+    if sweep.seen[name] then return end
+    sweep.seen[name] = true
+    local w = watchDb()
+    if not w then return end
+    w.marks = type(w.marks) == "table" and w.marks or {}
+    if #w.marks < SWEEP_MARKS then
+      w.marks[#w.marks + 1] = name .. "\t" .. date("%%H:%%M:%%S") .. "\t" .. sweepPart() .. "\t" .. sweep.n
+    end
+  end
+  local function sweepKeys(t, label)
+    for key in pairs(t) do
+      if type(key) == "string" then
+        local ok, isSecure, owner = pcall(issecurevariable, t, key)
+        if ok and not isSecure and owner == "WoWForeverJapanese" then sweepNote(label .. "." .. key) end
+      end
+    end
+  end
+  local function sweepOwn(name)
+    return name:find("^WFJ") or name:find("^WoWForeverJapanese") or name:find("^SLASH_WFJ") or name:find("WFJ_")
+  end
+  local function sweepSome()
+    local started = debugprofilestop()
+    while debugprofilestop() - started < SWEEP_MS do
+      if sweep.phase == "frames" then
+        sweep.frame = EnumerateFrames(sweep.frame)
+        local f = sweep.frame
+        if not f then
+          sweep.phase, sweep.key = "globals", nil
+        else
+          pcall(function()
+            if f:IsForbidden() then return end
+            local name = f.GetDebugName and f:GetDebugName() or "unnamed"
+            sweepKeys(f, tostring(name))
+          end)
+        end
+      else
+        local key, value = next(_G, sweep.key)
+        sweep.key = key
+        if key == nil then
+          sweep.n = sweep.n + 1
+          sweep.phase, sweep.frame = "frames", nil
+          local w = watchDb()
+          if w then w.sweeps = sweep.n end
+          if sweep.stopAt and GetTime() >= sweep.stopAt then
+            sweep.runner:Hide()
+            return
+          end
+        elseif type(key) == "string" and not sweepOwn(key) then
+          local ok, isSecure, owner = pcall(issecurevariable, _G, key)
+          if ok and not isSecure and owner == "WoWForeverJapanese" then sweepNote("_G." .. key) end
+          -- one level under a global table that is no frame: a frame was read with the frames
+          if type(value) == "table" and type(rawget(value, 0)) ~= "userdata" then pcall(sweepKeys, value, key) end
+        end
+      end
+    end
+  end
+  local function sweepStep()
+    -- a global removed while the sweep stood on it ends that pass: the next one starts over
+    if not pcall(sweepSome) then sweep.phase, sweep.frame, sweep.key = "frames", nil, nil end
+  end
+  -- `seconds`: how long to go on from now, or nil to go on until told
+  WFJScanTaint.sweepFor = function(seconds)
+    if not sweep.runner then
+      sweep.runner = CreateFrame("Frame")
+      sweep.runner:SetScript("OnUpdate", sweepStep)
+    end
+    sweep.phase = sweep.phase or "frames"
+    sweep.stopAt = seconds and GetTime() + seconds or nil
+    sweep.runner:Show()
+  end
+
   -- under pcall: a client without one of these keeps the rest of the test
   pcall(function()
     if type(ShowUIPanel) == "function" then hooksecurefunc("ShowUIPanel", function(frame) watchShown(frame) end) end
@@ -4438,7 +4525,12 @@ end
       pcall(watcher.RegisterEvent, watcher, event)
     end
     watcher:SetScript("OnEvent", function(_, event, a1, a2)
-      if event == "PLAYER_LOGIN" then return pcall(traceArm) end
+      if event == "PLAYER_LOGIN" then
+        pcall(traceArm)
+        -- what is in the addon's name before anything runs: one sweep, a few seconds after login
+        C_Timer.After(3, function() pcall(WFJScanTaint.sweepFor, 1) end)
+        return
+      end
       if event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then return watchRefused(a1, a2) end
       if event == "PLAYER_REGEN_DISABLED" then return watchFight(true) end
       if event == "PLAYER_REGEN_ENABLED" then return watchFight(false) end
@@ -4569,6 +4661,7 @@ SlashCmdList.WFJTEST = function(how)
     return
   end
   testRunning = true
+  pcall(WFJScanTaint.sweepFor, nil) -- every key that takes the addon's name while the test runs
   pagesOnly = how == "tabs"
   local db = probeDb()
   db.test = { started = date("%%Y-%%m-%%d %%H:%%M:%%S"), build = tostring((select(2, GetBuildInfo()))),
@@ -4670,6 +4763,7 @@ SlashCmdList.WFJTEST = function(how)
     watcher:UnregisterAllEvents()
     readGrabbed()
     testRunning = false
+    pcall(WFJScanTaint.sweepFor, 25) -- and for a while after: the windows the player opens last are read too
     db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
     pcall(sayCounts, db)
     print("WFJ test done: /reload to save, then the result can be read" .. said)
@@ -5800,6 +5894,11 @@ def read_watch(text: str) -> dict[str, Any] | None:
     for row in (came.positional() if came is not None else []):
         entered.append({"key": str(row.get("key") or ""), "after": str(row.get("after") or ""),
                         "at": str(row.get("at") or ""), "stack": str(row.get("stack") or "")})
+    marks = []
+    noted = watch.get("marks")
+    for row in (noted.positional() if noted is not None else []):
+        name, at, part, sweep = (str(row).split("\t") + ["", "", ""])[:4]
+        marks.append({"name": name, "at": at, "part": part, "sweep": int(sweep or 0)})
     traces = []
     kept = watch.get("traces")
     for row in (kept.positional() if kept is not None else []):
@@ -5807,7 +5906,7 @@ def read_watch(text: str) -> dict[str, Any] | None:
                        "stack": str(row.get("stack") or ""), "near": str(row.get("near") or ""),
                        "at": str(row.get("at") or "")})
     return {"build": str(watch.get("build") or ""), "code": str(watch.get("code") or ""), "windows": out,
-            "traces": traces, "entered": entered,
+            "traces": traces, "entered": entered, "marks": marks, "sweeps": int(watch.get("sweeps") or 0),
             "refused": refused, "fights": int(watch.get("fights") or 0),
             "fight_seconds": int(watch.get("fightSeconds") or 0)}
 
@@ -6493,6 +6592,12 @@ def _print_watch(watch: dict[str, Any]) -> None:
     for (addon, action), rec in sorted(watch["refused"].items()):
         if addon != "WoWForeverJapanese":
             print(f"in play  refused in another addon's name ({addon}): {action}, {rec['n']} times")
+    late = [m for m in watch["marks"] if m["sweep"] > 0]
+    if watch["marks"]:
+        print(f"in play  {watch['sweeps']} sweeps of every frame and global: {len(watch['marks']) - len(late)} keys "
+              f"in the addon's name at login, {len(late)} more after it")
+    for mark in late:
+        print(f"in play  {mark['at']} sweep {mark['sweep']} during {mark['part']}: {mark['name']}")
     for row in watch["entered"]:
         print(f"in play  {row['at']} {row['key']} first read in the addon's name after {row['after']}")
         for line in row["stack"].splitlines():
