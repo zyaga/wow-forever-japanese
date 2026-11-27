@@ -4282,19 +4282,6 @@ end
     end
     return type(t) == "table" and t or nil, parts[#parts], #parts
   end
-  -- Values to trace whatever the watcher holds: seen in the addon's name after a full test run and never in play,
-  -- so the next run that shows them has to say who wrote them. A name with a path is resolved as the watcher names
-  -- things; `rows` looks through a scroll box's rows for the key.
-  local TRACE_SEEDS = {
-    { name = "ReputationFrame.filterDropdown.menuGenerator" },
-    { name = "ReputationFrame.ScrollBox rows.factionID", rows = "ReputationFrame.ScrollBox.x", key = "factionID" },
-    { name = "CharacterFrame.selectedTab" }, { name = "CharacterFrame.activeSubframe" },
-  }
-  -- Tables whose functions are hooked as well, and whose keys are looked at each time: what the reputation pane's
-  -- show runs through on the way to the values above (camelot/reputationframe.lua:113-127, characterframe.lua:106-118).
-  local TRACE_ALSO = { "HelpTip", "HelpTip.framePool", "ReputationFrame.ScrollBox.view",
-    "ReputationFrame.ReputationDetailFrame", "PaperDollFrame", "SkillsFrame", "TokenFrame", "PVPRankFrame",
-    "StatisticsFrame", "ScrollUtil", "FrameUtil", "PanelTemplates_SetTab", "CHARACTERFRAME_SUBFRAMES" }
   local function traceArm()
     local w = watchDb()
     if not w then return end
@@ -4308,22 +4295,9 @@ end
       for _, path in ipairs(type(rec.ours) == "table" and rec.ours or {}) do want(path) end
     end
     for _, path in ipairs(type(w.suspects) == "table" and w.suspects or {}) do want(path) end
-    for _, seed in ipairs(TRACE_SEEDS) do
-      if seed.rows then
-        pending[seed.name] = function()
-          local box = traceResolve(seed.rows)
-          if type(box) ~= "table" or type(box.GetFrames) ~= "function" then return nil end
-          local ok, rows = pcall(box.GetFrames, box)
-          for _, row in ipairs(ok and type(rows) == "table" and rows or {}) do
-            local okS, isSecure, owner = pcall(issecurevariable, row, seed.key)
-            if okS and not isSecure and owner == "WoWForeverJapanese" then return row, seed.key end
-          end
-          return nil
-        end
-      else
-        want(seed.name)
-      end
-    end
+    -- nothing to trace: no hook is placed, so a session the watcher found nothing in stays free of the test's own
+    -- code inside the player's clicks
+    if next(pending) == nil then return end
     w.traces = {}
     -- what else on the tables being watched reads in the addon's name at that moment: what the writer may have read
     local function near()
@@ -4406,9 +4380,6 @@ end
       end
     end
     for name in pairs(pending) do hookPath(name) end
-    for _, seed in ipairs(TRACE_SEEDS) do
-      if seed.rows then hookPath(seed.rows) end
-    end
     for _, name in ipairs(TRACE_ALSO) do hookAll((traceResolve(name .. ".x")), name) end
     -- the help tips there are now, and the ones waiting in the pool
     local pool = type(HelpTip) == "table" and HelpTip.framePool or nil
@@ -4577,12 +4548,11 @@ end
   -- name after a test run and never in play. It does one thing at a time and keeps, after each, whose name every
   -- value of the character window's reputation side carries (any addon's, not only this one's):
   --   1  as it is, before anything
-  --   2  the test addon shows the reputation pane itself: a run that carries the test addon's name from its start,
-  --      with the addon's own hooks running inside it
-  --   3  the window put away
-  --   4  the player opens the window and clicks the Reputation tab: a run that starts clean, after step 2 happened
-  --      in the session
-  --   5  the player closes it
+  --   2  the player opens the window and clicks the Reputation tab, 3 closes it: the base, with nothing of the
+  --      test's before it in the session. Run it first thing after a reload.
+  --   4  the test addon shows the reputation pane itself: a run that carries the test addon's name from its start,
+  --      with the addon's own hooks running inside it; 5 the window put away
+  --   6  the player opens it again, 7 closes it: a run that starts clean, after step 4 happened in the session
   -- Values the client writes before the addon's hooks run (CharacterFrame.activeSubframe,
   -- ReputationFrame.needsInitialSelection) and after them (the detail pane's ViewRenownButton.factionID, the filter
   -- dropdown's menuGenerator) are all in the list, so the step and the place a name comes in can be read off it.
@@ -4641,40 +4611,49 @@ end
       record.refused = "the character window was open"
       return done()
     end
-    step("1 before anything")
-    local ok, err = pcall(ToggleCharacter, "ReputationFrame")
-    C_Timer.After(1.5, function()
-      step("2 the test addon showed the reputation pane", not ok and tostring(err) or nil)
-      if shown() then pcall(HideUIPanel, _G.CharacterFrame) end
-      C_Timer.After(1, function()
-        step("3 the window put away")
-        -- the player's own way in: the tab is no button a script can click, so the test waits for the click
-        print("WFJ test: now open the character window, click the Reputation tab, then close the window.")
-        local waited, seen, ticker = 0, false, nil
-        local function paneShown()
-          local pane = _G.ReputationFrame
-          return type(pane) == "table" and pane:IsVisible()
+    local function paneShown()
+      local pane = _G.ReputationFrame
+      return type(pane) == "table" and pane:IsVisible()
+    end
+    -- The player's own way in: the tab is no button a script can click, so the test waits for the click, keeps the
+    -- names once the pane shows and once the window is closed, then goes on.
+    local function byPlayer(first, second, ask, nxt)
+      print(ask)
+      local waited, seen, ticker = 0, false, nil
+      ticker = C_Timer.NewTicker(0.25, function()
+        waited = waited + 0.25
+        if not seen and paneShown() then
+          seen, waited = true, 0
+          C_Timer.After(1.5, function() step(first) end)
+        elseif seen and waited > 2 and not shown() then
+          ticker:Cancel()
+          return C_Timer.After(1, function()
+            step(second)
+            nxt()
+          end)
         end
-        ticker = C_Timer.NewTicker(0.25, function()
-          waited = waited + 0.25
-          if not seen and paneShown() then
-            seen = true
-            C_Timer.After(1.5, function() step("4 the player's own click showed the reputation pane") end)
-          elseif seen and waited > 2 and not shown() then
-            ticker:Cancel()
-            return C_Timer.After(1, function()
-              step("5 the player closed the window")
-              done()
-            end)
-          end
-          if waited >= 180 then
-            ticker:Cancel()
-            record.refused = seen and "the window was not closed" or "the reputation pane was not opened"
-            done()
-          end
+        if waited >= 180 then
+          ticker:Cancel()
+          record.refused = seen and "the window was not closed" or "the reputation pane was not opened"
+          done()
+        end
+      end)
+    end
+    step("1 before anything")
+    byPlayer("2 the player's own click showed the reputation pane, nothing of the test's before it",
+      "3 the player closed the window",
+      "WFJ test: open the character window, click the Reputation tab, then close the window.", function()
+        local ok, err = pcall(ToggleCharacter, "ReputationFrame")
+        C_Timer.After(1.5, function()
+          step("4 the test addon showed the reputation pane", not ok and tostring(err) or nil)
+          if shown() then pcall(HideUIPanel, _G.CharacterFrame) end
+          C_Timer.After(1, function()
+            step("5 the window put away")
+            byPlayer("6 the player's own click showed the reputation pane again", "7 the player closed the window",
+              "WFJ test: once more: open the character window, click the Reputation tab, then close the window.", done)
+          end)
         end)
       end)
-    end)
   end
 
   WFJScanTaint.watch = function(done) done() end
