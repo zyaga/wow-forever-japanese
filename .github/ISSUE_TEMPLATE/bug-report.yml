@@ -36,6 +36,24 @@ body:
       description: "`/wfj version` in game. / ゲーム内で `/wfj version` を実行すると表示されます。"
     validations:
       required: true
+  - type: dropdown
+    id: alone
+    attributes:
+      label: Does it still happen with only this addon on? / このアドオンだけを有効にしても起きますか
+      description: Turn every other addon off, reload, and try again. Many problems come from two addons together. / ほかのアドオンをすべて無効にして再読み込みし、もう一度試してください。二つのアドオンの組み合わせが原因のことがよくあります。
+      options:
+        - Yes, with only this addon / はい、このアドオンだけでも起きます
+        - No, only with other addons on / いいえ、ほかのアドオンがあるときだけ起きます
+        - I did not try / 試していません
+    validations:
+      required: true
+  - type: input
+    id: other-addons
+    attributes:
+      label: Other addons that were on / 有効だったほかのアドオン
+      description: The ones that were on when it happened. / 起きたときに有効だったものを書いてください。
+    validations:
+      required: false
   - type: textarea
     id: errors
     attributes:

@@ -9,6 +9,15 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- Action bars that stopped working in combat, and a vendor that refused to sell, after the Professions window (or another window with popup dictionary text in it) had been open. The addon kept a note on its own popup dictionary frames that the game's layout code also reads, and the game then treated its own windows as changed by an addon until a reload. The addon now keeps all of its notes in its own tables.
+- The red error text ("Out of range.") is handled without replacing a function of the game's error frame, which had the same effect on the game's own code.
+- The game's currency transfer window and other text that sizes itself to fit are written without leaving a value on the game's text widget.
+- When the game does refuse an action because of the addon, a line in chat now says so once, with what to do (`/reload` clears it), and `/wfj bug` includes what the addon found so the cause can be fixed.
+
+### Changed
+- The bug report form asks whether the problem still happens with only this addon on.
+
 ## 0.15.0 - 2026-11-26
 
 ### Added
