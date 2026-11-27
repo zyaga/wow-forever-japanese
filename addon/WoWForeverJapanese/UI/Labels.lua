@@ -99,9 +99,12 @@ function Labels.familiesWith(extra, ...)
   return familySet(extra, { ... })
 end
 
--- A ScrollingFontTemplate frame's FontString and the refit its own SetText does after writing (the container
--- re-heighted to the text, the scroll box updated; ScrollingFontMixin:SetText, scrolltemplates.lua:347–358), so a
--- longer Japanese scrolls instead of spilling. → fs, refit | nil
+-- A ScrollingFontTemplate frame's FontString and the refit after writing it: the container re-heighted to the text,
+-- as the frame's own SetText does (ScrollingFontMixin:SetText, scrolltemplates.lua:347–358), so a longer Japanese
+-- is not cut off. The scroll box is never updated from here: its FullUpdate is the client's own Lua, and run from
+-- the addon it writes the box's and the bar's scroll state in the addon's name, which the client then reads on its
+-- way through the window (seen in game on the reputation pane: the pane's next values came out in the addon's
+-- name). The box takes the new height at its own next update. → fs, refit | nil
 function Labels.scrolling(sf)
   if type(sf) ~= "table" or type(sf.GetFontString) ~= "function" then return nil end
   local ok, fs = pcall(sf.GetFontString, sf)
@@ -112,8 +115,6 @@ function Labels.scrolling(sf)
         and type(fs.GetStringHeight) == "function" then
       container:SetHeight(fs:GetStringHeight())
     end
-    local okB, box = pcall(sf.GetScrollBox, sf)
-    if okB and type(box) == "table" and type(box.FullUpdate) == "function" then pcall(box.FullUpdate, box, true) end
   end
   return fs, refit
 end

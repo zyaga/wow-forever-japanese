@@ -152,21 +152,21 @@ The rules, each with what holds the addon to it:
 | No field on a client frame, and none on a frame of the addon's that sits inside a client frame. The addon's state lives in its own tables, keyed by the frame | The client's layout code reads fields off every child of a layout frame (`blizzard_sharedxml/layoutframe.lua`); a mixin reads its own fields | the window test's `touch` part; `tests/python/test_taint_rules.py` for the layout field names |
 | A client function or a frame's method is followed with a post-hook (`hooksecurefunc`, `HookScript`), never replaced or wrapped | A replaced function is a value the addon wrote: every call of it runs in the addon's name | `test_taint_rules.py`; `touch` |
 | A client font string that carries its own `SetText` is written with the widget's plain `SetText` | The mixin's `SetText` stores fields on the widget (`AutoScalingFontStringMixin`) | every label is written through `Core/SurfaceState.lua`; `touch` |
-| The addon never calls a client function that opens, closes or drives a window. The one such call is the phrase book's, which opens the chat box with the clicked phrase typed | The client's own state for that window is then written in the addon's name. For the chat box that is four values, measured in game, and a protected slash command typed afterwards still runs | `test_taint_rules.py` (the list of such calls, and the files allowed to name one, each with its reason); the window test's `send` part lists what the chat box open leaves |
+| The addon never calls a client function that opens, closes, lays out or scrolls a window (a scroll box's `FullUpdate` among them). The one such call is the phrase book's, which opens the chat box with the clicked phrase typed | The client's own state for that window is then written in the addon's name. For the chat box that is four values, measured in game, and a protected slash command typed afterwards still runs | `test_taint_rules.py` (the list of such calls, and the files allowed to name one, each with its reason); the window test's `send` part lists what the chat box open leaves |
 | A frame's script is never called directly | The client's handler then runs in the addon's name | `test_taint_rules.py` |
 | The global `_` is never written | The client's own code uses it as a throwaway | `test_taint_rules.py` |
 | A value the client keeps secret is checked before it is compared | Comparing one raises | `Compat.secret` before every comparison of client text; the error log |
 | A window the client opens itself is read after it opened: the window, the bags and the bars carry none of the addon's taint | A field can look harmless until the client's own open reads it | the window test's `craft` part |
 | A workaround names the client code it works around, in a comment beside it | The next reader has to be able to check that the client still does that | review |
 
-What the addon cannot avoid, and why it is safe: a scroll box, a scroll bar or a message frame keeps its scroll
-state in fields, and its own code writes them whenever the text under it changes. When the addon writes a text
-inside one (a calendar event's description), the widget's size handler runs in that same call; when it rewrites a
-chat line through the client's own `TransformMessages`, the client marks the stored line itself
-(`blizzard_sharedxml/scrollingmessageframe.lua`). The scroll state then carries the addon's name. Only the client's
-scroll code reads those fields, and nothing there reaches a protected call. They are the four entries of
-`TOUCH_ALLOWED` in `pipeline/wfj/dev/client_surface.py`, by field name with the reason; a new entry there is a
-decision, never a way past a failing run.
+Nothing is excused. `TOUCH_ALLOWED` in `pipeline/wfj/dev/client_surface.py` is empty. A scroll box's and a scroll
+bar's state were once listed there on the reasoning that only the client's scroll code reads them. An isolated test
+in game showed the reasoning wrong: after writing a longer Japanese description the addon called the scroll box's
+own `FullUpdate`, the box's and the bar's state took the addon's name, and the client's next values on that pane
+(the reputation pane's filter menu, a button's faction) came out in the addon's name too, from the player's own
+click. The scroll code runs inside whatever the client is doing when the box updates. So the rule above has no
+exception for "a value nothing important reads": an entry in that list needs an isolated test that shows the value
+is never read on the way to anything else.
 
 When the game refuses an action because of the addon, the addon says so once in chat, and the bug report
 (`/wfj bug`) carries the first values of that session it found in its own name (`UI/TaintWatch.lua`).

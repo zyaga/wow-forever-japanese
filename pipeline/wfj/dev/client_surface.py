@@ -5871,20 +5871,12 @@ def client_field_names(ui: Path) -> set[str]:
     return names
 
 
-# A client field the addon may taint, by the field's name, with the reason. A line here is a decision, never a way
-# past a failure.
-_SCROLL = ("the scroll state of a scroll box, scroll bar or message frame the addon's text sits in. The widget's own "
-           "code writes it when the text under it changes size or a line is rewritten: a text the addon writes fires "
-           "the widget's size handler in the same run (a calendar description, ScrollingFontTemplate), and a chat "
-           "line rewritten through the client's TransformMessages is stored by a closure the client taints on "
-           "purpose (scrollingmessageframe.lua:795-824). Only blizzard_sharedxml/shared/scroll reads these fields "
-           "(scrollbar.lua, scrollcontroller.lua, scrollbox.lua), and nothing there reaches a protected call")
-TOUCH_ALLOWED: dict[str, str] = {
-    "scrollPercentage": _SCROLL,
-    "visibleExtentPercentage": _SCROLL,
-    "panExtentPercentage": _SCROLL,
-    "updateLock": _SCROLL,
-}
+# A client field the addon may taint, by the field's name, with the reason: none. A scroll box's and a scroll bar's
+# state were listed here once, on the reasoning that only the scroll code reads them. An isolated test in game
+# showed that reasoning wrong: the scroll code runs inside whatever the client is doing when the box updates, and a
+# value it reads there in the addon's name puts the addon's name on what the client writes next. An entry here needs
+# an isolated test that shows the value is never read on the way to anything else, not an argument that it is not.
+TOUCH_ALLOWED: dict[str, str] = {}
 
 
 def read_touch(text: str) -> dict[str, Any] | None:
@@ -6780,9 +6772,7 @@ def _print_watch(watch: dict[str, Any]) -> None:
     wrote a value found in the addon's name, and the expected windows not opened yet."""
     for name, rec in sorted(watch["windows"].items()):
         print(f"read in play  {name}: opened {rec['opens']} times, {rec['checked']} values read, "
-              f"{len(rec['ours'])} in the addon's name"
-              + (f" ({sum(1 for v in rec['ours'] if v.rsplit('.', 1)[-1] in TOUCH_ALLOWED)} of them scroll state, "
-                 f"allowed)" if rec["ours"] else "") + f" (last {rec['at']})")
+              f"{len(rec['ours'])} in the addon's name (last {rec['at']})")
     minutes = watch["fight_seconds"] // 60
     ours = sum(rec["n"] for (addon, _), rec in watch["refused"].items() if addon == "WoWForeverJapanese")
     print(f"in play  {watch['fights']} fights ({minutes} minutes in them); actions the game refused in the "

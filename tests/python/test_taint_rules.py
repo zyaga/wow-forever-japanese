@@ -50,6 +50,13 @@ NAMED_FOR_A_HOOK = {
 }
 
 
+# A scroll box's own update and scroll calls are the client's Lua: run from the addon they write the box's and the
+# bar's scroll state in the addon's name, which the client reads on its way through the window. The addon's own
+# settings list is its own frame.
+_SCROLL_CALLED = re.compile(r"[.:](FullUpdate|ScrollToBegin|ScrollToEnd|SetScrollPercentage|ScrollToOffset"
+                            r"|ScrollToElementData\w*|ScrollToNearest\w*)\b")
+
+
 def code_lines(text: str):
     """(line number, code) for each line of Lua, comments left out."""
     for number, line in enumerate(text.split("\n"), 1):
@@ -71,6 +78,8 @@ def problems(text: str) -> list[str]:
             out.append(f"{number}: a frame's script is called directly")
         if _TABLE_REPLACED.search(code):
             out.append(f"{number}: a client table every addon shares is replaced")
+        if _SCROLL_CALLED.search(code):
+            out.append(f"{number}: a scroll box's own update or scroll call is called")
         if _DRIVER_CALLED.search(code):
             out.append(f"{number}: a client call that drives a window or the chat box is called")
     return out
@@ -115,6 +124,8 @@ def test_the_window_tests_own_lua_replaces_no_shared_client_table():
     ("_, height = frame:GetSize()", "global _ is written"),
     ('button:GetScript("OnClick")(button, "LeftButton")', "script is called directly"),
     ("SlashCmdList = SlashCmdList or {}", "shares is replaced"),
+    ("pcall(box.FullUpdate, box, true)", "scroll box's own update"),
+    ("box:ScrollToBegin()", "scroll box's own update"),
     ("ShowUIPanel(CharacterFrame)", "drives a window"),
     ('if open then StaticPopup_Show("CONFIRM") end', "drives a window"),
 ])

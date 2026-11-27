@@ -2156,18 +2156,20 @@ def test_the_touch_read_fails_on_a_client_field_and_on_a_field_name_the_client_r
     assert {"ignoreInLayout", "GetID", "id"} <= names and "tints" not in names
     problems = client_surface.touch_problems(record, names)
     assert problems == [
-        "client field tainted by the addon: UIErrorsFrame.ShouldDisplayMessageType",  # the allowed one is not listed
+        "client field tainted by the addon: UIErrorsFrame.ShouldDisplayMessageType",
+        # a scroll bar's state is a failure like any other field: nothing is excused
+        "client field tainted by the addon: CommunitiesFrame.Chat.ScrollBar.scrollPercentage",
         "client fields tainted by the addon: 2 more",
         ("the addon's frame inside a client frame carries fields the client's code names (2 frames, e.g. under "
          "QuestInfoFrame): id ignoreInLayout"),
     ]
     # with no UI source to check against, no field of a frame inside a client frame can be cleared
-    assert len(client_surface.touch_problems(record, None)) == 4
+    assert len(client_surface.touch_problems(record, None)) == 5
     assert client_surface.read_touch("WFJScanDB = {}") is None and len(client_surface.touch_problems(None, names)) == 1
 
 
-def test_every_allowed_client_field_gives_its_reason():
-    assert all(len(reason) > 40 for reason in client_surface.TOUCH_ALLOWED.values())
+def test_no_client_field_is_excused():
+    assert client_surface.TOUCH_ALLOWED == {}
 
 
 def test_the_send_read_fails_on_a_chat_send_value_the_addon_or_the_test_addon_tainted():
@@ -2250,6 +2252,7 @@ def test_a_window_read_in_play_fails_only_on_a_value_in_the_addons_name():
     assert (watch["fights"], watch["fight_seconds"]) == (12, 610)
     assert client_surface.watch_problems(watch) == [
         "a window opened in play carries the addon's taint (MerchantFrame): MerchantFrame.selectedTab",
+        "a window opened in play carries the addon's taint (MerchantFrame): MerchantFrame.#4.#1.updateLock",
         # an action refused in the addon's name while the player played; another addon's is printed, not failed
         "the game refused UseAction() in the addon's name in play: 3 times, 2 in a fight "
         "(first 2026-11-27 11:00:00, last 2026-11-27 11:05:00)"]

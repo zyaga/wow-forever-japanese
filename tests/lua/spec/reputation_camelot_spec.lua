@@ -219,7 +219,9 @@ describe("the reputation frame's faction description", function()
     detail():SetDescription(DESC)
     assert.are.equal("ストームウィンドの軍と市民は人間の首都を守っている。", sf:GetText())
     assert.are.equal(sf.fs:GetStringHeight(), sf.container.height) -- the container re-heighted to the Japanese
-    assert.is_true(sf.box.fullUpdates >= 2) -- the client's own SetText, then our refit
+    -- the client's own SetText updated the scroll box once; the addon never does (its update run from the addon
+    -- leaves the box's scroll state in the addon's name)
+    assert.are.equal(1, sf.box.fullUpdates)
     alt(true)
     assert.are.equal(DESC, sf:GetText())
     alt(false)
