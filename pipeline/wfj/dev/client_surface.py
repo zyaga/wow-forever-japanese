@@ -5198,6 +5198,13 @@ def read_send(text: str) -> dict[str, Any] | None:
 
 
 SEND_ADDONS = ("WoWForeverJapanese", "WFJScan")
+# A value of the send path an addon's taint may sit on, with the reason.
+SEND_ALLOWED = {
+    "autoCompleteParams": "set while the player types a slash command: the client looks the command up in the table "
+                          "every addon registers in, so the box's completion settings are written in the name of "
+                          "the addon whose command is being typed (here the test's own), and again on the next "
+                          "change of chat type",
+}
 
 
 def send_problems(record: dict[str, Any] | None) -> list[str]:
@@ -5207,7 +5214,7 @@ def send_problems(record: dict[str, Any] | None) -> list[str]:
         return ["chat send path not read: this run's test addon has no such read (make scan-install, then run it "
                 "again)"]
     return [f"chat send path value tainted by {by}: {name}" for name, by in record["tainted"]
-            if by in SEND_ADDONS and not _SEND_OWN.match(name)]
+            if by in SEND_ADDONS and not _SEND_OWN.match(name) and name.rsplit(".", 1)[-1] not in SEND_ALLOWED]
 
 
 def read_covers(text: str) -> dict[str, Any] | None:

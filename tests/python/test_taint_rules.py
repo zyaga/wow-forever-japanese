@@ -41,8 +41,13 @@ _DRIVER_CALLED = re.compile(r"(?<![\w.\"])(" + "|".join(DRIVERS) + r")\s*\(")
 # The same calls reached by name through the addon's table of client names: never looked up to be called.
 _DRIVER_NAMED = re.compile(r'"(?:ChatFrameUtil\.OpenChat|ChatFrame_OpenChat|ChatFrameUtil\.ActivateChat'
                            r'|ChatEdit_ActivateChat|ChatEdit_InsertLink)"')
-# Files that name such a call to follow it with a post-hook or to list it for the trace, never to call it.
-NAMED_FOR_A_HOOK = {"TaintWatch.lua"}
+# The files that may name such a call, each with its reason. A new line here is a decision.
+NAMED_FOR_A_HOOK = {
+    "TaintWatch.lua": "lists client calls to follow with a post-hook, never to call",
+    "PhraseBook.lua": "opens the chat box with the clicked phrase typed. Measured in game: the open leaves four of "
+                      "the client's chat values in the addon's name (the window test's `send` part lists them), and "
+                      "a protected slash command typed afterwards still runs",
+}
 
 
 def code_lines(text: str):
@@ -85,6 +90,10 @@ def test_no_addon_file_looks_up_a_call_that_opens_the_chat_box():
     found = [f"{path.name}:{number}" for path in addon_files() if path.name not in NAMED_FOR_A_HOOK
              for number, code in code_lines(path.read_text(encoding="utf-8")) if _DRIVER_NAMED.search(code)]
     assert found == []
+
+
+def test_every_file_allowed_to_name_a_chat_open_gives_its_reason():
+    assert all(len(reason) > 40 for reason in NAMED_FOR_A_HOOK.values())
 
 
 def test_a_looked_up_chat_open_is_caught():

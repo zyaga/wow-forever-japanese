@@ -54,27 +54,14 @@ describe("the phrase book", function()
     assert.equals(h, card.size[2])
   end)
 
-  it("with no chat box open the phrase waits, the card collapses, and the player's own open types it", function()
+  it("types the dot and the English into a new chat box and collapses, on a click", function()
     local card = Book.open()
     local row = shownRows(card)[1]
     row:GetScript("OnClick")(row)
-    assert.is_nil(Env.opened) -- the addon never opens the chat box itself
-    assert.equals(Env.DOT .. " Hello!", Book.waiting())
+    assert.equals(Env.DOT .. " Hello!", Env.opened)
     local button = Book.frames()
     assert.is_false(card:IsShown())
     assert.is_true(button:IsShown())
-    -- a box opened with the slash key already holds text: the phrase goes on waiting
-    local slash = CreateFrame("EditBox")
-    slash.text = "/"
-    _G.ChatFrameUtil.ActivateChat(slash)
-    assert.equals("/", slash.text)
-    assert.equals(Env.DOT .. " Hello!", Book.waiting())
-    local box = CreateFrame("EditBox")
-    _G.ChatFrameUtil.ActivateChat(box)
-    assert.equals(Env.DOT .. " Hello!", box.text)
-    assert.is_nil(Book.waiting())
-    _G.ChatFrameUtil.ActivateChat(box) -- typed once
-    assert.equals(Env.DOT .. " Hello!", box.text)
   end)
 
   it("types into the chat box that is already open", function()

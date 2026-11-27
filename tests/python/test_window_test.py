@@ -2091,6 +2091,7 @@ TAINT_SAVED = """WFJScanDB = {
 "ChatFrame1EditBox.text\\tWFJScan",
 "hash_SlashCmdList./WFJ\\tWoWForeverJapanese",
 "ChatFrame1EditBox.setText\\tBaganator",
+"ChatFrame1EditBox.autoCompleteParams\\tWFJScan",
 },
 },
 ["touch"] = {
@@ -2155,8 +2156,9 @@ def test_every_allowed_client_field_gives_its_reason():
 
 def test_the_send_read_fails_on_a_chat_send_value_the_addon_or_the_test_addon_tainted():
     record = client_surface.read_send(TAINT_SAVED)
-    assert record["checked"] == 40 and len(record["tainted"]) == 3
-    # an addon's own slash command entry is its own to write; another addon's taint is not this addon's to fix
+    assert record["checked"] == 40 and len(record["tainted"]) == 4
+    # an addon's own slash command entry is its own to write, another addon's taint is not this addon's to fix, and
+    # the completion settings are written while any addon's command is typed
     assert client_surface.send_problems(record) == ["chat send path value tainted by WFJScan: ChatFrame1EditBox.text"]
     assert client_surface.read_send("WFJScanDB = {}") is None and len(client_surface.send_problems(None)) == 1
 
