@@ -1,5 +1,5 @@
 - **Fixed: action bars that stopped working in combat.** After the Professions window (or another window with popup dictionary text) had been open, the game could refuse to cast from the bars or sell to a vendor until a reload. Fixed at the cause.
 - **Fixed: the same kind of problem from the red error text** ("Out of range.") and from the currency transfer window.
 - If the game ever refuses an action because of the addon, a chat line now says so once: `/reload` clears it, and `/wfj bug` sends what the addon found.
-- The bug report form now asks whether the problem happens with only this addon on.
+- Bug reports: the form asks whether it happens with only this addon on, and `/wfj bug` lists your other loaded addons.
 - With Japanese names on, recipe names and reagent names in the Professions window are in Japanese too.

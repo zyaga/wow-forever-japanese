@@ -51,7 +51,7 @@ body:
     id: other-addons
     attributes:
       label: Other addons that were on / 有効だったほかのアドオン
-      description: The ones that were on when it happened. / 起きたときに有効だったものを書いてください。
+      description: "`/wfj bug` fills this in. Otherwise, the ones that were on when it happened. / `/wfj bug` が入力します。それ以外の場合は、起きたときに有効だったものを書いてください。"
     validations:
       required: false
   - type: textarea

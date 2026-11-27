@@ -6,6 +6,7 @@
 -- Pure: the caller passes build, version and the errors.
 --   BugReport.pack(info) · info = { build, version, errors = ErrorLog.unsent(), ours = ErrorLog.ours(),
 --     voice = { "Levels1to10 2026.11.12-36d91beb (format 3, 3432 lines)", … } } (Core/Voice.packList)
+--     addons = { "Baganator", … } the player's other loaded addons, by folder name (UI/ReportWindow lists them)
 --     → { mode = "link" | "paste", url, text, count, ours, sent = { { msg, last, n }, … } }
 --   BugReport.text(errors) → the readable error text
 --   BugReport.IDEA_URL
@@ -18,6 +19,8 @@ BugReport.URL = REPO .. "bug-report.yml"
 BugReport.IDEA_URL = REPO .. "idea.yml"
 -- the form's field ids (.github/ISSUE_TEMPLATE/bug-report.yml)
 BugReport.FIELDS = { build = "client-build", version = "addon-version", errors = "errors" }
+BugReport.ADDONS_FIELD = "other-addons"
+BugReport.ADDONS_MAX = 600 -- characters of addon names the link carries: a long list must not crowd the errors out
 
 -- A time as recorded, or "?" for one caught before the clock could be read.
 local function when(t)
@@ -50,6 +53,20 @@ function BugReport.pack(info)
   end
   local base = BugReport.URL .. param(BugReport.FIELDS.build, info.build or "?")
     .. param(BugReport.FIELDS.version, version)
+  -- the other addons the player runs: a fault that needs two addons together cannot be found without their names
+  if type(info.addons) == "table" and #info.addons > 0 then
+    local names, length = {}, 0
+    for i, name in ipairs(info.addons) do
+      name = tostring(name)
+      if length + #name + 2 > BugReport.ADDONS_MAX then
+        names[#names + 1] = ("and %d more"):format(#info.addons - i + 1)
+        break
+      end
+      names[#names + 1] = name
+      length = length + #name + 2
+    end
+    base = base .. param(BugReport.ADDONS_FIELD, table.concat(names, ", "))
+  end
   local result = { mode = "link", url = base, text = "", count = #errors, ours = info.ours ~= false, sent = {} }
   if #errors == 0 then return result end
   for i, e in ipairs(errors) do result.sent[i] = { msg = e.msg, last = e.last, n = e.n } end

@@ -227,6 +227,8 @@ A radio choice at the top picks **Bug** or **Idea**. The window always opens on 
 - `addon-version`: the addon's version.
 - `errors`: the unsent errors as readable, percent-encoded text. Each error is a numbered block: `1) 3 times, first <time>, last <time>`, then the message, then the stack. With no errors the parameter is left out.
 
+The bug link also fills the form's `other-addons` field with the folder names of the other addons loaded at that moment (`ReportWindow.otherAddons`, through `C_AddOns`; this addon and its voice packs left out, 600 characters at most, then "and N more"): a fault that needs two addons together cannot be found without their names. Names only, read when the player opens the report, and nothing leaves the game until the player pastes the link.
+
 Percent-encoding and the length limit come from `Core/CollectorSend` (`percentEncode`, `URL_BUDGET`): a link over 6,000 characters, the limit measured for the collector send ([ADR-056](../adr/056-collector-send-string.md)), keeps build and version only, and the window shows the error text in a scrolling box to paste into the form's Lua errors field.
 
 The idea link is `…/issues/new?template=idea.yml`, with nothing filled in.
