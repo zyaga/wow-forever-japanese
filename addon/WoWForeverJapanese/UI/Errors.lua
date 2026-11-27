@@ -243,7 +243,13 @@ function Errors.flash(fs)
 end
 
 local waiting -- { rec, fs, message }: the line showing the client's English for the client's check of this event
-local inEvent, lastShown -- the message the listener saw / the client displayed, to tell which of the two ran first
+-- the message the listener saw / the client displayed and the frame each was in, to tell which of the two ran first
+local inEvent, inEventAt, lastShown, lastShownAt
+-- The time of the frame being drawn (the same all through one frame), or nil.
+local function frameTime()
+  local now = Compat.get(SURFACE, "now")
+  return type(now) == "function" and now() or nil
+end
 local orderLogged = false
 
 -- Our Japanese back on the line put to English for the client's check, when the client kept that line (it flashed
@@ -266,16 +272,20 @@ function Errors.onEvent(_, _, messageType, message)
   local frame = Compat.get(SURFACE, "frame")
   if type(frame) ~= "table" or type(frame.GetFontStringByID) ~= "function" then return 0 end
   Errors.back() -- a line still waiting: the client's frame never handled that event
-  if lastShown ~= nil and not Compat.secret(message) and lastShown == message and not orderLogged then
+  -- Which of the two ran first for this event: the client's frame showing this same message earlier in this same
+  -- frame means it did. Every event is marked, whether or not its line is the addon's.
+  local readable = type(message) == "string" and not Compat.secret(message)
+  local at = frameTime()
+  if readable and at ~= nil and lastShown == message and lastShownAt == at and not orderLogged then
     orderLogged = true
     if WFJ.Diag then
       WFJ.Diag.log("errors", "the client's error frame runs before the addon's listener: repeats sound again")
     end
   end
   lastShown = nil
+  inEvent, inEventAt = readable and message or nil, at
   local rec, fs = ours(frame, messageType, message)
   if not rec then return 0 end
-  inEvent = message
   WFJ.SurfaceState.setText(fs, message)
   waiting = { rec = rec, fs = fs, message = message }
   local timer = Compat.get(SURFACE, "timer")
@@ -286,7 +296,12 @@ end
 -- hooksecurefunc target (UIErrorsFrame:TryDisplayMessage). → 1 | 0
 function Errors.onDisplayed(_, _, message)
   if type(message) == "string" and not Compat.secret(message) then
-    if inEvent == message then lastShown = nil else lastShown = message end
+    local at = frameTime()
+    if inEvent == message and inEventAt == at then
+      lastShown = nil
+    else
+      lastShown, lastShownAt = message, at
+    end
   end
   inEvent = nil
   return Errors.back()
