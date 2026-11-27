@@ -50,8 +50,11 @@ end
 SurfaceState.setText = setText
 
 -- The original font back on a record's widget; an original with no size takes the size that was applied.
--- Called only while a font is applied.
+-- Called only while a font is applied. A widget that had no face when it was captured (a button whose text region
+-- did not exist yet: a mail row's expiry text) has none to put back, and SetFont raises on a face that is nil: it
+-- keeps the applied face, which draws the client's letters too.
 local function putBack(rec)
+  if rec.font.path == nil then return end
   rec.fs:SetFont(rec.font.path, rec.font.size or rec.appliedFont.size, rec.font.flags)
 end
 

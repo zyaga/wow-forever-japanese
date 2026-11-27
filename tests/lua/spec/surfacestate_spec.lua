@@ -34,6 +34,26 @@ describe("SurfaceState: the capture, apply and restore state machine", function(
     end)
   end
 
+  it("a widget captured with no face keeps the applied one on restore, and SetFont is never given nil", function()
+    -- a button's adapter whose text region did not exist yet: no face, no size
+    local fs = { text = "Expires in 3 days", fonts = {} }
+    function fs.GetText() return fs.text end
+    function fs.SetText(_, text) fs.text = text end
+    function fs.GetFont() return nil end
+    function fs.SetFont(_, path, size, flags)
+      assert(type(path) == "string", "SetFont was given no face")
+      fs.fonts[#fs.fonts + 1] = { path, size, flags }
+      return true
+    end
+    SS.capture("mail", "row5.expire", fs, "Expires in 3 days")
+    SS.apply("mail", "row5.expire", "3日後に期限切れ", { path = "J.ttf", size = 12, flags = "" })
+    assert.has_no.errors(function() assert.is_true(SS.restore("mail", "row5.expire")) end)
+    assert.are.equal("Expires in 3 days", fs.text)
+    assert.are.equal(1, #fs.fonts) -- the applied face only: nothing to put back
+    SS.apply("mail", "row5.expire", "3日後に期限切れ", { path = "J.ttf", size = 12, flags = "" })
+    assert.has_no.errors(function() SS.release("mail") end)
+  end)
+
   it("a refused SetFont records no applied font; the next apply tries again", function()
     local fs = Stub.fontString("English", "Fonts\\FRIZQT__.TTF", 14, "")
     SS.capture("quest", "k", fs, "English")

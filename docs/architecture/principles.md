@@ -159,12 +159,14 @@ The rules, each with what holds the addon to it:
 | A window the client opens itself is read after it opened: the window, the bags and the bars carry none of the addon's taint | A field can look harmless until the client's own open reads it | the window test's `craft` part |
 | A workaround names the client code it works around, in a comment beside it | The next reader has to be able to check that the client still does that | review |
 
-What the addon does on purpose, and why it is safe: a chat line is rewritten through the client's own
-`TransformMessages`, which the client built for addons and marks itself
-(`blizzard_sharedxml/scrollingmessageframe.lua`). The message frame's scroll bar then holds three values in the
-addon's name, read only by the scroll bar's own code. They are the only entries of `TOUCH_ALLOWED` in
-`pipeline/wfj/dev/client_surface.py`, each with its reason; a new entry there is a decision, never a way past a
-failing run.
+What the addon cannot avoid, and why it is safe: a scroll box, a scroll bar or a message frame keeps its scroll
+state in fields, and its own code writes them whenever the text under it changes. When the addon writes a text
+inside one (a calendar event's description), the widget's size handler runs in that same call; when it rewrites a
+chat line through the client's own `TransformMessages`, the client marks the stored line itself
+(`blizzard_sharedxml/scrollingmessageframe.lua`). The scroll state then carries the addon's name. Only the client's
+scroll code reads those fields, and nothing there reaches a protected call. They are the four entries of
+`TOUCH_ALLOWED` in `pipeline/wfj/dev/client_surface.py`, by field name with the reason; a new entry there is a
+decision, never a way past a failing run.
 
 When the game refuses an action because of the addon, the addon says so once in chat, and the bug report
 (`/wfj bug`) carries the first values of that session it found in its own name (`UI/TaintWatch.lua`).

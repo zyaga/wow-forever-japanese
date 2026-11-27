@@ -2212,6 +2212,7 @@ WATCH_SAVED = """WFJScanDB = {
 ["at"] = "2026-11-27 10:00:00",
 ["ours"] = {
 "MerchantFrame.selectedTab",
+"MerchantFrame.#4.#1.updateLock",
 },
 },
 ["CharacterFrame"] = {

@@ -14,6 +14,7 @@ an old setting stops working). A release moves those lines under its version num
 - The red error text ("Out of range.") is handled without replacing a function of the game's error frame, which had the same effect on the game's own code.
 - The game's currency transfer window and other text that sizes itself to fit are written without leaving a value on the game's text widget.
 - When the game does refuse an action because of the addon, a line in chat now says so once, with what to do (`/reload` clears it), and `/wfj bug` includes what the addon found so the cause can be fixed.
+- A Lua error raised dozens of times in a row from the mail window ("bad argument #1 to 'SetFont'") when the reveal key was pressed or a setting changed while a mail row's expiry text showed. The addon tried to put back a font it had never recorded for that text.
 
 ### Changed
 - The addon's background check for values it left on the game's tables is much lighter: one pass after login in steps of at most 2 milliseconds, then nothing unless the game refuses an action. Before, it ran all session and a single step could take long enough to feel.

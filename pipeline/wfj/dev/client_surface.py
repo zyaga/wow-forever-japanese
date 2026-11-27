@@ -4339,7 +4339,7 @@ end)()
 SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
 -- (a test holds this list to the parts table)
-local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, touch, send, covers, open, watch, freeze"
+local TEST_PART_NAMES = "craft, walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, touch, send, covers, open, watch, freeze"
 local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
@@ -4473,6 +4473,10 @@ SlashCmdList.WFJTEST = function(how)
   -- The run's parts in order, each named: `/wfjtest <name>` runs that part alone (with the parts it needs), so a
   -- change to one area is checked without the whole run. The whole run is the bar before a merge.
   local parts = {
+    -- First, and straight from the player's own key press: the client opens the crafting window only for a call
+    -- that comes from one, and refuses it from a timer (seen in game: a refused call, and the part read nothing).
+    -- The client refuses to open a window in a fight too.
+    { "craft", function(nxt) outOfCombat(function() WFJScanTaint.craft(nxt) end) end },
     { "walk", function(nxt) WFJScanWalk(nxt) end },
     -- a fight that starts during the load walk would end the live sweep before it began: it waits for the end
     { "live", function(nxt) outOfCombat(function() WFJScanLiveSweep(nxt) end) end, needs = "walk" },
@@ -4494,8 +4498,6 @@ SlashCmdList.WFJTEST = function(how)
     { "marks", function(nxt) outOfCombat(function() WFJScanMarksRead(nxt) end) end },
     -- the interface is hidden and shown again, which waits for the end of a fight too
     { "bagclick", function(nxt) outOfCombat(function() WFJScanBagClickRead(nxt) end) end },
-    -- the client refuses to open a window in a fight
-    { "craft", function(nxt) outOfCombat(function() WFJScanTaint.craft(nxt) end) end },
     -- after the windows were walked and opened, so the frames the addon makes on them exist
     { "touch", function(nxt) WFJScanTaint.touch(nxt) end },
     { "send", function(nxt) WFJScanTaint.send(nxt) end },
@@ -5413,16 +5415,19 @@ def client_field_names(ui: Path) -> set[str]:
     return names
 
 
-# A client field the addon may taint, with the reason. A line here is a decision, never a way past a failure.
-_SMF_BAR = ("a message frame's scroll bar, set from the frame's display refresh "
-            "(blizzard_sharedxml/shared/scroll/scrollutil.lua:175-195). A line the addon rewrote through the client's "
-            "TransformMessages is stored by a closure the client taints on purpose (scrollingmessageframe.lua:795-824), "
-            "so the refresh that reads it runs in the addon's name. Only scrollbar.lua and scrollcontroller.lua read "
-            "the value")
+# A client field the addon may taint, by the field's name, with the reason. A line here is a decision, never a way
+# past a failure.
+_SCROLL = ("the scroll state of a scroll box, scroll bar or message frame the addon's text sits in. The widget's own "
+           "code writes it when the text under it changes size or a line is rewritten: a text the addon writes fires "
+           "the widget's size handler in the same run (a calendar description, ScrollingFontTemplate), and a chat "
+           "line rewritten through the client's TransformMessages is stored by a closure the client taints on "
+           "purpose (scrollingmessageframe.lua:795-824). Only blizzard_sharedxml/shared/scroll reads these fields "
+           "(scrollbar.lua, scrollcontroller.lua, scrollbox.lua), and nothing there reaches a protected call")
 TOUCH_ALLOWED: dict[str, str] = {
-    "CommunitiesFrame.Chat.ScrollBar.scrollPercentage": _SMF_BAR,
-    "CommunitiesFrame.Chat.ScrollBar.visibleExtentPercentage": _SMF_BAR,
-    "CommunitiesFrame.Chat.ScrollBar.panExtentPercentage": _SMF_BAR,
+    "scrollPercentage": _SCROLL,
+    "visibleExtentPercentage": _SCROLL,
+    "panExtentPercentage": _SCROLL,
+    "updateLock": _SCROLL,
 }
 
 
@@ -5598,7 +5603,8 @@ def watch_problems(record: dict[str, Any] | None) -> list[str]:
     if record is None:
         return []
     out = [f"a window opened in play carries the addon's taint ({name}): {value}"
-           for name, rec in sorted(record["windows"].items()) for value in rec["ours"]]
+           for name, rec in sorted(record["windows"].items()) for value in rec["ours"]
+           if value.rsplit(".", 1)[-1] not in TOUCH_ALLOWED]
     out += [f"the game refused {action} in the addon's name in play: {rec['n']} times, {rec['fights']} in a fight "
             f"(first {rec['first']}, last {rec['last']})"
             for (addon, action), rec in sorted(record["refused"].items()) if addon == "WoWForeverJapanese"]
@@ -5638,7 +5644,8 @@ def open_problems(record: dict[str, Any] | None, watch: dict[str, Any] | None) -
     out = [f"open step: {name} showed and was not read" for name in sorted(set(record["windows"]))
            if not seen.get(name, {}).get("checked")]
     out += [f"a window the open step opened carries the addon's taint ({name}): {value}"
-            for name in sorted(set(record["windows"])) for value in seen.get(name, {}).get("ours", [])]
+            for name in sorted(set(record["windows"])) for value in seen.get(name, {}).get("ours", [])
+            if value.rsplit(".", 1)[-1] not in TOUCH_ALLOWED]
     return out
 
 
@@ -6292,7 +6299,9 @@ def _taint_reads(saved: str, part: Any, ui: Path | None, section: str | None = N
     if watch is not None and (part("watch") or part("open")):
         for name, rec in sorted(watch["windows"].items()):
             print(f"read in play  {name}: opened {rec['opens']} times, {rec['checked']} values read, "
-                  f"{len(rec['ours'])} in the addon's name (last {rec['at']})")
+                  f"{len(rec['ours'])} in the addon's name"
+                  + (f" ({sum(1 for v in rec['ours'] if v.rsplit('.', 1)[-1] in TOUCH_ALLOWED)} of them scroll state, "
+                     f"allowed)" if rec["ours"] else "") + f" (last {rec['at']})")
         minutes = watch["fight_seconds"] // 60
         ours = sum(rec["n"] for (addon, _), rec in watch["refused"].items() if addon == "WoWForeverJapanese")
         print(f"in play  {watch['fights']} fights ({minutes} minutes in them); actions the game refused in the "

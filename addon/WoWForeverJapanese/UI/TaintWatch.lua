@@ -619,6 +619,7 @@ function TaintWatch.walkAgain()
   local want = originRound + 1
   if want > TaintWatch.ORIGIN_ROUNDS then return false end
   if originWanted < want then originWanted = want end
+  TaintWatch.walkStart()
   return true
 end
 
@@ -632,6 +633,28 @@ end
 -- Whether the walk has nothing left to read.
 function TaintWatch.walkDone()
   return #originQueue == 0 and not seeding and not roundOpen and originRound >= originWanted
+end
+
+-- The walk's timer runs only while there is something to read: it stops itself at the end of the last round asked
+-- for, and a new round starts it again. → whether it runs
+local originTicker
+local function originTick()
+  TaintWatch.originStep()
+  if originTicker and TaintWatch.walkDone() then
+    if type(originTicker.Cancel) == "function" then originTicker:Cancel() end
+    originTicker = nil
+  end
+end
+function TaintWatch.walkStart()
+  if originTicker then return true end
+  local timer = C.resolve("C_Timer")
+  -- not before the watch was started: a round asked for earlier waits for it
+  if not TaintWatch.walkArmed or TaintWatch.walkDone() or type(timer) ~= "table"
+      or type(timer.NewTicker) ~= "function" then
+    return false
+  end
+  originTicker = timer.NewTicker(TaintWatch.ORIGIN_EVERY, WFJ.Perf.wrap("idle.watch.origin", originTick))
+  return originTicker ~= nil
 end
 
 -- The rounds asked for, read to their end in one go, with no time limit on a step: for a check that cannot wait
@@ -1003,7 +1026,8 @@ function TaintWatch.init()
         TaintWatch.sweepBars(barAt)
       end
     end))
-    timer.NewTicker(TaintWatch.ORIGIN_EVERY, WFJ.Perf.wrap("idle.watch.origin", TaintWatch.originStep))
   end
+  TaintWatch.walkArmed = true
+  TaintWatch.walkStart()
   return n
 end
