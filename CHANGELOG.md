@@ -19,7 +19,7 @@ an old setting stops working). A release moves those lines under its version num
 - The guild and community chat's date lines and "Message of the Day" label are shown in Japanese without changing the chat's stored lines. Changing them left the chat's scroll bar marked as changed by an addon.
 
 ### Changed
-- The addon's background check for values it left on the game's tables is much lighter: one pass after login in steps of at most 2 milliseconds, then nothing unless the game refuses an action. Before, it ran all session and a single step could take long enough to feel.
+- The addon now checks, in the background, for values it left on the game's tables: one pass after login in steps of at most 2 milliseconds, then nothing unless the game refuses an action.
 - With Japanese names on, the Professions window shows each recipe's name in its list and each reagent's name in the crafting form in Japanese, the counts as the game writes them, and the tools a recipe requires ("Requires: Forge"). A name with no Japanese yet stays English.
 - The bug report form asks whether the problem still happens with only this addon on, and `/wfj bug` fills in the names of the other addons you have loaded, so a problem that needs two addons together can be found.
 

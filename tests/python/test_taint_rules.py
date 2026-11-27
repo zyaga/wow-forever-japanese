@@ -1,4 +1,4 @@
-"""Rules that keep the addon's writes off the client's own tables (docs/architecture/principles.md, "Taint").
+"""Rules that keep the addon's writes off the client's own tables (docs/architecture/principles.md, section 10).
 
 A value the addon writes on a table the client's code reads makes that code run in the addon's name, and the
 client then refuses protected actions (casting from the action bars, selling to a vendor) for the rest of the

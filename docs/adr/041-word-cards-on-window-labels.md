@@ -67,8 +67,10 @@ names across its UI modules.
   still shows the attached text) keeps a stale cover from drawing, unchanged.
 - A label holding `|` (a colour code) gets no card, as for prose (ADR-036 decision 9).
 - `attach` stays inside Render's `pcall`; a failure is counted, never raised.
-- A cover sets `ignoreInLayout = true`, so it never counts toward the size of a Blizzard `ResizeLayout` frame the
-  label sits in.
+- A cover never counts toward the size of a Blizzard layout frame the label sits in. It was first done with
+  `ignoreInLayout = true` on the cover; the client's layout code reads that field, and the read ran the client in
+  the addon's name. The cover now carries no field and sits one level above a layout frame, following the label's
+  show and hide.
 - The denylist must follow new surfaces. One pytest checks that every `NON_WINDOW` entry names a surface some UI
   module registers, so the list cannot rot into names that match nothing; `test_every_registered_surface_is_classified`
   resolves every surface name a module hands to `Labels` / `LabelTree` / the Communities kit / `Render` /
