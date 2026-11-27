@@ -31,6 +31,24 @@ local function readFont(fs)
   return { path = path, size = size, flags = flags }
 end
 
+-- Writes `text` on a widget without running a client mixin's own SetText in the addon's name. A client FontString
+-- can carry a Lua SetText of its mixin that writes fields on the widget (AutoScalingFontStringMixin keeps
+-- baseLineHeight [verified: forever blizzard_sharedxml/secureutil.lua:54-74]); called from the addon, those fields
+-- are written by the addon, and the client's next SetText on the widget reads them and runs tainted. So a widget
+-- whose table holds its own SetText gets the widget type's plain SetText, and its mixin's fit afterwards only when
+-- the fit writes no field (the mixin has measured the line before).
+local function setText(fs, text)
+  local mt = type(rawget) == "function" and rawget(fs, "SetText") ~= nil and getmetatable(fs) or nil
+  local index = type(mt) == "table" and mt.__index or nil
+  local native = type(index) == "table" and index.SetText or nil
+  if type(native) ~= "function" then return fs:SetText(text) end
+  native(fs, text)
+  if type(rawget(fs, "ScaleTextToFit")) == "function" and rawget(fs, "baseLineHeight") ~= nil then
+    fs:ScaleTextToFit()
+  end
+end
+SurfaceState.setText = setText
+
 -- The original font back on a record's widget; an original with no size takes the size that was applied.
 -- Called only while a font is applied.
 local function putBack(rec)
@@ -117,7 +135,7 @@ function SurfaceState.apply(surface, key, text, font)
     putBack(rec)
     rec.appliedFont = nil
   end
-  rec.fs:SetText(text)
+  setText(rec.fs, text)
   rec.applied = text
   rec.last = { text = text, font = font }
   return true, fontOk
@@ -143,7 +161,7 @@ function SurfaceState.restore(surface, key)
   if not rec then return false end
   local wrote = false
   if rec.applied ~= nil then
-    rec.fs:SetText(rec.en)
+    setText(rec.fs, rec.en)
     rec.applied = nil
     wrote = true
   end
@@ -171,7 +189,7 @@ function SurfaceState.rewrite(rec)
   if SurfaceState.secret(current) or current ~= rec.en then return false end
   local font = rec.appliedFont
   if font and rec.fs:GetFont() ~= font.path then rec.fs:SetFont(font.path, font.size, font.flags) end
-  rec.fs:SetText(rec.applied)
+  setText(rec.fs, rec.applied)
   return true
 end
 
@@ -197,7 +215,7 @@ function SurfaceState.drop(surface, key)
   local wrote = false
   local current = rec.fs:GetText()
   if rec.applied ~= nil and not SurfaceState.secret(current) and current == rec.applied then
-    rec.fs:SetText(rec.en)
+    setText(rec.fs, rec.en)
     wrote = true
   end
   if rec.appliedFont then

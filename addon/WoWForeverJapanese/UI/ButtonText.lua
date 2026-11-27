@@ -46,7 +46,8 @@ function ButtonText.of(button)
   if not ButtonText.is(button) then return nil end
   a = { button = button, font = nil }
   function a.GetText() return button:GetText() end
-  function a.SetText(_, text) button:SetText(text) end
+  -- through SurfaceState's write: a button's mixin can carry its own SetText too
+  function a.SetText(_, text) WFJ.SurfaceState.setText(button, text) end
   function a.GetFont()
     local fs = button:GetFontString()
     if not fs then return nil end

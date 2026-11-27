@@ -262,7 +262,7 @@ function Labels.menuText(fs)
   if a then return a end
   a = {}
   function a.GetText() return fs:GetText() end
-  function a.SetText(_, text) fs:SetText(text) end
+  function a.SetText(_, text) WFJ.SurfaceState.setText(fs, text) end
   function a.GetFont() return fs:GetFont() end
   function a.SetFont(_, path, size, flags)
     local set = fontStringSetFont()
