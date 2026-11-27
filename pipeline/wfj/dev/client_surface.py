@@ -4053,7 +4053,7 @@ end
 --   windows[<frame>] = { opens, reads, checked, at, ours = { "<name>" } }   ours: a failure
 ;(function()
   local WATCH_DEPTH = 4 -- tables under a window that are read
-  local WATCH_KEYS = 6000 -- values read per window
+  local WATCH_KEYS = 40000 -- values read per window (the first run stopped at 6,000 on every window)
   local WATCH_READS = 3 -- reads of one window per build and addon code
   local WATCH_OURS = 60
   local WATCH_ALWAYS = { "CharacterBag0Slot", "CharacterBag1Slot", "CharacterBag2Slot", "CharacterBag3Slot",
@@ -4210,8 +4210,10 @@ end
   --   refused  why it did not run (no button to click, or the player never pressed)
   local OPEN_BUTTONS = { "CharacterMicroButton", "ProfessionMicroButton", "PlayerSpellsMicroButton",
     "SpellbookMicroButton", "TalentMicroButton", "AchievementMicroButton", "QuestLogMicroButton", "GuildMicroButton",
-    "LFDMicroButton", "CollectionsMicroButton", "EJMicroButton", "LegacyMicroButton", "HousingMicroButton",
-    "MainMenuBarBackpackButton" }
+    "LFDMicroButton", "CollectionsMicroButton", "LegacyMicroButton", "MainMenuBarBackpackButton" }
+  -- Left out: EJMicroButton and HousingMicroButton. Forever has the buttons and reports them shown and enabled, but
+  -- not what they open: their own click handlers raise (CanShowEncounterJournal and HousingFramesUtil are nil,
+  -- blizzard_micromenu/mainline/mainmenubarmicrobuttons.lua:1832, 1189) [seen in game].
   local OPEN_TEXT_MAX = 240 -- characters of macro text per press
   local OPEN_WAIT = 120 -- seconds the player is given to press
   local openButton
