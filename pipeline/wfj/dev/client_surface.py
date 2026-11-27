@@ -4742,7 +4742,12 @@ local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
 SlashCmdList.WFJTEST = function(how)
-  if not japaneseOn() or InCombatLockdown() then return end
+  -- the isolated test runs with translation off as well: one run with the addon writing nothing is half of it
+  if strtrim(how or "") == "isolate" then
+    if InCombatLockdown() then return end
+  else
+    if not japaneseOn() or InCombatLockdown() then return end
+  end
   if characterShown() then -- the test closes windows as it goes, and must not close this one (see above)
     print("WFJ test: close the character window first, then run it again")
     return
