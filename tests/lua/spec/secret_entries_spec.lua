@@ -360,9 +360,12 @@ describe("UI error messages in combat", function()
     }
     assert.are.equal(0, WFJ.Errors.render(frame, "Out of range.", S("number")))
     assert.are.equal(1, WFJ.Errors.onAddMessage(frame, "Out of range.", 1, 0, 0, 1, S("number")))
-    local wrapped = WFJ.Errors.wrapShould(function() return true end)
-    assert.is_true(wrapped(frame, 5, s))
-    assert.is_true(wrapped(frame, S("number"), "Out of range."))
+    -- the listener ahead of the client's frame compares neither a secret message nor a secret id
+    _G.UIErrorsFrame = frame
+    WFJ.Compat.declare(WFJ.Errors.SURFACE, "frame", { "UIErrorsFrame" })
+    assert.are.equal(0, WFJ.Errors.onEvent(nil, "UI_ERROR_MESSAGE", 5, s))
+    assert.are.equal(0, WFJ.Errors.onEvent(nil, "UI_ERROR_MESSAGE", S("number"), "Out of range."))
+    _G.UIErrorsFrame = nil
   end)
 end)
 

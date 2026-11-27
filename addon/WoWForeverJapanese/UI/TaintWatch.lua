@@ -601,7 +601,6 @@ local function originHit(label, by, root)
   WFJ.Diag.log("origin", key, fields)
 end
 
--- One step of the walk. → the number of keys checked
 -- Another round of the walk after the one that is open or done, ORIGIN_ROUNDS a session at most. → whether one
 -- will run
 function TaintWatch.walkAgain()
@@ -623,20 +622,16 @@ function TaintWatch.walkDone()
   return #originQueue == 0 and not roundOpen and originRound >= originWanted
 end
 
--- The rounds asked for, read to their end in one go: for a check that cannot wait on the timer.
+-- The rounds asked for, read to their end in one go, with no time limit on a step: for a check that cannot wait
+-- on the timer.
+local unhurried = false
 function TaintWatch.finish()
+  unhurried = true
   for _ = 1, 1000000 do
-    if TaintWatch.walkDone() then return end
+    if TaintWatch.walkDone() then break end
     TaintWatch.originStep()
   end
-end
-
--- One step of the walk. → the number of keys checked
--- Another round of the walk, asked for when the game refuses an action. → whether one will run
-function TaintWatch.walkAgain()
-  if originWanted >= TaintWatch.ORIGIN_ROUNDS then return false end
-  originWanted = originWanted + 1
-  return true
+  unhurried = false
 end
 
 -- One step of the walk. → the number of keys checked
@@ -644,7 +639,7 @@ function TaintWatch.originStep()
   -- between rounds nothing is read: the queue is empty and no round is owed
   if TaintWatch.walkDone() then return 0 end
   local now = C.resolve("debugprofilestop")
-  local started = type(now) == "function" and now() or nil
+  local started = not unhurried and type(now) == "function" and now() or nil
   local checked = 0
   local function spent()
     return checked >= TaintWatch.ORIGIN_KEYS or (started ~= nil and now() - started >= TaintWatch.ORIGIN_MS)
