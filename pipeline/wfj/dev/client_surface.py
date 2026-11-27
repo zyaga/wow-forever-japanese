@@ -4096,7 +4096,15 @@ end
     local build = tostring((select(2, GetBuildInfo())))
     local w = WFJScanDB.watch
     if type(w) ~= "table" or w.code ~= WFJScanAddonCode or w.build ~= build or type(w.windows) ~= "table" then
-      w = { code = WFJScanAddonCode, build = build, windows = {} }
+      -- what the last code or build left in the addon's name is still worth tracing on this one
+      local suspects = {}
+      for _, rec in pairs(type(w) == "table" and type(w.windows) == "table" and w.windows or {}) do
+        for _, path in ipairs(type(rec.ours) == "table" and rec.ours or {}) do suspects[#suspects + 1] = path end
+      end
+      for _, path in ipairs(type(w) == "table" and type(w.suspects) == "table" and w.suspects or {}) do
+        suspects[#suspects + 1] = path
+      end
+      w = { code = WFJScanAddonCode, build = build, windows = {}, suspects = suspects }
       WFJScanDB.watch = w
     end
     return w
@@ -4249,16 +4257,96 @@ end
     end
   end
 
+  -- Who wrote it. A value the watcher found in the addon's name says nothing about the call that wrote it. So at the
+  -- next login, before the window is shown again, every function of the tables on the way to that value gets a
+  -- post-hook, and the first one after which the value reads in the addon's name is kept with its call stack: the
+  -- stack runs from that function back to what called it. Into `WFJScanDB.watch.traces`:
+  --   { path, after = "<table>:<function>", stack }
+  local TRACE_SKIP = { scrollPercentage = true, visibleExtentPercentage = true, panExtentPercentage = true,
+    updateLock = true }
+  local TRACE_MAX = 12
+  -- the table a watched name leads to and its last key: "CharacterFrame.#19.#4.#9.factionID"
+  local function traceResolve(path, upTo)
+    local parts = {}
+    for part in path:gmatch("[^.]+") do parts[#parts + 1] = part end
+    local t = _G[parts[1]]
+    for i = 2, (upTo or #parts - 1) do
+      if type(t) ~= "table" then return nil end
+      local index = parts[i]:match("^#(%%d+)$")
+      if index then
+        local ok, children = pcall(function() return { t:GetChildren() } end)
+        t = ok and children[tonumber(index)] or nil
+      else
+        t = rawget(t, parts[i])
+      end
+    end
+    return type(t) == "table" and t or nil, parts[#parts], #parts
+  end
+  local function traceArm()
+    local w = watchDb()
+    if not w then return end
+    local pending, hooked = {}, {}
+    local function want(path)
+      if type(path) == "string" and not TRACE_SKIP[path:match("([^.]+)$") or ""] then pending[path] = true end
+    end
+    for _, rec in pairs(w.windows) do
+      for _, path in ipairs(type(rec.ours) == "table" and rec.ours or {}) do want(path) end
+    end
+    for _, path in ipairs(type(w.suspects) == "table" and w.suspects or {}) do want(path) end
+    if next(pending) == nil then return end
+    w.traces = {}
+    local checking = false
+    local function check(label)
+      -- its own reads may run a hooked function (a frame that keeps GetChildren as a field): never from inside
+      if checking or next(pending) == nil then return end
+      checking = true
+      for path in pairs(pending) do
+        local t, key = traceResolve(path)
+        if t then
+          local ok, isSecure, owner = pcall(issecurevariable, t, key)
+          if ok and not isSecure and owner == "WoWForeverJapanese" then
+            pending[path] = nil
+            if #w.traces < TRACE_MAX then
+              w.traces[#w.traces + 1] = { path = path, after = label, stack = debugstack(3, 40, 40) }
+            end
+          end
+        end
+      end
+      checking = false
+    end
+    local function hookAll(t, label)
+      if type(t) ~= "table" or hooked[t] then return end
+      hooked[t] = true
+      for key, value in pairs(t) do
+        if type(key) == "string" and type(value) == "function" then
+          pcall(hooksecurefunc, t, key, function() check(label .. ":" .. key) end)
+        end
+      end
+      if type(t.HookScript) == "function" then
+        for _, script in ipairs({ "OnShow", "OnEvent", "OnHide" }) do
+          pcall(t.HookScript, t, script, function() check(label .. " script " .. script) end)
+        end
+      end
+    end
+    for path in pairs(pending) do
+      local _, _, count = traceResolve(path)
+      for upTo = 1, (count or 1) - 1 do
+        hookAll(traceResolve(path, upTo), (path:match(("[^.]+%%."):rep(upTo - 1) .. "[^.]+") or path))
+      end
+    end
+  end
+
   -- under pcall: a client without one of these keeps the rest of the test
   pcall(function()
     if type(ShowUIPanel) == "function" then hooksecurefunc("ShowUIPanel", function(frame) watchShown(frame) end) end
     local watcher = CreateFrame("Frame")
     for event in pairs(WATCH_EVENTS) do pcall(watcher.RegisterEvent, watcher, event) end
     for _, event in ipairs({ "ADDON_ACTION_BLOCKED", "ADDON_ACTION_FORBIDDEN", "PLAYER_REGEN_DISABLED",
-      "PLAYER_REGEN_ENABLED" }) do
+      "PLAYER_REGEN_ENABLED", "PLAYER_LOGIN" }) do
       pcall(watcher.RegisterEvent, watcher, event)
     end
     watcher:SetScript("OnEvent", function(_, event, a1, a2)
+      if event == "PLAYER_LOGIN" then return pcall(traceArm) end
       if event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then return watchRefused(a1, a2) end
       if event == "PLAYER_REGEN_DISABLED" then return watchFight(true) end
       if event == "PLAYER_REGEN_ENABLED" then return watchFight(false) end
@@ -5615,7 +5703,13 @@ def read_watch(text: str) -> dict[str, Any] | None:
         addon, action = (str(key).split("\t", 1) + [""])[:2]
         refused[addon, action] = {"n": int(rec.get("n") or 0), "fights": int(rec.get("fights") or 0),
                                   "first": str(rec.get("first") or ""), "last": str(rec.get("last") or "")}
+    traces = []
+    kept = watch.get("traces")
+    for row in (kept.positional() if kept is not None else []):
+        traces.append({"path": str(row.get("path") or ""), "after": str(row.get("after") or ""),
+                       "stack": str(row.get("stack") or "")})
     return {"build": str(watch.get("build") or ""), "code": str(watch.get("code") or ""), "windows": out,
+            "traces": traces,
             "refused": refused, "fights": int(watch.get("fights") or 0),
             "fight_seconds": int(watch.get("fightSeconds") or 0)}
 
@@ -6286,6 +6380,30 @@ def client_build_beside(saved: Path) -> str | None:
     return None
 
 
+def _print_watch(watch: dict[str, Any]) -> None:
+    """Prints what the test addon read while the player played: each window, the fights and refused actions, who
+    wrote a value found in the addon's name, and the expected windows not opened yet."""
+    for name, rec in sorted(watch["windows"].items()):
+        print(f"read in play  {name}: opened {rec['opens']} times, {rec['checked']} values read, "
+              f"{len(rec['ours'])} in the addon's name"
+              + (f" ({sum(1 for v in rec['ours'] if v.rsplit('.', 1)[-1] in TOUCH_ALLOWED)} of them scroll state, "
+                 f"allowed)" if rec["ours"] else "") + f" (last {rec['at']})")
+    minutes = watch["fight_seconds"] // 60
+    ours = sum(rec["n"] for (addon, _), rec in watch["refused"].items() if addon == "WoWForeverJapanese")
+    print(f"in play  {watch['fights']} fights ({minutes} minutes in them); actions the game refused in the "
+          f"addon's name: {ours}")
+    for (addon, action), rec in sorted(watch["refused"].items()):
+        if addon != "WoWForeverJapanese":
+            print(f"in play  refused in another addon's name ({addon}): {action}, {rec['n']} times")
+    for trace in watch["traces"]:
+        print(f"in play  {trace['path']} was written in the addon's name by {trace['after']}:")
+        for line in trace["stack"].splitlines():
+            print("in play      " + line)
+    unread = [name for name in WATCH_EXPECTED if not watch["windows"].get(name, {}).get("checked")]
+    if unread:
+        print("read in play  not opened yet on this build and addon code: " + ", ".join(unread))
+
+
 def _taint_reads(saved: str, part: Any, ui: Path | None, section: str | None = None) -> list[str]:
     """Prints what the crafting, touch, chat send, cover, play and open-step reads saw and gives back their problems; `part(name)` says
     whether this run holds that part."""
@@ -6321,21 +6439,7 @@ def _taint_reads(saved: str, part: Any, ui: Path | None, section: str | None = N
     out += covers_problems(covers) if part("covers") else []
     watch = read_watch(saved)
     if watch is not None and (part("watch") or part("open")):
-        for name, rec in sorted(watch["windows"].items()):
-            print(f"read in play  {name}: opened {rec['opens']} times, {rec['checked']} values read, "
-                  f"{len(rec['ours'])} in the addon's name"
-                  + (f" ({sum(1 for v in rec['ours'] if v.rsplit('.', 1)[-1] in TOUCH_ALLOWED)} of them scroll state, "
-                     f"allowed)" if rec["ours"] else "") + f" (last {rec['at']})")
-        minutes = watch["fight_seconds"] // 60
-        ours = sum(rec["n"] for (addon, _), rec in watch["refused"].items() if addon == "WoWForeverJapanese")
-        print(f"in play  {watch['fights']} fights ({minutes} minutes in them); actions the game refused in the "
-              f"addon's name: {ours}")
-        for (addon, action), rec in sorted(watch["refused"].items()):
-            if addon != "WoWForeverJapanese":
-                print(f"in play  refused in another addon's name ({addon}): {action}, {rec['n']} times")
-        unread = [name for name in WATCH_EXPECTED if not watch["windows"].get(name, {}).get("checked")]
-        if unread:
-            print("read in play  not opened yet on this build and addon code: " + ", ".join(unread))
+        _print_watch(watch)
     out += watch_problems(watch) if part("watch") else []
     if section == "open":
         opened = read_open(saved)
