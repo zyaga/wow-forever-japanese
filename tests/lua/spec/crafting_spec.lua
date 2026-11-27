@@ -2,7 +2,8 @@
 -- ProfessionsFrame.CraftingPage replayed from the extracted 1.60.1 source: blizzard_professions/
 -- blizzard_professionscrafting.lua|xml (ValidateControls' Create / Create All buttons, the link button's tooltip,
 -- the static buttons), blizzard_professionstemplates (the recipe list, the schematic form's labels and Init) and
--- the crafting results panel's SetTitle. Recipe, item and profession names and the recipe's verbs stay English.
+-- the crafting results panel's SetTitle. Recipe, item and profession names are names (Japanese only while names are
+-- on); the recipe's verbs stay English.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
@@ -404,7 +405,7 @@ describe("the crafting page on the Forever client: list rows, enchant slot, help
       box():initFrame(recipe, node({ recipeInfo = { name = "Favorites" } }),
         function(r) r.Label:SetText("Favorites") end)
       assert.are.equal("Favorites", recipe.Label:GetText())
-      assert.is_true(WFJ.Labels.forbidden(recipe.Label))
+      assert.is_true(WFJ.Labels.forbidden(recipe.Label)) -- never a dictionary word
       assert.are.equal("確実にスキルが3上昇する", hover(recipe.SkillUps, "Guaranteed chance of gaining 3 skill ups"))
       assert.are.equal("スキル上昇の確率は低い", hover(recipe.SkillUps, "Low chance of gaining skill"))
       alt(true)
@@ -527,6 +528,49 @@ describe("the crafting page on the Forever client: list rows, enchant slot, help
     assert.are.equal(_G.PROFESSIONS_TRACK_RECIPE, track:GetText())
     alt(false)
     _G.InspectRecipeFrame = nil
+  end)
+
+  it("with names on a recipe row and a reagent slot show the name's Japanese, the count and colour kept", function()
+    setup(true)
+    WFJ.Data.add("name", {
+      [WFJ.Names.key("Copper Bar")] = "カッパー・バー\tかっぱー・ばー",
+      [WFJ.Names.key("Smelt Copper")] = "スメルト・カッパー\tすめると・かっぱー",
+    })
+    WFJ.State.setNames(true)
+    local function recipeRow(name)
+      local row = CreateFrame("Button")
+      row.Label, row.SkillUps = fs(""), CreateFrame("Button", nil, row)
+      box():initFrame(row, node({ recipeInfo = { name = name } }), function(r) r.Label:SetText(name) end)
+      return row
+    end
+    assert.are.equal("スメルト・カッパー", recipeRow("Smelt Copper").Label:GetText())
+    assert.are.equal("Smelt Tin", recipeRow("Smelt Tin").Label:GetText()) -- no line in the name list
+    assert.are.equal("Favorites", recipeRow("Favorites").Label:GetText()) -- a dictionary word is not a name
+    -- the slots of the form: followed once each, written again by the slot whenever the bags change
+    local function slot(text)
+      return { Name = fs(text), Update = function(self, now) self.Name:SetText(now or text) end }
+    end
+    local slots = { slot("|cffffffff3/5 Copper Bar|r"), slot("2 Copper Bar"), slot("|cffffffff1/1 Unknown Dye|r"),
+      slot("|cffffffffAdd Enchant|r") }
+    form().reagentSlotPool = { EnumerateActive = function()
+      local i = 0
+      return function()
+        i = i + 1
+        return slots[i]
+      end
+    end }
+    form():Init(C.recipe)
+    assert.are.equal("|cffffffff3/5 カッパー・バー|r", slots[1].Name:GetText())
+    assert.are.equal("2 カッパー・バー", slots[2].Name:GetText())
+    assert.are.equal("|cffffffff1/1 Unknown Dye|r", slots[3].Name:GetText())
+    assert.are.equal("|cffffffffAdd Enchant|r", slots[4].Name:GetText()) -- no count: not a reagent line
+    slots[1]:Update("|cffff20200/5 Copper Bar|r") -- the slot's own Update, after the bags changed
+    assert.are.equal("|cffff20200/5 カッパー・バー|r", slots[1].Name:GetText())
+    alt(true)
+    assert.are.equal("|cffff20200/5 Copper Bar|r", slots[1].Name:GetText())
+    alt(false)
+    WFJ.State.setNames(false)
+    assert.are.equal("Smelt Copper", recipeRow("Smelt Copper").Label:GetText())
   end)
 
   it("the create buttons' disabled reason, the required tools, Track Recipe, the enchant slot's replace hint"
