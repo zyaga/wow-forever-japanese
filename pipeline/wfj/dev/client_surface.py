@@ -3023,6 +3023,17 @@ end
 -- The reads below look for a value the addon wrote where the client's own code reads it. They sit in one function
 -- of their own, reached through this table: the file's chunk may hold 200 local names at once, and it is near that.
 local WFJScanTaint = {}
+-- The addon's popup dictionary covers, as it holds them: each one's state (its frame under `frame`, its text, its
+-- spans, the marks drawn on it). A cover's frame carries no field, so the state is asked for, never read off it.
+WFJScanTaint.coverStates = function()
+  local out = {}
+  if type(WFJ_ReadingCovers) == "function" then
+    pcall(WFJ_ReadingCovers, function(_, frame, _, state)
+      if type(state) == "table" and type(frame) == "table" then out[#out + 1] = state end
+    end)
+  end
+  return out
+end
 ;(function()
 -- The touch read. Everything of the addon's that the client's own code could read: a client frame's field that
 -- carries the addon's taint (the addon wrote it, or replaced a function there), and a frame the addon made that sits
@@ -3504,30 +3515,37 @@ local function WFJScanMarksRead(done)
   if not ok then record.refused = tostring(err) end
   if not wasOpen and _G.WFJKnownWordsWindow then _G.WFJKnownWordsWindow:Hide() end
   local function look()
+  -- One carrier of marks: `held` holds what the addon keeps about it, `frame` is what is on screen. A chat line's
+  -- overlay is its own frame and holds its own fields; a cover's frame carries none, and its state is asked for.
+  local function judge(held, frame)
+    if frame:IsForbidden() then return end
+    if type(held.markTex) ~= "table" and not (held.marksPlace and held.spans) then return end
+    record.frames = record.frames + 1
+    local showing = 0
+    for _, mark in ipairs(held.markTex or {}) do
+      if mark:IsShown() then showing = showing + 1 end
+    end
+    record.shown = record.shown + showing
+    local owner = held.fs
+    local now = owner and owner.GetText and owner:GetText() or held.text
+    if showing > 0 and frame:IsVisible() and (held.text == nil or now ~= held.text) then
+      record.stale[#record.stale + 1] = tostring(held.surface or "chat")
+    end
+    if held.marksPlace and held.spans and frame:IsVisible() then record.texts = record.texts + 1 end
+    local tag = held.scoreFs
+    if tag and tag:IsShown() and frame:IsVisible() then
+      local said = tag:GetText()
+      if type(said) ~= "string" or not said:find("%%d+%%%%") then record.tags[#record.tags + 1] = tostring(said) end
+    end
+  end
   local frame = EnumerateFrames()
   while frame do
     pcall(function()
-      if frame:IsForbidden() or type(frame.markTex) ~= "table" then return end
-      record.frames = record.frames + 1
-      local showing = 0
-      for _, mark in ipairs(frame.markTex) do
-        if mark:IsShown() then showing = showing + 1 end
-      end
-      record.shown = record.shown + showing
-      local owner = frame.fs
-      local now = owner and owner.GetText and owner:GetText() or frame.text
-      if showing > 0 and frame:IsVisible() and (frame.text == nil or now ~= frame.text) then
-        record.stale[#record.stale + 1] = tostring(frame.surface or "chat")
-      end
-      if frame.marksPlace and frame.spans and frame:IsVisible() then record.texts = record.texts + 1 end
-      local tag = frame.scoreFs
-      if tag and tag:IsShown() and frame:IsVisible() then
-        local said = tag:GetText()
-        if type(said) ~= "string" or not said:find("%%d+%%%%") then record.tags[#record.tags + 1] = tostring(said) end
-      end
+      if type(frame.markTex) == "table" then judge(frame, frame) end
     end)
     frame = EnumerateFrames(frame)
   end
+  for _, state in ipairs(WFJScanTaint.coverStates()) do pcall(judge, state, state.frame) end
   local known = type(WFJ_Known) == "table" and type(WFJ_Known.ja) == "table" and WFJ_Known.ja or {}
   record.bare = record.texts > 0 and record.shown == 0 and next(known) == nil
     and saved["marks.enabled"] ~= false and saved["marks.underline"] ~= false
@@ -3849,7 +3867,13 @@ local function WFJScanFreezeRead(done)
     for _, child in ipairs({ copy:GetChildren() }) do
       if child ~= copy.NineSlice and child:IsShown() and child.IsMouseMotionEnabled and child:IsMouseMotionEnabled() then
         record.cards = record.cards + 1
-        if type(child.text) == "string" and type(child.spans) == "table" then covers[#covers + 1] = child end
+      end
+    end
+    -- the covers laid on this copy, as the addon holds them: a cover's frame carries no field to read
+    for _, state in ipairs(WFJScanTaint.coverStates()) do
+      if type(state.text) == "string" and type(state.spans) == "table" and state.frame:IsShown()
+          and state.frame:GetParent() == copy then
+        covers[#covers + 1] = state
       end
     end
     -- every Japanese character of every copied line: under a word card or not

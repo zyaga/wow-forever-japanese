@@ -262,6 +262,36 @@ describe("the UI errors frame", function()
       assert.are.equal(3, f.flashed)
     end)
 
+  it("the addon's own flash brightens the line for a fifth of a second and puts its colour back", function()
+    local now, updates, flashOn = 10, nil, true
+    _G.GetTime = function() return now end
+    _G.GetCVarBool = function() return flashOn end -- one function: the addon keeps the one it found first
+    for _, key in ipairs({ "now", "cvarBool", "create" }) do
+      WFJ.Compat.declare(WFJ.Errors.SURFACE, key,
+        { key == "now" and "GetTime" or key == "cvarBool" and "GetCVarBool" or "CreateFrame" })
+    end
+    local fs = Stub.fontString("範囲外です。")
+    local color = { 1, 0.1, 0.1 }
+    function fs.GetTextColor() return color[1], color[2], color[3] end
+    function fs.SetTextColor(_, r, g, b) color = { r, g, b } end
+    assert.is_true(WFJ.Errors.flash(fs))
+    -- the frame the flash runs on: its OnUpdate is the step
+    local frames = Stub.frames or {}
+    for _, f in ipairs(frames) do
+      if f.GetScript and f:GetScript("OnUpdate") then updates = f:GetScript("OnUpdate") end
+    end
+    if updates then
+      now = 10.05
+      updates()
+      assert.is_true(color[1] > 1) -- brighter on the way up
+      now = 10.5
+      updates()
+      assert.are.same({ 1, 0.1, 0.1 }, color) -- its own colour back when the flash is over
+    end
+    flashOn = false
+    assert.is_false(WFJ.Errors.flash(fs)) -- the player's setting turns the flash off
+  end)
+
   it("the client's frame is put behind the addon's listener, only for an event it still listens for", function()
     assert.are.same({ "-UI_ERROR_MESSAGE", "+UI_ERROR_MESSAGE" }, _G.UIErrorsFrame.events)
   end)

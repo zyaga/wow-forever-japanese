@@ -53,6 +53,13 @@ describe("Core/Names (the Lua twin of wfj.core.names for names on screen)", func
       WFJ.Names.value("|cffffffff|Hitem:2589::::::::1:::::|h[Linen Cloth]|h|r"))
     assert.are.equal("|Hitem:2589|h[リネン・クロス]|hx2", WFJ.Names.value("|Hitem:2589|h[Linen Cloth]|hx2"))
     assert.is_nil(WFJ.Names.value("|Hitem:1|h[Unknown Thing]|h"))
+    -- a link with a bare label (a recipe's required tool), and several in one value, an unmet one in its colour
+    WFJ.Data.add("name", { [WFJ.Names.key("Forge")] = "フォージ\tふぉーじ", [WFJ.Names.key("Anvil")] = "アンビル\tあんびる" })
+    assert.are.equal("|Hrequirement|hフォージ|h", WFJ.Names.value("|Hrequirement|hForge|h"))
+    assert.are.equal("|Hrequirement|hアンビル|h, |cffff2020|Hrequirement|hフォージ|h|r",
+      WFJ.Names.value("|Hrequirement|hAnvil|h, |cffff2020|Hrequirement|hForge|h|r"))
+    assert.are.equal("|Hrequirement|hアンビル|h, |Hrequirement|hRunic Loom|h",
+      WFJ.Names.value("|Hrequirement|hAnvil|h, |Hrequirement|hRunic Loom|h")) -- the one with no Japanese is kept
     assert.is_nil(WFJ.Names.value("Reyn"))
     assert.is_nil(WFJ.Names.value(nil))
   end)

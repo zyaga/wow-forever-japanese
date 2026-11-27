@@ -61,6 +61,19 @@ describe("the report window", function()
     assert.are.equal(0, #WFJ.ErrorLog.unsent())
   end)
 
+  it("lists the other loaded addons by folder name: this addon, its voice packs and unloaded ones left out", function()
+    assert.are.same({}, RW.otherAddons()) -- a client without the addon list calls
+    local list = { { "WoWForeverJapanese", true }, { "WoWForeverJapanese_VoiceOther", true }, { "Zeta", true },
+      { "Baganator", true }, { "Sleeping", false } }
+    _G.C_AddOns = {
+      GetNumAddOns = function() return #list end,
+      GetAddOnInfo = function(i) return list[i][1] end,
+      IsAddOnLoaded = function(i) return list[i][2], list[i][2] end,
+    }
+    assert.are.same({ "Baganator", "Zeta" }, RW.otherAddons())
+    _G.C_AddOns = nil
+  end)
+
   it("with no new errors the link fills build and version only and there is nothing to mark", function()
     local f = RW.open()
     assert.are.equal(ja("report.summary.none"), f.summary.en:GetText())
