@@ -268,7 +268,9 @@ function Errors.onEvent(_, _, messageType, message)
   Errors.back() -- a line still waiting: the client's frame never handled that event
   if lastShown ~= nil and not Compat.secret(message) and lastShown == message and not orderLogged then
     orderLogged = true
-    if WFJ.Diag then WFJ.Diag.log("errors", "the client's error frame runs before the addon's listener: repeats sound again") end
+    if WFJ.Diag then
+      WFJ.Diag.log("errors", "the client's error frame runs before the addon's listener: repeats sound again")
+    end
   end
   lastShown = nil
   local rec, fs = ours(frame, messageType, message)

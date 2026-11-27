@@ -3020,6 +3020,10 @@ local function WFJScanBagClickRead(done)
   end)
 end
 
+-- The reads below look for a value the addon wrote where the client's own code reads it. They sit in one function
+-- of their own, reached through this table: the file's chunk may hold 200 local names at once, and it is near that.
+local WFJScanTaint = {}
+;(function()
 -- The touch read. Everything of the addon's that the client's own code could read: a client frame's field that
 -- carries the addon's taint (the addon wrote it, or replaced a function there), and a frame the addon made that sits
 -- inside a client frame, with the fields it carries. The client reads fields off the children of its frames (a
@@ -3031,7 +3035,7 @@ end
 --   inside   { "<keys, space separated>\\t<count>\\t<a parent it was found under>" } one line per set of keys
 local TOUCH_SLICE = 400 -- frames read per frame drawn, at most
 local TOUCH_MAX = 300
-local function WFJScanTouchRead(done)
+WFJScanTaint.touch = function(done)
   local TOUCH_MS = 2 -- milliseconds of reading per frame drawn: nothing here may be long enough to see
   local db = probeDb()
   local record = { frames = 0, made = 0, insideN = 0, onClient = {}, onClientN = 0, inside = {} }
@@ -3141,7 +3145,7 @@ end
 --   beside   { "<text>" } a showing cover whose box is not its text's box: a failure
 --   fields   { "<text>\\t<keys>" } a cover's frame carrying a field: a failure
 --   inLayout { "<text>" } a cover that is a layout frame's own child: a failure
-local function WFJScanCoversRead(done)
+WFJScanTaint.covers = function(done)
   local COVERS_MAX = 40 -- names listed per kind of fault
   local db = probeDb()
   local record = { total = 0, shown = 0, idle = 0, stray = {}, missing = {}, beside = {}, fields = {}, inLayout = {} }
@@ -3209,7 +3213,7 @@ local SEND_GLOBALS = { "ACTIVE_CHAT_EDIT_BOX", "LAST_ACTIVE_CHAT_EDIT_BOX", "CHA
   "ChatFrame_OpenChat", "ChatEdit_ActivateChat", "ChatEdit_OnEnterPressed" }
 local SEND_TABLES = { "ChatFrameUtil", "ChatFrameEditBoxMixin", "ChatFrameEditBoxBaseMixin", "hash_SlashCmdList",
   "hash_ChatTypeInfoList", "C_GuildInfo", "C_PartyInfo" }
-local function WFJScanSendRead(done)
+WFJScanTaint.send = function(done)
   local db = probeDb()
   local record = { checked = 0, tainted = {}, afterInsert = {}, afterOpen = {} }
   db.send = record
@@ -3286,7 +3290,7 @@ end
 local CRAFT_WAIT = 5 -- seconds the client is given to answer
 local CRAFT_FRAMES = { "CharacterBag0Slot", "CharacterBag1Slot", "CharacterBag2Slot", "CharacterBag3Slot",
   "CharacterReagentBag0Slot", "MainMenuBarBackpackButton", "ContainerFrameCombinedBags", "MerchantFrame" }
-local function WFJScanCraftRead(done)
+WFJScanTaint.craft = function(done)
   local db = probeDb()
   local record = { checked = 0, ours = {}, others = {}, own = 0 }
   db.craft = record
@@ -3403,6 +3407,7 @@ local function WFJScanCraftRead(done)
   end
   open(second)
 end
+end)()
 
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
 -- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
@@ -4046,8 +4051,6 @@ end
 -- buttons are read for the addon's taint. Nothing is opened, clicked or written. Into `WFJScanDB.watch`, started
 -- again for another client build or addon code:
 --   windows[<frame>] = { opens, reads, checked, at, ours = { "<name>" } }   ours: a failure
--- (Inside a function of its own: the file's chunk may hold 200 local names at once, and it is near that.)
-local WFJScanOpenStep
 ;(function()
   local WATCH_DEPTH = 4 -- tables under a window that are read
   local WATCH_KEYS = 6000 -- values read per window
@@ -4092,7 +4095,7 @@ local WFJScanOpenStep
   -- thousand values is. A job is a stack of tables still to read, each with the key it was left at.
   local WATCH_MS = 2 -- milliseconds of reading per frame drawn
   local jobs = {}
-  local pump = CreateFrame("Frame")
+  local pump -- the frame whose OnUpdate does the reading, made at the first read
   local function push(job, t, name, depth)
     if type(t) ~= "table" or job.seen[t] then return end
     local okF, forbidden = pcall(function() return type(t.IsForbidden) == "function" and t:IsForbidden() end)
@@ -4124,15 +4127,20 @@ local WFJScanOpenStep
     end
     return true
   end
-  pump:Hide()
-  pump:SetScript("OnUpdate", function(self)
-    local started = debugprofilestop()
-    while jobs[1] do
-      if not step(jobs[1]) then table.remove(jobs, 1) end
-      if debugprofilestop() - started >= WATCH_MS then return end
+  local function pumpStart()
+    if not pump then
+      pump = CreateFrame("Frame")
+      pump:SetScript("OnUpdate", function(self)
+        local started = debugprofilestop()
+        while jobs[1] do
+          if not step(jobs[1]) then table.remove(jobs, 1) end
+          if debugprofilestop() - started >= WATCH_MS then return end
+        end
+        self:Hide()
+      end)
     end
-    self:Hide()
-  end)
+    pump:Show()
+  end
 
   local watchPending = {}
   local watchStep -- the names of the windows shown while the open step runs, when it runs
@@ -4170,7 +4178,7 @@ local WFJScanOpenStep
     end
     push(job, frame, name, 0)
     jobs[#jobs + 1] = job
-    pump:Show()
+    pumpStart()
   end
 
   local function watchShown(frame, always)
@@ -4185,10 +4193,13 @@ local WFJScanOpenStep
     end)
   end
 
-  if type(ShowUIPanel) == "function" then hooksecurefunc("ShowUIPanel", function(frame) watchShown(frame) end) end
-  local watcher = CreateFrame("Frame")
-  for event in pairs(WATCH_EVENTS) do pcall(watcher.RegisterEvent, watcher, event) end
-  watcher:SetScript("OnEvent", function(_, event) watchShown(_G[WATCH_EVENTS[event]]) end)
+  -- under pcall: a client without one of these keeps the rest of the test
+  pcall(function()
+    if type(ShowUIPanel) == "function" then hooksecurefunc("ShowUIPanel", function(frame) watchShown(frame) end) end
+    local watcher = CreateFrame("Frame")
+    for event in pairs(WATCH_EVENTS) do pcall(watcher.RegisterEvent, watcher, event) end
+    watcher:SetScript("OnEvent", function(_, event) watchShown(_G[WATCH_EVENTS[event]]) end)
+  end)
 
   -- The open step (`/wfjtest open`): the windows of the micro buttons and the bags, opened the client's own way. A
   -- window the test opens carries the test's taint first, so here the player's own click does the opening: a secure
@@ -4204,7 +4215,9 @@ local WFJScanOpenStep
   local OPEN_TEXT_MAX = 240 -- characters of macro text per press
   local OPEN_WAIT = 120 -- seconds the player is given to press
   local openButton
-  WFJScanOpenStep = function(done)
+  WFJScanTaint.watch = function(done) done() end
+
+  WFJScanTaint.open = function(done)
     local db = probeDb()
     local record = { asked = {}, presses = 0, windows = {} }
     db.open = record
@@ -4283,8 +4296,7 @@ end)()
 SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
 -- (a test holds this list to the parts table)
-local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, "
-  .. "touch, send, covers, freeze, open, watch"
+local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, touch, send, covers, open, watch, freeze"
 local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
@@ -4440,17 +4452,17 @@ SlashCmdList.WFJTEST = function(how)
     -- the interface is hidden and shown again, which waits for the end of a fight too
     { "bagclick", function(nxt) outOfCombat(function() WFJScanBagClickRead(nxt) end) end },
     -- the client refuses to open a window in a fight
-    { "craft", function(nxt) outOfCombat(function() WFJScanCraftRead(nxt) end) end },
+    { "craft", function(nxt) outOfCombat(function() WFJScanTaint.craft(nxt) end) end },
     -- after the windows were walked and opened, so the frames the addon makes on them exist
-    { "touch", function(nxt) WFJScanTouchRead(nxt) end },
-    { "send", function(nxt) WFJScanSendRead(nxt) end },
-    { "covers", function(nxt) WFJScanCoversRead(nxt) end },
+    { "touch", function(nxt) WFJScanTaint.touch(nxt) end },
+    { "send", function(nxt) WFJScanTaint.send(nxt) end },
+    { "covers", function(nxt) WFJScanTaint.covers(nxt) end },
+    -- the player presses a button for this one, so a plain run leaves it out (like the hand read)
+    { "open", function(nxt) outOfCombat(function() WFJScanTaint.open(nxt) end) end, only = true },
+    -- nothing to run: the windows read during play are in the saved file already
+    { "watch", function(nxt) WFJScanTaint.watch(nxt) end },
     -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
     { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
-    -- the player presses a button for this one, so a plain run leaves it out (like the hand read)
-    { "open", function(nxt) outOfCombat(function() WFJScanOpenStep(nxt) end) end, only = true },
-    -- nothing to run: the windows read during play are in the saved file already
-    { "watch", function(nxt) nxt() end },
   }
   local byName = {}
   for _, part in ipairs(parts) do byName[part[1]] = part end

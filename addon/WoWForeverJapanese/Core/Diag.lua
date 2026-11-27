@@ -23,7 +23,7 @@ Diag.MAX_LINES = 50 -- the most /wfj log prints
 Diag.KEPT = { blocked = true, turned = true, taint = true, context = true }
 -- kept apart from the cap on blocks: a burst of blocked calls must never push out the scan or the trace that says
 -- where their taint came from. Only the newest MAX_SCANS scans stay (each lists up to 200 fields).
-Diag.HELD = { taint = true, origin = true, cvar = true, selftest = true, caller = true, traced = true, global = true, sweep = true }
+Diag.HELD = { taint = true, origin = true, caller = true, traced = true, global = true, sweep = true }
 Diag.MAX_SCANS = 12
 Diag.MAX_HELD = 60 -- entries of one held kind
 Diag.MAX_KEPT = 50

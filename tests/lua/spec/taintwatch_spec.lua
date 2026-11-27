@@ -173,7 +173,8 @@ describe("UI/TaintWatch", function()
     local fields = TW.scan("slash")
     assert.are.equal(1, fields)
     local scan = entriesOf("taint")[1].fields
-    assert.is_truthy(scan:find("QuestScrollFrame.titleFramePool[n].layoutIndex", 1, true) -- rows of one list are one line)
+    -- rows of one list are one line
+    assert.is_truthy(scan:find("QuestScrollFrame.titleFramePool[n].layoutIndex", 1, true))
     _G.QuestScrollFrame, _G.QuestMapFrame = nil, nil
   end)
 

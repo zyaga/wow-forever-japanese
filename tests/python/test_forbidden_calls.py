@@ -23,6 +23,8 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/StudyWindow.lua",
                 # saving a word: its screenshot event frame
                 "UI/WordSave.lua",
+                # the error text: its own event listener and its own flash timer, never the client's error frame
+                "UI/Errors.lua",
                 # the nameplate setting: its own event frame, which hears the client's settings change
                 "UI/NamePlateSetting.lua",
                 # the tooltip trace window (/wfj debug tooltip)

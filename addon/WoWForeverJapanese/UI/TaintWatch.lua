@@ -41,7 +41,8 @@ TaintWatch.LISTENER_ROOTS = { "StatusTrackingBarManager", "CVarCallbackRegistry"
   "GamepadMainActionBarFrame", "MainMenuBarBackpackButton", "ContainerFrameSettingsManager", "UIParent" }
 TaintWatch.SCAN_ROOTS = { "StatusTrackingBarManager", "CVarCallbackRegistry", "ActionBarButtonEventsFrame",
   "ActionBarActionEventsFrame", "ActionBarController", "OverrideActionBar", "PossessActionBar",
-  "GamepadMainActionBarFrame", "MainMenuBarBackpackButton", "ContainerFrameSettingsManager", "StanceBar", "PetActionBar", "MainActionBar", "MultiBarBottomLeft", "MultiBarBottomRight",
+  "GamepadMainActionBarFrame", "MainMenuBarBackpackButton", "ContainerFrameSettingsManager", "StanceBar",
+  "PetActionBar", "MainActionBar", "MultiBarBottomLeft", "MultiBarBottomRight",
   "MultiBarLeft", "MultiBarRight", "MultiBar5", "MultiBar6", "MultiBar7", "EditModeManagerFrame",
   "MainStatusTrackingBarContainer", "SecondaryStatusTrackingBarContainer", "MicroButtonAndBagsBar",
   "ObjectiveTrackerFrame", "GameTooltip", "PlayerSpellsFrame", "QuestMapFrame", "WorldMapFrame", "QuestCache",
@@ -387,8 +388,9 @@ function TaintWatch.onBlocked(entry)
   -- the bug report carries the addon's caught errors: the refusal goes in as one, with the session's first causes
   if WFJ.ErrorLog and not TaintWatch.reported then
     TaintWatch.reported = true
+    local found = TaintWatch.causes()
     pcall(WFJ.ErrorLog.recordCaught, "Interface/AddOns/" .. tostring(WFJ.ADDON) .. "/UI/TaintWatch.lua:0: the game "
-      .. "refused " .. key .. "; first tainted this session: " .. (causes[1] and TaintWatch.causes() or "none found"))
+      .. "refused " .. key .. "; first tainted this session: " .. (found ~= "" and found or "none found"))
   end
   WFJ.Diag.log("context", "events before " .. key, { events = TaintWatch.events() })
   TaintWatch.scanPending = true
@@ -641,11 +643,11 @@ end
 function TaintWatch.originStep()
   -- between rounds nothing is read: the queue is empty and no round is owed
   if TaintWatch.walkDone() then return 0 end
-  local clock = C.resolve("debugprofilestop")
-  local started = type(clock) == "function" and clock() or nil
+  local now = C.resolve("debugprofilestop")
+  local started = type(now) == "function" and now() or nil
   local checked = 0
   local function spent()
-    return checked >= TaintWatch.ORIGIN_KEYS or (started ~= nil and clock() - started >= TaintWatch.ORIGIN_MS)
+    return checked >= TaintWatch.ORIGIN_KEYS or (started ~= nil and now() - started >= TaintWatch.ORIGIN_MS)
   end
   while not spent() do
     local item = table.remove(originQueue)

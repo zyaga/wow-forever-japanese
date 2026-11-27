@@ -272,7 +272,7 @@ end
 -- colour as written. Each slot's Update is followed once, since the slot runs it again when an item loads and when
 -- the bags change. → names shown
 local slotKey = WFJ.Labels.keyer("slot.")
-local slotHooked = setmetatable({}, { __mode = "k" })
+local reagentHooked = setmetatable({}, { __mode = "k" })
 local function showSlotName(slot)
   local fs = type(slot) == "table" and slot.Name or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" then return 0 end
@@ -285,8 +285,8 @@ function Crafting.showReagents(form)
   if type(pool) ~= "table" or type(pool.EnumerateActive) ~= "function" then return 0 end
   local n = 0
   for slot in pool:EnumerateActive() do
-    if type(slot) == "table" and not slotHooked[slot] and type(slot.Update) == "function" then
-      slotHooked[slot] = true
+    if type(slot) == "table" and not reagentHooked[slot] and type(slot.Update) == "function" then
+      reagentHooked[slot] = true
       hooksecurefunc(slot, "Update", showSlotName)
     end
     n = n + showSlotName(slot)

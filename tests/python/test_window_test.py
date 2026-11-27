@@ -559,6 +559,9 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     assert "ERROR chat tools not read: this run's test addon has no such read" in out
     # and one from before the bag click read
     assert "ERROR bag click not read: this run's test addon has no such read" in out
+    # and one from before the reads for what the addon wrote where the client reads
+    for read in ("crafting window", "touch", "chat send path", "popup dictionary covers"):
+        assert f"ERROR {read} not read: this run's test addon has no such read" in out
     fine = TOOLTIPS.replace('["408498"] = "3 numbers in the Japanese, 4 on this client"', "").replace(
         '["279845"] = "one Japanese paragraph over 2 lines"', "").replace(
         '["783"] = "says it has no voice, and the voice pack does not list it"', "").replace(
@@ -572,6 +575,7 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     fine = fine.replace('["tooltips"] = {', CHAT + '\n' + MARKS + '\n["tooltips"] = {', 1)
     # and the bag click read, with nothing tainted by the addon
     fine = fine.replace('["tooltips"] = {', BAGGED + '\n["tooltips"] = {', 1)
+    fine = fine.replace('["tooltips"] = {', CLEAN + '\n["tooltips"] = {', 1)
     saved.write_text(fine, encoding="utf-8")
     assert client_surface._texts(args) == 0
     out = capsys.readouterr().out
@@ -922,6 +926,14 @@ def test_the_frozen_tooltip_read_fails_a_missing_line_a_copy_left_open_and_a_cop
 
 BAGGED = ('["bagclick"] = { ["checked"] = 412, ["ours"] = { }, '
           '["others"] = { ["ContainerFrame1.Items[2].bagID"] = "Baganator" } },')
+# the crafting, touch, chat send and cover reads with nothing wrong
+CLEAN = ('["craft"] = { ["checked"] = 2600, ["ours"] = { }, ["others"] = { }, ["own"] = 0, ["shown"] = true, '
+         '["line"] = 164, ["recipe"] = 7 },\n'
+         '["touch"] = { ["frames"] = 900, ["made"] = 5, ["insideN"] = 0, ["onClientN"] = 0, ["onClient"] = { }, '
+         '["inside"] = { } },\n'
+         '["send"] = { ["checked"] = 40, ["tainted"] = { }, ["afterInsert"] = { }, ["afterOpen"] = { } },\n'
+         '["covers"] = { ["total"] = 9, ["shown"] = 4, ["idle"] = 0, ["on"] = true, ["stray"] = { }, '
+         '["missing"] = { }, ["beside"] = { }, ["fields"] = { }, ["inLayout"] = { } },')
 
 
 def test_the_bag_click_read_runs_out_of_combat_before_the_freeze_and_never_uses_an_item():
@@ -1014,6 +1026,10 @@ WFJScanDB = {
 ["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["list"] = 9, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { }, ["secretTry"] = { ["looks"] = 7, ["answers"] = { "IsMouseOver" } } },
 ["marks"] = { ["window"] = 9, ["frames"] = 3, ["shown"] = 14, ["texts"] = 2, ["bare"] = false, ["quest"] = 783, ["on"] = true, ["expect"] = true, ["english"] = { }, ["stale"] = { }, ["tags"] = { } },
 ["bagclick"] = { ["checked"] = 412, ["ours"] = { }, ["others"] = { } },
+["craft"] = { ["checked"] = 2600, ["ours"] = { }, ["others"] = { }, ["own"] = 0, ["shown"] = true, ["line"] = 164 },
+["touch"] = { ["frames"] = 900, ["made"] = 5, ["insideN"] = 0, ["onClientN"] = 0, ["onClient"] = { }, ["inside"] = { } },
+["send"] = { ["checked"] = 40, ["tainted"] = { }, ["afterInsert"] = { }, ["afterOpen"] = { } },
+["covers"] = { ["total"] = 9, ["shown"] = 4, ["idle"] = 0, ["on"] = true, ["stray"] = { }, ["missing"] = { }, ["beside"] = { }, ["fields"] = { }, ["inLayout"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
 ["hover"] = { ["map"] = { ["made"] = 3, ["found"] = 3, ["tips"] = 2, ["english"] = { }, ["runs"] = { } } },
 ["tooltips"] = { ["read"] = 50, ["japanese"] = 45, ["unread"] = 0, ["items"] = 3,

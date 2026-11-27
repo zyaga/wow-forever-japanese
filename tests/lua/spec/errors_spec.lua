@@ -82,7 +82,7 @@ local function install()
     end
   end
   frame.events = {}
-  function frame:IsEventRegistered(event) return event ~= "UI_INFO_MESSAGE" end -- another addon turned that one off
+  function frame.IsEventRegistered(_, event) return event ~= "UI_INFO_MESSAGE" end -- another addon turned it off
   function frame:UnregisterEvent(event) self.events[#self.events + 1] = "-" .. event end
   function frame:RegisterEvent(event) self.events[#self.events + 1] = "+" .. event end
   _G.UIErrorsFrame = frame
