@@ -4561,6 +4561,7 @@ end
     local db = probeDb()
     local record = { steps = {} }
     db.isolate = record
+    local guildTarget = _G.WFJ_ISOLATE_TARGET == "guild"
     local function owners()
       local out = {}
       local function keys(t, label)
@@ -4570,6 +4571,17 @@ end
             local ok, isSecure, owner = pcall(issecurevariable, t, key)
             if ok and not isSecure and #out < 400 then out[#out + 1] = label .. "." .. key .. "\\t" .. tostring(owner) end
           end
+        end
+      end
+      -- a copy of the addon may point the test at the guild window instead (WFJ_ISOLATE_TARGET)
+      local guild = guildTarget and _G.CommunitiesFrame or nil
+      if type(guild) == "table" then
+        keys(guild, "CommunitiesFrame")
+        local chat = guild.Chat
+        keys(chat, "CommunitiesFrame.Chat")
+        if type(chat) == "table" then
+          keys(chat.MessageFrame, "CommunitiesFrame.Chat.MessageFrame")
+          keys(chat.ScrollBar, "CommunitiesFrame.Chat.ScrollBar")
         end
       end
       keys(_G.CharacterFrame, "CharacterFrame")
@@ -4607,6 +4619,16 @@ end
     -- How the description sits in its scroll box: the text's own height, the height of the container the scroll box
     -- scrolls, and the height of the box. A container shorter than the text cuts the text off.
     local function fit()
+      if guildTarget then
+        -- what the copy of the addon logged since the last step (which of its pieces ran), and the chat's line count
+        local log = type(_G.WFJ_ISOLATE_LOG) == "table" and _G.WFJ_ISOLATE_LOG or {}
+        local text = table.concat(log, ", ")
+        for i = #log, 1, -1 do log[i] = nil end
+        local guild = _G.CommunitiesFrame
+        local frame = type(guild) == "table" and type(guild.Chat) == "table" and guild.Chat.MessageFrame or nil
+        local ok, n = pcall(function() return frame:GetNumMessages() end)
+        return ("%%s lines in the chat; the addon: %%s"):format(ok and tostring(n) or "?", text ~= "" and text or "nothing ran")
+      end
       local pane = _G.ReputationFrame
       local detail = type(pane) == "table" and pane.ReputationDetailFrame or nil
       local sf = type(detail) == "table" and detail.Description or nil
@@ -4623,14 +4645,19 @@ end
         fit = fit() }
     end
     local function shown()
-      local frame = _G.CharacterFrame
+      local frame = guildTarget and _G.CommunitiesFrame or _G.CharacterFrame
+      if guildTarget and type(frame) ~= "table" then return false end
       return type(frame) == "table" and frame:IsShown()
     end
     if shown() then
-      record.refused = "the character window was open"
+      record.refused = "the window was open"
       return done()
     end
     local function paneShown()
+      if guildTarget then
+        local guild = _G.CommunitiesFrame
+        return type(guild) == "table" and type(guild.Chat) == "table" and guild.Chat:IsVisible()
+      end
       local pane = _G.ReputationFrame
       return type(pane) == "table" and pane:IsVisible()
     end
@@ -4643,8 +4670,8 @@ end
         waited = waited + 0.25
         if not seen and paneShown() then
           seen, waited = true, 0
-          C_Timer.After(1.5, function() step(first) end)
-        elseif seen and waited > 2 and not shown() then
+          C_Timer.After(guildTarget and 3 or 1.5, function() step(first) end)
+        elseif seen and waited > (guildTarget and 3.5 or 2) and not shown() then
           ticker:Cancel()
           return C_Timer.After(1, function()
             step(second)
@@ -4681,9 +4708,10 @@ end
           return done()
         end
         if own then _G.WFJ_ISOLATE = what else _G.WFJ_ISOLATE = what ~= "everything" and what or nil end
-        byPlayer("only " .. what .. ": the player's own click showed the reputation pane",
+        byPlayer("only " .. what .. ": the player's own click showed the " .. (guildTarget and "guild chat" or "reputation pane"),
           "only " .. what .. ": the player closed the window",
-          "WFJ test (" .. i .. " of " .. #order .. "): open the character window, click the Reputation tab, close it.",
+          "WFJ test (" .. i .. " of " .. #order .. "): " .. (guildTarget and "open the guild window, wait for its chat, close it."
+            or "open the character window, click the Reputation tab, close it."),
           function() variant(i + 1) end)
       end
       return variant(1)
