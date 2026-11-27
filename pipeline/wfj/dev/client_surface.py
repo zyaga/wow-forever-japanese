@@ -4435,7 +4435,7 @@ end
   -- and the part beside it is what was running. Into `WFJScanDB.watch.marks`:
   --   { "<name>\t<time>\t<part>\t<sweep>" }
   local SWEEP_MS = 4 -- milliseconds a frame: the test's own run, so it may cost more than play would bear
-  local SWEEP_MARKS = 2500
+  local SWEEP_MARKS = 6000
   local SWEEP_AFTER = 25 -- seconds it goes on after the test ends
   local sweep = { seen = {}, n = 0 }
   local function sweepPart()
@@ -4443,21 +4443,26 @@ end
     local test = type(probe) == "table" and probe.test or nil
     return type(test) == "table" and test.finished == nil and tostring(test.part or "starting") or "no test"
   end
-  local function sweepNote(name)
-    if sweep.seen[name] then return end
-    sweep.seen[name] = true
+  -- the two names kept: the addon's and the test addon's own. Another addon's frames hold thousands of keys in its
+  -- own name, which say nothing here.
+  local SWEEP_OWNERS = { WoWForeverJapanese = true, WFJScan = true }
+  local function sweepNote(name, owner)
+    local id = name .. "\t" .. owner
+    if sweep.seen[id] then return end
+    sweep.seen[id] = true
     local w = watchDb()
     if not w then return end
     w.marks = type(w.marks) == "table" and w.marks or {}
     if #w.marks < SWEEP_MARKS then
-      w.marks[#w.marks + 1] = name .. "\t" .. date("%%H:%%M:%%S") .. "\t" .. sweepPart() .. "\t" .. sweep.n
+      w.marks[#w.marks + 1] = name .. "\t" .. date("%%H:%%M:%%S") .. "\t" .. (sweep.after or sweepPart()) .. "\t"
+        .. sweep.n .. "\t" .. owner
     end
   end
   local function sweepKeys(t, label)
     for key in pairs(t) do
       if type(key) == "string" then
         local ok, isSecure, owner = pcall(issecurevariable, t, key)
-        if ok and not isSecure and owner == "WoWForeverJapanese" then sweepNote(label .. "." .. key) end
+        if ok and not isSecure and SWEEP_OWNERS[owner] then sweepNote(label .. "." .. key, owner) end
       end
     end
   end
@@ -4487,13 +4492,19 @@ end
           sweep.phase, sweep.frame = "frames", nil
           local w = watchDb()
           if w then w.sweeps = sweep.n end
+          -- a pass asked for after a part: it has read everything once since that part ended
+          if sweep.waiting and sweep.n >= sweep.waiting.from + 2 then
+            local go = sweep.waiting.go
+            sweep.waiting, sweep.after = nil, nil
+            go()
+          end
           if sweep.stopAt and GetTime() >= sweep.stopAt then
             sweep.runner:Hide()
             return
           end
         elseif type(key) == "string" and not sweepOwn(key) then
           local ok, isSecure, owner = pcall(issecurevariable, _G, key)
-          if ok and not isSecure and owner == "WoWForeverJapanese" then sweepNote("_G." .. key) end
+          if ok and not isSecure and SWEEP_OWNERS[owner] then sweepNote("_G." .. key, owner) end
           -- one level under a global table that is no frame: a frame was read with the frames
           if type(value) == "table" and type(rawget(value, 0)) ~= "userdata" then pcall(sweepKeys, value, key) end
         end
@@ -4503,6 +4514,14 @@ end
   local function sweepStep()
     -- a global removed while the sweep stood on it ends that pass: the next one starts over
     if not pcall(sweepSome) then sweep.phase, sweep.frame, sweep.key = "frames", nil, nil end
+  end
+  -- One whole pass over everything after the part `label` ended, then `go`: what the pass finds for the first time
+  -- is kept as found "after <label>", so the part that brought a name in is the one named. (Two pass ends are
+  -- waited for: the pass under way when the part ended had read some things before it did.)
+  WFJScanTaint.sweepAfter = function(label, go)
+    if not sweep.runner or not sweep.runner:IsShown() then return go() end
+    sweep.after = "after " .. label
+    sweep.waiting = { from = sweep.n, go = go }
   end
   -- `seconds`: how long to go on from now, or nil to go on until told
   WFJScanTaint.sweepFor = function(seconds)
@@ -4554,6 +4573,110 @@ end
   local OPEN_TEXT_MAX = 240 -- characters of macro text per press
   local OPEN_WAIT = 120 -- seconds the player is given to press
   local openButton
+  -- The isolated test of one finding (`/wfjtest isolate`): two values of the reputation pane read in the addon's
+  -- name after a test run and never in play. It does one thing at a time and keeps, after each, whose name every
+  -- value of the character window's reputation side carries (any addon's, not only this one's):
+  --   1  as it is, before anything
+  --   2  the test addon shows the reputation pane itself: a run that carries the test addon's name from its start,
+  --      with the addon's own hooks running inside it
+  --   3  the window put away
+  --   4  the player opens the window and clicks the Reputation tab: a run that starts clean, after step 2 happened
+  --      in the session
+  --   5  the player closes it
+  -- Values the client writes before the addon's hooks run (CharacterFrame.activeSubframe,
+  -- ReputationFrame.needsInitialSelection) and after them (the detail pane's ViewRenownButton.factionID, the filter
+  -- dropdown's menuGenerator) are all in the list, so the step and the place a name comes in can be read off it.
+  -- Into `probe.isolate`: steps = { { label, at, raised, owners = { "<value>\\t<addon>" } } }
+  WFJScanTaint.isolate = function(done)
+    local db = probeDb()
+    local record = { steps = {} }
+    db.isolate = record
+    local function owners()
+      local out = {}
+      local function keys(t, label)
+        if type(t) ~= "table" then return end
+        for key in pairs(t) do
+          if type(key) == "string" then
+            local ok, isSecure, owner = pcall(issecurevariable, t, key)
+            if ok and not isSecure and #out < 400 then out[#out + 1] = label .. "." .. key .. "\\t" .. tostring(owner) end
+          end
+        end
+      end
+      keys(_G.CharacterFrame, "CharacterFrame")
+      local pane = _G.ReputationFrame
+      keys(pane, "ReputationFrame")
+      if type(pane) == "table" then
+        keys(pane.filterDropdown, "ReputationFrame.filterDropdown")
+        local detail = pane.ReputationDetailFrame
+        keys(detail, "ReputationDetailFrame")
+        if type(detail) == "table" then
+          keys(detail.ViewRenownButton, "ReputationDetailFrame.ViewRenownButton")
+          keys(detail.Description, "ReputationDetailFrame.Description")
+          keys(detail.StandingBar, "ReputationDetailFrame.StandingBar")
+        end
+        local box = pane.ScrollBox
+        keys(box, "ReputationFrame.ScrollBox")
+        if type(box) == "table" and type(box.GetFrames) == "function" then
+          local ok, rows = pcall(box.GetFrames, box)
+          for i, row in ipairs(ok and type(rows) == "table" and rows or {}) do
+            if i <= 8 then keys(row, "ReputationFrame.ScrollBox row " .. i) end
+          end
+        end
+      end
+      for _, name in ipairs({ "CHARACTERFRAME_SUBFRAMES", "PaperDollFrame", "SkillsFrame", "TokenFrame" }) do
+        local ok, isSecure, owner = pcall(issecurevariable, _G, name)
+        if ok and not isSecure then out[#out + 1] = "_G." .. name .. "\\t" .. tostring(owner) end
+      end
+      table.sort(out)
+      return out
+    end
+    local function step(label, raised)
+      record.steps[#record.steps + 1] = { label = label, at = date("%%H:%%M:%%S"), raised = raised, owners = owners() }
+    end
+    local function shown()
+      local frame = _G.CharacterFrame
+      return type(frame) == "table" and frame:IsShown()
+    end
+    if shown() then
+      record.refused = "the character window was open"
+      return done()
+    end
+    step("1 before anything")
+    local ok, err = pcall(ToggleCharacter, "ReputationFrame")
+    C_Timer.After(1.5, function()
+      step("2 the test addon showed the reputation pane", not ok and tostring(err) or nil)
+      if shown() then pcall(HideUIPanel, _G.CharacterFrame) end
+      C_Timer.After(1, function()
+        step("3 the window put away")
+        -- the player's own way in: the tab is no button a script can click, so the test waits for the click
+        print("WFJ test: now open the character window, click the Reputation tab, then close the window.")
+        local waited, seen, ticker = 0, false, nil
+        local function paneShown()
+          local pane = _G.ReputationFrame
+          return type(pane) == "table" and pane:IsVisible()
+        end
+        ticker = C_Timer.NewTicker(0.25, function()
+          waited = waited + 0.25
+          if not seen and paneShown() then
+            seen = true
+            C_Timer.After(1.5, function() step("4 the player's own click showed the reputation pane") end)
+          elseif seen and waited > 2 and not shown() then
+            ticker:Cancel()
+            return C_Timer.After(1, function()
+              step("5 the player closed the window")
+              done()
+            end)
+          end
+          if waited >= 180 then
+            ticker:Cancel()
+            record.refused = seen and "the window was not closed" or "the reputation pane was not opened"
+            done()
+          end
+        end)
+      end)
+    end)
+  end
+
   WFJScanTaint.watch = function(done) done() end
 
   WFJScanTaint.open = function(done)
@@ -4635,7 +4758,7 @@ end)()
 SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
 -- (a test holds this list to the parts table)
-local TEST_PART_NAMES = "craft, walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, touch, send, covers, open, watch, freeze"
+local TEST_PART_NAMES = "craft, walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, touch, send, covers, open, watch, isolate, freeze"
 local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
@@ -4804,6 +4927,8 @@ SlashCmdList.WFJTEST = function(how)
     { "open", function(nxt) outOfCombat(function() WFJScanTaint.open(nxt) end) end, only = true },
     -- nothing to run: the windows read during play are in the saved file already
     { "watch", function(nxt) WFJScanTaint.watch(nxt) end },
+    -- one finding, taken apart: not part of a plain run
+    { "isolate", function(nxt) outOfCombat(function() WFJScanTaint.isolate(nxt) end) end, only = true },
     -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
     { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
   }
@@ -4821,7 +4946,8 @@ SlashCmdList.WFJTEST = function(how)
     local part = chosen[i]
     if part then
       db.test.part = part[1]
-      return part[2](function() run(i + 1) end)
+      -- after each part, everything is read once more before the next part starts
+      return part[2](function() WFJScanTaint.sweepAfter(part[1], function() run(i + 1) end) end)
     end
     if section then return finish(" (only the " .. section .. " part; plain /wfjtest runs them all)") end
     -- The guild and character windows are the player's to open, so a plain run does not wait for them:
@@ -5897,8 +6023,9 @@ def read_watch(text: str) -> dict[str, Any] | None:
     marks = []
     noted = watch.get("marks")
     for row in (noted.positional() if noted is not None else []):
-        name, at, part, sweep = (str(row).split("\t") + ["", "", ""])[:4]
-        marks.append({"name": name, "at": at, "part": part, "sweep": int(sweep or 0)})
+        name, at, part, sweep, owner = (str(row).split("\t") + ["", "", "", ""])[:5]
+        marks.append({"name": name, "at": at, "part": part, "sweep": int(sweep or 0),
+                      "owner": owner or "WoWForeverJapanese"})
     traces = []
     kept = watch.get("traces")
     for row in (kept.positional() if kept is not None else []):
@@ -5962,6 +6089,44 @@ def open_problems(record: dict[str, Any] | None, watch: dict[str, Any] | None) -
             for name in sorted(set(record["windows"])) for value in seen.get(name, {}).get("ours", [])
             if value.rsplit(".", 1)[-1] not in TOUCH_ALLOWED]
     return out
+
+
+def read_isolate(text: str) -> list[dict[str, Any]] | None:
+    """The window test's isolated test out of a saved-variables file, or None when the run had none: its steps in
+    order, each with its label, its time, an error it raised, and whose name each value carried (`owners`, as
+    (value, addon))."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("isolate") if probe is not None else None
+    steps = record.get("steps") if record is not None else None
+    if steps is None:
+        return None
+    out = []
+    for step in steps.positional():
+        rows = step.get("owners")
+        out.append({"label": str(step.get("label") or ""), "at": str(step.get("at") or ""),
+                    "raised": str(step.get("raised") or ""),
+                    "owners": [tuple((str(r).split("\t", 1) + [""])[:2])
+                               for r in (rows.positional() if rows is not None else [])]})
+    return out
+
+
+def print_isolate(steps: list[dict[str, Any]]) -> None:
+    """Prints the isolated test: per step, the values that carry a name the step before did not show, with the name."""
+    before: dict[str, str] = {}
+    for step in steps:
+        now = dict(step["owners"])
+        new = {k: v for k, v in now.items() if before.get(k) != v}
+        gone = [k for k in before if k not in now]
+        print(f"isolate  {step['at']} {step['label']}: {len(now)} values carry a name, {len(new)} new or changed"
+              + (f", raised: {step['raised']}" if step["raised"] else ""))
+        for key in sorted(new):
+            print(f"isolate      {key}: {new[key]}" + (f" (was {before[key]})" if key in before else ""))
+        for key in sorted(gone):
+            print(f"isolate      {key}: clean again (was {before[key]})")
+        before = now
 
 
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
@@ -6597,7 +6762,7 @@ def _print_watch(watch: dict[str, Any]) -> None:
         print(f"in play  {watch['sweeps']} sweeps of every frame and global: {len(watch['marks']) - len(late)} keys "
               f"in the addon's name at login, {len(late)} more after it")
     for mark in late:
-        print(f"in play  {mark['at']} sweep {mark['sweep']} during {mark['part']}: {mark['name']}")
+        print(f"in play  {mark['at']} sweep {mark['sweep']} {mark['part']}: {mark['name']} ({mark['owner']})")
     for row in watch["entered"]:
         print(f"in play  {row['at']} {row['key']} first read in the addon's name after {row['after']}")
         for line in row["stack"].splitlines():
@@ -6649,6 +6814,10 @@ def _taint_reads(saved: str, part: Any, ui: Path | None, section: str | None = N
     if watch is not None and (part("watch") or part("open")):
         _print_watch(watch)
     out += watch_problems(watch) if part("watch") else []
+    if section == "isolate":
+        steps = read_isolate(saved)
+        if steps is not None:
+            print_isolate(steps)
     if section == "open":
         opened = read_open(saved)
         if opened is not None:
