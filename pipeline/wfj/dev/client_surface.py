@@ -4290,6 +4290,11 @@ end
     { name = "ReputationFrame.ScrollBox rows.factionID", rows = "ReputationFrame.ScrollBox.x", key = "factionID" },
     { name = "CharacterFrame.selectedTab" }, { name = "CharacterFrame.activeSubframe" },
   }
+  -- Tables whose functions are hooked as well, and whose keys are looked at each time: what the reputation pane's
+  -- show runs through on the way to the values above (camelot/reputationframe.lua:113-127, characterframe.lua:106-118).
+  local TRACE_ALSO = { "HelpTip", "HelpTip.framePool", "ReputationFrame.ScrollBox.view",
+    "ReputationFrame.ReputationDetailFrame", "PaperDollFrame", "SkillsFrame", "TokenFrame", "PVPRankFrame",
+    "StatisticsFrame", "ScrollUtil", "FrameUtil", "PanelTemplates_SetTab", "CHARACTERFRAME_SUBFRAMES" }
   local function traceArm()
     local w = watchDb()
     if not w then return end
@@ -4334,11 +4339,36 @@ end
       table.sort(out)
       return table.concat(out, " | ")
     end
+    -- the keys of the watched tables that read in the addon's name, each noted the first time with the function it
+    -- showed up after: the first of them is where the addon's name came into the client's run
+    local known = {}
+    w.entered = {}
+    local function entered(label)
+      for t, name in pairs(labels) do
+        for key in pairs(t) do
+          if type(key) == "string" and not known[name .. "." .. key] then
+            local ok, isSecure, owner = pcall(issecurevariable, t, key)
+            if ok and not isSecure and owner == "WoWForeverJapanese" then
+              known[name .. "." .. key] = true
+              if #w.entered < 30 then
+                w.entered[#w.entered + 1] = { key = name .. "." .. key, after = label, at = date("%%H:%%M:%%S"),
+                  stack = #w.entered < 6 and debugstack(4, 30, 30) or nil }
+              end
+            end
+          end
+        end
+      end
+    end
     local checking = false
     local function check(label)
       -- its own reads may run a hooked function (a frame that keeps GetChildren as a field): never from inside
-      if checking or next(pending) == nil then return end
+      if checking then return end
       checking = true
+      entered(label)
+      if next(pending) == nil then
+        checking = false
+        return
+      end
       for name, find in pairs(pending) do
         local t, key = find()
         if t then
@@ -4379,6 +4409,23 @@ end
     for _, seed in ipairs(TRACE_SEEDS) do
       if seed.rows then hookPath(seed.rows) end
     end
+    for _, name in ipairs(TRACE_ALSO) do hookAll((traceResolve(name .. ".x")), name) end
+    -- the help tips there are now, and the ones waiting in the pool
+    local pool = type(HelpTip) == "table" and HelpTip.framePool or nil
+    if type(pool) == "table" then
+      local n = 0
+      pcall(function()
+        for tip in pool:EnumerateActive() do
+          n = n + 1
+          hookAll(tip, "HelpTip active " .. n)
+        end
+      end)
+      for i, tip in ipairs(type(pool.inactiveObjects) == "table" and pool.inactiveObjects or {}) do
+        hookAll(tip, "HelpTip waiting " .. i)
+      end
+    end
+    -- what already reads in the addon's name before anything is shown
+    entered("at login")
   end
 
   -- under pcall: a client without one of these keeps the rest of the test
@@ -5748,6 +5795,11 @@ def read_watch(text: str) -> dict[str, Any] | None:
         addon, action = (str(key).split("\t", 1) + [""])[:2]
         refused[addon, action] = {"n": int(rec.get("n") or 0), "fights": int(rec.get("fights") or 0),
                                   "first": str(rec.get("first") or ""), "last": str(rec.get("last") or "")}
+    entered = []
+    came = watch.get("entered")
+    for row in (came.positional() if came is not None else []):
+        entered.append({"key": str(row.get("key") or ""), "after": str(row.get("after") or ""),
+                        "at": str(row.get("at") or ""), "stack": str(row.get("stack") or "")})
     traces = []
     kept = watch.get("traces")
     for row in (kept.positional() if kept is not None else []):
@@ -5755,7 +5807,7 @@ def read_watch(text: str) -> dict[str, Any] | None:
                        "stack": str(row.get("stack") or ""), "near": str(row.get("near") or ""),
                        "at": str(row.get("at") or "")})
     return {"build": str(watch.get("build") or ""), "code": str(watch.get("code") or ""), "windows": out,
-            "traces": traces,
+            "traces": traces, "entered": entered,
             "refused": refused, "fights": int(watch.get("fights") or 0),
             "fight_seconds": int(watch.get("fightSeconds") or 0)}
 
@@ -6441,6 +6493,10 @@ def _print_watch(watch: dict[str, Any]) -> None:
     for (addon, action), rec in sorted(watch["refused"].items()):
         if addon != "WoWForeverJapanese":
             print(f"in play  refused in another addon's name ({addon}): {action}, {rec['n']} times")
+    for row in watch["entered"]:
+        print(f"in play  {row['at']} {row['key']} first read in the addon's name after {row['after']}")
+        for line in row["stack"].splitlines():
+            print("in play      " + line)
     for trace in watch["traces"]:
         print(f"in play  {trace['path']} was written in the addon's name by {trace['after']} at {trace['at']}"
               f" (also in its name there: {trace['near'] or 'nothing'}):")
