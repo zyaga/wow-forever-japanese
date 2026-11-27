@@ -110,8 +110,21 @@ describe("UI/TooltipFreeze", function()
 
   local function copy(n) return F.copies[n or 1] end
   local function line(n, i) return copy(n).lines[i] end
+  -- A cover is a table that holds its frame (the frame carries no field): the tests read both through one view,
+  -- the cover's state first, then its frame.
   local function coverOf(fs)
-    for _, f in ipairs(Stub.frames) do if f.allPoints == fs then return f end end
+    for _, fr in ipairs(Stub.frames) do
+      if fr.allPoints == fs then
+        local state = WFJ.ReadingView.coverAt(fs)
+        return setmetatable({ frame = fr }, { __index = function(_, k)
+          local v = state and state[k]
+          if v ~= nil then return v end
+          return fr[k]
+        end, __newindex = function(_, k, v)
+          if state then state[k] = v else fr[k] = v end
+        end })
+      end
+    end
     return nil
   end
 

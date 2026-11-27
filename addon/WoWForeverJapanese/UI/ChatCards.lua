@@ -22,11 +22,12 @@ local at -- where the shown word is: { line, text, first, last } in the chat lin
 
 local function ensureCover()
   if cover then return cover end
-  cover = CreateFrame("Frame", nil, Compat.resolve("UIParent"))
-  cover:SetFrameStrata("MEDIUM")
-  cover.tints = {}
+  local frame = CreateFrame("Frame", nil, Compat.resolve("UIParent"))
+  frame:SetFrameStrata("MEDIUM")
+  -- the shape of a UI/Readings cover: a table that holds its frame
+  cover = { frame = frame, tints = {} }
   cover.kind, cover.id, cover.surface = "chat", "chat", "chat" -- what a saved word is kept under
-  cover:Hide()
+  frame:Hide()
   return cover
 end
 
@@ -34,7 +35,7 @@ function Cards.clear()
   if cover and at then
     WFJ.ReadingView.clearHover(cover)
     cover.words, cover.pressWord = nil, nil
-    cover:Hide()
+    cover.frame:Hide()
   end
   at = nil
 end
@@ -62,9 +63,9 @@ local function show(line, text, w)
   if type(areas) ~= "table" or WFJ.ChatLines.secret(areas) or not areas[1] then return false end
   clear()
   local c = ensureCover()
-  c:ClearAllPoints()
-  c:SetAllPoints(line)
-  c:Show()
+  c.frame:ClearAllPoints()
+  c.frame:SetAllPoints(line)
+  c.frame:Show()
   local rects = {}
   for i, a in ipairs(areas) do rects[i] = { left = a.left, bottom = a.bottom, width = a.width, height = a.height } end
   -- the word as UI/Readings shows it and UI/WordSave saves it: its place is counted in the sentence it is saved with

@@ -3020,6 +3020,99 @@ local function WFJScanBagClickRead(done)
   end)
 end
 
+-- The touch read. Everything of the addon's that the client's own code could read: a client frame's field that
+-- carries the addon's taint (the addon wrote it, or replaced a function there), and a frame the addon made that sits
+-- inside a client frame, with the fields it carries. The client reads fields off the children of its frames (a
+-- layout frame asks each child for ignoreInLayout), and a value the addon wrote taints the client's run from that
+-- read on. A frame is the addon's when its fields carry the addon's taint and none is secure. Read in slices, so
+-- the game does not stall. Into `probe.touch`:
+--   frames   frames walked; made  frames the addon made; insideN  of them, inside a client frame
+--   onClient { "<frame>.<key>" } client fields carrying the addon's taint (the first TOUCH_MAX); onClientN  all
+--   inside   { "<keys, space separated>\\t<count>\\t<a parent it was found under>" } one line per set of keys
+local TOUCH_SLICE = 400 -- frames read per frame drawn
+local TOUCH_MAX = 300
+local function WFJScanTouchRead(done)
+  local db = probeDb()
+  local record = { frames = 0, made = 0, insideN = 0, onClient = {}, onClientN = 0, inside = {} }
+  db.touch = record
+  local ADDON = "WoWForeverJapanese"
+  local madeBy = {} -- frame → true | false
+  local groups, order = {}, {}
+  local function nameOf(f)
+    local ok, name = pcall(function() return f.GetDebugName and f:GetDebugName() or f:GetName() end)
+    return ok and type(name) == "string" and name or "unnamed"
+  end
+  -- → whether the addon made `f`, and its string keys (sorted) and the client keys carrying the addon's taint
+  local function look(f)
+    local ours, secure, keys, tainted = 0, 0, {}, {}
+    for key in pairs(f) do
+      if type(key) == "string" then
+        local ok, isSecure, by = pcall(issecurevariable, f, key)
+        if ok and isSecure then
+          secure = secure + 1
+        elseif ok and by == ADDON then
+          ours = ours + 1
+          tainted[#tainted + 1] = key
+        end
+        keys[#keys + 1] = key
+      end
+    end
+    return ours > 0 and secure == 0, keys, tainted
+  end
+  local function read(f)
+    record.frames = record.frames + 1
+    local okF, forbidden = pcall(function() return f.IsForbidden and f:IsForbidden() end)
+    if not okF or forbidden then return end
+    local made, keys, tainted = look(f)
+    madeBy[f] = made
+    if not made then
+      for _, key in ipairs(tainted) do
+        record.onClientN = record.onClientN + 1
+        if #record.onClient < TOUCH_MAX then record.onClient[#record.onClient + 1] = nameOf(f) .. "." .. key end
+      end
+      return
+    end
+    record.made = record.made + 1
+    -- the nearest ancestor the addon did not make: its fields are read by the client when that is a client frame
+    local parent = f:GetParent()
+    while parent and madeBy[parent] == nil do madeBy[parent] = (look(parent)) end
+    while parent and madeBy[parent] do
+      parent = parent:GetParent()
+      if parent and madeBy[parent] == nil then madeBy[parent] = (look(parent)) end
+    end
+    -- only a frame directly under a client frame is one of that frame's children; UIParent holds every window
+    local direct = f:GetParent()
+    if not direct or madeBy[direct] or direct == UIParent or direct == WorldFrame then return end
+    record.insideN = record.insideN + 1
+    table.sort(keys)
+    local sig = table.concat(keys, " ")
+    local g = groups[sig]
+    if not g then
+      g = { n = 0, where = nameOf(direct) }
+      groups[sig] = g
+      order[#order + 1] = sig
+    end
+    g.n = g.n + 1
+  end
+  local f = EnumerateFrames()
+  local walker = CreateFrame("Frame")
+  walker:SetScript("OnUpdate", function(self)
+    local n = 0
+    while f and n < TOUCH_SLICE do
+      pcall(read, f)
+      f = EnumerateFrames(f)
+      n = n + 1
+    end
+    if f then return end
+    self:SetScript("OnUpdate", nil)
+    for i, sig in ipairs(order) do
+      if i > TOUCH_MAX then break end
+      record.inside[i] = sig .. "\\t" .. groups[sig].n .. "\\t" .. groups[sig].where
+    end
+    done()
+  end)
+end
+
 -- The crafting window read. The window is opened the way the client opens it for a player: the test asks the
 -- client for the trade skill (C_TradeSkillUI.OpenTradeSkill), the client answers with its own event, and the window's
 -- own code opens it in a fresh run that carries no addon's taint. A field of the window that then carries the
@@ -3791,7 +3884,7 @@ end
 SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
 -- (a test holds this list to the parts table)
-local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, freeze"
+local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, touch, freeze"
 local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
@@ -3948,6 +4041,8 @@ SlashCmdList.WFJTEST = function(how)
     { "bagclick", function(nxt) outOfCombat(function() WFJScanBagClickRead(nxt) end) end },
     -- the client refuses to open a window in a fight
     { "craft", function(nxt) outOfCombat(function() WFJScanCraftRead(nxt) end) end },
+    -- after the windows were walked and opened, so the frames the addon makes on them exist
+    { "touch", function(nxt) WFJScanTouchRead(nxt) end },
     -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
     { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
   }
@@ -4838,6 +4933,74 @@ def craft_problems(record: dict[str, Any] | None) -> list[str]:
     return out
 
 
+def client_field_names(ui: Path) -> set[str]:
+    """Every name the client's UI source uses as a member (`x.name`, `x:name`, a parentKey, a KeyValue key) under
+    `ui` (an extract's Interface/AddOns folder): the names a field of the addon's must not have on a frame that sits
+    inside a client frame."""
+    names: set[str] = set()
+    member = re.compile(r"[.:]\s*([A-Za-z_][A-Za-z0-9_]*)")
+    keyed = re.compile(r'(?:parentKey|key)="([A-Za-z_][A-Za-z0-9_]*)"')
+    for path in ui.rglob("*"):
+        suffix = path.suffix.lower()
+        if suffix == ".lua":
+            names.update(member.findall(path.read_text(encoding="utf-8", errors="replace")))
+        elif suffix == ".xml":
+            names.update(keyed.findall(path.read_text(encoding="utf-8", errors="replace")))
+    return names
+
+
+# A client field the addon may taint, with the reason: none today. A line here is a decision, never a way past a
+# failure.
+TOUCH_ALLOWED: dict[str, str] = {}
+
+
+def read_touch(text: str) -> dict[str, Any] | None:
+    """The window test's touch read out of a saved-variables file, or None when the run had none: the frames walked
+    (`frames`), the ones the addon made (`made`) and how many of those sit inside a client frame (`inside_n`), the
+    client fields carrying the addon's taint (`on_client`, and their whole count `on_client_n`), and the addon's
+    frames inside client frames as (keys, count, a parent) (`inside`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("touch") if probe is not None else None
+    if record is None:
+        return None
+    on_client = record.get("onClient")
+    inside = record.get("inside")
+    rows = []
+    for row in (inside.positional() if inside is not None else []):
+        keys, count, where = (str(row).split("\t") + ["", ""])[:3]
+        rows.append((keys.split(), int(count or 0), where))
+    return {
+        "frames": int(record.get("frames") or 0),
+        "made": int(record.get("made") or 0),
+        "inside_n": int(record.get("insideN") or 0),
+        "on_client": [str(r) for r in (on_client.positional() if on_client is not None else [])],
+        "on_client_n": int(record.get("onClientN") or 0),
+        "inside": rows,
+    }
+
+
+def touch_problems(record: dict[str, Any] | None, client_names: set[str] | None) -> list[str]:
+    """What the touch read found wrong, one line each: a client field carrying the addon's taint that is not allowed
+    (TOUCH_ALLOWED), and a field on a frame of the addon's inside a client frame whose name the client's own source
+    uses (`client_names`, or None when no UI extract was given: then every such field is named, as it cannot be
+    cleared)."""
+    if record is None:
+        return ["touch not read: this run's test addon has no such read (make scan-install, then run it again)"]
+    out = [f"client field tainted by the addon: {name}" for name in record["on_client"]
+           if name not in TOUCH_ALLOWED and name.rsplit(".", 1)[-1] not in TOUCH_ALLOWED]
+    if record["on_client_n"] > len(record["on_client"]):
+        out.append(f"client fields tainted by the addon: {record['on_client_n'] - len(record['on_client'])} more")
+    for keys, count, where in record["inside"]:
+        read = [k for k in keys if client_names is None or k in client_names]
+        if read:
+            out.append(f"the addon's frame inside a client frame carries fields the client's code names "
+                       f"({count} frames, e.g. under {where}): {' '.join(read)}")
+    return out
+
+
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
     nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
@@ -5451,7 +5614,7 @@ def client_build_beside(saved: Path) -> str | None:
     return None
 
 
-def _own_reads(saved: str, section: str | None = None) -> list[str]:
+def _own_reads(saved: str, section: str | None = None, ui: Path | None = None) -> list[str]:
     """Prints what the tooltip read, the no-voice read and the names read saw and gives back their problems; for a
     run of one part (`section`), only that part's: the others' records are an earlier run's."""
     def part(name: str) -> bool:
@@ -5532,6 +5695,13 @@ def _own_reads(saved: str, section: str | None = None) -> list[str]:
               + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(craft["others"].items()))
                  if craft["others"] else ""))
     out += craft_problems(craft) if part("craft") else []
+    touch = read_touch(saved) if part("touch") else None
+    if touch is not None:
+        print(f"touch: {touch['frames']} frames walked, {touch['made']} made by the addon, {touch['inside_n']} of "
+              f"them inside a client frame in {len(touch['inside'])} shapes; {touch['on_client_n']} client fields "
+              f"tainted by the addon" + ("" if ui else "; no UI extract given, so every field is named"))
+    if part("touch"):
+        out += touch_problems(touch, client_field_names(ui) if ui and touch is not None else None)
     return out
 
 
@@ -5957,7 +6127,7 @@ def _texts(args: argparse.Namespace) -> int:
     log = args.log or args.saved.with_name("WoWForeverJapanese.lua")
     problems = read_test_problems(text,
                                   log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
-    problems += _own_reads(text, section)
+    problems += _own_reads(text, section, getattr(args, "ui", None))
     if section in (None, "tooltips"):
         problems += tooltip_row_problems(text)
     if section in (None, "live"):
@@ -5984,6 +6154,7 @@ def _parser() -> argparse.ArgumentParser:
     t = sub.add_parser("texts", help="the window test's result against the baseline: exit 1 on a new English line")
     t.add_argument("--saved", required=True, type=Path, help="the client's WFJScan.lua SavedVariables file")
     t.add_argument("--baseline", required=True, type=Path)
+    t.add_argument("--ui", type=Path, help="the client's UI extract (Interface/AddOns), for the names its code uses")
     t.add_argument("--log", type=Path, help="the shipped addon's SavedVariables file, for its recorded errors "
                    "(default: WoWForeverJapanese.lua beside --saved)")
     r = sub.add_parser("report")

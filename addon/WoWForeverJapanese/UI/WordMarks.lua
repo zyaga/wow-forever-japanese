@@ -89,21 +89,25 @@ function Marks.line(gap)
   return gap / 2 + thick / 2, thick
 end
 
+-- a cover is a table that holds its frame (UI/Readings); a chat line's overlay is the frame itself
+local function frameOf(cover) return cover.frame or cover end
+
 local function texture(cover, used, color, left, bottom, width, height, thin)
   local t = cover.markTex[used]
+  local frame = frameOf(cover)
   if not t then
-    t = cover:CreateTexture(nil, "BACKGROUND", nil, -1)
+    t = frame:CreateTexture(nil, "BACKGROUND", nil, -1)
     cover.markTex[used] = t
   end
   t:SetColorTexture(color[1], color[2], color[3], color[4])
   t:ClearAllPoints()
-  t:SetPoint("BOTTOMLEFT", cover, "BOTTOMLEFT", left, bottom)
+  t:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", left, bottom)
   t:SetSize(math.max(width, 1), height)
   -- a line is a whole number of screen pixels, on the pixel grid: a height between two pixels draws one pixel
   -- thick in one place and two in another [verified: forever blizzard_sharedxml/pixelutil.lua:44, :55]
   local pixel = thin and Compat.resolve("PixelUtil")
   if type(pixel) == "table" and pixel.SetPoint and pixel.SetHeight then
-    pixel.SetPoint(t, "BOTTOMLEFT", cover, "BOTTOMLEFT", left, bottom)
+    pixel.SetPoint(t, "BOTTOMLEFT", frame, "BOTTOMLEFT", left, bottom)
     pixel.SetHeight(t, height, height >= 1.5 and 2 or 1)
   end
   t:Show()
@@ -128,8 +132,8 @@ local function drawScore(cover)
   if counted < SCORE_MIN then return end
   local fs = cover.scoreFs
   if not fs then
-    fs = cover:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    fs:SetPoint("BOTTOMRIGHT", cover, "TOPRIGHT", 0, 1)
+    fs = frameOf(cover):CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    fs:SetPoint("BOTTOMRIGHT", frameOf(cover), "TOPRIGHT", 0, 1)
     cover.scoreFs = fs
   end
   local share = WFJ.WordScore.percent(known, counted)
@@ -235,7 +239,7 @@ end
 function Marks.report()
   local out = {}
   for cover in pairs(covers) do
-    if cover.spans and cover.IsVisible and cover:IsVisible() then
+    if cover.spans and frameOf(cover):IsVisible() then
       out[#out + 1] = ("%s gap %.2f"):format(tostring(cover.surface), cover.markGap or -1)
     end
   end

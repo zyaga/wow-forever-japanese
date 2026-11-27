@@ -124,7 +124,7 @@ View.refused = 0 -- spans the guard refused this session (/wfj debug)
 View.refusedAt = nil -- the first refused call's "kind id first..right"
 View.attached = 0 -- attaches this session (/wfj debug)
 
-local covers = setmetatable({}, { __mode = "k" }) -- FontString → its cover frame
+local covers = setmetatable({}, { __mode = "k" }) -- FontString → its cover: { frame, fs, tints, … }
 
 -- ── The guard ──────────────────────────────────────────────────────────────
 
@@ -201,7 +201,7 @@ function clearHover(cover)
   for _, t in ipairs(cover.tints) do t:Hide() end
   cover.hovered = nil
   if box and box.owner == cover then box:Hide(); box.owner = nil end
-  if WFJ.ReadingPopup then WFJ.ReadingPopup.hide(cover) end
+  if WFJ.ReadingPopup then WFJ.ReadingPopup.hide(cover.frame) end
 end
 
 -- The word's gloss when the popup should show it, else nil → the reading-only box.
@@ -216,12 +216,12 @@ function showHover(cover, word)
   for i, r in ipairs(word.rects) do
     local t = cover.tints[i]
     if not t then
-      t = cover:CreateTexture(nil, "BACKGROUND")
+      t = cover.frame:CreateTexture(nil, "BACKGROUND")
       t:SetColorTexture(TINT[1], TINT[2], TINT[3], TINT[4])
       cover.tints[i] = t
     end
     t:ClearAllPoints()
-    t:SetPoint("BOTTOMLEFT", cover, "BOTTOMLEFT", r.left, r.bottom)
+    t:SetPoint("BOTTOMLEFT", cover.frame, "BOTTOMLEFT", r.left, r.bottom)
     t:SetSize(math.max(r.width, 1), math.max(r.height, 1))
     t:Show()
   end
@@ -234,7 +234,7 @@ function showHover(cover, word)
     -- a word with a status carries it on its card, above the save hint (UI/WordMarks)
     local status = WFJ.WordMarks and WFJ.WordMarks.statusLine(cover, word)
     if status then hint = hint and (status .. "\n" .. hint) or status end
-    WFJ.ReadingPopup.show(cover, r.left + r.width / 2, r.bottom + r.height + 2, word, gloss, size, hint)
+    WFJ.ReadingPopup.show(cover.frame, r.left + r.width / 2, r.bottom + r.height + 2, word, gloss, size, hint)
     return
   end
   local b = ensureBox()
@@ -242,9 +242,9 @@ function showHover(cover, word)
   boxText:SetTextColor(1, 1, 1)
   boxText:SetText(word.reading)
   b:SetSize(boxText:GetStringWidth() + 18, boxText:GetStringHeight() + 12) -- room for the tooltip border
-  View.reparent(b, cover)
+  View.reparent(b, cover.frame)
   b:ClearAllPoints()
-  b:SetPoint("BOTTOM", cover, "BOTTOMLEFT", r.left + r.width / 2, r.bottom + r.height + 2)
+  b:SetPoint("BOTTOM", cover.frame, "BOTTOMLEFT", r.left + r.width / 2, r.bottom + r.height + 2)
   b.owner = cover
   b:Show()
 end
@@ -291,10 +291,10 @@ end
 
 local function onUpdate(cover)
   local cursor = Compat.resolve("GetCursorPosition")
-  local left, bottom = cover:GetLeft(), cover:GetBottom()
+  local left, bottom = cover.frame:GetLeft(), cover.frame:GetBottom()
   if not cursor or not left or not bottom or not cover.words then return end
   local x, y = cursor()
-  local scale = cover:GetEffectiveScale()
+  local scale = cover.frame:GetEffectiveScale()
   local word = View.wordAt(cover.words, x / scale - left, y / scale - bottom)
   if word ~= cover.hovered then
     if word then showHover(cover, word) else clearHover(cover) end
@@ -314,14 +314,14 @@ local function onEnter(cover)
     -- the widget shows other text now (dropped outside Render, e.g. a pooled gossip row): this cover is stale.
     -- Hide it so it never takes mouse motion from whatever is laid out there next.
     cover.spans, cover.text = nil, nil
-    cover:Hide()
+    cover.frame:Hide()
   elseif cover.words[1] then
-    cover:SetScript("OnUpdate", onUpdate)
+    cover.frame:SetScript("OnUpdate", function() onUpdate(cover) end)
   end
 end
 
 local function onLeave(cover)
-  cover:SetScript("OnUpdate", nil)
+  cover.frame:SetScript("OnUpdate", nil)
   cover.words, cover.pressWord = nil, nil
   clearHover(cover)
 end
@@ -362,10 +362,10 @@ local function follow(cover, parent)
     followed[parent] = set
     if type(parent.HookScript) == "function" then
       parent:HookScript("OnHide", function()
-        for c in pairs(set) do c:Hide() end
+        for c in pairs(set) do c.frame:Hide() end
       end)
       parent:HookScript("OnShow", function()
-        for c in pairs(set) do c:SetShown(View.enabled and c.text ~= nil) end
+        for c in pairs(set) do c.frame:SetShown(View.enabled and c.text ~= nil) end
       end)
     end
   end
@@ -375,14 +375,14 @@ end
 -- Puts the cover under the frame its text needs it under. → nothing
 local function place(cover, fs)
   local host, parent = hostOf(fs)
-  if cover:GetParent() ~= host then
-    cover:SetParent(host)
-    cover:ClearAllPoints()
-    cover:SetAllPoints(fs)
+  if cover.frame:GetParent() ~= host then
+    cover.frame:SetParent(host)
+    cover.frame:ClearAllPoints()
+    cover.frame:SetAllPoints(fs)
   end
   if host ~= parent then
     -- above the layout frame's own children, which the cover no longer sits among
-    if type(parent.GetFrameLevel) == "function" then cover:SetFrameLevel(parent:GetFrameLevel() + 2) end
+    if type(parent.GetFrameLevel) == "function" then cover.frame:SetFrameLevel(parent:GetFrameLevel() + 2) end
     follow(cover, parent)
   else
     follow(cover, nil)
@@ -394,26 +394,28 @@ local function coverFor(fs)
   if cover then return cover end
   local inCombat = Compat.resolve("InCombatLockdown")
   if type(inCombat) == "function" and inCombat() then return nil end
-  cover = CreateFrame("Frame", nil, (hostOf(fs)))
-  cover:SetAllPoints(fs)
-  cover:SetMouseMotionEnabled(true)
+  -- the cover is this table, and its frame carries no field: a frame inside a client frame is read by the client's
+  -- own code (a layout asks each child for its fields), and a value the addon wrote there taints that code's run
+  local frame = CreateFrame("Frame", nil, (hostOf(fs)))
+  cover = { frame = frame, fs = fs, tints = {} }
+  frame:SetAllPoints(fs)
+  frame:SetMouseMotionEnabled(true)
   place(cover, fs)
   -- the text under the cover keeps its own mouse motion, and the cover never takes clicks: its clicks are off and
   -- passed on to its parent, the frame the text sits in, so a search box behind its placeholder ("Search") still
   -- takes the click. Both calls are protected in combat, like the motion one, and a cover is only made out of combat
   -- [verified: forever blizzard_apidocumentationgenerated/simplescriptregionapidocumentation.lua:631, :677]. The save
   -- click is read by polling the button (View.poll), never from a click event, so it keeps working.
-  if cover.SetPropagateMouseMotion then cover:SetPropagateMouseMotion(true) end
-  if cover.SetMouseClickEnabled then cover:SetMouseClickEnabled(false) end
-  if cover.SetPropagateMouseClicks then cover:SetPropagateMouseClicks(true) end
-  cover.fs, cover.tints = fs, {}
-  cover:SetScript("OnEnter", onEnter)
-  cover:SetScript("OnLeave", onLeave)
-  cover:SetScript("OnHide", onLeave)
+  if frame.SetPropagateMouseMotion then frame:SetPropagateMouseMotion(true) end
+  if frame.SetMouseClickEnabled then frame:SetMouseClickEnabled(false) end
+  if frame.SetPropagateMouseClicks then frame:SetPropagateMouseClicks(true) end
+  frame:SetScript("OnEnter", function() onEnter(cover) end)
+  frame:SetScript("OnLeave", function() onLeave(cover) end)
+  frame:SetScript("OnHide", function() onLeave(cover) end)
   -- the word status marks follow the text when it is shown again or laid out at another size
-  local function moved(self) if WFJ.WordMarks then WFJ.WordMarks.moved(self) end end
-  cover:SetScript("OnShow", moved)
-  cover:SetScript("OnSizeChanged", moved)
+  local function moved() if WFJ.WordMarks then WFJ.WordMarks.moved(cover) end end
+  frame:SetScript("OnShow", moved)
+  frame:SetScript("OnSizeChanged", moved)
   covers[fs] = cover
   return cover
 end
@@ -443,6 +445,9 @@ local function region(rec)
   if type(r) ~= "table" or type(r.GetText) ~= "function" or r:GetText() ~= rec.applied then return nil end
   return r
 end
+
+-- → the cover laid on `fs`, or nil: its state, and its frame under `frame`
+function View.coverAt(fs) return covers[fs] end
 
 -- the cover of a record's FontString, own or an adapter's (whatever text that FontString holds now)
 local function coverOf(rec)
@@ -482,11 +487,11 @@ local function lay(rec, fs, text, spans, english)
   cover.kind, cover.id, cover.surface = rec.meta.kind, rec.meta.id, rec.surface
   -- a cover that follows a hidden parent stays hidden until that parent shows
   local parent = cover.following
-  cover:SetShown(View.enabled and (parent == nil or type(parent.IsShown) ~= "function" or parent:IsShown()))
+  cover.frame:SetShown(View.enabled and (parent == nil or type(parent.IsShown) ~= "function" or parent:IsShown()))
   if WFJ.WordMarks then WFJ.WordMarks.laid(cover, rec, english) end
   View.attached = View.attached + 1
   -- a re-attach under a resting mouse (the pane redisplayed on QUEST_LOG_UPDATE) gets no new OnEnter: start again
-  if View.enabled and cover.IsMouseOver and cover:IsMouseOver() then onEnter(cover) end
+  if View.enabled and cover.frame.IsMouseOver and cover.frame:IsMouseOver() then onEnter(cover) end
   return true
 end
 
@@ -496,7 +501,7 @@ function View.detach(rec)
   cover.spans, cover.text = nil, nil
   if WFJ.WordMarks then WFJ.WordMarks.clear(cover) end
   onLeave(cover)
-  cover:Hide()
+  cover.frame:Hide()
 end
 
 -- → true when the record's FontString now takes readings
@@ -590,13 +595,13 @@ function View.poll(cover)
     cover.pressWord = cover.hovered
     -- where the cover was at the press: a frame dragged by its text (the voice panel) moves the cover with it, and a
     -- drag is not a click
-    cover.pressLeft, cover.pressBottom = cover:GetLeft(), cover:GetBottom()
+    cover.pressLeft, cover.pressBottom = cover.frame:GetLeft(), cover.frame:GetBottom()
   elseif not down and cover.wasDown then
     local w = cover.pressWord
     cover.pressWord = nil
     -- a name's card is never saved: a name is not a word to study
-    if w and not w.name and w == cover.hovered and cover:GetLeft() == cover.pressLeft
-        and cover:GetBottom() == cover.pressBottom then
+    if w and not w.name and w == cover.hovered and cover.frame:GetLeft() == cover.pressLeft
+        and cover.frame:GetBottom() == cover.pressBottom then
       if not (marking and marks.click(cover, w, "LeftButton")) and saving then save.release(cover, w) end
     end
   end
@@ -623,7 +628,7 @@ end
 -- Hides the reading box or the card over a cover; the tint stays (UI/WordSave's screenshot shows the word).
 function View.hideCard(cover)
   if box and box.owner == cover then box:Hide() end
-  if WFJ.ReadingPopup then WFJ.ReadingPopup.hide(cover) end
+  if WFJ.ReadingPopup then WFJ.ReadingPopup.hide(cover.frame) end
 end
 
 -- Shows the hovered word's box or card again.
@@ -641,7 +646,7 @@ function View.setEnabled(v)
   View.enabled = v and true or false
   for _, cover in pairs(covers) do
     if not View.enabled then onLeave(cover) end
-    cover:SetShown(View.enabled and cover.spans ~= nil)
+    cover.frame:SetShown(View.enabled and cover.spans ~= nil)
   end
   if WFJ.WordMarks then WFJ.WordMarks.redraw() end
 end

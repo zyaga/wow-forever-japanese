@@ -110,8 +110,21 @@ describe("Readings", function()
     return fs
   end
 
+  -- A cover is a table that holds its frame (the frame carries no field): the tests read both through one view,
+  -- the cover's state first, then its frame.
   local function coverOf(fs)
-    for _, f in ipairs(Stub.frames) do if f.allPoints == fs then return f end end
+    for _, fr in ipairs(Stub.frames) do
+      if fr.allPoints == fs then
+        local state = WFJ.ReadingView.coverAt(fs)
+        return setmetatable({ frame = fr }, { __index = function(_, k)
+          local v = state and state[k]
+          if v ~= nil then return v end
+          return fr[k]
+        end, __newindex = function(_, k, v)
+          if state then state[k] = v else fr[k] = v end
+        end })
+      end
+    end
     return nil
   end
 
@@ -257,7 +270,7 @@ describe("Readings", function()
       for _, c in ipairs(box.children) do if c.GetText then label = c end end
       assert.are.equal("すこし", label:GetText())
       -- BOTTOM of the box at the middle of the word's top edge, 2 px up, relative to the cover's BOTTOMLEFT
-      assert.are.same({ "BOTTOM", cover, "BOTTOMLEFT", s + (e + 1 - s) / 2, 0 + 14 + 2 }, box.point)
+      assert.are.same({ "BOTTOM", cover.frame, "BOTTOMLEFT", s + (e + 1 - s) / 2, 0 + 14 + 2 }, box.point)
       -- off every word: hidden
       Stub.cursor = { 100 + #text + 50, 205 }
       cover.scripts.OnUpdate(cover, 0.01)
@@ -727,7 +740,7 @@ describe("Readings", function()
       local fs = questFs()
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
       local cover = coverOf(fs)
-      cover.mouseOver = true
+      cover.frame.mouseOver = true
       R.forget("questframe.detail")
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
       assert.is_function(cover.scripts.OnUpdate)
