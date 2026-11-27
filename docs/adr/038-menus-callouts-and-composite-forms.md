@@ -141,7 +141,9 @@ What the existing mechanisms could not reach:
     client lines are one of a few keys (the Communities `Chat.MessageFrame`: `COMMUNITIES_CHAT_FRAME_TODAY_ /
     _YESTERDAY_ / _UNREAD_MESSAGES_NOTIFICATION`, `COMMUNITIES_MESSAGE_OF_THE_DAY_FORMAT`) gets `AddMessage` and
     `BackFillMessage` post-hooks. Only a line that is wholly one of those keys (`ChatSystem.translateOnly`) is
-    rewritten, once, in the history, as ADR-035 §7; the visible lines follow Alt and the switch the same way.
+    shown in Japanese. The stored line is left as the client wrote it and the Japanese goes on the visible line at
+    each redraw (rewriting the stored line, as first built, left the chat's scroll bar state in the addon's name:
+    seen in game with an isolated test); the visible lines follow Alt and the switch as a chat window's do.
 17. **The guild logs.**
     - **Event log:** `CommunitiesGuildLogFrame`'s SimpleHTML is **parsed, not rebuilt**. A `SetText` post-hook reads
       each text the client writes; every `|n` line is matched as its `GUILDEVENT_TYPE_*` template (player names and
