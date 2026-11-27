@@ -357,7 +357,7 @@ local function fitRow(row)
   local room = row:GetWidth() - 10 - width(row.SkillUps, "GetWidth") - width(row.LockedIcon, "GetWidth", true)
     - width(row.Count, "GetStringWidth", true)
   label:SetWidth(row:GetWidth())
-  label:SetWidth(math.min(room, label:GetStringWidth()))
+  label:SetWidth(math.max(1, math.min(room, label:GetStringWidth() or room)))
 end
 
 -- ScrollUtil callback for a recipe list row: (owner, frame, node) on initialization, (frame, node) on the
