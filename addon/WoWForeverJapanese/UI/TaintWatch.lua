@@ -413,8 +413,6 @@ TaintWatch.ORIGIN_MAX = 300 -- fields a session logs
 TaintWatch.ORIGIN_EVENTS = 4
 local originQueue, originSeen, originFirst, originCount, originRound = {}, {}, {}, 0, 0
 
--- Tables a client function reads on the way to a field the walk found tainted, checked first in every round.
-TaintWatch.ORIGIN_EXTRA = {}
 TaintWatch.GLOBAL_MAX = 250 -- global names a session logs
 TaintWatch.TRACE_ROOTS = 60 -- roots kept for tracing
 TaintWatch.OWN_GLOBAL = { "^_G%.WFJ", "^_G%.WoWForeverJapanese", "^_G%.SLASH_WFJ", "^_G%.BINDING_[A-Z]+_WFJ" }
@@ -488,9 +486,6 @@ local function originSeed()
   originQueue[#originQueue + 1] = { C.resolve("UIParent"), "UIParent", 1 }
   for _, entry in ipairs(C.tables()) do
     originQueue[#originQueue + 1] = { entry[2], entry[1], TaintWatch.COMPAT_DEPTH }
-  end
-  for _, path in ipairs(TaintWatch.ORIGIN_EXTRA) do
-    originQueue[#originQueue + 1] = { byPath(path), path, 1 }
   end
 end
 
