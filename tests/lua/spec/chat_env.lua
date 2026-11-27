@@ -114,6 +114,7 @@ function Env.setup()
     AddMessageEventFilter = function(event, fn) Env.filters[event] = fn end,
     GetActiveWindow = function() return Env.activeBox end,
     OpenChat = function(text) Env.opened = text end,
+    ActivateChat = function() end, -- the client's own open of a chat box (the player's Enter)
   }
   Env.activeBox = nil
   local WFJ = H.loadChunks(Env.FILES)

@@ -2069,8 +2069,12 @@ TAINT_SAVED = """WFJScanDB = {
 ["covers"] = {
 ["total"] = 9,
 ["shown"] = 4,
+["idle"] = 2,
 ["stray"] = {
 "QuestInfoDescriptionText",
+},
+["missing"] = {
+"QuestInfoRewardText",
 },
 ["beside"] = {
 },
@@ -2159,13 +2163,14 @@ def test_the_send_read_fails_on_a_chat_send_value_the_addon_or_the_test_addon_ta
 
 def test_the_cover_read_fails_on_a_cover_out_of_step_beside_its_text_with_a_field_or_in_a_layout_frame():
     record = client_surface.read_covers(TAINT_SAVED)
-    assert (record["total"], record["shown"]) == (9, 4)
+    assert (record["total"], record["shown"], record["idle"]) == (9, 4, 2)
     assert client_surface.covers_problems(record) == [
-        "popup dictionary cover out of step with its text (one shows, the other does not): QuestInfoDescriptionText",
+        "popup dictionary cover showing over a text that is not the addon's any more: QuestInfoDescriptionText",
+        "popup dictionary cover hidden while its text shows: QuestInfoRewardText",
         "popup dictionary cover carries a field (id ignoreInLayout): QuestInfoObjectivesText",
         "popup dictionary cover is a layout frame's own child: GearManagerPopupFrame.BorderBox.Text",
     ]
-    clean = dict(record, stray=[], fields=[], in_layout=[])
+    clean = dict(record, stray=[], missing=[], fields=[], in_layout=[])
     assert client_surface.covers_problems(clean) == []
     assert "older build" in client_surface.covers_problems(dict(clean, noread=True))[0]
     assert client_surface.read_covers("WFJScanDB = {}") is None and len(client_surface.covers_problems(None)) == 1

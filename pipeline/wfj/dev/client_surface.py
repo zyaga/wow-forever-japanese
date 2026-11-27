@@ -3133,14 +3133,17 @@ end
 -- (the client's layout code reads fields off every child it lays out) and may not be a layout frame's own child.
 -- Read as they are now, over whatever is on screen. Into `probe.covers`:
 --   total  covers the addon holds; shown  those showing; noread  the addon has no such read (an older build)
---   stray    { "<text>" } a cover showing while its text is not, or hidden while its text shows: a failure
+--   on       whether the popup dictionary is switched on; idle  covers showing over a text that is not (the cover
+--            answers nothing there and lets the mouse through: counted, never a failure)
+--   stray    { "<text>" } a cover showing over a text that is not the addon's any more: a failure
+--   missing  { "<text>" } with the popup dictionary on, a text of the addon's showing with its cover hidden: a failure
 --   beside   { "<text>" } a showing cover whose box is not its text's box: a failure
 --   fields   { "<text>\\t<keys>" } a cover's frame carrying a field: a failure
 --   inLayout { "<text>" } a cover that is a layout frame's own child: a failure
 local COVERS_MAX = 40
 local function WFJScanCoversRead(done)
   local db = probeDb()
-  local record = { total = 0, shown = 0, stray = {}, beside = {}, fields = {}, inLayout = {} }
+  local record = { total = 0, shown = 0, idle = 0, stray = {}, missing = {}, beside = {}, fields = {}, inLayout = {} }
   db.covers = record
   if type(WFJ_ReadingCovers) ~= "function" then
     record.noread = true
@@ -3154,14 +3157,18 @@ local function WFJScanCoversRead(done)
     return ok and type(name) == "string" and name or "unnamed"
   end
   local function near(a, b) return a ~= nil and b ~= nil and math.abs(a - b) <= 1.5 end
-  pcall(WFJ_ReadingCovers, function(fs, frame)
+  local visits = {}
+  local okOn, on = pcall(WFJ_ReadingCovers, function(fs, frame, inUse) visits[#visits + 1] = { fs, frame, inUse } end)
+  record.on = okOn and on and true or false
+  for _, visit in ipairs(visits) do
+    local fs, frame, inUse = visit[1], visit[2], visit[3]
     record.total = record.total + 1
     local name = label(fs)
-    local okF, forbidden = pcall(function() return frame:IsForbidden() end)
-    if not okF or forbidden then return end
     local frameShown, textShown = frame:IsVisible() and true or false, fs:IsVisible() and true or false
     if frameShown then record.shown = record.shown + 1 end
-    if frameShown ~= textShown then note(record.stray, name) end
+    if frameShown and not inUse then note(record.stray, name) end
+    if frameShown and inUse and not textShown then record.idle = record.idle + 1 end
+    if record.on and inUse and textShown and not frameShown then note(record.missing, name) end
     if frameShown and textShown then
       local l, b, w, h = frame:GetRect()
       local fl, fb, fw, fh = fs:GetRect()
@@ -3179,7 +3186,7 @@ local function WFJScanCoversRead(done)
     if type(parent) == "table" and type(parent.Layout) == "function" and type(parent.GetLayoutChildren) == "function" then
       note(record.inLayout, name)
     end
-  end)
+  end
   done()
 end
 
@@ -5206,8 +5213,9 @@ def send_problems(record: dict[str, Any] | None) -> list[str]:
 def read_covers(text: str) -> dict[str, Any] | None:
     """The window test's popup dictionary cover read out of a saved-variables file, or None when the run had none:
     how many covers the addon holds (`total`) and shows (`shown`), whether the addon had no such read (`noread`),
-    and the texts whose cover is out of step with them (`stray`), beside them (`beside`), carries a field
-    (`fields`, as (text, keys)) or is a layout frame's own child (`in_layout`)."""
+    how many show over a text that does not (`idle`), and the texts whose cover shows though the text is not the
+    addon's any more (`stray`), is hidden though the text shows (`missing`), lies beside them (`beside`), carries a
+    field (`fields`, as (text, keys)) or is a layout frame's own child (`in_layout`)."""
     from wfj.io import lua_reader
 
     db = lua_reader.parse_assignments(text).get("WFJScanDB")
@@ -5221,7 +5229,8 @@ def read_covers(text: str) -> dict[str, Any] | None:
         return [str(r) for r in (found.positional() if found is not None else [])]
 
     return {"total": int(record.get("total") or 0), "shown": int(record.get("shown") or 0),
-            "noread": bool(record.get("noread")), "stray": rows("stray"), "beside": rows("beside"),
+            "noread": bool(record.get("noread")), "idle": int(record.get("idle") or 0),
+            "stray": rows("stray"), "missing": rows("missing"), "beside": rows("beside"),
             "fields": [tuple((r.split("\t", 1) + [""])[:2]) for r in rows("fields")], "in_layout": rows("inLayout")}
 
 
@@ -5232,8 +5241,9 @@ def covers_problems(record: dict[str, Any] | None) -> list[str]:
                 "run it again)"]
     if record["noread"]:
         return ["popup dictionary covers not read: the addon in the game has no read for them (an older build)"]
-    out = [f"popup dictionary cover out of step with its text (one shows, the other does not): {name}"
+    out = [f"popup dictionary cover showing over a text that is not the addon's any more: {name}"
            for name in record["stray"]]
+    out += [f"popup dictionary cover hidden while its text shows: {name}" for name in record["missing"]]
     out += [f"popup dictionary cover not over its text: {name}" for name in record["beside"]]
     out += [f"popup dictionary cover carries a field ({keys}): {name}" for name, keys in record["fields"]]
     out += [f"popup dictionary cover is a layout frame's own child: {name}" for name in record["in_layout"]]
@@ -5883,7 +5893,8 @@ def _taint_reads(saved: str, part: Any, ui: Path | None) -> list[str]:
     out += send_problems(send) if part("send") else []
     covers = read_covers(saved) if part("covers") else None
     if covers is not None and not covers["noread"]:
-        print(f"popup dictionary covers: {covers['total']} held, {covers['shown']} showing")
+        print(f"popup dictionary covers: {covers['total']} held, {covers['shown']} showing, "
+              f"{covers['idle']} over a text that is hidden")
     out += covers_problems(covers) if part("covers") else []
     return out
 

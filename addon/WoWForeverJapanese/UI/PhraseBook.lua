@@ -13,7 +13,7 @@ local Compat = WFJ.Compat
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
 local SURFACE = "chat.phrasebook"
 local CANDIDATES = { chatFrame = { "ChatFrame1" }, activeBox = { "ChatFrameUtil.GetActiveWindow" },
-  openChat = { "ChatFrameUtil.OpenChat", "ChatFrame_OpenChat" } }
+  chatUtil = { "ChatFrameUtil" }, timer = { "C_Timer" } }
 
 Book.COLS = 2
 Book.ROWS = 8 -- the fullest topic the card has room for is COLS x ROWS phrases (a test holds the data to it)
@@ -25,6 +25,7 @@ local db -- WFJ_DB (init): db.phrases = { point = { p, rp, x, y } }
 local card, button
 local rows, tabs, topic = {}, {}, nil
 local cardOpen, closed = false, false
+local hookedOpen = false
 
 local function pick(key) return W.pick(Text.get(key)) end
 
@@ -79,19 +80,58 @@ end
 
 -- ── Typing a phrase ────────────────────────────────────────────────────────
 
--- Into the chat box that is open, else a new one. The text goes in with the edit box's own Insert or the client's
--- own open call; the player sends it.
+-- Into the chat box that is open. With none open the phrase waits for the player to open one (Enter): the addon
+-- never opens the chat box itself, since the client's open call writes the client's own record of the active box
+-- (ChatFrameUtil.ActivateChat, blizzard_chatframebase/shared/chatframeutil.lua:531–545) and a record written from
+-- the addon's code makes the client's later chat code run in the addon's name. The player sends it.
+local waiting -- the typed text of the phrase waiting for a chat box
+
+local function say(key)
+  local en, ja = Text.get(key)
+  if en then print("WFJ: " .. en .. " ・ " .. ja) end
+end
+
 function Book.type(phrase)
   local text = WFJ.ChatPhrases.typed(phrase)
   local active = Compat.get(SURFACE, "activeBox")
   local box = type(active) == "function" and active() or nil
   if type(box) == "table" and type(box.Insert) == "function" then
+    waiting = nil
     box:Insert(text)
     return text
   end
-  local open = Compat.get(SURFACE, "openChat")
-  if type(open) == "function" then open(text) end
+  waiting = text
+  say("chat.book.wait")
   return text
+end
+
+-- The phrase waiting, if any (a test and the card read it).
+function Book.waiting() return waiting end
+
+-- The waiting phrase into a box the player opened. A box that already holds text (opened with the slash key) is left
+-- alone and the phrase goes on waiting. → true when typed
+function Book.typeWaiting(box)
+  if not waiting or type(box) ~= "table" or type(box.Insert) ~= "function" or type(box.GetText) ~= "function" then
+    return false
+  end
+  local held = box:GetText()
+  if Compat.secret(held) or (type(held) == "string" and held ~= "") then return false end
+  local text = waiting
+  waiting = nil
+  box:Insert(text)
+  return true
+end
+
+-- hooksecurefunc target (ChatFrameUtil.ActivateChat(editBox)): on the next frame, after the client's open call has
+-- written what it opens the box with.
+function Book.onActivate(box)
+  if not waiting then return end
+  local timer = Compat.get(SURFACE, "timer")
+  if type(timer) == "table" and type(timer.After) == "function" then
+    timer.After(0, function() Book.typeWaiting(box) end)
+  else
+    Book.typeWaiting(box)
+  end
 end
 
 -- ── The card ───────────────────────────────────────────────────────────────
@@ -324,6 +364,11 @@ function Book.init(saved)
   WFJ.State.on("chat", function() pcall(apply) end)
   WFJ.State.on("enabled", function() pcall(apply) end)
   WFJ.State.on("language", function() pcall(relabel) end)
+  local util = Compat.get(SURFACE, "chatUtil")
+  if not hookedOpen and type(util) == "table" and type(util.ActivateChat) == "function" then
+    hookedOpen = true
+    hooksecurefunc(util, "ActivateChat", Book.onActivate)
+  end
   apply()
   return true
 end

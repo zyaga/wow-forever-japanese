@@ -68,12 +68,12 @@ The icon follows the line `UI/ChatLines` reports (`ChatLines.onLine`), so it nev
 ### The phrase book
 **The button** (`WFJPhraseButton`, 27 × 26) is the client's own chat button art (`chatframe-button-up`, `-down`, `-highlight`) with a gold 文 where the client's buttons carry their icon. Until the player drags it, it sits centred right above the chat frame's own menu button (the speech bubble), or beside the main chat frame when that button is not shown (on the side the client keeps the chat buttons). The card opens by the chat frame on that same side. Its tooltip is a label of the addon's own (the client's tooltip font has no Japanese).
 
-**The card** (`WFJPhraseCard`, 704 × 416) is built the way the study card is ([Study → The tab and where it lives](study.md#the-tab-and-where-it-lives)): the same backdrop, a minus and an X in the header, the topics as the client's own tabs under it (the strip drawn smaller when nine tabs are wider than the card), the phrases in two columns of up to eight rows (Japanese above, English below in grey), and a footer, "Click a phrase, then press Enter to send it." Every topic shows at one fixed size, so the card never moves under the mouse.
+**The card** (`WFJPhraseCard`, 704 × 416) is built the way the study card is ([Study → The tab and where it lives](study.md#the-tab-and-where-it-lives)): the same backdrop, a minus and an X in the header, the topics as the client's own tabs under it (the strip drawn smaller when nine tabs are wider than the card), the phrases in two columns of up to eight rows (Japanese above, English below in grey), and a footer, "Click a phrase, then press Enter. With chat closed, Enter opens it with the phrase typed." Every topic shows at one fixed size, so the card never moves under the mouse.
 
 | action | what happens |
 |---|---|
 | click the button | the button becomes the card, at the same spot |
-| click a phrase | `· ` and the phrase's English go into the chat box (the open one with its own `Insert`, else a new one); the card collapses to the button; the player presses Enter |
+| click a phrase | `· ` and the phrase's English go into the open chat box with its own `Insert`; with no chat box open the phrase waits, one chat line says to press Enter, and it is typed into the box the player opens (a post-hook on `ChatFrameUtil.ActivateChat`, on the next frame; a box opened with text in it, the slash key's, is left alone). The addon never opens the chat box itself: the client's open call writes its record of the active box, and a record written from addon code makes the client's later chat code run in the addon's name. The card collapses to the button; the player presses Enter to send |
 | the card's minus | back to the button |
 | the card's X | both hidden until something opens the card again; the next login or `/reload` shows the button as before |
 | drag either | both move: they share one saved spot, `WFJ_DB.phrases.point` |

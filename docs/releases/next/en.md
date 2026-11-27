@@ -3,3 +3,4 @@
 - If the game ever refuses an action because of the addon, a chat line now says so once: `/reload` clears it, and `/wfj bug` sends what the addon found.
 - The bug report form now asks whether the problem happens with only this addon on.
 - With Japanese names on, recipe names and reagent names in the Professions window are in Japanese too.
+- Phrase book: with chat closed, click a phrase and press Enter. Chat opens with the phrase typed.

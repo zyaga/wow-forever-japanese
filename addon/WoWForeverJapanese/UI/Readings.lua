@@ -449,9 +449,11 @@ end
 -- → the cover laid on `fs`, or nil: its state, and its frame under `frame`
 function View.coverAt(fs) return covers[fs] end
 
--- Every cover and the text it lies on, for a check of the running game: visit(fs, frame) per cover.
+-- Every cover and the text it lies on, for a check of the running game: visit(fs, frame, inUse) per cover, `inUse`
+-- while the text is the addon's and takes word cards. → whether the popup dictionary is switched on
 function WFJ_ReadingCovers(visit)
-  for fs, cover in pairs(covers) do visit(fs, cover.frame) end
+  for fs, cover in pairs(covers) do visit(fs, cover.frame, cover.spans ~= nil) end
+  return View.enabled
 end
 
 -- the cover of a record's FontString, own or an adapter's (whatever text that FontString holds now)
