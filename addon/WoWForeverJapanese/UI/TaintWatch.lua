@@ -448,8 +448,8 @@ local armed = {}
 
 -- A root the walk found tainted is traced method by method from the next login on, in every session, so the next
 -- time it turns the entry names the method and the calls that led to it. `_G` and UIParent are too wide to hook.
-local function rootObject(root)
-  for _, entry in ipairs(C.tables()) do
+local function rootObject(root, tables)
+  for _, entry in ipairs(tables) do
     if entry[1] == root then return entry[2] end
   end
   return byPath(root)
@@ -459,9 +459,11 @@ function TaintWatch.armPersisted()
   local roots = type(WFJ_Log) == "table" and WFJ_Log.traceRoots or nil
   if type(roots) ~= "table" then return 0 end
   local n = 0
+  local tables -- the declared frames, listed once and only when a root is not armed yet
   for root in pairs(roots) do
     if not armed[root] then
-      local obj = rootObject(root)
+      tables = tables or C.tables(true)
+      local obj = rootObject(root, tables)
       if type(obj) == "table" then
         armed[root] = true
         TaintWatch.traceObject(root, obj)
@@ -510,6 +512,9 @@ local function summarize(label, by, root)
   summary.groups[key] = summary.groups[key] + 1
 end
 
+-- A round starts in three steps of its own, one per step of the walk, so that no step is long: the round's state
+-- and the traced roots, then the scan's roots, then the frames the addon's declarations resolved to.
+local seeding -- the steps of the start still to run, when a round is starting
 local function originSeed()
   originRound = originRound + 1
   originChecked = 0
@@ -523,27 +528,33 @@ local function originSeed()
     summary = { reasons = summaryAsked, groups = {}, order = {}, found = 0, globals = {} }
     summaryAsked = {}
   end
-  pcall(TaintWatch.armPersisted)
-  -- every global name and one level under each global table: popped last, so the named roots are read first
-  originQueue[#originQueue + 1] = { _G, "_G", 1 }
-  for _, name in ipairs(TaintWatch.SCAN_ROOTS) do
-    local root = C.resolve(name)
-    originQueue[#originQueue + 1] = { root, name, TaintWatch.SCAN_DEEP[name] or TaintWatch.SCAN_DEPTH }
-    -- a pool's rows are reached through EnumerateActive, which only reads
-    for _, key in ipairs(TaintWatch.SCAN_POOLS[name] or {}) do
-      local pool = type(root) == "table" and root[key]
-      pcall(function()
-        for row in pool:EnumerateActive() do
-          local id = type(row) == "table" and (row.questID or row.layoutIndex) or "?"
-          originQueue[#originQueue + 1] = { row, name .. "." .. key .. "[" .. tostring(id) .. "]", 1, name }
+  seeding = {
+    function() pcall(TaintWatch.armPersisted) end,
+    function()
+      -- every global name and one level under each global table: popped last, so the named roots are read first
+      originQueue[#originQueue + 1] = { _G, "_G", 1 }
+      for _, name in ipairs(TaintWatch.SCAN_ROOTS) do
+        local root = C.resolve(name)
+        originQueue[#originQueue + 1] = { root, name, TaintWatch.SCAN_DEEP[name] or TaintWatch.SCAN_DEPTH }
+        -- a pool's rows are reached through EnumerateActive, which only reads
+        for _, key in ipairs(TaintWatch.SCAN_POOLS[name] or {}) do
+          local pool = type(root) == "table" and root[key]
+          pcall(function()
+            for row in pool:EnumerateActive() do
+              local id = type(row) == "table" and (row.questID or row.layoutIndex) or "?"
+              originQueue[#originQueue + 1] = { row, name .. "." .. key .. "[" .. tostring(id) .. "]", 1, name }
+            end
+          end)
         end
-      end)
-    end
-  end
-  originQueue[#originQueue + 1] = { C.resolve("UIParent"), "UIParent", 1 }
-  for _, entry in ipairs(C.tables()) do
-    originQueue[#originQueue + 1] = { entry[2], entry[1], TaintWatch.COMPAT_DEPTH }
-  end
+      end
+      originQueue[#originQueue + 1] = { C.resolve("UIParent"), "UIParent", 1 }
+    end,
+    function()
+      for _, entry in ipairs(C.tables(true)) do
+        originQueue[#originQueue + 1] = { entry[2], entry[1], TaintWatch.COMPAT_DEPTH }
+      end
+    end,
+  }
 end
 
 -- The end of a round: its count, and the summary when one was asked for.
@@ -619,7 +630,7 @@ end
 
 -- Whether the walk has nothing left to read.
 function TaintWatch.walkDone()
-  return #originQueue == 0 and not roundOpen and originRound >= originWanted
+  return #originQueue == 0 and not seeding and not roundOpen and originRound >= originWanted
 end
 
 -- The rounds asked for, read to their end in one go, with no time limit on a step: for a check that cannot wait
@@ -638,6 +649,11 @@ end
 function TaintWatch.originStep()
   -- between rounds nothing is read: the queue is empty and no round is owed
   if TaintWatch.walkDone() then return 0 end
+  if seeding then
+    table.remove(seeding, 1)()
+    if #seeding == 0 then seeding = nil end
+    return 0
+  end
   local now = C.resolve("debugprofilestop")
   local started = not unhurried and type(now) == "function" and now() or nil
   local checked = 0
