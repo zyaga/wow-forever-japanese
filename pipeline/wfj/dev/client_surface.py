@@ -4582,7 +4582,11 @@ end
         if type(detail) == "table" then
           keys(detail.ViewRenownButton, "ReputationDetailFrame.ViewRenownButton")
           keys(detail.Description, "ReputationDetailFrame.Description")
+          keys(type(detail.Description) == "table" and detail.Description.ScrollBox or nil,
+            "ReputationDetailFrame.Description.ScrollBox")
+          keys(detail.DescriptionScrollBar, "ReputationDetailFrame.DescriptionScrollBar")
           keys(detail.StandingBar, "ReputationDetailFrame.StandingBar")
+          keys(detail.Content, "ReputationDetailFrame.Content")
         end
         local box = pane.ScrollBox
         keys(box, "ReputationFrame.ScrollBox")
@@ -4640,6 +4644,33 @@ end
       end)
     end
     step("1 before anything")
+    -- With a copy of the addon that takes a switch (WFJ_ISOLATE: the one write of the reputation pane it makes), the
+    -- test turns on one write at a time and the player opens the pane once for each: the write after which a value
+    -- reads in the addon's name is the one. The description comes last: what it leaves on its scroll box stays for
+    -- the opens after it.
+    if _G.WFJ_ISOLATE_BUILD then
+      -- this half needs the addon writing: with translation off no write is made and every step reads clean
+      local settings = type(WFJ_DB) == "table" and WFJ_DB.settings or nil
+      if type(settings) == "table" and settings.enabled == false then
+        print("WFJ test: translation is off. Type /wfj on, then run it again.")
+        record.refused = "translation was off"
+        return done()
+      end
+      local order = { "none", "title", "rows", "list", "empty", "description", "everything" }
+      local function variant(i)
+        local what = order[i]
+        if not what then
+          _G.WFJ_ISOLATE = nil
+          return done()
+        end
+        _G.WFJ_ISOLATE = what ~= "everything" and what or nil
+        byPlayer("only " .. what .. ": the player's own click showed the reputation pane",
+          "only " .. what .. ": the player closed the window",
+          "WFJ test (" .. i .. " of " .. #order .. "): open the character window, click the Reputation tab, close it.",
+          function() variant(i + 1) end)
+      end
+      return variant(1)
+    end
     byPlayer("2 the player's own click showed the reputation pane, nothing of the test's before it",
       "3 the player closed the window",
       "WFJ test: open the character window, click the Reputation tab, then close the window.", function()
