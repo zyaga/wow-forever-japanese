@@ -4282,32 +4282,72 @@ end
     end
     return type(t) == "table" and t or nil, parts[#parts], #parts
   end
+  -- Values to trace whatever the watcher holds: seen in the addon's name after a full test run and never in play,
+  -- so the next run that shows them has to say who wrote them. A name with a path is resolved as the watcher names
+  -- things; `rows` looks through a scroll box's rows for the key.
+  local TRACE_SEEDS = {
+    { name = "ReputationFrame.filterDropdown.menuGenerator" },
+    { name = "ReputationFrame.ScrollBox rows.factionID", rows = "ReputationFrame.ScrollBox.x", key = "factionID" },
+    { name = "CharacterFrame.selectedTab" }, { name = "CharacterFrame.activeSubframe" },
+  }
   local function traceArm()
     local w = watchDb()
     if not w then return end
-    local pending, hooked = {}, {}
+    local pending, hooked, labels = {}, {}, {}
     local function want(path)
-      if type(path) == "string" and not TRACE_SKIP[path:match("([^.]+)$") or ""] then pending[path] = true end
+      if type(path) == "string" and not TRACE_SKIP[path:match("([^.]+)$") or ""] then
+        pending[path] = function() return traceResolve(path) end
+      end
     end
     for _, rec in pairs(w.windows) do
       for _, path in ipairs(type(rec.ours) == "table" and rec.ours or {}) do want(path) end
     end
     for _, path in ipairs(type(w.suspects) == "table" and w.suspects or {}) do want(path) end
-    if next(pending) == nil then return end
+    for _, seed in ipairs(TRACE_SEEDS) do
+      if seed.rows then
+        pending[seed.name] = function()
+          local box = traceResolve(seed.rows)
+          if type(box) ~= "table" or type(box.GetFrames) ~= "function" then return nil end
+          local ok, rows = pcall(box.GetFrames, box)
+          for _, row in ipairs(ok and type(rows) == "table" and rows or {}) do
+            local okS, isSecure, owner = pcall(issecurevariable, row, seed.key)
+            if okS and not isSecure and owner == "WoWForeverJapanese" then return row, seed.key end
+          end
+          return nil
+        end
+      else
+        want(seed.name)
+      end
+    end
     w.traces = {}
+    -- what else on the tables being watched reads in the addon's name at that moment: what the writer may have read
+    local function near()
+      local out = {}
+      for t, label in pairs(labels) do
+        for key in pairs(t) do
+          if type(key) == "string" and #out < 30 then
+            local ok, isSecure, owner = pcall(issecurevariable, t, key)
+            if ok and not isSecure and owner == "WoWForeverJapanese" then out[#out + 1] = label .. "." .. key end
+          end
+        end
+      end
+      table.sort(out)
+      return table.concat(out, " | ")
+    end
     local checking = false
     local function check(label)
       -- its own reads may run a hooked function (a frame that keeps GetChildren as a field): never from inside
       if checking or next(pending) == nil then return end
       checking = true
-      for path in pairs(pending) do
-        local t, key = traceResolve(path)
+      for name, find in pairs(pending) do
+        local t, key = find()
         if t then
           local ok, isSecure, owner = pcall(issecurevariable, t, key)
           if ok and not isSecure and owner == "WoWForeverJapanese" then
-            pending[path] = nil
+            pending[name] = nil
             if #w.traces < TRACE_MAX then
-              w.traces[#w.traces + 1] = { path = path, after = label, stack = debugstack(3, 40, 40) }
+              w.traces[#w.traces + 1] = { path = name, after = label, stack = debugstack(3, 40, 40), near = near(),
+                at = date("%%H:%%M:%%S") }
             end
           end
         end
@@ -4317,6 +4357,7 @@ end
     local function hookAll(t, label)
       if type(t) ~= "table" or hooked[t] then return end
       hooked[t] = true
+      labels[t] = label
       for key, value in pairs(t) do
         if type(key) == "string" and type(value) == "function" then
           pcall(hooksecurefunc, t, key, function() check(label .. ":" .. key) end)
@@ -4328,11 +4369,15 @@ end
         end
       end
     end
-    for path in pairs(pending) do
+    local function hookPath(path)
       local _, _, count = traceResolve(path)
       for upTo = 1, (count or 1) - 1 do
         hookAll(traceResolve(path, upTo), (path:match(("[^.]+%%."):rep(upTo - 1) .. "[^.]+") or path))
       end
+    end
+    for name in pairs(pending) do hookPath(name) end
+    for _, seed in ipairs(TRACE_SEEDS) do
+      if seed.rows then hookPath(seed.rows) end
     end
   end
 
@@ -5707,7 +5752,8 @@ def read_watch(text: str) -> dict[str, Any] | None:
     kept = watch.get("traces")
     for row in (kept.positional() if kept is not None else []):
         traces.append({"path": str(row.get("path") or ""), "after": str(row.get("after") or ""),
-                       "stack": str(row.get("stack") or "")})
+                       "stack": str(row.get("stack") or ""), "near": str(row.get("near") or ""),
+                       "at": str(row.get("at") or "")})
     return {"build": str(watch.get("build") or ""), "code": str(watch.get("code") or ""), "windows": out,
             "traces": traces,
             "refused": refused, "fights": int(watch.get("fights") or 0),
@@ -6396,7 +6442,8 @@ def _print_watch(watch: dict[str, Any]) -> None:
         if addon != "WoWForeverJapanese":
             print(f"in play  refused in another addon's name ({addon}): {action}, {rec['n']} times")
     for trace in watch["traces"]:
-        print(f"in play  {trace['path']} was written in the addon's name by {trace['after']}:")
+        print(f"in play  {trace['path']} was written in the addon's name by {trace['after']} at {trace['at']}"
+              f" (also in its name there: {trace['near'] or 'nothing'}):")
         for line in trace["stack"].splitlines():
             print("in play      " + line)
     unread = [name for name in WATCH_EXPECTED if not watch["windows"].get(name, {}).get("checked")]
