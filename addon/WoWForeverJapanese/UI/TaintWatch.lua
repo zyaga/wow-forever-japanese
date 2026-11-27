@@ -386,11 +386,12 @@ function TaintWatch.onBlocked(entry)
   scannedBlocks[key] = true
   TaintWatch.scanFor = key
   -- the bug report carries the addon's caught errors: the refusal goes in as one, with the session's first causes
+  -- (quietly: the refusal has its own chat line)
   if WFJ.ErrorLog and not TaintWatch.reported then
     TaintWatch.reported = true
     local found = TaintWatch.causes()
     pcall(WFJ.ErrorLog.recordCaught, "Interface/AddOns/" .. tostring(WFJ.ADDON) .. "/UI/TaintWatch.lua:0: the game "
-      .. "refused " .. key .. "; first tainted this session: " .. (found ~= "" and found or "none found"))
+      .. "refused " .. key .. "; first tainted this session: " .. (found ~= "" and found or "none found"), true)
   end
   WFJ.Diag.log("context", "events before " .. key, { events = TaintWatch.events() })
   TaintWatch.scanPending = true
