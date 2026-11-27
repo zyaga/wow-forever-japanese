@@ -2066,6 +2066,14 @@ TAINT_SAVED = """WFJScanDB = {
 ["line"] = 164,
 ["recipe"] = 7,
 },
+["send"] = {
+["checked"] = 40,
+["tainted"] = {
+"ChatFrame1EditBox.text\\tWFJScan",
+"hash_SlashCmdList./WFJ\\tWoWForeverJapanese",
+"ChatFrame1EditBox.setText\\tBaganator",
+},
+},
 ["touch"] = {
 ["frames"] = 900,
 ["made"] = 5,
@@ -2114,8 +2122,8 @@ def test_the_touch_read_fails_on_a_client_field_and_on_a_field_name_the_client_r
     assert problems == [
         "client field tainted by the addon: UIErrorsFrame.ShouldDisplayMessageType",  # the allowed one is not listed
         "client fields tainted by the addon: 2 more",
-        "the addon's frame inside a client frame carries fields the client's code names (2 frames, e.g. under "
-        "QuestInfoFrame): id ignoreInLayout",
+        ("the addon's frame inside a client frame carries fields the client's code names (2 frames, e.g. under "
+         "QuestInfoFrame): id ignoreInLayout"),
     ]
     # with no UI source to check against, no field of a frame inside a client frame can be cleared
     assert len(client_surface.touch_problems(record, None)) == 4
@@ -2124,3 +2132,11 @@ def test_the_touch_read_fails_on_a_client_field_and_on_a_field_name_the_client_r
 
 def test_every_allowed_client_field_gives_its_reason():
     assert all(len(reason) > 40 for reason in client_surface.TOUCH_ALLOWED.values())
+
+
+def test_the_send_read_fails_on_a_chat_send_value_the_addon_or_the_test_addon_tainted():
+    record = client_surface.read_send(TAINT_SAVED)
+    assert record["checked"] == 40 and len(record["tainted"]) == 3
+    # an addon's own slash command entry is its own to write; another addon's taint is not this addon's to fix
+    assert client_surface.send_problems(record) == ["chat send path value tainted by WFJScan: ChatFrame1EditBox.text"]
+    assert client_surface.read_send("WFJScanDB = {}") is None and len(client_surface.send_problems(None)) == 1

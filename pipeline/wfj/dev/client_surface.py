@@ -3127,6 +3127,57 @@ local function WFJScanTouchRead(done)
   end)
 end
 
+-- The chat send read. A slash command the player types runs from the chat box's Enter handler through the client's
+-- own send code (chatframeeditbox.lua:451-455, 426, 296, 271) to the command's function; a value on that path that
+-- carries an addon's taint makes the client refuse a command that needs a clean run (a guild invite). Read here:
+-- every field of each chat edit box, the globals that path names, and each entry of the slash command tables.
+-- Into `probe.send`:
+--   checked  values read; tainted  { "<name>\\t<addon>" } carrying any addon's taint
+local SEND_GLOBALS = { "ACTIVE_CHAT_EDIT_BOX", "LAST_ACTIVE_CHAT_EDIT_BOX", "CHAT_FOCUS_OVERRIDE", "DEFAULT_CHAT_FRAME",
+  "SELECTED_CHAT_FRAME", "SELECTED_DOCK_FRAME", "ChatFrameUtil", "ChatFrameEditBoxMixin", "ChatFrameEditBoxBaseMixin",
+  "ChatFrameMixin", "SlashCmdList", "hash_SlashCmdList", "hash_EmoteTokenList", "hash_ChatTypeInfoList", "ChatTypeInfo",
+  "C_GuildInfo", "C_PartyInfo", "C_ChatInfo", "Constants", "GetUnitName", "UnitName", "strtrim", "strupper", "strlower",
+  "strmatch", "strfind", "strsub", "strlen", "strsplit", "format", "gsub", "tinsert", "tremove", "securecallfunction",
+  "secureexecuterange", "issecure", "IsSecureCmd", "GENERAL_CHAT_DOCK", "FCFDock_GetSelectedWindow", "GetCVar",
+  "GetCVarBool", "UIParent", "AutoCompleteEditBox_OnEnterPressed", "AutoComplete_Update", "IsVoiceTranscription",
+  "MacroEditBox", "RunMacroText", "SecureCmdOptionParse", "ChatEdit_ParseText", "ChatEdit_SendText",
+  "ChatFrame_OpenChat", "ChatEdit_ActivateChat", "ChatEdit_OnEnterPressed" }
+local SEND_TABLES = { "ChatFrameUtil", "ChatFrameEditBoxMixin", "ChatFrameEditBoxBaseMixin", "hash_SlashCmdList",
+  "hash_ChatTypeInfoList", "C_GuildInfo", "C_PartyInfo" }
+local function WFJScanSendRead(done)
+  local db = probeDb()
+  local record = { checked = 0, tainted = {} }
+  db.send = record
+  local function look(t, key, name)
+    record.checked = record.checked + 1
+    local ok, isSecure, by = pcall(issecurevariable, t, key)
+    if ok and not isSecure and #record.tainted < 200 then
+      record.tainted[#record.tainted + 1] = name .. "\\t" .. tostring(by)
+    end
+  end
+  for _, name in ipairs(SEND_GLOBALS) do look(_G, name, name) end
+  for _, name in ipairs(SEND_TABLES) do
+    local t = _G[name]
+    if type(t) == "table" then
+      for key in pairs(t) do
+        if type(key) == "string" then look(t, key, name .. "." .. key) end
+      end
+    end
+  end
+  for i = 1, NUM_CHAT_WINDOWS or 10 do
+    for _, name in ipairs({ "ChatFrame" .. i .. "EditBox", "ChatFrame" .. i }) do
+      local f = _G[name]
+      look(_G, name, name)
+      if type(f) == "table" then
+        for key in pairs(f) do
+          if type(key) == "string" then look(f, key, name .. "." .. key) end
+        end
+      end
+    end
+  end
+  done()
+end
+
 -- The crafting window read. The window is opened the way the client opens it for a player: the test asks the
 -- client for the trade skill (C_TradeSkillUI.OpenTradeSkill), the client answers with its own event, and the window's
 -- own code opens it in a fresh run that carries no addon's taint. A field of the window that then carries the
@@ -3898,7 +3949,8 @@ end
 SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
 -- (a test holds this list to the parts table)
-local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, touch, freeze"
+local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, craft, "
+  .. "touch, send, freeze"
 local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
@@ -4057,6 +4109,7 @@ SlashCmdList.WFJTEST = function(how)
     { "craft", function(nxt) outOfCombat(function() WFJScanCraftRead(nxt) end) end },
     -- after the windows were walked and opened, so the frames the addon makes on them exist
     { "touch", function(nxt) WFJScanTouchRead(nxt) end },
+    { "send", function(nxt) WFJScanSendRead(nxt) end },
     -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
     { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
   }
@@ -5023,6 +5076,42 @@ def touch_problems(record: dict[str, Any] | None, client_names: set[str] | None)
     return out
 
 
+# An addon's own slash command entry is its own to write; nothing on the send path reads another command's entry.
+_SEND_OWN = re.compile(r"^(hash_SlashCmdList|hash_ChatTypeInfoList)\./")
+
+
+def read_send(text: str) -> dict[str, Any] | None:
+    """The window test's chat send read out of a saved-variables file, or None when the run had none: how many
+    values of the chat send path it read (`checked`) and the ones carrying an addon's taint as (name, addon)
+    (`tainted`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("send") if probe is not None else None
+    if record is None:
+        return None
+    rows = record.get("tainted")
+    return {
+        "checked": int(record.get("checked") or 0),
+        "tainted": [tuple((str(r).split("\t", 1) + [""])[:2])
+                    for r in (rows.positional() if rows is not None else [])],
+    }
+
+
+SEND_ADDONS = ("WoWForeverJapanese", "WFJScan")
+
+
+def send_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the chat send read found wrong, one line each: a value on the chat send path carrying the taint of the
+    addon or of the test addon, other than a slash command entry (every addon writes its own)."""
+    if record is None:
+        return ["chat send path not read: this run's test addon has no such read (make scan-install, then run it "
+                "again)"]
+    return [f"chat send path value tainted by {by}: {name}" for name, by in record["tainted"]
+            if by in SEND_ADDONS and not _SEND_OWN.match(name)]
+
+
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
     nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
@@ -5636,6 +5725,33 @@ def client_build_beside(saved: Path) -> str | None:
     return None
 
 
+def _taint_reads(saved: str, part: Any, ui: Path | None) -> list[str]:
+    """Prints what the crafting, touch and chat send reads saw and gives back their problems; `part(name)` says
+    whether this run holds that part."""
+    out: list[str] = []
+    craft = read_craft(saved) if part("craft") else None
+    if craft is not None:
+        print(f"crafting window: {craft['checked']} values read, {len(craft['ours'])} tainted by the addon, "
+              f"{craft['own']} by the test's own steps, skill line {craft['line'] or 'none'}, "
+              f"recipe {craft['recipe'] or 'none'}"
+              + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(craft["others"].items()))
+                 if craft["others"] else ""))
+    out += craft_problems(craft) if part("craft") else []
+    touch = read_touch(saved) if part("touch") else None
+    if touch is not None:
+        print(f"touch: {touch['frames']} frames walked, {touch['made']} made by the addon, {touch['inside_n']} of "
+              f"them inside a client frame in {len(touch['inside'])} shapes; {touch['on_client_n']} client fields "
+              f"tainted by the addon" + ("" if ui else "; no UI extract given, so every field is named"))
+    if part("touch"):
+        out += touch_problems(touch, client_field_names(ui) if ui and touch is not None else None)
+    send = read_send(saved) if part("send") else None
+    if send is not None:
+        print(f"chat send path: {send['checked']} values read, {len(send['tainted'])} tainted"
+              + (": " + ", ".join(f"{name} ({by})" for name, by in send["tainted"][:40]) if send["tainted"] else ""))
+    out += send_problems(send) if part("send") else []
+    return out
+
+
 def _own_reads(saved: str, section: str | None = None, ui: Path | None = None) -> list[str]:
     """Prints what the tooltip read, the no-voice read and the names read saw and gives back their problems; for a
     run of one part (`section`), only that part's: the others' records are an earlier run's."""
@@ -5709,22 +5825,7 @@ def _own_reads(saved: str, section: str | None = None, ui: Path | None = None) -
     out += freeze_problems(freeze) if part("freeze") else []
     out += plates_problems(plates) if part("plates") else []
     out += bagclick_problems(bagclick) if part("bagclick") else []
-    craft = read_craft(saved) if part("craft") else None
-    if craft is not None:
-        print(f"crafting window: {craft['checked']} values read, {len(craft['ours'])} tainted by the addon, "
-              f"{craft['own']} by the test's own steps, skill line {craft['line'] or 'none'}, "
-              f"recipe {craft['recipe'] or 'none'}"
-              + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(craft["others"].items()))
-                 if craft["others"] else ""))
-    out += craft_problems(craft) if part("craft") else []
-    touch = read_touch(saved) if part("touch") else None
-    if touch is not None:
-        print(f"touch: {touch['frames']} frames walked, {touch['made']} made by the addon, {touch['inside_n']} of "
-              f"them inside a client frame in {len(touch['inside'])} shapes; {touch['on_client_n']} client fields "
-              f"tainted by the addon" + ("" if ui else "; no UI extract given, so every field is named"))
-    if part("touch"):
-        out += touch_problems(touch, client_field_names(ui) if ui and touch is not None else None)
-    return out
+    return out + _taint_reads(saved, part, ui)
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A
