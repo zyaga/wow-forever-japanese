@@ -302,7 +302,8 @@ describe("addon loads in TOC order and answers /wfj version", function()
     assert.are.equal(1, #Stub.prints) -- one chat line per session
     Stub.prints = {}
     SlashCmdList.WFJ("log 5")
-    assert.are.equal("WFJ: errors: 0 recorded, 0 not sent (/wfj bug)", Stub.prints[#Stub.prints])
+    -- the refused action is kept as one caught error, so the bug report carries it with what the addon found
+    assert.are.equal("WFJ: errors: 1 recorded, 1 not sent (/wfj bug)", Stub.prints[#Stub.prints])
     local shown = false
     for _, line in ipairs(Stub.prints) do
       if line:find("MainActionBar:SetPointBase()", 1, true) and line:find("×2", 1, true) then shown = true end
