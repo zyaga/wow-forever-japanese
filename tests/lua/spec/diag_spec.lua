@@ -142,7 +142,8 @@ describe("Core/Diag", function()
     for i = 1, D.MAX_KEPT + 3 do D.log("blocked", "block " .. i) end
     local blocks, first = 0, nil
     for _, e in ipairs(db.entries) do
-      if D.KEPT[e.kind] and (e.kind ~= "turned" or e.by == "WoWForeverJapanese") then
+      -- a held kind (a scan) is kept apart and counted under its own limit
+      if D.KEPT[e.kind] and not D.HELD[e.kind] and (e.kind ~= "turned" or e.by == "WoWForeverJapanese") then
         blocks = blocks + 1
         first = first or e.msg
       end
@@ -197,5 +198,25 @@ describe("Core/Diag", function()
     assert.are.equal("?", (D.blockedSite("")))
     D.setDeps({ inCombat = function() return false end })
     assert.is_false(D.onBlocked("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "X()", "WoWForeverJapanese").combat)
+  end)
+
+  it("tells the player once a session that an action was refused, and that a reload clears it", function()
+    local D, printed = fresh()
+    D.load(nil)
+    D.onBlocked("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "StanceButton1:SetShown()", "WoWForeverJapanese")
+    D.onBlocked("ADDON_ACTION_FORBIDDEN", "WoWForeverJapanese", "UNKNOWN()", "WoWForeverJapanese")
+    assert.are.equal(1, #printed)
+    assert.is_truthy(printed[1]:find("/reload", 1, true))
+    assert.is_truthy(printed[1]:find("/wfj bug", 1, true))
+  end)
+
+  it("keeps only the newest entries of a held kind", function()
+    local D = fresh()
+    local db = D.load(nil)
+    for i = 1, D.MAX_HELD + 5 do D.log("caller", "ShowUIPanel site " .. i, { stack = "s" }) end
+    local n = 0
+    for _, e in ipairs(db.entries) do if e.kind == "caller" then n = n + 1 end end
+    assert.are.equal(D.MAX_HELD, n)
+    assert.are.equal("ShowUIPanel site 6", db.entries[1].msg)
   end)
 end)

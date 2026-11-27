@@ -229,7 +229,9 @@ function Diag.onBlocked(event, addon, fn, addonName)
   local combat = type(deps.inCombat) == "function" and deps.inCombat() and true or false
   local e = Diag.log("blocked", tostring(fn) .. " <" .. site .. ">", { event = event, fn = tostring(fn),
     site = site, stack = stack, combat = combat })
-  say(("WFJ: the game blocked %s (%s). Logged; /wfj log shows it."):format(tostring(fn), event))
+  -- once a session, in both languages: the player sees a broken bar, not a log
+  say("WFJ: the game refused an action because of this addon. /reload clears it, and /wfj bug sends the cause. ・ "
+    .. "このアドオンが原因でゲームが操作を拒否しました。/reload で直ります。/wfj bug で原因を送れます。")
   return e
 end
 

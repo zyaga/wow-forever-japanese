@@ -187,7 +187,6 @@ end
 
 function TaintWatch.onEvent(event, a1)
   if TaintWatch.NOISY[event] or event:find("^CHAT_MSG_") then return end
-  if event == "PLAYER_LOGIN" then pcall(TaintWatch.selfTest) end
   local arg = ""
   local t = type(a1)
   if (t == "number" or t == "boolean") and not isSecret(a1) then
@@ -383,6 +382,12 @@ function TaintWatch.onBlocked(entry)
   if scannedBlocks[key] then return false end
   scannedBlocks[key] = true
   TaintWatch.scanFor = key
+  -- the bug report carries the addon's caught errors: the refusal goes in as one, with the session's first causes
+  if WFJ.ErrorLog and not TaintWatch.reported then
+    TaintWatch.reported = true
+    pcall(WFJ.ErrorLog.recordCaught, "Interface/AddOns/" .. tostring(WFJ.ADDON) .. "/UI/TaintWatch.lua:0: the game "
+      .. "refused " .. key .. "; first tainted this session: " .. (causes[1] and TaintWatch.causes() or "none found"))
+  end
   WFJ.Diag.log("context", "events before " .. key, { events = TaintWatch.events() })
   TaintWatch.scanPending = true
   TaintWatch.scanWhenSafe()
@@ -489,6 +494,15 @@ local function originSeed()
   end
 end
 
+-- The first fields found tainted this session, as "<time> <field>": what a bug report says when the client then
+-- refuses an action in the addon's name.
+TaintWatch.CAUSES = 6
+local causes = {}
+local function cause(text)
+  if #causes < TaintWatch.CAUSES then causes[#causes + 1] = clock() .. " " .. text end
+end
+function TaintWatch.causes() return table.concat(causes, "; ") end
+
 local function originHit(label, by, root)
   if by ~= WFJ.ADDON then return end
   local key = label:gsub("%[[^%]]*%]", "[n]")
@@ -505,6 +519,7 @@ local function originHit(label, by, root)
     return
   end
   rememberRoot(root)
+  cause(key)
   originCount = originCount + 1
   if originCount > TaintWatch.ORIGIN_MAX then return end
   local fields = { example = label, round = originRound, order = originCount, combat = inCombat() }
@@ -543,73 +558,6 @@ function TaintWatch.originStep()
   end
   originChecked = originChecked + checked
   return checked
-end
-
--- What the client's own listeners for a changed setting write, read right after this addon wrote a setting: the
--- status bar manager rewrites shownBarIndices on every such event, and the settings cache keeps the new value.
-local function cvarProbe(name)
-  local out = {}
-  local function add(label, t, key)
-    if type(t) ~= "table" then
-      out[#out + 1] = label .. "=missing"
-      return
-    end
-    local tainted, by = check(t, key)
-    out[#out + 1] = label .. "=" .. (tainted and ("TAINTED:" .. tostring(by)) or "clean")
-  end
-  add("StatusTrackingBarManager.shownBarIndices", C.resolve("StatusTrackingBarManager"), "shownBarIndices")
-  local registry = C.resolve("CVarCallbackRegistry")
-  add("cvarValueCache." .. tostring(name), type(registry) == "table" and registry.cvarValueCache or nil, name)
-  return table.concat(out, " ")
-end
-
--- Runs `fn` (one settings write of this addon) and logs what the client's listeners left behind, once per setting
--- and outcome. → fn's results
-function TaintWatch.cvar(name, fn, ...)
-  local before = cvarProbe(name)
-  local a, b = fn(...)
-  local after = cvarProbe(name)
-  pcall(WFJ.Diag.log, "cvar", tostring(name) .. " before[" .. before .. "] after[" .. after .. "]",
-    { combat = inCombat() })
-  return a, b
-end
-
--- Once per install of this build, at login before the world is entered: one setting written twice from addon code
--- (off and back, so nothing changes), then what the bars look like after the client's own entering-world update.
--- It answers whether a settings write of ours is enough to taint the bar layout. The result waits in the log for the
--- next reload; a chat line says when it is done.
-TaintWatch.SELFTEST = "cvar-1"
-function TaintWatch.selfTest()
-  if type(WFJ_Log) ~= "table" or WFJ_Log.taintSelfTest == TaintWatch.SELFTEST or inCombat() then return false end
-  local cv = C.resolve("C_CVar")
-  if type(cv) ~= "table" or type(cv.GetCVar) ~= "function" or type(cv.SetCVar) ~= "function" then return false end
-  WFJ_Log.taintSelfTest = TaintWatch.SELFTEST
-  local name = "Sound_EnableDialog"
-  local value = tostring(cv.GetCVar(name))
-  local before = cvarProbe(name)
-  cv.SetCVar(name, value == "1" and "0" or "1")
-  cv.SetCVar(name, value)
-  WFJ.Diag.log("selftest", "write before[" .. before .. "] after[" .. cvarProbe(name) .. "]",
-    { events = TaintWatch.events() })
-  local timer = C.resolve("C_Timer")
-  if type(timer) == "table" and type(timer.After) == "function" then
-    timer.After(12, function()
-      local out = {}
-      for _, f in ipairs(TaintWatch.fields or fieldList()) do
-        local t = f[2] and C.resolve(f[2]) or nil
-        if f[2] == nil or type(t) == "table" then
-          local tainted, by = check(t, f[3])
-          if tainted then out[#out + 1] = f[1] .. ":" .. tostring(by) end
-        end
-      end
-      WFJ.Diag.log("selftest", "bars 12s after login: " .. (#out == 0 and "all clean" or table.concat(out, " ")),
-        { manager = cvarProbe(name) })
-      if not inCombat() then TaintWatch.scan("selftest") end
-      local p = C.resolve("print")
-      if type(p) == "function" then p("WFJ: taint self-test done. /reload now.") end
-    end)
-  end
-  return true
 end
 
 local function hook(t, method, fn)
