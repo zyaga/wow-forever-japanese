@@ -2198,6 +2198,12 @@ WATCH_SAVED = """WFJScanDB = {
 ["watch"] = {
 ["build"] = "71139",
 ["code"] = "abc",
+["fights"] = 12,
+["fightSeconds"] = 610,
+["refused"] = {
+["WoWForeverJapanese\\tUseAction()"] = { ["n"] = 3, ["fights"] = 2, ["first"] = "2026-11-27 11:00:00", ["last"] = "2026-11-27 11:05:00" },
+["WFJScan\\tClearTarget()"] = { ["n"] = 1, ["fights"] = 0, ["first"] = "2026-11-27 11:01:00", ["last"] = "2026-11-27 11:01:00" },
+},
 ["windows"] = {
 ["MerchantFrame"] = {
 ["opens"] = 4,
@@ -2240,8 +2246,12 @@ def test_a_window_read_in_play_fails_only_on_a_value_in_the_addons_name():
     watch = client_surface.read_watch(WATCH_SAVED)
     assert (watch["build"], watch["code"]) == ("71139", "abc")
     assert watch["windows"]["MerchantFrame"]["checked"] == 2100 and watch["windows"]["CharacterFrame"]["ours"] == []
+    assert (watch["fights"], watch["fight_seconds"]) == (12, 610)
     assert client_surface.watch_problems(watch) == [
-        "a window opened in play carries the addon's taint (MerchantFrame): MerchantFrame.selectedTab"]
+        "a window opened in play carries the addon's taint (MerchantFrame): MerchantFrame.selectedTab",
+        # an action refused in the addon's name while the player played; another addon's is printed, not failed
+        "the game refused UseAction() in the addon's name in play: 3 times, 2 in a fight "
+        "(first 2026-11-27 11:00:00, last 2026-11-27 11:05:00)"]
     assert client_surface.read_watch("WFJScanDB = {}") is None and client_surface.watch_problems(None) == []
 
 

@@ -4193,12 +4193,53 @@ end
     end)
   end
 
+  -- Every action the client refuses an addon, in play: the result the reads above look for the cause of. Kept per
+  -- addon and action with how often, whether in a fight, and when first and last; and the fights the session saw,
+  -- so "none refused" can be told from "never fought". Into `WFJScanDB.watch`:
+  --   refused[<addon>\t<action>] = { n, fights, first, last }; fights  fights begun; fightSeconds  time in them
+  local fightBegan
+  local function watchRefused(addon, action)
+    local w = watchDb()
+    if not w then return end
+    w.refused = type(w.refused) == "table" and w.refused or {}
+    local key = tostring(addon) .. "\t" .. tostring(action)
+    local rec = w.refused[key]
+    local at = date("%%Y-%%m-%%d %%H:%%M:%%S")
+    if type(rec) ~= "table" then
+      rec = { n = 0, fights = 0, first = at }
+      w.refused[key] = rec
+    end
+    rec.n = rec.n + 1
+    if InCombatLockdown() then rec.fights = rec.fights + 1 end
+    rec.last = at
+  end
+  local function watchFight(began)
+    local w = watchDb()
+    if not w then return end
+    if began then
+      fightBegan = GetTime()
+      w.fights = (tonumber(w.fights) or 0) + 1
+    elseif fightBegan then
+      w.fightSeconds = math.floor((tonumber(w.fightSeconds) or 0) + GetTime() - fightBegan)
+      fightBegan = nil
+    end
+  end
+
   -- under pcall: a client without one of these keeps the rest of the test
   pcall(function()
     if type(ShowUIPanel) == "function" then hooksecurefunc("ShowUIPanel", function(frame) watchShown(frame) end) end
     local watcher = CreateFrame("Frame")
     for event in pairs(WATCH_EVENTS) do pcall(watcher.RegisterEvent, watcher, event) end
-    watcher:SetScript("OnEvent", function(_, event) watchShown(_G[WATCH_EVENTS[event]]) end)
+    for _, event in ipairs({ "ADDON_ACTION_BLOCKED", "ADDON_ACTION_FORBIDDEN", "PLAYER_REGEN_DISABLED",
+      "PLAYER_REGEN_ENABLED" }) do
+      pcall(watcher.RegisterEvent, watcher, event)
+    end
+    watcher:SetScript("OnEvent", function(_, event, a1, a2)
+      if event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then return watchRefused(a1, a2) end
+      if event == "PLAYER_REGEN_DISABLED" then return watchFight(true) end
+      if event == "PLAYER_REGEN_ENABLED" then return watchFight(false) end
+      watchShown(_G[WATCH_EVENTS[event]])
+    end)
   end)
 
   -- The open step (`/wfjtest open`): the windows of the micro buttons and the bags, opened the client's own way. A
@@ -5539,17 +5580,29 @@ def read_watch(text: str) -> dict[str, Any] | None:
         out[str(name)] = {"opens": int(rec.get("opens") or 0), "reads": int(rec.get("reads") or 0),
                           "checked": int(rec.get("checked") or 0), "at": str(rec.get("at") or ""),
                           "ours": [str(r) for r in (ours.positional() if ours is not None else [])]}
-    return {"build": str(watch.get("build") or ""), "code": str(watch.get("code") or ""), "windows": out}
+    refused: dict[tuple[str, str], dict[str, Any]] = {}
+    found = watch.get("refused")
+    for key, rec in (found.named().items() if found is not None else []):
+        addon, action = (str(key).split("\t", 1) + [""])[:2]
+        refused[addon, action] = {"n": int(rec.get("n") or 0), "fights": int(rec.get("fights") or 0),
+                                  "first": str(rec.get("first") or ""), "last": str(rec.get("last") or "")}
+    return {"build": str(watch.get("build") or ""), "code": str(watch.get("code") or ""), "windows": out,
+            "refused": refused, "fights": int(watch.get("fights") or 0),
+            "fight_seconds": int(watch.get("fightSeconds") or 0)}
 
 
 def watch_problems(record: dict[str, Any] | None) -> list[str]:
     """What the windows read in play carry wrong, one line each: a value in the addon's name on a window the client
-    opened itself, on a bag button or on an action button. A window never opened in play is not a problem (it is
-    printed as not read yet)."""
+    opened itself, on a bag button or on an action button, and an action the client refused in the addon's name
+    while the player played. A window never opened in play is not a problem (it is printed as not read yet)."""
     if record is None:
         return []
-    return [f"a window opened in play carries the addon's taint ({name}): {value}"
-            for name, rec in sorted(record["windows"].items()) for value in rec["ours"]]
+    out = [f"a window opened in play carries the addon's taint ({name}): {value}"
+           for name, rec in sorted(record["windows"].items()) for value in rec["ours"]]
+    out += [f"the game refused {action} in the addon's name in play: {rec['n']} times, {rec['fights']} in a fight "
+            f"(first {rec['first']}, last {rec['last']})"
+            for (addon, action), rec in sorted(record["refused"].items()) if addon == "WoWForeverJapanese"]
+    return out
 
 
 def read_open(text: str) -> dict[str, Any] | None:
@@ -6240,6 +6293,13 @@ def _taint_reads(saved: str, part: Any, ui: Path | None, section: str | None = N
         for name, rec in sorted(watch["windows"].items()):
             print(f"read in play  {name}: opened {rec['opens']} times, {rec['checked']} values read, "
                   f"{len(rec['ours'])} in the addon's name (last {rec['at']})")
+        minutes = watch["fight_seconds"] // 60
+        ours = sum(rec["n"] for (addon, _), rec in watch["refused"].items() if addon == "WoWForeverJapanese")
+        print(f"in play  {watch['fights']} fights ({minutes} minutes in them); actions the game refused in the "
+              f"addon's name: {ours}")
+        for (addon, action), rec in sorted(watch["refused"].items()):
+            if addon != "WoWForeverJapanese":
+                print(f"in play  refused in another addon's name ({addon}): {action}, {rec['n']} times")
         unread = [name for name in WATCH_EXPECTED if not watch["windows"].get(name, {}).get("checked")]
         if unread:
             print("read in play  not opened yet on this build and addon code: " + ", ".join(unread))
