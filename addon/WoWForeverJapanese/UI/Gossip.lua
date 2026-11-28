@@ -218,7 +218,10 @@ end
 local function measureGreetingBody(fs, text)
   if measure.greetingApplied then
     local f = measure.greetingFont
-    fs:SetFont(f.path, f.size or WFJ.Font.DEFAULT_SIZE, f.flags) -- no size: the one Font.bundled gave the Japanese
+    -- a widget that had no face when it was read has none to put back, and SetFont raises on a face that is nil
+    if f.path ~= nil then
+      fs:SetFont(f.path, f.size or WFJ.Font.DEFAULT_SIZE, f.flags) -- no size: the one Font.bundled gave the Japanese
+    end
     measure.greetingApplied = false
   end
   local en = apiText()
@@ -248,7 +251,10 @@ local function measureOptionBody(button, opt)
   local changed = false
   if measure.optionApplied then
     local f = measure.optionFont
-    fs:SetFont(f.path, f.size or WFJ.Font.DEFAULT_SIZE, f.flags) -- no size: the one Font.bundled gave the Japanese
+    -- a widget that had no face when it was read has none to put back, and SetFont raises on a face that is nil
+    if f.path ~= nil then
+      fs:SetFont(f.path, f.size or WFJ.Font.DEFAULT_SIZE, f.flags) -- no size: the one Font.bundled gave the Japanese
+    end
     measure.optionApplied, changed = false, true
   end
   local en = type(opt) == "table" and opt.name or nil

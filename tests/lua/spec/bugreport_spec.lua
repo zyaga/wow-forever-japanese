@@ -24,6 +24,19 @@ local ERR = { msg = "Interface/AddOns/WoWForeverJapanese/UI/A.lua:1: x", stack =
   first = "2026-10-03 14:40:00", last = "2026-10-03 14:45:00" }
 
 describe("Core/BugReport", function()
+  it("carries the player's other addons in their own field, cut short when the list is long", function()
+    local B = load()
+    local pk = B.pack({ build = "1.60.1.71139", version = "0.15.1", errors = {},
+      addons = { "Baganator", "BlizzMove" } })
+    assert.are.equal("Baganator, BlizzMove", params(pk.url)["other-addons"])
+    assert.is_nil(params(B.pack({ build = "1", version = "1", errors = {} }).url)["other-addons"])
+    local many = {}
+    for i = 1, 200 do many[i] = "SomeAddonWithALongName" .. i end
+    local long = params(B.pack({ build = "1", version = "1", errors = {}, addons = many }).url)["other-addons"]
+    assert.is_true(#long <= B.ADDONS_MAX + 20)
+    assert.is_truthy(long:find("and %d+ more$"))
+  end)
+
   it("carries every voice pack and its version in the version field", function()
     local B = load()
     local pk = B.pack({ build = "1.60.1.70938", version = "0.14.0", errors = {},

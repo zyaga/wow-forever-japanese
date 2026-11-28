@@ -165,7 +165,10 @@ local function fonts(bundled)
         if s then obj:SetFont(WFJ.Font.PATH, s[2], s[3]) end
       elseif saved[name] then
         -- only while it still wears ours: Dialogue UI sets its own face again when the player changes its font size
-        if obj:GetFont() == WFJ.Font.PATH then obj:SetFont(saved[name][1], saved[name][2], saved[name][3]) end
+        -- a face that was never there cannot be put back: SetFont raises on nil
+        if obj:GetFont() == WFJ.Font.PATH and saved[name][1] ~= nil then
+          obj:SetFont(saved[name][1], saved[name][2], saved[name][3])
+        end
         saved[name] = nil
       end
     end

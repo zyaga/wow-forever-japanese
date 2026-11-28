@@ -91,6 +91,8 @@ describe("UI/TaintWatch", function()
     assert.are.equal(1, #writes)
     assert.is_truthy(writes[1].msg:find("MerchantFrame.selectedTab", 1, true))
     assert.are.equal(2, writes[1].n)
+    assert.are.equal(0, #entriesOf("taint")) -- asked for, and read a little at a time by the walk
+    TW.finish()
     local scans = entriesOf("taint")
     assert.are.equal(1, #scans)
     assert.are.equal("merchant tab written tainted", scans[1].reason)
@@ -141,6 +143,7 @@ describe("UI/TaintWatch", function()
     assert.are.equal("WFJ_DB", scan.globals)
     assert.is_true(TW.onBlocked())
     assert.is_false(TW.onBlocked())
+    TW.finish()
     assert.are.equal(2, #entriesOf("taint")) -- the slash scan and the block's, each its own entry
     assert.are.equal(1, #entriesOf("context")) -- a repeat of the same block reads the ring no more
     _G.WFJ_DB = nil
@@ -170,7 +173,8 @@ describe("UI/TaintWatch", function()
     local fields = TW.scan("slash")
     assert.are.equal(1, fields)
     local scan = entriesOf("taint")[1].fields
-    assert.is_truthy(scan:find("QuestScrollFrame.titleFramePool[93949].layoutIndex", 1, true))
+    -- rows of one list are one line
+    assert.is_truthy(scan:find("QuestScrollFrame.titleFramePool[n].layoutIndex", 1, true))
     _G.QuestScrollFrame, _G.QuestMapFrame = nil, nil
   end)
 
@@ -273,8 +277,9 @@ describe("UI/TaintWatch", function()
     assert.is_false(TW.scanWhenSafe())
     fighting = false
     assert.is_true(TW.scanWhenSafe())
-    assert.are.equal(1, #entriesOf("taint"))
     assert.is_false(TW.scanWhenSafe()) -- once
+    TW.finish()
+    assert.are.equal(1, #entriesOf("taint"))
     _G.InCombatLockdown = nil
   end)
 
@@ -380,7 +385,7 @@ describe("UI/TaintWatch", function()
     taint.note = { t = declared, by = "WoWForeverJapanese" }
     assert.are.equal(2, TW.scan("slash"))
     local scan = entriesOf("taint")[1].fields
-    assert.is_truthy(scan:find("ContainerFrame1.Items[1].bagID (WoWForeverJapanese)", 1, true))
+    assert.is_truthy(scan:find("ContainerFrame1.Items[n].bagID (WoWForeverJapanese)", 1, true))
     assert.is_truthy(scan:find("demo.window.note (WoWForeverJapanese)", 1, true))
     _G.ContainerFrame1, _G.SomeWindow = nil, nil
   end)
@@ -397,5 +402,39 @@ describe("UI/TaintWatch", function()
     table.sort(msgs)
     assert.are.same({ "MerchantFrame", "MerchantFrame.selectedTab" }, msgs)
     _G.MerchantFrame = nil
+  end)
+
+  it("names the first addon line on a call stack that is not the client's and not the watch's own", function()
+    local stack = "[Interface/AddOns/WoWForeverJapanese/UI/TaintWatch.lua]:700: in function <x>\n"
+      .. "[Interface/AddOns/Blizzard_UIPanels_Game/Mainline/MerchantFrame.lua]:150: in function 'y'\n"
+      .. "[Interface/AddOns/SomeAddon/Code/Talk.lua]:12: in function 'z'"
+    assert.are.equal("[Interface/AddOns/SomeAddon/Code/Talk.lua]:12: in function 'z'", TW.outsideCaller(stack))
+    assert.is_nil(TW.outsideCaller("[Interface/AddOns/Blizzard_X/a.lua]:1: in function 'q'"))
+  end)
+
+  it("logs a client panel function called from an addon's file once per calling line", function()
+    _G.debugstack = function()
+      return "[Interface/AddOns/SomeAddon/Code/Talk.lua]:12: in function 'z'\n[C]: ?"
+    end
+    TW.called("ShowUIPanel", { GetName = function() return "MerchantFrame" end })
+    TW.called("ShowUIPanel", { GetName = function() return "MerchantFrame" end })
+    local callers = entriesOf("caller")
+    assert.are.equal(1, #callers)
+    assert.are.equal("ShowUIPanel [Interface/AddOns/SomeAddon/Code/Talk.lua]:12", callers[1].msg)
+  end)
+
+  it("stops reading calls after a session's worth: the client's own calls never end", function()
+    local stacks = 0
+    _G.debugstack = function()
+      stacks = stacks + 1
+      return "[Interface/AddOns/Blizzard_UIParent/UIParent.lua]:1: in function 'q'\n[C]: ?"
+    end
+    for _ = 1, TW.CALLED_LOOKS + 50 do TW.called("SetCVar", "x") end
+    assert.is_true(stacks <= TW.CALLED_LOOKS)
+    assert.are.equal(0, #entriesOf("caller"))
+  end)
+
+  it("keeps the session's first tainted fields for the bug report", function()
+    assert.are.equal("", TW.causes())
   end)
 end)

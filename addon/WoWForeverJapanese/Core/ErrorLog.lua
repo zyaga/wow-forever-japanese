@@ -190,7 +190,7 @@ local function store(list, e)
   return list[#list] == e and e or nil
 end
 
-local function keep(msg, stack)
+local function keep(msg, stack, quiet)
   seen = true
   local name = deps.name()
   local at = deps.clock()
@@ -200,7 +200,7 @@ local function keep(msg, stack)
     return store(pending, e)
   end
   local kept = store(db.errors, e)
-  say()
+  if not quiet then say() end
   return kept
 end
 
@@ -214,11 +214,12 @@ function ErrorLog.record(msg)
 end
 
 -- Records an error this addon caught itself (a setup step's pcall): it never reaches the handler, and there is no
--- stack left to read, so the message decides. → the stored entry, or nil
-function ErrorLog.recordCaught(msg)
+-- stack left to read, so the message decides. `quiet` leaves the chat line out, for a caller that tells the player
+-- itself. → the stored entry, or nil
+function ErrorLog.recordCaught(msg, quiet)
   msg = tostring(msg)
   if not ErrorLog.isOurs(msg, nil) then return nil end
-  return keep(msg, "")
+  return keep(msg, "", quiet)
 end
 
 -- Wraps the current handler once. get / set: the client's geterrorhandler and seterrorhandler. → true when installed

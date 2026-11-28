@@ -110,8 +110,21 @@ describe("Readings", function()
     return fs
   end
 
+  -- A cover is a table that holds its frame (the frame carries no field): the tests read both through one view,
+  -- the cover's state first, then its frame.
   local function coverOf(fs)
-    for _, f in ipairs(Stub.frames) do if f.allPoints == fs then return f end end
+    for _, fr in ipairs(Stub.frames) do
+      if fr.allPoints == fs then
+        local state = WFJ.ReadingView.coverAt(fs)
+        return setmetatable({ frame = fr }, { __index = function(_, k)
+          local v = state and state[k]
+          if v ~= nil then return v end
+          return fr[k]
+        end, __newindex = function(_, k, v)
+          if state then state[k] = v else fr[k] = v end
+        end })
+      end
+    end
     return nil
   end
 
@@ -234,6 +247,47 @@ describe("Readings", function()
   -- ── where it attaches ────────────────────────────────────────────
 
   describe("attach / detach through Render", function()
+    it("a cover is never a child of a layout frame: it sits one level up and follows the text's parent", function()
+      -- a layout frame reads fields off every child and sizes itself around the shown ones
+      local window, section = CreateFrame("Frame"), CreateFrame("Frame")
+      section.parent = window
+      function section.IsLayoutFrame() return true end
+      function section.GetFrameLevel() return 5 end
+      function section.IsVisible(f) return f.shown and window.shown end -- shown, and its window shown
+      window:Show(); section:Show()
+      local fs = spanFontString("Greetings, Reyn.")
+      fs.parentFrame = section
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      local cover = coverOf(fs)
+      assert.is_table(cover)
+      assert.are.equal(window, cover.frame:GetParent())
+      assert.are.equal(fs, cover.frame.allPoints) -- still laid over the text
+      assert.is_true(cover.frame:IsShown())
+      for key in pairs({ ignoreInLayout = true, layoutIndex = true, spans = true, text = true, fs = true }) do
+        assert.is_nil(rawget(cover.frame, key)) -- no field the client's layout looks for, and none of the cover's own
+      end
+      section:Hide() -- the cover is no longer under the section, so it hides and shows with it by hook
+      assert.is_false(cover.frame:IsShown())
+      section:Show()
+      assert.is_true(cover.frame:IsShown())
+      -- the setting switched while the section is out of sight: the cover stays hidden until the section shows
+      section:Hide()
+      V.setEnabled(false); V.setEnabled(true)
+      assert.is_false(cover.frame:IsShown())
+      section:Show()
+      assert.is_true(cover.frame:IsShown())
+      -- a section inside a hidden window is shown but not visible: a line laid again there keeps its cover hidden
+      window:Hide()
+      V.attach(WFJ.SurfaceState.get("questframe.detail", "description"))
+      assert.is_false(cover.frame:IsShown())
+    end)
+
+    it("a cover whose text is under a plain parent stays that parent's child", function()
+      local fs = questFs()
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      assert.are.equal(fs.parentFrame, coverOf(fs).frame:GetParent())
+    end)
+
     it("attaches after an apply on a quest prose surface and shows the whole reading under the mouse", function()
       local fs = questFs()
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
@@ -257,7 +311,7 @@ describe("Readings", function()
       for _, c in ipairs(box.children) do if c.GetText then label = c end end
       assert.are.equal("すこし", label:GetText())
       -- BOTTOM of the box at the middle of the word's top edge, 2 px up, relative to the cover's BOTTOMLEFT
-      assert.are.same({ "BOTTOM", cover, "BOTTOMLEFT", s + (e + 1 - s) / 2, 0 + 14 + 2 }, box.point)
+      assert.are.same({ "BOTTOM", cover.frame, "BOTTOMLEFT", s + (e + 1 - s) / 2, 0 + 14 + 2 }, box.point)
       -- off every word: hidden
       Stub.cursor = { 100 + #text + 50, 205 }
       cover.scripts.OnUpdate(cover, 0.01)
@@ -727,7 +781,7 @@ describe("Readings", function()
       local fs = questFs()
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
       local cover = coverOf(fs)
-      cover.mouseOver = true
+      cover.frame.mouseOver = true
       R.forget("questframe.detail")
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
       assert.is_function(cover.scripts.OnUpdate)

@@ -143,11 +143,18 @@ end
 
 function Names.value(text)
   if type(text) ~= "string" then return nil end
-  -- a link: its payload and colour stay byte for byte, the label is the name
-  local before, label, after = text:match("^(.*|h%[)(.-)(%]|h.*)$")
-  if label then
-    local ja = Names.item(label)
-    return ja and (before .. ja .. after) or nil
+  -- links: each one's payload and colour stay byte for byte, its label is the name. A label in brackets (an item
+  -- link) or bare (a recipe's required tool: LinkUtil.FormatLink writes none), and a line may hold several ("Anvil,
+  -- Forge", an unmet one inside a colour code). A label with no Japanese keeps the client's text.
+  if text:find("|H", 1, true) then
+    local changed = 0
+    local out = text:gsub("(|H[^|]*|h%[?)([^|%[%]]+)(%]?|h)", function(open, label, close)
+      local ja = Names.item(label)
+      if not ja then return nil end
+      changed = changed + 1
+      return open .. ja .. close
+    end)
+    return changed > 0 and out or nil
   end
   return (Names.item(text))
 end

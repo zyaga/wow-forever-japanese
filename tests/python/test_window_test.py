@@ -559,6 +559,9 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     assert "ERROR chat tools not read: this run's test addon has no such read" in out
     # and one from before the bag click read
     assert "ERROR bag click not read: this run's test addon has no such read" in out
+    # and one from before the reads for what the addon wrote where the client reads
+    for read in ("crafting window", "touch", "chat send path", "popup dictionary covers"):
+        assert f"ERROR {read} not read: this run's test addon has no such read" in out
     fine = TOOLTIPS.replace('["408498"] = "3 numbers in the Japanese, 4 on this client"', "").replace(
         '["279845"] = "one Japanese paragraph over 2 lines"', "").replace(
         '["783"] = "says it has no voice, and the voice pack does not list it"', "").replace(
@@ -572,6 +575,7 @@ def test_the_result_command_fails_a_run_with_a_tooltip_problem_and_prints_what_c
     fine = fine.replace('["tooltips"] = {', CHAT + '\n' + MARKS + '\n["tooltips"] = {', 1)
     # and the bag click read, with nothing tainted by the addon
     fine = fine.replace('["tooltips"] = {', BAGGED + '\n["tooltips"] = {', 1)
+    fine = fine.replace('["tooltips"] = {', CLEAN + '\n["tooltips"] = {', 1)
     saved.write_text(fine, encoding="utf-8")
     assert client_surface._texts(args) == 0
     out = capsys.readouterr().out
@@ -922,6 +926,14 @@ def test_the_frozen_tooltip_read_fails_a_missing_line_a_copy_left_open_and_a_cop
 
 BAGGED = ('["bagclick"] = { ["checked"] = 412, ["ours"] = { }, '
           '["others"] = { ["ContainerFrame1.Items[2].bagID"] = "Baganator" } },')
+# the crafting, touch, chat send and cover reads with nothing wrong
+CLEAN = ('["craft"] = { ["checked"] = 2600, ["ours"] = { }, ["others"] = { }, ["own"] = 0, ["shown"] = true, '
+         '["line"] = 164, ["recipe"] = 7 },\n'
+         '["touch"] = { ["frames"] = 900, ["made"] = 5, ["insideN"] = 0, ["onClientN"] = 0, ["onClient"] = { }, '
+         '["inside"] = { } },\n'
+         '["send"] = { ["checked"] = 40, ["tainted"] = { }, ["afterInsert"] = { }, ["afterOpen"] = { } },\n'
+         '["covers"] = { ["total"] = 9, ["shown"] = 4, ["idle"] = 0, ["on"] = true, ["stray"] = { }, '
+         '["missing"] = { }, ["beside"] = { }, ["fields"] = { }, ["inLayout"] = { } },')
 
 
 def test_the_bag_click_read_runs_out_of_combat_before_the_freeze_and_never_uses_an_item():
@@ -1014,6 +1026,10 @@ WFJScanDB = {
 ["chat"] = { ["topics"] = 9, ["phrases"] = 132, ["words"] = 12, ["list"] = 9, ["expect"] = true, ["blank"] = { }, ["copy"] = "WFJ テスト", ["sizes"] = { "592x380" }, ["english"] = { }, ["secretTry"] = { ["looks"] = 7, ["answers"] = { "IsMouseOver" } } },
 ["marks"] = { ["window"] = 9, ["frames"] = 3, ["shown"] = 14, ["texts"] = 2, ["bare"] = false, ["quest"] = 783, ["on"] = true, ["expect"] = true, ["english"] = { }, ["stale"] = { }, ["tags"] = { } },
 ["bagclick"] = { ["checked"] = 412, ["ours"] = { }, ["others"] = { } },
+["craft"] = { ["checked"] = 2600, ["ours"] = { }, ["others"] = { }, ["own"] = 0, ["shown"] = true, ["line"] = 164 },
+["touch"] = { ["frames"] = 900, ["made"] = 5, ["insideN"] = 0, ["onClientN"] = 0, ["onClient"] = { }, ["inside"] = { } },
+["send"] = { ["checked"] = 40, ["tainted"] = { }, ["afterInsert"] = { }, ["afterOpen"] = { } },
+["covers"] = { ["total"] = 9, ["shown"] = 4, ["idle"] = 0, ["on"] = true, ["stray"] = { }, ["missing"] = { }, ["beside"] = { }, ["fields"] = { }, ["inLayout"] = { } },
 ["novoice"] = { ["quests"] = 1, ["said"] = 0, ["pack"] = false, ["listed"] = 0, ["wrong"] = { } },
 ["hover"] = { ["map"] = { ["made"] = 3, ["found"] = 3, ["tips"] = 2, ["english"] = { }, ["runs"] = { } } },
 ["tooltips"] = { ["read"] = 50, ["japanese"] = 45, ["unread"] = 0, ["items"] = 3,
@@ -2049,3 +2065,206 @@ def test_the_result_command_prints_each_hovered_english_row_and_the_counts_per_w
     assert not any(ln.startswith("HOVER") and "Elwynn" in ln for ln in out)  # a name, with names off
     assert "ERROR English on hovered tooltips: 1 rows or words in 1 windows (listed below as HOVER)" in out
     assert "gone  calendar\t(hover) Gone Line" in out  # a hover line the baseline still lists, no longer seen
+
+
+TAINT_SAVED = """WFJScanDB = {
+["probe"] = {
+["craft"] = {
+["checked"] = 12,
+["ours"] = {
+"opened\\tProfessionsFrame.CraftingPage.RankBar.ratio",
+},
+["others"] = {
+["MerchantFrame.x"] = "OtherAddon",
+},
+["own"] = 2,
+["shown"] = true,
+["line"] = 164,
+["recipe"] = 7,
+},
+["covers"] = {
+["total"] = 9,
+["shown"] = 4,
+["idle"] = 2,
+["stray"] = {
+"QuestInfoDescriptionText",
+},
+["missing"] = {
+"QuestInfoRewardText",
+},
+["beside"] = {
+},
+["fields"] = {
+"QuestInfoObjectivesText\\tid ignoreInLayout",
+},
+["inLayout"] = {
+"GearManagerPopupFrame.BorderBox.Text",
+},
+},
+["send"] = {
+["checked"] = 40,
+["tainted"] = {
+"ChatFrame1EditBox.text\\tWFJScan",
+"hash_SlashCmdList./WFJ\\tWoWForeverJapanese",
+"ChatFrame1EditBox.setText\\tBaganator",
+"ChatFrame1EditBox.autoCompleteParams\\tWFJScan",
+},
+},
+["touch"] = {
+["frames"] = 900,
+["made"] = 5,
+["insideN"] = 3,
+["onClientN"] = 4,
+["onClient"] = {
+"UIErrorsFrame.ShouldDisplayMessageType",
+"CommunitiesFrame.Chat.ScrollBar.scrollPercentage",
+},
+["inside"] = {
+"id ignoreInLayout tints\\t2\\tQuestInfoFrame",
+"tints\\t1\\tQuestInfoFrame",
+},
+},
+},
+}
+"""
+
+
+def test_the_crafting_read_fails_on_a_value_the_addon_tainted_and_on_a_window_it_could_not_read():
+    record = client_surface.read_craft(TAINT_SAVED)
+    assert record["checked"] == 12 and record["shown"] and record["line"] == 164 and record["recipe"] == 7
+    assert record["ours"] == [("opened", "ProfessionsFrame.CraftingPage.RankBar.ratio")]
+    assert record["others"] == {"MerchantFrame.x": "OtherAddon"}  # another addon's taint is named, never a failure
+    assert client_surface.craft_problems(record) == [
+        "crafting window value tainted by the addon (opened): ProfessionsFrame.CraftingPage.RankBar.ratio"]
+    clean = dict(record, ours=[])
+    assert client_surface.craft_problems(clean) == []
+    assert client_surface.craft_problems(dict(clean, refused="no profession")) == [
+        "crafting window not read: no profession"]
+    assert client_surface.read_craft("WFJScanDB = {}") is None
+    assert len(client_surface.craft_problems(None)) == 1  # a run without the read proves nothing
+
+
+def test_the_touch_read_fails_on_a_client_field_and_on_a_field_name_the_client_reads(tmp_path):
+    record = client_surface.read_touch(TAINT_SAVED)
+    assert (record["frames"], record["made"], record["inside_n"], record["on_client_n"]) == (900, 5, 3, 4)
+    assert record["inside"] == [(["id", "ignoreInLayout", "tints"], 2, "QuestInfoFrame"),
+                                (["tints"], 1, "QuestInfoFrame")]
+    (tmp_path / "blizzard_x").mkdir()
+    (tmp_path / "blizzard_x" / "layout.lua").write_text("if not region.ignoreInLayout then use(region:GetID()) end\n")
+    (tmp_path / "blizzard_x" / "frame.xml").write_text('<Frame parentKey="id"/>\n')
+    names = client_surface.client_field_names(tmp_path)
+    assert {"ignoreInLayout", "GetID", "id"} <= names and "tints" not in names
+    problems = client_surface.touch_problems(record, names)
+    assert problems == [
+        "client field tainted by the addon: UIErrorsFrame.ShouldDisplayMessageType",
+        # a scroll bar's state is a failure like any other field: nothing is excused
+        "client field tainted by the addon: CommunitiesFrame.Chat.ScrollBar.scrollPercentage",
+        "client fields tainted by the addon: 2 more",
+        ("the addon's frame inside a client frame carries fields the client's code names (2 frames, e.g. under "
+         "QuestInfoFrame): id ignoreInLayout"),
+    ]
+    # with no UI source to check against, no field of a frame inside a client frame can be cleared
+    assert len(client_surface.touch_problems(record, None)) == 5
+    assert client_surface.read_touch("WFJScanDB = {}") is None and len(client_surface.touch_problems(None, names)) == 1
+
+
+def test_no_client_field_is_excused():
+    assert client_surface.TOUCH_ALLOWED == {}
+
+
+def test_the_send_read_fails_on_a_chat_send_value_the_addon_or_the_test_addon_tainted():
+    record = client_surface.read_send(TAINT_SAVED)
+    assert record["checked"] == 40 and len(record["tainted"]) == 4
+    # an addon's own slash command entry is its own to write, another addon's taint is not this addon's to fix, and
+    # the completion settings are written while any addon's command is typed
+    assert client_surface.send_problems(record) == ["chat send path value tainted by WFJScan: ChatFrame1EditBox.text"]
+    assert client_surface.read_send("WFJScanDB = {}") is None and len(client_surface.send_problems(None)) == 1
+
+
+def test_the_cover_read_fails_on_a_cover_out_of_step_beside_its_text_with_a_field_or_in_a_layout_frame():
+    record = client_surface.read_covers(TAINT_SAVED)
+    assert (record["total"], record["shown"], record["idle"]) == (9, 4, 2)
+    assert client_surface.covers_problems(record) == [
+        "popup dictionary cover showing over a text that is not the addon's any more: QuestInfoDescriptionText",
+        "popup dictionary cover hidden while its text shows: QuestInfoRewardText",
+        "popup dictionary cover carries a field (id ignoreInLayout): QuestInfoObjectivesText",
+        "popup dictionary cover is a layout frame's own child: GearManagerPopupFrame.BorderBox.Text",
+    ]
+    clean = dict(record, stray=[], missing=[], fields=[], in_layout=[])
+    assert client_surface.covers_problems(clean) == []
+    assert "older build" in client_surface.covers_problems(dict(clean, noread=True))[0]
+    assert client_surface.read_covers("WFJScanDB = {}") is None and len(client_surface.covers_problems(None)) == 1
+
+
+WATCH_SAVED = """WFJScanDB = {
+["watch"] = {
+["build"] = "71139",
+["code"] = "abc",
+["fights"] = 12,
+["fightSeconds"] = 610,
+["refused"] = {
+["WoWForeverJapanese\\tUseAction()"] = { ["n"] = 3, ["fights"] = 2, ["first"] = "2026-11-27 11:00:00", ["last"] = "2026-11-27 11:05:00" },
+["WFJScan\\tClearTarget()"] = { ["n"] = 1, ["fights"] = 0, ["first"] = "2026-11-27 11:01:00", ["last"] = "2026-11-27 11:01:00" },
+},
+["windows"] = {
+["MerchantFrame"] = {
+["opens"] = 4,
+["reads"] = 3,
+["checked"] = 2100,
+["at"] = "2026-11-27 10:00:00",
+["ours"] = {
+"MerchantFrame.selectedTab",
+"MerchantFrame.#4.#1.updateLock",
+},
+},
+["CharacterFrame"] = {
+["opens"] = 1,
+["reads"] = 1,
+["checked"] = 900,
+["at"] = "2026-11-27 10:01:00",
+["ours"] = {
+},
+},
+},
+},
+["probe"] = {
+["open"] = {
+["asked"] = {
+"CharacterMicroButton",
+"GuildMicroButton",
+},
+["presses"] = 1,
+["windows"] = {
+"CharacterFrame",
+"CommunitiesFrame",
+"CharacterFrame",
+},
+},
+},
+}
+"""
+
+
+def test_a_window_read_in_play_fails_only_on_a_value_in_the_addons_name():
+    watch = client_surface.read_watch(WATCH_SAVED)
+    assert (watch["build"], watch["code"]) == ("71139", "abc")
+    assert watch["windows"]["MerchantFrame"]["checked"] == 2100 and watch["windows"]["CharacterFrame"]["ours"] == []
+    assert (watch["fights"], watch["fight_seconds"]) == (12, 610)
+    assert client_surface.watch_problems(watch) == [
+        "a window opened in play carries the addon's taint (MerchantFrame): MerchantFrame.selectedTab",
+        "a window opened in play carries the addon's taint (MerchantFrame): MerchantFrame.#4.#1.updateLock",
+        # an action refused in the addon's name while the player played; another addon's is printed, not failed
+        "the game refused UseAction() in the addon's name in play: 3 times, 2 in a fight "
+        "(first 2026-11-27 11:00:00, last 2026-11-27 11:05:00)"]
+    assert client_surface.read_watch("WFJScanDB = {}") is None and client_surface.watch_problems(None) == []
+
+
+def test_the_open_step_fails_when_it_did_not_finish_or_a_window_it_opened_was_not_read():
+    watch = client_surface.read_watch(WATCH_SAVED)
+    opened = client_surface.read_open(WATCH_SAVED)
+    assert opened["asked"] == ["CharacterMicroButton", "GuildMicroButton"] and opened["presses"] == 1
+    assert client_surface.open_problems(opened, watch) == ["open step: CommunitiesFrame showed and was not read"]
+    assert client_surface.open_problems(dict(opened, refused="the button was not clicked"), watch) == [
+        "open step not finished: the button was not clicked"]
+    assert len(client_surface.open_problems(dict(opened, windows=[]), watch)) == 1
+    assert len(client_surface.open_problems(None, watch)) == 1

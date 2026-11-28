@@ -29,7 +29,7 @@ describe("word cards on chat", function()
     assert.equals("今日", w.word)
     assert.equals("today", Env.card.card.meaning)
     assert.equals(first, Cards.shown().first)
-    assert.is_true(Env.card.anchor.tints[1].shown)
+    assert.is_true(Env.card.anchor.textures[1].shown) -- the tint, drawn on the cover's frame
     assert.equals(line, Env.card.anchor.allPoints) -- the cover lies on the chat line, which is left as it is
     assert.equals(SAID, line:GetText())
   end)

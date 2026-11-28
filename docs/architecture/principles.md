@@ -136,3 +136,46 @@ reaches data only through a lookup call.
 
 How a Blizzard API, event or frame behaves on the Forever client is stated only with a source: Blizzard's own UI
 code from the client, its API documentation, or an in-game check. Code comments cite the file and line.
+
+## 10. Nothing of the addon's is written where the client reads
+
+The client marks every value an addon writes. When the client's own code reads such a value it runs in the addon's
+name from then on, and the game refuses protected actions from code running in an addon's name: casting from the
+action bars in combat, selling to a vendor, inviting to a guild. The player sees bars that stop working until a
+reload. One field on one frame is enough, and it can sit far from where the damage shows: a field the layout code
+read in the Professions window reached the bags, then the vendor, then the action bars.
+
+The rules, each with what holds the addon to it:
+
+| Rule | Why | Held by |
+| --- | --- | --- |
+| No field on a client frame, and none on a frame of the addon's that sits inside a client frame. The addon's state lives in its own tables, keyed by the frame | The client's layout code reads fields off every child of a layout frame (`blizzard_sharedxml/layoutframe.lua`); a mixin reads its own fields | the window test's `touch` part; `tests/python/test_taint_rules.py` for the layout field names |
+| A client function or a frame's method is followed with a post-hook (`hooksecurefunc`, `HookScript`), never replaced or wrapped | A replaced function is a value the addon wrote: every call of it runs in the addon's name | `test_taint_rules.py`; `touch` |
+| A client font string that carries its own `SetText` is written with the widget's plain `SetText` | The mixin's `SetText` stores fields on the widget (`AutoScalingFontStringMixin`) | every label is written through `Core/SurfaceState.lua`; `touch` |
+| The addon never calls a client function that opens, closes, lays out or scrolls a window (a scroll box's `FullUpdate` among them). The one such call is the phrase book's, which opens the chat box with the clicked phrase typed | The client's own state for that window is then written in the addon's name. For the chat box that is four values, measured in game, and a protected slash command typed afterwards still runs | `test_taint_rules.py` (the list of such calls, and the files allowed to name one, each with its reason); the window test's `send` part lists what the chat box open leaves |
+| A frame's script is never called directly | The client's handler then runs in the addon's name | `test_taint_rules.py` |
+| The global `_` is never written | The client's own code uses it as a throwaway | `test_taint_rules.py` |
+| A value the client keeps secret is checked before it is compared | Comparing one raises | `Compat.secret` before every comparison of client text; the error log |
+| A window the client opens itself is read after it opened: the window, the bags and the bars carry none of the addon's taint | A field can look harmless until the client's own open reads it | the window test's `craft` part |
+| A workaround names the client code it works around, in a comment beside it | The next reader has to be able to check that the client still does that | review |
+
+Nothing is excused. `TOUCH_ALLOWED` in `pipeline/wfj/dev/client_surface.py` is empty. A scroll box's and a scroll
+bar's state were once listed there on the reasoning that only the client's scroll code reads them. An isolated test
+in game showed the reasoning wrong: after writing a longer Japanese description the addon called the scroll box's
+own `FullUpdate`, the box's and the bar's state took the addon's name, and the client's next values on that pane
+(the reputation pane's filter menu, a button's faction) came out in the addon's name too, from the player's own
+click. The scroll code runs inside whatever the client is doing when the box updates. So the rule above has no
+exception for "a value nothing important reads": an entry in that list needs an isolated test that shows the value
+is never read on the way to anything else. The price is that the box keeps the scroll range it measured for the
+English, so `Labels.scrolling` draws a taller Japanese text smaller until it fits that range.
+
+When the game refuses an action because of the addon, the addon says so once in chat, and the bug report
+(`/wfj bug`) carries the first values of that session it found in its own name (`UI/TaintWatch.lua`).
+
+When a client window hides, the addon puts the client's text back from a `HookScript("OnHide", ...)` hook. That
+hook runs after the client's own handler and apart from it, and it writes only through the widget's plain `SetText`,
+so closing a window with Esc leaves nothing of the addon's on the window.
+
+Rules other addons follow that do not apply here, checked against the code: the addon forwards no click to a client
+handler, hides no client panel in combat, uses no bottom-managed frame template, adds no handler to the game menu's
+Esc, reads no Edit Mode field, makes no item button, and embeds no library.

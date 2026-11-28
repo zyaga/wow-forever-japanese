@@ -468,18 +468,31 @@ local function refresh(surface)
     local list = {}
     for _, rec in pairs(SS.records(s)) do list[#list + 1] = rec end
     local refits, seen = {}, {}
-    for _, rec in ipairs(list) do
+    -- One record at a time, each on its own: a widget the client refuses a write on (a font it will not take back)
+    -- must not leave every line after it in the other language until a reload. The error is kept for the report.
+    local function one(rec)
       if stale(rec) then
         readings("detach", rec)
-        if SS.drop(rec.surface, rec.key) then n = n + 1 end
-      elseif sync(rec) then
+        return SS.drop(rec.surface, rec.key) and true or false
+      end
+      if not sync(rec) then return false end
+      local ctx = rec.meta and rec.meta.ctx
+      local fn = ctx and ctx.refit
+      if fn and not seen[fn] then seen[fn] = true; refits[#refits + 1] = fn end
+      return true
+    end
+    for _, rec in ipairs(list) do
+      local ok, wrote = pcall(one, rec)
+      if not ok then
+        if WFJ.ErrorLog then WFJ.ErrorLog.recordCaught(wrote) end
+      elseif wrote then
         n = n + 1
-        local ctx = rec.meta and rec.meta.ctx
-        local fn = ctx and ctx.refit
-        if fn and not seen[fn] then seen[fn] = true; refits[#refits + 1] = fn end
       end
     end
-    for _, fn in ipairs(refits) do fn() end
+    for _, fn in ipairs(refits) do
+      local ok, err = pcall(fn)
+      if not ok and WFJ.ErrorLog then WFJ.ErrorLog.recordCaught(err) end
+    end
     updateBanner(s)
   end
   if surface then

@@ -100,15 +100,16 @@ function Compat.unresolved()
 end
 
 -- Every table a declared name has resolved to so far, labelled "surface.key": the Blizzard frames this addon touches,
--- for the taint scan (UI/TaintWatch). → { { label, table }, … }, sorted by label
-function Compat.tables()
+-- for the taint scan (UI/TaintWatch). → { { label, table }, … }, sorted by label unless `unsorted` (the sort of a few
+-- thousand labels is the long part, and a reader that takes them in any order does without it)
+function Compat.tables(unsorted)
   local out = {}
   for surface, keys in pairs(resolved) do
     for key, value in pairs(keys) do
       if type(value) == "table" then out[#out + 1] = { surface .. "." .. key, value } end
     end
   end
-  table.sort(out, function(a, b) return a[1] < b[1] end)
+  if not unsorted then table.sort(out, function(a, b) return a[1] < b[1] end) end
   return out
 end
 

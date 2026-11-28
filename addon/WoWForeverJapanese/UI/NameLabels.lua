@@ -15,6 +15,8 @@
 --   NameLabels.after(surface, recKey, widget, lead[, area[, refit]]) → the same for a name the client wrote after a
 --     fixed lead ("- <name>", a reward in a list): the lead kept byte for byte. A text that does not start with the
 --     lead, or whose rest is no name, stays as written.
+--   NameLabels.counted(surface, recKey, widget[, area[, refit]]) → the same for a name the client wrote after a
+--     count, maybe inside one colour code ("|cffffffff3/5 Copper Bar|r", a reagent in a crafting slot).
 --   NameLabels.before(surface, recKey, widget, tail[, area[, refit]]) → the same for a name the client wrote before
 --     a fixed tail ("<skill>:"): the tail kept byte for byte.
 --   NameLabels.joined(surface, recKey, widget[, area[, refit]]) → the same for a widget that holds one name or two
@@ -153,6 +155,26 @@ function NameLabels.after(surface, recKey, widget, lead, area, refit)
     local name = en:sub(#lead + 1)
     if name == "" or name:find("|", 1, true) or not WFJ.Names.item(name) then return nil end
     return name, lead, nil
+  end
+  return WFJ.Perf.call(surface, parts, surface, recKey, widget, area, refit, split)
+end
+
+-- A reagent in a crafting slot: a name after its count, the whole inside one colour code or none
+-- ("|cffffffff3/5 Copper Bar|r", "2 Copper Bar"; blizzard_professionsrecipereagentslot.lua:113–130, 236–252). The
+-- colour code and the count are kept byte for byte.
+function NameLabels.counted(surface, recKey, widget, area, refit)
+  local function split(en)
+    local open = en:match("^|c%x%x%x%x%x%x%x%x") or ""
+    local rest = en:sub(#open + 1)
+    local count = rest:match("^%d+/%d+ ") or rest:match("^%d+ ")
+    if not count then return nil end
+    local name, close = rest:sub(#count + 1), nil
+    if open ~= "" then
+      if name:sub(-2) ~= "|r" then return nil end
+      name, close = name:sub(1, -3), "|r"
+    end
+    if name == "" or name:find("|", 1, true) or not WFJ.Names.item(name) then return nil end
+    return name, open .. count, close
   end
   return WFJ.Perf.call(surface, parts, surface, recKey, widget, area, refit, split)
 end

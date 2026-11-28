@@ -32,7 +32,8 @@
 --   is C_TradeSkillUI.GetCategoryInfo's name, a TradeSkillCategory row (TradeSkillCategory.Name_lang, ADR-042), or
 --   the favourites category, PROFESSIONS_CATEGORY_FAVORITE (blizzard_professions.lua:844): those are the keys it may
 --   show. A profession's own name has no row there and stays English. The unlearned divider's Label is XML text
---   PROFESSIONS_CATEGORY_UNLEARNED (recipelist.xml:98); a recipe row's Label is the recipe's name (forbidden), and
+--   PROFESSIONS_CATEGORY_UNLEARNED (recipelist.xml:98); a recipe row's Label is the recipe's name (a name: its
+--   Japanese while names are on, never a dictionary word), and
 --   its SkillUps icon owns a tooltip of one line, PROFESSIONS_SKILL_UP_EASY / _MEDIUM / _OPTIMAL
 --   (recipelist.lua:282–316), registered per row.
 -- The enchant target slot (form.enchantSlot, built for an Enchant-type recipe by the form's Init,
@@ -262,7 +263,36 @@ function Crafting.showOutput(form)
 end
 
 -- hooksecurefunc target (SchematicForm:Init): the words the form rewrites per recipe. → the number found.
-function Crafting.onFormInit() return showList(FORM_WRITTEN) + Crafting.showEnchantSlot() end
+function Crafting.onFormInit()
+  return showList(FORM_WRITTEN) + Crafting.showEnchantSlot() + Crafting.showReagents(get("form"))
+end
+
+-- A reagent slot's name ("3/5 Copper Bar" in the slot's colour, written by the slot's Update,
+-- blizzard_professionsrecipereagentslot.lua:113–130): the reagent in Japanese while names are on, the count and the
+-- colour as written. Each slot's Update is followed once, since the slot runs it again when an item loads and when
+-- the bags change. → names shown
+local slotKey = WFJ.Labels.keyer("slot.")
+local reagentHooked = setmetatable({}, { __mode = "k" })
+local function showSlotName(slot)
+  local fs = type(slot) == "table" and slot.Name or nil
+  if type(fs) ~= "table" or type(fs.GetText) ~= "function" then return 0 end
+  local n = WFJ.NameLabels.counted(SURFACE, slotKey(fs), fs, "items")
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+function Crafting.showReagents(form)
+  local pool = type(form) == "table" and form.reagentSlotPool or nil
+  if type(pool) ~= "table" or type(pool.EnumerateActive) ~= "function" then return 0 end
+  local n = 0
+  for slot in pool:EnumerateActive() do
+    if type(slot) == "table" and not reagentHooked[slot] and type(slot.Update) == "function" then
+      reagentHooked[slot] = true
+      hooksecurefunc(slot, "Update", showSlotName)
+    end
+    n = n + showSlotName(slot)
+  end
+  return n
+end
 
 -- hooksecurefunc target (the inspect window's SchematicForm:Init / :Update): its labels. → the number found.
 function Crafting.onInspect() return showList(INSPECT_LABELS) end
@@ -310,6 +340,26 @@ end
 
 local rowKey = WFJ.Labels.keyer("row.") -- a pooled list row's record key
 
+-- A recipe row's name is as wide as its text, up to the room the row's other pieces leave (Init,
+-- blizzard_professionsrecipelist.lua:346–353: the row less the lock icon, the craftable count, the skill-up icon and
+-- 10 of padding). The client measured the English, so the name is sized again for the text shown, the same way.
+local function fitRow(row)
+  local label = row.Label
+  if type(label) ~= "table" or type(label.SetWidth) ~= "function" or type(label.GetStringWidth) ~= "function"
+      or type(row.GetWidth) ~= "function" then
+    return
+  end
+  local function width(piece, measure, onlyShown)
+    if type(piece) ~= "table" or type(piece[measure]) ~= "function" then return 0 end
+    if onlyShown and not (type(piece.IsShown) == "function" and piece:IsShown()) then return 0 end
+    return piece[measure](piece) or 0
+  end
+  local room = row:GetWidth() - 10 - width(row.SkillUps, "GetWidth") - width(row.LockedIcon, "GetWidth", true)
+    - width(row.Count, "GetStringWidth", true)
+  label:SetWidth(row:GetWidth())
+  label:SetWidth(math.max(1, math.min(room, label:GetStringWidth() or room)))
+end
+
 -- ScrollUtil callback for a recipe list row: (owner, frame, node) on initialization, (frame, node) on the
 -- existing-frames pass. Returns nothing (ForEachFrame stops at the first truthy return).
 function Crafting.onListRow(a, b, c)
@@ -319,9 +369,13 @@ function Crafting.onListRow(a, b, c)
   local data = node
   if type(node) == "table" and type(node.GetData) == "function" then data = node:GetData() end
   if type(data) ~= "table" then return end
-  if data.recipeInfo then -- the recipe's name is never ours; its skill-up icon owns a one-line tooltip
+  if data.recipeInfo then
+    -- the recipe's name is a name, never a dictionary word; its skill-up icon owns a one-line tooltip
     WFJ.Labels.forbid(row.Label)
     if type(row.SkillUps) == "table" then WFJ.HelpTooltip.register(row.SkillUps, SKILL_UP) end
+    if WFJ.NameLabels.show(SURFACE, rowKey(row), row.Label, "ui", function() fitRow(row) end) == 1 then
+      WFJ.Render.updateBanner(SURFACE)
+    end
     return
   end
   if data.categoryInfo then

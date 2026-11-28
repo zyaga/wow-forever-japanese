@@ -94,6 +94,8 @@ function Env.setup()
       t.SetColorTexture, t.ClearAllPoints, t.SetSize = Env.noop, Env.noop, Env.noop
       function t.Show(x) x.shown = true end
       function t.Hide(x) x.shown = false end
+      self.textures = self.textures or {} -- the textures made on this frame, in order
+      self.textures[#self.textures + 1] = t
       return t
     end
     return f

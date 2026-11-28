@@ -497,7 +497,7 @@ _Avoid_: chat header (that is the edit box's "Say:" label, `CHAT_<type>_SEND`), 
 → [ADR-035](adr/035-ui-errors-frame-surface.md) §9
 
 **Key-restricted chat path**:
-The [[System chat line]] rewrite applied to a message frame outside the chat windows whose client lines can only be a few [[UI key]]s: the Communities chat's date and unread separators and its message-of-the-day label. A line is rewritten only when it is wholly one of those keys; members' messages never are (`ChatSystem.hookKeyed`).
+The [[System chat line]] rewrite applied to a message frame outside the chat windows whose client lines can only be a few [[UI key]]s: the Communities chat's date and unread separators and its message-of-the-day label. A line is shown in Japanese only when it is wholly one of those keys; members' messages never are (`ChatSystem.hookKeyed`). Unlike a chat window's line, the stored line is left as the client wrote it and the Japanese goes on the visible line at each redraw: rewriting a stored line of that chat from the addon left its scroll bar's state in the addon's name.
 _Avoid_: communities chat hook, keyed frame, chat filter
 → [Addon modules](architecture/addon-modules.md) · [ADR-038](adr/038-menus-callouts-and-composite-forms.md) §16
 

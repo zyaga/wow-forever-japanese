@@ -99,21 +99,53 @@ function Labels.familiesWith(extra, ...)
   return familySet(extra, { ... })
 end
 
--- A ScrollingFontTemplate frame's FontString and the refit its own SetText does after writing (the container
--- re-heighted to the text, the scroll box updated; ScrollingFontMixin:SetText, scrolltemplates.lua:347–358), so a
--- longer Japanese scrolls instead of spilling. → fs, refit | nil
+-- A ScrollingFontTemplate frame's FontString and the refit after writing it. The scroll box is never updated from
+-- here: its FullUpdate is the client's own Lua, and run from the addon it writes the box's and the bar's scroll
+-- state in the addon's name, which the client then reads on its way through the window (seen in game on the
+-- reputation pane: the pane's next values came out in the addon's name). So the box keeps the scroll range it
+-- measured for the client's English (ScrollingFontMixin:SetText, scrolltemplates.lua:347–358; the range is only
+-- recomputed in FullUpdate, scrollbox.lua:154–174), and the Japanese is made to fit that range: when it is taller
+-- than both the English and the box, its font is drawn smaller, a size at a time, until it fits or reaches
+-- SCROLLING_MIN_SIZE. The container is then re-heighted to the text. → fs, refit | nil
+Labels.SCROLLING_MIN_SIZE = 8
+local scrollingFit = setmetatable({}, { __mode = "k" }) -- sf → { room, set, size }
 function Labels.scrolling(sf)
   if type(sf) ~= "table" or type(sf.GetFontString) ~= "function" then return nil end
   local ok, fs = pcall(sf.GetFontString, sf)
   if not ok or type(fs) ~= "table" then return nil end
   local function refit()
     local okC, container = pcall(sf.GetFontStringContainer, sf)
-    if okC and type(container) == "table" and type(container.SetHeight) == "function"
-        and type(fs.GetStringHeight) == "function" then
-      container:SetHeight(fs:GetStringHeight())
+    if not okC or type(container) ~= "table" or type(container.SetHeight) ~= "function"
+        or type(fs.GetStringHeight) ~= "function" then
+      return
     end
-    local okB, box = pcall(sf.GetScrollBox, sf)
-    if okB and type(box) == "table" and type(box.FullUpdate) == "function" then pcall(box.FullUpdate, box, true) end
+    local now = type(container.GetHeight) == "function" and container:GetHeight() or nil
+    if type(now) == "number" and type(fs.GetFont) == "function" and type(fs.SetFont) == "function" then
+      local path, size, flags = fs:GetFont()
+      local fit = scrollingFit[sf]
+      -- a height other than the one set here last is the client's, measured for a new English text
+      if not fit or math.abs(now - fit.set) > 0.5 then
+        fit = { room = now, size = fit and fit.size or size }
+        scrollingFit[sf] = fit
+      end
+      if type(path) == "string" and type(size) == "number" and type(fit.size) == "number" then
+        local okB, box = pcall(sf.GetScrollBox, sf)
+        local shown = okB and type(box) == "table" and type(box.GetHeight) == "function" and box:GetHeight() or 0
+        local room = math.max(fit.room, type(shown) == "number" and shown or 0)
+        if size ~= fit.size then -- the size a shorter text before this one was drawn at
+          size = fit.size
+          fs:SetFont(path, size, flags)
+        end
+        while size > Labels.SCROLLING_MIN_SIZE and fs:GetStringHeight() > room + 0.5 do
+          size = size - 1
+          fs:SetFont(path, size, flags)
+        end
+      end
+      container:SetHeight(fs:GetStringHeight())
+      fit.set = container:GetHeight()
+      return
+    end
+    container:SetHeight(fs:GetStringHeight())
   end
   return fs, refit
 end
@@ -262,7 +294,7 @@ function Labels.menuText(fs)
   if a then return a end
   a = {}
   function a.GetText() return fs:GetText() end
-  function a.SetText(_, text) fs:SetText(text) end
+  function a.SetText(_, text) WFJ.SurfaceState.setText(fs, text) end
   function a.GetFont() return fs:GetFont() end
   function a.SetFont(_, path, size, flags)
     local set = fontStringSetFont()

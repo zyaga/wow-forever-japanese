@@ -34,6 +34,26 @@ describe("SurfaceState: the capture, apply and restore state machine", function(
     end)
   end
 
+  it("a widget captured with no face keeps the applied one on restore, and SetFont is never given nil", function()
+    -- a button's adapter whose text region did not exist yet: no face, no size
+    local fs = { text = "Expires in 3 days", fonts = {} }
+    function fs.GetText() return fs.text end
+    function fs.SetText(_, text) fs.text = text end
+    function fs.GetFont() return nil end
+    function fs.SetFont(_, path, size, flags)
+      assert(type(path) == "string", "SetFont was given no face")
+      fs.fonts[#fs.fonts + 1] = { path, size, flags }
+      return true
+    end
+    SS.capture("mail", "row5.expire", fs, "Expires in 3 days")
+    SS.apply("mail", "row5.expire", "3日後に期限切れ", { path = "J.ttf", size = 12, flags = "" })
+    assert.has_no.errors(function() assert.is_true(SS.restore("mail", "row5.expire")) end)
+    assert.are.equal("Expires in 3 days", fs.text)
+    assert.are.equal(1, #fs.fonts) -- the applied face only: nothing to put back
+    SS.apply("mail", "row5.expire", "3日後に期限切れ", { path = "J.ttf", size = 12, flags = "" })
+    assert.has_no.errors(function() SS.release("mail") end)
+  end)
+
   it("a refused SetFont records no applied font; the next apply tries again", function()
     local fs = Stub.fontString("English", "Fonts\\FRIZQT__.TTF", 14, "")
     SS.capture("quest", "k", fs, "English")
@@ -268,5 +288,46 @@ describe("SurfaceState.drop / dropAll: forget without restoring over the client'
     assert.are.equal("う", c:GetText())
     assert.are.equal(1, SS.count("t"))
     assert.are.equal(0, SS.dropAll("s"))
+  end)
+
+  -- A client FontString whose mixin carries its own SetText (it writes fields on the widget): the addon writes the
+  -- text with the widget type's plain SetText, so no field of the widget is written in the addon's name.
+  describe("a widget with a mixin's own SetText", function()
+    local function mixed(text)
+      local native = { calls = 0 }
+      local index = {}
+      function index.SetText(self, t) native.calls = native.calls + 1; rawset(self, "shown", t) end
+      function index.GetText(self) return rawget(self, "shown") end
+      function index.GetFont() return "Fonts\\FRIZQT__.TTF", 14, "" end
+      function index.SetFont() return true end
+      local fs = setmetatable({ shown = text, mixinCalls = 0, fits = 0 }, { __index = index })
+      function fs.SetText(self, t)
+        self.mixinCalls = self.mixinCalls + 1
+        self.baseLineHeight = 12
+        index.SetText(self, t)
+      end
+      function fs.ScaleTextToFit(self) self.fits = self.fits + 1 end
+      return fs, native
+    end
+
+    it("writes with the plain SetText and never runs the mixin's, which would write a field", function()
+      local fs, native = mixed("English")
+      SS.capture("s", "k", fs, "English")
+      assert.is_true((SS.apply("s", "k", "日本語")))
+      assert.are.equal("日本語", fs:GetText())
+      assert.are.equal(1, native.calls)
+      assert.are.equal(0, fs.mixinCalls)
+      assert.is_nil(rawget(fs, "baseLineHeight"))
+      assert.are.equal(0, fs.fits) -- the mixin never measured the line: its fit would write the field
+    end)
+
+    it("runs the mixin's fit once the client has measured the line itself", function()
+      local fs = mixed("English")
+      rawset(fs, "baseLineHeight", 12)
+      SS.capture("s", "k", fs, "English")
+      SS.apply("s", "k", "日本語")
+      assert.are.equal(1, fs.fits)
+      assert.are.equal(0, fs.mixinCalls)
+    end)
   end)
 end)

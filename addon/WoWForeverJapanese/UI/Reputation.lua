@@ -94,9 +94,53 @@ local function barText(row)
   return type(bar) == "table" and bar.Text or nil
 end
 
+-- A row written before the client has laid it out (the first time the pane shows) draws nothing: the widget holds
+-- the Japanese, the face and a width, and stays blank until the row is set up again (a scroll, a second open).
+-- Asking the widget its width one frame later makes the client draw it (seen in game, one follow-up per row: the
+-- width asked at the write, the string width or the same text written again a frame later did not). So a widget
+-- written while its rectangle is not valid yet is asked once, a frame later; all of a pass share one timer.
+local unsettled, settling = {}, false
+local function settleAll()
+  settling = false
+  local list = unsettled
+  unsettled = {}
+  for _, fs in ipairs(list) do pcall(fs.GetWidth, fs) end
+end
+local function settle(widget)
+  local fs = WFJ.Labels.widget(widget)
+  if type(fs) ~= "table" or type(fs.GetWidth) ~= "function" or type(fs.IsRectValid) ~= "function" then return end
+  local ok, valid = pcall(fs.IsRectValid, fs)
+  if not ok or valid then return end
+  unsettled[#unsettled + 1] = fs
+  if settling then return end
+  local timer = WFJ.Compat.resolve("C_Timer")
+  if type(timer) ~= "table" or type(timer.After) ~= "function" then
+    unsettled = {}
+    return
+  end
+  settling = true
+  timer.After(0, settleAll)
+end
+Reputation.settle = settle
+
 -- One entry's bar standing (after its initializer, and after its own OnEnter / OnLeave writes). → 1 | 0
-function Reputation.showBar(row)
-  local n = WFJ.Labels.show(SURFACE, rowKey(row) .. ".bar", barText(row), nil, BAR_ONLY)
+-- A bar text written before the client has placed it (the first time the pane shows) is never placed: it holds the
+-- Japanese and draws nothing until the row is set up again. Seen in game, one way per bar: left unwritten it is
+-- placed and shows the English; written at once it stays unplaced, whatever is asked of it or done to it a frame
+-- later; written a frame later it is placed and shows the Japanese. So an unplaced bar text is written a frame
+-- later (`late`: that second call, which writes whatever the row then holds).
+function Reputation.showBar(row, late)
+  local text = barText(row)
+  local fs = not late and WFJ.Labels.widget(text) or nil
+  if type(fs) == "table" and type(fs.IsRectValid) == "function" then
+    local ok, valid = pcall(fs.IsRectValid, fs)
+    local timer = WFJ.Compat.resolve("C_Timer")
+    if ok and not valid and type(timer) == "table" and type(timer.After) == "function" then
+      timer.After(0, function() Reputation.showBar(row, true) end)
+      return 0
+    end
+  end
+  local n = WFJ.Labels.show(SURFACE, rowKey(row) .. ".bar", text, nil, BAR_ONLY)
   WFJ.Render.updateBanner(SURFACE)
   return n
 end
@@ -128,7 +172,7 @@ function Reputation.onRow(a, b)
   if type(row) ~= "table" then return end
   if type(row.Content) == "table" then -- an entry or a sub-header: a faction name and a standing bar
     WFJ.Labels.forbid(row.Content.Name)
-    WFJ.NameLabels.show(SURFACE, rowKey(row) .. ".name", row.Content.Name)
+    if WFJ.NameLabels.show(SURFACE, rowKey(row) .. ".name", row.Content.Name) == 1 then settle(row.Content.Name) end
     hookRow(row)
     Reputation.showBar(row)
   elseif type(row.Name) == "table" then -- a top-level header

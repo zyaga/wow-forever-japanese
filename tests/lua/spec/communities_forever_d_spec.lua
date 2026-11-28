@@ -746,7 +746,16 @@ describe("the rest of the Communities window on Forever", function()
         m:AddMessage("Yesterday")
         m:BackFillMessage("Yesterday")
         m:AddMessage("[Thrall]: Yesterday was fun.")
-        assert.are.same({ "昨日", "昨日", "[Thrall]: Yesterday was fun." }, m.history)
+        -- the stored lines stay the client's; the Japanese goes on the visible line at the redraw
+        assert.are.same({ "Yesterday", "Yesterday", "[Thrall]: Yesterday was fun." }, m.history)
+        local line, member = Stub.fontString("Yesterday"), Stub.fontString("[Thrall]: Yesterday was fun.")
+        line.messageInfo, member.messageInfo = { message = "Yesterday" }, { message = "[Thrall]: Yesterday was fun." }
+        local had = m.visibleLines
+        m.visibleLines = { line, member }
+        WFJ.ChatSystem.show(m)
+        m.visibleLines = had
+        assert.are.equal("昨日", line:GetText())
+        assert.are.equal("[Thrall]: Yesterday was fun.", member:GetText())
       end)
 
       it("the streams dialogs: create / edit title and labels; the channel name untouched", function()

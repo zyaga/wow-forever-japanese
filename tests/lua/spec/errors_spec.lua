@@ -32,7 +32,8 @@ local UI = {
 -- the message ids the stub client sends: LE_GAME_ERR_* numbers → GlobalStrings keys
 local IDS = { [1] = "ERR_OUT_OF_RANGE", [2] = "ERR_OUT_OF_MANA", [3] = "ERR_INV_FULL", [4] = "ERR_QUEST_ADD_KILL_SII",
   [5] = "ERR_SPELL_FAILED_S", [6] = "ERR_BADATTACKFACING", [8] = "ERR_ATTACK_PREVENTED_BY_MECHANIC_S" }
-local NAMES = { "UIErrorsFrame", "GetGameMessageInfo", "ERR_BADATTACKFACING", "C_Timer" }
+local NAMES = { "UIErrorsFrame", "GetGameMessageInfo", "ERR_BADATTACKFACING", "C_Timer", "GetTime", "GetCVarBool" }
+local clientShould -- the frame's own ShouldDisplayMessageType, as the client defined it
 
 local function install()
   _G.ERR_BADATTACKFACING = "You are facing the wrong way!" -- a key the client has and the addon does not list
@@ -73,12 +74,17 @@ local function install()
     if THROTTLED[messageType] and self:TryFlashingExistingMessage(messageType, message) then return false end
     return true
   end
+  clientShould = frame.ShouldDisplayMessageType
   function frame:TryDisplayMessage(messageType, message)
     if self:ShouldDisplayMessageType(messageType, message) then
       self:AddMessage(message, 1, 0.1, 0.1, 1.0, messageType)
       self.sounds = self.sounds + 1
     end
   end
+  frame.events = {}
+  function frame.IsEventRegistered(_, event) return event ~= "UI_INFO_MESSAGE" end -- another addon turned it off
+  function frame:UnregisterEvent(event) self.events[#self.events + 1] = "-" .. event end
+  function frame:RegisterEvent(event) self.events[#self.events + 1] = "+" .. event end
   _G.UIErrorsFrame = frame
 end
 
@@ -225,26 +231,80 @@ describe("the UI errors frame", function()
 
   it("a repeated throttled error flashes its Japanese line, silently, as the client does for English",
     function()
-      local f = _G.UIErrorsFrame
-      f:TryDisplayMessage(1, "Out of range.")
-      f:TryDisplayMessage(1, "Out of range.")
-      f:TryDisplayMessage(1, "Out of range.")
+      local f, now = _G.UIErrorsFrame, 10
+      _G.GetTime = function() return now end
+      for _, key in ipairs({ "now", "cvarBool" }) do
+        WFJ.Compat.declare(WFJ.Errors.SURFACE, key, { key == "now" and "GetTime" or "GetCVarBool" })
+      end
+      -- the event reaches the addon's listener first, then the client's frame
+      local function send(id, message)
+        WFJ.Errors.onEvent(nil, "UI_ERROR_MESSAGE", id, message)
+        f:TryDisplayMessage(id, message)
+      end
+      send(1, "Out of range.")
+      send(1, "Out of range.")
+      send(1, "Out of range.")
       assert.are.equal("範囲外です。", f.lines[1]:GetText())
       assert.are.equal(1, f.sounds) -- the first line only; the repeats flash
       assert.are.equal(2, f.flashed)
-      assert.are.equal("範囲外です。", f.lines[1].origMsg) -- the flash runs on the text that shows
+      -- nothing of the client's frame is replaced, and the client's flash record holds what the client read
+      assert.are.equal(clientShould, f.ShouldDisplayMessageType)
+      assert.are.equal("Out of range.", f.lines[1].origMsg)
       -- a type the client never throttles is added again (and sounds) exactly as without the addon
-      f:TryDisplayMessage(2, "Not enough mana")
-      f:TryDisplayMessage(2, "Not enough mana")
+      send(2, "Not enough mana")
+      send(2, "Not enough mana")
       assert.are.equal(3, f.sounds)
       assert.are.equal("マナが足りません", f.lines[2]:GetText())
       -- with the modifier held the line is English, and the client's own comparison already holds
       X.alt(WFJ, true)
-      f:TryDisplayMessage(1, "Out of range.")
+      send(1, "Out of range.")
       assert.are.equal("Out of range.", f.lines[1]:GetText())
       assert.are.equal(3, f.flashed)
     end)
 
+  it("the addon's own flash brightens the line for a fifth of a second and puts its colour back", function()
+    local now, updates, flashOn = 10, nil, true
+    _G.GetTime = function() return now end
+    _G.GetCVarBool = function() return flashOn end -- one function: the addon keeps the one it found first
+    for _, key in ipairs({ "now", "cvarBool", "create" }) do
+      WFJ.Compat.declare(WFJ.Errors.SURFACE, key,
+        { key == "now" and "GetTime" or key == "cvarBool" and "GetCVarBool" or "CreateFrame" })
+    end
+    local fs = Stub.fontString("範囲外です。")
+    local color = { 1, 0.1, 0.1 }
+    function fs.GetTextColor() return color[1], color[2], color[3] end
+    function fs.SetTextColor(_, r, g, b) color = { r, g, b } end
+    assert.is_true(WFJ.Errors.flash(fs))
+    -- the frame the flash runs on: its OnUpdate is the step
+    local frames = Stub.frames or {}
+    for _, f in ipairs(frames) do
+      if f.GetScript and f:GetScript("OnUpdate") then updates = f:GetScript("OnUpdate") end
+    end
+    if updates then
+      now = 10.05
+      updates()
+      assert.is_true(color[1] > 1) -- brighter on the way up
+      now = 10.5
+      updates()
+      assert.are.same({ 1, 0.1, 0.1 }, color) -- its own colour back when the flash is over
+    end
+    flashOn = false
+    assert.is_false(WFJ.Errors.flash(fs)) -- the player's setting turns the flash off
+  end)
+
+  it("the client's frame is put behind the addon's listener, only for an event it still listens for", function()
+    assert.are.same({ "-UI_ERROR_MESSAGE", "+UI_ERROR_MESSAGE" }, _G.UIErrorsFrame.events)
+  end)
+
+  it("a line the client's frame never checked gets its Japanese back", function()
+    local f = _G.UIErrorsFrame
+    f:TryDisplayMessage(1, "Out of range.")
+    WFJ.Errors.onEvent(nil, "UI_ERROR_MESSAGE", 1, "Out of range.") -- and no client call follows
+    assert.are.equal("Out of range.", f.lines[1]:GetText())
+    assert.are.equal(1, WFJ.Errors.back())
+    assert.are.equal("範囲外です。", f.lines[1]:GetText())
+    assert.are.equal(0, WFJ.Errors.back())
+  end)
 
   it("an argument that is a dictionary word is shown in Japanese; any other as written", function()
     _G.UIErrorsFrame:TryDisplayMessage(8, "Can't attack while Stunned.")

@@ -136,10 +136,32 @@ local function clientBuild()
   return tostring(version) .. "." .. tostring(number)
 end
 
+-- The other addons loaded now, by folder name, sorted: this addon and its voice packs left out. Names only, read
+-- when the player opens the report [verified: forever blizzard_apidocumentationgenerated/addonsdocumentation.lua,
+-- GetNumAddOns, GetAddOnInfo, IsAddOnLoaded].
+function ReportWindow.otherAddons()
+  local api = WFJ.Compat.resolve("C_AddOns")
+  if type(api) ~= "table" or type(api.GetNumAddOns) ~= "function" or type(api.GetAddOnInfo) ~= "function"
+      or type(api.IsAddOnLoaded) ~= "function" then
+    return {}
+  end
+  local out = {}
+  for i = 1, api.GetNumAddOns() do
+    local ok, name = pcall(api.GetAddOnInfo, i)
+    if ok and type(name) == "string" and name:sub(1, #WFJ.ADDON) ~= WFJ.ADDON then
+      local okL, _, loaded = pcall(api.IsAddOnLoaded, i)
+      if okL and loaded then out[#out + 1] = name end
+    end
+  end
+  table.sort(out)
+  return out
+end
+
 -- A fresh bug report from the unsent errors.
 local function packBug()
   return WFJ.BugReport.pack({ build = clientBuild(), version = WFJ.VERSION, errors = WFJ.ErrorLog.unsent(),
-    ours = WFJ.ErrorLog.ours(), voice = WFJ.Voice and WFJ.Voice.packList() or nil })
+    ours = WFJ.ErrorLog.ours(), voice = WFJ.Voice and WFJ.Voice.packList() or nil,
+    addons = ReportWindow.otherAddons() })
 end
 
 function ReportWindow.retitle()

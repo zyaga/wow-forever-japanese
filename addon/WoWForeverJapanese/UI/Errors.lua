@@ -15,13 +15,17 @@
 -- own sentence stays as written.
 -- Repeats: a throttled type flashes its line instead of adding it again only when the line's text
 -- equals the incoming English (TryFlashingExistingMessage, :118–127); once the line is Japanese that is never true, so
--- the client would re-add it AND replay its error sound / voice line on every press (:146–155). The frame's own
--- ShouldDisplayMessageType, called only from TryDisplayMessage (:133–147; blizzard_channels' TryDisplayMessage), is
--- wrapped on the instance: while the line of that id is our Japanese for that same English, the client's English is put
--- back for the length of the original check, so the client decides exactly as it would without the addon (flash and
--- no sound for a throttled type, a new line for any other), then our Japanese goes back. Taint: the wrapper runs inside
--- the errors frame's event handler and the voice-channel error display, neither of which reaches a protected call;
--- TryFlashingExistingMessage itself (also used by AddExternalMessage, which Blizzard's action code calls) is untouched.
+-- the client would re-add it AND replay its error sound / voice line on every press (:146–155). Nothing of the frame
+-- is replaced for this: a function of the frame written by the addon makes every error display run in the addon's
+-- name, and the fields that display writes (flashingFontStrings, a line's origMsg) are then read by the client's own
+-- callers of AddExternalErrorMessage (key bindings, the character window). Instead a frame of the addon's own
+-- listens for the two events ahead of the client's frame and, while the line of that id is our Japanese for that
+-- same English, writes the client's English back, so the client decides exactly as it would without the addon (flash
+-- and no sound for a throttled type, a new line for any other). A post-hook on TryDisplayMessage then puts our
+-- Japanese back and flashes the line itself, since the client's flash stops on a line whose text changed (:36–47).
+-- Order: the client's frame is registered for the two events again after the addon's listener [unverified: that
+-- events reach frames in the order they registered; in-game check: a repeated "Out of range" plays its sound once.
+-- When the order is the other way the client adds the line again with its sound, and one log line says so].
 local _, WFJ = ...
 local Errors = {}
 WFJ.Errors = Errors
@@ -33,7 +37,7 @@ local Compat = WFJ.Compat
 Errors.NEVER_TOUCH = {} -- each line is restricted to its own key
 
 local CANDIDATES = { frame = { "UIErrorsFrame" }, messageInfo = { "GetGameMessageInfo" },
-  timer = { "C_Timer" } }
+  timer = { "C_Timer" }, create = { "CreateFrame" }, now = { "GetTime" }, cvarBool = { "GetCVarBool" } }
 
 local onlyByKey = {} -- { [key] = { [key] = true } }: one `only` set per key, so matchOnly caches it
 local wrapperSet, wrapperIndex -- the listed error keys a wrapper's line may be, rebuilt when the index is
@@ -195,19 +199,112 @@ local function ours(frame, messageType, message)
   return rec, fs
 end
 
--- The wrapper around the instance's ShouldDisplayMessageType (see the header). → the original's answer
-function Errors.wrapShould(original)
-  return function(frame, messageType, message, ...)
-    local rec, fs = ours(frame, messageType, message)
-    if not rec then return original(frame, messageType, message, ...) end
-    fs:SetText(message)
-    local show = original(frame, messageType, message, ...)
-    if not show and type(frame.flashingFontStrings) == "table" and frame.flashingFontStrings[fs] then
-      fs.origMsg = rec.applied -- the flash (OnUpdate, :31–52) runs while the text is still the flashed text
+local FLASH_SECONDS = 0.2 -- the client's own flash (uierrorsframe.lua:26–52)
+local flashing = {} -- line → { start, text, r, g, b }
+local flasher -- the addon's own frame whose OnUpdate runs the flashes
+
+local function flashStep()
+  local now = Compat.get(SURFACE, "now")
+  local t, more = type(now) == "function" and now() or 0, false
+  for fs, f in pairs(flashing) do
+    local text = fs:GetText()
+    local part = (t - f.start) / FLASH_SECONDS
+    if Compat.secret(text) or text ~= f.text or part > 1 or part < 0 or (fs.IsShown and not fs:IsShown()) then
+      if not Compat.secret(text) and text == f.text then fs:SetTextColor(f.r, f.g, f.b) end
+      flashing[fs] = nil
+    else
+      local lift = (part > 0.5 and (1 - part) / 0.5 or part / 0.5) * 0.4
+      fs:SetTextColor(f.r + lift, f.g + lift, f.b + lift)
+      more = true
     end
-    fs:SetText(rec.applied)
-    return show
   end
+  if not more and flasher then flasher:SetScript("OnUpdate", nil) end
+end
+
+-- Flashes a line the way the client flashes a repeated error, on the text the line shows now.
+function Errors.flash(fs)
+  local cvarBool, now = Compat.get(SURFACE, "cvarBool"), Compat.get(SURFACE, "now")
+  local create = Compat.get(SURFACE, "create")
+  if type(now) ~= "function" or type(create) ~= "function" or type(fs.SetTextColor) ~= "function"
+      or type(fs.GetTextColor) ~= "function" then
+    return false
+  end
+  if type(cvarBool) == "function" and not cvarBool("flashErrorMessageRepeats") then return false end
+  local f = flashing[fs]
+  if f then
+    f.start, f.text = now(), fs:GetText()
+  else
+    local r, g, b = fs:GetTextColor()
+    flashing[fs] = { start = now(), text = fs:GetText(), r = r, g = g, b = b }
+  end
+  flasher = flasher or create("Frame")
+  flasher:SetScript("OnUpdate", flashStep)
+  return true
+end
+
+local waiting -- { rec, fs, message }: the line showing the client's English for the client's check of this event
+-- the message the listener saw / the client displayed and the frame each was in, to tell which of the two ran first
+local inEvent, inEventAt, lastShown, lastShownAt
+-- The time of the frame being drawn (the same all through one frame), or nil.
+local function frameTime()
+  local now = Compat.get(SURFACE, "now")
+  return type(now) == "function" and now() or nil
+end
+local orderLogged = false
+
+-- Our Japanese back on the line put to English for the client's check, when the client kept that line (it flashed
+-- it, or showed nothing); a line the client wrote again gets its Japanese from the AddMessage hook. → 1 | 0
+function Errors.back()
+  local w = waiting
+  waiting = nil
+  if not w then return 0 end
+  local rec, fs = w.rec, w.fs
+  if WFJ.SurfaceState.get(SURFACE, rec.key) ~= rec or type(rec.applied) ~= "string" then return 0 end
+  local text = fs:GetText()
+  if Compat.secret(text) or text ~= w.message then return 0 end
+  WFJ.SurfaceState.setText(fs, rec.applied)
+  Errors.flash(fs)
+  return 1
+end
+
+-- The addon's own listener for UI_ERROR_MESSAGE / UI_INFO_MESSAGE, ahead of the client's frame. → 1 | 0
+function Errors.onEvent(_, _, messageType, message)
+  local frame = Compat.get(SURFACE, "frame")
+  if type(frame) ~= "table" or type(frame.GetFontStringByID) ~= "function" then return 0 end
+  Errors.back() -- a line still waiting: the client's frame never handled that event
+  -- Which of the two ran first for this event: the client's frame showing this same message earlier in this same
+  -- frame means it did. Every event is marked, whether or not its line is the addon's.
+  local readable = type(message) == "string" and not Compat.secret(message)
+  local at = frameTime()
+  if readable and at ~= nil and lastShown == message and lastShownAt == at and not orderLogged then
+    orderLogged = true
+    if WFJ.Diag then
+      WFJ.Diag.log("errors", "the client's error frame runs before the addon's listener: repeats sound again")
+    end
+  end
+  lastShown = nil
+  inEvent, inEventAt = readable and message or nil, at
+  local rec, fs = ours(frame, messageType, message)
+  if not rec then return 0 end
+  WFJ.SurfaceState.setText(fs, message)
+  waiting = { rec = rec, fs = fs, message = message }
+  local timer = Compat.get(SURFACE, "timer")
+  if type(timer) == "table" and type(timer.After) == "function" then timer.After(0, Errors.back) end
+  return 1
+end
+
+-- hooksecurefunc target (UIErrorsFrame:TryDisplayMessage). → 1 | 0
+function Errors.onDisplayed(_, _, message)
+  if type(message) == "string" and not Compat.secret(message) then
+    local at = frameTime()
+    if inEvent == message and inEventAt == at then
+      lastShown = nil
+    else
+      lastShown, lastShownAt = message, at
+    end
+  end
+  inEvent = nil
+  return Errors.back()
 end
 
 local hooked = false
@@ -222,8 +319,20 @@ function Errors.init()
   end
   hooked = true
   hooksecurefunc(frame, "AddMessage", Errors.onAddMessage)
-  if type(frame.ShouldDisplayMessageType) == "function" and type(frame.GetFontStringByID) == "function" then
-    frame.ShouldDisplayMessageType = Errors.wrapShould(frame.ShouldDisplayMessageType)
+  local create = Compat.get(SURFACE, "create")
+  if type(frame.TryDisplayMessage) == "function" and type(frame.GetFontStringByID) == "function"
+      and type(create) == "function" then
+    hooksecurefunc(frame, "TryDisplayMessage", Errors.onDisplayed)
+    local listener = create("Frame")
+    listener:SetScript("OnEvent", Errors.onEvent)
+    for _, event in ipairs({ "UI_ERROR_MESSAGE", "UI_INFO_MESSAGE" }) do
+      listener:RegisterEvent(event)
+      -- only an event the frame still listens for: another addon may have turned the error text off this way
+      if type(frame.IsEventRegistered) == "function" and frame:IsEventRegistered(event) then
+        frame:UnregisterEvent(event)
+        frame:RegisterEvent(event)
+      end
+    end
   end
   WFJ.Render.updateBanner(SURFACE)
   return true

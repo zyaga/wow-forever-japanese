@@ -57,6 +57,11 @@ ChatSystem.MAX_REMEMBERED = 4096 -- distinct Japanese ↔ English pairs held at 
 ChatSystem.SWEEP_EVERY = 256 -- a sweep that freed nothing is retried after this many refused lines
 local jaToEn, jaArea, remembered, refused = {}, {}, 0, 0
 local hooked = setmetatable({}, { __mode = "k" })
+-- A key-restricted frame (the Communities chat) → its key list, and the Japanese of each English line of theirs.
+-- Their stored lines are never rewritten: seen in game, the client's redraw after a stored line of that chat was
+-- rewritten from the addon wrote its scroll bar's state in the addon's name. The Japanese goes on the visible line.
+local keyedFrames = setmetatable({}, { __mode = "k" })
+local keyedJa = {}
 local ready = false
 
 local function secret(value) return Compat.secret(value) end
@@ -164,13 +169,19 @@ function ChatSystem.sweep()
     if type(frame.GetNumMessages) == "function" and type(frame.GetMessageInfo) == "function" then
       for i = 1, frame:GetNumMessages() do
         local text = frame:GetMessageInfo(i)
-        if type(text) == "string" and not secret(text) and jaToEn[text] then held[text] = true end
+        if type(text) == "string" and not secret(text) then
+          if jaToEn[text] then held[text] = true end
+          if keyedJa[text] then held[keyedJa[text]] = true end -- a key-restricted frame holds the English
+        end
       end
     end
   end
   local n = 0
-  for ja in pairs(jaToEn) do
-    if not held[ja] then jaToEn[ja], jaArea[ja], n = nil, nil, n + 1 end
+  for ja, en in pairs(jaToEn) do
+    if not held[ja] then
+      if keyedJa[en] == ja then keyedJa[en] = nil end
+      jaToEn[ja], jaArea[ja], n = nil, nil, n + 1
+    end
   end
   remembered = remembered - n
   return n
@@ -634,11 +645,13 @@ end
 function ChatSystem.show(frame)
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local fontObject = type(frame) == "table" and type(frame.GetFontObject) == "function" and frame:GetFontObject() or nil
+  local keyed = type(frame) == "table" and keyedFrames[frame] ~= nil
   local n = 0
   for _, line in ipairs(lines) do
     local info = type(line) == "table" and line.messageInfo or nil
     local ja = type(info) == "table" and info.message or nil
     local readable = type(ja) == "string" and not secret(ja)
+    if keyed and readable and keyedJa[ja] then ja = keyedJa[ja] end -- the stored line is the client's English
     local ours = readable and jaToEn[ja] ~= nil
     local labels = not ours and readable and ChatSystem.linkLabels(ja) or nil
     if ours and wanted(jaArea[ja]) then
@@ -667,10 +680,9 @@ ChatSystem.onRefreshed = ChatSystem.show
 -- communitiesChat: a message frame outside CHAT_FRAMES whose client-written lines are one of a few keys:
 -- the Communities chat's date / unread separators and its message-of-the-day line (communitieschatframe.lua:357–397:
 -- MessageFrame:AddMessage / BackFillMessage(text, r, g, b), no chat type). Only a line that is wholly one of `keys`
--- is rewritten (once, in the history, as a plain line is); a member's message ("[name]: text") is never one of them
--- and is never touched. The visible lines follow the modifier / the switch as a chat frame's do.
-local keyedFrames = setmetatable({}, { __mode = "k" }) -- frame → its key list
-
+-- is shown in Japanese, on its visible line only (the stored line stays the client's); a member's message
+-- ("[name]: text") is never one of them and is never touched. The visible lines follow the modifier / the switch
+-- as a chat frame's do.
 -- The cheap test run before any lookup: `message` is one of `keys`' English as the client has
 -- it (the global string), whole, or starts with a template's text before its first specifier ('Message of the Day: "').
 -- A member's message fails it, so it never runs the index's unrestricted scan nor takes a slot of its shared memo.
@@ -692,15 +704,12 @@ ChatSystem.mayBeKeyed = mayBeKeyed
 
 function ChatSystem.onKeyedMessage(frame, message)
   local keys = type(frame) == "table" and keyedFrames[frame] or nil
-  if not keys or type(message) ~= "string" or secret(message) or type(frame.TransformMessages) ~= "function"
-      or not on() or not mayBeKeyed(message, keys) then
+  if not keys or type(message) ~= "string" or secret(message) or not on() or not mayBeKeyed(message, keys) then
     return 0
   end
   local ja = ChatSystem.translateOnly(message, keys)
   if not ja or not remember(ja, message) then return 0 end
-  frame:TransformMessages(function(text) return not secret(text) and text == message end, function(_, ...)
-    return ja, ...
-  end)
+  keyedJa[message] = ja
   return 1
 end
 

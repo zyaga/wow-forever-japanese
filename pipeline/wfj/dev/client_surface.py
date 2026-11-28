@@ -3020,6 +3020,406 @@ local function WFJScanBagClickRead(done)
   end)
 end
 
+-- The reads below look for a value the addon wrote where the client's own code reads it. They sit in one function
+-- of their own, reached through this table: the file's chunk may hold 200 local names at once, and it is near that.
+local WFJScanTaint = {}
+-- The addon's popup dictionary covers, as it holds them: each one's state (its frame under `frame`, its text, its
+-- spans, the marks drawn on it). A cover's frame carries no field, so the state is asked for, never read off it.
+WFJScanTaint.coverStates = function()
+  local out = {}
+  if type(WFJ_ReadingCovers) == "function" then
+    pcall(WFJ_ReadingCovers, function(_, frame, _, state)
+      if type(state) == "table" and type(frame) == "table" then out[#out + 1] = state end
+    end)
+  end
+  return out
+end
+;(function()
+-- The touch read. Everything of the addon's that the client's own code could read: a client frame's field that
+-- carries the addon's taint (the addon wrote it, or replaced a function there), and a frame the addon made that sits
+-- inside a client frame, with the fields it carries. The client reads fields off the children of its frames (a
+-- layout frame asks each child for ignoreInLayout), and a value the addon wrote taints the client's run from that
+-- read on. A frame is the addon's when its fields carry the addon's taint and none is secure. Read in slices, so
+-- the game does not stall. Into `probe.touch`:
+--   frames   frames walked; made  frames the addon made; insideN  of them, inside a client frame
+--   onClient { "<frame>.<key>" } client fields carrying the addon's taint (the first TOUCH_MAX); onClientN  all
+--   inside   { "<keys, space separated>\\t<count>\\t<a parent it was found under>" } one line per set of keys
+local TOUCH_SLICE = 400 -- frames read per frame drawn, at most
+local TOUCH_MAX = 300
+WFJScanTaint.touch = function(done)
+  local TOUCH_MS = 2 -- milliseconds of reading per frame drawn: nothing here may be long enough to see
+  local db = probeDb()
+  local record = { frames = 0, made = 0, insideN = 0, onClient = {}, onClientN = 0, inside = {} }
+  db.touch = record
+  local ADDON = "WoWForeverJapanese"
+  local madeBy = {} -- frame → true | false
+  local groups, order = {}, {}
+  local function nameOf(f)
+    local ok, name = pcall(function() return f.GetDebugName and f:GetDebugName() or f:GetName() end)
+    return ok and type(name) == "string" and name or "unnamed"
+  end
+  -- → whether the addon made `f`, and its string keys (sorted) and the client keys carrying the addon's taint
+  local function look(f)
+    local ours, secure, keys, tainted = 0, 0, {}, {}
+    for key in pairs(f) do
+      if type(key) == "string" then
+        local ok, isSecure, by = pcall(issecurevariable, f, key)
+        if ok and isSecure then
+          secure = secure + 1
+        elseif ok and by == ADDON then
+          ours = ours + 1
+          tainted[#tainted + 1] = key
+        end
+        keys[#keys + 1] = key
+      end
+    end
+    return ours > 0 and secure == 0, keys, tainted
+  end
+  -- Whether the addon made `f`: its own keys say so, or its global name carries the addon's taint, or a frame above it
+  -- is the addon's (a button the addon built from a client template holds the template's keys beside the addon's).
+  local function made(f)
+    local known = madeBy[f]
+    if known ~= nil then return known end
+    madeBy[f] = false -- a parent loop ends here
+    local mine = (look(f))
+    if not mine then
+      local okN, name = pcall(f.GetName, f)
+      if okN and type(name) == "string" and _G[name] == f then
+        local okS, isSecure, by = pcall(issecurevariable, _G, name)
+        mine = okS and not isSecure and by == ADDON
+      end
+    end
+    if not mine then
+      local okP, parent = pcall(f.GetParent, f)
+      mine = okP and parent ~= nil and parent ~= UIParent and parent ~= WorldFrame and made(parent) or false
+    end
+    madeBy[f] = mine
+    return mine
+  end
+  local function read(f)
+    record.frames = record.frames + 1
+    local okF, forbidden = pcall(function() return f.IsForbidden and f:IsForbidden() end)
+    if not okF or forbidden then return end
+    local _, keys, tainted = look(f)
+    if not made(f) then
+      for _, key in ipairs(tainted) do
+        record.onClientN = record.onClientN + 1
+        if #record.onClient < TOUCH_MAX then record.onClient[#record.onClient + 1] = nameOf(f) .. "." .. key end
+      end
+      return
+    end
+    record.made = record.made + 1
+    -- the nearest ancestor the addon did not make: its fields are read by the client when that is a client frame
+    -- only a frame directly under a client frame is one of that frame's children; UIParent holds every window
+    local direct = f:GetParent()
+    if not direct or direct == UIParent or direct == WorldFrame or made(direct) then return end
+    record.insideN = record.insideN + 1
+    table.sort(keys)
+    local sig = table.concat(keys, " ")
+    local g = groups[sig]
+    if not g then
+      g = { n = 0, where = nameOf(direct) }
+      groups[sig] = g
+      order[#order + 1] = sig
+    end
+    g.n = g.n + 1
+  end
+  local f = EnumerateFrames()
+  local walker = CreateFrame("Frame")
+  walker:SetScript("OnUpdate", function(self)
+    local n, started = 0, debugprofilestop()
+    while f and n < TOUCH_SLICE and debugprofilestop() - started < TOUCH_MS do
+      pcall(read, f)
+      f = EnumerateFrames(f)
+      n = n + 1
+    end
+    if f then return end
+    self:SetScript("OnUpdate", nil)
+    for i, sig in ipairs(order) do
+      if i > TOUCH_MAX then break end
+      record.inside[i] = sig .. "\\t" .. groups[sig].n .. "\\t" .. groups[sig].where
+    end
+    done()
+  end)
+end
+
+-- The popup dictionary cover read. A cover is the addon's own frame laid over a text, and what the mouse meets
+-- there: a cover that is missing, lies beside its text, or stays when its text hides is a popup dictionary that does
+-- not answer or answers in the wrong place. A cover also sits among the client's frames, so it may carry no field
+-- (the client's layout code reads fields off every child it lays out) and may not be a layout frame's own child.
+-- Read as they are now, over whatever is on screen. Into `probe.covers`:
+--   total  covers the addon holds; shown  those showing; noread  the addon has no such read (an older build)
+--   on       whether the popup dictionary is switched on; idle  covers showing over a text that is not (the cover
+--            answers nothing there and lets the mouse through: counted, never a failure)
+--   stray    { "<text>" } a cover showing over a text that is not the addon's any more: a failure
+--   missing  { "<text>" } with the popup dictionary on, a text of the addon's showing with its cover hidden: a failure
+--   beside   { "<text>" } a showing cover whose box is not its text's box: a failure
+--   fields   { "<text>\\t<keys>" } a cover's frame carrying a field: a failure
+--   inLayout { "<text>" } a cover that is a layout frame's own child: a failure
+WFJScanTaint.covers = function(done)
+  local COVERS_MAX = 40 -- names listed per kind of fault
+  local db = probeDb()
+  local record = { total = 0, shown = 0, idle = 0, stray = {}, missing = {}, beside = {}, fields = {}, inLayout = {} }
+  db.covers = record
+  if type(WFJ_ReadingCovers) ~= "function" then
+    record.noread = true
+    return done()
+  end
+  local function note(list, text)
+    if #list < COVERS_MAX then list[#list + 1] = text end
+  end
+  local function label(fs)
+    local ok, name = pcall(function() return fs:GetDebugName() end)
+    return ok and type(name) == "string" and name or "unnamed"
+  end
+  local function near(a, b) return a ~= nil and b ~= nil and math.abs(a - b) <= 1.5 end
+  local visits = {}
+  local okOn, on = pcall(WFJ_ReadingCovers, function(fs, frame, inUse) visits[#visits + 1] = { fs, frame, inUse } end)
+  record.on = okOn and on and true or false
+  for _, visit in ipairs(visits) do
+    local fs, frame, inUse = visit[1], visit[2], visit[3]
+    record.total = record.total + 1
+    local name = label(fs)
+    local frameShown, textShown = frame:IsVisible() and true or false, fs:IsVisible() and true or false
+    if frameShown then record.shown = record.shown + 1 end
+    if frameShown and not inUse then note(record.stray, name) end
+    if frameShown and inUse and not textShown then record.idle = record.idle + 1 end
+    if record.on and inUse and textShown and not frameShown then note(record.missing, name) end
+    if frameShown and textShown then
+      local l, b, w, h = frame:GetRect()
+      local fl, fb, fw, fh = fs:GetRect()
+      if l and fl and not (near(l, fl) and near(b, fb) and near(w, fw) and near(h, fh)) then note(record.beside, name) end
+    end
+    local keys = {}
+    for key in pairs(frame) do
+      if type(key) == "string" then keys[#keys + 1] = key end
+    end
+    if #keys > 0 then
+      table.sort(keys)
+      note(record.fields, name .. "\\t" .. table.concat(keys, " "))
+    end
+    local parent = frame:GetParent()
+    if type(parent) == "table" and type(parent.Layout) == "function" and type(parent.GetLayoutChildren) == "function" then
+      note(record.inLayout, name)
+    end
+  end
+  done()
+end
+
+-- The chat send read. A slash command the player types runs from the chat box's Enter handler through the client's
+-- own send code (chatframeeditbox.lua:451-455, 426, 296, 271) to the command's function; a value on that path that
+-- carries an addon's taint makes the client refuse a command that needs a clean run (a guild invite). Read here:
+-- every field of each chat edit box, the globals that path names, and each entry of the slash command tables.
+-- Into `probe.send`:
+--   checked  values read; tainted  { "<name>\\t<addon>" } carrying any addon's taint when the read began
+--   afterInsert / afterOpen  the same, for what an addon's own insert into the chat box and its own open added
+local SEND_GLOBALS = { "ACTIVE_CHAT_EDIT_BOX", "LAST_ACTIVE_CHAT_EDIT_BOX", "CHAT_FOCUS_OVERRIDE", "DEFAULT_CHAT_FRAME",
+  "SELECTED_CHAT_FRAME", "SELECTED_DOCK_FRAME", "ChatFrameUtil", "ChatFrameEditBoxMixin", "ChatFrameEditBoxBaseMixin",
+  "ChatFrameMixin", "SlashCmdList", "hash_SlashCmdList", "hash_EmoteTokenList", "hash_ChatTypeInfoList", "ChatTypeInfo",
+  "C_GuildInfo", "C_PartyInfo", "C_ChatInfo", "Constants", "GetUnitName", "UnitName", "strtrim", "strupper", "strlower",
+  "strmatch", "strfind", "strsub", "strlen", "strsplit", "format", "gsub", "tinsert", "tremove", "securecallfunction",
+  "secureexecuterange", "issecure", "IsSecureCmd", "GENERAL_CHAT_DOCK", "FCFDock_GetSelectedWindow", "GetCVar",
+  "GetCVarBool", "UIParent", "AutoCompleteEditBox_OnEnterPressed", "AutoComplete_Update", "IsVoiceTranscription",
+  "MacroEditBox", "RunMacroText", "SecureCmdOptionParse", "ChatEdit_ParseText", "ChatEdit_SendText",
+  "ChatFrame_OpenChat", "ChatEdit_ActivateChat", "ChatEdit_OnEnterPressed" }
+local SEND_TABLES = { "ChatFrameUtil", "ChatFrameEditBoxMixin", "ChatFrameEditBoxBaseMixin", "hash_SlashCmdList",
+  "hash_ChatTypeInfoList", "C_GuildInfo", "C_PartyInfo" }
+WFJScanTaint.send = function(done)
+  local db = probeDb()
+  local record = { checked = 0, tainted = {}, afterInsert = {}, afterOpen = {} }
+  db.send = record
+  -- every tainted value of the send path, as name → the addon whose taint it carries
+  local function snapshot()
+    local found = {}
+    local function look(t, key, name)
+      record.checked = record.checked + 1
+      local ok, isSecure, by = pcall(issecurevariable, t, key)
+      if ok and not isSecure then found[name] = tostring(by) end
+    end
+    for _, name in ipairs(SEND_GLOBALS) do look(_G, name, name) end
+    for _, name in ipairs(SEND_TABLES) do
+      local t = _G[name]
+      if type(t) == "table" then
+        for key in pairs(t) do
+          if type(key) == "string" then look(t, key, name .. "." .. key) end
+        end
+      end
+    end
+    for i = 1, NUM_CHAT_WINDOWS or 10 do
+      for _, name in ipairs({ "ChatFrame" .. i .. "EditBox", "ChatFrame" .. i }) do
+        local f = _G[name]
+        look(_G, name, name)
+        if type(f) == "table" then
+          for key in pairs(f) do
+            if type(key) == "string" then look(f, key, name .. "." .. key) end
+          end
+        end
+      end
+    end
+    return found
+  end
+  -- what `now` holds that `before` did not, into `list`
+  local function added(list, before, now)
+    for name, by in pairs(now) do
+      if before[name] ~= by and #list < 200 then list[#list + 1] = name .. "\\t" .. by end
+    end
+    table.sort(list)
+  end
+  local base = snapshot()
+  added(record.tainted, {}, base)
+  -- What an addon leaves on the path when it writes into the chat box itself, as the phrase book does: first text
+  -- put into the box, then the box opened with the client's own call. Both are the test's own writes, so they
+  -- carry the test addon's name; the chat box is put away again and a reload clears them.
+  local box = _G.ChatFrame1EditBox
+  if type(box) == "table" and type(box.Insert) == "function" then
+    pcall(box.Insert, box, "x")
+    local now = snapshot()
+    added(record.afterInsert, base, now)
+    base = now
+    pcall(box.SetText, box, "")
+  end
+  local open = type(ChatFrameUtil) == "table" and ChatFrameUtil.OpenChat or _G.ChatFrame_OpenChat
+  if type(open) == "function" then
+    pcall(open, "")
+    added(record.afterOpen, base, snapshot())
+    local active = type(ChatFrameUtil) == "table" and type(ChatFrameUtil.GetActiveWindow) == "function"
+      and ChatFrameUtil.GetActiveWindow() or nil
+    if active and type(ChatFrameUtil.DeactivateChat) == "function" then pcall(ChatFrameUtil.DeactivateChat, active) end
+  end
+  done()
+end
+
+-- The crafting window read. The window is opened the way the client opens it for a player: the test asks the
+-- client for the trade skill (C_TradeSkillUI.OpenTradeSkill), the client answers with its own event, and the window's
+-- own code opens it in a fresh run that carries no addon's taint. A field of the window that then carries the
+-- addon's taint was written while one of the addon's hooks had poisoned what that code reads; the recipe form marks
+-- reagents in the bags, so the taint reaches the bag buttons and from there a vendor and the action bars. Read once
+-- with the window open and once after the client opened another recipe. Into `probe.craft`:
+--   checked  values read; ours  { "<when>\\t<name>" } carrying the addon's taint: a failure
+--   others   name → the addon whose taint it carries; own  values the test's own steps tainted
+--   refused  why the window was not read; line  the skill line opened; recipe  the recipe opened
+local CRAFT_WAIT = 5 -- seconds the client is given to answer
+local CRAFT_FRAMES = { "CharacterBag0Slot", "CharacterBag1Slot", "CharacterBag2Slot", "CharacterBag3Slot",
+  "CharacterReagentBag0Slot", "MainMenuBarBackpackButton", "ContainerFrameCombinedBags", "MerchantFrame" }
+WFJScanTaint.craft = function(done)
+  local db = probeDb()
+  local record = { checked = 0, ours = {}, others = {}, own = 0 }
+  db.craft = record
+  local listed = {}
+  local function note(when, name, secure, owner)
+    record.checked = record.checked + 1
+    if secure or owner == nil then return end
+    if owner == "WoWForeverJapanese" then
+      if not listed[name] then
+        listed[name] = true
+        record.ours[#record.ours + 1] = when .. "\\t" .. name
+      end
+    elseif owner == "WFJScan" then
+      record.own = record.own + 1
+    else
+      record.others[name] = tostring(owner)
+    end
+  end
+  local function fields(when, label, t)
+    if type(t) ~= "table" then return end
+    for key in pairs(t) do
+      if type(key) == "string" then note(when, label .. "." .. key, issecurevariable(t, key)) end
+    end
+  end
+  local function read(when)
+    local frame = _G.ProfessionsFrame
+    fields(when, "ProfessionsFrame", frame)
+    local page = type(frame) == "table" and rawget(frame, "CraftingPage") or nil
+    if type(page) == "table" then
+      fields(when, "CraftingPage", page)
+      fields(when, "CraftingPage.RankBar", rawget(page, "RankBar"))
+      fields(when, "CraftingPage.SchematicForm", rawget(page, "SchematicForm"))
+      local list = rawget(page, "RecipeList")
+      fields(when, "CraftingPage.RecipeList", list)
+      if type(list) == "table" then fields(when, "CraftingPage.RecipeList.ScrollBox", rawget(list, "ScrollBox")) end
+    end
+    for _, name in ipairs(CRAFT_FRAMES) do fields(when, name, _G[name]) end
+  end
+  local function readSafely(when)
+    local ok, err = pcall(read, when)
+    if not ok then record.failed = when .. ": " .. tostring(err) end
+  end
+  local api = C_TradeSkillUI
+  if type(api) ~= "table" or type(api.OpenTradeSkill) ~= "function" or type(GetProfessions) ~= "function"
+      or type(GetProfessionInfo) ~= "function" then
+    record.refused = "the client has no OpenTradeSkill or GetProfessions"
+    return done()
+  end
+  -- the first profession the character has: its two main ones, then cooking
+  local owned = { GetProfessions() }
+  local line
+  for _, i in ipairs({ 1, 2, 5 }) do
+    local index = owned[i]
+    if index and not line then line = select(7, GetProfessionInfo(index)) end
+  end
+  if type(line) ~= "number" then
+    record.refused = "the character has no profession with a crafting window"
+    return done()
+  end
+  record.line = line
+  local function shown()
+    local frame = _G.ProfessionsFrame
+    return type(frame) == "table" and frame:IsShown()
+  end
+  if shown() then
+    record.refused = "the crafting window was already open"
+    return done()
+  end
+  local function close()
+    if type(api.CloseTradeSkill) == "function" then pcall(api.CloseTradeSkill) end
+    C_Timer.After(0.5, done)
+  end
+  local function second()
+    readSafely("window open")
+    local ids = type(api.GetAllRecipeIDs) == "function" and api.GetAllRecipeIDs() or nil
+    local pick
+    for _, id in ipairs(type(ids) == "table" and ids or {}) do
+      local info = type(api.GetRecipeInfo) == "function" and api.GetRecipeInfo(id) or nil
+      if type(info) == "table" and info.learned then pick = id end
+    end
+    if not pick or type(api.OpenRecipe) ~= "function" then
+      record.norecipe = true
+      return close()
+    end
+    record.recipe = pick
+    pcall(api.OpenRecipe, pick)
+    C_Timer.After(1.5, function()
+      readSafely("recipe opened")
+      close()
+    end)
+  end
+  -- one opening of the window, then `after()` once it shows (or the read ends, when it does not)
+  local function open(after)
+    local ok, err = pcall(api.OpenTradeSkill, line)
+    if not ok then
+      record.refused = "OpenTradeSkill raised: " .. tostring(err)
+      return done()
+    end
+    local waited = 0
+    local ticker
+    ticker = C_Timer.NewTicker(0.25, function()
+      waited = waited + 0.25
+      if shown() then
+        ticker:Cancel()
+        record.shown = true
+        return C_Timer.After(1.5, after)
+      end
+      if waited >= CRAFT_WAIT then
+        ticker:Cancel()
+        record.refused = "the crafting window did not open for skill line " .. tostring(line)
+        done()
+      end
+    end)
+  end
+  open(second)
+end
+end)()
+
 -- The frozen tooltip read. The freeze key draws a copy of the tooltip showing, so the mouse can rest on its words
 -- (UI/TooltipFreeze); no sweep above presses it. This shows the tooltip of each item the character wears or
 -- carries and runs what the key runs (`WFJ_FreezeTooltip`), twice, into `probe.freeze`:
@@ -3115,30 +3515,37 @@ local function WFJScanMarksRead(done)
   if not ok then record.refused = tostring(err) end
   if not wasOpen and _G.WFJKnownWordsWindow then _G.WFJKnownWordsWindow:Hide() end
   local function look()
+  -- One carrier of marks: `held` holds what the addon keeps about it, `frame` is what is on screen. A chat line's
+  -- overlay is its own frame and holds its own fields; a cover's frame carries none, and its state is asked for.
+  local function judge(held, frame)
+    if frame:IsForbidden() then return end
+    if type(held.markTex) ~= "table" and not (held.marksPlace and held.spans) then return end
+    record.frames = record.frames + 1
+    local showing = 0
+    for _, mark in ipairs(held.markTex or {}) do
+      if mark:IsShown() then showing = showing + 1 end
+    end
+    record.shown = record.shown + showing
+    local owner = held.fs
+    local now = owner and owner.GetText and owner:GetText() or held.text
+    if showing > 0 and frame:IsVisible() and (held.text == nil or now ~= held.text) then
+      record.stale[#record.stale + 1] = tostring(held.surface or "chat")
+    end
+    if held.marksPlace and held.spans and frame:IsVisible() then record.texts = record.texts + 1 end
+    local tag = held.scoreFs
+    if tag and tag:IsShown() and frame:IsVisible() then
+      local said = tag:GetText()
+      if type(said) ~= "string" or not said:find("%%d+%%%%") then record.tags[#record.tags + 1] = tostring(said) end
+    end
+  end
   local frame = EnumerateFrames()
   while frame do
     pcall(function()
-      if frame:IsForbidden() or type(frame.markTex) ~= "table" then return end
-      record.frames = record.frames + 1
-      local showing = 0
-      for _, mark in ipairs(frame.markTex) do
-        if mark:IsShown() then showing = showing + 1 end
-      end
-      record.shown = record.shown + showing
-      local owner = frame.fs
-      local now = owner and owner.GetText and owner:GetText() or frame.text
-      if showing > 0 and frame:IsVisible() and (frame.text == nil or now ~= frame.text) then
-        record.stale[#record.stale + 1] = tostring(frame.surface or "chat")
-      end
-      if frame.marksPlace and frame.spans and frame:IsVisible() then record.texts = record.texts + 1 end
-      local tag = frame.scoreFs
-      if tag and tag:IsShown() and frame:IsVisible() then
-        local said = tag:GetText()
-        if type(said) ~= "string" or not said:find("%%d+%%%%") then record.tags[#record.tags + 1] = tostring(said) end
-      end
+      if type(frame.markTex) == "table" then judge(frame, frame) end
     end)
     frame = EnumerateFrames(frame)
   end
+  for _, state in ipairs(WFJScanTaint.coverStates()) do pcall(judge, state, state.frame) end
   local known = type(WFJ_Known) == "table" and type(WFJ_Known.ja) == "table" and WFJ_Known.ja or {}
   record.bare = record.texts > 0 and record.shown == 0 and next(known) == nil
     and saved["marks.enabled"] ~= false and saved["marks.underline"] ~= false
@@ -3460,7 +3867,13 @@ local function WFJScanFreezeRead(done)
     for _, child in ipairs({ copy:GetChildren() }) do
       if child ~= copy.NineSlice and child:IsShown() and child.IsMouseMotionEnabled and child:IsMouseMotionEnabled() then
         record.cards = record.cards + 1
-        if type(child.text) == "string" and type(child.spans) == "table" then covers[#covers + 1] = child end
+      end
+    end
+    -- the covers laid on this copy, as the addon holds them: a cover's frame carries no field to read
+    for _, state in ipairs(WFJScanTaint.coverStates()) do
+      if type(state.text) == "string" and type(state.spans) == "table" and state.frame:IsShown()
+          and state.frame:GetParent() == copy then
+        covers[#covers + 1] = state
       end
     end
     -- every Japanese character of every copied line: under a word card or not
@@ -3652,6 +4065,767 @@ local function WFJScanGuildRead(done)
     "WFJ test: NOT DONE YET. Open the guild window (press J), click its tabs, then close it", done)
 end
 
+-- ── Windows read as the player opens them ───────────────────────────────────────────────────────────────────────
+-- A window the client opens for the player (a key, a click on an NPC, a micro button) is opened by the client's own
+-- code in a run that carries no addon's taint. If that code reads a value the addon wrote, everything it writes from
+-- there carries the addon's name: the window's fields, then the bags and the action bars. The test cannot see that
+-- when it opens the window itself (its own taint comes first), so every window is read here as play opens it: the
+-- client's ShowUIPanel is followed with a post-hook, and the events of the NPC windows are listened for. A second
+-- after a window shows, its fields, the fields of the tables and frames under it, the bag buttons and the action
+-- buttons are read for the addon's taint. Nothing is opened, clicked or written. Into `WFJScanDB.watch`, started
+-- again for another client build or addon code:
+--   windows[<frame>] = { opens, reads, checked, at, ours = { "<name>" } }   ours: a failure
+;(function()
+  local WATCH_DEPTH = 4 -- tables under a window that are read
+  local WATCH_KEYS = 40000 -- values read per window (the first run stopped at 6,000 on every window)
+  local WATCH_READS = 3 -- reads of one window per build and addon code
+  local WATCH_OURS = 60
+  local WATCH_ALWAYS = { "CharacterBag0Slot", "CharacterBag1Slot", "CharacterBag2Slot", "CharacterBag3Slot",
+    "CharacterReagentBag0Slot", "MainMenuBarBackpackButton", "ContainerFrameCombinedBags", "ContainerFrame1",
+    "ContainerFrame2", "ContainerFrame3", "ContainerFrame4", "ContainerFrame5", "ContainerFrame6", "MerchantFrame",
+    "MainMenuBar", "MainActionBar", "ActionButton1", "ActionButton2", "ActionButton12", "MultiBarBottomLeftButton1",
+    "MultiBarBottomRightButton1", "MultiBarRightButton1", "MultiBarLeftButton1", "StanceButton1", "PetActionButton1" }
+  local WATCH_EVENTS = { MERCHANT_SHOW = "MerchantFrame", GOSSIP_SHOW = "GossipFrame", QUEST_DETAIL = "QuestFrame",
+    QUEST_GREETING = "QuestFrame", QUEST_PROGRESS = "QuestFrame", QUEST_COMPLETE = "QuestFrame", MAIL_SHOW = "MailFrame",
+    BANKFRAME_OPENED = "BankFrame", AUCTION_HOUSE_SHOW = "AuctionHouseFrame", TRAINER_SHOW = "ClassTrainerFrame",
+    TAXIMAP_OPENED = "TaxiFrame", LOOT_OPENED = "LootFrame", TRADE_SHOW = "TradeFrame",
+    ITEM_TEXT_BEGIN = "ItemTextFrame", TRADE_SKILL_SHOW = "ProfessionsFrame", GUILDBANKFRAME_OPENED = "GuildBankFrame" }
+
+  local function watchDb()
+    if type(WFJScanDB) ~= "table" then return nil end
+    local build = tostring((select(2, GetBuildInfo())))
+    local w = WFJScanDB.watch
+    if type(w) ~= "table" or w.code ~= WFJScanAddonCode or w.build ~= build or type(w.windows) ~= "table" then
+      -- what the last code or build left in the addon's name is still worth tracing on this one
+      local suspects = {}
+      for _, rec in pairs(type(w) == "table" and type(w.windows) == "table" and w.windows or {}) do
+        for _, path in ipairs(type(rec.ours) == "table" and rec.ours or {}) do suspects[#suspects + 1] = path end
+      end
+      for _, path in ipairs(type(w) == "table" and type(w.suspects) == "table" and w.suspects or {}) do
+        suspects[#suspects + 1] = path
+      end
+      w = { code = WFJScanAddonCode, build = build, windows = {}, suspects = suspects }
+      WFJScanDB.watch = w
+    end
+    return w
+  end
+
+  -- Whether the frame `f` sits under `root` (a table that is no frame counts as under it: a window's own data).
+  local function watchUnder(root, f)
+    if type(f.GetParent) ~= "function" then return true end
+    local at = f
+    for _ = 1, 12 do
+      if at == root then return true end
+      local ok, parent = pcall(at.GetParent, at)
+      if not ok or type(parent) ~= "table" then return false end
+      at = parent
+    end
+    return false
+  end
+
+  -- The reads waiting, done a little per frame: nothing here may be long enough to see, and a window with a few
+  -- thousand values is. A job is a stack of tables still to read, each with the key it was left at.
+  local WATCH_MS = 2 -- milliseconds of reading per frame drawn
+  local jobs = {}
+  local pump -- the frame whose OnUpdate does the reading, made at the first read
+  local function push(job, t, name, depth)
+    if type(t) ~= "table" or job.seen[t] then return end
+    local okF, forbidden = pcall(function() return type(t.IsForbidden) == "function" and t:IsForbidden() end)
+    if not okF or forbidden then return end
+    job.seen[t] = true
+    job.stack[#job.stack + 1] = { t = t, name = name, depth = depth }
+    if depth < WATCH_DEPTH and type(t.GetChildren) == "function" then
+      local ok, children = pcall(function() return { t:GetChildren() } end)
+      for i, child in ipairs(ok and children or {}) do push(job, child, name .. ".#" .. i, depth + 1) end
+    end
+  end
+  -- One key of the job's top table. → false when the job has nothing left
+  local function step(job)
+    local top = job.stack[#job.stack]
+    if not top or job.left <= 0 then return false end
+    local ok, key, value = pcall(next, top.t, top.at)
+    if not ok or key == nil then
+      job.stack[#job.stack] = nil
+      return true
+    end
+    top.at = key
+    if type(key) == "string" then
+      job.left = job.left - 1
+      local okS, isSecure, owner = pcall(issecurevariable, top.t, key)
+      if okS then job.visit(top.name .. "." .. key, isSecure, owner) end
+      if top.depth < WATCH_DEPTH and type(value) == "table" and watchUnder(job.root, value) then
+        push(job, value, top.name .. "." .. key, top.depth + 1)
+      end
+    end
+    return true
+  end
+  local function pumpStart()
+    if not pump then
+      pump = CreateFrame("Frame")
+      pump:SetScript("OnUpdate", function(self)
+        local started = debugprofilestop()
+        while jobs[1] do
+          if not step(jobs[1]) then table.remove(jobs, 1) end
+          if debugprofilestop() - started >= WATCH_MS then return end
+        end
+        self:Hide()
+      end)
+    end
+    pump:Show()
+  end
+
+  local watchPending = {}
+  local watchStep -- the names of the windows shown while the open step runs, when it runs
+
+  -- One read of the window `name`, queued. `always` reads it whatever the count (the open step's own windows).
+  local function watchRead(name, frame, always)
+    local w = watchDb()
+    if not w or type(frame) ~= "table" then return end
+    local rec = w.windows[name]
+    if type(rec) ~= "table" then
+      rec = { opens = 0, reads = 0, checked = 0, ours = {} }
+      w.windows[name] = rec
+    end
+    rec.opens = rec.opens + 1
+    -- a window whose last read found something is read again at every open, until a read finds it clean: a
+    -- finding from before a fix must not stand for good because the window had used up its reads
+    if not always and rec.reads >= WATCH_READS and #rec.ours == 0 then return end
+    rec.reads = rec.reads + 1
+    rec.at = date("%%Y-%%m-%%d %%H:%%M:%%S")
+    -- each read starts its list again: a value an earlier read (or an earlier session, before a fix) found in the
+    -- addon's name is a finding of that read, not of this one
+    local listed = {}
+    rec.ours = {}
+    local job = { root = frame, stack = {}, seen = {}, left = WATCH_KEYS }
+    function job.visit(n, isSecure, owner)
+      rec.checked = rec.checked + 1
+      if not isSecure and owner == "WoWForeverJapanese" and not listed[n] and #rec.ours < WATCH_OURS then
+        listed[n] = true
+        rec.ours[#rec.ours + 1] = n
+      end
+    end
+    -- the bag and bar buttons first on the stack, so they are read last and only their own fields
+    for _, global in ipairs(WATCH_ALWAYS) do
+      local t = _G[global]
+      if type(t) == "table" and t ~= frame and not job.seen[t] then
+        job.seen[t] = true
+        job.stack[#job.stack + 1] = { t = t, name = global, depth = WATCH_DEPTH }
+      end
+    end
+    push(job, frame, name, 0)
+    jobs[#jobs + 1] = job
+    pumpStart()
+  end
+
+  local function watchShown(frame, always)
+    if type(frame) ~= "table" or type(frame.GetName) ~= "function" then return end
+    local ok, name = pcall(frame.GetName, frame)
+    if not ok or type(name) ~= "string" or name == "" or watchPending[name] then return end
+    if watchStep then watchStep[#watchStep + 1] = name end
+    watchPending[name] = true
+    C_Timer.After(1, function()
+      watchPending[name] = nil
+      pcall(watchRead, name, frame, always or watchStep ~= nil)
+    end)
+  end
+
+  -- Every action the client refuses an addon, in play: the result the reads above look for the cause of. Kept per
+  -- addon and action with how often, whether in a fight, and when first and last; and the fights the session saw,
+  -- so "none refused" can be told from "never fought". Into `WFJScanDB.watch`:
+  --   refused[<addon>\t<action>] = { n, fights, first, last }; fights  fights begun; fightSeconds  time in them
+  local fightBegan
+  local function watchRefused(addon, action)
+    local w = watchDb()
+    if not w then return end
+    w.refused = type(w.refused) == "table" and w.refused or {}
+    local key = tostring(addon) .. "\t" .. tostring(action)
+    local rec = w.refused[key]
+    local at = date("%%Y-%%m-%%d %%H:%%M:%%S")
+    if type(rec) ~= "table" then
+      rec = { n = 0, fights = 0, first = at }
+      w.refused[key] = rec
+    end
+    rec.n = rec.n + 1
+    if InCombatLockdown() then rec.fights = rec.fights + 1 end
+    rec.last = at
+  end
+  local function watchFight(began)
+    local w = watchDb()
+    if not w then return end
+    if began then
+      fightBegan = GetTime()
+      w.fights = (tonumber(w.fights) or 0) + 1
+    elseif fightBegan then
+      w.fightSeconds = math.floor((tonumber(w.fightSeconds) or 0) + GetTime() - fightBegan)
+      fightBegan = nil
+    end
+  end
+
+  -- Who wrote it. A value the watcher found in the addon's name says nothing about the call that wrote it. So at the
+  -- next login, before the window is shown again, every function of the tables on the way to that value gets a
+  -- post-hook, and the first one after which the value reads in the addon's name is kept with its call stack: the
+  -- stack runs from that function back to what called it. Into `WFJScanDB.watch.traces`:
+  --   { path, after = "<table>:<function>", stack }
+  local TRACE_SKIP = { scrollPercentage = true, visibleExtentPercentage = true, panExtentPercentage = true,
+    updateLock = true }
+  local TRACE_MAX = 12
+  -- the table a watched name leads to and its last key: "CharacterFrame.#19.#4.#9.factionID"
+  local function traceResolve(path, upTo)
+    local parts = {}
+    for part in path:gmatch("[^.]+") do parts[#parts + 1] = part end
+    local t = _G[parts[1]]
+    for i = 2, (upTo or #parts - 1) do
+      if type(t) ~= "table" then return nil end
+      local index = parts[i]:match("^#(%%d+)$")
+      if index then
+        local ok, children = pcall(function() return { t:GetChildren() } end)
+        t = ok and children[tonumber(index)] or nil
+      else
+        t = rawget(t, parts[i])
+      end
+    end
+    return type(t) == "table" and t or nil, parts[#parts], #parts
+  end
+  local function traceArm()
+    local w = watchDb()
+    if not w then return end
+    local pending, hooked, labels = {}, {}, {}
+    local function want(path)
+      if type(path) == "string" and not TRACE_SKIP[path:match("([^.]+)$") or ""] then
+        pending[path] = function() return traceResolve(path) end
+      end
+    end
+    for _, rec in pairs(w.windows) do
+      for _, path in ipairs(type(rec.ours) == "table" and rec.ours or {}) do want(path) end
+    end
+    for _, path in ipairs(type(w.suspects) == "table" and w.suspects or {}) do want(path) end
+    -- nothing to trace: no hook is placed, so a session the watcher found nothing in stays free of the test's own
+    -- code inside the player's clicks
+    if next(pending) == nil then return end
+    w.traces = {}
+    -- what else on the tables being watched reads in the addon's name at that moment: what the writer may have read
+    local function near()
+      local out = {}
+      for t, label in pairs(labels) do
+        for key in pairs(t) do
+          if type(key) == "string" and #out < 30 then
+            local ok, isSecure, owner = pcall(issecurevariable, t, key)
+            if ok and not isSecure and owner == "WoWForeverJapanese" then out[#out + 1] = label .. "." .. key end
+          end
+        end
+      end
+      table.sort(out)
+      return table.concat(out, " | ")
+    end
+    -- the keys of the watched tables that read in the addon's name, each noted the first time with the function it
+    -- showed up after: the first of them is where the addon's name came into the client's run
+    local known = {}
+    w.entered = {}
+    local function entered(label)
+      for t, name in pairs(labels) do
+        for key in pairs(t) do
+          if type(key) == "string" and not known[name .. "." .. key] then
+            local ok, isSecure, owner = pcall(issecurevariable, t, key)
+            if ok and not isSecure and owner == "WoWForeverJapanese" then
+              known[name .. "." .. key] = true
+              if #w.entered < 30 then
+                w.entered[#w.entered + 1] = { key = name .. "." .. key, after = label, at = date("%%H:%%M:%%S"),
+                  stack = #w.entered < 6 and debugstack(4, 30, 30) or nil }
+              end
+            end
+          end
+        end
+      end
+    end
+    local checking = false
+    local function check(label)
+      -- its own reads may run a hooked function (a frame that keeps GetChildren as a field): never from inside
+      if checking then return end
+      checking = true
+      entered(label)
+      if next(pending) == nil then
+        checking = false
+        return
+      end
+      for name, find in pairs(pending) do
+        local t, key = find()
+        if t then
+          local ok, isSecure, owner = pcall(issecurevariable, t, key)
+          if ok and not isSecure and owner == "WoWForeverJapanese" then
+            pending[name] = nil
+            if #w.traces < TRACE_MAX then
+              w.traces[#w.traces + 1] = { path = name, after = label, stack = debugstack(3, 40, 40), near = near(),
+                at = date("%%H:%%M:%%S") }
+            end
+          end
+        end
+      end
+      checking = false
+    end
+    local function hookAll(t, label)
+      if type(t) ~= "table" or hooked[t] then return end
+      hooked[t] = true
+      labels[t] = label
+      for key, value in pairs(t) do
+        if type(key) == "string" and type(value) == "function" then
+          pcall(hooksecurefunc, t, key, function() check(label .. ":" .. key) end)
+        end
+      end
+      if type(t.HookScript) == "function" then
+        for _, script in ipairs({ "OnShow", "OnEvent", "OnHide" }) do
+          pcall(t.HookScript, t, script, function() check(label .. " script " .. script) end)
+        end
+      end
+    end
+    local function hookPath(path)
+      local _, _, count = traceResolve(path)
+      for upTo = 1, (count or 1) - 1 do
+        hookAll(traceResolve(path, upTo), (path:match(("[^.]+%%."):rep(upTo - 1) .. "[^.]+") or path))
+      end
+    end
+    for name in pairs(pending) do hookPath(name) end
+    for _, name in ipairs(TRACE_ALSO) do hookAll((traceResolve(name .. ".x")), name) end
+    -- the help tips there are now, and the ones waiting in the pool
+    local pool = type(HelpTip) == "table" and HelpTip.framePool or nil
+    if type(pool) == "table" then
+      local n = 0
+      pcall(function()
+        for tip in pool:EnumerateActive() do
+          n = n + 1
+          hookAll(tip, "HelpTip active " .. n)
+        end
+      end)
+      for i, tip in ipairs(type(pool.inactiveObjects) == "table" and pool.inactiveObjects or {}) do
+        hookAll(tip, "HelpTip waiting " .. i)
+      end
+    end
+    -- what already reads in the addon's name before anything is shown
+    entered("at login")
+  end
+
+  -- Everything that takes the addon's name, as it happens. Once at login and then over and over while the test
+  -- runs (and for a while after), every frame's keys, every global name and one level under each global table are
+  -- read; a key in the addon's name not seen before is kept with the time, the part of the test running then and
+  -- the number of the sweep. The first sweep is what was there at login; anything after it came during the run,
+  -- and the part beside it is what was running. Into `WFJScanDB.watch.marks`:
+  --   { "<name>\t<time>\t<part>\t<sweep>" }
+  local SWEEP_MS = 4 -- milliseconds a frame: the test's own run, so it may cost more than play would bear
+  local SWEEP_MARKS = 6000
+  local SWEEP_AFTER = 25 -- seconds it goes on after the test ends
+  local sweep = { seen = {}, n = 0 }
+  local function sweepPart()
+    local probe = type(WFJScanDB) == "table" and WFJScanDB.probe or nil
+    local test = type(probe) == "table" and probe.test or nil
+    return type(test) == "table" and test.finished == nil and tostring(test.part or "starting") or "no test"
+  end
+  -- the two names kept: the addon's and the test addon's own. Another addon's frames hold thousands of keys in its
+  -- own name, which say nothing here.
+  local SWEEP_OWNERS = { WoWForeverJapanese = true, WFJScan = true }
+  local function sweepNote(name, owner)
+    local id = name .. "\t" .. owner
+    if sweep.seen[id] then return end
+    sweep.seen[id] = true
+    local w = watchDb()
+    if not w then return end
+    w.marks = type(w.marks) == "table" and w.marks or {}
+    if #w.marks < SWEEP_MARKS then
+      w.marks[#w.marks + 1] = name .. "\t" .. date("%%H:%%M:%%S") .. "\t" .. (sweep.after or sweepPart()) .. "\t"
+        .. sweep.n .. "\t" .. owner
+    end
+  end
+  local function sweepKeys(t, label)
+    for key in pairs(t) do
+      if type(key) == "string" then
+        local ok, isSecure, owner = pcall(issecurevariable, t, key)
+        if ok and not isSecure and SWEEP_OWNERS[owner] then sweepNote(label .. "." .. key, owner) end
+      end
+    end
+  end
+  local function sweepOwn(name)
+    return name:find("^WFJ") or name:find("^WoWForeverJapanese") or name:find("^SLASH_WFJ") or name:find("WFJ_")
+  end
+  local function sweepSome()
+    local started = debugprofilestop()
+    while debugprofilestop() - started < SWEEP_MS do
+      if sweep.phase == "frames" then
+        sweep.frame = EnumerateFrames(sweep.frame)
+        local f = sweep.frame
+        if not f then
+          sweep.phase, sweep.key = "globals", nil
+        else
+          pcall(function()
+            if f:IsForbidden() then return end
+            local name = f.GetDebugName and f:GetDebugName() or "unnamed"
+            sweepKeys(f, tostring(name))
+          end)
+        end
+      else
+        local key, value = next(_G, sweep.key)
+        sweep.key = key
+        if key == nil then
+          sweep.n = sweep.n + 1
+          sweep.phase, sweep.frame = "frames", nil
+          local w = watchDb()
+          if w then w.sweeps = sweep.n end
+          -- a pass asked for after a part: it has read everything once since that part ended
+          if sweep.waiting and sweep.n >= sweep.waiting.from + 2 then
+            local go = sweep.waiting.go
+            sweep.waiting, sweep.after = nil, nil
+            go()
+          end
+          if sweep.stopAt and GetTime() >= sweep.stopAt then
+            sweep.runner:Hide()
+            return
+          end
+        elseif type(key) == "string" and not sweepOwn(key) then
+          local ok, isSecure, owner = pcall(issecurevariable, _G, key)
+          if ok and not isSecure and SWEEP_OWNERS[owner] then sweepNote("_G." .. key, owner) end
+          -- one level under a global table that is no frame: a frame was read with the frames
+          if type(value) == "table" and type(rawget(value, 0)) ~= "userdata" then pcall(sweepKeys, value, key) end
+        end
+      end
+    end
+  end
+  local function sweepStep()
+    -- a global removed while the sweep stood on it ends that pass: the next one starts over
+    if not pcall(sweepSome) then sweep.phase, sweep.frame, sweep.key = "frames", nil, nil end
+  end
+  -- One whole pass over everything after the part `label` ended, then `go`: what the pass finds for the first time
+  -- is kept as found "after <label>", so the part that brought a name in is the one named. (Two pass ends are
+  -- waited for: the pass under way when the part ended had read some things before it did.)
+  WFJScanTaint.sweepAfter = function(label, go)
+    if not sweep.runner or not sweep.runner:IsShown() then return go() end
+    sweep.after = "after " .. label
+    sweep.waiting = { from = sweep.n, go = go }
+  end
+  -- `seconds`: how long to go on from now, or nil to go on until told
+  WFJScanTaint.sweepFor = function(seconds)
+    if not sweep.runner then
+      sweep.runner = CreateFrame("Frame")
+      sweep.runner:SetScript("OnUpdate", sweepStep)
+    end
+    sweep.phase = sweep.phase or "frames"
+    sweep.stopAt = seconds and GetTime() + seconds or nil
+    sweep.runner:Show()
+  end
+
+  -- under pcall: a client without one of these keeps the rest of the test
+  pcall(function()
+    if type(ShowUIPanel) == "function" then hooksecurefunc("ShowUIPanel", function(frame) watchShown(frame) end) end
+    local watcher = CreateFrame("Frame")
+    for event in pairs(WATCH_EVENTS) do pcall(watcher.RegisterEvent, watcher, event) end
+    for _, event in ipairs({ "ADDON_ACTION_BLOCKED", "ADDON_ACTION_FORBIDDEN", "PLAYER_REGEN_DISABLED",
+      "PLAYER_REGEN_ENABLED", "PLAYER_LOGIN" }) do
+      pcall(watcher.RegisterEvent, watcher, event)
+    end
+    watcher:SetScript("OnEvent", function(_, event, a1, a2)
+      if event == "PLAYER_LOGIN" then
+        pcall(traceArm)
+        -- what is in the addon's name before anything runs: one sweep, a few seconds after login
+        C_Timer.After(3, function() pcall(WFJScanTaint.sweepFor, 1) end)
+        return
+      end
+      if event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then return watchRefused(a1, a2) end
+      if event == "PLAYER_REGEN_DISABLED" then return watchFight(true) end
+      if event == "PLAYER_REGEN_ENABLED" then return watchFight(false) end
+      watchShown(_G[WATCH_EVENTS[event]])
+    end)
+  end)
+
+  -- The open step (`/wfjtest open`): the windows of the micro buttons and the bags, opened the client's own way. A
+  -- window the test opens carries the test's taint first, so here the player's own click does the opening: a secure
+  -- button of the test's runs "/click <micro button>" lines, which the client runs in a clean run exactly as it runs a
+  -- player's macro [verified: blizzard_framexml/securetemplates.lua:450-463]. Each press opens the next few windows
+  -- one after another; the watcher above reads each. Into `probe.open`:
+  --   asked    the buttons the step clicked; presses  the presses it took; windows  the frames that showed
+  --   refused  why it did not run (no button to click, or the player never pressed)
+  local OPEN_BUTTONS = { "CharacterMicroButton", "ProfessionMicroButton", "PlayerSpellsMicroButton",
+    "SpellbookMicroButton", "TalentMicroButton", "AchievementMicroButton", "QuestLogMicroButton", "GuildMicroButton",
+    "LFDMicroButton", "CollectionsMicroButton", "LegacyMicroButton", "MainMenuBarBackpackButton" }
+  -- Left out: EJMicroButton and HousingMicroButton. Forever has the buttons and reports them shown and enabled, but
+  -- not what they open: their own click handlers raise (CanShowEncounterJournal and HousingFramesUtil are nil,
+  -- blizzard_micromenu/mainline/mainmenubarmicrobuttons.lua:1832, 1189) [seen in game].
+  local OPEN_TEXT_MAX = 240 -- characters of macro text per press
+  local OPEN_WAIT = 120 -- seconds the player is given to press
+  local openButton
+  -- The isolated test of one finding (`/wfjtest isolate`): two values of the reputation pane read in the addon's
+  -- name after a test run and never in play. It does one thing at a time and keeps, after each, whose name every
+  -- value of the character window's reputation side carries (any addon's, not only this one's):
+  --   1  as it is, before anything
+  --   2  the player opens the window and clicks the Reputation tab, 3 closes it: the base, with nothing of the
+  --      test's before it in the session. Run it first thing after a reload.
+  -- The test never opens the window itself: a run it starts carries the test addon's name from its first line, and
+  -- says nothing about the addon. A copy of the addon with a switch (WFJ_ISOLATE_BUILD) gets one round per switch
+  -- value instead, each opened by the player.
+  -- Values the client writes before the addon's hooks run (CharacterFrame.activeSubframe,
+  -- ReputationFrame.needsInitialSelection) and after them (the detail pane's ViewRenownButton.factionID, the filter
+  -- dropdown's menuGenerator) are all in the list, so the step and the place a name comes in can be read off it.
+  -- Into `probe.isolate`: steps = { { label, at, raised, owners = { "<value>\\t<addon>" } } }
+  WFJScanTaint.isolate = function(done)
+    local db = probeDb()
+    local record = { steps = {} }
+    db.isolate = record
+    local guildTarget = _G.WFJ_ISOLATE_TARGET == "guild"
+    local function owners()
+      local out = {}
+      local function keys(t, label)
+        if type(t) ~= "table" then return end
+        for key in pairs(t) do
+          if type(key) == "string" then
+            local ok, isSecure, owner = pcall(issecurevariable, t, key)
+            if ok and not isSecure and #out < 400 then out[#out + 1] = label .. "." .. key .. "\\t" .. tostring(owner) end
+          end
+        end
+      end
+      -- a copy of the addon may point the test at the guild window instead (WFJ_ISOLATE_TARGET)
+      local guild = guildTarget and _G.CommunitiesFrame or nil
+      if type(guild) == "table" then
+        keys(guild, "CommunitiesFrame")
+        local chat = guild.Chat
+        keys(chat, "CommunitiesFrame.Chat")
+        if type(chat) == "table" then
+          keys(chat.MessageFrame, "CommunitiesFrame.Chat.MessageFrame")
+          keys(chat.ScrollBar, "CommunitiesFrame.Chat.ScrollBar")
+        end
+      end
+      keys(_G.CharacterFrame, "CharacterFrame")
+      local pane = _G.ReputationFrame
+      keys(pane, "ReputationFrame")
+      if type(pane) == "table" then
+        keys(pane.filterDropdown, "ReputationFrame.filterDropdown")
+        local detail = pane.ReputationDetailFrame
+        keys(detail, "ReputationDetailFrame")
+        if type(detail) == "table" then
+          keys(detail.ViewRenownButton, "ReputationDetailFrame.ViewRenownButton")
+          keys(detail.Description, "ReputationDetailFrame.Description")
+          keys(type(detail.Description) == "table" and detail.Description.ScrollBox or nil,
+            "ReputationDetailFrame.Description.ScrollBox")
+          keys(detail.DescriptionScrollBar, "ReputationDetailFrame.DescriptionScrollBar")
+          keys(detail.StandingBar, "ReputationDetailFrame.StandingBar")
+          keys(detail.Content, "ReputationDetailFrame.Content")
+        end
+        local box = pane.ScrollBox
+        keys(box, "ReputationFrame.ScrollBox")
+        if type(box) == "table" and type(box.GetFrames) == "function" then
+          local ok, rows = pcall(box.GetFrames, box)
+          for i, row in ipairs(ok and type(rows) == "table" and rows or {}) do
+            if i <= 8 then keys(row, "ReputationFrame.ScrollBox row " .. i) end
+          end
+        end
+      end
+      for _, name in ipairs({ "CHARACTERFRAME_SUBFRAMES", "PaperDollFrame", "SkillsFrame", "TokenFrame" }) do
+        local ok, isSecure, owner = pcall(issecurevariable, _G, name)
+        if ok and not isSecure then out[#out + 1] = "_G." .. name .. "\\t" .. tostring(owner) end
+      end
+      table.sort(out)
+      return out
+    end
+    -- How the description sits in its scroll box: the text's own height, the height of the container the scroll box
+    -- scrolls, and the height of the box. A container shorter than the text cuts the text off.
+    local function fit()
+      if guildTarget then
+        -- what the copy of the addon logged since the last step (which of its pieces ran), and the chat's line count
+        local log = type(_G.WFJ_ISOLATE_LOG) == "table" and _G.WFJ_ISOLATE_LOG or {}
+        local text = table.concat(log, ", ")
+        for i = #log, 1, -1 do log[i] = nil end
+        local guild = _G.CommunitiesFrame
+        local frame = type(guild) == "table" and type(guild.Chat) == "table" and guild.Chat.MessageFrame or nil
+        local ok, n = pcall(function() return frame:GetNumMessages() end)
+        return ("%%s lines in the chat; the addon: %%s"):format(ok and tostring(n) or "?", text ~= "" and text or "nothing ran")
+      end
+      local pane = _G.ReputationFrame
+      local detail = type(pane) == "table" and pane.ReputationDetailFrame or nil
+      local sf = type(detail) == "table" and detail.Description or nil
+      if type(sf) ~= "table" or type(sf.GetFontString) ~= "function" then return nil end
+      local ok, out = pcall(function()
+        local fs, container, box = sf:GetFontString(), sf:GetFontStringContainer(), sf:GetScrollBox()
+        return ("text %%.0f, container %%.0f, box %%.0f, %%d letters"):format(fs:GetStringHeight() or 0,
+          container:GetHeight() or 0, box:GetHeight() or 0, #(fs:GetText() or ""))
+      end)
+      -- how each faction row's name is drawn: a name that holds text and shows nothing has a width, a face, an
+      -- alpha or a shown state that says why
+      -- not while a test copy is logging: a read of a name widget is itself a thing under test
+      local rows = {}
+      pcall(function()
+        if type(_G.WFJ_ISOLATE_LOG) == "table" then return end
+        for i, row in ipairs(pane.ScrollBox:GetFrames()) do
+          local name = type(row.Content) == "table" and row.Content.Name or row.Name
+          if i <= 10 and type(name) == "table" then
+            local face, size = name:GetFont()
+            local r, gr, b, a = name:GetTextColor()
+            rows[#rows + 1] = ("row %%d: %%d letters, drawn %%.0f wide in %%.0f, %%.0f high, face %%s@%%s, alpha %%.2f/%%.2f, "
+              .. "colour %%.1f %%.1f %%.1f, shown %%s visible %%s, lines %%s, own SetText %%s, scale field %%s"):format(i,
+              #(name:GetText() or ""), name:GetStringWidth() or -1, name:GetWidth() or -1, name:GetStringHeight() or -1,
+              tostring(face):match("[^\\\\/]+$") or tostring(face), tostring(size), name:GetAlpha() or -1, a or -1,
+              r or -1, gr or -1, b or -1, tostring(name:IsShown()), tostring(name:IsVisible()),
+              tostring(name.GetNumLines and name:GetNumLines()), tostring(rawget(name, "SetText") ~= nil),
+              tostring(rawget(name, "baseLineHeight")))
+          end
+        end
+      end)
+      -- and what a test copy of the addon logged since the last step
+      local log = type(_G.WFJ_ISOLATE_LOG) == "table" and _G.WFJ_ISOLATE_LOG or {}
+      local logged = #log > 0 and (" || LOG || " .. table.concat(log, " || ")) or ""
+      for i = #log, 1, -1 do log[i] = nil end
+      return (ok and out or "?") .. (#rows > 0 and (" || " .. table.concat(rows, " || ")) or "") .. logged
+    end
+    local function step(label, raised)
+      record.steps[#record.steps + 1] = { label = label, at = date("%%H:%%M:%%S"), raised = raised, owners = owners(),
+        fit = fit() }
+    end
+    local function shown()
+      local frame = guildTarget and _G.CommunitiesFrame or _G.CharacterFrame
+      if guildTarget and type(frame) ~= "table" then return false end
+      return type(frame) == "table" and frame:IsShown()
+    end
+    if shown() then
+      record.refused = "the window was open"
+      return done()
+    end
+    local function paneShown()
+      if guildTarget then
+        local guild = _G.CommunitiesFrame
+        return type(guild) == "table" and type(guild.Chat) == "table" and guild.Chat:IsVisible()
+      end
+      local pane = _G.ReputationFrame
+      return type(pane) == "table" and pane:IsVisible()
+    end
+    -- The player's own way in: the tab is no button a script can click, so the test waits for the click, keeps the
+    -- names once the pane shows and once the window is closed, then goes on.
+    local function byPlayer(first, second, ask, nxt)
+      print(ask)
+      local waited, seen, ticker = 0, false, nil
+      ticker = C_Timer.NewTicker(0.25, function()
+        waited = waited + 0.25
+        if not seen and paneShown() then
+          seen, waited = true, 0
+          C_Timer.After(guildTarget and 3 or 1.5, function() step(first) end)
+        elseif seen and waited > (guildTarget and 3.5 or 2) and not shown() then
+          ticker:Cancel()
+          return C_Timer.After(1, function()
+            step(second)
+            nxt()
+          end)
+        end
+        if waited >= 180 then
+          ticker:Cancel()
+          record.refused = seen and "the window was not closed" or "the reputation pane was not opened"
+          done()
+        end
+      end)
+    end
+    step("1 before anything")
+    -- With a copy of the addon that takes a switch (WFJ_ISOLATE: the one write of the reputation pane it makes), the
+    -- test turns on one write at a time and the player opens the pane once for each: the write after which a value
+    -- reads in the addon's name is the one. The description comes last: what it leaves on its scroll box stays for
+    -- the opens after it.
+    if _G.WFJ_ISOLATE_BUILD then
+      -- this half needs the addon writing: with translation off no write is made and every step reads clean
+      local settings = type(WFJ_DB) == "table" and WFJ_DB.settings or nil
+      if type(settings) == "table" and settings.enabled == false then
+        print("WFJ test: translation is off. Type /wfj on, then run it again.")
+        record.refused = "translation was off"
+        return done()
+      end
+      -- the copy may name its own rounds (WFJ_ISOLATE_ORDER), each a value of the switch it understands
+      local own = type(_G.WFJ_ISOLATE_ORDER) == "table" and _G.WFJ_ISOLATE_ORDER or nil
+      local order = own or { "none", "title", "rows", "list", "empty", "description", "everything" }
+      local function variant(i)
+        local what = order[i]
+        if not what then
+          _G.WFJ_ISOLATE = nil
+          return done()
+        end
+        if own then _G.WFJ_ISOLATE = what else _G.WFJ_ISOLATE = what ~= "everything" and what or nil end
+        byPlayer("only " .. what .. ": the player's own click showed the " .. (guildTarget and "guild chat" or "reputation pane"),
+          "only " .. what .. ": the player closed the window",
+          "WFJ test (" .. i .. " of " .. #order .. "): " .. (guildTarget and "open the guild window, wait for its chat, close it."
+            or "open the character window, click the Reputation tab, close it."),
+          function() variant(i + 1) end)
+      end
+      return variant(1)
+    end
+    byPlayer("2 the player's own click showed the reputation pane, nothing of the test's before it",
+      "3 the player closed the window",
+      "WFJ test: open the character window, click the Reputation tab, then close the window.", function()
+        -- a second open by the player: what a first open shows wrongly and a second shows rightly differs here
+        byPlayer("4 the player's own click showed the reputation pane a second time", "5 the player closed the window",
+          "WFJ test: once more: open the character window, click the Reputation tab, then close the window.", done)
+      end)
+  end
+
+  WFJScanTaint.watch = function(done) done() end
+
+  WFJScanTaint.open = function(done)
+    local db = probeDb()
+    local record = { asked = {}, presses = 0, windows = {} }
+    db.open = record
+    local texts, text = {}, ""
+    for _, name in ipairs(OPEN_BUTTONS) do
+      local b = _G[name]
+      if type(b) == "table" and type(b.IsShown) == "function" and b:IsShown()
+          and (type(b.IsEnabled) ~= "function" or b:IsEnabled()) then
+        record.asked[#record.asked + 1] = name
+        -- twice: the first click opens the window, the second puts it away again
+        local lines = "/click " .. name .. "\\n/click " .. name .. "\\n"
+        if #text + #lines > OPEN_TEXT_MAX and text ~= "" then
+          texts[#texts + 1] = text
+          text = ""
+        end
+        text = text .. lines
+      end
+    end
+    if text ~= "" then texts[#texts + 1] = text end
+    if #texts == 0 then
+      record.refused = "no micro button to click"
+      return done()
+    end
+    if not openButton then
+      openButton = CreateFrame("Button", "WFJScanOpenButton", UIParent, "SecureActionButtonTemplate,UIPanelButtonTemplate")
+      openButton:SetSize(360, 44)
+      openButton:SetPoint("TOP", UIParent, "TOP", 0, -140)
+      openButton:SetFrameStrata("DIALOG")
+      openButton:RegisterForClicks("AnyUp", "AnyDown")
+      openButton:SetAttribute("type", "macro")
+    end
+    local press = 0
+    local function arm()
+      openButton:SetAttribute("macrotext", texts[press + 1])
+      openButton:SetText("WFJ test: click here (" .. (press + 1) .. " of " .. #texts .. ")")
+    end
+    watchStep = record.windows
+    local waited, ticker = 0, nil
+    local function finish(why)
+      if ticker then ticker:Cancel() end
+      openButton:SetScript("PostClick", nil)
+      record.refused = why
+      record.presses = press
+      -- the last windows are read a second after they show
+      C_Timer.After(2.5, function()
+        watchStep = nil
+        if not InCombatLockdown() then openButton:Hide() end
+        done()
+      end)
+    end
+    openButton:SetScript("PostClick", function(_, _, down)
+      -- the client runs the macro on one of the two halves of a click; the other half does nothing
+      if down ~= GetCVarBool("ActionButtonUseKeyDown") then return end
+      press = press + 1
+      waited = 0
+      if press >= #texts then return finish(nil) end
+      if InCombatLockdown() then return finish("a fight started before every window was opened") end
+      arm()
+    end)
+    arm()
+    openButton:Show()
+    print("WFJ test: click the button at the top of the screen " .. #texts .. " times. Windows open and close by themselves.")
+    ticker = C_Timer.NewTicker(1, function()
+      waited = waited + 1
+      if waited >= OPEN_WAIT then finish("the button was not clicked") end
+    end)
+  end
+end)()
+
 -- The whole window test (`/wfjtest`): the load walk, the live sweep (with the hover read of each window), the
 -- closed-window read, the tooltip read, the no-voice read, the names read, the bag click read, the frozen tooltip read,
 -- then one done line. `/wfjtest hand` also reads the guild and character
@@ -3661,12 +4835,17 @@ end
 SLASH_WFJTEST1 = "/wfjtest"
 -- the names `/wfjtest <part>` takes, in run order (the parts are built in the handler)
 -- (a test holds this list to the parts table)
-local TEST_PART_NAMES = "walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, freeze"
+local TEST_PART_NAMES = "craft, walk, live, closed, tooltips, novoice, names, plates, load, chat, marks, bagclick, touch, send, covers, open, watch, isolate, freeze"
 local TEST_PARTS = {}
 for name in TEST_PART_NAMES:gmatch("[^, ]+") do TEST_PARTS[name] = true end
 local testRunning = false
 SlashCmdList.WFJTEST = function(how)
-  if not japaneseOn() or InCombatLockdown() then return end
+  -- the isolated test runs with translation off as well: one run with the addon writing nothing is half of it
+  if strtrim(how or "") == "isolate" then
+    if InCombatLockdown() then return end
+  else
+    if not japaneseOn() or InCombatLockdown() then return end
+  end
   if characterShown() then -- the test closes windows as it goes, and must not close this one (see above)
     print("WFJ test: close the character window first, then run it again")
     return
@@ -3687,6 +4866,7 @@ SlashCmdList.WFJTEST = function(how)
     return
   end
   testRunning = true
+  pcall(WFJScanTaint.sweepFor, nil) -- every key that takes the addon's name while the test runs
   pagesOnly = how == "tabs"
   local db = probeDb()
   db.test = { started = date("%%Y-%%m-%%d %%H:%%M:%%S"), build = tostring((select(2, GetBuildInfo()))),
@@ -3788,6 +4968,7 @@ SlashCmdList.WFJTEST = function(how)
     watcher:UnregisterAllEvents()
     readGrabbed()
     testRunning = false
+    pcall(WFJScanTaint.sweepFor, 25) -- and for a while after: the windows the player opens last are read too
     db.test.finished = date("%%Y-%%m-%%d %%H:%%M:%%S")
     pcall(sayCounts, db)
     print("WFJ test done: /reload to save, then the result can be read" .. said)
@@ -3795,6 +4976,10 @@ SlashCmdList.WFJTEST = function(how)
   -- The run's parts in order, each named: `/wfjtest <name>` runs that part alone (with the parts it needs), so a
   -- change to one area is checked without the whole run. The whole run is the bar before a merge.
   local parts = {
+    -- First, and straight from the player's own key press: the client opens the crafting window only for a call
+    -- that comes from one, and refuses it from a timer (seen in game: a refused call, and the part read nothing).
+    -- The client refuses to open a window in a fight too.
+    { "craft", function(nxt) outOfCombat(function() WFJScanTaint.craft(nxt) end) end },
     { "walk", function(nxt) WFJScanWalk(nxt) end },
     -- a fight that starts during the load walk would end the live sweep before it began: it waits for the end
     { "live", function(nxt) outOfCombat(function() WFJScanLiveSweep(nxt) end) end, needs = "walk" },
@@ -3816,12 +5001,25 @@ SlashCmdList.WFJTEST = function(how)
     { "marks", function(nxt) outOfCombat(function() WFJScanMarksRead(nxt) end) end },
     -- the interface is hidden and shown again, which waits for the end of a fight too
     { "bagclick", function(nxt) outOfCombat(function() WFJScanBagClickRead(nxt) end) end },
+    -- after the windows were walked and opened, so the frames the addon makes on them exist
+    { "touch", function(nxt) WFJScanTaint.touch(nxt) end },
+    { "send", function(nxt) WFJScanTaint.send(nxt) end },
+    { "covers", function(nxt) WFJScanTaint.covers(nxt) end },
+    -- the player presses a button for this one, so a plain run leaves it out (like the hand read)
+    { "open", function(nxt) outOfCombat(function() WFJScanTaint.open(nxt) end) end, only = true },
+    -- nothing to run: the windows read during play are in the saved file already
+    { "watch", function(nxt) WFJScanTaint.watch(nxt) end },
+    -- one finding, taken apart: not part of a plain run
+    { "isolate", function(nxt) outOfCombat(function() WFJScanTaint.isolate(nxt) end) end, only = true },
     -- in a fight the copy takes no cards and the client hides a tooltip's rows from addons
     { "freeze", function(nxt) outOfCombat(function() WFJScanFreezeRead(nxt) end) end },
   }
   local byName = {}
   for _, part in ipairs(parts) do byName[part[1]] = part end
-  local chosen = parts
+  local chosen = {}
+  for _, part in ipairs(parts) do
+    if not part.only then chosen[#chosen + 1] = part end
+  end
   if section then
     chosen = { byName[section].needs and byName[byName[section].needs] or nil, byName[section] }
     if chosen[1] == nil then chosen = { byName[section] } end
@@ -3830,7 +5028,8 @@ SlashCmdList.WFJTEST = function(how)
     local part = chosen[i]
     if part then
       db.test.part = part[1]
-      return part[2](function() run(i + 1) end)
+      -- after each part, everything is read once more before the next part starts
+      return part[2](function() WFJScanTaint.sweepAfter(part[1], function() run(i + 1) end) end)
     end
     if section then return finish(" (only the " .. section .. " part; plain /wfjtest runs them all)") end
     -- The guild and character windows are the player's to open, so a plain run does not wait for them:
@@ -4663,6 +5862,348 @@ def bagclick_problems(record: dict[str, Any] | None) -> list[str]:
     return out
 
 
+def read_craft(text: str) -> dict[str, Any] | None:
+    """The window test's crafting window read out of a saved-variables file, or None when the run had none: how many
+    values it read (`checked`), the ones carrying the addon's taint as (when, name) (`ours`), the ones carrying
+    another addon's as name → addon (`others`), the values the test's own steps tainted (`own`), why the window was
+    not read (`refused`), a read that raised (`failed`), whether the window opened (`shown`), the skill line and the
+    recipe opened (`line`, `recipe`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("craft") if probe is not None else None
+    if record is None:
+        return None
+    rows = record.get("ours")
+    others = record.get("others")
+    return {
+        "checked": int(record.get("checked") or 0),
+        "ours": [tuple(str(r).split("\t", 1)) for r in (rows.positional() if rows is not None else [])],
+        "others": {str(k): str(v) for k, v in (others.named() if others is not None else {}).items()},
+        "own": int(record.get("own") or 0),
+        "refused": str(record.get("refused") or ""),
+        "failed": str(record.get("failed") or ""),
+        "shown": bool(record.get("shown")),
+        "line": int(record.get("line") or 0),
+        "recipe": int(record.get("recipe") or 0),
+    }
+
+
+def craft_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the crafting window read found wrong, one line each: every value of the window, the bag buttons or the
+    vendor window that carries the addon's taint after the client opened the window itself (from there the taint
+    reaches a vendor and the action bars). A window that was not read is a problem too: the read proves nothing."""
+    if record is None:
+        return ["crafting window not read: this run's test addon has no such read (make scan-install, then run it "
+                "again)"]
+    out = [f"crafting window value tainted by the addon ({when}): {name}" for when, name in record["ours"]]
+    if record["refused"]:
+        out.append(f"crafting window not read: {record['refused']}")
+    if record["failed"]:
+        out.append(f"crafting window read stopped: {record['failed']}")
+    return out
+
+
+def client_field_names(ui: Path) -> set[str]:
+    """Every name the client's UI source uses as a member (`x.name`, `x:name`, a parentKey, a KeyValue key) under
+    `ui` (an extract's Interface/AddOns folder): the names a field of the addon's must not have on a frame that sits
+    inside a client frame."""
+    names: set[str] = set()
+    member = re.compile(r"[.:]\s*([A-Za-z_][A-Za-z0-9_]*)")
+    keyed = re.compile(r'(?:parentKey|key)="([A-Za-z_][A-Za-z0-9_]*)"')
+    for path in ui.rglob("*"):
+        suffix = path.suffix.lower()
+        if suffix == ".lua":
+            names.update(member.findall(path.read_text(encoding="utf-8", errors="replace")))
+        elif suffix == ".xml":
+            names.update(keyed.findall(path.read_text(encoding="utf-8", errors="replace")))
+    return names
+
+
+# A client field the addon may taint, by the field's name, with the reason: none. A scroll box's and a scroll bar's
+# state were listed here once, on the reasoning that only the scroll code reads them. An isolated test in game
+# showed that reasoning wrong: the scroll code runs inside whatever the client is doing when the box updates, and a
+# value it reads there in the addon's name puts the addon's name on what the client writes next. An entry here needs
+# an isolated test that shows the value is never read on the way to anything else, not an argument that it is not.
+TOUCH_ALLOWED: dict[str, str] = {}
+
+
+def read_touch(text: str) -> dict[str, Any] | None:
+    """The window test's touch read out of a saved-variables file, or None when the run had none: the frames walked
+    (`frames`), the ones the addon made (`made`) and how many of those sit inside a client frame (`inside_n`), the
+    client fields carrying the addon's taint (`on_client`, and their whole count `on_client_n`), and the addon's
+    frames inside client frames as (keys, count, a parent) (`inside`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("touch") if probe is not None else None
+    if record is None:
+        return None
+    on_client = record.get("onClient")
+    inside = record.get("inside")
+    rows = []
+    for row in (inside.positional() if inside is not None else []):
+        keys, count, where = (str(row).split("\t") + ["", ""])[:3]
+        rows.append((keys.split(), int(count or 0), where))
+    return {
+        "frames": int(record.get("frames") or 0),
+        "made": int(record.get("made") or 0),
+        "inside_n": int(record.get("insideN") or 0),
+        "on_client": [str(r) for r in (on_client.positional() if on_client is not None else [])],
+        "on_client_n": int(record.get("onClientN") or 0),
+        "inside": rows,
+    }
+
+
+def touch_problems(record: dict[str, Any] | None, client_names: set[str] | None) -> list[str]:
+    """What the touch read found wrong, one line each: a client field carrying the addon's taint that is not allowed
+    (TOUCH_ALLOWED), and a field on a frame of the addon's inside a client frame whose name the client's own source
+    uses (`client_names`, or None when no UI extract was given: then every such field is named, as it cannot be
+    cleared)."""
+    if record is None:
+        return ["touch not read: this run's test addon has no such read (make scan-install, then run it again)"]
+    out = [f"client field tainted by the addon: {name}" for name in record["on_client"]
+           if name not in TOUCH_ALLOWED and name.rsplit(".", 1)[-1] not in TOUCH_ALLOWED]
+    if record["on_client_n"] > len(record["on_client"]):
+        out.append(f"client fields tainted by the addon: {record['on_client_n'] - len(record['on_client'])} more")
+    for keys, count, where in record["inside"]:
+        read = [k for k in keys if client_names is None or k in client_names]
+        if read:
+            out.append(f"the addon's frame inside a client frame carries fields the client's code names "
+                       f"({count} frames, e.g. under {where}): {' '.join(read)}")
+    return out
+
+
+# An addon's own slash command entry is its own to write; nothing on the send path reads another command's entry.
+_SEND_OWN = re.compile(r"^(hash_SlashCmdList|hash_ChatTypeInfoList)\./")
+
+
+def read_send(text: str) -> dict[str, Any] | None:
+    """The window test's chat send read out of a saved-variables file, or None when the run had none: how many
+    values of the chat send path it read (`checked`), the ones carrying an addon's taint as (name, addon)
+    (`tainted`), and what an addon's own insert into the chat box and its own open of it added (`after_insert`,
+    `after_open`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("send") if probe is not None else None
+    if record is None:
+        return None
+
+    def pairs_of(key: str) -> list[tuple[str, ...]]:
+        rows = record.get(key)
+        return [tuple((str(r).split("\t", 1) + [""])[:2]) for r in (rows.positional() if rows is not None else [])]
+
+    return {"checked": int(record.get("checked") or 0), "tainted": pairs_of("tainted"),
+            "after_insert": pairs_of("afterInsert"), "after_open": pairs_of("afterOpen")}
+
+
+SEND_ADDONS = ("WoWForeverJapanese", "WFJScan")
+# A value of the send path an addon's taint may sit on, with the reason.
+SEND_ALLOWED = {
+    "autoCompleteParams": "set while the player types a slash command: the client looks the command up in the table "
+                          "every addon registers in, so the box's completion settings are written in the name of "
+                          "the addon whose command is being typed (here the test's own), and again on the next "
+                          "change of chat type",
+}
+
+
+def send_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the chat send read found wrong, one line each: a value on the chat send path carrying the taint of the
+    addon or of the test addon, other than a slash command entry (every addon writes its own)."""
+    if record is None:
+        return ["chat send path not read: this run's test addon has no such read (make scan-install, then run it "
+                "again)"]
+    return [f"chat send path value tainted by {by}: {name}" for name, by in record["tainted"]
+            if by in SEND_ADDONS and not _SEND_OWN.match(name) and name.rsplit(".", 1)[-1] not in SEND_ALLOWED]
+
+
+def read_covers(text: str) -> dict[str, Any] | None:
+    """The window test's popup dictionary cover read out of a saved-variables file, or None when the run had none:
+    how many covers the addon holds (`total`) and shows (`shown`), whether the addon had no such read (`noread`),
+    how many show over a text that does not (`idle`), and the texts whose cover shows though the text is not the
+    addon's any more (`stray`), is hidden though the text shows (`missing`), lies beside them (`beside`), carries a
+    field (`fields`, as (text, keys)) or is a layout frame's own child (`in_layout`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("covers") if probe is not None else None
+    if record is None:
+        return None
+
+    def rows(key: str) -> list[str]:
+        found = record.get(key)
+        return [str(r) for r in (found.positional() if found is not None else [])]
+
+    return {"total": int(record.get("total") or 0), "shown": int(record.get("shown") or 0),
+            "noread": bool(record.get("noread")), "idle": int(record.get("idle") or 0),
+            "stray": rows("stray"), "missing": rows("missing"), "beside": rows("beside"),
+            "fields": [tuple((r.split("\t", 1) + [""])[:2]) for r in rows("fields")], "in_layout": rows("inLayout")}
+
+
+def covers_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the popup dictionary cover read found wrong, one line each."""
+    if record is None:
+        return ["popup dictionary covers not read: this run's test addon has no such read (make scan-install, then "
+                "run it again)"]
+    if record["noread"]:
+        return ["popup dictionary covers not read: the addon in the game has no read for them (an older build)"]
+    out = [f"popup dictionary cover showing over a text that is not the addon's any more: {name}"
+           for name in record["stray"]]
+    out += [f"popup dictionary cover hidden while its text shows: {name}" for name in record["missing"]]
+    out += [f"popup dictionary cover not over its text: {name}" for name in record["beside"]]
+    out += [f"popup dictionary cover carries a field ({keys}): {name}" for name, keys in record["fields"]]
+    out += [f"popup dictionary cover is a layout frame's own child: {name}" for name in record["in_layout"]]
+    return out
+
+
+# The windows a player opens from an NPC or the micro buttons: the ones a release should have seen read in play.
+WATCH_EXPECTED = ("CharacterFrame", "MerchantFrame", "GossipFrame", "QuestFrame", "MailFrame", "BankFrame",
+                  "AuctionHouseFrame", "ClassTrainerFrame", "ProfessionsFrame", "WorldMapFrame", "FriendsFrame")
+
+
+def read_watch(text: str) -> dict[str, Any] | None:
+    """The windows the test addon read as play opened them, out of a saved-variables file, or None when it holds
+    none: the client build and addon code they were read on (`build`, `code`) and, per window frame, how often it
+    opened and was read, the values read, when, and the values carrying the addon's taint (`windows`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    watch = db.get("watch") if db is not None else None
+    windows = watch.get("windows") if watch is not None else None
+    if windows is None:
+        return None
+    out: dict[str, dict[str, Any]] = {}
+    for name, rec in windows.named().items():
+        ours = rec.get("ours")
+        out[str(name)] = {"opens": int(rec.get("opens") or 0), "reads": int(rec.get("reads") or 0),
+                          "checked": int(rec.get("checked") or 0), "at": str(rec.get("at") or ""),
+                          "ours": [str(r) for r in (ours.positional() if ours is not None else [])]}
+    refused: dict[tuple[str, str], dict[str, Any]] = {}
+    found = watch.get("refused")
+    for key, rec in (found.named().items() if found is not None else []):
+        addon, action = (str(key).split("\t", 1) + [""])[:2]
+        refused[addon, action] = {"n": int(rec.get("n") or 0), "fights": int(rec.get("fights") or 0),
+                                  "first": str(rec.get("first") or ""), "last": str(rec.get("last") or "")}
+    entered = []
+    came = watch.get("entered")
+    for row in (came.positional() if came is not None else []):
+        entered.append({"key": str(row.get("key") or ""), "after": str(row.get("after") or ""),
+                        "at": str(row.get("at") or ""), "stack": str(row.get("stack") or "")})
+    marks = []
+    noted = watch.get("marks")
+    for row in (noted.positional() if noted is not None else []):
+        name, at, part, sweep, owner = (str(row).split("\t") + ["", "", "", ""])[:5]
+        marks.append({"name": name, "at": at, "part": part, "sweep": int(sweep or 0),
+                      "owner": owner or "WoWForeverJapanese"})
+    traces = []
+    kept = watch.get("traces")
+    for row in (kept.positional() if kept is not None else []):
+        traces.append({"path": str(row.get("path") or ""), "after": str(row.get("after") or ""),
+                       "stack": str(row.get("stack") or ""), "near": str(row.get("near") or ""),
+                       "at": str(row.get("at") or "")})
+    return {"build": str(watch.get("build") or ""), "code": str(watch.get("code") or ""), "windows": out,
+            "traces": traces, "entered": entered, "marks": marks, "sweeps": int(watch.get("sweeps") or 0),
+            "refused": refused, "fights": int(watch.get("fights") or 0),
+            "fight_seconds": int(watch.get("fightSeconds") or 0)}
+
+
+def watch_problems(record: dict[str, Any] | None) -> list[str]:
+    """What the windows read in play carry wrong, one line each: a value in the addon's name on a window the client
+    opened itself, on a bag button or on an action button, and an action the client refused in the addon's name
+    while the player played. A window never opened in play is not a problem (it is printed as not read yet)."""
+    if record is None:
+        return []
+    out = [f"a window opened in play carries the addon's taint ({name}): {value}"
+           for name, rec in sorted(record["windows"].items()) for value in rec["ours"]
+           if value.rsplit(".", 1)[-1] not in TOUCH_ALLOWED]
+    out += [f"the game refused {action} in the addon's name in play: {rec['n']} times, {rec['fights']} in a fight "
+            f"(first {rec['first']}, last {rec['last']})"
+            for (addon, action), rec in sorted(record["refused"].items()) if addon == "WoWForeverJapanese"]
+    return out
+
+
+def read_open(text: str) -> dict[str, Any] | None:
+    """The window test's open step out of a saved-variables file, or None when the run had none: the micro buttons
+    it clicked through the player's own click (`asked`), the presses it took (`presses`), the frames that showed
+    (`windows`) and why it did not finish (`refused`)."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("open") if probe is not None else None
+    if record is None:
+        return None
+
+    def rows(key: str) -> list[str]:
+        found = record.get(key)
+        return [str(r) for r in (found.positional() if found is not None else [])]
+
+    return {"asked": rows("asked"), "presses": int(record.get("presses") or 0), "windows": rows("windows"),
+            "refused": str(record.get("refused") or "")}
+
+
+def open_problems(record: dict[str, Any] | None, watch: dict[str, Any] | None) -> list[str]:
+    """What the open step found wrong: it did not run to its end, it opened no window, a window it opened was not
+    read, or a window it opened carries the addon's taint."""
+    if record is None:
+        return ["open step not run: this run's test addon has no such step (make scan-install, then run it again)"]
+    if record["refused"]:
+        return [f"open step not finished: {record['refused']}"]
+    if not record["windows"]:
+        return ["open step opened no window: the micro buttons' clicks showed nothing"]
+    seen = watch["windows"] if watch is not None else {}
+    out = [f"open step: {name} showed and was not read" for name in sorted(set(record["windows"]))
+           if not seen.get(name, {}).get("checked")]
+    out += [f"a window the open step opened carries the addon's taint ({name}): {value}"
+            for name in sorted(set(record["windows"])) for value in seen.get(name, {}).get("ours", [])
+            if value.rsplit(".", 1)[-1] not in TOUCH_ALLOWED]
+    return out
+
+
+def read_isolate(text: str) -> list[dict[str, Any]] | None:
+    """The window test's isolated test out of a saved-variables file, or None when the run had none: its steps in
+    order, each with its label, its time, an error it raised, and whose name each value carried (`owners`, as
+    (value, addon))."""
+    from wfj.io import lua_reader
+
+    db = lua_reader.parse_assignments(text).get("WFJScanDB")
+    probe = db.get("probe") if db is not None else None
+    record = probe.get("isolate") if probe is not None else None
+    steps = record.get("steps") if record is not None else None
+    if steps is None:
+        return None
+    out = []
+    for step in steps.positional():
+        rows = step.get("owners")
+        out.append({"label": str(step.get("label") or ""), "at": str(step.get("at") or ""),
+                    "raised": str(step.get("raised") or ""), "fit": str(step.get("fit") or ""),
+                    "owners": [tuple((str(r).split("\t", 1) + [""])[:2])
+                               for r in (rows.positional() if rows is not None else [])]})
+    return out
+
+
+def print_isolate(steps: list[dict[str, Any]]) -> None:
+    """Prints the isolated test: per step, the values that carry a name the step before did not show, with the name."""
+    before: dict[str, str] = {}
+    for step in steps:
+        now = dict(step["owners"])
+        new = {k: v for k, v in now.items() if before.get(k) != v}
+        gone = [k for k in before if k not in now]
+        print(f"isolate  {step['at']} {step['label']}: {len(now)} values carry a name, {len(new)} new or changed"
+              + (f", raised: {step['raised']}" if step["raised"] else "")
+              + (f" [description: {step['fit']}]" if step.get("fit") else ""))
+        for key in sorted(new):
+            print(f"isolate      {key}: {new[key]}" + (f" (was {before[key]})" if key in before else ""))
+        for key in sorted(gone):
+            print(f"isolate      {key}: clean again (was {before[key]})")
+        before = now
+
+
 def plates_problems(record: dict[str, Any] | None) -> list[str]:
     """What the nameplate read found wrong: with Japanese names on, an English name over an NPC head still on, or a
     nameplate range short of the one Japanese names set (PLATE_RANGE, or the client's limit when that is lower). A
@@ -5276,7 +6817,90 @@ def client_build_beside(saved: Path) -> str | None:
     return None
 
 
-def _own_reads(saved: str, section: str | None = None) -> list[str]:
+def _print_watch(watch: dict[str, Any]) -> None:
+    """Prints what the test addon read while the player played: each window, the fights and refused actions, who
+    wrote a value found in the addon's name, and the expected windows not opened yet."""
+    for name, rec in sorted(watch["windows"].items()):
+        print(f"read in play  {name}: opened {rec['opens']} times, {rec['checked']} values read, "
+              f"{len(rec['ours'])} in the addon's name (last {rec['at']})")
+    minutes = watch["fight_seconds"] // 60
+    ours = sum(rec["n"] for (addon, _), rec in watch["refused"].items() if addon == "WoWForeverJapanese")
+    print(f"in play  {watch['fights']} fights ({minutes} minutes in them); actions the game refused in the "
+          f"addon's name: {ours}")
+    for (addon, action), rec in sorted(watch["refused"].items()):
+        if addon != "WoWForeverJapanese":
+            print(f"in play  refused in another addon's name ({addon}): {action}, {rec['n']} times")
+    late = [m for m in watch["marks"] if m["sweep"] > 0]
+    if watch["marks"]:
+        print(f"in play  {watch['sweeps']} sweeps of every frame and global: {len(watch['marks']) - len(late)} keys "
+              f"in the addon's name at login, {len(late)} more after it")
+    for mark in late:
+        print(f"in play  {mark['at']} sweep {mark['sweep']} {mark['part']}: {mark['name']} ({mark['owner']})")
+    for row in watch["entered"]:
+        print(f"in play  {row['at']} {row['key']} first read in the addon's name after {row['after']}")
+        for line in row["stack"].splitlines():
+            print("in play      " + line)
+    for trace in watch["traces"]:
+        print(f"in play  {trace['path']} was written in the addon's name by {trace['after']} at {trace['at']}"
+              f" (also in its name there: {trace['near'] or 'nothing'}):")
+        for line in trace["stack"].splitlines():
+            print("in play      " + line)
+    unread = [name for name in WATCH_EXPECTED if not watch["windows"].get(name, {}).get("checked")]
+    if unread:
+        print("read in play  not opened yet on this build and addon code: " + ", ".join(unread))
+
+
+def _taint_reads(saved: str, part: Any, ui: Path | None, section: str | None = None) -> list[str]:
+    """Prints what the crafting, touch, chat send, cover, play and open-step reads saw and gives back their problems; `part(name)` says
+    whether this run holds that part."""
+    out: list[str] = []
+    craft = read_craft(saved) if part("craft") else None
+    if craft is not None:
+        print(f"crafting window: {craft['checked']} values read, {len(craft['ours'])} tainted by the addon, "
+              f"{craft['own']} by the test's own steps, skill line {craft['line'] or 'none'}, "
+              f"recipe {craft['recipe'] or 'none'}"
+              + (", others: " + ", ".join(f"{k} ({v})" for k, v in sorted(craft["others"].items()))
+                 if craft["others"] else ""))
+    out += craft_problems(craft) if part("craft") else []
+    touch = read_touch(saved) if part("touch") else None
+    if touch is not None:
+        print(f"touch: {touch['frames']} frames walked, {touch['made']} made by the addon, {touch['inside_n']} of "
+              f"them inside a client frame in {len(touch['inside'])} shapes; {touch['on_client_n']} client fields "
+              f"tainted by the addon" + ("" if ui else "; no UI extract given, so every field is named"))
+    if part("touch"):
+        out += touch_problems(touch, client_field_names(ui) if ui and touch is not None else None)
+    send = read_send(saved) if part("send") else None
+    if send is not None:
+        print(f"chat send path: {send['checked']} values read, {len(send['tainted'])} tainted"
+              + (": " + ", ".join(f"{name} ({by})" for name, by in send["tainted"][:40]) if send["tainted"] else ""))
+        for label, key in (("an addon's own insert into the chat box", "after_insert"),
+                           ("an addon's own open of the chat box", "after_open")):
+            names = [name for name, _ in send[key]]
+            print(f"chat send path: {label} taints {len(names)} values" + (": " + ", ".join(names[:40]) if names else ""))
+    out += send_problems(send) if part("send") else []
+    covers = read_covers(saved) if part("covers") else None
+    if covers is not None and not covers["noread"]:
+        print(f"popup dictionary covers: {covers['total']} held, {covers['shown']} showing, "
+              f"{covers['idle']} over a text that is hidden")
+    out += covers_problems(covers) if part("covers") else []
+    watch = read_watch(saved)
+    if watch is not None and (part("watch") or part("open")):
+        _print_watch(watch)
+    out += watch_problems(watch) if part("watch") else []
+    if section == "isolate":
+        steps = read_isolate(saved)
+        if steps is not None:
+            print_isolate(steps)
+    if section == "open":
+        opened = read_open(saved)
+        if opened is not None:
+            print(f"open step: {len(opened['asked'])} buttons in {opened['presses']} presses, "
+                  f"{len(set(opened['windows']))} windows showed: {', '.join(sorted(set(opened['windows'])))}")
+        out += open_problems(opened, watch)
+    return out
+
+
+def _own_reads(saved: str, section: str | None = None, ui: Path | None = None) -> list[str]:
     """Prints what the tooltip read, the no-voice read and the names read saw and gives back their problems; for a
     run of one part (`section`), only that part's: the others' records are an earlier run's."""
     def part(name: str) -> bool:
@@ -5349,7 +6973,7 @@ def _own_reads(saved: str, section: str | None = None) -> list[str]:
     out += freeze_problems(freeze) if part("freeze") else []
     out += plates_problems(plates) if part("plates") else []
     out += bagclick_problems(bagclick) if part("bagclick") else []
-    return out
+    return out + _taint_reads(saved, part, ui, section)
 
 
 # A refusal only a click of the test's own causes, which no player's click does: listed, never a failure. A
@@ -5774,7 +7398,7 @@ def _texts(args: argparse.Namespace) -> int:
     log = args.log or args.saved.with_name("WoWForeverJapanese.lua")
     problems = read_test_problems(text,
                                   log.read_text(encoding="utf-8", errors="replace") if log.exists() else "")
-    problems += _own_reads(text, section)
+    problems += _own_reads(text, section, getattr(args, "ui", None))
     if section in (None, "tooltips"):
         problems += tooltip_row_problems(text)
     if section in (None, "live"):
@@ -5801,6 +7425,7 @@ def _parser() -> argparse.ArgumentParser:
     t = sub.add_parser("texts", help="the window test's result against the baseline: exit 1 on a new English line")
     t.add_argument("--saved", required=True, type=Path, help="the client's WFJScan.lua SavedVariables file")
     t.add_argument("--baseline", required=True, type=Path)
+    t.add_argument("--ui", type=Path, help="the client's UI extract (Interface/AddOns), for the names its code uses")
     t.add_argument("--log", type=Path, help="the shipped addon's SavedVariables file, for its recorded errors "
                    "(default: WoWForeverJapanese.lua beside --saved)")
     r = sub.add_parser("report")

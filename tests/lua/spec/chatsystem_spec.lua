@@ -531,24 +531,31 @@ describe("SYSTEM chat lines", function()
       local m = chatFrame()
       assert.are.equal(1, WFJ.ChatSystem.hookKeyed(m, keys))
       assert.are.equal(0, WFJ.ChatSystem.hookKeyed(m, keys)) -- once
+      -- the stored line stays the client's English: the Japanese goes on the visible line at the redraw
+      local function shown(i) m:Refresh(); return m.visibleLines[i]:GetText() end
       m:AddMessage("Today", 0.4, 0.4, 0.4)
-      assert.are.equal("今日", m:Last())
+      assert.are.equal("Today", m:Last())
+      assert.are.equal("今日", shown(2))
       m:AddMessage("Message of the Day: \"Raid at 8. Bring flasks!\"", 1, 1, 0)
-      assert.are.equal("今日のメッセージ: 「Raid at 8. Bring flasks!」", m:Last())
+      assert.are.equal("Message of the Day: \"Raid at 8. Bring flasks!\"", m:Last())
+      assert.are.equal("今日のメッセージ: 「Raid at 8. Bring flasks!」", shown(2))
       m:BackFillMessage("Unread Messages", 1, 0.5, 0)
-      assert.are.equal("未読メッセージ", m.history[1].message)
+      assert.are.equal("Unread Messages", m.history[1].message)
       for _, text in ipairs({ "[Thrall]: Today", "Today", "Your party is full.", "[Jaina]: Unread Messages" }) do
         m:AddMessage(text == "Today" and "[Bob]: Today" or text, 1, 1, 1) -- members' lines, and a non-key English
         assert.are.equal(text == "Today" and "[Bob]: Today" or text, m:Last())
+        assert.are.equal(text == "Today" and "[Bob]: Today" or text, shown(2))
       end
-      m:Refresh()
-      m.visibleLines = { Stub.fontString(""), Stub.fontString("") }
       m.history[#m.history + 1] = m.history[1] -- the backfilled separator scrolled into view
       m:Refresh()
       assert.are.equal("未読メッセージ", m.visibleLines[2]:GetText())
       alt(WFJ, true)
       assert.are.equal("Unread Messages", m.visibleLines[2]:GetText())
       alt(WFJ, false)
+      assert.are.equal("未読メッセージ", m.visibleLines[2]:GetText())
+      -- a sweep keeps the pair while the frame still holds the English
+      WFJ.ChatSystem.sweep()
+      m:Refresh()
       assert.are.equal("未読メッセージ", m.visibleLines[2]:GetText())
     end)
 
@@ -570,7 +577,8 @@ describe("SYSTEM chat lines", function()
     assert.are.equal(0, calls)
     assert.are.equal(memo, index.memoCount)
     m:AddMessage("Message of the Day: \"Raid at 8.\"", 1, 1, 0) -- the MOTD prefix passes, then is matched by key
-    assert.are.equal("今日のメッセージ: 「Raid at 8.」", m:Last())
+    m:Refresh()
+    assert.are.equal("今日のメッセージ: 「Raid at 8.」", m.visibleLines[2]:GetText())
     assert.is_true(calls > 0)
     index.match, index.matchOnly = match, matchOnly
   end)

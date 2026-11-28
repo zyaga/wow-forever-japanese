@@ -21,6 +21,11 @@ Diag.MAX_LINES = 50 -- the most /wfj log prints
 -- and only the newest MAX_KEPT of them stay. A field another addon tainted is not kept this way: an action bar
 -- addon can turn many, and they would push out this addon's own blocks.
 Diag.KEPT = { blocked = true, turned = true, taint = true, context = true }
+-- kept apart from the cap on blocks: a burst of blocked calls must never push out the scan or the trace that says
+-- where their taint came from. Only the newest MAX_SCANS scans stay (each lists up to 200 fields).
+Diag.HELD = { taint = true, origin = true, caller = true, traced = true, global = true, sweep = true }
+Diag.MAX_SCANS = 12
+Diag.MAX_HELD = 60 -- entries of one held kind
 Diag.MAX_KEPT = 50
 Diag.CHECK_INTERVAL = 5 -- seconds between hook checks
 Diag.MEMORY_EVERY = 60 -- hook checks between memory samples (5 minutes)
@@ -62,23 +67,42 @@ local function oldest(list, keep)
   end
   return nil
 end
-local function kept(e) return Diag.KEPT[e.kind] == true and (e.kind ~= "turned" or e.by == ADDON) end
+local function held(e) return Diag.HELD[e.kind] == true end
+local function kept(e) return held(e) or (Diag.KEPT[e.kind] == true and (e.kind ~= "turned" or e.by == ADDON)) end
+local function counted(e) return kept(e) and not held(e) end
 local function forget(gone)
   local key = tostring(gone.kind) .. "\0" .. tostring(gone.msg)
   if repeats[key] == gone then repeats[key] = nil end -- its next repeat starts a new entry
 end
 local function trim(list)
-  local sessions, keptN = 0, 0
+  local sessions, keptN, scans = 0, 0, 0
   for _, e in ipairs(list) do
     if e.kind == "session" then sessions = sessions + 1 end
-    if kept(e) then keptN = keptN + 1 end
+    if counted(e) then keptN = keptN + 1 end
+    if e.kind == "taint" then scans = scans + 1 end
+  end
+  -- a held kind is never pushed out by another kind, and keeps only its newest MAX_HELD: a caller or an origin entry
+  -- carries a call stack and the events before it, and a session can add dozens
+  local heldN = {}
+  for _, e in ipairs(list) do
+    if held(e) and e.kind ~= "taint" then heldN[e.kind] = (heldN[e.kind] or 0) + 1 end
+  end
+  for kind, count in pairs(heldN) do
+    while count > Diag.MAX_HELD do
+      forget(table.remove(list, oldest(list, function(e) return e.kind == kind end)))
+      count = count - 1
+    end
+  end
+  while scans > Diag.MAX_SCANS do
+    forget(table.remove(list, oldest(list, function(e) return e.kind == "taint" end)))
+    scans = scans - 1
   end
   while sessions > Diag.MAX_SESSIONS do
     table.remove(list, oldest(list, function(e) return e.kind == "session" end))
     sessions = sessions - 1
   end
   while keptN > Diag.MAX_KEPT do
-    forget(table.remove(list, oldest(list, kept)))
+    forget(table.remove(list, oldest(list, counted)))
     keptN = keptN - 1
   end
   local speech = 0
@@ -205,7 +229,9 @@ function Diag.onBlocked(event, addon, fn, addonName)
   local combat = type(deps.inCombat) == "function" and deps.inCombat() and true or false
   local e = Diag.log("blocked", tostring(fn) .. " <" .. site .. ">", { event = event, fn = tostring(fn),
     site = site, stack = stack, combat = combat })
-  say(("WFJ: the game blocked %s (%s). Logged; /wfj log shows it."):format(tostring(fn), event))
+  -- once a session, in both languages: the player sees a broken bar, not a log
+  say("WFJ: the game refused an action because of this addon. /reload clears it, and /wfj bug sends the cause. ・ "
+    .. "このアドオンが原因でゲームが操作を拒否しました。/reload で直ります。/wfj bug で原因を送れます。")
   return e
 end
 

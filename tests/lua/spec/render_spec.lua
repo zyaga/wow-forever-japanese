@@ -83,6 +83,24 @@ describe("Render: refresh on state, per-FontString font", function()
     assert.are.same({ 2, 4, 2 }, { quest.calls, quest.ms, quest.max }) -- two shows, the clock 2 ms on per read
   end)
 
+  it("a widget that raises on a write does not stop the refresh of the lines after it", function()
+    local caught = {}
+    WFJ.ErrorLog = { recordCaught = function(err) caught[#caught + 1] = tostring(err) end }
+    local lines = {}
+    for i = 1, 3 do
+      lines[i] = Stub.fontString("Quest text", "F.ttf", 14, "")
+      assert.is_true(R.show("quest", "line" .. i, lines[i], "Quest text", "quests", "quest", 1))
+    end
+    -- the second widget refuses every write from here on (the client raises on a font or a text it will not take)
+    local bad = lines[2]
+    bad.SetText = function() error("Interface/AddOns/WoWForeverJapanese/UI/X.lua:1: refused") end
+    WFJ.State.setEnabled(false)
+    assert.are.equal("Quest text", lines[1]:GetText())
+    assert.are.equal("Quest text", lines[3]:GetText())
+    assert.is_true(#caught >= 1)
+    WFJ.ErrorLog = nil
+  end)
+
   it("modifier, master, and area changes restore / reapply the open records", function()
     local q = Stub.fontString("Quest text", "F.ttf", 14, "OUTLINE")
     local g = Stub.fontString("Hello", "F.ttf", 12, "")

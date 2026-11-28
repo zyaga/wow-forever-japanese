@@ -75,8 +75,21 @@ end
 describe("Saving a word", function()
   local WFJ, R, S, fs, cover, mouseCalls, timers, shots
 
+  -- A cover is a table that holds its frame (the frame carries no field): the tests read both through one view,
+  -- the cover's state first, then its frame.
   local function coverOf(f)
-    for _, fr in ipairs(Stub.frames) do if fr.allPoints == f then return fr end end
+    for _, fr in ipairs(Stub.frames) do
+      if fr.allPoints == f then
+        local state = WFJ.ReadingView.coverAt(f)
+        return setmetatable({ frame = fr }, { __index = function(_, k)
+          local v = state and state[k]
+          if v ~= nil then return v end
+          return fr[k]
+        end, __newindex = function(_, k, v)
+          if state then state[k] = v else fr[k] = v end
+        end })
+      end
+    end
     return nil
   end
 

@@ -282,7 +282,7 @@ describe("addon loads in TOC order and answers /wfj version", function()
   it("keeps a problem log: a session on load, a blocked action naming this addon, /wfj log prints it", function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()
-    Loader.load("WoWForeverJapanese")
+    local loaded = Loader.load("WoWForeverJapanese")
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
     assert.are.equal(1, WFJ_Log.version)
     assert.are.equal("session", WFJ_Log.entries[#WFJ_Log.entries].kind)
@@ -290,6 +290,7 @@ describe("addon loads in TOC order and answers /wfj version", function()
     Stub.fireAll("ADDON_ACTION_BLOCKED", "SomeOtherAddon", "CastSpellByName()")
     Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
     Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
+    loaded.TaintWatch.finish() -- the scan a block asks for is read by the walk, a little per timer tick
     local blocked, kinds = nil, {}
     for _, e in ipairs(WFJ_Log.entries) do
       if e.kind == "blocked" then blocked = e end
@@ -301,7 +302,8 @@ describe("addon loads in TOC order and answers /wfj version", function()
     assert.are.equal(1, #Stub.prints) -- one chat line per session
     Stub.prints = {}
     SlashCmdList.WFJ("log 5")
-    assert.are.equal("WFJ: errors: 0 recorded, 0 not sent (/wfj bug)", Stub.prints[#Stub.prints])
+    -- the refused action is kept as one caught error, so the bug report carries it with what the addon found
+    assert.are.equal("WFJ: errors: 1 recorded, 1 not sent (/wfj bug)", Stub.prints[#Stub.prints])
     local shown = false
     for _, line in ipairs(Stub.prints) do
       if line:find("MainActionBar:SetPointBase()", 1, true) and line:find("×2", 1, true) then shown = true end

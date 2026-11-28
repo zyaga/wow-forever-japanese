@@ -9,6 +9,21 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- Action bars that stopped working in combat, and a vendor that refused to sell, after the Professions window (or another window with popup dictionary text in it) had been open. The addon kept a note on its own popup dictionary frames that the game's layout code also reads, and the game then treated its own windows as changed by an addon until a reload. The addon now keeps all of its notes in its own tables.
+- The red error text ("Out of range.") is handled without replacing a function of the game's error frame, which had the same effect on the game's own code.
+- The game's currency transfer window and other text that sizes itself to fit are written without leaving a value on the game's text widget.
+- When the game does refuse an action because of the addon, a line in chat now says so once, with what to do (`/reload` clears it), and `/wfj bug` includes what the addon found so the cause can be fixed.
+- A Lua error raised dozens of times in a row from the mail window ("bad argument #1 to 'SetFont'") when the reveal key was pressed or a setting changed while a mail row's expiry text showed. The addon tried to put back a font it had never recorded for that text. The same mistake is guarded in the NPC talk window and the Dialogue UI book. And one text the game refuses a write on no longer stops the rest of the screen from switching language: each line is handled on its own, and the error goes into `/wfj bug`.
+- The reputation, skill and currency descriptions and the calendar's event descriptions are written without running the game's own scroll code. The addon used to update the scroll box itself after writing a longer Japanese text, which left the box's state marked as changed by an addon, and the game then treated the next things on that page as changed too. A Japanese description longer than the room the game measured for the English is now drawn slightly smaller so all of it can be reached.
+- With Japanese names on, the faction names and the standing on each bar in the Reputation list were blank the first time the list was opened after a login or reload, until it was scrolled or opened again. They show at once now.
+- The guild and community chat's date lines and "Message of the Day" label are shown in Japanese without changing the chat's stored lines. Changing them left the chat's scroll bar marked as changed by an addon.
+
+### Changed
+- The addon now checks, in the background, for values it left on the game's tables: one pass after login in steps of at most 2 milliseconds, then nothing unless the game refuses an action.
+- With Japanese names on, the Professions window shows each recipe's name in its list and each reagent's name in the crafting form in Japanese, the counts as the game writes them, and the tools a recipe requires ("Requires: Forge"). A name with no Japanese yet stays English.
+- The bug report form asks whether the problem still happens with only this addon on, and `/wfj bug` fills in the names of the other addons you have loaded, so a problem that needs two addons together can be found.
+
 ## 0.15.0 - 2026-11-26
 
 ### Added
