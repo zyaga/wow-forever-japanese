@@ -4644,8 +4644,10 @@ end
       end)
       -- how each faction row's name is drawn: a name that holds text and shows nothing has a width, a face, an
       -- alpha or a shown state that says why
+      -- not while a test copy is logging: a read of a name widget is itself a thing under test
       local rows = {}
       pcall(function()
+        if type(_G.WFJ_ISOLATE_LOG) == "table" then return end
         for i, row in ipairs(pane.ScrollBox:GetFrames()) do
           local name = type(row.Content) == "table" and row.Content.Name or row.Name
           if i <= 10 and type(name) == "table" then

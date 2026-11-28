@@ -115,6 +115,39 @@ describe("the reputation frame on the Forever client", function()
     assert.are.equal("オナー・ホールド", rows[2].Content.Name:GetText())
   end)
 
+  it("a row the client has not placed yet: the name is asked its width a frame later, the bar text is written a"
+    .. " frame later; a placed row is written at once", function()
+    local queue, had = {}, _G.C_Timer
+    _G.C_Timer = { After = function(_, fn) queue[#queue + 1] = fn end }
+    WFJ.Data.add("name", { [WFJ.Names.key("Stormwind")] = "ストームウィンド\tすとーむうぃんど" })
+    local row = RC.setFactions({ { name = "Stormwind", standing = "Friendly" } })[1]
+    local name, text = row.Content.Name, bar(row)
+    local placed, asked = false, 0
+    function name.IsRectValid() return placed end
+    function text.IsRectValid() return placed end
+    function name.GetWidth() asked = asked + 1; return 100 end
+    queue = {}
+    -- the client sets the row up (its English), then the addon's pass runs, before the client has placed the row
+    name:SetText("Stormwind"); text:SetText("Friendly")
+    WFJ.Reputation.onRow(row)
+    assert.are.equal("ストームウィンド", name:GetText())
+    assert.are.equal("Friendly", text:GetText()) -- written now, it would never be placed
+    assert.are.equal(0, asked)
+    assert.is_true(#queue >= 1)
+    for _, fn in ipairs(queue) do fn() end
+    assert.are.equal("友好", text:GetText())
+    assert.are.equal(1, asked)
+    -- a row the client has placed: both written at once, nothing left for a later frame
+    placed, queue = true, {}
+    name:SetText("Stormwind"); text:SetText("Friendly")
+    WFJ.Reputation.onRow(row)
+    assert.are.equal("ストームウィンド", name:GetText())
+    assert.are.equal("友好", text:GetText())
+    assert.are.equal(0, #queue)
+    assert.are.equal(1, asked)
+    _G.C_Timer = had
+  end)
+
   it("an entry's hover shows the numbers, its leave the Japanese standing again; the modifier never puts English"
     .. " over the numbers", function()
     local rows = RC.setFactions({ { name = "Stormwind", standing = "Friendly", progress = "1200 / 6000" } })
